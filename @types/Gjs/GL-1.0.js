@@ -1,2 +1,2 @@
-imports.gi.versions.GL = '1.0'
-export default imports.gi.GL
+import GL from 'gi://GL?version=1.0';
+export default GL;

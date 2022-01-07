@@ -1,2 +1,2 @@
-imports.gi.versions.Gsf = '1'
-export default imports.gi.Gsf
+import Gsf from 'gi://Gsf?version=1';
+export default Gsf;

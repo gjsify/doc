@@ -1,2 +1,2 @@
-imports.gi.versions.GstRiff = '1.0'
-export default imports.gi.GstRiff
+import GstRiff from 'gi://GstRiff?version=1.0';
+export default GstRiff;

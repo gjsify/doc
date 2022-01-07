@@ -1,2 +1,2 @@
-imports.gi.versions.WebKit2 = '4.0'
-export default imports.gi.WebKit2
+import WebKit2 from 'gi://WebKit2?version=4.0';
+export default WebKit2;

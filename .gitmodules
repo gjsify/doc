@@ -1,4 +1,4 @@
 [submodule "vala-girs"]
 	path = vala-girs
-	url = https://github.com/nemequ/vala-girs.git
+	url = https://github.com/nemequ/vala-girs
 	branch = master

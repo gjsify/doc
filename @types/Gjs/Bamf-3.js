@@ -1,2 +1,2 @@
-imports.gi.versions.Bamf = '3'
-export default imports.gi.Bamf
+import Bamf from 'gi://Bamf?version=3';
+export default Bamf;

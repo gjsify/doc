@@ -1,2 +1,2 @@
-imports.gi.versions.LibvirtGLib = '1.0'
-export default imports.gi.LibvirtGLib
+import LibvirtGLib from 'gi://LibvirtGLib?version=1.0';
+export default LibvirtGLib;

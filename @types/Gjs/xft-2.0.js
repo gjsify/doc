@@ -1,2 +1,2 @@
-imports.gi.versions.xft = '2.0'
-export default imports.gi.xft
+import xft from 'gi://xft?version=2.0';
+export default xft;

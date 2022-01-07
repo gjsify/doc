@@ -1,2 +1,2 @@
-imports.gi.versions.Gpseq = '1.0'
-export default imports.gi.Gpseq
+import Gpseq from 'gi://Gpseq?version=1.0';
+export default Gpseq;

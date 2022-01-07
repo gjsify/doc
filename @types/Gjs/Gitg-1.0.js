@@ -1,2 +1,2 @@
-imports.gi.versions.Gitg = '1.0'
-export default imports.gi.Gitg
+import Gitg from 'gi://Gitg?version=1.0';
+export default Gitg;

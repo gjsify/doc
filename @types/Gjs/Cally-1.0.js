@@ -1,2 +1,2 @@
-imports.gi.versions.Cally = '1.0'
-export default imports.gi.Cally
+import Cally from 'gi://Cally?version=1.0';
+export default Cally;

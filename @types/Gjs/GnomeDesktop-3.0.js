@@ -1,2 +1,2 @@
-imports.gi.versions.GnomeDesktop = '3.0'
-export default imports.gi.GnomeDesktop
+import GnomeDesktop from 'gi://GnomeDesktop?version=3.0';
+export default GnomeDesktop;

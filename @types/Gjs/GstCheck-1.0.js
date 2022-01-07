@@ -1,2 +1,2 @@
-imports.gi.versions.GstCheck = '1.0'
-export default imports.gi.GstCheck
+import GstCheck from 'gi://GstCheck?version=1.0';
+export default GstCheck;

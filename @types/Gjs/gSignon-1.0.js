@@ -1,2 +1,2 @@
-imports.gi.versions.gSignon = '1.0'
-export default imports.gi.gSignon
+import gSignon from 'gi://gSignon?version=1.0';
+export default gSignon;

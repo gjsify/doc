@@ -3,38 +3,40 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum AttrType {
+export namespace IBus {
+
+enum AttrType {
     UNDERLINE,
     FOREGROUND,
     BACKGROUND,
 }
-export enum AttrUnderline {
+enum AttrUnderline {
     NONE,
     SINGLE,
     DOUBLE,
     LOW,
     ERROR,
 }
-export enum BusRequestNameReply {
+enum BusRequestNameReply {
     PRIMARY_OWNER,
     IN_QUEUE,
     EXISTS,
     ALREADY_OWNER,
 }
-export enum BusStartServiceByNameReply {
+enum BusStartServiceByNameReply {
     SUCCESS,
     ALREADY_RUNNING,
 }
-export enum Error {
+enum Error {
     NO_ENGINE,
     NO_CONFIG,
     FAILED,
 }
-export enum InputPurpose {
+enum InputPurpose {
     FREE_FORM,
     ALPHA,
     DIGITS,
@@ -46,33 +48,33 @@ export enum InputPurpose {
     PASSWORD,
     PIN,
 }
-export enum Orientation {
+enum Orientation {
     HORIZONTAL,
     VERTICAL,
     SYSTEM,
 }
-export enum PreeditFocusMode {
+enum PreeditFocusMode {
     CLEAR,
     COMMIT,
 }
-export enum PropState {
+enum PropState {
     UNCHECKED,
     CHECKED,
     INCONSISTENT,
 }
-export enum PropType {
+enum PropType {
     NORMAL,
     TOGGLE,
     RADIO,
     MENU,
     SEPARATOR,
 }
-export enum BusNameFlag {
+enum BusNameFlag {
     ALLOW_REPLACEMENT,
     REPLACE_EXISTING,
     DO_NOT_QUEUE,
 }
-export enum Capabilite {
+enum Capabilite {
     PREEDIT_TEXT,
     AUXILIARY_TEXT,
     LOOKUP_TABLE,
@@ -80,7 +82,7 @@ export enum Capabilite {
     PROPERTY,
     SURROUNDING_TEXT,
 }
-export enum InputHints {
+enum InputHints {
     NONE,
     SPELLCHECK,
     NO_SPELLCHECK,
@@ -92,7 +94,7 @@ export enum InputHints {
     INHIBIT_OSK,
     VERTICAL_WRITING,
 }
-export enum ModifierType {
+enum ModifierType {
     SHIFT_MASK,
     LOCK_MASK,
     CONTROL_MASK,
@@ -115,7 +117,7 @@ export enum ModifierType {
     RELEASE_MASK,
     MODIFIER_MASK,
 }
-export enum ObjectFlags {
+enum ObjectFlags {
     IN_DESTRUCTION,
     DESTROYED,
     RESERVED_1,
@@ -4225,83 +4227,83 @@ export const zcaron: number
 export const zerosubscript: number
 export const zerosuperior: number
 export const zstroke: number
-export function attr_background_new(color: number, start_index: number, end_index: number): Attribute
-export function attr_foreground_new(color: number, start_index: number, end_index: number): Attribute
-export function attr_underline_new(underline_type: number, start_index: number, end_index: number): Attribute
-export function error_quark(): GLib.Quark
-export function free_strv(strv: string): void
-export function get_address(): string
-export function get_daemon_uid(): number
-export function get_language_name(_locale: string): string
-export function get_local_machine_id(): string
-export function get_socket_path(): string
-export function get_timeout(): number
-export function get_untranslated_language_name(_locale: string): string
-export function get_user_name(): string
-export function init(): void
-export function key_event_from_string(string: string, keyval: number, modifiers: number): boolean
-export function key_event_to_string(keyval: number, modifiers: number): string
-export function keyval_convert_case(symbol: number): [ /* lower */ number, /* upper */ number ]
-export function keyval_from_name(keyval_name: string): number
-export function keyval_name(keyval: number): string
-export function keyval_to_lower(keyval: number): number
-export function keyval_to_unicode(keyval: number): number
-export function keyval_to_upper(keyval: number): number
-export function main(): void
-export function quit(): void
-export function set_display(display: string): void
-export function set_log_handler(verbose: boolean): void
-export function unicode_to_keyval(wc: number): number
-export function unset_log_handler(): void
-export function write_address(address: string): void
-export function xml_parse_buffer(buffer: string): XML
-export function xml_parse_file(name: string): XML
-export interface FreeFunc {
+function attr_background_new(color: number, start_index: number, end_index: number): Attribute
+function attr_foreground_new(color: number, start_index: number, end_index: number): Attribute
+function attr_underline_new(underline_type: number, start_index: number, end_index: number): Attribute
+function error_quark(): GLib.Quark
+function free_strv(strv: string): void
+function get_address(): string
+function get_daemon_uid(): number
+function get_language_name(_locale: string): string
+function get_local_machine_id(): string
+function get_socket_path(): string
+function get_timeout(): number
+function get_untranslated_language_name(_locale: string): string
+function get_user_name(): string
+function init(): void
+function key_event_from_string(string: string, keyval: number, modifiers: number): boolean
+function key_event_to_string(keyval: number, modifiers: number): string
+function keyval_convert_case(symbol: number): [ /* lower */ number, /* upper */ number ]
+function keyval_from_name(keyval_name: string): number
+function keyval_name(keyval: number): string
+function keyval_to_lower(keyval: number): number
+function keyval_to_unicode(keyval: number): number
+function keyval_to_upper(keyval: number): number
+function main(): void
+function quit(): void
+function set_display(display: string): void
+function set_log_handler(verbose: boolean): void
+function unicode_to_keyval(wc: number): number
+function unset_log_handler(): void
+function write_address(address: string): void
+function xml_parse_buffer(buffer: string): XML
+function xml_parse_file(name: string): XML
+interface FreeFunc {
     (object: object): void
 }
-export interface ObjectDestroyFunc {
+interface ObjectDestroyFunc {
     (object: Object): void
 }
-export interface SerializableCopyFunc {
+interface SerializableCopyFunc {
     (dest: Serializable, src: Serializable): boolean
 }
-export interface SerializableDeserializeFunc {
+interface SerializableDeserializeFunc {
     (serializable: Serializable, variant: GLib.Variant): number
 }
-export interface SerializableSerializeFunc {
+interface SerializableSerializeFunc {
     (serializable: Serializable, builder: GLib.VariantBuilder): boolean
 }
 export interface AttrList_ConstructProps extends Serializable_ConstructProps {
 }
-export class AttrList {
-    /* Fields of IBus.AttrList */
+class AttrList {
+    /* Fields of IBus-1.0.IBus.AttrList */
     parent: Serializable
     attributes: object[]
-    /* Fields of IBus.Object */
+    /* Fields of IBus-1.0.IBus.Object */
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.AttrList */
+    /* Methods of IBus-1.0.IBus.AttrList */
     append(attr: Attribute): void
     get(index: number): Attribute
-    /* Methods of IBus.Serializable */
+    /* Methods of IBus-1.0.IBus.Serializable */
     copy(): Serializable
     get_qattachment(key: GLib.Quark): GLib.Variant
     remove_qattachment(key: GLib.Quark): void
     serialize(): GLib.Variant
     set_qattachment(key: GLib.Quark, value: GLib.Variant): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4309,31 +4311,31 @@ export class AttrList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Serializable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Serializable */
     vfunc_copy(src: Serializable): boolean
     vfunc_deserialize(variant: GLib.Variant): number
     vfunc_serialize(builder: GLib.VariantBuilder): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: AttrList) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: AttrList) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AttrList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AttrList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4350,40 +4352,40 @@ export class AttrList {
 }
 export interface Attribute_ConstructProps extends Serializable_ConstructProps {
 }
-export class Attribute {
-    /* Fields of IBus.Attribute */
+class Attribute {
+    /* Fields of IBus-1.0.IBus.Attribute */
     parent: Serializable
     type: number
     value: number
     start_index: number
     end_index: number
-    /* Fields of IBus.Object */
+    /* Fields of IBus-1.0.IBus.Object */
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.Attribute */
+    /* Methods of IBus-1.0.IBus.Attribute */
     get_attr_type(): number
     get_end_index(): number
     get_start_index(): number
     get_value(): number
-    /* Methods of IBus.Serializable */
+    /* Methods of IBus-1.0.IBus.Serializable */
     copy(): Serializable
     get_qattachment(key: GLib.Quark): GLib.Variant
     remove_qattachment(key: GLib.Quark): void
     serialize(): GLib.Variant
     set_qattachment(key: GLib.Quark, value: GLib.Variant): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4391,31 +4393,31 @@ export class Attribute {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Serializable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Serializable */
     vfunc_copy(src: Serializable): boolean
     vfunc_deserialize(variant: GLib.Variant): number
     vfunc_serialize(builder: GLib.VariantBuilder): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: Attribute) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: Attribute) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Attribute, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Attribute, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4434,15 +4436,15 @@ export class Attribute {
 export interface Bus_ConstructProps extends Object_ConstructProps {
     connect_async?: boolean
 }
-export class Bus {
-    /* Fields of IBus.Bus */
+class Bus {
+    /* Fields of IBus-1.0.IBus.Bus */
     parent: Object
     priv: BusPrivate
-    /* Fields of IBus.Object */
+    /* Fields of IBus-1.0.IBus.Object */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.Bus */
+    /* Methods of IBus-1.0.IBus.Bus */
     add_match(rule: string): boolean
     add_match_async(rule: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): void
     add_match_async_finish(res: Gio.AsyncResult): boolean
@@ -4512,17 +4514,17 @@ export class Bus {
     set_ibus_property_async_finish(res: Gio.AsyncResult): boolean
     set_watch_dbus_signal(watch: boolean): void
     set_watch_ibus_signal(watch: boolean): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4530,23 +4532,23 @@ export class Bus {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Bus */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Bus */
     connect(sigName: "connected", callback: (($obj: Bus) => void)): number
     connect_after(sigName: "connected", callback: (($obj: Bus) => void)): number
     emit(sigName: "connected"): void
@@ -4559,11 +4561,11 @@ export class Bus {
     connect(sigName: "name-owner-changed", callback: (($obj: Bus, name: string, old_owner: string, new_owner: string) => void)): number
     connect_after(sigName: "name-owner-changed", callback: (($obj: Bus, name: string, old_owner: string, new_owner: string) => void)): number
     emit(sigName: "name-owner-changed", name: string, old_owner: string, new_owner: string): void
-    /* Signals of IBus.Object */
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: Bus) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: Bus) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Bus, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Bus, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4589,14 +4591,14 @@ export interface Component_ConstructProps extends Serializable_ConstructProps {
     textdomain?: string
     version?: string
 }
-export class Component {
-    /* Fields of IBus.Object */
+class Component {
+    /* Fields of IBus-1.0.IBus.Object */
     parent: GObject.InitiallyUnowned
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.Component */
+    /* Methods of IBus-1.0.IBus.Component */
     add_engine(engine: EngineDesc): void
     add_observed_path(path: string, access_fs: boolean): void
     check_modification(): boolean
@@ -4612,23 +4614,23 @@ export class Component {
     get_version(): string
     output(output: GLib.String, indent: number): void
     output_engines(output: GLib.String, indent: number): void
-    /* Methods of IBus.Serializable */
+    /* Methods of IBus-1.0.IBus.Serializable */
     copy(): Serializable
     get_qattachment(key: GLib.Quark): GLib.Variant
     remove_qattachment(key: GLib.Quark): void
     serialize(): GLib.Variant
     set_qattachment(key: GLib.Quark, value: GLib.Variant): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4636,31 +4638,31 @@ export class Component {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Serializable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Serializable */
     vfunc_copy(src: Serializable): boolean
     vfunc_deserialize(variant: GLib.Variant): number
     vfunc_serialize(builder: GLib.VariantBuilder): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: Component) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: Component) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Component, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Component, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4680,18 +4682,18 @@ export class Component {
 }
 export interface Config_ConstructProps extends Proxy_ConstructProps {
 }
-export class Config {
-    /* Properties of Gio.DBusProxy */
+class Config {
+    /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of IBus.Proxy */
+    /* Fields of IBus-1.0.IBus.Proxy */
     parent: Gio.DBusProxy
     flags: number
     own: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.Config */
+    /* Methods of IBus-1.0.IBus.Config */
     get_value(section: string, name: string): GLib.Variant
     get_value_async(section: string, name: string, timeout_ms: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): void
     get_value_async_finish(result: Gio.AsyncResult): GLib.Variant
@@ -4704,9 +4706,9 @@ export class Config {
     unset(section: string, name: string): boolean
     unwatch(section?: string | null, name?: string | null): boolean
     watch(section?: string | null, name?: string | null): boolean
-    /* Methods of IBus.Proxy */
+    /* Methods of IBus-1.0.IBus.Proxy */
     destroy(): void
-    /* Methods of Gio.DBusProxy */
+    /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
     call_sync(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null): GLib.Variant
@@ -4720,21 +4722,21 @@ export class Config {
     get_flags(): Gio.DBusProxyFlags
     get_interface_info(): Gio.DBusInterfaceInfo | null
     get_interface_name(): string
-    get_name(): string
+    get_name(): string | null
     get_name_owner(): string | null
     get_object_path(): string
     set_cached_property(property_name: string, value?: GLib.Variant | null): void
     set_default_timeout(timeout_msec: number): void
     set_interface_info(info?: Gio.DBusInterfaceInfo | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4742,57 +4744,57 @@ export class Config {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.AsyncInitable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     get_info(): Gio.DBusInterfaceInfo
     set_object(object?: Gio.DBusObject | null): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of IBus.Proxy */
+    /* Virtual methods of IBus-1.0.IBus.Proxy */
     vfunc_destroy(): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.DBusProxy */
+    /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Config */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Config */
     connect(sigName: "value-changed", callback: (($obj: Config, section: string, name: string, value: GLib.Variant) => void)): number
     connect_after(sigName: "value-changed", callback: (($obj: Config, section: string, name: string, value: GLib.Variant) => void)): number
     emit(sigName: "value-changed", section: string, name: string, value: GLib.Variant): void
-    /* Signals of IBus.Proxy */
+    /* Signals of IBus-1.0.IBus.Proxy */
     connect(sigName: "destroy", callback: (($obj: Config) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: Config) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of Gio.DBusProxy */
+    /* Signals of Gio-2.0.Gio.DBusProxy */
     connect(sigName: "g-properties-changed", callback: (($obj: Config, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     connect_after(sigName: "g-properties-changed", callback: (($obj: Config, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     emit(sigName: "g-properties-changed", changed_properties: GLib.Variant, invalidated_properties: string[]): void
     connect(sigName: "g-signal", callback: (($obj: Config, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     connect_after(sigName: "g-signal", callback: (($obj: Config, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     emit(sigName: "g-signal", sender_name: string | null, signal_name: string, parameters: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Config, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Config, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4817,32 +4819,32 @@ export class Config {
 }
 export interface ConfigService_ConstructProps extends Service_ConstructProps {
 }
-export class ConfigService {
-    /* Fields of IBus.Object */
+class ConfigService {
+    /* Fields of IBus-1.0.IBus.Object */
     parent: GObject.InitiallyUnowned
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.ConfigService */
+    /* Methods of IBus-1.0.IBus.ConfigService */
     value_changed(section: string, name: string, value: GLib.Variant): void
-    /* Methods of IBus.Service */
+    /* Methods of IBus-1.0.IBus.Service */
     emit_signal(dest_bus_name: string, interface_name: string, signal_name: string, parameters: GLib.Variant): boolean
     get_connection(): Gio.DBusConnection
     get_object_path(): string
     register(connection: Gio.DBusConnection): boolean
     unregister(connection: Gio.DBusConnection): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4850,36 +4852,36 @@ export class ConfigService {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.ConfigService */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.ConfigService */
     vfunc_get_value(section: string, name: string): GLib.Variant
     vfunc_get_values(section: string): GLib.Variant
     vfunc_set_value(section: string, name: string, value: GLib.Variant): boolean
     vfunc_unset_value(section: string, name: string): boolean
-    /* Virtual methods of IBus.Service */
+    /* Virtual methods of IBus-1.0.IBus.Service */
     vfunc_service_get_property(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string): GLib.Variant | null
     vfunc_service_method_call(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant, invocation: Gio.DBusMethodInvocation): void
     vfunc_service_set_property(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string, value: GLib.Variant): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: ConfigService) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: ConfigService) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ConfigService, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ConfigService, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4899,19 +4901,19 @@ export class ConfigService {
 export interface Engine_ConstructProps extends Service_ConstructProps {
     engine_name?: string
 }
-export class Engine {
-    /* Fields of IBus.Engine */
+class Engine {
+    /* Fields of IBus-1.0.IBus.Engine */
     enabled: boolean
     has_focus: boolean
     cursor_area: Rectangle
     client_capabilities: number
-    /* Fields of IBus.Object */
+    /* Fields of IBus-1.0.IBus.Object */
     parent: GObject.InitiallyUnowned
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.Engine */
+    /* Methods of IBus-1.0.IBus.Engine */
     commit_text(text: Text): void
     delete_surrounding_text(offset: number, nchars: number): void
     forward_key_event(keyval: number, keycode: number, state: number): void
@@ -4931,23 +4933,23 @@ export class Engine {
     update_preedit_text(text: Text, cursor_pos: number, visible: boolean): void
     update_preedit_text_with_mode(text: Text, cursor_pos: number, visible: boolean, mode: PreeditFocusMode): void
     update_property(prop: Property): void
-    /* Methods of IBus.Service */
+    /* Methods of IBus-1.0.IBus.Service */
     emit_signal(dest_bus_name: string, interface_name: string, signal_name: string, parameters: GLib.Variant): boolean
     get_connection(): Gio.DBusConnection
     get_object_path(): string
     register(connection: Gio.DBusConnection): boolean
     unregister(connection: Gio.DBusConnection): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4955,13 +4957,13 @@ export class Engine {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Engine */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Engine */
     vfunc_cancel_hand_writing(n_strokes: number): void
     vfunc_candidate_clicked(index: number, button: number, state: number): void
     vfunc_cursor_down(): void
@@ -4982,21 +4984,21 @@ export class Engine {
     vfunc_set_content_type(purpose: number, hints: number): void
     vfunc_set_cursor_location(x: number, y: number, w: number, h: number): void
     vfunc_set_surrounding_text(text: Text, cursor_index: number, anchor_pos: number): void
-    /* Virtual methods of IBus.Service */
+    /* Virtual methods of IBus-1.0.IBus.Service */
     vfunc_service_get_property(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string): GLib.Variant | null
     vfunc_service_method_call(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant, invocation: Gio.DBusMethodInvocation): void
     vfunc_service_set_property(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string, value: GLib.Variant): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Engine */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Engine */
     connect(sigName: "cancel-hand-writing", callback: (($obj: Engine, n_strokes: number) => void)): number
     connect_after(sigName: "cancel-hand-writing", callback: (($obj: Engine, n_strokes: number) => void)): number
     emit(sigName: "cancel-hand-writing", n_strokes: number): void
@@ -5057,11 +5059,11 @@ export class Engine {
     connect(sigName: "set-surrounding-text", callback: (($obj: Engine, text: GObject.Object, cursor_pos: number, anchor_pos: number) => void)): number
     connect_after(sigName: "set-surrounding-text", callback: (($obj: Engine, text: GObject.Object, cursor_pos: number, anchor_pos: number) => void)): number
     emit(sigName: "set-surrounding-text", text: GObject.Object, cursor_pos: number, anchor_pos: number): void
-    /* Signals of IBus.Object */
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: Engine) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: Engine) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Engine, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Engine, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5098,15 +5100,15 @@ export interface EngineDesc_ConstructProps extends Serializable_ConstructProps {
     textdomain?: string
     version?: string
 }
-export class EngineDesc {
-    /* Fields of IBus.EngineDesc */
+class EngineDesc {
+    /* Fields of IBus-1.0.IBus.EngineDesc */
     parent: Serializable
-    /* Fields of IBus.Object */
+    /* Fields of IBus-1.0.IBus.Object */
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.EngineDesc */
+    /* Methods of IBus-1.0.IBus.EngineDesc */
     get_author(): string
     get_description(): string
     get_hotkeys(): string
@@ -5125,23 +5127,23 @@ export class EngineDesc {
     get_textdomain(): string
     get_version(): string
     output(output: GLib.String, indent: number): void
-    /* Methods of IBus.Serializable */
+    /* Methods of IBus-1.0.IBus.Serializable */
     copy(): Serializable
     get_qattachment(key: GLib.Quark): GLib.Variant
     remove_qattachment(key: GLib.Quark): void
     serialize(): GLib.Variant
     set_qattachment(key: GLib.Quark, value: GLib.Variant): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5149,31 +5151,31 @@ export class EngineDesc {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Serializable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Serializable */
     vfunc_copy(src: Serializable): boolean
     vfunc_deserialize(variant: GLib.Variant): number
     vfunc_serialize(builder: GLib.VariantBuilder): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: EngineDesc) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: EngineDesc) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: EngineDesc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: EngineDesc, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5192,23 +5194,23 @@ export class EngineDesc {
 }
 export interface EngineSimple_ConstructProps extends Engine_ConstructProps {
 }
-export class EngineSimple {
-    /* Fields of IBus.Engine */
+class EngineSimple {
+    /* Fields of IBus-1.0.IBus.Engine */
     enabled: boolean
     has_focus: boolean
     cursor_area: Rectangle
     client_capabilities: number
-    /* Fields of IBus.Object */
+    /* Fields of IBus-1.0.IBus.Object */
     parent: GObject.InitiallyUnowned
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.EngineSimple */
+    /* Methods of IBus-1.0.IBus.EngineSimple */
     add_compose_file(file: string): boolean
     add_table(data: number[], max_seq_len: number, n_seqs: number): void
     add_table_by_locale(locale?: string | null): boolean
-    /* Methods of IBus.Engine */
+    /* Methods of IBus-1.0.IBus.Engine */
     commit_text(text: Text): void
     delete_surrounding_text(offset: number, nchars: number): void
     forward_key_event(keyval: number, keycode: number, state: number): void
@@ -5228,23 +5230,23 @@ export class EngineSimple {
     update_preedit_text(text: Text, cursor_pos: number, visible: boolean): void
     update_preedit_text_with_mode(text: Text, cursor_pos: number, visible: boolean, mode: PreeditFocusMode): void
     update_property(prop: Property): void
-    /* Methods of IBus.Service */
+    /* Methods of IBus-1.0.IBus.Service */
     emit_signal(dest_bus_name: string, interface_name: string, signal_name: string, parameters: GLib.Variant): boolean
     get_connection(): Gio.DBusConnection
     get_object_path(): string
     register(connection: Gio.DBusConnection): boolean
     unregister(connection: Gio.DBusConnection): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5252,13 +5254,13 @@ export class EngineSimple {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Engine */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Engine */
     vfunc_cancel_hand_writing(n_strokes: number): void
     vfunc_candidate_clicked(index: number, button: number, state: number): void
     vfunc_cursor_down(): void
@@ -5279,21 +5281,21 @@ export class EngineSimple {
     vfunc_set_content_type(purpose: number, hints: number): void
     vfunc_set_cursor_location(x: number, y: number, w: number, h: number): void
     vfunc_set_surrounding_text(text: Text, cursor_index: number, anchor_pos: number): void
-    /* Virtual methods of IBus.Service */
+    /* Virtual methods of IBus-1.0.IBus.Service */
     vfunc_service_get_property(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string): GLib.Variant | null
     vfunc_service_method_call(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant, invocation: Gio.DBusMethodInvocation): void
     vfunc_service_set_property(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string, value: GLib.Variant): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Engine */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Engine */
     connect(sigName: "cancel-hand-writing", callback: (($obj: EngineSimple, n_strokes: number) => void)): number
     connect_after(sigName: "cancel-hand-writing", callback: (($obj: EngineSimple, n_strokes: number) => void)): number
     emit(sigName: "cancel-hand-writing", n_strokes: number): void
@@ -5354,11 +5356,11 @@ export class EngineSimple {
     connect(sigName: "set-surrounding-text", callback: (($obj: EngineSimple, text: GObject.Object, cursor_pos: number, anchor_pos: number) => void)): number
     connect_after(sigName: "set-surrounding-text", callback: (($obj: EngineSimple, text: GObject.Object, cursor_pos: number, anchor_pos: number) => void)): number
     emit(sigName: "set-surrounding-text", text: GObject.Object, cursor_pos: number, anchor_pos: number): void
-    /* Signals of IBus.Object */
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: EngineSimple) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: EngineSimple) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: EngineSimple, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: EngineSimple, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5377,33 +5379,33 @@ export class EngineSimple {
 }
 export interface Factory_ConstructProps extends Service_ConstructProps {
 }
-export class Factory {
-    /* Fields of IBus.Object */
+class Factory {
+    /* Fields of IBus-1.0.IBus.Object */
     parent: GObject.InitiallyUnowned
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.Factory */
+    /* Methods of IBus-1.0.IBus.Factory */
     add_engine(engine_name: string, engine_type: GObject.Type): void
     create_engine(engine_name: string): Engine
-    /* Methods of IBus.Service */
+    /* Methods of IBus-1.0.IBus.Service */
     emit_signal(dest_bus_name: string, interface_name: string, signal_name: string, parameters: GLib.Variant): boolean
     get_connection(): Gio.DBusConnection
     get_object_path(): string
     register(connection: Gio.DBusConnection): boolean
     unregister(connection: Gio.DBusConnection): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5411,37 +5413,37 @@ export class Factory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Factory */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Factory */
     vfunc_create_engine(engine_name: string): Engine
-    /* Virtual methods of IBus.Service */
+    /* Virtual methods of IBus-1.0.IBus.Service */
     vfunc_service_get_property(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string): GLib.Variant | null
     vfunc_service_method_call(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant, invocation: Gio.DBusMethodInvocation): void
     vfunc_service_set_property(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string, value: GLib.Variant): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Factory */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Factory */
     connect(sigName: "create-engine", callback: (($obj: Factory, engine_name: string) => Engine | null)): number
     connect_after(sigName: "create-engine", callback: (($obj: Factory, engine_name: string) => Engine | null)): number
     emit(sigName: "create-engine", engine_name: string): void
-    /* Signals of IBus.Object */
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: Factory) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: Factory) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Factory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Factory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5460,38 +5462,38 @@ export class Factory {
 }
 export interface HotkeyProfile_ConstructProps extends Serializable_ConstructProps {
 }
-export class HotkeyProfile {
-    /* Fields of IBus.HotkeyProfile */
+class HotkeyProfile {
+    /* Fields of IBus-1.0.IBus.HotkeyProfile */
     parent: Serializable
-    /* Fields of IBus.Object */
+    /* Fields of IBus-1.0.IBus.Object */
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.HotkeyProfile */
+    /* Methods of IBus-1.0.IBus.HotkeyProfile */
     add_hotkey(keyval: number, modifiers: number, event: GLib.Quark): boolean
     add_hotkey_from_string(str: string, event: GLib.Quark): boolean
     filter_key_event(keyval: number, modifiers: number, prev_keyval: number, prev_modifiers: number, user_data: object): GLib.Quark
     lookup_hotkey(keyval: number, modifiers: number): GLib.Quark
     remove_hotkey(keyval: number, modifiers: number): boolean
     remove_hotkey_by_event(event: GLib.Quark): boolean
-    /* Methods of IBus.Serializable */
+    /* Methods of IBus-1.0.IBus.Serializable */
     copy(): Serializable
     get_qattachment(key: GLib.Quark): GLib.Variant
     remove_qattachment(key: GLib.Quark): void
     serialize(): GLib.Variant
     set_qattachment(key: GLib.Quark, value: GLib.Variant): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5499,37 +5501,37 @@ export class HotkeyProfile {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.HotkeyProfile */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.HotkeyProfile */
     vfunc_trigger(event: GLib.Quark): void
-    /* Virtual methods of IBus.Serializable */
+    /* Virtual methods of IBus-1.0.IBus.Serializable */
     vfunc_copy(src: Serializable): boolean
     vfunc_deserialize(variant: GLib.Variant): number
     vfunc_serialize(builder: GLib.VariantBuilder): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.HotkeyProfile */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.HotkeyProfile */
     connect(sigName: "trigger", callback: (($obj: HotkeyProfile, event: number, user_data: object) => void)): number
     connect_after(sigName: "trigger", callback: (($obj: HotkeyProfile, event: number, user_data: object) => void)): number
     emit(sigName: "trigger", event: number, user_data: object): void
-    /* Signals of IBus.Object */
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: HotkeyProfile) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: HotkeyProfile) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: HotkeyProfile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: HotkeyProfile, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5546,19 +5548,19 @@ export class HotkeyProfile {
 }
 export interface InputContext_ConstructProps extends Proxy_ConstructProps {
 }
-export class InputContext {
-    /* Properties of Gio.DBusProxy */
+class InputContext {
+    /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of IBus.InputContext */
+    /* Fields of IBus-1.0.IBus.InputContext */
     parent: Proxy
-    /* Fields of IBus.Proxy */
+    /* Fields of IBus-1.0.IBus.Proxy */
     flags: number
     own: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.InputContext */
+    /* Methods of IBus-1.0.IBus.InputContext */
     cancel_hand_writing(n_strokes: number): void
     focus_in(): void
     focus_out(): void
@@ -5577,9 +5579,9 @@ export class InputContext {
     set_cursor_location(x: number, y: number, w: number, h: number): void
     set_engine(name: string): void
     set_surrounding_text(text: Text, cursor_pos: number, anchor_pos: number): void
-    /* Methods of IBus.Proxy */
+    /* Methods of IBus-1.0.IBus.Proxy */
     destroy(): void
-    /* Methods of Gio.DBusProxy */
+    /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
     call_sync(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null): GLib.Variant
@@ -5593,21 +5595,21 @@ export class InputContext {
     get_flags(): Gio.DBusProxyFlags
     get_interface_info(): Gio.DBusInterfaceInfo | null
     get_interface_name(): string
-    get_name(): string
+    get_name(): string | null
     get_name_owner(): string | null
     get_object_path(): string
     set_cached_property(property_name: string, value?: GLib.Variant | null): void
     set_default_timeout(timeout_msec: number): void
     set_interface_info(info?: Gio.DBusInterfaceInfo | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5615,42 +5617,42 @@ export class InputContext {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.AsyncInitable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     get_info(): Gio.DBusInterfaceInfo
     set_object(object?: Gio.DBusObject | null): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of IBus.Proxy */
+    /* Virtual methods of IBus-1.0.IBus.Proxy */
     vfunc_destroy(): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.DBusProxy */
+    /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.InputContext */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.InputContext */
     connect(sigName: "commit-text", callback: (($obj: InputContext, text: Text) => void)): number
     connect_after(sigName: "commit-text", callback: (($obj: InputContext, text: Text) => void)): number
     emit(sigName: "commit-text", text: Text): void
@@ -5711,18 +5713,18 @@ export class InputContext {
     connect(sigName: "update-property", callback: (($obj: InputContext, prop: Property) => void)): number
     connect_after(sigName: "update-property", callback: (($obj: InputContext, prop: Property) => void)): number
     emit(sigName: "update-property", prop: Property): void
-    /* Signals of IBus.Proxy */
+    /* Signals of IBus-1.0.IBus.Proxy */
     connect(sigName: "destroy", callback: (($obj: InputContext) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: InputContext) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of Gio.DBusProxy */
+    /* Signals of Gio-2.0.Gio.DBusProxy */
     connect(sigName: "g-properties-changed", callback: (($obj: InputContext, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     connect_after(sigName: "g-properties-changed", callback: (($obj: InputContext, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     emit(sigName: "g-properties-changed", changed_properties: GLib.Variant, invalidated_properties: string[]): void
     connect(sigName: "g-signal", callback: (($obj: InputContext, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     connect_after(sigName: "g-signal", callback: (($obj: InputContext, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     emit(sigName: "g-signal", sender_name: string | null, signal_name: string, parameters: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InputContext, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputContext, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5750,29 +5752,29 @@ export class InputContext {
 }
 export interface Keymap_ConstructProps extends Object_ConstructProps {
 }
-export class Keymap {
-    /* Fields of IBus.Keymap */
+class Keymap {
+    /* Fields of IBus-1.0.IBus.Keymap */
     name: string
     keymap: number[]
-    /* Fields of IBus.Object */
+    /* Fields of IBus-1.0.IBus.Object */
     parent: GObject.InitiallyUnowned
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.Keymap */
+    /* Methods of IBus-1.0.IBus.Keymap */
     lookup_keysym(keycode: number, state: number): number
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5780,27 +5782,27 @@ export class Keymap {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: Keymap) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: Keymap) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Keymap, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Keymap, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5819,8 +5821,8 @@ export class Keymap {
 }
 export interface LookupTable_ConstructProps extends Serializable_ConstructProps {
 }
-export class LookupTable {
-    /* Fields of IBus.LookupTable */
+class LookupTable {
+    /* Fields of IBus-1.0.IBus.LookupTable */
     parent: Serializable
     page_size: number
     cursor_pos: number
@@ -5829,12 +5831,12 @@ export class LookupTable {
     orientation: number
     candidates: object[]
     labels: object[]
-    /* Fields of IBus.Object */
+    /* Fields of IBus-1.0.IBus.Object */
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.LookupTable */
+    /* Methods of IBus-1.0.IBus.LookupTable */
     append_candidate(text: Text): void
     append_label(text: Text): void
     clear(): void
@@ -5857,23 +5859,23 @@ export class LookupTable {
     set_orientation(orientation: number): void
     set_page_size(page_size: number): void
     set_round(round: boolean): void
-    /* Methods of IBus.Serializable */
+    /* Methods of IBus-1.0.IBus.Serializable */
     copy(): Serializable
     get_qattachment(key: GLib.Quark): GLib.Variant
     remove_qattachment(key: GLib.Quark): void
     serialize(): GLib.Variant
     set_qattachment(key: GLib.Quark, value: GLib.Variant): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5881,31 +5883,31 @@ export class LookupTable {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Serializable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Serializable */
     vfunc_copy(src: Serializable): boolean
     vfunc_deserialize(variant: GLib.Variant): number
     vfunc_serialize(builder: GLib.VariantBuilder): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: LookupTable) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: LookupTable) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: LookupTable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: LookupTable, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5923,24 +5925,24 @@ export class LookupTable {
 }
 export interface Object_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
 }
-export class Object {
-    /* Fields of IBus.Object */
+class Object {
+    /* Fields of IBus-1.0.IBus.Object */
     parent: GObject.InitiallyUnowned
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5948,27 +5950,27 @@ export class Object {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: Object) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: Object) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5985,39 +5987,39 @@ export class Object {
 }
 export interface ObservedPath_ConstructProps extends Serializable_ConstructProps {
 }
-export class ObservedPath {
-    /* Fields of IBus.ObservedPath */
+class ObservedPath {
+    /* Fields of IBus-1.0.IBus.ObservedPath */
     parent: Serializable
     path: string
     mtime: number
     is_dir: boolean
     is_exist: boolean
-    /* Fields of IBus.Object */
+    /* Fields of IBus-1.0.IBus.Object */
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.ObservedPath */
+    /* Methods of IBus-1.0.IBus.ObservedPath */
     check_modification(): boolean
     output(output: GLib.String, indent: number): void
     traverse(dir_only: boolean): ObservedPath[]
-    /* Methods of IBus.Serializable */
+    /* Methods of IBus-1.0.IBus.Serializable */
     copy(): Serializable
     get_qattachment(key: GLib.Quark): GLib.Variant
     remove_qattachment(key: GLib.Quark): void
     serialize(): GLib.Variant
     set_qattachment(key: GLib.Quark, value: GLib.Variant): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6025,31 +6027,31 @@ export class ObservedPath {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Serializable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Serializable */
     vfunc_copy(src: Serializable): boolean
     vfunc_deserialize(variant: GLib.Variant): number
     vfunc_serialize(builder: GLib.VariantBuilder): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: ObservedPath) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: ObservedPath) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ObservedPath, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ObservedPath, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6068,15 +6070,15 @@ export class ObservedPath {
 }
 export interface PanelService_ConstructProps extends Service_ConstructProps {
 }
-export class PanelService {
-    /* Fields of IBus.PanelService */
+class PanelService {
+    /* Fields of IBus-1.0.IBus.PanelService */
     parent: Service
-    /* Fields of IBus.Object */
+    /* Fields of IBus-1.0.IBus.Object */
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.PanelService */
+    /* Methods of IBus-1.0.IBus.PanelService */
     candidate_clicked(index: number, button: number, state: number): void
     cursor_down(): void
     cursor_up(): void
@@ -6085,23 +6087,23 @@ export class PanelService {
     property_activate(prop_name: string, prop_state: number): void
     property_hide(prop_name: string): void
     property_show(prop_name: string): void
-    /* Methods of IBus.Service */
+    /* Methods of IBus-1.0.IBus.Service */
     emit_signal(dest_bus_name: string, interface_name: string, signal_name: string, parameters: GLib.Variant): boolean
     get_connection(): Gio.DBusConnection
     get_object_path(): string
     register(connection: Gio.DBusConnection): boolean
     unregister(connection: Gio.DBusConnection): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6109,13 +6111,13 @@ export class PanelService {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.PanelService */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.PanelService */
     vfunc_cursor_down_lookup_table(): void
     vfunc_cursor_up_lookup_table(): void
     vfunc_destroy_context(input_context_path: string): void
@@ -6141,21 +6143,21 @@ export class PanelService {
     vfunc_update_lookup_table(lookup_table: LookupTable, visible: boolean): void
     vfunc_update_preedit_text(text: Text, cursor_pos: number, visible: boolean): void
     vfunc_update_property(prop: Property): void
-    /* Virtual methods of IBus.Service */
+    /* Virtual methods of IBus-1.0.IBus.Service */
     vfunc_service_get_property(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string): GLib.Variant | null
     vfunc_service_method_call(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant, invocation: Gio.DBusMethodInvocation): void
     vfunc_service_set_property(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string, value: GLib.Variant): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.PanelService */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.PanelService */
     connect(sigName: "cursor-down-lookup-table", callback: (($obj: PanelService) => void)): number
     connect_after(sigName: "cursor-down-lookup-table", callback: (($obj: PanelService) => void)): number
     emit(sigName: "cursor-down-lookup-table"): void
@@ -6231,11 +6233,11 @@ export class PanelService {
     connect(sigName: "update-property", callback: (($obj: PanelService, prop: Property) => void)): number
     connect_after(sigName: "update-property", callback: (($obj: PanelService, prop: Property) => void)): number
     emit(sigName: "update-property", prop: Property): void
-    /* Signals of IBus.Object */
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: PanelService) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: PanelService) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PanelService, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PanelService, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6254,36 +6256,36 @@ export class PanelService {
 }
 export interface PropList_ConstructProps extends Serializable_ConstructProps {
 }
-export class PropList {
-    /* Fields of IBus.PropList */
+class PropList {
+    /* Fields of IBus-1.0.IBus.PropList */
     parent: Serializable
     properties: object[]
-    /* Fields of IBus.Object */
+    /* Fields of IBus-1.0.IBus.Object */
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.PropList */
+    /* Methods of IBus-1.0.IBus.PropList */
     append(prop: Property): void
     get(index: number): Property
     update_property(prop: Property): boolean
-    /* Methods of IBus.Serializable */
+    /* Methods of IBus-1.0.IBus.Serializable */
     copy(): Serializable
     get_qattachment(key: GLib.Quark): GLib.Variant
     remove_qattachment(key: GLib.Quark): void
     serialize(): GLib.Variant
     set_qattachment(key: GLib.Quark, value: GLib.Variant): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6291,31 +6293,31 @@ export class PropList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Serializable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Serializable */
     vfunc_copy(src: Serializable): boolean
     vfunc_deserialize(variant: GLib.Variant): number
     vfunc_serialize(builder: GLib.VariantBuilder): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: PropList) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: PropList) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PropList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PropList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6342,8 +6344,8 @@ export interface Property_ConstructProps extends Serializable_ConstructProps {
     tooltip?: Text
     visible?: boolean
 }
-export class Property {
-    /* Properties of IBus.Property */
+class Property {
+    /* Properties of IBus-1.0.IBus.Property */
     icon: string
     label: Text
     sensitive: boolean
@@ -6352,13 +6354,13 @@ export class Property {
     symbol: Text
     tooltip: Text
     visible: boolean
-    /* Fields of IBus.Object */
+    /* Fields of IBus-1.0.IBus.Object */
     parent: GObject.InitiallyUnowned
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.Property */
+    /* Methods of IBus-1.0.IBus.Property */
     get_icon(): string
     get_key(): string
     get_label(): Text
@@ -6378,23 +6380,23 @@ export class Property {
     set_tooltip(tooltip: Text): void
     set_visible(visible: boolean): void
     update(prop_update: Property): boolean
-    /* Methods of IBus.Serializable */
+    /* Methods of IBus-1.0.IBus.Serializable */
     copy(): Serializable
     get_qattachment(key: GLib.Quark): GLib.Variant
     remove_qattachment(key: GLib.Quark): void
     serialize(): GLib.Variant
     set_qattachment(key: GLib.Quark, value: GLib.Variant): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6402,31 +6404,31 @@ export class Property {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Serializable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Serializable */
     vfunc_copy(src: Serializable): boolean
     vfunc_deserialize(variant: GLib.Variant): number
     vfunc_serialize(builder: GLib.VariantBuilder): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: Property) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: Property) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Property, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Property, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6460,20 +6462,20 @@ export class Property {
 }
 export interface Proxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
-export class Proxy {
-    /* Properties of Gio.DBusProxy */
+class Proxy {
+    /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of IBus.Proxy */
+    /* Fields of IBus-1.0.IBus.Proxy */
     parent: Gio.DBusProxy
     flags: number
     own: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.Proxy */
+    /* Methods of IBus-1.0.IBus.Proxy */
     destroy(): void
-    /* Methods of Gio.DBusProxy */
+    /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
     call_sync(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null): GLib.Variant
@@ -6487,21 +6489,21 @@ export class Proxy {
     get_flags(): Gio.DBusProxyFlags
     get_interface_info(): Gio.DBusInterfaceInfo | null
     get_interface_name(): string
-    get_name(): string
+    get_name(): string | null
     get_name_owner(): string | null
     get_object_path(): string
     set_cached_property(property_name: string, value?: GLib.Variant | null): void
     set_default_timeout(timeout_msec: number): void
     set_interface_info(info?: Gio.DBusInterfaceInfo | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6509,53 +6511,53 @@ export class Proxy {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.AsyncInitable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     get_info(): Gio.DBusInterfaceInfo
     set_object(object?: Gio.DBusObject | null): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of IBus.Proxy */
+    /* Virtual methods of IBus-1.0.IBus.Proxy */
     vfunc_destroy(): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.DBusProxy */
+    /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Proxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Proxy */
     connect(sigName: "destroy", callback: (($obj: Proxy) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: Proxy) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of Gio.DBusProxy */
+    /* Signals of Gio-2.0.Gio.DBusProxy */
     connect(sigName: "g-properties-changed", callback: (($obj: Proxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     connect_after(sigName: "g-properties-changed", callback: (($obj: Proxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     emit(sigName: "g-properties-changed", changed_properties: GLib.Variant, invalidated_properties: string[]): void
     connect(sigName: "g-signal", callback: (($obj: Proxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     connect_after(sigName: "g-signal", callback: (($obj: Proxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     emit(sigName: "g-signal", sender_name: string | null, signal_name: string, parameters: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Proxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Proxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6579,14 +6581,14 @@ export class Proxy {
 }
 export interface Registry_ConstructProps extends Serializable_ConstructProps {
 }
-export class Registry {
-    /* Fields of IBus.Object */
+class Registry {
+    /* Fields of IBus-1.0.IBus.Object */
     parent: GObject.InitiallyUnowned
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.Registry */
+    /* Methods of IBus-1.0.IBus.Registry */
     check_modification(): boolean
     get_components(): Component[]
     get_observed_paths(): ObservedPath[]
@@ -6598,23 +6600,23 @@ export class Registry {
     save_cache(is_user: boolean): boolean
     save_cache_file(filename: string): boolean
     start_monitor_changes(): void
-    /* Methods of IBus.Serializable */
+    /* Methods of IBus-1.0.IBus.Serializable */
     copy(): Serializable
     get_qattachment(key: GLib.Quark): GLib.Variant
     remove_qattachment(key: GLib.Quark): void
     serialize(): GLib.Variant
     set_qattachment(key: GLib.Quark, value: GLib.Variant): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6622,35 +6624,35 @@ export class Registry {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Serializable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Serializable */
     vfunc_copy(src: Serializable): boolean
     vfunc_deserialize(variant: GLib.Variant): number
     vfunc_serialize(builder: GLib.VariantBuilder): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Registry */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Registry */
     connect(sigName: "changed", callback: (($obj: Registry) => void)): number
     connect_after(sigName: "changed", callback: (($obj: Registry) => void)): number
     emit(sigName: "changed"): void
-    /* Signals of IBus.Object */
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: Registry) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: Registry) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Registry, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Registry, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6667,30 +6669,30 @@ export class Registry {
 }
 export interface Serializable_ConstructProps extends Object_ConstructProps {
 }
-export class Serializable {
-    /* Fields of IBus.Object */
+class Serializable {
+    /* Fields of IBus-1.0.IBus.Object */
     parent: GObject.InitiallyUnowned
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.Serializable */
+    /* Methods of IBus-1.0.IBus.Serializable */
     copy(): Serializable
     get_qattachment(key: GLib.Quark): GLib.Variant
     remove_qattachment(key: GLib.Quark): void
     serialize(): GLib.Variant
     set_qattachment(key: GLib.Quark, value: GLib.Variant): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6698,31 +6700,31 @@ export class Serializable {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Serializable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Serializable */
     vfunc_copy(src: Serializable): boolean
     vfunc_deserialize(variant: GLib.Variant): number
     vfunc_serialize(builder: GLib.VariantBuilder): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: Serializable) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: Serializable) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Serializable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Serializable, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6742,30 +6744,30 @@ export interface Service_ConstructProps extends Object_ConstructProps {
     connection?: Gio.DBusConnection
     object_path?: string
 }
-export class Service {
-    /* Fields of IBus.Object */
+class Service {
+    /* Fields of IBus-1.0.IBus.Object */
     parent: GObject.InitiallyUnowned
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.Service */
+    /* Methods of IBus-1.0.IBus.Service */
     emit_signal(dest_bus_name: string, interface_name: string, signal_name: string, parameters: GLib.Variant): boolean
     get_connection(): Gio.DBusConnection
     get_object_path(): string
     register(connection: Gio.DBusConnection): boolean
     unregister(connection: Gio.DBusConnection): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6773,31 +6775,31 @@ export class Service {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Service */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Service */
     vfunc_service_get_property(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string): GLib.Variant | null
     vfunc_service_method_call(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant, invocation: Gio.DBusMethodInvocation): void
     vfunc_service_set_property(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string, value: GLib.Variant): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: Service) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: Service) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Service, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Service, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6816,40 +6818,40 @@ export class Service {
 }
 export interface Text_ConstructProps extends Serializable_ConstructProps {
 }
-export class Text {
-    /* Fields of IBus.Text */
+class Text {
+    /* Fields of IBus-1.0.IBus.Text */
     parent: Serializable
     is_static: boolean
     text: string
     attrs: AttrList
-    /* Fields of IBus.Object */
+    /* Fields of IBus-1.0.IBus.Object */
     flags: number
     priv: ObjectPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of IBus.Text */
+    /* Methods of IBus-1.0.IBus.Text */
     append_attribute(type: number, value: number, start_index: number, end_index: number): void
     get_attributes(): AttrList
     get_length(): number
     get_text(): string
     set_attributes(attrs: AttrList): void
-    /* Methods of IBus.Serializable */
+    /* Methods of IBus-1.0.IBus.Serializable */
     copy(): Serializable
     get_qattachment(key: GLib.Quark): GLib.Variant
     remove_qattachment(key: GLib.Quark): void
     serialize(): GLib.Variant
     set_qattachment(key: GLib.Quark, value: GLib.Variant): void
-    /* Methods of IBus.Object */
+    /* Methods of IBus-1.0.IBus.Object */
     destroy(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6857,31 +6859,31 @@ export class Text {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of IBus.Serializable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of IBus-1.0.IBus.Serializable */
     vfunc_copy(src: Serializable): boolean
     vfunc_deserialize(variant: GLib.Variant): number
     vfunc_serialize(builder: GLib.VariantBuilder): boolean
-    /* Virtual methods of IBus.Object */
+    /* Virtual methods of IBus-1.0.IBus.Object */
     vfunc_destroy(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of IBus.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of IBus-1.0.IBus.Object */
     connect(sigName: "destroy", callback: (($obj: Text) => void)): number
     connect_after(sigName: "destroy", callback: (($obj: Text) => void)): number
     emit(sigName: "destroy"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Text, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Text, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6898,48 +6900,48 @@ export class Text {
     static new_from_unichar(c: number): Text
     static $gtype: GObject.Type
 }
-export abstract class AttrListClass {
-    /* Fields of IBus.AttrListClass */
+abstract class AttrListClass {
+    /* Fields of IBus-1.0.IBus.AttrListClass */
     parent: SerializableClass
     static name: string
 }
-export abstract class AttributeClass {
-    /* Fields of IBus.AttributeClass */
+abstract class AttributeClass {
+    /* Fields of IBus-1.0.IBus.AttributeClass */
     parent: SerializableClass
     static name: string
 }
-export abstract class BusClass {
-    /* Fields of IBus.BusClass */
+abstract class BusClass {
+    /* Fields of IBus-1.0.IBus.BusClass */
     parent: ObjectClass
     static name: string
 }
-export class BusPrivate {
+class BusPrivate {
     static name: string
 }
-export abstract class ComponentClass {
-    /* Fields of IBus.ComponentClass */
+abstract class ComponentClass {
+    /* Fields of IBus-1.0.IBus.ComponentClass */
     parent: SerializableClass
     static name: string
 }
-export class ComponentPrivate {
+class ComponentPrivate {
     static name: string
 }
-export abstract class ConfigClass {
+abstract class ConfigClass {
     static name: string
 }
-export class ConfigPrivate {
+class ConfigPrivate {
     static name: string
 }
-export abstract class ConfigServiceClass {
-    /* Fields of IBus.ConfigServiceClass */
+abstract class ConfigServiceClass {
+    /* Fields of IBus-1.0.IBus.ConfigServiceClass */
     set_value: (config: ConfigService, section: string, name: string, value: GLib.Variant) => boolean
     get_value: (config: ConfigService, section: string, name: string) => GLib.Variant
     unset_value: (config: ConfigService, section: string, name: string) => boolean
     get_values: (config: ConfigService, section: string) => GLib.Variant
     static name: string
 }
-export abstract class EngineClass {
-    /* Fields of IBus.EngineClass */
+abstract class EngineClass {
+    /* Fields of IBus-1.0.IBus.EngineClass */
     process_key_event: (engine: Engine, keyval: number, keycode: number, state: number) => boolean
     focus_in: (engine: Engine) => void
     focus_out: (engine: Engine) => void
@@ -6962,68 +6964,68 @@ export abstract class EngineClass {
     set_content_type: (engine: Engine, purpose: number, hints: number) => void
     static name: string
 }
-export abstract class EngineDescClass {
-    /* Fields of IBus.EngineDescClass */
+abstract class EngineDescClass {
+    /* Fields of IBus-1.0.IBus.EngineDescClass */
     parent: SerializableClass
     static name: string
 }
-export class EngineDescPrivate {
+class EngineDescPrivate {
     static name: string
 }
-export class EnginePrivate {
+class EnginePrivate {
     static name: string
 }
-export abstract class EngineSimpleClass {
+abstract class EngineSimpleClass {
     static name: string
 }
-export class EngineSimplePrivate {
+class EngineSimplePrivate {
     static name: string
 }
-export abstract class FactoryClass {
-    /* Fields of IBus.FactoryClass */
+abstract class FactoryClass {
+    /* Fields of IBus-1.0.IBus.FactoryClass */
     create_engine: (factory: Factory, engine_name: string) => Engine
     static name: string
 }
-export class FactoryPrivate {
+class FactoryPrivate {
     static name: string
 }
-export abstract class HotkeyProfileClass {
-    /* Fields of IBus.HotkeyProfileClass */
+abstract class HotkeyProfileClass {
+    /* Fields of IBus-1.0.IBus.HotkeyProfileClass */
     parent: SerializableClass
     trigger: (profile: HotkeyProfile, event: GLib.Quark) => void
     static name: string
 }
-export abstract class InputContextClass {
-    /* Fields of IBus.InputContextClass */
+abstract class InputContextClass {
+    /* Fields of IBus-1.0.IBus.InputContextClass */
     parent: ProxyClass
     static name: string
 }
-export abstract class KeymapClass {
-    /* Fields of IBus.KeymapClass */
+abstract class KeymapClass {
+    /* Fields of IBus-1.0.IBus.KeymapClass */
     parent: ObjectClass
     static name: string
 }
-export abstract class LookupTableClass {
-    /* Fields of IBus.LookupTableClass */
+abstract class LookupTableClass {
+    /* Fields of IBus-1.0.IBus.LookupTableClass */
     parent: SerializableClass
     static name: string
 }
-export abstract class ObjectClass {
-    /* Fields of IBus.ObjectClass */
+abstract class ObjectClass {
+    /* Fields of IBus-1.0.IBus.ObjectClass */
     parent: GObject.InitiallyUnownedClass
     destroy: (object: Object) => void
     static name: string
 }
-export class ObjectPrivate {
+class ObjectPrivate {
     static name: string
 }
-export abstract class ObservedPathClass {
-    /* Fields of IBus.ObservedPathClass */
+abstract class ObservedPathClass {
+    /* Fields of IBus-1.0.IBus.ObservedPathClass */
     parent: SerializableClass
     static name: string
 }
-export abstract class PanelServiceClass {
-    /* Fields of IBus.PanelServiceClass */
+abstract class PanelServiceClass {
+    /* Fields of IBus-1.0.IBus.PanelServiceClass */
     parent: ServiceClass
     focus_in: (panel: PanelService, input_context_path: string) => void
     focus_out: (panel: PanelService, input_context_path: string) => void
@@ -7052,73 +7054,73 @@ export abstract class PanelServiceClass {
     set_content_type: (panel: PanelService, purpose: number, hints: number) => void
     static name: string
 }
-export abstract class PropListClass {
-    /* Fields of IBus.PropListClass */
+abstract class PropListClass {
+    /* Fields of IBus-1.0.IBus.PropListClass */
     parent: SerializableClass
     static name: string
 }
-export abstract class PropertyClass {
-    /* Fields of IBus.PropertyClass */
+abstract class PropertyClass {
+    /* Fields of IBus-1.0.IBus.PropertyClass */
     parent: SerializableClass
     static name: string
 }
-export class PropertyPrivate {
+class PropertyPrivate {
     static name: string
 }
-export abstract class ProxyClass {
-    /* Fields of IBus.ProxyClass */
+abstract class ProxyClass {
+    /* Fields of IBus-1.0.IBus.ProxyClass */
     parent: Gio.DBusProxyClass
     destroy: (proxy: Proxy) => void
     static name: string
 }
-export class Rectangle {
-    /* Fields of IBus.Rectangle */
+class Rectangle {
+    /* Fields of IBus-1.0.IBus.Rectangle */
     x: number
     y: number
     width: number
     height: number
     static name: string
 }
-export abstract class RegistryClass {
+abstract class RegistryClass {
     static name: string
 }
-export class RegistryPrivate {
+class RegistryPrivate {
     static name: string
 }
-export abstract class SerializableClass {
-    /* Fields of IBus.SerializableClass */
+abstract class SerializableClass {
+    /* Fields of IBus-1.0.IBus.SerializableClass */
     serialize: (object: Serializable, builder: GLib.VariantBuilder) => boolean
     deserialize: (object: Serializable, variant: GLib.Variant) => number
     copy: (dest: Serializable, src: Serializable) => boolean
     static name: string
 }
-export class SerializablePrivate {
+class SerializablePrivate {
     static name: string
 }
-export abstract class ServiceClass {
-    /* Fields of IBus.ServiceClass */
+abstract class ServiceClass {
+    /* Fields of IBus-1.0.IBus.ServiceClass */
     service_method_call: (service: Service, connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant, invocation: Gio.DBusMethodInvocation) => void
     service_get_property: (service: Service, connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string) => GLib.Variant | null
     service_set_property: (service: Service, connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string, value: GLib.Variant) => boolean
-    /* Methods of IBus.ServiceClass */
+    /* Methods of IBus-1.0.IBus.ServiceClass */
     add_interfaces(klass: Service | Function | GObject.Type, xml_data: string): boolean
     static name: string
 }
-export class ServicePrivate {
+class ServicePrivate {
     static name: string
 }
-export abstract class TextClass {
-    /* Fields of IBus.TextClass */
+abstract class TextClass {
+    /* Fields of IBus-1.0.IBus.TextClass */
     parent: SerializableClass
     static name: string
 }
-export class XML {
-    /* Fields of IBus.XML */
+class XML {
+    /* Fields of IBus-1.0.IBus.XML */
     name: string
     text: string
     attributes: string
     sub_nodes: object[]
-    /* Methods of IBus.XML */
+    /* Methods of IBus-1.0.IBus.XML */
     copy(): XML
     free(): void
     output(output: GLib.String): void
@@ -7127,3 +7129,5 @@ export class XML {
     static parse_buffer(buffer: string): XML
     static parse_file(name: string): XML
 }
+}
+export default IBus;

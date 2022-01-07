@@ -3,16 +3,18 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GLib from './GLib-2.0';
-import type * as Gee from './Gee-0.8';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GUPnP from './GUPnP-1.2';
-import type * as libxml2 from './libxml2-2.0';
-import type * as Soup from './Soup-2.4';
-import type * as GSSDP from './GSSDP-1.2';
+import type GLib from './GLib-2.0';
+import type Gee from './Gee-0.8';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GUPnP from './GUPnP-1.2';
+import type libxml2 from './libxml2-2.0';
+import type Soup from './Soup-2.4';
+import type GSSDP from './GSSDP-1.2';
 
-export enum LogLevel {
+export namespace RygelCore {
+
+enum LogLevel {
     INVALID,
     ERROR,
     CRITICAL,
@@ -21,7 +23,7 @@ export enum LogLevel {
     DEFAULT,
     DEBUG,
 }
-export enum ConfigurationEntry {
+enum ConfigurationEntry {
     INTERFACE,
     PORT,
     TRANSCODING,
@@ -33,18 +35,18 @@ export enum ConfigurationEntry {
     MUSIC_UPLOAD_FOLDER,
     PICTURE_UPLOAD_FOLDER,
 }
-export enum SectionEntry {
+enum SectionEntry {
     TITLE,
     ENABLED,
 }
-export enum ConfigurationError {
+enum ConfigurationError {
     NO_VALUE_SET,
     VALUE_OUT_OF_RANGE,
 }
-export enum CmdlineConfigError {
+enum CmdlineConfigError {
     VERSION_ONLY,
 }
-export enum PluginCapabilities {
+enum PluginCapabilities {
     NONE,
     IMAGE_UPLOAD,
     VIDEO_UPLOAD,
@@ -55,23 +57,23 @@ export enum PluginCapabilities {
     DIAGNOSTICS,
     ENERGY_MANAGEMENT,
 }
-export function get_pretty_host_name(): string
+function get_pretty_host_name(): string
 export interface DBusInterface_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class DBusInterface {
-    /* Fields of GObject.Object */
+class DBusInterface {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.DBusInterface */
+    /* Methods of RygelCore-2.6.RygelCore.DBusInterface */
     shutdown(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -79,23 +81,23 @@ export class DBusInterface {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of RygelCore.DBusInterface */
+    watch_closure(closure: Function): void
+    /* Virtual methods of RygelCore-2.6.RygelCore.DBusInterface */
     vfunc_shutdown(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DBusInterface, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DBusInterface, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -110,21 +112,21 @@ export class DBusInterface {
 }
 export interface DBusAclProvider_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class DBusAclProvider {
-    /* Fields of GObject.Object */
+class DBusAclProvider {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.DBusAclProvider */
+    /* Methods of RygelCore-2.6.RygelCore.DBusAclProvider */
     is_allowed(device: GLib.HashTable, service: GLib.HashTable, path: string, address: string, agent?: string | null, _callback_?: Gio.AsyncReadyCallback | null): void
     is_allowed_finish(_res_: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -132,24 +134,24 @@ export class DBusAclProvider {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of RygelCore.DBusAclProvider */
+    watch_closure(closure: Function): void
+    /* Virtual methods of RygelCore-2.6.RygelCore.DBusAclProvider */
     vfunc_is_allowed(device: GLib.HashTable, service: GLib.HashTable, path: string, address: string, agent?: string | null, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_is_allowed_finish(_res_: Gio.AsyncResult): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DBusAclProvider, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DBusAclProvider, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -164,10 +166,10 @@ export class DBusAclProvider {
 }
 export interface Configuration_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Configuration {
-    /* Fields of GObject.Object */
+class Configuration {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.Configuration */
+    /* Methods of RygelCore-2.6.RygelCore.Configuration */
     get_interface(): string
     get_interfaces(): string[]
     get_port(): number
@@ -188,15 +190,15 @@ export class Configuration {
     get_int(section: string, key: string, min: number, max: number): number
     get_int_list(section: string, key: string): Gee.ArrayList
     get_bool(section: string, key: string): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -204,13 +206,13 @@ export class Configuration {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of RygelCore.Configuration */
+    watch_closure(closure: Function): void
+    /* Virtual methods of RygelCore-2.6.RygelCore.Configuration */
     vfunc_get_interface(): string
     vfunc_get_interfaces(): string[]
     vfunc_get_port(): number
@@ -231,15 +233,15 @@ export class Configuration {
     vfunc_get_int(section: string, key: string, min: number, max: number): number
     vfunc_get_int_list(section: string, key: string): Gee.ArrayList
     vfunc_get_bool(section: string, key: string): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of RygelCore.Configuration */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of RygelCore-2.6.RygelCore.Configuration */
     connect(sigName: "configuration-changed", callback: (($obj: Configuration, entry: ConfigurationEntry) => void)): number
     connect_after(sigName: "configuration-changed", callback: (($obj: Configuration, entry: ConfigurationEntry) => void)): number
     emit(sigName: "configuration-changed", entry: ConfigurationEntry): void
@@ -249,7 +251,7 @@ export class Configuration {
     connect(sigName: "setting-changed", callback: (($obj: Configuration, section: string, key: string) => void)): number
     connect_after(sigName: "setting-changed", callback: (($obj: Configuration, section: string, key: string) => void)): number
     emit(sigName: "setting-changed", section: string, key: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Configuration, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Configuration, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -265,25 +267,25 @@ export class Configuration {
 export interface StateMachine_ConstructProps extends GObject.Object_ConstructProps {
     cancellable?: Gio.Cancellable
 }
-export class StateMachine {
-    /* Properties of RygelCore.StateMachine */
+class StateMachine {
+    /* Properties of RygelCore-2.6.RygelCore.StateMachine */
     cancellable: Gio.Cancellable
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.StateMachine */
+    /* Methods of RygelCore-2.6.RygelCore.StateMachine */
     run(_callback_?: Gio.AsyncReadyCallback | null): void
     run_finish(_res_: Gio.AsyncResult): void
     get_cancellable(): Gio.Cancellable
     set_cancellable(value: Gio.Cancellable): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -291,30 +293,30 @@ export class StateMachine {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of RygelCore.StateMachine */
+    watch_closure(closure: Function): void
+    /* Virtual methods of RygelCore-2.6.RygelCore.StateMachine */
     vfunc_run(_callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_run_finish(_res_: Gio.AsyncResult): void
     vfunc_get_cancellable(): Gio.Cancellable
     vfunc_set_cancellable(value: Gio.Cancellable): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of RygelCore.StateMachine */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of RygelCore-2.6.RygelCore.StateMachine */
     connect(sigName: "completed", callback: (($obj: StateMachine) => void)): number
     connect_after(sigName: "completed", callback: (($obj: StateMachine) => void)): number
     emit(sigName: "completed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StateMachine, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StateMachine, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -331,26 +333,26 @@ export class StateMachine {
 }
 export interface ConnectionManager_ConstructProps extends GUPnP.Service_ConstructProps {
 }
-export class ConnectionManager {
-    /* Fields of RygelCore.ConnectionManager */
+class ConnectionManager {
+    /* Fields of RygelCore-2.6.RygelCore.ConnectionManager */
     sink_protocol_info: string
     connection_ids: string
     source_protocol_info: string
     rcs_id: number
     av_transport_id: number
     direction: string
-    /* Fields of GUPnP.Service */
+    /* Fields of GUPnP-1.2.GUPnP.Service */
     parent_instance: GUPnP.ServiceInfo
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.ConnectionManager */
+    /* Methods of RygelCore-2.6.RygelCore.ConnectionManager */
     get_current_protocol_info(): string
-    /* Methods of GUPnP.Service */
+    /* Methods of GUPnP-1.2.GUPnP.Service */
     freeze_notify(): void
     notify_value(variable: string, value: any): void
     signals_autoconnect(user_data?: object | null): void
     thaw_notify(): void
-    /* Methods of GUPnP.ServiceInfo */
+    /* Methods of GUPnP-1.2.GUPnP.ServiceInfo */
     get_context(): GUPnP.Context
     get_control_url(): string
     get_event_subscription_url(): string
@@ -363,15 +365,15 @@ export class ConnectionManager {
     get_udn(): string
     get_url_base(): Soup.URI
     introspect_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    introspect_finish(res: Gio.AsyncResult): GUPnP.ServiceIntrospection
-    /* Methods of GObject.Object */
+    introspect_finish(res: Gio.AsyncResult): GUPnP.ServiceIntrospection | null
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -379,25 +381,25 @@ export class ConnectionManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of RygelCore.ConnectionManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of RygelCore-2.6.RygelCore.ConnectionManager */
     vfunc_get_current_protocol_info(): string
-    /* Virtual methods of GUPnP.Service */
+    /* Virtual methods of GUPnP-1.2.GUPnP.Service */
     vfunc_action_invoked(action: GUPnP.ServiceAction): void
     vfunc_query_variable(variable: string, value: any): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GUPnP.Service */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GUPnP-1.2.GUPnP.Service */
     connect(sigName: "action-invoked", callback: (($obj: ConnectionManager, action: GUPnP.ServiceAction) => void)): number
     connect_after(sigName: "action-invoked", callback: (($obj: ConnectionManager, action: GUPnP.ServiceAction) => void)): number
     emit(sigName: "action-invoked", action: GUPnP.ServiceAction): void
@@ -407,7 +409,7 @@ export class ConnectionManager {
     connect(sigName: "query-variable", callback: (($obj: ConnectionManager, variable: string, value: any) => void)): number
     connect_after(sigName: "query-variable", callback: (($obj: ConnectionManager, variable: string, value: any) => void)): number
     emit(sigName: "query-variable", variable: string, value: any): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ConnectionManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ConnectionManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -425,24 +427,24 @@ export class ConnectionManager {
 export interface BasicManagement_ConstructProps extends GUPnP.Service_ConstructProps {
     max_history_size?: number
 }
-export class BasicManagement {
-    /* Properties of RygelCore.BasicManagement */
+class BasicManagement {
+    /* Properties of RygelCore-2.6.RygelCore.BasicManagement */
     max_history_size: number
-    /* Fields of RygelCore.BasicManagement */
+    /* Fields of RygelCore-2.6.RygelCore.BasicManagement */
     device_status: string
-    /* Fields of GUPnP.Service */
+    /* Fields of GUPnP-1.2.GUPnP.Service */
     parent_instance: GUPnP.ServiceInfo
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.BasicManagement */
+    /* Methods of RygelCore-2.6.RygelCore.BasicManagement */
     get_max_history_size(): number
     set_max_history_size(value: number): void
-    /* Methods of GUPnP.Service */
+    /* Methods of GUPnP-1.2.GUPnP.Service */
     freeze_notify(): void
     notify_value(variable: string, value: any): void
     signals_autoconnect(user_data?: object | null): void
     thaw_notify(): void
-    /* Methods of GUPnP.ServiceInfo */
+    /* Methods of GUPnP-1.2.GUPnP.ServiceInfo */
     get_context(): GUPnP.Context
     get_control_url(): string
     get_event_subscription_url(): string
@@ -455,15 +457,15 @@ export class BasicManagement {
     get_udn(): string
     get_url_base(): Soup.URI
     introspect_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    introspect_finish(res: Gio.AsyncResult): GUPnP.ServiceIntrospection
-    /* Methods of GObject.Object */
+    introspect_finish(res: Gio.AsyncResult): GUPnP.ServiceIntrospection | null
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -471,23 +473,23 @@ export class BasicManagement {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GUPnP.Service */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GUPnP-1.2.GUPnP.Service */
     vfunc_action_invoked(action: GUPnP.ServiceAction): void
     vfunc_query_variable(variable: string, value: any): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GUPnP.Service */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GUPnP-1.2.GUPnP.Service */
     connect(sigName: "action-invoked", callback: (($obj: BasicManagement, action: GUPnP.ServiceAction) => void)): number
     connect_after(sigName: "action-invoked", callback: (($obj: BasicManagement, action: GUPnP.ServiceAction) => void)): number
     emit(sigName: "action-invoked", action: GUPnP.ServiceAction): void
@@ -497,7 +499,7 @@ export class BasicManagement {
     connect(sigName: "query-variable", callback: (($obj: BasicManagement, variable: string, value: any) => void)): number
     connect_after(sigName: "query-variable", callback: (($obj: BasicManagement, variable: string, value: any) => void)): number
     emit(sigName: "query-variable", variable: string, value: any): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BasicManagement, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BasicManagement, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -516,10 +518,10 @@ export class BasicManagement {
 }
 export interface DescriptionFile_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class DescriptionFile {
-    /* Fields of GObject.Object */
+class DescriptionFile {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.DescriptionFile */
+    /* Methods of RygelCore-2.6.RygelCore.DescriptionFile */
     set_device_type(device_type: string): void
     set_model_description(model_description: string): void
     set_model_name(model_name: string): void
@@ -538,15 +540,15 @@ export class DescriptionFile {
     add_icon(device_name: string, icon_info: IconInfo, url: string): void
     modify_service_type(old_type: string, new_type: string): void
     save(path: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -554,21 +556,21 @@ export class DescriptionFile {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DescriptionFile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DescriptionFile, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -584,8 +586,8 @@ export class DescriptionFile {
     static from_xml_document(doc: GUPnP.XMLDoc): DescriptionFile
     static $gtype: GObject.Type
 }
-export class DLNAProfile {
-    /* Fields of RygelCore.DLNAProfile */
+class DLNAProfile {
+    /* Fields of RygelCore-2.6.RygelCore.DLNAProfile */
     ref_count: number
     mime: string
     name: string
@@ -598,17 +600,17 @@ export class DLNAProfile {
 }
 export interface EnergyManagement_ConstructProps extends GUPnP.Service_ConstructProps {
 }
-export class EnergyManagement {
-    /* Fields of GUPnP.Service */
+class EnergyManagement {
+    /* Fields of GUPnP-1.2.GUPnP.Service */
     parent_instance: GUPnP.ServiceInfo
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GUPnP.Service */
+    /* Methods of GUPnP-1.2.GUPnP.Service */
     freeze_notify(): void
     notify_value(variable: string, value: any): void
     signals_autoconnect(user_data?: object | null): void
     thaw_notify(): void
-    /* Methods of GUPnP.ServiceInfo */
+    /* Methods of GUPnP-1.2.GUPnP.ServiceInfo */
     get_context(): GUPnP.Context
     get_control_url(): string
     get_event_subscription_url(): string
@@ -621,15 +623,15 @@ export class EnergyManagement {
     get_udn(): string
     get_url_base(): Soup.URI
     introspect_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    introspect_finish(res: Gio.AsyncResult): GUPnP.ServiceIntrospection
-    /* Methods of GObject.Object */
+    introspect_finish(res: Gio.AsyncResult): GUPnP.ServiceIntrospection | null
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -637,23 +639,23 @@ export class EnergyManagement {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GUPnP.Service */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GUPnP-1.2.GUPnP.Service */
     vfunc_action_invoked(action: GUPnP.ServiceAction): void
     vfunc_query_variable(variable: string, value: any): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GUPnP.Service */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GUPnP-1.2.GUPnP.Service */
     connect(sigName: "action-invoked", callback: (($obj: EnergyManagement, action: GUPnP.ServiceAction) => void)): number
     connect_after(sigName: "action-invoked", callback: (($obj: EnergyManagement, action: GUPnP.ServiceAction) => void)): number
     emit(sigName: "action-invoked", action: GUPnP.ServiceAction): void
@@ -663,7 +665,7 @@ export class EnergyManagement {
     connect(sigName: "query-variable", callback: (($obj: EnergyManagement, variable: string, value: any) => void)): number
     connect_after(sigName: "query-variable", callback: (($obj: EnergyManagement, variable: string, value: any) => void)): number
     emit(sigName: "query-variable", variable: string, value: any): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: EnergyManagement, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: EnergyManagement, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -681,64 +683,64 @@ export class EnergyManagement {
 export interface RootDevice_ConstructProps extends GUPnP.RootDevice_ConstructProps {
     services?: Gee.ArrayList
 }
-export class RootDevice {
-    /* Properties of RygelCore.RootDevice */
+class RootDevice {
+    /* Properties of RygelCore-2.6.RygelCore.RootDevice */
     services: Gee.ArrayList
-    /* Properties of GUPnP.RootDevice */
+    /* Properties of GUPnP-1.2.GUPnP.RootDevice */
     available: boolean
-    /* Properties of GUPnP.DeviceInfo */
+    /* Properties of GUPnP-1.2.GUPnP.DeviceInfo */
     element: object
     location: string
     url_base: Soup.URI
-    /* Fields of GUPnP.RootDevice */
+    /* Fields of GUPnP-1.2.GUPnP.RootDevice */
     parent_instance: GUPnP.Device
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.RootDevice */
+    /* Methods of RygelCore-2.6.RygelCore.RootDevice */
     get_services(): Gee.ArrayList
-    /* Methods of GUPnP.RootDevice */
+    /* Methods of GUPnP-1.2.GUPnP.RootDevice */
     get_available(): boolean
     get_description_dir(): string
     get_description_path(): string
     get_relative_location(): string
     get_ssdp_resource_group(): GSSDP.ResourceGroup
     set_available(available: boolean): void
-    /* Methods of GUPnP.DeviceInfo */
+    /* Methods of GUPnP-1.2.GUPnP.DeviceInfo */
     get_context(): GUPnP.Context
-    get_description_value(element: string): string
+    get_description_value(element: string): string | null
     get_device(type: string): GUPnP.DeviceInfo | null
     get_device_type(): string
     get_friendly_name(): string
-    get_icon_url(requested_mime_type: string | null, requested_depth: number, requested_width: number, requested_height: number, prefer_bigger: boolean): [ /* returnType */ string, /* mime_type */ string | null, /* depth */ number | null, /* width */ number | null, /* height */ number | null ]
+    get_icon_url(requested_mime_type: string | null, requested_depth: number, requested_width: number, requested_height: number, prefer_bigger: boolean): [ /* returnType */ string | null, /* mime_type */ string | null, /* depth */ number | null, /* width */ number | null, /* height */ number | null ]
     get_location(): string
-    get_manufacturer(): string
-    get_manufacturer_url(): string
-    get_model_description(): string
-    get_model_name(): string
-    get_model_number(): string
-    get_model_url(): string
-    get_presentation_url(): string
+    get_manufacturer(): string | null
+    get_manufacturer_url(): string | null
+    get_model_description(): string | null
+    get_model_name(): string | null
+    get_model_number(): string | null
+    get_model_url(): string | null
+    get_presentation_url(): string | null
     get_resource_factory(): GUPnP.ResourceFactory
-    get_serial_number(): string
-    get_service(type: string): GUPnP.ServiceInfo
+    get_serial_number(): string | null
+    get_service(type: string): GUPnP.ServiceInfo | null
     get_udn(): string
-    get_upc(): string
+    get_upc(): string | null
     get_url_base(): Soup.URI
-    list_device_types(): string[]
-    list_devices(): GUPnP.DeviceInfo[]
-    list_dlna_capabilities(): string[]
-    list_dlna_device_class_identifier(): string[]
-    list_service_types(): string[]
-    list_services(): GUPnP.ServiceInfo[]
-    /* Methods of GObject.Object */
+    list_device_types(): string[] | null
+    list_devices(): GUPnP.DeviceInfo[] | null
+    list_dlna_capabilities(): string[] | null
+    list_dlna_device_class_identifier(): string[] | null
+    list_service_types(): string[] | null
+    list_services(): GUPnP.ServiceInfo[] | null
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -746,25 +748,25 @@ export class RootDevice {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GUPnP.RootDevice */
+    /* Virtual methods of GUPnP-1.2.GUPnP.RootDevice */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -793,21 +795,21 @@ export class RootDevice {
 export interface RootDeviceFactory_ConstructProps extends GObject.Object_ConstructProps {
     context?: GUPnP.Context
 }
-export class RootDeviceFactory {
-    /* Fields of GObject.Object */
+class RootDeviceFactory {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.RootDeviceFactory */
+    /* Methods of RygelCore-2.6.RygelCore.RootDeviceFactory */
     create(plugin: Plugin): RootDevice
     get_context(): GUPnP.Context
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -815,25 +817,25 @@ export class RootDeviceFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of RygelCore.RootDeviceFactory */
+    /* Virtual methods of RygelCore-2.6.RygelCore.RootDeviceFactory */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RootDeviceFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RootDeviceFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -851,18 +853,18 @@ export class RootDeviceFactory {
 }
 export interface LogHandler_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class LogHandler {
-    /* Fields of GObject.Object */
+class LogHandler {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -870,21 +872,21 @@ export class LogHandler {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: LogHandler, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: LogHandler, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -901,18 +903,18 @@ export class LogHandler {
 }
 export interface MetaConfig_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class MetaConfig {
-    /* Fields of GObject.Object */
+class MetaConfig {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -920,13 +922,13 @@ export class MetaConfig {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of RygelCore.Configuration */
+    watch_closure(closure: Function): void
+    /* Methods of RygelCore-2.6.RygelCore.Configuration */
     get_interface(): string
     get_interfaces(): string[]
     get_port(): number
@@ -947,7 +949,7 @@ export class MetaConfig {
     get_int(section: string, key: string, min: number, max: number): number
     get_int_list(section: string, key: string): Gee.ArrayList
     get_bool(section: string, key: string): boolean
-    /* Virtual methods of RygelCore.MetaConfig */
+    /* Virtual methods of RygelCore-2.6.RygelCore.MetaConfig */
     vfunc_get_interface(): string
     vfunc_get_interfaces(): string[]
     vfunc_get_port(): number
@@ -968,19 +970,19 @@ export class MetaConfig {
     vfunc_get_int(section: string, key: string, min: number, max: number): number
     vfunc_get_int_list(section: string, key: string): Gee.ArrayList
     vfunc_get_bool(section: string, key: string): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MetaConfig, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MetaConfig, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of RygelCore.Configuration */
+    /* Signals of RygelCore-2.6.RygelCore.Configuration */
     connect(sigName: "configuration-changed", callback: (($obj: MetaConfig, entry: ConfigurationEntry) => void)): number
     connect_after(sigName: "configuration-changed", callback: (($obj: MetaConfig, entry: ConfigurationEntry) => void)): number
     emit(sigName: "configuration-changed", entry: ConfigurationEntry): void
@@ -1006,32 +1008,32 @@ export class MetaConfig {
 }
 export interface PluginLoader_ConstructProps extends RecursiveModuleLoader_ConstructProps {
 }
-export class PluginLoader {
-    /* Properties of RygelCore.RecursiveModuleLoader */
+class PluginLoader {
+    /* Properties of RygelCore-2.6.RygelCore.RecursiveModuleLoader */
     base_path: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.PluginLoader */
+    /* Methods of RygelCore-2.6.RygelCore.PluginLoader */
     plugin_disabled(name: string): boolean
     add_plugin(plugin: Plugin): void
     get_plugin_by_name(name: string): Plugin | null
     list_plugins(): Gee.Collection
-    /* Methods of RygelCore.RecursiveModuleLoader */
+    /* Methods of RygelCore-2.6.RygelCore.RecursiveModuleLoader */
     load_modules(): void
     load_modules_sync(cancellable?: Gio.Cancellable | null): void
     load_module_from_file(file: Gio.File): boolean
     load_module_from_info(info: PluginInformation): boolean
     get_base_path(): string
     set_base_path(value: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1039,28 +1041,28 @@ export class PluginLoader {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of RygelCore.RecursiveModuleLoader */
+    watch_closure(closure: Function): void
+    /* Virtual methods of RygelCore-2.6.RygelCore.RecursiveModuleLoader */
     vfunc_load_module_from_file(file: Gio.File): boolean
     vfunc_load_module_from_info(info: PluginInformation): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of RygelCore.PluginLoader */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of RygelCore-2.6.RygelCore.PluginLoader */
     connect(sigName: "plugin-available", callback: (($obj: PluginLoader, plugin: Plugin) => void)): number
     connect_after(sigName: "plugin-available", callback: (($obj: PluginLoader, plugin: Plugin) => void)): number
     emit(sigName: "plugin-available", plugin: Plugin): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PluginLoader, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PluginLoader, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1080,27 +1082,27 @@ export class PluginLoader {
 export interface RecursiveModuleLoader_ConstructProps extends GObject.Object_ConstructProps {
     base_path?: string
 }
-export class RecursiveModuleLoader {
-    /* Properties of RygelCore.RecursiveModuleLoader */
+class RecursiveModuleLoader {
+    /* Properties of RygelCore-2.6.RygelCore.RecursiveModuleLoader */
     base_path: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.RecursiveModuleLoader */
+    /* Methods of RygelCore-2.6.RygelCore.RecursiveModuleLoader */
     load_modules(): void
     load_modules_sync(cancellable?: Gio.Cancellable | null): void
     load_module_from_file(file: Gio.File): boolean
     load_module_from_info(info: PluginInformation): boolean
     get_base_path(): string
     set_base_path(value: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1108,24 +1110,24 @@ export class RecursiveModuleLoader {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of RygelCore.RecursiveModuleLoader */
+    watch_closure(closure: Function): void
+    /* Virtual methods of RygelCore-2.6.RygelCore.RecursiveModuleLoader */
     vfunc_load_module_from_file(file: Gio.File): boolean
     vfunc_load_module_from_info(info: PluginInformation): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RecursiveModuleLoader, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RecursiveModuleLoader, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1151,19 +1153,19 @@ export interface Plugin_ConstructProps extends GUPnP.ResourceFactory_ConstructPr
     icon_infos?: Gee.ArrayList
     default_icons?: Gee.ArrayList
 }
-export class Plugin {
-    /* Properties of RygelCore.Plugin */
+class Plugin {
+    /* Properties of RygelCore-2.6.RygelCore.Plugin */
     capabilities: PluginCapabilities
     title: string
     active: boolean
     resource_infos: Gee.ArrayList
     icon_infos: Gee.ArrayList
     default_icons: Gee.ArrayList
-    /* Fields of GUPnP.ResourceFactory */
+    /* Fields of GUPnP-1.2.GUPnP.ResourceFactory */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.Plugin */
+    /* Methods of RygelCore-2.6.RygelCore.Plugin */
     add_resource(resource_info: ResourceInfo): void
     add_icon(icon_info: IconInfo): void
     apply_hacks(device: RootDevice, description_path: string): void
@@ -1179,20 +1181,20 @@ export class Plugin {
     get_resource_infos(): Gee.ArrayList
     get_icon_infos(): Gee.ArrayList
     get_default_icons(): Gee.ArrayList
-    /* Methods of GUPnP.ResourceFactory */
+    /* Methods of GUPnP-1.2.GUPnP.ResourceFactory */
     register_resource_proxy_type(upnp_type: string, type: GObject.Type): void
     register_resource_type(upnp_type: string, type: GObject.Type): void
     unregister_resource_proxy_type(upnp_type: string): boolean
     unregister_resource_type(upnp_type: string): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1200,23 +1202,23 @@ export class Plugin {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of RygelCore.Plugin */
+    watch_closure(closure: Function): void
+    /* Virtual methods of RygelCore-2.6.RygelCore.Plugin */
     vfunc_apply_hacks(device: RootDevice, description_path: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Plugin, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Plugin, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1244,8 +1246,8 @@ export class Plugin {
     static new(): Plugin
     static $gtype: GObject.Type
 }
-export class ResourceInfo {
-    /* Fields of RygelCore.ResourceInfo */
+class ResourceInfo {
+    /* Fields of RygelCore-2.6.RygelCore.ResourceInfo */
     ref_count: number
     upnp_type: string
     upnp_id: string
@@ -1262,12 +1264,12 @@ export interface MediaDevice_ConstructProps extends GObject.Object_ConstructProp
     title?: string
     capabilities?: PluginCapabilities
 }
-export class MediaDevice {
-    /* Properties of RygelCore.MediaDevice */
+class MediaDevice {
+    /* Properties of RygelCore-2.6.RygelCore.MediaDevice */
     plugin: Plugin
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.MediaDevice */
+    /* Methods of RygelCore-2.6.RygelCore.MediaDevice */
     add_interface(iface: string): void
     remove_interface(iface: string): void
     get_interfaces(): string[]
@@ -1275,15 +1277,15 @@ export class MediaDevice {
     set_plugin(value: Plugin): void
     get_title(): string
     get_capabilities(): PluginCapabilities
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1291,21 +1293,21 @@ export class MediaDevice {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MediaDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MediaDevice, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1322,10 +1324,10 @@ export class MediaDevice {
 }
 export interface BaseConfiguration_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class BaseConfiguration {
-    /* Fields of GObject.Object */
+class BaseConfiguration {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.BaseConfiguration */
+    /* Methods of RygelCore-2.6.RygelCore.BaseConfiguration */
     get_interface(): string
     get_interfaces(): string[]
     get_port(): number
@@ -1346,15 +1348,15 @@ export class BaseConfiguration {
     get_int(section: string, key: string, min: number, max: number): number
     get_int_list(section: string, key: string): Gee.ArrayList
     get_bool(section: string, key: string): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1362,13 +1364,13 @@ export class BaseConfiguration {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of RygelCore.BaseConfiguration */
+    watch_closure(closure: Function): void
+    /* Virtual methods of RygelCore-2.6.RygelCore.BaseConfiguration */
     vfunc_get_interface(): string
     vfunc_get_interfaces(): string[]
     vfunc_get_port(): number
@@ -1389,19 +1391,19 @@ export class BaseConfiguration {
     vfunc_get_int(section: string, key: string, min: number, max: number): number
     vfunc_get_int_list(section: string, key: string): Gee.ArrayList
     vfunc_get_bool(section: string, key: string): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BaseConfiguration, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BaseConfiguration, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of RygelCore.Configuration */
+    /* Signals of RygelCore-2.6.RygelCore.Configuration */
     connect(sigName: "configuration-changed", callback: (($obj: BaseConfiguration, entry: ConfigurationEntry) => void)): number
     connect_after(sigName: "configuration-changed", callback: (($obj: BaseConfiguration, entry: ConfigurationEntry) => void)): number
     emit(sigName: "configuration-changed", entry: ConfigurationEntry): void
@@ -1424,20 +1426,20 @@ export class BaseConfiguration {
 }
 export interface CmdlineConfig_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class CmdlineConfig {
-    /* Fields of GObject.Object */
+class CmdlineConfig {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.CmdlineConfig */
+    /* Methods of RygelCore-2.6.RygelCore.CmdlineConfig */
     get_config_file(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1445,13 +1447,13 @@ export class CmdlineConfig {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of RygelCore.Configuration */
+    watch_closure(closure: Function): void
+    /* Methods of RygelCore-2.6.RygelCore.Configuration */
     get_interface(): string
     get_interfaces(): string[]
     get_port(): number
@@ -1472,7 +1474,7 @@ export class CmdlineConfig {
     get_int(section: string, key: string, min: number, max: number): number
     get_int_list(section: string, key: string): Gee.ArrayList
     get_bool(section: string, key: string): boolean
-    /* Virtual methods of RygelCore.CmdlineConfig */
+    /* Virtual methods of RygelCore-2.6.RygelCore.CmdlineConfig */
     vfunc_get_interface(): string
     vfunc_get_interfaces(): string[]
     vfunc_get_port(): number
@@ -1493,19 +1495,19 @@ export class CmdlineConfig {
     vfunc_get_int(section: string, key: string, min: number, max: number): number
     vfunc_get_int_list(section: string, key: string): Gee.ArrayList
     vfunc_get_bool(section: string, key: string): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CmdlineConfig, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CmdlineConfig, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of RygelCore.Configuration */
+    /* Signals of RygelCore-2.6.RygelCore.Configuration */
     connect(sigName: "configuration-changed", callback: (($obj: CmdlineConfig, entry: ConfigurationEntry) => void)): number
     connect_after(sigName: "configuration-changed", callback: (($obj: CmdlineConfig, entry: ConfigurationEntry) => void)): number
     emit(sigName: "configuration-changed", entry: ConfigurationEntry): void
@@ -1530,18 +1532,18 @@ export class CmdlineConfig {
 }
 export interface EnvironmentConfig_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class EnvironmentConfig {
-    /* Fields of GObject.Object */
+class EnvironmentConfig {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1549,13 +1551,13 @@ export class EnvironmentConfig {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of RygelCore.Configuration */
+    watch_closure(closure: Function): void
+    /* Methods of RygelCore-2.6.RygelCore.Configuration */
     get_interface(): string
     get_interfaces(): string[]
     get_port(): number
@@ -1576,7 +1578,7 @@ export class EnvironmentConfig {
     get_int(section: string, key: string, min: number, max: number): number
     get_int_list(section: string, key: string): Gee.ArrayList
     get_bool(section: string, key: string): boolean
-    /* Virtual methods of RygelCore.EnvironmentConfig */
+    /* Virtual methods of RygelCore-2.6.RygelCore.EnvironmentConfig */
     vfunc_get_interface(): string
     vfunc_get_interfaces(): string[]
     vfunc_get_port(): number
@@ -1597,19 +1599,19 @@ export class EnvironmentConfig {
     vfunc_get_int(section: string, key: string, min: number, max: number): number
     vfunc_get_int_list(section: string, key: string): Gee.ArrayList
     vfunc_get_bool(section: string, key: string): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: EnvironmentConfig, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: EnvironmentConfig, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of RygelCore.Configuration */
+    /* Signals of RygelCore-2.6.RygelCore.Configuration */
     connect(sigName: "configuration-changed", callback: (($obj: EnvironmentConfig, entry: ConfigurationEntry) => void)): number
     connect_after(sigName: "configuration-changed", callback: (($obj: EnvironmentConfig, entry: ConfigurationEntry) => void)): number
     emit(sigName: "configuration-changed", entry: ConfigurationEntry): void
@@ -1633,23 +1635,23 @@ export class EnvironmentConfig {
 }
 export interface UserConfig_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class UserConfig {
-    /* Fields of RygelCore.UserConfig */
+class UserConfig {
+    /* Fields of RygelCore-2.6.RygelCore.UserConfig */
     key_file: GLib.KeyFile
     sys_key_file: GLib.KeyFile
     key_file_monitor: Gio.FileMonitor
     sys_key_file_monitor: Gio.FileMonitor
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1657,13 +1659,13 @@ export class UserConfig {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of RygelCore.Configuration */
+    watch_closure(closure: Function): void
+    /* Methods of RygelCore-2.6.RygelCore.Configuration */
     get_interface(): string
     get_interfaces(): string[]
     get_port(): number
@@ -1684,7 +1686,7 @@ export class UserConfig {
     get_int(section: string, key: string, min: number, max: number): number
     get_int_list(section: string, key: string): Gee.ArrayList
     get_bool(section: string, key: string): boolean
-    /* Virtual methods of RygelCore.UserConfig */
+    /* Virtual methods of RygelCore-2.6.RygelCore.UserConfig */
     vfunc_get_interface(): string
     vfunc_get_interfaces(): string[]
     vfunc_get_port(): number
@@ -1705,19 +1707,19 @@ export class UserConfig {
     vfunc_get_int(section: string, key: string, min: number, max: number): number
     vfunc_get_int_list(section: string, key: string): Gee.ArrayList
     vfunc_get_bool(section: string, key: string): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UserConfig, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UserConfig, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of RygelCore.Configuration */
+    /* Signals of RygelCore-2.6.RygelCore.Configuration */
     connect(sigName: "configuration-changed", callback: (($obj: UserConfig, entry: ConfigurationEntry) => void)): number
     connect_after(sigName: "configuration-changed", callback: (($obj: UserConfig, entry: ConfigurationEntry) => void)): number
     emit(sigName: "configuration-changed", entry: ConfigurationEntry): void
@@ -1744,27 +1746,27 @@ export interface V1Hacks_ConstructProps extends GObject.Object_ConstructProps {
     device_type?: string
     service_types?: string[]
 }
-export class V1Hacks {
-    /* Properties of RygelCore.V1Hacks */
+class V1Hacks {
+    /* Properties of RygelCore-2.6.RygelCore.V1Hacks */
     device_type: string
-    /* Fields of RygelCore.V1Hacks */
+    /* Fields of RygelCore-2.6.RygelCore.V1Hacks */
     description_path: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.V1Hacks */
+    /* Methods of RygelCore-2.6.RygelCore.V1Hacks */
     apply_on_device(device: RootDevice, template_path?: string | null): void
     get_device_type(): string
     set_device_type(value: string): void
     get_service_types(): string[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1772,21 +1774,21 @@ export class V1Hacks {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: V1Hacks, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: V1Hacks, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1803,8 +1805,8 @@ export class V1Hacks {
     static new(device_type: string, service_types: string[]): V1Hacks
     static $gtype: GObject.Type
 }
-export class IconInfo {
-    /* Fields of RygelCore.IconInfo */
+class IconInfo {
+    /* Fields of RygelCore-2.6.RygelCore.IconInfo */
     ref_count: number
     mime_type: string
     uri: string
@@ -1819,8 +1821,8 @@ export class IconInfo {
     /* Static methods and pseudo-constructors */
     static new(mime_type: string, file_extension: string): IconInfo
 }
-export class XMLUtils {
-    /* Fields of RygelCore.XMLUtils */
+class XMLUtils {
+    /* Fields of RygelCore-2.6.RygelCore.XMLUtils */
     ref_count: number
     static name: string
     static new(): XMLUtils
@@ -1828,10 +1830,10 @@ export class XMLUtils {
     /* Static methods and pseudo-constructors */
     static new(): XMLUtils
 }
-export class XMLUtilsIterator {
-    /* Fields of RygelCore.XMLUtilsIterator */
+class XMLUtilsIterator {
+    /* Fields of RygelCore-2.6.RygelCore.XMLUtilsIterator */
     ref_count: number
-    /* Methods of RygelCore.XMLUtilsIterator */
+    /* Methods of RygelCore-2.6.RygelCore.XMLUtilsIterator */
     iterator(): XMLUtilsIterator
     next(): boolean
     get(): object | null
@@ -1841,10 +1843,10 @@ export class XMLUtilsIterator {
     /* Static methods and pseudo-constructors */
     static new(node?: object | null): XMLUtilsIterator
 }
-export class XMLUtilsChildIterator {
-    /* Fields of RygelCore.XMLUtilsIterator */
+class XMLUtilsChildIterator {
+    /* Fields of RygelCore-2.6.RygelCore.XMLUtilsIterator */
     ref_count: number
-    /* Methods of RygelCore.XMLUtilsIterator */
+    /* Methods of RygelCore-2.6.RygelCore.XMLUtilsIterator */
     iterator(): XMLUtilsIterator
     next(): boolean
     get(): object | null
@@ -1860,26 +1862,26 @@ export interface PluginInformation_ConstructProps extends GObject.Object_Constru
     conflicts?: any
     module_loaded?: boolean
 }
-export class PluginInformation {
-    /* Properties of RygelCore.PluginInformation */
+class PluginInformation {
+    /* Properties of RygelCore-2.6.RygelCore.PluginInformation */
     module_loaded: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelCore.PluginInformation */
+    /* Methods of RygelCore-2.6.RygelCore.PluginInformation */
     get_module_path(): string
     get_name(): string
     get_conflicts(): any
     get_module_loaded(): boolean
     set_module_loaded(value: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1887,21 +1889,21 @@ export class PluginInformation {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PluginInformation, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PluginInformation, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1918,99 +1920,99 @@ export class PluginInformation {
     static new_from_file(file: Gio.File): PluginInformation
     static $gtype: GObject.Type
 }
-export abstract class ConnectionManagerClass {
-    /* Fields of RygelCore.ConnectionManagerClass */
+abstract class ConnectionManagerClass {
+    /* Fields of RygelCore-2.6.RygelCore.ConnectionManagerClass */
     get_current_protocol_info: (self: ConnectionManager) => string
     static name: string
 }
-export class ConnectionManagerPrivate {
+class ConnectionManagerPrivate {
     static name: string
 }
-export abstract class BasicManagementClass {
+abstract class BasicManagementClass {
     static name: string
 }
-export class BasicManagementPrivate {
+class BasicManagementPrivate {
     static name: string
 }
-export abstract class DescriptionFileClass {
+abstract class DescriptionFileClass {
     static name: string
 }
-export class DescriptionFilePrivate {
+class DescriptionFilePrivate {
     static name: string
 }
-export abstract class DLNAProfileClass {
+abstract class DLNAProfileClass {
     static name: string
 }
-export class DLNAProfilePrivate {
+class DLNAProfilePrivate {
     static name: string
 }
-export abstract class EnergyManagementClass {
+abstract class EnergyManagementClass {
     static name: string
 }
-export class EnergyManagementPrivate {
+class EnergyManagementPrivate {
     static name: string
 }
-export abstract class RootDeviceClass {
+abstract class RootDeviceClass {
     static name: string
 }
-export class RootDevicePrivate {
+class RootDevicePrivate {
     static name: string
 }
-export abstract class RootDeviceFactoryClass {
+abstract class RootDeviceFactoryClass {
     static name: string
 }
-export class RootDeviceFactoryPrivate {
+class RootDeviceFactoryPrivate {
     static name: string
 }
-export abstract class LogHandlerClass {
+abstract class LogHandlerClass {
     static name: string
 }
-export class LogHandlerPrivate {
+class LogHandlerPrivate {
     static name: string
 }
-export abstract class MetaConfigClass {
+abstract class MetaConfigClass {
     static name: string
 }
-export class MetaConfigPrivate {
+class MetaConfigPrivate {
     static name: string
 }
-export abstract class PluginLoaderClass {
+abstract class PluginLoaderClass {
     static name: string
 }
-export class PluginLoaderPrivate {
+class PluginLoaderPrivate {
     static name: string
 }
-export abstract class RecursiveModuleLoaderClass {
-    /* Fields of RygelCore.RecursiveModuleLoaderClass */
+abstract class RecursiveModuleLoaderClass {
+    /* Fields of RygelCore-2.6.RygelCore.RecursiveModuleLoaderClass */
     load_module_from_file: (self: RecursiveModuleLoader, file: Gio.File) => boolean
     load_module_from_info: (self: RecursiveModuleLoader, info: PluginInformation) => boolean
     static name: string
 }
-export class RecursiveModuleLoaderPrivate {
+class RecursiveModuleLoaderPrivate {
     static name: string
 }
-export abstract class PluginClass {
-    /* Fields of RygelCore.PluginClass */
+abstract class PluginClass {
+    /* Fields of RygelCore-2.6.RygelCore.PluginClass */
     apply_hacks: (self: Plugin, device: RootDevice, description_path: string) => void
     static name: string
 }
-export class PluginPrivate {
+class PluginPrivate {
     static name: string
 }
-export abstract class ResourceInfoClass {
+abstract class ResourceInfoClass {
     static name: string
 }
-export class ResourceInfoPrivate {
+class ResourceInfoPrivate {
     static name: string
 }
-export abstract class MediaDeviceClass {
+abstract class MediaDeviceClass {
     static name: string
 }
-export class MediaDevicePrivate {
+class MediaDevicePrivate {
     static name: string
 }
-export abstract class BaseConfigurationClass {
-    /* Fields of RygelCore.BaseConfigurationClass */
+abstract class BaseConfigurationClass {
+    /* Fields of RygelCore-2.6.RygelCore.BaseConfigurationClass */
     get_interface: (self: BaseConfiguration) => string
     get_interfaces: (self: BaseConfiguration) => string[]
     get_port: (self: BaseConfiguration) => number
@@ -2033,76 +2035,76 @@ export abstract class BaseConfigurationClass {
     get_bool: (self: BaseConfiguration, section: string, key: string) => boolean
     static name: string
 }
-export class BaseConfigurationPrivate {
+class BaseConfigurationPrivate {
     static name: string
 }
-export abstract class CmdlineConfigClass {
+abstract class CmdlineConfigClass {
     static name: string
 }
-export class CmdlineConfigPrivate {
+class CmdlineConfigPrivate {
     static name: string
 }
-export abstract class EnvironmentConfigClass {
+abstract class EnvironmentConfigClass {
     static name: string
 }
-export class EnvironmentConfigPrivate {
+class EnvironmentConfigPrivate {
     static name: string
 }
-export abstract class UserConfigClass {
+abstract class UserConfigClass {
     static name: string
 }
-export class UserConfigPrivate {
+class UserConfigPrivate {
     static name: string
 }
-export abstract class V1HacksClass {
+abstract class V1HacksClass {
     static name: string
 }
-export class V1HacksPrivate {
+class V1HacksPrivate {
     static name: string
 }
-export abstract class IconInfoClass {
+abstract class IconInfoClass {
     static name: string
 }
-export class IconInfoPrivate {
+class IconInfoPrivate {
     static name: string
 }
-export abstract class XMLUtilsClass {
+abstract class XMLUtilsClass {
     static name: string
 }
-export class XMLUtilsPrivate {
+class XMLUtilsPrivate {
     static name: string
 }
-export abstract class XMLUtilsIteratorClass {
+abstract class XMLUtilsIteratorClass {
     static name: string
 }
-export class XMLUtilsIteratorPrivate {
+class XMLUtilsIteratorPrivate {
     static name: string
 }
-export abstract class XMLUtilsChildIteratorClass {
+abstract class XMLUtilsChildIteratorClass {
     static name: string
 }
-export class XMLUtilsChildIteratorPrivate {
+class XMLUtilsChildIteratorPrivate {
     static name: string
 }
-export abstract class PluginInformationClass {
+abstract class PluginInformationClass {
     static name: string
 }
-export class PluginInformationPrivate {
+class PluginInformationPrivate {
     static name: string
 }
-export abstract class DBusInterfaceIface {
-    /* Fields of RygelCore.DBusInterfaceIface */
+abstract class DBusInterfaceIface {
+    /* Fields of RygelCore-2.6.RygelCore.DBusInterfaceIface */
     shutdown: (self: DBusInterface) => void
     static name: string
 }
-export abstract class DBusAclProviderIface {
-    /* Fields of RygelCore.DBusAclProviderIface */
+abstract class DBusAclProviderIface {
+    /* Fields of RygelCore-2.6.RygelCore.DBusAclProviderIface */
     is_allowed: (self: DBusAclProvider, device: GLib.HashTable, service: GLib.HashTable, path: string, address: string, agent?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
     is_allowed_finish: (self: DBusAclProvider, _res_: Gio.AsyncResult) => boolean
     static name: string
 }
-export abstract class ConfigurationIface {
-    /* Fields of RygelCore.ConfigurationIface */
+abstract class ConfigurationIface {
+    /* Fields of RygelCore-2.6.RygelCore.ConfigurationIface */
     get_interface: (self: Configuration) => string
     get_interfaces: (self: Configuration) => string[]
     get_port: (self: Configuration) => number
@@ -2125,11 +2127,13 @@ export abstract class ConfigurationIface {
     get_bool: (self: Configuration, section: string, key: string) => boolean
     static name: string
 }
-export abstract class StateMachineIface {
-    /* Fields of RygelCore.StateMachineIface */
+abstract class StateMachineIface {
+    /* Fields of RygelCore-2.6.RygelCore.StateMachineIface */
     run: (self: StateMachine, _callback_?: Gio.AsyncReadyCallback | null) => void
     run_finish: (self: StateMachine, _res_: Gio.AsyncResult) => void
     get_cancellable: (self: StateMachine) => Gio.Cancellable
     set_cancellable: (self: StateMachine, value: Gio.Cancellable) => void
     static name: string
 }
+}
+export default RygelCore;

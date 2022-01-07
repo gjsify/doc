@@ -3,16 +3,19 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum ConflictAction {
+export namespace GnomeAutoar {
+
+enum ConflictAction {
+    UNHANDLED,
     SKIP,
     OVERWRITE,
     CHANGE_DESTINATION,
 }
-export enum Filter {
+enum Filter {
     NONE,
     COMPRESS,
     GZIP,
@@ -24,7 +27,7 @@ export enum Filter {
     GRZIP,
     LRZIP,
 }
-export enum Format {
+enum Format {
     ZIP,
     TAR,
     CPIO,
@@ -38,30 +41,30 @@ export enum Format {
     USTAR,
     XAR,
 }
-export function check_mime_type_supported(mime_type: string): boolean
-export function filter_get_description(filter: Filter): string
-export function filter_get_description_libarchive(filter: Filter): string
-export function filter_get_extension(filter: Filter): string
-export function filter_get_filter_libarchive(filter: Filter): number
-export function filter_get_mime_type(filter: Filter): string
-export function filter_is_valid(filter: Filter): boolean
-export function filter_last(): number
-export function format_filter_get_description(format: Format, filter: Filter): string
-export function format_filter_get_extension(format: Format, filter: Filter): string
-export function format_filter_get_mime_type(format: Format, filter: Filter): string
-export function format_get_description(format: Format): string
-export function format_get_description_libarchive(format: Format): string
-export function format_get_extension(format: Format): string
-export function format_get_format_libarchive(format: Format): number
-export function format_get_mime_type(format: Format): string
-export function format_is_valid(format: Format): boolean
-export function format_last(): number
-export function libarchive_quark(): GLib.Quark
-export function query_mime_type_supported(file: Gio.File): boolean
-export interface FilterFunc {
+function check_mime_type_supported(mime_type: string): boolean
+function filter_get_description(filter: Filter): string
+function filter_get_description_libarchive(filter: Filter): string
+function filter_get_extension(filter: Filter): string
+function filter_get_filter_libarchive(filter: Filter): number
+function filter_get_mime_type(filter: Filter): string
+function filter_is_valid(filter: Filter): boolean
+function filter_last(): number
+function format_filter_get_description(format: Format, filter: Filter): string
+function format_filter_get_extension(format: Format, filter: Filter): string
+function format_filter_get_mime_type(format: Format, filter: Filter): string
+function format_get_description(format: Format): string
+function format_get_description_libarchive(format: Format): string
+function format_get_extension(format: Format): string
+function format_get_format_libarchive(format: Format): number
+function format_get_mime_type(format: Format): string
+function format_is_valid(format: Format): boolean
+function format_last(): number
+function libarchive_quark(): GLib.Quark
+function query_mime_type_supported(file: Gio.File): boolean
+interface FilterFunc {
     (a?: object | null): number
 }
-export interface FormatFunc {
+interface FormatFunc {
     (a?: object | null): number
 }
 export interface Compressor_ConstructProps extends GObject.Object_ConstructProps {
@@ -71,8 +74,8 @@ export interface Compressor_ConstructProps extends GObject.Object_ConstructProps
     output_is_dest?: boolean
     source_files?: object
 }
-export class Compressor {
-    /* Properties of GnomeAutoar.Compressor */
+class Compressor {
+    /* Properties of GnomeAutoar-0.1.GnomeAutoar.Compressor */
     readonly completed_files: number
     readonly completed_size: number
     create_top_level_directory: boolean
@@ -80,9 +83,9 @@ export class Compressor {
     notify_interval: number
     output_is_dest: boolean
     readonly size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GnomeAutoar.Compressor */
+    /* Methods of GnomeAutoar-0.1.GnomeAutoar.Compressor */
     get_completed_files(): number
     get_completed_size(): number
     get_create_top_level_directory(): boolean
@@ -93,19 +96,21 @@ export class Compressor {
     get_output_file(): Gio.File
     get_output_is_dest(): boolean
     get_size(): number
+    get_source_files(): Gio.File[]
     set_notify_interval(notify_interval: number): void
     set_output_is_dest(output_is_dest: boolean): void
+    set_passphrase(passphrase: string): void
     start(cancellable?: Gio.Cancellable | null): void
     start_async(cancellable?: Gio.Cancellable | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -113,21 +118,21 @@ export class Compressor {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GnomeAutoar.Compressor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GnomeAutoar-0.1.GnomeAutoar.Compressor */
     connect(sigName: "cancelled", callback: (($obj: Compressor) => void)): number
     connect_after(sigName: "cancelled", callback: (($obj: Compressor) => void)): number
     emit(sigName: "cancelled"): void
@@ -143,7 +148,7 @@ export class Compressor {
     connect(sigName: "progress", callback: (($obj: Compressor, completed_size: number, completed_files: number) => void)): number
     connect_after(sigName: "progress", callback: (($obj: Compressor, completed_size: number, completed_files: number) => void)): number
     emit(sigName: "progress", completed_size: number, completed_files: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Compressor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Compressor, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -169,6 +174,7 @@ export class Compressor {
     constructor (config?: Compressor_ConstructProps)
     _init (config?: Compressor_ConstructProps): void
     /* Static methods and pseudo-constructors */
+    static new(source_files: Gio.File[], output_file: Gio.File, format: Format, filter: Filter, create_top_level_directory: boolean): Compressor
     static quark(): GLib.Quark
     static $gtype: GObject.Type
 }
@@ -179,8 +185,8 @@ export interface Extractor_ConstructProps extends GObject.Object_ConstructProps 
     output_is_dest?: boolean
     source_file?: Gio.File
 }
-export class Extractor {
-    /* Properties of GnomeAutoar.Extractor */
+class Extractor {
+    /* Properties of GnomeAutoar-0.1.GnomeAutoar.Extractor */
     readonly completed_files: number
     readonly completed_size: number
     delete_after_extraction: boolean
@@ -188,9 +194,9 @@ export class Extractor {
     output_is_dest: boolean
     readonly total_files: number
     readonly total_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GnomeAutoar.Extractor */
+    /* Methods of GnomeAutoar-0.1.GnomeAutoar.Extractor */
     get_completed_files(): number
     get_completed_size(): number
     get_delete_after_extraction(): boolean
@@ -200,20 +206,20 @@ export class Extractor {
     get_source_file(): Gio.File
     get_total_files(): number
     get_total_size(): number
-    set_delete_after_extraction(delete_if_succeed: boolean): void
+    set_delete_after_extraction(delete_after_extraction: boolean): void
     set_notify_interval(notify_interval: number): void
     set_output_is_dest(output_is_dest: boolean): void
     start(cancellable?: Gio.Cancellable | null): void
     start_async(cancellable?: Gio.Cancellable | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -221,21 +227,21 @@ export class Extractor {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GnomeAutoar.Extractor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GnomeAutoar-0.1.GnomeAutoar.Extractor */
     connect(sigName: "cancelled", callback: (($obj: Extractor) => void)): number
     connect_after(sigName: "cancelled", callback: (($obj: Extractor) => void)): number
     emit(sigName: "cancelled"): void
@@ -254,10 +260,13 @@ export class Extractor {
     connect(sigName: "progress", callback: (($obj: Extractor, completed_size: number, completed_files: number) => void)): number
     connect_after(sigName: "progress", callback: (($obj: Extractor, completed_size: number, completed_files: number) => void)): number
     emit(sigName: "progress", completed_size: number, completed_files: number): void
+    connect(sigName: "request-passphrase", callback: (($obj: Extractor) => string)): number
+    connect_after(sigName: "request-passphrase", callback: (($obj: Extractor) => string)): number
+    emit(sigName: "request-passphrase"): void
     connect(sigName: "scanned", callback: (($obj: Extractor, files: number) => void)): number
     connect_after(sigName: "scanned", callback: (($obj: Extractor, files: number) => void)): number
     emit(sigName: "scanned", files: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Extractor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Extractor, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -287,13 +296,15 @@ export class Extractor {
     static quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export abstract class CompressorClass {
-    /* Fields of GnomeAutoar.CompressorClass */
+abstract class CompressorClass {
+    /* Fields of GnomeAutoar-0.1.GnomeAutoar.CompressorClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class ExtractorClass {
-    /* Fields of GnomeAutoar.ExtractorClass */
+abstract class ExtractorClass {
+    /* Fields of GnomeAutoar-0.1.GnomeAutoar.ExtractorClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
+}
+export default GnomeAutoar;

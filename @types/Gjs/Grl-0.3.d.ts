@@ -3,12 +3,14 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as GModule from './GModule-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type GModule from './GModule-2.0';
 
-export enum CoreError {
+export namespace Grl {
+
+enum CoreError {
     BROWSE_FAILED,
     SEARCH_FAILED,
     SEARCH_NULL_UNSUPPORTED,
@@ -29,7 +31,7 @@ export enum CoreError {
     OPERATION_CANCELLED,
     AUTHENTICATION_TOKEN,
 }
-export enum LogLevel {
+enum LogLevel {
     NONE,
     ERROR,
     WARNING,
@@ -38,44 +40,44 @@ export enum LogLevel {
     DEBUG,
     LAST,
 }
-export enum MediaSerializeType {
+enum MediaSerializeType {
     BASIC,
     PARTIAL,
     FULL,
 }
-export enum MediaType {
+enum MediaType {
     UNKNOWN,
     AUDIO,
     VIDEO,
     IMAGE,
     CONTAINER,
 }
-export enum Rank {
+enum Rank {
     LOWEST,
     LOW,
     DEFAULT,
     HIGH,
     HIGHEST,
 }
-export enum SourceChangeType {
+enum SourceChangeType {
     CHANGED,
     ADDED,
     REMOVED,
 }
-export enum ResolutionFlags {
+enum ResolutionFlags {
     NORMAL,
     FULL,
     IDLE_RELAY,
     FAST_ONLY,
 }
-export enum SupportedMedia {
+enum SupportedMedia {
     NONE,
     AUDIO,
     VIDEO,
     IMAGE,
     ALL,
 }
-export enum SupportedOps {
+enum SupportedOps {
     NONE,
     RESOLVE,
     BROWSE,
@@ -88,14 +90,14 @@ export enum SupportedOps {
     MEDIA_FROM_URI,
     NOTIFY_CHANGE,
 }
-export enum TypeFilter {
+enum TypeFilter {
     NONE,
     AUDIO,
     VIDEO,
     IMAGE,
     ALL,
 }
-export enum WriteFlags {
+enum WriteFlags {
     NORMAL,
     FULL,
 }
@@ -108,6 +110,7 @@ export const CONFIG_KEY_PASSWORD: string
 export const CONFIG_KEY_PLUGIN: string
 export const CONFIG_KEY_SOURCE: string
 export const CONFIG_KEY_USERNAME: string
+export const CONFIG_PATH_VAR: string
 export const COUNT_INFINITY: number
 export const KEYID_FORMAT: string
 export const METADATA_KEY_ALBUM: number
@@ -186,55 +189,55 @@ export const PLUGIN_RANKS_VAR: string
 export const PLUGIN_SITE: string
 export const PLUGIN_VERSION: string
 export const SOURCE_REMAINING_UNKNOWN: number
-export function date_time_from_iso8601(date: string): GLib.DateTime
-export function deinit(): void
-export function g_value_dup(value: any): any
-export function g_value_free(value: any): void
-export function g_value_hashtable_new(): GLib.HashTable
-export function g_value_hashtable_new_direct(): GLib.HashTable
-export function g_value_new(g_type: GObject.Type): any
-export function init(argv?: string[] | null): /* argv */ string[] | null
-export function init_get_option_group(): GLib.OptionGroup
-export function log_configure(config: string): void
-export function metadata_key_get_desc(key: KeyID): string
-export function metadata_key_get_name(key: KeyID): string
-export function metadata_key_get_type(key: KeyID): GObject.Type
-export function multiple_get_media_from_uri(uri: string, keys: KeyID[], options: OperationOptions, callback: SourceResolveCb): void
-export function multiple_search(sources: Source[] | null, text: string, keys: KeyID[], options: OperationOptions, callback: SourceResultCb): number
-export function multiple_search_sync(sources: Source[] | null, text: string, keys: KeyID[], options: OperationOptions): Media[]
-export function operation_cancel(operation_id: number): void
-export function operation_get_data(operation_id: number): object | null
-export function operation_set_data(operation_id: number, user_data?: object | null): void
-export function operation_set_data_full(operation_id: number, user_data?: object | null, destroy_func?: GLib.DestroyNotify | null): void
-export function paging_translate(skip: number, count: number, max_page_size: number, page_size: number, page_number: number, internal_offset: number): void
-export function range_value_hashtable_insert(hash_table: GLib.HashTable, key: object | null, min: any, max: any): void
-export function range_value_hashtable_new(): GLib.HashTable
-export interface PluginDeinitFunc {
+function date_time_from_iso8601(date: string): GLib.DateTime
+function deinit(): void
+function g_value_dup(value: any): any
+function g_value_free(value: any): void
+function g_value_hashtable_new(): GLib.HashTable
+function g_value_hashtable_new_direct(): GLib.HashTable
+function g_value_new(g_type: GObject.Type): any
+function init(argv?: string[] | null): /* argv */ string[] | null
+function init_get_option_group(): GLib.OptionGroup
+function log_configure(config: string): void
+function metadata_key_get_desc(key: KeyID): string
+function metadata_key_get_name(key: KeyID): string
+function metadata_key_get_type(key: KeyID): GObject.Type
+function multiple_get_media_from_uri(uri: string, keys: KeyID[], options: OperationOptions, callback: SourceResolveCb): void
+function multiple_search(sources: Source[] | null, text: string, keys: KeyID[], options: OperationOptions, callback: SourceResultCb): number
+function multiple_search_sync(sources: Source[] | null, text: string, keys: KeyID[], options: OperationOptions): Media[]
+function operation_cancel(operation_id: number): void
+function operation_get_data(operation_id: number): object | null
+function operation_set_data(operation_id: number, user_data?: object | null): void
+function operation_set_data_full(operation_id: number, user_data?: object | null, destroy_func?: GLib.DestroyNotify | null): void
+function paging_translate(skip: number, count: number, max_page_size: number, page_size: number, page_number: number, internal_offset: number): void
+function range_value_hashtable_insert(hash_table: GLib.HashTable, key: object | null, min: any, max: any): void
+function range_value_hashtable_new(): GLib.HashTable
+interface PluginDeinitFunc {
     (plugin: Plugin): void
 }
-export interface PluginRegisterKeysFunc {
+interface PluginRegisterKeysFunc {
     (registry: Registry, plugin: Plugin): void
 }
-export interface SourceRemoveCb {
+interface SourceRemoveCb {
     (source: Source, media: Media, error?: GLib.Error | null): void
 }
-export interface SourceResolveCb {
+interface SourceResolveCb {
     (source: Source, operation_id: number, media: Media, error?: GLib.Error | null): void
 }
-export interface SourceResultCb {
+interface SourceResultCb {
     (source: Source, operation_id: number, media: Media | null, remaining: number, error?: GLib.Error | null): void
 }
-export interface SourceStoreCb {
+interface SourceStoreCb {
     (source: Source, media: Media, failed_keys: KeyID[], error?: GLib.Error | null): void
 }
 export interface Caps_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Caps {
-    /* Fields of Grl.Caps */
+class Caps {
+    /* Fields of Grl-0.3.Grl.Caps */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Grl.Caps */
+    /* Methods of Grl-0.3.Grl.Caps */
     get_key_filter(): KeyID[]
     get_key_range_filter(): KeyID[]
     get_type_filter(): TypeFilter
@@ -244,15 +247,15 @@ export class Caps {
     set_key_range_filter(keys: KeyID[]): void
     set_type_filter(filter: TypeFilter): void
     test_option(key: string, value: any): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -260,21 +263,21 @@ export class Caps {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Caps, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Caps, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -291,14 +294,14 @@ export class Caps {
 }
 export interface Config_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Config {
-    /* Fields of Grl.Config */
+class Config {
+    /* Fields of Grl-0.3.Grl.Config */
     parent: GObject.Object
     priv: ConfigPrivate
     _grl_reserved: object[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Grl.Config */
+    /* Methods of Grl-0.3.Grl.Config */
     get_api_key(): string
     get_api_key_blob(size: number): number
     get_api_secret(): string
@@ -329,15 +332,15 @@ export class Config {
     set_source(source: string): void
     set_string(param: string, value: string): void
     set_username(username: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -345,21 +348,21 @@ export class Config {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Config, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Config, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -376,14 +379,14 @@ export class Config {
 }
 export interface Data_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Data {
-    /* Fields of Grl.Data */
+class Data {
+    /* Fields of Grl-0.3.Grl.Data */
     parent: GObject.Object
     priv: DataPrivate
     _grl_reserved: object[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Grl.Data */
+    /* Methods of Grl-0.3.Grl.Data */
     add_binary(key: KeyID, buf: number, size: number): void
     add_boxed(key: KeyID, boxed?: object | null): void
     add_float(key: KeyID, floatvalue: number): void
@@ -419,15 +422,15 @@ export class Data {
     set_int64(key: KeyID, intvalue: number): void
     set_related_keys(relkeys: RelatedKeys, index: number): void
     set_string(key: KeyID, strvalue: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -435,21 +438,21 @@ export class Data {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Data, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Data, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -467,17 +470,17 @@ export class Data {
 export interface Media_ConstructProps extends Data_ConstructProps {
     media_type?: MediaType
 }
-export class Media {
-    /* Properties of Grl.Media */
+class Media {
+    /* Properties of Grl-0.3.Grl.Media */
     media_type: MediaType
-    /* Fields of Grl.Media */
+    /* Fields of Grl-0.3.Grl.Media */
     parent: Data
-    /* Fields of Grl.Data */
+    /* Fields of Grl-0.3.Grl.Data */
     priv: DataPrivate
     _grl_reserved: object[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Grl.Media */
+    /* Methods of Grl-0.3.Grl.Media */
     add_artist(artist: string): void
     add_author(author: string): void
     add_director(director: string): void
@@ -638,7 +641,7 @@ export class Media {
     set_url(url: string): void
     set_url_data(url: string, mime: string, bitrate: number, framerate: number, width: number, height: number): void
     set_width(width: number): void
-    /* Methods of Grl.Data */
+    /* Methods of Grl-0.3.Grl.Data */
     add_binary(key: KeyID, buf: number, size: number): void
     add_boxed(key: KeyID, boxed?: object | null): void
     add_float(key: KeyID, floatvalue: number): void
@@ -674,15 +677,15 @@ export class Media {
     set_int64(key: KeyID, intvalue: number): void
     set_related_keys(relkeys: RelatedKeys, index: number): void
     set_string(key: KeyID, strvalue: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -690,21 +693,21 @@ export class Media {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Media, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Media, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -728,12 +731,12 @@ export class Media {
 }
 export interface OperationOptions_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class OperationOptions {
-    /* Fields of Grl.OperationOptions */
+class OperationOptions {
+    /* Fields of Grl-0.3.Grl.OperationOptions */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Grl.OperationOptions */
+    /* Methods of Grl-0.3.Grl.OperationOptions */
     copy(): OperationOptions
     get_count(): number
     get_key_filter(key: KeyID): any
@@ -751,15 +754,15 @@ export class OperationOptions {
     set_resolution_flags(flags: ResolutionFlags): boolean
     set_skip(skip: number): boolean
     set_type_filter(filter: TypeFilter): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -767,21 +770,21 @@ export class OperationOptions {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OperationOptions, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OperationOptions, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -798,14 +801,14 @@ export class OperationOptions {
 }
 export interface Plugin_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Plugin {
-    /* Properties of Grl.Plugin */
+class Plugin {
+    /* Properties of Grl-0.3.Grl.Plugin */
     readonly loaded: boolean
-    /* Fields of Grl.Plugin */
+    /* Fields of Grl-0.3.Grl.Plugin */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Grl.Plugin */
+    /* Methods of Grl-0.3.Grl.Plugin */
     get_author(): string
     get_description(): string
     get_filename(): string
@@ -816,15 +819,15 @@ export class Plugin {
     get_site(): string
     get_sources(): Source[]
     get_version(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -832,21 +835,21 @@ export class Plugin {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Plugin, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Plugin, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -863,12 +866,12 @@ export class Plugin {
 }
 export interface Registry_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Registry {
-    /* Fields of Grl.Registry */
+class Registry {
+    /* Fields of Grl-0.3.Grl.Registry */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Grl.Registry */
+    /* Methods of Grl-0.3.Grl.Registry */
     activate_all_plugins(): boolean
     activate_plugin_by_id(plugin_id: string): boolean
     add_config(config: Config): boolean
@@ -894,15 +897,15 @@ export class Registry {
     register_source(plugin: Plugin, source: Source): boolean
     unload_plugin(plugin_id: string): boolean
     unregister_source(source: Source): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -910,21 +913,21 @@ export class Registry {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Grl.Registry */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Grl-0.3.Grl.Registry */
     connect(sigName: "metadata-key-added", callback: (($obj: Registry, key: string) => void)): number
     connect_after(sigName: "metadata-key-added", callback: (($obj: Registry, key: string) => void)): number
     emit(sigName: "metadata-key-added", key: string): void
@@ -934,7 +937,7 @@ export class Registry {
     connect(sigName: "source-removed", callback: (($obj: Registry, source: Source) => void)): number
     connect_after(sigName: "source-removed", callback: (($obj: Registry, source: Source) => void)): number
     emit(sigName: "source-removed", source: Source): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Registry, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Registry, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -951,12 +954,12 @@ export class Registry {
 }
 export interface RelatedKeys_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class RelatedKeys {
-    /* Fields of Grl.RelatedKeys */
+class RelatedKeys {
+    /* Fields of Grl-0.3.Grl.RelatedKeys */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Grl.RelatedKeys */
+    /* Methods of Grl-0.3.Grl.RelatedKeys */
     dup(): RelatedKeys
     get(key: KeyID): any
     get_binary(key: KeyID): [ /* returnType */ number, /* size */ number ]
@@ -978,15 +981,15 @@ export class RelatedKeys {
     set_int(key: KeyID, intvalue: number): void
     set_int64(key: KeyID, intvalue: number): void
     set_string(key: KeyID, strvalue: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -994,21 +997,21 @@ export class RelatedKeys {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RelatedKeys, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RelatedKeys, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1034,8 +1037,8 @@ export interface Source_ConstructProps extends GObject.Object_ConstructProps {
     source_tags?: string[]
     supported_media?: SupportedMedia
 }
-export class Source {
-    /* Properties of Grl.Source */
+class Source {
+    /* Properties of Grl-0.3.Grl.Source */
     auto_split_threshold: number
     plugin: Plugin
     rank: number
@@ -1045,11 +1048,11 @@ export class Source {
     source_name: string
     source_tags: string[]
     supported_media: SupportedMedia
-    /* Fields of Grl.Source */
+    /* Fields of Grl-0.3.Grl.Source */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Grl.Source */
+    /* Methods of Grl-0.3.Grl.Source */
     browse(container: Media | null, keys: KeyID[], options: OperationOptions, callback: SourceResultCb): number
     browse_sync(container: Media | null, keys: KeyID[], options: OperationOptions): Media[]
     get_auto_split_threshold(): number
@@ -1087,15 +1090,15 @@ export class Source {
     supported_operations(): number
     test_media_from_uri(uri: string): boolean
     writable_keys(): KeyID[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1103,13 +1106,13 @@ export class Source {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Grl.Source */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Grl-0.3.Grl.Source */
     vfunc_browse(bs: SourceBrowseSpec): void
     vfunc_cancel(operation_id: number): void
     vfunc_get_caps(operation: SupportedOps): Caps
@@ -1128,19 +1131,19 @@ export class Source {
     vfunc_supported_operations(): SupportedOps
     vfunc_test_media_from_uri(uri: string): boolean
     vfunc_writable_keys(): KeyID[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Grl.Source */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Grl-0.3.Grl.Source */
     connect(sigName: "content-changed", callback: (($obj: Source, changed_medias: Media[], change_type: SourceChangeType, location_unknown: boolean) => void)): number
     connect_after(sigName: "content-changed", callback: (($obj: Source, changed_medias: Media[], change_type: SourceChangeType, location_unknown: boolean) => void)): number
     emit(sigName: "content-changed", changed_medias: Media[], change_type: SourceChangeType, location_unknown: boolean): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Source, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Source, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1171,58 +1174,58 @@ export class Source {
     _init (config?: Source_ConstructProps): void
     static $gtype: GObject.Type
 }
-export abstract class CapsClass {
-    /* Fields of Grl.CapsClass */
+abstract class CapsClass {
+    /* Fields of Grl-0.3.Grl.CapsClass */
     parent: GObject.ObjectClass
     static name: string
 }
-export class CapsPrivate {
+class CapsPrivate {
     static name: string
 }
-export abstract class ConfigClass {
-    /* Fields of Grl.ConfigClass */
+abstract class ConfigClass {
+    /* Fields of Grl-0.3.Grl.ConfigClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class ConfigPrivate {
+class ConfigPrivate {
     static name: string
 }
-export abstract class DataClass {
-    /* Fields of Grl.DataClass */
+abstract class DataClass {
+    /* Fields of Grl-0.3.Grl.DataClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class DataPrivate {
+class DataPrivate {
     static name: string
 }
-export class LogDomain {
-    /* Methods of Grl.LogDomain */
+class LogDomain {
+    /* Methods of Grl-0.3.Grl.LogDomain */
     free(): void
     static name: string
 }
-export abstract class MediaClass {
-    /* Fields of Grl.MediaClass */
+abstract class MediaClass {
+    /* Fields of Grl-0.3.Grl.MediaClass */
     parent_class: DataClass
     static name: string
 }
-export class MediaPrivate {
+class MediaPrivate {
     static name: string
 }
-export abstract class OperationOptionsClass {
-    /* Fields of Grl.OperationOptionsClass */
+abstract class OperationOptionsClass {
+    /* Fields of Grl-0.3.Grl.OperationOptionsClass */
     parent: GObject.ObjectClass
     static name: string
 }
-export class OperationOptionsPrivate {
+class OperationOptionsPrivate {
     static name: string
 }
-export abstract class PluginClass {
-    /* Fields of Grl.PluginClass */
+abstract class PluginClass {
+    /* Fields of Grl-0.3.Grl.PluginClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class PluginDescriptor {
-    /* Fields of Grl.PluginDescriptor */
+class PluginDescriptor {
+    /* Fields of Grl-0.3.Grl.PluginDescriptor */
     major_version: number
     minor_version: number
     id: string
@@ -1236,14 +1239,14 @@ export class PluginDescriptor {
     register_keys: PluginRegisterKeysFunc
     static name: string
 }
-export class PluginPrivate {
+class PluginPrivate {
     static name: string
 }
-export class RangeValue {
-    /* Fields of Grl.RangeValue */
+class RangeValue {
+    /* Fields of Grl-0.3.Grl.RangeValue */
     min: any
     max: any
-    /* Methods of Grl.RangeValue */
+    /* Methods of Grl-0.3.Grl.RangeValue */
     dup(): RangeValue
     free(): void
     static name: string
@@ -1254,24 +1257,24 @@ export class RangeValue {
     static hashtable_insert(hash_table: GLib.HashTable, key: object | null, min: any, max: any): void
     static hashtable_new(): GLib.HashTable
 }
-export abstract class RegistryClass {
-    /* Fields of Grl.RegistryClass */
+abstract class RegistryClass {
+    /* Fields of Grl-0.3.Grl.RegistryClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class RegistryPrivate {
+class RegistryPrivate {
     static name: string
 }
-export abstract class RelatedKeysClass {
-    /* Fields of Grl.RelatedKeysClass */
+abstract class RelatedKeysClass {
+    /* Fields of Grl-0.3.Grl.RelatedKeysClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class RelatedKeysPrivate {
+class RelatedKeysPrivate {
     static name: string
 }
-export class SourceBrowseSpec {
-    /* Fields of Grl.SourceBrowseSpec */
+class SourceBrowseSpec {
+    /* Fields of Grl-0.3.Grl.SourceBrowseSpec */
     source: Source
     operation_id: number
     container: Media
@@ -1281,8 +1284,8 @@ export class SourceBrowseSpec {
     user_data: object
     static name: string
 }
-export abstract class SourceClass {
-    /* Fields of Grl.SourceClass */
+abstract class SourceClass {
+    /* Fields of Grl-0.3.Grl.SourceClass */
     parent_class: GObject.ObjectClass
     supported_operations: (source: Source) => SupportedOps
     supported_keys: (source: Source) => KeyID[]
@@ -1304,8 +1307,8 @@ export abstract class SourceClass {
     notify_change_stop: (source: Source) => boolean
     static name: string
 }
-export class SourceMediaFromUriSpec {
-    /* Fields of Grl.SourceMediaFromUriSpec */
+class SourceMediaFromUriSpec {
+    /* Fields of Grl-0.3.Grl.SourceMediaFromUriSpec */
     source: Source
     operation_id: number
     uri: string
@@ -1315,11 +1318,11 @@ export class SourceMediaFromUriSpec {
     user_data: object
     static name: string
 }
-export class SourcePrivate {
+class SourcePrivate {
     static name: string
 }
-export class SourceQuerySpec {
-    /* Fields of Grl.SourceQuerySpec */
+class SourceQuerySpec {
+    /* Fields of Grl-0.3.Grl.SourceQuerySpec */
     source: Source
     operation_id: number
     query: string
@@ -1329,8 +1332,8 @@ export class SourceQuerySpec {
     user_data: object
     static name: string
 }
-export class SourceRemoveSpec {
-    /* Fields of Grl.SourceRemoveSpec */
+class SourceRemoveSpec {
+    /* Fields of Grl-0.3.Grl.SourceRemoveSpec */
     source: Source
     media_id: string
     media: Media
@@ -1338,8 +1341,8 @@ export class SourceRemoveSpec {
     user_data: object
     static name: string
 }
-export class SourceResolveSpec {
-    /* Fields of Grl.SourceResolveSpec */
+class SourceResolveSpec {
+    /* Fields of Grl-0.3.Grl.SourceResolveSpec */
     source: Source
     operation_id: number
     media: Media
@@ -1349,8 +1352,8 @@ export class SourceResolveSpec {
     user_data: object
     static name: string
 }
-export class SourceSearchSpec {
-    /* Fields of Grl.SourceSearchSpec */
+class SourceSearchSpec {
+    /* Fields of Grl-0.3.Grl.SourceSearchSpec */
     source: Source
     operation_id: number
     text: string
@@ -1360,8 +1363,8 @@ export class SourceSearchSpec {
     user_data: object
     static name: string
 }
-export class SourceStoreMetadataSpec {
-    /* Fields of Grl.SourceStoreMetadataSpec */
+class SourceStoreMetadataSpec {
+    /* Fields of Grl-0.3.Grl.SourceStoreMetadataSpec */
     source: Source
     media: Media
     keys: object[]
@@ -1371,8 +1374,8 @@ export class SourceStoreMetadataSpec {
     failed_keys: object[]
     static name: string
 }
-export class SourceStoreSpec {
-    /* Fields of Grl.SourceStoreSpec */
+class SourceStoreSpec {
+    /* Fields of Grl-0.3.Grl.SourceStoreSpec */
     source: Source
     parent: Media
     media: Media
@@ -1380,4 +1383,6 @@ export class SourceStoreSpec {
     user_data: object
     static name: string
 }
-export type KeyID = number
+type KeyID = number
+}
+export default Grl;

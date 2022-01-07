@@ -3,27 +3,29 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gtk from './Gtk-3.0';
-import type * as xlib from './xlib-2.0';
-import type * as Gdk from './Gdk-3.0';
-import type * as cairo from './cairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as Atk from './Atk-1.0';
+import type Gtk from './Gtk-3.0';
+import type xlib from './xlib-2.0';
+import type Gdk from './Gdk-3.0';
+import type cairo from './cairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type GModule from './GModule-2.0';
+import type Atk from './Atk-1.0';
 
-export enum Category {
+export namespace GnomeBluetooth {
+
+enum Category {
     ALL,
     PAIRED,
     TRUSTED,
     NOT_PAIRED_OR_TRUSTED,
     PAIRED_OR_TRUSTED,
 }
-export enum Column {
+enum Column {
     PROXY,
     PROPERTIES,
     ADDRESS,
@@ -42,14 +44,14 @@ export enum Column {
     SERVICES,
     UUIDS,
 }
-export enum Status {
+enum Status {
     INVALID,
     DISCONNECTED,
     CONNECTED,
     CONNECTING,
     PLAYING,
 }
-export enum Type {
+enum Type {
     ANY,
     PHONE,
     MODEM,
@@ -99,11 +101,11 @@ export const UUID_SAP: number
 export const UUID_SDP: number
 export const UUID_SPP: number
 export const UUID_VDP_SOURCE: number
-export function class_to_type(class_: number): Type
-export function send_to_address(address: string, alias: string): void
-export function type_to_string(type: number): string
-export function uuid_to_string(uuid: string): string
-export function verify_address(bdaddr: string): boolean
+function class_to_type(class_: number): Type
+function send_to_address(address: string, alias: string): void
+function type_to_string(type: number): string
+function uuid_to_string(uuid: string): string
+function verify_address(bdaddr: string): boolean
 export interface Chooser_ConstructProps extends Gtk.Box_ConstructProps {
     device_selected?: string
     device_service_filter?: string
@@ -117,8 +119,8 @@ export interface Chooser_ConstructProps extends Gtk.Box_ConstructProps {
     show_searching?: boolean
     orientation?: Gtk.Orientation
 }
-export class Chooser {
-    /* Properties of GnomeBluetooth.Chooser */
+class Chooser {
+    /* Properties of GnomeBluetooth-1.0.GnomeBluetooth.Chooser */
     device_selected: string
     device_service_filter: string
     device_type_filter: number
@@ -128,15 +130,15 @@ export class Chooser {
     show_device_type_column: boolean
     show_pairing: boolean
     show_searching: boolean
-    /* Properties of Gtk.Box */
+    /* Properties of Gtk-3.0.Gtk.Box */
     baseline_position: Gtk.BaselinePosition
     homogeneous: boolean
     spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -176,17 +178,17 @@ export class Chooser {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Orientable */
+    /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Gtk.Box */
+    /* Fields of Gtk-3.0.Gtk.Box */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GnomeBluetooth.Chooser */
+    /* Methods of GnomeBluetooth-1.0.GnomeBluetooth.Chooser */
     dump_selected_device(): void
     get_scrolled_window(): Gtk.Widget
     get_selected_device(): string
@@ -197,7 +199,7 @@ export class Chooser {
     get_selected_device_type(): Type
     start_discovery(): void
     stop_discovery(): void
-    /* Methods of Gtk.Box */
+    /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
     get_homogeneous(): boolean
@@ -211,10 +213,11 @@ export class Chooser {
     set_child_packing(child: Gtk.Widget, expand: boolean, fill: boolean, padding: number, pack_type: Gtk.PackType): void
     set_homogeneous(homogeneous: boolean): void
     set_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -239,7 +242,7 @@ export class Chooser {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -498,15 +501,15 @@ export class Chooser {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -514,13 +517,13 @@ export class Chooser {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -529,10 +532,10 @@ export class Chooser {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Orientable */
+    /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
-    /* Virtual methods of GnomeBluetooth.Chooser */
+    /* Virtual methods of GnomeBluetooth-1.0.GnomeBluetooth.Chooser */
     vfunc_selected_device_activated(address: string): void
     vfunc_selected_device_changed(address: string): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -545,7 +548,7 @@ export class Chooser {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -556,7 +559,7 @@ export class Chooser {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -639,22 +642,22 @@ export class Chooser {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GnomeBluetooth.Chooser */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GnomeBluetooth-1.0.GnomeBluetooth.Chooser */
     connect(sigName: "selected-device-activated", callback: (($obj: Chooser, address: string) => void)): number
     connect_after(sigName: "selected-device-activated", callback: (($obj: Chooser, address: string) => void)): number
     emit(sigName: "selected-device-activated", address: string): void
     connect(sigName: "selected-device-changed", callback: (($obj: Chooser, address: string) => void)): number
     connect_after(sigName: "selected-device-changed", callback: (($obj: Chooser, address: string) => void)): number
     emit(sigName: "selected-device-changed", address: string): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: Chooser, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: Chooser, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -667,7 +670,7 @@ export class Chooser {
     connect(sigName: "set-focus-child", callback: (($obj: Chooser, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: Chooser, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: Chooser) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: Chooser) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -875,7 +878,7 @@ export class Chooser {
     connect(sigName: "window-state-event", callback: (($obj: Chooser, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: Chooser, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Chooser, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Chooser, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1008,11 +1011,11 @@ export interface ChooserButton_ConstructProps extends Gtk.Button_ConstructProps 
     related_action?: Gtk.Action
     use_action_appearance?: boolean
 }
-export class ChooserButton {
-    /* Properties of GnomeBluetooth.ChooserButton */
+class ChooserButton {
+    /* Properties of GnomeBluetooth-1.0.GnomeBluetooth.ChooserButton */
     device: string
     readonly is_available: boolean
-    /* Properties of Gtk.Button */
+    /* Properties of Gtk-3.0.Gtk.Button */
     always_show_image: boolean
     image: Gtk.Widget
     image_position: Gtk.PositionType
@@ -1022,11 +1025,11 @@ export class ChooserButton {
     use_underline: boolean
     xalign: number
     yalign: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -1066,23 +1069,23 @@ export class ChooserButton {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Actionable */
+    /* Properties of Gtk-3.0.Gtk.Actionable */
     action_name: string
     action_target: GLib.Variant
-    /* Properties of Gtk.Activatable */
+    /* Properties of Gtk-3.0.Gtk.Activatable */
     related_action: Gtk.Action
     use_action_appearance: boolean
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GnomeBluetooth.ChooserButton */
+    /* Methods of GnomeBluetooth-1.0.GnomeBluetooth.ChooserButton */
     available(): boolean
-    /* Methods of Gtk.Button */
+    /* Methods of Gtk-3.0.Gtk.Button */
     clicked(): void
     enter(): void
     get_alignment(): [ /* xalign */ number, /* yalign */ number ]
@@ -1107,12 +1110,13 @@ export class ChooserButton {
     set_relief(relief: Gtk.ReliefStyle): void
     set_use_stock(use_stock: boolean): void
     set_use_underline(use_underline: boolean): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1137,7 +1141,7 @@ export class ChooserButton {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -1394,15 +1398,15 @@ export class ChooserButton {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1410,26 +1414,26 @@ export class ChooserButton {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Actionable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Actionable */
     get_action_name(): string | null
     get_action_target_value(): GLib.Variant
     set_action_name(action_name?: string | null): void
     set_action_target_value(target_value?: GLib.Variant | null): void
     set_detailed_action_name(detailed_action_name: string): void
-    /* Methods of Gtk.Activatable */
+    /* Methods of Gtk-3.0.Gtk.Activatable */
     do_set_related_action(action: Gtk.Action): void
     get_related_action(): Gtk.Action
     get_use_action_appearance(): boolean
     set_related_action(action: Gtk.Action): void
     set_use_action_appearance(use_appearance: boolean): void
     sync_action_properties(action?: Gtk.Action | null): void
-    /* Methods of Gtk.Buildable */
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -1438,7 +1442,7 @@ export class ChooserButton {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of GnomeBluetooth.ChooserButton */
+    /* Virtual methods of GnomeBluetooth-1.0.GnomeBluetooth.ChooserButton */
     vfunc_chooser_created(chooser: Gtk.Widget): void
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant
@@ -1456,14 +1460,14 @@ export class ChooserButton {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Button */
+    /* Virtual methods of Gtk-3.0.Gtk.Button */
     vfunc_activate(): void
     vfunc_clicked(): void
     vfunc_enter(): void
     vfunc_leave(): void
     vfunc_pressed(): void
     vfunc_released(): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -1474,7 +1478,7 @@ export class ChooserButton {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -1557,19 +1561,19 @@ export class ChooserButton {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GnomeBluetooth.ChooserButton */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GnomeBluetooth-1.0.GnomeBluetooth.ChooserButton */
     connect(sigName: "chooser-created", callback: (($obj: ChooserButton, chooser: GObject.Object) => void)): number
     connect_after(sigName: "chooser-created", callback: (($obj: ChooserButton, chooser: GObject.Object) => void)): number
     emit(sigName: "chooser-created", chooser: GObject.Object): void
-    /* Signals of Gtk.Button */
+    /* Signals of Gtk-3.0.Gtk.Button */
     connect(sigName: "activate", callback: (($obj: ChooserButton) => void)): number
     connect_after(sigName: "activate", callback: (($obj: ChooserButton) => void)): number
     emit(sigName: "activate"): void
@@ -1588,7 +1592,7 @@ export class ChooserButton {
     connect(sigName: "released", callback: (($obj: ChooserButton) => void)): number
     connect_after(sigName: "released", callback: (($obj: ChooserButton) => void)): number
     emit(sigName: "released"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: ChooserButton, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: ChooserButton, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -1601,7 +1605,7 @@ export class ChooserButton {
     connect(sigName: "set-focus-child", callback: (($obj: ChooserButton, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: ChooserButton, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: ChooserButton) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: ChooserButton) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -1809,7 +1813,7 @@ export class ChooserButton {
     connect(sigName: "window-state-event", callback: (($obj: ChooserButton, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: ChooserButton, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ChooserButton, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ChooserButton, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1942,19 +1946,19 @@ export interface ChooserCombo_ConstructProps extends Gtk.Box_ConstructProps {
     device?: string
     orientation?: Gtk.Orientation
 }
-export class ChooserCombo {
-    /* Properties of GnomeBluetooth.ChooserCombo */
+class ChooserCombo {
+    /* Properties of GnomeBluetooth-1.0.GnomeBluetooth.ChooserCombo */
     readonly chooser: Chooser
     device: string
-    /* Properties of Gtk.Box */
+    /* Properties of Gtk-3.0.Gtk.Box */
     baseline_position: Gtk.BaselinePosition
     homogeneous: boolean
     spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -1994,19 +1998,19 @@ export class ChooserCombo {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Orientable */
+    /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of GnomeBluetooth.ChooserCombo */
+    /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.ChooserCombo */
     priv: ChooserComboPrivate
-    /* Fields of Gtk.Box */
+    /* Fields of Gtk-3.0.Gtk.Box */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gtk.Box */
+    /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
     get_homogeneous(): boolean
@@ -2020,10 +2024,11 @@ export class ChooserCombo {
     set_child_packing(child: Gtk.Widget, expand: boolean, fill: boolean, padding: number, pack_type: Gtk.PackType): void
     set_homogeneous(homogeneous: boolean): void
     set_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2048,7 +2053,7 @@ export class ChooserCombo {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -2307,15 +2312,15 @@ export class ChooserCombo {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2323,13 +2328,13 @@ export class ChooserCombo {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2338,10 +2343,10 @@ export class ChooserCombo {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Orientable */
+    /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
-    /* Virtual methods of GnomeBluetooth.ChooserCombo */
+    /* Virtual methods of GnomeBluetooth-1.0.GnomeBluetooth.ChooserCombo */
     vfunc_chooser_created(chooser: Gtk.Widget): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -2353,7 +2358,7 @@ export class ChooserCombo {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -2364,7 +2369,7 @@ export class ChooserCombo {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -2447,19 +2452,19 @@ export class ChooserCombo {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GnomeBluetooth.ChooserCombo */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GnomeBluetooth-1.0.GnomeBluetooth.ChooserCombo */
     connect(sigName: "chooser-created", callback: (($obj: ChooserCombo, chooser: GObject.Object) => void)): number
     connect_after(sigName: "chooser-created", callback: (($obj: ChooserCombo, chooser: GObject.Object) => void)): number
     emit(sigName: "chooser-created", chooser: GObject.Object): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: ChooserCombo, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: ChooserCombo, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -2472,7 +2477,7 @@ export class ChooserCombo {
     connect(sigName: "set-focus-child", callback: (($obj: ChooserCombo, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: ChooserCombo, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: ChooserCombo) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: ChooserCombo) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -2680,7 +2685,7 @@ export class ChooserCombo {
     connect(sigName: "window-state-event", callback: (($obj: ChooserCombo, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: ChooserCombo, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ChooserCombo, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ChooserCombo, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2796,33 +2801,33 @@ export interface Client_ConstructProps extends GObject.Object_ConstructProps {
     default_adapter_discoverable?: boolean
     default_adapter_discovering?: boolean
 }
-export class Client {
-    /* Properties of GnomeBluetooth.Client */
+class Client {
+    /* Properties of GnomeBluetooth-1.0.GnomeBluetooth.Client */
     readonly default_adapter: string
     default_adapter_discoverable: boolean
     default_adapter_discovering: boolean
     readonly default_adapter_name: string
     readonly default_adapter_powered: boolean
-    /* Fields of GnomeBluetooth.Client */
+    /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.Client */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GnomeBluetooth.Client */
+    /* Methods of GnomeBluetooth-1.0.GnomeBluetooth.Client */
     connect_service(path: string, connect: boolean, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): void
     connect_service_finish(res: Gio.AsyncResult): boolean
     get_adapter_model(): Gtk.TreeModel
     get_device_model(): Gtk.TreeModel
     get_filter_model(func: Gtk.TreeModelFilterVisibleFunc): Gtk.TreeModel
     get_model(): Gtk.TreeModel
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2830,25 +2835,25 @@ export class Client {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GnomeBluetooth.Client */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GnomeBluetooth-1.0.GnomeBluetooth.Client */
     connect(sigName: "device-removed", callback: (($obj: Client, device: string) => void)): number
     connect_after(sigName: "device-removed", callback: (($obj: Client, device: string) => void)): number
     emit(sigName: "device-removed", device: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2880,21 +2885,21 @@ export interface FilterWidget_ConstructProps extends Gtk.Box_ConstructProps {
     show_device_type?: boolean
     orientation?: Gtk.Orientation
 }
-export class FilterWidget {
-    /* Properties of GnomeBluetooth.FilterWidget */
+class FilterWidget {
+    /* Properties of GnomeBluetooth-1.0.GnomeBluetooth.FilterWidget */
     device_service_filter: string
     device_type_filter: number
     show_device_category: boolean
     show_device_type: boolean
-    /* Properties of Gtk.Box */
+    /* Properties of Gtk-3.0.Gtk.Box */
     baseline_position: Gtk.BaselinePosition
     homogeneous: boolean
     spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -2934,20 +2939,20 @@ export class FilterWidget {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Orientable */
+    /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Gtk.Box */
+    /* Fields of Gtk-3.0.Gtk.Box */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GnomeBluetooth.FilterWidget */
+    /* Methods of GnomeBluetooth-1.0.GnomeBluetooth.FilterWidget */
     bind_filter(chooser: Chooser): void
     set_title(title: string): void
-    /* Methods of Gtk.Box */
+    /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
     get_homogeneous(): boolean
@@ -2961,10 +2966,11 @@ export class FilterWidget {
     set_child_packing(child: Gtk.Widget, expand: boolean, fill: boolean, padding: number, pack_type: Gtk.PackType): void
     set_homogeneous(homogeneous: boolean): void
     set_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2989,7 +2995,7 @@ export class FilterWidget {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -3248,15 +3254,15 @@ export class FilterWidget {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3264,13 +3270,13 @@ export class FilterWidget {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -3279,10 +3285,10 @@ export class FilterWidget {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Orientable */
+    /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
-    /* Virtual methods of GnomeBluetooth.FilterWidget */
+    /* Virtual methods of GnomeBluetooth-1.0.GnomeBluetooth.FilterWidget */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -3293,7 +3299,7 @@ export class FilterWidget {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -3304,7 +3310,7 @@ export class FilterWidget {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -3387,15 +3393,15 @@ export class FilterWidget {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: FilterWidget, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: FilterWidget, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -3408,7 +3414,7 @@ export class FilterWidget {
     connect(sigName: "set-focus-child", callback: (($obj: FilterWidget, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: FilterWidget, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: FilterWidget) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: FilterWidget) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -3616,7 +3622,7 @@ export class FilterWidget {
     connect(sigName: "window-state-event", callback: (($obj: FilterWidget, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: FilterWidget, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FilterWidget, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FilterWidget, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3735,16 +3741,16 @@ export class FilterWidget {
 export interface SettingsWidget_ConstructProps extends Gtk.Box_ConstructProps {
     orientation?: Gtk.Orientation
 }
-export class SettingsWidget {
-    /* Properties of Gtk.Box */
+class SettingsWidget {
+    /* Properties of Gtk-3.0.Gtk.Box */
     baseline_position: Gtk.BaselinePosition
     homogeneous: boolean
     spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -3784,19 +3790,19 @@ export class SettingsWidget {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Orientable */
+    /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Gtk.Box */
+    /* Fields of Gtk-3.0.Gtk.Box */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GnomeBluetooth.SettingsWidget */
+    /* Methods of GnomeBluetooth-1.0.GnomeBluetooth.SettingsWidget */
     get_default_adapter_powered(): boolean
-    /* Methods of Gtk.Box */
+    /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
     get_homogeneous(): boolean
@@ -3810,10 +3816,11 @@ export class SettingsWidget {
     set_child_packing(child: Gtk.Widget, expand: boolean, fill: boolean, padding: number, pack_type: Gtk.PackType): void
     set_homogeneous(homogeneous: boolean): void
     set_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3838,7 +3845,7 @@ export class SettingsWidget {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -4097,15 +4104,15 @@ export class SettingsWidget {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4113,13 +4120,13 @@ export class SettingsWidget {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -4128,10 +4135,10 @@ export class SettingsWidget {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Orientable */
+    /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
-    /* Virtual methods of GnomeBluetooth.SettingsWidget */
+    /* Virtual methods of GnomeBluetooth-1.0.GnomeBluetooth.SettingsWidget */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -4142,7 +4149,7 @@ export class SettingsWidget {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -4153,7 +4160,7 @@ export class SettingsWidget {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -4236,22 +4243,22 @@ export class SettingsWidget {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GnomeBluetooth.SettingsWidget */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GnomeBluetooth-1.0.GnomeBluetooth.SettingsWidget */
     connect(sigName: "adapter-status-changed", callback: (($obj: SettingsWidget) => void)): number
     connect_after(sigName: "adapter-status-changed", callback: (($obj: SettingsWidget) => void)): number
     emit(sigName: "adapter-status-changed"): void
     connect(sigName: "panel-changed", callback: (($obj: SettingsWidget, panel: string) => void)): number
     connect_after(sigName: "panel-changed", callback: (($obj: SettingsWidget, panel: string) => void)): number
     emit(sigName: "panel-changed", panel: string): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: SettingsWidget, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: SettingsWidget, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -4264,7 +4271,7 @@ export class SettingsWidget {
     connect(sigName: "set-focus-child", callback: (($obj: SettingsWidget, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: SettingsWidget, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: SettingsWidget) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: SettingsWidget) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -4472,7 +4479,7 @@ export class SettingsWidget {
     connect(sigName: "window-state-event", callback: (($obj: SettingsWidget, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: SettingsWidget, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SettingsWidget, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SettingsWidget, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4580,40 +4587,42 @@ export class SettingsWidget {
     static new(orientation: Gtk.Orientation, spacing: number): SettingsWidget
     static $gtype: GObject.Type
 }
-export abstract class ChooserButtonClass {
-    /* Fields of GnomeBluetooth.ChooserButtonClass */
+abstract class ChooserButtonClass {
+    /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.ChooserButtonClass */
     parent_class: Gtk.ButtonClass
     chooser_created: (self: ChooserButton, chooser: Gtk.Widget) => void
     static name: string
 }
-export abstract class ChooserClass {
-    /* Fields of GnomeBluetooth.ChooserClass */
+abstract class ChooserClass {
+    /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.ChooserClass */
     parent_class: Gtk.BoxClass
     selected_device_changed: (chooser: Chooser, address: string) => void
     selected_device_activated: (chooser: Chooser, address: string) => void
     static name: string
 }
-export abstract class ChooserComboClass {
-    /* Fields of GnomeBluetooth.ChooserComboClass */
+abstract class ChooserComboClass {
+    /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.ChooserComboClass */
     parent_class: Gtk.BoxClass
     chooser_created: (self: ChooserCombo, chooser: Gtk.Widget) => void
     static name: string
 }
-export class ChooserComboPrivate {
+class ChooserComboPrivate {
     static name: string
 }
-export abstract class ClientClass {
-    /* Fields of GnomeBluetooth.ClientClass */
+abstract class ClientClass {
+    /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.ClientClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class FilterWidgetClass {
-    /* Fields of GnomeBluetooth.FilterWidgetClass */
+abstract class FilterWidgetClass {
+    /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.FilterWidgetClass */
     parent_class: Gtk.BoxClass
     static name: string
 }
-export abstract class SettingsWidgetClass {
-    /* Fields of GnomeBluetooth.SettingsWidgetClass */
+abstract class SettingsWidgetClass {
+    /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.SettingsWidgetClass */
     parent_class: Gtk.BoxClass
     static name: string
 }
+}
+export default GnomeBluetooth;

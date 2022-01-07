@@ -1,2 +1,2 @@
-imports.gi.versions.Atk = '1.0'
-export default imports.gi.Atk
+import Atk from 'gi://Atk?version=1.0';
+export default Atk;

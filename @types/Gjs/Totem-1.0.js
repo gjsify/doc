@@ -1,2 +1,2 @@
-imports.gi.versions.Totem = '1.0'
-export default imports.gi.Totem
+import Totem from 'gi://Totem?version=1.0';
+export default Totem;

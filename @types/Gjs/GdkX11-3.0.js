@@ -1,2 +1,2 @@
-imports.gi.versions.GdkX11 = '3.0'
-export default imports.gi.GdkX11
+import GdkX11 from 'gi://GdkX11?version=3.0';
+export default GdkX11;

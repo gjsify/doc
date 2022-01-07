@@ -1,2 +1,2 @@
-imports.gi.versions.Gdl = '3'
-export default imports.gi.Gdl
+import Gdl from 'gi://Gdl?version=3';
+export default Gdl;

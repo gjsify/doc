@@ -1,2 +1,2 @@
-imports.gi.versions.SpiceClientGLib = '2.0'
-export default imports.gi.SpiceClientGLib
+import SpiceClientGLib from 'gi://SpiceClientGLib?version=2.0';
+export default SpiceClientGLib;

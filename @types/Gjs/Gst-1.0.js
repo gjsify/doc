@@ -1,2 +1,2 @@
-imports.gi.versions.Gst = '1.0'
-export default imports.gi.Gst
+import Gst from 'gi://Gst?version=1.0';
+export default Gst;

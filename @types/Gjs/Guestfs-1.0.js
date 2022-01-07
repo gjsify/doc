@@ -1,2 +1,2 @@
-imports.gi.versions.Guestfs = '1.0'
-export default imports.gi.Guestfs
+import Guestfs from 'gi://Guestfs?version=1.0';
+export default Guestfs;

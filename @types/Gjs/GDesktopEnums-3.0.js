@@ -1,2 +1,2 @@
-imports.gi.versions.GDesktopEnums = '3.0'
-export default imports.gi.GDesktopEnums
+import GDesktopEnums from 'gi://GDesktopEnums?version=3.0';
+export default GDesktopEnums;

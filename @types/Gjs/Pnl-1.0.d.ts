@@ -3,20 +3,22 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gtk from './Gtk-3.0';
-import type * as xlib from './xlib-2.0';
-import type * as Gdk from './Gdk-3.0';
-import type * as cairo from './cairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as Atk from './Atk-1.0';
+import type Gtk from './Gtk-3.0';
+import type xlib from './xlib-2.0';
+import type Gdk from './Gdk-3.0';
+import type cairo from './cairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type GModule from './GModule-2.0';
+import type Atk from './Atk-1.0';
 
-export enum AnimationMode {
+export namespace Pnl {
+
+enum AnimationMode {
     LINEAR,
     EASE_IN_QUAD,
     EASE_IN_OUT_QUAD,
@@ -25,7 +27,7 @@ export enum AnimationMode {
     EASE_OUT_CUBIC,
     EASE_IN_OUT_CUBIC,
 }
-export enum DockRevealerTransitionType {
+enum DockRevealerTransitionType {
     NONE,
     SLIDE_RIGHT,
     SLIDE_LEFT,
@@ -36,21 +38,21 @@ export const MAJOR_VERSION: number
 export const MICRO_VERSION: number
 export const MINOR_VERSION: number
 export const VERSION_S: string
-export function frame_source_add(frames_per_sec: number, callback: GLib.SourceFunc): number
-export function gtk_bin_draw(widget: Gtk.Widget, cr: cairo.Context): boolean
-export function gtk_bin_size_allocate(widget: Gtk.Widget, allocation: Gtk.Allocation): void
-export function overlay_add_child(self: DockOverlay, child: Gtk.Widget, type: string): void
+function frame_source_add(frames_per_sec: number, callback: GLib.SourceFunc): number
+function gtk_bin_draw(widget: Gtk.Widget, cr: cairo.Context): boolean
+function gtk_bin_size_allocate(widget: Gtk.Widget, allocation: Gtk.Allocation): void
+function overlay_add_child(self: DockOverlay, child: Gtk.Widget, type: string): void
 export interface Dock_ConstructProps extends Gtk.Container_ConstructProps {
     manager?: DockManager
 }
-export class Dock {
-    /* Properties of Pnl.Dock */
+class Dock {
+    /* Properties of Pnl-1.0.Pnl.Dock */
     manager: DockManager
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -90,16 +92,17 @@ export class Dock {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -124,7 +127,7 @@ export class Dock {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -383,15 +386,15 @@ export class Dock {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -399,13 +402,13 @@ export class Dock {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -416,7 +419,7 @@ export class Dock {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -499,15 +502,15 @@ export class Dock {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: Dock, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: Dock, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -520,7 +523,7 @@ export class Dock {
     connect(sigName: "set-focus-child", callback: (($obj: Dock, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: Dock, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: Dock) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: Dock) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -728,7 +731,7 @@ export class Dock {
     connect(sigName: "window-state-event", callback: (($obj: Dock, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: Dock, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Dock, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Dock, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -829,8 +832,8 @@ export class Dock {
 }
 export interface DockItem_ConstructProps extends Gtk.Widget_ConstructProps {
 }
-export class DockItem {
-    /* Properties of Gtk.Widget */
+class DockItem {
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -870,11 +873,11 @@ export class DockItem {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.DockItem */
+    /* Methods of Pnl-1.0.Pnl.DockItem */
     adopt(child: DockItem): boolean
     get_child_visible(child: DockItem): boolean
     get_manager(): DockManager | null
@@ -885,7 +888,7 @@ export class DockItem {
     set_child_visible(child: DockItem, child_visible: boolean): void
     set_manager(manager?: DockManager | null): void
     update_visibility(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -1144,15 +1147,15 @@ export class DockItem {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1160,13 +1163,13 @@ export class DockItem {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Pnl.DockItem */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Pnl-1.0.Pnl.DockItem */
     vfunc_get_child_visible(child: DockItem): boolean
     vfunc_get_manager(): DockManager | null
     vfunc_manager_set(old_manager: DockManager): void
@@ -1174,7 +1177,7 @@ export class DockItem {
     vfunc_set_child_visible(child: DockItem, child_visible: boolean): void
     vfunc_set_manager(manager?: DockManager | null): void
     vfunc_update_visibility(): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -1257,19 +1260,19 @@ export class DockItem {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.DockItem */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Pnl-1.0.Pnl.DockItem */
     connect(sigName: "manager-set", callback: (($obj: DockItem, object: DockManager) => void)): number
     connect_after(sigName: "manager-set", callback: (($obj: DockItem, object: DockManager) => void)): number
     emit(sigName: "manager-set", object: DockManager): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DockItem) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DockItem) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -1477,7 +1480,7 @@ export class DockItem {
     connect(sigName: "window-state-event", callback: (($obj: DockItem, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DockItem, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DockItem, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DockItem, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1574,22 +1577,22 @@ export interface Animation_ConstructProps extends GObject.InitiallyUnowned_Const
     mode?: AnimationMode
     target?: GObject.Object
 }
-export class Animation {
-    /* Fields of GObject.InitiallyUnowned */
+class Animation {
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.Animation */
+    /* Methods of Pnl-1.0.Pnl.Animation */
     add_property(pspec: GObject.ParamSpec, value: any): void
     start(): void
     stop(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1597,25 +1600,25 @@ export class Animation {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.Animation */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Pnl-1.0.Pnl.Animation */
     connect(sigName: "tick", callback: (($obj: Animation) => void)): number
     connect_after(sigName: "tick", callback: (($obj: Animation) => void)): number
     emit(sigName: "tick"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Animation, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Animation, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1633,12 +1636,12 @@ export class Animation {
 export interface DockBin_ConstructProps extends Gtk.Container_ConstructProps {
     manager?: DockManager
 }
-export class DockBin {
-    /* Properties of Gtk.Container */
+class DockBin {
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -1678,24 +1681,25 @@ export class DockBin {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Pnl.Dock */
+    /* Properties of Pnl-1.0.Pnl.Dock */
     manager: DockManager
-    /* Fields of Pnl.DockBin */
+    /* Fields of Pnl-1.0.Pnl.DockBin */
     parent_instance: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.DockBin */
+    /* Methods of Pnl-1.0.Pnl.DockBin */
     get_bottom_edge(): Gtk.Widget
     get_center_widget(): Gtk.Widget | null
     get_left_edge(): Gtk.Widget
     get_right_edge(): Gtk.Widget
     get_top_edge(): Gtk.Widget
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1720,7 +1724,7 @@ export class DockBin {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -1979,15 +1983,15 @@ export class DockBin {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1995,13 +1999,13 @@ export class DockBin {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2010,7 +2014,7 @@ export class DockBin {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Pnl.DockItem */
+    /* Methods of Pnl-1.0.Pnl.DockItem */
     adopt(child: DockItem): boolean
     get_child_visible(child: DockItem): boolean
     get_manager(): DockManager | null
@@ -2021,7 +2025,7 @@ export class DockBin {
     set_child_visible(child: DockItem, child_visible: boolean): void
     set_manager(manager?: DockManager | null): void
     update_visibility(): void
-    /* Virtual methods of Pnl.DockBin */
+    /* Virtual methods of Pnl-1.0.Pnl.DockBin */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2039,7 +2043,7 @@ export class DockBin {
     vfunc_set_child_visible(child: DockItem, child_visible: boolean): void
     vfunc_set_manager(manager?: DockManager | null): void
     vfunc_update_visibility(): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -2050,7 +2054,7 @@ export class DockBin {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -2133,15 +2137,15 @@ export class DockBin {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: DockBin, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: DockBin, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -2154,7 +2158,7 @@ export class DockBin {
     connect(sigName: "set-focus-child", callback: (($obj: DockBin, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: DockBin, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DockBin) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DockBin) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -2362,11 +2366,11 @@ export class DockBin {
     connect(sigName: "window-state-event", callback: (($obj: DockBin, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DockBin, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DockBin, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DockBin, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.DockItem */
+    /* Signals of Pnl-1.0.Pnl.DockItem */
     connect(sigName: "manager-set", callback: (($obj: DockBin, object: DockManager) => void)): number
     connect_after(sigName: "manager-set", callback: (($obj: DockBin, object: DockManager) => void)): number
     emit(sigName: "manager-set", object: DockManager): void
@@ -2470,21 +2474,21 @@ export class DockBin {
 export interface DockBinEdge_ConstructProps extends DockRevealer_ConstructProps {
     edge?: Gtk.PositionType
 }
-export class DockBinEdge {
-    /* Properties of Pnl.DockBinEdge */
+class DockBinEdge {
+    /* Properties of Pnl-1.0.Pnl.DockBinEdge */
     edge: Gtk.PositionType
-    /* Properties of Pnl.DockRevealer */
+    /* Properties of Pnl-1.0.Pnl.DockRevealer */
     readonly child_revealed: boolean
     position: number
     position_set: boolean
     reveal_child: boolean
     transition_duration: number
     transition_type: DockRevealerTransitionType
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -2524,18 +2528,18 @@ export class DockBinEdge {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Pnl.DockBinEdge */
+    /* Fields of Pnl-1.0.Pnl.DockBinEdge */
     parent_instance: DockRevealer
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.DockBinEdge */
+    /* Methods of Pnl-1.0.Pnl.DockBinEdge */
     get_edge(): Gtk.PositionType
     set_edge(bin_edge: Gtk.PositionType): void
-    /* Methods of Pnl.DockRevealer */
+    /* Methods of Pnl-1.0.Pnl.DockRevealer */
     animate_to_position(position: number, transition_duration: number): void
     get_child_revealed(): boolean
     get_position(): number
@@ -2548,12 +2552,13 @@ export class DockBinEdge {
     set_reveal_child(reveal_child: boolean): void
     set_transition_duration(transition_duration: number): void
     set_transition_type(transition_type: DockRevealerTransitionType): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2578,7 +2583,7 @@ export class DockBinEdge {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -2837,15 +2842,15 @@ export class DockBinEdge {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2853,13 +2858,13 @@ export class DockBinEdge {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2868,7 +2873,7 @@ export class DockBinEdge {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Pnl.DockItem */
+    /* Methods of Pnl-1.0.Pnl.DockItem */
     adopt(child: DockItem): boolean
     get_child_visible(child: DockItem): boolean
     get_manager(): DockManager | null
@@ -2879,7 +2884,7 @@ export class DockBinEdge {
     set_child_visible(child: DockItem, child_visible: boolean): void
     set_manager(manager?: DockManager | null): void
     update_visibility(): void
-    /* Virtual methods of Pnl.DockBinEdge */
+    /* Virtual methods of Pnl-1.0.Pnl.DockBinEdge */
     vfunc_move_to_bin_child(): void
     vfunc_get_child_visible(child: DockItem): boolean
     vfunc_get_manager(): DockManager | null
@@ -2888,7 +2893,7 @@ export class DockBinEdge {
     vfunc_set_child_visible(child: DockItem, child_visible: boolean): void
     vfunc_set_manager(manager?: DockManager | null): void
     vfunc_update_visibility(): void
-    /* Virtual methods of Pnl.DockRevealer */
+    /* Virtual methods of Pnl-1.0.Pnl.DockRevealer */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2899,7 +2904,7 @@ export class DockBinEdge {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -2910,7 +2915,7 @@ export class DockBinEdge {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -2993,19 +2998,19 @@ export class DockBinEdge {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.DockBinEdge */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Pnl-1.0.Pnl.DockBinEdge */
     connect(sigName: "move-to-bin-child", callback: (($obj: DockBinEdge) => void)): number
     connect_after(sigName: "move-to-bin-child", callback: (($obj: DockBinEdge) => void)): number
     emit(sigName: "move-to-bin-child"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: DockBinEdge, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: DockBinEdge, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -3018,7 +3023,7 @@ export class DockBinEdge {
     connect(sigName: "set-focus-child", callback: (($obj: DockBinEdge, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: DockBinEdge, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DockBinEdge) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DockBinEdge) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -3226,11 +3231,11 @@ export class DockBinEdge {
     connect(sigName: "window-state-event", callback: (($obj: DockBinEdge, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DockBinEdge, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DockBinEdge, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DockBinEdge, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.DockItem */
+    /* Signals of Pnl-1.0.Pnl.DockItem */
     connect(sigName: "manager-set", callback: (($obj: DockBinEdge, object: DockManager) => void)): number
     connect_after(sigName: "manager-set", callback: (($obj: DockBinEdge, object: DockManager) => void)): number
     emit(sigName: "manager-set", object: DockManager): void
@@ -3343,23 +3348,23 @@ export class DockBinEdge {
 }
 export interface DockManager_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class DockManager {
-    /* Fields of Pnl.DockManager */
+class DockManager {
+    /* Fields of Pnl-1.0.Pnl.DockManager */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.DockManager */
+    /* Methods of Pnl-1.0.Pnl.DockManager */
     register_dock(dock: Dock): void
     unregister_dock(dock: Dock): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3367,31 +3372,31 @@ export class DockManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Pnl.DockManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Pnl-1.0.Pnl.DockManager */
     vfunc_register_dock(dock: Dock): void
     vfunc_unregister_dock(dock: Dock): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.DockManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Pnl-1.0.Pnl.DockManager */
     connect(sigName: "register-dock", callback: (($obj: DockManager, object: Dock) => void)): number
     connect_after(sigName: "register-dock", callback: (($obj: DockManager, object: Dock) => void)): number
     emit(sigName: "register-dock", object: Dock): void
     connect(sigName: "unregister-dock", callback: (($obj: DockManager, object: Dock) => void)): number
     connect_after(sigName: "unregister-dock", callback: (($obj: DockManager, object: Dock) => void)): number
     emit(sigName: "unregister-dock", object: Dock): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DockManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DockManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3409,15 +3414,15 @@ export class DockManager {
 export interface DockOverlay_ConstructProps extends Gtk.EventBox_ConstructProps {
     manager?: DockManager
 }
-export class DockOverlay {
-    /* Properties of Gtk.EventBox */
+class DockOverlay {
+    /* Properties of Gtk-3.0.Gtk.EventBox */
     above_child: boolean
     visible_window: boolean
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -3457,32 +3462,33 @@ export class DockOverlay {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Pnl.Dock */
+    /* Properties of Pnl-1.0.Pnl.Dock */
     manager: DockManager
-    /* Fields of Pnl.DockOverlay */
+    /* Fields of Pnl-1.0.Pnl.DockOverlay */
     parent_instance: Gtk.EventBox
-    /* Fields of Gtk.EventBox */
+    /* Fields of Gtk-3.0.Gtk.EventBox */
     bin: Gtk.Bin
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.DockOverlay */
+    /* Methods of Pnl-1.0.Pnl.DockOverlay */
     get_edge(position: Gtk.PositionType): DockOverlayEdge
     get_edge_adjustment(position: Gtk.PositionType): Gtk.Adjustment
-    /* Methods of Gtk.EventBox */
+    /* Methods of Gtk-3.0.Gtk.EventBox */
     get_above_child(): boolean
     get_visible_window(): boolean
     set_above_child(above_child: boolean): void
     set_visible_window(visible_window: boolean): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3507,7 +3513,7 @@ export class DockOverlay {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -3766,15 +3772,15 @@ export class DockOverlay {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3782,13 +3788,13 @@ export class DockOverlay {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -3797,7 +3803,7 @@ export class DockOverlay {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Pnl.DockItem */
+    /* Methods of Pnl-1.0.Pnl.DockItem */
     adopt(child: DockItem): boolean
     get_child_visible(child: DockItem): boolean
     get_manager(): DockManager | null
@@ -3808,7 +3814,7 @@ export class DockOverlay {
     set_child_visible(child: DockItem, child_visible: boolean): void
     set_manager(manager?: DockManager | null): void
     update_visibility(): void
-    /* Virtual methods of Pnl.DockOverlay */
+    /* Virtual methods of Pnl-1.0.Pnl.DockOverlay */
     vfunc_hide_edges(): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -3827,7 +3833,7 @@ export class DockOverlay {
     vfunc_set_child_visible(child: DockItem, child_visible: boolean): void
     vfunc_set_manager(manager?: DockManager | null): void
     vfunc_update_visibility(): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -3838,7 +3844,7 @@ export class DockOverlay {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -3921,19 +3927,19 @@ export class DockOverlay {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.DockOverlay */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Pnl-1.0.Pnl.DockOverlay */
     connect(sigName: "hide-edges", callback: (($obj: DockOverlay) => void)): number
     connect_after(sigName: "hide-edges", callback: (($obj: DockOverlay) => void)): number
     emit(sigName: "hide-edges"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: DockOverlay, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: DockOverlay, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -3946,7 +3952,7 @@ export class DockOverlay {
     connect(sigName: "set-focus-child", callback: (($obj: DockOverlay, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: DockOverlay, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DockOverlay) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DockOverlay) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -4154,11 +4160,11 @@ export class DockOverlay {
     connect(sigName: "window-state-event", callback: (($obj: DockOverlay, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DockOverlay, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DockOverlay, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DockOverlay, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.DockItem */
+    /* Signals of Pnl-1.0.Pnl.DockItem */
     connect(sigName: "manager-set", callback: (($obj: DockOverlay, object: DockManager) => void)): number
     connect_after(sigName: "manager-set", callback: (($obj: DockOverlay, object: DockManager) => void)): number
     emit(sigName: "manager-set", object: DockManager): void
@@ -4267,15 +4273,15 @@ export interface DockOverlayEdge_ConstructProps extends Gtk.Bin_ConstructProps {
     edge?: Gtk.PositionType
     position?: number
 }
-export class DockOverlayEdge {
-    /* Properties of Pnl.DockOverlayEdge */
+class DockOverlayEdge {
+    /* Properties of Pnl-1.0.Pnl.DockOverlayEdge */
     edge: Gtk.PositionType
     position: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -4315,25 +4321,26 @@ export class DockOverlayEdge {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.DockOverlayEdge */
+    /* Methods of Pnl-1.0.Pnl.DockOverlayEdge */
     get_edge(): Gtk.PositionType
     get_position(): number
     set_edge(edge: Gtk.PositionType): void
     set_position(position: number): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4358,7 +4365,7 @@ export class DockOverlayEdge {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -4617,15 +4624,15 @@ export class DockOverlayEdge {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4633,13 +4640,13 @@ export class DockOverlayEdge {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -4648,7 +4655,7 @@ export class DockOverlayEdge {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Pnl.DockItem */
+    /* Methods of Pnl-1.0.Pnl.DockItem */
     adopt(child: DockItem): boolean
     get_child_visible(child: DockItem): boolean
     get_manager(): DockManager | null
@@ -4659,7 +4666,7 @@ export class DockOverlayEdge {
     set_child_visible(child: DockItem, child_visible: boolean): void
     set_manager(manager?: DockManager | null): void
     update_visibility(): void
-    /* Virtual methods of Pnl.DockOverlayEdge */
+    /* Virtual methods of Pnl-1.0.Pnl.DockOverlayEdge */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -4677,7 +4684,7 @@ export class DockOverlayEdge {
     vfunc_set_child_visible(child: DockItem, child_visible: boolean): void
     vfunc_set_manager(manager?: DockManager | null): void
     vfunc_update_visibility(): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -4688,7 +4695,7 @@ export class DockOverlayEdge {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -4771,15 +4778,15 @@ export class DockOverlayEdge {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: DockOverlayEdge, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: DockOverlayEdge, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -4792,7 +4799,7 @@ export class DockOverlayEdge {
     connect(sigName: "set-focus-child", callback: (($obj: DockOverlayEdge, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: DockOverlayEdge, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DockOverlayEdge) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DockOverlayEdge) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -5000,11 +5007,11 @@ export class DockOverlayEdge {
     connect(sigName: "window-state-event", callback: (($obj: DockOverlayEdge, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DockOverlayEdge, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DockOverlayEdge, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DockOverlayEdge, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.DockItem */
+    /* Signals of Pnl-1.0.Pnl.DockItem */
     connect(sigName: "manager-set", callback: (($obj: DockOverlayEdge, object: DockManager) => void)): number
     connect_after(sigName: "manager-set", callback: (($obj: DockOverlayEdge, object: DockManager) => void)): number
     emit(sigName: "manager-set", object: DockManager): void
@@ -5108,14 +5115,14 @@ export class DockOverlayEdge {
 export interface DockPaned_ConstructProps extends MultiPaned_ConstructProps {
     orientation?: Gtk.Orientation
 }
-export class DockPaned {
-    /* Properties of Pnl.MultiPaned */
+class DockPaned {
+    /* Properties of Pnl-1.0.Pnl.MultiPaned */
     orientation: Gtk.Orientation
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -5155,20 +5162,21 @@ export class DockPaned {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Pnl.DockPaned */
+    /* Fields of Pnl-1.0.Pnl.DockPaned */
     parent_instance: MultiPaned
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.DockPaned */
+    /* Methods of Pnl-1.0.Pnl.DockPaned */
     set_child_edge(child_edge: Gtk.PositionType): void
-    /* Methods of Pnl.MultiPaned */
+    /* Methods of Pnl-1.0.Pnl.MultiPaned */
     get_n_children(): number
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -5193,7 +5201,7 @@ export class DockPaned {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -5452,15 +5460,15 @@ export class DockPaned {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5468,13 +5476,13 @@ export class DockPaned {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -5483,10 +5491,10 @@ export class DockPaned {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Orientable */
+    /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
-    /* Methods of Pnl.DockItem */
+    /* Methods of Pnl-1.0.Pnl.DockItem */
     adopt(child: DockItem): boolean
     get_child_visible(child: DockItem): boolean
     get_manager(): DockManager | null
@@ -5497,7 +5505,7 @@ export class DockPaned {
     set_child_visible(child: DockItem, child_visible: boolean): void
     set_manager(manager?: DockManager | null): void
     update_visibility(): void
-    /* Virtual methods of Pnl.DockPaned */
+    /* Virtual methods of Pnl-1.0.Pnl.DockPaned */
     vfunc_get_child_visible(child: DockItem): boolean
     vfunc_get_manager(): DockManager | null
     vfunc_manager_set(old_manager: DockManager): void
@@ -5505,7 +5513,7 @@ export class DockPaned {
     vfunc_set_child_visible(child: DockItem, child_visible: boolean): void
     vfunc_set_manager(manager?: DockManager | null): void
     vfunc_update_visibility(): void
-    /* Virtual methods of Pnl.MultiPaned */
+    /* Virtual methods of Pnl-1.0.Pnl.MultiPaned */
     vfunc_resize_drag_begin(child: Gtk.Widget): void
     vfunc_resize_drag_end(child: Gtk.Widget): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -5518,7 +5526,7 @@ export class DockPaned {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -5529,7 +5537,7 @@ export class DockPaned {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -5612,22 +5620,22 @@ export class DockPaned {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.MultiPaned */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Pnl-1.0.Pnl.MultiPaned */
     connect(sigName: "resize-drag-begin", callback: (($obj: DockPaned, object: Gtk.Widget) => void)): number
     connect_after(sigName: "resize-drag-begin", callback: (($obj: DockPaned, object: Gtk.Widget) => void)): number
     emit(sigName: "resize-drag-begin", object: Gtk.Widget): void
     connect(sigName: "resize-drag-end", callback: (($obj: DockPaned, object: Gtk.Widget) => void)): number
     connect_after(sigName: "resize-drag-end", callback: (($obj: DockPaned, object: Gtk.Widget) => void)): number
     emit(sigName: "resize-drag-end", object: Gtk.Widget): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: DockPaned, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: DockPaned, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -5640,7 +5648,7 @@ export class DockPaned {
     connect(sigName: "set-focus-child", callback: (($obj: DockPaned, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: DockPaned, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DockPaned) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DockPaned) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -5848,11 +5856,11 @@ export class DockPaned {
     connect(sigName: "window-state-event", callback: (($obj: DockPaned, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DockPaned, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DockPaned, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DockPaned, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.DockItem */
+    /* Signals of Pnl-1.0.Pnl.DockItem */
     connect(sigName: "manager-set", callback: (($obj: DockPaned, object: DockManager) => void)): number
     connect_after(sigName: "manager-set", callback: (($obj: DockPaned, object: DockManager) => void)): number
     emit(sigName: "manager-set", object: DockManager): void
@@ -5960,19 +5968,19 @@ export interface DockRevealer_ConstructProps extends Gtk.Bin_ConstructProps {
     transition_duration?: number
     transition_type?: DockRevealerTransitionType
 }
-export class DockRevealer {
-    /* Properties of Pnl.DockRevealer */
+class DockRevealer {
+    /* Properties of Pnl-1.0.Pnl.DockRevealer */
     readonly child_revealed: boolean
     position: number
     position_set: boolean
     reveal_child: boolean
     transition_duration: number
     transition_type: DockRevealerTransitionType
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -6012,15 +6020,15 @@ export class DockRevealer {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Pnl.DockRevealer */
+    /* Fields of Pnl-1.0.Pnl.DockRevealer */
     parent_instance: Gtk.Bin
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.DockRevealer */
+    /* Methods of Pnl-1.0.Pnl.DockRevealer */
     animate_to_position(position: number, transition_duration: number): void
     get_child_revealed(): boolean
     get_position(): number
@@ -6033,12 +6041,13 @@ export class DockRevealer {
     set_reveal_child(reveal_child: boolean): void
     set_transition_duration(transition_duration: number): void
     set_transition_type(transition_type: DockRevealerTransitionType): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -6063,7 +6072,7 @@ export class DockRevealer {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -6322,15 +6331,15 @@ export class DockRevealer {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6338,13 +6347,13 @@ export class DockRevealer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -6353,7 +6362,7 @@ export class DockRevealer {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Pnl.DockRevealer */
+    /* Virtual methods of Pnl-1.0.Pnl.DockRevealer */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -6364,7 +6373,7 @@ export class DockRevealer {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -6375,7 +6384,7 @@ export class DockRevealer {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -6458,15 +6467,15 @@ export class DockRevealer {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: DockRevealer, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: DockRevealer, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -6479,7 +6488,7 @@ export class DockRevealer {
     connect(sigName: "set-focus-child", callback: (($obj: DockRevealer, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: DockRevealer, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DockRevealer) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DockRevealer) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -6687,7 +6696,7 @@ export class DockRevealer {
     connect(sigName: "window-state-event", callback: (($obj: DockRevealer, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DockRevealer, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DockRevealer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DockRevealer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6802,18 +6811,18 @@ export interface DockStack_ConstructProps extends Gtk.Box_ConstructProps {
     edge?: Gtk.PositionType
     orientation?: Gtk.Orientation
 }
-export class DockStack {
-    /* Properties of Pnl.DockStack */
+class DockStack {
+    /* Properties of Pnl-1.0.Pnl.DockStack */
     edge: Gtk.PositionType
-    /* Properties of Gtk.Box */
+    /* Properties of Gtk-3.0.Gtk.Box */
     baseline_position: Gtk.BaselinePosition
     homogeneous: boolean
     spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -6853,20 +6862,20 @@ export class DockStack {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Orientable */
+    /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Pnl.DockStack */
+    /* Fields of Pnl-1.0.Pnl.DockStack */
     parent_instance: Gtk.Box
-    /* Fields of Gtk.Box */
+    /* Fields of Gtk-3.0.Gtk.Box */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.DockStack */
+    /* Methods of Pnl-1.0.Pnl.DockStack */
     get_edge(): Gtk.PositionType
     set_edge(edge: Gtk.PositionType): void
-    /* Methods of Gtk.Box */
+    /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
     get_homogeneous(): boolean
@@ -6880,10 +6889,11 @@ export class DockStack {
     set_child_packing(child: Gtk.Widget, expand: boolean, fill: boolean, padding: number, pack_type: Gtk.PackType): void
     set_homogeneous(homogeneous: boolean): void
     set_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -6908,7 +6918,7 @@ export class DockStack {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -7167,15 +7177,15 @@ export class DockStack {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7183,13 +7193,13 @@ export class DockStack {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -7198,10 +7208,10 @@ export class DockStack {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Orientable */
+    /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
-    /* Methods of Pnl.DockItem */
+    /* Methods of Pnl-1.0.Pnl.DockItem */
     adopt(child: DockItem): boolean
     get_child_visible(child: DockItem): boolean
     get_manager(): DockManager | null
@@ -7212,7 +7222,7 @@ export class DockStack {
     set_child_visible(child: DockItem, child_visible: boolean): void
     set_manager(manager?: DockManager | null): void
     update_visibility(): void
-    /* Virtual methods of Pnl.DockStack */
+    /* Virtual methods of Pnl-1.0.Pnl.DockStack */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -7230,7 +7240,7 @@ export class DockStack {
     vfunc_set_child_visible(child: DockItem, child_visible: boolean): void
     vfunc_set_manager(manager?: DockManager | null): void
     vfunc_update_visibility(): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -7241,7 +7251,7 @@ export class DockStack {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -7324,15 +7334,15 @@ export class DockStack {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: DockStack, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: DockStack, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -7345,7 +7355,7 @@ export class DockStack {
     connect(sigName: "set-focus-child", callback: (($obj: DockStack, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: DockStack, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DockStack) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DockStack) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -7553,11 +7563,11 @@ export class DockStack {
     connect(sigName: "window-state-event", callback: (($obj: DockStack, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DockStack, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DockStack, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DockStack, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.DockItem */
+    /* Signals of Pnl-1.0.Pnl.DockItem */
     connect(sigName: "manager-set", callback: (($obj: DockStack, object: DockManager) => void)): number
     connect_after(sigName: "manager-set", callback: (($obj: DockStack, object: DockManager) => void)): number
     emit(sigName: "manager-set", object: DockManager): void
@@ -7670,19 +7680,19 @@ export class DockStack {
 export interface DockTabStrip_ConstructProps extends TabStrip_ConstructProps {
     orientation?: Gtk.Orientation
 }
-export class DockTabStrip {
-    /* Properties of Pnl.TabStrip */
+class DockTabStrip {
+    /* Properties of Pnl-1.0.Pnl.TabStrip */
     edge: Gtk.PositionType
     stack: Gtk.Stack
-    /* Properties of Gtk.Box */
+    /* Properties of Gtk-3.0.Gtk.Box */
     baseline_position: Gtk.BaselinePosition
     homogeneous: boolean
     spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -7722,24 +7732,24 @@ export class DockTabStrip {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Orientable */
+    /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Pnl.TabStrip */
+    /* Fields of Pnl-1.0.Pnl.TabStrip */
     parent_instance: Gtk.Box
-    /* Fields of Gtk.Box */
+    /* Fields of Gtk-3.0.Gtk.Box */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.TabStrip */
+    /* Methods of Pnl-1.0.Pnl.TabStrip */
     get_edge(): Gtk.PositionType
     get_show_labels(): boolean
     get_stack(): Gtk.Stack | null
     set_edge(edge: Gtk.PositionType): void
     set_show_labels(show_labels: boolean): void
     set_stack(stack: Gtk.Stack): void
-    /* Methods of Gtk.Box */
+    /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
     get_homogeneous(): boolean
@@ -7753,10 +7763,11 @@ export class DockTabStrip {
     set_child_packing(child: Gtk.Widget, expand: boolean, fill: boolean, padding: number, pack_type: Gtk.PackType): void
     set_homogeneous(homogeneous: boolean): void
     set_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7781,7 +7792,7 @@ export class DockTabStrip {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -8040,15 +8051,15 @@ export class DockTabStrip {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -8056,13 +8067,13 @@ export class DockTabStrip {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -8071,10 +8082,10 @@ export class DockTabStrip {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Orientable */
+    /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
-    /* Virtual methods of Pnl.TabStrip */
+    /* Virtual methods of Pnl-1.0.Pnl.TabStrip */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -8085,7 +8096,7 @@ export class DockTabStrip {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -8096,7 +8107,7 @@ export class DockTabStrip {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -8179,15 +8190,15 @@ export class DockTabStrip {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: DockTabStrip, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: DockTabStrip, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -8200,7 +8211,7 @@ export class DockTabStrip {
     connect(sigName: "set-focus-child", callback: (($obj: DockTabStrip, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: DockTabStrip, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DockTabStrip) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DockTabStrip) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -8408,7 +8419,7 @@ export class DockTabStrip {
     connect(sigName: "window-state-event", callback: (($obj: DockTabStrip, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DockTabStrip, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DockTabStrip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DockTabStrip, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -8523,12 +8534,12 @@ export class DockTabStrip {
 export interface DockTransientGrab_ConstructProps extends GObject.Object_ConstructProps {
     timeout?: number
 }
-export class DockTransientGrab {
-    /* Properties of Pnl.DockTransientGrab */
+class DockTransientGrab {
+    /* Properties of Pnl-1.0.Pnl.DockTransientGrab */
     timeout: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.DockTransientGrab */
+    /* Methods of Pnl-1.0.Pnl.DockTransientGrab */
     acquire(): void
     add_item(item: DockItem): void
     contains(item: DockItem): boolean
@@ -8538,15 +8549,15 @@ export class DockTransientGrab {
     remove_item(item: DockItem): void
     set_timeout(timeout: number): void
     steal_common_ancestors(other: DockTransientGrab): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -8554,21 +8565,21 @@ export class DockTransientGrab {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DockTransientGrab, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DockTransientGrab, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -8589,15 +8600,15 @@ export interface DockWidget_ConstructProps extends Gtk.Bin_ConstructProps {
     manager?: DockManager
     title?: string
 }
-export class DockWidget {
-    /* Properties of Pnl.DockWidget */
+class DockWidget {
+    /* Properties of Pnl-1.0.Pnl.DockWidget */
     manager: DockManager
     title: string
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -8637,23 +8648,24 @@ export class DockWidget {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Pnl.DockWidget */
+    /* Fields of Pnl-1.0.Pnl.DockWidget */
     parent_instance: Gtk.Bin
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.DockWidget */
+    /* Methods of Pnl-1.0.Pnl.DockWidget */
     get_title(): string
     set_title(title: string): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -8678,7 +8690,7 @@ export class DockWidget {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -8937,15 +8949,15 @@ export class DockWidget {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -8953,13 +8965,13 @@ export class DockWidget {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -8968,7 +8980,7 @@ export class DockWidget {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Pnl.DockItem */
+    /* Methods of Pnl-1.0.Pnl.DockItem */
     adopt(child: DockItem): boolean
     get_child_visible(child: DockItem): boolean
     get_manager(): DockManager | null
@@ -8979,7 +8991,7 @@ export class DockWidget {
     set_child_visible(child: DockItem, child_visible: boolean): void
     set_manager(manager?: DockManager | null): void
     update_visibility(): void
-    /* Virtual methods of Pnl.DockWidget */
+    /* Virtual methods of Pnl-1.0.Pnl.DockWidget */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -8997,7 +9009,7 @@ export class DockWidget {
     vfunc_set_child_visible(child: DockItem, child_visible: boolean): void
     vfunc_set_manager(manager?: DockManager | null): void
     vfunc_update_visibility(): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -9008,7 +9020,7 @@ export class DockWidget {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -9091,15 +9103,15 @@ export class DockWidget {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: DockWidget, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: DockWidget, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -9112,7 +9124,7 @@ export class DockWidget {
     connect(sigName: "set-focus-child", callback: (($obj: DockWidget, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: DockWidget, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DockWidget) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DockWidget) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -9320,11 +9332,11 @@ export class DockWidget {
     connect(sigName: "window-state-event", callback: (($obj: DockWidget, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DockWidget, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DockWidget, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DockWidget, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.DockItem */
+    /* Signals of Pnl-1.0.Pnl.DockItem */
     connect(sigName: "manager-set", callback: (($obj: DockWidget, object: DockManager) => void)): number
     connect_after(sigName: "manager-set", callback: (($obj: DockWidget, object: DockManager) => void)): number
     emit(sigName: "manager-set", object: DockManager): void
@@ -9430,8 +9442,8 @@ export class DockWidget {
 export interface DockWindow_ConstructProps extends Gtk.Window_ConstructProps {
     manager?: DockManager
 }
-export class DockWindow {
-    /* Properties of Gtk.Window */
+class DockWindow {
+    /* Properties of Gtk-3.0.Gtk.Window */
     accept_focus: boolean
     application: Gtk.Application
     attached_to: Gtk.Widget
@@ -9464,11 +9476,11 @@ export class DockWindow {
     type_hint: Gdk.WindowTypeHint
     urgency_hint: boolean
     window_position: Gtk.WindowPosition
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -9508,20 +9520,20 @@ export class DockWindow {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Pnl.Dock */
+    /* Properties of Pnl-1.0.Pnl.Dock */
     manager: DockManager
-    /* Fields of Pnl.DockWindow */
+    /* Fields of Pnl-1.0.Pnl.DockWindow */
     parent_instance: Gtk.Window
-    /* Fields of Gtk.Window */
+    /* Fields of Gtk-3.0.Gtk.Window */
     bin: Gtk.Bin
     priv: Gtk.WindowPrivate
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gtk.Window */
+    /* Methods of Gtk-3.0.Gtk.Window */
     activate_default(): boolean
     activate_focus(): boolean
     activate_key(event: Gdk.EventKey): boolean
@@ -9628,12 +9640,13 @@ export class DockWindow {
     unfullscreen(): void
     unmaximize(): void
     unstick(): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -9658,7 +9671,7 @@ export class DockWindow {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -9914,15 +9927,15 @@ export class DockWindow {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9930,13 +9943,13 @@ export class DockWindow {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -9945,7 +9958,7 @@ export class DockWindow {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Pnl.DockItem */
+    /* Methods of Pnl-1.0.Pnl.DockItem */
     adopt(child: DockItem): boolean
     get_child_visible(child: DockItem): boolean
     get_manager(): DockManager | null
@@ -9955,7 +9968,7 @@ export class DockWindow {
     set_child_visible(child: DockItem, child_visible: boolean): void
     set_manager(manager?: DockManager | null): void
     update_visibility(): void
-    /* Virtual methods of Pnl.DockWindow */
+    /* Virtual methods of Pnl-1.0.Pnl.DockWindow */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -9973,13 +9986,13 @@ export class DockWindow {
     vfunc_set_child_visible(child: DockItem, child_visible: boolean): void
     vfunc_set_manager(manager?: DockManager | null): void
     vfunc_update_visibility(): void
-    /* Virtual methods of Gtk.Window */
+    /* Virtual methods of Gtk-3.0.Gtk.Window */
     vfunc_activate_default(): void
     vfunc_activate_focus(): void
     vfunc_enable_debugging(toggle: boolean): boolean
     vfunc_keys_changed(): void
     vfunc_set_focus(focus?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -9990,7 +10003,7 @@ export class DockWindow {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -10073,15 +10086,15 @@ export class DockWindow {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Window */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Window */
     connect(sigName: "activate-default", callback: (($obj: DockWindow) => void)): number
     connect_after(sigName: "activate-default", callback: (($obj: DockWindow) => void)): number
     emit(sigName: "activate-default"): void
@@ -10097,7 +10110,7 @@ export class DockWindow {
     connect(sigName: "set-focus", callback: (($obj: DockWindow, widget?: Gtk.Widget | null) => void)): number
     connect_after(sigName: "set-focus", callback: (($obj: DockWindow, widget?: Gtk.Widget | null) => void)): number
     emit(sigName: "set-focus", widget?: Gtk.Widget | null): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: DockWindow, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: DockWindow, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -10110,7 +10123,7 @@ export class DockWindow {
     connect(sigName: "set-focus-child", callback: (($obj: DockWindow, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: DockWindow, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DockWindow) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DockWindow) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -10318,11 +10331,11 @@ export class DockWindow {
     connect(sigName: "window-state-event", callback: (($obj: DockWindow, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DockWindow, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DockWindow, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DockWindow, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.DockItem */
+    /* Signals of Pnl-1.0.Pnl.DockItem */
     connect(sigName: "manager-set", callback: (($obj: DockWindow, object: DockManager) => void)): number
     connect_after(sigName: "manager-set", callback: (($obj: DockWindow, object: DockManager) => void)): number
     emit(sigName: "manager-set", object: DockManager): void
@@ -10491,14 +10504,14 @@ export class DockWindow {
 export interface MultiPaned_ConstructProps extends Gtk.Container_ConstructProps {
     orientation?: Gtk.Orientation
 }
-export class MultiPaned {
-    /* Properties of Pnl.MultiPaned */
+class MultiPaned {
+    /* Properties of Pnl-1.0.Pnl.MultiPaned */
     orientation: Gtk.Orientation
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -10538,18 +10551,19 @@ export class MultiPaned {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Pnl.MultiPaned */
+    /* Fields of Pnl-1.0.Pnl.MultiPaned */
     parent_instance: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.MultiPaned */
+    /* Methods of Pnl-1.0.Pnl.MultiPaned */
     get_n_children(): number
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -10574,7 +10588,7 @@ export class MultiPaned {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -10833,15 +10847,15 @@ export class MultiPaned {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10849,13 +10863,13 @@ export class MultiPaned {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -10864,10 +10878,10 @@ export class MultiPaned {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Orientable */
+    /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
-    /* Virtual methods of Pnl.MultiPaned */
+    /* Virtual methods of Pnl-1.0.Pnl.MultiPaned */
     vfunc_resize_drag_begin(child: Gtk.Widget): void
     vfunc_resize_drag_end(child: Gtk.Widget): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -10880,7 +10894,7 @@ export class MultiPaned {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -10891,7 +10905,7 @@ export class MultiPaned {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -10974,22 +10988,22 @@ export class MultiPaned {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Pnl.MultiPaned */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Pnl-1.0.Pnl.MultiPaned */
     connect(sigName: "resize-drag-begin", callback: (($obj: MultiPaned, object: Gtk.Widget) => void)): number
     connect_after(sigName: "resize-drag-begin", callback: (($obj: MultiPaned, object: Gtk.Widget) => void)): number
     emit(sigName: "resize-drag-begin", object: Gtk.Widget): void
     connect(sigName: "resize-drag-end", callback: (($obj: MultiPaned, object: Gtk.Widget) => void)): number
     connect_after(sigName: "resize-drag-end", callback: (($obj: MultiPaned, object: Gtk.Widget) => void)): number
     emit(sigName: "resize-drag-end", object: Gtk.Widget): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: MultiPaned, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: MultiPaned, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -11002,7 +11016,7 @@ export class MultiPaned {
     connect(sigName: "set-focus-child", callback: (($obj: MultiPaned, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: MultiPaned, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: MultiPaned) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: MultiPaned) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -11210,7 +11224,7 @@ export class MultiPaned {
     connect(sigName: "window-state-event", callback: (($obj: MultiPaned, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: MultiPaned, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MultiPaned, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MultiPaned, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11320,16 +11334,16 @@ export interface Tab_ConstructProps extends Gtk.ToggleButton_ConstructProps {
     related_action?: Gtk.Action
     use_action_appearance?: boolean
 }
-export class Tab {
-    /* Properties of Pnl.Tab */
+class Tab {
+    /* Properties of Pnl-1.0.Pnl.Tab */
     edge: Gtk.PositionType
     title: string
     widget: Gtk.Widget
-    /* Properties of Gtk.ToggleButton */
+    /* Properties of Gtk-3.0.Gtk.ToggleButton */
     active: boolean
     draw_indicator: boolean
     inconsistent: boolean
-    /* Properties of Gtk.Button */
+    /* Properties of Gtk-3.0.Gtk.Button */
     always_show_image: boolean
     image: Gtk.Widget
     image_position: Gtk.PositionType
@@ -11339,11 +11353,11 @@ export class Tab {
     use_underline: boolean
     xalign: number
     yalign: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -11383,26 +11397,26 @@ export class Tab {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Actionable */
+    /* Properties of Gtk-3.0.Gtk.Actionable */
     action_name: string
     action_target: GLib.Variant
-    /* Properties of Gtk.Activatable */
+    /* Properties of Gtk-3.0.Gtk.Activatable */
     related_action: Gtk.Action
     use_action_appearance: boolean
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.Tab */
+    /* Methods of Pnl-1.0.Pnl.Tab */
     get_edge(): Gtk.PositionType
     get_title(): string
     get_widget(): Gtk.Widget | null
     set_edge(edge: Gtk.PositionType): void
     set_title(title: string): void
     set_widget(widget: Gtk.Widget): void
-    /* Methods of Gtk.ToggleButton */
+    /* Methods of Gtk-3.0.Gtk.ToggleButton */
     get_active(): boolean
     get_inconsistent(): boolean
     get_mode(): boolean
@@ -11410,7 +11424,7 @@ export class Tab {
     set_inconsistent(setting: boolean): void
     set_mode(draw_indicator: boolean): void
     toggled(): void
-    /* Methods of Gtk.Button */
+    /* Methods of Gtk-3.0.Gtk.Button */
     clicked(): void
     enter(): void
     get_alignment(): [ /* xalign */ number, /* yalign */ number ]
@@ -11435,12 +11449,13 @@ export class Tab {
     set_relief(relief: Gtk.ReliefStyle): void
     set_use_stock(use_stock: boolean): void
     set_use_underline(use_underline: boolean): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -11465,7 +11480,7 @@ export class Tab {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -11722,15 +11737,15 @@ export class Tab {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11738,26 +11753,26 @@ export class Tab {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Actionable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Actionable */
     get_action_name(): string | null
     get_action_target_value(): GLib.Variant
     set_action_name(action_name?: string | null): void
     set_action_target_value(target_value?: GLib.Variant | null): void
     set_detailed_action_name(detailed_action_name: string): void
-    /* Methods of Gtk.Activatable */
+    /* Methods of Gtk-3.0.Gtk.Activatable */
     do_set_related_action(action: Gtk.Action): void
     get_related_action(): Gtk.Action
     get_use_action_appearance(): boolean
     set_related_action(action: Gtk.Action): void
     set_use_action_appearance(use_appearance: boolean): void
     sync_action_properties(action?: Gtk.Action | null): void
-    /* Methods of Gtk.Buildable */
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -11766,7 +11781,7 @@ export class Tab {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Pnl.Tab */
+    /* Virtual methods of Pnl-1.0.Pnl.Tab */
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant
     vfunc_set_action_name(action_name?: string | null): void
@@ -11783,16 +11798,16 @@ export class Tab {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.ToggleButton */
+    /* Virtual methods of Gtk-3.0.Gtk.ToggleButton */
     vfunc_toggled(): void
-    /* Virtual methods of Gtk.Button */
+    /* Virtual methods of Gtk-3.0.Gtk.Button */
     vfunc_activate(): void
     vfunc_clicked(): void
     vfunc_enter(): void
     vfunc_leave(): void
     vfunc_pressed(): void
     vfunc_released(): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -11803,7 +11818,7 @@ export class Tab {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -11886,19 +11901,19 @@ export class Tab {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.ToggleButton */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.ToggleButton */
     connect(sigName: "toggled", callback: (($obj: Tab) => void)): number
     connect_after(sigName: "toggled", callback: (($obj: Tab) => void)): number
     emit(sigName: "toggled"): void
-    /* Signals of Gtk.Button */
+    /* Signals of Gtk-3.0.Gtk.Button */
     connect(sigName: "activate", callback: (($obj: Tab) => void)): number
     connect_after(sigName: "activate", callback: (($obj: Tab) => void)): number
     emit(sigName: "activate"): void
@@ -11917,7 +11932,7 @@ export class Tab {
     connect(sigName: "released", callback: (($obj: Tab) => void)): number
     connect_after(sigName: "released", callback: (($obj: Tab) => void)): number
     emit(sigName: "released"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: Tab, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: Tab, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -11930,7 +11945,7 @@ export class Tab {
     connect(sigName: "set-focus-child", callback: (($obj: Tab, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: Tab, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: Tab) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: Tab) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -12138,7 +12153,7 @@ export class Tab {
     connect(sigName: "window-state-event", callback: (($obj: Tab, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: Tab, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Tab, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Tab, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -12278,19 +12293,19 @@ export interface TabStrip_ConstructProps extends Gtk.Box_ConstructProps {
     stack?: Gtk.Stack
     orientation?: Gtk.Orientation
 }
-export class TabStrip {
-    /* Properties of Pnl.TabStrip */
+class TabStrip {
+    /* Properties of Pnl-1.0.Pnl.TabStrip */
     edge: Gtk.PositionType
     stack: Gtk.Stack
-    /* Properties of Gtk.Box */
+    /* Properties of Gtk-3.0.Gtk.Box */
     baseline_position: Gtk.BaselinePosition
     homogeneous: boolean
     spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -12330,24 +12345,24 @@ export class TabStrip {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Orientable */
+    /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Pnl.TabStrip */
+    /* Fields of Pnl-1.0.Pnl.TabStrip */
     parent_instance: Gtk.Box
-    /* Fields of Gtk.Box */
+    /* Fields of Gtk-3.0.Gtk.Box */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pnl.TabStrip */
+    /* Methods of Pnl-1.0.Pnl.TabStrip */
     get_edge(): Gtk.PositionType
     get_show_labels(): boolean
     get_stack(): Gtk.Stack | null
     set_edge(edge: Gtk.PositionType): void
     set_show_labels(show_labels: boolean): void
     set_stack(stack: Gtk.Stack): void
-    /* Methods of Gtk.Box */
+    /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
     get_homogeneous(): boolean
@@ -12361,10 +12376,11 @@ export class TabStrip {
     set_child_packing(child: Gtk.Widget, expand: boolean, fill: boolean, padding: number, pack_type: Gtk.PackType): void
     set_homogeneous(homogeneous: boolean): void
     set_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -12389,7 +12405,7 @@ export class TabStrip {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -12648,15 +12664,15 @@ export class TabStrip {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -12664,13 +12680,13 @@ export class TabStrip {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -12679,10 +12695,10 @@ export class TabStrip {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Orientable */
+    /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
-    /* Virtual methods of Pnl.TabStrip */
+    /* Virtual methods of Pnl-1.0.Pnl.TabStrip */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -12693,7 +12709,7 @@ export class TabStrip {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -12704,7 +12720,7 @@ export class TabStrip {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -12787,15 +12803,15 @@ export class TabStrip {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: TabStrip, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: TabStrip, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -12808,7 +12824,7 @@ export class TabStrip {
     connect(sigName: "set-focus-child", callback: (($obj: TabStrip, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: TabStrip, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: TabStrip) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: TabStrip) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -13016,7 +13032,7 @@ export class TabStrip {
     connect(sigName: "window-state-event", callback: (($obj: TabStrip, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: TabStrip, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TabStrip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TabStrip, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -13128,13 +13144,13 @@ export class TabStrip {
     static new(orientation: Gtk.Orientation, spacing: number): TabStrip
     static $gtype: GObject.Type
 }
-export abstract class AnimationClass {
-    /* Fields of Pnl.AnimationClass */
+abstract class AnimationClass {
+    /* Fields of Pnl-1.0.Pnl.AnimationClass */
     parent_class: GObject.InitiallyUnownedClass
     static name: string
 }
-export abstract class DockBinClass {
-    /* Fields of Pnl.DockBinClass */
+abstract class DockBinClass {
+    /* Fields of Pnl-1.0.Pnl.DockBinClass */
     parent: Gtk.ContainerClass
     padding1: () => void
     padding2: () => void
@@ -13146,8 +13162,8 @@ export abstract class DockBinClass {
     padding8: () => void
     static name: string
 }
-export abstract class DockBinEdgeClass {
-    /* Fields of Pnl.DockBinEdgeClass */
+abstract class DockBinEdgeClass {
+    /* Fields of Pnl-1.0.Pnl.DockBinEdgeClass */
     parent: DockRevealerClass
     move_to_bin_child: (self: DockBinEdge) => void
     padding1: () => void
@@ -13160,13 +13176,13 @@ export abstract class DockBinEdgeClass {
     padding8: () => void
     static name: string
 }
-export abstract class DockInterface {
-    /* Fields of Pnl.DockInterface */
+abstract class DockInterface {
+    /* Fields of Pnl-1.0.Pnl.DockInterface */
     parent: GObject.TypeInterface
     static name: string
 }
-export abstract class DockItemInterface {
-    /* Fields of Pnl.DockItemInterface */
+abstract class DockItemInterface {
+    /* Fields of Pnl-1.0.Pnl.DockItemInterface */
     parent: GObject.TypeInterface
     set_manager: (self: DockItem, manager?: DockManager | null) => void
     get_manager: (self: DockItem) => DockManager | null
@@ -13177,8 +13193,8 @@ export abstract class DockItemInterface {
     set_child_visible: (self: DockItem, child: DockItem, child_visible: boolean) => void
     static name: string
 }
-export abstract class DockManagerClass {
-    /* Fields of Pnl.DockManagerClass */
+abstract class DockManagerClass {
+    /* Fields of Pnl-1.0.Pnl.DockManagerClass */
     parent: GObject.ObjectClass
     register_dock: (self: DockManager, dock: Dock) => void
     unregister_dock: (self: DockManager, dock: Dock) => void
@@ -13192,8 +13208,8 @@ export abstract class DockManagerClass {
     padding8: () => void
     static name: string
 }
-export abstract class DockOverlayClass {
-    /* Fields of Pnl.DockOverlayClass */
+abstract class DockOverlayClass {
+    /* Fields of Pnl-1.0.Pnl.DockOverlayClass */
     parent: Gtk.EventBoxClass
     hide_edges: (self: DockOverlay) => void
     padding1: () => void
@@ -13206,13 +13222,13 @@ export abstract class DockOverlayClass {
     padding8: () => void
     static name: string
 }
-export abstract class DockOverlayEdgeClass {
-    /* Fields of Pnl.DockOverlayEdgeClass */
+abstract class DockOverlayEdgeClass {
+    /* Fields of Pnl-1.0.Pnl.DockOverlayEdgeClass */
     parent_class: Gtk.BinClass
     static name: string
 }
-export abstract class DockPanedClass {
-    /* Fields of Pnl.DockPanedClass */
+abstract class DockPanedClass {
+    /* Fields of Pnl-1.0.Pnl.DockPanedClass */
     parent: MultiPanedClass
     padding1: () => void
     padding2: () => void
@@ -13224,8 +13240,8 @@ export abstract class DockPanedClass {
     padding8: () => void
     static name: string
 }
-export abstract class DockRevealerClass {
-    /* Fields of Pnl.DockRevealerClass */
+abstract class DockRevealerClass {
+    /* Fields of Pnl-1.0.Pnl.DockRevealerClass */
     parent: Gtk.BinClass
     padding1: () => void
     padding2: () => void
@@ -13237,23 +13253,23 @@ export abstract class DockRevealerClass {
     padding8: () => void
     static name: string
 }
-export abstract class DockStackClass {
-    /* Fields of Pnl.DockStackClass */
+abstract class DockStackClass {
+    /* Fields of Pnl-1.0.Pnl.DockStackClass */
     parent: Gtk.BoxClass
     static name: string
 }
-export abstract class DockTabStripClass {
-    /* Fields of Pnl.DockTabStripClass */
+abstract class DockTabStripClass {
+    /* Fields of Pnl-1.0.Pnl.DockTabStripClass */
     parent_class: TabStripClass
     static name: string
 }
-export abstract class DockTransientGrabClass {
-    /* Fields of Pnl.DockTransientGrabClass */
+abstract class DockTransientGrabClass {
+    /* Fields of Pnl-1.0.Pnl.DockTransientGrabClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class DockWidgetClass {
-    /* Fields of Pnl.DockWidgetClass */
+abstract class DockWidgetClass {
+    /* Fields of Pnl-1.0.Pnl.DockWidgetClass */
     parent: Gtk.BinClass
     padding1: () => void
     padding2: () => void
@@ -13265,13 +13281,13 @@ export abstract class DockWidgetClass {
     padding8: () => void
     static name: string
 }
-export abstract class DockWindowClass {
-    /* Fields of Pnl.DockWindowClass */
+abstract class DockWindowClass {
+    /* Fields of Pnl-1.0.Pnl.DockWindowClass */
     parent: Gtk.WindowClass
     static name: string
 }
-export abstract class MultiPanedClass {
-    /* Fields of Pnl.MultiPanedClass */
+abstract class MultiPanedClass {
+    /* Fields of Pnl-1.0.Pnl.MultiPanedClass */
     parent: Gtk.ContainerClass
     resize_drag_begin: (self: MultiPaned, child: Gtk.Widget) => void
     resize_drag_end: (self: MultiPaned, child: Gtk.Widget) => void
@@ -13285,13 +13301,15 @@ export abstract class MultiPanedClass {
     padding8: () => void
     static name: string
 }
-export abstract class TabClass {
-    /* Fields of Pnl.TabClass */
+abstract class TabClass {
+    /* Fields of Pnl-1.0.Pnl.TabClass */
     parent_class: Gtk.ToggleButtonClass
     static name: string
 }
-export abstract class TabStripClass {
-    /* Fields of Pnl.TabStripClass */
+abstract class TabStripClass {
+    /* Fields of Pnl-1.0.Pnl.TabStripClass */
     parent: Gtk.BoxClass
     static name: string
 }
+}
+export default Pnl;

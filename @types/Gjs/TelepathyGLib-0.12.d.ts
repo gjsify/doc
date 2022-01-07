@@ -3,11 +3,13 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum AccessControlType {
+export namespace TelepathyGLib {
+
+enum AccessControlType {
     WHITELIST,
     PUBLISH_LIST,
     GROUP,
@@ -16,21 +18,21 @@ export enum AccessControlType {
     CLOSED,
     NOT_UNDERSTOOD,
 }
-export enum CMInfoSource {
+enum CMInfoSource {
     NONE,
     FILE,
     LIVE,
 }
-export enum CallContentDisposition {
+enum CallContentDisposition {
     NONE,
     INITIAL,
 }
-export enum CallContentPacketizationType {
+enum CallContentPacketizationType {
     RTP,
     RAW,
     MSN_WEBCAM,
 }
-export enum CallState {
+enum CallState {
     UNKNOWN,
     PENDING_INITIATOR,
     INITIALISING,
@@ -39,7 +41,7 @@ export enum CallState {
     ACTIVE,
     ENDED,
 }
-export enum CallStateChangeReason {
+enum CallStateChangeReason {
     UNKNOWN,
     PROGRESS_MADE,
     USER_REQUESTED,
@@ -55,7 +57,7 @@ export enum CallStateChangeReason {
     MEDIA_ERROR,
     CONNECTIVITY_ERROR,
 }
-export enum CallStreamCandidateType {
+enum CallStreamCandidateType {
     NONE,
     HOST,
     SERVER_REFLEXIVE,
@@ -63,33 +65,33 @@ export enum CallStreamCandidateType {
     RELAY,
     MULTICAST,
 }
-export enum CaptchaCancelReason {
+enum CaptchaCancelReason {
     USER_CANCELLED,
     NOT_SUPPORTED,
     SERVICE_CONFUSED,
 }
-export enum CaptchaStatus {
+enum CaptchaStatus {
     LOCAL_PENDING,
     REMOTE_PENDING,
     SUCCEEDED,
     TRY_AGAIN,
     FAILED,
 }
-export enum ChannelChatState {
+enum ChannelChatState {
     GONE,
     INACTIVE,
     ACTIVE,
     PAUSED,
     COMPOSING,
 }
-export enum ChannelContactSearchState {
+enum ChannelContactSearchState {
     NOT_STARTED,
     IN_PROGRESS,
     MORE_AVAILABLE,
     COMPLETED,
     FAILED,
 }
-export enum ChannelGroupChangeReason {
+enum ChannelGroupChangeReason {
     NONE,
     OFFLINE,
     KICKED,
@@ -103,14 +105,14 @@ export enum ChannelGroupChangeReason {
     PERMISSION_DENIED,
     SEPARATED,
 }
-export enum ChannelTextMessageType {
+enum ChannelTextMessageType {
     NORMAL,
     ACTION,
     NOTICE,
     AUTO_REPLY,
     DELIVERY_REPORT,
 }
-export enum ChannelTextSendError {
+enum ChannelTextSendError {
     UNKNOWN,
     OFFLINE,
     INVALID_CONTACT,
@@ -118,7 +120,7 @@ export enum ChannelTextSendError {
     TOO_LONG,
     NOT_IMPLEMENTED,
 }
-export enum ConnectionPresenceType {
+enum ConnectionPresenceType {
     UNSET,
     OFFLINE,
     AVAILABLE,
@@ -129,12 +131,12 @@ export enum ConnectionPresenceType {
     UNKNOWN,
     ERROR,
 }
-export enum ConnectionStatus {
+enum ConnectionStatus {
     CONNECTED,
     CONNECTING,
     DISCONNECTED,
 }
-export enum ConnectionStatusReason {
+enum ConnectionStatusReason {
     NONE_SPECIFIED,
     REQUESTED,
     NETWORK_ERROR,
@@ -153,7 +155,7 @@ export enum ConnectionStatusReason {
     CERT_INSECURE,
     CERT_LIMIT_EXCEEDED,
 }
-export enum ContactFeature {
+enum ContactFeature {
     ALIAS,
     AVATAR_TOKEN,
     PRESENCE,
@@ -166,19 +168,19 @@ export enum ContactFeature {
     CONTACT_GROUPS,
     CONTACT_BLOCKING,
 }
-export enum ContactListState {
+enum ContactListState {
     NONE,
     WAITING,
     FAILURE,
     SUCCESS,
 }
-export enum ContactMetadataStorageType {
+enum ContactMetadataStorageType {
     NONE,
     SUBSCRIBED_OR_PENDING,
     SUBSCRIBED,
     ANYONE,
 }
-export enum DBusError {
+enum DBusError {
     UNKNOWN_REMOTE_ERROR,
     PROXY_UNREFERENCED,
     NO_INTERFACE,
@@ -191,7 +193,7 @@ export enum DBusError {
     CANCELLED,
     INCONSISTENT,
 }
-export enum DTMFEvent {
+enum DTMFEvent {
     DIGIT_0,
     DIGIT_1,
     DIGIT_2,
@@ -209,7 +211,7 @@ export enum DTMFEvent {
     LETTER_C,
     LETTER_D,
 }
-export enum DebugLevel {
+enum DebugLevel {
     ERROR,
     CRITICAL,
     WARNING,
@@ -217,7 +219,7 @@ export enum DebugLevel {
     INFO,
     DEBUG,
 }
-export enum DeliveryStatus {
+enum DeliveryStatus {
     UNKNOWN,
     DELIVERED,
     TEMPORARILY_FAILED,
@@ -226,7 +228,7 @@ export enum DeliveryStatus {
     READ,
     DELETED,
 }
-export enum Error {
+enum Error {
     NETWORK_ERROR,
     NOT_IMPLEMENTED,
     INVALID_ARGUMENT,
@@ -282,13 +284,13 @@ export enum Error {
     MEDIA_STREAMING_ERROR,
     CAPTCHA_NOT_SUPPORTED,
 }
-export enum FileHashType {
+enum FileHashType {
     NONE,
     MD5,
     SHA1,
     SHA256,
 }
-export enum FileTransferState {
+enum FileTransferState {
     NONE,
     PENDING,
     ACCEPTED,
@@ -296,7 +298,7 @@ export enum FileTransferState {
     COMPLETED,
     CANCELLED,
 }
-export enum FileTransferStateChangeReason {
+enum FileTransferStateChangeReason {
     NONE,
     REQUESTED,
     LOCAL_STOPPED,
@@ -304,39 +306,39 @@ export enum FileTransferStateChangeReason {
     LOCAL_ERROR,
     REMOTE_ERROR,
 }
-export enum HTTPMethod {
+enum HTTPMethod {
     GET,
     POST,
 }
-export enum HandleType {
+enum HandleType {
     NONE,
     CONTACT,
     ROOM,
     LIST,
     GROUP,
 }
-export enum LocalHoldState {
+enum LocalHoldState {
     UNHELD,
     HELD,
     PENDING_HOLD,
     PENDING_UNHOLD,
 }
-export enum LocalHoldStateReason {
+enum LocalHoldStateReason {
     NONE,
     REQUESTED,
     RESOURCE_NOT_AVAILABLE,
 }
-export enum MediaStreamBaseProto {
+enum MediaStreamBaseProto {
     UDP,
     TCP,
 }
-export enum MediaStreamDirection {
+enum MediaStreamDirection {
     NONE,
     SEND,
     RECEIVE,
     BIDIRECTIONAL,
 }
-export enum MediaStreamError {
+enum MediaStreamError {
     UNKNOWN,
     EOS,
     CODEC_NEGOTIATION_FAILED,
@@ -346,35 +348,35 @@ export enum MediaStreamError {
     INVALID_CM_BEHAVIOR,
     MEDIA_ERROR,
 }
-export enum MediaStreamState {
+enum MediaStreamState {
     DISCONNECTED,
     CONNECTING,
     CONNECTED,
 }
-export enum MediaStreamTransportType {
+enum MediaStreamTransportType {
     LOCAL,
     DERIVED,
     RELAY,
 }
-export enum MediaStreamType {
+enum MediaStreamType {
     AUDIO,
     VIDEO,
 }
-export enum RCPTXRRTTMode {
+enum RCPTXRRTTMode {
     ALL,
     SENDER,
 }
-export enum RichPresenceAccessControlType {
+enum RichPresenceAccessControlType {
     WHITELIST,
     PUBLISH_LIST,
     GROUP,
     OPEN,
 }
-export enum SASLAbortReason {
+enum SASLAbortReason {
     INVALID_CHALLENGE,
     USER_ABORT,
 }
-export enum SASLStatus {
+enum SASLStatus {
     NOT_STARTED,
     IN_PROGRESS,
     SERVER_SUCCEEDED,
@@ -383,48 +385,48 @@ export enum SASLStatus {
     SERVER_FAILED,
     CLIENT_FAILED,
 }
-export enum SendingState {
+enum SendingState {
     NONE,
     PENDING_SEND,
     SENDING,
     PENDING_STOP_SENDING,
 }
-export enum ServicePointType {
+enum ServicePointType {
     NONE,
     EMERGENCY,
     COUNSELING,
 }
-export enum SocketAccessControl {
+enum SocketAccessControl {
     LOCALHOST,
     PORT,
     NETMASK,
     CREDENTIALS,
 }
-export enum SocketAddressType {
+enum SocketAddressType {
     UNIX,
     ABSTRACT_UNIX,
     IPV4,
     IPV6,
 }
-export enum StreamComponent {
+enum StreamComponent {
     UNKNOWN,
     DATA,
     CONTROL,
 }
-export enum StreamEndpointState {
+enum StreamEndpointState {
     CONNECTING,
     PROVISIONALLY_CONNECTED,
     FULLY_CONNECTED,
     EXHAUSTED_CANDIDATES,
     FAILED,
 }
-export enum StreamFlowState {
+enum StreamFlowState {
     STOPPED,
     PENDING_START,
     PENDING_STOP,
     STARTED,
 }
-export enum StreamTransportType {
+enum StreamTransportType {
     UNKNOWN,
     RAW_UDP,
     ICE,
@@ -433,14 +435,14 @@ export enum StreamTransportType {
     SHM,
     MULTICAST,
 }
-export enum SubscriptionState {
+enum SubscriptionState {
     UNKNOWN,
     NO,
     REMOVED_REMOTELY,
     ASK,
     YES,
 }
-export enum TLSCertificateRejectReason {
+enum TLSCertificateRejectReason {
     UNKNOWN,
     UNTRUSTED,
     EXPIRED,
@@ -452,47 +454,47 @@ export enum TLSCertificateRejectReason {
     INSECURE,
     LIMIT_EXCEEDED,
 }
-export enum TLSCertificateState {
+enum TLSCertificateState {
     PENDING,
     ACCEPTED,
     REJECTED,
 }
-export enum TubeChannelState {
+enum TubeChannelState {
     LOCAL_PENDING,
     REMOTE_PENDING,
     OPEN,
     NOT_OFFERED,
 }
-export enum TubeState {
+enum TubeState {
     LOCAL_PENDING,
     REMOTE_PENDING,
     OPEN,
 }
-export enum TubeType {
+enum TubeType {
     DBUS,
     STREAM,
 }
-export enum AnonymityModeFlags {
+enum AnonymityModeFlags {
     CLIENT_INFO,
     SHOW_CLIENT_INFO,
     NETWORK_INFO,
 }
-export enum CallFlags {
+enum CallFlags {
     LOCALLY_HELD,
     LOCALLY_RINGING,
     LOCALLY_QUEUED,
     FORWARDED,
     CLEARING,
 }
-export enum CallMemberFlags {
+enum CallMemberFlags {
     RINGING,
     HELD,
     CONFERENCE_HOST,
 }
-export enum CaptchaFlags {
+enum CaptchaFlags {
     CAPTCHA_FLAGS_REQUIRED,
 }
-export enum ChannelCallStateFlags {
+enum ChannelCallStateFlags {
     RINGING,
     QUEUED,
     HELD,
@@ -500,7 +502,7 @@ export enum ChannelCallStateFlags {
     IN_PROGRESS,
     CONFERENCE_HOST,
 }
-export enum ChannelGroupFlags {
+enum ChannelGroupFlags {
     CAN_ADD,
     CAN_REMOVE,
     CAN_RESCIND,
@@ -516,7 +518,7 @@ export enum ChannelGroupFlags {
     MEMBERS_CHANGED_DETAILED,
     MESSAGE_DEPART,
 }
-export enum ChannelMediaCapabilities {
+enum ChannelMediaCapabilities {
     AUDIO,
     VIDEO,
     NAT_TRAVERSAL_STUN,
@@ -524,64 +526,64 @@ export enum ChannelMediaCapabilities {
     NAT_TRAVERSAL_ICE_UDP,
     IMMUTABLE_STREAMS,
 }
-export enum ChannelPasswordFlags {
+enum ChannelPasswordFlags {
     PROVIDE,
     HINT,
 }
-export enum ChannelTextMessageFlags {
+enum ChannelTextMessageFlags {
     TRUNCATED,
     NON_TEXT_CONTENT,
     SCROLLBACK,
     RESCUED,
 }
-export enum ConnMgrParamFlags {
+enum ConnMgrParamFlags {
     REQUIRED,
     REGISTER,
     HAS_DEFAULT,
     SECRET,
     DBUS_PROPERTY,
 }
-export enum ConnectionAliasFlags {
+enum ConnectionAliasFlags {
     CONNECTION_ALIAS_FLAG_USER_SET,
 }
-export enum ConnectionCapabilityFlags {
+enum ConnectionCapabilityFlags {
     CREATE,
     INVITE,
 }
-export enum ContactBlockingCapabilities {
+enum ContactBlockingCapabilities {
     CONTACT_BLOCKING_CAPABILITY_CAN_REPORT_ABUSIVE,
 }
-export enum ContactInfoFieldFlags {
+enum ContactInfoFieldFlags {
     PARAMETERS_EXACT,
     OVERWRITTEN_BY_NICKNAME,
 }
-export enum ContactInfoFlags {
+enum ContactInfoFlags {
     CAN_SET,
     PUSH,
 }
-export enum DBusNameType {
+enum DBusNameType {
     UNIQUE,
     WELL_KNOWN,
     BUS_DAEMON,
     NOT_BUS_DAEMON,
     ANY,
 }
-export enum DBusPropertiesMixinFlags {
+enum DBusPropertiesMixinFlags {
     READ,
     WRITE,
     EMITS_CHANGED,
     EMITS_INVALIDATED,
 }
-export enum DeliveryReportingSupportFlags {
+enum DeliveryReportingSupportFlags {
     FAILURES,
     SUCCESSES,
     READ,
     DELETED,
 }
-export enum LocationFeatures {
+enum LocationFeatures {
     LOCATION_FEATURE_CAN_SET,
 }
-export enum MailNotificationFlags {
+enum MailNotificationFlags {
     SUPPORTS_UNREAD_MAIL_COUNT,
     SUPPORTS_UNREAD_MAILS,
     EMITS_MAILS_RECEIVED,
@@ -589,31 +591,31 @@ export enum MailNotificationFlags {
     SUPPORTS_REQUEST_MAIL_URL,
     THREAD_BASED,
 }
-export enum MediaStreamPendingSend {
+enum MediaStreamPendingSend {
     LOCAL_SEND,
     REMOTE_SEND,
 }
-export enum MessagePartSupportFlags {
+enum MessagePartSupportFlags {
     ONE_ATTACHMENT,
     MULTIPLE_ATTACHMENTS,
 }
-export enum MessageSendingFlags {
+enum MessageSendingFlags {
     DELIVERY,
     READ,
     DELETED,
 }
-export enum PropertyFlags {
+enum PropertyFlags {
     READ,
     WRITE,
 }
-export enum RTCPXRStatisticsFlags {
+enum RTCPXRStatisticsFlags {
     LOSS,
     DUPLICATE,
     JITTER,
     TTL,
     HL,
 }
-export enum StorageRestrictionFlags {
+enum StorageRestrictionFlags {
     PARAMETERS,
     ENABLED,
     PRESENCE,
@@ -1130,264 +1132,264 @@ export const TOKEN_CONNECTION_INTERFACE_SIMPLE_PRESENCE_PRESENCE: string
 export const UNKNOWN_CONNECTION_STATUS: ConnectionStatus
 export const UNKNOWN_HANDLE_TYPE: HandleType
 export const USER_ACTION_TIME_NOT_USER_ACTION: number
-export function asv_get_boolean(asv: GLib.HashTable, key: string): [ /* returnType */ boolean, /* valid */ boolean ]
-export function asv_get_boxed(asv: GLib.HashTable, key: string, type: GObject.Type): object | null
-export function asv_get_bytes(asv: GLib.HashTable, key: string): Uint8Array[] | null
-export function asv_get_double(asv: GLib.HashTable, key: string): [ /* returnType */ number, /* valid */ boolean ]
-export function asv_get_int32(asv: GLib.HashTable, key: string): [ /* returnType */ number, /* valid */ boolean ]
-export function asv_get_int64(asv: GLib.HashTable, key: string): [ /* returnType */ number, /* valid */ boolean ]
-export function asv_get_object_path(asv: GLib.HashTable, key: string): string | null
-export function asv_get_string(asv: GLib.HashTable, key: string): string | null
-export function asv_get_strv(asv: GLib.HashTable, key: string): string[] | null
-export function asv_get_uint32(asv: GLib.HashTable, key: string): [ /* returnType */ number, /* valid */ boolean ]
-export function asv_get_uint64(asv: GLib.HashTable, key: string): [ /* returnType */ number, /* valid */ boolean ]
-export function dbus_check_valid_bus_name(name: string, allow_types: DBusNameType): boolean
-export function dbus_check_valid_interface_name(name: string): boolean
-export function dbus_check_valid_member_name(name: string): boolean
-export function dbus_check_valid_object_path(path: string): boolean
-export function dbus_errors_quark(): GLib.Quark
-export function dbus_properties_mixin_class_init(cls: GObject.ObjectClass, offset: number): void
-export function dbus_properties_mixin_dup_all(self: GObject.Object, interface_name: string): GLib.HashTable
-export function dbus_properties_mixin_emit_properties_changed(object: GObject.Object, interface_name: string, properties?: string | null): void
-export function dbus_properties_mixin_get(self: GObject.Object, interface_name: string, property_name: string, value: any): boolean
-export function dbus_properties_mixin_getter_gobject_properties(object: GObject.Object, iface: GLib.Quark, name: GLib.Quark, value: any, getter_data?: object | null): void
-export function dbus_properties_mixin_iface_init(g_iface?: object | null, iface_data?: object | null): void
-export function dbus_properties_mixin_set(self: GObject.Object, interface_name: string, property_name: string, value: any): boolean
-export function dbus_properties_mixin_setter_gobject_properties(object: GObject.Object, iface: GLib.Quark, name: GLib.Quark, value: any, setter_data?: object | null): boolean
-export function debug_divert_messages(filename: string): void
-export function debug_set_flags(flags_string: string): void
-export function debug_set_persistent(persistent: boolean): void
-export function debug_timestamped_log_handler(log_domain: string, log_level: GLib.LogLevelFlags, message: string, ignored?: object | null): void
-export function error_get_dbus_name(error: Error): string
-export function error_quark(): GLib.Quark
-export function errors_disconnected_quark(): GLib.Quark
-export function errors_removed_from_group_quark(): GLib.Quark
-export function escape_as_identifier(name: string): string
-export function handle_ensure(self: HandleRepoIface, id: string, context?: object | null): Handle
-export function handle_type_is_valid(type: HandleType): boolean
-export function handle_type_to_string(type: HandleType): string
-export function iface_quark_account(): GLib.Quark
-export function iface_quark_account_interface_addressing(): GLib.Quark
-export function iface_quark_account_interface_avatar(): GLib.Quark
-export function iface_quark_account_interface_storage(): GLib.Quark
-export function iface_quark_account_manager(): GLib.Quark
-export function iface_quark_authentication_tls_certificate(): GLib.Quark
-export function iface_quark_call_content(): GLib.Quark
-export function iface_quark_call_content_interface_audio_control(): GLib.Quark
-export function iface_quark_call_content_interface_dtmf(): GLib.Quark
-export function iface_quark_call_content_interface_media(): GLib.Quark
-export function iface_quark_call_content_interface_video_control(): GLib.Quark
-export function iface_quark_call_content_media_description(): GLib.Quark
-export function iface_quark_call_content_media_description_interface_rtcp_extended_reports(): GLib.Quark
-export function iface_quark_call_content_media_description_interface_rtcp_feedback(): GLib.Quark
-export function iface_quark_call_content_media_description_interface_rtp_header_extensions(): GLib.Quark
-export function iface_quark_call_stream(): GLib.Quark
-export function iface_quark_call_stream_endpoint(): GLib.Quark
-export function iface_quark_call_stream_interface_media(): GLib.Quark
-export function iface_quark_channel(): GLib.Quark
-export function iface_quark_channel_dispatch_operation(): GLib.Quark
-export function iface_quark_channel_dispatcher(): GLib.Quark
-export function iface_quark_channel_dispatcher_interface_messages1(): GLib.Quark
-export function iface_quark_channel_dispatcher_interface_operation_list(): GLib.Quark
-export function iface_quark_channel_interface_anonymity(): GLib.Quark
-export function iface_quark_channel_interface_call_state(): GLib.Quark
-export function iface_quark_channel_interface_captcha_authentication(): GLib.Quark
-export function iface_quark_channel_interface_chat_state(): GLib.Quark
-export function iface_quark_channel_interface_conference(): GLib.Quark
-export function iface_quark_channel_interface_destroyable(): GLib.Quark
-export function iface_quark_channel_interface_dtmf(): GLib.Quark
-export function iface_quark_channel_interface_file_transfer_metadata(): GLib.Quark
-export function iface_quark_channel_interface_group(): GLib.Quark
-export function iface_quark_channel_interface_hold(): GLib.Quark
-export function iface_quark_channel_interface_media_signalling(): GLib.Quark
-export function iface_quark_channel_interface_messages(): GLib.Quark
-export function iface_quark_channel_interface_password(): GLib.Quark
-export function iface_quark_channel_interface_room(): GLib.Quark
-export function iface_quark_channel_interface_room_config(): GLib.Quark
-export function iface_quark_channel_interface_sasl_authentication(): GLib.Quark
-export function iface_quark_channel_interface_securable(): GLib.Quark
-export function iface_quark_channel_interface_service_point(): GLib.Quark
-export function iface_quark_channel_interface_sms(): GLib.Quark
-export function iface_quark_channel_interface_subject(): GLib.Quark
-export function iface_quark_channel_interface_tube(): GLib.Quark
-export function iface_quark_channel_request(): GLib.Quark
-export function iface_quark_channel_type_call(): GLib.Quark
-export function iface_quark_channel_type_contact_list(): GLib.Quark
-export function iface_quark_channel_type_contact_search(): GLib.Quark
-export function iface_quark_channel_type_dbus_tube(): GLib.Quark
-export function iface_quark_channel_type_file_transfer(): GLib.Quark
-export function iface_quark_channel_type_room_list(): GLib.Quark
-export function iface_quark_channel_type_server_authentication(): GLib.Quark
-export function iface_quark_channel_type_server_tls_connection(): GLib.Quark
-export function iface_quark_channel_type_stream_tube(): GLib.Quark
-export function iface_quark_channel_type_streamed_media(): GLib.Quark
-export function iface_quark_channel_type_text(): GLib.Quark
-export function iface_quark_channel_type_tubes(): GLib.Quark
-export function iface_quark_client(): GLib.Quark
-export function iface_quark_client_approver(): GLib.Quark
-export function iface_quark_client_handler(): GLib.Quark
-export function iface_quark_client_interface_requests(): GLib.Quark
-export function iface_quark_client_observer(): GLib.Quark
-export function iface_quark_connection(): GLib.Quark
-export function iface_quark_connection_interface_addressing(): GLib.Quark
-export function iface_quark_connection_interface_aliasing(): GLib.Quark
-export function iface_quark_connection_interface_anonymity(): GLib.Quark
-export function iface_quark_connection_interface_avatars(): GLib.Quark
-export function iface_quark_connection_interface_balance(): GLib.Quark
-export function iface_quark_connection_interface_capabilities(): GLib.Quark
-export function iface_quark_connection_interface_cellular(): GLib.Quark
-export function iface_quark_connection_interface_client_types(): GLib.Quark
-export function iface_quark_connection_interface_contact_blocking(): GLib.Quark
-export function iface_quark_connection_interface_contact_capabilities(): GLib.Quark
-export function iface_quark_connection_interface_contact_groups(): GLib.Quark
-export function iface_quark_connection_interface_contact_info(): GLib.Quark
-export function iface_quark_connection_interface_contact_list(): GLib.Quark
-export function iface_quark_connection_interface_contacts(): GLib.Quark
-export function iface_quark_connection_interface_location(): GLib.Quark
-export function iface_quark_connection_interface_mail_notification(): GLib.Quark
-export function iface_quark_connection_interface_power_saving(): GLib.Quark
-export function iface_quark_connection_interface_presence(): GLib.Quark
-export function iface_quark_connection_interface_renaming(): GLib.Quark
-export function iface_quark_connection_interface_requests(): GLib.Quark
-export function iface_quark_connection_interface_service_point(): GLib.Quark
-export function iface_quark_connection_interface_sidecars1(): GLib.Quark
-export function iface_quark_connection_interface_simple_presence(): GLib.Quark
-export function iface_quark_connection_manager(): GLib.Quark
-export function iface_quark_dbus_daemon(): GLib.Quark
-export function iface_quark_dbus_introspectable(): GLib.Quark
-export function iface_quark_dbus_peer(): GLib.Quark
-export function iface_quark_dbus_properties(): GLib.Quark
-export function iface_quark_debug(): GLib.Quark
-export function iface_quark_media_session_handler(): GLib.Quark
-export function iface_quark_media_stream_handler(): GLib.Quark
-export function iface_quark_properties_interface(): GLib.Quark
-export function iface_quark_protocol(): GLib.Quark
-export function iface_quark_protocol_interface_addressing(): GLib.Quark
-export function iface_quark_protocol_interface_avatars(): GLib.Quark
-export function iface_quark_protocol_interface_presence(): GLib.Quark
-export function intset_from_array(array: number[]): Intset
-export function list_connection_managers(bus_daemon: DBusDaemon, callback: ConnectionManagerListCb, weak_object?: GObject.Object | null): void
-export function list_connection_managers_async(dbus_daemon?: DBusDaemon | null, callback?: Gio.AsyncReadyCallback | null): void
-export function list_connection_managers_finish(result: Gio.AsyncResult): ConnectionManager[]
-export function list_connection_names(bus_daemon: DBusDaemon, callback: ConnectionNameListCb, weak_object?: GObject.Object | null): void
-export function simple_async_report_success_in_idle(source?: GObject.Object | null, callback?: Gio.AsyncReadyCallback | null, source_tag?: object | null): void
-export function svc_interface_set_dbus_properties_info(g_interface: GObject.Type, info: DBusPropertiesMixinIfaceInfo): void
-export function user_action_time_from_x11(x11_time: number): number
-export function user_action_time_should_present(user_action_time: number): [ /* returnType */ boolean, /* x11_time */ number | null ]
-export function utf8_make_valid(name: string): string
-export function value_array_free(va: GObject.ValueArray): void
-export interface AccountChannelRequestDelegatedChannelCb {
+function asv_get_boolean(asv: GLib.HashTable, key: string): [ /* returnType */ boolean, /* valid */ boolean ]
+function asv_get_boxed(asv: GLib.HashTable, key: string, type: GObject.Type): object | null
+function asv_get_bytes(asv: GLib.HashTable, key: string): Uint8Array[] | null
+function asv_get_double(asv: GLib.HashTable, key: string): [ /* returnType */ number, /* valid */ boolean ]
+function asv_get_int32(asv: GLib.HashTable, key: string): [ /* returnType */ number, /* valid */ boolean ]
+function asv_get_int64(asv: GLib.HashTable, key: string): [ /* returnType */ number, /* valid */ boolean ]
+function asv_get_object_path(asv: GLib.HashTable, key: string): string | null
+function asv_get_string(asv: GLib.HashTable, key: string): string | null
+function asv_get_strv(asv: GLib.HashTable, key: string): string[] | null
+function asv_get_uint32(asv: GLib.HashTable, key: string): [ /* returnType */ number, /* valid */ boolean ]
+function asv_get_uint64(asv: GLib.HashTable, key: string): [ /* returnType */ number, /* valid */ boolean ]
+function dbus_check_valid_bus_name(name: string, allow_types: DBusNameType): boolean
+function dbus_check_valid_interface_name(name: string): boolean
+function dbus_check_valid_member_name(name: string): boolean
+function dbus_check_valid_object_path(path: string): boolean
+function dbus_errors_quark(): GLib.Quark
+function dbus_properties_mixin_class_init(cls: GObject.ObjectClass, offset: number): void
+function dbus_properties_mixin_dup_all(self: GObject.Object, interface_name: string): GLib.HashTable
+function dbus_properties_mixin_emit_properties_changed(object: GObject.Object, interface_name: string, properties?: string | null): void
+function dbus_properties_mixin_get(self: GObject.Object, interface_name: string, property_name: string, value: any): boolean
+function dbus_properties_mixin_getter_gobject_properties(object: GObject.Object, iface: GLib.Quark, name: GLib.Quark, value: any, getter_data?: object | null): void
+function dbus_properties_mixin_iface_init(g_iface?: object | null, iface_data?: object | null): void
+function dbus_properties_mixin_set(self: GObject.Object, interface_name: string, property_name: string, value: any): boolean
+function dbus_properties_mixin_setter_gobject_properties(object: GObject.Object, iface: GLib.Quark, name: GLib.Quark, value: any, setter_data?: object | null): boolean
+function debug_divert_messages(filename: string): void
+function debug_set_flags(flags_string: string): void
+function debug_set_persistent(persistent: boolean): void
+function debug_timestamped_log_handler(log_domain: string, log_level: GLib.LogLevelFlags, message: string, ignored?: object | null): void
+function error_get_dbus_name(error: Error): string
+function error_quark(): GLib.Quark
+function errors_disconnected_quark(): GLib.Quark
+function errors_removed_from_group_quark(): GLib.Quark
+function escape_as_identifier(name: string): string
+function handle_ensure(self: HandleRepoIface, id: string, context?: object | null): Handle
+function handle_type_is_valid(type: HandleType): boolean
+function handle_type_to_string(type: HandleType): string
+function iface_quark_account(): GLib.Quark
+function iface_quark_account_interface_addressing(): GLib.Quark
+function iface_quark_account_interface_avatar(): GLib.Quark
+function iface_quark_account_interface_storage(): GLib.Quark
+function iface_quark_account_manager(): GLib.Quark
+function iface_quark_authentication_tls_certificate(): GLib.Quark
+function iface_quark_call_content(): GLib.Quark
+function iface_quark_call_content_interface_audio_control(): GLib.Quark
+function iface_quark_call_content_interface_dtmf(): GLib.Quark
+function iface_quark_call_content_interface_media(): GLib.Quark
+function iface_quark_call_content_interface_video_control(): GLib.Quark
+function iface_quark_call_content_media_description(): GLib.Quark
+function iface_quark_call_content_media_description_interface_rtcp_extended_reports(): GLib.Quark
+function iface_quark_call_content_media_description_interface_rtcp_feedback(): GLib.Quark
+function iface_quark_call_content_media_description_interface_rtp_header_extensions(): GLib.Quark
+function iface_quark_call_stream(): GLib.Quark
+function iface_quark_call_stream_endpoint(): GLib.Quark
+function iface_quark_call_stream_interface_media(): GLib.Quark
+function iface_quark_channel(): GLib.Quark
+function iface_quark_channel_dispatch_operation(): GLib.Quark
+function iface_quark_channel_dispatcher(): GLib.Quark
+function iface_quark_channel_dispatcher_interface_messages1(): GLib.Quark
+function iface_quark_channel_dispatcher_interface_operation_list(): GLib.Quark
+function iface_quark_channel_interface_anonymity(): GLib.Quark
+function iface_quark_channel_interface_call_state(): GLib.Quark
+function iface_quark_channel_interface_captcha_authentication(): GLib.Quark
+function iface_quark_channel_interface_chat_state(): GLib.Quark
+function iface_quark_channel_interface_conference(): GLib.Quark
+function iface_quark_channel_interface_destroyable(): GLib.Quark
+function iface_quark_channel_interface_dtmf(): GLib.Quark
+function iface_quark_channel_interface_file_transfer_metadata(): GLib.Quark
+function iface_quark_channel_interface_group(): GLib.Quark
+function iface_quark_channel_interface_hold(): GLib.Quark
+function iface_quark_channel_interface_media_signalling(): GLib.Quark
+function iface_quark_channel_interface_messages(): GLib.Quark
+function iface_quark_channel_interface_password(): GLib.Quark
+function iface_quark_channel_interface_room(): GLib.Quark
+function iface_quark_channel_interface_room_config(): GLib.Quark
+function iface_quark_channel_interface_sasl_authentication(): GLib.Quark
+function iface_quark_channel_interface_securable(): GLib.Quark
+function iface_quark_channel_interface_service_point(): GLib.Quark
+function iface_quark_channel_interface_sms(): GLib.Quark
+function iface_quark_channel_interface_subject(): GLib.Quark
+function iface_quark_channel_interface_tube(): GLib.Quark
+function iface_quark_channel_request(): GLib.Quark
+function iface_quark_channel_type_call(): GLib.Quark
+function iface_quark_channel_type_contact_list(): GLib.Quark
+function iface_quark_channel_type_contact_search(): GLib.Quark
+function iface_quark_channel_type_dbus_tube(): GLib.Quark
+function iface_quark_channel_type_file_transfer(): GLib.Quark
+function iface_quark_channel_type_room_list(): GLib.Quark
+function iface_quark_channel_type_server_authentication(): GLib.Quark
+function iface_quark_channel_type_server_tls_connection(): GLib.Quark
+function iface_quark_channel_type_stream_tube(): GLib.Quark
+function iface_quark_channel_type_streamed_media(): GLib.Quark
+function iface_quark_channel_type_text(): GLib.Quark
+function iface_quark_channel_type_tubes(): GLib.Quark
+function iface_quark_client(): GLib.Quark
+function iface_quark_client_approver(): GLib.Quark
+function iface_quark_client_handler(): GLib.Quark
+function iface_quark_client_interface_requests(): GLib.Quark
+function iface_quark_client_observer(): GLib.Quark
+function iface_quark_connection(): GLib.Quark
+function iface_quark_connection_interface_addressing(): GLib.Quark
+function iface_quark_connection_interface_aliasing(): GLib.Quark
+function iface_quark_connection_interface_anonymity(): GLib.Quark
+function iface_quark_connection_interface_avatars(): GLib.Quark
+function iface_quark_connection_interface_balance(): GLib.Quark
+function iface_quark_connection_interface_capabilities(): GLib.Quark
+function iface_quark_connection_interface_cellular(): GLib.Quark
+function iface_quark_connection_interface_client_types(): GLib.Quark
+function iface_quark_connection_interface_contact_blocking(): GLib.Quark
+function iface_quark_connection_interface_contact_capabilities(): GLib.Quark
+function iface_quark_connection_interface_contact_groups(): GLib.Quark
+function iface_quark_connection_interface_contact_info(): GLib.Quark
+function iface_quark_connection_interface_contact_list(): GLib.Quark
+function iface_quark_connection_interface_contacts(): GLib.Quark
+function iface_quark_connection_interface_location(): GLib.Quark
+function iface_quark_connection_interface_mail_notification(): GLib.Quark
+function iface_quark_connection_interface_power_saving(): GLib.Quark
+function iface_quark_connection_interface_presence(): GLib.Quark
+function iface_quark_connection_interface_renaming(): GLib.Quark
+function iface_quark_connection_interface_requests(): GLib.Quark
+function iface_quark_connection_interface_service_point(): GLib.Quark
+function iface_quark_connection_interface_sidecars1(): GLib.Quark
+function iface_quark_connection_interface_simple_presence(): GLib.Quark
+function iface_quark_connection_manager(): GLib.Quark
+function iface_quark_dbus_daemon(): GLib.Quark
+function iface_quark_dbus_introspectable(): GLib.Quark
+function iface_quark_dbus_peer(): GLib.Quark
+function iface_quark_dbus_properties(): GLib.Quark
+function iface_quark_debug(): GLib.Quark
+function iface_quark_media_session_handler(): GLib.Quark
+function iface_quark_media_stream_handler(): GLib.Quark
+function iface_quark_properties_interface(): GLib.Quark
+function iface_quark_protocol(): GLib.Quark
+function iface_quark_protocol_interface_addressing(): GLib.Quark
+function iface_quark_protocol_interface_avatars(): GLib.Quark
+function iface_quark_protocol_interface_presence(): GLib.Quark
+function intset_from_array(array: number[]): Intset
+function list_connection_managers(bus_daemon: DBusDaemon, callback: ConnectionManagerListCb, weak_object?: GObject.Object | null): void
+function list_connection_managers_async(dbus_daemon?: DBusDaemon | null, callback?: Gio.AsyncReadyCallback | null): void
+function list_connection_managers_finish(result: Gio.AsyncResult): ConnectionManager[]
+function list_connection_names(bus_daemon: DBusDaemon, callback: ConnectionNameListCb, weak_object?: GObject.Object | null): void
+function simple_async_report_success_in_idle(source?: GObject.Object | null, callback?: Gio.AsyncReadyCallback | null, source_tag?: object | null): void
+function svc_interface_set_dbus_properties_info(g_interface: GObject.Type, info: DBusPropertiesMixinIfaceInfo): void
+function user_action_time_from_x11(x11_time: number): number
+function user_action_time_should_present(user_action_time: number): [ /* returnType */ boolean, /* x11_time */ number | null ]
+function utf8_make_valid(name: string): string
+function value_array_free(va: GObject.ValueArray): void
+interface AccountChannelRequestDelegatedChannelCb {
     (request: AccountChannelRequest, channel: Channel): void
 }
-export interface BaseClientClassAddDispatchOperationImpl {
+interface BaseClientClassAddDispatchOperationImpl {
     (client: BaseClient, account: Account, connection: Connection, channels: Channel[], dispatch_operation: ChannelDispatchOperation, context: AddDispatchOperationContext): void
 }
-export interface BaseClientClassHandleChannelsImpl {
+interface BaseClientClassHandleChannelsImpl {
     (client: BaseClient, account: Account, connection: Connection, channels: Channel[], requests_satisfied: ChannelRequest[], user_action_time: number, context: HandleChannelsContext): void
 }
-export interface BaseClientClassObserveChannelsImpl {
+interface BaseClientClassObserveChannelsImpl {
     (client: BaseClient, account: Account, connection: Connection, channels: Channel[], dispatch_operation: ChannelDispatchOperation | null, requests: ChannelRequest[], context: ObserveChannelsContext): void
 }
-export interface BaseClientDelegatedChannelsCb {
+interface BaseClientDelegatedChannelsCb {
     (client: BaseClient, channels: Channel[]): void
 }
-export interface BaseConnectionGetUniqueConnectionNameImpl {
+interface BaseConnectionGetUniqueConnectionNameImpl {
     (self: BaseConnection): string
 }
-export interface BaseConnectionProc {
+interface BaseConnectionProc {
     (self: BaseConnection): void
 }
-export interface BaseConnectionStartConnectingImpl {
+interface BaseConnectionStartConnectingImpl {
     (self: BaseConnection): boolean
 }
-export interface ChannelWhenReadyCb {
+interface ChannelWhenReadyCb {
     (channel: Channel, error: GLib.Error): void
 }
-export interface ConnectionContactsByHandleCb {
+interface ConnectionContactsByHandleCb {
     (connection: Connection, contacts: Contact[], failed: Handle[], error: GLib.Error, weak_object: GObject.Object): void
 }
-export interface ConnectionContactsByIdCb {
+interface ConnectionContactsByIdCb {
     (connection: Connection, contacts: Contact[], requested_ids: string[], failed_id_errors: GLib.HashTable, error: GLib.Error, weak_object: GObject.Object): void
 }
-export interface ConnectionHoldHandlesCb {
+interface ConnectionHoldHandlesCb {
     (connection: Connection, handle_type: HandleType, n_handles: number, handles: Handle, error: GLib.Error, weak_object: GObject.Object): void
 }
-export interface ConnectionManagerListCb {
+interface ConnectionManagerListCb {
     (cms: ConnectionManager[], n_cms: number, error: GLib.Error, weak_object: GObject.Object): void
 }
-export interface ConnectionManagerWhenReadyCb {
+interface ConnectionManagerWhenReadyCb {
     (cm: ConnectionManager, error: GLib.Error, weak_object: GObject.Object): void
 }
-export interface ConnectionNameListCb {
+interface ConnectionNameListCb {
     (names: string[], n: number, cms: string[], protocols: string[], error: GLib.Error, weak_object: GObject.Object): void
 }
-export interface ConnectionRequestHandlesCb {
+interface ConnectionRequestHandlesCb {
     (connection: Connection, handle_type: HandleType, handles: number[], ids: string[], error: GLib.Error, weak_object: GObject.Object): void
 }
-export interface ConnectionUpgradeContactsCb {
+interface ConnectionUpgradeContactsCb {
     (connection: Connection, contacts: Contact[], error: GLib.Error, weak_object: GObject.Object): void
 }
-export interface ConnectionWhenReadyCb {
+interface ConnectionWhenReadyCb {
     (connection: Connection, error: GLib.Error): void
 }
-export interface DBusDaemonListNamesCb {
+interface DBusDaemonListNamesCb {
     (bus_daemon: DBusDaemon, names: string, error: GLib.Error, weak_object: GObject.Object): void
 }
-export interface DBusDaemonNameOwnerChangedCb {
+interface DBusDaemonNameOwnerChangedCb {
     (bus_daemon: DBusDaemon, name: string, new_owner: string): void
 }
-export interface DBusPropertiesMixinGetter {
+interface DBusPropertiesMixinGetter {
     (object: GObject.Object, iface: GLib.Quark, name: GLib.Quark, value: any, getter_data?: object | null): void
 }
-export interface DBusPropertiesMixinSetter {
+interface DBusPropertiesMixinSetter {
     (object: GObject.Object, iface: GLib.Quark, name: GLib.Quark, value: any, setter_data?: object | null): boolean
 }
-export interface GroupMixinAddMemberFunc {
+interface GroupMixinAddMemberFunc {
     (obj: GObject.Object, handle: Handle, message: string): boolean
 }
-export interface GroupMixinRemMemberFunc {
+interface GroupMixinRemMemberFunc {
     (obj: GObject.Object, handle: Handle, message: string): boolean
 }
-export interface GroupMixinRemMemberWithReasonFunc {
+interface GroupMixinRemMemberWithReasonFunc {
     (obj: GObject.Object, handle: Handle, message: string, reason: number): boolean
 }
-export interface IntFunc {
+interface IntFunc {
     (i: number, userdata?: object | null): void
 }
-export interface PresenceMixinGetMaximumStatusMessageLengthFunc {
+interface PresenceMixinGetMaximumStatusMessageLengthFunc {
     (obj: GObject.Object): number
 }
-export interface PresenceMixinSetOwnStatusFunc {
+interface PresenceMixinSetOwnStatusFunc {
     (obj: GObject.Object, status: PresenceStatus): boolean
 }
-export interface PresenceMixinStatusAvailableFunc {
+interface PresenceMixinStatusAvailableFunc {
     (obj: GObject.Object, which: number): boolean
 }
-export interface ProxyPrepareAsync {
+interface ProxyPrepareAsync {
     (proxy: Proxy, feature: ProxyFeature, callback?: Gio.AsyncReadyCallback | null): void
 }
-export interface SimpleApproverAddDispatchOperationImpl {
+interface SimpleApproverAddDispatchOperationImpl {
     (approver: SimpleApprover, account: Account, connection: Connection, channels: Channel[], dispatch_operation: ChannelDispatchOperation | null, context: AddDispatchOperationContext): void
 }
-export interface SimpleHandlerHandleChannelsImpl {
+interface SimpleHandlerHandleChannelsImpl {
     (handler: SimpleHandler, account: Account, connection: Connection, channels: Channel[], requests_satisfied: ChannelRequest[], user_action_time: number, context: HandleChannelsContext): void
 }
-export interface SimpleObserverObserveChannelsImpl {
+interface SimpleObserverObserveChannelsImpl {
     (observer: SimpleObserver, account: Account, connection: Connection, channels: Channel[], dispatch_operation: ChannelDispatchOperation | null, requests: ChannelRequest[], context: ObserveChannelsContext): void
 }
-export class ClientChannelFactory {
-    /* Methods of TelepathyGLib.ClientChannelFactory */
+class ClientChannelFactory {
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.ClientChannelFactory */
     create_channel(conn: Connection, path: string, properties: GLib.HashTable): Channel
     dup_channel_features(channel: Channel): GLib.Quark[]
     static name: string
 }
-export class HandleRepoIface {
+class HandleRepoIface {
     static name: string
 }
 export interface Account_ConstructProps extends Proxy_ConstructProps {
 }
-export class Account {
-    /* Properties of TelepathyGLib.Account */
+class Account {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Account */
     readonly automatic_presence_type: number
     readonly automatic_status: string
     readonly automatic_status_message: string
@@ -1422,11 +1424,11 @@ export class Account {
     readonly supersedes: string[]
     readonly uri_schemes: string[]
     readonly valid: boolean
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.Account */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Account */
     associated_with_uri_scheme(scheme: string): boolean
     bind_connection_status_to_property(target: object | null, target_property: string, invert: boolean): GObject.Binding
     dup_detailed_error_vardict(): [ /* returnType */ string | null, /* details */ GLib.Variant | null ]
@@ -1493,7 +1495,7 @@ export class Account {
     update_parameters_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* reconnect_required */ string[] ]
     update_parameters_vardict_async(parameters: GLib.Variant, unset_parameters: string[], callback?: Gio.AsyncReadyCallback | null): void
     update_parameters_vardict_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* reconnect_required */ string[] ]
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -1505,15 +1507,15 @@ export class Account {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1521,21 +1523,21 @@ export class Account {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.Account */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Account */
     connect(sigName: "avatar-changed", callback: (($obj: Account) => void)): number
     connect_after(sigName: "avatar-changed", callback: (($obj: Account) => void)): number
     emit(sigName: "avatar-changed"): void
@@ -1545,14 +1547,14 @@ export class Account {
     connect(sigName: "status-changed", callback: (($obj: Account, old_status: number, new_status: number, reason: number, dbus_error_name: string | null, details: GLib.HashTable) => void)): number
     connect_after(sigName: "status-changed", callback: (($obj: Account, old_status: number, new_status: number, reason: number, dbus_error_name: string | null, details: GLib.HashTable) => void)): number
     emit(sigName: "status-changed", old_status: number, new_status: number, reason: number, dbus_error_name: string | null, details: GLib.HashTable): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: Account, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: Account, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: Account, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: Account, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Account, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Account, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1648,12 +1650,12 @@ export interface AccountChannelRequest_ConstructProps extends GObject.Object_Con
     request_vardict?: GLib.Variant
     user_action_time?: number
 }
-export class AccountChannelRequest {
-    /* Properties of TelepathyGLib.AccountChannelRequest */
+class AccountChannelRequest {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.AccountChannelRequest */
     readonly channel_request: ChannelRequest
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.AccountChannelRequest */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.AccountChannelRequest */
     create_and_handle_channel_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     create_and_handle_channel_finish(result: Gio.AsyncResult): [ /* returnType */ Channel | null, /* context */ HandleChannelsContext | null ]
     create_and_observe_channel_async(preferred_handler: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1688,15 +1690,15 @@ export class AccountChannelRequest {
     set_sms_channel(is_sms_channel: boolean): void
     set_target_contact(contact: Contact): void
     set_target_id(handle_type: HandleType, identifier: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1704,25 +1706,25 @@ export class AccountChannelRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.AccountChannelRequest */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.AccountChannelRequest */
     connect(sigName: "re-handled", callback: (($obj: AccountChannelRequest, channel: Channel, user_action_time: number, context: HandleChannelsContext) => void)): number
     connect_after(sigName: "re-handled", callback: (($obj: AccountChannelRequest, channel: Channel, user_action_time: number, context: HandleChannelsContext) => void)): number
     emit(sigName: "re-handled", channel: Channel, user_action_time: number, context: HandleChannelsContext): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AccountChannelRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AccountChannelRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1748,12 +1750,12 @@ export class AccountChannelRequest {
 }
 export interface AccountManager_ConstructProps extends Proxy_ConstructProps {
 }
-export class AccountManager {
-    /* Properties of TelepathyGLib.Proxy */
+class AccountManager {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.AccountManager */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.AccountManager */
     create_account_async(connection_manager: string, protocol: string, display_name: string, parameters: GLib.HashTable, properties: GLib.HashTable, callback?: Gio.AsyncReadyCallback | null): void
     create_account_finish(result: Gio.AsyncResult): Account
     dup_valid_accounts(): Account[]
@@ -1763,7 +1765,7 @@ export class AccountManager {
     get_valid_accounts(): Account[]
     set_all_requested_presences(type: ConnectionPresenceType, status: string, message: string): void
     set_default(): void
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -1775,15 +1777,15 @@ export class AccountManager {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1791,21 +1793,21 @@ export class AccountManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.AccountManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.AccountManager */
     connect(sigName: "account-disabled", callback: (($obj: AccountManager, account: Account) => void)): number
     connect_after(sigName: "account-disabled", callback: (($obj: AccountManager, account: Account) => void)): number
     emit(sigName: "account-disabled", account: Account): void
@@ -1821,14 +1823,14 @@ export class AccountManager {
     connect(sigName: "most-available-presence-changed", callback: (($obj: AccountManager, presence: number, status: string, message: string) => void)): number
     connect_after(sigName: "most-available-presence-changed", callback: (($obj: AccountManager, presence: number, status: string, message: string) => void)): number
     emit(sigName: "most-available-presence-changed", presence: number, status: string, message: string): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: AccountManager, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: AccountManager, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: AccountManager, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: AccountManager, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AccountManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AccountManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1856,8 +1858,8 @@ export interface AccountRequest_ConstructProps extends GObject.Object_ConstructP
     display_name?: string
     protocol?: string
 }
-export class AccountRequest {
-    /* Properties of TelepathyGLib.AccountRequest */
+class AccountRequest {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.AccountRequest */
     readonly automatic_presence_type: number
     readonly automatic_status: string
     readonly automatic_status_message: string
@@ -1875,9 +1877,9 @@ export class AccountRequest {
     readonly service: string
     readonly storage_provider: string
     readonly supersedes: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.AccountRequest */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.AccountRequest */
     add_supersedes(superseded_path: string): void
     create_account_async(callback?: Gio.AsyncReadyCallback | null): void
     create_account_finish(result: Gio.AsyncResult): Account
@@ -1893,15 +1895,15 @@ export class AccountRequest {
     set_service(service: string): void
     set_storage_provider(provider: string): void
     unset_parameter(key: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1909,21 +1911,21 @@ export class AccountRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AccountRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AccountRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1979,22 +1981,22 @@ export interface AddDispatchOperationContext_ConstructProps extends GObject.Obje
     connection?: Connection
     dispatch_operation?: ChannelDispatchOperation
 }
-export class AddDispatchOperationContext {
-    /* Fields of GObject.Object */
+class AddDispatchOperationContext {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.AddDispatchOperationContext */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.AddDispatchOperationContext */
     accept(): void
     delay(): void
     fail(error: GLib.Error): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2002,21 +2004,21 @@ export class AddDispatchOperationContext {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AddDispatchOperationContext, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AddDispatchOperationContext, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2031,10 +2033,10 @@ export class AddDispatchOperationContext {
 }
 export interface AutomaticClientFactory_ConstructProps extends SimpleClientFactory_ConstructProps {
 }
-export class AutomaticClientFactory {
-    /* Fields of GObject.Object */
+class AutomaticClientFactory {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.SimpleClientFactory */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.SimpleClientFactory */
     add_account_features(features?: GLib.Quark[] | null): void
     add_channel_features(features?: GLib.Quark[] | null): void
     add_connection_features(features?: GLib.Quark[] | null): void
@@ -2052,15 +2054,15 @@ export class AutomaticClientFactory {
     get_dbus_daemon(): DBusDaemon
     upgrade_contacts_async(connection: Connection, contacts: Contact[], callback?: Gio.AsyncReadyCallback | null): void
     upgrade_contacts_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* contacts */ Contact[] | null ]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2068,26 +2070,26 @@ export class AutomaticClientFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of TelepathyGLib.SimpleClientFactory */
+    watch_closure(closure: Function): void
+    /* Virtual methods of TelepathyGLib-0.12.TelepathyGLib.SimpleClientFactory */
     vfunc_dup_account_features(account: Account): GLib.Quark[]
     vfunc_dup_channel_features(channel: Channel): GLib.Quark[]
     vfunc_dup_connection_features(connection: Connection): GLib.Quark[]
     vfunc_dup_contact_features(connection: Connection): ContactFeature[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AutomaticClientFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AutomaticClientFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2104,18 +2106,18 @@ export class AutomaticClientFactory {
 }
 export interface AutomaticProxyFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class AutomaticProxyFactory {
-    /* Fields of GObject.Object */
+class AutomaticProxyFactory {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2123,24 +2125,24 @@ export class AutomaticProxyFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of TelepathyGLib.ClientChannelFactory */
+    watch_closure(closure: Function): void
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.ClientChannelFactory */
     create_channel(conn: Connection, path: string, properties: GLib.HashTable): Channel
     dup_channel_features(channel: Channel): GLib.Quark[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AutomaticProxyFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AutomaticProxyFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2164,10 +2166,10 @@ export interface BaseClient_ConstructProps extends GObject.Object_ConstructProps
     name?: string
     uniquify_name?: boolean
 }
-export class BaseClient {
-    /* Fields of GObject.Object */
+class BaseClient {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.BaseClient */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.BaseClient */
     add_account_features(features: GLib.Quark[]): void
     add_approver_filter(filter: GLib.HashTable): void
     add_approver_filter_vardict(filter: GLib.Variant): void
@@ -2200,15 +2202,15 @@ export class BaseClient {
     set_observer_delay_approvers(delay: boolean): void
     set_observer_recover(recover: boolean): void
     unregister(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2216,32 +2218,32 @@ export class BaseClient {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of TelepathyGLib.BaseClient */
+    watch_closure(closure: Function): void
+    /* Virtual methods of TelepathyGLib-0.12.TelepathyGLib.BaseClient */
     vfunc_add_dispatch_operation(account: Account, connection: Connection, channels: Channel[], dispatch_operation: ChannelDispatchOperation, context: AddDispatchOperationContext): void
     vfunc_handle_channels(account: Account, connection: Connection, channels: Channel[], requests_satisfied: ChannelRequest[], user_action_time: number, context: HandleChannelsContext): void
     vfunc_observe_channels(account: Account, connection: Connection, channels: Channel[], dispatch_operation: ChannelDispatchOperation | null, requests: ChannelRequest[], context: ObserveChannelsContext): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.BaseClient */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.BaseClient */
     connect(sigName: "request-added", callback: (($obj: BaseClient, account: Account, request: ChannelRequest) => void)): number
     connect_after(sigName: "request-added", callback: (($obj: BaseClient, account: Account, request: ChannelRequest) => void)): number
     emit(sigName: "request-added", account: Account, request: ChannelRequest): void
     connect(sigName: "request-removed", callback: (($obj: BaseClient, request: ChannelRequest, error: string, message: string) => void)): number
     connect_after(sigName: "request-removed", callback: (($obj: BaseClient, request: ChannelRequest, error: string, message: string) => void)): number
     emit(sigName: "request-removed", request: ChannelRequest, error: string, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BaseClient, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BaseClient, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2257,12 +2259,12 @@ export class BaseClient {
 export interface BaseConnection_ConstructProps extends GObject.Object_ConstructProps {
     account_path_suffix?: string
 }
-export class BaseConnection {
-    /* Properties of TelepathyGLib.BaseConnection */
+class BaseConnection {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.BaseConnection */
     readonly has_immortal_handles: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.BaseConnection */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.BaseConnection */
     add_client_interest(unique_name: string, token: string, only_if_uninterested: boolean): void
     add_possible_client_interest(token: GLib.Quark): void
     change_status(status: ConnectionStatus, reason: ConnectionStatusReason): void
@@ -2275,15 +2277,15 @@ export class BaseConnection {
     is_destroyed(): boolean
     register(cm_name: string): [ /* returnType */ boolean, /* bus_name */ string, /* object_path */ string ]
     set_self_handle(self_handle: Handle): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2291,28 +2293,28 @@ export class BaseConnection {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of TelepathyGLib.BaseConnection */
+    watch_closure(closure: Function): void
+    /* Virtual methods of TelepathyGLib-0.12.TelepathyGLib.BaseConnection */
     vfunc_connected(): void
     vfunc_connecting(): void
     vfunc_disconnected(): void
     vfunc_get_unique_connection_name(): string
     vfunc_shut_down(): void
     vfunc_start_connecting(): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.BaseConnection */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.BaseConnection */
     connect(sigName: "clients-interested", callback: (($obj: BaseConnection, token: string) => void)): number
     connect_after(sigName: "clients-interested", callback: (($obj: BaseConnection, token: string) => void)): number
     emit(sigName: "clients-interested", token: string): void
@@ -2322,7 +2324,7 @@ export class BaseConnection {
     connect(sigName: "shutdown-finished", callback: (($obj: BaseConnection) => void)): number
     connect_after(sigName: "shutdown-finished", callback: (($obj: BaseConnection) => void)): number
     emit(sigName: "shutdown-finished"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BaseConnection, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BaseConnection, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2339,18 +2341,18 @@ export class BaseConnection {
 }
 export interface BasicProxyFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class BasicProxyFactory {
-    /* Fields of GObject.Object */
+class BasicProxyFactory {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2358,24 +2360,24 @@ export class BasicProxyFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of TelepathyGLib.ClientChannelFactory */
+    watch_closure(closure: Function): void
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.ClientChannelFactory */
     create_channel(conn: Connection, path: string, properties: GLib.HashTable): Channel
     dup_channel_features(channel: Channel): GLib.Quark[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BasicProxyFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BasicProxyFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2393,8 +2395,8 @@ export class BasicProxyFactory {
 }
 export interface CallChannel_ConstructProps extends Channel_ConstructProps {
 }
-export class CallChannel {
-    /* Properties of TelepathyGLib.CallChannel */
+class CallChannel {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.CallChannel */
     readonly contents: object[]
     readonly flags: number
     readonly hardware_streaming: boolean
@@ -2408,7 +2410,7 @@ export class CallChannel {
     readonly state: number
     readonly state_details: GLib.HashTable
     readonly state_reason: CallStateReason
-    /* Properties of TelepathyGLib.Channel */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Channel */
     readonly channel_ready: boolean
     readonly group_flags: number
     readonly group_self_contact: Contact
@@ -2420,11 +2422,11 @@ export class CallChannel {
     readonly password_needed: boolean
     readonly requested: boolean
     readonly target_contact: Contact
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.CallChannel */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.CallChannel */
     accept_async(callback?: Gio.AsyncReadyCallback | null): void
     accept_finish(result: Gio.AsyncResult): boolean
     add_content_async(name: string, type: MediaStreamType, initial_direction: MediaStreamDirection, callback?: Gio.AsyncReadyCallback | null): void
@@ -2448,7 +2450,7 @@ export class CallChannel {
     set_queued_finish(result: Gio.AsyncResult): boolean
     set_ringing_async(callback?: Gio.AsyncReadyCallback | null): void
     set_ringing_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Channel */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Channel */
     borrow_connection(): Connection
     borrow_immutable_properties(): GLib.HashTable
     close_async(callback?: Gio.AsyncReadyCallback | null): void
@@ -2484,7 +2486,7 @@ export class CallChannel {
     leave_finish(result: Gio.AsyncResult): boolean
     provide_password_async(password: string, callback?: Gio.AsyncReadyCallback | null): void
     provide_password_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -2496,15 +2498,15 @@ export class CallChannel {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2512,21 +2514,21 @@ export class CallChannel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.CallChannel */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.CallChannel */
     connect(sigName: "content-added", callback: (($obj: CallChannel, content: GObject.Object) => void)): number
     connect_after(sigName: "content-added", callback: (($obj: CallChannel, content: GObject.Object) => void)): number
     emit(sigName: "content-added", content: GObject.Object): void
@@ -2539,7 +2541,7 @@ export class CallChannel {
     connect(sigName: "state-changed", callback: (($obj: CallChannel, state: number, flags: number, reason: CallStateReason, details: GLib.HashTable) => void)): number
     connect_after(sigName: "state-changed", callback: (($obj: CallChannel, state: number, flags: number, reason: CallStateReason, details: GLib.HashTable) => void)): number
     emit(sigName: "state-changed", state: number, flags: number, reason: CallStateReason, details: GLib.HashTable): void
-    /* Signals of TelepathyGLib.Channel */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Channel */
     connect(sigName: "chat-state-changed", callback: (($obj: CallChannel, contact: number, state: number) => void)): number
     connect_after(sigName: "chat-state-changed", callback: (($obj: CallChannel, contact: number, state: number) => void)): number
     emit(sigName: "chat-state-changed", contact: number, state: number): void
@@ -2555,14 +2557,14 @@ export class CallChannel {
     connect(sigName: "group-members-changed-detailed", callback: (($obj: CallChannel, added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable) => void)): number
     connect_after(sigName: "group-members-changed-detailed", callback: (($obj: CallChannel, added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable) => void)): number
     emit(sigName: "group-members-changed-detailed", added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: CallChannel, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: CallChannel, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: CallChannel, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: CallChannel, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CallChannel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CallChannel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2631,17 +2633,17 @@ export interface CallContent_ConstructProps extends Proxy_ConstructProps {
     channel?: CallChannel
     connection?: Connection
 }
-export class CallContent {
-    /* Properties of TelepathyGLib.CallContent */
+class CallContent {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.CallContent */
     readonly disposition: number
     readonly media_type: number
     readonly name: string
     readonly streams: object[]
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.CallContent */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.CallContent */
     get_disposition(): CallContentDisposition
     get_media_type(): MediaStreamType
     get_name(): string
@@ -2650,7 +2652,7 @@ export class CallContent {
     remove_finish(result: Gio.AsyncResult): boolean
     send_tones_async(tones: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     send_tones_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -2662,15 +2664,15 @@ export class CallContent {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2678,21 +2680,21 @@ export class CallContent {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.CallContent */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.CallContent */
     connect(sigName: "removed", callback: (($obj: CallContent) => void)): number
     connect_after(sigName: "removed", callback: (($obj: CallContent) => void)): number
     emit(sigName: "removed"): void
@@ -2702,14 +2704,14 @@ export class CallContent {
     connect(sigName: "streams-removed", callback: (($obj: CallContent, streams: CallStream[], reason: CallStateReason) => void)): number
     connect_after(sigName: "streams-removed", callback: (($obj: CallContent, streams: CallStream[], reason: CallStateReason) => void)): number
     emit(sigName: "streams-removed", streams: CallStream[], reason: CallStateReason): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: CallContent, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: CallContent, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: CallContent, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: CallContent, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CallContent, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CallContent, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2739,22 +2741,22 @@ export interface CallStream_ConstructProps extends Proxy_ConstructProps {
     connection?: Connection
     content?: CallContent
 }
-export class CallStream {
-    /* Properties of TelepathyGLib.CallStream */
+class CallStream {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.CallStream */
     readonly can_request_receiving: boolean
     readonly local_sending_state: number
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.CallStream */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.CallStream */
     get_local_sending_state(): SendingState
     get_remote_members(): GLib.HashTable
     request_receiving_async(contact: Contact, receive: boolean, callback?: Gio.AsyncReadyCallback | null): void
     request_receiving_finish(result: Gio.AsyncResult): boolean
     set_sending_async(send: boolean, callback?: Gio.AsyncReadyCallback | null): void
     set_sending_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -2766,15 +2768,15 @@ export class CallStream {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2782,35 +2784,35 @@ export class CallStream {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.CallStream */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.CallStream */
     connect(sigName: "local-sending-state-changed", callback: (($obj: CallStream, state: number, reason: CallStateReason) => void)): number
     connect_after(sigName: "local-sending-state-changed", callback: (($obj: CallStream, state: number, reason: CallStateReason) => void)): number
     emit(sigName: "local-sending-state-changed", state: number, reason: CallStateReason): void
     connect(sigName: "remote-members-changed", callback: (($obj: CallStream, updates: GLib.HashTable, removed: Contact[], reason: CallStateReason) => void)): number
     connect_after(sigName: "remote-members-changed", callback: (($obj: CallStream, updates: GLib.HashTable, removed: Contact[], reason: CallStateReason) => void)): number
     emit(sigName: "remote-members-changed", updates: GLib.HashTable, removed: Contact[], reason: CallStateReason): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: CallStream, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: CallStream, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: CallStream, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: CallStream, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CallStream, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CallStream, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2835,12 +2837,12 @@ export class CallStream {
 export interface Capabilities_ConstructProps extends GObject.Object_ConstructProps {
     contact_specific?: boolean
 }
-export class Capabilities {
-    /* Properties of TelepathyGLib.Capabilities */
+class Capabilities {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Capabilities */
     readonly channel_classes_variant: GLib.Variant
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.Capabilities */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Capabilities */
     dup_channel_classes_variant(): GLib.Variant
     get_channel_classes(): GLib.HashTable[]
     is_specific_to_contact(): boolean
@@ -2858,15 +2860,15 @@ export class Capabilities {
     supports_stream_tubes(handle_type: HandleType, service: string): boolean
     supports_text_chatrooms(): boolean
     supports_text_chats(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2874,21 +2876,21 @@ export class Capabilities {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Capabilities, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Capabilities, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2906,8 +2908,8 @@ export class Capabilities {
 export interface Channel_ConstructProps extends Proxy_ConstructProps {
     connection?: Connection
 }
-export class Channel {
-    /* Properties of TelepathyGLib.Channel */
+class Channel {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Channel */
     readonly channel_ready: boolean
     readonly group_flags: number
     readonly group_self_contact: Contact
@@ -2919,11 +2921,11 @@ export class Channel {
     readonly password_needed: boolean
     readonly requested: boolean
     readonly target_contact: Contact
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.Channel */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Channel */
     borrow_connection(): Connection
     borrow_immutable_properties(): GLib.HashTable
     close_async(callback?: Gio.AsyncReadyCallback | null): void
@@ -2959,7 +2961,7 @@ export class Channel {
     leave_finish(result: Gio.AsyncResult): boolean
     provide_password_async(password: string, callback?: Gio.AsyncReadyCallback | null): void
     provide_password_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -2971,15 +2973,15 @@ export class Channel {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2987,21 +2989,21 @@ export class Channel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.Channel */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Channel */
     connect(sigName: "chat-state-changed", callback: (($obj: Channel, contact: number, state: number) => void)): number
     connect_after(sigName: "chat-state-changed", callback: (($obj: Channel, contact: number, state: number) => void)): number
     emit(sigName: "chat-state-changed", contact: number, state: number): void
@@ -3017,14 +3019,14 @@ export class Channel {
     connect(sigName: "group-members-changed-detailed", callback: (($obj: Channel, added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable) => void)): number
     connect_after(sigName: "group-members-changed-detailed", callback: (($obj: Channel, added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable) => void)): number
     emit(sigName: "group-members-changed-detailed", added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: Channel, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: Channel, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: Channel, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: Channel, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Channel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Channel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3075,14 +3077,14 @@ export interface ChannelDispatchOperation_ConstructProps extends Proxy_Construct
     channels?: object[]
     connection?: Connection
 }
-export class ChannelDispatchOperation {
-    /* Properties of TelepathyGLib.ChannelDispatchOperation */
+class ChannelDispatchOperation {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.ChannelDispatchOperation */
     readonly possible_handlers: string[]
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.ChannelDispatchOperation */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.ChannelDispatchOperation */
     claim_async(callback?: Gio.AsyncReadyCallback | null): void
     claim_finish(result: Gio.AsyncResult): boolean
     claim_with_async(client: BaseClient, callback?: Gio.AsyncReadyCallback | null): void
@@ -3098,7 +3100,7 @@ export class ChannelDispatchOperation {
     handle_with_time_finish(result: Gio.AsyncResult): boolean
     leave_channels_async(reason: ChannelGroupChangeReason, message: string, callback?: Gio.AsyncReadyCallback | null): void
     leave_channels_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -3110,15 +3112,15 @@ export class ChannelDispatchOperation {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3126,32 +3128,32 @@ export class ChannelDispatchOperation {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.ChannelDispatchOperation */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.ChannelDispatchOperation */
     connect(sigName: "channel-lost", callback: (($obj: ChannelDispatchOperation, channel: Channel, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "channel-lost", callback: (($obj: ChannelDispatchOperation, channel: Channel, domain: number, code: number, message: string) => void)): number
     emit(sigName: "channel-lost", channel: Channel, domain: number, code: number, message: string): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: ChannelDispatchOperation, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: ChannelDispatchOperation, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: ChannelDispatchOperation, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: ChannelDispatchOperation, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ChannelDispatchOperation, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ChannelDispatchOperation, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3174,15 +3176,15 @@ export class ChannelDispatchOperation {
 }
 export interface ChannelDispatcher_ConstructProps extends Proxy_ConstructProps {
 }
-export class ChannelDispatcher {
-    /* Properties of TelepathyGLib.Proxy */
+class ChannelDispatcher {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.ChannelDispatcher */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.ChannelDispatcher */
     present_channel_async(channel: Channel, user_action_time: number, callback?: Gio.AsyncReadyCallback | null): void
     present_channel_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -3194,15 +3196,15 @@ export class ChannelDispatcher {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3210,28 +3212,28 @@ export class ChannelDispatcher {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.Proxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: ChannelDispatcher, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: ChannelDispatcher, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: ChannelDispatcher, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: ChannelDispatcher, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ChannelDispatcher, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ChannelDispatcher, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3252,19 +3254,19 @@ export class ChannelDispatcher {
 export interface ChannelRequest_ConstructProps extends Proxy_ConstructProps {
     channel_factory?: GObject.Object
 }
-export class ChannelRequest {
-    /* Properties of TelepathyGLib.ChannelRequest */
+class ChannelRequest {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.ChannelRequest */
     readonly account: Account
     channel_factory: GObject.Object
     readonly hints_vardict: GLib.Variant
     readonly immutable_properties_vardict: GLib.Variant
     readonly preferred_handler: string
     readonly user_action_time: number
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.ChannelRequest */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.ChannelRequest */
     dup_hints(): GLib.Variant
     dup_immutable_properties(): GLib.Variant
     get_account(): Account
@@ -3273,7 +3275,7 @@ export class ChannelRequest {
     get_preferred_handler(): string
     get_user_action_time(): number
     set_channel_factory(factory: ClientChannelFactory): void
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -3285,15 +3287,15 @@ export class ChannelRequest {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3301,35 +3303,35 @@ export class ChannelRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.ChannelRequest */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.ChannelRequest */
     connect(sigName: "succeeded", callback: (($obj: ChannelRequest) => void)): number
     connect_after(sigName: "succeeded", callback: (($obj: ChannelRequest) => void)): number
     emit(sigName: "succeeded"): void
     connect(sigName: "succeeded-with-channel", callback: (($obj: ChannelRequest, connection: Connection, channel: Channel) => void)): number
     connect_after(sigName: "succeeded-with-channel", callback: (($obj: ChannelRequest, connection: Connection, channel: Channel) => void)): number
     emit(sigName: "succeeded-with-channel", connection: Connection, channel: Channel): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: ChannelRequest, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: ChannelRequest, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: ChannelRequest, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: ChannelRequest, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ChannelRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ChannelRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3361,10 +3363,10 @@ export class ChannelRequest {
 }
 export interface ClientMessage_ConstructProps extends Message_ConstructProps {
 }
-export class ClientMessage {
-    /* Fields of GObject.Object */
+class ClientMessage {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.Message */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Message */
     append_part(): number
     count_parts(): number
     delete_key(part: number, key: string): boolean
@@ -3396,15 +3398,15 @@ export class ClientMessage {
     set_variant(part: number, key: string, value: GLib.Variant): void
     take_message(part: number, key: string, message: Message): void
     to_text(): [ /* returnType */ string, /* out_flags */ ChannelTextMessageFlags ]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3412,21 +3414,21 @@ export class ClientMessage {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientMessage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientMessage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3444,8 +3446,8 @@ export class ClientMessage {
 }
 export interface Connection_ConstructProps extends Proxy_ConstructProps {
 }
-export class Connection {
-    /* Properties of TelepathyGLib.Connection */
+class Connection {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Connection */
     readonly balance: number
     readonly balance_currency: string
     readonly balance_scale: number
@@ -3468,11 +3470,11 @@ export class Connection {
     readonly self_handle: number
     readonly status: number
     readonly status_reason: number
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.Connection */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Connection */
     add_client_interest(interested_in: string): void
     add_to_group_async(group: string, contacts: Contact[], callback?: Gio.AsyncReadyCallback | null): void
     add_to_group_finish(result: Gio.AsyncResult): boolean
@@ -3545,7 +3547,7 @@ export class Connection {
     upgrade_contacts(contacts: Contact[], features: ContactFeature[], callback: ConnectionUpgradeContactsCb, weak_object?: GObject.Object | null): void
     upgrade_contacts_async(contacts: Contact[], features: ContactFeature[], callback?: Gio.AsyncReadyCallback | null): void
     upgrade_contacts_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* contacts */ Contact[] | null ]
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -3557,15 +3559,15 @@ export class Connection {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3573,21 +3575,21 @@ export class Connection {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.Connection */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Connection */
     connect(sigName: "balance-changed", callback: (($obj: Connection, balance: number, balance_scale: number, balance_currency: string) => void)): number
     connect_after(sigName: "balance-changed", callback: (($obj: Connection, balance: number, balance_scale: number, balance_currency: string) => void)): number
     emit(sigName: "balance-changed", balance: number, balance_scale: number, balance_currency: string): void
@@ -3606,14 +3608,14 @@ export class Connection {
     connect(sigName: "groups-removed", callback: (($obj: Connection, added: string[]) => void)): number
     connect_after(sigName: "groups-removed", callback: (($obj: Connection, added: string[]) => void)): number
     emit(sigName: "groups-removed", added: string[]): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: Connection, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: Connection, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: Connection, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: Connection, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Connection, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Connection, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3691,18 +3693,18 @@ export interface ConnectionManager_ConstructProps extends Proxy_ConstructProps {
     always_introspect?: boolean
     manager_file?: string
 }
-export class ConnectionManager {
-    /* Properties of TelepathyGLib.ConnectionManager */
+class ConnectionManager {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.ConnectionManager */
     always_introspect: boolean
     readonly cm_name: string
     readonly connection_manager: string
     readonly info_source: number
     manager_file: string
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.ConnectionManager */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.ConnectionManager */
     dup_protocol_names(): string[]
     dup_protocols(): Protocol[]
     get_info_source(): CMInfoSource
@@ -3711,7 +3713,7 @@ export class ConnectionManager {
     get_protocol_object(protocol: string): Protocol
     has_protocol(protocol: string): boolean
     is_running(): boolean
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -3723,15 +3725,15 @@ export class ConnectionManager {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3739,21 +3741,21 @@ export class ConnectionManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.ConnectionManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.ConnectionManager */
     connect(sigName: "activated", callback: (($obj: ConnectionManager) => void)): number
     connect_after(sigName: "activated", callback: (($obj: ConnectionManager) => void)): number
     emit(sigName: "activated"): void
@@ -3763,14 +3765,14 @@ export class ConnectionManager {
     connect(sigName: "got-info", callback: (($obj: ConnectionManager, source: number) => void)): number
     connect_after(sigName: "got-info", callback: (($obj: ConnectionManager, source: number) => void)): number
     emit(sigName: "got-info", source: number): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: ConnectionManager, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: ConnectionManager, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: ConnectionManager, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: ConnectionManager, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ConnectionManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ConnectionManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3803,8 +3805,8 @@ export class ConnectionManager {
 }
 export interface Contact_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Contact {
-    /* Properties of TelepathyGLib.Contact */
+class Contact {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Contact */
     readonly alias: string
     readonly avatar_file: Gio.File
     readonly avatar_mime_type: string
@@ -3824,9 +3826,9 @@ export class Contact {
     readonly publish_request: string
     readonly publish_state: number
     readonly subscribe_state: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.Contact */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Contact */
     add_to_group_async(group: string, callback?: Gio.AsyncReadyCallback | null): void
     add_to_group_finish(result: Gio.AsyncResult): boolean
     authorize_publication_async(callback?: Gio.AsyncReadyCallback | null): void
@@ -3871,15 +3873,15 @@ export class Contact {
     unpublish_finish(result: Gio.AsyncResult): boolean
     unsubscribe_async(callback?: Gio.AsyncReadyCallback | null): void
     unsubscribe_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3887,21 +3889,21 @@ export class Contact {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.Contact */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Contact */
     connect(sigName: "contact-groups-changed", callback: (($obj: Contact, added: string[], removed: string[]) => void)): number
     connect_after(sigName: "contact-groups-changed", callback: (($obj: Contact, added: string[], removed: string[]) => void)): number
     emit(sigName: "contact-groups-changed", added: string[], removed: string[]): void
@@ -3911,7 +3913,7 @@ export class Contact {
     connect(sigName: "subscription-states-changed", callback: (($obj: Contact, subscribe: number, publish: number, publish_request: string) => void)): number
     connect_after(sigName: "subscription-states-changed", callback: (($obj: Contact, subscribe: number, publish: number, publish_request: string) => void)): number
     emit(sigName: "subscription-states-changed", subscribe: number, publish: number, publish_request: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3967,13 +3969,13 @@ export interface ContactSearch_ConstructProps extends GObject.Object_ConstructPr
     limit?: number
     server?: string
 }
-export class ContactSearch {
-    /* Properties of TelepathyGLib.ContactSearch */
+class ContactSearch {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.ContactSearch */
     limit: number
     readonly state: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.ContactSearch */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.ContactSearch */
     get_account(): Account
     get_limit(): number
     get_search_keys(): string[]
@@ -3981,15 +3983,15 @@ export class ContactSearch {
     reset_async(server: string, limit: number, callback?: Gio.AsyncReadyCallback | null): void
     reset_finish(result: Gio.AsyncResult): string[]
     start(criteria: GLib.HashTable): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3997,32 +3999,32 @@ export class ContactSearch {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.AsyncInitable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Virtual methods of TelepathyGLib.ContactSearch */
+    /* Virtual methods of TelepathyGLib-0.12.TelepathyGLib.ContactSearch */
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.ContactSearch */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.ContactSearch */
     connect(sigName: "search-results-received", callback: (($obj: ContactSearch, results: ContactSearchResult[]) => void)): number
     connect_after(sigName: "search-results-received", callback: (($obj: ContactSearch, results: ContactSearchResult[]) => void)): number
     emit(sigName: "search-results-received", results: ContactSearchResult[]): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ContactSearch, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ContactSearch, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4046,23 +4048,23 @@ export class ContactSearch {
 export interface ContactSearchResult_ConstructProps extends GObject.Object_ConstructProps {
     identifier?: string
 }
-export class ContactSearchResult {
-    /* Fields of GObject.Object */
+class ContactSearchResult {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.ContactSearchResult */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.ContactSearchResult */
     dup_fields(): ContactInfoField[]
     get_field(field: string): ContactInfoField
     get_fields(): ContactInfoField[]
     get_identifier(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4070,21 +4072,21 @@ export class ContactSearchResult {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ContactSearchResult, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ContactSearchResult, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4099,12 +4101,12 @@ export class ContactSearchResult {
 }
 export interface DBusDaemon_ConstructProps extends Proxy_ConstructProps {
 }
-export class DBusDaemon {
-    /* Properties of TelepathyGLib.Proxy */
+class DBusDaemon {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.DBusDaemon */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.DBusDaemon */
     get_unique_name(): string
     list_activatable_names(timeout_ms: number, callback: DBusDaemonListNamesCb, weak_object: GObject.Object): void
     list_names(timeout_ms: number, callback: DBusDaemonListNamesCb, weak_object: GObject.Object): void
@@ -4113,7 +4115,7 @@ export class DBusDaemon {
     request_name(well_known_name: string, idempotent: boolean): boolean
     unregister_object(object: GObject.Object): void
     watch_name_owner(name: string, callback: DBusDaemonNameOwnerChangedCb): void
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -4125,15 +4127,15 @@ export class DBusDaemon {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4141,28 +4143,28 @@ export class DBusDaemon {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.Proxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: DBusDaemon, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: DBusDaemon, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: DBusDaemon, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: DBusDaemon, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DBusDaemon, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DBusDaemon, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4182,11 +4184,11 @@ export class DBusDaemon {
 }
 export interface DBusTubeChannel_ConstructProps extends Channel_ConstructProps {
 }
-export class DBusTubeChannel {
-    /* Properties of TelepathyGLib.DBusTubeChannel */
+class DBusTubeChannel {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.DBusTubeChannel */
     readonly parameters_vardict: GLib.Variant
     readonly service_name: string
-    /* Properties of TelepathyGLib.Channel */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Channel */
     readonly channel_ready: boolean
     readonly group_flags: number
     readonly group_self_contact: Contact
@@ -4198,18 +4200,18 @@ export class DBusTubeChannel {
     readonly password_needed: boolean
     readonly requested: boolean
     readonly target_contact: Contact
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.DBusTubeChannel */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.DBusTubeChannel */
     accept_async(callback?: Gio.AsyncReadyCallback | null): void
     accept_finish(result: Gio.AsyncResult): Gio.DBusConnection
     dup_parameters_vardict(): GLib.Variant
     get_service_name(): string
     offer_async(params?: GLib.HashTable | null, callback?: Gio.AsyncReadyCallback | null): void
     offer_finish(result: Gio.AsyncResult): Gio.DBusConnection
-    /* Methods of TelepathyGLib.Channel */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Channel */
     borrow_connection(): Connection
     borrow_immutable_properties(): GLib.HashTable
     close_async(callback?: Gio.AsyncReadyCallback | null): void
@@ -4245,7 +4247,7 @@ export class DBusTubeChannel {
     leave_finish(result: Gio.AsyncResult): boolean
     provide_password_async(password: string, callback?: Gio.AsyncReadyCallback | null): void
     provide_password_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -4257,15 +4259,15 @@ export class DBusTubeChannel {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4273,21 +4275,21 @@ export class DBusTubeChannel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.Channel */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Channel */
     connect(sigName: "chat-state-changed", callback: (($obj: DBusTubeChannel, contact: number, state: number) => void)): number
     connect_after(sigName: "chat-state-changed", callback: (($obj: DBusTubeChannel, contact: number, state: number) => void)): number
     emit(sigName: "chat-state-changed", contact: number, state: number): void
@@ -4303,14 +4305,14 @@ export class DBusTubeChannel {
     connect(sigName: "group-members-changed-detailed", callback: (($obj: DBusTubeChannel, added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable) => void)): number
     connect_after(sigName: "group-members-changed-detailed", callback: (($obj: DBusTubeChannel, added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable) => void)): number
     emit(sigName: "group-members-changed-detailed", added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: DBusTubeChannel, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: DBusTubeChannel, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: DBusTubeChannel, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: DBusTubeChannel, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DBusTubeChannel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DBusTubeChannel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4355,20 +4357,20 @@ export class DBusTubeChannel {
 }
 export interface DebugClient_ConstructProps extends Proxy_ConstructProps {
 }
-export class DebugClient {
-    /* Properties of TelepathyGLib.DebugClient */
+class DebugClient {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.DebugClient */
     readonly enabled: boolean
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.DebugClient */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.DebugClient */
     get_messages_async(callback?: Gio.AsyncReadyCallback | null): void
     get_messages_finish(result: Gio.AsyncResult): DebugMessage[]
     is_enabled(): boolean
     set_enabled_async(enabled: boolean, callback?: Gio.AsyncReadyCallback | null): void
     set_enabled_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -4380,15 +4382,15 @@ export class DebugClient {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4396,32 +4398,32 @@ export class DebugClient {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.DebugClient */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.DebugClient */
     connect(sigName: "new-debug-message", callback: (($obj: DebugClient, message: DebugMessage) => void)): number
     connect_after(sigName: "new-debug-message", callback: (($obj: DebugClient, message: DebugMessage) => void)): number
     emit(sigName: "new-debug-message", message: DebugMessage): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: DebugClient, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: DebugClient, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: DebugClient, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: DebugClient, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DebugClient, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DebugClient, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4444,30 +4446,30 @@ export class DebugClient {
 }
 export interface DebugMessage_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class DebugMessage {
-    /* Properties of TelepathyGLib.DebugMessage */
+class DebugMessage {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.DebugMessage */
     readonly category: string
     readonly domain: string
     readonly level: number
     readonly message: string
     readonly time: GLib.DateTime
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.DebugMessage */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.DebugMessage */
     get_category(): string
     get_domain(): string
     get_level(): GLib.LogLevelFlags
     get_message(): string
     get_time(): GLib.DateTime
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4475,21 +4477,21 @@ export class DebugMessage {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DebugMessage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DebugMessage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4514,8 +4516,8 @@ export class DebugMessage {
 }
 export interface FileTransferChannel_ConstructProps extends Channel_ConstructProps {
 }
-export class FileTransferChannel {
-    /* Properties of TelepathyGLib.FileTransferChannel */
+class FileTransferChannel {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.FileTransferChannel */
     readonly date: GLib.DateTime
     readonly description: string
     readonly file: Gio.File
@@ -4526,7 +4528,7 @@ export class FileTransferChannel {
     readonly size: number
     readonly state: number
     readonly transferred_bytes: number
-    /* Properties of TelepathyGLib.Channel */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Channel */
     readonly channel_ready: boolean
     readonly group_flags: number
     readonly group_self_contact: Contact
@@ -4538,11 +4540,11 @@ export class FileTransferChannel {
     readonly password_needed: boolean
     readonly requested: boolean
     readonly target_contact: Contact
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.FileTransferChannel */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.FileTransferChannel */
     accept_file_async(file: Gio.File, offset: number, callback?: Gio.AsyncReadyCallback | null): void
     accept_file_finish(result: Gio.AsyncResult): boolean
     get_date(): GLib.DateTime
@@ -4556,7 +4558,7 @@ export class FileTransferChannel {
     get_transferred_bytes(): number
     provide_file_async(file: Gio.File, callback?: Gio.AsyncReadyCallback | null): void
     provide_file_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Channel */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Channel */
     borrow_connection(): Connection
     borrow_immutable_properties(): GLib.HashTable
     close_async(callback?: Gio.AsyncReadyCallback | null): void
@@ -4592,7 +4594,7 @@ export class FileTransferChannel {
     leave_finish(result: Gio.AsyncResult): boolean
     provide_password_async(password: string, callback?: Gio.AsyncReadyCallback | null): void
     provide_password_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -4604,15 +4606,15 @@ export class FileTransferChannel {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4620,21 +4622,21 @@ export class FileTransferChannel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.Channel */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Channel */
     connect(sigName: "chat-state-changed", callback: (($obj: FileTransferChannel, contact: number, state: number) => void)): number
     connect_after(sigName: "chat-state-changed", callback: (($obj: FileTransferChannel, contact: number, state: number) => void)): number
     emit(sigName: "chat-state-changed", contact: number, state: number): void
@@ -4650,14 +4652,14 @@ export class FileTransferChannel {
     connect(sigName: "group-members-changed-detailed", callback: (($obj: FileTransferChannel, added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable) => void)): number
     connect_after(sigName: "group-members-changed-detailed", callback: (($obj: FileTransferChannel, added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable) => void)): number
     emit(sigName: "group-members-changed-detailed", added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: FileTransferChannel, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: FileTransferChannel, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: FileTransferChannel, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: FileTransferChannel, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FileTransferChannel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FileTransferChannel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4725,24 +4727,24 @@ export interface HandleChannelsContext_ConstructProps extends GObject.Object_Con
     requests_satisfied?: object[]
     user_action_time?: number
 }
-export class HandleChannelsContext {
-    /* Fields of GObject.Object */
+class HandleChannelsContext {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.HandleChannelsContext */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.HandleChannelsContext */
     accept(): void
     delay(): void
     fail(error: GLib.Error): void
     get_handler_info(): GLib.HashTable
     get_requests(): ChannelRequest[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4750,25 +4752,25 @@ export class HandleChannelsContext {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.HandleChannelsContext */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.HandleChannelsContext */
     connect(sigName: "done", callback: (($obj: HandleChannelsContext) => void)): number
     connect_after(sigName: "done", callback: (($obj: HandleChannelsContext) => void)): number
     emit(sigName: "done"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: HandleChannelsContext, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: HandleChannelsContext, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4783,10 +4785,10 @@ export class HandleChannelsContext {
 }
 export interface Message_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Message {
-    /* Fields of GObject.Object */
+class Message {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.Message */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Message */
     append_part(): number
     count_parts(): number
     delete_key(part: number, key: string): boolean
@@ -4818,15 +4820,15 @@ export class Message {
     set_variant(part: number, key: string, value: GLib.Variant): void
     take_message(part: number, key: string, message: Message): void
     to_text(): [ /* returnType */ string, /* out_flags */ ChannelTextMessageFlags ]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4834,21 +4836,21 @@ export class Message {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Message, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Message, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4868,24 +4870,24 @@ export interface ObserveChannelsContext_ConstructProps extends GObject.Object_Co
     dispatch_operation?: ChannelDispatchOperation
     requests?: object[]
 }
-export class ObserveChannelsContext {
-    /* Fields of GObject.Object */
+class ObserveChannelsContext {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.ObserveChannelsContext */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.ObserveChannelsContext */
     accept(): void
     delay(): void
     fail(error: GLib.Error): void
     get_requests(): ChannelRequest[]
     is_recovering(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4893,21 +4895,21 @@ export class ObserveChannelsContext {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ObserveChannelsContext, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ObserveChannelsContext, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4924,8 +4926,8 @@ export interface Protocol_ConstructProps extends Proxy_ConstructProps {
     cm_name?: string
     protocol_name?: string
 }
-export class Protocol {
-    /* Properties of TelepathyGLib.Protocol */
+class Protocol {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Protocol */
     readonly addressable_uri_schemes: string[]
     readonly addressable_vcard_fields: string[]
     readonly authentication_types: string[]
@@ -4936,11 +4938,11 @@ export class Protocol {
     readonly param_names: string[]
     readonly protocol_properties_vardict: GLib.Variant
     readonly vcard_field: string
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.Protocol */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Protocol */
     can_register(): boolean
     dup_immutable_properties(): GLib.Variant
     dup_param(param: string): ConnectionManagerParam
@@ -4967,7 +4969,7 @@ export class Protocol {
     normalize_contact_uri_finish(result: Gio.AsyncResult): string
     normalize_vcard_address_async(field: string, value: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     normalize_vcard_address_finish(result: Gio.AsyncResult): string
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -4979,15 +4981,15 @@ export class Protocol {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4995,28 +4997,28 @@ export class Protocol {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.Proxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: Protocol, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: Protocol, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: Protocol, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: Protocol, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Protocol, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Protocol, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5063,12 +5065,12 @@ export interface Proxy_ConstructProps extends GObject.Object_ConstructProps {
     factory?: SimpleClientFactory
     object_path?: string
 }
-export class Proxy {
-    /* Properties of TelepathyGLib.Proxy */
+class Proxy {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -5080,15 +5082,15 @@ export class Proxy {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5096,28 +5098,28 @@ export class Proxy {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.Proxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: Proxy, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: Proxy, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: Proxy, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: Proxy, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Proxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Proxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5134,10 +5136,10 @@ export class Proxy {
 }
 export interface RoomInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class RoomInfo {
-    /* Fields of GObject.Object */
+class RoomInfo {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.RoomInfo */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.RoomInfo */
     get_channel_type(): string
     get_description(): string
     get_handle(): Handle
@@ -5149,15 +5151,15 @@ export class RoomInfo {
     get_room_id(): string
     get_server(): string
     get_subject(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5165,21 +5167,21 @@ export class RoomInfo {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RoomInfo, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RoomInfo, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5196,25 +5198,25 @@ export interface RoomList_ConstructProps extends GObject.Object_ConstructProps {
     account?: Account
     server?: string
 }
-export class RoomList {
-    /* Properties of TelepathyGLib.RoomList */
+class RoomList {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.RoomList */
     readonly listing: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.RoomList */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.RoomList */
     get_account(): Account
     get_server(): string
     is_listing(): boolean
     start(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5222,35 +5224,35 @@ export class RoomList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.AsyncInitable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Virtual methods of TelepathyGLib.RoomList */
+    /* Virtual methods of TelepathyGLib-0.12.TelepathyGLib.RoomList */
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.RoomList */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.RoomList */
     connect(sigName: "failed", callback: (($obj: RoomList, error: GLib.Error) => void)): number
     connect_after(sigName: "failed", callback: (($obj: RoomList, error: GLib.Error) => void)): number
     emit(sigName: "failed", error: GLib.Error): void
     connect(sigName: "got-room", callback: (($obj: RoomList, room: RoomInfo) => void)): number
     connect_after(sigName: "got-room", callback: (($obj: RoomList, room: RoomInfo) => void)): number
     emit(sigName: "got-room", room: RoomInfo): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RoomList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RoomList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5272,10 +5274,10 @@ export class RoomList {
 export interface SignalledMessage_ConstructProps extends Message_ConstructProps {
     sender?: Contact
 }
-export class SignalledMessage {
-    /* Fields of GObject.Object */
+class SignalledMessage {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.Message */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Message */
     append_part(): number
     count_parts(): number
     delete_key(part: number, key: string): boolean
@@ -5307,15 +5309,15 @@ export class SignalledMessage {
     set_variant(part: number, key: string, value: GLib.Variant): void
     take_message(part: number, key: string, message: Message): void
     to_text(): [ /* returnType */ string, /* out_flags */ ChannelTextMessageFlags ]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5323,21 +5325,21 @@ export class SignalledMessage {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SignalledMessage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SignalledMessage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5357,10 +5359,10 @@ export interface SimpleApprover_ConstructProps extends BaseClient_ConstructProps
     destroy?: object
     user_data?: object
 }
-export class SimpleApprover {
-    /* Fields of GObject.Object */
+class SimpleApprover {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.BaseClient */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.BaseClient */
     add_account_features(features: GLib.Quark[]): void
     add_approver_filter(filter: GLib.HashTable): void
     add_approver_filter_vardict(filter: GLib.Variant): void
@@ -5393,15 +5395,15 @@ export class SimpleApprover {
     set_observer_delay_approvers(delay: boolean): void
     set_observer_recover(recover: boolean): void
     unregister(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5409,32 +5411,32 @@ export class SimpleApprover {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of TelepathyGLib.BaseClient */
+    watch_closure(closure: Function): void
+    /* Virtual methods of TelepathyGLib-0.12.TelepathyGLib.BaseClient */
     vfunc_add_dispatch_operation(account: Account, connection: Connection, channels: Channel[], dispatch_operation: ChannelDispatchOperation, context: AddDispatchOperationContext): void
     vfunc_handle_channels(account: Account, connection: Connection, channels: Channel[], requests_satisfied: ChannelRequest[], user_action_time: number, context: HandleChannelsContext): void
     vfunc_observe_channels(account: Account, connection: Connection, channels: Channel[], dispatch_operation: ChannelDispatchOperation | null, requests: ChannelRequest[], context: ObserveChannelsContext): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.BaseClient */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.BaseClient */
     connect(sigName: "request-added", callback: (($obj: SimpleApprover, account: Account, request: ChannelRequest) => void)): number
     connect_after(sigName: "request-added", callback: (($obj: SimpleApprover, account: Account, request: ChannelRequest) => void)): number
     emit(sigName: "request-added", account: Account, request: ChannelRequest): void
     connect(sigName: "request-removed", callback: (($obj: SimpleApprover, request: ChannelRequest, error: string, message: string) => void)): number
     connect_after(sigName: "request-removed", callback: (($obj: SimpleApprover, request: ChannelRequest, error: string, message: string) => void)): number
     emit(sigName: "request-removed", request: ChannelRequest, error: string, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SimpleApprover, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SimpleApprover, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5454,10 +5456,10 @@ export class SimpleApprover {
 export interface SimpleClientFactory_ConstructProps extends GObject.Object_ConstructProps {
     dbus_daemon?: DBusDaemon
 }
-export class SimpleClientFactory {
-    /* Fields of GObject.Object */
+class SimpleClientFactory {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.SimpleClientFactory */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.SimpleClientFactory */
     add_account_features(features?: GLib.Quark[] | null): void
     add_channel_features(features?: GLib.Quark[] | null): void
     add_connection_features(features?: GLib.Quark[] | null): void
@@ -5475,15 +5477,15 @@ export class SimpleClientFactory {
     get_dbus_daemon(): DBusDaemon
     upgrade_contacts_async(connection: Connection, contacts: Contact[], callback?: Gio.AsyncReadyCallback | null): void
     upgrade_contacts_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* contacts */ Contact[] | null ]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5491,26 +5493,26 @@ export class SimpleClientFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of TelepathyGLib.SimpleClientFactory */
+    watch_closure(closure: Function): void
+    /* Virtual methods of TelepathyGLib-0.12.TelepathyGLib.SimpleClientFactory */
     vfunc_dup_account_features(account: Account): GLib.Quark[]
     vfunc_dup_channel_features(channel: Channel): GLib.Quark[]
     vfunc_dup_connection_features(connection: Connection): GLib.Quark[]
     vfunc_dup_contact_features(connection: Connection): ContactFeature[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SimpleClientFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SimpleClientFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5532,10 +5534,10 @@ export interface SimpleHandler_ConstructProps extends BaseClient_ConstructProps 
     requests?: boolean
     user_data?: object
 }
-export class SimpleHandler {
-    /* Fields of GObject.Object */
+class SimpleHandler {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.BaseClient */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.BaseClient */
     add_account_features(features: GLib.Quark[]): void
     add_approver_filter(filter: GLib.HashTable): void
     add_approver_filter_vardict(filter: GLib.Variant): void
@@ -5568,15 +5570,15 @@ export class SimpleHandler {
     set_observer_delay_approvers(delay: boolean): void
     set_observer_recover(recover: boolean): void
     unregister(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5584,32 +5586,32 @@ export class SimpleHandler {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of TelepathyGLib.BaseClient */
+    watch_closure(closure: Function): void
+    /* Virtual methods of TelepathyGLib-0.12.TelepathyGLib.BaseClient */
     vfunc_add_dispatch_operation(account: Account, connection: Connection, channels: Channel[], dispatch_operation: ChannelDispatchOperation, context: AddDispatchOperationContext): void
     vfunc_handle_channels(account: Account, connection: Connection, channels: Channel[], requests_satisfied: ChannelRequest[], user_action_time: number, context: HandleChannelsContext): void
     vfunc_observe_channels(account: Account, connection: Connection, channels: Channel[], dispatch_operation: ChannelDispatchOperation | null, requests: ChannelRequest[], context: ObserveChannelsContext): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.BaseClient */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.BaseClient */
     connect(sigName: "request-added", callback: (($obj: SimpleHandler, account: Account, request: ChannelRequest) => void)): number
     connect_after(sigName: "request-added", callback: (($obj: SimpleHandler, account: Account, request: ChannelRequest) => void)): number
     emit(sigName: "request-added", account: Account, request: ChannelRequest): void
     connect(sigName: "request-removed", callback: (($obj: SimpleHandler, request: ChannelRequest, error: string, message: string) => void)): number
     connect_after(sigName: "request-removed", callback: (($obj: SimpleHandler, request: ChannelRequest, error: string, message: string) => void)): number
     emit(sigName: "request-removed", request: ChannelRequest, error: string, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SimpleHandler, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SimpleHandler, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5632,10 +5634,10 @@ export interface SimpleObserver_ConstructProps extends BaseClient_ConstructProps
     recover?: boolean
     user_data?: object
 }
-export class SimpleObserver {
-    /* Fields of GObject.Object */
+class SimpleObserver {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.BaseClient */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.BaseClient */
     add_account_features(features: GLib.Quark[]): void
     add_approver_filter(filter: GLib.HashTable): void
     add_approver_filter_vardict(filter: GLib.Variant): void
@@ -5668,15 +5670,15 @@ export class SimpleObserver {
     set_observer_delay_approvers(delay: boolean): void
     set_observer_recover(recover: boolean): void
     unregister(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5684,32 +5686,32 @@ export class SimpleObserver {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of TelepathyGLib.BaseClient */
+    watch_closure(closure: Function): void
+    /* Virtual methods of TelepathyGLib-0.12.TelepathyGLib.BaseClient */
     vfunc_add_dispatch_operation(account: Account, connection: Connection, channels: Channel[], dispatch_operation: ChannelDispatchOperation, context: AddDispatchOperationContext): void
     vfunc_handle_channels(account: Account, connection: Connection, channels: Channel[], requests_satisfied: ChannelRequest[], user_action_time: number, context: HandleChannelsContext): void
     vfunc_observe_channels(account: Account, connection: Connection, channels: Channel[], dispatch_operation: ChannelDispatchOperation | null, requests: ChannelRequest[], context: ObserveChannelsContext): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.BaseClient */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.BaseClient */
     connect(sigName: "request-added", callback: (($obj: SimpleObserver, account: Account, request: ChannelRequest) => void)): number
     connect_after(sigName: "request-added", callback: (($obj: SimpleObserver, account: Account, request: ChannelRequest) => void)): number
     emit(sigName: "request-added", account: Account, request: ChannelRequest): void
     connect(sigName: "request-removed", callback: (($obj: SimpleObserver, request: ChannelRequest, error: string, message: string) => void)): number
     connect_after(sigName: "request-removed", callback: (($obj: SimpleObserver, request: ChannelRequest, error: string, message: string) => void)): number
     emit(sigName: "request-removed", request: ChannelRequest, error: string, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SimpleObserver, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SimpleObserver, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5728,11 +5730,11 @@ export class SimpleObserver {
 }
 export interface StreamTubeChannel_ConstructProps extends Channel_ConstructProps {
 }
-export class StreamTubeChannel {
-    /* Properties of TelepathyGLib.StreamTubeChannel */
+class StreamTubeChannel {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.StreamTubeChannel */
     readonly parameters_vardict: GLib.Variant
     readonly service: string
-    /* Properties of TelepathyGLib.Channel */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Channel */
     readonly channel_ready: boolean
     readonly group_flags: number
     readonly group_self_contact: Contact
@@ -5744,18 +5746,18 @@ export class StreamTubeChannel {
     readonly password_needed: boolean
     readonly requested: boolean
     readonly target_contact: Contact
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.StreamTubeChannel */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.StreamTubeChannel */
     accept_async(callback?: Gio.AsyncReadyCallback | null): void
     accept_finish(result: Gio.AsyncResult): StreamTubeConnection
     dup_parameters_vardict(): GLib.Variant
     get_service(): string
     offer_async(params?: GLib.HashTable | null, callback?: Gio.AsyncReadyCallback | null): void
     offer_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Channel */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Channel */
     borrow_connection(): Connection
     borrow_immutable_properties(): GLib.HashTable
     close_async(callback?: Gio.AsyncReadyCallback | null): void
@@ -5791,7 +5793,7 @@ export class StreamTubeChannel {
     leave_finish(result: Gio.AsyncResult): boolean
     provide_password_async(password: string, callback?: Gio.AsyncReadyCallback | null): void
     provide_password_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -5803,15 +5805,15 @@ export class StreamTubeChannel {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5819,25 +5821,25 @@ export class StreamTubeChannel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.StreamTubeChannel */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.StreamTubeChannel */
     connect(sigName: "incoming", callback: (($obj: StreamTubeChannel, tube_connection: StreamTubeConnection) => void)): number
     connect_after(sigName: "incoming", callback: (($obj: StreamTubeChannel, tube_connection: StreamTubeConnection) => void)): number
     emit(sigName: "incoming", tube_connection: StreamTubeConnection): void
-    /* Signals of TelepathyGLib.Channel */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Channel */
     connect(sigName: "chat-state-changed", callback: (($obj: StreamTubeChannel, contact: number, state: number) => void)): number
     connect_after(sigName: "chat-state-changed", callback: (($obj: StreamTubeChannel, contact: number, state: number) => void)): number
     emit(sigName: "chat-state-changed", contact: number, state: number): void
@@ -5853,14 +5855,14 @@ export class StreamTubeChannel {
     connect(sigName: "group-members-changed-detailed", callback: (($obj: StreamTubeChannel, added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable) => void)): number
     connect_after(sigName: "group-members-changed-detailed", callback: (($obj: StreamTubeChannel, added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable) => void)): number
     emit(sigName: "group-members-changed-detailed", added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: StreamTubeChannel, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: StreamTubeChannel, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: StreamTubeChannel, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: StreamTubeChannel, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StreamTubeChannel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StreamTubeChannel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5909,22 +5911,22 @@ export interface StreamTubeConnection_ConstructProps extends GObject.Object_Cons
     contact?: Contact
     socket_connection?: Gio.SocketConnection
 }
-export class StreamTubeConnection {
-    /* Fields of GObject.Object */
+class StreamTubeConnection {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.StreamTubeConnection */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.StreamTubeConnection */
     get_channel(): StreamTubeChannel
     get_contact(): Contact
     get_socket_connection(): Gio.SocketConnection
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5932,25 +5934,25 @@ export class StreamTubeConnection {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.StreamTubeConnection */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.StreamTubeConnection */
     connect(sigName: "closed", callback: (($obj: StreamTubeConnection, error: GLib.Error) => void)): number
     connect_after(sigName: "closed", callback: (($obj: StreamTubeConnection, error: GLib.Error) => void)): number
     emit(sigName: "closed", error: GLib.Error): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StreamTubeConnection, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StreamTubeConnection, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5966,16 +5968,16 @@ export class StreamTubeConnection {
 export interface TLSCertificate_ConstructProps extends Proxy_ConstructProps {
     parent?: Proxy
 }
-export class TLSCertificate {
-    /* Properties of TelepathyGLib.TLSCertificate */
+class TLSCertificate {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.TLSCertificate */
     readonly cert_data: object[]
     readonly cert_type: string
     readonly state: number
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.TLSCertificate */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.TLSCertificate */
     accept_async(callback?: Gio.AsyncReadyCallback | null): void
     accept_finish(result: Gio.AsyncResult): boolean
     add_rejection(reason: TLSCertificateRejectReason, dbus_error: string, details?: GLib.Variant | null): void
@@ -5986,7 +5988,7 @@ export class TLSCertificate {
     get_state(): TLSCertificateState
     reject_async(callback?: Gio.AsyncReadyCallback | null): void
     reject_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -5998,15 +6000,15 @@ export class TLSCertificate {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6014,28 +6016,28 @@ export class TLSCertificate {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.Proxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: TLSCertificate, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: TLSCertificate, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: TLSCertificate, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: TLSCertificate, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TLSCertificate, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TLSCertificate, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6066,24 +6068,24 @@ export interface TLSCertificateRejection_ConstructProps extends GObject.Object_C
     error?: GLib.Error
     reason?: number
 }
-export class TLSCertificateRejection {
-    /* Fields of GObject.Object */
+class TLSCertificateRejection {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.TLSCertificateRejection */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.TLSCertificateRejection */
     get_dbus_error(): string
     get_details(): GLib.Variant
     get_error(): GLib.Error
     get_reason(): TLSCertificateRejectReason
     raise_error(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6091,21 +6093,21 @@ export class TLSCertificateRejection {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TLSCertificateRejection, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TLSCertificateRejection, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6120,14 +6122,14 @@ export class TLSCertificateRejection {
 }
 export interface TextChannel_ConstructProps extends Channel_ConstructProps {
 }
-export class TextChannel {
-    /* Properties of TelepathyGLib.TextChannel */
+class TextChannel {
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.TextChannel */
     readonly delivery_reporting_support: number
     readonly is_sms_channel: boolean
     readonly message_part_support_flags: number
     readonly sms_flash: boolean
     readonly supported_content_types: string[]
-    /* Properties of TelepathyGLib.Channel */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Channel */
     readonly channel_ready: boolean
     readonly group_flags: number
     readonly group_self_contact: Contact
@@ -6139,11 +6141,11 @@ export class TextChannel {
     readonly password_needed: boolean
     readonly requested: boolean
     readonly target_contact: Contact
-    /* Properties of TelepathyGLib.Proxy */
+    /* Properties of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     readonly interfaces: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TelepathyGLib.TextChannel */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.TextChannel */
     ack_all_pending_messages_async(callback?: Gio.AsyncReadyCallback | null): void
     ack_all_pending_messages_finish(result: Gio.AsyncResult): boolean
     ack_message_async(message: Message, callback?: Gio.AsyncReadyCallback | null): void
@@ -6165,7 +6167,7 @@ export class TextChannel {
     set_chat_state_async(state: ChannelChatState, callback?: Gio.AsyncReadyCallback | null): void
     set_chat_state_finish(result: Gio.AsyncResult): boolean
     supports_message_type(message_type: ChannelTextMessageType): boolean
-    /* Methods of TelepathyGLib.Channel */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Channel */
     borrow_connection(): Connection
     borrow_immutable_properties(): GLib.HashTable
     close_async(callback?: Gio.AsyncReadyCallback | null): void
@@ -6201,7 +6203,7 @@ export class TextChannel {
     leave_finish(result: Gio.AsyncResult): boolean
     provide_password_async(password: string, callback?: Gio.AsyncReadyCallback | null): void
     provide_password_finish(result: Gio.AsyncResult): boolean
-    /* Methods of TelepathyGLib.Proxy */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     dbus_error_to_gerror(dbus_error: string, debug_message: string): void
     get_bus_name(): string
     get_dbus_daemon(): DBusDaemon
@@ -6213,15 +6215,15 @@ export class TextChannel {
     is_prepared(feature: GLib.Quark): boolean
     prepare_async(features?: GLib.Quark[] | null, callback?: Gio.AsyncReadyCallback | null): void
     prepare_finish(result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6229,21 +6231,21 @@ export class TextChannel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TelepathyGLib.TextChannel */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.TextChannel */
     connect(sigName: "contact-chat-state-changed", callback: (($obj: TextChannel, contact: Contact, state: number) => void)): number
     connect_after(sigName: "contact-chat-state-changed", callback: (($obj: TextChannel, contact: Contact, state: number) => void)): number
     emit(sigName: "contact-chat-state-changed", contact: Contact, state: number): void
@@ -6256,7 +6258,7 @@ export class TextChannel {
     connect(sigName: "pending-message-removed", callback: (($obj: TextChannel, message: SignalledMessage) => void)): number
     connect_after(sigName: "pending-message-removed", callback: (($obj: TextChannel, message: SignalledMessage) => void)): number
     emit(sigName: "pending-message-removed", message: SignalledMessage): void
-    /* Signals of TelepathyGLib.Channel */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Channel */
     connect(sigName: "chat-state-changed", callback: (($obj: TextChannel, contact: number, state: number) => void)): number
     connect_after(sigName: "chat-state-changed", callback: (($obj: TextChannel, contact: number, state: number) => void)): number
     emit(sigName: "chat-state-changed", contact: number, state: number): void
@@ -6272,14 +6274,14 @@ export class TextChannel {
     connect(sigName: "group-members-changed-detailed", callback: (($obj: TextChannel, added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable) => void)): number
     connect_after(sigName: "group-members-changed-detailed", callback: (($obj: TextChannel, added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable) => void)): number
     emit(sigName: "group-members-changed-detailed", added: number[], removed: number[], local_pending: number[], remote_pending: number[], details: GLib.HashTable): void
-    /* Signals of TelepathyGLib.Proxy */
+    /* Signals of TelepathyGLib-0.12.TelepathyGLib.Proxy */
     connect(sigName: "interface-added", callback: (($obj: TextChannel, id: number, proxy: any) => void)): number
     connect_after(sigName: "interface-added", callback: (($obj: TextChannel, id: number, proxy: any) => void)): number
     emit(sigName: "interface-added", id: number, proxy: any): void
     connect(sigName: "invalidated", callback: (($obj: TextChannel, domain: number, code: number, message: string) => void)): number
     connect_after(sigName: "invalidated", callback: (($obj: TextChannel, domain: number, code: number, message: string) => void)): number
     emit(sigName: "invalidated", domain: number, code: number, message: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TextChannel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TextChannel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6332,54 +6334,54 @@ export class TextChannel {
     static get_feature_quark_sms(): GLib.Quark
     static $gtype: GObject.Type
 }
-export abstract class AccountChannelRequestClass {
+abstract class AccountChannelRequestClass {
     static name: string
 }
-export class AccountChannelRequestPrivate {
+class AccountChannelRequestPrivate {
     static name: string
 }
-export abstract class AccountClass {
+abstract class AccountClass {
     static name: string
 }
-export class AccountClassPrivate {
+class AccountClassPrivate {
     static name: string
 }
-export abstract class AccountManagerClass {
+abstract class AccountManagerClass {
     static name: string
 }
-export class AccountManagerClassPrivate {
+class AccountManagerClassPrivate {
     static name: string
 }
-export class AccountManagerPrivate {
+class AccountManagerPrivate {
     static name: string
 }
-export class AccountPrivate {
+class AccountPrivate {
     static name: string
 }
-export abstract class AccountRequestClass {
+abstract class AccountRequestClass {
     static name: string
 }
-export class AccountRequestPrivate {
+class AccountRequestPrivate {
     static name: string
 }
-export abstract class AddDispatchOperationContextClass {
+abstract class AddDispatchOperationContextClass {
     static name: string
 }
-export class AddDispatchOperationContextPrivate {
+class AddDispatchOperationContextPrivate {
     static name: string
 }
-export abstract class AutomaticClientFactoryClass {
-    /* Fields of TelepathyGLib.AutomaticClientFactoryClass */
+abstract class AutomaticClientFactoryClass {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.AutomaticClientFactoryClass */
     parent_class: SimpleClientFactoryClass
     static name: string
 }
-export abstract class AutomaticProxyFactoryClass {
-    /* Fields of TelepathyGLib.AutomaticProxyFactoryClass */
+abstract class AutomaticProxyFactoryClass {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.AutomaticProxyFactoryClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class AvatarRequirements {
-    /* Fields of TelepathyGLib.AvatarRequirements */
+class AvatarRequirements {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.AvatarRequirements */
     supported_mime_types: string[]
     minimum_width: number
     minimum_height: number
@@ -6394,22 +6396,22 @@ export class AvatarRequirements {
     /* Static methods and pseudo-constructors */
     static new(supported_mime_types: string[], minimum_width: number, minimum_height: number, recommended_width: number, recommended_height: number, maximum_width: number, maximum_height: number, maximum_bytes: number): AvatarRequirements
 }
-export abstract class BaseClientClass {
-    /* Fields of TelepathyGLib.BaseClientClass */
+abstract class BaseClientClass {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.BaseClientClass */
     parent_class: GObject.ObjectClass
     observe_channels: BaseClientClassObserveChannelsImpl
     add_dispatch_operation: BaseClientClassAddDispatchOperationImpl
     handle_channels: BaseClientClassHandleChannelsImpl
     static name: string
 }
-export class BaseClientClassPrivate {
+class BaseClientClassPrivate {
     static name: string
 }
-export class BaseClientPrivate {
+class BaseClientPrivate {
     static name: string
 }
-export abstract class BaseConnectionClass {
-    /* Fields of TelepathyGLib.BaseConnectionClass */
+abstract class BaseConnectionClass {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.BaseConnectionClass */
     parent_class: GObject.ObjectClass
     get_unique_connection_name: BaseConnectionGetUniqueConnectionNameImpl
     connecting: BaseConnectionProc
@@ -6419,102 +6421,102 @@ export abstract class BaseConnectionClass {
     start_connecting: BaseConnectionStartConnectingImpl
     static name: string
 }
-export class BaseConnectionPrivate {
+class BaseConnectionPrivate {
     static name: string
 }
-export abstract class BasicProxyFactoryClass {
-    /* Fields of TelepathyGLib.BasicProxyFactoryClass */
+abstract class BasicProxyFactoryClass {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.BasicProxyFactoryClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class CallChannelClass {
+abstract class CallChannelClass {
     static name: string
 }
-export class CallChannelPrivate {
+class CallChannelPrivate {
     static name: string
 }
-export abstract class CallContentClass {
+abstract class CallContentClass {
     static name: string
 }
-export class CallContentPrivate {
+class CallContentPrivate {
     static name: string
 }
-export class CallStateReason {
-    /* Fields of TelepathyGLib.CallStateReason */
+class CallStateReason {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.CallStateReason */
     actor: Handle
     reason: CallStateChangeReason
     dbus_reason: string
     message: string
     static name: string
 }
-export abstract class CallStreamClass {
+abstract class CallStreamClass {
     static name: string
 }
-export class CallStreamPrivate {
+class CallStreamPrivate {
     static name: string
 }
-export abstract class CapabilitiesClass {
+abstract class CapabilitiesClass {
     static name: string
 }
-export class CapabilitiesPrivate {
+class CapabilitiesPrivate {
     static name: string
 }
-export abstract class ChannelClass {
-    /* Fields of TelepathyGLib.ChannelClass */
+abstract class ChannelClass {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.ChannelClass */
     parent_class: ProxyClass
     static name: string
 }
-export abstract class ChannelDispatchOperationClass {
+abstract class ChannelDispatchOperationClass {
     static name: string
 }
-export class ChannelDispatchOperationClassPrivate {
+class ChannelDispatchOperationClassPrivate {
     static name: string
 }
-export class ChannelDispatchOperationPrivate {
+class ChannelDispatchOperationPrivate {
     static name: string
 }
-export abstract class ChannelDispatcherClass {
+abstract class ChannelDispatcherClass {
     static name: string
 }
-export class ChannelDispatcherClassPrivate {
+class ChannelDispatcherClassPrivate {
     static name: string
 }
-export class ChannelDispatcherPrivate {
+class ChannelDispatcherPrivate {
     static name: string
 }
-export class ChannelManagerIter {
+class ChannelManagerIter {
     static name: string
 }
-export class ChannelPrivate {
+class ChannelPrivate {
     static name: string
 }
-export abstract class ChannelRequestClass {
+abstract class ChannelRequestClass {
     static name: string
 }
-export class ChannelRequestClassPrivate {
+class ChannelRequestClassPrivate {
     static name: string
 }
-export class ChannelRequestPrivate {
+class ChannelRequestPrivate {
     static name: string
 }
-export abstract class ClientChannelFactoryInterface {
-    /* Fields of TelepathyGLib.ClientChannelFactoryInterface */
+abstract class ClientChannelFactoryInterface {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.ClientChannelFactoryInterface */
     parent: GObject.TypeInterface
     static name: string
 }
-export abstract class ClientMessageClass {
+abstract class ClientMessageClass {
     static name: string
 }
-export abstract class ConnectionClass {
-    /* Fields of TelepathyGLib.ConnectionClass */
+abstract class ConnectionClass {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.ConnectionClass */
     parent_class: ProxyClass
     static name: string
 }
-export abstract class ConnectionManagerClass {
+abstract class ConnectionManagerClass {
     static name: string
 }
-export class ConnectionManagerParam {
-    /* Methods of TelepathyGLib.ConnectionManagerParam */
+class ConnectionManagerParam {
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.ConnectionManagerParam */
     copy(): ConnectionManagerParam
     dup_default_variant(): GLib.Variant
     dup_variant_type(): GLib.VariantType
@@ -6528,14 +6530,14 @@ export class ConnectionManagerParam {
     is_secret(): boolean
     static name: string
 }
-export class ConnectionManagerPrivate {
+class ConnectionManagerPrivate {
     static name: string
 }
-export class ConnectionManagerProtocol {
-    /* Fields of TelepathyGLib.ConnectionManagerProtocol */
+class ConnectionManagerProtocol {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.ConnectionManagerProtocol */
     name: string
     params: ConnectionManagerParam
-    /* Methods of TelepathyGLib.ConnectionManagerProtocol */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.ConnectionManagerProtocol */
     can_register(): boolean
     copy(): ConnectionManagerProtocol
     dup_param_names(): string[]
@@ -6544,14 +6546,14 @@ export class ConnectionManagerProtocol {
     has_param(param: string): boolean
     static name: string
 }
-export class ConnectionPrivate {
+class ConnectionPrivate {
     static name: string
 }
-export abstract class ContactClass {
+abstract class ContactClass {
     static name: string
 }
-export class ContactInfoField {
-    /* Fields of TelepathyGLib.ContactInfoField */
+class ContactInfoField {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.ContactInfoField */
     field_name: string
     parameters: string[]
     field_value: string[]
@@ -6561,109 +6563,109 @@ export class ContactInfoField {
     /* Static methods and pseudo-constructors */
     static new(field_name: string, parameters: string[], field_value: string[]): ContactInfoField
 }
-export class ContactInfoFieldSpec {
-    /* Fields of TelepathyGLib.ContactInfoFieldSpec */
+class ContactInfoFieldSpec {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.ContactInfoFieldSpec */
     name: string
     parameters: string[]
     flags: ContactInfoFieldFlags
     max: number
     static name: string
 }
-export class ContactPrivate {
+class ContactPrivate {
     static name: string
 }
-export abstract class ContactSearchClass {
+abstract class ContactSearchClass {
     static name: string
 }
-export class ContactSearchPrivate {
+class ContactSearchPrivate {
     static name: string
 }
-export abstract class ContactSearchResultClass {
+abstract class ContactSearchResultClass {
     static name: string
 }
-export class ContactSearchResultPrivate {
+class ContactSearchResultPrivate {
     static name: string
 }
-export class ContactsMixin {
+class ContactsMixin {
     static name: string
 }
-export class ContactsMixinClass {
+class ContactsMixinClass {
     static name: string
 }
-export class ContactsMixinClassPrivate {
+class ContactsMixinClassPrivate {
     static name: string
 }
-export class ContactsMixinPrivate {
+class ContactsMixinPrivate {
     static name: string
 }
-export abstract class DBusDaemonClass {
+abstract class DBusDaemonClass {
     static name: string
 }
-export class DBusDaemonPrivate {
+class DBusDaemonPrivate {
     static name: string
 }
-export class DBusPropertiesMixinClass {
-    /* Fields of TelepathyGLib.DBusPropertiesMixinClass */
+class DBusPropertiesMixinClass {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.DBusPropertiesMixinClass */
     interfaces: DBusPropertiesMixinIfaceImpl
     static name: string
     /* Static methods and pseudo-constructors */
     static init(cls: GObject.ObjectClass, offset: number): void
 }
-export class DBusPropertiesMixinIfaceImpl {
-    /* Fields of TelepathyGLib.DBusPropertiesMixinIfaceImpl */
+class DBusPropertiesMixinIfaceImpl {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.DBusPropertiesMixinIfaceImpl */
     name: string
     getter: DBusPropertiesMixinGetter
     setter: DBusPropertiesMixinSetter
     props: DBusPropertiesMixinPropImpl
     static name: string
 }
-export class DBusPropertiesMixinIfaceInfo {
-    /* Fields of TelepathyGLib.DBusPropertiesMixinIfaceInfo */
+class DBusPropertiesMixinIfaceInfo {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.DBusPropertiesMixinIfaceInfo */
     dbus_interface: GLib.Quark
     props: DBusPropertiesMixinPropInfo
     static name: string
 }
-export class DBusPropertiesMixinPropImpl {
-    /* Fields of TelepathyGLib.DBusPropertiesMixinPropImpl */
+class DBusPropertiesMixinPropImpl {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.DBusPropertiesMixinPropImpl */
     name: string
     getter_data: object
     setter_data: object
     static name: string
 }
-export class DBusPropertiesMixinPropInfo {
-    /* Fields of TelepathyGLib.DBusPropertiesMixinPropInfo */
+class DBusPropertiesMixinPropInfo {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.DBusPropertiesMixinPropInfo */
     name: GLib.Quark
     flags: DBusPropertiesMixinFlags
     dbus_signature: string
     type: GObject.Type
     static name: string
 }
-export abstract class DBusTubeChannelClass {
+abstract class DBusTubeChannelClass {
     static name: string
 }
-export class DBusTubeChannelPrivate {
+class DBusTubeChannelPrivate {
     static name: string
 }
-export abstract class DebugClientClass {
+abstract class DebugClientClass {
     static name: string
 }
-export class DebugClientPrivate {
+class DebugClientPrivate {
     static name: string
 }
-export abstract class DebugMessageClass {
+abstract class DebugMessageClass {
     static name: string
 }
-export class DebugMessagePriv {
+class DebugMessagePriv {
     static name: string
 }
-export abstract class FileTransferChannelClass {
+abstract class FileTransferChannelClass {
     static name: string
 }
-export class FileTransferChannelPrivate {
+class FileTransferChannelPrivate {
     static name: string
 }
-export class GroupMixin {
-    /* Fields of TelepathyGLib.GroupMixin */
+class GroupMixin {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.GroupMixin */
     handle_repo: HandleRepoIface
     self_handle: Handle
     group_flags: ChannelGroupFlags
@@ -6673,36 +6675,36 @@ export class GroupMixin {
     priv: GroupMixinPrivate
     static name: string
 }
-export class GroupMixinClass {
-    /* Fields of TelepathyGLib.GroupMixinClass */
+class GroupMixinClass {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.GroupMixinClass */
     add_member: GroupMixinAddMemberFunc
     remove_member: GroupMixinRemMemberFunc
     priv: GroupMixinClassPrivate
     static name: string
 }
-export class GroupMixinClassPrivate {
+class GroupMixinClassPrivate {
     static name: string
 }
-export class GroupMixinPrivate {
+class GroupMixinPrivate {
     static name: string
 }
-export abstract class HandleChannelsContextClass {
+abstract class HandleChannelsContextClass {
     static name: string
 }
-export class HandleChannelsContextPrivate {
+class HandleChannelsContextPrivate {
     static name: string
 }
-export class HandleRepoIfaceClass {
+class HandleRepoIfaceClass {
     static name: string
 }
-export class HandleSet {
-    /* Methods of TelepathyGLib.HandleSet */
+class HandleSet {
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.HandleSet */
     dump(): string
     to_identifier_map(): GLib.HashTable
     static name: string
 }
-export class Intset {
-    /* Methods of TelepathyGLib.Intset */
+class Intset {
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.Intset */
     add(element: number): void
     clear(): void
     copy(): Intset
@@ -6730,67 +6732,67 @@ export class Intset {
     static sized_new(size: number): Intset
     static from_array(array: number[]): Intset
 }
-export class IntsetFastIter {
-    /* Methods of TelepathyGLib.IntsetFastIter */
+class IntsetFastIter {
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.IntsetFastIter */
     init(set: Intset): void
     next(output: number): boolean
     static name: string
 }
-export class IntsetIter {
-    /* Fields of TelepathyGLib.IntsetIter */
+class IntsetIter {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.IntsetIter */
     set: Intset
     element: number
-    /* Methods of TelepathyGLib.IntsetIter */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.IntsetIter */
     init(set: Intset): void
     next(): boolean
     reset(): void
     static name: string
 }
-export abstract class MessageClass {
+abstract class MessageClass {
     static name: string
 }
-export abstract class ObserveChannelsContextClass {
+abstract class ObserveChannelsContextClass {
     static name: string
 }
-export class ObserveChannelsContextPrivate {
+class ObserveChannelsContextPrivate {
     static name: string
 }
-export class PresenceMixin {
+class PresenceMixin {
     static name: string
 }
-export class PresenceMixinClass {
-    /* Fields of TelepathyGLib.PresenceMixinClass */
+class PresenceMixinClass {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.PresenceMixinClass */
     status_available: PresenceMixinStatusAvailableFunc
     set_own_status: PresenceMixinSetOwnStatusFunc
     statuses: PresenceStatusSpec
     get_maximum_status_message_length: PresenceMixinGetMaximumStatusMessageLengthFunc
     static name: string
 }
-export class PresenceMixinClassPrivate {
+class PresenceMixinClassPrivate {
     static name: string
 }
-export class PresenceMixinPrivate {
+class PresenceMixinPrivate {
     static name: string
 }
-export class PresenceStatus {
-    /* Fields of TelepathyGLib.PresenceStatus */
+class PresenceStatus {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.PresenceStatus */
     index: number
     optional_arguments: GLib.HashTable
     static name: string
 }
-export class PresenceStatusOptionalArgumentSpec {
-    /* Fields of TelepathyGLib.PresenceStatusOptionalArgumentSpec */
+class PresenceStatusOptionalArgumentSpec {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.PresenceStatusOptionalArgumentSpec */
     name: string
     dtype: string
     static name: string
 }
-export class PresenceStatusSpec {
-    /* Fields of TelepathyGLib.PresenceStatusSpec */
+class PresenceStatusSpec {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.PresenceStatusSpec */
     name: string
     presence_type: ConnectionPresenceType
     self: boolean
     optional_arguments: PresenceStatusOptionalArgumentSpec
-    /* Methods of TelepathyGLib.PresenceStatusSpec */
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.PresenceStatusSpec */
     can_set_on_self(): boolean
     copy(): PresenceStatusSpec
     free(): void
@@ -6803,27 +6805,27 @@ export class PresenceStatusSpec {
     /* Static methods and pseudo-constructors */
     static new(name: string, type: ConnectionPresenceType, can_set_on_self: boolean, has_message: boolean): PresenceStatusSpec
 }
-export class PresenceStatusSpecPrivate {
+class PresenceStatusSpecPrivate {
     static name: string
 }
-export abstract class ProtocolClass {
+abstract class ProtocolClass {
     static name: string
 }
-export class ProtocolClassPrivate {
+class ProtocolClassPrivate {
     static name: string
 }
-export class ProtocolPrivate {
+class ProtocolPrivate {
     static name: string
 }
-export abstract class ProxyClass {
-    /* Fields of TelepathyGLib.ProxyClass */
+abstract class ProxyClass {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.ProxyClass */
     parent_class: GObject.ObjectClass
     interface: GLib.Quark
     must_have_unique_name: number
     static name: string
 }
-export class ProxyFeature {
-    /* Fields of TelepathyGLib.ProxyFeature */
+class ProxyFeature {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.ProxyFeature */
     name: GLib.Quark
     core: boolean
     prepare_async: ProxyPrepareAsync
@@ -6833,45 +6835,45 @@ export class ProxyFeature {
     can_retry: boolean
     static name: string
 }
-export class ProxyFeaturePrivate {
+class ProxyFeaturePrivate {
     static name: string
 }
-export class ProxyPendingCall {
-    /* Methods of TelepathyGLib.ProxyPendingCall */
+class ProxyPendingCall {
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.ProxyPendingCall */
     cancel(): void
     static name: string
 }
-export class ProxyPrivate {
+class ProxyPrivate {
     static name: string
 }
-export class ProxySignalConnection {
-    /* Methods of TelepathyGLib.ProxySignalConnection */
+class ProxySignalConnection {
+    /* Methods of TelepathyGLib-0.12.TelepathyGLib.ProxySignalConnection */
     disconnect(): void
     static name: string
 }
-export abstract class RoomInfoClass {
+abstract class RoomInfoClass {
     static name: string
 }
-export class RoomInfoPriv {
+class RoomInfoPriv {
     static name: string
 }
-export abstract class RoomListClass {
+abstract class RoomListClass {
     static name: string
 }
-export class RoomListPrivate {
+class RoomListPrivate {
     static name: string
 }
-export abstract class SignalledMessageClass {
+abstract class SignalledMessageClass {
     static name: string
 }
-export abstract class SimpleApproverClass {
+abstract class SimpleApproverClass {
     static name: string
 }
-export class SimpleApproverPrivate {
+class SimpleApproverPrivate {
     static name: string
 }
-export abstract class SimpleClientFactoryClass {
-    /* Fields of TelepathyGLib.SimpleClientFactoryClass */
+abstract class SimpleClientFactoryClass {
+    /* Fields of TelepathyGLib-0.12.TelepathyGLib.SimpleClientFactoryClass */
     parent_class: GObject.ObjectClass
     dup_account_features: (self: SimpleClientFactory, account: Account) => GLib.Quark[]
     dup_connection_features: (self: SimpleClientFactory, connection: Connection) => GLib.Quark[]
@@ -6879,55 +6881,57 @@ export abstract class SimpleClientFactoryClass {
     dup_contact_features: (self: SimpleClientFactory, connection: Connection) => ContactFeature[]
     static name: string
 }
-export class SimpleClientFactoryPrivate {
+class SimpleClientFactoryPrivate {
     static name: string
 }
-export abstract class SimpleHandlerClass {
+abstract class SimpleHandlerClass {
     static name: string
 }
-export class SimpleHandlerPrivate {
+class SimpleHandlerPrivate {
     static name: string
 }
-export abstract class SimpleObserverClass {
+abstract class SimpleObserverClass {
     static name: string
 }
-export class SimpleObserverPrivate {
+class SimpleObserverPrivate {
     static name: string
 }
-export abstract class StreamTubeChannelClass {
+abstract class StreamTubeChannelClass {
     static name: string
 }
-export class StreamTubeChannelPrivate {
+class StreamTubeChannelPrivate {
     static name: string
 }
-export abstract class StreamTubeConnectionClass {
+abstract class StreamTubeConnectionClass {
     static name: string
 }
-export class StreamTubeConnectionPrivate {
+class StreamTubeConnectionPrivate {
     static name: string
 }
-export abstract class TLSCertificateClass {
+abstract class TLSCertificateClass {
     static name: string
 }
-export class TLSCertificateClassPrivate {
+class TLSCertificateClassPrivate {
     static name: string
 }
-export class TLSCertificatePrivate {
+class TLSCertificatePrivate {
     static name: string
 }
-export abstract class TLSCertificateRejectionClass {
+abstract class TLSCertificateRejectionClass {
     static name: string
 }
-export class TLSCertificateRejectionPriv {
+class TLSCertificateRejectionPriv {
     static name: string
 }
-export abstract class TextChannelClass {
+abstract class TextChannelClass {
     static name: string
 }
-export class TextChannelPrivate {
+class TextChannelPrivate {
     static name: string
 }
-export class WeakRef {
+class WeakRef {
     static name: string
 }
-export type Handle = number
+type Handle = number
+}
+export default TelepathyGLib;

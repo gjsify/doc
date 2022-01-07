@@ -3,16 +3,21 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as libxml2 from './libxml2-2.0';
-import type * as Soup from './Soup-2.4';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as ICalGLib from './ICalGLib-3.0';
-import type * as EDataServer from './EDataServer-1.2';
-import type * as Camel from './Camel-1.2';
+import type libxml2 from './libxml2-2.0';
+import type Soup from './Soup-2.4';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type ICalGLib from './ICalGLib-3.0';
+import type EDataServer from './EDataServer-1.2';
+import type GData from './GData-0.0';
+import type Json from './Json-1.0';
+import type Goa from './Goa-1.0';
+import type Camel from './Camel-1.2';
 
-export enum ClientError {
+export namespace ECal {
+
+enum ClientError {
     NO_SUCH_CALENDAR,
     OBJECT_NOT_FOUND,
     INVALID_OBJECT,
@@ -20,12 +25,12 @@ export enum ClientError {
     OBJECT_ID_ALREADY_EXISTS,
     INVALID_RANGE,
 }
-export enum ClientSourceType {
+enum ClientSourceType {
     EVENTS,
     TASKS,
     MEMOS,
 }
-export enum ComponentAlarmAction {
+enum ComponentAlarmAction {
     NONE,
     AUDIO,
     DISPLAY,
@@ -33,35 +38,35 @@ export enum ComponentAlarmAction {
     PROCEDURE,
     UNKNOWN,
 }
-export enum ComponentAlarmTriggerKind {
+enum ComponentAlarmTriggerKind {
     NONE,
     RELATIVE_START,
     RELATIVE_END,
     ABSOLUTE,
 }
-export enum ComponentClassification {
+enum ComponentClassification {
     NONE,
     PUBLIC,
     PRIVATE,
     CONFIDENTIAL,
     UNKNOWN,
 }
-export enum ComponentPeriodKind {
+enum ComponentPeriodKind {
     DATETIME,
     DURATION,
 }
-export enum ComponentRangeKind {
+enum ComponentRangeKind {
     SINGLE,
     THISPRIOR,
     THISFUTURE,
 }
-export enum ComponentTransparency {
+enum ComponentTransparency {
     NONE,
     TRANSPARENT,
     OPAQUE,
     UNKNOWN,
 }
-export enum ComponentVType {
+enum ComponentVType {
     NO_TYPE,
     EVENT,
     TODO,
@@ -69,18 +74,18 @@ export enum ComponentVType {
     FREEBUSY,
     TIMEZONE,
 }
-export enum ClientViewFlags {
+enum ClientViewFlags {
     NONE,
     NOTIFY_INITIAL,
 }
-export enum ObjModType {
+enum ObjModType {
     THIS,
     THIS_AND_PRIOR,
     THIS_AND_FUTURE,
     ALL,
     ONLY_THIS,
 }
-export enum OperationFlags {
+enum OperationFlags {
     NONE,
     CONFLICT_FAIL,
     CONFLICT_USE_NEWER,
@@ -89,12 +94,12 @@ export enum OperationFlags {
     CONFLICT_WRITE_COPY,
     DISABLE_ITIP_MESSAGE,
 }
-export enum RecurDescribeRecurrenceFlags {
+enum RecurDescribeRecurrenceFlags {
     NONE,
     PREFIXED,
     FALLBACK,
 }
-export enum ReminderWatcherDescribeFlags {
+enum ReminderWatcherDescribeFlags {
     NONE,
     MARKUP,
 }
@@ -141,108 +146,112 @@ export const STATIC_CAPABILITY_REMOVE_ONLY_THIS: string
 export const STATIC_CAPABILITY_REQ_SEND_OPTIONS: string
 export const STATIC_CAPABILITY_SAVE_SCHEDULES: string
 export const STATIC_CAPABILITY_SIMPLE_MEMO: string
+export const STATIC_CAPABILITY_SIMPLE_MEMO_WITH_SUMMARY: string
 export const STATIC_CAPABILITY_TASK_CAN_RECUR: string
 export const STATIC_CAPABILITY_TASK_DATE_ONLY: string
+export const STATIC_CAPABILITY_TASK_ESTIMATED_DURATION: string
 export const STATIC_CAPABILITY_TASK_HANDLE_RECUR: string
 export const STATIC_CAPABILITY_TASK_NO_ALARM: string
-export function isodate_from_time_t(t: number): string
-export function match_tzid(tzid: string): string
-export function recur_describe_recurrence(icalcomp: ICalGLib.Component, week_start_day: GLib.DateWeekday, flags: number): string | null
-export function recur_describe_recurrence_ex(icalcomp: ICalGLib.Component, week_start_day: GLib.DateWeekday, flags: number, datetime_fmt_func?: RecurFormatDateTimeFunc | null): string | null
-export function recur_ensure_end_dates(comp: Component, refresh: boolean, tz_cb: RecurResolveTimezoneCb, cancellable?: Gio.Cancellable | null): boolean
-export function recur_generate_instances_sync(icalcomp: ICalGLib.Component, interval_start: ICalGLib.Time, interval_end: ICalGLib.Time, default_timezone: ICalGLib.Timezone, cancellable?: Gio.Cancellable | null): boolean
-export function recur_get_localized_nth(nth: number): string
-export function recur_obtain_enddate(ir: ICalGLib.Recurrence, prop: ICalGLib.Property, zone: ICalGLib.Timezone, convert_end_date: boolean): number
-export function reminder_data_free(rd?: object | null): void
-export function system_timezone_get_location(): string
-export function time_add_day(time: number, days: number): number
-export function time_add_day_with_zone(time: number, days: number, zone: ICalGLib.Timezone): number
-export function time_add_month_with_zone(time: number, months: number, zone: ICalGLib.Timezone): number
-export function time_add_week(time: number, weeks: number): number
-export function time_add_week_with_zone(time: number, weeks: number, zone: ICalGLib.Timezone): number
-export function time_day_begin(t: number): number
-export function time_day_begin_with_zone(time: number, zone: ICalGLib.Timezone): number
-export function time_day_end(t: number): number
-export function time_day_end_with_zone(time: number, zone: ICalGLib.Timezone): number
-export function time_day_of_week(day: number, month: number, year: number): number
-export function time_day_of_year(day: number, month: number, year: number): number
-export function time_days_in_month(year: number, month: number): number
-export function time_from_isodate(str: string): number
-export function time_is_leap_year(year: number): boolean
-export function time_leap_years_up_to(year: number): number
-export function time_month_begin_with_zone(time: number, zone: ICalGLib.Timezone): number
-export function time_to_gdate_with_zone(date: GLib.Date, time: number, zone?: ICalGLib.Timezone | null): void
-export function time_week_begin_with_zone(time: number, week_start_day: number, zone: ICalGLib.Timezone): number
-export function time_year_begin_with_zone(time: number, zone: ICalGLib.Timezone): number
-export function util_add_timezones_from_component(vcal_comp: ICalGLib.Component, icalcomp: ICalGLib.Component): void
-export function util_component_dup_x_property(icalcomp: ICalGLib.Component, x_name: string): string | null
-export function util_component_find_x_property(icalcomp: ICalGLib.Component, x_name: string): ICalGLib.Property | null
-export function util_component_get_recurid_as_string(icalcomp: ICalGLib.Component): string | null
-export function util_component_has_alarms(icalcomp: ICalGLib.Component): boolean
-export function util_component_has_attendee(icalcomp: ICalGLib.Component): boolean
-export function util_component_has_organizer(icalcomp: ICalGLib.Component): boolean
-export function util_component_has_property(icalcomp: ICalGLib.Component, prop_kind: ICalGLib.PropertyKind): boolean
-export function util_component_has_rdates(icalcomp: ICalGLib.Component): boolean
-export function util_component_has_recurrences(icalcomp: ICalGLib.Component): boolean
-export function util_component_has_rrules(icalcomp: ICalGLib.Component): boolean
-export function util_component_has_x_property(icalcomp: ICalGLib.Component, x_name: string): boolean
-export function util_component_is_instance(icalcomp: ICalGLib.Component): boolean
-export function util_component_remove_property_by_kind(icalcomp: ICalGLib.Component, kind: ICalGLib.PropertyKind, all: boolean): number
-export function util_component_remove_x_property(icalcomp: ICalGLib.Component, x_name: string): boolean
-export function util_component_set_x_property(icalcomp: ICalGLib.Component, x_name: string, value?: string | null): void
-export function util_conflict_resolution_to_operation_flags(conflict_resolution: EDataServer.ConflictResolution): number
-export function util_construct_instance(icalcomp: ICalGLib.Component, rid: ICalGLib.Time): ICalGLib.Component | null
-export function util_copy_timezone(zone: ICalGLib.Timezone): ICalGLib.Timezone
-export function util_generate_alarms_for_comp(comp: Component, start: number, end: number, omit: ComponentAlarmAction, resolve_tzid: RecurResolveTimezoneCb, default_timezone: ICalGLib.Timezone): ComponentAlarms | null
-export function util_generate_alarms_for_list(comps: Component[], start: number, end: number, omit: ComponentAlarmAction, resolve_tzid: RecurResolveTimezoneCb, default_timezone: ICalGLib.Timezone): [ /* returnType */ number, /* comp_alarms */ ComponentAlarms[] ]
-export function util_get_component_occur_times(comp: Component, tz_cb: RecurResolveTimezoneCb, default_timezone: ICalGLib.Timezone, kind: ICalGLib.ComponentKind): [ /* out_start */ number, /* out_end */ number ]
-export function util_get_system_timezone(): ICalGLib.Timezone | null
-export function util_get_system_timezone_location(): string
-export function util_icaltime_to_tm(itt: ICalGLib.Time): object | null
-export function util_icaltime_to_tm_with_zone(itt: ICalGLib.Time, from_zone: ICalGLib.Timezone, to_zone: ICalGLib.Timezone): object | null
-export function util_init_recur_task_sync(vtodo: ICalGLib.Component, cal_client: Client, cancellable?: Gio.Cancellable | null): boolean
-export function util_inline_local_attachments_sync(component: ICalGLib.Component, cancellable?: Gio.Cancellable | null): boolean
-export function util_is_first_instance(comp: Component, rid: ICalGLib.Time, tz_cb: RecurResolveTimezoneCb): boolean
-export function util_mark_task_complete_sync(vtodo: ICalGLib.Component, completed_time: number, cal_client: Client, cancellable?: Gio.Cancellable | null): boolean
-export function util_new_component(kind: ICalGLib.ComponentKind): ICalGLib.Component
-export function util_new_top_level(): ICalGLib.Component
-export function util_normalize_rrule_until_value(icalcomp: ICalGLib.Component, ttuntil: ICalGLib.Time, tz_cb: RecurResolveTimezoneCb): void
-export function util_operation_flags_to_conflict_resolution(flags: number): EDataServer.ConflictResolution
-export function util_parse_ics_file(filename: string): ICalGLib.Component | null
-export function util_parse_ics_string(string: string): ICalGLib.Component | null
-export function util_priority_from_string(string: string): number
-export function util_priority_to_string(priority: number): string
-export function util_property_has_parameter(prop: ICalGLib.Property, param_kind: ICalGLib.ParameterKind): boolean
-export function util_remove_instances(icalcomp: ICalGLib.Component, rid: ICalGLib.Time, mod: ObjModType): void
-export function util_remove_instances_ex(icalcomp: ICalGLib.Component, rid: ICalGLib.Time, mod: ObjModType, tz_cb: RecurResolveTimezoneCb): void
-export function util_seconds_to_string(seconds: number): string
-export function util_split_at_instance(icalcomp: ICalGLib.Component, rid: ICalGLib.Time, master_dtstart?: ICalGLib.Time | null): ICalGLib.Component | null
-export function util_split_at_instance_ex(icalcomp: ICalGLib.Component, rid: ICalGLib.Time, master_dtstart: ICalGLib.Time | null, tz_cb: RecurResolveTimezoneCb): ICalGLib.Component | null
-export function util_tm_to_icaltime(tm: object | null, is_date: boolean): ICalGLib.Time
-export interface ComponentParameterBagFilterFunc {
+function isodate_from_time_t(t: number): string
+function match_tzid(tzid: string): string
+function recur_describe_recurrence(icalcomp: ICalGLib.Component, week_start_day: GLib.DateWeekday, flags: number): string | null
+function recur_describe_recurrence_ex(icalcomp: ICalGLib.Component, week_start_day: GLib.DateWeekday, flags: number, datetime_fmt_func?: RecurFormatDateTimeFunc | null): string | null
+function recur_ensure_end_dates(comp: Component, refresh: boolean, tz_cb: RecurResolveTimezoneCb, cancellable?: Gio.Cancellable | null): boolean
+function recur_generate_instances_sync(icalcomp: ICalGLib.Component, interval_start: ICalGLib.Time, interval_end: ICalGLib.Time, default_timezone: ICalGLib.Timezone, cancellable?: Gio.Cancellable | null): boolean
+function recur_get_localized_nth(nth: number): string
+function recur_obtain_enddate(ir: ICalGLib.Recurrence, prop: ICalGLib.Property, zone: ICalGLib.Timezone, convert_end_date: boolean): number
+function system_timezone_get_location(): string
+function time_add_day(time: number, days: number): number
+function time_add_day_with_zone(time: number, days: number, zone: ICalGLib.Timezone): number
+function time_add_month_with_zone(time: number, months: number, zone: ICalGLib.Timezone): number
+function time_add_week(time: number, weeks: number): number
+function time_add_week_with_zone(time: number, weeks: number, zone: ICalGLib.Timezone): number
+function time_day_begin(t: number): number
+function time_day_begin_with_zone(time: number, zone: ICalGLib.Timezone): number
+function time_day_end(t: number): number
+function time_day_end_with_zone(time: number, zone: ICalGLib.Timezone): number
+function time_day_of_week(day: number, month: number, year: number): number
+function time_day_of_year(day: number, month: number, year: number): number
+function time_days_in_month(year: number, month: number): number
+function time_from_isodate(str: string): number
+function time_is_leap_year(year: number): boolean
+function time_leap_years_up_to(year: number): number
+function time_month_begin_with_zone(time: number, zone: ICalGLib.Timezone): number
+function time_to_gdate_with_zone(date: GLib.Date, time: number, zone?: ICalGLib.Timezone | null): void
+function time_week_begin_with_zone(time: number, week_start_day: number, zone: ICalGLib.Timezone): number
+function time_year_begin_with_zone(time: number, zone: ICalGLib.Timezone): number
+function util_add_timezones_from_component(vcal_comp: ICalGLib.Component, icalcomp: ICalGLib.Component): void
+function util_clamp_vtimezone(vtimezone: ICalGLib.Component, from: ICalGLib.Time, to?: ICalGLib.Time | null): /* vtimezone */ ICalGLib.Component
+function util_clamp_vtimezone_by_component(vtimezone: ICalGLib.Component, component: ICalGLib.Component): /* vtimezone */ ICalGLib.Component
+function util_component_dup_x_property(icalcomp: ICalGLib.Component, x_name: string): string | null
+function util_component_find_x_property(icalcomp: ICalGLib.Component, x_name: string): ICalGLib.Property | null
+function util_component_get_recurid_as_string(icalcomp: ICalGLib.Component): string | null
+function util_component_has_alarms(icalcomp: ICalGLib.Component): boolean
+function util_component_has_attendee(icalcomp: ICalGLib.Component): boolean
+function util_component_has_organizer(icalcomp: ICalGLib.Component): boolean
+function util_component_has_property(icalcomp: ICalGLib.Component, prop_kind: ICalGLib.PropertyKind): boolean
+function util_component_has_rdates(icalcomp: ICalGLib.Component): boolean
+function util_component_has_recurrences(icalcomp: ICalGLib.Component): boolean
+function util_component_has_rrules(icalcomp: ICalGLib.Component): boolean
+function util_component_has_x_property(icalcomp: ICalGLib.Component, x_name: string): boolean
+function util_component_is_instance(icalcomp: ICalGLib.Component): boolean
+function util_component_remove_property_by_kind(icalcomp: ICalGLib.Component, kind: ICalGLib.PropertyKind, all: boolean): number
+function util_component_remove_x_property(icalcomp: ICalGLib.Component, x_name: string): boolean
+function util_component_set_x_property(icalcomp: ICalGLib.Component, x_name: string, value?: string | null): void
+function util_conflict_resolution_to_operation_flags(conflict_resolution: EDataServer.ConflictResolution): number
+function util_construct_instance(icalcomp: ICalGLib.Component, rid: ICalGLib.Time): ICalGLib.Component | null
+function util_copy_timezone(zone: ICalGLib.Timezone): ICalGLib.Timezone
+function util_generate_alarms_for_comp(comp: Component, start: number, end: number, omit: ComponentAlarmAction, resolve_tzid: RecurResolveTimezoneCb, default_timezone: ICalGLib.Timezone): ComponentAlarms | null
+function util_generate_alarms_for_list(comps: Component[], start: number, end: number, omit: ComponentAlarmAction, resolve_tzid: RecurResolveTimezoneCb, default_timezone: ICalGLib.Timezone): [ /* returnType */ number, /* comp_alarms */ ComponentAlarms[] ]
+function util_get_component_occur_times(comp: Component, tz_cb: RecurResolveTimezoneCb, default_timezone: ICalGLib.Timezone, kind: ICalGLib.ComponentKind): [ /* out_start */ number, /* out_end */ number ]
+function util_get_system_timezone(): ICalGLib.Timezone | null
+function util_get_system_timezone_location(): string
+function util_icaltime_to_tm(itt: ICalGLib.Time): object | null
+function util_icaltime_to_tm_with_zone(itt: ICalGLib.Time, from_zone: ICalGLib.Timezone, to_zone: ICalGLib.Timezone): object | null
+function util_init_recur_task_sync(vtodo: ICalGLib.Component, cal_client: Client, cancellable?: Gio.Cancellable | null): boolean
+function util_inline_local_attachments_sync(component: ICalGLib.Component, cancellable?: Gio.Cancellable | null): boolean
+function util_is_first_instance(comp: Component, rid: ICalGLib.Time, tz_cb: RecurResolveTimezoneCb): boolean
+function util_mark_task_complete_sync(vtodo: ICalGLib.Component, completed_time: number, cal_client: Client, cancellable?: Gio.Cancellable | null): boolean
+function util_new_component(kind: ICalGLib.ComponentKind): ICalGLib.Component
+function util_new_top_level(): ICalGLib.Component
+function util_normalize_rrule_until_value(icalcomp: ICalGLib.Component, ttuntil: ICalGLib.Time, tz_cb: RecurResolveTimezoneCb): void
+function util_operation_flags_to_conflict_resolution(flags: number): EDataServer.ConflictResolution
+function util_parse_ics_file(filename: string): ICalGLib.Component | null
+function util_parse_ics_string(string: string): ICalGLib.Component | null
+function util_priority_from_string(string: string): number
+function util_priority_to_string(priority: number): string
+function util_property_has_parameter(prop: ICalGLib.Property, param_kind: ICalGLib.ParameterKind): boolean
+function util_remove_instances(icalcomp: ICalGLib.Component, rid: ICalGLib.Time, mod: ObjModType): void
+function util_remove_instances_ex(icalcomp: ICalGLib.Component, rid: ICalGLib.Time, mod: ObjModType, tz_cb: RecurResolveTimezoneCb): void
+function util_seconds_to_string(seconds: number): string
+function util_set_alarm_acknowledged(component: Component, auid: string, when: number): boolean
+function util_split_at_instance(icalcomp: ICalGLib.Component, rid: ICalGLib.Time, master_dtstart?: ICalGLib.Time | null): ICalGLib.Component | null
+function util_split_at_instance_ex(icalcomp: ICalGLib.Component, rid: ICalGLib.Time, master_dtstart: ICalGLib.Time | null, tz_cb: RecurResolveTimezoneCb): ICalGLib.Component | null
+function util_tm_to_icaltime(tm: object | null, is_date: boolean): ICalGLib.Time
+interface ComponentParameterBagFilterFunc {
     (parameter: ICalGLib.Parameter): boolean
 }
-export interface ComponentPropertyBagFilterFunc {
+interface ComponentPropertyBagFilterFunc {
     (property: ICalGLib.Property): boolean
 }
-export interface RecurFormatDateTimeFunc {
+interface RecurFormatDateTimeFunc {
     (itt: ICalGLib.Time, buffer: string, buffer_size: number): void
 }
-export interface RecurInstanceCb {
+interface RecurInstanceCb {
     (icomp: ICalGLib.Component, instance_start: ICalGLib.Time, instance_end: ICalGLib.Time, cancellable?: Gio.Cancellable | null): boolean
 }
-export interface RecurResolveTimezoneCb {
+interface RecurResolveTimezoneCb {
     (tzid: string, cancellable?: Gio.Cancellable | null): ICalGLib.Timezone | null
 }
-export class TimezoneCache {
-    /* Methods of ECal.TimezoneCache */
+class TimezoneCache {
+    /* Methods of ECal-2.0.ECal.TimezoneCache */
     add_timezone(zone: ICalGLib.Timezone): void
     get_timezone(tzid: string): ICalGLib.Timezone | null
     list_timezones(): ICalGLib.Timezone[]
-    /* Virtual methods of ECal.TimezoneCache */
+    /* Virtual methods of ECal-2.0.ECal.TimezoneCache */
     vfunc_timezone_added(zone: ICalGLib.Timezone): void
     vfunc_tzcache_add_timezone(zone: ICalGLib.Timezone): void
-    /* Signals of ECal.TimezoneCache */
+    /* Signals of ECal-2.0.ECal.TimezoneCache */
     connect(sigName: "timezone-added", callback: (($obj: TimezoneCache, zone: ICalGLib.Timezone) => void)): number
     connect_after(sigName: "timezone-added", callback: (($obj: TimezoneCache, zone: ICalGLib.Timezone) => void)): number
     emit(sigName: "timezone-added", zone: ICalGLib.Timezone): void
@@ -252,18 +261,18 @@ export interface Client_ConstructProps extends EDataServer.Client_ConstructProps
     default_timezone?: ICalGLib.Timezone
     source_type?: ClientSourceType
 }
-export class Client {
-    /* Properties of ECal.Client */
+class Client {
+    /* Properties of ECal-2.0.ECal.Client */
     default_timezone: ICalGLib.Timezone
-    /* Properties of EDataServer.Client */
+    /* Properties of EDataServer-1.2.EDataServer.Client */
     readonly capabilities: object
     readonly main_context: GLib.MainContext
     online: boolean
     readonly opened: boolean
     readonly readonly: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ECal.Client */
+    /* Methods of ECal-2.0.ECal.Client */
     add_timezone(zone: ICalGLib.Timezone, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     add_timezone_finish(result: Gio.AsyncResult): boolean
     add_timezone_sync(zone: ICalGLib.Timezone, cancellable?: Gio.Cancellable | null): boolean
@@ -272,32 +281,32 @@ export class Client {
     check_organizer_must_attend(): boolean
     check_recurrences_no_master(): boolean
     check_save_schedules(): boolean
-    create_object(icalcomp: ICalGLib.Component, opflags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    create_object(icalcomp: ICalGLib.Component, opflags: OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     create_object_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_uid */ string | null ]
-    create_object_sync(icalcomp: ICalGLib.Component, opflags: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_uid */ string | null ]
-    create_objects(icalcomps: ICalGLib.Component[], opflags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    create_object_sync(icalcomp: ICalGLib.Component, opflags: OperationFlags, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_uid */ string | null ]
+    create_objects(icalcomps: ICalGLib.Component[], opflags: OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     create_objects_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_uids */ string[] | null ]
-    create_objects_sync(icalcomps: ICalGLib.Component[], opflags: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_uids */ string[] | null ]
-    discard_alarm(uid: string, rid: string, auid: string, opflags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    create_objects_sync(icalcomps: ICalGLib.Component[], opflags: OperationFlags, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_uids */ string[] | null ]
+    discard_alarm(uid: string, rid: string | null, auid: string, opflags: OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     discard_alarm_finish(result: Gio.AsyncResult): boolean
-    discard_alarm_sync(uid: string, rid: string, auid: string, opflags: number, cancellable?: Gio.Cancellable | null): boolean
+    discard_alarm_sync(uid: string, rid: string | null, auid: string, opflags: OperationFlags, cancellable?: Gio.Cancellable | null): boolean
     generate_instances(start: number, end: number, cancellable: Gio.Cancellable | null, cb: RecurInstanceCb): void
     generate_instances_for_object(icalcomp: ICalGLib.Component, start: number, end: number, cancellable: Gio.Cancellable | null, cb: RecurInstanceCb): void
     generate_instances_for_object_sync(icalcomp: ICalGLib.Component, start: number, end: number, cancellable: Gio.Cancellable | null, cb: RecurInstanceCb): void
     generate_instances_sync(start: number, end: number, cancellable: Gio.Cancellable | null, cb: RecurInstanceCb): void
-    get_attachment_uris(uid: string, rid: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_attachment_uris(uid: string, rid?: string | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_attachment_uris_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_attachment_uris */ string[] ]
-    get_attachment_uris_sync(uid: string, rid: string, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_attachment_uris */ string[] ]
-    get_component_as_string(icalcomp: ICalGLib.Component): string
+    get_attachment_uris_sync(uid: string, rid?: string | null, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_attachment_uris */ string[] ]
+    get_component_as_string(icalcomp: ICalGLib.Component): string | null
     get_default_object(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_default_object_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_icalcomp */ ICalGLib.Component ]
     get_default_object_sync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_icalcomp */ ICalGLib.Component ]
     get_default_timezone(): ICalGLib.Timezone
     get_free_busy(start: number, end: number, users: string[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    get_free_busy_finish(result: Gio.AsyncResult, out_freebusy: Component[]): boolean
-    get_free_busy_sync(start: number, end: number, users: string[], out_freebusy: Component[], cancellable?: Gio.Cancellable | null): boolean
+    get_free_busy_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_freebusy */ Component[] ]
+    get_free_busy_sync(start: number, end: number, users: string[], cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_freebusy */ Component[] ]
     get_local_attachment_store(): string
-    get_object(uid: string, rid: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_object(uid: string, rid?: string | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_object_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_icalcomp */ ICalGLib.Component ]
     get_object_list(sexp: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_object_list_as_comps(sexp: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -305,7 +314,7 @@ export class Client {
     get_object_list_as_comps_sync(sexp: string, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_ecalcomps */ Component[] ]
     get_object_list_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_icalcomps */ ICalGLib.Component[] ]
     get_object_list_sync(sexp: string, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_icalcomps */ ICalGLib.Component[] ]
-    get_object_sync(uid: string, rid: string, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_icalcomp */ ICalGLib.Component ]
+    get_object_sync(uid: string, rid?: string | null, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_icalcomp */ ICalGLib.Component ]
     get_objects_for_uid(uid: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_objects_for_uid_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_ecalcomps */ Component[] ]
     get_objects_for_uid_sync(uid: string, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_ecalcomps */ Component[] ]
@@ -316,26 +325,26 @@ export class Client {
     get_view(sexp: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_view_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_view */ ClientView ]
     get_view_sync(sexp: string, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_view */ ClientView ]
-    modify_object(icalcomp: ICalGLib.Component, mod: ObjModType, opflags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    modify_object(icalcomp: ICalGLib.Component, mod: ObjModType, opflags: OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     modify_object_finish(result: Gio.AsyncResult): boolean
-    modify_object_sync(icalcomp: ICalGLib.Component, mod: ObjModType, opflags: number, cancellable?: Gio.Cancellable | null): boolean
-    modify_objects(icalcomps: ICalGLib.Component[], mod: ObjModType, opflags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    modify_object_sync(icalcomp: ICalGLib.Component, mod: ObjModType, opflags: OperationFlags, cancellable?: Gio.Cancellable | null): boolean
+    modify_objects(icalcomps: ICalGLib.Component[], mod: ObjModType, opflags: OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     modify_objects_finish(result: Gio.AsyncResult): boolean
-    modify_objects_sync(icalcomps: ICalGLib.Component[], mod: ObjModType, opflags: number, cancellable?: Gio.Cancellable | null): boolean
-    receive_objects(icalcomp: ICalGLib.Component, opflags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    modify_objects_sync(icalcomps: ICalGLib.Component[], mod: ObjModType, opflags: OperationFlags, cancellable?: Gio.Cancellable | null): boolean
+    receive_objects(icalcomp: ICalGLib.Component, opflags: OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     receive_objects_finish(result: Gio.AsyncResult): boolean
-    receive_objects_sync(icalcomp: ICalGLib.Component, opflags: number, cancellable?: Gio.Cancellable | null): boolean
-    remove_object(uid: string, rid: string, mod: ObjModType, opflags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    receive_objects_sync(icalcomp: ICalGLib.Component, opflags: OperationFlags, cancellable?: Gio.Cancellable | null): boolean
+    remove_object(uid: string, rid: string | null, mod: ObjModType, opflags: OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     remove_object_finish(result: Gio.AsyncResult): boolean
-    remove_object_sync(uid: string, rid: string, mod: ObjModType, opflags: number, cancellable?: Gio.Cancellable | null): boolean
-    remove_objects(ids: ComponentId[], mod: ObjModType, opflags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    remove_object_sync(uid: string, rid: string | null, mod: ObjModType, opflags: OperationFlags, cancellable?: Gio.Cancellable | null): boolean
+    remove_objects(ids: ComponentId[], mod: ObjModType, opflags: OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     remove_objects_finish(result: Gio.AsyncResult): boolean
-    remove_objects_sync(ids: ComponentId[], mod: ObjModType, opflags: number, cancellable?: Gio.Cancellable | null): boolean
-    send_objects(icalcomp: ICalGLib.Component, opflags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    remove_objects_sync(ids: ComponentId[], mod: ObjModType, opflags: OperationFlags, cancellable?: Gio.Cancellable | null): boolean
+    send_objects(icalcomp: ICalGLib.Component, opflags: OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     send_objects_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_users */ string[], /* out_modified_icalcomp */ ICalGLib.Component ]
-    send_objects_sync(icalcomp: ICalGLib.Component, opflags: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_users */ string[], /* out_modified_icalcomp */ ICalGLib.Component ]
+    send_objects_sync(icalcomp: ICalGLib.Component, opflags: OperationFlags, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_users */ string[], /* out_modified_icalcomp */ ICalGLib.Component ]
     set_default_timezone(zone: ICalGLib.Timezone): void
-    /* Methods of EDataServer.Client */
+    /* Methods of EDataServer-1.2.EDataServer.Client */
     cancel_all(): void
     check_capability(capability: string): boolean
     check_refresh_supported(): boolean
@@ -372,15 +381,15 @@ export class Client {
     wait_for_connected(timeout_seconds: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     wait_for_connected_finish(result: Gio.AsyncResult): boolean
     wait_for_connected_sync(timeout_seconds: number, cancellable?: Gio.Cancellable | null): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -388,29 +397,29 @@ export class Client {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of ECal.TimezoneCache */
+    watch_closure(closure: Function): void
+    /* Methods of ECal-2.0.ECal.TimezoneCache */
     add_timezone(zone: ICalGLib.Timezone): void
     get_timezone(tzid: string): ICalGLib.Timezone | null
     list_timezones(): ICalGLib.Timezone[]
-    /* Methods of Gio.AsyncInitable */
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of ECal.Client */
+    /* Virtual methods of ECal-2.0.ECal.Client */
     vfunc_timezone_added(zone: ICalGLib.Timezone): void
     vfunc_tzcache_add_timezone(zone: ICalGLib.Timezone): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of EDataServer.Client */
+    /* Virtual methods of EDataServer-1.2.EDataServer.Client */
     vfunc_backend_died(): void
     vfunc_backend_error(error_msg: string): void
     vfunc_backend_property_changed(prop_name: string, prop_value: string): void
@@ -435,19 +444,19 @@ export class Client {
     vfunc_set_backend_property_finish(result: Gio.AsyncResult): boolean
     vfunc_set_backend_property_sync(prop_name: string, prop_value: string, cancellable?: Gio.Cancellable | null): boolean
     vfunc_unwrap_dbus_error(dbus_error: GLib.Error): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of ECal.Client */
-    connect(sigName: "free-busy-data", callback: (($obj: Client, object?: object | null) => void)): number
-    connect_after(sigName: "free-busy-data", callback: (($obj: Client, object?: object | null) => void)): number
-    emit(sigName: "free-busy-data", object?: object | null): void
-    /* Signals of EDataServer.Client */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of ECal-2.0.ECal.Client */
+    connect(sigName: "free-busy-data", callback: (($obj: Client, free_busy_ecalcomps: Component[]) => void)): number
+    connect_after(sigName: "free-busy-data", callback: (($obj: Client, free_busy_ecalcomps: Component[]) => void)): number
+    emit(sigName: "free-busy-data", free_busy_ecalcomps: Component[]): void
+    /* Signals of EDataServer-1.2.EDataServer.Client */
     connect(sigName: "backend-died", callback: (($obj: Client) => void)): number
     connect_after(sigName: "backend-died", callback: (($obj: Client) => void)): number
     emit(sigName: "backend-died"): void
@@ -460,11 +469,11 @@ export class Client {
     connect(sigName: "opened", callback: (($obj: Client, object: GLib.Error) => void)): number
     connect_after(sigName: "opened", callback: (($obj: Client, object: GLib.Error) => void)): number
     emit(sigName: "opened", object: GLib.Error): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of ECal.TimezoneCache */
+    /* Signals of ECal-2.0.ECal.TimezoneCache */
     connect(sigName: "timezone-added", callback: (($obj: Client, zone: ICalGLib.Timezone) => void)): number
     connect_after(sigName: "timezone-added", callback: (($obj: Client, zone: ICalGLib.Timezone) => void)): number
     emit(sigName: "timezone-added", zone: ICalGLib.Timezone): void
@@ -490,8 +499,8 @@ export class Client {
     /* Static methods and pseudo-constructors */
     static check_timezones_sync(vcalendar: ICalGLib.Component, icalcomps?: ICalGLib.Component[] | null, cancellable?: Gio.Cancellable | null): boolean
     static connect(source: EDataServer.Source, source_type: ClientSourceType, wait_for_connected_seconds: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    static connect_finish(result: Gio.AsyncResult): EDataServer.Client
-    static connect_sync(source: EDataServer.Source, source_type: ClientSourceType, wait_for_connected_seconds: number, cancellable?: Gio.Cancellable | null): EDataServer.Client
+    static connect_finish(result: Gio.AsyncResult): EDataServer.Client | null
+    static connect_sync(source: EDataServer.Source, source_type: ClientSourceType, wait_for_connected_seconds: number, cancellable?: Gio.Cancellable | null): EDataServer.Client | null
     static error_create(code: ClientError, custom_msg?: string | null): GLib.Error
     static error_create(code: EDataServer.ClientError, custom_msg?: string | null): GLib.Error
     static error_quark(): GLib.Quark
@@ -508,10 +517,10 @@ export interface ClientView_ConstructProps extends GObject.Object_ConstructProps
     connection?: Gio.DBusConnection
     object_path?: string
 }
-export class ClientView {
-    /* Fields of GObject.Object */
+class ClientView {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ECal.ClientView */
+    /* Methods of ECal-2.0.ECal.ClientView */
     get_connection(): Gio.DBusConnection
     get_object_path(): string
     is_running(): boolean
@@ -520,15 +529,15 @@ export class ClientView {
     set_flags(flags: ClientViewFlags): void
     start(): void
     stop(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -536,27 +545,27 @@ export class ClientView {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of ECal.ClientView */
+    /* Virtual methods of ECal-2.0.ECal.ClientView */
     vfunc_complete(error: GLib.Error): void
     vfunc_progress(percent: number, message: string): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of ECal.ClientView */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of ECal-2.0.ECal.ClientView */
     connect(sigName: "complete", callback: (($obj: ClientView, object: GLib.Error) => void)): number
     connect_after(sigName: "complete", callback: (($obj: ClientView, object: GLib.Error) => void)): number
     emit(sigName: "complete", object: GLib.Error): void
@@ -572,7 +581,7 @@ export class ClientView {
     connect(sigName: "progress", callback: (($obj: ClientView, object: number, p0: string) => void)): number
     connect_after(sigName: "progress", callback: (($obj: ClientView, object: number, p0: string) => void)): number
     emit(sigName: "progress", object: number, p0: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientView, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -589,10 +598,10 @@ export class ClientView {
 }
 export interface Component_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Component {
-    /* Fields of GObject.Object */
+class Component {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ECal.Component */
+    /* Methods of ECal-2.0.ECal.Component */
     abort_sequence(): void
     add_alarm(alarm: ComponentAlarm): void
     clone(): Component
@@ -686,15 +695,15 @@ export class Component {
     set_uid(uid: string): void
     set_url(url?: string | null): void
     strip_errors(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -702,21 +711,21 @@ export class Component {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Component, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Component, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -739,13 +748,13 @@ export interface ReminderWatcher_ConstructProps extends GObject.Object_Construct
     registry?: EDataServer.SourceRegistry
     timers_enabled?: boolean
 }
-export class ReminderWatcher {
-    /* Properties of ECal.ReminderWatcher */
+class ReminderWatcher {
+    /* Properties of ECal-2.0.ECal.ReminderWatcher */
     default_zone: ICalGLib.Timezone
     timers_enabled: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ECal.ReminderWatcher */
+    /* Methods of ECal-2.0.ECal.ReminderWatcher */
     describe_data(rd: ReminderData, flags: number): string
     dismiss(rd: ReminderData, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     dismiss_all(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -763,15 +772,15 @@ export class ReminderWatcher {
     set_timers_enabled(enabled: boolean): void
     snooze(rd: ReminderData, until: number): void
     timer_elapsed(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -779,36 +788,36 @@ export class ReminderWatcher {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of ECal.ReminderWatcher */
+    watch_closure(closure: Function): void
+    /* Virtual methods of ECal-2.0.ECal.ReminderWatcher */
     vfunc_cal_client_connect(source: EDataServer.Source, source_type: ClientSourceType, wait_for_connected_seconds: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_changed(): void
     vfunc_format_time(rd: ReminderData, itt: ICalGLib.Time, inout_buffer: string, buffer_size: number): void
     vfunc_schedule_timer(at_time: number): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of ECal.ReminderWatcher */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of ECal-2.0.ECal.ReminderWatcher */
     connect(sigName: "changed", callback: (($obj: ReminderWatcher) => void)): number
     connect_after(sigName: "changed", callback: (($obj: ReminderWatcher) => void)): number
     emit(sigName: "changed"): void
-    connect(sigName: "format-time", callback: (($obj: ReminderWatcher, rd: object | null, itt: object | null, inout_buffer: object | null, buffer_size: number) => void)): number
-    connect_after(sigName: "format-time", callback: (($obj: ReminderWatcher, rd: object | null, itt: object | null, inout_buffer: object | null, buffer_size: number) => void)): number
-    emit(sigName: "format-time", rd: object | null, itt: object | null, inout_buffer: object | null, buffer_size: number): void
+    connect(sigName: "format-time", callback: (($obj: ReminderWatcher, rd: ReminderData, itt: ICalGLib.Time, inout_buffer: object | null, buffer_size: number) => void)): number
+    connect_after(sigName: "format-time", callback: (($obj: ReminderWatcher, rd: ReminderData, itt: ICalGLib.Time, inout_buffer: object | null, buffer_size: number) => void)): number
+    emit(sigName: "format-time", rd: ReminderData, itt: ICalGLib.Time, inout_buffer: object | null, buffer_size: number): void
     connect(sigName: "triggered", callback: (($obj: ReminderWatcher, reminders: ReminderData[], snoozed: boolean) => void)): number
     connect_after(sigName: "triggered", callback: (($obj: ReminderWatcher, reminders: ReminderData[], snoozed: boolean) => void)): number
     emit(sigName: "triggered", reminders: ReminderData[], snoozed: boolean): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ReminderWatcher, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ReminderWatcher, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -827,14 +836,14 @@ export class ReminderWatcher {
     static new(registry: EDataServer.SourceRegistry): ReminderWatcher
     static $gtype: GObject.Type
 }
-export abstract class ClientClass {
+abstract class ClientClass {
     static name: string
 }
-export class ClientPrivate {
+class ClientPrivate {
     static name: string
 }
-export class ClientTzlookupICalCompData {
-    /* Methods of ECal.ClientTzlookupICalCompData */
+class ClientTzlookupICalCompData {
+    /* Methods of ECal-2.0.ECal.ClientTzlookupICalCompData */
     copy(): ClientTzlookupICalCompData | null
     free(): void
     get_icalcomponent(): ICalGLib.Component
@@ -844,19 +853,20 @@ export class ClientTzlookupICalCompData {
     /* Static methods and pseudo-constructors */
     static new(icomp: ICalGLib.Component): ClientTzlookupICalCompData
 }
-export abstract class ClientViewClass {
-    /* Fields of ECal.ClientViewClass */
+abstract class ClientViewClass {
+    /* Fields of ECal-2.0.ECal.ClientViewClass */
     progress: (client_view: ClientView, percent: number, message: string) => void
     complete: (client_view: ClientView, error: GLib.Error) => void
     static name: string
 }
-export class ClientViewPrivate {
+class ClientViewPrivate {
     static name: string
 }
-export class ComponentAlarm {
-    /* Methods of ECal.ComponentAlarm */
+class ComponentAlarm {
+    /* Methods of ECal-2.0.ECal.ComponentAlarm */
     copy(): ComponentAlarm
     fill_component(component: ICalGLib.Component): void
+    get_acknowledged(): ICalGLib.Time | null
     get_action(): ComponentAlarmAction
     get_as_component(): ICalGLib.Component
     get_attachments(): ICalGLib.Attach[] | null
@@ -869,6 +879,7 @@ export class ComponentAlarm {
     get_uid(): string | null
     has_attachments(): boolean
     has_attendees(): boolean
+    set_acknowledged(when?: ICalGLib.Time | null): void
     set_action(action: ComponentAlarmAction): void
     set_attachments(attachments?: ICalGLib.Attach[] | null): void
     set_attendees(attendees?: ComponentAttendee[] | null): void
@@ -878,6 +889,7 @@ export class ComponentAlarm {
     set_summary(summary?: ComponentText | null): void
     set_trigger(trigger?: ComponentAlarmTrigger | null): void
     set_uid(uid?: string | null): void
+    take_acknowledged(when?: ICalGLib.Time | null): void
     static name: string
     static new(): ComponentAlarm
     constructor()
@@ -885,15 +897,17 @@ export class ComponentAlarm {
     static new(): ComponentAlarm
     static new_from_component(component: ICalGLib.Component): ComponentAlarm
 }
-export class ComponentAlarmInstance {
-    /* Methods of ECal.ComponentAlarmInstance */
+class ComponentAlarmInstance {
+    /* Methods of ECal-2.0.ECal.ComponentAlarmInstance */
     copy(): ComponentAlarmInstance
     get_occur_end(): number
     get_occur_start(): number
+    get_rid(): string | null
     get_time(): number
     get_uid(): string
     set_occur_end(occur_end: number): void
     set_occur_start(occur_start: number): void
+    set_rid(rid?: string | null): void
     set_time(instance_time: number): void
     set_uid(uid: string): void
     static name: string
@@ -902,8 +916,8 @@ export class ComponentAlarmInstance {
     /* Static methods and pseudo-constructors */
     static new(uid: string, instance_time: number, occur_start: number, occur_end: number): ComponentAlarmInstance
 }
-export class ComponentAlarmRepeat {
-    /* Methods of ECal.ComponentAlarmRepeat */
+class ComponentAlarmRepeat {
+    /* Methods of ECal-2.0.ECal.ComponentAlarmRepeat */
     copy(): ComponentAlarmRepeat
     get_interval(): ICalGLib.Duration
     get_interval_seconds(): number
@@ -918,8 +932,8 @@ export class ComponentAlarmRepeat {
     static new(repetitions: number, interval: ICalGLib.Duration): ComponentAlarmRepeat
     static new_seconds(repetitions: number, interval_seconds: number): ComponentAlarmRepeat
 }
-export class ComponentAlarmTrigger {
-    /* Methods of ECal.ComponentAlarmTrigger */
+class ComponentAlarmTrigger {
+    /* Methods of ECal-2.0.ECal.ComponentAlarmTrigger */
     copy(): ComponentAlarmTrigger
     fill_property(property: ICalGLib.Property): /* property */ ICalGLib.Property
     get_absolute_time(): ICalGLib.Time | null
@@ -939,8 +953,8 @@ export class ComponentAlarmTrigger {
     static new_from_property(property: ICalGLib.Property): ComponentAlarmTrigger
     static new_relative(kind: ComponentAlarmTriggerKind, duration: ICalGLib.Duration): ComponentAlarmTrigger
 }
-export class ComponentAlarms {
-    /* Methods of ECal.ComponentAlarms */
+class ComponentAlarms {
+    /* Methods of ECal-2.0.ECal.ComponentAlarms */
     add_instance(instance: ComponentAlarmInstance): void
     copy(): ComponentAlarms
     get_component(): Component
@@ -955,8 +969,8 @@ export class ComponentAlarms {
     /* Static methods and pseudo-constructors */
     static new(comp: Component): ComponentAlarms
 }
-export class ComponentAttendee {
-    /* Methods of ECal.ComponentAttendee */
+class ComponentAttendee {
+    /* Methods of ECal-2.0.ECal.ComponentAttendee */
     copy(): ComponentAttendee
     fill_property(property: ICalGLib.Property): /* property */ ICalGLib.Property
     get_as_property(): ICalGLib.Property
@@ -992,11 +1006,11 @@ export class ComponentAttendee {
     static new_from_property(property: ICalGLib.Property): ComponentAttendee
     static new_full(value: string | null, member: string | null, cutype: ICalGLib.ParameterCutype, role: ICalGLib.ParameterRole, partstat: ICalGLib.ParameterPartstat, rsvp: boolean, delegatedfrom?: string | null, delegatedto?: string | null, sentby?: string | null, cn?: string | null, language?: string | null): ComponentAttendee
 }
-export abstract class ComponentClass {
+abstract class ComponentClass {
     static name: string
 }
-export class ComponentDateTime {
-    /* Methods of ECal.ComponentDateTime */
+class ComponentDateTime {
+    /* Methods of ECal-2.0.ECal.ComponentDateTime */
     copy(): ComponentDateTime
     get_tzid(): string | null
     get_value(): ICalGLib.Time
@@ -1012,8 +1026,8 @@ export class ComponentDateTime {
     static new(value: ICalGLib.Time, tzid?: string | null): ComponentDateTime
     static new_take(value: ICalGLib.Time, tzid?: string | null): ComponentDateTime
 }
-export class ComponentId {
-    /* Methods of ECal.ComponentId */
+class ComponentId {
+    /* Methods of ECal-2.0.ECal.ComponentId */
     copy(): ComponentId
     equal(id2: ComponentId): boolean
     get_rid(): string | null
@@ -1028,8 +1042,8 @@ export class ComponentId {
     static new(uid: string, rid?: string | null): ComponentId
     static new_take(uid: string, rid?: string | null): ComponentId
 }
-export class ComponentOrganizer {
-    /* Methods of ECal.ComponentOrganizer */
+class ComponentOrganizer {
+    /* Methods of ECal-2.0.ECal.ComponentOrganizer */
     copy(): ComponentOrganizer
     fill_property(property: ICalGLib.Property): /* property */ ICalGLib.Property
     get_as_property(): ICalGLib.Property
@@ -1051,8 +1065,8 @@ export class ComponentOrganizer {
     static new_from_property(property: ICalGLib.Property): ComponentOrganizer
     static new_full(value?: string | null, sentby?: string | null, cn?: string | null, language?: string | null): ComponentOrganizer
 }
-export class ComponentParameterBag {
-    /* Methods of ECal.ComponentParameterBag */
+class ComponentParameterBag {
+    /* Methods of ECal-2.0.ECal.ComponentParameterBag */
     add(param: ICalGLib.Parameter): void
     assign(src_bag: ComponentParameterBag): void
     clear(): void
@@ -1072,8 +1086,8 @@ export class ComponentParameterBag {
     static new(): ComponentParameterBag
     static new_from_property(property: ICalGLib.Property): ComponentParameterBag
 }
-export class ComponentPeriod {
-    /* Methods of ECal.ComponentPeriod */
+class ComponentPeriod {
+    /* Methods of ECal-2.0.ECal.ComponentPeriod */
     copy(): ComponentPeriod
     get_duration(): ICalGLib.Duration
     get_end(): ICalGLib.Time | null
@@ -1089,11 +1103,11 @@ export class ComponentPeriod {
     static new_datetime(start: ICalGLib.Time, end?: ICalGLib.Time | null): ComponentPeriod
     static new_duration(start: ICalGLib.Time, duration: ICalGLib.Duration): ComponentPeriod
 }
-export class ComponentPrivate {
+class ComponentPrivate {
     static name: string
 }
-export class ComponentPropertyBag {
-    /* Methods of ECal.ComponentPropertyBag */
+class ComponentPropertyBag {
+    /* Methods of ECal-2.0.ECal.ComponentPropertyBag */
     add(prop: ICalGLib.Property): void
     assign(src_bag: ComponentPropertyBag): void
     clear(): void
@@ -1113,8 +1127,8 @@ export class ComponentPropertyBag {
     static new(): ComponentPropertyBag
     static new_from_component(component: ICalGLib.Component): ComponentPropertyBag
 }
-export class ComponentRange {
-    /* Methods of ECal.ComponentRange */
+class ComponentRange {
+    /* Methods of ECal-2.0.ECal.ComponentRange */
     copy(): ComponentRange
     get_datetime(): ComponentDateTime
     get_kind(): ComponentRangeKind
@@ -1126,8 +1140,8 @@ export class ComponentRange {
     /* Static methods and pseudo-constructors */
     static new(kind: ComponentRangeKind, datetime: ComponentDateTime): ComponentRange
 }
-export class ComponentText {
-    /* Methods of ECal.ComponentText */
+class ComponentText {
+    /* Methods of ECal-2.0.ECal.ComponentText */
     copy(): ComponentText
     get_altrep(): string
     get_value(): string
@@ -1139,9 +1153,10 @@ export class ComponentText {
     /* Static methods and pseudo-constructors */
     static new(value?: string | null, altrep?: string | null): ComponentText
 }
-export class ReminderData {
-    /* Methods of ECal.ReminderData */
+class ReminderData {
+    /* Methods of ECal-2.0.ECal.ReminderData */
     copy(): ReminderData
+    free(): void
     get_component(): Component
     get_instance(): ComponentAlarmInstance
     get_source_uid(): string
@@ -1153,10 +1168,9 @@ export class ReminderData {
     constructor(source_uid: string, component: Component, instance: ComponentAlarmInstance)
     /* Static methods and pseudo-constructors */
     static new(source_uid: string, component: Component, instance: ComponentAlarmInstance): ReminderData
-    static free(rd?: object | null): void
 }
-export abstract class ReminderWatcherClass {
-    /* Fields of ECal.ReminderWatcherClass */
+abstract class ReminderWatcherClass {
+    /* Fields of ECal-2.0.ECal.ReminderWatcherClass */
     parent_class: GObject.ObjectClass
     schedule_timer: (watcher: ReminderWatcher, at_time: number) => void
     format_time: (watcher: ReminderWatcher, rd: ReminderData, itt: ICalGLib.Time, inout_buffer: string, buffer_size: number) => void
@@ -1165,13 +1179,15 @@ export abstract class ReminderWatcherClass {
     reserved: object[]
     static name: string
 }
-export class ReminderWatcherPrivate {
+class ReminderWatcherPrivate {
     static name: string
 }
-export abstract class TimezoneCacheInterface {
-    /* Fields of ECal.TimezoneCacheInterface */
+abstract class TimezoneCacheInterface {
+    /* Fields of ECal-2.0.ECal.TimezoneCacheInterface */
     tzcache_add_timezone: (cache: TimezoneCache, zone: ICalGLib.Timezone) => void
     timezone_added: (cache: TimezoneCache, zone: ICalGLib.Timezone) => void
     reserved_signals: object[]
     static name: string
 }
+}
+export default ECal;

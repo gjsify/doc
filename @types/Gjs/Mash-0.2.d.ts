@@ -3,32 +3,34 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as freetype2 from './freetype2-2.0';
-import type * as fontconfig from './fontconfig-2.0';
-import type * as cairo from './cairo-1.0';
-import type * as PangoFT2 from './PangoFT2-1.0';
-import type * as PangoFc from './PangoFc-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as PangoCairo from './PangoCairo-1.0';
-import type * as Json from './Json-1.0';
-import type * as Gio from './Gio-2.0';
-import type * as GL from './GL-1.0';
-import type * as CoglPango from './CoglPango-1.0';
-import type * as Cogl from './Cogl-1.0';
-import type * as Clutter from './Clutter-1.0';
-import type * as Atk from './Atk-1.0';
+import type freetype2 from './freetype2-2.0';
+import type fontconfig from './fontconfig-2.0';
+import type cairo from './cairo-1.0';
+import type PangoFT2 from './PangoFT2-1.0';
+import type PangoFc from './PangoFc-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type PangoCairo from './PangoCairo-1.0';
+import type Json from './Json-1.0';
+import type Gio from './Gio-2.0';
+import type GL from './GL-1.0';
+import type CoglPango from './CoglPango-1.0';
+import type Cogl from './Cogl-1.0';
+import type Clutter from './Clutter-1.0';
+import type Atk from './Atk-1.0';
 
-export enum DataError {
+export namespace Mash {
+
+enum DataError {
     UNKNOWN_FORMAT,
     UNKNOWN,
     MISSING_PROPERTY,
     INVALID,
     UNSUPPORTED,
 }
-export enum DataFlags {
+enum DataFlags {
     NONE,
     NEGATE_X,
     NEGATE_Y,
@@ -36,22 +38,22 @@ export enum DataFlags {
 }
 export interface Data_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Data {
-    /* Fields of GObject.Object */
+class Data {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Mash.Data */
+    /* Methods of Mash-0.2.Mash.Data */
     get_extents(min_vertex: Clutter.Vertex, max_vertex: Clutter.Vertex): void
     load(flags: DataFlags, filename: string): boolean
     render(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -59,21 +61,21 @@ export class Data {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Data, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Data, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -91,21 +93,21 @@ export class Data {
 }
 export interface DataLoader_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class DataLoader {
-    /* Fields of GObject.Object */
+class DataLoader {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Mash.DataLoader */
+    /* Methods of Mash-0.2.Mash.DataLoader */
     get_data(loader_data: DataLoaderData): void
     load(flags: DataFlags, filename: string): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -113,24 +115,24 @@ export class DataLoader {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Mash.DataLoader */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Mash-0.2.Mash.DataLoader */
     vfunc_get_data(loader_data: DataLoaderData): void
     vfunc_load(flags: DataFlags, filename: string): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DataLoader, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DataLoader, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -145,12 +147,12 @@ export class DataLoader {
 }
 export interface DirectionalLight_ConstructProps extends Light_ConstructProps {
 }
-export class DirectionalLight {
-    /* Properties of Mash.Light */
+class DirectionalLight {
+    /* Properties of Mash-0.2.Mash.Light */
     ambient: Clutter.Color
     diffuse: Clutter.Color
     specular: Clutter.Color
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -233,11 +235,11 @@ export class DirectionalLight {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Mash.Light */
+    /* Methods of Mash-0.2.Mash.Light */
     append_shader(shader_source: GLib.String, snippet: string): void
     generate_shader(uniform_source: GLib.String, main_source: GLib.String): void
     get_ambient(ambient: Clutter.Color): void
@@ -250,7 +252,7 @@ export class DirectionalLight {
     set_direction_uniform(program: Cogl.Handle, uniform_location: number, direction_in: number): void
     set_specular(specular: Clutter.Color): void
     update_uniforms(program: Cogl.Handle): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -486,15 +488,15 @@ export class DirectionalLight {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -502,19 +504,19 @@ export class DirectionalLight {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -529,12 +531,12 @@ export class DirectionalLight {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Mash.Light */
+    /* Virtual methods of Mash-0.2.Mash.Light */
     vfunc_generate_shader(uniform_source: GLib.String, main_source: GLib.String): void
     vfunc_update_uniforms(program: Cogl.Handle): void
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
@@ -559,7 +561,7 @@ export class DirectionalLight {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -595,15 +597,15 @@ export class DirectionalLight {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: DirectionalLight, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: DirectionalLight, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -682,11 +684,11 @@ export class DirectionalLight {
     connect(sigName: "unrealize", callback: (($obj: DirectionalLight) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: DirectionalLight) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DirectionalLight, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DirectionalLight, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: DirectionalLight, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: DirectionalLight, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -882,12 +884,12 @@ export interface Light_ConstructProps extends Clutter.Actor_ConstructProps {
     diffuse?: Clutter.Color
     specular?: Clutter.Color
 }
-export class Light {
-    /* Properties of Mash.Light */
+class Light {
+    /* Properties of Mash-0.2.Mash.Light */
     ambient: Clutter.Color
     diffuse: Clutter.Color
     specular: Clutter.Color
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -970,11 +972,11 @@ export class Light {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Mash.Light */
+    /* Methods of Mash-0.2.Mash.Light */
     append_shader(shader_source: GLib.String, snippet: string): void
     generate_shader(uniform_source: GLib.String, main_source: GLib.String): void
     get_ambient(ambient: Clutter.Color): void
@@ -987,7 +989,7 @@ export class Light {
     set_direction_uniform(program: Cogl.Handle, uniform_location: number, direction_in: number): void
     set_specular(specular: Clutter.Color): void
     update_uniforms(program: Cogl.Handle): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -1223,15 +1225,15 @@ export class Light {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1239,19 +1241,19 @@ export class Light {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -1266,12 +1268,12 @@ export class Light {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Mash.Light */
+    /* Virtual methods of Mash-0.2.Mash.Light */
     vfunc_generate_shader(uniform_source: GLib.String, main_source: GLib.String): void
     vfunc_update_uniforms(program: Cogl.Handle): void
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
@@ -1296,7 +1298,7 @@ export class Light {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -1332,15 +1334,15 @@ export class Light {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Light, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Light, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -1419,11 +1421,11 @@ export class Light {
     connect(sigName: "unrealize", callback: (($obj: Light) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Light) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Light, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Light, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Light, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Light, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -1617,21 +1619,21 @@ export class Light {
 }
 export interface LightSet_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class LightSet {
-    /* Fields of GObject.Object */
+class LightSet {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Mash.LightSet */
+    /* Methods of Mash-0.2.Mash.LightSet */
     add_light(light: Light): void
     remove_light(light: Light): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1639,21 +1641,21 @@ export class LightSet {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: LightSet, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: LightSet, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1673,12 +1675,12 @@ export interface Model_ConstructProps extends Clutter.Actor_ConstructProps {
     fit_to_allocation?: boolean
     light_set?: LightSet
 }
-export class Model {
-    /* Properties of Mash.Model */
+class Model {
+    /* Properties of Mash-0.2.Mash.Model */
     data: Data
     fit_to_allocation: boolean
     light_set: LightSet
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -1761,17 +1763,17 @@ export class Model {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Mash.Model */
+    /* Methods of Mash-0.2.Mash.Model */
     get_fit_to_allocation(): boolean
     set_data(data: Data): void
     set_fit_to_allocation(fit_to_allocation: boolean): void
     set_light_set(light_set: LightSet): void
     set_material(material: Cogl.Handle): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -2007,15 +2009,15 @@ export class Model {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2023,19 +2025,19 @@ export class Model {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -2050,12 +2052,12 @@ export class Model {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Mash.Model */
+    /* Virtual methods of Mash-0.2.Mash.Model */
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     vfunc_find_property(property_name: string): GObject.ParamSpec
     vfunc_get_initial_state(property_name: string, value: any): void
@@ -2078,7 +2080,7 @@ export class Model {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -2114,15 +2116,15 @@ export class Model {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Model, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Model, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -2201,11 +2203,11 @@ export class Model {
     connect(sigName: "unrealize", callback: (($obj: Model) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Model) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Model, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Model, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Model, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Model, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -2401,22 +2403,22 @@ export class Model {
 }
 export interface PlyLoader_ConstructProps extends Data_ConstructProps {
 }
-export class PlyLoader {
-    /* Fields of GObject.Object */
+class PlyLoader {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Mash.Data */
+    /* Methods of Mash-0.2.Mash.Data */
     get_extents(min_vertex: Clutter.Vertex, max_vertex: Clutter.Vertex): void
     load(flags: DataFlags, filename: string): boolean
     render(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2424,21 +2426,21 @@ export class PlyLoader {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PlyLoader, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PlyLoader, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2456,16 +2458,16 @@ export interface PointLight_ConstructProps extends Light_ConstructProps {
     linear_attenuation?: number
     quadratic_attenuation?: number
 }
-export class PointLight {
-    /* Properties of Mash.PointLight */
+class PointLight {
+    /* Properties of Mash-0.2.Mash.PointLight */
     constant_attenuation: number
     linear_attenuation: number
     quadratic_attenuation: number
-    /* Properties of Mash.Light */
+    /* Properties of Mash-0.2.Mash.Light */
     ambient: Clutter.Color
     diffuse: Clutter.Color
     specular: Clutter.Color
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -2548,18 +2550,18 @@ export class PointLight {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Mash.PointLight */
+    /* Methods of Mash-0.2.Mash.PointLight */
     get_constant_attenuation(): number
     get_linear_attenuation(): number
     get_quadratic_attenuation(): number
     set_constant_attenuation(attenuation: number): void
     set_linear_attenuation(attenuation: number): void
     set_quadratic_attenuation(attenuation: number): void
-    /* Methods of Mash.Light */
+    /* Methods of Mash-0.2.Mash.Light */
     append_shader(shader_source: GLib.String, snippet: string): void
     generate_shader(uniform_source: GLib.String, main_source: GLib.String): void
     get_ambient(ambient: Clutter.Color): void
@@ -2572,7 +2574,7 @@ export class PointLight {
     set_direction_uniform(program: Cogl.Handle, uniform_location: number, direction_in: number): void
     set_specular(specular: Clutter.Color): void
     update_uniforms(program: Cogl.Handle): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -2808,15 +2810,15 @@ export class PointLight {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2824,19 +2826,19 @@ export class PointLight {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -2851,12 +2853,12 @@ export class PointLight {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Mash.Light */
+    /* Virtual methods of Mash-0.2.Mash.Light */
     vfunc_generate_shader(uniform_source: GLib.String, main_source: GLib.String): void
     vfunc_update_uniforms(program: Cogl.Handle): void
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
@@ -2881,7 +2883,7 @@ export class PointLight {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -2917,15 +2919,15 @@ export class PointLight {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: PointLight, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: PointLight, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -3004,11 +3006,11 @@ export class PointLight {
     connect(sigName: "unrealize", callback: (($obj: PointLight) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: PointLight) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PointLight, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PointLight, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: PointLight, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: PointLight, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -3209,19 +3211,19 @@ export interface SpotLight_ConstructProps extends PointLight_ConstructProps {
     spot_cutoff?: number
     spot_exponent?: number
 }
-export class SpotLight {
-    /* Properties of Mash.SpotLight */
+class SpotLight {
+    /* Properties of Mash-0.2.Mash.SpotLight */
     spot_cutoff: number
     spot_exponent: number
-    /* Properties of Mash.PointLight */
+    /* Properties of Mash-0.2.Mash.PointLight */
     constant_attenuation: number
     linear_attenuation: number
     quadratic_attenuation: number
-    /* Properties of Mash.Light */
+    /* Properties of Mash-0.2.Mash.Light */
     ambient: Clutter.Color
     diffuse: Clutter.Color
     specular: Clutter.Color
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -3304,23 +3306,23 @@ export class SpotLight {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Mash.SpotLight */
+    /* Methods of Mash-0.2.Mash.SpotLight */
     get_spot_cutoff(): number
     get_spot_exponent(): number
     set_spot_cutoff(cutoff: number): void
     set_spot_exponent(exponent: number): void
-    /* Methods of Mash.PointLight */
+    /* Methods of Mash-0.2.Mash.PointLight */
     get_constant_attenuation(): number
     get_linear_attenuation(): number
     get_quadratic_attenuation(): number
     set_constant_attenuation(attenuation: number): void
     set_linear_attenuation(attenuation: number): void
     set_quadratic_attenuation(attenuation: number): void
-    /* Methods of Mash.Light */
+    /* Methods of Mash-0.2.Mash.Light */
     append_shader(shader_source: GLib.String, snippet: string): void
     generate_shader(uniform_source: GLib.String, main_source: GLib.String): void
     get_ambient(ambient: Clutter.Color): void
@@ -3333,7 +3335,7 @@ export class SpotLight {
     set_direction_uniform(program: Cogl.Handle, uniform_location: number, direction_in: number): void
     set_specular(specular: Clutter.Color): void
     update_uniforms(program: Cogl.Handle): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -3569,15 +3571,15 @@ export class SpotLight {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3585,19 +3587,19 @@ export class SpotLight {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -3612,12 +3614,12 @@ export class SpotLight {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Mash.Light */
+    /* Virtual methods of Mash-0.2.Mash.Light */
     vfunc_generate_shader(uniform_source: GLib.String, main_source: GLib.String): void
     vfunc_update_uniforms(program: Cogl.Handle): void
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
@@ -3642,7 +3644,7 @@ export class SpotLight {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -3678,15 +3680,15 @@ export class SpotLight {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: SpotLight, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: SpotLight, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -3765,11 +3767,11 @@ export class SpotLight {
     connect(sigName: "unrealize", callback: (($obj: SpotLight) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: SpotLight) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SpotLight, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SpotLight, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: SpotLight, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: SpotLight, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -3970,17 +3972,17 @@ export class SpotLight {
     static new(): SpotLight
     static $gtype: GObject.Type
 }
-export abstract class DataClass {
+abstract class DataClass {
     static name: string
 }
-export abstract class DataLoaderClass {
-    /* Fields of Mash.DataLoaderClass */
+abstract class DataLoaderClass {
+    /* Fields of Mash-0.2.Mash.DataLoaderClass */
     load: (data_loader: DataLoader, flags: DataFlags, filename: string) => boolean
     get_data: (data_loader: DataLoader, loader_data: DataLoaderData) => void
     static name: string
 }
-export class DataLoaderData {
-    /* Fields of Mash.DataLoaderData */
+class DataLoaderData {
+    /* Fields of Mash-0.2.Mash.DataLoaderData */
     vertices_vbo: Cogl.Handle
     indices: Cogl.Handle
     min_index: number
@@ -3990,54 +3992,56 @@ export class DataLoaderData {
     max_vertex: Clutter.Vertex
     static name: string
 }
-export class DataLoaderPrivate {
+class DataLoaderPrivate {
     static name: string
 }
-export class DataPrivate {
+class DataPrivate {
     static name: string
 }
-export abstract class DirectionalLightClass {
+abstract class DirectionalLightClass {
     static name: string
 }
-export class DirectionalLightPrivate {
+class DirectionalLightPrivate {
     static name: string
 }
-export abstract class LightClass {
-    /* Fields of Mash.LightClass */
+abstract class LightClass {
+    /* Fields of Mash-0.2.Mash.LightClass */
     generate_shader: (light: Light, uniform_source: GLib.String, main_source: GLib.String) => void
     update_uniforms: (light: Light, program: Cogl.Handle) => void
     static name: string
 }
-export class LightPrivate {
+class LightPrivate {
     static name: string
 }
-export abstract class LightSetClass {
+abstract class LightSetClass {
     static name: string
 }
-export class LightSetPrivate {
+class LightSetPrivate {
     static name: string
 }
-export abstract class ModelClass {
+abstract class ModelClass {
     static name: string
 }
-export class ModelPrivate {
+class ModelPrivate {
     static name: string
 }
-export abstract class PlyLoaderClass {
+abstract class PlyLoaderClass {
     static name: string
 }
-export class PlyLoaderPrivate {
+class PlyLoaderPrivate {
     static name: string
 }
-export abstract class PointLightClass {
+abstract class PointLightClass {
     static name: string
 }
-export class PointLightPrivate {
+class PointLightPrivate {
     static name: string
 }
-export abstract class SpotLightClass {
+abstract class SpotLightClass {
     static name: string
 }
-export class SpotLightPrivate {
+class SpotLightPrivate {
     static name: string
 }
+}
+export default Mash;

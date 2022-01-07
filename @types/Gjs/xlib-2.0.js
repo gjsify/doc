@@ -1,2 +1,2 @@
-imports.gi.versions.xlib = '2.0'
-export default imports.gi.xlib
+import xlib from 'gi://xlib?version=2.0';
+export default xlib;

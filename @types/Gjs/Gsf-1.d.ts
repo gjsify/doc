@@ -3,12 +3,14 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as libxml2 from './libxml2-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type libxml2 from './libxml2-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum ClipFormat {
+export namespace Gsf {
+
+enum ClipFormat {
     WINDOWS_CLIPBOARD,
     MACINTOSH_CLIPBOARD,
     GUID,
@@ -16,29 +18,29 @@ export enum ClipFormat {
     CLIPBOARD_FORMAT_NAME,
     UNKNOWN,
 }
-export enum ClipFormatWindows {
+enum ClipFormatWindows {
     ERROR,
     UNKNOWN,
     METAFILE,
     DIB,
     ENHANCED_METAFILE,
 }
-export enum Error {
+enum Error {
     OUT_OF_MEMORY,
     INVALID_DATA,
 }
-export enum OutputCsvQuotingMode {
+enum OutputCsvQuotingMode {
     NEVER,
     AUTO,
     ALWAYS,
 }
-export enum XMLContent {
+enum XMLContent {
     NO_CONTENT,
     CONTENT,
     SHARED_CONTENT,
     /* 2ND (invalid, starts with a number) */
 }
-export enum ZipCompressionMethod {
+enum ZipCompressionMethod {
     STORED,
     SHRUNK,
     REDUCEDX1,
@@ -105,83 +107,83 @@ export const META_NAME_TEMPLATE: string
 export const META_NAME_THUMBNAIL: string
 export const META_NAME_TITLE: string
 export const META_NAME_WORD_COUNT: string
-export function base64_decode_simple(data: Uint8Array[], len: number): number
-export function base64_decode_step(in_: Uint8Array[], len: number, out: Uint8Array[], state: number, save: number): [ /* returnType */ number, /* state */ number, /* save */ number ]
-export function base64_encode_close(in_: Uint8Array[], break_lines: boolean, out: Uint8Array[], state: number, save: number): [ /* returnType */ number, /* state */ number, /* save */ number ]
-export function base64_encode_simple(data: Uint8Array[], len: number): number
-export function base64_encode_step(in_: Uint8Array[], len: number, break_lines: boolean, out: Uint8Array[], state: number, save: number): [ /* returnType */ number, /* state */ number, /* save */ number ]
-export function debug_flag(flag: string): boolean
-export function doc_meta_dump(meta: DocMetaData): void
-export function error_quark(): GLib.Quark
-export function extension_pointer(path: string): string
-export function filename_to_utf8(filename: string, quoted: boolean): string
-export function init(): void
-export function init_dynamic(module: GObject.TypeModule): void
-export function le_get_double(p?: object | null): number
-export function le_get_float(p?: object | null): number
-export function le_get_guint64(p?: object | null): number
-export function le_set_double(p: object | null, d: number): void
-export function le_set_float(p: object | null, f: number): void
-export function mem_dump(ptr: number, len: number): void
-export function msole_codepage_to_lid(codepage: number): number
-export function msole_iconv_win_codepage(): number
-export function msole_inflate(input: Input, offset: gsf_off_t): Uint8Array[]
-export function msole_language_for_lid(lid: number): string
-export function msole_lid_for_language(lang?: string | null): number
-export function msole_lid_to_codepage(lid: number): number
-export function msole_lid_to_codepage_str(lid: number): string
-export function odf_get_ns(): XMLInNS
-export function odf_get_version(): number
-export function odf_get_version_string(): string
-export function open_pkg_error_id(): number
-export function open_pkg_foreach_rel(opkg: Input, func: OpenPkgIter): void
-export function open_pkg_open_rel(opkg: Input, rel: OpenPkgRel): Input
-export function open_pkg_open_rel_by_id(opkg: Input, id: string): Input
-export function open_pkg_open_rel_by_type(opkg: Input, type: string): Input
-export function open_pkg_parse_rel_by_id(xin: XMLIn, id: string, dtd: XMLInNode, ns: XMLInNS): GLib.Error
-export function property_settings_find(name: string, params: GObject.Parameter[]): GObject.Parameter
-export function property_settings_free(params: GObject.Parameter[]): void
-export function shutdown(): void
-export function shutdown_dynamic(module: GObject.TypeModule): void
-export function value_get_docprop_array(value: any): any[] | null
-export function value_get_docprop_varray(value: any): GObject.ValueArray
-export function value_get_docprop_vector(value: any): DocPropVector
-export function vba_inflate(input: Input, offset: gsf_off_t, size: number, add_null_terminator: boolean): number
-export function xmlDocFormatDump(output: Output, cur: libxml2.Doc, encoding: string | null, format: boolean): number
-export function xml_gvalue_from_str(res: any, t: GObject.Type, str: string): boolean
-export function xml_probe(input: Input, func: XMLProbeFunc): boolean
-export interface OpenPkgIter {
+function base64_decode_simple(data: Uint8Array[], len: number): number
+function base64_decode_step(in_: Uint8Array[], len: number, out: Uint8Array[], state: number, save: number): [ /* returnType */ number, /* state */ number, /* save */ number ]
+function base64_encode_close(in_: Uint8Array[], break_lines: boolean, out: Uint8Array[], state: number, save: number): [ /* returnType */ number, /* state */ number, /* save */ number ]
+function base64_encode_simple(data: Uint8Array[], len: number): number
+function base64_encode_step(in_: Uint8Array[], len: number, break_lines: boolean, out: Uint8Array[], state: number, save: number): [ /* returnType */ number, /* state */ number, /* save */ number ]
+function debug_flag(flag: string): boolean
+function doc_meta_dump(meta: DocMetaData): void
+function error_quark(): GLib.Quark
+function extension_pointer(path: string): string
+function filename_to_utf8(filename: string, quoted: boolean): string
+function init(): void
+function init_dynamic(module: GObject.TypeModule): void
+function le_get_double(p?: object | null): number
+function le_get_float(p?: object | null): number
+function le_get_guint64(p?: object | null): number
+function le_set_double(p: object | null, d: number): void
+function le_set_float(p: object | null, f: number): void
+function mem_dump(ptr: number, len: number): void
+function msole_codepage_to_lid(codepage: number): number
+function msole_iconv_win_codepage(): number
+function msole_inflate(input: Input, offset: gsf_off_t): Uint8Array[]
+function msole_language_for_lid(lid: number): string
+function msole_lid_for_language(lang?: string | null): number
+function msole_lid_to_codepage(lid: number): number
+function msole_lid_to_codepage_str(lid: number): string
+function odf_get_ns(): XMLInNS
+function odf_get_version(): number
+function odf_get_version_string(): string
+function open_pkg_error_id(): number
+function open_pkg_foreach_rel(opkg: Input, func: OpenPkgIter): void
+function open_pkg_open_rel(opkg: Input, rel: OpenPkgRel): Input
+function open_pkg_open_rel_by_id(opkg: Input, id: string): Input
+function open_pkg_open_rel_by_type(opkg: Input, type: string): Input
+function open_pkg_parse_rel_by_id(xin: XMLIn, id: string, dtd: XMLInNode, ns: XMLInNS): GLib.Error
+function property_settings_find(name: string, params: GObject.Parameter[]): GObject.Parameter
+function property_settings_free(params: GObject.Parameter[]): void
+function shutdown(): void
+function shutdown_dynamic(module: GObject.TypeModule): void
+function value_get_docprop_array(value: any): any[] | null
+function value_get_docprop_varray(value: any): GObject.ValueArray
+function value_get_docprop_vector(value: any): DocPropVector
+function vba_inflate(input: Input, offset: gsf_off_t, size: number, add_null_terminator: boolean): number
+function xmlDocFormatDump(output: Output, cur: libxml2.Doc, encoding: string | null, format: boolean): number
+function xml_gvalue_from_str(res: any, t: GObject.Type, str: string): boolean
+function xml_probe(input: Input, func: XMLProbeFunc): boolean
+interface OpenPkgIter {
     (opkg: Input, rel: OpenPkgRel): void
 }
-export interface XMLInExtDtor {
+interface XMLInExtDtor {
     (xin: XMLIn, old_state?: object | null): void
 }
-export interface XMLInUnknownFunc {
+interface XMLInUnknownFunc {
     (xin: XMLIn, elem: libxml2.Char, attrs: libxml2.Char): boolean
 }
-export interface XMLProbeFunc {
+interface XMLProbeFunc {
     (name: libxml2.Char, prefix: libxml2.Char, URI: libxml2.Char, nb_namespaces: number, namespaces: libxml2.Char, nb_attributes: number, nb_defaulted: number, attributes: libxml2.Char): boolean
 }
 export interface Blob_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Blob {
-    /* Fields of Gsf.Blob */
+class Blob {
+    /* Fields of Gsf-1.Gsf.Blob */
     object: GObject.Object
     priv: BlobPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Blob */
+    /* Methods of Gsf-1.Gsf.Blob */
     get_size(): number
     peek_data(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -189,21 +191,21 @@ export class Blob {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Blob, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Blob, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -220,26 +222,26 @@ export class Blob {
 }
 export interface ClipData_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ClipData {
-    /* Fields of Gsf.ClipData */
+class ClipData {
+    /* Fields of Gsf-1.Gsf.ClipData */
     object: GObject.Object
     priv: ClipDataPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.ClipData */
+    /* Methods of Gsf-1.Gsf.ClipData */
     get_data_blob(): Blob
     get_format(): ClipFormat
     get_windows_clipboard_format(): ClipFormatWindows
     peek_real_data(ret_size: number): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -247,21 +249,21 @@ export class ClipData {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClipData, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClipData, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -278,10 +280,10 @@ export class ClipData {
 }
 export interface DocMetaData_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class DocMetaData {
-    /* Fields of GObject.Object */
+class DocMetaData {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.DocMetaData */
+    /* Methods of Gsf-1.Gsf.DocMetaData */
     foreach(func: GLib.HFunc): void
     insert(name: string, value: any): void
     lookup(name: string): DocProp | null
@@ -294,15 +296,15 @@ export class DocMetaData {
     store(prop: DocProp): void
     write_to_msole(out: Output, doc_not_component: boolean): boolean
     write_to_odf(output: XMLOut): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -310,21 +312,21 @@ export class DocMetaData {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DocMetaData, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DocMetaData, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -341,21 +343,21 @@ export class DocMetaData {
 }
 export interface DocPropVector_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class DocPropVector {
-    /* Fields of GObject.Object */
+class DocPropVector {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.DocPropVector */
+    /* Methods of Gsf-1.Gsf.DocPropVector */
     append(value: any): void
     as_string(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -363,21 +365,21 @@ export class DocPropVector {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DocPropVector, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DocPropVector, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -394,8 +396,8 @@ export class DocPropVector {
 }
 export interface Infile_ConstructProps extends Input_ConstructProps {
 }
-export class Infile {
-    /* Properties of Gsf.Input */
+class Infile {
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -403,20 +405,20 @@ export class Infile {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Infile */
+    /* Fields of Gsf-1.Gsf.Infile */
     parent: Input
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Infile */
+    /* Methods of Gsf-1.Gsf.Infile */
     child_by_aname(names: string[]): Input
     child_by_index(i: number): Input
     child_by_name(name: string): Input
     name_by_index(i: number): string | null
     num_children(): number
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -434,15 +436,15 @@ export class Infile {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -450,28 +452,28 @@ export class Infile {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Infile */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Infile */
     vfunc_name_by_index(i: number): string | null
     vfunc_num_children(): number
-    /* Virtual methods of Gsf.Input */
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -500,8 +502,8 @@ export class Infile {
 }
 export interface InfileMSOle_ConstructProps extends Infile_ConstructProps {
 }
-export class InfileMSOle {
-    /* Properties of Gsf.Input */
+class InfileMSOle {
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -509,22 +511,22 @@ export class InfileMSOle {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Infile */
+    /* Fields of Gsf-1.Gsf.Infile */
     parent: Input
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.InfileMSOle */
+    /* Methods of Gsf-1.Gsf.InfileMSOle */
     get_class_id(res: number): boolean
-    /* Methods of Gsf.Infile */
+    /* Methods of Gsf-1.Gsf.Infile */
     child_by_aname(names: string[]): Input
     child_by_index(i: number): Input
     child_by_name(name: string): Input
     name_by_index(i: number): string | null
     num_children(): number
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -542,15 +544,15 @@ export class InfileMSOle {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -558,28 +560,28 @@ export class InfileMSOle {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Infile */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Infile */
     vfunc_name_by_index(i: number): string | null
     vfunc_num_children(): number
-    /* Virtual methods of Gsf.Input */
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -610,8 +612,8 @@ export class InfileMSOle {
 }
 export interface InfileMSVBA_ConstructProps extends Infile_ConstructProps {
 }
-export class InfileMSVBA {
-    /* Properties of Gsf.Input */
+class InfileMSVBA {
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -619,23 +621,23 @@ export class InfileMSVBA {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Infile */
+    /* Fields of Gsf-1.Gsf.Infile */
     parent: Input
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.InfileMSVBA */
+    /* Methods of Gsf-1.Gsf.InfileMSVBA */
     get_modules(): GLib.HashTable | null
     steal_modules(): GLib.HashTable | null
-    /* Methods of Gsf.Infile */
+    /* Methods of Gsf-1.Gsf.Infile */
     child_by_aname(names: string[]): Input
     child_by_index(i: number): Input
     child_by_name(name: string): Input
     name_by_index(i: number): string | null
     num_children(): number
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -653,15 +655,15 @@ export class InfileMSVBA {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -669,28 +671,28 @@ export class InfileMSVBA {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Infile */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Infile */
     vfunc_name_by_index(i: number): string | null
     vfunc_num_children(): number
-    /* Virtual methods of Gsf.Input */
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -721,8 +723,8 @@ export class InfileMSVBA {
 }
 export interface InfileStdio_ConstructProps extends Infile_ConstructProps {
 }
-export class InfileStdio {
-    /* Properties of Gsf.Input */
+class InfileStdio {
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -730,20 +732,20 @@ export class InfileStdio {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Infile */
+    /* Fields of Gsf-1.Gsf.Infile */
     parent: Input
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Infile */
+    /* Methods of Gsf-1.Gsf.Infile */
     child_by_aname(names: string[]): Input
     child_by_index(i: number): Input
     child_by_name(name: string): Input
     name_by_index(i: number): string | null
     num_children(): number
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -761,15 +763,15 @@ export class InfileStdio {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -777,28 +779,28 @@ export class InfileStdio {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Infile */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Infile */
     vfunc_name_by_index(i: number): string | null
     vfunc_num_children(): number
-    /* Virtual methods of Gsf.Input */
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -830,8 +832,8 @@ export class InfileStdio {
 export interface InfileTar_ConstructProps extends Infile_ConstructProps {
     source?: Input
 }
-export class InfileTar {
-    /* Properties of Gsf.Input */
+class InfileTar {
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -839,20 +841,20 @@ export class InfileTar {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Infile */
+    /* Fields of Gsf-1.Gsf.Infile */
     parent: Input
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Infile */
+    /* Methods of Gsf-1.Gsf.Infile */
     child_by_aname(names: string[]): Input
     child_by_index(i: number): Input
     child_by_name(name: string): Input
     name_by_index(i: number): string | null
     num_children(): number
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -870,15 +872,15 @@ export class InfileTar {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -886,28 +888,28 @@ export class InfileTar {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Infile */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Infile */
     vfunc_name_by_index(i: number): string | null
     vfunc_num_children(): number
-    /* Virtual methods of Gsf.Input */
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -940,10 +942,11 @@ export interface InfileZip_ConstructProps extends Infile_ConstructProps {
     internal_parent?: InfileZip
     source?: Input
 }
-export class InfileZip {
-    /* Properties of Gsf.InfileZip */
+class InfileZip {
+    /* Properties of Gsf-1.Gsf.InfileZip */
     readonly compression_level: number
-    /* Properties of Gsf.Input */
+    readonly zip64: boolean
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -951,20 +954,20 @@ export class InfileZip {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Infile */
+    /* Fields of Gsf-1.Gsf.Infile */
     parent: Input
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Infile */
+    /* Methods of Gsf-1.Gsf.Infile */
     child_by_aname(names: string[]): Input
     child_by_index(i: number): Input
     child_by_name(name: string): Input
     name_by_index(i: number): string | null
     num_children(): number
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -982,15 +985,15 @@ export class InfileZip {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -998,33 +1001,35 @@ export class InfileZip {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Infile */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Infile */
     vfunc_name_by_index(i: number): string | null
     vfunc_num_children(): number
-    /* Virtual methods of Gsf.Input */
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::compression-level", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::compression-level", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::zip64", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::zip64", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::container", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::container", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
@@ -1052,8 +1057,8 @@ export class InfileZip {
 }
 export interface Input_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Input {
-    /* Properties of Gsf.Input */
+class Input {
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -1061,12 +1066,12 @@ export class Input {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -1084,15 +1089,15 @@ export class Input {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1100,25 +1105,25 @@ export class Input {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Input */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Input, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Input, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1153,8 +1158,8 @@ export interface InputGZip_ConstructProps extends Input_ConstructProps {
     source?: Input
     uncompressed_size?: number
 }
-export class InputGZip {
-    /* Properties of Gsf.Input */
+class InputGZip {
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -1162,12 +1167,12 @@ export class InputGZip {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -1185,15 +1190,15 @@ export class InputGZip {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1201,25 +1206,25 @@ export class InputGZip {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Input */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1250,8 +1255,8 @@ export class InputGZip {
 }
 export interface InputGio_ConstructProps extends Input_ConstructProps {
 }
-export class InputGio {
-    /* Properties of Gsf.Input */
+class InputGio {
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -1259,12 +1264,12 @@ export class InputGio {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -1282,15 +1287,15 @@ export class InputGio {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1298,25 +1303,25 @@ export class InputGio {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Input */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1351,8 +1356,8 @@ export interface InputHTTP_ConstructProps extends Input_ConstructProps {
     content_type?: string
     url?: string
 }
-export class InputHTTP {
-    /* Properties of Gsf.Input */
+class InputHTTP {
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -1360,15 +1365,15 @@ export class InputHTTP {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.InputHTTP */
+    /* Methods of Gsf-1.Gsf.InputHTTP */
     get_content_type(): string
     get_url(): string
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -1386,15 +1391,15 @@ export class InputHTTP {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1402,25 +1407,25 @@ export class InputHTTP {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Input */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1451,8 +1456,8 @@ export class InputHTTP {
 }
 export interface InputMemory_ConstructProps extends Input_ConstructProps {
 }
-export class InputMemory {
-    /* Properties of Gsf.Input */
+class InputMemory {
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -1460,12 +1465,12 @@ export class InputMemory {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -1483,15 +1488,15 @@ export class InputMemory {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1499,25 +1504,25 @@ export class InputMemory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Input */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1551,8 +1556,8 @@ export class InputMemory {
 }
 export interface InputProxy_ConstructProps extends Input_ConstructProps {
 }
-export class InputProxy {
-    /* Properties of Gsf.Input */
+class InputProxy {
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -1560,12 +1565,12 @@ export class InputProxy {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -1583,15 +1588,15 @@ export class InputProxy {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1599,25 +1604,25 @@ export class InputProxy {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Input */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1649,8 +1654,8 @@ export class InputProxy {
 }
 export interface InputStdio_ConstructProps extends Input_ConstructProps {
 }
-export class InputStdio {
-    /* Properties of Gsf.Input */
+class InputStdio {
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -1658,12 +1663,12 @@ export class InputStdio {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -1681,15 +1686,15 @@ export class InputStdio {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1697,25 +1702,25 @@ export class InputStdio {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Input */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1747,8 +1752,8 @@ export class InputStdio {
 }
 export interface InputTextline_ConstructProps extends Input_ConstructProps {
 }
-export class InputTextline {
-    /* Properties of Gsf.Input */
+class InputTextline {
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -1756,15 +1761,15 @@ export class InputTextline {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.InputTextline */
+    /* Methods of Gsf-1.Gsf.InputTextline */
     ascii_gets(): Uint8Array[] | null
     utf8_gets(): Uint8Array[] | null
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -1782,15 +1787,15 @@ export class InputTextline {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1798,25 +1803,25 @@ export class InputTextline {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Input */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1848,20 +1853,20 @@ export class InputTextline {
 export interface ODFOut_ConstructProps extends XMLOut_ConstructProps {
     odf_version?: number
 }
-export class ODFOut {
-    /* Properties of Gsf.XMLOut */
+class ODFOut {
+    /* Properties of Gsf-1.Gsf.XMLOut */
     pretty_print: boolean
-    /* Fields of Gsf.ODFOut */
+    /* Fields of Gsf-1.Gsf.ODFOut */
     base: XMLOut
     priv: object
-    /* Fields of Gsf.XMLOut */
+    /* Fields of Gsf-1.Gsf.XMLOut */
     output: Output
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.ODFOut */
+    /* Methods of Gsf-1.Gsf.ODFOut */
     get_version(): number
     get_version_string(): string
-    /* Methods of Gsf.XMLOut */
+    /* Methods of Gsf-1.Gsf.XMLOut */
     add_base64(id: string | null, data: Uint8Array[]): void
     add_bool(id: string | null, val: boolean): void
     add_color(id: string | null, r: number, g: number, b: number): void
@@ -1881,15 +1886,15 @@ export class ODFOut {
     simple_float_element(id: string, val: number, precision: number): void
     simple_int_element(id: string, val: number): void
     start_element(id: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1897,21 +1902,21 @@ export class ODFOut {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ODFOut, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ODFOut, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1928,16 +1933,16 @@ export class ODFOut {
 }
 export interface Outfile_ConstructProps extends Output_ConstructProps {
 }
-export class Outfile {
-    /* Properties of Gsf.Output */
+class Outfile {
+    /* Properties of Gsf-1.Gsf.Output */
     container: Outfile
     readonly is_closed: boolean
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf.Outfile */
+    /* Fields of Gsf-1.Gsf.Outfile */
     parent: Output
-    /* Fields of Gsf.Output */
+    /* Fields of Gsf-1.Gsf.Output */
     g_object: GObject.Object
     cur_size: gsf_off_t
     cur_offset: gsf_off_t
@@ -1945,12 +1950,12 @@ export class Outfile {
     err: GLib.Error
     printf_buf: string
     printf_buf_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Outfile */
+    /* Methods of Gsf-1.Gsf.Outfile */
     new_child(name: string, is_dir: boolean): Output
     open_pkg_add_rel(name: string, content_type: string, parent: Outfile, type: string): Output
-    /* Methods of Gsf.Output */
+    /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
     get_modtime(): GLib.DateTime | null
@@ -1962,15 +1967,15 @@ export class Outfile {
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
     write(data: Uint8Array[]): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1978,25 +1983,25 @@ export class Outfile {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Output */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     vfunc_Write(data: Uint8Array[]): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Outfile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Outfile, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2024,16 +2029,16 @@ export interface OutfileMSOle_ConstructProps extends Outfile_ConstructProps {
     sink?: Output
     small_block_size?: number
 }
-export class OutfileMSOle {
-    /* Properties of Gsf.Output */
+class OutfileMSOle {
+    /* Properties of Gsf-1.Gsf.Output */
     container: Outfile
     readonly is_closed: boolean
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf.Outfile */
+    /* Fields of Gsf-1.Gsf.Outfile */
     parent: Output
-    /* Fields of Gsf.Output */
+    /* Fields of Gsf-1.Gsf.Output */
     g_object: GObject.Object
     cur_size: gsf_off_t
     cur_offset: gsf_off_t
@@ -2041,14 +2046,14 @@ export class OutfileMSOle {
     err: GLib.Error
     printf_buf: string
     printf_buf_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.OutfileMSOle */
+    /* Methods of Gsf-1.Gsf.OutfileMSOle */
     set_class_id(clsid: Uint8Array[]): boolean
-    /* Methods of Gsf.Outfile */
+    /* Methods of Gsf-1.Gsf.Outfile */
     new_child(name: string, is_dir: boolean): Output
     open_pkg_add_rel(name: string, content_type: string, parent: Outfile, type: string): Output
-    /* Methods of Gsf.Output */
+    /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
     get_modtime(): GLib.DateTime | null
@@ -2060,15 +2065,15 @@ export class OutfileMSOle {
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
     write(data: Uint8Array[]): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2076,25 +2081,25 @@ export class OutfileMSOle {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Output */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     vfunc_Write(data: Uint8Array[]): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OutfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutfileMSOle, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2125,16 +2130,16 @@ export interface OutfileOpenPkg_ConstructProps extends Outfile_ConstructProps {
     is_dir?: boolean
     sink?: Outfile
 }
-export class OutfileOpenPkg {
-    /* Properties of Gsf.Output */
+class OutfileOpenPkg {
+    /* Properties of Gsf-1.Gsf.Output */
     container: Outfile
     readonly is_closed: boolean
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf.Outfile */
+    /* Fields of Gsf-1.Gsf.Outfile */
     parent: Output
-    /* Fields of Gsf.Output */
+    /* Fields of Gsf-1.Gsf.Output */
     g_object: GObject.Object
     cur_size: gsf_off_t
     cur_offset: gsf_off_t
@@ -2142,17 +2147,17 @@ export class OutfileOpenPkg {
     err: GLib.Error
     printf_buf: string
     printf_buf_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.OutfileOpenPkg */
+    /* Methods of Gsf-1.Gsf.OutfileOpenPkg */
     add_extern_rel(target: string, content_type: string): string
     relate(parent: OutfileOpenPkg, type: string): string
     set_content_type(content_type: string): void
     set_sink(sink: Output): void
-    /* Methods of Gsf.Outfile */
+    /* Methods of Gsf-1.Gsf.Outfile */
     new_child(name: string, is_dir: boolean): Output
     open_pkg_add_rel(name: string, content_type: string, parent: Outfile, type: string): Output
-    /* Methods of Gsf.Output */
+    /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
     get_modtime(): GLib.DateTime | null
@@ -2164,15 +2169,15 @@ export class OutfileOpenPkg {
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
     write(data: Uint8Array[]): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2180,25 +2185,25 @@ export class OutfileOpenPkg {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Output */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     vfunc_Write(data: Uint8Array[]): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OutfileOpenPkg, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutfileOpenPkg, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2225,16 +2230,16 @@ export class OutfileOpenPkg {
 }
 export interface OutfileStdio_ConstructProps extends Outfile_ConstructProps {
 }
-export class OutfileStdio {
-    /* Properties of Gsf.Output */
+class OutfileStdio {
+    /* Properties of Gsf-1.Gsf.Output */
     container: Outfile
     readonly is_closed: boolean
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf.Outfile */
+    /* Fields of Gsf-1.Gsf.Outfile */
     parent: Output
-    /* Fields of Gsf.Output */
+    /* Fields of Gsf-1.Gsf.Output */
     g_object: GObject.Object
     cur_size: gsf_off_t
     cur_offset: gsf_off_t
@@ -2242,12 +2247,12 @@ export class OutfileStdio {
     err: GLib.Error
     printf_buf: string
     printf_buf_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Outfile */
+    /* Methods of Gsf-1.Gsf.Outfile */
     new_child(name: string, is_dir: boolean): Output
     open_pkg_add_rel(name: string, content_type: string, parent: Outfile, type: string): Output
-    /* Methods of Gsf.Output */
+    /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
     get_modtime(): GLib.DateTime | null
@@ -2259,15 +2264,15 @@ export class OutfileStdio {
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
     write(data: Uint8Array[]): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2275,25 +2280,25 @@ export class OutfileStdio {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Output */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     vfunc_Write(data: Uint8Array[]): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OutfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutfileStdio, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2325,16 +2330,16 @@ export interface OutfileZip_ConstructProps extends Outfile_ConstructProps {
     sink?: Output
     zip64?: number
 }
-export class OutfileZip {
-    /* Properties of Gsf.Output */
+class OutfileZip {
+    /* Properties of Gsf-1.Gsf.Output */
     container: Outfile
     readonly is_closed: boolean
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf.Outfile */
+    /* Fields of Gsf-1.Gsf.Outfile */
     parent: Output
-    /* Fields of Gsf.Output */
+    /* Fields of Gsf-1.Gsf.Output */
     g_object: GObject.Object
     cur_size: gsf_off_t
     cur_offset: gsf_off_t
@@ -2342,14 +2347,14 @@ export class OutfileZip {
     err: GLib.Error
     printf_buf: string
     printf_buf_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.OutfileZip */
+    /* Methods of Gsf-1.Gsf.OutfileZip */
     set_compression_method(method: ZipCompressionMethod): boolean
-    /* Methods of Gsf.Outfile */
+    /* Methods of Gsf-1.Gsf.Outfile */
     new_child(name: string, is_dir: boolean): Output
     open_pkg_add_rel(name: string, content_type: string, parent: Outfile, type: string): Output
-    /* Methods of Gsf.Output */
+    /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
     get_modtime(): GLib.DateTime | null
@@ -2361,15 +2366,15 @@ export class OutfileZip {
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
     write(data: Uint8Array[]): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2377,25 +2382,25 @@ export class OutfileZip {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Output */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     vfunc_Write(data: Uint8Array[]): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OutfileZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutfileZip, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2425,14 +2430,14 @@ export interface Output_ConstructProps extends GObject.Object_ConstructProps {
     modtime?: GLib.DateTime
     name?: string
 }
-export class Output {
-    /* Properties of Gsf.Output */
+class Output {
+    /* Properties of Gsf-1.Gsf.Output */
     container: Outfile
     readonly is_closed: boolean
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf.Output */
+    /* Fields of Gsf-1.Gsf.Output */
     g_object: GObject.Object
     cur_size: gsf_off_t
     cur_offset: gsf_off_t
@@ -2440,9 +2445,9 @@ export class Output {
     err: GLib.Error
     printf_buf: string
     printf_buf_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Output */
+    /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
     get_modtime(): GLib.DateTime | null
@@ -2454,15 +2459,15 @@ export class Output {
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
     write(data: Uint8Array[]): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2470,25 +2475,25 @@ export class Output {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Output */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     vfunc_Write(data: Uint8Array[]): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Output, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Output, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2517,14 +2522,14 @@ export class Output {
 }
 export interface OutputBzip_ConstructProps extends Output_ConstructProps {
 }
-export class OutputBzip {
-    /* Properties of Gsf.Output */
+class OutputBzip {
+    /* Properties of Gsf-1.Gsf.Output */
     container: Outfile
     readonly is_closed: boolean
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf.Output */
+    /* Fields of Gsf-1.Gsf.Output */
     g_object: GObject.Object
     cur_size: gsf_off_t
     cur_offset: gsf_off_t
@@ -2532,9 +2537,9 @@ export class OutputBzip {
     err: GLib.Error
     printf_buf: string
     printf_buf_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Output */
+    /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
     get_modtime(): GLib.DateTime | null
@@ -2546,15 +2551,15 @@ export class OutputBzip {
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
     write(data: Uint8Array[]): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2562,25 +2567,25 @@ export class OutputBzip {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Output */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     vfunc_Write(data: Uint8Array[]): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OutputBzip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutputBzip, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2614,8 +2619,8 @@ export interface OutputCsv_ConstructProps extends Output_ConstructProps {
     separator?: string
     sink?: Output
 }
-export class OutputCsv {
-    /* Properties of Gsf.OutputCsv */
+class OutputCsv {
+    /* Properties of Gsf-1.Gsf.OutputCsv */
     eol: string
     quote: string
     quoting_mode: OutputCsvQuotingMode
@@ -2623,20 +2628,20 @@ export class OutputCsv {
     quoting_triggers: string
     separator: string
     sink: Output
-    /* Properties of Gsf.Output */
+    /* Properties of Gsf-1.Gsf.Output */
     container: Outfile
     readonly is_closed: boolean
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf.OutputCsv */
+    /* Fields of Gsf-1.Gsf.OutputCsv */
     output: Output
     quote_len: number
     eol_len: number
     separator_len: number
     fields_on_line: boolean
     buf: GLib.String
-    /* Fields of Gsf.Output */
+    /* Fields of Gsf-1.Gsf.Output */
     g_object: GObject.Object
     cur_size: gsf_off_t
     cur_offset: gsf_off_t
@@ -2644,12 +2649,12 @@ export class OutputCsv {
     err: GLib.Error
     printf_buf: string
     printf_buf_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.OutputCsv */
+    /* Methods of Gsf-1.Gsf.OutputCsv */
     write_eol(): boolean
     write_field(field: string, len: number): boolean
-    /* Methods of Gsf.Output */
+    /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
     get_modtime(): GLib.DateTime | null
@@ -2661,15 +2666,15 @@ export class OutputCsv {
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
     write(data: Uint8Array[]): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2677,25 +2682,25 @@ export class OutputCsv {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Output */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     vfunc_Write(data: Uint8Array[]): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OutputCsv, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutputCsv, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2737,16 +2742,16 @@ export interface OutputGZip_ConstructProps extends Output_ConstructProps {
     raw?: boolean
     sink?: Output
 }
-export class OutputGZip {
-    /* Properties of Gsf.OutputGZip */
+class OutputGZip {
+    /* Properties of Gsf-1.Gsf.OutputGZip */
     deflate_level: number
-    /* Properties of Gsf.Output */
+    /* Properties of Gsf-1.Gsf.Output */
     container: Outfile
     readonly is_closed: boolean
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf.Output */
+    /* Fields of Gsf-1.Gsf.Output */
     g_object: GObject.Object
     cur_size: gsf_off_t
     cur_offset: gsf_off_t
@@ -2754,9 +2759,9 @@ export class OutputGZip {
     err: GLib.Error
     printf_buf: string
     printf_buf_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Output */
+    /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
     get_modtime(): GLib.DateTime | null
@@ -2768,15 +2773,15 @@ export class OutputGZip {
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
     write(data: Uint8Array[]): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2784,25 +2789,25 @@ export class OutputGZip {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Output */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     vfunc_Write(data: Uint8Array[]): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OutputGZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutputGZip, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2831,14 +2836,14 @@ export class OutputGZip {
 }
 export interface OutputGio_ConstructProps extends Output_ConstructProps {
 }
-export class OutputGio {
-    /* Properties of Gsf.Output */
+class OutputGio {
+    /* Properties of Gsf-1.Gsf.Output */
     container: Outfile
     readonly is_closed: boolean
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf.Output */
+    /* Fields of Gsf-1.Gsf.Output */
     g_object: GObject.Object
     cur_size: gsf_off_t
     cur_offset: gsf_off_t
@@ -2846,9 +2851,9 @@ export class OutputGio {
     err: GLib.Error
     printf_buf: string
     printf_buf_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Output */
+    /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
     get_modtime(): GLib.DateTime | null
@@ -2860,15 +2865,15 @@ export class OutputGio {
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
     write(data: Uint8Array[]): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2876,25 +2881,25 @@ export class OutputGio {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Output */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     vfunc_Write(data: Uint8Array[]): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OutputGio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutputGio, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2923,14 +2928,14 @@ export class OutputGio {
 }
 export interface OutputIOChannel_ConstructProps extends Output_ConstructProps {
 }
-export class OutputIOChannel {
-    /* Properties of Gsf.Output */
+class OutputIOChannel {
+    /* Properties of Gsf-1.Gsf.Output */
     container: Outfile
     readonly is_closed: boolean
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf.Output */
+    /* Fields of Gsf-1.Gsf.Output */
     g_object: GObject.Object
     cur_size: gsf_off_t
     cur_offset: gsf_off_t
@@ -2938,9 +2943,9 @@ export class OutputIOChannel {
     err: GLib.Error
     printf_buf: string
     printf_buf_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Output */
+    /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
     get_modtime(): GLib.DateTime | null
@@ -2952,15 +2957,15 @@ export class OutputIOChannel {
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
     write(data: Uint8Array[]): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2968,25 +2973,25 @@ export class OutputIOChannel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Output */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     vfunc_Write(data: Uint8Array[]): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OutputIOChannel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutputIOChannel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3017,16 +3022,16 @@ export interface OutputIconv_ConstructProps extends Output_ConstructProps {
     output_charset?: string
     sink?: Output
 }
-export class OutputIconv {
-    /* Properties of Gsf.OutputIconv */
+class OutputIconv {
+    /* Properties of Gsf-1.Gsf.OutputIconv */
     fallback: string
-    /* Properties of Gsf.Output */
+    /* Properties of Gsf-1.Gsf.Output */
     container: Outfile
     readonly is_closed: boolean
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf.Output */
+    /* Fields of Gsf-1.Gsf.Output */
     g_object: GObject.Object
     cur_size: gsf_off_t
     cur_offset: gsf_off_t
@@ -3034,9 +3039,9 @@ export class OutputIconv {
     err: GLib.Error
     printf_buf: string
     printf_buf_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Output */
+    /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
     get_modtime(): GLib.DateTime | null
@@ -3048,15 +3053,15 @@ export class OutputIconv {
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
     write(data: Uint8Array[]): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3064,25 +3069,25 @@ export class OutputIconv {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Output */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     vfunc_Write(data: Uint8Array[]): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OutputIconv, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutputIconv, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3111,14 +3116,14 @@ export class OutputIconv {
 }
 export interface OutputMemory_ConstructProps extends Output_ConstructProps {
 }
-export class OutputMemory {
-    /* Properties of Gsf.Output */
+class OutputMemory {
+    /* Properties of Gsf-1.Gsf.Output */
     container: Outfile
     readonly is_closed: boolean
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf.Output */
+    /* Fields of Gsf-1.Gsf.Output */
     g_object: GObject.Object
     cur_size: gsf_off_t
     cur_offset: gsf_off_t
@@ -3126,12 +3131,12 @@ export class OutputMemory {
     err: GLib.Error
     printf_buf: string
     printf_buf_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.OutputMemory */
+    /* Methods of Gsf-1.Gsf.OutputMemory */
     get_bytes(): Uint8Array[] | null
     steal_bytes(): Uint8Array[] | null
-    /* Methods of Gsf.Output */
+    /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
     get_modtime(): GLib.DateTime | null
@@ -3143,15 +3148,15 @@ export class OutputMemory {
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
     write(data: Uint8Array[]): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3159,25 +3164,25 @@ export class OutputMemory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Output */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     vfunc_Write(data: Uint8Array[]): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OutputMemory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutputMemory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3204,14 +3209,14 @@ export class OutputMemory {
 }
 export interface OutputStdio_ConstructProps extends Output_ConstructProps {
 }
-export class OutputStdio {
-    /* Properties of Gsf.Output */
+class OutputStdio {
+    /* Properties of Gsf-1.Gsf.Output */
     container: Outfile
     readonly is_closed: boolean
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf.Output */
+    /* Fields of Gsf-1.Gsf.Output */
     g_object: GObject.Object
     cur_size: gsf_off_t
     cur_offset: gsf_off_t
@@ -3219,9 +3224,9 @@ export class OutputStdio {
     err: GLib.Error
     printf_buf: string
     printf_buf_size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.Output */
+    /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
     get_modtime(): GLib.DateTime | null
@@ -3233,15 +3238,15 @@ export class OutputStdio {
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
     write(data: Uint8Array[]): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3249,25 +3254,25 @@ export class OutputStdio {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Output */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     vfunc_Write(data: Uint8Array[]): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OutputStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutputStdio, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3294,24 +3299,24 @@ export class OutputStdio {
 }
 export interface SharedMemory_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class SharedMemory {
-    /* Fields of Gsf.SharedMemory */
+class SharedMemory {
+    /* Fields of Gsf-1.Gsf.SharedMemory */
     g_object: GObject.Object
     buf: object
     size: gsf_off_t
     needs_free: boolean
     needs_unmap: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3319,21 +3324,21 @@ export class SharedMemory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SharedMemory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SharedMemory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3351,8 +3356,8 @@ export class SharedMemory {
 }
 export interface StructuredBlob_ConstructProps extends Infile_ConstructProps {
 }
-export class StructuredBlob {
-    /* Properties of Gsf.Input */
+class StructuredBlob {
+    /* Properties of Gsf-1.Gsf.Input */
     readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
@@ -3360,22 +3365,22 @@ export class StructuredBlob {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf.Infile */
+    /* Fields of Gsf-1.Gsf.Infile */
     parent: Input
-    /* Fields of Gsf.Input */
+    /* Fields of Gsf-1.Gsf.Input */
     g_object: GObject.Object
     cur_offset: gsf_off_t
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.StructuredBlob */
+    /* Methods of Gsf-1.Gsf.StructuredBlob */
     write(container: Outfile): boolean
-    /* Methods of Gsf.Infile */
+    /* Methods of Gsf-1.Gsf.Infile */
     child_by_aname(names: string[]): Input
     child_by_index(i: number): Input
     child_by_name(name: string): Input
     name_by_index(i: number): string | null
     num_children(): number
-    /* Methods of Gsf.Input */
+    /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
@@ -3393,15 +3398,15 @@ export class StructuredBlob {
     sibling(name: string): Input
     tell(): gsf_off_t
     uncompress(): Input
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3409,28 +3414,28 @@ export class StructuredBlob {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gsf.Infile */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gsf-1.Gsf.Infile */
     vfunc_name_by_index(i: number): string | null
     vfunc_num_children(): number
-    /* Virtual methods of Gsf.Input */
+    /* Virtual methods of Gsf-1.Gsf.Input */
     vfunc_Dup(): Input | null
     vfunc_OpenSibling(name: string): Input
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3463,16 +3468,16 @@ export interface XMLOut_ConstructProps extends GObject.Object_ConstructProps {
     pretty_print?: boolean
     sink?: Output
 }
-export class XMLOut {
-    /* Properties of Gsf.XMLOut */
+class XMLOut {
+    /* Properties of Gsf-1.Gsf.XMLOut */
     pretty_print: boolean
-    /* Fields of Gsf.XMLOut */
+    /* Fields of Gsf-1.Gsf.XMLOut */
     base: GObject.Object
     output: Output
     priv: object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gsf.XMLOut */
+    /* Methods of Gsf-1.Gsf.XMLOut */
     add_base64(id: string | null, data: Uint8Array[]): void
     add_bool(id: string | null, val: boolean): void
     add_color(id: string | null, r: number, g: number, b: number): void
@@ -3492,15 +3497,15 @@ export class XMLOut {
     simple_float_element(id: string, val: number, precision: number): void
     simple_int_element(id: string, val: number): void
     start_element(id: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3508,21 +3513,21 @@ export class XMLOut {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: XMLOut, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: XMLOut, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3539,20 +3544,20 @@ export class XMLOut {
     static new(output: Output): XMLOut
     static $gtype: GObject.Type
 }
-export abstract class BlobClass {
+abstract class BlobClass {
     static name: string
 }
-export class BlobPrivate {
+class BlobPrivate {
     static name: string
 }
-export abstract class ClipDataClass {
+abstract class ClipDataClass {
     static name: string
 }
-export class ClipDataPrivate {
+class ClipDataPrivate {
     static name: string
 }
-export class DocProp {
-    /* Methods of Gsf.DocProp */
+class DocProp {
+    /* Methods of Gsf-1.Gsf.DocProp */
     dump(): void
     free(): void
     get_link(): string | null
@@ -3567,15 +3572,15 @@ export class DocProp {
     /* Static methods and pseudo-constructors */
     static new(name: string): DocProp
 }
-export abstract class InfileClass {
-    /* Fields of Gsf.InfileClass */
+abstract class InfileClass {
+    /* Fields of Gsf-1.Gsf.InfileClass */
     input_class: InputClass
     num_children: (infile: Infile) => number
     name_by_index: (infile: Infile, i: number) => string | null
     static name: string
 }
-export abstract class InputClass {
-    /* Fields of Gsf.InputClass */
+abstract class InputClass {
+    /* Fields of Gsf-1.Gsf.InputClass */
     g_object_class: GObject.ObjectClass
     Dup: (input: Input) => Input | null
     Read: (input: Input, num_bytes: number, optional_buffer?: Uint8Array[] | null) => Uint8Array[] | null
@@ -3583,8 +3588,8 @@ export abstract class InputClass {
     OpenSibling: (input: Input, name: string) => Input
     static name: string
 }
-export class MSOleSortingKey {
-    /* Methods of Gsf.MSOleSortingKey */
+class MSOleSortingKey {
+    /* Methods of Gsf-1.Gsf.MSOleSortingKey */
     cmp(b: MSOleSortingKey): number
     free(): void
     static name: string
@@ -3593,51 +3598,51 @@ export class MSOleSortingKey {
     /* Static methods and pseudo-constructors */
     static new(name: string): MSOleSortingKey
 }
-export abstract class ODFOutClass {
-    /* Fields of Gsf.ODFOutClass */
+abstract class ODFOutClass {
+    /* Fields of Gsf-1.Gsf.ODFOutClass */
     base: XMLOutClass
     static name: string
 }
-export class OpenPkgRel {
-    /* Methods of Gsf.OpenPkgRel */
+class OpenPkgRel {
+    /* Methods of Gsf-1.Gsf.OpenPkgRel */
     get_target(): string
     get_type(): string
     is_extern(): boolean
     static name: string
 }
-export class OpenPkgRels {
+class OpenPkgRels {
     static name: string
 }
-export abstract class OutfileClass {
-    /* Fields of Gsf.OutfileClass */
+abstract class OutfileClass {
+    /* Fields of Gsf-1.Gsf.OutfileClass */
     output_class: OutputClass
     static name: string
 }
-export abstract class OutputClass {
-    /* Fields of Gsf.OutputClass */
+abstract class OutputClass {
+    /* Fields of Gsf-1.Gsf.OutputClass */
     g_object_class: GObject.ObjectClass
     Close: (output: Output) => boolean
     Seek: (output: Output, offset: gsf_off_t, whence: GLib.SeekType) => boolean
     Write: (output: Output, data: Uint8Array[]) => boolean
     static name: string
 }
-export abstract class OutputCsvClass {
-    /* Fields of Gsf.OutputCsvClass */
+abstract class OutputCsvClass {
+    /* Fields of Gsf-1.Gsf.OutputCsvClass */
     output_class: OutputClass
     static name: string
 }
-export abstract class OutputIconvClass {
-    /* Fields of Gsf.OutputIconvClass */
+abstract class OutputIconvClass {
+    /* Fields of Gsf-1.Gsf.OutputIconvClass */
     output_class: OutputClass
     static name: string
 }
-export class Timestamp {
-    /* Fields of Gsf.Timestamp */
+class Timestamp {
+    /* Fields of Gsf-1.Gsf.Timestamp */
     date: GLib.Date
     seconds: number
     time_zone: GLib.String
     timet: number
-    /* Methods of Gsf.Timestamp */
+    /* Methods of Gsf-1.Gsf.Timestamp */
     as_string(): string
     copy(): Timestamp
     equal(b: Timestamp): boolean
@@ -3652,16 +3657,16 @@ export class Timestamp {
     /* Static methods and pseudo-constructors */
     static new(): Timestamp
 }
-export class XMLBlob {
+class XMLBlob {
     static name: string
 }
-export class XMLIn {
-    /* Fields of Gsf.XMLIn */
+class XMLIn {
+    /* Fields of Gsf-1.Gsf.XMLIn */
     user_state: object
     content: GLib.String
     doc: XMLInDoc
     node: XMLInNode
-    /* Methods of Gsf.XMLIn */
+    /* Methods of Gsf-1.Gsf.XMLIn */
     check_ns(str: string, ns_id: number): string | null
     get_input(): Input
     namecmp(str: string, ns_id: number, name: string): boolean
@@ -3669,8 +3674,8 @@ export class XMLIn {
     set_silent_unknowns(silent: boolean): void
     static name: string
 }
-export class XMLInDoc {
-    /* Methods of Gsf.XMLInDoc */
+class XMLInDoc {
+    /* Methods of Gsf-1.Gsf.XMLInDoc */
     add_nodes(nodes: XMLInNode[]): void
     free(): void
     parse(input: Input, user_state?: object | null): boolean
@@ -3681,14 +3686,14 @@ export class XMLInDoc {
     /* Static methods and pseudo-constructors */
     static new(nodes: XMLInNode[], ns: XMLInNS[]): XMLInDoc
 }
-export class XMLInNS {
-    /* Fields of Gsf.XMLInNS */
+class XMLInNS {
+    /* Fields of Gsf-1.Gsf.XMLInNS */
     uri: string
     ns_id: number
     static name: string
 }
-export class XMLInNode {
-    /* Fields of Gsf.XMLInNode */
+class XMLInNode {
+    /* Fields of Gsf-1.Gsf.XMLInNode */
     id: string
     ns_id: number
     name: string
@@ -3700,9 +3705,11 @@ export class XMLInNode {
     share_children_with_parent: number
     static name: string
 }
-export abstract class XMLOutClass {
-    /* Fields of Gsf.XMLOutClass */
+abstract class XMLOutClass {
+    /* Fields of Gsf-1.Gsf.XMLOutClass */
     base: GObject.ObjectClass
     static name: string
 }
-export type gsf_off_t = number
+type gsf_off_t = number
+}
+export default Gsf;

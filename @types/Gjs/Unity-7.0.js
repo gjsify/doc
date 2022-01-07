@@ -1,2 +1,2 @@
-imports.gi.versions.Unity = '7.0'
-export default imports.gi.Unity
+import Unity from 'gi://Unity?version=7.0';
+export default Unity;

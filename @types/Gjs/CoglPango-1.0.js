@@ -1,2 +1,2 @@
-imports.gi.versions.CoglPango = '1.0'
-export default imports.gi.CoglPango
+import CoglPango from 'gi://CoglPango?version=1.0';
+export default CoglPango;

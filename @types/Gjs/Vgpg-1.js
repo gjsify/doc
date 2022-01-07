@@ -1,2 +1,2 @@
-imports.gi.versions.Vgpg = '1'
-export default imports.gi.Vgpg
+import Vgpg from 'gi://Vgpg?version=1';
+export default Vgpg;

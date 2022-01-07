@@ -3,22 +3,27 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as libxml2 from './libxml2-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as EDataServer from './EDataServer-1.2';
-import type * as Soup from './Soup-2.4';
-import type * as Camel from './Camel-1.2';
-import type * as EBookContacts from './EBookContacts-1.2';
-import type * as EBackend from './EBackend-1.2';
+import type libxml2 from './libxml2-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type EDataServer from './EDataServer-1.2';
+import type Soup from './Soup-2.4';
+import type GData from './GData-0.0';
+import type Json from './Json-1.0';
+import type Goa from './Goa-1.0';
+import type Camel from './Camel-1.2';
+import type EBookContacts from './EBookContacts-1.2';
+import type EBackend from './EBackend-1.2';
 
-export enum BookCacheCursorOrigin {
+export namespace EDataBook {
+
+enum BookCacheCursorOrigin {
     CURRENT,
     BEGIN,
     END,
 }
-export enum BookSqliteError {
+enum BookSqliteError {
     ENGINE,
     CONSTRAINT,
     CONTACT_NOT_FOUND,
@@ -28,30 +33,30 @@ export enum BookSqliteError {
     END_OF_LIST,
     LOAD,
 }
-export enum bSqlChangeType {
+enum bSqlChangeType {
     CONTACT_ADDED,
     LOCALE_CHANGED,
     LAST,
 }
-export enum bSqlCursorOrigin {
+enum bSqlCursorOrigin {
     CURRENT,
     BEGIN,
     END,
 }
-export enum bSqlLockType {
+enum bSqlLockType {
     READ,
     WRITE,
 }
-export enum bSqlUnlockAction {
+enum bSqlUnlockAction {
     NONE,
     COMMIT,
     ROLLBACK,
 }
-export enum BookCacheCursorStepFlags {
+enum BookCacheCursorStepFlags {
     MOVE,
     FETCH,
 }
-export enum bSqlCursorStepFlags {
+enum bSqlCursorStepFlags {
     MOVE,
     FETCH,
 }
@@ -60,42 +65,42 @@ export const BOOK_SQL_SYNC_DATA_KEY: string
 export const EDS_ADDRESS_BOOK_MODULES: string
 export const EDS_SUBPROCESS_BOOK_PATH: string
 export const XIMIAN_VCARD: string
-export function book_cache_search_data_free(data?: object | null): void
-export function book_meta_backend_info_free(ptr?: object | null): void
-export function ebsql_get_contact_extra_unlocked(ebsql: BookSqlite, uid: string): [ /* returnType */ boolean, /* ret_extra */ string ]
-export function ebsql_get_contact_unlocked(ebsql: BookSqlite, uid: string, meta_contact: boolean): [ /* returnType */ boolean, /* contact */ EBookContacts.Contact ]
-export function ebsql_get_vcard_unlocked(ebsql: BookSqlite, uid: string, meta_contact: boolean): [ /* returnType */ boolean, /* ret_vcard */ string ]
-export interface BookBackendCustomOpFunc {
+function book_cache_search_data_free(data?: object | null): void
+function book_meta_backend_info_free(ptr?: object | null): void
+function ebsql_get_contact_extra_unlocked(ebsql: BookSqlite, uid: string): [ /* returnType */ boolean, /* ret_extra */ string ]
+function ebsql_get_contact_unlocked(ebsql: BookSqlite, uid: string, meta_contact: boolean): [ /* returnType */ boolean, /* contact */ EBookContacts.Contact ]
+function ebsql_get_vcard_unlocked(ebsql: BookSqlite, uid: string, meta_contact: boolean): [ /* returnType */ boolean, /* ret_vcard */ string ]
+interface BookBackendCustomOpFunc {
     (book_backend: BookBackend, cancellable?: Gio.Cancellable | null): void
 }
-export interface BookBackendForeachViewFunc {
+interface BookBackendForeachViewFunc {
     (backend: BookBackend, view: DataBookView): boolean
 }
-export interface BookCacheSearchFunc {
+interface BookCacheSearchFunc {
     (book_cache: BookCache, uid: string, revision: string, object: string, extra: string, custom_flags: number, offline_state: EBackend.OfflineState): boolean
 }
-export interface DataBookCursorCompareContactFunc {
+interface DataBookCursorCompareContactFunc {
     (cursor: DataBookCursor, contact: EBookContacts.Contact): number
 }
-export interface DataBookCursorGetPositionFunc {
+interface DataBookCursorGetPositionFunc {
     (cursor: DataBookCursor, cancellable?: Gio.Cancellable | null): boolean
 }
-export interface DataBookCursorLoadLocaleFunc {
+interface DataBookCursorLoadLocaleFunc {
     (cursor: DataBookCursor): boolean
 }
-export interface DataBookCursorSetAlphabetIndexFunc {
+interface DataBookCursorSetAlphabetIndexFunc {
     (cursor: DataBookCursor, index: number, locale: string): boolean
 }
-export interface DataBookCursorSetSexpFunc {
+interface DataBookCursorSetSexpFunc {
     (cursor: DataBookCursor, sexp?: string | null): boolean
 }
-export interface DataBookCursorStepFunc {
+interface DataBookCursorStepFunc {
     (cursor: DataBookCursor, revision_guard: string | null, flags: EBookContacts.BookCursorStepFlags, origin: EBookContacts.BookCursorOrigin, count: number, cancellable?: Gio.Cancellable | null): number
 }
-export interface bSqlChangeCallback {
+interface bSqlChangeCallback {
     (change_type: bSqlChangeType, uid: string, extra: string, vcard: string): void
 }
-export interface bSqlVCardCallback {
+interface bSqlVCardCallback {
     (uid: string, extra: string): string
 }
 export interface BookBackend_ConstructProps extends EBackend.Backend_ConstructProps {
@@ -103,21 +108,24 @@ export interface BookBackend_ConstructProps extends EBackend.Backend_ConstructPr
     registry?: EDataServer.SourceRegistry
     writable?: boolean
 }
-export class BookBackend {
-    /* Properties of EDataBook.BookBackend */
+class BookBackend {
+    /* Properties of EDataBook-1.2.EDataBook.BookBackend */
     cache_dir: string
     readonly proxy_resolver: Gio.ProxyResolver
     writable: boolean
-    /* Properties of EBackend.Backend */
+    /* Properties of EBackend-1.2.EBackend.Backend */
     connectable: Gio.SocketConnectable
     readonly main_context: GLib.MainContext
     online: boolean
     readonly user_prompter: EBackend.UserPrompter
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EDataBook.BookBackend */
+    /* Methods of EDataBook-1.2.EDataBook.BookBackend */
     add_view(view: DataBookView): void
     configure_direct(config: string): void
+    contains_email(email_address: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    contains_email_finish(result: Gio.AsyncResult): boolean
+    contains_email_sync(email_address: string, cancellable?: Gio.Cancellable | null): boolean
     create_contacts(vcards: string, opflags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     create_contacts_finish(result: Gio.AsyncResult, out_contacts: GLib.Queue): boolean
     create_contacts_sync(vcards: string, opflags: number, out_contacts: GLib.Queue, cancellable?: Gio.Cancellable | null): boolean
@@ -173,7 +181,7 @@ export class BookBackend {
     start_view(view: DataBookView): void
     stop_view(view: DataBookView): void
     sync(): void
-    /* Methods of EBackend.Backend */
+    /* Methods of EBackend-1.2.EBackend.Backend */
     credentials_required(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     credentials_required_finish(result: Gio.AsyncResult): boolean
     credentials_required_sync(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null, cancellable?: Gio.Cancellable | null): boolean
@@ -194,15 +202,15 @@ export class BookBackend {
     trust_prompt(parameters: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     trust_prompt_finish(result: Gio.AsyncResult): EDataServer.TrustPromptResponse
     trust_prompt_sync(parameters: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null): EDataServer.TrustPromptResponse
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -210,15 +218,16 @@ export class BookBackend {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of EDataBook.BookBackend */
+    watch_closure(closure: Function): void
+    /* Virtual methods of EDataBook-1.2.EDataBook.BookBackend */
     vfunc_closed(sender: string): void
     vfunc_impl_configure_direct(config: string): void
+    vfunc_impl_contains_email(book: DataBook, opid: number, cancellable: Gio.Cancellable | null, email_address: string): void
     vfunc_impl_create_contacts(book: DataBook, opid: number, cancellable: Gio.Cancellable | null, vcards: string, opflags: number): void
     vfunc_impl_delete_cursor(cursor: DataBookCursor): boolean
     vfunc_impl_dup_locale(): string
@@ -235,26 +244,26 @@ export class BookBackend {
     vfunc_impl_start_view(view: DataBookView): void
     vfunc_impl_stop_view(view: DataBookView): void
     vfunc_shutdown(): void
-    /* Virtual methods of EBackend.Backend */
+    /* Virtual methods of EBackend-1.2.EBackend.Backend */
     vfunc_authenticate_sync(credentials: EDataServer.NamedParameters, out_certificate_pem: string, out_certificate_errors: Gio.TlsCertificateFlags, cancellable?: Gio.Cancellable | null): EDataServer.SourceAuthenticationResult
     vfunc_get_destination_address(): [ /* returnType */ boolean, /* host */ string, /* port */ number ]
     vfunc_prepare_shutdown(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of EDataBook.BookBackend */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EDataBook-1.2.EDataBook.BookBackend */
     connect(sigName: "closed", callback: (($obj: BookBackend, sender: string) => void)): number
     connect_after(sigName: "closed", callback: (($obj: BookBackend, sender: string) => void)): number
     emit(sigName: "closed", sender: string): void
     connect(sigName: "shutdown", callback: (($obj: BookBackend) => void)): number
     connect_after(sigName: "shutdown", callback: (($obj: BookBackend) => void)): number
     emit(sigName: "shutdown"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BookBackend, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BookBackend, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -283,25 +292,25 @@ export class BookBackend {
 }
 export interface BookBackendFactory_ConstructProps extends EBackend.BackendFactory_ConstructProps {
 }
-export class BookBackendFactory {
-    /* Fields of GObject.Object */
+class BookBackendFactory {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.BackendFactory */
+    /* Methods of EBackend-1.2.EBackend.BackendFactory */
     get_hash_key(): string
     get_module_filename(): string
     new_backend(source: EDataServer.Source): EBackend.Backend
     share_subprocess(): boolean
-    /* Methods of EDataServer.Extension */
+    /* Methods of EDataServer-1.2.EDataServer.Extension */
     get_extensible(): EDataServer.Extensible
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -309,24 +318,24 @@ export class BookBackendFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of EBackend.BackendFactory */
+    watch_closure(closure: Function): void
+    /* Virtual methods of EBackend-1.2.EBackend.BackendFactory */
     vfunc_get_hash_key(): string
     vfunc_new_backend(source: EDataServer.Source): EBackend.Backend
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BookBackendFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BookBackendFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -341,24 +350,24 @@ export class BookBackendFactory {
 }
 export interface BookBackendSExp_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class BookBackendSExp {
-    /* Fields of GObject.Object */
+class BookBackendSExp {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EDataBook.BookBackendSExp */
+    /* Methods of EDataBook-1.2.EDataBook.BookBackendSExp */
     lock(): void
     match_contact(contact: EBookContacts.Contact): boolean
     match_vcard(vcard: string): boolean
     text(): string
     unlock(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -366,21 +375,21 @@ export class BookBackendSExp {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BookBackendSExp, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BookBackendSExp, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -397,19 +406,20 @@ export class BookBackendSExp {
 }
 export interface BookBackendSync_ConstructProps extends BookBackend_ConstructProps {
 }
-export class BookBackendSync {
-    /* Properties of EDataBook.BookBackend */
+class BookBackendSync {
+    /* Properties of EDataBook-1.2.EDataBook.BookBackend */
     cache_dir: string
     readonly proxy_resolver: Gio.ProxyResolver
     writable: boolean
-    /* Properties of EBackend.Backend */
+    /* Properties of EBackend-1.2.EBackend.Backend */
     connectable: Gio.SocketConnectable
     readonly main_context: GLib.MainContext
     online: boolean
     readonly user_prompter: EBackend.UserPrompter
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EDataBook.BookBackendSync */
+    /* Methods of EDataBook-1.2.EDataBook.BookBackendSync */
+    contains_email(email_address: string, cancellable?: Gio.Cancellable | null): boolean
     create_contacts(vcards: string, opflags: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_contacts */ EBookContacts.Contact[] ]
     get_contact(uid: string, cancellable?: Gio.Cancellable | null): EBookContacts.Contact
     get_contact_list(query: string, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_contacts */ EBookContacts.Contact[] ]
@@ -418,9 +428,12 @@ export class BookBackendSync {
     open(cancellable?: Gio.Cancellable | null): boolean
     refresh(cancellable?: Gio.Cancellable | null): boolean
     remove_contacts(uids: string, opflags: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_removed_uids */ string[] ]
-    /* Methods of EDataBook.BookBackend */
+    /* Methods of EDataBook-1.2.EDataBook.BookBackend */
     add_view(view: DataBookView): void
     configure_direct(config: string): void
+    contains_email(email_address: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    contains_email_finish(result: Gio.AsyncResult): boolean
+    contains_email_sync(email_address: string, cancellable?: Gio.Cancellable | null): boolean
     create_contacts(vcards: string, opflags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     create_contacts_finish(result: Gio.AsyncResult, out_contacts: GLib.Queue): boolean
     create_contacts_sync(vcards: string, opflags: number, out_contacts: GLib.Queue, cancellable?: Gio.Cancellable | null): boolean
@@ -476,7 +489,7 @@ export class BookBackendSync {
     start_view(view: DataBookView): void
     stop_view(view: DataBookView): void
     sync(): void
-    /* Methods of EBackend.Backend */
+    /* Methods of EBackend-1.2.EBackend.Backend */
     credentials_required(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     credentials_required_finish(result: Gio.AsyncResult): boolean
     credentials_required_sync(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null, cancellable?: Gio.Cancellable | null): boolean
@@ -497,15 +510,15 @@ export class BookBackendSync {
     trust_prompt(parameters: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     trust_prompt_finish(result: Gio.AsyncResult): EDataServer.TrustPromptResponse
     trust_prompt_sync(parameters: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null): EDataServer.TrustPromptResponse
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -513,18 +526,20 @@ export class BookBackendSync {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of EDataBook.BookBackendSync */
+    watch_closure(closure: Function): void
+    /* Virtual methods of EDataBook-1.2.EDataBook.BookBackendSync */
+    vfunc_contains_email_sync(email_address: string, cancellable?: Gio.Cancellable | null): boolean
     vfunc_open_sync(cancellable?: Gio.Cancellable | null): boolean
     vfunc_refresh_sync(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of EDataBook.BookBackend */
+    /* Virtual methods of EDataBook-1.2.EDataBook.BookBackend */
     vfunc_closed(sender: string): void
     vfunc_impl_configure_direct(config: string): void
+    vfunc_impl_contains_email(book: DataBook, opid: number, cancellable: Gio.Cancellable | null, email_address: string): void
     vfunc_impl_create_contacts(book: DataBook, opid: number, cancellable: Gio.Cancellable | null, vcards: string, opflags: number): void
     vfunc_impl_delete_cursor(cursor: DataBookCursor): boolean
     vfunc_impl_dup_locale(): string
@@ -541,26 +556,26 @@ export class BookBackendSync {
     vfunc_impl_start_view(view: DataBookView): void
     vfunc_impl_stop_view(view: DataBookView): void
     vfunc_shutdown(): void
-    /* Virtual methods of EBackend.Backend */
+    /* Virtual methods of EBackend-1.2.EBackend.Backend */
     vfunc_authenticate_sync(credentials: EDataServer.NamedParameters, out_certificate_pem: string, out_certificate_errors: Gio.TlsCertificateFlags, cancellable?: Gio.Cancellable | null): EDataServer.SourceAuthenticationResult
     vfunc_get_destination_address(): [ /* returnType */ boolean, /* host */ string, /* port */ number ]
     vfunc_prepare_shutdown(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of EDataBook.BookBackend */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EDataBook-1.2.EDataBook.BookBackend */
     connect(sigName: "closed", callback: (($obj: BookBackendSync, sender: string) => void)): number
     connect_after(sigName: "closed", callback: (($obj: BookBackendSync, sender: string) => void)): number
     emit(sigName: "closed", sender: string): void
     connect(sigName: "shutdown", callback: (($obj: BookBackendSync) => void)): number
     connect_after(sigName: "shutdown", callback: (($obj: BookBackendSync) => void)): number
     emit(sigName: "shutdown"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BookBackendSync, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BookBackendSync, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -589,12 +604,13 @@ export class BookBackendSync {
 }
 export interface BookCache_ConstructProps extends EBackend.Cache_ConstructProps {
 }
-export class BookCache {
-    /* Properties of EDataBook.BookCache */
+class BookCache {
+    /* Properties of EDataBook-1.2.EDataBook.BookCache */
     readonly locale: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EDataBook.BookCache */
+    /* Methods of EDataBook-1.2.EDataBook.BookCache */
+    contains_email(email_address: string, cancellable?: Gio.Cancellable | null): boolean
     cursor_calculate(cursor: BookCacheCursor, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_total */ number | null, /* out_position */ number | null ]
     cursor_compare_contact(cursor: BookCacheCursor, contact: EBookContacts.Contact): [ /* returnType */ number, /* out_matches_sexp */ boolean | null ]
     cursor_free(cursor: BookCacheCursor): void
@@ -620,7 +636,7 @@ export class BookCache {
     set_contact_custom_flags(uid: string, custom_flags: number, cancellable?: Gio.Cancellable | null): boolean
     set_contact_extra(uid: string, extra?: string | null, cancellable?: Gio.Cancellable | null): boolean
     set_locale(lc_collate: string, cancellable?: Gio.Cancellable | null): boolean
-    /* Methods of EBackend.Cache */
+    /* Methods of EBackend-1.2.EBackend.Cache */
     change_revision(): void
     clear_offline_changes(cancellable?: Gio.Cancellable | null): boolean
     contains(uid: string, deleted_flag: EBackend.CacheDeletedFlag): boolean
@@ -658,15 +674,15 @@ export class BookCache {
     sqlite_select(sql_stmt: string, func: EBackend.CacheSelectFunc, cancellable?: Gio.Cancellable | null): boolean
     thaw_revision_change(): void
     unlock(action: EBackend.CacheUnlockAction): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -674,19 +690,19 @@ export class BookCache {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of EDataServer.Extensible */
+    watch_closure(closure: Function): void
+    /* Methods of EDataServer-1.2.EDataServer.Extensible */
     list_extensions(extension_type: GObject.Type): EDataServer.Extension[]
     load_extensions(): void
-    /* Virtual methods of EDataBook.BookCache */
+    /* Virtual methods of EDataBook-1.2.EDataBook.BookCache */
     vfunc_dup_contact_revision(contact: EBookContacts.Contact): string
     vfunc_e164_changed(contact: EBookContacts.Contact, is_replace: boolean): void
-    /* Virtual methods of EBackend.Cache */
+    /* Virtual methods of EBackend-1.2.EBackend.Cache */
     vfunc_before_put(uid: string, revision: string, object: string, other_columns: EBackend.CacheColumnValues, is_replace: boolean, cancellable?: Gio.Cancellable | null): boolean
     vfunc_before_remove(uid: string, cancellable?: Gio.Cancellable | null): boolean
     vfunc_clear_offline_changes_locked(cancellable?: Gio.Cancellable | null): boolean
@@ -694,22 +710,22 @@ export class BookCache {
     vfunc_put_locked(uid: string, revision: string, object: string, other_columns: EBackend.CacheColumnValues, offline_state: EBackend.OfflineState, is_replace: boolean, cancellable?: Gio.Cancellable | null): boolean
     vfunc_remove_locked(uid: string, cancellable?: Gio.Cancellable | null): boolean
     vfunc_revision_changed(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of EDataBook.BookCache */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EDataBook-1.2.EDataBook.BookCache */
     connect(sigName: "dup-contact-revision", callback: (($obj: BookCache, object: EBookContacts.Contact) => string)): number
     connect_after(sigName: "dup-contact-revision", callback: (($obj: BookCache, object: EBookContacts.Contact) => string)): number
     emit(sigName: "dup-contact-revision", object: EBookContacts.Contact): void
     connect(sigName: "e164-changed", callback: (($obj: BookCache, object: EBookContacts.Contact, p0: boolean) => void)): number
     connect_after(sigName: "e164-changed", callback: (($obj: BookCache, object: EBookContacts.Contact, p0: boolean) => void)): number
     emit(sigName: "e164-changed", object: EBookContacts.Contact, p0: boolean): void
-    /* Signals of EBackend.Cache */
+    /* Signals of EBackend-1.2.EBackend.Cache */
     connect(sigName: "before-put", callback: (($obj: BookCache, object: string, p0: string, p1: string, p2: EBackend.CacheColumnValues, p3: boolean, p4?: Gio.Cancellable | null, p5?: object | null) => boolean)): number
     connect_after(sigName: "before-put", callback: (($obj: BookCache, object: string, p0: string, p1: string, p2: EBackend.CacheColumnValues, p3: boolean, p4?: Gio.Cancellable | null, p5?: object | null) => boolean)): number
     emit(sigName: "before-put", object: string, p0: string, p1: string, p2: EBackend.CacheColumnValues, p3: boolean, p4?: Gio.Cancellable | null, p5?: object | null): void
@@ -719,7 +735,7 @@ export class BookCache {
     connect(sigName: "revision-changed", callback: (($obj: BookCache) => void)): number
     connect_after(sigName: "revision-changed", callback: (($obj: BookCache) => void)): number
     emit(sigName: "revision-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BookCache, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BookCache, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -740,21 +756,21 @@ export class BookCache {
 export interface BookMetaBackend_ConstructProps extends BookBackendSync_ConstructProps {
     cache?: BookCache
 }
-export class BookMetaBackend {
-    /* Properties of EDataBook.BookMetaBackend */
+class BookMetaBackend {
+    /* Properties of EDataBook-1.2.EDataBook.BookMetaBackend */
     cache: BookCache
-    /* Properties of EDataBook.BookBackend */
+    /* Properties of EDataBook-1.2.EDataBook.BookBackend */
     cache_dir: string
     readonly proxy_resolver: Gio.ProxyResolver
     writable: boolean
-    /* Properties of EBackend.Backend */
+    /* Properties of EBackend-1.2.EBackend.Backend */
     connectable: Gio.SocketConnectable
     readonly main_context: GLib.MainContext
     online: boolean
     readonly user_prompter: EBackend.UserPrompter
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EDataBook.BookMetaBackend */
+    /* Methods of EDataBook-1.2.EDataBook.BookMetaBackend */
     connect_sync(credentials?: EDataServer.NamedParameters | null, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_auth_result */ EDataServer.SourceAuthenticationResult, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
     disconnect_sync(cancellable?: Gio.Cancellable | null): boolean
     dup_sync_tag(): string | null
@@ -782,7 +798,8 @@ export class BookMetaBackend {
     set_ever_connected(value: boolean): void
     split_changes_sync(objects: BookMetaBackendInfo[], cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* objects */ BookMetaBackendInfo[], /* out_created_objects */ BookMetaBackendInfo[], /* out_modified_objects */ BookMetaBackendInfo[], /* out_removed_objects */ BookMetaBackendInfo[] | null ]
     store_inline_photos_sync(contact: EBookContacts.Contact, cancellable?: Gio.Cancellable | null): boolean
-    /* Methods of EDataBook.BookBackendSync */
+    /* Methods of EDataBook-1.2.EDataBook.BookBackendSync */
+    contains_email(email_address: string, cancellable?: Gio.Cancellable | null): boolean
     create_contacts(vcards: string, opflags: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_contacts */ EBookContacts.Contact[] ]
     get_contact(uid: string, cancellable?: Gio.Cancellable | null): EBookContacts.Contact
     get_contact_list(query: string, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_contacts */ EBookContacts.Contact[] ]
@@ -791,9 +808,12 @@ export class BookMetaBackend {
     open(cancellable?: Gio.Cancellable | null): boolean
     refresh(cancellable?: Gio.Cancellable | null): boolean
     remove_contacts(uids: string, opflags: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_removed_uids */ string[] ]
-    /* Methods of EDataBook.BookBackend */
+    /* Methods of EDataBook-1.2.EDataBook.BookBackend */
     add_view(view: DataBookView): void
     configure_direct(config: string): void
+    contains_email(email_address: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    contains_email_finish(result: Gio.AsyncResult): boolean
+    contains_email_sync(email_address: string, cancellable?: Gio.Cancellable | null): boolean
     create_contacts(vcards: string, opflags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     create_contacts_finish(result: Gio.AsyncResult, out_contacts: GLib.Queue): boolean
     create_contacts_sync(vcards: string, opflags: number, out_contacts: GLib.Queue, cancellable?: Gio.Cancellable | null): boolean
@@ -848,7 +868,7 @@ export class BookMetaBackend {
     start_view(view: DataBookView): void
     stop_view(view: DataBookView): void
     sync(): void
-    /* Methods of EBackend.Backend */
+    /* Methods of EBackend-1.2.EBackend.Backend */
     credentials_required(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     credentials_required_finish(result: Gio.AsyncResult): boolean
     credentials_required_sync(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null, cancellable?: Gio.Cancellable | null): boolean
@@ -869,15 +889,15 @@ export class BookMetaBackend {
     trust_prompt(parameters: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     trust_prompt_finish(result: Gio.AsyncResult): EDataServer.TrustPromptResponse
     trust_prompt_sync(parameters: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null): EDataServer.TrustPromptResponse
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -885,13 +905,13 @@ export class BookMetaBackend {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of EDataBook.BookMetaBackend */
+    watch_closure(closure: Function): void
+    /* Virtual methods of EDataBook-1.2.EDataBook.BookMetaBackend */
     vfunc_connect_sync(credentials?: EDataServer.NamedParameters | null, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_auth_result */ EDataServer.SourceAuthenticationResult, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
     vfunc_disconnect_sync(cancellable?: Gio.Cancellable | null): boolean
     vfunc_get_changes_sync(last_sync_tag: string | null, is_repeat: boolean, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_new_sync_tag */ string, /* out_repeat */ boolean, /* out_created_objects */ BookMetaBackendInfo[], /* out_modified_objects */ BookMetaBackendInfo[], /* out_removed_objects */ BookMetaBackendInfo[] ]
@@ -904,12 +924,14 @@ export class BookMetaBackend {
     vfunc_search_sync(expr: string | null, meta_contact: boolean, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_contacts */ EBookContacts.Contact[] ]
     vfunc_search_uids_sync(expr?: string | null, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_uids */ string[] ]
     vfunc_source_changed(): void
-    /* Virtual methods of EDataBook.BookBackendSync */
+    /* Virtual methods of EDataBook-1.2.EDataBook.BookBackendSync */
+    vfunc_contains_email_sync(email_address: string, cancellable?: Gio.Cancellable | null): boolean
     vfunc_open_sync(cancellable?: Gio.Cancellable | null): boolean
     vfunc_refresh_sync(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of EDataBook.BookBackend */
+    /* Virtual methods of EDataBook-1.2.EDataBook.BookBackend */
     vfunc_closed(sender: string): void
     vfunc_impl_configure_direct(config: string): void
+    vfunc_impl_contains_email(book: DataBook, opid: number, cancellable: Gio.Cancellable | null, email_address: string): void
     vfunc_impl_create_contacts(book: DataBook, opid: number, cancellable: Gio.Cancellable | null, vcards: string, opflags: number): void
     vfunc_impl_delete_cursor(cursor: DataBookCursor): boolean
     vfunc_impl_dup_locale(): string
@@ -926,33 +948,33 @@ export class BookMetaBackend {
     vfunc_impl_start_view(view: DataBookView): void
     vfunc_impl_stop_view(view: DataBookView): void
     vfunc_shutdown(): void
-    /* Virtual methods of EBackend.Backend */
+    /* Virtual methods of EBackend-1.2.EBackend.Backend */
     vfunc_authenticate_sync(credentials: EDataServer.NamedParameters, out_certificate_pem: string, out_certificate_errors: Gio.TlsCertificateFlags, cancellable?: Gio.Cancellable | null): EDataServer.SourceAuthenticationResult
     vfunc_get_destination_address(): [ /* returnType */ boolean, /* host */ string, /* port */ number ]
     vfunc_prepare_shutdown(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of EDataBook.BookMetaBackend */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EDataBook-1.2.EDataBook.BookMetaBackend */
     connect(sigName: "refresh-completed", callback: (($obj: BookMetaBackend) => void)): number
     connect_after(sigName: "refresh-completed", callback: (($obj: BookMetaBackend) => void)): number
     emit(sigName: "refresh-completed"): void
     connect(sigName: "source-changed", callback: (($obj: BookMetaBackend) => void)): number
     connect_after(sigName: "source-changed", callback: (($obj: BookMetaBackend) => void)): number
     emit(sigName: "source-changed"): void
-    /* Signals of EDataBook.BookBackend */
+    /* Signals of EDataBook-1.2.EDataBook.BookBackend */
     connect(sigName: "closed", callback: (($obj: BookMetaBackend, sender: string) => void)): number
     connect_after(sigName: "closed", callback: (($obj: BookMetaBackend, sender: string) => void)): number
     emit(sigName: "closed", sender: string): void
     connect(sigName: "shutdown", callback: (($obj: BookMetaBackend) => void)): number
     connect_after(sigName: "shutdown", callback: (($obj: BookMetaBackend) => void)): number
     emit(sigName: "shutdown"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BookMetaBackend, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BookMetaBackend, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -983,10 +1005,10 @@ export class BookMetaBackend {
 }
 export interface BookSqlite_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class BookSqlite {
-    /* Fields of GObject.Object */
+class BookSqlite {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EDataBook.BookSqlite */
+    /* Methods of EDataBook-1.2.EDataBook.BookSqlite */
     add_contact(contact: EBookContacts.Contact, extra: string, replace: boolean, cancellable?: Gio.Cancellable | null): boolean
     add_contacts(contacts: EBookContacts.Contact[], extra: string[] | null, replace: boolean, cancellable?: Gio.Cancellable | null): boolean
     get_contact(uid: string, meta_contact: boolean): [ /* returnType */ boolean, /* ret_contact */ EBookContacts.Contact ]
@@ -1008,15 +1030,15 @@ export class BookSqlite {
     set_key_value_int(key: string, value: number): boolean
     set_locale(lc_collate: string, cancellable?: Gio.Cancellable | null): boolean
     unlock(action: bSqlUnlockAction): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1024,34 +1046,34 @@ export class BookSqlite {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of EDataServer.Extensible */
+    watch_closure(closure: Function): void
+    /* Methods of EDataServer-1.2.EDataServer.Extensible */
     list_extensions(extension_type: GObject.Type): EDataServer.Extension[]
     load_extensions(): void
-    /* Virtual methods of EDataBook.BookSqlite */
+    /* Virtual methods of EDataBook-1.2.EDataBook.BookSqlite */
     vfunc_before_insert_contact(db: object | null, contact: EBookContacts.Contact, extra: string, replace: boolean, cancellable?: Gio.Cancellable | null): boolean
     vfunc_before_remove_contact(db: object | null, contact_uid: string, cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of EDataBook.BookSqlite */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EDataBook-1.2.EDataBook.BookSqlite */
     connect(sigName: "before-insert-contact", callback: (($obj: BookSqlite, object: object | null, p0: EBookContacts.Contact, p1: string, p2: boolean, p3: GObject.Object, p4?: object | null) => boolean)): number
     connect_after(sigName: "before-insert-contact", callback: (($obj: BookSqlite, object: object | null, p0: EBookContacts.Contact, p1: string, p2: boolean, p3: GObject.Object, p4?: object | null) => boolean)): number
     emit(sigName: "before-insert-contact", object: object | null, p0: EBookContacts.Contact, p1: string, p2: boolean, p3: GObject.Object, p4?: object | null): void
     connect(sigName: "before-remove-contact", callback: (($obj: BookSqlite, object: object | null, p0: string, p1?: Gio.Cancellable | null, p2?: object | null) => boolean)): number
     connect_after(sigName: "before-remove-contact", callback: (($obj: BookSqlite, object: object | null, p0: string, p1?: Gio.Cancellable | null, p2?: object | null) => boolean)): number
     emit(sigName: "before-remove-contact", object: object | null, p0: string, p1?: Gio.Cancellable | null, p2?: object | null): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BookSqlite, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BookSqlite, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1063,7 +1085,7 @@ export class BookSqlite {
     constructor (config?: BookSqlite_ConstructProps)
     _init (config?: BookSqlite_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(path: string, source: EDataServer.Source, cancellable?: Gio.Cancellable | null): BookSqlite
+    static new(path: string, source?: EDataServer.Source | null, cancellable?: Gio.Cancellable | null): BookSqlite
     static new_full(path: string, source: EDataServer.Source, setup?: EBookContacts.SourceBackendSummarySetup | null, vcard_callback?: bSqlVCardCallback | null, change_callback?: bSqlChangeCallback | null, cancellable?: Gio.Cancellable | null): BookSqlite
     static error_quark(): GLib.Quark
     static search_data_free(data: bSqlSearchData): void
@@ -1074,33 +1096,34 @@ export interface DataBook_ConstructProps extends GObject.Object_ConstructProps {
     connection?: Gio.DBusConnection
     object_path?: string
 }
-export class DataBook {
-    /* Fields of GObject.Object */
+class DataBook {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EDataBook.DataBook */
+    /* Methods of EDataBook-1.2.EDataBook.DataBook */
     get_connection(): Gio.DBusConnection
     get_object_path(): string
     ref_backend(): BookBackend
-    report_backend_property_changed(prop_name: string, prop_value: string): void
+    report_backend_property_changed(prop_name: string, prop_value?: string | null): void
     report_error(message: string): void
-    respond_create_contacts(opid: number, error: GLib.Error, contacts?: EBookContacts.Contact[] | null): void
+    respond_contains_email(opid: number, error: GLib.Error, found: boolean): void
+    respond_create_contacts(opid: number, error: GLib.Error, contacts: EBookContacts.Contact[]): void
     respond_get_contact(opid: number, error?: GLib.Error | null, contact?: EBookContacts.Contact | null): void
-    respond_get_contact_list(opid: number, error: GLib.Error, contacts?: EBookContacts.Contact[] | null): void
-    respond_get_contact_list_uids(opid: number, error: GLib.Error, uids?: string[] | null): void
-    respond_modify_contacts(opid: number, error: GLib.Error, contacts?: EBookContacts.Contact[] | null): void
+    respond_get_contact_list(opid: number, error: GLib.Error, contacts: EBookContacts.Contact[]): void
+    respond_get_contact_list_uids(opid: number, error: GLib.Error, uids: string[]): void
+    respond_modify_contacts(opid: number, error: GLib.Error, contacts: EBookContacts.Contact[]): void
     respond_open(opid: number, error: GLib.Error): void
     respond_refresh(opid: number, error: GLib.Error): void
-    respond_remove_contacts(opid: number, error: GLib.Error, ids?: string[] | null): void
+    respond_remove_contacts(opid: number, error: GLib.Error, ids: string[]): void
     set_locale(locale: string, cancellable?: Gio.Cancellable | null): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1108,25 +1131,25 @@ export class DataBook {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of EDataBook.DataBook */
+    /* Virtual methods of EDataBook-1.2.EDataBook.DataBook */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DataBook, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DataBook, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1146,13 +1169,13 @@ export class DataBook {
 export interface DataBookCursor_ConstructProps extends GObject.Object_ConstructProps {
     backend?: BookBackend
 }
-export class DataBookCursor {
-    /* Properties of EDataBook.DataBookCursor */
+class DataBookCursor {
+    /* Properties of EDataBook-1.2.EDataBook.DataBookCursor */
     readonly position: number
     readonly total: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EDataBook.DataBookCursor */
+    /* Methods of EDataBook-1.2.EDataBook.DataBookCursor */
     contact_added(contact: EBookContacts.Contact): void
     contact_removed(contact: EBookContacts.Contact): void
     get_backend(): BookBackend
@@ -1164,15 +1187,15 @@ export class DataBookCursor {
     set_alphabetic_index(index: number, locale: string, cancellable?: Gio.Cancellable | null): boolean
     set_sexp(sexp?: string | null, cancellable?: Gio.Cancellable | null): boolean
     step(revision_guard: string, flags: EBookContacts.BookCursorStepFlags, origin: EBookContacts.BookCursorOrigin, count: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* results */ string[] | null ]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1180,28 +1203,28 @@ export class DataBookCursor {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of EDataBook.DataBookCursor */
+    watch_closure(closure: Function): void
+    /* Virtual methods of EDataBook-1.2.EDataBook.DataBookCursor */
     vfunc_compare_contact(contact: EBookContacts.Contact): [ /* returnType */ number, /* matches_sexp */ boolean | null ]
     vfunc_get_position(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* total */ number, /* position */ number ]
     vfunc_load_locale(): [ /* returnType */ boolean, /* locale */ string ]
     vfunc_set_alphabetic_index(index: number, locale: string): boolean
     vfunc_set_sexp(sexp?: string | null): boolean
     vfunc_step(revision_guard: string | null, flags: EBookContacts.BookCursorStepFlags, origin: EBookContacts.BookCursorOrigin, count: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* results */ string[] | null ]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DataBookCursor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DataBookCursor, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1222,13 +1245,13 @@ export interface DataBookCursorCache_ConstructProps extends DataBookCursor_Const
     book_cache?: BookCache
     cursor?: object
 }
-export class DataBookCursorCache {
-    /* Properties of EDataBook.DataBookCursor */
+class DataBookCursorCache {
+    /* Properties of EDataBook-1.2.EDataBook.DataBookCursor */
     readonly position: number
     readonly total: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EDataBook.DataBookCursor */
+    /* Methods of EDataBook-1.2.EDataBook.DataBookCursor */
     contact_added(contact: EBookContacts.Contact): void
     contact_removed(contact: EBookContacts.Contact): void
     get_backend(): BookBackend
@@ -1240,15 +1263,15 @@ export class DataBookCursorCache {
     set_alphabetic_index(index: number, locale: string, cancellable?: Gio.Cancellable | null): boolean
     set_sexp(sexp?: string | null, cancellable?: Gio.Cancellable | null): boolean
     step(revision_guard: string, flags: EBookContacts.BookCursorStepFlags, origin: EBookContacts.BookCursorOrigin, count: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* results */ string[] | null ]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1256,28 +1279,28 @@ export class DataBookCursorCache {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of EDataBook.DataBookCursor */
+    watch_closure(closure: Function): void
+    /* Virtual methods of EDataBook-1.2.EDataBook.DataBookCursor */
     vfunc_compare_contact(contact: EBookContacts.Contact): [ /* returnType */ number, /* matches_sexp */ boolean | null ]
     vfunc_get_position(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* total */ number, /* position */ number ]
     vfunc_load_locale(): [ /* returnType */ boolean, /* locale */ string ]
     vfunc_set_alphabetic_index(index: number, locale: string): boolean
     vfunc_set_sexp(sexp?: string | null): boolean
     vfunc_step(revision_guard: string | null, flags: EBookContacts.BookCursorStepFlags, origin: EBookContacts.BookCursorOrigin, count: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* results */ string[] | null ]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DataBookCursorCache, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DataBookCursorCache, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1301,13 +1324,13 @@ export interface DataBookCursorSqlite_ConstructProps extends DataBookCursor_Cons
     ebsql?: BookSqlite
     revision_key?: string
 }
-export class DataBookCursorSqlite {
-    /* Properties of EDataBook.DataBookCursor */
+class DataBookCursorSqlite {
+    /* Properties of EDataBook-1.2.EDataBook.DataBookCursor */
     readonly position: number
     readonly total: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EDataBook.DataBookCursor */
+    /* Methods of EDataBook-1.2.EDataBook.DataBookCursor */
     contact_added(contact: EBookContacts.Contact): void
     contact_removed(contact: EBookContacts.Contact): void
     get_backend(): BookBackend
@@ -1319,15 +1342,15 @@ export class DataBookCursorSqlite {
     set_alphabetic_index(index: number, locale: string, cancellable?: Gio.Cancellable | null): boolean
     set_sexp(sexp?: string | null, cancellable?: Gio.Cancellable | null): boolean
     step(revision_guard: string, flags: EBookContacts.BookCursorStepFlags, origin: EBookContacts.BookCursorOrigin, count: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* results */ string[] | null ]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1335,28 +1358,28 @@ export class DataBookCursorSqlite {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of EDataBook.DataBookCursor */
+    watch_closure(closure: Function): void
+    /* Virtual methods of EDataBook-1.2.EDataBook.DataBookCursor */
     vfunc_compare_contact(contact: EBookContacts.Contact): [ /* returnType */ number, /* matches_sexp */ boolean | null ]
     vfunc_get_position(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* total */ number, /* position */ number ]
     vfunc_load_locale(): [ /* returnType */ boolean, /* locale */ string ]
     vfunc_set_alphabetic_index(index: number, locale: string): boolean
     vfunc_set_sexp(sexp?: string | null): boolean
     vfunc_step(revision_guard: string | null, flags: EBookContacts.BookCursorStepFlags, origin: EBookContacts.BookCursorOrigin, count: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* results */ string[] | null ]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DataBookCursorSqlite, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DataBookCursorSqlite, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1377,23 +1400,23 @@ export class DataBookCursorSqlite {
 }
 export interface DataBookDirect_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class DataBookDirect {
-    /* Fields of EDataBook.DataBookDirect */
+class DataBookDirect {
+    /* Fields of EDataBook-1.2.EDataBook.DataBookDirect */
     parent: GObject.Object
     priv: DataBookDirectPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EDataBook.DataBookDirect */
+    /* Methods of EDataBook-1.2.EDataBook.DataBookDirect */
     register_gdbus_object(connection: Gio.DBusConnection, object_path: string): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1401,21 +1424,21 @@ export class DataBookDirect {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DataBookDirect, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DataBookDirect, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1432,15 +1455,15 @@ export class DataBookDirect {
 }
 export interface DataBookFactory_ConstructProps extends EBackend.DataFactory_ConstructProps {
 }
-export class DataBookFactory {
-    /* Properties of EBackend.DataFactory */
+class DataBookFactory {
+    /* Properties of EBackend-1.2.EBackend.DataFactory */
     readonly registry: EDataServer.SourceRegistry
-    /* Fields of EDataBook.DataBookFactory */
+    /* Fields of EDataBook-1.2.EDataBook.DataBookFactory */
     parent: EBackend.DataFactory
     priv: DataBookFactoryPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.DataFactory */
+    /* Methods of EBackend-1.2.EBackend.DataFactory */
     backend_closed(backend: EBackend.Backend): void
     backend_closed_by_sender(backend: EBackend.Backend, sender: string): void
     construct_path(): string
@@ -1453,21 +1476,21 @@ export class DataBookFactory {
     ref_backend_factory(backend_name: string, extension_name: string): EBackend.BackendFactory
     spawn_subprocess_backend(invocation: Gio.DBusMethodInvocation, uid: string, extension_name: string, subprocess_path: string): void
     use_backend_per_process(): boolean
-    /* Methods of EBackend.DBusServer */
+    /* Methods of EBackend-1.2.EBackend.DBusServer */
     hold(): void
     load_modules(): void
     quit(code: EBackend.DBusServerExitCode): void
     release(): void
     run(wait_for_client: boolean): EBackend.DBusServerExitCode
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1475,37 +1498,37 @@ export class DataBookFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of EDataServer.Extensible */
+    watch_closure(closure: Function): void
+    /* Methods of EDataServer-1.2.EDataServer.Extensible */
     list_extensions(extension_type: GObject.Type): EDataServer.Extension[]
     load_extensions(): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of EBackend.DataFactory */
+    /* Virtual methods of EBackend-1.2.EBackend.DataFactory */
     vfunc_complete_open(invocation: Gio.DBusMethodInvocation, object_path: string, bus_name: string, extension_name: string): void
     vfunc_create_backend(backend_factory: EBackend.BackendFactory, source: EDataServer.Source): EBackend.Backend
     vfunc_open_backend(backend: EBackend.Backend, connection: Gio.DBusConnection, cancellable?: Gio.Cancellable | null): string
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of EBackend.DBusServer */
+    /* Virtual methods of EBackend-1.2.EBackend.DBusServer */
     vfunc_bus_acquired(connection: Gio.DBusConnection): void
     vfunc_bus_name_acquired(connection: Gio.DBusConnection): void
     vfunc_bus_name_lost(connection: Gio.DBusConnection): void
     vfunc_quit_server(code: EBackend.DBusServerExitCode): void
     vfunc_run_server(): EBackend.DBusServerExitCode
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of EBackend.DBusServer */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EBackend-1.2.EBackend.DBusServer */
     connect(sigName: "bus-acquired", callback: (($obj: DataBookFactory, connection: Gio.DBusConnection) => void)): number
     connect_after(sigName: "bus-acquired", callback: (($obj: DataBookFactory, connection: Gio.DBusConnection) => void)): number
     emit(sigName: "bus-acquired", connection: Gio.DBusConnection): void
@@ -1521,7 +1544,7 @@ export class DataBookFactory {
     connect(sigName: "run-server", callback: (($obj: DataBookFactory) => EBackend.DBusServerExitCode)): number
     connect_after(sigName: "run-server", callback: (($obj: DataBookFactory) => EBackend.DBusServerExitCode)): number
     emit(sigName: "run-server"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DataBookFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DataBookFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1544,13 +1567,13 @@ export interface DataBookView_ConstructProps extends GObject.Object_ConstructPro
     object_path?: string
     sexp?: BookBackendSExp
 }
-export class DataBookView {
-    /* Fields of EDataBook.DataBookView */
+class DataBookView {
+    /* Fields of EDataBook-1.2.EDataBook.DataBookView */
     parent: GObject.Object
     priv: DataBookViewPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EDataBook.DataBookView */
+    /* Methods of EDataBook-1.2.EDataBook.DataBookView */
     get_connection(): Gio.DBusConnection
     get_fields_of_interest(): GLib.HashTable | null
     get_flags(): EBookContacts.BookClientViewFlags
@@ -1564,15 +1587,15 @@ export class DataBookView {
     notify_update_prefiltered_vcard(id: string, vcard: string): void
     notify_update_vcard(id: string, vcard: string): void
     ref_backend(): BookBackend | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1580,25 +1603,25 @@ export class DataBookView {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of EDataBook.DataBookView */
+    /* Virtual methods of EDataBook-1.2.EDataBook.DataBookView */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DataBookView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DataBookView, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1616,30 +1639,30 @@ export class DataBookView {
 }
 export interface SubprocessBookFactory_ConstructProps extends EBackend.SubprocessFactory_ConstructProps {
 }
-export class SubprocessBookFactory {
-    /* Properties of EBackend.SubprocessFactory */
+class SubprocessBookFactory {
+    /* Properties of EBackend-1.2.EBackend.SubprocessFactory */
     readonly registry: EDataServer.SourceRegistry
-    /* Fields of EDataBook.SubprocessBookFactory */
+    /* Fields of EDataBook-1.2.EDataBook.SubprocessBookFactory */
     parent: EBackend.SubprocessFactory
     priv: SubprocessBookFactoryPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.SubprocessFactory */
+    /* Methods of EBackend-1.2.EBackend.SubprocessFactory */
     call_backends_prepare_shutdown(): void
     get_backends_list(): EBackend.Backend[]
     get_registry(): EDataServer.SourceRegistry
     open_backend(connection: Gio.DBusConnection, uid: string, backend_factory_type_name: string, module_filename: string, proxy: Gio.DBusInterfaceSkeleton, cancellable?: Gio.Cancellable | null): string
     ref_initable_backend(uid: string, backend_factory_type_name: string, module_filename: string, cancellable?: Gio.Cancellable | null): EBackend.Backend | null
     set_backend_callbacks(backend: EBackend.Backend, proxy: Gio.DBusInterfaceSkeleton): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1647,28 +1670,28 @@ export class SubprocessBookFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of EBackend.SubprocessFactory */
+    /* Virtual methods of EBackend-1.2.EBackend.SubprocessFactory */
     vfunc_backend_closed(backend: EBackend.Backend): void
     vfunc_backend_created(backend: EBackend.Backend): void
     vfunc_open_data(backend: EBackend.Backend, connection: Gio.DBusConnection, data?: object | null, cancellable?: Gio.Cancellable | null): string
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SubprocessBookFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SubprocessBookFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1687,22 +1710,22 @@ export class SubprocessBookFactory {
 }
 export interface SystemLocaleWatcher_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class SystemLocaleWatcher {
-    /* Properties of EDataBook.SystemLocaleWatcher */
+class SystemLocaleWatcher {
+    /* Properties of EDataBook-1.2.EDataBook.SystemLocaleWatcher */
     readonly locale: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EDataBook.SystemLocaleWatcher */
+    /* Methods of EDataBook-1.2.EDataBook.SystemLocaleWatcher */
     dup_locale(): string | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1710,21 +1733,21 @@ export class SystemLocaleWatcher {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SystemLocaleWatcher, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SystemLocaleWatcher, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1741,8 +1764,8 @@ export class SystemLocaleWatcher {
     static new(): SystemLocaleWatcher
     static $gtype: GObject.Type
 }
-export abstract class BookBackendClass {
-    /* Fields of EDataBook.BookBackendClass */
+abstract class BookBackendClass {
+    /* Fields of EDataBook-1.2.EDataBook.BookBackendClass */
     use_serial_dispatch_queue: boolean
     impl_get_backend_property: (backend: BookBackend, prop_name: string) => string
     impl_open: (backend: BookBackend, book: DataBook, opid: number, cancellable?: Gio.Cancellable | null) => void
@@ -1762,59 +1785,61 @@ export abstract class BookBackendClass {
     impl_delete_cursor: (backend: BookBackend, cursor: DataBookCursor) => boolean
     closed: (backend: BookBackend, sender: string) => void
     shutdown: (backend: BookBackend) => void
+    impl_contains_email: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, email_address: string) => void
     reserved_padding: object[]
     static name: string
 }
-export abstract class BookBackendFactoryClass {
-    /* Fields of EDataBook.BookBackendFactoryClass */
+abstract class BookBackendFactoryClass {
+    /* Fields of EDataBook-1.2.EDataBook.BookBackendFactoryClass */
     factory_name: string
     backend_type: GObject.Type
     static name: string
 }
-export class BookBackendFactoryPrivate {
+class BookBackendFactoryPrivate {
     static name: string
 }
-export class BookBackendPrivate {
+class BookBackendPrivate {
     static name: string
 }
-export abstract class BookBackendSExpClass {
+abstract class BookBackendSExpClass {
     static name: string
 }
-export class BookBackendSExpPrivate {
+class BookBackendSExpPrivate {
     static name: string
 }
-export abstract class BookBackendSyncClass {
-    /* Fields of EDataBook.BookBackendSyncClass */
+abstract class BookBackendSyncClass {
+    /* Fields of EDataBook-1.2.EDataBook.BookBackendSyncClass */
     open_sync: (backend: BookBackendSync, cancellable?: Gio.Cancellable | null) => boolean
     refresh_sync: (backend: BookBackendSync, cancellable?: Gio.Cancellable | null) => boolean
+    contains_email_sync: (backend: BookBackendSync, email_address: string, cancellable?: Gio.Cancellable | null) => boolean
     reserved_padding: object[]
     static name: string
 }
-export class BookBackendSyncPrivate {
+class BookBackendSyncPrivate {
     static name: string
 }
-export abstract class BookCacheClass {
-    /* Fields of EDataBook.BookCacheClass */
+abstract class BookCacheClass {
+    /* Fields of EDataBook-1.2.EDataBook.BookCacheClass */
     e164_changed: (book_cache: BookCache, contact: EBookContacts.Contact, is_replace: boolean) => void
     dup_contact_revision: (book_cache: BookCache, contact: EBookContacts.Contact) => string
     static name: string
 }
-export class BookCacheCursor {
+class BookCacheCursor {
     static name: string
     static new(book_cache: BookCache, sexp: string, sort_fields: EBookContacts.ContactField[], sort_types: EBookContacts.BookCursorSortType[]): BookCacheCursor
     constructor(book_cache: BookCache, sexp: string, sort_fields: EBookContacts.ContactField[], sort_types: EBookContacts.BookCursorSortType[])
     /* Static methods and pseudo-constructors */
     static new(book_cache: BookCache, sexp: string, sort_fields: EBookContacts.ContactField[], sort_types: EBookContacts.BookCursorSortType[]): BookCacheCursor
 }
-export class BookCachePrivate {
+class BookCachePrivate {
     static name: string
 }
-export class BookCacheSearchData {
-    /* Fields of EDataBook.BookCacheSearchData */
+class BookCacheSearchData {
+    /* Fields of EDataBook-1.2.EDataBook.BookCacheSearchData */
     uid: string
     vcard: string
     extra: string
-    /* Methods of EDataBook.BookCacheSearchData */
+    /* Methods of EDataBook-1.2.EDataBook.BookCacheSearchData */
     copy(): BookCacheSearchData
     static name: string
     static new(uid: string, vcard: string, extra?: string | null): BookCacheSearchData
@@ -1823,8 +1848,8 @@ export class BookCacheSearchData {
     static new(uid: string, vcard: string, extra?: string | null): BookCacheSearchData
     static free(data?: object | null): void
 }
-export abstract class BookMetaBackendClass {
-    /* Fields of EDataBook.BookMetaBackendClass */
+abstract class BookMetaBackendClass {
+    /* Fields of EDataBook-1.2.EDataBook.BookMetaBackendClass */
     connect_sync: (meta_backend: BookMetaBackend, credentials?: EDataServer.NamedParameters | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_auth_result */ EDataServer.SourceAuthenticationResult, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
     disconnect_sync: (meta_backend: BookMetaBackend, cancellable?: Gio.Cancellable | null) => boolean
     get_changes_sync: (meta_backend: BookMetaBackend, last_sync_tag: string | null, is_repeat: boolean, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_new_sync_tag */ string, /* out_repeat */ boolean, /* out_created_objects */ BookMetaBackendInfo[], /* out_modified_objects */ BookMetaBackendInfo[], /* out_removed_objects */ BookMetaBackendInfo[] ]
@@ -1839,13 +1864,13 @@ export abstract class BookMetaBackendClass {
     get_ssl_error_details: (meta_backend: BookMetaBackend) => [ /* returnType */ boolean, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
     static name: string
 }
-export class BookMetaBackendInfo {
-    /* Fields of EDataBook.BookMetaBackendInfo */
+class BookMetaBackendInfo {
+    /* Fields of EDataBook-1.2.EDataBook.BookMetaBackendInfo */
     uid: string
     revision: string
     object: string
     extra: string
-    /* Methods of EDataBook.BookMetaBackendInfo */
+    /* Methods of EDataBook-1.2.EDataBook.BookMetaBackendInfo */
     copy(): BookMetaBackendInfo
     static name: string
     static new(uid: string, revision?: string | null, object?: string | null, extra?: string | null): BookMetaBackendInfo
@@ -1854,29 +1879,29 @@ export class BookMetaBackendInfo {
     static new(uid: string, revision?: string | null, object?: string | null, extra?: string | null): BookMetaBackendInfo
     static free(ptr?: object | null): void
 }
-export class BookMetaBackendPrivate {
+class BookMetaBackendPrivate {
     static name: string
 }
-export abstract class BookSqliteClass {
-    /* Fields of EDataBook.BookSqliteClass */
+abstract class BookSqliteClass {
+    /* Fields of EDataBook-1.2.EDataBook.BookSqliteClass */
     before_insert_contact: (ebsql: BookSqlite, db: object | null, contact: EBookContacts.Contact, extra: string, replace: boolean, cancellable?: Gio.Cancellable | null) => boolean
     before_remove_contact: (ebsql: BookSqlite, db: object | null, contact_uid: string, cancellable?: Gio.Cancellable | null) => boolean
     static name: string
 }
-export class BookSqlitePrivate {
+class BookSqlitePrivate {
     static name: string
 }
-export abstract class DataBookClass {
+abstract class DataBookClass {
     static name: string
 }
-export abstract class DataBookCursorCacheClass {
+abstract class DataBookCursorCacheClass {
     static name: string
 }
-export class DataBookCursorCachePrivate {
+class DataBookCursorCachePrivate {
     static name: string
 }
-export abstract class DataBookCursorClass {
-    /* Fields of EDataBook.DataBookCursorClass */
+abstract class DataBookCursorClass {
+    /* Fields of EDataBook-1.2.EDataBook.DataBookCursorClass */
     set_sexp: DataBookCursorSetSexpFunc
     step: DataBookCursorStepFunc
     set_alphabetic_index: DataBookCursorSetAlphabetIndexFunc
@@ -1885,65 +1910,67 @@ export abstract class DataBookCursorClass {
     load_locale: DataBookCursorLoadLocaleFunc
     static name: string
 }
-export class DataBookCursorPrivate {
+class DataBookCursorPrivate {
     static name: string
 }
-export abstract class DataBookCursorSqliteClass {
+abstract class DataBookCursorSqliteClass {
     static name: string
 }
-export class DataBookCursorSqlitePrivate {
+class DataBookCursorSqlitePrivate {
     static name: string
 }
-export abstract class DataBookDirectClass {
-    /* Fields of EDataBook.DataBookDirectClass */
+abstract class DataBookDirectClass {
+    /* Fields of EDataBook-1.2.EDataBook.DataBookDirectClass */
     parent: GObject.ObjectClass
     static name: string
 }
-export class DataBookDirectPrivate {
+class DataBookDirectPrivate {
     static name: string
 }
-export abstract class DataBookFactoryClass {
-    /* Fields of EDataBook.DataBookFactoryClass */
+abstract class DataBookFactoryClass {
+    /* Fields of EDataBook-1.2.EDataBook.DataBookFactoryClass */
     parent_class: EBackend.DataFactoryClass
     static name: string
 }
-export class DataBookFactoryPrivate {
+class DataBookFactoryPrivate {
     static name: string
 }
-export class DataBookPrivate {
+class DataBookPrivate {
     static name: string
 }
-export abstract class DataBookViewClass {
-    /* Fields of EDataBook.DataBookViewClass */
+abstract class DataBookViewClass {
+    /* Fields of EDataBook-1.2.EDataBook.DataBookViewClass */
     parent: GObject.ObjectClass
     static name: string
 }
-export class DataBookViewPrivate {
+class DataBookViewPrivate {
     static name: string
 }
-export abstract class SubprocessBookFactoryClass {
-    /* Fields of EDataBook.SubprocessBookFactoryClass */
+abstract class SubprocessBookFactoryClass {
+    /* Fields of EDataBook-1.2.EDataBook.SubprocessBookFactoryClass */
     parent_class: EBackend.SubprocessFactoryClass
     static name: string
 }
-export class SubprocessBookFactoryPrivate {
+class SubprocessBookFactoryPrivate {
     static name: string
 }
-export abstract class SystemLocaleWatcherClass {
-    /* Fields of EDataBook.SystemLocaleWatcherClass */
+abstract class SystemLocaleWatcherClass {
+    /* Fields of EDataBook-1.2.EDataBook.SystemLocaleWatcherClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class SystemLocaleWatcherPrivate {
+class SystemLocaleWatcherPrivate {
     static name: string
 }
-export class bSqlCursor {
+class bSqlCursor {
     static name: string
 }
-export class bSqlSearchData {
-    /* Fields of EDataBook.bSqlSearchData */
+class bSqlSearchData {
+    /* Fields of EDataBook-1.2.EDataBook.bSqlSearchData */
     uid: string
     vcard: string
     extra: string
     static name: string
 }
+}
+export default EDataBook;

@@ -1,2 +1,2 @@
-imports.gi.versions.Tepl = '5'
-export default imports.gi.Tepl
+import Tepl from 'gi://Tepl?version=5';
+export default Tepl;

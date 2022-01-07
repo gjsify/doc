@@ -1,2 +1,2 @@
-imports.gi.versions.GData = '0.0'
-export default imports.gi.GData
+import GData from 'gi://GData?version=0.0';
+export default GData;

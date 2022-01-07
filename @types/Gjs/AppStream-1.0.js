@@ -1,2 +1,2 @@
-imports.gi.versions.AppStream = '1.0'
-export default imports.gi.AppStream
+import AppStream from 'gi://AppStream?version=1.0';
+export default AppStream;

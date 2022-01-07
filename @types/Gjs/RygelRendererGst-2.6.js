@@ -1,2 +1,2 @@
-imports.gi.versions.RygelRendererGst = '2.6'
-export default imports.gi.RygelRendererGst
+import RygelRendererGst from 'gi://RygelRendererGst?version=2.6';
+export default RygelRendererGst;

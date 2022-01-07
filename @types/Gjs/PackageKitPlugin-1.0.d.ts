@@ -3,12 +3,14 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as PackageKitGlib from './PackageKitGlib-1.0';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type PackageKitGlib from './PackageKitGlib-1.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum BackendJobSignal {
+export namespace PackageKitPlugin {
+
+enum BackendJobSignal {
     ALLOW_CANCEL,
     DETAILS,
     ERROR_CODE,
@@ -32,14 +34,14 @@ export enum BackendJobSignal {
     CATEGORY,
     LAST,
 }
-export enum HintEnum {
+enum HintEnum {
     FALSE,
     TRUE,
     UNSET,
     INVALID,
     LAST,
 }
-export enum PluginPhase {
+enum PluginPhase {
     INIT,
     TRANSACTION_CONTENT_TYPES,
     TRANSACTION_RUN,
@@ -50,7 +52,7 @@ export enum PluginPhase {
     STATE_CHANGED,
     UNKNOWN,
 }
-export enum TransactionState {
+enum TransactionState {
     NEW,
     WAITING_FOR_AUTH,
     COMMITTED,
@@ -62,47 +64,47 @@ export enum TransactionState {
 export const BACKEND_PERCENTAGE_INVALID: number
 export const TRANSACTION_ALL_BACKEND_SIGNALS: number
 export const TRANSACTION_NO_BACKEND_SIGNALS: number
-export function directory_remove_contents(directory: string): boolean
-export function get_resource(): Gio.Resource
-export function hint_enum_from_string(hint: string): HintEnum
-export function hint_enum_to_string(hint: HintEnum): string
-export function load_introspection(filename: string): Gio.DBusNodeInfo
-export function plugin_get_description(): string
-export function strlen(text: string, len: number): number
-export function strtoint(text: string, value: number): boolean
-export function strtouint(text: string, value: number): boolean
-export function strtouint64(text: string, value: number): boolean
-export function strzero(text: string): boolean
-export interface BackendFileChanged {
+function directory_remove_contents(directory: string): boolean
+function get_resource(): Gio.Resource
+function hint_enum_from_string(hint: string): HintEnum
+function hint_enum_to_string(hint: HintEnum): string
+function load_introspection(filename: string): Gio.DBusNodeInfo
+function plugin_get_description(): string
+function strlen(text: string, len: number): number
+function strtoint(text: string, value: number): boolean
+function strtouint(text: string, value: number): boolean
+function strtouint64(text: string, value: number): boolean
+function strzero(text: string): boolean
+interface BackendFileChanged {
     (backend: Backend, data: object): void
 }
-export interface BackendJobThreadFunc {
+interface BackendJobThreadFunc {
     (job: BackendJob, params: GLib.Variant): void
 }
-export interface BackendJobVFunc {
+interface BackendJobVFunc {
     (job: BackendJob, object: object): void
 }
-export interface PluginFunc {
+interface PluginFunc {
     (plugin: Plugin): void
 }
-export interface PluginGetActionFunc {
+interface PluginGetActionFunc {
     (plugin: Plugin, transaction: Transaction, action_id: string): string
 }
-export interface PluginGetDescFunc {
+interface PluginGetDescFunc {
     (): string
 }
-export interface PluginTransactionFunc {
+interface PluginTransactionFunc {
     (plugin: Plugin, transaction: Transaction): void
 }
 export interface Backend_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Backend {
-    /* Fields of PackageKitPlugin.Backend */
+class Backend {
+    /* Fields of PackageKitPlugin-1.0.PackageKitPlugin.Backend */
     parent: GObject.Object
     priv: BackendPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of PackageKitPlugin.Backend */
+    /* Methods of PackageKitPlugin-1.0.PackageKitPlugin.Backend */
     accept_eula(eula_id: string): void
     cancel(job: BackendJob): void
     depends_on(job: BackendJob, filters: PackageKitGlib.Bitfield, package_ids: string, recursive: boolean): void
@@ -157,15 +159,15 @@ export class Backend {
     update_packages(job: BackendJob, transaction_flags: PackageKitGlib.Bitfield, package_ids: string): void
     watch_file(filename: string, func: BackendFileChanged): boolean
     what_provides(job: BackendJob, filters: PackageKitGlib.Bitfield, search: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -173,21 +175,21 @@ export class Backend {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Backend, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Backend, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -206,13 +208,13 @@ export class Backend {
 }
 export interface BackendJob_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class BackendJob {
-    /* Fields of PackageKitPlugin.BackendJob */
+class BackendJob {
+    /* Fields of PackageKitPlugin-1.0.PackageKitPlugin.BackendJob */
     parent: GObject.Object
     priv: BackendJobPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of PackageKitPlugin.BackendJob */
+    /* Methods of PackageKitPlugin-1.0.PackageKitPlugin.BackendJob */
     category(parent_id: string, cat_id: string, name: string, summary: string, icon: string): void
     details(package_id: string, summary: string, license: string, group: PackageKitGlib.GroupEnum, description: string, url: string, size: number): void
     distro_upgrade(type: PackageKitGlib.DistroUpgradeEnum, name: string, summary: string): void
@@ -279,15 +281,15 @@ export class BackendJob {
     thread_create(func: BackendJobThreadFunc): boolean
     update_detail(package_id: string, updates: string, obsoletes: string, vendor_urls: string, bugzilla_urls: string, cve_urls: string, restart: PackageKitGlib.RestartEnum, update_text: string, changelog: string, state: PackageKitGlib.UpdateStateEnum, issued: string, updated: string): void
     use_background(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -295,21 +297,21 @@ export class BackendJob {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BackendJob, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BackendJob, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -326,13 +328,13 @@ export class BackendJob {
 }
 export interface Transaction_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Transaction {
-    /* Fields of PackageKitPlugin.Transaction */
+class Transaction {
+    /* Fields of PackageKitPlugin-1.0.PackageKitPlugin.Transaction */
     parent: GObject.Object
     priv: TransactionPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of PackageKitPlugin.Transaction */
+    /* Methods of PackageKitPlugin-1.0.PackageKitPlugin.Transaction */
     add_supported_content_type(mime_type: string): void
     cancel_bg(): void
     get_backend_job(): BackendJob
@@ -357,15 +359,15 @@ export class Transaction {
     set_state(state: TransactionState): boolean
     signals_reset(job: BackendJob): void
     skip_auth_checks(skip_checks: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -373,25 +375,25 @@ export class Transaction {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of PackageKitPlugin.Transaction */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of PackageKitPlugin-1.0.PackageKitPlugin.Transaction */
     connect(sigName: "finished", callback: (($obj: Transaction) => void)): number
     connect_after(sigName: "finished", callback: (($obj: Transaction) => void)): number
     emit(sigName: "finished"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Transaction, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Transaction, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -408,28 +410,28 @@ export class Transaction {
     static state_to_string(state: TransactionState): string
     static $gtype: GObject.Type
 }
-export abstract class BackendClass {
-    /* Fields of PackageKitPlugin.BackendClass */
+abstract class BackendClass {
+    /* Fields of PackageKitPlugin-1.0.PackageKitPlugin.BackendClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class BackendJobClass {
-    /* Fields of PackageKitPlugin.BackendJobClass */
+abstract class BackendJobClass {
+    /* Fields of PackageKitPlugin-1.0.PackageKitPlugin.BackendJobClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class BackendJobPrivate {
+class BackendJobPrivate {
     static name: string
 }
-export class BackendPrivate {
+class BackendPrivate {
     static name: string
 }
-export class Plugin {
-    /* Fields of PackageKitPlugin.Plugin */
+class Plugin {
+    /* Fields of PackageKitPlugin-1.0.PackageKitPlugin.Plugin */
     backend: Backend
     job: BackendJob
     priv: PluginPrivate
-    /* Methods of PackageKitPlugin.Plugin */
+    /* Methods of PackageKitPlugin-1.0.PackageKitPlugin.Plugin */
     destroy(): void
     initialize(): void
     state_changed(): void
@@ -443,14 +445,16 @@ export class Plugin {
     /* Static methods and pseudo-constructors */
     static get_description(): string
 }
-export class PluginPrivate {
+class PluginPrivate {
     static name: string
 }
-export abstract class TransactionClass {
-    /* Fields of PackageKitPlugin.TransactionClass */
+abstract class TransactionClass {
+    /* Fields of PackageKitPlugin-1.0.PackageKitPlugin.TransactionClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class TransactionPrivate {
+class TransactionPrivate {
     static name: string
 }
+}
+export default PackageKitPlugin;

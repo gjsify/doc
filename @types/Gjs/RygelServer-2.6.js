@@ -1,2 +1,2 @@
-imports.gi.versions.RygelServer = '2.6'
-export default imports.gi.RygelServer
+import RygelServer from 'gi://RygelServer?version=2.6';
+export default RygelServer;

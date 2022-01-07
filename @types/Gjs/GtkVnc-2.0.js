@@ -1,2 +1,2 @@
-imports.gi.versions.GtkVnc = '2.0'
-export default imports.gi.GtkVnc
+import GtkVnc from 'gi://GtkVnc?version=2.0';
+export default GtkVnc;

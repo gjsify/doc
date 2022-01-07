@@ -1,2 +1,2 @@
-imports.gi.versions.GstRtp = '1.0'
-export default imports.gi.GstRtp
+import GstRtp from 'gi://GstRtp?version=1.0';
+export default GstRtp;

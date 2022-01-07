@@ -3,26 +3,28 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GLib from './GLib-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as Gee from './Gee-0.8';
+import type GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type Gee from './Gee-0.8';
 
-export enum Gender {
+export namespace Folks {
+
+enum Gender {
     UNSPECIFIED,
     MALE,
     FEMALE,
 }
-export enum TrustLevel {
+enum TrustLevel {
     NONE,
     PERSONAS,
 }
-export enum PersonaStoreTrust {
+enum PersonaStoreTrust {
     NONE,
     PARTIAL,
     FULL,
 }
-export enum PersonaDetail {
+enum PersonaDetail {
     INVALID,
     ALIAS,
     AVATAR,
@@ -50,7 +52,7 @@ export enum PersonaDetail {
     ANTI_LINKS,
     EXTENDED_INFO,
 }
-export enum MatchResult {
+enum MatchResult {
     NONE,
     VERY_LOW,
     LOW,
@@ -60,7 +62,7 @@ export enum MatchResult {
     MIN,
     MAX,
 }
-export enum PresenceType {
+enum PresenceType {
     UNSET,
     OFFLINE,
     AVAILABLE,
@@ -71,22 +73,22 @@ export enum PresenceType {
     UNKNOWN,
     ERROR,
 }
-export enum MaybeBool {
+enum MaybeBool {
     UNSET,
     FALSE,
     TRUE,
 }
-export enum ImDetailsError {
+enum ImDetailsError {
     INVALID_IM_ADDRESS,
 }
-export enum IndividualAggregatorError {
+enum IndividualAggregatorError {
     ADD_FAILED,
     NO_WRITEABLE_STORE,
     STORE_OFFLINE,
     PROPERTY_NOT_WRITEABLE,
     NO_PRIMARY_STORE,
 }
-export enum PersonaStoreError {
+enum PersonaStoreError {
     INVALID_ARGUMENT,
     CREATE_FAILED,
     UNSUPPORTED_ON_USER,
@@ -96,13 +98,13 @@ export enum PersonaStoreError {
     REMOVE_FAILED,
     UNSUPPORTED_ON_NON_USER,
 }
-export enum PropertyError {
+enum PropertyError {
     NOT_WRITEABLE,
     INVALID_VALUE,
     UNKNOWN_ERROR,
     UNAVAILABLE,
 }
-export enum GroupDetailsChangeReason {
+enum GroupDetailsChangeReason {
     NONE,
     OFFLINE,
     KICKED,
@@ -119,25 +121,25 @@ export enum GroupDetailsChangeReason {
 export interface AliasDetails_ConstructProps extends GObject.Object_ConstructProps {
     alias?: string
 }
-export class AliasDetails {
-    /* Properties of Folks.AliasDetails */
+class AliasDetails {
+    /* Properties of Folks-0.6.Folks.AliasDetails */
     alias: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.AliasDetails */
+    /* Methods of Folks-0.6.Folks.AliasDetails */
     change_alias(alias: string, _callback_?: Gio.AsyncReadyCallback | null): void
     change_alias_finish(_res_: Gio.AsyncResult): void
     get_alias(): string
     set_alias(value: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -145,26 +147,26 @@ export class AliasDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.AliasDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.AliasDetails */
     vfunc_change_alias(alias: string, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_alias_finish(_res_: Gio.AsyncResult): void
     vfunc_get_alias(): string
     vfunc_set_alias(value: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AliasDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AliasDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -182,16 +184,16 @@ export class AliasDetails {
 export interface AntiLinkable_ConstructProps extends Persona_ConstructProps {
     anti_links?: Gee.Set
 }
-export class AntiLinkable {
-    /* Properties of Folks.AntiLinkable */
+class AntiLinkable {
+    /* Properties of Folks-0.6.Folks.AntiLinkable */
     anti_links: Gee.Set
-    /* Properties of Folks.Persona */
+    /* Properties of Folks-0.6.Folks.Persona */
     individual: Individual
     readonly linkable_properties: string[]
     readonly writeable_properties: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.AntiLinkable */
+    /* Methods of Folks-0.6.Folks.AntiLinkable */
     change_anti_links(anti_links: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_anti_links_finish(_res_: Gio.AsyncResult): void
     has_anti_link_with_persona(other_persona: Persona): boolean
@@ -206,7 +208,7 @@ export class AntiLinkable {
     has_global_anti_link(): boolean
     get_anti_links(): Gee.Set
     set_anti_links(value: Gee.Set): void
-    /* Methods of Folks.Persona */
+    /* Methods of Folks-0.6.Folks.Persona */
     linkable_property_to_links(prop_name: string, callback: any): void
     get_iid(): string
     get_uid(): string
@@ -216,15 +218,15 @@ export class AntiLinkable {
     get_individual(): Individual | null
     get_linkable_properties(): string[]
     get_writeable_properties(): string[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -232,30 +234,30 @@ export class AntiLinkable {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.AntiLinkable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.AntiLinkable */
     vfunc_change_anti_links(anti_links: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_anti_links_finish(_res_: Gio.AsyncResult): void
     vfunc_get_anti_links(): Gee.Set
     vfunc_set_anti_links(value: Gee.Set): void
-    /* Virtual methods of Folks.Persona */
+    /* Virtual methods of Folks-0.6.Folks.Persona */
     vfunc_linkable_property_to_links(prop_name: string, callback: any): void
     vfunc_get_linkable_properties(): string[]
     vfunc_get_writeable_properties(): string[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AntiLinkable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AntiLinkable, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -279,25 +281,25 @@ export class AntiLinkable {
 export interface AvatarDetails_ConstructProps extends GObject.Object_ConstructProps {
     avatar?: Gio.LoadableIcon
 }
-export class AvatarDetails {
-    /* Properties of Folks.AvatarDetails */
+class AvatarDetails {
+    /* Properties of Folks-0.6.Folks.AvatarDetails */
     avatar: Gio.LoadableIcon
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.AvatarDetails */
+    /* Methods of Folks-0.6.Folks.AvatarDetails */
     change_avatar(avatar?: Gio.LoadableIcon | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_avatar_finish(_res_: Gio.AsyncResult): void
     get_avatar(): Gio.LoadableIcon | null
     set_avatar(value?: Gio.LoadableIcon | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -305,26 +307,26 @@ export class AvatarDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.AvatarDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.AvatarDetails */
     vfunc_change_avatar(avatar?: Gio.LoadableIcon | null, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_avatar_finish(_res_: Gio.AsyncResult): void
     vfunc_get_avatar(): Gio.LoadableIcon | null
     vfunc_set_avatar(value?: Gio.LoadableIcon | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AvatarDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AvatarDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -343,13 +345,13 @@ export interface BirthdayDetails_ConstructProps extends GObject.Object_Construct
     birthday?: GLib.DateTime
     calendar_event_id?: string
 }
-export class BirthdayDetails {
-    /* Properties of Folks.BirthdayDetails */
+class BirthdayDetails {
+    /* Properties of Folks-0.6.Folks.BirthdayDetails */
     birthday: GLib.DateTime
     calendar_event_id: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.BirthdayDetails */
+    /* Methods of Folks-0.6.Folks.BirthdayDetails */
     change_birthday(birthday?: GLib.DateTime | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_birthday_finish(_res_: Gio.AsyncResult): void
     change_calendar_event_id(event_id?: string | null, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -358,15 +360,15 @@ export class BirthdayDetails {
     set_birthday(value?: GLib.DateTime | null): void
     get_calendar_event_id(): string | null
     set_calendar_event_id(value?: string | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -374,13 +376,13 @@ export class BirthdayDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.BirthdayDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.BirthdayDetails */
     vfunc_change_birthday(birthday?: GLib.DateTime | null, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_birthday_finish(_res_: Gio.AsyncResult): void
     vfunc_change_calendar_event_id(event_id?: string | null, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -389,15 +391,15 @@ export class BirthdayDetails {
     vfunc_set_birthday(value?: GLib.DateTime | null): void
     vfunc_get_calendar_event_id(): string | null
     vfunc_set_calendar_event_id(value?: string | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BirthdayDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BirthdayDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -417,25 +419,25 @@ export class BirthdayDetails {
 export interface EmailDetails_ConstructProps extends GObject.Object_ConstructProps {
     email_addresses?: Gee.Set
 }
-export class EmailDetails {
-    /* Properties of Folks.EmailDetails */
+class EmailDetails {
+    /* Properties of Folks-0.6.Folks.EmailDetails */
     email_addresses: Gee.Set
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.EmailDetails */
+    /* Methods of Folks-0.6.Folks.EmailDetails */
     change_email_addresses(email_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_email_addresses_finish(_res_: Gio.AsyncResult): void
     get_email_addresses(): Gee.Set
     set_email_addresses(value: Gee.Set): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -443,26 +445,26 @@ export class EmailDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.EmailDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.EmailDetails */
     vfunc_change_email_addresses(email_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_email_addresses_finish(_res_: Gio.AsyncResult): void
     vfunc_get_email_addresses(): Gee.Set
     vfunc_set_email_addresses(value: Gee.Set): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: EmailDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: EmailDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -479,24 +481,24 @@ export class EmailDetails {
 }
 export interface ExtendedInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ExtendedInfo {
-    /* Fields of GObject.Object */
+class ExtendedInfo {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.ExtendedInfo */
+    /* Methods of Folks-0.6.Folks.ExtendedInfo */
     get_extended_field(name: string): ExtendedFieldDetails | null
     change_extended_field(name: string, value: ExtendedFieldDetails, _callback_?: Gio.AsyncReadyCallback | null): void
     change_extended_field_finish(_res_: Gio.AsyncResult): void
     remove_extended_field(name: string, _callback_?: Gio.AsyncReadyCallback | null): void
     remove_extended_field_finish(_res_: Gio.AsyncResult): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -504,27 +506,27 @@ export class ExtendedInfo {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.ExtendedInfo */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.ExtendedInfo */
     vfunc_get_extended_field(name: string): ExtendedFieldDetails | null
     vfunc_change_extended_field(name: string, value: ExtendedFieldDetails, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_extended_field_finish(_res_: Gio.AsyncResult): void
     vfunc_remove_extended_field(name: string, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_remove_extended_field_finish(_res_: Gio.AsyncResult): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ExtendedInfo, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ExtendedInfo, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -540,25 +542,25 @@ export class ExtendedInfo {
 export interface FavouriteDetails_ConstructProps extends GObject.Object_ConstructProps {
     is_favourite?: boolean
 }
-export class FavouriteDetails {
-    /* Properties of Folks.FavouriteDetails */
+class FavouriteDetails {
+    /* Properties of Folks-0.6.Folks.FavouriteDetails */
     is_favourite: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.FavouriteDetails */
+    /* Methods of Folks-0.6.Folks.FavouriteDetails */
     change_is_favourite(is_favourite: boolean, _callback_?: Gio.AsyncReadyCallback | null): void
     change_is_favourite_finish(_res_: Gio.AsyncResult): void
     get_is_favourite(): boolean
     set_is_favourite(value: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -566,26 +568,26 @@ export class FavouriteDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.FavouriteDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.FavouriteDetails */
     vfunc_change_is_favourite(is_favourite: boolean, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_is_favourite_finish(_res_: Gio.AsyncResult): void
     vfunc_get_is_favourite(): boolean
     vfunc_set_is_favourite(value: boolean): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FavouriteDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FavouriteDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -603,25 +605,25 @@ export class FavouriteDetails {
 export interface GenderDetails_ConstructProps extends GObject.Object_ConstructProps {
     gender?: Gender
 }
-export class GenderDetails {
-    /* Properties of Folks.GenderDetails */
+class GenderDetails {
+    /* Properties of Folks-0.6.Folks.GenderDetails */
     gender: Gender
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.GenderDetails */
+    /* Methods of Folks-0.6.Folks.GenderDetails */
     change_gender(gender: Gender, _callback_?: Gio.AsyncReadyCallback | null): void
     change_gender_finish(_res_: Gio.AsyncResult): void
     get_gender(): Gender
     set_gender(value: Gender): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -629,26 +631,26 @@ export class GenderDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.GenderDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.GenderDetails */
     vfunc_change_gender(gender: Gender, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_gender_finish(_res_: Gio.AsyncResult): void
     vfunc_get_gender(): Gender
     vfunc_set_gender(value: Gender): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GenderDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GenderDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -666,27 +668,27 @@ export class GenderDetails {
 export interface GroupDetails_ConstructProps extends GObject.Object_ConstructProps {
     groups?: Gee.Set
 }
-export class GroupDetails {
-    /* Properties of Folks.GroupDetails */
+class GroupDetails {
+    /* Properties of Folks-0.6.Folks.GroupDetails */
     groups: Gee.Set
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.GroupDetails */
+    /* Methods of Folks-0.6.Folks.GroupDetails */
     change_group(group: string, is_member: boolean, _callback_?: Gio.AsyncReadyCallback | null): void
     change_group_finish(_res_: Gio.AsyncResult): void
     change_groups(groups: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_groups_finish(_res_: Gio.AsyncResult): void
     get_groups(): Gee.Set
     set_groups(value: Gee.Set): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -694,32 +696,32 @@ export class GroupDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.GroupDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.GroupDetails */
     vfunc_change_group(group: string, is_member: boolean, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_group_finish(_res_: Gio.AsyncResult): void
     vfunc_change_groups(groups: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_groups_finish(_res_: Gio.AsyncResult): void
     vfunc_get_groups(): Gee.Set
     vfunc_set_groups(value: Gee.Set): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Folks.GroupDetails */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Folks-0.6.Folks.GroupDetails */
     connect(sigName: "group-changed", callback: (($obj: GroupDetails, group: string, is_member: boolean) => void)): number
     connect_after(sigName: "group-changed", callback: (($obj: GroupDetails, group: string, is_member: boolean) => void)): number
     emit(sigName: "group-changed", group: string, is_member: boolean): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GroupDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GroupDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -737,25 +739,25 @@ export class GroupDetails {
 export interface ImDetails_ConstructProps extends GObject.Object_ConstructProps {
     im_addresses?: Gee.MultiMap
 }
-export class ImDetails {
-    /* Properties of Folks.ImDetails */
+class ImDetails {
+    /* Properties of Folks-0.6.Folks.ImDetails */
     im_addresses: Gee.MultiMap
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.ImDetails */
+    /* Methods of Folks-0.6.Folks.ImDetails */
     change_im_addresses(im_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null): void
     change_im_addresses_finish(_res_: Gio.AsyncResult): void
     get_im_addresses(): Gee.MultiMap
     set_im_addresses(value: Gee.MultiMap): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -763,26 +765,26 @@ export class ImDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.ImDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.ImDetails */
     vfunc_change_im_addresses(im_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_im_addresses_finish(_res_: Gio.AsyncResult): void
     vfunc_get_im_addresses(): Gee.MultiMap
     vfunc_set_im_addresses(value: Gee.MultiMap): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ImDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ImDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -801,28 +803,28 @@ export class ImDetails {
 }
 export interface InteractionDetails_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class InteractionDetails {
-    /* Properties of Folks.InteractionDetails */
+class InteractionDetails {
+    /* Properties of Folks-0.6.Folks.InteractionDetails */
     readonly im_interaction_count: number
     readonly last_im_interaction_datetime: GLib.DateTime
     readonly call_interaction_count: number
     readonly last_call_interaction_datetime: GLib.DateTime
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.InteractionDetails */
+    /* Methods of Folks-0.6.Folks.InteractionDetails */
     get_im_interaction_count(): number
     get_last_im_interaction_datetime(): GLib.DateTime | null
     get_call_interaction_count(): number
     get_last_call_interaction_datetime(): GLib.DateTime | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -830,26 +832,26 @@ export class InteractionDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.InteractionDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.InteractionDetails */
     vfunc_get_im_interaction_count(): number
     vfunc_get_last_im_interaction_datetime(): GLib.DateTime | null
     vfunc_get_call_interaction_count(): number
     vfunc_get_last_call_interaction_datetime(): GLib.DateTime | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InteractionDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InteractionDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -873,25 +875,25 @@ export class InteractionDetails {
 export interface LocalIdDetails_ConstructProps extends GObject.Object_ConstructProps {
     local_ids?: Gee.Set
 }
-export class LocalIdDetails {
-    /* Properties of Folks.LocalIdDetails */
+class LocalIdDetails {
+    /* Properties of Folks-0.6.Folks.LocalIdDetails */
     local_ids: Gee.Set
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.LocalIdDetails */
+    /* Methods of Folks-0.6.Folks.LocalIdDetails */
     change_local_ids(local_ids: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_local_ids_finish(_res_: Gio.AsyncResult): void
     get_local_ids(): Gee.Set
     set_local_ids(value: Gee.Set): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -899,26 +901,26 @@ export class LocalIdDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.LocalIdDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.LocalIdDetails */
     vfunc_change_local_ids(local_ids: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_local_ids_finish(_res_: Gio.AsyncResult): void
     vfunc_get_local_ids(): Gee.Set
     vfunc_set_local_ids(value: Gee.Set): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: LocalIdDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: LocalIdDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -936,25 +938,25 @@ export class LocalIdDetails {
 export interface LocationDetails_ConstructProps extends GObject.Object_ConstructProps {
     location?: Location
 }
-export class LocationDetails {
-    /* Properties of Folks.LocationDetails */
+class LocationDetails {
+    /* Properties of Folks-0.6.Folks.LocationDetails */
     location: Location
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.LocationDetails */
+    /* Methods of Folks-0.6.Folks.LocationDetails */
     change_location(location?: Location | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_location_finish(_res_: Gio.AsyncResult): void
     get_location(): Location | null
     set_location(value?: Location | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -962,26 +964,26 @@ export class LocationDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.LocationDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.LocationDetails */
     vfunc_change_location(location?: Location | null, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_location_finish(_res_: Gio.AsyncResult): void
     vfunc_get_location(): Location | null
     vfunc_set_location(value?: Location | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: LocationDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: LocationDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1001,14 +1003,14 @@ export interface NameDetails_ConstructProps extends GObject.Object_ConstructProp
     full_name?: string
     nickname?: string
 }
-export class NameDetails {
-    /* Properties of Folks.NameDetails */
+class NameDetails {
+    /* Properties of Folks-0.6.Folks.NameDetails */
     structured_name: StructuredName
     full_name: string
     nickname: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.NameDetails */
+    /* Methods of Folks-0.6.Folks.NameDetails */
     change_structured_name(name?: StructuredName | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_structured_name_finish(_res_: Gio.AsyncResult): void
     change_full_name(full_name: string, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -1021,15 +1023,15 @@ export class NameDetails {
     set_full_name(value: string): void
     get_nickname(): string
     set_nickname(value: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1037,13 +1039,13 @@ export class NameDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.NameDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.NameDetails */
     vfunc_change_structured_name(name?: StructuredName | null, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_structured_name_finish(_res_: Gio.AsyncResult): void
     vfunc_change_full_name(full_name: string, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -1056,15 +1058,15 @@ export class NameDetails {
     vfunc_set_full_name(value: string): void
     vfunc_get_nickname(): string
     vfunc_set_nickname(value: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: NameDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: NameDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1086,25 +1088,25 @@ export class NameDetails {
 export interface NoteDetails_ConstructProps extends GObject.Object_ConstructProps {
     notes?: Gee.Set
 }
-export class NoteDetails {
-    /* Properties of Folks.NoteDetails */
+class NoteDetails {
+    /* Properties of Folks-0.6.Folks.NoteDetails */
     notes: Gee.Set
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.NoteDetails */
+    /* Methods of Folks-0.6.Folks.NoteDetails */
     change_notes(notes: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_notes_finish(_res_: Gio.AsyncResult): void
     get_notes(): Gee.Set
     set_notes(value: Gee.Set): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1112,26 +1114,26 @@ export class NoteDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.NoteDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.NoteDetails */
     vfunc_change_notes(notes: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_notes_finish(_res_: Gio.AsyncResult): void
     vfunc_get_notes(): Gee.Set
     vfunc_set_notes(value: Gee.Set): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: NoteDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: NoteDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1149,25 +1151,25 @@ export class NoteDetails {
 export interface PhoneDetails_ConstructProps extends GObject.Object_ConstructProps {
     phone_numbers?: Gee.Set
 }
-export class PhoneDetails {
-    /* Properties of Folks.PhoneDetails */
+class PhoneDetails {
+    /* Properties of Folks-0.6.Folks.PhoneDetails */
     phone_numbers: Gee.Set
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.PhoneDetails */
+    /* Methods of Folks-0.6.Folks.PhoneDetails */
     change_phone_numbers(phone_numbers: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_phone_numbers_finish(_res_: Gio.AsyncResult): void
     get_phone_numbers(): Gee.Set
     set_phone_numbers(value: Gee.Set): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1175,26 +1177,26 @@ export class PhoneDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.PhoneDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.PhoneDetails */
     vfunc_change_phone_numbers(phone_numbers: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_phone_numbers_finish(_res_: Gio.AsyncResult): void
     vfunc_get_phone_numbers(): Gee.Set
     vfunc_set_phone_numbers(value: Gee.Set): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PhoneDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PhoneDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1212,25 +1214,25 @@ export class PhoneDetails {
 export interface PostalAddressDetails_ConstructProps extends GObject.Object_ConstructProps {
     postal_addresses?: Gee.Set
 }
-export class PostalAddressDetails {
-    /* Properties of Folks.PostalAddressDetails */
+class PostalAddressDetails {
+    /* Properties of Folks-0.6.Folks.PostalAddressDetails */
     postal_addresses: Gee.Set
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.PostalAddressDetails */
+    /* Methods of Folks-0.6.Folks.PostalAddressDetails */
     change_postal_addresses(postal_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_postal_addresses_finish(_res_: Gio.AsyncResult): void
     get_postal_addresses(): Gee.Set
     set_postal_addresses(value: Gee.Set): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1238,26 +1240,26 @@ export class PostalAddressDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.PostalAddressDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.PostalAddressDetails */
     vfunc_change_postal_addresses(postal_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_postal_addresses_finish(_res_: Gio.AsyncResult): void
     vfunc_get_postal_addresses(): Gee.Set
     vfunc_set_postal_addresses(value: Gee.Set): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PostalAddressDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PostalAddressDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1278,15 +1280,15 @@ export interface PresenceDetails_ConstructProps extends GObject.Object_Construct
     client_types?: string[]
     presence_status?: string
 }
-export class PresenceDetails {
-    /* Properties of Folks.PresenceDetails */
+class PresenceDetails {
+    /* Properties of Folks-0.6.Folks.PresenceDetails */
     presence_type: PresenceType
     presence_message: string
     client_types: string[]
     presence_status: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.PresenceDetails */
+    /* Methods of Folks-0.6.Folks.PresenceDetails */
     is_online(): boolean
     get_presence_type(): PresenceType
     set_presence_type(value: PresenceType): void
@@ -1296,15 +1298,15 @@ export class PresenceDetails {
     set_client_types(value: string[]): void
     get_presence_status(): string
     set_presence_status(value: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1312,13 +1314,13 @@ export class PresenceDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.PresenceDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.PresenceDetails */
     vfunc_get_presence_type(): PresenceType
     vfunc_set_presence_type(value: PresenceType): void
     vfunc_get_presence_message(): string
@@ -1327,15 +1329,15 @@ export class PresenceDetails {
     vfunc_set_client_types(value: string[]): void
     vfunc_get_presence_status(): string
     vfunc_set_presence_status(value: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PresenceDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PresenceDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1362,25 +1364,25 @@ export class PresenceDetails {
 export interface RoleDetails_ConstructProps extends GObject.Object_ConstructProps {
     roles?: Gee.Set
 }
-export class RoleDetails {
-    /* Properties of Folks.RoleDetails */
+class RoleDetails {
+    /* Properties of Folks-0.6.Folks.RoleDetails */
     roles: Gee.Set
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.RoleDetails */
+    /* Methods of Folks-0.6.Folks.RoleDetails */
     change_roles(roles: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_roles_finish(_res_: Gio.AsyncResult): void
     get_roles(): Gee.Set
     set_roles(value: Gee.Set): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1388,26 +1390,26 @@ export class RoleDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.RoleDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.RoleDetails */
     vfunc_change_roles(roles: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_roles_finish(_res_: Gio.AsyncResult): void
     vfunc_get_roles(): Gee.Set
     vfunc_set_roles(value: Gee.Set): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RoleDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RoleDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1425,25 +1427,25 @@ export class RoleDetails {
 export interface UrlDetails_ConstructProps extends GObject.Object_ConstructProps {
     urls?: Gee.Set
 }
-export class UrlDetails {
-    /* Properties of Folks.UrlDetails */
+class UrlDetails {
+    /* Properties of Folks-0.6.Folks.UrlDetails */
     urls: Gee.Set
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.UrlDetails */
+    /* Methods of Folks-0.6.Folks.UrlDetails */
     change_urls(urls: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_urls_finish(_res_: Gio.AsyncResult): void
     get_urls(): Gee.Set
     set_urls(value: Gee.Set): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1451,26 +1453,26 @@ export class UrlDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.UrlDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.UrlDetails */
     vfunc_change_urls(urls: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_urls_finish(_res_: Gio.AsyncResult): void
     vfunc_get_urls(): Gee.Set
     vfunc_set_urls(value: Gee.Set): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UrlDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UrlDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1488,25 +1490,25 @@ export class UrlDetails {
 export interface WebServiceDetails_ConstructProps extends GObject.Object_ConstructProps {
     web_service_addresses?: Gee.MultiMap
 }
-export class WebServiceDetails {
-    /* Properties of Folks.WebServiceDetails */
+class WebServiceDetails {
+    /* Properties of Folks-0.6.Folks.WebServiceDetails */
     web_service_addresses: Gee.MultiMap
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.WebServiceDetails */
+    /* Methods of Folks-0.6.Folks.WebServiceDetails */
     change_web_service_addresses(web_service_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null): void
     change_web_service_addresses_finish(_res_: Gio.AsyncResult): void
     get_web_service_addresses(): Gee.MultiMap
     set_web_service_addresses(value: Gee.MultiMap): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1514,26 +1516,26 @@ export class WebServiceDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.WebServiceDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.WebServiceDetails */
     vfunc_change_web_service_addresses(web_service_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_web_service_addresses_finish(_res_: Gio.AsyncResult): void
     vfunc_get_web_service_addresses(): Gee.MultiMap
     vfunc_set_web_service_addresses(value: Gee.MultiMap): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WebServiceDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WebServiceDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1556,15 +1558,15 @@ export interface AbstractFieldDetails_ConstructProps extends GObject.Object_Cons
     id?: string
     parameters?: Gee.MultiMap
 }
-export class AbstractFieldDetails {
-    /* Properties of Folks.AbstractFieldDetails */
+class AbstractFieldDetails {
+    /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
     value: object
     readonly value_type: GObject.Type
     id: string
     parameters: Gee.MultiMap
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.AbstractFieldDetails */
+    /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
     set_parameter(parameter_name: string, parameter_value: string): void
@@ -1581,15 +1583,15 @@ export class AbstractFieldDetails {
     set_id(value: string): void
     get_parameters(): Gee.MultiMap
     set_parameters(value: Gee.MultiMap): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1597,13 +1599,13 @@ export class AbstractFieldDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.AbstractFieldDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.AbstractFieldDetails */
     vfunc_equal(that: AbstractFieldDetails): boolean
     vfunc_parameters_equal(that: AbstractFieldDetails): boolean
     vfunc_values_equal(that: AbstractFieldDetails): boolean
@@ -1614,15 +1616,15 @@ export class AbstractFieldDetails {
     vfunc_set_id(value: string): void
     vfunc_get_parameters(): Gee.MultiMap
     vfunc_set_parameters(value: Gee.MultiMap): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AbstractFieldDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AbstractFieldDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1648,10 +1650,10 @@ export class AbstractFieldDetails {
 }
 export interface AvatarCache_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class AvatarCache {
-    /* Fields of GObject.Object */
+class AvatarCache {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.AvatarCache */
+    /* Methods of Folks-0.6.Folks.AvatarCache */
     load_avatar(id: string, _callback_?: Gio.AsyncReadyCallback | null): void
     load_avatar_finish(_res_: Gio.AsyncResult): Gio.LoadableIcon | null
     store_avatar(id: string, avatar: Gio.LoadableIcon, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -1659,15 +1661,15 @@ export class AvatarCache {
     remove_avatar(id: string, _callback_?: Gio.AsyncReadyCallback | null): void
     remove_avatar_finish(_res_: Gio.AsyncResult): void
     build_uri_for_avatar(id: string): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1675,21 +1677,21 @@ export class AvatarCache {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AvatarCache, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AvatarCache, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1708,15 +1710,15 @@ export interface BackendStore_ConstructProps extends GObject.Object_ConstructPro
     enabled_backends?: Gee.Map
     is_prepared?: boolean
 }
-export class BackendStore {
-    /* Properties of Folks.BackendStore */
+class BackendStore {
+    /* Properties of Folks-0.6.Folks.BackendStore */
     enabled_backends: Gee.Map
     is_prepared: boolean
-    /* Fields of Folks.BackendStore */
+    /* Fields of Folks-0.6.Folks.BackendStore */
     folks_backend_store_KEY_FILE_GROUP_ALL_OTHERS: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.BackendStore */
+    /* Methods of Folks-0.6.Folks.BackendStore */
     prepare(_callback_?: Gio.AsyncReadyCallback | null): void
     prepare_finish(_res_: Gio.AsyncResult): void
     load_backends(_callback_?: Gio.AsyncReadyCallback | null): void
@@ -1730,15 +1732,15 @@ export class BackendStore {
     disable_backend_finish(_res_: Gio.AsyncResult): void
     get_enabled_backends(): Gee.Map
     get_is_prepared(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1746,25 +1748,25 @@ export class BackendStore {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Folks.BackendStore */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Folks-0.6.Folks.BackendStore */
     connect(sigName: "backend-available", callback: (($obj: BackendStore, backend: Backend) => void)): number
     connect_after(sigName: "backend-available", callback: (($obj: BackendStore, backend: Backend) => void)): number
     emit(sigName: "backend-available", backend: Backend): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BackendStore, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BackendStore, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1785,15 +1787,15 @@ export class BackendStore {
 }
 export interface Backend_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Backend {
-    /* Properties of Folks.Backend */
+class Backend {
+    /* Properties of Folks-0.6.Folks.Backend */
     readonly is_prepared: boolean
     readonly is_quiescent: boolean
     readonly name: string
     readonly persona_stores: Gee.Map
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.Backend */
+    /* Methods of Folks-0.6.Folks.Backend */
     disable_persona_store(store: PersonaStore): void
     enable_persona_store(store: PersonaStore): void
     set_persona_stores(storeids?: Gee.Set | null): void
@@ -1805,15 +1807,15 @@ export class Backend {
     get_is_quiescent(): boolean
     get_name(): string
     get_persona_stores(): Gee.Map
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1821,13 +1823,13 @@ export class Backend {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.Backend */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.Backend */
     vfunc_disable_persona_store(store: PersonaStore): void
     vfunc_enable_persona_store(store: PersonaStore): void
     vfunc_set_persona_stores(storeids?: Gee.Set | null): void
@@ -1839,22 +1841,22 @@ export class Backend {
     vfunc_get_is_quiescent(): boolean
     vfunc_get_name(): string
     vfunc_get_persona_stores(): Gee.Map
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Folks.Backend */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Folks-0.6.Folks.Backend */
     connect(sigName: "persona-store-added", callback: (($obj: Backend, store: PersonaStore) => void)): number
     connect_after(sigName: "persona-store-added", callback: (($obj: Backend, store: PersonaStore) => void)): number
     emit(sigName: "persona-store-added", store: PersonaStore): void
     connect(sigName: "persona-store-removed", callback: (($obj: Backend, store: PersonaStore) => void)): number
     connect_after(sigName: "persona-store-removed", callback: (($obj: Backend, store: PersonaStore) => void)): number
     emit(sigName: "persona-store-removed", store: PersonaStore): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Backend, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Backend, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1879,13 +1881,13 @@ export interface Debug_ConstructProps extends GObject.Object_ConstructProps {
     colour_enabled?: boolean
     debug_output_enabled?: boolean
 }
-export class Debug {
-    /* Properties of Folks.Debug */
+class Debug {
+    /* Properties of Folks-0.6.Folks.Debug */
     colour_enabled: boolean
     debug_output_enabled: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.Debug */
+    /* Methods of Folks-0.6.Folks.Debug */
     emit_print_status(): void
     indent(): void
     unindent(): void
@@ -1893,15 +1895,15 @@ export class Debug {
     set_colour_enabled(value: boolean): void
     get_debug_output_enabled(): boolean
     set_debug_output_enabled(value: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1909,25 +1911,25 @@ export class Debug {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Folks.Debug */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Folks-0.6.Folks.Debug */
     connect(sigName: "print-status", callback: (($obj: Debug) => void)): number
     connect_after(sigName: "print-status", callback: (($obj: Debug) => void)): number
     emit(sigName: "print-status"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Debug, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Debug, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1949,15 +1951,15 @@ export class Debug {
 }
 export interface EmailFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
-export class EmailFieldDetails {
-    /* Properties of Folks.AbstractFieldDetails */
+class EmailFieldDetails {
+    /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
     value: object
     readonly value_type: GObject.Type
     id: string
     parameters: Gee.MultiMap
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.AbstractFieldDetails */
+    /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
     set_parameter(parameter_name: string, parameter_value: string): void
@@ -1974,15 +1976,15 @@ export class EmailFieldDetails {
     set_id(value: string): void
     get_parameters(): Gee.MultiMap
     set_parameters(value: Gee.MultiMap): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1990,13 +1992,13 @@ export class EmailFieldDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.AbstractFieldDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.AbstractFieldDetails */
     vfunc_equal(that: AbstractFieldDetails): boolean
     vfunc_parameters_equal(that: AbstractFieldDetails): boolean
     vfunc_values_equal(that: AbstractFieldDetails): boolean
@@ -2007,15 +2009,15 @@ export class EmailFieldDetails {
     vfunc_set_id(value: string): void
     vfunc_get_parameters(): Gee.MultiMap
     vfunc_set_parameters(value: Gee.MultiMap): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: EmailFieldDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: EmailFieldDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2040,15 +2042,15 @@ export class EmailFieldDetails {
 }
 export interface ExtendedFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
-export class ExtendedFieldDetails {
-    /* Properties of Folks.AbstractFieldDetails */
+class ExtendedFieldDetails {
+    /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
     value: object
     readonly value_type: GObject.Type
     id: string
     parameters: Gee.MultiMap
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.AbstractFieldDetails */
+    /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
     set_parameter(parameter_name: string, parameter_value: string): void
@@ -2065,15 +2067,15 @@ export class ExtendedFieldDetails {
     set_id(value: string): void
     get_parameters(): Gee.MultiMap
     set_parameters(value: Gee.MultiMap): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2081,13 +2083,13 @@ export class ExtendedFieldDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.AbstractFieldDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.AbstractFieldDetails */
     vfunc_equal(that: AbstractFieldDetails): boolean
     vfunc_parameters_equal(that: AbstractFieldDetails): boolean
     vfunc_values_equal(that: AbstractFieldDetails): boolean
@@ -2098,15 +2100,15 @@ export class ExtendedFieldDetails {
     vfunc_set_id(value: string): void
     vfunc_get_parameters(): Gee.MultiMap
     vfunc_set_parameters(value: Gee.MultiMap): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ExtendedFieldDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ExtendedFieldDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2131,15 +2133,15 @@ export class ExtendedFieldDetails {
 }
 export interface ImFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
-export class ImFieldDetails {
-    /* Properties of Folks.AbstractFieldDetails */
+class ImFieldDetails {
+    /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
     value: object
     readonly value_type: GObject.Type
     id: string
     parameters: Gee.MultiMap
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.AbstractFieldDetails */
+    /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
     set_parameter(parameter_name: string, parameter_value: string): void
@@ -2156,15 +2158,15 @@ export class ImFieldDetails {
     set_id(value: string): void
     get_parameters(): Gee.MultiMap
     set_parameters(value: Gee.MultiMap): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2172,13 +2174,13 @@ export class ImFieldDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.AbstractFieldDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.AbstractFieldDetails */
     vfunc_equal(that: AbstractFieldDetails): boolean
     vfunc_parameters_equal(that: AbstractFieldDetails): boolean
     vfunc_values_equal(that: AbstractFieldDetails): boolean
@@ -2189,15 +2191,15 @@ export class ImFieldDetails {
     vfunc_set_id(value: string): void
     vfunc_get_parameters(): Gee.MultiMap
     vfunc_set_parameters(value: Gee.MultiMap): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ImFieldDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ImFieldDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2225,16 +2227,16 @@ export interface IndividualAggregator_ConstructProps extends GObject.Object_Cons
     individuals?: Gee.Map
     user?: Individual
 }
-export class IndividualAggregator {
-    /* Properties of Folks.IndividualAggregator */
+class IndividualAggregator {
+    /* Properties of Folks-0.6.Folks.IndividualAggregator */
     readonly is_prepared: boolean
     readonly is_quiescent: boolean
     readonly primary_store: PersonaStore
     individuals: Gee.Map
     user: Individual
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.IndividualAggregator */
+    /* Methods of Folks-0.6.Folks.IndividualAggregator */
     prepare(_callback_?: Gio.AsyncReadyCallback | null): void
     prepare_finish(_res_: Gio.AsyncResult): void
     unprepare(_callback_?: Gio.AsyncReadyCallback | null): void
@@ -2261,15 +2263,15 @@ export class IndividualAggregator {
     get_backend_store(): BackendStore
     get_individuals(): Gee.Map
     get_user(): Individual | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2277,28 +2279,28 @@ export class IndividualAggregator {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Folks.IndividualAggregator */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Folks-0.6.Folks.IndividualAggregator */
     connect(sigName: "individuals-changed", callback: (($obj: IndividualAggregator, added: Gee.Set, removed: Gee.Set, message: string | null, actor: Persona | null, reason: GroupDetailsChangeReason) => void)): number
     connect_after(sigName: "individuals-changed", callback: (($obj: IndividualAggregator, added: Gee.Set, removed: Gee.Set, message: string | null, actor: Persona | null, reason: GroupDetailsChangeReason) => void)): number
     emit(sigName: "individuals-changed", added: Gee.Set, removed: Gee.Set, message: string | null, actor: Persona | null, reason: GroupDetailsChangeReason): void
     connect(sigName: "individuals-changed-detailed", callback: (($obj: IndividualAggregator, changes: Gee.MultiMap) => void)): number
     connect_after(sigName: "individuals-changed-detailed", callback: (($obj: IndividualAggregator, changes: Gee.MultiMap) => void)): number
     emit(sigName: "individuals-changed-detailed", changes: Gee.MultiMap): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: IndividualAggregator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: IndividualAggregator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2356,63 +2358,63 @@ export interface Individual_ConstructProps extends GObject.Object_ConstructProps
     urls?: Gee.Set
     web_service_addresses?: Gee.MultiMap
 }
-export class Individual {
-    /* Properties of Folks.Individual */
+class Individual {
+    /* Properties of Folks-0.6.Folks.Individual */
     trust_level: TrustLevel
     is_user: boolean
     id: string
     readonly display_name: string
     personas: Gee.Set
-    /* Properties of Folks.AliasDetails */
+    /* Properties of Folks-0.6.Folks.AliasDetails */
     alias: string
-    /* Properties of Folks.AvatarDetails */
+    /* Properties of Folks-0.6.Folks.AvatarDetails */
     avatar: Gio.LoadableIcon
-    /* Properties of Folks.BirthdayDetails */
+    /* Properties of Folks-0.6.Folks.BirthdayDetails */
     birthday: GLib.DateTime
     calendar_event_id: string
-    /* Properties of Folks.EmailDetails */
+    /* Properties of Folks-0.6.Folks.EmailDetails */
     email_addresses: Gee.Set
-    /* Properties of Folks.FavouriteDetails */
+    /* Properties of Folks-0.6.Folks.FavouriteDetails */
     is_favourite: boolean
-    /* Properties of Folks.GenderDetails */
+    /* Properties of Folks-0.6.Folks.GenderDetails */
     gender: Gender
-    /* Properties of Folks.GroupDetails */
+    /* Properties of Folks-0.6.Folks.GroupDetails */
     groups: Gee.Set
-    /* Properties of Folks.ImDetails */
+    /* Properties of Folks-0.6.Folks.ImDetails */
     im_addresses: Gee.MultiMap
-    /* Properties of Folks.InteractionDetails */
+    /* Properties of Folks-0.6.Folks.InteractionDetails */
     readonly im_interaction_count: number
     readonly last_im_interaction_datetime: GLib.DateTime
     readonly call_interaction_count: number
     readonly last_call_interaction_datetime: GLib.DateTime
-    /* Properties of Folks.LocalIdDetails */
+    /* Properties of Folks-0.6.Folks.LocalIdDetails */
     local_ids: Gee.Set
-    /* Properties of Folks.LocationDetails */
+    /* Properties of Folks-0.6.Folks.LocationDetails */
     location: Location
-    /* Properties of Folks.NameDetails */
+    /* Properties of Folks-0.6.Folks.NameDetails */
     structured_name: StructuredName
     full_name: string
     nickname: string
-    /* Properties of Folks.NoteDetails */
+    /* Properties of Folks-0.6.Folks.NoteDetails */
     notes: Gee.Set
-    /* Properties of Folks.PresenceDetails */
+    /* Properties of Folks-0.6.Folks.PresenceDetails */
     presence_type: PresenceType
     presence_message: string
     client_types: string[]
     presence_status: string
-    /* Properties of Folks.PhoneDetails */
+    /* Properties of Folks-0.6.Folks.PhoneDetails */
     phone_numbers: Gee.Set
-    /* Properties of Folks.PostalAddressDetails */
+    /* Properties of Folks-0.6.Folks.PostalAddressDetails */
     postal_addresses: Gee.Set
-    /* Properties of Folks.RoleDetails */
+    /* Properties of Folks-0.6.Folks.RoleDetails */
     roles: Gee.Set
-    /* Properties of Folks.UrlDetails */
+    /* Properties of Folks-0.6.Folks.UrlDetails */
     urls: Gee.Set
-    /* Properties of Folks.WebServiceDetails */
+    /* Properties of Folks-0.6.Folks.WebServiceDetails */
     web_service_addresses: Gee.MultiMap
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.Individual */
+    /* Methods of Folks-0.6.Folks.Individual */
     has_anti_link_with_persona(p: Persona): boolean
     has_anti_link_with_individual(i: Individual): boolean
     get_trust_level(): TrustLevel
@@ -2421,15 +2423,15 @@ export class Individual {
     get_display_name(): string
     get_personas(): Gee.Set
     set_personas(value: Gee.Set): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2437,23 +2439,23 @@ export class Individual {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Folks.AliasDetails */
+    watch_closure(closure: Function): void
+    /* Methods of Folks-0.6.Folks.AliasDetails */
     change_alias(alias: string, _callback_?: Gio.AsyncReadyCallback | null): void
     change_alias_finish(_res_: Gio.AsyncResult): void
     get_alias(): string
     set_alias(value: string): void
-    /* Methods of Folks.AvatarDetails */
+    /* Methods of Folks-0.6.Folks.AvatarDetails */
     change_avatar(avatar?: Gio.LoadableIcon | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_avatar_finish(_res_: Gio.AsyncResult): void
     get_avatar(): Gio.LoadableIcon | null
     set_avatar(value?: Gio.LoadableIcon | null): void
-    /* Methods of Folks.BirthdayDetails */
+    /* Methods of Folks-0.6.Folks.BirthdayDetails */
     change_birthday(birthday?: GLib.DateTime | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_birthday_finish(_res_: Gio.AsyncResult): void
     change_calendar_event_id(event_id?: string | null, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -2462,55 +2464,55 @@ export class Individual {
     set_birthday(value?: GLib.DateTime | null): void
     get_calendar_event_id(): string | null
     set_calendar_event_id(value?: string | null): void
-    /* Methods of Folks.EmailDetails */
+    /* Methods of Folks-0.6.Folks.EmailDetails */
     change_email_addresses(email_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_email_addresses_finish(_res_: Gio.AsyncResult): void
     get_email_addresses(): Gee.Set
     set_email_addresses(value: Gee.Set): void
-    /* Methods of Folks.ExtendedInfo */
+    /* Methods of Folks-0.6.Folks.ExtendedInfo */
     get_extended_field(name: string): ExtendedFieldDetails | null
     change_extended_field(name: string, value: ExtendedFieldDetails, _callback_?: Gio.AsyncReadyCallback | null): void
     change_extended_field_finish(_res_: Gio.AsyncResult): void
     remove_extended_field(name: string, _callback_?: Gio.AsyncReadyCallback | null): void
     remove_extended_field_finish(_res_: Gio.AsyncResult): void
-    /* Methods of Folks.FavouriteDetails */
+    /* Methods of Folks-0.6.Folks.FavouriteDetails */
     change_is_favourite(is_favourite: boolean, _callback_?: Gio.AsyncReadyCallback | null): void
     change_is_favourite_finish(_res_: Gio.AsyncResult): void
     get_is_favourite(): boolean
     set_is_favourite(value: boolean): void
-    /* Methods of Folks.GenderDetails */
+    /* Methods of Folks-0.6.Folks.GenderDetails */
     change_gender(gender: Gender, _callback_?: Gio.AsyncReadyCallback | null): void
     change_gender_finish(_res_: Gio.AsyncResult): void
     get_gender(): Gender
     set_gender(value: Gender): void
-    /* Methods of Folks.GroupDetails */
+    /* Methods of Folks-0.6.Folks.GroupDetails */
     change_group(group: string, is_member: boolean, _callback_?: Gio.AsyncReadyCallback | null): void
     change_group_finish(_res_: Gio.AsyncResult): void
     change_groups(groups: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_groups_finish(_res_: Gio.AsyncResult): void
     get_groups(): Gee.Set
     set_groups(value: Gee.Set): void
-    /* Methods of Folks.ImDetails */
+    /* Methods of Folks-0.6.Folks.ImDetails */
     change_im_addresses(im_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null): void
     change_im_addresses_finish(_res_: Gio.AsyncResult): void
     get_im_addresses(): Gee.MultiMap
     set_im_addresses(value: Gee.MultiMap): void
-    /* Methods of Folks.InteractionDetails */
+    /* Methods of Folks-0.6.Folks.InteractionDetails */
     get_im_interaction_count(): number
     get_last_im_interaction_datetime(): GLib.DateTime | null
     get_call_interaction_count(): number
     get_last_call_interaction_datetime(): GLib.DateTime | null
-    /* Methods of Folks.LocalIdDetails */
+    /* Methods of Folks-0.6.Folks.LocalIdDetails */
     change_local_ids(local_ids: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_local_ids_finish(_res_: Gio.AsyncResult): void
     get_local_ids(): Gee.Set
     set_local_ids(value: Gee.Set): void
-    /* Methods of Folks.LocationDetails */
+    /* Methods of Folks-0.6.Folks.LocationDetails */
     change_location(location?: Location | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_location_finish(_res_: Gio.AsyncResult): void
     get_location(): Location | null
     set_location(value?: Location | null): void
-    /* Methods of Folks.NameDetails */
+    /* Methods of Folks-0.6.Folks.NameDetails */
     change_structured_name(name?: StructuredName | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_structured_name_finish(_res_: Gio.AsyncResult): void
     change_full_name(full_name: string, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -2523,12 +2525,12 @@ export class Individual {
     set_full_name(value: string): void
     get_nickname(): string
     set_nickname(value: string): void
-    /* Methods of Folks.NoteDetails */
+    /* Methods of Folks-0.6.Folks.NoteDetails */
     change_notes(notes: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_notes_finish(_res_: Gio.AsyncResult): void
     get_notes(): Gee.Set
     set_notes(value: Gee.Set): void
-    /* Methods of Folks.PresenceDetails */
+    /* Methods of Folks-0.6.Folks.PresenceDetails */
     is_online(): boolean
     get_presence_type(): PresenceType
     set_presence_type(value: PresenceType): void
@@ -2538,32 +2540,32 @@ export class Individual {
     set_client_types(value: string[]): void
     get_presence_status(): string
     set_presence_status(value: string): void
-    /* Methods of Folks.PhoneDetails */
+    /* Methods of Folks-0.6.Folks.PhoneDetails */
     change_phone_numbers(phone_numbers: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_phone_numbers_finish(_res_: Gio.AsyncResult): void
     get_phone_numbers(): Gee.Set
     set_phone_numbers(value: Gee.Set): void
-    /* Methods of Folks.PostalAddressDetails */
+    /* Methods of Folks-0.6.Folks.PostalAddressDetails */
     change_postal_addresses(postal_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_postal_addresses_finish(_res_: Gio.AsyncResult): void
     get_postal_addresses(): Gee.Set
     set_postal_addresses(value: Gee.Set): void
-    /* Methods of Folks.RoleDetails */
+    /* Methods of Folks-0.6.Folks.RoleDetails */
     change_roles(roles: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_roles_finish(_res_: Gio.AsyncResult): void
     get_roles(): Gee.Set
     set_roles(value: Gee.Set): void
-    /* Methods of Folks.UrlDetails */
+    /* Methods of Folks-0.6.Folks.UrlDetails */
     change_urls(urls: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_urls_finish(_res_: Gio.AsyncResult): void
     get_urls(): Gee.Set
     set_urls(value: Gee.Set): void
-    /* Methods of Folks.WebServiceDetails */
+    /* Methods of Folks-0.6.Folks.WebServiceDetails */
     change_web_service_addresses(web_service_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null): void
     change_web_service_addresses_finish(_res_: Gio.AsyncResult): void
     get_web_service_addresses(): Gee.MultiMap
     set_web_service_addresses(value: Gee.MultiMap): void
-    /* Virtual methods of Folks.Individual */
+    /* Virtual methods of Folks-0.6.Folks.Individual */
     vfunc_change_alias(alias: string, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_alias_finish(_res_: Gio.AsyncResult): void
     vfunc_get_alias(): string
@@ -2663,26 +2665,26 @@ export class Individual {
     vfunc_change_web_service_addresses_finish(_res_: Gio.AsyncResult): void
     vfunc_get_web_service_addresses(): Gee.MultiMap
     vfunc_set_web_service_addresses(value: Gee.MultiMap): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Folks.Individual */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Folks-0.6.Folks.Individual */
     connect(sigName: "removed", callback: (($obj: Individual, replacement_individual?: Individual | null) => void)): number
     connect_after(sigName: "removed", callback: (($obj: Individual, replacement_individual?: Individual | null) => void)): number
     emit(sigName: "removed", replacement_individual?: Individual | null): void
     connect(sigName: "personas-changed", callback: (($obj: Individual, added: Gee.Set, removed: Gee.Set) => void)): number
     connect_after(sigName: "personas-changed", callback: (($obj: Individual, added: Gee.Set, removed: Gee.Set) => void)): number
     emit(sigName: "personas-changed", added: Gee.Set, removed: Gee.Set): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Individual, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Individual, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Folks.GroupDetails */
+    /* Signals of Folks-0.6.Folks.GroupDetails */
     connect(sigName: "group-changed", callback: (($obj: Individual, group: string, is_member: boolean) => void)): number
     connect_after(sigName: "group-changed", callback: (($obj: Individual, group: string, is_member: boolean) => void)): number
     emit(sigName: "group-changed", group: string, is_member: boolean): void
@@ -2768,24 +2770,24 @@ export class Individual {
 }
 export interface Location_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Location {
-    /* Fields of Folks.Location */
+class Location {
+    /* Fields of Folks-0.6.Folks.Location */
     latitude: number
     longitude: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.Location */
+    /* Methods of Folks-0.6.Folks.Location */
     equal(other: Location): boolean
     equal_coordinates(latitude: number, longitude: number): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2793,21 +2795,21 @@ export class Location {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Location, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Location, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2829,16 +2831,16 @@ export interface StructuredName_ConstructProps extends GObject.Object_ConstructP
     prefixes?: string
     suffixes?: string
 }
-export class StructuredName {
-    /* Properties of Folks.StructuredName */
+class StructuredName {
+    /* Properties of Folks-0.6.Folks.StructuredName */
     family_name: string
     given_name: string
     additional_names: string
     prefixes: string
     suffixes: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.StructuredName */
+    /* Methods of Folks-0.6.Folks.StructuredName */
     is_empty(): boolean
     equal(other: StructuredName): boolean
     to_string(): string
@@ -2853,15 +2855,15 @@ export class StructuredName {
     set_prefixes(value: string): void
     get_suffixes(): string
     set_suffixes(value: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2869,21 +2871,21 @@ export class StructuredName {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StructuredName, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StructuredName, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2912,20 +2914,20 @@ export class StructuredName {
 export interface NoteFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
     uid?: string
 }
-export class NoteFieldDetails {
-    /* Properties of Folks.NoteFieldDetails */
+class NoteFieldDetails {
+    /* Properties of Folks-0.6.Folks.NoteFieldDetails */
     uid: string
-    /* Properties of Folks.AbstractFieldDetails */
+    /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
     value: object
     readonly value_type: GObject.Type
     id: string
     parameters: Gee.MultiMap
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.NoteFieldDetails */
+    /* Methods of Folks-0.6.Folks.NoteFieldDetails */
     get_uid(): string
     set_uid(value: string): void
-    /* Methods of Folks.AbstractFieldDetails */
+    /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
     set_parameter(parameter_name: string, parameter_value: string): void
@@ -2942,15 +2944,15 @@ export class NoteFieldDetails {
     set_id(value: string): void
     get_parameters(): Gee.MultiMap
     set_parameters(value: Gee.MultiMap): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2958,13 +2960,13 @@ export class NoteFieldDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.AbstractFieldDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.AbstractFieldDetails */
     vfunc_equal(that: AbstractFieldDetails): boolean
     vfunc_parameters_equal(that: AbstractFieldDetails): boolean
     vfunc_values_equal(that: AbstractFieldDetails): boolean
@@ -2975,15 +2977,15 @@ export class NoteFieldDetails {
     vfunc_set_id(value: string): void
     vfunc_get_parameters(): Gee.MultiMap
     vfunc_set_parameters(value: Gee.MultiMap): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: NoteFieldDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: NoteFieldDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3015,10 +3017,10 @@ export interface ObjectCache_ConstructProps extends GObject.Object_ConstructProp
     type_id?: string
     id?: string
 }
-export class ObjectCache {
-    /* Fields of GObject.Object */
+class ObjectCache {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.ObjectCache */
+    /* Methods of Folks-0.6.Folks.ObjectCache */
     get_serialised_object_type(object_version: number): GLib.VariantType | null
     get_serialised_object_version(): number
     serialise_object(object?: object | null): GLib.Variant
@@ -3031,15 +3033,15 @@ export class ObjectCache {
     clear_cache_finish(_res_: Gio.AsyncResult): void
     get_type_id(): string
     get_id(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3047,26 +3049,26 @@ export class ObjectCache {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.ObjectCache */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.ObjectCache */
     vfunc_get_serialised_object_type(object_version: number): GLib.VariantType | null
     vfunc_get_serialised_object_version(): number
     vfunc_serialise_object(object?: object | null): GLib.Variant
     vfunc_deserialise_object(variant: GLib.Variant, object_version: number): object | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ObjectCache, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ObjectCache, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3087,8 +3089,8 @@ export interface PersonaStore_ConstructProps extends GObject.Object_ConstructPro
     is_primary_store?: boolean
     is_user_set_default?: boolean
 }
-export class PersonaStore {
-    /* Properties of Folks.PersonaStore */
+class PersonaStore {
+    /* Properties of Folks-0.6.Folks.PersonaStore */
     readonly type_id: string
     readonly personas: Gee.Map
     readonly can_add_personas: MaybeBool
@@ -3102,9 +3104,9 @@ export class PersonaStore {
     readonly always_writeable_properties: string[]
     is_primary_store: boolean
     is_user_set_default: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.PersonaStore */
+    /* Methods of Folks-0.6.Folks.PersonaStore */
     _emit_personas_changed(added: Gee.Set | null, removed: Gee.Set | null, message: string | null, actor: Persona | null, reason: GroupDetailsChangeReason): void
     prepare(_callback_?: Gio.AsyncReadyCallback | null): void
     prepare_finish(_res_: Gio.AsyncResult): void
@@ -3131,15 +3133,15 @@ export class PersonaStore {
     get_always_writeable_properties(): string[]
     get_is_primary_store(): boolean
     get_is_user_set_default(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3147,13 +3149,13 @@ export class PersonaStore {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.PersonaStore */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.PersonaStore */
     vfunc_prepare(_callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_prepare_finish(_res_: Gio.AsyncResult): void
     vfunc_flush(_callback_?: Gio.AsyncReadyCallback | null): void
@@ -3171,22 +3173,22 @@ export class PersonaStore {
     vfunc_get_is_prepared(): boolean
     vfunc_get_is_quiescent(): boolean
     vfunc_get_always_writeable_properties(): string[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Folks.PersonaStore */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Folks-0.6.Folks.PersonaStore */
     connect(sigName: "personas-changed", callback: (($obj: PersonaStore, added: Gee.Set, removed: Gee.Set, message: string | null, actor: Persona | null, reason: GroupDetailsChangeReason) => void)): number
     connect_after(sigName: "personas-changed", callback: (($obj: PersonaStore, added: Gee.Set, removed: Gee.Set, message: string | null, actor: Persona | null, reason: GroupDetailsChangeReason) => void)): number
     emit(sigName: "personas-changed", added: Gee.Set, removed: Gee.Set, message: string | null, actor: Persona | null, reason: GroupDetailsChangeReason): void
     connect(sigName: "removed", callback: (($obj: PersonaStore) => void)): number
     connect_after(sigName: "removed", callback: (($obj: PersonaStore) => void)): number
     emit(sigName: "removed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PersonaStore, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PersonaStore, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3235,14 +3237,14 @@ export interface Persona_ConstructProps extends GObject.Object_ConstructProps {
     store?: PersonaStore
     individual?: Individual
 }
-export class Persona {
-    /* Properties of Folks.Persona */
+class Persona {
+    /* Properties of Folks-0.6.Folks.Persona */
     individual: Individual
     readonly linkable_properties: string[]
     readonly writeable_properties: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.Persona */
+    /* Methods of Folks-0.6.Folks.Persona */
     linkable_property_to_links(prop_name: string, callback: any): void
     get_iid(): string
     get_uid(): string
@@ -3252,15 +3254,15 @@ export class Persona {
     get_individual(): Individual | null
     get_linkable_properties(): string[]
     get_writeable_properties(): string[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3268,25 +3270,25 @@ export class Persona {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.Persona */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.Persona */
     vfunc_linkable_property_to_links(prop_name: string, callback: any): void
     vfunc_get_linkable_properties(): string[]
     vfunc_get_writeable_properties(): string[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Persona, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Persona, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3310,17 +3312,17 @@ export class Persona {
 }
 export interface PhoneFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
-export class PhoneFieldDetails {
-    /* Properties of Folks.AbstractFieldDetails */
+class PhoneFieldDetails {
+    /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
     value: object
     readonly value_type: GObject.Type
     id: string
     parameters: Gee.MultiMap
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.PhoneFieldDetails */
+    /* Methods of Folks-0.6.Folks.PhoneFieldDetails */
     get_normalised(): string
-    /* Methods of Folks.AbstractFieldDetails */
+    /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
     set_parameter(parameter_name: string, parameter_value: string): void
@@ -3337,15 +3339,15 @@ export class PhoneFieldDetails {
     set_id(value: string): void
     get_parameters(): Gee.MultiMap
     set_parameters(value: Gee.MultiMap): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3353,13 +3355,13 @@ export class PhoneFieldDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.AbstractFieldDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.AbstractFieldDetails */
     vfunc_equal(that: AbstractFieldDetails): boolean
     vfunc_parameters_equal(that: AbstractFieldDetails): boolean
     vfunc_values_equal(that: AbstractFieldDetails): boolean
@@ -3370,15 +3372,15 @@ export class PhoneFieldDetails {
     vfunc_set_id(value: string): void
     vfunc_get_parameters(): Gee.MultiMap
     vfunc_set_parameters(value: Gee.MultiMap): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PhoneFieldDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PhoneFieldDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3412,8 +3414,8 @@ export interface PostalAddress_ConstructProps extends GObject.Object_ConstructPr
     address_format?: string
     uid?: string
 }
-export class PostalAddress {
-    /* Properties of Folks.PostalAddress */
+class PostalAddress {
+    /* Properties of Folks-0.6.Folks.PostalAddress */
     po_box: string
     extension: string
     street: string
@@ -3423,9 +3425,9 @@ export class PostalAddress {
     country: string
     address_format: string
     uid: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.PostalAddress */
+    /* Methods of Folks-0.6.Folks.PostalAddress */
     is_empty(): boolean
     equal(with_: PostalAddress): boolean
     to_string(): string
@@ -3447,15 +3449,15 @@ export class PostalAddress {
     set_address_format(value: string): void
     get_uid(): string
     set_uid(value: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3463,21 +3465,21 @@ export class PostalAddress {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PostalAddress, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PostalAddress, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3512,15 +3514,15 @@ export class PostalAddress {
 }
 export interface PostalAddressFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
-export class PostalAddressFieldDetails {
-    /* Properties of Folks.AbstractFieldDetails */
+class PostalAddressFieldDetails {
+    /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
     value: object
     readonly value_type: GObject.Type
     id: string
     parameters: Gee.MultiMap
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.AbstractFieldDetails */
+    /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
     set_parameter(parameter_name: string, parameter_value: string): void
@@ -3537,15 +3539,15 @@ export class PostalAddressFieldDetails {
     set_id(value: string): void
     get_parameters(): Gee.MultiMap
     set_parameters(value: Gee.MultiMap): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3553,13 +3555,13 @@ export class PostalAddressFieldDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.AbstractFieldDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.AbstractFieldDetails */
     vfunc_equal(that: AbstractFieldDetails): boolean
     vfunc_parameters_equal(that: AbstractFieldDetails): boolean
     vfunc_values_equal(that: AbstractFieldDetails): boolean
@@ -3570,15 +3572,15 @@ export class PostalAddressFieldDetails {
     vfunc_set_id(value: string): void
     vfunc_get_parameters(): Gee.MultiMap
     vfunc_set_parameters(value: Gee.MultiMap): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PostalAddressFieldDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PostalAddressFieldDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3603,22 +3605,22 @@ export class PostalAddressFieldDetails {
 }
 export interface PotentialMatch_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class PotentialMatch {
-    /* Fields of Folks.PotentialMatch */
+class PotentialMatch {
+    /* Fields of Folks-0.6.Folks.PotentialMatch */
     folks_potential_match_known_email_aliases: Gee.Set
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.PotentialMatch */
+    /* Methods of Folks-0.6.Folks.PotentialMatch */
     potential_match(a: Individual, b: Individual): MatchResult
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3626,21 +3628,21 @@ export class PotentialMatch {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PotentialMatch, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PotentialMatch, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3658,21 +3660,21 @@ export class PotentialMatch {
 export interface Query_ConstructProps extends GObject.Object_ConstructProps {
     match_fields?: string[]
 }
-export class Query {
-    /* Fields of GObject.Object */
+class Query {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.Query */
+    /* Methods of Folks-0.6.Folks.Query */
     is_match(individual: Individual): number
     get_match_fields(): string[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3680,24 +3682,24 @@ export class Query {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.Query */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.Query */
     vfunc_is_match(individual: Individual): number
     vfunc_get_match_fields(): string[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Query, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Query, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3716,15 +3718,15 @@ export interface Role_ConstructProps extends GObject.Object_ConstructProps {
     role?: string
     uid?: string
 }
-export class Role {
-    /* Properties of Folks.Role */
+class Role {
+    /* Properties of Folks-0.6.Folks.Role */
     organisation_name: string
     title: string
     role: string
     uid: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.Role */
+    /* Methods of Folks-0.6.Folks.Role */
     is_empty(): boolean
     to_string(): string
     get_organisation_name(): string
@@ -3735,15 +3737,15 @@ export class Role {
     set_role(value: string): void
     get_uid(): string
     set_uid(value: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3751,21 +3753,21 @@ export class Role {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Role, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Role, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3792,15 +3794,15 @@ export class Role {
 }
 export interface RoleFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
-export class RoleFieldDetails {
-    /* Properties of Folks.AbstractFieldDetails */
+class RoleFieldDetails {
+    /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
     value: object
     readonly value_type: GObject.Type
     id: string
     parameters: Gee.MultiMap
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.AbstractFieldDetails */
+    /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
     set_parameter(parameter_name: string, parameter_value: string): void
@@ -3817,15 +3819,15 @@ export class RoleFieldDetails {
     set_id(value: string): void
     get_parameters(): Gee.MultiMap
     set_parameters(value: Gee.MultiMap): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3833,13 +3835,13 @@ export class RoleFieldDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.AbstractFieldDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.AbstractFieldDetails */
     vfunc_equal(that: AbstractFieldDetails): boolean
     vfunc_parameters_equal(that: AbstractFieldDetails): boolean
     vfunc_values_equal(that: AbstractFieldDetails): boolean
@@ -3850,15 +3852,15 @@ export class RoleFieldDetails {
     vfunc_set_id(value: string): void
     vfunc_get_parameters(): Gee.MultiMap
     vfunc_set_parameters(value: Gee.MultiMap): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RoleFieldDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RoleFieldDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3884,16 +3886,16 @@ export class RoleFieldDetails {
 export interface SearchView_ConstructProps extends GObject.Object_ConstructProps {
     query?: Query
 }
-export class SearchView {
-    /* Properties of Folks.SearchView */
+class SearchView {
+    /* Properties of Folks-0.6.Folks.SearchView */
     readonly aggregator: IndividualAggregator
     query: Query
     readonly individuals: Gee.SortedSet
     readonly is_prepared: boolean
     readonly is_quiescent: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.SearchView */
+    /* Methods of Folks-0.6.Folks.SearchView */
     prepare(_callback_?: Gio.AsyncReadyCallback | null): void
     prepare_finish(_res_: Gio.AsyncResult): void
     unprepare(_callback_?: Gio.AsyncReadyCallback | null): void
@@ -3906,15 +3908,15 @@ export class SearchView {
     get_individuals(): Gee.SortedSet
     get_is_prepared(): boolean
     get_is_quiescent(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3922,25 +3924,25 @@ export class SearchView {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Folks.SearchView */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Folks-0.6.Folks.SearchView */
     connect(sigName: "individuals-changed-detailed", callback: (($obj: SearchView, added: Gee.SortedSet, removed: Gee.SortedSet) => void)): number
     connect_after(sigName: "individuals-changed-detailed", callback: (($obj: SearchView, added: Gee.SortedSet, removed: Gee.SortedSet) => void)): number
     emit(sigName: "individuals-changed-detailed", added: Gee.SortedSet, removed: Gee.SortedSet): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SearchView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SearchView, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3969,29 +3971,29 @@ export interface SimpleQuery_ConstructProps extends Query_ConstructProps {
     query_string?: string
     query_locale?: string
 }
-export class SimpleQuery {
-    /* Properties of Folks.SimpleQuery */
+class SimpleQuery {
+    /* Properties of Folks-0.6.Folks.SimpleQuery */
     query_string: string
     query_locale: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.SimpleQuery */
+    /* Methods of Folks-0.6.Folks.SimpleQuery */
     get_query_string(): string
     set_query_string(value: string): void
     get_query_locale(): string | null
     set_query_locale(value?: string | null): void
-    /* Methods of Folks.Query */
+    /* Methods of Folks-0.6.Folks.Query */
     is_match(individual: Individual): number
     get_match_fields(): string[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3999,24 +4001,24 @@ export class SimpleQuery {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.Query */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.Query */
     vfunc_is_match(individual: Individual): number
     vfunc_get_match_fields(): string[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SimpleQuery, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SimpleQuery, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4037,15 +4039,15 @@ export class SimpleQuery {
 }
 export interface UrlFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
-export class UrlFieldDetails {
-    /* Properties of Folks.AbstractFieldDetails */
+class UrlFieldDetails {
+    /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
     value: object
     readonly value_type: GObject.Type
     id: string
     parameters: Gee.MultiMap
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.AbstractFieldDetails */
+    /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
     set_parameter(parameter_name: string, parameter_value: string): void
@@ -4062,15 +4064,15 @@ export class UrlFieldDetails {
     set_id(value: string): void
     get_parameters(): Gee.MultiMap
     set_parameters(value: Gee.MultiMap): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4078,13 +4080,13 @@ export class UrlFieldDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.AbstractFieldDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.AbstractFieldDetails */
     vfunc_equal(that: AbstractFieldDetails): boolean
     vfunc_parameters_equal(that: AbstractFieldDetails): boolean
     vfunc_values_equal(that: AbstractFieldDetails): boolean
@@ -4095,15 +4097,15 @@ export class UrlFieldDetails {
     vfunc_set_id(value: string): void
     vfunc_get_parameters(): Gee.MultiMap
     vfunc_set_parameters(value: Gee.MultiMap): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UrlFieldDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UrlFieldDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4128,18 +4130,18 @@ export class UrlFieldDetails {
 }
 export interface Utils_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Utils {
-    /* Fields of GObject.Object */
+class Utils {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4147,21 +4149,21 @@ export class Utils {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Utils, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Utils, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4182,15 +4184,15 @@ export class Utils {
 }
 export interface WebServiceFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
-export class WebServiceFieldDetails {
-    /* Properties of Folks.AbstractFieldDetails */
+class WebServiceFieldDetails {
+    /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
     value: object
     readonly value_type: GObject.Type
     id: string
     parameters: Gee.MultiMap
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Folks.AbstractFieldDetails */
+    /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
     set_parameter(parameter_name: string, parameter_value: string): void
@@ -4207,15 +4209,15 @@ export class WebServiceFieldDetails {
     set_id(value: string): void
     get_parameters(): Gee.MultiMap
     set_parameters(value: Gee.MultiMap): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4223,13 +4225,13 @@ export class WebServiceFieldDetails {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.AbstractFieldDetails */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.AbstractFieldDetails */
     vfunc_equal(that: AbstractFieldDetails): boolean
     vfunc_parameters_equal(that: AbstractFieldDetails): boolean
     vfunc_values_equal(that: AbstractFieldDetails): boolean
@@ -4240,15 +4242,15 @@ export class WebServiceFieldDetails {
     vfunc_set_id(value: string): void
     vfunc_get_parameters(): Gee.MultiMap
     vfunc_set_parameters(value: Gee.MultiMap): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WebServiceFieldDetails, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WebServiceFieldDetails, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4271,389 +4273,391 @@ export class WebServiceFieldDetails {
     static new(value: string, parameters?: Gee.MultiMap | null): WebServiceFieldDetails
     static $gtype: GObject.Type
 }
-export abstract class AbstractFieldDetailsClass {
-    /* Fields of Folks.AbstractFieldDetailsClass */
-    equal: (self: AbstractFieldDetails, that: AbstractFieldDetails) => boolean
-    parameters_equal: (self: AbstractFieldDetails, that: AbstractFieldDetails) => boolean
-    values_equal: (self: AbstractFieldDetails, that: AbstractFieldDetails) => boolean
-    hash: (self: AbstractFieldDetails) => number
+abstract class AbstractFieldDetailsClass {
+    /* Fields of Folks-0.6.Folks.AbstractFieldDetailsClass */
+    equal: (that: AbstractFieldDetails) => boolean
+    parameters_equal: (that: AbstractFieldDetails) => boolean
+    values_equal: (that: AbstractFieldDetails) => boolean
+    hash: () => number
     static name: string
 }
-export class AbstractFieldDetailsPrivate {
+class AbstractFieldDetailsPrivate {
     static name: string
 }
-export abstract class AvatarCacheClass {
+abstract class AvatarCacheClass {
     static name: string
 }
-export class AvatarCachePrivate {
+class AvatarCachePrivate {
     static name: string
 }
-export abstract class BackendStoreClass {
+abstract class BackendStoreClass {
     static name: string
 }
-export class BackendStorePrivate {
+class BackendStorePrivate {
     static name: string
 }
-export abstract class BackendClass {
-    /* Fields of Folks.BackendClass */
-    disable_persona_store: (self: Backend, store: PersonaStore) => void
-    enable_persona_store: (self: Backend, store: PersonaStore) => void
-    set_persona_stores: (self: Backend, storeids?: Gee.Set | null) => void
-    prepare: (self: Backend, _callback_?: Gio.AsyncReadyCallback | null) => void
-    prepare_finish: (self: Backend, _res_: Gio.AsyncResult) => void
-    unprepare: (self: Backend, _callback_?: Gio.AsyncReadyCallback | null) => void
-    unprepare_finish: (self: Backend, _res_: Gio.AsyncResult) => void
+abstract class BackendClass {
+    /* Fields of Folks-0.6.Folks.BackendClass */
+    disable_persona_store: (store: PersonaStore) => void
+    enable_persona_store: (store: PersonaStore) => void
+    set_persona_stores: (storeids?: Gee.Set | null) => void
+    prepare: (_callback_?: Gio.AsyncReadyCallback | null) => void
+    prepare_finish: (_res_: Gio.AsyncResult) => void
+    unprepare: (_callback_?: Gio.AsyncReadyCallback | null) => void
+    unprepare_finish: (_res_: Gio.AsyncResult) => void
     static name: string
 }
-export class BackendPrivate {
+class BackendPrivate {
     static name: string
 }
-export abstract class DebugClass {
+abstract class DebugClass {
     static name: string
 }
-export class DebugPrivate {
+class DebugPrivate {
     static name: string
 }
-export abstract class EmailFieldDetailsClass {
+abstract class EmailFieldDetailsClass {
     static name: string
 }
-export class EmailFieldDetailsPrivate {
+class EmailFieldDetailsPrivate {
     static name: string
 }
-export abstract class ExtendedFieldDetailsClass {
+abstract class ExtendedFieldDetailsClass {
     static name: string
 }
-export class ExtendedFieldDetailsPrivate {
+class ExtendedFieldDetailsPrivate {
     static name: string
 }
-export abstract class ImFieldDetailsClass {
+abstract class ImFieldDetailsClass {
     static name: string
 }
-export class ImFieldDetailsPrivate {
+class ImFieldDetailsPrivate {
     static name: string
 }
-export abstract class IndividualAggregatorClass {
+abstract class IndividualAggregatorClass {
     static name: string
 }
-export class IndividualAggregatorPrivate {
+class IndividualAggregatorPrivate {
     static name: string
 }
-export abstract class IndividualClass {
+abstract class IndividualClass {
     static name: string
 }
-export class IndividualPrivate {
+class IndividualPrivate {
     static name: string
 }
-export abstract class LocationClass {
+abstract class LocationClass {
     static name: string
 }
-export class LocationPrivate {
+class LocationPrivate {
     static name: string
 }
-export abstract class StructuredNameClass {
+abstract class StructuredNameClass {
     static name: string
 }
-export class StructuredNamePrivate {
+class StructuredNamePrivate {
     static name: string
 }
-export abstract class NoteFieldDetailsClass {
+abstract class NoteFieldDetailsClass {
     static name: string
 }
-export class NoteFieldDetailsPrivate {
+class NoteFieldDetailsPrivate {
     static name: string
 }
-export abstract class ObjectCacheClass {
-    /* Fields of Folks.ObjectCacheClass */
-    get_serialised_object_type: (self: ObjectCache, object_version: number) => GLib.VariantType | null
-    get_serialised_object_version: (self: ObjectCache) => number
-    serialise_object: (self: ObjectCache, object?: object | null) => GLib.Variant
-    deserialise_object: (self: ObjectCache, variant: GLib.Variant, object_version: number) => object | null
+abstract class ObjectCacheClass {
+    /* Fields of Folks-0.6.Folks.ObjectCacheClass */
+    get_serialised_object_type: (object_version: number) => GLib.VariantType | null
+    get_serialised_object_version: () => number
+    serialise_object: (object?: object | null) => GLib.Variant
+    deserialise_object: (variant: GLib.Variant, object_version: number) => object | null
     static name: string
 }
-export class ObjectCachePrivate {
+class ObjectCachePrivate {
     static name: string
 }
-export abstract class PersonaStoreClass {
-    /* Fields of Folks.PersonaStoreClass */
-    prepare: (self: PersonaStore, _callback_?: Gio.AsyncReadyCallback | null) => void
-    prepare_finish: (self: PersonaStore, _res_: Gio.AsyncResult) => void
-    flush: (self: PersonaStore, _callback_?: Gio.AsyncReadyCallback | null) => void
-    flush_finish: (self: PersonaStore, _res_: Gio.AsyncResult) => void
-    add_persona_from_details: (self: PersonaStore, details: GLib.HashTable, _callback_?: Gio.AsyncReadyCallback | null) => void
-    add_persona_from_details_finish: (self: PersonaStore, _res_: Gio.AsyncResult) => Persona | null
-    remove_persona: (self: PersonaStore, persona: Persona, _callback_?: Gio.AsyncReadyCallback | null) => void
-    remove_persona_finish: (self: PersonaStore, _res_: Gio.AsyncResult) => void
+abstract class PersonaStoreClass {
+    /* Fields of Folks-0.6.Folks.PersonaStoreClass */
+    prepare: (_callback_?: Gio.AsyncReadyCallback | null) => void
+    prepare_finish: (_res_: Gio.AsyncResult) => void
+    flush: (_callback_?: Gio.AsyncReadyCallback | null) => void
+    flush_finish: (_res_: Gio.AsyncResult) => void
+    add_persona_from_details: (details: GLib.HashTable, _callback_?: Gio.AsyncReadyCallback | null) => void
+    add_persona_from_details_finish: (_res_: Gio.AsyncResult) => Persona | null
+    remove_persona: (persona: Persona, _callback_?: Gio.AsyncReadyCallback | null) => void
+    remove_persona_finish: (_res_: Gio.AsyncResult) => void
     static name: string
 }
-export class PersonaStorePrivate {
+class PersonaStorePrivate {
     static name: string
 }
-export abstract class PersonaClass {
-    /* Fields of Folks.PersonaClass */
-    linkable_property_to_links: (self: Persona, prop_name: string, callback: any) => void
+abstract class PersonaClass {
+    /* Fields of Folks-0.6.Folks.PersonaClass */
+    linkable_property_to_links: (prop_name: string, callback: any) => void
     static name: string
 }
-export class PersonaPrivate {
+class PersonaPrivate {
     static name: string
 }
-export abstract class PhoneFieldDetailsClass {
+abstract class PhoneFieldDetailsClass {
     static name: string
 }
-export class PhoneFieldDetailsPrivate {
+class PhoneFieldDetailsPrivate {
     static name: string
 }
-export abstract class PostalAddressClass {
+abstract class PostalAddressClass {
     static name: string
 }
-export class PostalAddressPrivate {
+class PostalAddressPrivate {
     static name: string
 }
-export abstract class PostalAddressFieldDetailsClass {
+abstract class PostalAddressFieldDetailsClass {
     static name: string
 }
-export class PostalAddressFieldDetailsPrivate {
+class PostalAddressFieldDetailsPrivate {
     static name: string
 }
-export abstract class PotentialMatchClass {
+abstract class PotentialMatchClass {
     static name: string
 }
-export class PotentialMatchPrivate {
+class PotentialMatchPrivate {
     static name: string
 }
-export abstract class QueryClass {
-    /* Fields of Folks.QueryClass */
-    is_match: (self: Query, individual: Individual) => number
+abstract class QueryClass {
+    /* Fields of Folks-0.6.Folks.QueryClass */
+    is_match: (individual: Individual) => number
     static name: string
 }
-export class QueryPrivate {
+class QueryPrivate {
     static name: string
 }
-export abstract class RoleClass {
+abstract class RoleClass {
     static name: string
 }
-export class RolePrivate {
+class RolePrivate {
     static name: string
 }
-export abstract class RoleFieldDetailsClass {
+abstract class RoleFieldDetailsClass {
     static name: string
 }
-export class RoleFieldDetailsPrivate {
+class RoleFieldDetailsPrivate {
     static name: string
 }
-export abstract class SearchViewClass {
+abstract class SearchViewClass {
     static name: string
 }
-export class SearchViewPrivate {
+class SearchViewPrivate {
     static name: string
 }
-export abstract class SimpleQueryClass {
+abstract class SimpleQueryClass {
     static name: string
 }
-export class SimpleQueryPrivate {
+class SimpleQueryPrivate {
     static name: string
 }
-export abstract class UrlFieldDetailsClass {
+abstract class UrlFieldDetailsClass {
     static name: string
 }
-export class UrlFieldDetailsPrivate {
+class UrlFieldDetailsPrivate {
     static name: string
 }
-export abstract class UtilsClass {
+abstract class UtilsClass {
     static name: string
 }
-export class UtilsPrivate {
+class UtilsPrivate {
     static name: string
 }
-export abstract class WebServiceFieldDetailsClass {
+abstract class WebServiceFieldDetailsClass {
     static name: string
 }
-export class WebServiceFieldDetailsPrivate {
+class WebServiceFieldDetailsPrivate {
     static name: string
 }
-export abstract class AliasDetailsIface {
-    /* Fields of Folks.AliasDetailsIface */
-    change_alias: (self: AliasDetails, alias: string, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_alias_finish: (self: AliasDetails, _res_: Gio.AsyncResult) => void
-    get_alias: (self: AliasDetails) => string
-    set_alias: (self: AliasDetails, value: string) => void
+abstract class AliasDetailsIface {
+    /* Fields of Folks-0.6.Folks.AliasDetailsIface */
+    change_alias: (alias: string, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_alias_finish: (_res_: Gio.AsyncResult) => void
+    get_alias: () => string
+    set_alias: (value: string) => void
     static name: string
 }
-export abstract class AntiLinkableIface {
-    /* Fields of Folks.AntiLinkableIface */
-    change_anti_links: (self: AntiLinkable, anti_links: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_anti_links_finish: (self: AntiLinkable, _res_: Gio.AsyncResult) => void
-    get_anti_links: (self: AntiLinkable) => Gee.Set
-    set_anti_links: (self: AntiLinkable, value: Gee.Set) => void
+abstract class AntiLinkableIface {
+    /* Fields of Folks-0.6.Folks.AntiLinkableIface */
+    change_anti_links: (anti_links: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_anti_links_finish: (_res_: Gio.AsyncResult) => void
+    get_anti_links: () => Gee.Set
+    set_anti_links: (value: Gee.Set) => void
     static name: string
 }
-export abstract class AvatarDetailsIface {
-    /* Fields of Folks.AvatarDetailsIface */
-    change_avatar: (self: AvatarDetails, avatar?: Gio.LoadableIcon | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_avatar_finish: (self: AvatarDetails, _res_: Gio.AsyncResult) => void
-    get_avatar: (self: AvatarDetails) => Gio.LoadableIcon | null
-    set_avatar: (self: AvatarDetails, value?: Gio.LoadableIcon | null) => void
+abstract class AvatarDetailsIface {
+    /* Fields of Folks-0.6.Folks.AvatarDetailsIface */
+    change_avatar: (avatar?: Gio.LoadableIcon | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_avatar_finish: (_res_: Gio.AsyncResult) => void
+    get_avatar: () => Gio.LoadableIcon | null
+    set_avatar: (value?: Gio.LoadableIcon | null) => void
     static name: string
 }
-export abstract class BirthdayDetailsIface {
-    /* Fields of Folks.BirthdayDetailsIface */
-    change_birthday: (self: BirthdayDetails, birthday?: GLib.DateTime | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_birthday_finish: (self: BirthdayDetails, _res_: Gio.AsyncResult) => void
-    change_calendar_event_id: (self: BirthdayDetails, event_id?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_calendar_event_id_finish: (self: BirthdayDetails, _res_: Gio.AsyncResult) => void
-    get_birthday: (self: BirthdayDetails) => GLib.DateTime | null
-    set_birthday: (self: BirthdayDetails, value?: GLib.DateTime | null) => void
-    get_calendar_event_id: (self: BirthdayDetails) => string | null
-    set_calendar_event_id: (self: BirthdayDetails, value?: string | null) => void
+abstract class BirthdayDetailsIface {
+    /* Fields of Folks-0.6.Folks.BirthdayDetailsIface */
+    change_birthday: (birthday?: GLib.DateTime | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_birthday_finish: (_res_: Gio.AsyncResult) => void
+    change_calendar_event_id: (event_id?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_calendar_event_id_finish: (_res_: Gio.AsyncResult) => void
+    get_birthday: () => GLib.DateTime | null
+    set_birthday: (value?: GLib.DateTime | null) => void
+    get_calendar_event_id: () => string | null
+    set_calendar_event_id: (value?: string | null) => void
     static name: string
 }
-export abstract class EmailDetailsIface {
-    /* Fields of Folks.EmailDetailsIface */
-    change_email_addresses: (self: EmailDetails, email_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_email_addresses_finish: (self: EmailDetails, _res_: Gio.AsyncResult) => void
-    get_email_addresses: (self: EmailDetails) => Gee.Set
-    set_email_addresses: (self: EmailDetails, value: Gee.Set) => void
+abstract class EmailDetailsIface {
+    /* Fields of Folks-0.6.Folks.EmailDetailsIface */
+    change_email_addresses: (email_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_email_addresses_finish: (_res_: Gio.AsyncResult) => void
+    get_email_addresses: () => Gee.Set
+    set_email_addresses: (value: Gee.Set) => void
     static name: string
 }
-export abstract class ExtendedInfoIface {
-    /* Fields of Folks.ExtendedInfoIface */
-    get_extended_field: (self: ExtendedInfo, name: string) => ExtendedFieldDetails | null
-    change_extended_field: (self: ExtendedInfo, name: string, value: ExtendedFieldDetails, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_extended_field_finish: (self: ExtendedInfo, _res_: Gio.AsyncResult) => void
-    remove_extended_field: (self: ExtendedInfo, name: string, _callback_?: Gio.AsyncReadyCallback | null) => void
-    remove_extended_field_finish: (self: ExtendedInfo, _res_: Gio.AsyncResult) => void
+abstract class ExtendedInfoIface {
+    /* Fields of Folks-0.6.Folks.ExtendedInfoIface */
+    get_extended_field: (name: string) => ExtendedFieldDetails | null
+    change_extended_field: (name: string, value: ExtendedFieldDetails, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_extended_field_finish: (_res_: Gio.AsyncResult) => void
+    remove_extended_field: (name: string, _callback_?: Gio.AsyncReadyCallback | null) => void
+    remove_extended_field_finish: (_res_: Gio.AsyncResult) => void
     static name: string
 }
-export abstract class FavouriteDetailsIface {
-    /* Fields of Folks.FavouriteDetailsIface */
-    change_is_favourite: (self: FavouriteDetails, is_favourite: boolean, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_is_favourite_finish: (self: FavouriteDetails, _res_: Gio.AsyncResult) => void
-    get_is_favourite: (self: FavouriteDetails) => boolean
-    set_is_favourite: (self: FavouriteDetails, value: boolean) => void
+abstract class FavouriteDetailsIface {
+    /* Fields of Folks-0.6.Folks.FavouriteDetailsIface */
+    change_is_favourite: (is_favourite: boolean, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_is_favourite_finish: (_res_: Gio.AsyncResult) => void
+    get_is_favourite: () => boolean
+    set_is_favourite: (value: boolean) => void
     static name: string
 }
-export abstract class GenderDetailsIface {
-    /* Fields of Folks.GenderDetailsIface */
-    change_gender: (self: GenderDetails, gender: Gender, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_gender_finish: (self: GenderDetails, _res_: Gio.AsyncResult) => void
-    get_gender: (self: GenderDetails) => Gender
-    set_gender: (self: GenderDetails, value: Gender) => void
+abstract class GenderDetailsIface {
+    /* Fields of Folks-0.6.Folks.GenderDetailsIface */
+    change_gender: (gender: Gender, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_gender_finish: (_res_: Gio.AsyncResult) => void
+    get_gender: () => Gender
+    set_gender: (value: Gender) => void
     static name: string
 }
-export abstract class GroupDetailsIface {
-    /* Fields of Folks.GroupDetailsIface */
-    change_group: (self: GroupDetails, group: string, is_member: boolean, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_group_finish: (self: GroupDetails, _res_: Gio.AsyncResult) => void
-    change_groups: (self: GroupDetails, groups: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_groups_finish: (self: GroupDetails, _res_: Gio.AsyncResult) => void
-    get_groups: (self: GroupDetails) => Gee.Set
-    set_groups: (self: GroupDetails, value: Gee.Set) => void
+abstract class GroupDetailsIface {
+    /* Fields of Folks-0.6.Folks.GroupDetailsIface */
+    change_group: (group: string, is_member: boolean, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_group_finish: (_res_: Gio.AsyncResult) => void
+    change_groups: (groups: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_groups_finish: (_res_: Gio.AsyncResult) => void
+    get_groups: () => Gee.Set
+    set_groups: (value: Gee.Set) => void
     static name: string
 }
-export abstract class ImDetailsIface {
-    /* Fields of Folks.ImDetailsIface */
-    change_im_addresses: (self: ImDetails, im_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_im_addresses_finish: (self: ImDetails, _res_: Gio.AsyncResult) => void
-    get_im_addresses: (self: ImDetails) => Gee.MultiMap
-    set_im_addresses: (self: ImDetails, value: Gee.MultiMap) => void
+abstract class ImDetailsIface {
+    /* Fields of Folks-0.6.Folks.ImDetailsIface */
+    change_im_addresses: (im_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_im_addresses_finish: (_res_: Gio.AsyncResult) => void
+    get_im_addresses: () => Gee.MultiMap
+    set_im_addresses: (value: Gee.MultiMap) => void
     static name: string
 }
-export abstract class InteractionDetailsIface {
-    /* Fields of Folks.InteractionDetailsIface */
-    get_im_interaction_count: (self: InteractionDetails) => number
-    get_last_im_interaction_datetime: (self: InteractionDetails) => GLib.DateTime | null
-    get_call_interaction_count: (self: InteractionDetails) => number
-    get_last_call_interaction_datetime: (self: InteractionDetails) => GLib.DateTime | null
+abstract class InteractionDetailsIface {
+    /* Fields of Folks-0.6.Folks.InteractionDetailsIface */
+    get_im_interaction_count: () => number
+    get_last_im_interaction_datetime: () => GLib.DateTime | null
+    get_call_interaction_count: () => number
+    get_last_call_interaction_datetime: () => GLib.DateTime | null
     static name: string
 }
-export abstract class LocalIdDetailsIface {
-    /* Fields of Folks.LocalIdDetailsIface */
-    change_local_ids: (self: LocalIdDetails, local_ids: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_local_ids_finish: (self: LocalIdDetails, _res_: Gio.AsyncResult) => void
-    get_local_ids: (self: LocalIdDetails) => Gee.Set
-    set_local_ids: (self: LocalIdDetails, value: Gee.Set) => void
+abstract class LocalIdDetailsIface {
+    /* Fields of Folks-0.6.Folks.LocalIdDetailsIface */
+    change_local_ids: (local_ids: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_local_ids_finish: (_res_: Gio.AsyncResult) => void
+    get_local_ids: () => Gee.Set
+    set_local_ids: (value: Gee.Set) => void
     static name: string
 }
-export abstract class LocationDetailsIface {
-    /* Fields of Folks.LocationDetailsIface */
-    change_location: (self: LocationDetails, location?: Location | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_location_finish: (self: LocationDetails, _res_: Gio.AsyncResult) => void
-    get_location: (self: LocationDetails) => Location | null
-    set_location: (self: LocationDetails, value?: Location | null) => void
+abstract class LocationDetailsIface {
+    /* Fields of Folks-0.6.Folks.LocationDetailsIface */
+    change_location: (location?: Location | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_location_finish: (_res_: Gio.AsyncResult) => void
+    get_location: () => Location | null
+    set_location: (value?: Location | null) => void
     static name: string
 }
-export abstract class NameDetailsIface {
-    /* Fields of Folks.NameDetailsIface */
-    change_structured_name: (self: NameDetails, name?: StructuredName | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_structured_name_finish: (self: NameDetails, _res_: Gio.AsyncResult) => void
-    change_full_name: (self: NameDetails, full_name: string, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_full_name_finish: (self: NameDetails, _res_: Gio.AsyncResult) => void
-    change_nickname: (self: NameDetails, nickname: string, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_nickname_finish: (self: NameDetails, _res_: Gio.AsyncResult) => void
-    get_structured_name: (self: NameDetails) => StructuredName | null
-    set_structured_name: (self: NameDetails, value?: StructuredName | null) => void
-    get_full_name: (self: NameDetails) => string
-    set_full_name: (self: NameDetails, value: string) => void
-    get_nickname: (self: NameDetails) => string
-    set_nickname: (self: NameDetails, value: string) => void
+abstract class NameDetailsIface {
+    /* Fields of Folks-0.6.Folks.NameDetailsIface */
+    change_structured_name: (name?: StructuredName | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_structured_name_finish: (_res_: Gio.AsyncResult) => void
+    change_full_name: (full_name: string, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_full_name_finish: (_res_: Gio.AsyncResult) => void
+    change_nickname: (nickname: string, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_nickname_finish: (_res_: Gio.AsyncResult) => void
+    get_structured_name: () => StructuredName | null
+    set_structured_name: (value?: StructuredName | null) => void
+    get_full_name: () => string
+    set_full_name: (value: string) => void
+    get_nickname: () => string
+    set_nickname: (value: string) => void
     static name: string
 }
-export abstract class NoteDetailsIface {
-    /* Fields of Folks.NoteDetailsIface */
-    change_notes: (self: NoteDetails, notes: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_notes_finish: (self: NoteDetails, _res_: Gio.AsyncResult) => void
-    get_notes: (self: NoteDetails) => Gee.Set
-    set_notes: (self: NoteDetails, value: Gee.Set) => void
+abstract class NoteDetailsIface {
+    /* Fields of Folks-0.6.Folks.NoteDetailsIface */
+    change_notes: (notes: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_notes_finish: (_res_: Gio.AsyncResult) => void
+    get_notes: () => Gee.Set
+    set_notes: (value: Gee.Set) => void
     static name: string
 }
-export abstract class PhoneDetailsIface {
-    /* Fields of Folks.PhoneDetailsIface */
-    change_phone_numbers: (self: PhoneDetails, phone_numbers: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_phone_numbers_finish: (self: PhoneDetails, _res_: Gio.AsyncResult) => void
-    get_phone_numbers: (self: PhoneDetails) => Gee.Set
-    set_phone_numbers: (self: PhoneDetails, value: Gee.Set) => void
+abstract class PhoneDetailsIface {
+    /* Fields of Folks-0.6.Folks.PhoneDetailsIface */
+    change_phone_numbers: (phone_numbers: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_phone_numbers_finish: (_res_: Gio.AsyncResult) => void
+    get_phone_numbers: () => Gee.Set
+    set_phone_numbers: (value: Gee.Set) => void
     static name: string
 }
-export abstract class PostalAddressDetailsIface {
-    /* Fields of Folks.PostalAddressDetailsIface */
-    change_postal_addresses: (self: PostalAddressDetails, postal_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_postal_addresses_finish: (self: PostalAddressDetails, _res_: Gio.AsyncResult) => void
-    get_postal_addresses: (self: PostalAddressDetails) => Gee.Set
-    set_postal_addresses: (self: PostalAddressDetails, value: Gee.Set) => void
+abstract class PostalAddressDetailsIface {
+    /* Fields of Folks-0.6.Folks.PostalAddressDetailsIface */
+    change_postal_addresses: (postal_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_postal_addresses_finish: (_res_: Gio.AsyncResult) => void
+    get_postal_addresses: () => Gee.Set
+    set_postal_addresses: (value: Gee.Set) => void
     static name: string
 }
-export abstract class PresenceDetailsIface {
-    /* Fields of Folks.PresenceDetailsIface */
-    get_presence_type: (self: PresenceDetails) => PresenceType
-    set_presence_type: (self: PresenceDetails, value: PresenceType) => void
-    get_presence_message: (self: PresenceDetails) => string
-    set_presence_message: (self: PresenceDetails, value: string) => void
-    get_client_types: (self: PresenceDetails) => string[]
-    set_client_types: (self: PresenceDetails, value: string[]) => void
-    get_presence_status: (self: PresenceDetails) => string
-    set_presence_status: (self: PresenceDetails, value: string) => void
+abstract class PresenceDetailsIface {
+    /* Fields of Folks-0.6.Folks.PresenceDetailsIface */
+    get_presence_type: () => PresenceType
+    set_presence_type: (value: PresenceType) => void
+    get_presence_message: () => string
+    set_presence_message: (value: string) => void
+    get_client_types: () => string[]
+    set_client_types: (value: string[]) => void
+    get_presence_status: () => string
+    set_presence_status: (value: string) => void
     static name: string
 }
-export abstract class RoleDetailsIface {
-    /* Fields of Folks.RoleDetailsIface */
-    change_roles: (self: RoleDetails, roles: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_roles_finish: (self: RoleDetails, _res_: Gio.AsyncResult) => void
-    get_roles: (self: RoleDetails) => Gee.Set
-    set_roles: (self: RoleDetails, value: Gee.Set) => void
+abstract class RoleDetailsIface {
+    /* Fields of Folks-0.6.Folks.RoleDetailsIface */
+    change_roles: (roles: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_roles_finish: (_res_: Gio.AsyncResult) => void
+    get_roles: () => Gee.Set
+    set_roles: (value: Gee.Set) => void
     static name: string
 }
-export abstract class UrlDetailsIface {
-    /* Fields of Folks.UrlDetailsIface */
-    change_urls: (self: UrlDetails, urls: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_urls_finish: (self: UrlDetails, _res_: Gio.AsyncResult) => void
-    get_urls: (self: UrlDetails) => Gee.Set
-    set_urls: (self: UrlDetails, value: Gee.Set) => void
+abstract class UrlDetailsIface {
+    /* Fields of Folks-0.6.Folks.UrlDetailsIface */
+    change_urls: (urls: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_urls_finish: (_res_: Gio.AsyncResult) => void
+    get_urls: () => Gee.Set
+    set_urls: (value: Gee.Set) => void
     static name: string
 }
-export abstract class WebServiceDetailsIface {
-    /* Fields of Folks.WebServiceDetailsIface */
-    change_web_service_addresses: (self: WebServiceDetails, web_service_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_web_service_addresses_finish: (self: WebServiceDetails, _res_: Gio.AsyncResult) => void
-    get_web_service_addresses: (self: WebServiceDetails) => Gee.MultiMap
-    set_web_service_addresses: (self: WebServiceDetails, value: Gee.MultiMap) => void
+abstract class WebServiceDetailsIface {
+    /* Fields of Folks-0.6.Folks.WebServiceDetailsIface */
+    change_web_service_addresses: (web_service_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null) => void
+    change_web_service_addresses_finish: (_res_: Gio.AsyncResult) => void
+    get_web_service_addresses: () => Gee.MultiMap
+    set_web_service_addresses: (value: Gee.MultiMap) => void
     static name: string
 }
+}
+export default Folks;

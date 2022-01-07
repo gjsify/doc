@@ -1,2 +1,2 @@
-imports.gi.versions.DMAP = '3.0'
-export default imports.gi.DMAP
+import DMAP from 'gi://DMAP?version=3.0';
+export default DMAP;

@@ -3,32 +3,34 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Soup from './Soup-2.4';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Json from './Json-1.0';
+import type Soup from './Soup-2.4';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Json from './Json-1.0';
 
-export enum Error {
+export namespace GeocodeGlib {
+
+enum Error {
     PARSE,
     NOT_SUPPORTED,
     NO_MATCHES,
     INVALID_ARGUMENTS,
     INTERNAL_SERVER,
 }
-export enum LocationCRS {
+enum LocationCRS {
     WGS84,
 }
-export enum LocationURIScheme {
+enum LocationURIScheme {
     GEO,
 }
-export enum PlaceOsmType {
+enum PlaceOsmType {
     UNKNOWN,
     NODE,
     RELATION,
     WAY,
 }
-export enum PlaceType {
+enum PlaceType {
     UNKNOWN,
     BUILDING,
     STREET,
@@ -71,16 +73,16 @@ export const LOCATION_ACCURACY_COUNTRY: number
 export const LOCATION_ACCURACY_REGION: number
 export const LOCATION_ACCURACY_STREET: number
 export const LOCATION_ACCURACY_UNKNOWN: number
-export function error_quark(): GLib.Quark
-export class Backend {
-    /* Methods of GeocodeGlib.Backend */
+function error_quark(): GLib.Quark
+class Backend {
+    /* Methods of GeocodeGlib-1.0.GeocodeGlib.Backend */
     forward_search(params: GLib.HashTable, cancellable?: Gio.Cancellable | null): Place[]
     forward_search_async(params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     forward_search_finish(result: Gio.AsyncResult): Place[]
     reverse_resolve(params: GLib.HashTable, cancellable?: Gio.Cancellable | null): Place[]
     reverse_resolve_async(params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     reverse_resolve_finish(result: Gio.AsyncResult): Place[]
-    /* Virtual methods of GeocodeGlib.Backend */
+    /* Virtual methods of GeocodeGlib-1.0.GeocodeGlib.Backend */
     vfunc_forward_search(params: GLib.HashTable, cancellable?: Gio.Cancellable | null): Place[]
     vfunc_forward_search_async(params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_forward_search_finish(result: Gio.AsyncResult): Place[]
@@ -95,24 +97,24 @@ export interface BoundingBox_ConstructProps extends GObject.Object_ConstructProp
     right?: number
     top?: number
 }
-export class BoundingBox {
-    /* Fields of GObject.Object */
+class BoundingBox {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GeocodeGlib.BoundingBox */
+    /* Methods of GeocodeGlib-1.0.GeocodeGlib.BoundingBox */
     equal(b: BoundingBox): boolean
     get_bottom(): number
     get_left(): number
     get_right(): number
     get_top(): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -120,21 +122,21 @@ export class BoundingBox {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BoundingBox, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BoundingBox, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -154,14 +156,14 @@ export interface Forward_ConstructProps extends GObject.Object_ConstructProps {
     bounded?: boolean
     search_area?: BoundingBox
 }
-export class Forward {
-    /* Properties of GeocodeGlib.Forward */
+class Forward {
+    /* Properties of GeocodeGlib-1.0.GeocodeGlib.Forward */
     answer_count: number
     bounded: boolean
     search_area: BoundingBox
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GeocodeGlib.Forward */
+    /* Methods of GeocodeGlib-1.0.GeocodeGlib.Forward */
     get_answer_count(): number
     get_bounded(): boolean
     get_search_area(): BoundingBox | null
@@ -172,15 +174,15 @@ export class Forward {
     set_backend(backend?: Backend | null): void
     set_bounded(bounded: boolean): void
     set_search_area(box: BoundingBox): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -188,21 +190,21 @@ export class Forward {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Forward, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Forward, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -233,16 +235,16 @@ export interface Location_ConstructProps extends GObject.Object_ConstructProps {
     longitude?: number
     timestamp?: number
 }
-export class Location {
-    /* Properties of GeocodeGlib.Location */
+class Location {
+    /* Properties of GeocodeGlib-1.0.GeocodeGlib.Location */
     accuracy: number
     altitude: number
     description: string
     latitude: number
     longitude: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GeocodeGlib.Location */
+    /* Methods of GeocodeGlib-1.0.GeocodeGlib.Location */
     equal(b: Location): boolean
     get_accuracy(): number
     get_altitude(): number
@@ -255,15 +257,15 @@ export class Location {
     set_description(description: string): void
     set_from_uri(uri: string): boolean
     to_uri(scheme: LocationURIScheme): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -271,21 +273,21 @@ export class Location {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Location, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Location, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -313,23 +315,23 @@ export class Location {
 }
 export interface MockBackend_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class MockBackend {
-    /* Fields of GObject.Object */
+class MockBackend {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GeocodeGlib.MockBackend */
+    /* Methods of GeocodeGlib-1.0.GeocodeGlib.MockBackend */
     add_forward_result(params: GLib.HashTable, results?: Place[] | null, error?: GLib.Error | null): void
     add_reverse_result(params: GLib.HashTable, results?: Place[] | null, error?: GLib.Error | null): void
     clear(): void
     get_query_log(): MockBackendQuery[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -337,35 +339,35 @@ export class MockBackend {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GeocodeGlib.Backend */
+    watch_closure(closure: Function): void
+    /* Methods of GeocodeGlib-1.0.GeocodeGlib.Backend */
     forward_search(params: GLib.HashTable, cancellable?: Gio.Cancellable | null): Place[]
     forward_search_async(params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     forward_search_finish(result: Gio.AsyncResult): Place[]
     reverse_resolve(params: GLib.HashTable, cancellable?: Gio.Cancellable | null): Place[]
     reverse_resolve_async(params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     reverse_resolve_finish(result: Gio.AsyncResult): Place[]
-    /* Virtual methods of GeocodeGlib.MockBackend */
+    /* Virtual methods of GeocodeGlib-1.0.GeocodeGlib.MockBackend */
     vfunc_forward_search(params: GLib.HashTable, cancellable?: Gio.Cancellable | null): Place[]
     vfunc_forward_search_async(params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_forward_search_finish(result: Gio.AsyncResult): Place[]
     vfunc_reverse_resolve(params: GLib.HashTable, cancellable?: Gio.Cancellable | null): Place[]
     vfunc_reverse_resolve_async(params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_reverse_resolve_finish(result: Gio.AsyncResult): Place[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MockBackend, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MockBackend, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -385,22 +387,22 @@ export interface Nominatim_ConstructProps extends GObject.Object_ConstructProps 
     maintainer_email_address?: string
     user_agent?: string
 }
-export class Nominatim {
-    /* Properties of GeocodeGlib.Nominatim */
+class Nominatim {
+    /* Properties of GeocodeGlib-1.0.GeocodeGlib.Nominatim */
     user_agent: string
-    /* Fields of GeocodeGlib.Nominatim */
+    /* Fields of GeocodeGlib-1.0.GeocodeGlib.Nominatim */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -408,20 +410,20 @@ export class Nominatim {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GeocodeGlib.Backend */
+    watch_closure(closure: Function): void
+    /* Methods of GeocodeGlib-1.0.GeocodeGlib.Backend */
     forward_search(params: GLib.HashTable, cancellable?: Gio.Cancellable | null): Place[]
     forward_search_async(params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     forward_search_finish(result: Gio.AsyncResult): Place[]
     reverse_resolve(params: GLib.HashTable, cancellable?: Gio.Cancellable | null): Place[]
     reverse_resolve_async(params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     reverse_resolve_finish(result: Gio.AsyncResult): Place[]
-    /* Virtual methods of GeocodeGlib.Nominatim */
+    /* Virtual methods of GeocodeGlib-1.0.GeocodeGlib.Nominatim */
     vfunc_query(uri: string, cancellable?: Gio.Cancellable | null): string
     vfunc_query_async(uri: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_query_finish(res: Gio.AsyncResult): string
@@ -431,15 +433,15 @@ export class Nominatim {
     vfunc_reverse_resolve(params: GLib.HashTable, cancellable?: Gio.Cancellable | null): Place[]
     vfunc_reverse_resolve_async(params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_reverse_resolve_finish(result: Gio.AsyncResult): Place[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Nominatim, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Nominatim, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -477,8 +479,8 @@ export interface Place_ConstructProps extends GObject.Object_ConstructProps {
     street_address?: string
     town?: string
 }
-export class Place {
-    /* Properties of GeocodeGlib.Place */
+class Place {
+    /* Properties of GeocodeGlib-1.0.GeocodeGlib.Place */
     administrative_area: string
     area: string
     bounding_box: BoundingBox
@@ -497,9 +499,9 @@ export class Place {
     street: string
     street_address: string
     town: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GeocodeGlib.Place */
+    /* Methods of GeocodeGlib-1.0.GeocodeGlib.Place */
     equal(b: Place): boolean
     get_administrative_area(): string
     get_area(): string
@@ -535,15 +537,15 @@ export class Place {
     set_street(street: string): void
     set_street_address(street_address: string): void
     set_town(town: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -551,21 +553,21 @@ export class Place {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Place, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Place, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -619,23 +621,23 @@ export class Place {
 }
 export interface Reverse_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Reverse {
-    /* Fields of GObject.Object */
+class Reverse {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GeocodeGlib.Reverse */
+    /* Methods of GeocodeGlib-1.0.GeocodeGlib.Reverse */
     resolve(): Place
     resolve_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     resolve_finish(res: Gio.AsyncResult): Place
     set_backend(backend?: Backend | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -643,21 +645,21 @@ export class Reverse {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Reverse, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Reverse, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -672,8 +674,8 @@ export class Reverse {
     static new_for_location(location: Location): Reverse
     static $gtype: GObject.Type
 }
-export abstract class BackendInterface {
-    /* Fields of GeocodeGlib.BackendInterface */
+abstract class BackendInterface {
+    /* Fields of GeocodeGlib-1.0.GeocodeGlib.BackendInterface */
     forward_search: (backend: Backend, params: GLib.HashTable, cancellable?: Gio.Cancellable | null) => Place[]
     forward_search_async: (backend: Backend, params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
     forward_search_finish: (backend: Backend, result: Gio.AsyncResult) => Place[]
@@ -682,54 +684,56 @@ export abstract class BackendInterface {
     reverse_resolve_finish: (backend: Backend, result: Gio.AsyncResult) => Place[]
     static name: string
 }
-export abstract class BoundingBoxClass {
+abstract class BoundingBoxClass {
     static name: string
 }
-export class BoundingBoxPrivate {
+class BoundingBoxPrivate {
     static name: string
 }
-export abstract class ForwardClass {
+abstract class ForwardClass {
     static name: string
 }
-export class ForwardPrivate {
+class ForwardPrivate {
     static name: string
 }
-export abstract class LocationClass {
+abstract class LocationClass {
     static name: string
 }
-export class LocationPrivate {
+class LocationPrivate {
     static name: string
 }
-export abstract class MockBackendClass {
-    /* Fields of GeocodeGlib.MockBackendClass */
+abstract class MockBackendClass {
+    /* Fields of GeocodeGlib-1.0.GeocodeGlib.MockBackendClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class MockBackendQuery {
-    /* Fields of GeocodeGlib.MockBackendQuery */
+class MockBackendQuery {
+    /* Fields of GeocodeGlib-1.0.GeocodeGlib.MockBackendQuery */
     params: GLib.HashTable
     is_forward: boolean
     results: Place[]
     error: GLib.Error
     static name: string
 }
-export abstract class NominatimClass {
-    /* Fields of GeocodeGlib.NominatimClass */
+abstract class NominatimClass {
+    /* Fields of GeocodeGlib-1.0.GeocodeGlib.NominatimClass */
     parent_class: GObject.ObjectClass
     query: (self: Nominatim, uri: string, cancellable?: Gio.Cancellable | null) => string
     query_async: (self: Nominatim, uri: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
     query_finish: (self: Nominatim, res: Gio.AsyncResult) => string
     static name: string
 }
-export abstract class PlaceClass {
+abstract class PlaceClass {
     static name: string
 }
-export class PlacePrivate {
+class PlacePrivate {
     static name: string
 }
-export abstract class ReverseClass {
+abstract class ReverseClass {
     static name: string
 }
-export class ReversePrivate {
+class ReversePrivate {
     static name: string
 }
+}
+export default GeocodeGlib;

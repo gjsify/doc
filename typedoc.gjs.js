@@ -1,10 +1,12 @@
 module.exports = {
     out: './docs/gjs/',
     readme: 'none',
-    includes: './@types/Gjs',
+    includes: './@types/Gjs/',
+    tsconfig: './tsconfig.gjs.json',
+    entryPointStrategy: 'expand',
     exclude: [
         // TODO fix duplicate identifiers
-        '@types/Gjs/index.d.ts',
+        // '@types/Gjs/index.d.ts',
         
         // Has errors
         '@types/Gjs/Clutter-1.0.d.ts',

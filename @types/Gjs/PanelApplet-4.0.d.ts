@@ -3,34 +3,36 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as xlib from './xlib-2.0';
-import type * as cairo from './cairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Gtk from './Gtk-3.0';
-import type * as Gdk from './Gdk-3.0';
-import type * as Gio from './Gio-2.0';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as Atk from './Atk-1.0';
-import type * as GConf from './GConf-2.0';
+import type xlib from './xlib-2.0';
+import type cairo from './cairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Gtk from './Gtk-3.0';
+import type Gdk from './Gdk-3.0';
+import type Gio from './Gio-2.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type GModule from './GModule-2.0';
+import type Atk from './Atk-1.0';
+import type GConf from './GConf-2.0';
 
-export enum AppletOrient {
+export namespace PanelApplet {
+
+enum AppletOrient {
     UP,
     DOWN,
     LEFT,
     RIGHT,
 }
-export enum AppletFlags {
+enum AppletFlags {
     FLAGS_NONE,
     EXPAND_MAJOR,
     EXPAND_MINOR,
     HAS_HANDLE,
 }
 export const APPLET_FLAGS_ALL: number
-export interface AppletFactoryCallback {
+interface AppletFactoryCallback {
     (applet: Applet, iid: string): boolean
 }
 export interface Applet_ConstructProps extends Gtk.EventBox_ConstructProps {
@@ -42,8 +44,8 @@ export interface Applet_ConstructProps extends Gtk.EventBox_ConstructProps {
     size?: number
     size_hints?: object
 }
-export class Applet {
-    /* Properties of PanelApplet.Applet */
+class Applet {
+    /* Properties of PanelApplet-4.0.PanelApplet.Applet */
     flags: number
     locked_down: boolean
     orient: number
@@ -51,14 +53,14 @@ export class Applet {
     settings_path: string
     size: number
     size_hints: object
-    /* Properties of Gtk.EventBox */
+    /* Properties of Gtk-3.0.Gtk.EventBox */
     above_child: boolean
     visible_window: boolean
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -98,19 +100,19 @@ export class Applet {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of PanelApplet.Applet */
+    /* Fields of PanelApplet-4.0.PanelApplet.Applet */
     event_box: Gtk.EventBox
-    /* Fields of Gtk.EventBox */
+    /* Fields of Gtk-3.0.Gtk.EventBox */
     bin: Gtk.Bin
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of PanelApplet.Applet */
+    /* Methods of PanelApplet-4.0.PanelApplet.Applet */
     add_preferences(schema_dir: string): void
     gconf_get_bool(key: string): boolean
     gconf_get_float(key: string): number
@@ -136,17 +138,18 @@ export class Applet {
     setup_menu(xml: string, action_group: Gtk.ActionGroup): void
     setup_menu_from_file(filename: string, action_group: Gtk.ActionGroup): void
     setup_menu_from_resource(resource_path: string, action_group: Gtk.ActionGroup): void
-    /* Methods of Gtk.EventBox */
+    /* Methods of Gtk-3.0.Gtk.EventBox */
     get_above_child(): boolean
     get_visible_window(): boolean
     set_above_child(above_child: boolean): void
     set_visible_window(visible_window: boolean): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -171,7 +174,7 @@ export class Applet {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -430,15 +433,15 @@ export class Applet {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -446,13 +449,13 @@ export class Applet {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -461,7 +464,7 @@ export class Applet {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of PanelApplet.Applet */
+    /* Virtual methods of PanelApplet-4.0.PanelApplet.Applet */
     vfunc_change_background(pattern: cairo.Pattern): void
     vfunc_change_orient(orient: AppletOrient): void
     vfunc_change_size(size: number): void
@@ -476,7 +479,7 @@ export class Applet {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -487,7 +490,7 @@ export class Applet {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -570,15 +573,15 @@ export class Applet {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of PanelApplet.Applet */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of PanelApplet-4.0.PanelApplet.Applet */
     connect(sigName: "change-background", callback: (($obj: Applet, pattern: cairo.Pattern) => void)): number
     connect_after(sigName: "change-background", callback: (($obj: Applet, pattern: cairo.Pattern) => void)): number
     emit(sigName: "change-background", pattern: cairo.Pattern): void
@@ -591,7 +594,7 @@ export class Applet {
     connect(sigName: "move-focus-out-of-applet", callback: (($obj: Applet, direction: Gtk.DirectionType) => void)): number
     connect_after(sigName: "move-focus-out-of-applet", callback: (($obj: Applet, direction: Gtk.DirectionType) => void)): number
     emit(sigName: "move-focus-out-of-applet", direction: Gtk.DirectionType): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: Applet, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: Applet, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -604,7 +607,7 @@ export class Applet {
     connect(sigName: "set-focus-child", callback: (($obj: Applet, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: Applet, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: Applet) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: Applet) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -812,7 +815,7 @@ export class Applet {
     connect(sigName: "window-state-event", callback: (($obj: Applet, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: Applet, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Applet, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Applet, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -929,8 +932,8 @@ export class Applet {
     static factory_main(factory_id: string, applet_type: GObject.Type, callback: AppletFactoryCallback): number
     static $gtype: GObject.Type
 }
-export abstract class AppletClass {
-    /* Fields of PanelApplet.AppletClass */
+abstract class AppletClass {
+    /* Fields of PanelApplet-4.0.PanelApplet.AppletClass */
     event_box_class: Gtk.EventBoxClass
     change_orient: (applet: Applet, orient: AppletOrient) => void
     change_size: (applet: Applet, size: number) => void
@@ -938,6 +941,8 @@ export abstract class AppletClass {
     move_focus_out_of_applet: (frame: Applet, direction: Gtk.DirectionType) => void
     static name: string
 }
-export class AppletPrivate {
+class AppletPrivate {
     static name: string
 }
+}
+export default PanelApplet;

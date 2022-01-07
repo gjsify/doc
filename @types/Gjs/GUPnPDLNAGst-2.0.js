@@ -1,2 +1,2 @@
-imports.gi.versions.GUPnPDLNAGst = '2.0'
-export default imports.gi.GUPnPDLNAGst
+import GUPnPDLNAGst from 'gi://GUPnPDLNAGst?version=2.0';
+export default GUPnPDLNAGst;

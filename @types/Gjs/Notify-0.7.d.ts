@@ -3,13 +3,15 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as GModule from './GModule-2.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type GModule from './GModule-2.0';
 
-export enum Urgency {
+export namespace Notify {
+
+enum Urgency {
     LOW,
     NORMAL,
     CRITICAL,
@@ -19,14 +21,14 @@ export const EXPIRES_NEVER: number
 export const VERSION_MAJOR: number
 export const VERSION_MICRO: number
 export const VERSION_MINOR: number
-export function get_app_name(): string
-export function get_server_caps(): string[]
-export function get_server_info(): [ /* returnType */ boolean, /* ret_name */ string | null, /* ret_vendor */ string | null, /* ret_version */ string | null, /* ret_spec_version */ string | null ]
-export function init(app_name: string): boolean
-export function is_initted(): boolean
-export function set_app_name(app_name: string): void
-export function uninit(): void
-export interface ActionCallback {
+function get_app_name(): string
+function get_server_caps(): string[]
+function get_server_info(): [ /* returnType */ boolean, /* ret_name */ string | null, /* ret_vendor */ string | null, /* ret_version */ string | null, /* ret_spec_version */ string | null ]
+function init(app_name: string): boolean
+function is_initted(): boolean
+function set_app_name(app_name: string): void
+function uninit(): void
+interface ActionCallback {
     (notification: Notification, action: string): void
 }
 export interface Notification_ConstructProps extends GObject.Object_ConstructProps {
@@ -36,17 +38,17 @@ export interface Notification_ConstructProps extends GObject.Object_ConstructPro
     id?: number
     summary?: string
 }
-export class Notification {
-    /* Properties of Notify.Notification */
+class Notification {
+    /* Properties of Notify-0.7.Notify.Notification */
     app_name: string
     body: string
     readonly closed_reason: number
     icon_name: string
     id: number
     summary: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Notify.Notification */
+    /* Methods of Notify-0.7.Notify.Notification */
     add_action(action: string, label: string, callback: ActionCallback): void
     clear_actions(): void
     clear_hints(): void
@@ -67,15 +69,15 @@ export class Notification {
     set_urgency(urgency: Urgency): void
     show(): boolean
     update(summary: string, body?: string | null, icon?: string | null): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -83,27 +85,27 @@ export class Notification {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Notify.Notification */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Notify-0.7.Notify.Notification */
     vfunc_closed(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Notify.Notification */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Notify-0.7.Notify.Notification */
     connect(sigName: "closed", callback: (($obj: Notification) => void)): number
     connect_after(sigName: "closed", callback: (($obj: Notification) => void)): number
     emit(sigName: "closed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Notification, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Notification, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -130,12 +132,14 @@ export class Notification {
     static new(summary: string, body?: string | null, icon?: string | null): Notification
     static $gtype: GObject.Type
 }
-export abstract class NotificationClass {
-    /* Fields of Notify.NotificationClass */
+abstract class NotificationClass {
+    /* Fields of Notify-0.7.Notify.NotificationClass */
     parent_class: GObject.ObjectClass
     closed: (notification: Notification) => void
     static name: string
 }
-export class NotificationPrivate {
+class NotificationPrivate {
     static name: string
 }
+}
+export default Notify;

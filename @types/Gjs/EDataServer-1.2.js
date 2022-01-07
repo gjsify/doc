@@ -1,2 +1,2 @@
-imports.gi.versions.EDataServer = '1.2'
-export default imports.gi.EDataServer
+import EDataServer from 'gi://EDataServer?version=1.2';
+export default EDataServer;

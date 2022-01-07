@@ -1,2 +1,2 @@
-imports.gi.versions.GstNet = '1.0'
-export default imports.gi.GstNet
+import GstNet from 'gi://GstNet?version=1.0';
+export default GstNet;

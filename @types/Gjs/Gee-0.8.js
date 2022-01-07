@@ -1,2 +1,2 @@
-imports.gi.versions.Gee = '0.8'
-export default imports.gi.Gee
+import Gee from 'gi://Gee?version=0.8';
+export default Gee;

@@ -1,2 +1,2 @@
-imports.gi.versions.Epc = '1.0'
-export default imports.gi.Epc
+import Epc from 'gi://Epc?version=1.0';
+export default Epc;

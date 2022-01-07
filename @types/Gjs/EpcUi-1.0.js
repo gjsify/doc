@@ -1,2 +1,2 @@
-imports.gi.versions.EpcUi = '1.0'
-export default imports.gi.EpcUi
+import EpcUi from 'gi://EpcUi?version=1.0';
+export default EpcUi;

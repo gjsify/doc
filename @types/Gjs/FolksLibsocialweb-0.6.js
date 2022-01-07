@@ -1,2 +1,2 @@
-imports.gi.versions.FolksLibsocialweb = '0.6'
-export default imports.gi.FolksLibsocialweb
+import FolksLibsocialweb from 'gi://FolksLibsocialweb?version=0.6';
+export default FolksLibsocialweb;

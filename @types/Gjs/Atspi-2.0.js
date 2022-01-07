@@ -1,2 +1,2 @@
-imports.gi.versions.Atspi = '2.0'
-export default imports.gi.Atspi
+import Atspi from 'gi://Atspi?version=2.0';
+export default Atspi;

@@ -1,2 +1,2 @@
-imports.gi.versions.Caribou = '1.0'
-export default imports.gi.Caribou
+import Caribou from 'gi://Caribou?version=1.0';
+export default Caribou;

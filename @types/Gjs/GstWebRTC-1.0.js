@@ -1,2 +1,2 @@
-imports.gi.versions.GstWebRTC = '1.0'
-export default imports.gi.GstWebRTC
+import GstWebRTC from 'gi://GstWebRTC?version=1.0';
+export default GstWebRTC;

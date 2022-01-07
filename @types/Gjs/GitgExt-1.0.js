@@ -1,2 +1,2 @@
-imports.gi.versions.GitgExt = '1.0'
-export default imports.gi.GitgExt
+import GitgExt from 'gi://GitgExt?version=1.0';
+export default GitgExt;

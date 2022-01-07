@@ -1,2 +1,2 @@
-imports.gi.versions.GrlNet = '0.3'
-export default imports.gi.GrlNet
+import GrlNet from 'gi://GrlNet?version=0.3';
+export default GrlNet;

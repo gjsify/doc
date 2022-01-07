@@ -1,2 +1,2 @@
-imports.gi.versions.Cheese = '3.0'
-export default imports.gi.Cheese
+import Cheese from 'gi://Cheese?version=3.0';
+export default Cheese;

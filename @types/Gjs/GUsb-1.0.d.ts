@@ -3,14 +3,16 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum ContextError {
+export namespace GUsb {
+
+enum ContextError {
     CONTEXT_ERROR_INTERNAL,
 }
-export enum DeviceClassCode {
+enum DeviceClassCode {
     INTERFACE_DESC,
     AUDIO,
     COMMUNICATIONS,
@@ -33,11 +35,11 @@ export enum DeviceClassCode {
     APPLICATION_SPECIFIC,
     VENDOR_SPECIFIC,
 }
-export enum DeviceDirection {
+enum DeviceDirection {
     DEVICE_TO_HOST,
     HOST_TO_DEVICE,
 }
-export enum DeviceError {
+enum DeviceError {
     INTERNAL,
     IO,
     TIMED_OUT,
@@ -50,48 +52,52 @@ export enum DeviceError {
     PERMISSION_DENIED,
     LAST,
 }
-export enum DeviceRecipient {
+enum DeviceLangid {
+    INVALID,
+    ENGLISH_UNITED_STATES,
+}
+enum DeviceRecipient {
     DEVICE,
     INTERFACE,
     ENDPOINT,
     OTHER,
 }
-export enum DeviceRequestType {
+enum DeviceRequestType {
     STANDARD,
     CLASS,
     VENDOR,
     RESERVED,
 }
-export enum SourceError {
+enum SourceError {
     SOURCE_ERROR_INTERNAL,
 }
-export enum ContextFlags {
+enum ContextFlags {
     NONE,
     AUTO_OPEN_DEVICES,
 }
-export enum DeviceClaimInterfaceFlags {
+enum DeviceClaimInterfaceFlags {
     NONE,
     BIND_KERNEL_DRIVER,
 }
 export const MAJOR_VERSION: number
 export const MICRO_VERSION: number
 export const MINOR_VERSION: number
-export function source_error_quark(): GLib.Quark
-export function strerror(error_code: number): string
-export function version_string(): string
+function source_error_quark(): GLib.Quark
+function strerror(error_code: number): string
+function version_string(): string
 export interface Context_ConstructProps extends GObject.Object_ConstructProps {
     debug_level?: number
 }
-export class Context {
-    /* Properties of GUsb.Context */
+class Context {
+    /* Properties of GUsb-1.0.GUsb.Context */
     debug_level: number
     readonly libusb_context: object
-    /* Fields of GUsb.Context */
+    /* Fields of GUsb-1.0.GUsb.Context */
     parent: GObject.Object
     priv: ContextPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GUsb.Context */
+    /* Methods of GUsb-1.0.GUsb.Context */
     enumerate(): void
     find_by_bus_address(bus: number, address: number): Device
     find_by_platform_id(platform_id: string): Device
@@ -104,15 +110,15 @@ export class Context {
     set_flags(flags: ContextFlags): void
     set_main_context(main_ctx: GLib.MainContext): void
     wait_for_replug(device: Device, timeout_ms: number): Device
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -120,34 +126,34 @@ export class Context {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GUsb.Context */
+    /* Virtual methods of GUsb-1.0.GUsb.Context */
     vfunc_device_added(device: Device): void
     vfunc_device_removed(device: Device): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GUsb.Context */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GUsb-1.0.GUsb.Context */
     connect(sigName: "device-added", callback: (($obj: Context, device: Device) => void)): number
     connect_after(sigName: "device-added", callback: (($obj: Context, device: Device) => void)): number
     emit(sigName: "device-added", device: Device): void
     connect(sigName: "device-removed", callback: (($obj: Context, device: Device) => void)): number
     connect_after(sigName: "device-removed", callback: (($obj: Context, device: Device) => void)): number
     emit(sigName: "device-removed", device: Device): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Context, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Context, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -173,13 +179,13 @@ export interface Device_ConstructProps extends GObject.Object_ConstructProps {
     libusb_device?: object
     platform_id?: string
 }
-export class Device {
-    /* Fields of GUsb.Device */
+class Device {
+    /* Fields of GUsb-1.0.GUsb.Device */
     parent: GObject.Object
     priv: DevicePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GUsb.Device */
+    /* Methods of GUsb-1.0.GUsb.Device */
     bulk_transfer(endpoint: number, data: Uint8Array[], timeout: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* actual_length */ number | null ]
     bulk_transfer_async(endpoint: number, data: Uint8Array[], timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     bulk_transfer_finish(res: Gio.AsyncResult): number
@@ -210,6 +216,8 @@ export class Device {
     get_serial_number_index(): number
     get_spec(): number
     get_string_descriptor(desc_index: number): string
+    get_string_descriptor_bytes(desc_index: number, langid: number): GLib.Bytes
+    get_string_descriptor_bytes_full(desc_index: number, langid: number, length: number): GLib.Bytes
     get_vid(): number
     get_vid_as_str(): string
     interrupt_transfer(endpoint: number, data: Uint8Array[], timeout: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* actual_length */ number | null ]
@@ -220,15 +228,15 @@ export class Device {
     reset(): boolean
     set_configuration(configuration: number): boolean
     set_interface_alt(interface: number, alt: number): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -236,25 +244,25 @@ export class Device {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GUsb.Device */
+    /* Virtual methods of GUsb-1.0.GUsb.Device */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -273,26 +281,26 @@ export class Device {
 export interface DeviceList_ConstructProps extends GObject.Object_ConstructProps {
     context?: Context
 }
-export class DeviceList {
-    /* Fields of GUsb.DeviceList */
+class DeviceList {
+    /* Fields of GUsb-1.0.GUsb.DeviceList */
     parent: GObject.Object
     priv: DeviceListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GUsb.DeviceList */
+    /* Methods of GUsb-1.0.GUsb.DeviceList */
     coldplug(): void
     find_by_bus_address(bus: number, address: number): Device
     find_by_vid_pid(vid: number, pid: number): Device
     get_devices(): Device[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -300,31 +308,31 @@ export class DeviceList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GUsb.DeviceList */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GUsb-1.0.GUsb.DeviceList */
     vfunc_device_added(device: Device): void
     vfunc_device_removed(device: Device): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GUsb.DeviceList */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GUsb-1.0.GUsb.DeviceList */
     connect(sigName: "device-added", callback: (($obj: DeviceList, device: Device) => void)): number
     connect_after(sigName: "device-added", callback: (($obj: DeviceList, device: Device) => void)): number
     emit(sigName: "device-added", device: Device): void
     connect(sigName: "device-removed", callback: (($obj: DeviceList, device: Device) => void)): number
     connect_after(sigName: "device-removed", callback: (($obj: DeviceList, device: Device) => void)): number
     emit(sigName: "device-removed", device: Device): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DeviceList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -341,10 +349,10 @@ export class DeviceList {
 }
 export interface Endpoint_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Endpoint {
-    /* Fields of GObject.Object */
+class Endpoint {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GUsb.Endpoint */
+    /* Methods of GUsb-1.0.GUsb.Endpoint */
     get_address(): number
     get_direction(): DeviceDirection
     get_extra(): GLib.Bytes
@@ -354,15 +362,15 @@ export class Endpoint {
     get_polling_interval(): number
     get_refresh(): number
     get_synch_address(): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -370,21 +378,21 @@ export class Endpoint {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Endpoint, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Endpoint, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -399,10 +407,10 @@ export class Endpoint {
 }
 export interface Interface_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Interface {
-    /* Fields of GObject.Object */
+class Interface {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GUsb.Interface */
+    /* Methods of GUsb-1.0.GUsb.Interface */
     get_alternate(): number
     get_class(): number
     get_endpoints(): Endpoint[]
@@ -413,15 +421,15 @@ export class Interface {
     get_number(): number
     get_protocol(): number
     get_subclass(): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -429,21 +437,21 @@ export class Interface {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Interface, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Interface, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -456,48 +464,50 @@ export class Interface {
     _init (config?: Interface_ConstructProps): void
     static $gtype: GObject.Type
 }
-export abstract class ContextClass {
-    /* Fields of GUsb.ContextClass */
+abstract class ContextClass {
+    /* Fields of GUsb-1.0.GUsb.ContextClass */
     parent_class: GObject.ObjectClass
     device_added: (context: Context, device: Device) => void
     device_removed: (context: Context, device: Device) => void
     static name: string
 }
-export class ContextPrivate {
+class ContextPrivate {
     static name: string
 }
-export abstract class DeviceClass {
-    /* Fields of GUsb.DeviceClass */
+abstract class DeviceClass {
+    /* Fields of GUsb-1.0.GUsb.DeviceClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class DeviceListClass {
-    /* Fields of GUsb.DeviceListClass */
+abstract class DeviceListClass {
+    /* Fields of GUsb-1.0.GUsb.DeviceListClass */
     parent_class: GObject.ObjectClass
     device_added: (list: DeviceList, device: Device) => void
     device_removed: (list: DeviceList, device: Device) => void
     static name: string
 }
-export class DeviceListPrivate {
+class DeviceListPrivate {
     static name: string
 }
-export class DevicePrivate {
+class DevicePrivate {
     static name: string
 }
-export abstract class EndpointClass {
-    /* Fields of GUsb.EndpointClass */
+abstract class EndpointClass {
+    /* Fields of GUsb-1.0.GUsb.EndpointClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class InterfaceClass {
-    /* Fields of GUsb.InterfaceClass */
+abstract class InterfaceClass {
+    /* Fields of GUsb-1.0.GUsb.InterfaceClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class Source {
-    /* Methods of GUsb.Source */
+class Source {
+    /* Methods of GUsb-1.0.GUsb.Source */
     set_callback(func: GLib.SourceFunc): void
     static name: string
     /* Static methods and pseudo-constructors */
     static error_quark(): GLib.Quark
 }
+}
+export default GUsb;

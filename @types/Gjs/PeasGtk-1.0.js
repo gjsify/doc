@@ -1,2 +1,2 @@
-imports.gi.versions.PeasGtk = '1.0'
-export default imports.gi.PeasGtk
+import PeasGtk from 'gi://PeasGtk?version=1.0';
+export default PeasGtk;

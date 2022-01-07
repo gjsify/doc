@@ -1,2 +1,2 @@
-imports.gi.versions.ClutterGst = '3.0'
-export default imports.gi.ClutterGst
+import ClutterGst from 'gi://ClutterGst?version=3.0';
+export default ClutterGst;

@@ -1,2 +1,2 @@
-imports.gi.versions.GLib = '2.0'
-export default imports.gi.GLib
+import GLib from 'gi://GLib?version=2.0';
+export default GLib;

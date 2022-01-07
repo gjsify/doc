@@ -3,23 +3,25 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum CandidateTransport {
+export namespace Nice {
+
+enum CandidateTransport {
     UDP,
     TCP_ACTIVE,
     TCP_PASSIVE,
     TCP_SO,
 }
-export enum CandidateType {
+enum CandidateType {
     HOST,
     SERVER_REFLEXIVE,
     PEER_REFLEXIVE,
     RELAYED,
 }
-export enum Compatibility {
+enum Compatibility {
     RFC5245,
     DRAFT19,
     GOOGLE,
@@ -29,7 +31,7 @@ export enum Compatibility {
     OC2007R2,
     LAST,
 }
-export enum ComponentState {
+enum ComponentState {
     DISCONNECTED,
     GATHERING,
     CONNECTING,
@@ -38,27 +40,31 @@ export enum ComponentState {
     FAILED,
     LAST,
 }
-export enum ComponentType {
+enum ComponentType {
     RTP,
     RTCP,
 }
-export enum ProxyType {
+enum NominationMode {
+    REGULAR,
+    AGGRESSIVE,
+}
+enum ProxyType {
     NONE,
     SOCKS5,
     HTTP,
     LAST,
 }
-export enum PseudoTcpDebugLevel {
+enum PseudoTcpDebugLevel {
     NONE,
     NORMAL,
     VERBOSE,
 }
-export enum PseudoTcpShutdown {
+enum PseudoTcpShutdown {
     RD,
     WR,
     RDWR,
 }
-export enum PseudoTcpState {
+enum PseudoTcpState {
     LISTEN,
     SYN_SENT,
     SYN_RECEIVED,
@@ -71,44 +77,50 @@ export enum PseudoTcpState {
     CLOSE_WAIT,
     LAST_ACK,
 }
-export enum PseudoTcpWriteResult {
+enum PseudoTcpWriteResult {
     SUCCESS,
     TOO_LARGE,
     FAIL,
 }
-export enum RelayType {
+enum RelayType {
     UDP,
     TCP,
     TLS,
 }
+enum AgentOption {
+    REGULAR_NOMINATION,
+    RELIABLE,
+    LITE_MODE,
+    ICE_TRICKLE,
+    SUPPORT_RENOMINATION,
+    CONSENT_FRESHNESS,
+}
 export const AGENT_MAX_REMOTE_CANDIDATES: number
-export const CANDIDATE_DIRECTION_MS_PREF_ACTIVE: number
-export const CANDIDATE_DIRECTION_MS_PREF_PASSIVE: number
 export const CANDIDATE_MAX_FOUNDATION: number
-export const CANDIDATE_TRANSPORT_MS_PREF_TCP: number
-export const CANDIDATE_TRANSPORT_MS_PREF_UDP: number
-export const CANDIDATE_TYPE_PREF_HOST: number
-export const CANDIDATE_TYPE_PREF_NAT_ASSISTED: number
-export const CANDIDATE_TYPE_PREF_PEER_REFLEXIVE: number
-export const CANDIDATE_TYPE_PREF_RELAYED: number
-export const CANDIDATE_TYPE_PREF_SERVER_REFLEXIVE: number
-export const CANDIDATE_TYPE_PREF_UDP_TUNNELED: number
-export function component_state_to_string(state: ComponentState): string
-export function debug_disable(with_stun: boolean): void
-export function debug_enable(with_stun: boolean): void
-export function interfaces_get_ip_for_interface(interface_name: string): string | null
-export function interfaces_get_local_interfaces(): string[]
-export function interfaces_get_local_ips(include_loopback: boolean): string[]
-export function pseudo_tcp_set_debug_level(level: PseudoTcpDebugLevel): void
-export interface AgentRecvFunc {
+export const CANDIDATE_MAX_LOCAL_ADDRESSES: number
+export const CANDIDATE_MAX_TURN_SERVERS: number
+function candidate_transport_to_string(transport: CandidateTransport): string
+function candidate_type_to_string(type: CandidateType): string
+function component_state_to_string(state: ComponentState): string
+function debug_disable(with_stun: boolean): void
+function debug_enable(with_stun: boolean): void
+function interfaces_get_ip_for_interface(interface_name: string): string | null
+function interfaces_get_local_interfaces(): string[]
+function interfaces_get_local_ips(include_loopback: boolean): string[]
+function pseudo_tcp_set_debug_level(level: PseudoTcpDebugLevel): void
+interface AgentRecvFunc {
     (agent: Agent, stream_id: number, component_id: number, len: number, buf: string): void
 }
 export interface Agent_ConstructProps extends GObject.Object_ConstructProps {
     compatibility?: number
+    consent_freshness?: boolean
     controlling_mode?: boolean
+    force_relay?: boolean
     full_mode?: boolean
     ice_tcp?: boolean
+    ice_trickle?: boolean
     ice_udp?: boolean
+    idle_timeout?: number
     keepalive_conncheck?: boolean
     main_context?: object
     max_connectivity_checks?: number
@@ -118,18 +130,25 @@ export interface Agent_ConstructProps extends GObject.Object_ConstructProps {
     proxy_type?: number
     proxy_username?: string
     reliable?: boolean
+    stun_initial_timeout?: number
+    stun_max_retransmissions?: number
     stun_pacing_timer?: number
+    stun_reliable_timeout?: number
     stun_server?: string
     stun_server_port?: number
+    support_renomination?: boolean
     upnp?: boolean
     upnp_timeout?: number
 }
-export class Agent {
-    /* Properties of Nice.Agent */
+class Agent {
+    /* Properties of Nice-0.1.Nice.Agent */
     readonly bytestream_tcp: boolean
     controlling_mode: boolean
+    force_relay: boolean
     ice_tcp: boolean
+    ice_trickle: boolean
     ice_udp: boolean
+    idle_timeout: number
     keepalive_conncheck: boolean
     max_connectivity_checks: number
     proxy_ip: string
@@ -137,16 +156,22 @@ export class Agent {
     proxy_port: number
     proxy_type: number
     proxy_username: string
+    stun_initial_timeout: number
+    stun_max_retransmissions: number
     stun_pacing_timer: number
+    stun_reliable_timeout: number
     stun_server: string
     stun_server_port: number
+    support_renomination: boolean
     upnp: boolean
     upnp_timeout: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Nice.Agent */
+    /* Methods of Nice-0.1.Nice.Agent */
     add_local_address(addr: Address): boolean
     add_stream(n_components: number): number
+    close_async(callback?: Gio.AsyncReadyCallback | null): void
+    consent_lost(stream_id: number, component_id: number): boolean
     forget_relays(stream_id: number, component_id: number): boolean
     gather_candidates(stream_id: number): boolean
     generate_local_candidate_sdp(candidate: Candidate): string
@@ -160,10 +185,12 @@ export class Agent {
     get_remote_candidates(stream_id: number, component_id: number): Candidate[]
     get_selected_pair(stream_id: number, component_id: number, local: Candidate, remote: Candidate): boolean
     get_selected_socket(stream_id: number, component_id: number): Gio.Socket | null
+    get_sockets(stream_id: number, component_id: number): Gio.Socket[]
     get_stream_name(stream_id: number): string
     parse_remote_candidate_sdp(stream_id: number, sdp: string): Candidate
     parse_remote_sdp(sdp: string): number
     parse_remote_stream_sdp(stream_id: number, sdp: string, ufrag: string, pwd: string): Candidate[]
+    peer_candidate_gathering_done(stream_id: number): boolean
     recv(stream_id: number, component_id: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buf */ Uint8Array[] ]
     recv_messages(stream_id: number, component_id: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* messages */ InputMessage[] ]
     recv_messages_nonblocking(stream_id: number, component_id: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* messages */ InputMessage[] ]
@@ -183,15 +210,15 @@ export class Agent {
     set_software(software: string): void
     set_stream_name(stream_id: number, name: string): boolean
     set_stream_tos(stream_id: number, tos: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -199,55 +226,55 @@ export class Agent {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Nice.Agent */
-    connect(sigName: "candidate-gathering-done", callback: (($obj: Agent, object: number) => void)): number
-    connect_after(sigName: "candidate-gathering-done", callback: (($obj: Agent, object: number) => void)): number
-    emit(sigName: "candidate-gathering-done", object: number): void
-    connect(sigName: "component-state-changed", callback: (($obj: Agent, object: number, p0: number, p1: number) => void)): number
-    connect_after(sigName: "component-state-changed", callback: (($obj: Agent, object: number, p0: number, p1: number) => void)): number
-    emit(sigName: "component-state-changed", object: number, p0: number, p1: number): void
-    connect(sigName: "initial-binding-request-received", callback: (($obj: Agent, object: number) => void)): number
-    connect_after(sigName: "initial-binding-request-received", callback: (($obj: Agent, object: number) => void)): number
-    emit(sigName: "initial-binding-request-received", object: number): void
-    connect(sigName: "new-candidate", callback: (($obj: Agent, object: number, p0: number, p1: string) => void)): number
-    connect_after(sigName: "new-candidate", callback: (($obj: Agent, object: number, p0: number, p1: string) => void)): number
-    emit(sigName: "new-candidate", object: number, p0: number, p1: string): void
-    connect(sigName: "new-candidate-full", callback: (($obj: Agent, object: Candidate) => void)): number
-    connect_after(sigName: "new-candidate-full", callback: (($obj: Agent, object: Candidate) => void)): number
-    emit(sigName: "new-candidate-full", object: Candidate): void
-    connect(sigName: "new-remote-candidate", callback: (($obj: Agent, object: number, p0: number, p1: string) => void)): number
-    connect_after(sigName: "new-remote-candidate", callback: (($obj: Agent, object: number, p0: number, p1: string) => void)): number
-    emit(sigName: "new-remote-candidate", object: number, p0: number, p1: string): void
-    connect(sigName: "new-remote-candidate-full", callback: (($obj: Agent, object: Candidate) => void)): number
-    connect_after(sigName: "new-remote-candidate-full", callback: (($obj: Agent, object: Candidate) => void)): number
-    emit(sigName: "new-remote-candidate-full", object: Candidate): void
-    connect(sigName: "new-selected-pair", callback: (($obj: Agent, object: number, p0: number, p1: string, p2: string) => void)): number
-    connect_after(sigName: "new-selected-pair", callback: (($obj: Agent, object: number, p0: number, p1: string, p2: string) => void)): number
-    emit(sigName: "new-selected-pair", object: number, p0: number, p1: string, p2: string): void
-    connect(sigName: "new-selected-pair-full", callback: (($obj: Agent, object: number, p0: number, p1: Candidate, p2: Candidate) => void)): number
-    connect_after(sigName: "new-selected-pair-full", callback: (($obj: Agent, object: number, p0: number, p1: Candidate, p2: Candidate) => void)): number
-    emit(sigName: "new-selected-pair-full", object: number, p0: number, p1: Candidate, p2: Candidate): void
-    connect(sigName: "reliable-transport-writable", callback: (($obj: Agent, object: number, p0: number) => void)): number
-    connect_after(sigName: "reliable-transport-writable", callback: (($obj: Agent, object: number, p0: number) => void)): number
-    emit(sigName: "reliable-transport-writable", object: number, p0: number): void
-    connect(sigName: "streams-removed", callback: (($obj: Agent, object: any) => void)): number
-    connect_after(sigName: "streams-removed", callback: (($obj: Agent, object: any) => void)): number
-    emit(sigName: "streams-removed", object: any): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Nice-0.1.Nice.Agent */
+    connect(sigName: "candidate-gathering-done", callback: (($obj: Agent, stream_id: number) => void)): number
+    connect_after(sigName: "candidate-gathering-done", callback: (($obj: Agent, stream_id: number) => void)): number
+    emit(sigName: "candidate-gathering-done", stream_id: number): void
+    connect(sigName: "component-state-changed", callback: (($obj: Agent, stream_id: number, component_id: number, state: number) => void)): number
+    connect_after(sigName: "component-state-changed", callback: (($obj: Agent, stream_id: number, component_id: number, state: number) => void)): number
+    emit(sigName: "component-state-changed", stream_id: number, component_id: number, state: number): void
+    connect(sigName: "initial-binding-request-received", callback: (($obj: Agent, stream_id: number) => void)): number
+    connect_after(sigName: "initial-binding-request-received", callback: (($obj: Agent, stream_id: number) => void)): number
+    emit(sigName: "initial-binding-request-received", stream_id: number): void
+    connect(sigName: "new-candidate", callback: (($obj: Agent, stream_id: number, component_id: number, foundation: string) => void)): number
+    connect_after(sigName: "new-candidate", callback: (($obj: Agent, stream_id: number, component_id: number, foundation: string) => void)): number
+    emit(sigName: "new-candidate", stream_id: number, component_id: number, foundation: string): void
+    connect(sigName: "new-candidate-full", callback: (($obj: Agent, candidate: Candidate) => void)): number
+    connect_after(sigName: "new-candidate-full", callback: (($obj: Agent, candidate: Candidate) => void)): number
+    emit(sigName: "new-candidate-full", candidate: Candidate): void
+    connect(sigName: "new-remote-candidate", callback: (($obj: Agent, stream_id: number, component_id: number, foundation: string) => void)): number
+    connect_after(sigName: "new-remote-candidate", callback: (($obj: Agent, stream_id: number, component_id: number, foundation: string) => void)): number
+    emit(sigName: "new-remote-candidate", stream_id: number, component_id: number, foundation: string): void
+    connect(sigName: "new-remote-candidate-full", callback: (($obj: Agent, candidate: Candidate) => void)): number
+    connect_after(sigName: "new-remote-candidate-full", callback: (($obj: Agent, candidate: Candidate) => void)): number
+    emit(sigName: "new-remote-candidate-full", candidate: Candidate): void
+    connect(sigName: "new-selected-pair", callback: (($obj: Agent, stream_id: number, component_id: number, lfoundation: string, rfoundation: string) => void)): number
+    connect_after(sigName: "new-selected-pair", callback: (($obj: Agent, stream_id: number, component_id: number, lfoundation: string, rfoundation: string) => void)): number
+    emit(sigName: "new-selected-pair", stream_id: number, component_id: number, lfoundation: string, rfoundation: string): void
+    connect(sigName: "new-selected-pair-full", callback: (($obj: Agent, stream_id: number, component_id: number, lcandidate: Candidate, rcandidate: Candidate) => void)): number
+    connect_after(sigName: "new-selected-pair-full", callback: (($obj: Agent, stream_id: number, component_id: number, lcandidate: Candidate, rcandidate: Candidate) => void)): number
+    emit(sigName: "new-selected-pair-full", stream_id: number, component_id: number, lcandidate: Candidate, rcandidate: Candidate): void
+    connect(sigName: "reliable-transport-writable", callback: (($obj: Agent, stream_id: number, component_id: number) => void)): number
+    connect_after(sigName: "reliable-transport-writable", callback: (($obj: Agent, stream_id: number, component_id: number) => void)): number
+    emit(sigName: "reliable-transport-writable", stream_id: number, component_id: number): void
+    connect(sigName: "streams-removed", callback: (($obj: Agent, stream_ids: number[]) => void)): number
+    connect_after(sigName: "streams-removed", callback: (($obj: Agent, stream_ids: number[]) => void)): number
+    emit(sigName: "streams-removed", stream_ids: number[]): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -255,10 +282,16 @@ export class Agent {
     connect_after(sigName: "notify::bytestream-tcp", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::controlling-mode", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::controlling-mode", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::force-relay", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::force-relay", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::ice-tcp", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::ice-tcp", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::ice-trickle", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::ice-trickle", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::ice-udp", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::ice-udp", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::idle-timeout", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::idle-timeout", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::keepalive-conncheck", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::keepalive-conncheck", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::max-connectivity-checks", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
@@ -273,12 +306,20 @@ export class Agent {
     connect_after(sigName: "notify::proxy-type", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::proxy-username", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::proxy-username", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::stun-initial-timeout", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::stun-initial-timeout", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::stun-max-retransmissions", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::stun-max-retransmissions", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::stun-pacing-timer", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::stun-pacing-timer", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::stun-reliable-timeout", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::stun-reliable-timeout", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::stun-server", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::stun-server", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::stun-server-port", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::stun-server-port", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::support-renomination", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::support-renomination", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::upnp", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::upnp", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::upnp-timeout", callback: (($obj: Agent, pspec: GObject.ParamSpec) => void)): number
@@ -292,6 +333,7 @@ export class Agent {
     _init (config?: Agent_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(ctx: GLib.MainContext, compat: Compatibility): Agent
+    static new_full(ctx: GLib.MainContext, compat: Compatibility, flags: AgentOption): Agent
     static new_reliable(ctx: GLib.MainContext, compat: Compatibility): Agent
     static $gtype: GObject.Type
 }
@@ -304,20 +346,17 @@ export interface PseudoTcpSocket_ConstructProps extends GObject.Object_Construct
     snd_buf?: number
     support_fin_ack?: boolean
 }
-export class PseudoTcpSocket {
-    /* Properties of Nice.PseudoTcpSocket */
+class PseudoTcpSocket {
+    /* Properties of Nice-0.1.Nice.PseudoTcpSocket */
     ack_delay: number
     callbacks: object
     no_delay: boolean
     rcv_buf: number
     snd_buf: number
     readonly state: number
-    /* Fields of Nice.PseudoTcpSocket */
-    parent: GObject.Object
-    priv: PseudoTcpSocketPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Nice.PseudoTcpSocket */
+    /* Methods of Nice-0.1.Nice.PseudoTcpSocket */
     can_send(): boolean
     close(force: boolean): void
     connect(): boolean
@@ -335,15 +374,15 @@ export class PseudoTcpSocket {
     send(buffer: string, len: number): number
     set_time(current_time: number): void
     shutdown(how: PseudoTcpShutdown): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -351,21 +390,21 @@ export class PseudoTcpSocket {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PseudoTcpSocket, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PseudoTcpSocket, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -392,9 +431,9 @@ export class PseudoTcpSocket {
     static new(conversation: number, callbacks: PseudoTcpCallbacks): PseudoTcpSocket
     static $gtype: GObject.Type
 }
-export class Address {
-    /* Methods of Nice.Address */
-    copy_to_sockaddr(sin: object): void
+class Address {
+    /* Methods of Nice-0.1.Nice.Address */
+    copy_to_sockaddr(sin?: object | null): void
     equal(b: Address): boolean
     equal_no_port(b: Address): boolean
     free(): void
@@ -403,7 +442,7 @@ export class Address {
     ip_version(): number
     is_private(): boolean
     is_valid(): boolean
-    set_from_sockaddr(sin: object): void
+    set_from_sockaddr(sin?: object | null): void
     set_from_string(str: string): boolean
     set_ipv4(addr_ipv4: number): void
     set_ipv6(addr_ipv6: number): void
@@ -411,13 +450,13 @@ export class Address {
     to_string(dst: string): void
     static name: string
 }
-export abstract class AgentClass {
-    /* Fields of Nice.AgentClass */
+abstract class AgentClass {
+    /* Fields of Nice-0.1.Nice.AgentClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class Candidate {
-    /* Fields of Nice.Candidate */
+class Candidate {
+    /* Fields of Nice-0.1.Nice.Candidate */
     type: CandidateType
     transport: CandidateTransport
     addr: Address
@@ -428,33 +467,34 @@ export class Candidate {
     foundation: number[]
     username: string
     password: string
-    turn: TurnServer
-    sockptr: object
-    /* Methods of Nice.Candidate */
+    /* Methods of Nice-0.1.Nice.Candidate */
     copy(): Candidate
+    equal_target(candidate2: Candidate): boolean
     free(): void
     static name: string
     static new(type: CandidateType): Candidate
     constructor(type: CandidateType)
     /* Static methods and pseudo-constructors */
     static new(type: CandidateType): Candidate
+    static transport_to_string(transport: CandidateTransport): string
+    static type_to_string(type: CandidateType): string
 }
-export class InputMessage {
-    /* Fields of Nice.InputMessage */
+class InputMessage {
+    /* Fields of Nice-0.1.Nice.InputMessage */
     buffers: Gio.InputVector[]
     n_buffers: number
     from: Address
     length: number
     static name: string
 }
-export class OutputMessage {
-    /* Fields of Nice.OutputMessage */
+class OutputMessage {
+    /* Fields of Nice-0.1.Nice.OutputMessage */
     buffers: Gio.OutputVector[]
     n_buffers: number
     static name: string
 }
-export class PseudoTcpCallbacks {
-    /* Fields of Nice.PseudoTcpCallbacks */
+class PseudoTcpCallbacks {
+    /* Fields of Nice-0.1.Nice.PseudoTcpCallbacks */
     user_data: object
     PseudoTcpOpened: (tcp: PseudoTcpSocket, data: object) => void
     PseudoTcpReadable: (tcp: PseudoTcpSocket, data: object) => void
@@ -463,20 +503,8 @@ export class PseudoTcpCallbacks {
     WritePacket: (tcp: PseudoTcpSocket, buffer: string, len: number, data: object) => PseudoTcpWriteResult
     static name: string
 }
-export abstract class PseudoTcpSocketClass {
-    /* Fields of Nice.PseudoTcpSocketClass */
-    parent_class: GObject.ObjectClass
+abstract class PseudoTcpSocketClass {
     static name: string
 }
-export class PseudoTcpSocketPrivate {
-    static name: string
 }
-export class TurnServer {
-    /* Fields of Nice.TurnServer */
-    ref_count: number
-    server: Address
-    username: string
-    password: string
-    type: RelayType
-    static name: string
-}
+export default Nice;

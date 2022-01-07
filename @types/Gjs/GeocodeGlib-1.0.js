@@ -1,2 +1,2 @@
-imports.gi.versions.GeocodeGlib = '1.0'
-export default imports.gi.GeocodeGlib
+import GeocodeGlib from 'gi://GeocodeGlib?version=1.0';
+export default GeocodeGlib;

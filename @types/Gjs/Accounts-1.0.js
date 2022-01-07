@@ -1,2 +1,2 @@
-imports.gi.versions.Accounts = '1.0'
-export default imports.gi.Accounts
+import Accounts from 'gi://Accounts?version=1.0';
+export default Accounts;

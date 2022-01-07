@@ -1,2 +1,2 @@
-imports.gi.versions.GtkClutter = '1.0'
-export default imports.gi.GtkClutter
+import GtkClutter from 'gi://GtkClutter?version=1.0';
+export default GtkClutter;

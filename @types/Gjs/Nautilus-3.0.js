@@ -1,2 +1,2 @@
-imports.gi.versions.Nautilus = '3.0'
-export default imports.gi.Nautilus
+import Nautilus from 'gi://Nautilus?version=3.0';
+export default Nautilus;

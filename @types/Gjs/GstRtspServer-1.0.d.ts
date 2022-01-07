@@ -3,29 +3,31 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GstRtsp from './GstRtsp-1.0';
-import type * as GstSdp from './GstSdp-1.0';
-import type * as Gst from './Gst-1.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as GstBase from './GstBase-1.0';
-import type * as Gio from './Gio-2.0';
-import type * as GstNet from './GstNet-1.0';
+import type GstRtsp from './GstRtsp-1.0';
+import type GstSdp from './GstSdp-1.0';
+import type Gst from './Gst-1.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type GModule from './GModule-2.0';
+import type GstBase from './GstBase-1.0';
+import type Gio from './Gio-2.0';
+import type GstNet from './GstNet-1.0';
 
-export enum RTSPAddressPoolResult {
+export namespace GstRtspServer {
+
+enum RTSPAddressPoolResult {
     OK,
     EINVAL,
     ERESERVED,
     ERANGE,
     ELAST,
 }
-export enum RTSPFilterResult {
+enum RTSPFilterResult {
     REMOVE,
     KEEP,
     REF,
 }
-export enum RTSPMediaStatus {
+enum RTSPMediaStatus {
     UNPREPARED,
     UNPREPARING,
     PREPARING,
@@ -33,21 +35,21 @@ export enum RTSPMediaStatus {
     SUSPENDED,
     ERROR,
 }
-export enum RTSPPublishClockMode {
+enum RTSPPublishClockMode {
     NONE,
     CLOCK,
     CLOCK_AND_OFFSET,
 }
-export enum RTSPSuspendMode {
+enum RTSPSuspendMode {
     NONE,
     PAUSE,
     RESET,
 }
-export enum RTSPThreadType {
+enum RTSPThreadType {
     CLIENT,
     MEDIA,
 }
-export enum RTSPAddressFlags {
+enum RTSPAddressFlags {
     NONE,
     IPV4,
     IPV6,
@@ -55,7 +57,7 @@ export enum RTSPAddressFlags {
     MULTICAST,
     UNICAST,
 }
-export enum RTSPTransportMode {
+enum RTSPTransportMode {
     PLAY,
     RECORD,
 }
@@ -72,74 +74,74 @@ export const RTSP_PERM_MEDIA_FACTORY_ACCESS: string
 export const RTSP_PERM_MEDIA_FACTORY_CONSTRUCT: string
 export const RTSP_TOKEN_MEDIA_FACTORY_ROLE: string
 export const RTSP_TOKEN_TRANSPORT_CLIENT_SETTINGS: string
-export function rtsp_context_get_type(): GObject.Type
-export function rtsp_params_get(client: RTSPClient, ctx: RTSPContext): GstRtsp.RTSPResult
-export function rtsp_params_set(client: RTSPClient, ctx: RTSPContext): GstRtsp.RTSPResult
-export function rtsp_sdp_from_media(sdp: GstSdp.SDPMessage, info: SDPInfo, media: RTSPMedia): boolean
-export function rtsp_sdp_from_stream(sdp: GstSdp.SDPMessage, info: SDPInfo, stream: RTSPStream): boolean
-export function rtsp_sdp_make_media(sdp: GstSdp.SDPMessage, info: SDPInfo, stream: RTSPStream, caps: Gst.Caps, profile: GstRtsp.RTSPProfile): boolean
-export interface RTSPClientSendFunc {
+function rtsp_context_get_type(): GObject.Type
+function rtsp_params_get(client: RTSPClient, ctx: RTSPContext): GstRtsp.RTSPResult
+function rtsp_params_set(client: RTSPClient, ctx: RTSPContext): GstRtsp.RTSPResult
+function rtsp_sdp_from_media(sdp: GstSdp.SDPMessage, info: SDPInfo, media: RTSPMedia): boolean
+function rtsp_sdp_from_stream(sdp: GstSdp.SDPMessage, info: SDPInfo, stream: RTSPStream): boolean
+function rtsp_sdp_make_media(sdp: GstSdp.SDPMessage, info: SDPInfo, stream: RTSPStream, caps: Gst.Caps, profile: GstRtsp.RTSPProfile): boolean
+interface RTSPClientSendFunc {
     (client: RTSPClient, message: GstRtsp.RTSPMessage, close: boolean): boolean
 }
-export interface RTSPClientSendMessagesFunc {
+interface RTSPClientSendMessagesFunc {
     (client: RTSPClient, messages: GstRtsp.RTSPMessage, n_messages: number, close: boolean): boolean
 }
-export interface RTSPClientSessionFilterFunc {
+interface RTSPClientSessionFilterFunc {
     (client: RTSPClient, sess: RTSPSession): RTSPFilterResult
 }
-export interface RTSPKeepAliveFunc {
+interface RTSPKeepAliveFunc {
     (): void
 }
-export interface RTSPMessageSentFunc {
+interface RTSPMessageSentFunc {
     (): void
 }
-export interface RTSPMessageSentFuncFull {
+interface RTSPMessageSentFuncFull {
     (trans: RTSPStreamTransport): void
 }
-export interface RTSPSendFunc {
+interface RTSPSendFunc {
     (buffer: Gst.Buffer, channel: number): boolean
 }
-export interface RTSPSendListFunc {
+interface RTSPSendListFunc {
     (buffer_list: Gst.BufferList, channel: number): boolean
 }
-export interface RTSPServerClientFilterFunc {
+interface RTSPServerClientFilterFunc {
     (server: RTSPServer, client: RTSPClient): RTSPFilterResult
 }
-export interface RTSPSessionFilterFunc {
+interface RTSPSessionFilterFunc {
     (sess: RTSPSession, media: RTSPSessionMedia): RTSPFilterResult
 }
-export interface RTSPSessionPoolFilterFunc {
+interface RTSPSessionPoolFilterFunc {
     (pool: RTSPSessionPool, session: RTSPSession): RTSPFilterResult
 }
-export interface RTSPSessionPoolFunc {
+interface RTSPSessionPoolFunc {
     (pool: RTSPSessionPool): boolean
 }
-export interface RTSPStreamTransportFilterFunc {
+interface RTSPStreamTransportFilterFunc {
     (stream: RTSPStream, trans: RTSPStreamTransport): RTSPFilterResult
 }
 export interface RTSPAddressPool_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class RTSPAddressPool {
-    /* Fields of GstRtspServer.RTSPAddressPool */
+class RTSPAddressPool {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPAddressPool */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPAddressPool */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPAddressPool */
     acquire_address(flags: RTSPAddressFlags, n_ports: number): RTSPAddress | null
     add_range(min_address: string, max_address: string, min_port: number, max_port: number, ttl: number): boolean
     clear(): void
     dump(): void
     has_unicast_addresses(): boolean
     reserve_address(ip_address: string, port: number, n_ports: number, ttl: number): [ /* returnType */ RTSPAddressPoolResult, /* address */ RTSPAddress ]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -147,21 +149,21 @@ export class RTSPAddressPool {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPAddressPool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPAddressPool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -178,12 +180,12 @@ export class RTSPAddressPool {
 }
 export interface RTSPAuth_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class RTSPAuth {
-    /* Fields of GstRtspServer.RTSPAuth */
+class RTSPAuth {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPAuth */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPAuth */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPAuth */
     add_basic(basic: string, token: RTSPToken): void
     add_digest(user: string, pass: string, token: RTSPToken): void
     get_default_token(): RTSPToken | null
@@ -201,15 +203,15 @@ export class RTSPAuth {
     set_tls_authentication_mode(mode: Gio.TlsAuthenticationMode): void
     set_tls_certificate(cert?: Gio.TlsCertificate | null): void
     set_tls_database(database?: Gio.TlsDatabase | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -217,30 +219,30 @@ export class RTSPAuth {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstRtspServer.RTSPAuth */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstRtspServer-1.0.GstRtspServer.RTSPAuth */
     vfunc_accept_certificate(connection: Gio.TlsConnection, peer_cert: Gio.TlsCertificate, errors: Gio.TlsCertificateFlags): boolean
     vfunc_authenticate(ctx: RTSPContext): boolean
     vfunc_check(ctx: RTSPContext, check: string): boolean
     vfunc_generate_authenticate_header(ctx: RTSPContext): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GstRtspServer.RTSPAuth */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GstRtspServer-1.0.GstRtspServer.RTSPAuth */
     connect(sigName: "accept-certificate", callback: (($obj: RTSPAuth, connection: Gio.TlsConnection, peer_cert: Gio.TlsCertificate, errors: Gio.TlsCertificateFlags) => boolean)): number
     connect_after(sigName: "accept-certificate", callback: (($obj: RTSPAuth, connection: Gio.TlsConnection, peer_cert: Gio.TlsCertificate, errors: Gio.TlsCertificateFlags) => boolean)): number
     emit(sigName: "accept-certificate", connection: Gio.TlsConnection, peer_cert: Gio.TlsCertificate, errors: Gio.TlsCertificateFlags): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPAuth, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPAuth, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -263,17 +265,17 @@ export interface RTSPClient_ConstructProps extends GObject.Object_ConstructProps
     post_session_timeout?: number
     session_pool?: RTSPSessionPool
 }
-export class RTSPClient {
-    /* Properties of GstRtspServer.RTSPClient */
+class RTSPClient {
+    /* Properties of GstRtspServer-1.0.GstRtspServer.RTSPClient */
     drop_backlog: boolean
     mount_points: RTSPMountPoints
     post_session_timeout: number
     session_pool: RTSPSessionPool
-    /* Fields of GstRtspServer.RTSPClient */
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPClient */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPClient */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPClient */
     attach(context?: GLib.MainContext | null): number
     close(): void
     get_auth(): RTSPAuth | null
@@ -294,15 +296,15 @@ export class RTSPClient {
     set_send_messages_func(func: RTSPClientSendMessagesFunc): void
     set_session_pool(pool?: RTSPSessionPool | null): void
     set_thread_pool(pool?: RTSPThreadPool | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -310,13 +312,13 @@ export class RTSPClient {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstRtspServer.RTSPClient */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstRtspServer-1.0.GstRtspServer.RTSPClient */
     vfunc_adjust_play_mode(context: RTSPContext, range: GstRtsp.RTSPTimeRange, flags: Gst.SeekFlags, rate: number, trickmode_interval: Gst.ClockTime, enable_rate_control: boolean): GstRtsp.RTSPStatusCode
     vfunc_adjust_play_response(context: RTSPContext): GstRtsp.RTSPStatusCode
     vfunc_announce_request(ctx: RTSPContext): void
@@ -352,15 +354,15 @@ export class RTSPClient {
     vfunc_setup_request(ctx: RTSPContext): void
     vfunc_teardown_request(ctx: RTSPContext): void
     vfunc_tunnel_http_response(request: GstRtsp.RTSPMessage, response: GstRtsp.RTSPMessage): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GstRtspServer.RTSPClient */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GstRtspServer-1.0.GstRtspServer.RTSPClient */
     connect(sigName: "announce-request", callback: (($obj: RTSPClient, ctx: RTSPContext) => void)): number
     connect_after(sigName: "announce-request", callback: (($obj: RTSPClient, ctx: RTSPContext) => void)): number
     emit(sigName: "announce-request", ctx: RTSPContext): void
@@ -436,7 +438,7 @@ export class RTSPClient {
     connect(sigName: "teardown-request", callback: (($obj: RTSPClient, ctx: RTSPContext) => void)): number
     connect_after(sigName: "teardown-request", callback: (($obj: RTSPClient, ctx: RTSPContext) => void)): number
     emit(sigName: "teardown-request", ctx: RTSPContext): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPClient, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPClient, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -477,8 +479,8 @@ export interface RTSPMedia_ConstructProps extends GObject.Object_ConstructProps 
     time_provider?: boolean
     transport_mode?: RTSPTransportMode
 }
-export class RTSPMedia {
-    /* Properties of GstRtspServer.RTSPMedia */
+class RTSPMedia {
+    /* Properties of GstRtspServer-1.0.GstRtspServer.RTSPMedia */
     bind_mcast_address: boolean
     buffer_size: number
     clock: Gst.Clock
@@ -494,11 +496,11 @@ export class RTSPMedia {
     suspend_mode: RTSPSuspendMode
     time_provider: boolean
     transport_mode: RTSPTransportMode
-    /* Fields of GstRtspServer.RTSPMedia */
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPMedia */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPMedia */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPMedia */
     collect_streams(): void
     complete_pipeline(transports: GstRtsp.RTSPTransport[]): boolean
     create_stream(payloader: Gst.Element, pad: Gst.Pad): RTSPStream
@@ -572,15 +574,15 @@ export class RTSPMedia {
     unprepare(): boolean
     unsuspend(): boolean
     use_time_provider(time_provider: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -588,13 +590,13 @@ export class RTSPMedia {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstRtspServer.RTSPMedia */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstRtspServer-1.0.GstRtspServer.RTSPMedia */
     vfunc_convert_range(range: GstRtsp.RTSPTimeRange, unit: GstRtsp.RTSPRangeUnit): boolean
     vfunc_handle_message(message: Gst.Message): boolean
     vfunc_handle_sdp(sdp: GstSdp.SDPMessage): boolean
@@ -612,15 +614,15 @@ export class RTSPMedia {
     vfunc_unprepare(): boolean
     vfunc_unprepared(): void
     vfunc_unsuspend(): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GstRtspServer.RTSPMedia */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GstRtspServer-1.0.GstRtspServer.RTSPMedia */
     connect(sigName: "new-state", callback: (($obj: RTSPMedia, object: number) => void)): number
     connect_after(sigName: "new-state", callback: (($obj: RTSPMedia, object: number) => void)): number
     emit(sigName: "new-state", object: number): void
@@ -639,7 +641,7 @@ export class RTSPMedia {
     connect(sigName: "unprepared", callback: (($obj: RTSPMedia) => void)): number
     connect_after(sigName: "unprepared", callback: (($obj: RTSPMedia) => void)): number
     emit(sigName: "unprepared"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPMedia, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPMedia, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -689,6 +691,7 @@ export interface RTSPMediaFactory_ConstructProps extends GObject.Object_Construc
     buffer_size?: number
     clock?: Gst.Clock
     dscp_qos?: number
+    enable_rtcp?: boolean
     eos_shutdown?: boolean
     latency?: number
     launch?: string
@@ -700,12 +703,13 @@ export interface RTSPMediaFactory_ConstructProps extends GObject.Object_Construc
     suspend_mode?: RTSPSuspendMode
     transport_mode?: RTSPTransportMode
 }
-export class RTSPMediaFactory {
-    /* Properties of GstRtspServer.RTSPMediaFactory */
+class RTSPMediaFactory {
+    /* Properties of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactory */
     bind_mcast_address: boolean
     buffer_size: number
     clock: Gst.Clock
     dscp_qos: number
+    enable_rtcp: boolean
     eos_shutdown: boolean
     latency: number
     launch: string
@@ -716,11 +720,11 @@ export class RTSPMediaFactory {
     stop_on_disconnect: boolean
     suspend_mode: RTSPSuspendMode
     transport_mode: RTSPTransportMode
-    /* Fields of GstRtspServer.RTSPMediaFactory */
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactory */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPMediaFactory */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactory */
     add_role_from_structure(structure: Gst.Structure): void
     construct(url: GstRtsp.RTSPUrl): RTSPMedia
     create_element(url: GstRtsp.RTSPUrl): Gst.Element
@@ -742,6 +746,7 @@ export class RTSPMediaFactory {
     get_suspend_mode(): RTSPSuspendMode
     get_transport_mode(): RTSPTransportMode
     is_bind_mcast_address(): boolean
+    is_enable_rtcp(): boolean
     is_eos_shutdown(): boolean
     is_shared(): boolean
     is_stop_on_disonnect(): boolean
@@ -751,6 +756,7 @@ export class RTSPMediaFactory {
     set_clock(clock?: Gst.Clock | null): void
     set_do_retransmission(do_retransmission: boolean): void
     set_dscp_qos(dscp_qos: number): void
+    set_enable_rtcp(enable: boolean): void
     set_eos_shutdown(eos_shutdown: boolean): void
     set_latency(latency: number): void
     set_launch(launch: string): void
@@ -766,15 +772,15 @@ export class RTSPMediaFactory {
     set_stop_on_disconnect(stop_on_disconnect: boolean): void
     set_suspend_mode(mode: RTSPSuspendMode): void
     set_transport_mode(mode: RTSPTransportMode): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -782,35 +788,35 @@ export class RTSPMediaFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstRtspServer.RTSPMediaFactory */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactory */
     vfunc_configure(media: RTSPMedia): void
     vfunc_construct(url: GstRtsp.RTSPUrl): RTSPMedia
     vfunc_create_element(url: GstRtsp.RTSPUrl): Gst.Element
     vfunc_gen_key(url: GstRtsp.RTSPUrl): string
     vfunc_media_configure(media: RTSPMedia): void
     vfunc_media_constructed(media: RTSPMedia): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GstRtspServer.RTSPMediaFactory */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactory */
     connect(sigName: "media-configure", callback: (($obj: RTSPMediaFactory, object: RTSPMedia) => void)): number
     connect_after(sigName: "media-configure", callback: (($obj: RTSPMediaFactory, object: RTSPMedia) => void)): number
     emit(sigName: "media-configure", object: RTSPMedia): void
     connect(sigName: "media-constructed", callback: (($obj: RTSPMediaFactory, object: RTSPMedia) => void)): number
     connect_after(sigName: "media-constructed", callback: (($obj: RTSPMediaFactory, object: RTSPMedia) => void)): number
     emit(sigName: "media-constructed", object: RTSPMedia): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPMediaFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPMediaFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -822,6 +828,8 @@ export class RTSPMediaFactory {
     connect_after(sigName: "notify::clock", callback: (($obj: RTSPMediaFactory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::dscp-qos", callback: (($obj: RTSPMediaFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::dscp-qos", callback: (($obj: RTSPMediaFactory, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::enable-rtcp", callback: (($obj: RTSPMediaFactory, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::enable-rtcp", callback: (($obj: RTSPMediaFactory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eos-shutdown", callback: (($obj: RTSPMediaFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eos-shutdown", callback: (($obj: RTSPMediaFactory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::latency", callback: (($obj: RTSPMediaFactory, pspec: GObject.ParamSpec) => void)): number
@@ -857,15 +865,16 @@ export interface RTSPMediaFactoryURI_ConstructProps extends RTSPMediaFactory_Con
     uri?: string
     use_gstpay?: boolean
 }
-export class RTSPMediaFactoryURI {
-    /* Properties of GstRtspServer.RTSPMediaFactoryURI */
+class RTSPMediaFactoryURI {
+    /* Properties of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactoryURI */
     uri: string
     use_gstpay: boolean
-    /* Properties of GstRtspServer.RTSPMediaFactory */
+    /* Properties of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactory */
     bind_mcast_address: boolean
     buffer_size: number
     clock: Gst.Clock
     dscp_qos: number
+    enable_rtcp: boolean
     eos_shutdown: boolean
     latency: number
     launch: string
@@ -876,14 +885,14 @@ export class RTSPMediaFactoryURI {
     stop_on_disconnect: boolean
     suspend_mode: RTSPSuspendMode
     transport_mode: RTSPTransportMode
-    /* Fields of GstRtspServer.RTSPMediaFactoryURI */
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactoryURI */
     parent: RTSPMediaFactory
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPMediaFactoryURI */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactoryURI */
     get_uri(): string
     set_uri(uri: string): void
-    /* Methods of GstRtspServer.RTSPMediaFactory */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactory */
     add_role_from_structure(structure: Gst.Structure): void
     construct(url: GstRtsp.RTSPUrl): RTSPMedia
     create_element(url: GstRtsp.RTSPUrl): Gst.Element
@@ -905,6 +914,7 @@ export class RTSPMediaFactoryURI {
     get_suspend_mode(): RTSPSuspendMode
     get_transport_mode(): RTSPTransportMode
     is_bind_mcast_address(): boolean
+    is_enable_rtcp(): boolean
     is_eos_shutdown(): boolean
     is_shared(): boolean
     is_stop_on_disonnect(): boolean
@@ -914,6 +924,7 @@ export class RTSPMediaFactoryURI {
     set_clock(clock?: Gst.Clock | null): void
     set_do_retransmission(do_retransmission: boolean): void
     set_dscp_qos(dscp_qos: number): void
+    set_enable_rtcp(enable: boolean): void
     set_eos_shutdown(eos_shutdown: boolean): void
     set_latency(latency: number): void
     set_launch(launch: string): void
@@ -929,15 +940,15 @@ export class RTSPMediaFactoryURI {
     set_stop_on_disconnect(stop_on_disconnect: boolean): void
     set_suspend_mode(mode: RTSPSuspendMode): void
     set_transport_mode(mode: RTSPTransportMode): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -945,35 +956,35 @@ export class RTSPMediaFactoryURI {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstRtspServer.RTSPMediaFactory */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactory */
     vfunc_configure(media: RTSPMedia): void
     vfunc_construct(url: GstRtsp.RTSPUrl): RTSPMedia
     vfunc_create_element(url: GstRtsp.RTSPUrl): Gst.Element
     vfunc_gen_key(url: GstRtsp.RTSPUrl): string
     vfunc_media_configure(media: RTSPMedia): void
     vfunc_media_constructed(media: RTSPMedia): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GstRtspServer.RTSPMediaFactory */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactory */
     connect(sigName: "media-configure", callback: (($obj: RTSPMediaFactoryURI, object: RTSPMedia) => void)): number
     connect_after(sigName: "media-configure", callback: (($obj: RTSPMediaFactoryURI, object: RTSPMedia) => void)): number
     emit(sigName: "media-configure", object: RTSPMedia): void
     connect(sigName: "media-constructed", callback: (($obj: RTSPMediaFactoryURI, object: RTSPMedia) => void)): number
     connect_after(sigName: "media-constructed", callback: (($obj: RTSPMediaFactoryURI, object: RTSPMedia) => void)): number
     emit(sigName: "media-constructed", object: RTSPMedia): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPMediaFactoryURI, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPMediaFactoryURI, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -989,6 +1000,8 @@ export class RTSPMediaFactoryURI {
     connect_after(sigName: "notify::clock", callback: (($obj: RTSPMediaFactoryURI, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::dscp-qos", callback: (($obj: RTSPMediaFactoryURI, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::dscp-qos", callback: (($obj: RTSPMediaFactoryURI, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::enable-rtcp", callback: (($obj: RTSPMediaFactoryURI, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::enable-rtcp", callback: (($obj: RTSPMediaFactoryURI, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eos-shutdown", callback: (($obj: RTSPMediaFactoryURI, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eos-shutdown", callback: (($obj: RTSPMediaFactoryURI, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::latency", callback: (($obj: RTSPMediaFactoryURI, pspec: GObject.ParamSpec) => void)): number
@@ -1022,25 +1035,25 @@ export class RTSPMediaFactoryURI {
 }
 export interface RTSPMountPoints_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class RTSPMountPoints {
-    /* Fields of GstRtspServer.RTSPMountPoints */
+class RTSPMountPoints {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPMountPoints */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPMountPoints */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPMountPoints */
     add_factory(path: string, factory: RTSPMediaFactory): void
     make_path(url: GstRtsp.RTSPUrl): string | null
     match(path: string): [ /* returnType */ RTSPMediaFactory, /* matched */ number | null ]
     remove_factory(path: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1048,23 +1061,23 @@ export class RTSPMountPoints {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstRtspServer.RTSPMountPoints */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstRtspServer-1.0.GstRtspServer.RTSPMountPoints */
     vfunc_make_path(url: GstRtsp.RTSPUrl): string | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPMountPoints, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPMountPoints, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1081,17 +1094,17 @@ export class RTSPMountPoints {
 }
 export interface RTSPOnvifClient_ConstructProps extends RTSPClient_ConstructProps {
 }
-export class RTSPOnvifClient {
-    /* Properties of GstRtspServer.RTSPClient */
+class RTSPOnvifClient {
+    /* Properties of GstRtspServer-1.0.GstRtspServer.RTSPClient */
     drop_backlog: boolean
     mount_points: RTSPMountPoints
     post_session_timeout: number
     session_pool: RTSPSessionPool
-    /* Fields of GstRtspServer.RTSPOnvifClient */
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPOnvifClient */
     parent: RTSPClient
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPClient */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPClient */
     attach(context?: GLib.MainContext | null): number
     close(): void
     get_auth(): RTSPAuth | null
@@ -1112,15 +1125,15 @@ export class RTSPOnvifClient {
     set_send_messages_func(func: RTSPClientSendMessagesFunc): void
     set_session_pool(pool?: RTSPSessionPool | null): void
     set_thread_pool(pool?: RTSPThreadPool | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1128,13 +1141,13 @@ export class RTSPOnvifClient {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstRtspServer.RTSPClient */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstRtspServer-1.0.GstRtspServer.RTSPClient */
     vfunc_adjust_play_mode(context: RTSPContext, range: GstRtsp.RTSPTimeRange, flags: Gst.SeekFlags, rate: number, trickmode_interval: Gst.ClockTime, enable_rate_control: boolean): GstRtsp.RTSPStatusCode
     vfunc_adjust_play_response(context: RTSPContext): GstRtsp.RTSPStatusCode
     vfunc_announce_request(ctx: RTSPContext): void
@@ -1170,15 +1183,15 @@ export class RTSPOnvifClient {
     vfunc_setup_request(ctx: RTSPContext): void
     vfunc_teardown_request(ctx: RTSPContext): void
     vfunc_tunnel_http_response(request: GstRtsp.RTSPMessage, response: GstRtsp.RTSPMessage): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GstRtspServer.RTSPClient */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GstRtspServer-1.0.GstRtspServer.RTSPClient */
     connect(sigName: "announce-request", callback: (($obj: RTSPOnvifClient, ctx: RTSPContext) => void)): number
     connect_after(sigName: "announce-request", callback: (($obj: RTSPOnvifClient, ctx: RTSPContext) => void)): number
     emit(sigName: "announce-request", ctx: RTSPContext): void
@@ -1254,7 +1267,7 @@ export class RTSPOnvifClient {
     connect(sigName: "teardown-request", callback: (($obj: RTSPOnvifClient, ctx: RTSPContext) => void)): number
     connect_after(sigName: "teardown-request", callback: (($obj: RTSPOnvifClient, ctx: RTSPContext) => void)): number
     emit(sigName: "teardown-request", ctx: RTSPContext): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPOnvifClient, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPOnvifClient, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1279,8 +1292,8 @@ export class RTSPOnvifClient {
 }
 export interface RTSPOnvifMedia_ConstructProps extends RTSPMedia_ConstructProps {
 }
-export class RTSPOnvifMedia {
-    /* Properties of GstRtspServer.RTSPMedia */
+class RTSPOnvifMedia {
+    /* Properties of GstRtspServer-1.0.GstRtspServer.RTSPMedia */
     bind_mcast_address: boolean
     buffer_size: number
     clock: Gst.Clock
@@ -1296,16 +1309,16 @@ export class RTSPOnvifMedia {
     suspend_mode: RTSPSuspendMode
     time_provider: boolean
     transport_mode: RTSPTransportMode
-    /* Fields of GstRtspServer.RTSPOnvifMedia */
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPOnvifMedia */
     parent: RTSPMedia
     priv: RTSPOnvifMediaPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPOnvifMedia */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPOnvifMedia */
     collect_backchannel(): boolean
     get_backchannel_bandwidth(): number
     set_backchannel_bandwidth(bandwidth: number): void
-    /* Methods of GstRtspServer.RTSPMedia */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPMedia */
     collect_streams(): void
     complete_pipeline(transports: GstRtsp.RTSPTransport[]): boolean
     create_stream(payloader: Gst.Element, pad: Gst.Pad): RTSPStream
@@ -1379,15 +1392,15 @@ export class RTSPOnvifMedia {
     unprepare(): boolean
     unsuspend(): boolean
     use_time_provider(time_provider: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1395,13 +1408,13 @@ export class RTSPOnvifMedia {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstRtspServer.RTSPMedia */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstRtspServer-1.0.GstRtspServer.RTSPMedia */
     vfunc_convert_range(range: GstRtsp.RTSPTimeRange, unit: GstRtsp.RTSPRangeUnit): boolean
     vfunc_handle_message(message: Gst.Message): boolean
     vfunc_handle_sdp(sdp: GstSdp.SDPMessage): boolean
@@ -1419,15 +1432,15 @@ export class RTSPOnvifMedia {
     vfunc_unprepare(): boolean
     vfunc_unprepared(): void
     vfunc_unsuspend(): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GstRtspServer.RTSPMedia */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GstRtspServer-1.0.GstRtspServer.RTSPMedia */
     connect(sigName: "new-state", callback: (($obj: RTSPOnvifMedia, object: number) => void)): number
     connect_after(sigName: "new-state", callback: (($obj: RTSPOnvifMedia, object: number) => void)): number
     emit(sigName: "new-state", object: number): void
@@ -1446,7 +1459,7 @@ export class RTSPOnvifMedia {
     connect(sigName: "unprepared", callback: (($obj: RTSPOnvifMedia) => void)): number
     connect_after(sigName: "unprepared", callback: (($obj: RTSPOnvifMedia) => void)): number
     emit(sigName: "unprepared"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPOnvifMedia, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPOnvifMedia, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1491,12 +1504,13 @@ export class RTSPOnvifMedia {
 }
 export interface RTSPOnvifMediaFactory_ConstructProps extends RTSPMediaFactory_ConstructProps {
 }
-export class RTSPOnvifMediaFactory {
-    /* Properties of GstRtspServer.RTSPMediaFactory */
+class RTSPOnvifMediaFactory {
+    /* Properties of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactory */
     bind_mcast_address: boolean
     buffer_size: number
     clock: Gst.Clock
     dscp_qos: number
+    enable_rtcp: boolean
     eos_shutdown: boolean
     latency: number
     launch: string
@@ -1507,12 +1521,12 @@ export class RTSPOnvifMediaFactory {
     stop_on_disconnect: boolean
     suspend_mode: RTSPSuspendMode
     transport_mode: RTSPTransportMode
-    /* Fields of GstRtspServer.RTSPOnvifMediaFactory */
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPOnvifMediaFactory */
     parent: RTSPMediaFactory
     priv: RTSPOnvifMediaFactoryPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPOnvifMediaFactory */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPOnvifMediaFactory */
     get_backchannel_bandwidth(): number
     get_backchannel_launch(): string
     has_backchannel_support(): boolean
@@ -1520,7 +1534,7 @@ export class RTSPOnvifMediaFactory {
     set_backchannel_bandwidth(bandwidth: number): void
     set_backchannel_launch(launch: string): void
     set_replay_support(has_replay_support: boolean): void
-    /* Methods of GstRtspServer.RTSPMediaFactory */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactory */
     add_role_from_structure(structure: Gst.Structure): void
     construct(url: GstRtsp.RTSPUrl): RTSPMedia
     create_element(url: GstRtsp.RTSPUrl): Gst.Element
@@ -1542,6 +1556,7 @@ export class RTSPOnvifMediaFactory {
     get_suspend_mode(): RTSPSuspendMode
     get_transport_mode(): RTSPTransportMode
     is_bind_mcast_address(): boolean
+    is_enable_rtcp(): boolean
     is_eos_shutdown(): boolean
     is_shared(): boolean
     is_stop_on_disonnect(): boolean
@@ -1551,6 +1566,7 @@ export class RTSPOnvifMediaFactory {
     set_clock(clock?: Gst.Clock | null): void
     set_do_retransmission(do_retransmission: boolean): void
     set_dscp_qos(dscp_qos: number): void
+    set_enable_rtcp(enable: boolean): void
     set_eos_shutdown(eos_shutdown: boolean): void
     set_latency(latency: number): void
     set_launch(launch: string): void
@@ -1566,15 +1582,15 @@ export class RTSPOnvifMediaFactory {
     set_stop_on_disconnect(stop_on_disconnect: boolean): void
     set_suspend_mode(mode: RTSPSuspendMode): void
     set_transport_mode(mode: RTSPTransportMode): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1582,37 +1598,37 @@ export class RTSPOnvifMediaFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstRtspServer.RTSPOnvifMediaFactory */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstRtspServer-1.0.GstRtspServer.RTSPOnvifMediaFactory */
     vfunc_has_backchannel_support(): boolean
-    /* Virtual methods of GstRtspServer.RTSPMediaFactory */
+    /* Virtual methods of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactory */
     vfunc_configure(media: RTSPMedia): void
     vfunc_construct(url: GstRtsp.RTSPUrl): RTSPMedia
     vfunc_create_element(url: GstRtsp.RTSPUrl): Gst.Element
     vfunc_gen_key(url: GstRtsp.RTSPUrl): string
     vfunc_media_configure(media: RTSPMedia): void
     vfunc_media_constructed(media: RTSPMedia): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GstRtspServer.RTSPMediaFactory */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactory */
     connect(sigName: "media-configure", callback: (($obj: RTSPOnvifMediaFactory, object: RTSPMedia) => void)): number
     connect_after(sigName: "media-configure", callback: (($obj: RTSPOnvifMediaFactory, object: RTSPMedia) => void)): number
     emit(sigName: "media-configure", object: RTSPMedia): void
     connect(sigName: "media-constructed", callback: (($obj: RTSPOnvifMediaFactory, object: RTSPMedia) => void)): number
     connect_after(sigName: "media-constructed", callback: (($obj: RTSPOnvifMediaFactory, object: RTSPMedia) => void)): number
     emit(sigName: "media-constructed", object: RTSPMedia): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPOnvifMediaFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPOnvifMediaFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1624,6 +1640,8 @@ export class RTSPOnvifMediaFactory {
     connect_after(sigName: "notify::clock", callback: (($obj: RTSPOnvifMediaFactory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::dscp-qos", callback: (($obj: RTSPOnvifMediaFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::dscp-qos", callback: (($obj: RTSPOnvifMediaFactory, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::enable-rtcp", callback: (($obj: RTSPOnvifMediaFactory, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::enable-rtcp", callback: (($obj: RTSPOnvifMediaFactory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eos-shutdown", callback: (($obj: RTSPOnvifMediaFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eos-shutdown", callback: (($obj: RTSPOnvifMediaFactory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::latency", callback: (($obj: RTSPOnvifMediaFactory, pspec: GObject.ParamSpec) => void)): number
@@ -1658,8 +1676,8 @@ export class RTSPOnvifMediaFactory {
 }
 export interface RTSPOnvifServer_ConstructProps extends RTSPServer_ConstructProps {
 }
-export class RTSPOnvifServer {
-    /* Properties of GstRtspServer.RTSPServer */
+class RTSPOnvifServer {
+    /* Properties of GstRtspServer-1.0.GstRtspServer.RTSPServer */
     address: string
     backlog: number
     readonly bound_port: number
@@ -1667,11 +1685,11 @@ export class RTSPOnvifServer {
     mount_points: RTSPMountPoints
     service: string
     session_pool: RTSPSessionPool
-    /* Fields of GstRtspServer.RTSPOnvifServer */
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPOnvifServer */
     parent: RTSPServer
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPServer */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPServer */
     attach(context?: GLib.MainContext | null): number
     client_filter(func?: RTSPServerClientFilterFunc | null): RTSPClient[]
     create_socket(cancellable?: Gio.Cancellable | null): Gio.Socket
@@ -1694,15 +1712,15 @@ export class RTSPOnvifServer {
     set_session_pool(pool?: RTSPSessionPool | null): void
     set_thread_pool(pool?: RTSPThreadPool | null): void
     transfer_connection(socket: Gio.Socket, ip: string, port: number, initial_buffer?: string | null): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1710,27 +1728,27 @@ export class RTSPOnvifServer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstRtspServer.RTSPServer */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstRtspServer-1.0.GstRtspServer.RTSPServer */
     vfunc_client_connected(client: RTSPClient): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GstRtspServer.RTSPServer */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GstRtspServer-1.0.GstRtspServer.RTSPServer */
     connect(sigName: "client-connected", callback: (($obj: RTSPOnvifServer, object: RTSPClient) => void)): number
     connect_after(sigName: "client-connected", callback: (($obj: RTSPOnvifServer, object: RTSPClient) => void)): number
     emit(sigName: "client-connected", object: RTSPClient): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPOnvifServer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPOnvifServer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1767,8 +1785,8 @@ export interface RTSPServer_ConstructProps extends GObject.Object_ConstructProps
     service?: string
     session_pool?: RTSPSessionPool
 }
-export class RTSPServer {
-    /* Properties of GstRtspServer.RTSPServer */
+class RTSPServer {
+    /* Properties of GstRtspServer-1.0.GstRtspServer.RTSPServer */
     address: string
     backlog: number
     readonly bound_port: number
@@ -1776,11 +1794,11 @@ export class RTSPServer {
     mount_points: RTSPMountPoints
     service: string
     session_pool: RTSPSessionPool
-    /* Fields of GstRtspServer.RTSPServer */
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPServer */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPServer */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPServer */
     attach(context?: GLib.MainContext | null): number
     client_filter(func?: RTSPServerClientFilterFunc | null): RTSPClient[]
     create_socket(cancellable?: Gio.Cancellable | null): Gio.Socket
@@ -1803,15 +1821,15 @@ export class RTSPServer {
     set_session_pool(pool?: RTSPSessionPool | null): void
     set_thread_pool(pool?: RTSPThreadPool | null): void
     transfer_connection(socket: Gio.Socket, ip: string, port: number, initial_buffer?: string | null): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1819,27 +1837,27 @@ export class RTSPServer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstRtspServer.RTSPServer */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstRtspServer-1.0.GstRtspServer.RTSPServer */
     vfunc_client_connected(client: RTSPClient): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GstRtspServer.RTSPServer */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GstRtspServer-1.0.GstRtspServer.RTSPServer */
     connect(sigName: "client-connected", callback: (($obj: RTSPServer, object: RTSPClient) => void)): number
     connect_after(sigName: "client-connected", callback: (($obj: RTSPServer, object: RTSPClient) => void)): number
     emit(sigName: "client-connected", object: RTSPClient): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPServer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPServer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1875,17 +1893,18 @@ export interface RTSPSession_ConstructProps extends GObject.Object_ConstructProp
     timeout?: number
     timeout_always_visible?: boolean
 }
-export class RTSPSession {
-    /* Properties of GstRtspServer.RTSPSession */
+class RTSPSession {
+    /* Properties of GstRtspServer-1.0.GstRtspServer.RTSPSession */
     extra_timeout: number
     timeout: number
     timeout_always_visible: boolean
-    /* Fields of GstRtspServer.RTSPSession */
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPSession */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPSession */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPSession */
     allow_expire(): void
+    dup_media(path: string): [ /* returnType */ RTSPSessionMedia | null, /* matched */ number ]
     filter(func?: RTSPSessionFilterFunc | null): RTSPSessionMedia[]
     get_header(): string | null
     get_media(path: string): [ /* returnType */ RTSPSessionMedia | null, /* matched */ number ]
@@ -1900,15 +1919,15 @@ export class RTSPSession {
     release_media(media: RTSPSessionMedia): boolean
     set_timeout(timeout: number): void
     touch(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1916,21 +1935,21 @@ export class RTSPSession {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPSession, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPSession, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1953,12 +1972,12 @@ export class RTSPSession {
 }
 export interface RTSPSessionMedia_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class RTSPSessionMedia {
-    /* Fields of GstRtspServer.RTSPSessionMedia */
+class RTSPSessionMedia {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPSessionMedia */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPSessionMedia */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPSessionMedia */
     alloc_channels(): [ /* returnType */ boolean, /* range */ GstRtsp.RTSPRange ]
     get_base_time(): Gst.ClockTime
     get_media(): RTSPMedia | null
@@ -1970,15 +1989,15 @@ export class RTSPSessionMedia {
     set_rtsp_state(state: GstRtsp.RTSPState): void
     set_state(state: Gst.State): boolean
     set_transport(stream: RTSPStream, tr: GstRtsp.RTSPTransport): RTSPStreamTransport
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1986,21 +2005,21 @@ export class RTSPSessionMedia {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPSessionMedia, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPSessionMedia, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2018,14 +2037,14 @@ export class RTSPSessionMedia {
 export interface RTSPSessionPool_ConstructProps extends GObject.Object_ConstructProps {
     max_sessions?: number
 }
-export class RTSPSessionPool {
-    /* Properties of GstRtspServer.RTSPSessionPool */
+class RTSPSessionPool {
+    /* Properties of GstRtspServer-1.0.GstRtspServer.RTSPSessionPool */
     max_sessions: number
-    /* Fields of GstRtspServer.RTSPSessionPool */
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPSessionPool */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPSessionPool */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPSessionPool */
     cleanup(): number
     create(): RTSPSession | null
     create_watch(): GLib.Source
@@ -2035,15 +2054,15 @@ export class RTSPSessionPool {
     get_n_sessions(): number
     remove(sess: RTSPSession): boolean
     set_max_sessions(max: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2051,28 +2070,28 @@ export class RTSPSessionPool {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstRtspServer.RTSPSessionPool */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstRtspServer-1.0.GstRtspServer.RTSPSessionPool */
     vfunc_create_session_id(): string
     vfunc_session_removed(session: RTSPSession): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GstRtspServer.RTSPSessionPool */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GstRtspServer-1.0.GstRtspServer.RTSPSessionPool */
     connect(sigName: "session-removed", callback: (($obj: RTSPSessionPool, object: RTSPSession) => void)): number
     connect_after(sigName: "session-removed", callback: (($obj: RTSPSessionPool, object: RTSPSession) => void)): number
     emit(sigName: "session-removed", object: RTSPSession): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPSessionPool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPSessionPool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2094,16 +2113,16 @@ export interface RTSPStream_ConstructProps extends GObject.Object_ConstructProps
     profiles?: GstRtsp.RTSPProfile
     protocols?: GstRtsp.RTSPLowerTrans
 }
-export class RTSPStream {
-    /* Properties of GstRtspServer.RTSPStream */
+class RTSPStream {
+    /* Properties of GstRtspServer-1.0.GstRtspServer.RTSPStream */
     control: string
     profiles: GstRtsp.RTSPProfile
     protocols: GstRtsp.RTSPLowerTrans
-    /* Fields of GstRtspServer.RTSPStream */
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPStream */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPStream */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPStream */
     add_multicast_client_address(destination: string, rtp_port: number, rtcp_port: number, family: Gio.SocketFamily): boolean
     add_transport(trans: RTSPStreamTransport): boolean
     allocate_udp_sockets(family: Gio.SocketFamily, transport: GstRtsp.RTSPTransport, use_client_settings: boolean): boolean
@@ -2187,17 +2206,18 @@ export class RTSPStream {
     set_ulpfec_pt(pt: number): void
     transport_filter(func?: RTSPStreamTransportFilterFunc | null): RTSPStreamTransport[]
     unblock_linked(): boolean
+    unblock_rtcp(): void
     update_crypto(ssrc: number, crypto?: Gst.Caps | null): boolean
     verify_mcast_ttl(ttl: number): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2205,21 +2225,21 @@ export class RTSPStream {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GstRtspServer.RTSPStream */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GstRtspServer-1.0.GstRtspServer.RTSPStream */
     connect(sigName: "new-rtcp-encoder", callback: (($obj: RTSPStream, object: Gst.Element) => void)): number
     connect_after(sigName: "new-rtcp-encoder", callback: (($obj: RTSPStream, object: Gst.Element) => void)): number
     emit(sigName: "new-rtcp-encoder", object: Gst.Element): void
@@ -2229,7 +2249,7 @@ export class RTSPStream {
     connect(sigName: "new-rtp-rtcp-decoder", callback: (($obj: RTSPStream, object: Gst.Element) => void)): number
     connect_after(sigName: "new-rtp-rtcp-decoder", callback: (($obj: RTSPStream, object: Gst.Element) => void)): number
     emit(sigName: "new-rtp-rtcp-decoder", object: Gst.Element): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPStream, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPStream, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2252,12 +2272,12 @@ export class RTSPStream {
 }
 export interface RTSPStreamTransport_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class RTSPStreamTransport {
-    /* Fields of GstRtspServer.RTSPStreamTransport */
+class RTSPStreamTransport {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPStreamTransport */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPStreamTransport */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPStreamTransport */
     get_rtpinfo(start_time: Gst.ClockTime): string | null
     get_stream(): RTSPStream | null
     get_transport(): GstRtsp.RTSPTransport | null
@@ -2279,15 +2299,15 @@ export class RTSPStreamTransport {
     set_timed_out(timedout: boolean): void
     set_transport(tr: GstRtsp.RTSPTransport): void
     set_url(url?: GstRtsp.RTSPUrl | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2295,21 +2315,21 @@ export class RTSPStreamTransport {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPStreamTransport, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPStreamTransport, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2327,26 +2347,26 @@ export class RTSPStreamTransport {
 export interface RTSPThreadPool_ConstructProps extends GObject.Object_ConstructProps {
     max_threads?: number
 }
-export class RTSPThreadPool {
-    /* Properties of GstRtspServer.RTSPThreadPool */
+class RTSPThreadPool {
+    /* Properties of GstRtspServer-1.0.GstRtspServer.RTSPThreadPool */
     max_threads: number
-    /* Fields of GstRtspServer.RTSPThreadPool */
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPThreadPool */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstRtspServer.RTSPThreadPool */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPThreadPool */
     get_max_threads(): number
     get_thread(type: RTSPThreadType, ctx: RTSPContext): RTSPThread | null
     set_max_threads(max_threads: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2354,26 +2374,26 @@ export class RTSPThreadPool {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstRtspServer.RTSPThreadPool */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstRtspServer-1.0.GstRtspServer.RTSPThreadPool */
     vfunc_configure_thread(thread: RTSPThread, ctx: RTSPContext): void
     vfunc_get_thread(type: RTSPThreadType, ctx: RTSPContext): RTSPThread | null
     vfunc_thread_enter(thread: RTSPThread): void
     vfunc_thread_leave(thread: RTSPThread): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RTSPThreadPool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTSPThreadPool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2391,28 +2411,28 @@ export class RTSPThreadPool {
     static cleanup(): void
     static $gtype: GObject.Type
 }
-export class RTSPAddress {
-    /* Fields of GstRtspServer.RTSPAddress */
+class RTSPAddress {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPAddress */
     pool: RTSPAddressPool
     address: string
     port: number
     n_ports: number
     ttl: number
-    /* Methods of GstRtspServer.RTSPAddress */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPAddress */
     copy(): RTSPAddress
     free(): void
     static name: string
 }
-export abstract class RTSPAddressPoolClass {
-    /* Fields of GstRtspServer.RTSPAddressPoolClass */
+abstract class RTSPAddressPoolClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPAddressPoolClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class RTSPAddressPoolPrivate {
+class RTSPAddressPoolPrivate {
     static name: string
 }
-export abstract class RTSPAuthClass {
-    /* Fields of GstRtspServer.RTSPAuthClass */
+abstract class RTSPAuthClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPAuthClass */
     parent_class: GObject.ObjectClass
     authenticate: (auth: RTSPAuth, ctx: RTSPContext) => boolean
     check: (auth: RTSPAuth, ctx: RTSPContext, check: string) => boolean
@@ -2420,11 +2440,11 @@ export abstract class RTSPAuthClass {
     accept_certificate: (auth: RTSPAuth, connection: Gio.TlsConnection, peer_cert: Gio.TlsCertificate, errors: Gio.TlsCertificateFlags) => boolean
     static name: string
 }
-export class RTSPAuthPrivate {
+class RTSPAuthPrivate {
     static name: string
 }
-export abstract class RTSPClientClass {
-    /* Fields of GstRtspServer.RTSPClientClass */
+abstract class RTSPClientClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPClientClass */
     parent_class: GObject.ObjectClass
     create_sdp: (client: RTSPClient, media: RTSPMedia) => GstSdp.SDPMessage
     configure_client_media: (client: RTSPClient, media: RTSPMedia, stream: RTSPStream, ctx: RTSPContext) => boolean
@@ -2463,11 +2483,11 @@ export abstract class RTSPClientClass {
     pre_record_request: (client: RTSPClient, ctx: RTSPContext) => GstRtsp.RTSPStatusCode
     static name: string
 }
-export class RTSPClientPrivate {
+class RTSPClientPrivate {
     static name: string
 }
-export class RTSPContext {
-    /* Fields of GstRtspServer.RTSPContext */
+class RTSPContext {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPContext */
     server: RTSPServer
     conn: GstRtsp.RTSPConnection
     client: RTSPClient
@@ -2483,13 +2503,13 @@ export class RTSPContext {
     stream: RTSPStream
     response: GstRtsp.RTSPMessage
     trans: RTSPStreamTransport
-    /* Methods of GstRtspServer.RTSPContext */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPContext */
     pop_current(): void
     push_current(): void
     static name: string
 }
-export abstract class RTSPMediaClass {
-    /* Fields of GstRtspServer.RTSPMediaClass */
+abstract class RTSPMediaClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPMediaClass */
     parent_class: GObject.ObjectClass
     handle_message: (media: RTSPMedia, message: Gst.Message) => boolean
     prepare: (media: RTSPMedia, thread?: RTSPThread | null) => boolean
@@ -2510,8 +2530,8 @@ export abstract class RTSPMediaClass {
     handle_sdp: (media: RTSPMedia, sdp: GstSdp.SDPMessage) => boolean
     static name: string
 }
-export abstract class RTSPMediaFactoryClass {
-    /* Fields of GstRtspServer.RTSPMediaFactoryClass */
+abstract class RTSPMediaFactoryClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactoryClass */
     parent_class: GObject.ObjectClass
     gen_key: (factory: RTSPMediaFactory, url: GstRtsp.RTSPUrl) => string
     create_element: (factory: RTSPMediaFactory, url: GstRtsp.RTSPUrl) => Gst.Element
@@ -2521,60 +2541,60 @@ export abstract class RTSPMediaFactoryClass {
     media_configure: (factory: RTSPMediaFactory, media: RTSPMedia) => void
     static name: string
 }
-export class RTSPMediaFactoryPrivate {
+class RTSPMediaFactoryPrivate {
     static name: string
 }
-export abstract class RTSPMediaFactoryURIClass {
-    /* Fields of GstRtspServer.RTSPMediaFactoryURIClass */
+abstract class RTSPMediaFactoryURIClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPMediaFactoryURIClass */
     parent_class: RTSPMediaFactoryClass
     static name: string
 }
-export class RTSPMediaFactoryURIPrivate {
+class RTSPMediaFactoryURIPrivate {
     static name: string
 }
-export class RTSPMediaPrivate {
+class RTSPMediaPrivate {
     static name: string
 }
-export abstract class RTSPMountPointsClass {
-    /* Fields of GstRtspServer.RTSPMountPointsClass */
+abstract class RTSPMountPointsClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPMountPointsClass */
     parent_class: GObject.ObjectClass
     make_path: (mounts: RTSPMountPoints, url: GstRtsp.RTSPUrl) => string | null
     static name: string
 }
-export class RTSPMountPointsPrivate {
+class RTSPMountPointsPrivate {
     static name: string
 }
-export abstract class RTSPOnvifClientClass {
-    /* Fields of GstRtspServer.RTSPOnvifClientClass */
+abstract class RTSPOnvifClientClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPOnvifClientClass */
     parent: RTSPClientClass
     static name: string
 }
-export abstract class RTSPOnvifMediaClass {
-    /* Fields of GstRtspServer.RTSPOnvifMediaClass */
+abstract class RTSPOnvifMediaClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPOnvifMediaClass */
     parent: RTSPMediaClass
     static name: string
 }
-export abstract class RTSPOnvifMediaFactoryClass {
-    /* Fields of GstRtspServer.RTSPOnvifMediaFactoryClass */
+abstract class RTSPOnvifMediaFactoryClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPOnvifMediaFactoryClass */
     parent: RTSPMediaFactoryClass
     has_backchannel_support: (factory: RTSPOnvifMediaFactory) => boolean
     static name: string
 }
-export class RTSPOnvifMediaFactoryPrivate {
+class RTSPOnvifMediaFactoryPrivate {
     static name: string
 }
-export class RTSPOnvifMediaPrivate {
+class RTSPOnvifMediaPrivate {
     static name: string
 }
-export abstract class RTSPOnvifServerClass {
-    /* Fields of GstRtspServer.RTSPOnvifServerClass */
+abstract class RTSPOnvifServerClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPOnvifServerClass */
     parent: RTSPServerClass
     static name: string
 }
-export class RTSPPermissions {
-    /* Fields of GstRtspServer.RTSPPermissions */
+class RTSPPermissions {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPPermissions */
     mini_object: Gst.MiniObject
-    /* Methods of GstRtspServer.RTSPPermissions */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPPermissions */
     add_permission_for_role(role: string, permission: string, allowed: boolean): void
     add_role(role: string): void
     add_role_from_structure(structure: Gst.Structure): void
@@ -2587,64 +2607,64 @@ export class RTSPPermissions {
     /* Static methods and pseudo-constructors */
     static new(): RTSPPermissions
 }
-export abstract class RTSPServerClass {
-    /* Fields of GstRtspServer.RTSPServerClass */
+abstract class RTSPServerClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPServerClass */
     parent_class: GObject.ObjectClass
     client_connected: (server: RTSPServer, client: RTSPClient) => void
     static name: string
 }
-export class RTSPServerPrivate {
+class RTSPServerPrivate {
     static name: string
 }
-export abstract class RTSPSessionClass {
-    /* Fields of GstRtspServer.RTSPSessionClass */
+abstract class RTSPSessionClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPSessionClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class RTSPSessionMediaClass {
-    /* Fields of GstRtspServer.RTSPSessionMediaClass */
+abstract class RTSPSessionMediaClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPSessionMediaClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class RTSPSessionMediaPrivate {
+class RTSPSessionMediaPrivate {
     static name: string
 }
-export abstract class RTSPSessionPoolClass {
-    /* Fields of GstRtspServer.RTSPSessionPoolClass */
+abstract class RTSPSessionPoolClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPSessionPoolClass */
     parent_class: GObject.ObjectClass
     create_session_id: (pool: RTSPSessionPool) => string
     session_removed: (pool: RTSPSessionPool, session: RTSPSession) => void
     static name: string
 }
-export class RTSPSessionPoolPrivate {
+class RTSPSessionPoolPrivate {
     static name: string
 }
-export class RTSPSessionPrivate {
+class RTSPSessionPrivate {
     static name: string
 }
-export abstract class RTSPStreamClass {
-    /* Fields of GstRtspServer.RTSPStreamClass */
+abstract class RTSPStreamClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPStreamClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class RTSPStreamPrivate {
+class RTSPStreamPrivate {
     static name: string
 }
-export abstract class RTSPStreamTransportClass {
-    /* Fields of GstRtspServer.RTSPStreamTransportClass */
+abstract class RTSPStreamTransportClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPStreamTransportClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class RTSPStreamTransportPrivate {
+class RTSPStreamTransportPrivate {
     static name: string
 }
-export class RTSPThread {
-    /* Fields of GstRtspServer.RTSPThread */
+class RTSPThread {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPThread */
     mini_object: Gst.MiniObject
     type: RTSPThreadType
     context: GLib.MainContext
     loop: GLib.MainLoop
-    /* Methods of GstRtspServer.RTSPThread */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPThread */
     reuse(): boolean
     stop(): void
     static name: string
@@ -2653,8 +2673,8 @@ export class RTSPThread {
     /* Static methods and pseudo-constructors */
     static new(type: RTSPThreadType): RTSPThread
 }
-export abstract class RTSPThreadPoolClass {
-    /* Fields of GstRtspServer.RTSPThreadPoolClass */
+abstract class RTSPThreadPoolClass {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPThreadPoolClass */
     parent_class: GObject.ObjectClass
     pool: GLib.ThreadPool
     get_thread: (pool: RTSPThreadPool, type: RTSPThreadType, ctx: RTSPContext) => RTSPThread | null
@@ -2663,13 +2683,13 @@ export abstract class RTSPThreadPoolClass {
     thread_leave: (pool: RTSPThreadPool, thread: RTSPThread) => void
     static name: string
 }
-export class RTSPThreadPoolPrivate {
+class RTSPThreadPoolPrivate {
     static name: string
 }
-export class RTSPToken {
-    /* Fields of GstRtspServer.RTSPToken */
+class RTSPToken {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.RTSPToken */
     mini_object: Gst.MiniObject
-    /* Methods of GstRtspServer.RTSPToken */
+    /* Methods of GstRtspServer-1.0.GstRtspServer.RTSPToken */
     get_string(field: string): string | null
     get_structure(): Gst.Structure
     is_allowed(field: string): boolean
@@ -2682,9 +2702,11 @@ export class RTSPToken {
     /* Static methods and pseudo-constructors */
     static new(): RTSPToken
 }
-export class SDPInfo {
-    /* Fields of GstRtspServer.SDPInfo */
+class SDPInfo {
+    /* Fields of GstRtspServer-1.0.GstRtspServer.SDPInfo */
     is_ipv6: boolean
     server_ip: string
     static name: string
 }
+}
+export default GstRtspServer;

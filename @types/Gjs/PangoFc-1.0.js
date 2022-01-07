@@ -1,2 +1,2 @@
-imports.gi.versions.PangoFc = '1.0'
-export default imports.gi.PangoFc
+import PangoFc from 'gi://PangoFc?version=1.0';
+export default PangoFc;

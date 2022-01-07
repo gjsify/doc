@@ -3,21 +3,23 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as RygelRenderer from './RygelRenderer-2.6';
-import type * as RygelCore from './RygelCore-2.6';
-import type * as GLib from './GLib-2.0';
-import type * as Gee from './Gee-0.8';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GUPnP from './GUPnP-1.2';
-import type * as libxml2 from './libxml2-2.0';
-import type * as Soup from './Soup-2.4';
-import type * as GSSDP from './GSSDP-1.2';
-import type * as GUPnPAV from './GUPnPAV-1.0';
-import type * as Gst from './Gst-1.0';
-import type * as GModule from './GModule-2.0';
+import type RygelRenderer from './RygelRenderer-2.6';
+import type RygelCore from './RygelCore-2.6';
+import type GLib from './GLib-2.0';
+import type Gee from './Gee-0.8';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GUPnP from './GUPnP-1.2';
+import type libxml2 from './libxml2-2.0';
+import type Soup from './Soup-2.4';
+import type GSSDP from './GSSDP-1.2';
+import type GUPnPAV from './GUPnPAV-1.0';
+import type Gst from './Gst-1.0';
+import type GModule from './GModule-2.0';
 
-export enum PlaybinPlayerError {
+export namespace RygelRendererGst {
+
+enum PlaybinPlayerError {
     NO_ELEMENT,
 }
 export interface PlaybinPlayer_ConstructProps extends GObject.Object_ConstructProps {
@@ -31,11 +33,11 @@ export interface PlaybinPlayer_ConstructProps extends GObject.Object_ConstructPr
     content_features?: string
     user_agent?: string
 }
-export class PlaybinPlayer {
-    /* Properties of RygelRendererGst.PlaybinPlayer */
+class PlaybinPlayer {
+    /* Properties of RygelRendererGst-2.6.RygelRendererGst.PlaybinPlayer */
     playbin: Gst.Element
     readonly supported_profiles: RygelCore.DLNAProfile[]
-    /* Properties of RygelRenderer.MediaPlayer */
+    /* Properties of RygelRenderer-2.6.RygelRenderer.MediaPlayer */
     playback_state: string
     readonly allowed_playback_speeds: string[]
     playback_speed: string
@@ -51,20 +53,20 @@ export class PlaybinPlayer {
     readonly position: number
     readonly byte_position: number
     user_agent: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelRendererGst.PlaybinPlayer */
+    /* Methods of RygelRendererGst-2.6.RygelRendererGst.PlaybinPlayer */
     get_playbin(): Gst.Element
     get_supported_profiles(): RygelCore.DLNAProfile[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -72,13 +74,13 @@ export class PlaybinPlayer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of RygelRenderer.MediaPlayer */
+    watch_closure(closure: Function): void
+    /* Methods of RygelRenderer-2.6.RygelRenderer.MediaPlayer */
     seek(time: number): boolean
     seek_bytes(bytes: number): boolean
     get_protocols(): string[]
@@ -110,7 +112,7 @@ export class PlaybinPlayer {
     get_user_agent(): string | null
     set_user_agent(value?: string | null): void
     get_protocol_info(): string
-    /* Virtual methods of RygelRendererGst.PlaybinPlayer */
+    /* Virtual methods of RygelRendererGst-2.6.RygelRendererGst.PlaybinPlayer */
     vfunc_seek(time: number): boolean
     vfunc_seek_bytes(bytes: number): boolean
     vfunc_get_protocols(): string[]
@@ -138,15 +140,15 @@ export class PlaybinPlayer {
     vfunc_get_byte_position(): number
     vfunc_get_user_agent(): string | null
     vfunc_set_user_agent(value?: string | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PlaybinPlayer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PlaybinPlayer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -197,14 +199,14 @@ export class PlaybinPlayer {
 }
 export interface PlaybinRenderer_ConstructProps extends RygelRenderer.MediaRenderer_ConstructProps {
 }
-export class PlaybinRenderer {
-    /* Properties of RygelCore.MediaDevice */
+class PlaybinRenderer {
+    /* Properties of RygelCore-2.6.RygelCore.MediaDevice */
     plugin: RygelCore.Plugin
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of RygelRendererGst.PlaybinRenderer */
+    /* Methods of RygelRendererGst-2.6.RygelRendererGst.PlaybinRenderer */
     get_playbin(): Gst.Element | null
-    /* Methods of RygelCore.MediaDevice */
+    /* Methods of RygelCore-2.6.RygelCore.MediaDevice */
     add_interface(iface: string): void
     remove_interface(iface: string): void
     get_interfaces(): string[]
@@ -212,15 +214,15 @@ export class PlaybinRenderer {
     set_plugin(value: RygelCore.Plugin): void
     get_title(): string
     get_capabilities(): RygelCore.PluginCapabilities
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -228,21 +230,21 @@ export class PlaybinRenderer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PlaybinRenderer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PlaybinRenderer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -260,15 +262,17 @@ export class PlaybinRenderer {
     static new(title: string, player: RygelRenderer.MediaPlayer, capabilities: RygelCore.PluginCapabilities): PlaybinRenderer
     static $gtype: GObject.Type
 }
-export abstract class PlaybinPlayerClass {
+abstract class PlaybinPlayerClass {
     static name: string
 }
-export class PlaybinPlayerPrivate {
+class PlaybinPlayerPrivate {
     static name: string
 }
-export abstract class PlaybinRendererClass {
+abstract class PlaybinRendererClass {
     static name: string
 }
-export class PlaybinRendererPrivate {
+class PlaybinRendererPrivate {
     static name: string
 }
+}
+export default RygelRendererGst;

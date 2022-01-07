@@ -1,2 +1,2 @@
-imports.gi.versions.GTop = '2.0'
-export default imports.gi.GTop
+import GTop from 'gi://GTop?version=2.0';
+export default GTop;

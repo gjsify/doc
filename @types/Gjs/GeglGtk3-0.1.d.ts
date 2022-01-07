@@ -3,22 +3,24 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gtk from './Gtk-3.0';
-import type * as xlib from './xlib-2.0';
-import type * as Gdk from './Gdk-3.0';
-import type * as cairo from './cairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as Atk from './Atk-1.0';
-import type * as Gegl from './Gegl-0.4';
-import type * as Babl from './Babl-0.1';
+import type Gtk from './Gtk-3.0';
+import type xlib from './xlib-2.0';
+import type Gdk from './Gdk-3.0';
+import type cairo from './cairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type GModule from './GModule-2.0';
+import type Atk from './Atk-1.0';
+import type Gegl from './Gegl-0.4';
+import type Babl from './Babl-0.1';
 
-export enum ViewAutoscale {
+export namespace GeglGtk3 {
+
+enum ViewAutoscale {
     DISABLED,
     WIDGET,
     CONTENT,
@@ -31,15 +33,15 @@ export interface View_ConstructProps extends Gtk.DrawingArea_ConstructProps {
     x?: number
     y?: number
 }
-export class View {
-    /* Properties of GeglGtk3.View */
+class View {
+    /* Properties of GeglGtk3-0.1.GeglGtk3.View */
     autoscale_policy: ViewAutoscale
     block: boolean
     node: GObject.Object
     scale: number
     x: number
     y: number
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -79,13 +81,13 @@ export class View {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.DrawingArea */
+    /* Fields of Gtk-3.0.Gtk.DrawingArea */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GeglGtk3.View */
+    /* Methods of GeglGtk3-0.1.GeglGtk3.View */
     get_autoscale_policy(): ViewAutoscale
     get_node(): Gegl.Node
     get_scale(): number
@@ -97,7 +99,7 @@ export class View {
     set_scale(scale: number): void
     set_x(x: number): void
     set_y(y: number): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -356,15 +358,15 @@ export class View {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -372,13 +374,13 @@ export class View {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -387,7 +389,7 @@ export class View {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of GeglGtk3.View */
+    /* Virtual methods of GeglGtk3-0.1.GeglGtk3.View */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -398,7 +400,7 @@ export class View {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -481,22 +483,22 @@ export class View {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GeglGtk3.View */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GeglGtk3-0.1.GeglGtk3.View */
     connect(sigName: "draw-background", callback: (($obj: View, cr: cairo.Context, rect: Gdk.Rectangle) => void)): number
     connect_after(sigName: "draw-background", callback: (($obj: View, cr: cairo.Context, rect: Gdk.Rectangle) => void)): number
     emit(sigName: "draw-background", cr: cairo.Context, rect: Gdk.Rectangle): void
     connect(sigName: "draw-overlay", callback: (($obj: View, cr: cairo.Context, rect: Gdk.Rectangle) => void)): number
     connect_after(sigName: "draw-overlay", callback: (($obj: View, cr: cairo.Context, rect: Gdk.Rectangle) => void)): number
     emit(sigName: "draw-overlay", cr: cairo.Context, rect: Gdk.Rectangle): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: View) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: View) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -704,7 +706,7 @@ export class View {
     connect(sigName: "window-state-event", callback: (($obj: View, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: View, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -811,9 +813,11 @@ export class View {
     static new_for_node(node: Gegl.Node): View
     static $gtype: GObject.Type
 }
-export abstract class ViewClass {
+abstract class ViewClass {
     static name: string
 }
-export class ViewPrivate {
+class ViewPrivate {
     static name: string
 }
+}
+export default GeglGtk3;

@@ -1,2 +1,2 @@
-imports.gi.versions.Handy = '1'
-export default imports.gi.Handy
+import Handy from 'gi://Handy?version=1';
+export default Handy;

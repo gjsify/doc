@@ -3,39 +3,41 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GstVideo from './GstVideo-1.0';
-import type * as GstBase from './GstBase-1.0';
-import type * as Gst from './Gst-1.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as GstGL from './GstGL-1.0';
+import type GstVideo from './GstVideo-1.0';
+import type GstBase from './GstBase-1.0';
+import type Gst from './Gst-1.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type GModule from './GModule-2.0';
+import type GstGL from './GstGL-1.0';
+
+export namespace GstGLEGL {
 
 export const GL_DISPLAY_EGL_NAME: string
 export const GL_MEMORY_EGL_ALLOCATOR_NAME: string
-export function egl_get_error_string(err: number): string
-export function egl_image_from_dmabuf(context: GstGL.GLContext, dmabuf: number, in_info: GstVideo.VideoInfo, plane: number, offset: number): EGLImage
-export function egl_image_from_dmabuf_direct(context: GstGL.GLContext, fd: number, offset: number, in_info: GstVideo.VideoInfo): EGLImage
-export function egl_image_from_dmabuf_direct_target(context: GstGL.GLContext, fd: number, offset: number, in_info: GstVideo.VideoInfo, target: GstGL.GLTextureTarget): EGLImage
-export function egl_image_from_texture(context: GstGL.GLContext, gl_mem: GstGL.GLMemory, attribs: number): EGLImage
-export function gl_memory_egl_init_once(): void
-export function is_gl_memory_egl(mem: Gst.Memory): boolean
-export interface EGLImageDestroyNotify {
+function egl_get_error_string(err: number): string
+function egl_image_from_dmabuf(context: GstGL.GLContext, dmabuf: number, in_info: GstVideo.VideoInfo, plane: number, offset: number): EGLImage
+function egl_image_from_dmabuf_direct(context: GstGL.GLContext, fd: number, offset: number, in_info: GstVideo.VideoInfo): EGLImage
+function egl_image_from_dmabuf_direct_target(context: GstGL.GLContext, fd: number, offset: number, in_info: GstVideo.VideoInfo, target: GstGL.GLTextureTarget): EGLImage
+function egl_image_from_texture(context: GstGL.GLContext, gl_mem: GstGL.GLMemory, attribs: number): EGLImage
+function gl_memory_egl_init_once(): void
+function is_gl_memory_egl(mem: Gst.Memory): boolean
+interface EGLImageDestroyNotify {
     (image: EGLImage, data?: object | null): void
 }
 export interface GLDisplayEGL_ConstructProps extends GstGL.GLDisplay_ConstructProps {
 }
-export class GLDisplayEGL {
-    /* Properties of Gst.Object */
+class GLDisplayEGL {
+    /* Properties of Gst-1.0.Gst.Object */
     name: string
     parent: Gst.Object
-    /* Fields of Gst.Object */
+    /* Fields of Gst-1.0.Gst.Object */
     object: GObject.InitiallyUnowned
     lock: GLib.Mutex
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstGL.GLDisplay */
+    /* Methods of GstGL-1.0.GstGL.GLDisplay */
     add_context(context: GstGL.GLContext): boolean
     create_context(other_context: GstGL.GLContext): [ /* returnType */ boolean, /* p_context */ GstGL.GLContext ]
     create_window(): GstGL.GLWindow
@@ -49,7 +51,7 @@ export class GLDisplayEGL {
     remove_context(context: GstGL.GLContext): void
     remove_window(window: GstGL.GLWindow): boolean
     retrieve_window(data: object | null, compare_func: GLib.CompareFunc): GstGL.GLWindow
-    /* Methods of Gst.Object */
+    /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: Gst.ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
     get_control_binding(property_name: string): Gst.ControlBinding | null
@@ -74,15 +76,15 @@ export class GLDisplayEGL {
     sync_values(timestamp: Gst.ClockTime): boolean
     unparent(): void
     unref(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -90,33 +92,33 @@ export class GLDisplayEGL {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstGL.GLDisplay */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstGL-1.0.GstGL.GLDisplay */
     vfunc_create_window(): GstGL.GLWindow
     vfunc_get_handle(): number
-    /* Virtual methods of Gst.Object */
+    /* Virtual methods of Gst-1.0.Gst.Object */
     vfunc_deep_notify(orig: Gst.Object, pspec: GObject.ParamSpec): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GstGL.GLDisplay */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GstGL-1.0.GstGL.GLDisplay */
     connect(sigName: "create-context", callback: (($obj: GLDisplayEGL, context: GstGL.GLContext) => GstGL.GLContext)): number
     connect_after(sigName: "create-context", callback: (($obj: GLDisplayEGL, context: GstGL.GLContext) => GstGL.GLContext)): number
     emit(sigName: "create-context", context: GstGL.GLContext): void
-    /* Signals of Gst.Object */
+    /* Signals of Gst-1.0.Gst.Object */
     connect(sigName: "deep-notify", callback: (($obj: GLDisplayEGL, prop_object: Gst.Object, prop: GObject.ParamSpec) => void)): number
     connect_after(sigName: "deep-notify", callback: (($obj: GLDisplayEGL, prop_object: Gst.Object, prop: GObject.ParamSpec) => void)): number
     emit(sigName: "deep-notify", prop_object: Gst.Object, prop: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GLDisplayEGL, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLDisplayEGL, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -140,20 +142,20 @@ export class GLDisplayEGL {
 }
 export interface GLDisplayEGLDevice_ConstructProps extends GstGL.GLDisplay_ConstructProps {
 }
-export class GLDisplayEGLDevice {
-    /* Properties of Gst.Object */
+class GLDisplayEGLDevice {
+    /* Properties of Gst-1.0.Gst.Object */
     name: string
     parent: Gst.Object
-    /* Fields of GstGLEGL.GLDisplayEGLDevice */
+    /* Fields of GstGLEGL-1.0.GstGLEGL.GLDisplayEGLDevice */
     device: object
     _padding: object[]
-    /* Fields of Gst.Object */
+    /* Fields of Gst-1.0.Gst.Object */
     object: GObject.InitiallyUnowned
     lock: GLib.Mutex
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstGL.GLDisplay */
+    /* Methods of GstGL-1.0.GstGL.GLDisplay */
     add_context(context: GstGL.GLContext): boolean
     create_context(other_context: GstGL.GLContext): [ /* returnType */ boolean, /* p_context */ GstGL.GLContext ]
     create_window(): GstGL.GLWindow
@@ -167,7 +169,7 @@ export class GLDisplayEGLDevice {
     remove_context(context: GstGL.GLContext): void
     remove_window(window: GstGL.GLWindow): boolean
     retrieve_window(data: object | null, compare_func: GLib.CompareFunc): GstGL.GLWindow
-    /* Methods of Gst.Object */
+    /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: Gst.ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
     get_control_binding(property_name: string): Gst.ControlBinding | null
@@ -192,15 +194,15 @@ export class GLDisplayEGLDevice {
     sync_values(timestamp: Gst.ClockTime): boolean
     unparent(): void
     unref(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -208,33 +210,33 @@ export class GLDisplayEGLDevice {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstGL.GLDisplay */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstGL-1.0.GstGL.GLDisplay */
     vfunc_create_window(): GstGL.GLWindow
     vfunc_get_handle(): number
-    /* Virtual methods of Gst.Object */
+    /* Virtual methods of Gst-1.0.Gst.Object */
     vfunc_deep_notify(orig: Gst.Object, pspec: GObject.ParamSpec): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GstGL.GLDisplay */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GstGL-1.0.GstGL.GLDisplay */
     connect(sigName: "create-context", callback: (($obj: GLDisplayEGLDevice, context: GstGL.GLContext) => GstGL.GLContext)): number
     connect_after(sigName: "create-context", callback: (($obj: GLDisplayEGLDevice, context: GstGL.GLContext) => GstGL.GLContext)): number
     emit(sigName: "create-context", context: GstGL.GLContext): void
-    /* Signals of Gst.Object */
+    /* Signals of Gst-1.0.Gst.Object */
     connect(sigName: "deep-notify", callback: (($obj: GLDisplayEGLDevice, prop_object: Gst.Object, prop: GObject.ParamSpec) => void)): number
     connect_after(sigName: "deep-notify", callback: (($obj: GLDisplayEGLDevice, prop_object: Gst.Object, prop: GObject.ParamSpec) => void)): number
     emit(sigName: "deep-notify", prop_object: Gst.Object, prop: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GLDisplayEGLDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLDisplayEGLDevice, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -257,11 +259,11 @@ export class GLDisplayEGLDevice {
 }
 export interface GLMemoryEGLAllocator_ConstructProps extends GstGL.GLMemoryAllocator_ConstructProps {
 }
-export class GLMemoryEGLAllocator {
-    /* Properties of Gst.Object */
+class GLMemoryEGLAllocator {
+    /* Properties of Gst-1.0.Gst.Object */
     name: string
     parent: Gst.Object
-    /* Fields of Gst.Allocator */
+    /* Fields of Gst-1.0.Gst.Allocator */
     object: Gst.Object
     mem_type: string
     mem_map: Gst.MemoryMapFunction
@@ -271,16 +273,16 @@ export class GLMemoryEGLAllocator {
     mem_is_span: Gst.MemoryIsSpanFunction
     mem_map_full: Gst.MemoryMapFullFunction
     mem_unmap_full: Gst.MemoryUnmapFullFunction
-    /* Fields of Gst.Object */
+    /* Fields of Gst-1.0.Gst.Object */
     lock: GLib.Mutex
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gst.Allocator */
+    /* Methods of Gst-1.0.Gst.Allocator */
     alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     free(memory: Gst.Memory): void
     set_default(): void
-    /* Methods of Gst.Object */
+    /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: Gst.ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
     get_control_binding(property_name: string): Gst.ControlBinding | null
@@ -305,15 +307,15 @@ export class GLMemoryEGLAllocator {
     sync_values(timestamp: Gst.ClockTime): boolean
     unparent(): void
     unref(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -321,38 +323,38 @@ export class GLMemoryEGLAllocator {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstGLEGL.GLMemoryEGLAllocator */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstGLEGL-1.0.GstGLEGL.GLMemoryEGLAllocator */
     vfunc_alloc(params: GstGL.GLAllocationParams): GstGL.GLBaseMemory
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
-    /* Virtual methods of GstGL.GLMemoryAllocator */
+    /* Virtual methods of GstGL-1.0.GstGL.GLMemoryAllocator */
     vfunc_alloc(params: GstGL.GLAllocationParams): GstGL.GLBaseMemory
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
-    /* Virtual methods of GstGL.GLBaseMemoryAllocator */
+    /* Virtual methods of GstGL-1.0.GstGL.GLBaseMemoryAllocator */
     vfunc_alloc(params: GstGL.GLAllocationParams): GstGL.GLBaseMemory
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
-    /* Virtual methods of Gst.Allocator */
+    /* Virtual methods of Gst-1.0.Gst.Allocator */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     vfunc_free(memory: Gst.Memory): void
-    /* Virtual methods of Gst.Object */
+    /* Virtual methods of Gst-1.0.Gst.Object */
     vfunc_deep_notify(orig: Gst.Object, pspec: GObject.ParamSpec): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gst.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gst-1.0.Gst.Object */
     connect(sigName: "deep-notify", callback: (($obj: GLMemoryEGLAllocator, prop_object: Gst.Object, prop: GObject.ParamSpec) => void)): number
     connect_after(sigName: "deep-notify", callback: (($obj: GLMemoryEGLAllocator, prop_object: Gst.Object, prop: GObject.ParamSpec) => void)): number
     emit(sigName: "deep-notify", prop_object: Gst.Object, prop: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GLMemoryEGLAllocator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLMemoryEGLAllocator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -369,8 +371,8 @@ export class GLMemoryEGLAllocator {
     _init (config?: GLMemoryEGLAllocator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export class EGLImage {
-    /* Methods of GstGLEGL.EGLImage */
+class EGLImage {
+    /* Methods of GstGLEGL-1.0.GstGLEGL.EGLImage */
     export_dmabuf(fd: number, stride: number, offset: number): boolean
     get_image(): object | null
     static name: string
@@ -381,26 +383,28 @@ export class EGLImage {
     static from_dmabuf_direct_target(context: GstGL.GLContext, fd: number, offset: number, in_info: GstVideo.VideoInfo, target: GstGL.GLTextureTarget): EGLImage
     static from_texture(context: GstGL.GLContext, gl_mem: GstGL.GLMemory, attribs: number): EGLImage
 }
-export abstract class GLDisplayEGLClass {
-    /* Fields of GstGLEGL.GLDisplayEGLClass */
+abstract class GLDisplayEGLClass {
+    /* Fields of GstGLEGL-1.0.GstGLEGL.GLDisplayEGLClass */
     object_class: GstGL.GLDisplayClass
     _padding: object[]
     static name: string
 }
-export abstract class GLDisplayEGLDeviceClass {
-    /* Fields of GstGLEGL.GLDisplayEGLDeviceClass */
+abstract class GLDisplayEGLDeviceClass {
+    /* Fields of GstGLEGL-1.0.GstGLEGL.GLDisplayEGLDeviceClass */
     object_class: GstGL.GLDisplayClass
     _padding: object[]
     static name: string
 }
-export class GLMemoryEGL {
-    /* Methods of GstGLEGL.GLMemoryEGL */
+class GLMemoryEGL {
+    /* Methods of GstGLEGL-1.0.GstGLEGL.GLMemoryEGL */
     get_display(): object | null
     get_image(): object | null
     static name: string
     /* Static methods and pseudo-constructors */
     static init_once(): void
 }
-export abstract class GLMemoryEGLAllocatorClass {
+abstract class GLMemoryEGLAllocatorClass {
     static name: string
 }
+}
+export default GstGLEGL;

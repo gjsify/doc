@@ -1,2 +1,2 @@
-imports.gi.versions.Json = '1.0'
-export default imports.gi.Json
+import Json from 'gi://Json?version=1.0';
+export default Json;

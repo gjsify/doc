@@ -1,2 +1,2 @@
-imports.gi.versions.AppStreamBuilder = '1.0'
-export default imports.gi.AppStreamBuilder
+import AppStreamBuilder from 'gi://AppStreamBuilder?version=1.0';
+export default AppStreamBuilder;

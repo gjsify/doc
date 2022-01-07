@@ -1,2 +1,2 @@
-imports.gi.versions.GcrUi = '3'
-export default imports.gi.GcrUi
+import GcrUi from 'gi://GcrUi?version=3';
+export default GcrUi;

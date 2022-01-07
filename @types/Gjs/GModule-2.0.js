@@ -1,2 +1,2 @@
-imports.gi.versions.GModule = '2.0'
-export default imports.gi.GModule
+import GModule from 'gi://GModule?version=2.0';
+export default GModule;

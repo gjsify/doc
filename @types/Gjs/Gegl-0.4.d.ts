@@ -3,18 +3,20 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Babl from './Babl-0.1';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Babl from './Babl-0.1';
 
-export enum AbyssPolicy {
+export namespace Gegl {
+
+enum AbyssPolicy {
     NONE,
     CLAMP,
     LOOP,
     BLACK,
     WHITE,
 }
-export enum BablVariant {
+enum BablVariant {
     FLOAT,
     LINEAR,
     NON_LINEAR,
@@ -25,17 +27,17 @@ export enum BablVariant {
     PERCEPTUAL_PREMULTIPLIED_IF_ALPHA,
     ADD_ALPHA,
 }
-export enum CachePolicy {
+enum CachePolicy {
     AUTO,
     NEVER,
     ALWAYS,
 }
-export enum DistanceMetric {
+enum DistanceMetric {
     EUCLIDEAN,
     MANHATTAN,
     CHEBYSHEV,
 }
-export enum DitherMethod {
+enum DitherMethod {
     NONE,
     FLOYD_STEINBERG,
     BAYER,
@@ -45,37 +47,39 @@ export enum DitherMethod {
     ADD_COVARIANT,
     XOR,
     XOR_COVARIANT,
+    BLUE_NOISE,
+    BLUE_NOISE_COVARIANT,
 }
-export enum MapFlags {
+enum MapFlags {
     MAP_EXCLUDE_UNMAPPED,
 }
-export enum Orientation {
+enum Orientation {
     HORIZONTAL,
     VERTICAL,
 }
-export enum RectangleAlignment {
+enum RectangleAlignment {
     SUBSET,
     SUPERSET,
     NEAREST,
 }
-export enum ResolutionUnit {
+enum ResolutionUnit {
     NONE,
     DPI,
     DPM,
 }
-export enum SamplerType {
+enum SamplerType {
     NEAREST,
     LINEAR,
     CUBIC,
     NOHALO,
     LOHALO,
 }
-export enum SplitStrategy {
+enum SplitStrategy {
     AUTO,
     HORIZONTAL,
     VERTICAL,
 }
-export enum TileCommand {
+enum TileCommand {
     EGL_TILE_IDLE,
     EGL_TILE_SET,
     EGL_TILE_GET,
@@ -89,21 +93,21 @@ export enum TileCommand {
     EGL_TILE_COPY,
     EGL_TILE_LAST_COMMAND,
 }
-export enum AccessMode {
+enum AccessMode {
     READ,
     WRITE,
     READWRITE,
 }
-export enum BlitFlags {
+enum BlitFlags {
     DEFAULT,
     CACHE,
     DIRTY,
 }
-export enum PadType {
+enum PadType {
     OUTPUT,
     INPUT,
 }
-export enum SerializeFlag {
+enum SerializeFlag {
     TRIM_DEFAULTS,
     VERSION,
     INDENT,
@@ -170,73 +174,73 @@ export const MAX_AUDIO_CHANNELS: number
 export const MICRO_VERSION: number
 export const MINOR_VERSION: number
 export const PARAM_NO_VALIDATE: number
-export function babl_variant(format: Babl.Object, variant: BablVariant): Babl.Object
-export function cl_disable(): void
-export function cl_init(): boolean
-export function cl_is_accelerated(): boolean
-export function config(): Config
-export function create_chain(ops: string, op_start: Node, op_end: Node, time: number, rel_dim: number, path_root: string): void
-export function create_chain_argv(ops: string, op_start: Node, op_end: Node, time: number, rel_dim: number, path_root: string): void
-export function exit(): void
-export function format(format_name: string): any | null
-export function format_get_name(format: any): string | null
-export function get_version(): [ /* major */ number, /* minor */ number, /* micro */ number ]
-export function graph_dump_outputs(node: Node): void
-export function graph_dump_request(node: Node, roi: Rectangle): void
-export function has_operation(operation_type: string): boolean
-export function init(argv?: string[] | null): /* argv */ string[] | null
-export function is_main_thread(): boolean
-export function list_operations(): string[]
-export function load_module_directory(path: string): void
-export function parallel_distribute(max_n: number, func: ParallelDistributeFunc): void
-export function parallel_distribute_area(area: Rectangle, thread_cost: number, split_strategy: SplitStrategy, func: ParallelDistributeAreaFunc): void
-export function parallel_distribute_range(size: number, thread_cost: number, func: ParallelDistributeRangeFunc): void
-export function param_spec_audio_fragment(name: string, nick: string, blurb: string, flags: GObject.ParamFlags): GObject.ParamSpec
-export function param_spec_color(name: string, nick: string, blurb: string, default_color: Color, flags: GObject.ParamFlags): GObject.ParamSpec
-export function param_spec_color_from_string(name: string, nick: string, blurb: string, default_color_string: string, flags: GObject.ParamFlags): GObject.ParamSpec
-export function param_spec_color_get_default(self: GObject.ParamSpec): Color
-export function param_spec_curve(name: string, nick: string, blurb: string, default_curve: Curve, flags: GObject.ParamFlags): GObject.ParamSpec
-export function param_spec_double(name: string, nick: string, blurb: string, minimum: number, maximum: number, default_value: number, ui_minimum: number, ui_maximum: number, ui_gamma: number, flags: GObject.ParamFlags): GObject.ParamSpec
-export function param_spec_enum(name: string, nick: string, blurb: string, enum_type: GObject.Type, default_value: number, flags: GObject.ParamFlags): GObject.ParamSpec
-export function param_spec_file_path(name: string, nick: string, blurb: string, no_validate: boolean, null_ok: boolean, default_value: string, flags: GObject.ParamFlags): GObject.ParamSpec
-export function param_spec_format(name: string, nick: string, blurb: string, flags: GObject.ParamFlags): GObject.ParamSpec
-export function param_spec_get_property_key(pspec: GObject.ParamSpec, key_name: string): string
-export function param_spec_int(name: string, nick: string, blurb: string, minimum: number, maximum: number, default_value: number, ui_minimum: number, ui_maximum: number, ui_gamma: number, flags: GObject.ParamFlags): GObject.ParamSpec
-export function param_spec_path(name: string, nick: string, blurb: string, default_path: Path, flags: GObject.ParamFlags): GObject.ParamSpec
-export function param_spec_seed(name: string, nick: string, blurb: string, flags: GObject.ParamFlags): GObject.ParamSpec
-export function param_spec_set_property_key(pspec: GObject.ParamSpec, key_name: string, value: string): void
-export function param_spec_string(name: string, nick: string, blurb: string, no_validate: boolean, null_ok: boolean, default_value: string, flags: GObject.ParamFlags): GObject.ParamSpec
-export function param_spec_uri(name: string, nick: string, blurb: string, no_validate: boolean, null_ok: boolean, default_value: string, flags: GObject.ParamFlags): GObject.ParamSpec
-export function rectangle_infinite_plane(): Rectangle
-export function reset_stats(): void
-export function serialize(start: Node, end: Node, basepath: string, serialize_flags: SerializeFlag): string
-export function stats(): Stats
-export interface LookupFunction {
+function babl_variant(format: Babl.Object, variant: BablVariant): Babl.Object
+function cl_disable(): void
+function cl_init(): boolean
+function cl_is_accelerated(): boolean
+function config(): Config
+function create_chain(ops: string, op_start: Node, op_end: Node, time: number, rel_dim: number, path_root: string): void
+function create_chain_argv(ops: string, op_start: Node, op_end: Node, time: number, rel_dim: number, path_root: string): void
+function exit(): void
+function format(format_name: string): any | null
+function format_get_name(format: any): string | null
+function get_version(): [ /* major */ number, /* minor */ number, /* micro */ number ]
+function graph_dump_outputs(node: Node): void
+function graph_dump_request(node: Node, roi: Rectangle): void
+function has_operation(operation_type: string): boolean
+function init(argv?: string[] | null): /* argv */ string[] | null
+function is_main_thread(): boolean
+function list_operations(): string[]
+function load_module_directory(path: string): void
+function parallel_distribute(max_n: number, func: ParallelDistributeFunc): void
+function parallel_distribute_area(area: Rectangle, thread_cost: number, split_strategy: SplitStrategy, func: ParallelDistributeAreaFunc): void
+function parallel_distribute_range(size: number, thread_cost: number, func: ParallelDistributeRangeFunc): void
+function param_spec_audio_fragment(name: string, nick: string, blurb: string, flags: GObject.ParamFlags): GObject.ParamSpec
+function param_spec_color(name: string, nick: string, blurb: string, default_color: Color, flags: GObject.ParamFlags): GObject.ParamSpec
+function param_spec_color_from_string(name: string, nick: string, blurb: string, default_color_string: string, flags: GObject.ParamFlags): GObject.ParamSpec
+function param_spec_color_get_default(self: GObject.ParamSpec): Color
+function param_spec_curve(name: string, nick: string, blurb: string, default_curve: Curve, flags: GObject.ParamFlags): GObject.ParamSpec
+function param_spec_double(name: string, nick: string, blurb: string, minimum: number, maximum: number, default_value: number, ui_minimum: number, ui_maximum: number, ui_gamma: number, flags: GObject.ParamFlags): GObject.ParamSpec
+function param_spec_enum(name: string, nick: string, blurb: string, enum_type: GObject.Type, default_value: number, flags: GObject.ParamFlags): GObject.ParamSpec
+function param_spec_file_path(name: string, nick: string, blurb: string, no_validate: boolean, null_ok: boolean, default_value: string, flags: GObject.ParamFlags): GObject.ParamSpec
+function param_spec_format(name: string, nick: string, blurb: string, flags: GObject.ParamFlags): GObject.ParamSpec
+function param_spec_get_property_key(pspec: GObject.ParamSpec, key_name: string): string
+function param_spec_int(name: string, nick: string, blurb: string, minimum: number, maximum: number, default_value: number, ui_minimum: number, ui_maximum: number, ui_gamma: number, flags: GObject.ParamFlags): GObject.ParamSpec
+function param_spec_path(name: string, nick: string, blurb: string, default_path: Path, flags: GObject.ParamFlags): GObject.ParamSpec
+function param_spec_seed(name: string, nick: string, blurb: string, flags: GObject.ParamFlags): GObject.ParamSpec
+function param_spec_set_property_key(pspec: GObject.ParamSpec, key_name: string, value: string): void
+function param_spec_string(name: string, nick: string, blurb: string, no_validate: boolean, null_ok: boolean, default_value: string, flags: GObject.ParamFlags): GObject.ParamSpec
+function param_spec_uri(name: string, nick: string, blurb: string, no_validate: boolean, null_ok: boolean, default_value: string, flags: GObject.ParamFlags): GObject.ParamSpec
+function rectangle_infinite_plane(): Rectangle
+function reset_stats(): void
+function serialize(start: Node, end: Node, basepath: string, serialize_flags: SerializeFlag): string
+function stats(): Stats
+interface LookupFunction {
     (value: number, data?: object | null): number
 }
-export interface NodeFunction {
+interface NodeFunction {
     (node: PathItem): void
 }
-export interface ParallelDistributeAreaFunc {
+interface ParallelDistributeAreaFunc {
     (area: Rectangle): void
 }
-export interface ParallelDistributeFunc {
+interface ParallelDistributeFunc {
     (i: number, n: number): void
 }
-export interface ParallelDistributeRangeFunc {
+interface ParallelDistributeRangeFunc {
     (offset: number, size: number): void
 }
-export interface SamplerGetFun {
+interface SamplerGetFun {
     (self: Sampler, x: number, y: number, scale: BufferMatrix2, output: object | null, repeat_mode: AbyssPolicy): void
 }
-export interface TileCallback {
+interface TileCallback {
     (tile: Tile): void
 }
-export interface TileSourceCommand {
+interface TileSourceCommand {
     (gegl_tile_source: TileSource, command: TileCommand, x: number, y: number, z: number, data?: object | null): object | null
 }
-export class Metadata {
-    /* Methods of Gegl.Metadata */
+class Metadata {
+    /* Methods of Gegl-0.4.Gegl.Metadata */
     get_resolution(unit: ResolutionUnit, x: number, y: number): boolean
     iter_get_value(iter: MetadataIter, value: any): boolean
     iter_init(iter: MetadataIter): void
@@ -246,7 +250,7 @@ export class Metadata {
     register_map(file_module: string, flags: number, map: MetadataMap[]): void
     set_resolution(unit: ResolutionUnit, x: number, y: number): boolean
     unregister_map(): void
-    /* Virtual methods of Gegl.Metadata */
+    /* Virtual methods of Gegl-0.4.Gegl.Metadata */
     vfunc_get_resolution(unit: ResolutionUnit, x: number, y: number): boolean
     vfunc_iter_get_value(iter: MetadataIter, value: any): boolean
     vfunc_iter_init(iter: MetadataIter): void
@@ -260,16 +264,16 @@ export class Metadata {
 export interface AudioFragment_ConstructProps extends GObject.Object_ConstructProps {
     string?: string
 }
-export class AudioFragment {
-    /* Properties of Gegl.AudioFragment */
+class AudioFragment {
+    /* Properties of Gegl-0.4.Gegl.AudioFragment */
     string: string
-    /* Fields of Gegl.AudioFragment */
+    /* Fields of Gegl-0.4.Gegl.AudioFragment */
     parent_instance: GObject.Object
     data: number[]
     priv: AudioFragmentPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gegl.AudioFragment */
+    /* Methods of Gegl-0.4.Gegl.AudioFragment */
     get_channel_layout(): number
     get_channels(): number
     get_max_samples(): number
@@ -282,15 +286,15 @@ export class AudioFragment {
     set_pos(pos: number): void
     set_sample_count(sample_count: number): void
     set_sample_rate(sample_rate: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -298,21 +302,21 @@ export class AudioFragment {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AudioFragment, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AudioFragment, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -347,8 +351,8 @@ export interface Buffer_ConstructProps extends TileHandler_ConstructProps {
     x?: number
     y?: number
 }
-export class Buffer {
-    /* Properties of Gegl.Buffer */
+class Buffer {
+    /* Properties of Gegl-0.4.Gegl.Buffer */
     format: object
     height: number
     readonly pixels: number
@@ -356,17 +360,17 @@ export class Buffer {
     width: number
     x: number
     y: number
-    /* Properties of Gegl.TileHandler */
+    /* Properties of Gegl-0.4.Gegl.TileHandler */
     source: GObject.Object
-    /* Fields of Gegl.TileHandler */
+    /* Fields of Gegl-0.4.Gegl.TileHandler */
     parent_instance: TileSource
     priv: TileHandlerPrivate
-    /* Fields of Gegl.TileSource */
+    /* Fields of Gegl-0.4.Gegl.TileSource */
     command: TileSourceCommand
     padding: object[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gegl.Buffer */
+    /* Methods of Gegl-0.4.Gegl.Buffer */
     add_handler(handler?: object | null): void
     clear(roi: Rectangle): void
     copy(src_rect: Rectangle, repeat_mode: AbyssPolicy, dst: Buffer, dst_rect: Rectangle): void
@@ -391,21 +395,21 @@ export class Buffer {
     share_storage(buffer2: Buffer): boolean
     signal_connect(detailed_signal: string, c_handler: GObject.Callback): number
     thaw_changed(): void
-    /* Methods of Gegl.TileHandler */
+    /* Methods of Gegl-0.4.Gegl.TileHandler */
     damage_rect(rect: Rectangle): void
     damage_tile(x: number, y: number, z: number, damage: number): void
     lock(): void
     set_source(source: TileSource): void
     unlock(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -413,25 +417,25 @@ export class Buffer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gegl.Buffer */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gegl-0.4.Gegl.Buffer */
     connect(sigName: "changed", callback: (($obj: Buffer, object: Rectangle) => void)): number
     connect_after(sigName: "changed", callback: (($obj: Buffer, object: Rectangle) => void)): number
     emit(sigName: "changed", object: Rectangle): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Buffer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Buffer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -471,30 +475,30 @@ export class Buffer {
 export interface Color_ConstructProps extends GObject.Object_ConstructProps {
     string?: string
 }
-export class Color {
-    /* Properties of Gegl.Color */
+class Color {
+    /* Properties of Gegl-0.4.Gegl.Color */
     string: string
-    /* Fields of Gegl.Color */
+    /* Fields of Gegl-0.4.Gegl.Color */
     parent_instance: GObject.Object
     priv: ColorPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gegl.Color */
+    /* Methods of Gegl-0.4.Gegl.Color */
     duplicate(): Color
     get_components(format: any): number[]
     get_format(): Babl.Object
     get_rgba(): [ /* red */ number, /* green */ number, /* blue */ number, /* alpha */ number ]
     set_components(format: any, components: number[]): void
     set_rgba(red: number, green: number, blue: number, alpha: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -502,21 +506,21 @@ export class Color {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Color, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Color, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -547,8 +551,8 @@ export interface Config_ConstructProps extends GObject.Object_ConstructProps {
     tile_width?: number
     use_opencl?: boolean
 }
-export class Config {
-    /* Properties of Gegl.Config */
+class Config {
+    /* Properties of Gegl-0.4.Gegl.Config */
     application_license: string
     chunk_size: number
     mipmap_rendering: boolean
@@ -561,17 +565,17 @@ export class Config {
     tile_height: number
     tile_width: number
     use_opencl: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -579,21 +583,21 @@ export class Config {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Config, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Config, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -632,12 +636,12 @@ export class Config {
 }
 export interface Curve_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Curve {
-    /* Fields of Gegl.Curve */
+class Curve {
+    /* Fields of Gegl-0.4.Gegl.Curve */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gegl.Curve */
+    /* Methods of Gegl-0.4.Gegl.Curve */
     add_point(x: number, y: number): number
     calc_value(x: number): number
     duplicate(): Curve
@@ -645,15 +649,15 @@ export class Curve {
     get_y_bounds(): [ /* min_y */ number, /* max_y */ number ]
     num_points(): number
     set_point(index: number, x: number, y: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -661,21 +665,21 @@ export class Curve {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Curve, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Curve, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -693,8 +697,8 @@ export class Curve {
 }
 export interface MetadataHash_ConstructProps extends MetadataStore_ConstructProps {
 }
-export class MetadataHash {
-    /* Properties of Gegl.MetadataStore */
+class MetadataHash {
+    /* Properties of Gegl-0.4.Gegl.MetadataStore */
     artist: string
     comment: string
     copyright: string
@@ -709,11 +713,11 @@ export class MetadataHash {
     timestamp: GLib.DateTime
     title: string
     warning: string
-    /* Fields of Gegl.MetadataStore */
+    /* Fields of Gegl-0.4.Gegl.MetadataStore */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gegl.MetadataStore */
+    /* Methods of Gegl-0.4.Gegl.MetadataStore */
     declare(pspec: GObject.ParamSpec): void
     get_artist(): string
     get_comment(): string
@@ -750,15 +754,15 @@ export class MetadataHash {
     set_value(name: string, value: any): void
     set_warning(warning: string): void
     typeof_value(name: string): GObject.Type
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -766,13 +770,13 @@ export class MetadataHash {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gegl.Metadata */
+    watch_closure(closure: Function): void
+    /* Methods of Gegl-0.4.Gegl.Metadata */
     get_resolution(unit: ResolutionUnit, x: number, y: number): boolean
     iter_get_value(iter: MetadataIter, value: any): boolean
     iter_init(iter: MetadataIter): void
@@ -782,7 +786,7 @@ export class MetadataHash {
     register_map(file_module: string, flags: number, map: MetadataMap[]): void
     set_resolution(unit: ResolutionUnit, x: number, y: number): boolean
     unregister_map(): void
-    /* Virtual methods of Gegl.MetadataStore */
+    /* Virtual methods of Gegl-0.4.Gegl.MetadataStore */
     vfunc__declare(pspec: GObject.ParamSpec, shadow: boolean): void
     vfunc__get_value(name: string): any
     vfunc_has_value(name: string): boolean
@@ -796,15 +800,15 @@ export class MetadataHash {
     vfunc_iter_set_value(iter: MetadataIter, value: any): boolean
     vfunc_register_map(file_module: string, flags: number, map: MetadataMap[]): void
     vfunc_set_resolution(unit: ResolutionUnit, x: number, y: number): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gegl.MetadataStore */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gegl-0.4.Gegl.MetadataStore */
     connect(sigName: "changed", callback: (($obj: MetadataHash, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "changed", callback: (($obj: MetadataHash, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "changed", pspec: GObject.ParamSpec): void
@@ -820,7 +824,7 @@ export class MetadataHash {
     connect(sigName: "unmapped", callback: (($obj: MetadataHash, file_module: string, local_name: string) => void)): number
     connect_after(sigName: "unmapped", callback: (($obj: MetadataHash, file_module: string, local_name: string) => void)): number
     emit(sigName: "unmapped", file_module: string, local_name: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MetadataHash, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MetadataHash, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -878,8 +882,8 @@ export interface MetadataStore_ConstructProps extends GObject.Object_ConstructPr
     title?: string
     warning?: string
 }
-export class MetadataStore {
-    /* Properties of Gegl.MetadataStore */
+class MetadataStore {
+    /* Properties of Gegl-0.4.Gegl.MetadataStore */
     artist: string
     comment: string
     copyright: string
@@ -894,11 +898,11 @@ export class MetadataStore {
     timestamp: GLib.DateTime
     title: string
     warning: string
-    /* Fields of Gegl.MetadataStore */
+    /* Fields of Gegl-0.4.Gegl.MetadataStore */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gegl.MetadataStore */
+    /* Methods of Gegl-0.4.Gegl.MetadataStore */
     declare(pspec: GObject.ParamSpec): void
     get_artist(): string
     get_comment(): string
@@ -935,15 +939,15 @@ export class MetadataStore {
     set_value(name: string, value: any): void
     set_warning(warning: string): void
     typeof_value(name: string): GObject.Type
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -951,13 +955,13 @@ export class MetadataStore {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gegl.Metadata */
+    watch_closure(closure: Function): void
+    /* Methods of Gegl-0.4.Gegl.Metadata */
     get_resolution(unit: ResolutionUnit, x: number, y: number): boolean
     iter_get_value(iter: MetadataIter, value: any): boolean
     iter_init(iter: MetadataIter): void
@@ -967,7 +971,7 @@ export class MetadataStore {
     register_map(file_module: string, flags: number, map: MetadataMap[]): void
     set_resolution(unit: ResolutionUnit, x: number, y: number): boolean
     unregister_map(): void
-    /* Virtual methods of Gegl.MetadataStore */
+    /* Virtual methods of Gegl-0.4.Gegl.MetadataStore */
     vfunc__declare(pspec: GObject.ParamSpec, shadow: boolean): void
     vfunc__get_value(name: string): any
     vfunc_has_value(name: string): boolean
@@ -981,15 +985,15 @@ export class MetadataStore {
     vfunc_iter_set_value(iter: MetadataIter, value: any): boolean
     vfunc_register_map(file_module: string, flags: number, map: MetadataMap[]): void
     vfunc_set_resolution(unit: ResolutionUnit, x: number, y: number): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gegl.MetadataStore */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gegl-0.4.Gegl.MetadataStore */
     connect(sigName: "changed", callback: (($obj: MetadataStore, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "changed", callback: (($obj: MetadataStore, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "changed", pspec: GObject.ParamSpec): void
@@ -1005,7 +1009,7 @@ export class MetadataStore {
     connect(sigName: "unmapped", callback: (($obj: MetadataStore, file_module: string, local_name: string) => void)): number
     connect_after(sigName: "unmapped", callback: (($obj: MetadataStore, file_module: string, local_name: string) => void)): number
     emit(sigName: "unmapped", file_module: string, local_name: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MetadataStore, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MetadataStore, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1055,8 +1059,8 @@ export interface Node_ConstructProps extends GObject.Object_ConstructProps {
     passthrough?: boolean
     use_opencl?: boolean
 }
-export class Node {
-    /* Properties of Gegl.Node */
+class Node {
+    /* Properties of Gegl-0.4.Gegl.Node */
     cache_policy: CachePolicy
     dont_cache: boolean
     gegl_operation: Operation
@@ -1064,9 +1068,9 @@ export class Node {
     operation: string
     passthrough: boolean
     use_opencl: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gegl.Node */
+    /* Methods of Gegl-0.4.Gegl.Node */
     add_child(child: Node): Node
     blit_buffer(buffer: Buffer | null, roi: Rectangle | null, level: number, abyss_policy: AbyssPolicy): void
     connect_from(input_pad_name: string, source: Node, output_pad_name: string): boolean
@@ -1100,15 +1104,15 @@ export class Node {
     set_time(time: number): void
     to_xml(path_root: string): string
     to_xml_full(tail: Node | null, path_root: string): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1116,21 +1120,20 @@ export class Node {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gegl.Node */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gegl-0.4.Gegl.Node */
     connect(sigName: "computed", callback: (($obj: Node, object: Rectangle) => void)): number
     connect_after(sigName: "computed", callback: (($obj: Node, object: Rectangle) => void)): number
     emit(sigName: "computed", object: Rectangle): void
@@ -1140,7 +1143,7 @@ export class Node {
     connect(sigName: "progress", callback: (($obj: Node, object: number) => void)): number
     connect_after(sigName: "progress", callback: (($obj: Node, object: number) => void)): number
     emit(sigName: "progress", object: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Node, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Node, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1174,18 +1177,18 @@ export class Node {
 }
 export interface Operation_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Operation {
-    /* Fields of GObject.Object */
+class Operation {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1193,21 +1196,21 @@ export class Operation {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Operation, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Operation, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1228,143 +1231,143 @@ export class Operation {
     static list_property_keys(operation_type: string, property_name: string): string[]
     static $gtype: GObject.Type
 }
-export class ParamAudioFragment {
-    /* Fields of GObject.ParamSpec */
+class ParamAudioFragment {
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export class ParamColor {
-    /* Fields of GObject.ParamSpec */
+class ParamColor {
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export class ParamCurve {
-    /* Fields of GObject.ParamSpec */
+class ParamCurve {
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export class ParamDouble {
-    /* Fields of GObject.ParamSpecDouble */
+class ParamDouble {
+    /* Fields of GObject-2.0.GObject.ParamSpecDouble */
     parent_instance: GObject.ParamSpec
     minimum: number
     maximum: number
     default_value: number
     epsilon: number
-    /* Fields of GObject.ParamSpec */
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export class ParamEnum {
-    /* Fields of GObject.ParamSpecEnum */
+class ParamEnum {
+    /* Fields of GObject-2.0.GObject.ParamSpecEnum */
     parent_instance: GObject.ParamSpec
     enum_class: GObject.EnumClass
     default_value: number
-    /* Fields of GObject.ParamSpec */
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export class ParamFilePath {
-    /* Fields of GObject.ParamSpecString */
+class ParamFilePath {
+    /* Fields of GObject-2.0.GObject.ParamSpecString */
     parent_instance: GObject.ParamSpec
     default_value: string
     cset_first: string
@@ -1372,144 +1375,144 @@ export class ParamFilePath {
     substitutor: number
     null_fold_if_empty: number
     ensure_non_null: number
-    /* Fields of GObject.ParamSpec */
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export class ParamFormat {
-    /* Fields of GObject.ParamSpecPointer */
+class ParamFormat {
+    /* Fields of GObject-2.0.GObject.ParamSpecPointer */
     parent_instance: GObject.ParamSpec
-    /* Fields of GObject.ParamSpec */
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export class ParamInt {
-    /* Fields of GObject.ParamSpecInt */
+class ParamInt {
+    /* Fields of GObject-2.0.GObject.ParamSpecInt */
     parent_instance: GObject.ParamSpec
     minimum: number
     maximum: number
     default_value: number
-    /* Fields of GObject.ParamSpec */
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export class ParamPath {
-    /* Fields of GObject.ParamSpec */
+class ParamPath {
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export class ParamSeed {
-    /* Fields of GObject.ParamSpecUInt */
+class ParamSeed {
+    /* Fields of GObject-2.0.GObject.ParamSpecUInt */
     parent_instance: GObject.ParamSpec
     minimum: number
     maximum: number
     default_value: number
-    /* Fields of GObject.ParamSpec */
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export class ParamString {
-    /* Fields of GObject.ParamSpecString */
+class ParamString {
+    /* Fields of GObject-2.0.GObject.ParamSpecString */
     parent_instance: GObject.ParamSpec
     default_value: string
     cset_first: string
@@ -1517,32 +1520,32 @@ export class ParamString {
     substitutor: number
     null_fold_if_empty: number
     ensure_non_null: number
-    /* Fields of GObject.ParamSpec */
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export class ParamUri {
-    /* Fields of GObject.ParamSpecString */
+class ParamUri {
+    /* Fields of GObject-2.0.GObject.ParamSpecString */
     parent_instance: GObject.ParamSpec
     default_value: string
     cset_first: string
@@ -1550,38 +1553,38 @@ export class ParamUri {
     substitutor: number
     null_fold_if_empty: number
     ensure_non_null: number
-    /* Fields of GObject.ParamSpec */
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
 export interface Path_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Path {
-    /* Fields of Gegl.Path */
+class Path {
+    /* Fields of Gegl-0.4.Gegl.Path */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gegl.Path */
+    /* Methods of Gegl-0.4.Gegl.Path */
     calc(pos: number): [ /* returnType */ boolean, /* x */ number, /* y */ number ]
     calc_y_for_x(x: number): [ /* returnType */ number, /* y */ number ]
     clear(): void
@@ -1603,15 +1606,15 @@ export class Path {
     set_matrix(matrix: Matrix3): void
     thaw(): void
     to_string(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1619,25 +1622,25 @@ export class Path {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gegl.Path */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gegl-0.4.Gegl.Path */
     connect(sigName: "changed", callback: (($obj: Path, object?: object | null) => void)): number
     connect_after(sigName: "changed", callback: (($obj: Path, object?: object | null) => void)): number
     emit(sigName: "changed", object?: object | null): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Path, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Path, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1660,28 +1663,28 @@ export interface Processor_ConstructProps extends GObject.Object_ConstructProps 
     progress?: number
     rectangle?: object
 }
-export class Processor {
-    /* Properties of Gegl.Processor */
+class Processor {
+    /* Properties of Gegl-0.4.Gegl.Processor */
     node: Node
     progress: number
     rectangle: object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gegl.Processor */
+    /* Methods of Gegl-0.4.Gegl.Processor */
     get_buffer(): Buffer
     set_level(level: number): void
     set_rectangle(rectangle: Rectangle): void
     set_scale(scale: number): void
     work(): [ /* returnType */ boolean, /* progress */ number ]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1689,21 +1692,21 @@ export class Processor {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Processor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Processor, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1724,8 +1727,8 @@ export class Processor {
 }
 export interface Stats_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Stats {
-    /* Properties of Gegl.Stats */
+class Stats {
+    /* Properties of Gegl-0.4.Gegl.Stats */
     readonly active_threads: number
     readonly assigned_threads: number
     readonly scratch_total: number
@@ -1747,17 +1750,17 @@ export class Stats {
     readonly tile_cache_total_max: number
     readonly tile_cache_total_uncompressed: number
     readonly zoom_total: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1765,21 +1768,21 @@ export class Stats {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Stats, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Stats, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1840,20 +1843,20 @@ export interface TileBackend_ConstructProps extends TileSource_ConstructProps {
     tile_height?: number
     tile_width?: number
 }
-export class TileBackend {
-    /* Properties of Gegl.TileBackend */
+class TileBackend {
+    /* Properties of Gegl-0.4.Gegl.TileBackend */
     flush_on_destroy: boolean
     readonly px_size: number
     readonly tile_size: number
-    /* Fields of Gegl.TileBackend */
+    /* Fields of Gegl-0.4.Gegl.TileBackend */
     parent_instance: TileSource
     priv: TileBackendPrivate
-    /* Fields of Gegl.TileSource */
+    /* Fields of Gegl-0.4.Gegl.TileSource */
     command: TileSourceCommand
     padding: object[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gegl.TileBackend */
+    /* Methods of Gegl-0.4.Gegl.TileBackend */
     get_flush_on_destroy(): boolean
     get_tile_height(): number
     get_tile_size(): number
@@ -1861,15 +1864,15 @@ export class TileBackend {
     peek_storage(): TileSource
     set_extent(rectangle: Rectangle): void
     set_flush_on_destroy(flush_on_destroy: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1877,21 +1880,21 @@ export class TileBackend {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TileBackend, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TileBackend, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1915,32 +1918,32 @@ export class TileBackend {
 export interface TileHandler_ConstructProps extends TileSource_ConstructProps {
     source?: GObject.Object
 }
-export class TileHandler {
-    /* Properties of Gegl.TileHandler */
+class TileHandler {
+    /* Properties of Gegl-0.4.Gegl.TileHandler */
     source: GObject.Object
-    /* Fields of Gegl.TileHandler */
+    /* Fields of Gegl-0.4.Gegl.TileHandler */
     parent_instance: TileSource
     priv: TileHandlerPrivate
-    /* Fields of Gegl.TileSource */
+    /* Fields of Gegl-0.4.Gegl.TileSource */
     command: TileSourceCommand
     padding: object[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gegl.TileHandler */
+    /* Methods of Gegl-0.4.Gegl.TileHandler */
     damage_rect(rect: Rectangle): void
     damage_tile(x: number, y: number, z: number, damage: number): void
     lock(): void
     set_source(source: TileSource): void
     unlock(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1948,21 +1951,21 @@ export class TileHandler {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TileHandler, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TileHandler, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1979,22 +1982,22 @@ export class TileHandler {
 }
 export interface TileSource_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class TileSource {
-    /* Fields of Gegl.TileSource */
+class TileSource {
+    /* Fields of Gegl-0.4.Gegl.TileSource */
     parent_instance: GObject.Object
     command: TileSourceCommand
     padding: object[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2002,21 +2005,21 @@ export class TileSource {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TileSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TileSource, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2029,54 +2032,54 @@ export class TileSource {
     _init (config?: TileSource_ConstructProps): void
     static $gtype: GObject.Type
 }
-export abstract class AudioFragmentClass {
-    /* Fields of Gegl.AudioFragmentClass */
+abstract class AudioFragmentClass {
+    /* Fields of Gegl-0.4.Gegl.AudioFragmentClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class AudioFragmentPrivate {
+class AudioFragmentPrivate {
     static name: string
 }
-export class BufferIterator {
-    /* Fields of Gegl.BufferIterator */
+class BufferIterator {
+    /* Fields of Gegl-0.4.Gegl.BufferIterator */
     length: number
     priv: BufferIteratorPriv
     items: BufferIteratorItem[]
     static name: string
 }
-export class BufferIteratorItem {
-    /* Fields of Gegl.BufferIteratorItem */
+class BufferIteratorItem {
+    /* Fields of Gegl-0.4.Gegl.BufferIteratorItem */
     data: object
     roi: Rectangle
     static name: string
 }
-export class BufferIteratorPriv {
+class BufferIteratorPriv {
     static name: string
 }
-export class BufferMatrix2 {
-    /* Fields of Gegl.BufferMatrix2 */
+class BufferMatrix2 {
+    /* Fields of Gegl-0.4.Gegl.BufferMatrix2 */
     coeff: number[]
-    /* Methods of Gegl.BufferMatrix2 */
+    /* Methods of Gegl-0.4.Gegl.BufferMatrix2 */
     determinant(): number
     is_identity(): boolean
     is_scale(): boolean
     static name: string
 }
-export abstract class ColorClass {
-    /* Fields of Gegl.ColorClass */
+abstract class ColorClass {
+    /* Fields of Gegl-0.4.Gegl.ColorClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class ColorPrivate {
+class ColorPrivate {
     static name: string
 }
-export abstract class CurveClass {
-    /* Fields of Gegl.CurveClass */
+abstract class CurveClass {
+    /* Fields of Gegl-0.4.Gegl.CurveClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class Lookup {
-    /* Fields of Gegl.Lookup */
+class Lookup {
+    /* Fields of Gegl-0.4.Gegl.Lookup */
     function_: LookupFunction
     data: object
     shift: number
@@ -2088,10 +2091,10 @@ export class Lookup {
     table: number[]
     static name: string
 }
-export class Matrix3 {
-    /* Fields of Gegl.Matrix3 */
+class Matrix3 {
+    /* Fields of Gegl-0.4.Gegl.Matrix3 */
     coeff: number[]
-    /* Methods of Gegl.Matrix3 */
+    /* Methods of Gegl-0.4.Gegl.Matrix3 */
     copy(): Matrix3
     copy_into(src: Matrix3): void
     determinant(): number
@@ -2114,13 +2117,13 @@ export class Matrix3 {
     /* Static methods and pseudo-constructors */
     static new(): Matrix3
 }
-export abstract class MetadataHashClass {
-    /* Fields of Gegl.MetadataHashClass */
+abstract class MetadataHashClass {
+    /* Fields of Gegl-0.4.Gegl.MetadataHashClass */
     parent_class: MetadataStoreClass
     static name: string
 }
-export abstract class MetadataInterface {
-    /* Fields of Gegl.MetadataInterface */
+abstract class MetadataInterface {
+    /* Fields of Gegl-0.4.Gegl.MetadataInterface */
     register_map: (metadata: Metadata, file_module: string, flags: number, map: MetadataMap[]) => void
     set_resolution: (metadata: Metadata, unit: ResolutionUnit, x: number, y: number) => boolean
     get_resolution: (metadata: Metadata, unit: ResolutionUnit, x: number, y: number) => boolean
@@ -2131,28 +2134,28 @@ export abstract class MetadataInterface {
     iter_get_value: (metadata: Metadata, iter: MetadataIter, value: any) => boolean
     static name: string
 }
-export class MetadataIter {
+class MetadataIter {
     static name: string
 }
-export class MetadataMap {
-    /* Fields of Gegl.MetadataMap */
+class MetadataMap {
+    /* Fields of Gegl-0.4.Gegl.MetadataMap */
     local_name: string
     name: string
     transform: GObject.ValueTransform
     static name: string
 }
-export abstract class MetadataStoreClass {
-    /* Fields of Gegl.MetadataStoreClass */
+abstract class MetadataStoreClass {
+    /* Fields of Gegl-0.4.Gegl.MetadataStoreClass */
     set_value: (self: MetadataStore, name: string, value: any) => void
     has_value: (self: MetadataStore, name: string) => boolean
     register_hook: (self: MetadataStore, file_module_name: string, flags: number) => void
     static name: string
 }
-export class OperationContext {
+class OperationContext {
     static name: string
 }
-export class ParamSpecDouble {
-    /* Fields of Gegl.ParamSpecDouble */
+class ParamSpecDouble {
+    /* Fields of Gegl-0.4.Gegl.ParamSpecDouble */
     parent_instance: GObject.ParamSpecDouble
     ui_minimum: number
     ui_maximum: number
@@ -2160,87 +2163,87 @@ export class ParamSpecDouble {
     ui_step_small: number
     ui_step_big: number
     ui_digits: number
-    /* Methods of Gegl.ParamSpecDouble */
+    /* Methods of Gegl-0.4.Gegl.ParamSpecDouble */
     set_digits(digits: number): void
     set_steps(small_step: number, big_step: number): void
     static name: string
 }
-export class ParamSpecEnum {
-    /* Fields of Gegl.ParamSpecEnum */
+class ParamSpecEnum {
+    /* Fields of Gegl-0.4.Gegl.ParamSpecEnum */
     parent_instance: GObject.ParamSpecEnum
     excluded_values: object[]
-    /* Methods of Gegl.ParamSpecEnum */
+    /* Methods of Gegl-0.4.Gegl.ParamSpecEnum */
     exclude_value(value: number): void
     static name: string
 }
-export class ParamSpecFilePath {
-    /* Fields of Gegl.ParamSpecFilePath */
+class ParamSpecFilePath {
+    /* Fields of Gegl-0.4.Gegl.ParamSpecFilePath */
     parent_instance: GObject.ParamSpecString
     no_validate: number
     null_ok: number
     static name: string
 }
-export class ParamSpecFormat {
-    /* Fields of Gegl.ParamSpecFormat */
+class ParamSpecFormat {
+    /* Fields of Gegl-0.4.Gegl.ParamSpecFormat */
     parent_instance: GObject.ParamSpecPointer
     static name: string
 }
-export class ParamSpecInt {
-    /* Fields of Gegl.ParamSpecInt */
+class ParamSpecInt {
+    /* Fields of Gegl-0.4.Gegl.ParamSpecInt */
     parent_instance: GObject.ParamSpecInt
     ui_minimum: number
     ui_maximum: number
     ui_gamma: number
     ui_step_small: number
     ui_step_big: number
-    /* Methods of Gegl.ParamSpecInt */
+    /* Methods of Gegl-0.4.Gegl.ParamSpecInt */
     set_steps(small_step: number, big_step: number): void
     static name: string
 }
-export class ParamSpecSeed {
-    /* Fields of Gegl.ParamSpecSeed */
+class ParamSpecSeed {
+    /* Fields of Gegl-0.4.Gegl.ParamSpecSeed */
     parent_instance: GObject.ParamSpecUInt
     ui_minimum: number
     ui_maximum: number
     static name: string
 }
-export class ParamSpecString {
-    /* Fields of Gegl.ParamSpecString */
+class ParamSpecString {
+    /* Fields of Gegl-0.4.Gegl.ParamSpecString */
     parent_instance: GObject.ParamSpecString
     no_validate: number
     null_ok: number
     static name: string
 }
-export class ParamSpecUri {
-    /* Fields of Gegl.ParamSpecUri */
+class ParamSpecUri {
+    /* Fields of Gegl-0.4.Gegl.ParamSpecUri */
     parent_instance: GObject.ParamSpecString
     no_validate: number
     null_ok: number
     static name: string
 }
-export abstract class PathClass {
+abstract class PathClass {
     static name: string
 }
-export class PathItem {
-    /* Fields of Gegl.PathItem */
+class PathItem {
+    /* Fields of Gegl-0.4.Gegl.PathItem */
     type: number
     point: PathPoint[]
     static name: string
 }
-export class PathList {
-    /* Fields of Gegl.PathList */
+class PathList {
+    /* Fields of Gegl-0.4.Gegl.PathList */
     next: object
     d: PathItem
     static name: string
 }
-export class PathPoint {
-    /* Fields of Gegl.PathPoint */
+class PathPoint {
+    /* Fields of Gegl-0.4.Gegl.PathPoint */
     x: number
     y: number
     static name: string
 }
-export class Random {
-    /* Methods of Gegl.Random */
+class Random {
+    /* Methods of Gegl-0.4.Gegl.Random */
     duplicate(): Random
     float(x: number, y: number, z: number, n: number): number
     float_range(x: number, y: number, z: number, n: number, min: number, max: number): number
@@ -2255,13 +2258,13 @@ export class Random {
     static new(): Random
     static new_with_seed(seed: number): Random
 }
-export class Rectangle {
-    /* Fields of Gegl.Rectangle */
+class Rectangle {
+    /* Fields of Gegl-0.4.Gegl.Rectangle */
     x: number
     y: number
     width: number
     height: number
-    /* Methods of Gegl.Rectangle */
+    /* Methods of Gegl-0.4.Gegl.Rectangle */
     align(rectangle: Rectangle, tile: Rectangle, alignment: RectangleAlignment): boolean
     align_to_buffer(rectangle: Rectangle, buffer: Buffer, alignment: RectangleAlignment): boolean
     bounding_box(source1: Rectangle, source2: Rectangle): void
@@ -2285,43 +2288,45 @@ export class Rectangle {
     static new(x: number, y: number, width: number, height: number): Rectangle
     static infinite_plane(): Rectangle
 }
-export class Sampler {
-    /* Methods of Gegl.Sampler */
+class Sampler {
+    /* Methods of Gegl-0.4.Gegl.Sampler */
     get(x: number, y: number, scale: BufferMatrix2, output: object | null, repeat_mode: AbyssPolicy): void
     get_context_rect(): Rectangle
     static name: string
 }
-export class Tile {
+class Tile {
     static name: string
 }
-export abstract class TileBackendClass {
-    /* Fields of Gegl.TileBackendClass */
+abstract class TileBackendClass {
+    /* Fields of Gegl-0.4.Gegl.TileBackendClass */
     parent_class: TileSourceClass
     padding: object[]
     static name: string
 }
-export class TileBackendPrivate {
+class TileBackendPrivate {
     static name: string
 }
-export class TileCopyParams {
-    /* Fields of Gegl.TileCopyParams */
+class TileCopyParams {
+    /* Fields of Gegl-0.4.Gegl.TileCopyParams */
     dst_buffer: Buffer
     dst_x: number
     dst_y: number
     dst_z: number
     static name: string
 }
-export abstract class TileHandlerClass {
-    /* Fields of Gegl.TileHandlerClass */
+abstract class TileHandlerClass {
+    /* Fields of Gegl-0.4.Gegl.TileHandlerClass */
     parent_class: TileSourceClass
     static name: string
 }
-export class TileHandlerPrivate {
+class TileHandlerPrivate {
     static name: string
 }
-export abstract class TileSourceClass {
-    /* Fields of Gegl.TileSourceClass */
+abstract class TileSourceClass {
+    /* Fields of Gegl-0.4.Gegl.TileSourceClass */
     parent_class: GObject.ObjectClass
     padding: object[]
     static name: string
 }
+}
+export default Gegl;

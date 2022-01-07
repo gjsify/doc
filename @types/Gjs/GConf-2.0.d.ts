@@ -3,20 +3,22 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum ClientErrorHandlingMode {
+export namespace GConf {
+
+enum ClientErrorHandlingMode {
     HANDLE_NONE,
     HANDLE_UNRETURNED,
     HANDLE_ALL,
 }
-export enum ClientPreloadType {
+enum ClientPreloadType {
     PRELOAD_NONE,
     PRELOAD_ONELEVEL,
     PRELOAD_RECURSIVE,
 }
-export enum Error {
+enum Error {
     SUCCESS,
     FAILED,
     NO_SERVER,
@@ -35,7 +37,7 @@ export enum Error {
     NO_WRITABLE_DATABASE,
     IN_SHUTDOWN,
 }
-export enum ValueType {
+enum ValueType {
     INVALID,
     STRING,
     INT,
@@ -45,47 +47,47 @@ export enum ValueType {
     LIST,
     PAIR,
 }
-export enum UnsetFlags {
+enum UnsetFlags {
     NAMES,
 }
-export function concat_dir_and_key(dir: string, key: string): string
-export function debug_shutdown(): number
-export function enum_to_string(lookup_table: EnumStringPair, enum_value: number): string
-export function error_quark(): GLib.Quark
-export function escape_key(arbitrary_text: string, len: number): string
-export function init(argc: number, argv: string): boolean
-export function is_initialized(): boolean
-export function key_is_below(above: string, below: string): boolean
-export function postinit(app?: object | null, mod_info?: object | null): void
-export function preinit(app?: object | null, mod_info?: object | null): void
-export function string_to_enum(lookup_table: EnumStringPair, str: string, enum_value_retloc: number): boolean
-export function unescape_key(escaped_key: string, len: number): string
-export function unique_key(): string
-export function valid_key(key: string, why_invalid: string): boolean
-export function value_decode(encoded: string): Value
-export interface ChangeSetForeachFunc {
+function concat_dir_and_key(dir: string, key: string): string
+function debug_shutdown(): number
+function enum_to_string(lookup_table: EnumStringPair, enum_value: number): string
+function error_quark(): GLib.Quark
+function escape_key(arbitrary_text: string, len: number): string
+function init(argc: number, argv: string): boolean
+function is_initialized(): boolean
+function key_is_below(above: string, below: string): boolean
+function postinit(app?: object | null, mod_info?: object | null): void
+function preinit(app?: object | null, mod_info?: object | null): void
+function string_to_enum(lookup_table: EnumStringPair, str: string, enum_value_retloc: number): boolean
+function unescape_key(escaped_key: string, len: number): string
+function unique_key(): string
+function valid_key(key: string, why_invalid: string): boolean
+function value_decode(encoded: string): Value
+interface ChangeSetForeachFunc {
     (cs: ChangeSet, key: string, value: Value): void
 }
-export interface ClientErrorHandlerFunc {
+interface ClientErrorHandlerFunc {
     (client: Client, error: GLib.Error): void
 }
-export interface ClientNotifyFunc {
+interface ClientNotifyFunc {
     (client: Client, cnxn_id: number, entry: Entry): void
 }
-export interface ListenersForeach {
+interface ListenersForeach {
     (location: string, cnxn_id: number, listener_data?: object | null): void
 }
-export interface ListenersPredicate {
+interface ListenersPredicate {
     (location: string, cnxn_id: number, listener_data?: object | null): boolean
 }
 export interface Client_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Client {
-    /* Fields of GConf.Client */
+class Client {
+    /* Fields of GConf-2.0.GConf.Client */
     object: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GConf.Client */
+    /* Methods of GConf-2.0.GConf.Client */
     add_dir(dir: string, preload: ClientPreloadType): void
     all_dirs(dir: string): string[]
     all_entries(dir: string): Entry[]
@@ -122,15 +124,15 @@ export class Client {
     unreturned_error(error: GLib.Error): void
     unset(key: string): boolean
     value_changed(key: string, value: Value): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -138,25 +140,25 @@ export class Client {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GConf.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GConf-2.0.GConf.Client */
     vfunc_error(error: GLib.Error): void
     vfunc_unreturned_error(error: GLib.Error): void
     vfunc_value_changed(key: string, value: Value): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GConf.Client */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GConf-2.0.GConf.Client */
     connect(sigName: "error", callback: (($obj: Client, object?: object | null) => void)): number
     connect_after(sigName: "error", callback: (($obj: Client, object?: object | null) => void)): number
     emit(sigName: "error", object?: object | null): void
@@ -166,7 +168,7 @@ export class Client {
     connect(sigName: "value-changed", callback: (($obj: Client, object: string, p0?: object | null) => void)): number
     connect_after(sigName: "value-changed", callback: (($obj: Client, object: string, p0?: object | null) => void)): number
     emit(sigName: "value-changed", object: string, p0?: object | null): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -181,8 +183,8 @@ export class Client {
     static get_default(): Client
     static $gtype: GObject.Type
 }
-export class ChangeSet {
-    /* Methods of GConf.ChangeSet */
+class ChangeSet {
+    /* Methods of GConf-2.0.GConf.ChangeSet */
     check_value(key: string, value_retloc: Value): boolean
     clear(): void
     foreach(func: ChangeSetForeachFunc): void
@@ -204,8 +206,8 @@ export class ChangeSet {
     /* Static methods and pseudo-constructors */
     static new(): ChangeSet
 }
-export abstract class ClientClass {
-    /* Fields of GConf.ClientClass */
+abstract class ClientClass {
+    /* Fields of GConf-2.0.GConf.ClientClass */
     parent_class: GObject.ObjectClass
     value_changed: (client: Client, key: string, value: Value) => void
     unreturned_error: (client: Client, error: GLib.Error) => void
@@ -215,8 +217,8 @@ export abstract class ClientClass {
     pad3: GLib.Func
     static name: string
 }
-export class Engine {
-    /* Methods of GConf.Engine */
+class Engine {
+    /* Methods of GConf-2.0.GConf.Engine */
     all_dirs(dir: string): string[]
     all_entries(dir: string): Entry[]
     associate_schema(key: string, schema_key: string): boolean
@@ -254,11 +256,11 @@ export class Engine {
     unset(key: string): boolean
     static name: string
 }
-export class Entry {
-    /* Fields of GConf.Entry */
+class Entry {
+    /* Fields of GConf-2.0.GConf.Entry */
     key: string
     value: Value
-    /* Methods of GConf.Entry */
+    /* Methods of GConf-2.0.GConf.Entry */
     copy(): Entry
     equal(b: Entry): boolean
     free(): void
@@ -282,14 +284,14 @@ export class Entry {
     static new(key: string, val: Value): Entry
     static new_nocopy(key: string, val: Value): Entry
 }
-export class EnumStringPair {
-    /* Fields of GConf.EnumStringPair */
+class EnumStringPair {
+    /* Fields of GConf-2.0.GConf.EnumStringPair */
     enum_value: number
     str: string
     static name: string
 }
-export class Listeners {
-    /* Methods of GConf.Listeners */
+class Listeners {
+    /* Methods of GConf-2.0.GConf.Listeners */
     add(listen_point: string, listener_data: object | null, destroy_notify: GLib.FreeFunc): number
     count(): number
     foreach(callback: ListenersForeach): void
@@ -300,12 +302,12 @@ export class Listeners {
     remove_if(predicate: ListenersPredicate): void
     static name: string
 }
-export class MetaInfo {
-    /* Fields of GConf.MetaInfo */
+class MetaInfo {
+    /* Fields of GConf-2.0.GConf.MetaInfo */
     schema: string
     mod_user: string
     mod_time: GLib.Time
-    /* Methods of GConf.MetaInfo */
+    /* Methods of GConf-2.0.GConf.MetaInfo */
     free(): void
     get_mod_user(): string
     get_schema(): string
@@ -314,8 +316,8 @@ export class MetaInfo {
     set_schema(schema_name: string): void
     static name: string
 }
-export class Schema {
-    /* Methods of GConf.Schema */
+class Schema {
+    /* Methods of GConf-2.0.GConf.Schema */
     free(): void
     get_car_type(): ValueType
     get_cdr_type(): ValueType
@@ -338,10 +340,10 @@ export class Schema {
     set_type(type: ValueType): void
     static name: string
 }
-export class Value {
-    /* Fields of GConf.Value */
+class Value {
+    /* Fields of GConf-2.0.GConf.Value */
     type: ValueType
-    /* Methods of GConf.Value */
+    /* Methods of GConf-2.0.GConf.Value */
     compare(value_b: Value): number
     copy(): Value
     encode(): string
@@ -372,3 +374,5 @@ export class Value {
     static new_from_string(type: ValueType, str: string): Value
     static decode(encoded: string): Value
 }
+}
+export default GConf;

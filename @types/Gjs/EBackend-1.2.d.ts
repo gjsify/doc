@@ -3,24 +3,29 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as libxml2 from './libxml2-2.0';
-import type * as Soup from './Soup-2.4';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as EDataServer from './EDataServer-1.2';
-import type * as Camel from './Camel-1.2';
+import type libxml2 from './libxml2-2.0';
+import type Soup from './Soup-2.4';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type EDataServer from './EDataServer-1.2';
+import type GData from './GData-0.0';
+import type Json from './Json-1.0';
+import type Goa from './Goa-1.0';
+import type Camel from './Camel-1.2';
 
-export enum AuthenticationSessionResult {
+export namespace EBackend {
+
+enum AuthenticationSessionResult {
     ERROR,
     SUCCESS,
     DISMISSED,
 }
-export enum CacheDeletedFlag {
+enum CacheDeletedFlag {
     EXCLUDE_DELETED,
     INCLUDE_DELETED,
 }
-export enum CacheError {
+enum CacheError {
     ENGINE,
     CONSTRAINT,
     NOT_FOUND,
@@ -30,33 +35,40 @@ export enum CacheError {
     END_OF_LIST,
     LOAD,
 }
-export enum CacheLockType {
+enum CacheLockType {
     READ,
     WRITE,
 }
-export enum CacheOfflineFlag {
+enum CacheOfflineFlag {
     OFFLINE_UNKNOWN,
     IS_ONLINE,
     IS_OFFLINE,
 }
-export enum CacheUnlockAction {
+enum CacheUnlockAction {
     NONE,
     COMMIT,
     ROLLBACK,
 }
-export enum DBusServerExitCode {
+enum DBusServerExitCode {
     NONE,
     NORMAL,
     RELOAD,
 }
-export enum OfflineState {
+enum OfflineState {
     UNKNOWN,
     SYNCED,
     LOCALLY_CREATED,
     LOCALLY_MODIFIED,
     LOCALLY_DELETED,
 }
-export enum SourcePermissionFlags {
+enum CollectionBackendParts {
+    NONE,
+    CALENDAR,
+    CONTACTS,
+    MAIL,
+    ANY,
+}
+enum SourcePermissionFlags {
     NONE,
     WRITABLE,
     REMOVABLE,
@@ -70,24 +82,24 @@ export const CACHE_TABLE_OBJECTS: string
 export const EDS_REGISTRY_MODULES: string
 export const SOURCE_REGISTRY_SERVER_OBJECT_PATH: string
 export const USER_PROMPTER_SERVER_OBJECT_PATH: string
-export function cache_column_info_free(info?: object | null): void
-export function cache_offline_change_free(change?: object | null): void
-export function sqlite3_vfs_init(): void
-export interface CacheForeachFunc {
+function cache_column_info_free(info?: object | null): void
+function cache_offline_change_free(change?: object | null): void
+function sqlite3_vfs_init(): void
+interface CacheForeachFunc {
     (cache: Cache, uid: string, revision: string, object: string, offline_state: OfflineState, column_names: string[], column_values: string[]): boolean
 }
-export interface CacheSelectFunc {
+interface CacheSelectFunc {
     (cache: Cache, column_names: string[], column_values: string[]): boolean
 }
-export interface CacheUpdateFunc {
+interface CacheUpdateFunc {
     (cache: Cache, uid: string, revision: string, object: string, offline_state: OfflineState, column_names: string[], column_values: string[]): boolean
 }
-export class OAuth2Support {
-    /* Methods of EBackend.OAuth2Support */
+class OAuth2Support {
+    /* Methods of EBackend-1.2.EBackend.OAuth2Support */
     get_access_token(source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_access_token_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
     get_access_token_sync(source: EDataServer.Source, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
-    /* Virtual methods of EBackend.OAuth2Support */
+    /* Virtual methods of EBackend-1.2.EBackend.OAuth2Support */
     vfunc_get_access_token(source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_get_access_token_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
     vfunc_get_access_token_sync(source: EDataServer.Source, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
@@ -98,15 +110,15 @@ export interface Backend_ConstructProps extends GObject.Object_ConstructProps {
     online?: boolean
     source?: EDataServer.Source
 }
-export class Backend {
-    /* Properties of EBackend.Backend */
+class Backend {
+    /* Properties of EBackend-1.2.EBackend.Backend */
     connectable: Gio.SocketConnectable
     readonly main_context: GLib.MainContext
     online: boolean
     readonly user_prompter: UserPrompter
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.Backend */
+    /* Methods of EBackend-1.2.EBackend.Backend */
     credentials_required(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     credentials_required_finish(result: Gio.AsyncResult): boolean
     credentials_required_sync(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null, cancellable?: Gio.Cancellable | null): boolean
@@ -127,15 +139,15 @@ export class Backend {
     trust_prompt(parameters: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     trust_prompt_finish(result: Gio.AsyncResult): EDataServer.TrustPromptResponse
     trust_prompt_sync(parameters: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null): EDataServer.TrustPromptResponse
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -143,25 +155,25 @@ export class Backend {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of EBackend.Backend */
+    watch_closure(closure: Function): void
+    /* Virtual methods of EBackend-1.2.EBackend.Backend */
     vfunc_authenticate_sync(credentials: EDataServer.NamedParameters, out_certificate_pem: string, out_certificate_errors: Gio.TlsCertificateFlags, cancellable?: Gio.Cancellable | null): EDataServer.SourceAuthenticationResult
     vfunc_get_destination_address(): [ /* returnType */ boolean, /* host */ string, /* port */ number ]
     vfunc_prepare_shutdown(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Backend, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Backend, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -184,25 +196,25 @@ export class Backend {
 }
 export interface BackendFactory_ConstructProps extends EDataServer.Extension_ConstructProps {
 }
-export class BackendFactory {
-    /* Fields of GObject.Object */
+class BackendFactory {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.BackendFactory */
+    /* Methods of EBackend-1.2.EBackend.BackendFactory */
     get_hash_key(): string
     get_module_filename(): string
     new_backend(source: EDataServer.Source): Backend
     share_subprocess(): boolean
-    /* Methods of EDataServer.Extension */
+    /* Methods of EDataServer-1.2.EDataServer.Extension */
     get_extensible(): EDataServer.Extensible
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -210,24 +222,24 @@ export class BackendFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of EBackend.BackendFactory */
+    watch_closure(closure: Function): void
+    /* Virtual methods of EBackend-1.2.EBackend.BackendFactory */
     vfunc_get_hash_key(): string
     vfunc_new_backend(source: EDataServer.Source): Backend
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BackendFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BackendFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -242,10 +254,10 @@ export class BackendFactory {
 }
 export interface Cache_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Cache {
-    /* Fields of GObject.Object */
+class Cache {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.Cache */
+    /* Methods of EBackend-1.2.EBackend.Cache */
     change_revision(): void
     clear_offline_changes(cancellable?: Gio.Cancellable | null): boolean
     contains(uid: string, deleted_flag: CacheDeletedFlag): boolean
@@ -283,15 +295,15 @@ export class Cache {
     sqlite_select(sql_stmt: string, func: CacheSelectFunc, cancellable?: Gio.Cancellable | null): boolean
     thaw_revision_change(): void
     unlock(action: CacheUnlockAction): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -299,13 +311,13 @@ export class Cache {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of EBackend.Cache */
+    watch_closure(closure: Function): void
+    /* Virtual methods of EBackend-1.2.EBackend.Cache */
     vfunc_before_put(uid: string, revision: string, object: string, other_columns: CacheColumnValues, is_replace: boolean, cancellable?: Gio.Cancellable | null): boolean
     vfunc_before_remove(uid: string, cancellable?: Gio.Cancellable | null): boolean
     vfunc_clear_offline_changes_locked(cancellable?: Gio.Cancellable | null): boolean
@@ -313,15 +325,15 @@ export class Cache {
     vfunc_put_locked(uid: string, revision: string, object: string, other_columns: CacheColumnValues, offline_state: OfflineState, is_replace: boolean, cancellable?: Gio.Cancellable | null): boolean
     vfunc_remove_locked(uid: string, cancellable?: Gio.Cancellable | null): boolean
     vfunc_revision_changed(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of EBackend.Cache */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EBackend-1.2.EBackend.Cache */
     connect(sigName: "before-put", callback: (($obj: Cache, object: string, p0: string, p1: string, p2: CacheColumnValues, p3: boolean, p4?: Gio.Cancellable | null, p5?: object | null) => boolean)): number
     connect_after(sigName: "before-put", callback: (($obj: Cache, object: string, p0: string, p1: string, p2: CacheColumnValues, p3: boolean, p4?: Gio.Cancellable | null, p5?: object | null) => boolean)): number
     emit(sigName: "before-put", object: string, p0: string, p1: string, p2: CacheColumnValues, p3: boolean, p4?: Gio.Cancellable | null, p5?: object | null): void
@@ -331,7 +343,7 @@ export class Cache {
     connect(sigName: "revision-changed", callback: (($obj: Cache) => void)): number
     connect_after(sigName: "revision-changed", callback: (($obj: Cache) => void)): number
     emit(sigName: "revision-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Cache, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Cache, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -349,23 +361,23 @@ export class Cache {
 }
 export interface CacheReaper_ConstructProps extends EDataServer.Extension_ConstructProps {
 }
-export class CacheReaper {
-    /* Fields of GObject.Object */
+class CacheReaper {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.CacheReaper */
+    /* Methods of EBackend-1.2.EBackend.CacheReaper */
     add_private_directory(name: string): void
     remove_private_directory(name: string): void
-    /* Methods of EDataServer.Extension */
+    /* Methods of EDataServer-1.2.EDataServer.Extension */
     get_extensible(): EDataServer.Extensible
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -373,24 +385,24 @@ export class CacheReaper {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of EDataServer.Extensible */
+    watch_closure(closure: Function): void
+    /* Methods of EDataServer-1.2.EDataServer.Extensible */
     list_extensions(extension_type: GObject.Type): EDataServer.Extension[]
     load_extensions(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CacheReaper, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CacheReaper, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -408,17 +420,17 @@ export class CacheReaper {
 export interface CollectionBackend_ConstructProps extends Backend_ConstructProps {
     server?: SourceRegistryServer
 }
-export class CollectionBackend {
-    /* Properties of EBackend.CollectionBackend */
+class CollectionBackend {
+    /* Properties of EBackend-1.2.EBackend.CollectionBackend */
     readonly proxy_resolver: Gio.ProxyResolver
-    /* Properties of EBackend.Backend */
+    /* Properties of EBackend-1.2.EBackend.Backend */
     connectable: Gio.SocketConnectable
     readonly main_context: GLib.MainContext
     online: boolean
     readonly user_prompter: UserPrompter
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.CollectionBackend */
+    /* Methods of EBackend-1.2.EBackend.CollectionBackend */
     authenticate_children(credentials: EDataServer.NamedParameters): void
     claim_all_resources(): EDataServer.Source[]
     create_resource(source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -430,6 +442,7 @@ export class CollectionBackend {
     dup_resource_id(child_source: EDataServer.Source): string
     freeze_populate(): boolean
     get_cache_dir(): string
+    get_part_enabled(parts: CollectionBackendParts): boolean
     get_populate_frozen(): boolean
     is_new_source(source: EDataServer.Source): boolean
     list_calendar_sources(): EDataServer.Source[]
@@ -440,7 +453,7 @@ export class CollectionBackend {
     ref_server(): SourceRegistryServer
     schedule_populate(): void
     thaw_populate(): void
-    /* Methods of EBackend.Backend */
+    /* Methods of EBackend-1.2.EBackend.Backend */
     credentials_required(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     credentials_required_finish(result: Gio.AsyncResult): boolean
     credentials_required_sync(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null, cancellable?: Gio.Cancellable | null): boolean
@@ -461,15 +474,15 @@ export class CollectionBackend {
     trust_prompt(parameters: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     trust_prompt_finish(result: Gio.AsyncResult): EDataServer.TrustPromptResponse
     trust_prompt_sync(parameters: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null): EDataServer.TrustPromptResponse
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -477,13 +490,13 @@ export class CollectionBackend {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of EBackend.CollectionBackend */
+    watch_closure(closure: Function): void
+    /* Virtual methods of EBackend-1.2.EBackend.CollectionBackend */
     vfunc_child_added(child_source: EDataServer.Source): void
     vfunc_child_removed(child_source: EDataServer.Source): void
     vfunc_create_resource(source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -494,26 +507,26 @@ export class CollectionBackend {
     vfunc_delete_resource_sync(source: EDataServer.Source, cancellable?: Gio.Cancellable | null): boolean
     vfunc_dup_resource_id(child_source: EDataServer.Source): string
     vfunc_populate(): void
-    /* Virtual methods of EBackend.Backend */
+    /* Virtual methods of EBackend-1.2.EBackend.Backend */
     vfunc_authenticate_sync(credentials: EDataServer.NamedParameters, out_certificate_pem: string, out_certificate_errors: Gio.TlsCertificateFlags, cancellable?: Gio.Cancellable | null): EDataServer.SourceAuthenticationResult
     vfunc_get_destination_address(): [ /* returnType */ boolean, /* host */ string, /* port */ number ]
     vfunc_prepare_shutdown(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of EBackend.CollectionBackend */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EBackend-1.2.EBackend.CollectionBackend */
     connect(sigName: "child-added", callback: (($obj: CollectionBackend, child_source: ServerSideSource) => void)): number
     connect_after(sigName: "child-added", callback: (($obj: CollectionBackend, child_source: ServerSideSource) => void)): number
     emit(sigName: "child-added", child_source: ServerSideSource): void
     connect(sigName: "child-removed", callback: (($obj: CollectionBackend, child_source: ServerSideSource) => void)): number
     connect_after(sigName: "child-removed", callback: (($obj: CollectionBackend, child_source: ServerSideSource) => void)): number
     emit(sigName: "child-removed", child_source: ServerSideSource): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CollectionBackend, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CollectionBackend, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -538,27 +551,27 @@ export class CollectionBackend {
 }
 export interface CollectionBackendFactory_ConstructProps extends BackendFactory_ConstructProps {
 }
-export class CollectionBackendFactory {
-    /* Fields of GObject.Object */
+class CollectionBackendFactory {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.CollectionBackendFactory */
+    /* Methods of EBackend-1.2.EBackend.CollectionBackendFactory */
     prepare_mail(mail_account_source: EDataServer.Source, mail_identity_source: EDataServer.Source, mail_transport_source: EDataServer.Source): void
-    /* Methods of EBackend.BackendFactory */
+    /* Methods of EBackend-1.2.EBackend.BackendFactory */
     get_hash_key(): string
     get_module_filename(): string
     new_backend(source: EDataServer.Source): Backend
     share_subprocess(): boolean
-    /* Methods of EDataServer.Extension */
+    /* Methods of EDataServer-1.2.EDataServer.Extension */
     get_extensible(): EDataServer.Extensible
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -566,26 +579,26 @@ export class CollectionBackendFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of EBackend.CollectionBackendFactory */
+    watch_closure(closure: Function): void
+    /* Virtual methods of EBackend-1.2.EBackend.CollectionBackendFactory */
     vfunc_prepare_mail(mail_account_source: EDataServer.Source, mail_identity_source: EDataServer.Source, mail_transport_source: EDataServer.Source): void
-    /* Virtual methods of EBackend.BackendFactory */
+    /* Virtual methods of EBackend-1.2.EBackend.BackendFactory */
     vfunc_get_hash_key(): string
     vfunc_new_backend(source: EDataServer.Source): Backend
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CollectionBackendFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CollectionBackendFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -600,24 +613,24 @@ export class CollectionBackendFactory {
 }
 export interface DBusServer_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class DBusServer {
-    /* Fields of GObject.Object */
+class DBusServer {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.DBusServer */
+    /* Methods of EBackend-1.2.EBackend.DBusServer */
     hold(): void
     load_modules(): void
     quit(code: DBusServerExitCode): void
     release(): void
     run(wait_for_client: boolean): DBusServerExitCode
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -625,30 +638,30 @@ export class DBusServer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of EDataServer.Extensible */
+    watch_closure(closure: Function): void
+    /* Methods of EDataServer-1.2.EDataServer.Extensible */
     list_extensions(extension_type: GObject.Type): EDataServer.Extension[]
     load_extensions(): void
-    /* Virtual methods of EBackend.DBusServer */
+    /* Virtual methods of EBackend-1.2.EBackend.DBusServer */
     vfunc_bus_acquired(connection: Gio.DBusConnection): void
     vfunc_bus_name_acquired(connection: Gio.DBusConnection): void
     vfunc_bus_name_lost(connection: Gio.DBusConnection): void
     vfunc_quit_server(code: DBusServerExitCode): void
     vfunc_run_server(): DBusServerExitCode
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of EBackend.DBusServer */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EBackend-1.2.EBackend.DBusServer */
     connect(sigName: "bus-acquired", callback: (($obj: DBusServer, connection: Gio.DBusConnection) => void)): number
     connect_after(sigName: "bus-acquired", callback: (($obj: DBusServer, connection: Gio.DBusConnection) => void)): number
     emit(sigName: "bus-acquired", connection: Gio.DBusConnection): void
@@ -664,7 +677,7 @@ export class DBusServer {
     connect(sigName: "run-server", callback: (($obj: DBusServer) => DBusServerExitCode)): number
     connect_after(sigName: "run-server", callback: (($obj: DBusServer) => DBusServerExitCode)): number
     emit(sigName: "run-server"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DBusServer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DBusServer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -681,12 +694,12 @@ export interface DataFactory_ConstructProps extends DBusServer_ConstructProps {
     backend_per_process?: number
     reload_supported?: boolean
 }
-export class DataFactory {
-    /* Properties of EBackend.DataFactory */
+class DataFactory {
+    /* Properties of EBackend-1.2.EBackend.DataFactory */
     readonly registry: EDataServer.SourceRegistry
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.DataFactory */
+    /* Methods of EBackend-1.2.EBackend.DataFactory */
     backend_closed(backend: Backend): void
     backend_closed_by_sender(backend: Backend, sender: string): void
     construct_path(): string
@@ -699,21 +712,21 @@ export class DataFactory {
     ref_backend_factory(backend_name: string, extension_name: string): BackendFactory
     spawn_subprocess_backend(invocation: Gio.DBusMethodInvocation, uid: string, extension_name: string, subprocess_path: string): void
     use_backend_per_process(): boolean
-    /* Methods of EBackend.DBusServer */
+    /* Methods of EBackend-1.2.EBackend.DBusServer */
     hold(): void
     load_modules(): void
     quit(code: DBusServerExitCode): void
     release(): void
     run(wait_for_client: boolean): DBusServerExitCode
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -721,37 +734,37 @@ export class DataFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of EDataServer.Extensible */
+    watch_closure(closure: Function): void
+    /* Methods of EDataServer-1.2.EDataServer.Extensible */
     list_extensions(extension_type: GObject.Type): EDataServer.Extension[]
     load_extensions(): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of EBackend.DataFactory */
+    /* Virtual methods of EBackend-1.2.EBackend.DataFactory */
     vfunc_complete_open(invocation: Gio.DBusMethodInvocation, object_path: string, bus_name: string, extension_name: string): void
     vfunc_create_backend(backend_factory: BackendFactory, source: EDataServer.Source): Backend
     vfunc_open_backend(backend: Backend, connection: Gio.DBusConnection, cancellable?: Gio.Cancellable | null): string
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of EBackend.DBusServer */
+    /* Virtual methods of EBackend-1.2.EBackend.DBusServer */
     vfunc_bus_acquired(connection: Gio.DBusConnection): void
     vfunc_bus_name_acquired(connection: Gio.DBusConnection): void
     vfunc_bus_name_lost(connection: Gio.DBusConnection): void
     vfunc_quit_server(code: DBusServerExitCode): void
     vfunc_run_server(): DBusServerExitCode
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of EBackend.DBusServer */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EBackend-1.2.EBackend.DBusServer */
     connect(sigName: "bus-acquired", callback: (($obj: DataFactory, connection: Gio.DBusConnection) => void)): number
     connect_after(sigName: "bus-acquired", callback: (($obj: DataFactory, connection: Gio.DBusConnection) => void)): number
     emit(sigName: "bus-acquired", connection: Gio.DBusConnection): void
@@ -767,7 +780,7 @@ export class DataFactory {
     connect(sigName: "run-server", callback: (($obj: DataFactory) => DBusServerExitCode)): number
     connect_after(sigName: "run-server", callback: (($obj: DataFactory) => DBusServerExitCode)): number
     emit(sigName: "run-server"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DataFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DataFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -787,10 +800,10 @@ export class DataFactory {
 export interface FileCache_ConstructProps extends GObject.Object_ConstructProps {
     filename?: string
 }
-export class FileCache {
-    /* Fields of GObject.Object */
+class FileCache {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.FileCache */
+    /* Methods of EBackend-1.2.EBackend.FileCache */
     add_object(key: string, value: string): boolean
     clean(): boolean
     freeze_changes(): void
@@ -802,15 +815,15 @@ export class FileCache {
     remove_object(key: string): boolean
     replace_object(key: string, new_value: string): boolean
     thaw_changes(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -818,21 +831,21 @@ export class FileCache {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FileCache, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FileCache, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -857,8 +870,8 @@ export interface ServerSideSource_ConstructProps extends EDataServer.Source_Cons
     writable?: boolean
     write_directory?: string
 }
-export class ServerSideSource {
-    /* Properties of EBackend.ServerSideSource */
+class ServerSideSource {
+    /* Properties of EBackend-1.2.EBackend.ServerSideSource */
     readonly exported: boolean
     oauth2_support: OAuth2Support
     remote_creatable: boolean
@@ -866,14 +879,14 @@ export class ServerSideSource {
     removable: boolean
     writable: boolean
     write_directory: string
-    /* Properties of EDataServer.Source */
+    /* Properties of EDataServer-1.2.EDataServer.Source */
     readonly connection_status: EDataServer.SourceConnectionStatus
     display_name: string
     enabled: boolean
     parent: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.ServerSideSource */
+    /* Methods of EBackend-1.2.EBackend.ServerSideSource */
     get_exported(): boolean
     get_file(): Gio.File | null
     get_node(): GLib.Node | null
@@ -887,7 +900,7 @@ export class ServerSideSource {
     set_removable(removable: boolean): void
     set_writable(writable: boolean): void
     set_write_directory(write_directory: string): void
-    /* Methods of EDataServer.Source */
+    /* Methods of EDataServer-1.2.EDataServer.Source */
     camel_configure_service(service: Camel.Service): void
     changed(): void
     compare_by_display_name(source2: EDataServer.Source): number
@@ -895,7 +908,7 @@ export class ServerSideSource {
     delete_password_finish(result: Gio.AsyncResult): boolean
     delete_password_sync(cancellable?: Gio.Cancellable | null): boolean
     dup_display_name(): string
-    dup_parent(): string
+    dup_parent(): string | null
     dup_secret_label(): string
     dup_uid(): string
     emit_credentials_required(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null): void
@@ -910,7 +923,7 @@ export class ServerSideSource {
     get_oauth2_access_token(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_oauth2_access_token_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
     get_oauth2_access_token_sync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
-    get_parent(): string
+    get_parent(): string | null
     get_remote_creatable(): boolean
     get_remote_deletable(): boolean
     get_removable(): boolean
@@ -925,8 +938,8 @@ export class ServerSideSource {
     invoke_credentials_required_finish(result: Gio.AsyncResult): boolean
     invoke_credentials_required_sync(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null, cancellable?: Gio.Cancellable | null): boolean
     lookup_password(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    lookup_password_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_password */ string ]
-    lookup_password_sync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_password */ string ]
+    lookup_password_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_password */ string | null ]
+    lookup_password_sync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_password */ string | null ]
     mail_signature_load(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     mail_signature_load_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* contents */ string, /* length */ number | null ]
     mail_signature_load_sync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* contents */ string, /* length */ number | null ]
@@ -939,7 +952,7 @@ export class ServerSideSource {
     proxy_lookup(uri: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     proxy_lookup_finish(result: Gio.AsyncResult): string[]
     proxy_lookup_sync(uri: string, cancellable?: Gio.Cancellable | null): string[]
-    ref_dbus_object(): Gio.DBusObject
+    ref_dbus_object(): Gio.DBusObject | null
     ref_main_context(): GLib.MainContext
     refresh_add_timeout(context: GLib.MainContext | null, callback: EDataServer.SourceRefreshFunc): number
     refresh_force_timeout(): void
@@ -961,22 +974,22 @@ export class ServerSideSource {
     store_password(password: string, permanently: boolean, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     store_password_finish(result: Gio.AsyncResult): boolean
     store_password_sync(password: string, permanently: boolean, cancellable?: Gio.Cancellable | null): boolean
-    to_string(length?: number | null): string
+    to_string(): [ /* returnType */ string, /* length */ number | null ]
     unset_last_credentials_required_arguments(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     unset_last_credentials_required_arguments_finish(result: Gio.AsyncResult): boolean
     unset_last_credentials_required_arguments_sync(cancellable?: Gio.Cancellable | null): boolean
     write(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_finish(result: Gio.AsyncResult): boolean
     write_sync(cancellable?: Gio.Cancellable | null): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -984,20 +997,20 @@ export class ServerSideSource {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Methods of Gio.ProxyResolver */
+    /* Methods of Gio-2.0.Gio.ProxyResolver */
     is_supported(): boolean
     lookup(uri: string, cancellable?: Gio.Cancellable | null): string[]
     lookup_async(uri: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     lookup_finish(result: Gio.AsyncResult): string[]
-    /* Virtual methods of EDataServer.Source */
+    /* Virtual methods of EDataServer-1.2.EDataServer.Source */
     vfunc_authenticate(credentials: EDataServer.NamedParameters): void
     vfunc_changed(): void
     vfunc_credentials_required(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error: GLib.Error): void
@@ -1024,15 +1037,15 @@ export class ServerSideSource {
     vfunc_lookup(uri: string, cancellable?: Gio.Cancellable | null): string[]
     vfunc_lookup_async(uri: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_lookup_finish(result: Gio.AsyncResult): string[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of EDataServer.Source */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EDataServer-1.2.EDataServer.Source */
     connect(sigName: "authenticate", callback: (($obj: ServerSideSource, credentials: EDataServer.NamedParameters) => void)): number
     connect_after(sigName: "authenticate", callback: (($obj: ServerSideSource, credentials: EDataServer.NamedParameters) => void)): number
     emit(sigName: "authenticate", credentials: EDataServer.NamedParameters): void
@@ -1042,7 +1055,7 @@ export class ServerSideSource {
     connect(sigName: "credentials-required", callback: (($obj: ServerSideSource, reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, error: GLib.Error) => void)): number
     connect_after(sigName: "credentials-required", callback: (($obj: ServerSideSource, reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, error: GLib.Error) => void)): number
     emit(sigName: "credentials-required", reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, error: GLib.Error): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ServerSideSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ServerSideSource, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1086,10 +1099,10 @@ export class ServerSideSource {
 }
 export interface ServerSideSourceCredentialsProvider_ConstructProps extends EDataServer.SourceCredentialsProvider_ConstructProps {
 }
-export class ServerSideSourceCredentialsProvider {
-    /* Fields of GObject.Object */
+class ServerSideSourceCredentialsProvider {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EDataServer.SourceCredentialsProvider */
+    /* Methods of EDataServer-1.2.EDataServer.SourceCredentialsProvider */
     can_prompt(source: EDataServer.Source): boolean
     can_store(source: EDataServer.Source): boolean
     delete(source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1106,15 +1119,15 @@ export class ServerSideSourceCredentialsProvider {
     store_finish(result: Gio.AsyncResult): boolean
     store_sync(source: EDataServer.Source, credentials: EDataServer.NamedParameters, permanently: boolean, cancellable?: Gio.Cancellable | null): boolean
     unregister_impl(provider_impl: EDataServer.SourceCredentialsProviderImpl): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1122,26 +1135,26 @@ export class ServerSideSourceCredentialsProvider {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of EDataServer.Extensible */
+    watch_closure(closure: Function): void
+    /* Methods of EDataServer-1.2.EDataServer.Extensible */
     list_extensions(extension_type: GObject.Type): EDataServer.Extension[]
     load_extensions(): void
-    /* Virtual methods of EDataServer.SourceCredentialsProvider */
+    /* Virtual methods of EDataServer-1.2.EDataServer.SourceCredentialsProvider */
     vfunc_ref_source(uid: string): EDataServer.Source
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ServerSideSourceCredentialsProvider, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ServerSideSourceCredentialsProvider, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1159,12 +1172,12 @@ export class ServerSideSourceCredentialsProvider {
 }
 export interface SourceRegistryServer_ConstructProps extends DataFactory_ConstructProps {
 }
-export class SourceRegistryServer {
-    /* Properties of EBackend.DataFactory */
+class SourceRegistryServer {
+    /* Properties of EBackend-1.2.EBackend.DataFactory */
     readonly registry: EDataServer.SourceRegistry
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.SourceRegistryServer */
+    /* Methods of EBackend-1.2.EBackend.SourceRegistryServer */
     add_source(source: EDataServer.Source): void
     find_extension(source: EDataServer.Source, extension_name: string): EDataServer.Source | null
     get_oauth2_services(): EDataServer.OAuth2Services
@@ -1176,9 +1189,10 @@ export class SourceRegistryServer {
     ref_backend(source: EDataServer.Source): CollectionBackend | null
     ref_backend_factory(source: EDataServer.Source): CollectionBackendFactory | null
     ref_credentials_provider(): EDataServer.SourceCredentialsProvider
+    ref_oauth2_support(): OAuth2Support | null
     ref_source(uid: string): EDataServer.Source | null
     remove_source(source: EDataServer.Source): void
-    /* Methods of EBackend.DataFactory */
+    /* Methods of EBackend-1.2.EBackend.DataFactory */
     backend_closed(backend: Backend): void
     backend_closed_by_sender(backend: Backend, sender: string): void
     construct_path(): string
@@ -1191,21 +1205,21 @@ export class SourceRegistryServer {
     ref_backend_factory(backend_name: string, extension_name: string): BackendFactory
     spawn_subprocess_backend(invocation: Gio.DBusMethodInvocation, uid: string, extension_name: string, subprocess_path: string): void
     use_backend_per_process(): boolean
-    /* Methods of EBackend.DBusServer */
+    /* Methods of EBackend-1.2.EBackend.DBusServer */
     hold(): void
     load_modules(): void
     quit(code: DBusServerExitCode): void
     release(): void
     run(wait_for_client: boolean): DBusServerExitCode
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1213,43 +1227,50 @@ export class SourceRegistryServer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of EDataServer.Extensible */
+    watch_closure(closure: Function): void
+    /* Methods of EBackend-1.2.EBackend.OAuth2Support */
+    get_access_token(source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_access_token_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
+    get_access_token_sync(source: EDataServer.Source, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
+    /* Methods of EDataServer-1.2.EDataServer.Extensible */
     list_extensions(extension_type: GObject.Type): EDataServer.Extension[]
     load_extensions(): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of EBackend.SourceRegistryServer */
+    /* Virtual methods of EBackend-1.2.EBackend.SourceRegistryServer */
     vfunc_files_loaded(): void
     vfunc_load_error(file: Gio.File, error: GLib.Error): void
     vfunc_source_added(source: EDataServer.Source): void
     vfunc_source_removed(source: EDataServer.Source): void
     vfunc_tweak_key_file(key_file: GLib.KeyFile, uid: string): boolean
-    /* Virtual methods of EBackend.DataFactory */
+    vfunc_get_access_token(source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_get_access_token_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
+    vfunc_get_access_token_sync(source: EDataServer.Source, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
+    /* Virtual methods of EBackend-1.2.EBackend.DataFactory */
     vfunc_complete_open(invocation: Gio.DBusMethodInvocation, object_path: string, bus_name: string, extension_name: string): void
     vfunc_create_backend(backend_factory: BackendFactory, source: EDataServer.Source): Backend
     vfunc_open_backend(backend: Backend, connection: Gio.DBusConnection, cancellable?: Gio.Cancellable | null): string
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of EBackend.DBusServer */
+    /* Virtual methods of EBackend-1.2.EBackend.DBusServer */
     vfunc_bus_acquired(connection: Gio.DBusConnection): void
     vfunc_bus_name_acquired(connection: Gio.DBusConnection): void
     vfunc_bus_name_lost(connection: Gio.DBusConnection): void
     vfunc_quit_server(code: DBusServerExitCode): void
     vfunc_run_server(): DBusServerExitCode
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of EBackend.SourceRegistryServer */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EBackend-1.2.EBackend.SourceRegistryServer */
     connect(sigName: "files-loaded", callback: (($obj: SourceRegistryServer) => void)): number
     connect_after(sigName: "files-loaded", callback: (($obj: SourceRegistryServer) => void)): number
     emit(sigName: "files-loaded"): void
@@ -1265,7 +1286,7 @@ export class SourceRegistryServer {
     connect(sigName: "tweak-key-file", callback: (($obj: SourceRegistryServer, key_file: GLib.KeyFile, uid: string) => boolean)): number
     connect_after(sigName: "tweak-key-file", callback: (($obj: SourceRegistryServer, key_file: GLib.KeyFile, uid: string) => boolean)): number
     emit(sigName: "tweak-key-file", key_file: GLib.KeyFile, uid: string): void
-    /* Signals of EBackend.DBusServer */
+    /* Signals of EBackend-1.2.EBackend.DBusServer */
     connect(sigName: "bus-acquired", callback: (($obj: SourceRegistryServer, connection: Gio.DBusConnection) => void)): number
     connect_after(sigName: "bus-acquired", callback: (($obj: SourceRegistryServer, connection: Gio.DBusConnection) => void)): number
     emit(sigName: "bus-acquired", connection: Gio.DBusConnection): void
@@ -1281,7 +1302,7 @@ export class SourceRegistryServer {
     connect(sigName: "run-server", callback: (($obj: SourceRegistryServer) => DBusServerExitCode)): number
     connect_after(sigName: "run-server", callback: (($obj: SourceRegistryServer) => DBusServerExitCode)): number
     emit(sigName: "run-server"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SourceRegistryServer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SourceRegistryServer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1300,27 +1321,27 @@ export class SourceRegistryServer {
 }
 export interface SubprocessFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class SubprocessFactory {
-    /* Properties of EBackend.SubprocessFactory */
+class SubprocessFactory {
+    /* Properties of EBackend-1.2.EBackend.SubprocessFactory */
     readonly registry: EDataServer.SourceRegistry
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.SubprocessFactory */
+    /* Methods of EBackend-1.2.EBackend.SubprocessFactory */
     call_backends_prepare_shutdown(): void
     get_backends_list(): Backend[]
     get_registry(): EDataServer.SourceRegistry
     open_backend(connection: Gio.DBusConnection, uid: string, backend_factory_type_name: string, module_filename: string, proxy: Gio.DBusInterfaceSkeleton, cancellable?: Gio.Cancellable | null): string
     ref_initable_backend(uid: string, backend_factory_type_name: string, module_filename: string, cancellable?: Gio.Cancellable | null): Backend | null
     set_backend_callbacks(backend: Backend, proxy: Gio.DBusInterfaceSkeleton): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1328,28 +1349,28 @@ export class SubprocessFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of EBackend.SubprocessFactory */
+    /* Virtual methods of EBackend-1.2.EBackend.SubprocessFactory */
     vfunc_backend_closed(backend: Backend): void
     vfunc_backend_created(backend: Backend): void
     vfunc_open_data(backend: Backend, connection: Gio.DBusConnection, data?: object | null, cancellable?: Gio.Cancellable | null): string
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SubprocessFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SubprocessFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1369,25 +1390,25 @@ export class SubprocessFactory {
 }
 export interface UserPrompter_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class UserPrompter {
-    /* Fields of GObject.Object */
+class UserPrompter {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.UserPrompter */
+    /* Methods of EBackend-1.2.EBackend.UserPrompter */
     extension_prompt(dialog_name: string, in_parameters?: EDataServer.NamedParameters | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     extension_prompt_finish(result: Gio.AsyncResult, out_values?: EDataServer.NamedParameters | null): number
     extension_prompt_sync(dialog_name: string, in_parameters?: EDataServer.NamedParameters | null, out_values?: EDataServer.NamedParameters | null, cancellable?: Gio.Cancellable | null): number
     prompt(type: string | null, title: string | null, primary_text: string | null, secondary_text: string | null, use_markup: boolean, button_captions?: string[] | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     prompt_finish(result: Gio.AsyncResult): number
     prompt_sync(type: string | null, title: string | null, primary_text: string | null, secondary_text: string | null, use_markup: boolean, button_captions?: string[] | null, cancellable?: Gio.Cancellable | null): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1395,21 +1416,21 @@ export class UserPrompter {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UserPrompter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UserPrompter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1426,27 +1447,27 @@ export class UserPrompter {
 }
 export interface UserPrompterServer_ConstructProps extends DBusServer_ConstructProps {
 }
-export class UserPrompterServer {
-    /* Fields of GObject.Object */
+class UserPrompterServer {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.UserPrompterServer */
+    /* Methods of EBackend-1.2.EBackend.UserPrompterServer */
     register(extension: EDataServer.Extension, dialog_name: string): boolean
     response(prompt_id: number, response: number, extension_values?: EDataServer.NamedParameters | null): void
-    /* Methods of EBackend.DBusServer */
+    /* Methods of EBackend-1.2.EBackend.DBusServer */
     hold(): void
     load_modules(): void
     quit(code: DBusServerExitCode): void
     release(): void
     run(wait_for_client: boolean): DBusServerExitCode
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1454,34 +1475,34 @@ export class UserPrompterServer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of EDataServer.Extensible */
+    watch_closure(closure: Function): void
+    /* Methods of EDataServer-1.2.EDataServer.Extensible */
     list_extensions(extension_type: GObject.Type): EDataServer.Extension[]
     load_extensions(): void
-    /* Virtual methods of EBackend.DBusServer */
+    /* Virtual methods of EBackend-1.2.EBackend.DBusServer */
     vfunc_bus_acquired(connection: Gio.DBusConnection): void
     vfunc_bus_name_acquired(connection: Gio.DBusConnection): void
     vfunc_bus_name_lost(connection: Gio.DBusConnection): void
     vfunc_quit_server(code: DBusServerExitCode): void
     vfunc_run_server(): DBusServerExitCode
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of EBackend.UserPrompterServer */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EBackend-1.2.EBackend.UserPrompterServer */
     connect(sigName: "prompt", callback: (($obj: UserPrompterServer, prompt_id: number, type: string | null, title: string | null, primary_text: string | null, secondary_text: string | null, use_markup: boolean, button_captions?: string[] | null) => void)): number
     connect_after(sigName: "prompt", callback: (($obj: UserPrompterServer, prompt_id: number, type: string | null, title: string | null, primary_text: string | null, secondary_text: string | null, use_markup: boolean, button_captions?: string[] | null) => void)): number
     emit(sigName: "prompt", prompt_id: number, type: string | null, title: string | null, primary_text: string | null, secondary_text: string | null, use_markup: boolean, button_captions?: string[] | null): void
-    /* Signals of EBackend.DBusServer */
+    /* Signals of EBackend-1.2.EBackend.DBusServer */
     connect(sigName: "bus-acquired", callback: (($obj: UserPrompterServer, connection: Gio.DBusConnection) => void)): number
     connect_after(sigName: "bus-acquired", callback: (($obj: UserPrompterServer, connection: Gio.DBusConnection) => void)): number
     emit(sigName: "bus-acquired", connection: Gio.DBusConnection): void
@@ -1497,7 +1518,7 @@ export class UserPrompterServer {
     connect(sigName: "run-server", callback: (($obj: UserPrompterServer) => DBusServerExitCode)): number
     connect_after(sigName: "run-server", callback: (($obj: UserPrompterServer) => DBusServerExitCode)): number
     emit(sigName: "run-server"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UserPrompterServer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UserPrompterServer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1514,23 +1535,23 @@ export class UserPrompterServer {
 }
 export interface UserPrompterServerExtension_ConstructProps extends EDataServer.Extension_ConstructProps {
 }
-export class UserPrompterServerExtension {
-    /* Fields of GObject.Object */
+class UserPrompterServerExtension {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.UserPrompterServerExtension */
+    /* Methods of EBackend-1.2.EBackend.UserPrompterServerExtension */
     prompt(prompt_id: number, dialog_name: string, parameters?: EDataServer.NamedParameters | null): boolean
     response(prompt_id: number, response: number, values?: EDataServer.NamedParameters | null): void
-    /* Methods of EDataServer.Extension */
+    /* Methods of EDataServer-1.2.EDataServer.Extension */
     get_extensible(): EDataServer.Extensible
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1538,23 +1559,23 @@ export class UserPrompterServerExtension {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of EBackend.UserPrompterServerExtension */
+    watch_closure(closure: Function): void
+    /* Virtual methods of EBackend-1.2.EBackend.UserPrompterServerExtension */
     vfunc_prompt(prompt_id: number, dialog_name: string, parameters?: EDataServer.NamedParameters | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UserPrompterServerExtension, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UserPrompterServerExtension, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1569,21 +1590,21 @@ export class UserPrompterServerExtension {
 }
 export interface WebDAVCollectionBackend_ConstructProps extends CollectionBackend_ConstructProps {
 }
-export class WebDAVCollectionBackend {
-    /* Properties of EBackend.CollectionBackend */
+class WebDAVCollectionBackend {
+    /* Properties of EBackend-1.2.EBackend.CollectionBackend */
     readonly proxy_resolver: Gio.ProxyResolver
-    /* Properties of EBackend.Backend */
+    /* Properties of EBackend-1.2.EBackend.Backend */
     connectable: Gio.SocketConnectable
     readonly main_context: GLib.MainContext
     online: boolean
     readonly user_prompter: UserPrompter
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBackend.WebDAVCollectionBackend */
+    /* Methods of EBackend-1.2.EBackend.WebDAVCollectionBackend */
     discover_sync(calendar_url: string | null, contacts_url: string | null, credentials: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null): [ /* returnType */ EDataServer.SourceAuthenticationResult, /* out_certificate_pem */ string | null, /* out_certificate_errors */ Gio.TlsCertificateFlags | null ]
     get_resource_id(source: EDataServer.Source): string | null
     is_custom_source(source: EDataServer.Source): boolean
-    /* Methods of EBackend.CollectionBackend */
+    /* Methods of EBackend-1.2.EBackend.CollectionBackend */
     authenticate_children(credentials: EDataServer.NamedParameters): void
     claim_all_resources(): EDataServer.Source[]
     create_resource(source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1595,6 +1616,7 @@ export class WebDAVCollectionBackend {
     dup_resource_id(child_source: EDataServer.Source): string
     freeze_populate(): boolean
     get_cache_dir(): string
+    get_part_enabled(parts: CollectionBackendParts): boolean
     get_populate_frozen(): boolean
     is_new_source(source: EDataServer.Source): boolean
     list_calendar_sources(): EDataServer.Source[]
@@ -1605,7 +1627,7 @@ export class WebDAVCollectionBackend {
     ref_server(): SourceRegistryServer
     schedule_populate(): void
     thaw_populate(): void
-    /* Methods of EBackend.Backend */
+    /* Methods of EBackend-1.2.EBackend.Backend */
     credentials_required(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     credentials_required_finish(result: Gio.AsyncResult): boolean
     credentials_required_sync(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null, cancellable?: Gio.Cancellable | null): boolean
@@ -1626,15 +1648,15 @@ export class WebDAVCollectionBackend {
     trust_prompt(parameters: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     trust_prompt_finish(result: Gio.AsyncResult): EDataServer.TrustPromptResponse
     trust_prompt_sync(parameters: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null): EDataServer.TrustPromptResponse
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1642,16 +1664,16 @@ export class WebDAVCollectionBackend {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of EBackend.WebDAVCollectionBackend */
+    watch_closure(closure: Function): void
+    /* Virtual methods of EBackend-1.2.EBackend.WebDAVCollectionBackend */
     vfunc_get_resource_id(source: EDataServer.Source): string | null
     vfunc_is_custom_source(source: EDataServer.Source): boolean
-    /* Virtual methods of EBackend.CollectionBackend */
+    /* Virtual methods of EBackend-1.2.EBackend.CollectionBackend */
     vfunc_child_added(child_source: EDataServer.Source): void
     vfunc_child_removed(child_source: EDataServer.Source): void
     vfunc_create_resource(source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1662,26 +1684,26 @@ export class WebDAVCollectionBackend {
     vfunc_delete_resource_sync(source: EDataServer.Source, cancellable?: Gio.Cancellable | null): boolean
     vfunc_dup_resource_id(child_source: EDataServer.Source): string
     vfunc_populate(): void
-    /* Virtual methods of EBackend.Backend */
+    /* Virtual methods of EBackend-1.2.EBackend.Backend */
     vfunc_authenticate_sync(credentials: EDataServer.NamedParameters, out_certificate_pem: string, out_certificate_errors: Gio.TlsCertificateFlags, cancellable?: Gio.Cancellable | null): EDataServer.SourceAuthenticationResult
     vfunc_get_destination_address(): [ /* returnType */ boolean, /* host */ string, /* port */ number ]
     vfunc_prepare_shutdown(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of EBackend.CollectionBackend */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EBackend-1.2.EBackend.CollectionBackend */
     connect(sigName: "child-added", callback: (($obj: WebDAVCollectionBackend, child_source: ServerSideSource) => void)): number
     connect_after(sigName: "child-added", callback: (($obj: WebDAVCollectionBackend, child_source: ServerSideSource) => void)): number
     emit(sigName: "child-added", child_source: ServerSideSource): void
     connect(sigName: "child-removed", callback: (($obj: WebDAVCollectionBackend, child_source: ServerSideSource) => void)): number
     connect_after(sigName: "child-removed", callback: (($obj: WebDAVCollectionBackend, child_source: ServerSideSource) => void)): number
     emit(sigName: "child-removed", child_source: ServerSideSource): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WebDAVCollectionBackend, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WebDAVCollectionBackend, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1704,29 +1726,29 @@ export class WebDAVCollectionBackend {
     _init (config?: WebDAVCollectionBackend_ConstructProps): void
     static $gtype: GObject.Type
 }
-export abstract class BackendClass {
-    /* Fields of EBackend.BackendClass */
+abstract class BackendClass {
+    /* Fields of EBackend-1.2.EBackend.BackendClass */
     get_destination_address: (backend: Backend) => [ /* returnType */ boolean, /* host */ string, /* port */ number ]
     prepare_shutdown: (backend: Backend) => void
     authenticate_sync: (backend: Backend, credentials: EDataServer.NamedParameters, out_certificate_pem: string, out_certificate_errors: Gio.TlsCertificateFlags, cancellable?: Gio.Cancellable | null) => EDataServer.SourceAuthenticationResult
     static name: string
 }
-export abstract class BackendFactoryClass {
-    /* Fields of EBackend.BackendFactoryClass */
+abstract class BackendFactoryClass {
+    /* Fields of EBackend-1.2.EBackend.BackendFactoryClass */
     get_hash_key: (factory: BackendFactory) => string
     new_backend: (factory: BackendFactory, source: EDataServer.Source) => Backend
     e_module: object
     share_subprocess: boolean
     static name: string
 }
-export class BackendFactoryPrivate {
+class BackendFactoryPrivate {
     static name: string
 }
-export class BackendPrivate {
+class BackendPrivate {
     static name: string
 }
-export abstract class CacheClass {
-    /* Fields of EBackend.CacheClass */
+abstract class CacheClass {
+    /* Fields of EBackend-1.2.EBackend.CacheClass */
     put_locked: (cache: Cache, uid: string, revision: string, object: string, other_columns: CacheColumnValues, offline_state: OfflineState, is_replace: boolean, cancellable?: Gio.Cancellable | null) => boolean
     remove_locked: (cache: Cache, uid: string, cancellable?: Gio.Cancellable | null) => boolean
     clear_offline_changes_locked: (cache: Cache, cancellable?: Gio.Cancellable | null) => boolean
@@ -1736,12 +1758,12 @@ export abstract class CacheClass {
     revision_changed: (cache: Cache) => void
     static name: string
 }
-export class CacheColumnInfo {
-    /* Fields of EBackend.CacheColumnInfo */
+class CacheColumnInfo {
+    /* Fields of EBackend-1.2.EBackend.CacheColumnInfo */
     name: string
     type: string
     index_name: string
-    /* Methods of EBackend.CacheColumnInfo */
+    /* Methods of EBackend-1.2.EBackend.CacheColumnInfo */
     copy(): CacheColumnInfo
     static name: string
     static new(name: string, type: string, index_name?: string | null): CacheColumnInfo
@@ -1750,8 +1772,8 @@ export class CacheColumnInfo {
     static new(name: string, type: string, index_name?: string | null): CacheColumnInfo
     static free(info?: object | null): void
 }
-export class CacheColumnValues {
-    /* Methods of EBackend.CacheColumnValues */
+class CacheColumnValues {
+    /* Methods of EBackend-1.2.EBackend.CacheColumnValues */
     contains(name: string): boolean
     copy(): CacheColumnValues
     free(): void
@@ -1769,13 +1791,13 @@ export class CacheColumnValues {
     /* Static methods and pseudo-constructors */
     static new(): CacheColumnValues
 }
-export class CacheOfflineChange {
-    /* Fields of EBackend.CacheOfflineChange */
+class CacheOfflineChange {
+    /* Fields of EBackend-1.2.EBackend.CacheOfflineChange */
     uid: string
     revision: string
     object: string
     state: OfflineState
-    /* Methods of EBackend.CacheOfflineChange */
+    /* Methods of EBackend-1.2.EBackend.CacheOfflineChange */
     copy(): CacheOfflineChange
     static name: string
     static new(uid: string, revision: string | null, object: string | null, state: OfflineState): CacheOfflineChange
@@ -1784,14 +1806,14 @@ export class CacheOfflineChange {
     static new(uid: string, revision: string | null, object: string | null, state: OfflineState): CacheOfflineChange
     static free(change?: object | null): void
 }
-export class CachePrivate {
+class CachePrivate {
     static name: string
 }
-export abstract class CacheReaperClass {
+abstract class CacheReaperClass {
     static name: string
 }
-export abstract class CollectionBackendClass {
-    /* Fields of EBackend.CollectionBackendClass */
+abstract class CollectionBackendClass {
+    /* Fields of EBackend-1.2.EBackend.CollectionBackendClass */
     populate: (backend: CollectionBackend) => void
     dup_resource_id: (backend: CollectionBackend, child_source: EDataServer.Source) => string
     child_added: (backend: CollectionBackend, child_source: EDataServer.Source) => void
@@ -1804,19 +1826,19 @@ export abstract class CollectionBackendClass {
     delete_resource_finish: (backend: CollectionBackend, result: Gio.AsyncResult) => boolean
     static name: string
 }
-export abstract class CollectionBackendFactoryClass {
-    /* Fields of EBackend.CollectionBackendFactoryClass */
+abstract class CollectionBackendFactoryClass {
+    /* Fields of EBackend-1.2.EBackend.CollectionBackendFactoryClass */
     prepare_mail: (factory: CollectionBackendFactory, mail_account_source: EDataServer.Source, mail_identity_source: EDataServer.Source, mail_transport_source: EDataServer.Source) => void
     static name: string
 }
-export class CollectionBackendFactoryPrivate {
+class CollectionBackendFactoryPrivate {
     static name: string
 }
-export class CollectionBackendPrivate {
+class CollectionBackendPrivate {
     static name: string
 }
-export abstract class DBusServerClass {
-    /* Fields of EBackend.DBusServerClass */
+abstract class DBusServerClass {
+    /* Fields of EBackend-1.2.EBackend.DBusServerClass */
     parent_class: GObject.ObjectClass
     bus_name: string
     module_directory: string
@@ -1828,11 +1850,11 @@ export abstract class DBusServerClass {
     reserved: object[]
     static name: string
 }
-export class DBusServerPrivate {
+class DBusServerPrivate {
     static name: string
 }
-export abstract class DataFactoryClass {
-    /* Fields of EBackend.DataFactoryClass */
+abstract class DataFactoryClass {
+    /* Fields of EBackend-1.2.EBackend.DataFactoryClass */
     parent_class: DBusServerClass
     backend_factory_type: GObject.Type
     factory_object_path: string
@@ -1846,42 +1868,42 @@ export abstract class DataFactoryClass {
     reserved: object[]
     static name: string
 }
-export class DataFactoryPrivate {
+class DataFactoryPrivate {
     static name: string
 }
-export abstract class FileCacheClass {
-    /* Fields of EBackend.FileCacheClass */
+abstract class FileCacheClass {
+    /* Fields of EBackend-1.2.EBackend.FileCacheClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class FileCachePrivate {
+class FileCachePrivate {
     static name: string
 }
-export abstract class OAuth2SupportInterface {
-    /* Fields of EBackend.OAuth2SupportInterface */
+abstract class OAuth2SupportInterface {
+    /* Fields of EBackend-1.2.EBackend.OAuth2SupportInterface */
     get_access_token_sync: (support: OAuth2Support, source: EDataServer.Source, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
     get_access_token: (support: OAuth2Support, source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
     get_access_token_finish: (support: OAuth2Support, result: Gio.AsyncResult) => [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
     static name: string
 }
-export abstract class ServerSideSourceClass {
-    /* Fields of EBackend.ServerSideSourceClass */
+abstract class ServerSideSourceClass {
+    /* Fields of EBackend-1.2.EBackend.ServerSideSourceClass */
     parent_class: EDataServer.SourceClass
     static name: string
 }
-export abstract class ServerSideSourceCredentialsProviderClass {
-    /* Fields of EBackend.ServerSideSourceCredentialsProviderClass */
+abstract class ServerSideSourceCredentialsProviderClass {
+    /* Fields of EBackend-1.2.EBackend.ServerSideSourceCredentialsProviderClass */
     parent_class: EDataServer.SourceCredentialsProviderClass
     static name: string
 }
-export class ServerSideSourceCredentialsProviderPrivate {
+class ServerSideSourceCredentialsProviderPrivate {
     static name: string
 }
-export class ServerSideSourcePrivate {
+class ServerSideSourcePrivate {
     static name: string
 }
-export abstract class SourceRegistryServerClass {
-    /* Fields of EBackend.SourceRegistryServerClass */
+abstract class SourceRegistryServerClass {
+    /* Fields of EBackend-1.2.EBackend.SourceRegistryServerClass */
     parent_class: DataFactoryClass
     load_error: (server: SourceRegistryServer, file: Gio.File, error: GLib.Error) => void
     files_loaded: (server: SourceRegistryServer) => void
@@ -1891,53 +1913,55 @@ export abstract class SourceRegistryServerClass {
     reserved: object[]
     static name: string
 }
-export class SourceRegistryServerPrivate {
+class SourceRegistryServerPrivate {
     static name: string
 }
-export abstract class SubprocessFactoryClass {
-    /* Fields of EBackend.SubprocessFactoryClass */
+abstract class SubprocessFactoryClass {
+    /* Fields of EBackend-1.2.EBackend.SubprocessFactoryClass */
     parent_class: GObject.ObjectClass
     open_data: (subprocess_factory: SubprocessFactory, backend: Backend, connection: Gio.DBusConnection, data?: object | null, cancellable?: Gio.Cancellable | null) => string
     backend_created: (subprocess_factory: SubprocessFactory, backend: Backend) => void
     backend_closed: (subprocess_factory: SubprocessFactory, backend: Backend) => void
     static name: string
 }
-export class SubprocessFactoryPrivate {
+class SubprocessFactoryPrivate {
     static name: string
 }
-export abstract class UserPrompterClass {
-    /* Fields of EBackend.UserPrompterClass */
+abstract class UserPrompterClass {
+    /* Fields of EBackend-1.2.EBackend.UserPrompterClass */
     parent: GObject.ObjectClass
     static name: string
 }
-export class UserPrompterPrivate {
+class UserPrompterPrivate {
     static name: string
 }
-export abstract class UserPrompterServerClass {
-    /* Fields of EBackend.UserPrompterServerClass */
+abstract class UserPrompterServerClass {
+    /* Fields of EBackend-1.2.EBackend.UserPrompterServerClass */
     parent_class: DBusServerClass
     static name: string
 }
-export abstract class UserPrompterServerExtensionClass {
-    /* Fields of EBackend.UserPrompterServerExtensionClass */
+abstract class UserPrompterServerExtensionClass {
+    /* Fields of EBackend-1.2.EBackend.UserPrompterServerExtensionClass */
     parent_class: EDataServer.ExtensionClass
     register_dialogs: (extension: EDataServer.Extension, server: object) => void
     prompt: (extension: UserPrompterServerExtension, prompt_id: number, dialog_name: string, parameters?: EDataServer.NamedParameters | null) => boolean
     static name: string
 }
-export class UserPrompterServerExtensionPrivate {
+class UserPrompterServerExtensionPrivate {
     static name: string
 }
-export class UserPrompterServerPrivate {
+class UserPrompterServerPrivate {
     static name: string
 }
-export abstract class WebDAVCollectionBackendClass {
-    /* Fields of EBackend.WebDAVCollectionBackendClass */
+abstract class WebDAVCollectionBackendClass {
+    /* Fields of EBackend-1.2.EBackend.WebDAVCollectionBackendClass */
     parent_class: CollectionBackendClass
     get_resource_id: (webdav_backend: WebDAVCollectionBackend, source: EDataServer.Source) => string | null
     is_custom_source: (webdav_backend: WebDAVCollectionBackend, source: EDataServer.Source) => boolean
     static name: string
 }
-export class WebDAVCollectionBackendPrivate {
+class WebDAVCollectionBackendPrivate {
     static name: string
 }
+}
+export default EBackend;

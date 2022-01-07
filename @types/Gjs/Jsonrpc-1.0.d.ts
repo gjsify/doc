@@ -3,12 +3,14 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Json from './Json-1.0';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Json from './Json-1.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum ClientError {
+export namespace Jsonrpc {
+
+enum ClientError {
     PARSE_ERROR,
     INVALID_REQUEST,
     METHOD_NOT_FOUND,
@@ -19,21 +21,21 @@ export const MAJOR_VERSION: number
 export const MICRO_VERSION: number
 export const MINOR_VERSION: number
 export const VERSION_S: string
-export interface ServerHandler {
+interface ServerHandler {
     (self: Server, client: Client, method: string, id: GLib.Variant, params: GLib.Variant): void
 }
 export interface Client_ConstructProps extends GObject.Object_ConstructProps {
     io_stream?: Gio.IOStream
     use_gvariant?: boolean
 }
-export class Client {
-    /* Properties of Jsonrpc.Client */
+class Client {
+    /* Properties of Jsonrpc-1.0.Jsonrpc.Client */
     use_gvariant: boolean
-    /* Fields of Jsonrpc.Client */
+    /* Fields of Jsonrpc-1.0.Jsonrpc.Client */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Jsonrpc.Client */
+    /* Methods of Jsonrpc-1.0.Jsonrpc.Client */
     call(method: string, params?: GLib.Variant | null, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* return_value */ GLib.Variant | null ]
     call_async(method: string, params?: GLib.Variant | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* return_value */ GLib.Variant | null ]
@@ -52,15 +54,15 @@ export class Client {
     send_notification_finish(result: Gio.AsyncResult): boolean
     set_use_gvariant(use_gvariant: boolean): void
     start_listening(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -68,25 +70,25 @@ export class Client {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Jsonrpc.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Jsonrpc-1.0.Jsonrpc.Client */
     vfunc_failed(): void
     vfunc_handle_call(method: string, id: GLib.Variant, params: GLib.Variant): boolean
     vfunc_notification(method_name: string, params: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Jsonrpc.Client */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Jsonrpc-1.0.Jsonrpc.Client */
     connect(sigName: "failed", callback: (($obj: Client) => void)): number
     connect_after(sigName: "failed", callback: (($obj: Client) => void)): number
     emit(sigName: "failed"): void
@@ -96,7 +98,7 @@ export class Client {
     connect(sigName: "notification", callback: (($obj: Client, method: string, params?: GLib.Variant | null) => void)): number
     connect_after(sigName: "notification", callback: (($obj: Client, method: string, params?: GLib.Variant | null) => void)): number
     emit(sigName: "notification", method: string, params?: GLib.Variant | null): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -116,25 +118,25 @@ export class Client {
 }
 export interface InputStream_ConstructProps extends Gio.DataInputStream_ConstructProps {
 }
-export class InputStream {
-    /* Properties of Gio.DataInputStream */
+class InputStream {
+    /* Properties of Gio-2.0.Gio.DataInputStream */
     byte_order: Gio.DataStreamByteOrder
     newline_type: Gio.DataStreamNewlineType
-    /* Properties of Gio.BufferedInputStream */
+    /* Properties of Gio-2.0.Gio.BufferedInputStream */
     buffer_size: number
-    /* Properties of Gio.FilterInputStream */
+    /* Properties of Gio-2.0.Gio.FilterInputStream */
     close_base_stream: boolean
-    /* Fields of Jsonrpc.InputStream */
+    /* Fields of Jsonrpc-1.0.Jsonrpc.InputStream */
     parent_instance: Gio.DataInputStream
-    /* Fields of Gio.FilterInputStream */
+    /* Fields of Gio-2.0.Gio.FilterInputStream */
     base_stream: Gio.InputStream
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Jsonrpc.InputStream */
+    /* Methods of Jsonrpc-1.0.Jsonrpc.InputStream */
     read_message(cancellable: Gio.Cancellable | null, message: GLib.Variant): boolean
     read_message_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     read_message_finish(result: Gio.AsyncResult, message: GLib.Variant): boolean
-    /* Methods of Gio.DataInputStream */
+    /* Methods of Gio-2.0.Gio.DataInputStream */
     get_byte_order(): Gio.DataStreamByteOrder
     get_newline_type(): Gio.DataStreamNewlineType
     read_byte(cancellable?: Gio.Cancellable | null): number
@@ -157,7 +159,7 @@ export class InputStream {
     read_upto_finish(result: Gio.AsyncResult): [ /* returnType */ string, /* length */ number | null ]
     set_byte_order(order: Gio.DataStreamByteOrder): void
     set_newline_type(type: Gio.DataStreamNewlineType): void
-    /* Methods of Gio.BufferedInputStream */
+    /* Methods of Gio-2.0.Gio.BufferedInputStream */
     fill(count: number, cancellable?: Gio.Cancellable | null): number
     fill_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     fill_finish(result: Gio.AsyncResult): number
@@ -166,11 +168,11 @@ export class InputStream {
     peek(buffer: Uint8Array[], offset: number): number
     peek_buffer(): Uint8Array[]
     set_buffer_size(size: number): void
-    /* Methods of Gio.FilterInputStream */
+    /* Methods of Gio-2.0.Gio.FilterInputStream */
     get_base_stream(): Gio.InputStream
     get_close_base_stream(): boolean
     set_close_base_stream(close_base: boolean): void
-    /* Methods of Gio.InputStream */
+    /* Methods of Gio-2.0.Gio.InputStream */
     clear_pending(): void
     close(cancellable?: Gio.Cancellable | null): boolean
     close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -190,15 +192,15 @@ export class InputStream {
     skip(count: number, cancellable?: Gio.Cancellable | null): number
     skip_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     skip_finish(result: Gio.AsyncResult): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -206,29 +208,29 @@ export class InputStream {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Seekable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Seekable */
     can_seek(): boolean
     can_truncate(): boolean
     seek(offset: number, type: GLib.SeekType, cancellable?: Gio.Cancellable | null): boolean
     tell(): number
     truncate(offset: number, cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Jsonrpc.InputStream */
+    /* Virtual methods of Jsonrpc-1.0.Jsonrpc.InputStream */
     vfunc_can_seek(): boolean
     vfunc_can_truncate(): boolean
     vfunc_seek(offset: number, type: GLib.SeekType, cancellable?: Gio.Cancellable | null): boolean
     vfunc_tell(): number
     vfunc_truncate_fn(offset: number, cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.BufferedInputStream */
+    /* Virtual methods of Gio-2.0.Gio.BufferedInputStream */
     vfunc_fill(count: number, cancellable?: Gio.Cancellable | null): number
     vfunc_fill_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_fill_finish(result: Gio.AsyncResult): number
-    /* Virtual methods of Gio.InputStream */
+    /* Virtual methods of Gio-2.0.Gio.InputStream */
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
@@ -238,15 +240,15 @@ export class InputStream {
     vfunc_skip(count: number, cancellable?: Gio.Cancellable | null): number
     vfunc_skip_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_skip_finish(result: Gio.AsyncResult): number
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InputStream, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputStream, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -272,24 +274,24 @@ export class InputStream {
 export interface OutputStream_ConstructProps extends Gio.DataOutputStream_ConstructProps {
     use_gvariant?: boolean
 }
-export class OutputStream {
-    /* Properties of Jsonrpc.OutputStream */
+class OutputStream {
+    /* Properties of Jsonrpc-1.0.Jsonrpc.OutputStream */
     use_gvariant: boolean
-    /* Properties of Gio.DataOutputStream */
+    /* Properties of Gio-2.0.Gio.DataOutputStream */
     byte_order: Gio.DataStreamByteOrder
-    /* Fields of Jsonrpc.OutputStream */
+    /* Fields of Jsonrpc-1.0.Jsonrpc.OutputStream */
     parent_instance: Gio.DataOutputStream
-    /* Fields of Gio.FilterOutputStream */
+    /* Fields of Gio-2.0.Gio.FilterOutputStream */
     base_stream: Gio.OutputStream
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Jsonrpc.OutputStream */
+    /* Methods of Jsonrpc-1.0.Jsonrpc.OutputStream */
     get_use_gvariant(): boolean
     set_use_gvariant(use_gvariant: boolean): void
     write_message(message: GLib.Variant, cancellable?: Gio.Cancellable | null): boolean
     write_message_async(message: GLib.Variant, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_message_finish(result: Gio.AsyncResult): boolean
-    /* Methods of Gio.DataOutputStream */
+    /* Methods of Gio-2.0.Gio.DataOutputStream */
     get_byte_order(): Gio.DataStreamByteOrder
     put_byte(data: number, cancellable?: Gio.Cancellable | null): boolean
     put_int16(data: number, cancellable?: Gio.Cancellable | null): boolean
@@ -300,11 +302,11 @@ export class OutputStream {
     put_uint32(data: number, cancellable?: Gio.Cancellable | null): boolean
     put_uint64(data: number, cancellable?: Gio.Cancellable | null): boolean
     set_byte_order(order: Gio.DataStreamByteOrder): void
-    /* Methods of Gio.FilterOutputStream */
+    /* Methods of Gio-2.0.Gio.FilterOutputStream */
     get_base_stream(): Gio.OutputStream
     get_close_base_stream(): boolean
     set_close_base_stream(close_base: boolean): void
-    /* Methods of Gio.OutputStream */
+    /* Methods of Gio-2.0.Gio.OutputStream */
     clear_pending(): void
     close(cancellable?: Gio.Cancellable | null): boolean
     close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -334,15 +336,15 @@ export class OutputStream {
     writev_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     writev_async(vectors: Gio.OutputVector[], io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     writev_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -350,25 +352,25 @@ export class OutputStream {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Seekable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Seekable */
     can_seek(): boolean
     can_truncate(): boolean
     seek(offset: number, type: GLib.SeekType, cancellable?: Gio.Cancellable | null): boolean
     tell(): number
     truncate(offset: number, cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Jsonrpc.OutputStream */
+    /* Virtual methods of Jsonrpc-1.0.Jsonrpc.OutputStream */
     vfunc_can_seek(): boolean
     vfunc_can_truncate(): boolean
     vfunc_seek(offset: number, type: GLib.SeekType, cancellable?: Gio.Cancellable | null): boolean
     vfunc_tell(): number
     vfunc_truncate_fn(offset: number, cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.OutputStream */
+    /* Virtual methods of Gio-2.0.Gio.OutputStream */
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
@@ -384,15 +386,15 @@ export class OutputStream {
     vfunc_writev_async(vectors: Gio.OutputVector[], io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_writev_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     vfunc_writev_fn(vectors: Gio.OutputVector[], cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OutputStream, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutputStream, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -413,25 +415,25 @@ export class OutputStream {
 }
 export interface Server_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Server {
-    /* Fields of Jsonrpc.Server */
+class Server {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.Server */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Jsonrpc.Server */
+    /* Methods of Jsonrpc-1.0.Jsonrpc.Server */
     accept_io_stream(io_stream: Gio.IOStream): void
     add_handler(method: string, handler: ServerHandler): number
     foreach(foreach_func: GLib.Func): void
     remove_handler(handler_id: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -439,26 +441,26 @@ export class Server {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Jsonrpc.Server */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Jsonrpc-1.0.Jsonrpc.Server */
     vfunc_client_accepted(client: Client): void
     vfunc_client_closed(client: Client): void
     vfunc_handle_call(client: Client, method: string, id: GLib.Variant, params: GLib.Variant): boolean
     vfunc_notification(client: Client, method: string, params: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Jsonrpc.Server */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Jsonrpc-1.0.Jsonrpc.Server */
     connect(sigName: "client-accepted", callback: (($obj: Server, client: Client) => void)): number
     connect_after(sigName: "client-accepted", callback: (($obj: Server, client: Client) => void)): number
     emit(sigName: "client-accepted", client: Client): void
@@ -471,7 +473,7 @@ export class Server {
     connect(sigName: "notification", callback: (($obj: Server, client: Client, method: string, id: GLib.Variant) => void)): number
     connect_after(sigName: "notification", callback: (($obj: Server, client: Client, method: string, id: GLib.Variant) => void)): number
     emit(sigName: "notification", client: Client, method: string, id: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Server, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Server, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -486,8 +488,8 @@ export class Server {
     static new(): Server
     static $gtype: GObject.Type
 }
-export abstract class ClientClass {
-    /* Fields of Jsonrpc.ClientClass */
+abstract class ClientClass {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.ClientClass */
     parent_class: GObject.ObjectClass
     notification: (self: Client, method_name: string, params: GLib.Variant) => void
     handle_call: (self: Client, method: string, id: GLib.Variant, params: GLib.Variant) => boolean
@@ -501,8 +503,8 @@ export abstract class ClientClass {
     _reserved8: object
     static name: string
 }
-export abstract class InputStreamClass {
-    /* Fields of Jsonrpc.InputStreamClass */
+abstract class InputStreamClass {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.InputStreamClass */
     parent_class: Gio.DataInputStreamClass
     _reserved1: object
     _reserved2: object
@@ -514,107 +516,113 @@ export abstract class InputStreamClass {
     _reserved8: object
     static name: string
 }
-export class MessageAny {
-    /* Fields of Jsonrpc.MessageAny */
+class MessageAny {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessageAny */
     magic: MessageMagic
     static name: string
 }
-export class MessageGetBoolean {
-    /* Fields of Jsonrpc.MessageGetBoolean */
+class MessageGetBoolean {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetBoolean */
     magic: MessageMagic
     valptr: boolean
     static name: string
 }
-export class MessageGetDict {
-    /* Fields of Jsonrpc.MessageGetDict */
+class MessageGetDict {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetDict */
     magic: MessageMagic
     dictptr: GLib.VariantDict
     static name: string
 }
-export class MessageGetDouble {
-    /* Fields of Jsonrpc.MessageGetDouble */
+class MessageGetDouble {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetDouble */
     magic: MessageMagic
     valptr: number
     static name: string
 }
-export class MessageGetInt32 {
-    /* Fields of Jsonrpc.MessageGetInt32 */
+class MessageGetInt32 {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetInt32 */
     magic: MessageMagic
     valptr: number
     static name: string
 }
-export class MessageGetInt64 {
-    /* Fields of Jsonrpc.MessageGetInt64 */
+class MessageGetInt64 {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetInt64 */
     magic: MessageMagic
     valptr: number
     static name: string
 }
-export class MessageGetIter {
-    /* Fields of Jsonrpc.MessageGetIter */
+class MessageGetIter {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetIter */
     magic: MessageMagic
     static name: string
 }
-export class MessageGetString {
-    /* Fields of Jsonrpc.MessageGetString */
+class MessageGetString {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetString */
     magic: MessageMagic
     valptr: string
     static name: string
 }
-export class MessageGetStrv {
-    /* Fields of Jsonrpc.MessageGetStrv */
+class MessageGetStrv {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetStrv */
     magic: MessageMagic
     valptr: string
     static name: string
 }
-export class MessageGetVariant {
-    /* Fields of Jsonrpc.MessageGetVariant */
+class MessageGetVariant {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetVariant */
     magic: MessageMagic
     variantptr: GLib.Variant
     static name: string
 }
-export class MessageMagic {
-    /* Fields of Jsonrpc.MessageMagic */
+class MessageMagic {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessageMagic */
     bytes: number[]
     static name: string
 }
-export class MessagePutBoolean {
-    /* Fields of Jsonrpc.MessagePutBoolean */
+class MessagePutBoolean {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessagePutBoolean */
     magic: MessageMagic
     val: boolean
     static name: string
 }
-export class MessagePutDouble {
-    /* Fields of Jsonrpc.MessagePutDouble */
+class MessagePutDouble {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessagePutDouble */
     magic: MessageMagic
     val: number
     static name: string
 }
-export class MessagePutInt32 {
-    /* Fields of Jsonrpc.MessagePutInt32 */
+class MessagePutInt32 {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessagePutInt32 */
     magic: MessageMagic
     val: number
     static name: string
 }
-export class MessagePutInt64 {
-    /* Fields of Jsonrpc.MessagePutInt64 */
+class MessagePutInt64 {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessagePutInt64 */
     magic: MessageMagic
     val: number
     static name: string
 }
-export class MessagePutString {
-    /* Fields of Jsonrpc.MessagePutString */
+class MessagePutString {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessagePutString */
     magic: MessageMagic
     val: string
     static name: string
 }
-export class MessagePutStrv {
-    /* Fields of Jsonrpc.MessagePutStrv */
+class MessagePutStrv {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessagePutStrv */
     magic: MessageMagic
     val: string
     static name: string
 }
-export abstract class OutputStreamClass {
-    /* Fields of Jsonrpc.OutputStreamClass */
+class MessagePutVariant {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.MessagePutVariant */
+    magic: MessageMagic
+    val: GLib.Variant
+    static name: string
+}
+abstract class OutputStreamClass {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.OutputStreamClass */
     parent_class: Gio.DataOutputStreamClass
     _reserved1: object
     _reserved2: object
@@ -630,8 +638,8 @@ export abstract class OutputStreamClass {
     _reserved12: object
     static name: string
 }
-export abstract class ServerClass {
-    /* Fields of Jsonrpc.ServerClass */
+abstract class ServerClass {
+    /* Fields of Jsonrpc-1.0.Jsonrpc.ServerClass */
     parent_class: GObject.ObjectClass
     handle_call: (self: Server, client: Client, method: string, id: GLib.Variant, params: GLib.Variant) => boolean
     notification: (self: Server, client: Client, method: string, params: GLib.Variant) => void
@@ -639,3 +647,5 @@ export abstract class ServerClass {
     client_closed: (self: Server, client: Client) => void
     static name: string
 }
+}
+export default Jsonrpc;

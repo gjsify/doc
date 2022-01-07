@@ -1,2 +1,2 @@
-imports.gi.versions.ECalendar = '1.2'
-export default imports.gi.ECalendar
+import ECalendar from 'gi://ECalendar?version=1.2';
+export default ECalendar;

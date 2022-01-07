@@ -1,2 +1,2 @@
-imports.gi.versions.GstGLEGL = '1.0'
-export default imports.gi.GstGLEGL
+import GstGLEGL from 'gi://GstGLEGL?version=1.0';
+export default GstGLEGL;

@@ -1,2 +1,2 @@
-imports.gi.versions.PangoCairo = '1.0'
-export default imports.gi.PangoCairo
+import PangoCairo from 'gi://PangoCairo?version=1.0';
+export default PangoCairo;

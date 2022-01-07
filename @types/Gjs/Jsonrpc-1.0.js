@@ -1,2 +1,2 @@
-imports.gi.versions.Jsonrpc = '1.0'
-export default imports.gi.Jsonrpc
+import Jsonrpc from 'gi://Jsonrpc?version=1.0';
+export default Jsonrpc;

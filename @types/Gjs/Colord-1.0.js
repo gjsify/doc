@@ -1,2 +1,2 @@
-imports.gi.versions.Colord = '1.0'
-export default imports.gi.Colord
+import Colord from 'gi://Colord?version=1.0';
+export default Colord;

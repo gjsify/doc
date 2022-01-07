@@ -3,45 +3,47 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gtk from './Gtk-3.0';
-import type * as xlib from './xlib-2.0';
-import type * as Gdk from './Gdk-3.0';
-import type * as cairo from './cairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as Atk from './Atk-1.0';
+import type Gtk from './Gtk-3.0';
+import type xlib from './xlib-2.0';
+import type Gdk from './Gdk-3.0';
+import type cairo from './cairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type GModule from './GModule-2.0';
+import type Atk from './Atk-1.0';
 
-export enum CairoAntialias {
+export namespace GooCanvas {
+
+enum CairoAntialias {
     DEFAULT,
     NONE,
     GRAY,
     SUBPIXEL,
 }
-export enum CairoFillRule {
+enum CairoFillRule {
     WINDING,
     EVEN_ODD,
 }
-export enum CairoHintMetrics {
+enum CairoHintMetrics {
     DEFAULT,
     OFF,
     ON,
 }
-export enum CairoLineCap {
+enum CairoLineCap {
     BUTT,
     ROUND,
     SQUARE,
 }
-export enum CairoLineJoin {
+enum CairoLineJoin {
     MITER,
     ROUND,
     BEVEL,
 }
-export enum CairoOperator {
+enum CairoOperator {
     CLEAR,
     SOURCE,
     OVER,
@@ -57,7 +59,7 @@ export enum CairoOperator {
     ADD,
     SATURATE,
 }
-export enum CanvasAnchorType {
+enum CanvasAnchorType {
     CENTER,
     NORTH,
     NORTH_WEST,
@@ -76,19 +78,19 @@ export enum CanvasAnchorType {
     W,
     E,
 }
-export enum CanvasAnimateType {
+enum CanvasAnimateType {
     FREEZE,
     RESET,
     RESTART,
     BOUNCE,
 }
-export enum CanvasItemVisibility {
+enum CanvasItemVisibility {
     HIDDEN,
     INVISIBLE,
     VISIBLE,
     VISIBLE_ABOVE_THRESHOLD,
 }
-export enum CanvasPathCommandType {
+enum CanvasPathCommandType {
     MOVE_TO,
     CLOSE_PATH,
     LINE_TO,
@@ -100,7 +102,7 @@ export enum CanvasPathCommandType {
     SMOOTH_QUADRATIC_CURVE_TO,
     ELLIPTICAL_ARC,
 }
-export enum CanvasPointerEvents {
+enum CanvasPointerEvents {
     VISIBLE_MASK,
     PAINTED_MASK,
     FILL_MASK,
@@ -116,16 +118,16 @@ export enum CanvasPointerEvents {
     ALL,
 }
 export const CANVAS_POLYLINE_NUM_ARROW_POINTS: number
-export function cairo_matrix_copy(matrix: cairo.Matrix): cairo.Matrix
-export function cairo_matrix_free(matrix: cairo.Matrix): void
-export function canvas_item_class_find_child_property(iclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
-export function canvas_item_class_install_child_property(iclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
-export function canvas_item_class_list_child_properties(iclass: GObject.ObjectClass): GObject.ParamSpec[]
-export function canvas_item_model_class_find_child_property(mclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
-export function canvas_item_model_class_install_child_property(mclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
-export function canvas_item_model_class_list_child_properties(mclass: GObject.ObjectClass): GObject.ParamSpec[]
-export class CanvasItem {
-    /* Properties of GooCanvas.CanvasItem */
+function cairo_matrix_copy(matrix: cairo.Matrix): cairo.Matrix
+function cairo_matrix_free(matrix: cairo.Matrix): void
+function canvas_item_class_find_child_property(iclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+function canvas_item_class_install_child_property(iclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+function canvas_item_class_list_child_properties(iclass: GObject.ObjectClass): GObject.ParamSpec[]
+function canvas_item_model_class_find_child_property(mclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+function canvas_item_model_class_install_child_property(mclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+function canvas_item_model_class_list_child_properties(mclass: GObject.ObjectClass): GObject.ParamSpec[]
+class CanvasItem {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
     parent: CanvasItem
@@ -135,7 +137,7 @@ export class CanvasItem {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Methods of GooCanvas.CanvasItem */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItem */
     add_child(child: CanvasItem, position: number): void
     allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
@@ -181,7 +183,7 @@ export class CanvasItem {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GooCanvas.CanvasItem */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItem */
     vfunc_add_child(child: CanvasItem, position: number): void
     vfunc_allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
     vfunc_animation_finished(stopped: boolean): void
@@ -226,7 +228,7 @@ export class CanvasItem {
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
     vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Signals of GooCanvas.CanvasItem */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItem */
     connect(sigName: "animation-finished", callback: (($obj: CanvasItem, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasItem, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -275,8 +277,8 @@ export class CanvasItem {
     static class_install_child_property(iclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
     static class_list_child_properties(iclass: GObject.ObjectClass): GObject.ParamSpec[]
 }
-export class CanvasItemModel {
-    /* Properties of GooCanvas.CanvasItemModel */
+class CanvasItemModel {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
     parent: CanvasItemModel
@@ -286,7 +288,7 @@ export class CanvasItemModel {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Methods of GooCanvas.CanvasItemModel */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     add_child(child: CanvasItemModel, position: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
     find_child(child: CanvasItemModel): number
@@ -314,7 +316,7 @@ export class CanvasItemModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
-    /* Virtual methods of GooCanvas.CanvasItemModel */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
     vfunc_changed(recompute_bounds: boolean): void
@@ -334,7 +336,7 @@ export class CanvasItemModel {
     vfunc_set_parent(parent: CanvasItemModel): void
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
-    /* Signals of GooCanvas.CanvasItemModel */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     connect(sigName: "animation-finished", callback: (($obj: CanvasItemModel, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasItemModel, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -385,8 +387,8 @@ export interface Canvas_ConstructProps extends Gtk.Container_ConstructProps {
     vadjustment?: Gtk.Adjustment
     vscroll_policy?: Gtk.ScrollablePolicy
 }
-export class Canvas {
-    /* Properties of GooCanvas.Canvas */
+class Canvas {
+    /* Properties of GooCanvas-2.0.GooCanvas.Canvas */
     anchor: CanvasAnchorType
     automatic_bounds: boolean
     background_color: string
@@ -407,11 +409,11 @@ export class Canvas {
     x2: number
     y1: number
     y2: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -451,12 +453,12 @@ export class Canvas {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Scrollable */
+    /* Properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment: Gtk.Adjustment
     hscroll_policy: Gtk.ScrollablePolicy
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
-    /* Fields of GooCanvas.Canvas */
+    /* Fields of GooCanvas-2.0.GooCanvas.Canvas */
     container: Gtk.Container
     root_item_model: CanvasItemModel
     root_item: CanvasItem
@@ -481,13 +483,13 @@ export class Canvas {
     device_to_pixels_x: number
     device_to_pixels_y: number
     widget_items: object[]
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GooCanvas.Canvas */
+    /* Methods of GooCanvas-2.0.GooCanvas.Canvas */
     convert_bounds_to_item_space(item: CanvasItem, bounds: CanvasBounds): void
     convert_from_item_space(item: CanvasItem, x: number, y: number): [ /* x */ number, /* y */ number ]
     convert_from_pixels(x: number, y: number): [ /* x */ number, /* y */ number ]
@@ -511,7 +513,7 @@ export class Canvas {
     grab_focus(item: CanvasItem): void
     keyboard_grab(item: CanvasItem, owner_events: boolean, time: number): Gdk.GrabStatus
     keyboard_ungrab(item: CanvasItem, time: number): void
-    pointer_grab(item: CanvasItem, event_mask: Gdk.EventMask, cursor: Gdk.Cursor, time: number): Gdk.GrabStatus
+    pointer_grab(item: CanvasItem, event_mask: Gdk.EventMask, cursor: Gdk.Cursor | null, time: number): Gdk.GrabStatus
     pointer_ungrab(item: CanvasItem, time: number): void
     register_widget_item(witem: CanvasWidget): void
     render(cr: cairo.Context, bounds: CanvasBounds | null, scale: number): void
@@ -528,10 +530,11 @@ export class Canvas {
     unregister_item(model: CanvasItemModel): void
     unregister_widget_item(witem: CanvasWidget): void
     update(): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -556,7 +559,7 @@ export class Canvas {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -815,15 +818,15 @@ export class Canvas {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -831,13 +834,13 @@ export class Canvas {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -846,7 +849,7 @@ export class Canvas {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Scrollable */
+    /* Methods of Gtk-3.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     get_hadjustment(): Gtk.Adjustment
     get_hscroll_policy(): Gtk.ScrollablePolicy
@@ -856,7 +859,7 @@ export class Canvas {
     set_hscroll_policy(policy: Gtk.ScrollablePolicy): void
     set_vadjustment(vadjustment?: Gtk.Adjustment | null): void
     set_vscroll_policy(policy: Gtk.ScrollablePolicy): void
-    /* Virtual methods of GooCanvas.Canvas */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.Canvas */
     vfunc_create_item(model: CanvasItemModel): CanvasItem
     vfunc_item_created(item: CanvasItem, model: CanvasItemModel): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -870,7 +873,7 @@ export class Canvas {
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
     vfunc_get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -881,7 +884,7 @@ export class Canvas {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -964,19 +967,19 @@ export class Canvas {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.Canvas */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GooCanvas-2.0.GooCanvas.Canvas */
     connect(sigName: "item-created", callback: (($obj: Canvas, item: CanvasItem, model: CanvasItemModel) => void)): number
     connect_after(sigName: "item-created", callback: (($obj: Canvas, item: CanvasItem, model: CanvasItemModel) => void)): number
     emit(sigName: "item-created", item: CanvasItem, model: CanvasItemModel): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: Canvas, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: Canvas, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -989,7 +992,7 @@ export class Canvas {
     connect(sigName: "set-focus-child", callback: (($obj: Canvas, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: Canvas, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: Canvas) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: Canvas) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -1197,7 +1200,7 @@ export class Canvas {
     connect(sigName: "window-state-event", callback: (($obj: Canvas, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: Canvas, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Canvas, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Canvas, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1353,24 +1356,24 @@ export class Canvas {
 }
 export interface CanvasAccessibleFactory_ConstructProps extends Atk.ObjectFactory_ConstructProps {
 }
-export class CanvasAccessibleFactory {
-    /* Fields of Atk.ObjectFactory */
+class CanvasAccessibleFactory {
+    /* Fields of Atk-1.0.Atk.ObjectFactory */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Atk.ObjectFactory */
+    /* Methods of Atk-1.0.Atk.ObjectFactory */
     create_accessible(obj: GObject.Object): Atk.Object
     get_accessible_type(): GObject.Type
     invalidate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1378,23 +1381,23 @@ export class CanvasAccessibleFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Atk.ObjectFactory */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Atk-1.0.Atk.ObjectFactory */
     vfunc_invalidate(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasAccessibleFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasAccessibleFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1426,8 +1429,8 @@ export interface CanvasEllipse_ConstructProps extends CanvasItemSimple_Construct
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasEllipse {
-    /* Properties of GooCanvas.CanvasEllipse */
+class CanvasEllipse {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasEllipse */
     center_x: number
     center_y: number
     height: number
@@ -1436,7 +1439,7 @@ export class CanvasEllipse {
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -1460,7 +1463,7 @@ export class CanvasEllipse {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItem */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
     parent: CanvasItem
@@ -1470,19 +1473,19 @@ export class CanvasEllipse {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasEllipse */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasEllipse */
     parent_object: CanvasItemSimple
     ellipse_data: CanvasEllipseData
-    /* Fields of GooCanvas.CanvasItemSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     canvas: Canvas
     model: CanvasItemModelSimple
     simple_data: CanvasItemSimpleData
     bounds: CanvasBounds
     need_update: number
     need_entire_subtree_update: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GooCanvas.CanvasItemSimple */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
     check_style(): void
@@ -1492,15 +1495,15 @@ export class CanvasEllipse {
     set_model(model: CanvasItemModel): void
     user_bounds_to_device(cr: cairo.Context, bounds: CanvasBounds): void
     user_bounds_to_parent(cr: cairo.Context, bounds: CanvasBounds): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1508,13 +1511,13 @@ export class CanvasEllipse {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItem */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItem */
     add_child(child: CanvasItem, position: number): void
     allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
@@ -1559,7 +1562,7 @@ export class CanvasEllipse {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GooCanvas.CanvasItemSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
     vfunc_simple_paint(cr: cairo.Context, bounds: CanvasBounds): void
@@ -1608,19 +1611,19 @@ export class CanvasEllipse {
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
     vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasEllipse, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasEllipse, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItem */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItem */
     connect(sigName: "animation-finished", callback: (($obj: CanvasEllipse, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasEllipse, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -1771,8 +1774,8 @@ export interface CanvasEllipseModel_ConstructProps extends CanvasItemModelSimple
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasEllipseModel {
-    /* Properties of GooCanvas.CanvasEllipseModel */
+class CanvasEllipseModel {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasEllipseModel */
     center_x: number
     center_y: number
     height: number
@@ -1781,7 +1784,7 @@ export class CanvasEllipseModel {
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemModelSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -1805,7 +1808,7 @@ export class CanvasEllipseModel {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItemModel */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
     parent: CanvasItemModel
@@ -1815,22 +1818,22 @@ export class CanvasEllipseModel {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasEllipseModel */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasEllipseModel */
     parent_object: CanvasItemModelSimple
     ellipse_data: CanvasEllipseData
-    /* Fields of GooCanvas.CanvasItemModelSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     simple_data: CanvasItemSimpleData
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1838,13 +1841,13 @@ export class CanvasEllipseModel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItemModel */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     add_child(child: CanvasItemModel, position: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
     find_child(child: CanvasItemModel): number
@@ -1872,7 +1875,7 @@ export class CanvasEllipseModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
-    /* Virtual methods of GooCanvas.CanvasItemModelSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
     vfunc_changed(recompute_bounds: boolean): void
@@ -1892,19 +1895,19 @@ export class CanvasEllipseModel {
     vfunc_set_parent(parent: CanvasItemModel): void
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasEllipseModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasEllipseModel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItemModel */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     connect(sigName: "animation-finished", callback: (($obj: CanvasEllipseModel, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasEllipseModel, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -2052,8 +2055,8 @@ export interface CanvasGrid_ConstructProps extends CanvasItemSimple_ConstructPro
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasGrid {
-    /* Properties of GooCanvas.CanvasGrid */
+class CanvasGrid {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasGrid */
     border_color: string
     border_color_gdk_rgba: Gdk.RGBA
     border_color_rgba: number
@@ -2083,7 +2086,7 @@ export class CanvasGrid {
     y: number
     y_offset: number
     y_step: number
-    /* Properties of GooCanvas.CanvasItemSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -2107,7 +2110,7 @@ export class CanvasGrid {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItem */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
     parent: CanvasItem
@@ -2117,19 +2120,19 @@ export class CanvasGrid {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasGrid */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasGrid */
     parent_object: CanvasItemSimple
     grid_data: CanvasGridData
-    /* Fields of GooCanvas.CanvasItemSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     canvas: Canvas
     model: CanvasItemModelSimple
     simple_data: CanvasItemSimpleData
     bounds: CanvasBounds
     need_update: number
     need_entire_subtree_update: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GooCanvas.CanvasItemSimple */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
     check_style(): void
@@ -2139,15 +2142,15 @@ export class CanvasGrid {
     set_model(model: CanvasItemModel): void
     user_bounds_to_device(cr: cairo.Context, bounds: CanvasBounds): void
     user_bounds_to_parent(cr: cairo.Context, bounds: CanvasBounds): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2155,13 +2158,13 @@ export class CanvasGrid {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItem */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItem */
     add_child(child: CanvasItem, position: number): void
     allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
@@ -2206,7 +2209,7 @@ export class CanvasGrid {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GooCanvas.CanvasItemSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
     vfunc_simple_paint(cr: cairo.Context, bounds: CanvasBounds): void
@@ -2255,19 +2258,19 @@ export class CanvasGrid {
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
     vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasGrid, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasGrid, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItem */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItem */
     connect(sigName: "animation-finished", callback: (($obj: CanvasGrid, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasGrid, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -2481,8 +2484,8 @@ export interface CanvasGridModel_ConstructProps extends CanvasItemModelSimple_Co
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasGridModel {
-    /* Properties of GooCanvas.CanvasGridModel */
+class CanvasGridModel {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasGridModel */
     border_color: string
     border_color_gdk_rgba: Gdk.RGBA
     border_color_rgba: number
@@ -2512,7 +2515,7 @@ export class CanvasGridModel {
     y: number
     y_offset: number
     y_step: number
-    /* Properties of GooCanvas.CanvasItemModelSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -2536,7 +2539,7 @@ export class CanvasGridModel {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItemModel */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
     parent: CanvasItemModel
@@ -2546,22 +2549,22 @@ export class CanvasGridModel {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasGridModel */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasGridModel */
     parent_object: CanvasItemModelSimple
     grid_data: CanvasGridData
-    /* Fields of GooCanvas.CanvasItemModelSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     simple_data: CanvasItemSimpleData
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2569,13 +2572,13 @@ export class CanvasGridModel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItemModel */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     add_child(child: CanvasItemModel, position: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
     find_child(child: CanvasItemModel): number
@@ -2603,7 +2606,7 @@ export class CanvasGridModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
-    /* Virtual methods of GooCanvas.CanvasItemModelSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
     vfunc_changed(recompute_bounds: boolean): void
@@ -2623,19 +2626,19 @@ export class CanvasGridModel {
     vfunc_set_parent(parent: CanvasItemModel): void
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasGridModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasGridModel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItemModel */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     connect(sigName: "animation-finished", callback: (($obj: CanvasGridModel, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasGridModel, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -2800,13 +2803,13 @@ export interface CanvasGroup_ConstructProps extends CanvasItemSimple_ConstructPr
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasGroup {
-    /* Properties of GooCanvas.CanvasGroup */
+class CanvasGroup {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasGroup */
     height: number
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -2830,7 +2833,7 @@ export class CanvasGroup {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItem */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
     parent: CanvasItem
@@ -2840,19 +2843,19 @@ export class CanvasGroup {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasGroup */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasGroup */
     parent_object: CanvasItemSimple
     items: object[]
-    /* Fields of GooCanvas.CanvasItemSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     canvas: Canvas
     model: CanvasItemModelSimple
     simple_data: CanvasItemSimpleData
     bounds: CanvasBounds
     need_update: number
     need_entire_subtree_update: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GooCanvas.CanvasItemSimple */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
     check_style(): void
@@ -2862,15 +2865,15 @@ export class CanvasGroup {
     set_model(model: CanvasItemModel): void
     user_bounds_to_device(cr: cairo.Context, bounds: CanvasBounds): void
     user_bounds_to_parent(cr: cairo.Context, bounds: CanvasBounds): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2878,13 +2881,13 @@ export class CanvasGroup {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItem */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItem */
     add_child(child: CanvasItem, position: number): void
     allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
@@ -2929,7 +2932,7 @@ export class CanvasGroup {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GooCanvas.CanvasItemSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
     vfunc_simple_paint(cr: cairo.Context, bounds: CanvasBounds): void
@@ -2978,19 +2981,19 @@ export class CanvasGroup {
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
     vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasGroup, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasGroup, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItem */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItem */
     connect(sigName: "animation-finished", callback: (($obj: CanvasGroup, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasGroup, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -3129,13 +3132,13 @@ export interface CanvasGroupModel_ConstructProps extends CanvasItemModelSimple_C
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasGroupModel {
-    /* Properties of GooCanvas.CanvasGroupModel */
+class CanvasGroupModel {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasGroupModel */
     height: number
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemModelSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -3159,7 +3162,7 @@ export class CanvasGroupModel {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItemModel */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
     parent: CanvasItemModel
@@ -3169,22 +3172,22 @@ export class CanvasGroupModel {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasGroupModel */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasGroupModel */
     parent_object: CanvasItemModelSimple
     children: object[]
-    /* Fields of GooCanvas.CanvasItemModelSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     simple_data: CanvasItemSimpleData
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3192,13 +3195,13 @@ export class CanvasGroupModel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItemModel */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     add_child(child: CanvasItemModel, position: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
     find_child(child: CanvasItemModel): number
@@ -3226,7 +3229,7 @@ export class CanvasGroupModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
-    /* Virtual methods of GooCanvas.CanvasItemModelSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
     vfunc_changed(recompute_bounds: boolean): void
@@ -3246,19 +3249,19 @@ export class CanvasGroupModel {
     vfunc_set_parent(parent: CanvasItemModel): void
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasGroupModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasGroupModel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItemModel */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     connect(sigName: "animation-finished", callback: (($obj: CanvasGroupModel, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasGroupModel, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -3377,8 +3380,8 @@ export interface CanvasImage_ConstructProps extends CanvasItemSimple_ConstructPr
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasImage {
-    /* Properties of GooCanvas.CanvasImage */
+class CanvasImage {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasImage */
     alpha: number
     height: number
     pattern: any
@@ -3387,7 +3390,7 @@ export class CanvasImage {
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -3411,7 +3414,7 @@ export class CanvasImage {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItem */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
     parent: CanvasItem
@@ -3421,19 +3424,19 @@ export class CanvasImage {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasImage */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasImage */
     parent_object: CanvasItemSimple
     image_data: CanvasImageData
-    /* Fields of GooCanvas.CanvasItemSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     canvas: Canvas
     model: CanvasItemModelSimple
     simple_data: CanvasItemSimpleData
     bounds: CanvasBounds
     need_update: number
     need_entire_subtree_update: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GooCanvas.CanvasItemSimple */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
     check_style(): void
@@ -3443,15 +3446,15 @@ export class CanvasImage {
     set_model(model: CanvasItemModel): void
     user_bounds_to_device(cr: cairo.Context, bounds: CanvasBounds): void
     user_bounds_to_parent(cr: cairo.Context, bounds: CanvasBounds): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3459,13 +3462,13 @@ export class CanvasImage {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItem */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItem */
     add_child(child: CanvasItem, position: number): void
     allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
@@ -3510,7 +3513,7 @@ export class CanvasImage {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GooCanvas.CanvasItemSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
     vfunc_simple_paint(cr: cairo.Context, bounds: CanvasBounds): void
@@ -3559,19 +3562,19 @@ export class CanvasImage {
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
     vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasImage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasImage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItem */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItem */
     connect(sigName: "animation-finished", callback: (($obj: CanvasImage, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasImage, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -3722,8 +3725,8 @@ export interface CanvasImageModel_ConstructProps extends CanvasItemModelSimple_C
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasImageModel {
-    /* Properties of GooCanvas.CanvasImageModel */
+class CanvasImageModel {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasImageModel */
     alpha: number
     height: number
     pattern: any
@@ -3732,7 +3735,7 @@ export class CanvasImageModel {
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemModelSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -3756,7 +3759,7 @@ export class CanvasImageModel {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItemModel */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
     parent: CanvasItemModel
@@ -3766,22 +3769,22 @@ export class CanvasImageModel {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasImageModel */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasImageModel */
     parent_object: CanvasItemModelSimple
     image_data: CanvasImageData
-    /* Fields of GooCanvas.CanvasItemModelSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     simple_data: CanvasItemSimpleData
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3789,13 +3792,13 @@ export class CanvasImageModel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItemModel */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     add_child(child: CanvasItemModel, position: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
     find_child(child: CanvasItemModel): number
@@ -3823,7 +3826,7 @@ export class CanvasImageModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
-    /* Virtual methods of GooCanvas.CanvasItemModelSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
     vfunc_changed(recompute_bounds: boolean): void
@@ -3843,19 +3846,19 @@ export class CanvasImageModel {
     vfunc_set_parent(parent: CanvasItemModel): void
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasImageModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasImageModel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItemModel */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     connect(sigName: "animation-finished", callback: (($obj: CanvasImageModel, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasImageModel, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -3965,24 +3968,24 @@ export class CanvasImageModel {
 }
 export interface CanvasItemAccessibleFactory_ConstructProps extends Atk.ObjectFactory_ConstructProps {
 }
-export class CanvasItemAccessibleFactory {
-    /* Fields of Atk.ObjectFactory */
+class CanvasItemAccessibleFactory {
+    /* Fields of Atk-1.0.Atk.ObjectFactory */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Atk.ObjectFactory */
+    /* Methods of Atk-1.0.Atk.ObjectFactory */
     create_accessible(obj: GObject.Object): Atk.Object
     get_accessible_type(): GObject.Type
     invalidate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3990,23 +3993,23 @@ export class CanvasItemAccessibleFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Atk.ObjectFactory */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Atk-1.0.Atk.ObjectFactory */
     vfunc_invalidate(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasItemAccessibleFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasItemAccessibleFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4053,8 +4056,8 @@ export interface CanvasItemModelSimple_ConstructProps extends GObject.Object_Con
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasItemModelSimple {
-    /* Properties of GooCanvas.CanvasItemModelSimple */
+class CanvasItemModelSimple {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -4078,7 +4081,7 @@ export class CanvasItemModelSimple {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItemModel */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
     parent: CanvasItemModel
@@ -4088,20 +4091,20 @@ export class CanvasItemModelSimple {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasItemModelSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     parent_object: GObject.Object
     simple_data: CanvasItemSimpleData
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4109,13 +4112,13 @@ export class CanvasItemModelSimple {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItemModel */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     add_child(child: CanvasItemModel, position: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
     find_child(child: CanvasItemModel): number
@@ -4143,7 +4146,7 @@ export class CanvasItemModelSimple {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
-    /* Virtual methods of GooCanvas.CanvasItemModelSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
     vfunc_changed(recompute_bounds: boolean): void
@@ -4163,19 +4166,19 @@ export class CanvasItemModelSimple {
     vfunc_set_parent(parent: CanvasItemModel): void
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasItemModelSimple, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasItemModelSimple, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItemModel */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     connect(sigName: "animation-finished", callback: (($obj: CanvasItemModelSimple, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasItemModelSimple, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -4305,8 +4308,8 @@ export interface CanvasItemSimple_ConstructProps extends GObject.Object_Construc
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasItemSimple {
-    /* Properties of GooCanvas.CanvasItemSimple */
+class CanvasItemSimple {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -4330,7 +4333,7 @@ export class CanvasItemSimple {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItem */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
     parent: CanvasItem
@@ -4340,16 +4343,16 @@ export class CanvasItemSimple {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasItemSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     canvas: Canvas
     model: CanvasItemModelSimple
     simple_data: CanvasItemSimpleData
     bounds: CanvasBounds
     need_update: number
     need_entire_subtree_update: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GooCanvas.CanvasItemSimple */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
     check_style(): void
@@ -4359,15 +4362,15 @@ export class CanvasItemSimple {
     set_model(model: CanvasItemModel): void
     user_bounds_to_device(cr: cairo.Context, bounds: CanvasBounds): void
     user_bounds_to_parent(cr: cairo.Context, bounds: CanvasBounds): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4375,13 +4378,13 @@ export class CanvasItemSimple {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItem */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItem */
     add_child(child: CanvasItem, position: number): void
     allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
@@ -4426,7 +4429,7 @@ export class CanvasItemSimple {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GooCanvas.CanvasItemSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
     vfunc_simple_paint(cr: cairo.Context, bounds: CanvasBounds): void
@@ -4475,19 +4478,19 @@ export class CanvasItemSimple {
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
     vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasItemSimple, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasItemSimple, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItem */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItem */
     connect(sigName: "animation-finished", callback: (($obj: CanvasItemSimple, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasItemSimple, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -4623,14 +4626,14 @@ export interface CanvasPath_ConstructProps extends CanvasItemSimple_ConstructPro
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasPath {
-    /* Properties of GooCanvas.CanvasPath */
+class CanvasPath {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasPath */
     data: string
     height: number
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -4654,7 +4657,7 @@ export class CanvasPath {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItem */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
     parent: CanvasItem
@@ -4664,18 +4667,18 @@ export class CanvasPath {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasPath */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasPath */
     path_data: CanvasPathData
-    /* Fields of GooCanvas.CanvasItemSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     canvas: Canvas
     model: CanvasItemModelSimple
     simple_data: CanvasItemSimpleData
     bounds: CanvasBounds
     need_update: number
     need_entire_subtree_update: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GooCanvas.CanvasItemSimple */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
     check_style(): void
@@ -4685,15 +4688,15 @@ export class CanvasPath {
     set_model(model: CanvasItemModel): void
     user_bounds_to_device(cr: cairo.Context, bounds: CanvasBounds): void
     user_bounds_to_parent(cr: cairo.Context, bounds: CanvasBounds): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4701,13 +4704,13 @@ export class CanvasPath {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItem */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItem */
     add_child(child: CanvasItem, position: number): void
     allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
@@ -4752,7 +4755,7 @@ export class CanvasPath {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GooCanvas.CanvasItemSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
     vfunc_simple_paint(cr: cairo.Context, bounds: CanvasBounds): void
@@ -4801,19 +4804,19 @@ export class CanvasPath {
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
     vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasPath, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasPath, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItem */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItem */
     connect(sigName: "animation-finished", callback: (($obj: CanvasPath, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasPath, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -4955,14 +4958,14 @@ export interface CanvasPathModel_ConstructProps extends CanvasItemModelSimple_Co
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasPathModel {
-    /* Properties of GooCanvas.CanvasPathModel */
+class CanvasPathModel {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasPathModel */
     data: string
     height: number
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemModelSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -4986,7 +4989,7 @@ export class CanvasPathModel {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItemModel */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
     parent: CanvasItemModel
@@ -4996,22 +4999,22 @@ export class CanvasPathModel {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasPathModel */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasPathModel */
     parent_object: CanvasItemModelSimple
     path_data: CanvasPathData
-    /* Fields of GooCanvas.CanvasItemModelSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     simple_data: CanvasItemSimpleData
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5019,13 +5022,13 @@ export class CanvasPathModel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItemModel */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     add_child(child: CanvasItemModel, position: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
     find_child(child: CanvasItemModel): number
@@ -5053,7 +5056,7 @@ export class CanvasPathModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
-    /* Virtual methods of GooCanvas.CanvasItemModelSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
     vfunc_changed(recompute_bounds: boolean): void
@@ -5073,19 +5076,19 @@ export class CanvasPathModel {
     vfunc_set_parent(parent: CanvasItemModel): void
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasPathModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasPathModel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItemModel */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     connect(sigName: "animation-finished", callback: (($obj: CanvasPathModel, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasPathModel, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -5209,8 +5212,8 @@ export interface CanvasPolyline_ConstructProps extends CanvasItemSimple_Construc
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasPolyline {
-    /* Properties of GooCanvas.CanvasPolyline */
+class CanvasPolyline {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasPolyline */
     arrow_length: number
     arrow_tip_length: number
     arrow_width: number
@@ -5222,7 +5225,7 @@ export class CanvasPolyline {
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -5246,7 +5249,7 @@ export class CanvasPolyline {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItem */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
     parent: CanvasItem
@@ -5256,18 +5259,18 @@ export class CanvasPolyline {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasPolyline */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasPolyline */
     polyline_data: CanvasPolylineData
-    /* Fields of GooCanvas.CanvasItemSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     canvas: Canvas
     model: CanvasItemModelSimple
     simple_data: CanvasItemSimpleData
     bounds: CanvasBounds
     need_update: number
     need_entire_subtree_update: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GooCanvas.CanvasItemSimple */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
     check_style(): void
@@ -5277,15 +5280,15 @@ export class CanvasPolyline {
     set_model(model: CanvasItemModel): void
     user_bounds_to_device(cr: cairo.Context, bounds: CanvasBounds): void
     user_bounds_to_parent(cr: cairo.Context, bounds: CanvasBounds): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5293,13 +5296,13 @@ export class CanvasPolyline {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItem */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItem */
     add_child(child: CanvasItem, position: number): void
     allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
@@ -5344,7 +5347,7 @@ export class CanvasPolyline {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GooCanvas.CanvasItemSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
     vfunc_simple_paint(cr: cairo.Context, bounds: CanvasBounds): void
@@ -5393,19 +5396,19 @@ export class CanvasPolyline {
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
     vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasPolyline, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasPolyline, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItem */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItem */
     connect(sigName: "animation-finished", callback: (($obj: CanvasPolyline, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasPolyline, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -5565,8 +5568,8 @@ export interface CanvasPolylineModel_ConstructProps extends CanvasItemModelSimpl
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasPolylineModel {
-    /* Properties of GooCanvas.CanvasPolylineModel */
+class CanvasPolylineModel {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasPolylineModel */
     arrow_length: number
     arrow_tip_length: number
     arrow_width: number
@@ -5578,7 +5581,7 @@ export class CanvasPolylineModel {
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemModelSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -5602,7 +5605,7 @@ export class CanvasPolylineModel {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItemModel */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
     parent: CanvasItemModel
@@ -5612,22 +5615,22 @@ export class CanvasPolylineModel {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasPolylineModel */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasPolylineModel */
     parent_object: CanvasItemModelSimple
     polyline_data: CanvasPolylineData
-    /* Fields of GooCanvas.CanvasItemModelSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     simple_data: CanvasItemSimpleData
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5635,13 +5638,13 @@ export class CanvasPolylineModel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItemModel */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     add_child(child: CanvasItemModel, position: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
     find_child(child: CanvasItemModel): number
@@ -5669,7 +5672,7 @@ export class CanvasPolylineModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
-    /* Virtual methods of GooCanvas.CanvasItemModelSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
     vfunc_changed(recompute_bounds: boolean): void
@@ -5689,19 +5692,19 @@ export class CanvasPolylineModel {
     vfunc_set_parent(parent: CanvasItemModel): void
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasPolylineModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasPolylineModel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItemModel */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     connect(sigName: "animation-finished", callback: (($obj: CanvasPolylineModel, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasPolylineModel, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -5832,15 +5835,15 @@ export interface CanvasRect_ConstructProps extends CanvasItemSimple_ConstructPro
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasRect {
-    /* Properties of GooCanvas.CanvasRect */
+class CanvasRect {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasRect */
     height: number
     radius_x: number
     radius_y: number
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -5864,7 +5867,7 @@ export class CanvasRect {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItem */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
     parent: CanvasItem
@@ -5874,18 +5877,18 @@ export class CanvasRect {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasRect */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasRect */
     rect_data: CanvasRectData
-    /* Fields of GooCanvas.CanvasItemSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     canvas: Canvas
     model: CanvasItemModelSimple
     simple_data: CanvasItemSimpleData
     bounds: CanvasBounds
     need_update: number
     need_entire_subtree_update: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GooCanvas.CanvasItemSimple */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
     check_style(): void
@@ -5895,15 +5898,15 @@ export class CanvasRect {
     set_model(model: CanvasItemModel): void
     user_bounds_to_device(cr: cairo.Context, bounds: CanvasBounds): void
     user_bounds_to_parent(cr: cairo.Context, bounds: CanvasBounds): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5911,13 +5914,13 @@ export class CanvasRect {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItem */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItem */
     add_child(child: CanvasItem, position: number): void
     allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
@@ -5962,7 +5965,7 @@ export class CanvasRect {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GooCanvas.CanvasItemSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
     vfunc_simple_paint(cr: cairo.Context, bounds: CanvasBounds): void
@@ -6011,19 +6014,19 @@ export class CanvasRect {
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
     vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasRect, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasRect, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItem */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItem */
     connect(sigName: "animation-finished", callback: (($obj: CanvasRect, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasRect, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -6168,15 +6171,15 @@ export interface CanvasRectModel_ConstructProps extends CanvasItemModelSimple_Co
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasRectModel {
-    /* Properties of GooCanvas.CanvasRectModel */
+class CanvasRectModel {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasRectModel */
     height: number
     radius_x: number
     radius_y: number
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemModelSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -6200,7 +6203,7 @@ export class CanvasRectModel {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItemModel */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
     parent: CanvasItemModel
@@ -6210,22 +6213,22 @@ export class CanvasRectModel {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasRectModel */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasRectModel */
     parent_object: CanvasItemModelSimple
     rect_data: CanvasRectData
-    /* Fields of GooCanvas.CanvasItemModelSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     simple_data: CanvasItemSimpleData
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6233,13 +6236,13 @@ export class CanvasRectModel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItemModel */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     add_child(child: CanvasItemModel, position: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
     find_child(child: CanvasItemModel): number
@@ -6267,7 +6270,7 @@ export class CanvasRectModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
-    /* Virtual methods of GooCanvas.CanvasItemModelSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
     vfunc_changed(recompute_bounds: boolean): void
@@ -6287,19 +6290,19 @@ export class CanvasRectModel {
     vfunc_set_parent(parent: CanvasItemModel): void
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasRectModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasRectModel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItemModel */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     connect(sigName: "animation-finished", callback: (($obj: CanvasRectModel, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasRectModel, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -6405,13 +6408,13 @@ export class CanvasRectModel {
 }
 export interface CanvasStyle_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class CanvasStyle {
-    /* Fields of GooCanvas.CanvasStyle */
+class CanvasStyle {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasStyle */
     parent: CanvasStyle
     properties: object[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GooCanvas.CanvasStyle */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasStyle */
     copy(): CanvasStyle
     get_parent(): CanvasStyle
     get_property(property_id: GLib.Quark): any
@@ -6419,15 +6422,15 @@ export class CanvasStyle {
     set_parent(parent: CanvasStyle): void
     set_property(property_id: GLib.Quark, value: any): void
     set_stroke_options(cr: cairo.Context): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6435,21 +6438,21 @@ export class CanvasStyle {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasStyle, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasStyle, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6483,8 +6486,8 @@ export interface CanvasTable_ConstructProps extends CanvasGroup_ConstructProps {
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasTable {
-    /* Properties of GooCanvas.CanvasTable */
+class CanvasTable {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasTable */
     column_spacing: number
     homogeneous_columns: boolean
     homogeneous_rows: boolean
@@ -6493,12 +6496,12 @@ export class CanvasTable {
     vert_grid_line_width: number
     x_border_spacing: number
     y_border_spacing: number
-    /* Properties of GooCanvas.CanvasGroup */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasGroup */
     height: number
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -6522,7 +6525,7 @@ export class CanvasTable {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItem */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
     parent: CanvasItem
@@ -6532,21 +6535,21 @@ export class CanvasTable {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasTable */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasTable */
     table_data: CanvasTableData
-    /* Fields of GooCanvas.CanvasGroup */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasGroup */
     parent_object: CanvasItemSimple
     items: object[]
-    /* Fields of GooCanvas.CanvasItemSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     canvas: Canvas
     model: CanvasItemModelSimple
     simple_data: CanvasItemSimpleData
     bounds: CanvasBounds
     need_update: number
     need_entire_subtree_update: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GooCanvas.CanvasItemSimple */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
     check_style(): void
@@ -6556,15 +6559,15 @@ export class CanvasTable {
     set_model(model: CanvasItemModel): void
     user_bounds_to_device(cr: cairo.Context, bounds: CanvasBounds): void
     user_bounds_to_parent(cr: cairo.Context, bounds: CanvasBounds): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6572,13 +6575,13 @@ export class CanvasTable {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItem */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItem */
     add_child(child: CanvasItem, position: number): void
     allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
@@ -6623,7 +6626,7 @@ export class CanvasTable {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GooCanvas.CanvasItemSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
     vfunc_simple_paint(cr: cairo.Context, bounds: CanvasBounds): void
@@ -6672,19 +6675,19 @@ export class CanvasTable {
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
     vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasTable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasTable, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItem */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItem */
     connect(sigName: "animation-finished", callback: (($obj: CanvasTable, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasTable, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -6843,8 +6846,8 @@ export interface CanvasTableModel_ConstructProps extends CanvasGroupModel_Constr
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasTableModel {
-    /* Properties of GooCanvas.CanvasTableModel */
+class CanvasTableModel {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasTableModel */
     column_spacing: number
     homogeneous_columns: boolean
     homogeneous_rows: boolean
@@ -6853,12 +6856,12 @@ export class CanvasTableModel {
     vert_grid_line_width: number
     x_border_spacing: number
     y_border_spacing: number
-    /* Properties of GooCanvas.CanvasGroupModel */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasGroupModel */
     height: number
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemModelSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -6882,7 +6885,7 @@ export class CanvasTableModel {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItemModel */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
     parent: CanvasItemModel
@@ -6892,24 +6895,24 @@ export class CanvasTableModel {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasTableModel */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasTableModel */
     parent_object: CanvasGroupModel
     table_data: CanvasTableData
-    /* Fields of GooCanvas.CanvasGroupModel */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasGroupModel */
     children: object[]
-    /* Fields of GooCanvas.CanvasItemModelSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     simple_data: CanvasItemSimpleData
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6917,13 +6920,13 @@ export class CanvasTableModel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItemModel */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     add_child(child: CanvasItemModel, position: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
     find_child(child: CanvasItemModel): number
@@ -6951,7 +6954,7 @@ export class CanvasTableModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
-    /* Virtual methods of GooCanvas.CanvasItemModelSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
     vfunc_changed(recompute_bounds: boolean): void
@@ -6971,19 +6974,19 @@ export class CanvasTableModel {
     vfunc_set_parent(parent: CanvasItemModel): void
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasTableModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasTableModel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItemModel */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     connect(sigName: "animation-finished", callback: (($obj: CanvasTableModel, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasTableModel, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -7120,8 +7123,8 @@ export interface CanvasText_ConstructProps extends CanvasItemSimple_ConstructPro
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasText {
-    /* Properties of GooCanvas.CanvasText */
+class CanvasText {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasText */
     alignment: Pango.Alignment
     anchor: CanvasAnchorType
     ellipsize: Pango.EllipsizeMode
@@ -7132,7 +7135,7 @@ export class CanvasText {
     wrap: Pango.WrapMode
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -7156,7 +7159,7 @@ export class CanvasText {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItem */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
     parent: CanvasItem
@@ -7166,21 +7169,21 @@ export class CanvasText {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasText */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasText */
     text_data: CanvasTextData
     layout_width: number
-    /* Fields of GooCanvas.CanvasItemSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     canvas: Canvas
     model: CanvasItemModelSimple
     simple_data: CanvasItemSimpleData
     bounds: CanvasBounds
     need_update: number
     need_entire_subtree_update: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GooCanvas.CanvasText */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasText */
     get_natural_extents(): [ /* ink_rect */ Pango.Rectangle | null, /* logical_rect */ Pango.Rectangle | null ]
-    /* Methods of GooCanvas.CanvasItemSimple */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
     check_style(): void
@@ -7190,15 +7193,15 @@ export class CanvasText {
     set_model(model: CanvasItemModel): void
     user_bounds_to_device(cr: cairo.Context, bounds: CanvasBounds): void
     user_bounds_to_parent(cr: cairo.Context, bounds: CanvasBounds): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7206,13 +7209,13 @@ export class CanvasText {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItem */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItem */
     add_child(child: CanvasItem, position: number): void
     allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
@@ -7257,7 +7260,7 @@ export class CanvasText {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GooCanvas.CanvasItemSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
     vfunc_simple_paint(cr: cairo.Context, bounds: CanvasBounds): void
@@ -7306,19 +7309,19 @@ export class CanvasText {
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
     vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasText, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasText, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItem */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItem */
     connect(sigName: "animation-finished", callback: (($obj: CanvasText, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasText, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -7475,8 +7478,8 @@ export interface CanvasTextModel_ConstructProps extends CanvasItemModelSimple_Co
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasTextModel {
-    /* Properties of GooCanvas.CanvasTextModel */
+class CanvasTextModel {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasTextModel */
     alignment: Pango.Alignment
     anchor: CanvasAnchorType
     ellipsize: Pango.EllipsizeMode
@@ -7487,7 +7490,7 @@ export class CanvasTextModel {
     wrap: Pango.WrapMode
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemModelSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -7511,7 +7514,7 @@ export class CanvasTextModel {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItemModel */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
     parent: CanvasItemModel
@@ -7521,22 +7524,22 @@ export class CanvasTextModel {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasTextModel */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasTextModel */
     parent_object: CanvasItemModelSimple
     text_data: CanvasTextData
-    /* Fields of GooCanvas.CanvasItemModelSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     simple_data: CanvasItemSimpleData
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7544,13 +7547,13 @@ export class CanvasTextModel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItemModel */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     add_child(child: CanvasItemModel, position: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
     find_child(child: CanvasItemModel): number
@@ -7578,7 +7581,7 @@ export class CanvasTextModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
-    /* Virtual methods of GooCanvas.CanvasItemModelSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
     vfunc_changed(recompute_bounds: boolean): void
@@ -7598,19 +7601,19 @@ export class CanvasTextModel {
     vfunc_set_parent(parent: CanvasItemModel): void
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasTextModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasTextModel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItemModel */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItemModel */
     connect(sigName: "animation-finished", callback: (($obj: CanvasTextModel, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasTextModel, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -7739,15 +7742,15 @@ export interface CanvasWidget_ConstructProps extends CanvasItemSimple_ConstructP
     visibility?: CanvasItemVisibility
     visibility_threshold?: number
 }
-export class CanvasWidget {
-    /* Properties of GooCanvas.CanvasWidget */
+class CanvasWidget {
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasWidget */
     anchor: CanvasAnchorType
     height: number
     widget: Gtk.Widget
     width: number
     x: number
     y: number
-    /* Properties of GooCanvas.CanvasItemSimple */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     antialias: CairoAntialias
     clip_fill_rule: CairoFillRule
     clip_path: string
@@ -7771,7 +7774,7 @@ export class CanvasWidget {
     stroke_color_rgba: number
     stroke_pattern: any
     stroke_pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of GooCanvas.CanvasItem */
+    /* Properties of GooCanvas-2.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
     parent: CanvasItem
@@ -7781,18 +7784,18 @@ export class CanvasWidget {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas.CanvasWidget */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasWidget */
     parent_object: CanvasItemSimple
-    /* Fields of GooCanvas.CanvasItemSimple */
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     canvas: Canvas
     model: CanvasItemModelSimple
     simple_data: CanvasItemSimpleData
     bounds: CanvasBounds
     need_update: number
     need_entire_subtree_update: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GooCanvas.CanvasItemSimple */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
     check_style(): void
@@ -7802,15 +7805,15 @@ export class CanvasWidget {
     set_model(model: CanvasItemModel): void
     user_bounds_to_device(cr: cairo.Context, bounds: CanvasBounds): void
     user_bounds_to_parent(cr: cairo.Context, bounds: CanvasBounds): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7818,13 +7821,13 @@ export class CanvasWidget {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GooCanvas.CanvasItem */
+    watch_closure(closure: Function): void
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasItem */
     add_child(child: CanvasItem, position: number): void
     allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
     animate(x: number, y: number, scale: number, degrees: number, absolute: boolean, duration: number, step_time: number, type: CanvasAnimateType): void
@@ -7869,7 +7872,7 @@ export class CanvasWidget {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GooCanvas.CanvasItemSimple */
+    /* Virtual methods of GooCanvas-2.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
     vfunc_simple_paint(cr: cairo.Context, bounds: CanvasBounds): void
@@ -7918,19 +7921,19 @@ export class CanvasWidget {
     vfunc_set_style(style: CanvasStyle): void
     vfunc_set_transform(transform?: cairo.Matrix | null): void
     vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasWidget, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasWidget, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of GooCanvas.CanvasItem */
+    /* Signals of GooCanvas-2.0.GooCanvas.CanvasItem */
     connect(sigName: "animation-finished", callback: (($obj: CanvasWidget, stopped: boolean) => void)): number
     connect_after(sigName: "animation-finished", callback: (($obj: CanvasWidget, stopped: boolean) => void)): number
     emit(sigName: "animation-finished", stopped: boolean): void
@@ -8060,24 +8063,24 @@ export class CanvasWidget {
 }
 export interface CanvasWidgetAccessibleFactory_ConstructProps extends Atk.ObjectFactory_ConstructProps {
 }
-export class CanvasWidgetAccessibleFactory {
-    /* Fields of Atk.ObjectFactory */
+class CanvasWidgetAccessibleFactory {
+    /* Fields of Atk-1.0.Atk.ObjectFactory */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Atk.ObjectFactory */
+    /* Methods of Atk-1.0.Atk.ObjectFactory */
     create_accessible(obj: GObject.Object): Atk.Object
     get_accessible_type(): GObject.Type
     invalidate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -8085,23 +8088,23 @@ export class CanvasWidgetAccessibleFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Atk.ObjectFactory */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Atk-1.0.Atk.ObjectFactory */
     vfunc_invalidate(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CanvasWidgetAccessibleFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CanvasWidgetAccessibleFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -8114,45 +8117,45 @@ export class CanvasWidgetAccessibleFactory {
     _init (config?: CanvasWidgetAccessibleFactory_ConstructProps): void
     static $gtype: GObject.Type
 }
-export class CanvasBounds {
-    /* Fields of GooCanvas.CanvasBounds */
+class CanvasBounds {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasBounds */
     x1: number
     y1: number
     x2: number
     y2: number
     static name: string
 }
-export abstract class CanvasClass {
-    /* Fields of GooCanvas.CanvasClass */
+abstract class CanvasClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasClass */
     create_item: (canvas: Canvas, model: CanvasItemModel) => CanvasItem
     item_created: (canvas: Canvas, item: CanvasItem, model: CanvasItemModel) => void
     static name: string
 }
-export abstract class CanvasEllipseClass {
-    /* Fields of GooCanvas.CanvasEllipseClass */
+abstract class CanvasEllipseClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasEllipseClass */
     parent_class: CanvasItemSimpleClass
     static name: string
 }
-export class CanvasEllipseData {
-    /* Fields of GooCanvas.CanvasEllipseData */
+class CanvasEllipseData {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasEllipseData */
     center_x: number
     center_y: number
     radius_x: number
     radius_y: number
     static name: string
 }
-export abstract class CanvasEllipseModelClass {
-    /* Fields of GooCanvas.CanvasEllipseModelClass */
+abstract class CanvasEllipseModelClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasEllipseModelClass */
     parent_class: CanvasItemModelSimpleClass
     static name: string
 }
-export abstract class CanvasGridClass {
-    /* Fields of GooCanvas.CanvasGridClass */
+abstract class CanvasGridClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasGridClass */
     parent_class: CanvasItemSimpleClass
     static name: string
 }
-export class CanvasGridData {
-    /* Fields of GooCanvas.CanvasGridData */
+class CanvasGridData {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasGridData */
     x: number
     y: number
     width: number
@@ -8172,28 +8175,28 @@ export class CanvasGridData {
     vert_grid_lines_on_top: number
     static name: string
 }
-export abstract class CanvasGridModelClass {
-    /* Fields of GooCanvas.CanvasGridModelClass */
+abstract class CanvasGridModelClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasGridModelClass */
     parent_class: CanvasItemModelSimpleClass
     static name: string
 }
-export abstract class CanvasGroupClass {
-    /* Fields of GooCanvas.CanvasGroupClass */
+abstract class CanvasGroupClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasGroupClass */
     parent_class: CanvasItemSimpleClass
     static name: string
 }
-export abstract class CanvasGroupModelClass {
-    /* Fields of GooCanvas.CanvasGroupModelClass */
+abstract class CanvasGroupModelClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasGroupModelClass */
     parent_class: CanvasItemModelSimpleClass
     static name: string
 }
-export abstract class CanvasImageClass {
-    /* Fields of GooCanvas.CanvasImageClass */
+abstract class CanvasImageClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasImageClass */
     parent_class: CanvasItemSimpleClass
     static name: string
 }
-export class CanvasImageData {
-    /* Fields of GooCanvas.CanvasImageData */
+class CanvasImageData {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasImageData */
     pattern: cairo.Pattern
     x: number
     y: number
@@ -8201,13 +8204,13 @@ export class CanvasImageData {
     height: number
     static name: string
 }
-export abstract class CanvasImageModelClass {
-    /* Fields of GooCanvas.CanvasImageModelClass */
+abstract class CanvasImageModelClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasImageModelClass */
     parent_class: CanvasItemModelSimpleClass
     static name: string
 }
-export abstract class CanvasItemIface {
-    /* Fields of GooCanvas.CanvasItemIface */
+abstract class CanvasItemIface {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemIface */
     get_canvas: (item: CanvasItem) => Canvas
     set_canvas: (item: CanvasItem, canvas: Canvas) => void
     get_n_children: (item: CanvasItem) => number
@@ -8254,8 +8257,8 @@ export abstract class CanvasItemIface {
     get_requested_area_for_width: (item: CanvasItem, cr: cairo.Context, width: number, requested_area: CanvasBounds) => boolean
     static name: string
 }
-export abstract class CanvasItemModelIface {
-    /* Fields of GooCanvas.CanvasItemModelIface */
+abstract class CanvasItemModelIface {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemModelIface */
     get_n_children: (model: CanvasItemModel) => number
     get_child: (model: CanvasItemModel, child_num: number) => CanvasItemModel
     add_child: (model: CanvasItemModel, child: CanvasItemModel, position: number) => void
@@ -8277,21 +8280,21 @@ export abstract class CanvasItemModelIface {
     animation_finished: (model: CanvasItemModel, stopped: boolean) => void
     static name: string
 }
-export abstract class CanvasItemModelSimpleClass {
-    /* Fields of GooCanvas.CanvasItemModelSimpleClass */
+abstract class CanvasItemModelSimpleClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemModelSimpleClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class CanvasItemSimpleClass {
-    /* Fields of GooCanvas.CanvasItemSimpleClass */
+abstract class CanvasItemSimpleClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemSimpleClass */
     simple_create_path: (simple: CanvasItemSimple, cr: cairo.Context) => void
     simple_update: (simple: CanvasItemSimple, cr: cairo.Context) => void
     simple_paint: (simple: CanvasItemSimple, cr: cairo.Context, bounds: CanvasBounds) => void
     simple_is_item_at: (simple: CanvasItemSimple, x: number, y: number, cr: cairo.Context, is_pointer_event: boolean) => boolean
     static name: string
 }
-export class CanvasItemSimpleData {
-    /* Fields of GooCanvas.CanvasItemSimpleData */
+class CanvasItemSimpleData {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasItemSimpleData */
     style: CanvasStyle
     transform: cairo.Matrix
     clip_path_commands: object[]
@@ -8305,13 +8308,13 @@ export class CanvasItemSimpleData {
     is_static: number
     static name: string
 }
-export class CanvasLineDash {
-    /* Fields of GooCanvas.CanvasLineDash */
+class CanvasLineDash {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasLineDash */
     ref_count: number
     num_dashes: number
     dashes: number
     dash_offset: number
-    /* Methods of GooCanvas.CanvasLineDash */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasLineDash */
     ref(): CanvasLineDash
     set_offset(dash_offset: number): void
     unref(): void
@@ -8319,27 +8322,27 @@ export class CanvasLineDash {
     /* Static methods and pseudo-constructors */
     static newv(dashes: number[]): CanvasLineDash
 }
-export abstract class CanvasPathClass {
-    /* Fields of GooCanvas.CanvasPathClass */
+abstract class CanvasPathClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasPathClass */
     parent_class: CanvasItemSimpleClass
     static name: string
 }
-export class CanvasPathData {
-    /* Fields of GooCanvas.CanvasPathData */
+class CanvasPathData {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasPathData */
     path_commands: object[]
     static name: string
 }
-export abstract class CanvasPathModelClass {
-    /* Fields of GooCanvas.CanvasPathModelClass */
+abstract class CanvasPathModelClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasPathModelClass */
     parent_class: CanvasItemModelSimpleClass
     static name: string
 }
-export class CanvasPoints {
-    /* Fields of GooCanvas.CanvasPoints */
+class CanvasPoints {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasPoints */
     coords: number
     num_points: number
     ref_count: number
-    /* Methods of GooCanvas.CanvasPoints */
+    /* Methods of GooCanvas-2.0.GooCanvas.CanvasPoints */
     get_point(idx: number): [ /* x */ number, /* y */ number ]
     ref(): CanvasPoints
     set_point(idx: number, x: number, y: number): void
@@ -8350,8 +8353,8 @@ export class CanvasPoints {
     /* Static methods and pseudo-constructors */
     static new(num_points: number): CanvasPoints
 }
-export class CanvasPolylineArrowData {
-    /* Fields of GooCanvas.CanvasPolylineArrowData */
+class CanvasPolylineArrowData {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasPolylineArrowData */
     arrow_width: number
     arrow_length: number
     arrow_tip_length: number
@@ -8361,13 +8364,13 @@ export class CanvasPolylineArrowData {
     end_arrow_coords: number[]
     static name: string
 }
-export abstract class CanvasPolylineClass {
-    /* Fields of GooCanvas.CanvasPolylineClass */
+abstract class CanvasPolylineClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasPolylineClass */
     parent_class: CanvasItemSimpleClass
     static name: string
 }
-export class CanvasPolylineData {
-    /* Fields of GooCanvas.CanvasPolylineData */
+class CanvasPolylineData {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasPolylineData */
     coords: number
     arrow_data: CanvasPolylineArrowData
     num_points: number
@@ -8377,18 +8380,18 @@ export class CanvasPolylineData {
     reconfigure_arrows: number
     static name: string
 }
-export abstract class CanvasPolylineModelClass {
-    /* Fields of GooCanvas.CanvasPolylineModelClass */
+abstract class CanvasPolylineModelClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasPolylineModelClass */
     parent_class: CanvasItemModelSimpleClass
     static name: string
 }
-export abstract class CanvasRectClass {
-    /* Fields of GooCanvas.CanvasRectClass */
+abstract class CanvasRectClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasRectClass */
     parent_class: CanvasItemSimpleClass
     static name: string
 }
-export class CanvasRectData {
-    /* Fields of GooCanvas.CanvasRectData */
+class CanvasRectData {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasRectData */
     x: number
     y: number
     width: number
@@ -8397,29 +8400,29 @@ export class CanvasRectData {
     radius_y: number
     static name: string
 }
-export abstract class CanvasRectModelClass {
-    /* Fields of GooCanvas.CanvasRectModelClass */
+abstract class CanvasRectModelClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasRectModelClass */
     parent_class: CanvasItemModelSimpleClass
     static name: string
 }
-export abstract class CanvasStyleClass {
-    /* Fields of GooCanvas.CanvasStyleClass */
+abstract class CanvasStyleClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasStyleClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class CanvasStyleProperty {
-    /* Fields of GooCanvas.CanvasStyleProperty */
+class CanvasStyleProperty {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasStyleProperty */
     id: GLib.Quark
     value: any
     static name: string
 }
-export abstract class CanvasTableClass {
-    /* Fields of GooCanvas.CanvasTableClass */
+abstract class CanvasTableClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasTableClass */
     parent_class: CanvasGroupClass
     static name: string
 }
-export class CanvasTableData {
-    /* Fields of GooCanvas.CanvasTableData */
+class CanvasTableData {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasTableData */
     width: number
     height: number
     dimensions: CanvasTableDimension[]
@@ -8428,29 +8431,29 @@ export class CanvasTableData {
     layout_data: CanvasTableLayoutData
     static name: string
 }
-export class CanvasTableDimension {
-    /* Fields of GooCanvas.CanvasTableDimension */
+class CanvasTableDimension {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasTableDimension */
     size: number
     default_spacing: number
     spacings: number
     homogeneous: number
     static name: string
 }
-export class CanvasTableLayoutData {
+class CanvasTableLayoutData {
     static name: string
 }
-export abstract class CanvasTableModelClass {
-    /* Fields of GooCanvas.CanvasTableModelClass */
+abstract class CanvasTableModelClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasTableModelClass */
     parent_class: CanvasGroupModelClass
     static name: string
 }
-export abstract class CanvasTextClass {
-    /* Fields of GooCanvas.CanvasTextClass */
+abstract class CanvasTextClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasTextClass */
     parent_class: CanvasItemSimpleClass
     static name: string
 }
-export class CanvasTextData {
-    /* Fields of GooCanvas.CanvasTextData */
+class CanvasTextData {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasTextData */
     text: string
     x: number
     y: number
@@ -8462,16 +8465,18 @@ export class CanvasTextData {
     wrap: number
     static name: string
 }
-export abstract class CanvasTextModelClass {
-    /* Fields of GooCanvas.CanvasTextModelClass */
+abstract class CanvasTextModelClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasTextModelClass */
     parent_class: CanvasItemModelSimpleClass
     static name: string
 }
-export abstract class CanvasWidgetClass {
-    /* Fields of GooCanvas.CanvasWidgetClass */
+abstract class CanvasWidgetClass {
+    /* Fields of GooCanvas-2.0.GooCanvas.CanvasWidgetClass */
     parent_class: CanvasItemSimpleClass
     static name: string
 }
-export class CanvasPathCommand {
+class CanvasPathCommand {
     static name: string
 }
+}
+export default GooCanvas;

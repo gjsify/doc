@@ -3,11 +3,13 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum AudioFormatType {
+export namespace GVnc {
+
+enum AudioFormatType {
     U8,
     S8,
     U16,
@@ -15,7 +17,7 @@ export enum AudioFormatType {
     U32,
     S32,
 }
-export enum ConnectionAuth {
+enum ConnectionAuth {
     INVALID,
     NONE,
     VNC,
@@ -30,7 +32,7 @@ export enum ConnectionAuth {
     MSLOGONII,
     MSLOGON,
 }
-export enum ConnectionAuthVencrypt {
+enum ConnectionAuthVencrypt {
     PLAIN,
     TLSNONE,
     TLSVNC,
@@ -41,12 +43,12 @@ export enum ConnectionAuthVencrypt {
     X509SASL,
     TLSSASL,
 }
-export enum ConnectionCredential {
+enum ConnectionCredential {
     PASSWORD,
     USERNAME,
     CLIENTNAME,
 }
-export enum ConnectionEncoding {
+enum ConnectionEncoding {
     RAW,
     COPY_RECT,
     RRE,
@@ -65,6 +67,7 @@ export enum ConnectionEncoding {
     TIGHT_JPEG8,
     TIGHT_JPEG9,
     DESKTOP_RESIZE,
+    LAST_RECT,
     WMVI,
     CURSOR_POS,
     RICH_CURSOR,
@@ -73,30 +76,50 @@ export enum ConnectionEncoding {
     EXT_KEY_EVENT,
     AUDIO,
     LED_STATE,
+    DESKTOP_NAME,
+    EXTENDED_DESKTOP_RESIZE,
+    XVP,
+    ALPHA_CURSOR,
+}
+enum ConnectionPowerAction {
+    SHUTDOWN,
+    REBOOT,
+    RESET,
+}
+enum ConnectionResizeStatus {
+    UNSUPPORTED,
+    OK,
+    ADMIN_PROHIBITED,
+    OUT_OF_RESOURCES,
+    INVALID_LAOUT,
+    FORWARDED,
 }
 export const LEDSTATE_CAPS_LOCK: number
 export const LEDSTATE_NUM_LOCK: number
 export const LEDSTATE_SCROLL_LOCK: number
+export const MAJOR_VERSION: number
+export const MICRO_VERSION: number
+export const MINOR_VERSION: number
 export const PADDING: number
 export const PADDING_LARGE: number
-export function util_check_version(major: number, minor: number, micro: number): boolean
-export function util_get_debug(): boolean
-export function util_get_version(): number
-export function util_get_version_string(): string
-export function util_set_debug(enabled: boolean): void
-export class Audio {
-    /* Methods of GVnc.Audio */
+function util_check_version(major: number, minor: number, micro: number): boolean
+function util_get_debug(): boolean
+function util_get_version(): number
+function util_get_version_string(): string
+function util_set_debug(enabled: boolean): void
+class Audio {
+    /* Methods of GVnc-1.0.GVnc.Audio */
     playback_data(sample: AudioSample): void
     playback_start(format: AudioFormat): void
     playback_stop(): void
-    /* Virtual methods of GVnc.Audio */
+    /* Virtual methods of GVnc-1.0.GVnc.Audio */
     vfunc_playback_data(sample: AudioSample): boolean
     vfunc_playback_start(format: AudioFormat): boolean
     vfunc_playback_stop(): boolean
     static name: string
 }
-export class Framebuffer {
-    /* Methods of GVnc.Framebuffer */
+class Framebuffer {
+    /* Methods of GVnc-1.0.GVnc.Framebuffer */
     blt(src: number, rowstride: number, x: number, y: number, width: number, height: number): void
     copyrect(srcx: number, srcy: number, dstx: number, dsty: number, width: number, height: number): void
     fill(src: Uint8Array[], x: number, y: number, width: number, height: number): void
@@ -110,7 +133,7 @@ export class Framebuffer {
     rgb24_blt(src: Uint8Array[], rowstride: number, x: number, y: number, width: number, height: number): void
     set_color_map(map: ColorMap): void
     set_pixel_at(src: Uint8Array[], x: number, y: number): void
-    /* Virtual methods of GVnc.Framebuffer */
+    /* Virtual methods of GVnc-1.0.GVnc.Framebuffer */
     vfunc_blt(src: number, rowstride: number, x: number, y: number, width: number, height: number): void
     vfunc_copyrect(srcx: number, srcy: number, dstx: number, dsty: number, width: number, height: number): void
     vfunc_fill(src: Uint8Array[], x: number, y: number, width: number, height: number): void
@@ -128,21 +151,21 @@ export class Framebuffer {
 }
 export interface BaseAudio_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class BaseAudio {
-    /* Fields of GVnc.BaseAudio */
+class BaseAudio {
+    /* Fields of GVnc-1.0.GVnc.BaseAudio */
     parent: GObject.Object
     priv: BaseAudioPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -150,29 +173,29 @@ export class BaseAudio {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GVnc.Audio */
+    watch_closure(closure: Function): void
+    /* Methods of GVnc-1.0.GVnc.Audio */
     playback_data(sample: AudioSample): void
     playback_start(format: AudioFormat): void
     playback_stop(): void
-    /* Virtual methods of GVnc.BaseAudio */
+    /* Virtual methods of GVnc-1.0.GVnc.BaseAudio */
     vfunc_playback_data(sample: AudioSample): boolean
     vfunc_playback_start(format: AudioFormat): boolean
     vfunc_playback_stop(): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GVnc.BaseAudio */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GVnc-1.0.GVnc.BaseAudio */
     connect(sigName: "vnc-audio-playback-data", callback: (($obj: BaseAudio, object: AudioSample) => void)): number
     connect_after(sigName: "vnc-audio-playback-data", callback: (($obj: BaseAudio, object: AudioSample) => void)): number
     emit(sigName: "vnc-audio-playback-data", object: AudioSample): void
@@ -182,7 +205,7 @@ export class BaseAudio {
     connect(sigName: "vnc-audio-playback-stop", callback: (($obj: BaseAudio) => void)): number
     connect_after(sigName: "vnc-audio-playback-stop", callback: (($obj: BaseAudio) => void)): number
     emit(sigName: "vnc-audio-playback-stop"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BaseAudio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BaseAudio, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -206,23 +229,23 @@ export interface BaseFramebuffer_ConstructProps extends GObject.Object_Construct
     rowstride?: number
     width?: number
 }
-export class BaseFramebuffer {
-    /* Properties of GVnc.BaseFramebuffer */
+class BaseFramebuffer {
+    /* Properties of GVnc-1.0.GVnc.BaseFramebuffer */
     color_map: ColorMap
-    /* Fields of GVnc.BaseFramebuffer */
+    /* Fields of GVnc-1.0.GVnc.BaseFramebuffer */
     parent: GObject.Object
     priv: BaseFramebufferPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -230,13 +253,13 @@ export class BaseFramebuffer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GVnc.Framebuffer */
+    watch_closure(closure: Function): void
+    /* Methods of GVnc-1.0.GVnc.Framebuffer */
     blt(src: number, rowstride: number, x: number, y: number, width: number, height: number): void
     copyrect(srcx: number, srcy: number, dstx: number, dsty: number, width: number, height: number): void
     fill(src: Uint8Array[], x: number, y: number, width: number, height: number): void
@@ -250,7 +273,7 @@ export class BaseFramebuffer {
     rgb24_blt(src: Uint8Array[], rowstride: number, x: number, y: number, width: number, height: number): void
     set_color_map(map: ColorMap): void
     set_pixel_at(src: Uint8Array[], x: number, y: number): void
-    /* Virtual methods of GVnc.BaseFramebuffer */
+    /* Virtual methods of GVnc-1.0.GVnc.BaseFramebuffer */
     vfunc_blt(src: number, rowstride: number, x: number, y: number, width: number, height: number): void
     vfunc_copyrect(srcx: number, srcy: number, dstx: number, dsty: number, width: number, height: number): void
     vfunc_fill(src: Uint8Array[], x: number, y: number, width: number, height: number): void
@@ -264,15 +287,15 @@ export class BaseFramebuffer {
     vfunc_rgb24_blt(src: Uint8Array[], rowstride: number, x: number, y: number, width: number, height: number): void
     vfunc_set_color_map(map: ColorMap): void
     vfunc_set_pixel_at(src: Uint8Array[], x: number, y: number): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BaseFramebuffer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BaseFramebuffer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -292,15 +315,15 @@ export class BaseFramebuffer {
 export interface Connection_ConstructProps extends GObject.Object_ConstructProps {
     framebuffer?: Framebuffer
 }
-export class Connection {
-    /* Properties of GVnc.Connection */
+class Connection {
+    /* Properties of GVnc-1.0.GVnc.Connection */
     framebuffer: Framebuffer
-    /* Fields of GVnc.Connection */
+    /* Fields of GVnc-1.0.GVnc.Connection */
     parent: GObject.Object
     priv: ConnectionPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GVnc.Connection */
+    /* Methods of GVnc-1.0.GVnc.Connection */
     audio_disable(): boolean
     audio_enable(): boolean
     client_cut_text(data: object | null, length: number): boolean
@@ -313,6 +336,7 @@ export class Connection {
     get_ledstate(): number
     get_name(): string
     get_pixel_format(): PixelFormat
+    get_power_control(): boolean
     get_shared(): boolean
     get_width(): number
     has_error(): boolean
@@ -324,6 +348,7 @@ export class Connection {
     open_fd_with_hostname(fd: number, hostname?: string | null): boolean
     open_host(host: string, port: string): boolean
     pointer_event(button_mask: number, x: number, y: number): boolean
+    power_control(action: ConnectionPowerAction): boolean
     set_audio(audio: Audio): boolean
     set_audio_format(fmt: AudioFormat): boolean
     set_auth_subtype(type: number): boolean
@@ -332,17 +357,18 @@ export class Connection {
     set_encodings(encoding: number[]): boolean
     set_framebuffer(fb: Framebuffer): boolean
     set_pixel_format(fmt: PixelFormat): boolean
-    set_shared(sharedFlag: boolean): boolean
+    set_shared(shared: boolean): boolean
+    set_size(width: number, height: number): ConnectionResizeStatus
     shutdown(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -350,13 +376,13 @@ export class Connection {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GVnc.Connection */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GVnc-1.0.GVnc.Connection */
     vfunc_vnc_auth_choose_subtype(type: number, subtypes: GObject.ValueArray): void
     vfunc_vnc_auth_choose_type(types: GObject.ValueArray): void
     vfunc_vnc_auth_credential(creds: GObject.ValueArray): void
@@ -365,6 +391,7 @@ export class Connection {
     vfunc_vnc_bell(): void
     vfunc_vnc_connected(): void
     vfunc_vnc_cursor_changed(cursor: Cursor): void
+    vfunc_vnc_desktop_rename(name: string): void
     vfunc_vnc_desktop_resize(width: number, height: number): void
     vfunc_vnc_disconnected(): void
     vfunc_vnc_error(message: string): void
@@ -373,16 +400,18 @@ export class Connection {
     vfunc_vnc_led_state(): void
     vfunc_vnc_pixel_format_changed(format: PixelFormat): void
     vfunc_vnc_pointer_mode_changed(absPointer: boolean): void
+    vfunc_vnc_power_control_failed(): void
+    vfunc_vnc_power_control_initialized(): void
     vfunc_vnc_server_cut_text(text: GLib.String): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GVnc.Connection */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GVnc-1.0.GVnc.Connection */
     connect(sigName: "vnc-auth-choose-subtype", callback: (($obj: Connection, object: number, p0: GObject.ValueArray) => void)): number
     connect_after(sigName: "vnc-auth-choose-subtype", callback: (($obj: Connection, object: number, p0: GObject.ValueArray) => void)): number
     emit(sigName: "vnc-auth-choose-subtype", object: number, p0: GObject.ValueArray): void
@@ -404,9 +433,12 @@ export class Connection {
     connect(sigName: "vnc-connected", callback: (($obj: Connection) => void)): number
     connect_after(sigName: "vnc-connected", callback: (($obj: Connection) => void)): number
     emit(sigName: "vnc-connected"): void
-    connect(sigName: "vnc-cursor-changed", callback: (($obj: Connection, object: Cursor) => void)): number
-    connect_after(sigName: "vnc-cursor-changed", callback: (($obj: Connection, object: Cursor) => void)): number
-    emit(sigName: "vnc-cursor-changed", object: Cursor): void
+    connect(sigName: "vnc-cursor-changed", callback: (($obj: Connection, cursor?: Cursor | null) => void)): number
+    connect_after(sigName: "vnc-cursor-changed", callback: (($obj: Connection, cursor?: Cursor | null) => void)): number
+    emit(sigName: "vnc-cursor-changed", cursor?: Cursor | null): void
+    connect(sigName: "vnc-desktop-rename", callback: (($obj: Connection, object: string) => void)): number
+    connect_after(sigName: "vnc-desktop-rename", callback: (($obj: Connection, object: string) => void)): number
+    emit(sigName: "vnc-desktop-rename", object: string): void
     connect(sigName: "vnc-desktop-resize", callback: (($obj: Connection, object: number, p0: number) => void)): number
     connect_after(sigName: "vnc-desktop-resize", callback: (($obj: Connection, object: number, p0: number) => void)): number
     emit(sigName: "vnc-desktop-resize", object: number, p0: number): void
@@ -425,16 +457,22 @@ export class Connection {
     connect(sigName: "vnc-led-state", callback: (($obj: Connection) => void)): number
     connect_after(sigName: "vnc-led-state", callback: (($obj: Connection) => void)): number
     emit(sigName: "vnc-led-state"): void
-    connect(sigName: "vnc-pixel-format-changed", callback: (($obj: Connection, object?: object | null) => void)): number
-    connect_after(sigName: "vnc-pixel-format-changed", callback: (($obj: Connection, object?: object | null) => void)): number
-    emit(sigName: "vnc-pixel-format-changed", object?: object | null): void
+    connect(sigName: "vnc-pixel-format-changed", callback: (($obj: Connection, object: PixelFormat) => void)): number
+    connect_after(sigName: "vnc-pixel-format-changed", callback: (($obj: Connection, object: PixelFormat) => void)): number
+    emit(sigName: "vnc-pixel-format-changed", object: PixelFormat): void
     connect(sigName: "vnc-pointer-mode-changed", callback: (($obj: Connection, object: boolean) => void)): number
     connect_after(sigName: "vnc-pointer-mode-changed", callback: (($obj: Connection, object: boolean) => void)): number
     emit(sigName: "vnc-pointer-mode-changed", object: boolean): void
+    connect(sigName: "vnc-power-control-failed", callback: (($obj: Connection) => void)): number
+    connect_after(sigName: "vnc-power-control-failed", callback: (($obj: Connection) => void)): number
+    emit(sigName: "vnc-power-control-failed"): void
+    connect(sigName: "vnc-power-control-initialized", callback: (($obj: Connection) => void)): number
+    connect_after(sigName: "vnc-power-control-initialized", callback: (($obj: Connection) => void)): number
+    emit(sigName: "vnc-power-control-initialized"): void
     connect(sigName: "vnc-server-cut-text", callback: (($obj: Connection, object: string) => void)): number
     connect_after(sigName: "vnc-server-cut-text", callback: (($obj: Connection, object: string) => void)): number
     emit(sigName: "vnc-server-cut-text", object: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Connection, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Connection, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -458,33 +496,33 @@ export interface Cursor_ConstructProps extends GObject.Object_ConstructProps {
     hoty?: number
     width?: number
 }
-export class Cursor {
-    /* Properties of GVnc.Cursor */
+class Cursor {
+    /* Properties of GVnc-1.0.GVnc.Cursor */
     data: object
     height: number
     hotx: number
     hoty: number
     width: number
-    /* Fields of GVnc.Cursor */
+    /* Fields of GVnc-1.0.GVnc.Cursor */
     parent: GObject.Object
     priv: CursorPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GVnc.Cursor */
+    /* Methods of GVnc-1.0.GVnc.Cursor */
     get_data(): Uint8Array[]
     get_height(): number
     get_hotx(): number
     get_hoty(): number
     get_width(): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -492,21 +530,21 @@ export class Cursor {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Cursor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Cursor, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -531,12 +569,12 @@ export class Cursor {
     static new(data: Uint8Array[], hotx: number, hoty: number, width: number, height: number): Cursor
     static $gtype: GObject.Type
 }
-export class AudioFormat {
-    /* Fields of GVnc.AudioFormat */
+class AudioFormat {
+    /* Fields of GVnc-1.0.GVnc.AudioFormat */
     format: number
     nchannels: number
     frequency: number
-    /* Methods of GVnc.AudioFormat */
+    /* Methods of GVnc-1.0.GVnc.AudioFormat */
     copy(): AudioFormat
     free(): void
     static name: string
@@ -545,20 +583,20 @@ export class AudioFormat {
     /* Static methods and pseudo-constructors */
     static new(): AudioFormat
 }
-export abstract class AudioInterface {
-    /* Fields of GVnc.AudioInterface */
+abstract class AudioInterface {
+    /* Fields of GVnc-1.0.GVnc.AudioInterface */
     parent: GObject.TypeInterface
     playback_start: (audio: Audio, format: AudioFormat) => boolean
     playback_stop: (audio: Audio) => boolean
     playback_data: (audio: Audio, sample: AudioSample) => boolean
     static name: string
 }
-export class AudioSample {
-    /* Fields of GVnc.AudioSample */
+class AudioSample {
+    /* Fields of GVnc-1.0.GVnc.AudioSample */
     data: number
     length: number
     capacity: number
-    /* Methods of GVnc.AudioSample */
+    /* Methods of GVnc-1.0.GVnc.AudioSample */
     copy(): AudioSample
     free(): void
     static name: string
@@ -567,35 +605,35 @@ export class AudioSample {
     /* Static methods and pseudo-constructors */
     static new(capacity: number): AudioSample
 }
-export abstract class BaseAudioClass {
-    /* Fields of GVnc.BaseAudioClass */
+abstract class BaseAudioClass {
+    /* Fields of GVnc-1.0.GVnc.BaseAudioClass */
     parent_class: GObject.ObjectClass
     playback_start: (audio: BaseAudio, format: AudioFormat) => boolean
     playback_stop: (audio: BaseAudio) => boolean
     playback_data: (audio: BaseAudio, sample: AudioSample) => boolean
     static name: string
 }
-export class BaseAudioPrivate {
+class BaseAudioPrivate {
     static name: string
 }
-export abstract class BaseFramebufferClass {
-    /* Fields of GVnc.BaseFramebufferClass */
+abstract class BaseFramebufferClass {
+    /* Fields of GVnc-1.0.GVnc.BaseFramebufferClass */
     parent_class: GObject.ObjectClass
     _vnc_reserved: object[]
     static name: string
 }
-export class BaseFramebufferPrivate {
+class BaseFramebufferPrivate {
     static name: string
 }
-export class ColorMap {
-    /* Fields of GVnc.ColorMap */
+class ColorMap {
+    /* Fields of GVnc-1.0.GVnc.ColorMap */
     offset: number
     size: number
     colors: ColorMapEntry
-    /* Methods of GVnc.ColorMap */
+    /* Methods of GVnc-1.0.GVnc.ColorMap */
     copy(): ColorMap
     free(): void
-    lookup(idx: number, red: number, green: number, blue: number): boolean
+    lookup(idx: number): [ /* returnType */ boolean, /* red */ number, /* green */ number, /* blue */ number ]
     set(idx: number, red: number, green: number, blue: number): boolean
     static name: string
     static new(offset: number, size: number): ColorMap
@@ -603,15 +641,15 @@ export class ColorMap {
     /* Static methods and pseudo-constructors */
     static new(offset: number, size: number): ColorMap
 }
-export class ColorMapEntry {
-    /* Fields of GVnc.ColorMapEntry */
+class ColorMapEntry {
+    /* Fields of GVnc-1.0.GVnc.ColorMapEntry */
     red: number
     green: number
     blue: number
     static name: string
 }
-export abstract class ConnectionClass {
-    /* Fields of GVnc.ConnectionClass */
+abstract class ConnectionClass {
+    /* Fields of GVnc-1.0.GVnc.ConnectionClass */
     parent_class: GObject.ObjectClass
     vnc_cursor_changed: (conn: Connection, cursor: Cursor) => void
     vnc_pointer_mode_changed: (conn: Connection, absPointer: boolean) => void
@@ -630,23 +668,26 @@ export abstract class ConnectionClass {
     vnc_disconnected: (conn: Connection) => void
     vnc_led_state: (conn: Connection) => void
     vnc_error: (conn: Connection, message: string) => void
+    vnc_power_control_initialized: (conn: Connection) => void
+    vnc_power_control_failed: (conn: Connection) => void
+    vnc_desktop_rename: (conn: Connection, name: string) => void
     _vnc_reserved: object[]
     static name: string
 }
-export class ConnectionPrivate {
+class ConnectionPrivate {
     static name: string
 }
-export abstract class CursorClass {
-    /* Fields of GVnc.CursorClass */
+abstract class CursorClass {
+    /* Fields of GVnc-1.0.GVnc.CursorClass */
     parent_class: GObject.ObjectClass
     _vnc_reserved: object[]
     static name: string
 }
-export class CursorPrivate {
+class CursorPrivate {
     static name: string
 }
-export abstract class FramebufferInterface {
-    /* Fields of GVnc.FramebufferInterface */
+abstract class FramebufferInterface {
+    /* Fields of GVnc-1.0.GVnc.FramebufferInterface */
     parent: GObject.TypeInterface
     get_width: (fb: Framebuffer) => number
     get_height: (fb: Framebuffer) => number
@@ -663,8 +704,8 @@ export abstract class FramebufferInterface {
     set_color_map: (fb: Framebuffer, map: ColorMap) => void
     static name: string
 }
-export class PixelFormat {
-    /* Fields of GVnc.PixelFormat */
+class PixelFormat {
+    /* Fields of GVnc-1.0.GVnc.PixelFormat */
     bits_per_pixel: number
     depth: number
     byte_order: number
@@ -675,12 +716,15 @@ export class PixelFormat {
     red_shift: number
     green_shift: number
     blue_shift: number
-    /* Methods of GVnc.PixelFormat */
+    /* Methods of GVnc-1.0.GVnc.PixelFormat */
     copy(): PixelFormat
     free(): void
+    match(other: PixelFormat): boolean
     static name: string
     static new(): PixelFormat
     constructor()
     /* Static methods and pseudo-constructors */
     static new(): PixelFormat
 }
+}
+export default GVnc;

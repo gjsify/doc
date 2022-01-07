@@ -1,2 +1,2 @@
-imports.gi.versions.Secret = '1'
-export default imports.gi.Secret
+import Secret from 'gi://Secret?version=1';
+export default Secret;

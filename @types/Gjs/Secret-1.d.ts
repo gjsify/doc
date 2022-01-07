@@ -3,57 +3,59 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum BackendFlags {
+export namespace Secret {
+
+enum BackendFlags {
     NONE,
     OPEN_SESSION,
     LOAD_COLLECTIONS,
 }
-export enum Error {
+enum Error {
     PROTOCOL,
     IS_LOCKED,
     NO_SUCH_OBJECT,
     ALREADY_EXISTS,
     INVALID_FILE_FORMAT,
 }
-export enum SchemaAttributeType {
+enum SchemaAttributeType {
     STRING,
     INTEGER,
     BOOLEAN,
 }
-export enum SchemaType {
+enum SchemaType {
     NOTE,
     COMPAT_NETWORK,
 }
-export enum CollectionCreateFlags {
+enum CollectionCreateFlags {
     NONE,
 }
-export enum CollectionFlags {
+enum CollectionFlags {
     NONE,
     LOAD_ITEMS,
 }
-export enum ItemCreateFlags {
+enum ItemCreateFlags {
     NONE,
     REPLACE,
 }
-export enum ItemFlags {
+enum ItemFlags {
     NONE,
     LOAD_SECRET,
 }
-export enum SchemaFlags {
+enum SchemaFlags {
     NONE,
     DONT_MATCH_NAME,
 }
-export enum SearchFlags {
+enum SearchFlags {
     NONE,
     ALL,
     UNLOCK,
     LOAD_SECRETS,
 }
-export enum ServiceFlags {
+enum ServiceFlags {
     NONE,
     OPEN_SESSION,
     LOAD_COLLECTIONS,
@@ -64,31 +66,31 @@ export const COLLECTION_SESSION: string
 export const MAJOR_VERSION: number
 export const MICRO_VERSION: number
 export const MINOR_VERSION: number
-export function backend_get(flags: BackendFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-export function backend_get_finish(result: Gio.AsyncResult): Backend
-export function error_get_quark(): GLib.Quark
-export function get_schema(type: SchemaType): Schema
-export function password_clear_finish(result: Gio.AsyncResult): boolean
-export function password_clear(schema: Schema | null, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-export function password_clear_sync(schema: Schema | null, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null): boolean
-export function password_lookup_finish(result: Gio.AsyncResult): string
-export function password_lookup(schema: Schema | null, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-export function password_lookup_sync(schema: Schema | null, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null): string
-export function password_search_finish(result: Gio.AsyncResult): Retrievable[]
-export function password_search(schema: Schema | null, attributes: GLib.HashTable, flags: SearchFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-export function password_search_sync(schema: Schema | null, attributes: GLib.HashTable, flags: SearchFlags, cancellable?: Gio.Cancellable | null): Retrievable[]
-export function password_store_finish(result: Gio.AsyncResult): boolean
-export function password_store(schema: Schema | null, attributes: GLib.HashTable, collection: string | null, label: string, password: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-export function password_store_binary(schema: Schema | null, attributes: GLib.HashTable, collection: string | null, label: string, value: Value, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-export function password_store_binary_sync(schema: Schema | null, attributes: GLib.HashTable, collection: string | null, label: string, value: Value, cancellable?: Gio.Cancellable | null): boolean
-export function password_store_sync(schema: Schema | null, attributes: GLib.HashTable, collection: string | null, label: string, password: string, cancellable?: Gio.Cancellable | null): boolean
-export function password_wipe(password?: string | null): void
-export class Backend {
-    /* Methods of Gio.AsyncInitable */
+function backend_get(flags: BackendFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+function backend_get_finish(result: Gio.AsyncResult): Backend
+function error_get_quark(): GLib.Quark
+function get_schema(type: SchemaType): Schema
+function password_clear_finish(result: Gio.AsyncResult): boolean
+function password_clear(schema: Schema | null, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+function password_clear_sync(schema: Schema | null, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null): boolean
+function password_lookup_finish(result: Gio.AsyncResult): string
+function password_lookup(schema: Schema | null, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+function password_lookup_sync(schema: Schema | null, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null): string
+function password_search_finish(result: Gio.AsyncResult): Retrievable[]
+function password_search(schema: Schema | null, attributes: GLib.HashTable, flags: SearchFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+function password_search_sync(schema: Schema | null, attributes: GLib.HashTable, flags: SearchFlags, cancellable?: Gio.Cancellable | null): Retrievable[]
+function password_store_finish(result: Gio.AsyncResult): boolean
+function password_store(schema: Schema | null, attributes: GLib.HashTable, collection: string | null, label: string, password: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+function password_store_binary(schema: Schema | null, attributes: GLib.HashTable, collection: string | null, label: string, value: Value, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+function password_store_binary_sync(schema: Schema | null, attributes: GLib.HashTable, collection: string | null, label: string, value: Value, cancellable?: Gio.Cancellable | null): boolean
+function password_store_sync(schema: Schema | null, attributes: GLib.HashTable, collection: string | null, label: string, password: string, cancellable?: Gio.Cancellable | null): boolean
+function password_wipe(password?: string | null): void
+class Backend {
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Virtual methods of Secret.Backend */
+    /* Virtual methods of Secret-1.Secret.Backend */
     vfunc_clear(schema: Schema, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_clear_finish(result: Gio.AsyncResult): boolean
     vfunc_ensure_for_flags(flags: BackendFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -98,7 +100,7 @@ export class Backend {
     vfunc_search(schema: Schema, attributes: GLib.HashTable, flags: SearchFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_store(schema: Schema, attributes: GLib.HashTable, collection: string, label: string, value: Value, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_store_finish(result: Gio.AsyncResult): boolean
-    /* Virtual methods of Gio.AsyncInitable */
+    /* Virtual methods of Gio-2.0.Gio.AsyncInitable */
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
     static name: string
@@ -106,13 +108,13 @@ export class Backend {
     static get(flags: BackendFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static get_finish(result: Gio.AsyncResult): Backend
 }
-export class Retrievable {
-    /* Properties of Secret.Retrievable */
+class Retrievable {
+    /* Properties of Secret-1.Secret.Retrievable */
     attributes: GLib.HashTable
     created: number
     label: string
     modified: number
-    /* Methods of Secret.Retrievable */
+    /* Methods of Secret-1.Secret.Retrievable */
     get_attributes(): GLib.HashTable
     get_created(): number
     get_label(): string
@@ -120,7 +122,7 @@ export class Retrievable {
     retrieve_secret(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     retrieve_secret_finish(result: Gio.AsyncResult): Value | null
     retrieve_secret_sync(cancellable?: Gio.Cancellable | null): Value | null
-    /* Virtual methods of Secret.Retrievable */
+    /* Virtual methods of Secret-1.Secret.Retrievable */
     vfunc_retrieve_secret(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_retrieve_secret_finish(result: Gio.AsyncResult): Value | null
     static name: string
@@ -132,21 +134,21 @@ export interface Collection_ConstructProps extends Gio.DBusProxy_ConstructProps 
     modified?: number
     service?: Service
 }
-export class Collection {
-    /* Properties of Secret.Collection */
+class Collection {
+    /* Properties of Secret-1.Secret.Collection */
     created: number
     label: string
     readonly locked: boolean
     modified: number
-    /* Properties of Gio.DBusProxy */
+    /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of Secret.Collection */
+    /* Fields of Secret-1.Secret.Collection */
     parent: Gio.DBusProxy
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Secret.Collection */
+    /* Methods of Secret-1.Secret.Collection */
     delete(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     delete_finish(result: Gio.AsyncResult): boolean
     delete_sync(cancellable?: Gio.Cancellable | null): boolean
@@ -167,7 +169,7 @@ export class Collection {
     set_label(label: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_label_finish(result: Gio.AsyncResult): boolean
     set_label_sync(label: string, cancellable?: Gio.Cancellable | null): boolean
-    /* Methods of Gio.DBusProxy */
+    /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
     call_sync(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null): GLib.Variant
@@ -181,21 +183,21 @@ export class Collection {
     get_flags(): Gio.DBusProxyFlags
     get_interface_info(): Gio.DBusInterfaceInfo | null
     get_interface_name(): string
-    get_name(): string
+    get_name(): string | null
     get_name_owner(): string | null
     get_object_path(): string
     set_cached_property(property_name: string, value?: GLib.Variant | null): void
     set_default_timeout(timeout_msec: number): void
     set_interface_info(info?: Gio.DBusInterfaceInfo | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -203,48 +205,48 @@ export class Collection {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.AsyncInitable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     get_info(): Gio.DBusInterfaceInfo
     set_object(object?: Gio.DBusObject | null): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Secret.Collection */
+    /* Virtual methods of Secret-1.Secret.Collection */
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.DBusProxy */
+    /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusProxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusProxy */
     connect(sigName: "g-properties-changed", callback: (($obj: Collection, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     connect_after(sigName: "g-properties-changed", callback: (($obj: Collection, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     emit(sigName: "g-properties-changed", changed_properties: GLib.Variant, invalidated_properties: string[]): void
     connect(sigName: "g-signal", callback: (($obj: Collection, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     connect_after(sigName: "g-signal", callback: (($obj: Collection, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     emit(sigName: "g-signal", sender_name: string | null, signal_name: string, parameters: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Collection, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Collection, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -288,23 +290,23 @@ export interface Item_ConstructProps extends Gio.DBusProxy_ConstructProps {
     label?: string
     modified?: number
 }
-export class Item {
-    /* Properties of Secret.Item */
+class Item {
+    /* Properties of Secret-1.Secret.Item */
     readonly locked: boolean
-    /* Properties of Gio.DBusProxy */
+    /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Properties of Secret.Retrievable */
+    /* Properties of Secret-1.Secret.Retrievable */
     attributes: GLib.HashTable
     created: number
     label: string
     modified: number
-    /* Fields of Secret.Item */
+    /* Fields of Secret-1.Secret.Item */
     parent_instance: Gio.DBusProxy
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Secret.Item */
+    /* Methods of Secret-1.Secret.Item */
     delete(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     delete_finish(result: Gio.AsyncResult): boolean
     delete_sync(cancellable?: Gio.Cancellable | null): boolean
@@ -330,7 +332,7 @@ export class Item {
     set_secret(value: Value, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_secret_finish(result: Gio.AsyncResult): boolean
     set_secret_sync(value: Value, cancellable?: Gio.Cancellable | null): boolean
-    /* Methods of Gio.DBusProxy */
+    /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
     call_sync(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null): GLib.Variant
@@ -344,21 +346,21 @@ export class Item {
     get_flags(): Gio.DBusProxyFlags
     get_interface_info(): Gio.DBusInterfaceInfo | null
     get_interface_name(): string
-    get_name(): string
+    get_name(): string | null
     get_name_owner(): string | null
     get_object_path(): string
     set_cached_property(property_name: string, value?: GLib.Variant | null): void
     set_default_timeout(timeout_msec: number): void
     set_interface_info(info?: Gio.DBusInterfaceInfo | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -366,54 +368,54 @@ export class Item {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.AsyncInitable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     get_info(): Gio.DBusInterfaceInfo
     set_object(object?: Gio.DBusObject | null): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Methods of Secret.Retrievable */
+    /* Methods of Secret-1.Secret.Retrievable */
     retrieve_secret(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     retrieve_secret_finish(result: Gio.AsyncResult): Value | null
     retrieve_secret_sync(cancellable?: Gio.Cancellable | null): Value | null
-    /* Virtual methods of Secret.Item */
+    /* Virtual methods of Secret-1.Secret.Item */
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     vfunc_retrieve_secret(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_retrieve_secret_finish(result: Gio.AsyncResult): Value | null
-    /* Virtual methods of Gio.DBusProxy */
+    /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusProxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusProxy */
     connect(sigName: "g-properties-changed", callback: (($obj: Item, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     connect_after(sigName: "g-properties-changed", callback: (($obj: Item, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     emit(sigName: "g-properties-changed", changed_properties: GLib.Variant, invalidated_properties: string[]): void
     connect(sigName: "g-signal", callback: (($obj: Item, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     connect_after(sigName: "g-signal", callback: (($obj: Item, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     emit(sigName: "g-signal", sender_name: string | null, signal_name: string, parameters: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Item, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Item, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -453,21 +455,21 @@ export class Item {
 }
 export interface Prompt_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
-export class Prompt {
-    /* Properties of Gio.DBusProxy */
+class Prompt {
+    /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of Secret.Prompt */
+    /* Fields of Secret-1.Secret.Prompt */
     parent_instance: Gio.DBusProxy
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Secret.Prompt */
+    /* Methods of Secret-1.Secret.Prompt */
     perform(window_id: string | null, return_type: GLib.VariantType, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     perform_finish(result: Gio.AsyncResult): GLib.Variant
     perform_sync(window_id: string | null, cancellable: Gio.Cancellable | null, return_type: GLib.VariantType): GLib.Variant
     run(window_id: string | null, cancellable: Gio.Cancellable | null, return_type: GLib.VariantType): GLib.Variant
-    /* Methods of Gio.DBusProxy */
+    /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
     call_sync(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null): GLib.Variant
@@ -481,21 +483,21 @@ export class Prompt {
     get_flags(): Gio.DBusProxyFlags
     get_interface_info(): Gio.DBusInterfaceInfo | null
     get_interface_name(): string
-    get_name(): string
+    get_name(): string | null
     get_name_owner(): string | null
     get_object_path(): string
     set_cached_property(property_name: string, value?: GLib.Variant | null): void
     set_default_timeout(timeout_msec: number): void
     set_interface_info(info?: Gio.DBusInterfaceInfo | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -503,48 +505,48 @@ export class Prompt {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.AsyncInitable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     get_info(): Gio.DBusInterfaceInfo
     set_object(object?: Gio.DBusObject | null): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Secret.Prompt */
+    /* Virtual methods of Secret-1.Secret.Prompt */
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.DBusProxy */
+    /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusProxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusProxy */
     connect(sigName: "g-properties-changed", callback: (($obj: Prompt, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     connect_after(sigName: "g-properties-changed", callback: (($obj: Prompt, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     emit(sigName: "g-properties-changed", changed_properties: GLib.Variant, invalidated_properties: string[]): void
     connect(sigName: "g-signal", callback: (($obj: Prompt, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     connect_after(sigName: "g-signal", callback: (($obj: Prompt, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     emit(sigName: "g-signal", sender_name: string | null, signal_name: string, parameters: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Prompt, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Prompt, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -569,16 +571,16 @@ export class Prompt {
 export interface Service_ConstructProps extends Gio.DBusProxy_ConstructProps {
     flags?: ServiceFlags
 }
-export class Service {
-    /* Properties of Gio.DBusProxy */
+class Service {
+    /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of Secret.Service */
+    /* Fields of Secret-1.Secret.Service */
     parent: Gio.DBusProxy
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Secret.Service */
+    /* Methods of Secret-1.Secret.Service */
     clear(schema: Schema | null, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     clear_finish(result: Gio.AsyncResult): boolean
     clear_sync(schema: Schema | null, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null): boolean
@@ -618,7 +620,7 @@ export class Service {
     unlock(objects: Gio.DBusProxy[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     unlock_finish(result: Gio.AsyncResult): [ /* returnType */ number, /* unlocked */ Gio.DBusProxy[] | null ]
     unlock_sync(objects: Gio.DBusProxy[], cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* unlocked */ Gio.DBusProxy[] | null ]
-    /* Methods of Gio.DBusProxy */
+    /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
     call_sync(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null): GLib.Variant
@@ -632,21 +634,21 @@ export class Service {
     get_flags(): Gio.DBusProxyFlags
     get_interface_info(): Gio.DBusInterfaceInfo | null
     get_interface_name(): string
-    get_name(): string
+    get_name(): string | null
     get_name_owner(): string | null
     get_object_path(): string
     set_cached_property(property_name: string, value?: GLib.Variant | null): void
     set_default_timeout(timeout_msec: number): void
     set_interface_info(info?: Gio.DBusInterfaceInfo | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -654,23 +656,23 @@ export class Service {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.AsyncInitable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     get_info(): Gio.DBusInterfaceInfo
     set_object(object?: Gio.DBusObject | null): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Secret.Service */
+    /* Virtual methods of Secret-1.Secret.Service */
     vfunc_get_collection_gtype(): GObject.Type
     vfunc_get_item_gtype(): GObject.Type
     vfunc_prompt_async(prompt: Prompt, return_type: GLib.VariantType, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -678,7 +680,7 @@ export class Service {
     vfunc_prompt_sync(prompt: Prompt, cancellable: Gio.Cancellable | null, return_type: GLib.VariantType): GLib.Variant
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
@@ -691,25 +693,25 @@ export class Service {
     vfunc_search(schema: Schema, attributes: GLib.HashTable, flags: SearchFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_store(schema: Schema, attributes: GLib.HashTable, collection: string, label: string, value: Value, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_store_finish(result: Gio.AsyncResult): boolean
-    /* Virtual methods of Gio.DBusProxy */
+    /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusProxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusProxy */
     connect(sigName: "g-properties-changed", callback: (($obj: Service, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     connect_after(sigName: "g-properties-changed", callback: (($obj: Service, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     emit(sigName: "g-properties-changed", changed_properties: GLib.Variant, invalidated_properties: string[]): void
     connect(sigName: "g-signal", callback: (($obj: Service, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     connect_after(sigName: "g-signal", callback: (($obj: Service, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     emit(sigName: "g-signal", sender_name: string | null, signal_name: string, parameters: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Service, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Service, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -740,8 +742,8 @@ export class Service {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export abstract class BackendInterface {
-    /* Fields of Secret.BackendInterface */
+abstract class BackendInterface {
+    /* Fields of Secret-1.Secret.BackendInterface */
     parent_iface: GObject.TypeInterface
     ensure_for_flags: (self: Backend, flags: BackendFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
     ensure_for_flags_finish: (self: Backend, result: Gio.AsyncResult) => boolean
@@ -754,43 +756,43 @@ export abstract class BackendInterface {
     search: (self: Backend, schema: Schema, attributes: GLib.HashTable, flags: SearchFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
     static name: string
 }
-export abstract class CollectionClass {
-    /* Fields of Secret.CollectionClass */
+abstract class CollectionClass {
+    /* Fields of Secret-1.Secret.CollectionClass */
     parent_class: Gio.DBusProxyClass
     static name: string
 }
-export class CollectionPrivate {
+class CollectionPrivate {
     static name: string
 }
-export abstract class ItemClass {
-    /* Fields of Secret.ItemClass */
+abstract class ItemClass {
+    /* Fields of Secret-1.Secret.ItemClass */
     parent_class: Gio.DBusProxyClass
     static name: string
 }
-export class ItemPrivate {
+class ItemPrivate {
     static name: string
 }
-export abstract class PromptClass {
-    /* Fields of Secret.PromptClass */
+abstract class PromptClass {
+    /* Fields of Secret-1.Secret.PromptClass */
     parent_class: Gio.DBusProxyClass
     static name: string
 }
-export class PromptPrivate {
+class PromptPrivate {
     static name: string
 }
-export abstract class RetrievableInterface {
-    /* Fields of Secret.RetrievableInterface */
+abstract class RetrievableInterface {
+    /* Fields of Secret-1.Secret.RetrievableInterface */
     parent_iface: GObject.TypeInterface
     retrieve_secret: (self: Retrievable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
     retrieve_secret_finish: (self: Retrievable, result: Gio.AsyncResult) => Value | null
     static name: string
 }
-export class Schema {
-    /* Fields of Secret.Schema */
+class Schema {
+    /* Fields of Secret-1.Secret.Schema */
     name: string
     flags: SchemaFlags
     attributes: SchemaAttribute[]
-    /* Methods of Secret.Schema */
+    /* Methods of Secret-1.Secret.Schema */
     ref(): Schema
     unref(): void
     static name: string
@@ -799,14 +801,14 @@ export class Schema {
     /* Static methods and pseudo-constructors */
     static new(name: string, flags: SchemaFlags, attribute_names_and_types: GLib.HashTable): Schema
 }
-export class SchemaAttribute {
-    /* Fields of Secret.SchemaAttribute */
+class SchemaAttribute {
+    /* Fields of Secret-1.Secret.SchemaAttribute */
     name: string
     type: SchemaAttributeType
     static name: string
 }
-export abstract class ServiceClass {
-    /* Fields of Secret.ServiceClass */
+abstract class ServiceClass {
+    /* Fields of Secret-1.Secret.ServiceClass */
     parent_class: Gio.DBusProxyClass
     collection_gtype: GObject.Type
     item_gtype: GObject.Type
@@ -817,11 +819,11 @@ export abstract class ServiceClass {
     get_item_gtype: (self: Service) => GObject.Type
     static name: string
 }
-export class ServicePrivate {
+class ServicePrivate {
     static name: string
 }
-export class Value {
-    /* Methods of Secret.Value */
+class Value {
+    /* Methods of Secret-1.Secret.Value */
     get(): Uint8Array[]
     get_content_type(): string
     get_text(): string | null
@@ -835,3 +837,5 @@ export class Value {
     static new(secret: string, length: number, content_type: string): Value
     static new_full(secret: string, length: number, content_type: string, destroy: GLib.DestroyNotify): Value
 }
+}
+export default Secret;

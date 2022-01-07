@@ -1,2 +1,2 @@
-imports.gi.versions.GMime = '3.0'
-export default imports.gi.GMime
+import GMime from 'gi://GMime?version=3.0';
+export default GMime;

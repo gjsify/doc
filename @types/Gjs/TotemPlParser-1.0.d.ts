@@ -3,29 +3,34 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum ParserError {
+export namespace TotemPlParser {
+
+enum ParserError {
     NO_DISC,
     MOUNT_FAILED,
     EMPTY_PLAYLIST,
 }
-export enum ParserResult {
+enum ParserResult {
     UNHANDLED,
     ERROR,
     SUCCESS,
     IGNORED,
     CANCELLED,
 }
-export enum ParserType {
+enum ParserType {
     PLS,
     M3U,
     M3U_DOS,
     XSPF,
     IRIVER_PLA,
 }
+export const PARSER_CONTENT_RATING_CLEAN: string
+export const PARSER_CONTENT_RATING_EXPLICIT: string
+export const PARSER_CONTENT_RATING_UNRATED: string
 export const PARSER_FIELD_ABSTRACT: string
 export const PARSER_FIELD_ALBUM: string
 export const PARSER_FIELD_AUDIO_TRACK: string
@@ -33,6 +38,7 @@ export const PARSER_FIELD_AUTHOR: string
 export const PARSER_FIELD_AUTOPLAY: string
 export const PARSER_FIELD_BASE: string
 export const PARSER_FIELD_CONTACT: string
+export const PARSER_FIELD_CONTENT_RATING: string
 export const PARSER_FIELD_CONTENT_TYPE: string
 export const PARSER_FIELD_COPYRIGHT: string
 export const PARSER_FIELD_DESCRIPTION: string
@@ -42,6 +48,7 @@ export const PARSER_FIELD_DURATION_MS: string
 export const PARSER_FIELD_ENDTIME: string
 export const PARSER_FIELD_FILESIZE: string
 export const PARSER_FIELD_GENRE: string
+export const PARSER_FIELD_GENRES: string
 export const PARSER_FIELD_ID: string
 export const PARSER_FIELD_IMAGE_URI: string
 export const PARSER_FIELD_IS_PLAYLIST: string
@@ -59,26 +66,26 @@ export const PARSER_FIELD_VOLUME: string
 export const PARSER_VERSION_MAJOR: number
 export const PARSER_VERSION_MICRO: number
 export const PARSER_VERSION_MINOR: number
-export function parser_error_quark(): GLib.Quark
-export function parser_metadata_get_type(): GObject.Type
+function parser_error_quark(): GLib.Quark
+function parser_metadata_get_type(): GObject.Type
 export interface Parser_ConstructProps extends GObject.Object_ConstructProps {
     debug?: boolean
     disable_unsafe?: boolean
     force?: boolean
     recurse?: boolean
 }
-export class Parser {
-    /* Properties of TotemPlParser.Parser */
+class Parser {
+    /* Properties of TotemPlParser-1.0.TotemPlParser.Parser */
     debug: boolean
     disable_unsafe: boolean
     force: boolean
     recurse: boolean
-    /* Fields of TotemPlParser.Parser */
+    /* Fields of TotemPlParser-1.0.TotemPlParser.Parser */
     parent: GObject.Object
     priv: ParserPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TotemPlParser.Parser */
+    /* Methods of TotemPlParser-1.0.TotemPlParser.Parser */
     add_ignored_glob(glob: string): void
     add_ignored_mimetype(mimetype: string): void
     add_ignored_scheme(scheme: string): void
@@ -90,15 +97,15 @@ export class Parser {
     save(playlist: Playlist, dest: Gio.File, title: string, type: ParserType): boolean
     save_async(playlist: Playlist, dest: Gio.File, title: string, type: ParserType, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     save_finish(async_result: Gio.AsyncResult): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -106,25 +113,25 @@ export class Parser {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of TotemPlParser.Parser */
+    watch_closure(closure: Function): void
+    /* Virtual methods of TotemPlParser-1.0.TotemPlParser.Parser */
     vfunc_entry_parsed(uri: string, metadata: GLib.HashTable): void
     vfunc_playlist_ended(uri: string): void
     vfunc_playlist_started(uri: string, metadata: GLib.HashTable): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of TotemPlParser.Parser */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of TotemPlParser-1.0.TotemPlParser.Parser */
     connect(sigName: "entry-parsed", callback: (($obj: Parser, uri: string, metadata: GLib.HashTable) => void)): number
     connect_after(sigName: "entry-parsed", callback: (($obj: Parser, uri: string, metadata: GLib.HashTable) => void)): number
     emit(sigName: "entry-parsed", uri: string, metadata: GLib.HashTable): void
@@ -134,7 +141,7 @@ export class Parser {
     connect(sigName: "playlist-started", callback: (($obj: Parser, uri: string, metadata: GLib.HashTable) => void)): number
     connect_after(sigName: "playlist-started", callback: (($obj: Parser, uri: string, metadata: GLib.HashTable) => void)): number
     emit(sigName: "playlist-started", uri: string, metadata: GLib.HashTable): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Parser, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Parser, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -164,12 +171,12 @@ export class Parser {
 }
 export interface Playlist_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Playlist {
-    /* Fields of TotemPlParser.Playlist */
+class Playlist {
+    /* Fields of TotemPlParser-1.0.TotemPlParser.Playlist */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of TotemPlParser.Playlist */
+    /* Methods of TotemPlParser-1.0.TotemPlParser.Playlist */
     append(): /* iter */ PlaylistIter
     get_value(iter: PlaylistIter, key: string, value: any): boolean
     insert(position: number): /* iter */ PlaylistIter
@@ -179,15 +186,15 @@ export class Playlist {
     prepend(): /* iter */ PlaylistIter
     set_value(iter: PlaylistIter, key: string, value: any): boolean
     size(): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -195,21 +202,21 @@ export class Playlist {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Playlist, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Playlist, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -224,22 +231,24 @@ export class Playlist {
     static new(): Playlist
     static $gtype: GObject.Type
 }
-export abstract class ParserClass {
-    /* Fields of TotemPlParser.ParserClass */
+abstract class ParserClass {
+    /* Fields of TotemPlParser-1.0.TotemPlParser.ParserClass */
     parent_class: GObject.ObjectClass
     entry_parsed: (parser: Parser, uri: string, metadata: GLib.HashTable) => void
     playlist_started: (parser: Parser, uri: string, metadata: GLib.HashTable) => void
     playlist_ended: (parser: Parser, uri: string) => void
     static name: string
 }
-export class ParserPrivate {
+class ParserPrivate {
     static name: string
 }
-export abstract class PlaylistClass {
-    /* Fields of TotemPlParser.PlaylistClass */
+abstract class PlaylistClass {
+    /* Fields of TotemPlParser-1.0.TotemPlParser.PlaylistClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class PlaylistIter {
+class PlaylistIter {
     static name: string
 }
+}
+export default TotemPlParser;

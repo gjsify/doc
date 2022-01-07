@@ -3,21 +3,24 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type libxml2 from './libxml2-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum DomainChannelTargetType {
+export namespace LibvirtGConfig {
+
+enum DomainChannelTargetType {
     GUESTFWD,
     VIRTIO,
     SPICEPORT,
 }
-export enum DomainClockOffset {
+enum DomainClockOffset {
     UTC,
     LOCALTIME,
     TIMEZONE,
     VARIABLE,
 }
-export enum DomainConsoleTargetType {
+enum DomainConsoleTargetType {
     XEN,
     SERIAL,
     UML,
@@ -25,7 +28,7 @@ export enum DomainConsoleTargetType {
     LXC,
     OPENVZ,
 }
-export enum DomainControllerUsbModel {
+enum DomainControllerUsbModel {
     PIIX3_UHCI,
     PIIX4_UHCI,
     EHCI,
@@ -37,24 +40,24 @@ export enum DomainControllerUsbModel {
     PCI_OHCI,
     QEMU_XHCI,
 }
-export enum DomainCpuFeaturePolicy {
+enum DomainCpuFeaturePolicy {
     FORCE,
     REQUIRE,
     OPTIONAL,
     DISABLE,
     FORBID,
 }
-export enum DomainCpuMatchPolicy {
+enum DomainCpuMatchPolicy {
     MINIMUM,
     EXACT,
     STRICT,
 }
-export enum DomainCpuMode {
+enum DomainCpuMode {
     CUSTOM,
     HOST_MODEL,
     HOST_PASSTHROUGH,
 }
-export enum DomainDiskBus {
+enum DomainDiskBus {
     IDE,
     FDC,
     SCSI,
@@ -64,7 +67,7 @@ export enum DomainDiskBus {
     UML,
     SATA,
 }
-export enum DomainDiskCacheType {
+enum DomainDiskCacheType {
     DEFAULT,
     NONE,
     WRITETHROUGH,
@@ -72,21 +75,21 @@ export enum DomainDiskCacheType {
     DIRECTSYNC,
     UNSAFE,
 }
-export enum DomainDiskDriverDiscard {
+enum DomainDiskDriverDiscard {
     UNMAP,
     IGNORE,
 }
-export enum DomainDiskDriverErrorPolicy {
+enum DomainDiskDriverErrorPolicy {
     STOP,
     REPORT,
     IGNORE,
     ENOSPACE,
 }
-export enum DomainDiskDriverIoPolicy {
+enum DomainDiskDriverIoPolicy {
     THREADS,
     NATIVE,
 }
-export enum DomainDiskFormat {
+enum DomainDiskFormat {
     RAW,
     DIR,
     BOCHS,
@@ -102,33 +105,33 @@ export enum DomainDiskFormat {
     FAT,
     VHD,
 }
-export enum DomainDiskGuestDeviceType {
+enum DomainDiskGuestDeviceType {
     DISK,
     FLOPPY,
     CDROM,
 }
-export enum DomainDiskSnapshotType {
+enum DomainDiskSnapshotType {
     NO,
     INTERNAL,
     EXTERNAL,
 }
-export enum DomainDiskStartupPolicy {
+enum DomainDiskStartupPolicy {
     MANDATORY,
     REQUISITE,
     OPTIONAL,
 }
-export enum DomainDiskType {
+enum DomainDiskType {
     FILE,
     BLOCK,
     DIR,
     NETWORK,
 }
-export enum DomainFilesysAccessType {
+enum DomainFilesysAccessType {
     PASSTHROUGH,
     MAPPED,
     SQUASH,
 }
-export enum DomainFilesysDriverType {
+enum DomainFilesysDriverType {
     DEFAULT,
     PATH,
     HANDLE,
@@ -136,7 +139,7 @@ export enum DomainFilesysDriverType {
     NBD,
     PLOOP,
 }
-export enum DomainFilesysType {
+enum DomainFilesysType {
     MOUNT,
     BLOCK,
     FILE,
@@ -144,7 +147,7 @@ export enum DomainFilesysType {
     RAM,
     BIND,
 }
-export enum DomainGraphicsSpiceImageCompression {
+enum DomainGraphicsSpiceImageCompression {
     AUTO_GLZ,
     AUTO_LZ,
     QUIC,
@@ -152,22 +155,22 @@ export enum DomainGraphicsSpiceImageCompression {
     LZ,
     OFF,
 }
-export enum DomainInputBus {
+enum DomainInputBus {
     PS2,
     USB,
     XEN,
 }
-export enum DomainInputDeviceType {
+enum DomainInputDeviceType {
     MOUSE,
     TABLET,
     KEYBOARD,
 }
-export enum DomainInterfaceLinkState {
+enum DomainInterfaceLinkState {
     DEFAULT,
     UP,
     DOWN,
 }
-export enum DomainLifecycleAction {
+enum DomainLifecycleAction {
     DESTROY,
     RESTART,
     PRESERVE,
@@ -175,45 +178,45 @@ export enum DomainLifecycleAction {
     COREDUMP_DESTROY,
     COREDUMP_RESTART,
 }
-export enum DomainLifecycleEvent {
+enum DomainLifecycleEvent {
     ON_POWEROFF,
     ON_REBOOT,
     ON_CRASH,
 }
-export enum DomainMemballoonModel {
+enum DomainMemballoonModel {
     NONE,
     VIRTIO,
 }
-export enum DomainOsBootDevice {
+enum DomainOsBootDevice {
     FD,
     HD,
     CDROM,
     NETWORK,
 }
-export enum DomainOsFirmware {
+enum DomainOsFirmware {
     BIOS,
     EFI,
 }
-export enum DomainOsSmBiosMode {
+enum DomainOsSmBiosMode {
     EMULATE,
     HOST,
     SYSINFO,
 }
-export enum DomainOsType {
+enum DomainOsType {
     HVM,
     LINUX,
     EXE,
     XEN,
     UML,
 }
-export enum DomainRedirdevBus {
+enum DomainRedirdevBus {
     USB,
 }
-export enum DomainSeclabelType {
+enum DomainSeclabelType {
     DYNAMIC,
     STATIC,
 }
-export enum DomainSnapshotDomainState {
+enum DomainSnapshotDomainState {
     NOSTATE,
     RUNNING,
     BLOCKED,
@@ -224,12 +227,12 @@ export enum DomainSnapshotDomainState {
     PMSUSPENDED,
     DISK_SNAPSHOT,
 }
-export enum DomainSnapshotMemoryState {
+enum DomainSnapshotMemoryState {
     NONE,
     INTERNAL,
     EXTERNAL,
 }
-export enum DomainSoundModel {
+enum DomainSoundModel {
     SB16,
     ES1370,
     PCSPK,
@@ -237,13 +240,13 @@ export enum DomainSoundModel {
     ICH6,
     ICH9,
 }
-export enum DomainTimerTickPolicy {
+enum DomainTimerTickPolicy {
     DELAY,
     CATCHUP,
     MERGE,
     DISCARD,
 }
-export enum DomainVideoModel {
+enum DomainVideoModel {
     VGA,
     CIRRUS,
     VMVGA,
@@ -253,7 +256,7 @@ export enum DomainVideoModel {
     VIRTIO,
     BOCHS,
 }
-export enum DomainVirtType {
+enum DomainVirtType {
     QEMU,
     KQEMU,
     KVM,
@@ -270,7 +273,7 @@ export enum DomainVirtType {
     ONE,
     PHYP,
 }
-export enum StoragePoolType {
+enum StoragePoolType {
     DIR,
     FS,
     NETFS,
@@ -280,35 +283,35 @@ export enum StoragePoolType {
     SCSI,
     MPATH,
 }
-export enum StorageVolTargetFeatures {
+enum StorageVolTargetFeatures {
     REFCOUNT,
 }
-export function init(argv?: string[] | null): /* argv */ string[] | null
-export function init_check(argv?: string[] | null): [ /* returnType */ boolean, /* argv */ string[] | null ]
+function init(argv?: string[] | null): /* argv */ string[] | null
+function init_check(argv?: string[] | null): [ /* returnType */ boolean, /* argv */ string[] | null ]
 export interface Capabilities_ConstructProps extends Object_ConstructProps {
 }
-export class Capabilities {
-    /* Fields of LibvirtGConfig.Capabilities */
+class Capabilities {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Capabilities */
     parent: Object
     priv: CapabilitiesPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.Capabilities */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Capabilities */
     get_guests(): CapabilitiesGuest[]
     get_host(): CapabilitiesHost
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -316,21 +319,21 @@ export class Capabilities {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Capabilities, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Capabilities, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -350,32 +353,32 @@ export class Capabilities {
 }
 export interface CapabilitiesCpu_ConstructProps extends Object_ConstructProps {
 }
-export class CapabilitiesCpu {
-    /* Fields of LibvirtGConfig.CapabilitiesCpu */
+class CapabilitiesCpu {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpu */
     parent: Object
     priv: CapabilitiesCpuPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.CapabilitiesCpu */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpu */
     add_feature(feature: CapabilitiesCpuFeature): void
     get_arch(): string
     get_features(): CapabilitiesCpuFeature[]
     get_model(): CapabilitiesCpuModel
     get_topology(): CapabilitiesCpuTopology
     set_topology(topology: CapabilitiesCpuTopology): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -383,23 +386,23 @@ export class CapabilitiesCpu {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of LibvirtGConfig.CapabilitiesCpu */
+    watch_closure(closure: Function): void
+    /* Virtual methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpu */
     vfunc_get_features(): CapabilitiesCpuFeature[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CapabilitiesCpu, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CapabilitiesCpu, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -414,28 +417,28 @@ export class CapabilitiesCpu {
 }
 export interface CapabilitiesCpuFeature_ConstructProps extends Object_ConstructProps {
 }
-export class CapabilitiesCpuFeature {
-    /* Fields of LibvirtGConfig.CapabilitiesCpuFeature */
+class CapabilitiesCpuFeature {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuFeature */
     parent: Object
     priv: CapabilitiesCpuFeaturePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.CapabilitiesCpuFeature */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuFeature */
     get_name(): string
     set_name(name: string): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -443,21 +446,21 @@ export class CapabilitiesCpuFeature {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CapabilitiesCpuFeature, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CapabilitiesCpuFeature, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -472,28 +475,28 @@ export class CapabilitiesCpuFeature {
 }
 export interface CapabilitiesCpuModel_ConstructProps extends Object_ConstructProps {
 }
-export class CapabilitiesCpuModel {
-    /* Fields of LibvirtGConfig.CapabilitiesCpuModel */
+class CapabilitiesCpuModel {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuModel */
     parent: Object
     priv: CapabilitiesCpuModelPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.CapabilitiesCpuModel */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuModel */
     get_name(): string
     set_name(name: string): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -501,21 +504,21 @@ export class CapabilitiesCpuModel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CapabilitiesCpuModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CapabilitiesCpuModel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -535,32 +538,32 @@ export class CapabilitiesCpuModel {
 }
 export interface CapabilitiesCpuTopology_ConstructProps extends Object_ConstructProps {
 }
-export class CapabilitiesCpuTopology {
-    /* Fields of LibvirtGConfig.CapabilitiesCpuTopology */
+class CapabilitiesCpuTopology {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuTopology */
     parent: Object
     priv: CapabilitiesCpuTopologyPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.CapabilitiesCpuTopology */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuTopology */
     get_cores(): number
     get_sockets(): number
     get_threads(): number
     set_cores(cores: number): void
     set_sockets(sockets: number): void
     set_threads(threads: number): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -568,21 +571,21 @@ export class CapabilitiesCpuTopology {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CapabilitiesCpuTopology, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CapabilitiesCpuTopology, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -602,29 +605,29 @@ export class CapabilitiesCpuTopology {
 }
 export interface CapabilitiesGuest_ConstructProps extends Object_ConstructProps {
 }
-export class CapabilitiesGuest {
-    /* Fields of LibvirtGConfig.CapabilitiesGuest */
+class CapabilitiesGuest {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuest */
     parent: Object
     priv: CapabilitiesGuestPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.CapabilitiesGuest */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuest */
     get_arch(): CapabilitiesGuestArch
     get_features(): CapabilitiesGuestFeature[]
     get_os_type(): DomainOsType
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -632,21 +635,21 @@ export class CapabilitiesGuest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CapabilitiesGuest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CapabilitiesGuest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -661,29 +664,29 @@ export class CapabilitiesGuest {
 }
 export interface CapabilitiesGuestArch_ConstructProps extends Object_ConstructProps {
 }
-export class CapabilitiesGuestArch {
-    /* Fields of LibvirtGConfig.CapabilitiesGuestArch */
+class CapabilitiesGuestArch {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestArch */
     parent: Object
     priv: CapabilitiesGuestArchPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.CapabilitiesGuestArch */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestArch */
     get_domains(): CapabilitiesGuestDomain[]
     get_emulator(): string
     get_name(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -691,21 +694,21 @@ export class CapabilitiesGuestArch {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CapabilitiesGuestArch, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CapabilitiesGuestArch, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -720,28 +723,28 @@ export class CapabilitiesGuestArch {
 }
 export interface CapabilitiesGuestDomain_ConstructProps extends Object_ConstructProps {
 }
-export class CapabilitiesGuestDomain {
-    /* Fields of LibvirtGConfig.CapabilitiesGuestDomain */
+class CapabilitiesGuestDomain {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestDomain */
     parent: Object
     priv: CapabilitiesGuestDomainPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.CapabilitiesGuestDomain */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestDomain */
     get_emulator(): string
     get_virt_type(): DomainVirtType
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -749,21 +752,21 @@ export class CapabilitiesGuestDomain {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CapabilitiesGuestDomain, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CapabilitiesGuestDomain, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -778,27 +781,27 @@ export class CapabilitiesGuestDomain {
 }
 export interface CapabilitiesGuestFeature_ConstructProps extends Object_ConstructProps {
 }
-export class CapabilitiesGuestFeature {
-    /* Fields of LibvirtGConfig.CapabilitiesGuestFeature */
+class CapabilitiesGuestFeature {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestFeature */
     parent: Object
     priv: CapabilitiesGuestFeaturePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.CapabilitiesGuestFeature */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestFeature */
     get_name(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -806,21 +809,21 @@ export class CapabilitiesGuestFeature {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CapabilitiesGuestFeature, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CapabilitiesGuestFeature, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -835,29 +838,29 @@ export class CapabilitiesGuestFeature {
 }
 export interface CapabilitiesHost_ConstructProps extends Object_ConstructProps {
 }
-export class CapabilitiesHost {
-    /* Fields of LibvirtGConfig.CapabilitiesHost */
+class CapabilitiesHost {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesHost */
     parent: Object
     priv: CapabilitiesHostPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.CapabilitiesHost */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesHost */
     get_cpu(): CapabilitiesCpu
     get_secmodels(): CapabilitiesHostSecModel[]
     get_uuid(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -865,21 +868,21 @@ export class CapabilitiesHost {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CapabilitiesHost, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CapabilitiesHost, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -894,28 +897,28 @@ export class CapabilitiesHost {
 }
 export interface CapabilitiesHostSecModel_ConstructProps extends Object_ConstructProps {
 }
-export class CapabilitiesHostSecModel {
-    /* Fields of LibvirtGConfig.CapabilitiesHostSecModel */
+class CapabilitiesHostSecModel {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesHostSecModel */
     parent: Object
     priv: CapabilitiesHostSecModelPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.CapabilitiesHostSecModel */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesHostSecModel */
     get_doi(): string
     get_model(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -923,21 +926,21 @@ export class CapabilitiesHostSecModel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CapabilitiesHostSecModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CapabilitiesHostSecModel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -960,8 +963,8 @@ export interface Domain_ConstructProps extends Object_ConstructProps {
     uuid?: string
     vcpu?: number
 }
-export class Domain {
-    /* Properties of LibvirtGConfig.Domain */
+class Domain {
+    /* Properties of LibvirtGConfig-1.0.LibvirtGConfig.Domain */
     current_memory: number
     description: string
     features: string[]
@@ -970,12 +973,12 @@ export class Domain {
     title: string
     uuid: string
     vcpu: number
-    /* Fields of LibvirtGConfig.Domain */
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Domain */
     parent: Object
     priv: DomainPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.Domain */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Domain */
     add_device(device: DomainDevice): void
     get_clock(): DomainClock
     get_cpu(): DomainCpu
@@ -1009,19 +1012,19 @@ export class Domain {
     set_uuid(uuid?: string | null): void
     set_vcpus(vcpu_count: number): void
     set_virt_type(type: DomainVirtType): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1029,21 +1032,21 @@ export class Domain {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Domain, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Domain, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1079,25 +1082,25 @@ export class Domain {
 }
 export interface DomainAddress_ConstructProps extends Object_ConstructProps {
 }
-export class DomainAddress {
-    /* Fields of LibvirtGConfig.DomainAddress */
+class DomainAddress {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddress */
     parent: Object
     priv: DomainAddressPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1105,21 +1108,21 @@ export class DomainAddress {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainAddress, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainAddress, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1134,13 +1137,13 @@ export class DomainAddress {
 }
 export interface DomainAddressPci_ConstructProps extends DomainAddress_ConstructProps {
 }
-export class DomainAddressPci {
-    /* Fields of LibvirtGConfig.DomainAddressPci */
+class DomainAddressPci {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddressPci */
     parent: DomainAddress
     priv: DomainAddressPciPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainAddressPci */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddressPci */
     get_bus(): number
     get_domain(): number
     get_function(): number
@@ -1151,19 +1154,19 @@ export class DomainAddressPci {
     set_function(function_: number): void
     set_multifunction(multifunction: boolean): void
     set_slot(slot: number): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1171,21 +1174,21 @@ export class DomainAddressPci {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainAddressPci, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainAddressPci, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1205,28 +1208,28 @@ export class DomainAddressPci {
 }
 export interface DomainAddressUsb_ConstructProps extends DomainAddress_ConstructProps {
 }
-export class DomainAddressUsb {
-    /* Fields of LibvirtGConfig.DomainAddressUsb */
+class DomainAddressUsb {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddressUsb */
     parent: DomainAddress
     priv: DomainAddressUsbPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainAddressUsb */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddressUsb */
     set_bus(bus: number): void
     set_port(port: string): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1234,21 +1237,21 @@ export class DomainAddressUsb {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainAddressUsb, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainAddressUsb, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1268,27 +1271,27 @@ export class DomainAddressUsb {
 }
 export interface DomainCapabilities_ConstructProps extends Object_ConstructProps {
 }
-export class DomainCapabilities {
-    /* Fields of LibvirtGConfig.DomainCapabilities */
+class DomainCapabilities {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCapabilities */
     parent: Object
     priv: DomainCapabilitiesPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainCapabilities */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainCapabilities */
     get_os(): DomainCapabilitiesOs
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1296,21 +1299,21 @@ export class DomainCapabilities {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainCapabilities, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainCapabilities, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1330,27 +1333,27 @@ export class DomainCapabilities {
 }
 export interface DomainCapabilitiesOs_ConstructProps extends Object_ConstructProps {
 }
-export class DomainCapabilitiesOs {
-    /* Fields of LibvirtGConfig.DomainCapabilitiesOs */
+class DomainCapabilitiesOs {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCapabilitiesOs */
     parent: Object
     priv: DomainCapabilitiesOsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainCapabilitiesOs */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainCapabilitiesOs */
     get_firmwares(): DomainOsFirmware[]
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1358,23 +1361,23 @@ export class DomainCapabilitiesOs {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of LibvirtGConfig.DomainCapabilitiesOs */
+    watch_closure(closure: Function): void
+    /* Virtual methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainCapabilitiesOs */
     vfunc_get_firmwares(): DomainOsFirmware[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainCapabilitiesOs, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainCapabilitiesOs, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1389,35 +1392,35 @@ export class DomainCapabilitiesOs {
 }
 export interface DomainChannel_ConstructProps extends DomainChardev_ConstructProps {
 }
-export class DomainChannel {
-    /* Fields of LibvirtGConfig.DomainChannel */
+class DomainChannel {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChannel */
     parent: DomainChardev
     priv: DomainChannelPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainChannel */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChannel */
     get_target_name(): string
     get_target_type(): DomainChannelTargetType
     set_target_name(name: string): void
     set_target_type(type: DomainChannelTargetType): void
-    /* Methods of LibvirtGConfig.DomainChardev */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
     get_source(): DomainChardevSource
     set_source(source: DomainChardevSource): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1425,21 +1428,21 @@ export class DomainChannel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainChannel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainChannel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1459,30 +1462,30 @@ export class DomainChannel {
 }
 export interface DomainChardev_ConstructProps extends DomainDevice_ConstructProps {
 }
-export class DomainChardev {
-    /* Fields of LibvirtGConfig.DomainChardev */
+class DomainChardev {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
     parent: DomainDevice
     priv: DomainChardevPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainChardev */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
     get_source(): DomainChardevSource
     set_source(source: DomainChardevSource): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1490,21 +1493,21 @@ export class DomainChardev {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainChardev, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainChardev, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1519,25 +1522,25 @@ export class DomainChardev {
 }
 export interface DomainChardevSource_ConstructProps extends Object_ConstructProps {
 }
-export class DomainChardevSource {
-    /* Fields of LibvirtGConfig.DomainChardevSource */
+class DomainChardevSource {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSource */
     parent: Object
     priv: DomainChardevSourcePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1545,21 +1548,21 @@ export class DomainChardevSource {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainChardevSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainChardevSource, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1574,28 +1577,28 @@ export class DomainChardevSource {
 }
 export interface DomainChardevSourcePty_ConstructProps extends DomainChardevSource_ConstructProps {
 }
-export class DomainChardevSourcePty {
-    /* Fields of LibvirtGConfig.DomainChardevSourcePty */
+class DomainChardevSourcePty {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourcePty */
     parent: DomainChardevSource
     priv: DomainChardevSourcePtyPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainChardevSourcePty */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourcePty */
     get_path(): string
     set_path(path: string): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1603,21 +1606,21 @@ export class DomainChardevSourcePty {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainChardevSourcePty, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainChardevSourcePty, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1637,28 +1640,28 @@ export class DomainChardevSourcePty {
 }
 export interface DomainChardevSourceSpicePort_ConstructProps extends DomainChardevSource_ConstructProps {
 }
-export class DomainChardevSourceSpicePort {
-    /* Fields of LibvirtGConfig.DomainChardevSourceSpicePort */
+class DomainChardevSourceSpicePort {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceSpicePort */
     parent: DomainChardevSource
     priv: DomainChardevSourceSpicePortPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainChardevSourceSpicePort */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceSpicePort */
     get_channel(): string
     set_channel(channel: string): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1666,21 +1669,21 @@ export class DomainChardevSourceSpicePort {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainChardevSourceSpicePort, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainChardevSourceSpicePort, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1700,25 +1703,25 @@ export class DomainChardevSourceSpicePort {
 }
 export interface DomainChardevSourceSpiceVmc_ConstructProps extends DomainChardevSource_ConstructProps {
 }
-export class DomainChardevSourceSpiceVmc {
-    /* Fields of LibvirtGConfig.DomainChardevSourceSpiceVmc */
+class DomainChardevSourceSpiceVmc {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceSpiceVmc */
     parent: DomainChardevSource
     priv: DomainChardevSourceSpiceVmcPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1726,21 +1729,21 @@ export class DomainChardevSourceSpiceVmc {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainChardevSourceSpiceVmc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainChardevSourceSpiceVmc, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1760,25 +1763,25 @@ export class DomainChardevSourceSpiceVmc {
 }
 export interface DomainChardevSourceUnix_ConstructProps extends DomainChardevSource_ConstructProps {
 }
-export class DomainChardevSourceUnix {
-    /* Fields of LibvirtGConfig.DomainChardevSourceUnix */
+class DomainChardevSourceUnix {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceUnix */
     parent: DomainChardevSource
     priv: DomainChardevSourceUnixPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1786,21 +1789,21 @@ export class DomainChardevSourceUnix {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainChardevSourceUnix, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainChardevSourceUnix, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1820,13 +1823,13 @@ export class DomainChardevSourceUnix {
 }
 export interface DomainClock_ConstructProps extends Object_ConstructProps {
 }
-export class DomainClock {
-    /* Fields of LibvirtGConfig.DomainClock */
+class DomainClock {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainClock */
     parent: Object
     priv: DomainClockPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainClock */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainClock */
     add_timer(timer: DomainTimer): void
     get_offset(): DomainClockOffset
     get_timezone(): string
@@ -1834,19 +1837,19 @@ export class DomainClock {
     set_offset(offset: DomainClockOffset): void
     set_timezone(tz: string): void
     set_variable_offset(seconds: number): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1854,21 +1857,21 @@ export class DomainClock {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainClock, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainClock, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1888,32 +1891,32 @@ export class DomainClock {
 }
 export interface DomainConsole_ConstructProps extends DomainChardev_ConstructProps {
 }
-export class DomainConsole {
-    /* Fields of LibvirtGConfig.DomainConsole */
+class DomainConsole {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainConsole */
     parent: DomainChardev
     priv: DomainConsolePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainConsole */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainConsole */
     set_target_type(type: DomainConsoleTargetType): void
-    /* Methods of LibvirtGConfig.DomainChardev */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
     get_source(): DomainChardevSource
     set_source(source: DomainChardevSource): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1921,21 +1924,21 @@ export class DomainConsole {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainConsole, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainConsole, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1955,31 +1958,33 @@ export class DomainConsole {
 }
 export interface DomainController_ConstructProps extends DomainDevice_ConstructProps {
 }
-export class DomainController {
-    /* Fields of LibvirtGConfig.DomainController */
+class DomainController {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainController */
     parent: DomainDevice
     priv: DomainControllerPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainController */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainController */
     get_index(): number
+    get_ports(): number
     set_address(address?: DomainAddress | null): void
     set_index(index: number): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    set_ports(ports: number): void
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1987,21 +1992,21 @@ export class DomainController {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainController, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainController, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2016,34 +2021,36 @@ export class DomainController {
 }
 export interface DomainControllerUsb_ConstructProps extends DomainController_ConstructProps {
 }
-export class DomainControllerUsb {
-    /* Fields of LibvirtGConfig.DomainControllerUsb */
+class DomainControllerUsb {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainControllerUsb */
     parent: DomainController
     priv: DomainControllerUsbPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainControllerUsb */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainControllerUsb */
     set_master(master: DomainControllerUsb, startport: number): void
     set_model(model: DomainControllerUsbModel): void
-    /* Methods of LibvirtGConfig.DomainController */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainController */
     get_index(): number
+    get_ports(): number
     set_address(address?: DomainAddress | null): void
     set_index(index: number): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    set_ports(ports: number): void
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2051,21 +2058,21 @@ export class DomainControllerUsb {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainControllerUsb, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainControllerUsb, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2085,38 +2092,38 @@ export class DomainControllerUsb {
 }
 export interface DomainCpu_ConstructProps extends CapabilitiesCpu_ConstructProps {
 }
-export class DomainCpu {
-    /* Fields of LibvirtGConfig.DomainCpu */
+class DomainCpu {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpu */
     parent: CapabilitiesCpu
     priv: DomainCpuPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainCpu */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpu */
     get_match_policy(): DomainCpuMatchPolicy
     get_mode(): DomainCpuMode
     set_match_policy(policy: DomainCpuMatchPolicy): void
     set_mode(mode: DomainCpuMode): void
     set_model(model: DomainCpuModel): void
-    /* Methods of LibvirtGConfig.CapabilitiesCpu */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpu */
     add_feature(feature: CapabilitiesCpuFeature): void
     get_arch(): string
     get_features(): CapabilitiesCpuFeature[]
     get_model(): CapabilitiesCpuModel
     get_topology(): CapabilitiesCpuTopology
     set_topology(topology: CapabilitiesCpuTopology): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2124,23 +2131,23 @@ export class DomainCpu {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of LibvirtGConfig.CapabilitiesCpu */
+    watch_closure(closure: Function): void
+    /* Virtual methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpu */
     vfunc_get_features(): CapabilitiesCpuFeature[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainCpu, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainCpu, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2160,31 +2167,31 @@ export class DomainCpu {
 }
 export interface DomainCpuFeature_ConstructProps extends CapabilitiesCpuFeature_ConstructProps {
 }
-export class DomainCpuFeature {
-    /* Fields of LibvirtGConfig.DomainCpuFeature */
+class DomainCpuFeature {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpuFeature */
     parent: CapabilitiesCpu
     priv: DomainCpuFeaturePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainCpuFeature */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpuFeature */
     get_policy(): DomainCpuFeaturePolicy
     set_policy(policy: DomainCpuFeaturePolicy): void
-    /* Methods of LibvirtGConfig.CapabilitiesCpuFeature */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuFeature */
     get_name(): string
     set_name(name: string): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2192,21 +2199,21 @@ export class DomainCpuFeature {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainCpuFeature, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainCpuFeature, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2226,28 +2233,28 @@ export class DomainCpuFeature {
 }
 export interface DomainCpuModel_ConstructProps extends CapabilitiesCpuModel_ConstructProps {
 }
-export class DomainCpuModel {
-    /* Fields of LibvirtGConfig.DomainCpuModel */
+class DomainCpuModel {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpuModel */
     parent: CapabilitiesCpuModel
     priv: DomainCpuModelPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.CapabilitiesCpuModel */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuModel */
     get_name(): string
     set_name(name: string): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2255,21 +2262,21 @@ export class DomainCpuModel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainCpuModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainCpuModel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2289,27 +2296,27 @@ export class DomainCpuModel {
 }
 export interface DomainDevice_ConstructProps extends Object_ConstructProps {
 }
-export class DomainDevice {
-    /* Fields of LibvirtGConfig.DomainDevice */
+class DomainDevice {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     parent: Object
     priv: DomainDevicePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2317,21 +2324,21 @@ export class DomainDevice {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainDevice, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2346,13 +2353,13 @@ export class DomainDevice {
 }
 export interface DomainDisk_ConstructProps extends DomainDevice_ConstructProps {
 }
-export class DomainDisk {
-    /* Fields of LibvirtGConfig.DomainDisk */
+class DomainDisk {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDisk */
     parent: DomainDevice
     priv: DomainDiskPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainDisk */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDisk */
     get_disk_type(): DomainDiskType
     get_driver(): DomainDiskDriver
     get_driver_cache(): DomainDiskCacheType
@@ -2378,21 +2385,21 @@ export class DomainDisk {
     set_target_bus(bus: DomainDiskBus): void
     set_target_dev(dev: string): void
     set_type(type: DomainDiskType): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2400,21 +2407,21 @@ export class DomainDisk {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainDisk, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainDisk, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2434,13 +2441,13 @@ export class DomainDisk {
 }
 export interface DomainDiskDriver_ConstructProps extends Object_ConstructProps {
 }
-export class DomainDiskDriver {
-    /* Fields of LibvirtGConfig.DomainDiskDriver */
+class DomainDiskDriver {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDiskDriver */
     parent: Object
     priv: DomainDiskDriverPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainDiskDriver */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDiskDriver */
     get_cache(): DomainDiskCacheType
     get_copy_on_read(): boolean
     get_discard(): DomainDiskDriverDiscard
@@ -2455,19 +2462,19 @@ export class DomainDiskDriver {
     set_format(format: DomainDiskFormat): void
     set_io_policy(policy: DomainDiskDriverIoPolicy): void
     set_name(name: string): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2475,21 +2482,21 @@ export class DomainDiskDriver {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainDiskDriver, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainDiskDriver, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2509,13 +2516,13 @@ export class DomainDiskDriver {
 }
 export interface DomainFilesys_ConstructProps extends DomainDevice_ConstructProps {
 }
-export class DomainFilesys {
-    /* Fields of LibvirtGConfig.DomainFilesys */
+class DomainFilesys {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainFilesys */
     parent: DomainDevice
     priv: DomainFilesysPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainFilesys */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainFilesys */
     set_access_type(type: DomainFilesysAccessType): void
     set_driver_format(format: DomainDiskFormat): void
     set_driver_type(type: DomainFilesysDriverType): void
@@ -2524,21 +2531,21 @@ export class DomainFilesys {
     set_source(source: string): void
     set_target(target: string): void
     set_type(type: DomainFilesysType): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2546,21 +2553,21 @@ export class DomainFilesys {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainFilesys, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainFilesys, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2580,27 +2587,27 @@ export class DomainFilesys {
 }
 export interface DomainGraphics_ConstructProps extends DomainDevice_ConstructProps {
 }
-export class DomainGraphics {
-    /* Fields of LibvirtGConfig.DomainGraphics */
+class DomainGraphics {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphics */
     parent: DomainDevice
     priv: DomainGraphicsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2608,21 +2615,21 @@ export class DomainGraphics {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainGraphics, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainGraphics, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2637,32 +2644,32 @@ export class DomainGraphics {
 }
 export interface DomainGraphicsDesktop_ConstructProps extends DomainGraphics_ConstructProps {
 }
-export class DomainGraphicsDesktop {
-    /* Fields of LibvirtGConfig.DomainGraphicsDesktop */
+class DomainGraphicsDesktop {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsDesktop */
     parent: DomainGraphics
     priv: DomainGraphicsDesktopPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainGraphicsDesktop */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsDesktop */
     get_display(): string
     get_fullscreen(): boolean
     set_display(disp: string): void
     set_fullscreen(fullscreen: boolean): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2670,21 +2677,21 @@ export class DomainGraphicsDesktop {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainGraphicsDesktop, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainGraphicsDesktop, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2704,13 +2711,13 @@ export class DomainGraphicsDesktop {
 }
 export interface DomainGraphicsRdp_ConstructProps extends DomainGraphics_ConstructProps {
 }
-export class DomainGraphicsRdp {
-    /* Fields of LibvirtGConfig.DomainGraphicsRdp */
+class DomainGraphicsRdp {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsRdp */
     parent: DomainGraphics
     priv: DomainGraphicsRdpPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainGraphicsRdp */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsRdp */
     get_multi_user(): boolean
     get_port(): number
     get_replace_user(): boolean
@@ -2718,21 +2725,21 @@ export class DomainGraphicsRdp {
     set_multi_user(multi_user: boolean): void
     set_port(port: number): void
     set_replace_user(replace_user: boolean): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2740,21 +2747,21 @@ export class DomainGraphicsRdp {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainGraphicsRdp, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainGraphicsRdp, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2774,31 +2781,31 @@ export class DomainGraphicsRdp {
 }
 export interface DomainGraphicsSdl_ConstructProps extends DomainGraphics_ConstructProps {
 }
-export class DomainGraphicsSdl {
-    /* Fields of LibvirtGConfig.DomainGraphicsSdl */
+class DomainGraphicsSdl {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsSdl */
     parent: DomainGraphics
     priv: DomainGraphicsSdlPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainGraphicsSdl */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsSdl */
     set_display(disp: string): void
     set_fullscreen(fullscreen: boolean): void
     set_xauthority(path: string): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2806,21 +2813,21 @@ export class DomainGraphicsSdl {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainGraphicsSdl, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainGraphicsSdl, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2840,13 +2847,13 @@ export class DomainGraphicsSdl {
 }
 export interface DomainGraphicsSpice_ConstructProps extends DomainGraphics_ConstructProps {
 }
-export class DomainGraphicsSpice {
-    /* Fields of LibvirtGConfig.DomainGraphicsSpice */
+class DomainGraphicsSpice {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsSpice */
     parent: DomainGraphics
     priv: DomainGraphicsSpicePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainGraphicsSpice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsSpice */
     get_image_compression(): DomainGraphicsSpiceImageCompression
     get_port(): number
     set_autoport(autoport: boolean): void
@@ -2855,21 +2862,21 @@ export class DomainGraphicsSpice {
     set_password(password: string): void
     set_port(port: number): void
     set_tls_port(port: number): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2877,21 +2884,21 @@ export class DomainGraphicsSpice {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainGraphicsSpice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainGraphicsSpice, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2911,34 +2918,34 @@ export class DomainGraphicsSpice {
 }
 export interface DomainGraphicsVnc_ConstructProps extends DomainGraphics_ConstructProps {
 }
-export class DomainGraphicsVnc {
-    /* Fields of LibvirtGConfig.DomainGraphicsVnc */
+class DomainGraphicsVnc {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsVnc */
     parent: DomainGraphics
     priv: DomainGraphicsVncPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainGraphicsVnc */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsVnc */
     get_port(): number
     get_socket(): string
     set_autoport(autoport: boolean): void
     set_password(password: string): void
     set_port(port: number): void
     set_socket(socket: string): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2946,21 +2953,21 @@ export class DomainGraphicsVnc {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainGraphicsVnc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainGraphicsVnc, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2980,34 +2987,34 @@ export class DomainGraphicsVnc {
 }
 export interface DomainHostdev_ConstructProps extends DomainDevice_ConstructProps {
 }
-export class DomainHostdev {
-    /* Fields of LibvirtGConfig.DomainHostdev */
+class DomainHostdev {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainHostdev */
     parent: DomainDevice
     priv: DomainHostdevPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainHostdev */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainHostdev */
     get_boot_order(): number
     get_readonly(): boolean
     get_shareable(): boolean
     set_boot_order(order: number): void
     set_readonly(readonly: boolean): void
     set_shareable(shareable: boolean): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3015,21 +3022,21 @@ export class DomainHostdev {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainHostdev, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainHostdev, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3044,13 +3051,13 @@ export class DomainHostdev {
 }
 export interface DomainHostdevPci_ConstructProps extends DomainHostdev_ConstructProps {
 }
-export class DomainHostdevPci {
-    /* Fields of LibvirtGConfig.DomainHostdevPci */
+class DomainHostdevPci {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainHostdevPci */
     parent: DomainHostdev
     priv: DomainHostdevPciPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainHostdevPci */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainHostdevPci */
     get_address(): DomainAddressPci
     get_managed(): boolean
     get_rom_bar(): boolean
@@ -3059,28 +3066,28 @@ export class DomainHostdevPci {
     set_managed(managed: boolean): void
     set_rom_bar(bar: boolean): void
     set_rom_file(file: string): void
-    /* Methods of LibvirtGConfig.DomainHostdev */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainHostdev */
     get_boot_order(): number
     get_readonly(): boolean
     get_shareable(): boolean
     set_boot_order(order: number): void
     set_readonly(readonly: boolean): void
     set_shareable(shareable: boolean): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3088,21 +3095,21 @@ export class DomainHostdevPci {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainHostdevPci, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainHostdevPci, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3122,32 +3129,32 @@ export class DomainHostdevPci {
 }
 export interface DomainInput_ConstructProps extends DomainDevice_ConstructProps {
 }
-export class DomainInput {
-    /* Fields of LibvirtGConfig.DomainInput */
+class DomainInput {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInput */
     parent: DomainDevice
     priv: DomainInputPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainInput */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInput */
     get_bus(): DomainInputBus
     get_device_type(): DomainInputDeviceType
     set_bus(bus: DomainInputBus): void
     set_device_type(type: DomainInputDeviceType): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3155,21 +3162,21 @@ export class DomainInput {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainInput, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainInput, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3189,13 +3196,13 @@ export class DomainInput {
 }
 export interface DomainInterface_ConstructProps extends DomainDevice_ConstructProps {
 }
-export class DomainInterface {
-    /* Fields of LibvirtGConfig.DomainInterface */
+class DomainInterface {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterface */
     parent: DomainDevice
     priv: DomainInterfacePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainInterface */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterface */
     get_filterref(): DomainInterfaceFilterref
     get_ifname(): string
     get_link_state(): DomainInterfaceLinkState
@@ -3206,21 +3213,21 @@ export class DomainInterface {
     set_link_state(state: DomainInterfaceLinkState): void
     set_mac(mac_address: string): void
     set_model(model: string): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3228,21 +3235,21 @@ export class DomainInterface {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainInterface, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainInterface, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3257,15 +3264,15 @@ export class DomainInterface {
 }
 export interface DomainInterfaceBridge_ConstructProps extends DomainInterface_ConstructProps {
 }
-export class DomainInterfaceBridge {
-    /* Fields of LibvirtGConfig.DomainInterfaceBridge */
+class DomainInterfaceBridge {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceBridge */
     parent: DomainInterface
     priv: DomainInterfaceBridgePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainInterfaceBridge */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceBridge */
     set_source(brname: string): void
-    /* Methods of LibvirtGConfig.DomainInterface */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterface */
     get_filterref(): DomainInterfaceFilterref
     get_ifname(): string
     get_link_state(): DomainInterfaceLinkState
@@ -3276,21 +3283,21 @@ export class DomainInterfaceBridge {
     set_link_state(state: DomainInterfaceLinkState): void
     set_mac(mac_address: string): void
     set_model(model: string): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3298,21 +3305,21 @@ export class DomainInterfaceBridge {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainInterfaceBridge, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainInterfaceBridge, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3332,30 +3339,30 @@ export class DomainInterfaceBridge {
 }
 export interface DomainInterfaceFilterref_ConstructProps extends Object_ConstructProps {
 }
-export class DomainInterfaceFilterref {
-    /* Fields of LibvirtGConfig.DomainInterfaceFilterref */
+class DomainInterfaceFilterref {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceFilterref */
     parent: Object
     priv: DomainInterfaceFilterrefPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainInterfaceFilterref */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceFilterref */
     add_parameter(parameter: DomainInterfaceFilterrefParameter): void
     get_name(): string
     get_parameters(): DomainInterfaceFilterrefParameter[]
     set_name(filter: string): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3363,21 +3370,21 @@ export class DomainInterfaceFilterref {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainInterfaceFilterref, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainInterfaceFilterref, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3397,30 +3404,30 @@ export class DomainInterfaceFilterref {
 }
 export interface DomainInterfaceFilterrefParameter_ConstructProps extends Object_ConstructProps {
 }
-export class DomainInterfaceFilterrefParameter {
-    /* Fields of LibvirtGConfig.DomainInterfaceFilterrefParameter */
+class DomainInterfaceFilterrefParameter {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceFilterrefParameter */
     parent: Object
     priv: DomainInterfaceFilterrefParameterPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainInterfaceFilterrefParameter */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceFilterrefParameter */
     get_name(): string
     get_value(): string
     set_name(name: string): void
     set_value(value: string): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3428,21 +3435,21 @@ export class DomainInterfaceFilterrefParameter {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainInterfaceFilterrefParameter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainInterfaceFilterrefParameter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3462,15 +3469,15 @@ export class DomainInterfaceFilterrefParameter {
 }
 export interface DomainInterfaceNetwork_ConstructProps extends DomainInterface_ConstructProps {
 }
-export class DomainInterfaceNetwork {
-    /* Fields of LibvirtGConfig.DomainInterfaceNetwork */
+class DomainInterfaceNetwork {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceNetwork */
     parent: DomainInterface
     priv: DomainInterfaceNetworkPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainInterfaceNetwork */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceNetwork */
     set_source(source: string): void
-    /* Methods of LibvirtGConfig.DomainInterface */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterface */
     get_filterref(): DomainInterfaceFilterref
     get_ifname(): string
     get_link_state(): DomainInterfaceLinkState
@@ -3481,21 +3488,21 @@ export class DomainInterfaceNetwork {
     set_link_state(state: DomainInterfaceLinkState): void
     set_mac(mac_address: string): void
     set_model(model: string): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3503,21 +3510,21 @@ export class DomainInterfaceNetwork {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainInterfaceNetwork, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainInterfaceNetwork, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3537,13 +3544,13 @@ export class DomainInterfaceNetwork {
 }
 export interface DomainInterfaceUser_ConstructProps extends DomainInterface_ConstructProps {
 }
-export class DomainInterfaceUser {
-    /* Fields of LibvirtGConfig.DomainInterfaceUser */
+class DomainInterfaceUser {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceUser */
     parent: DomainInterface
     priv: DomainInterfaceUserPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainInterface */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterface */
     get_filterref(): DomainInterfaceFilterref
     get_ifname(): string
     get_link_state(): DomainInterfaceLinkState
@@ -3554,21 +3561,21 @@ export class DomainInterfaceUser {
     set_link_state(state: DomainInterfaceLinkState): void
     set_mac(mac_address: string): void
     set_model(model: string): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3576,21 +3583,21 @@ export class DomainInterfaceUser {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainInterfaceUser, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainInterfaceUser, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3610,29 +3617,29 @@ export class DomainInterfaceUser {
 }
 export interface DomainMemballoon_ConstructProps extends DomainDevice_ConstructProps {
 }
-export class DomainMemballoon {
-    /* Fields of LibvirtGConfig.DomainMemballoon */
+class DomainMemballoon {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainMemballoon */
     parent: DomainDevice
     priv: DomainMemballoonPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainMemballoon */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainMemballoon */
     set_model(model: DomainMemballoonModel): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3640,21 +3647,21 @@ export class DomainMemballoon {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainMemballoon, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainMemballoon, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3674,13 +3681,13 @@ export class DomainMemballoon {
 }
 export interface DomainOs_ConstructProps extends Object_ConstructProps {
 }
-export class DomainOs {
-    /* Fields of LibvirtGConfig.DomainOs */
+class DomainOs {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainOs */
     parent: Object
     priv: DomainOsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainOs */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainOs */
     bios_enable_serial(enable: boolean): void
     enable_boot_menu(enable: boolean): void
     get_arch(): string
@@ -3699,19 +3706,19 @@ export class DomainOs {
     set_os_type(type: DomainOsType): void
     set_ramdisk(ramdisk?: string | null): void
     set_smbios_mode(mode: DomainOsSmBiosMode): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3719,21 +3726,21 @@ export class DomainOs {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainOs, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainOs, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3753,30 +3760,30 @@ export class DomainOs {
 }
 export interface DomainParallel_ConstructProps extends DomainChardev_ConstructProps {
 }
-export class DomainParallel {
-    /* Fields of LibvirtGConfig.DomainParallel */
+class DomainParallel {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainParallel */
     parent: DomainChardev
     priv: DomainParallelPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainChardev */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
     get_source(): DomainChardevSource
     set_source(source: DomainChardevSource): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3784,21 +3791,21 @@ export class DomainParallel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainParallel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainParallel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3818,28 +3825,28 @@ export class DomainParallel {
 }
 export interface DomainPowerManagement_ConstructProps extends Object_ConstructProps {
 }
-export class DomainPowerManagement {
-    /* Fields of LibvirtGConfig.DomainPowerManagement */
+class DomainPowerManagement {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainPowerManagement */
     parent: Object
     priv: DomainPowerManagementPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainPowerManagement */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainPowerManagement */
     set_disk_suspend_enabled(enabled: boolean): void
     set_mem_suspend_enabled(enabled: boolean): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3847,21 +3854,21 @@ export class DomainPowerManagement {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainPowerManagement, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainPowerManagement, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3881,33 +3888,33 @@ export class DomainPowerManagement {
 }
 export interface DomainRedirdev_ConstructProps extends DomainChardev_ConstructProps {
 }
-export class DomainRedirdev {
-    /* Fields of LibvirtGConfig.DomainRedirdev */
+class DomainRedirdev {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainRedirdev */
     parent: DomainChardev
     priv: DomainRedirdevPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainRedirdev */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainRedirdev */
     set_address(address?: DomainAddress | null): void
     set_bus(bus: DomainRedirdevBus): void
-    /* Methods of LibvirtGConfig.DomainChardev */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
     get_source(): DomainChardevSource
     set_source(source: DomainChardevSource): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3915,21 +3922,21 @@ export class DomainRedirdev {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainRedirdev, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainRedirdev, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3949,30 +3956,30 @@ export class DomainRedirdev {
 }
 export interface DomainSeclabel_ConstructProps extends Object_ConstructProps {
 }
-export class DomainSeclabel {
-    /* Fields of LibvirtGConfig.DomainSeclabel */
+class DomainSeclabel {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSeclabel */
     parent: Object
     priv: DomainSeclabelPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainSeclabel */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainSeclabel */
     set_baselabel(label?: string | null): void
     set_label(label?: string | null): void
     set_model(model: string): void
     set_type(type: DomainSeclabelType): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3980,21 +3987,21 @@ export class DomainSeclabel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainSeclabel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainSeclabel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4014,30 +4021,30 @@ export class DomainSeclabel {
 }
 export interface DomainSerial_ConstructProps extends DomainChardev_ConstructProps {
 }
-export class DomainSerial {
-    /* Fields of LibvirtGConfig.DomainSerial */
+class DomainSerial {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSerial */
     parent: DomainChardev
     priv: DomainSerialPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainChardev */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
     get_source(): DomainChardevSource
     set_source(source: DomainChardevSource): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4045,21 +4052,21 @@ export class DomainSerial {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainSerial, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainSerial, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4079,27 +4086,27 @@ export class DomainSerial {
 }
 export interface DomainSmartcard_ConstructProps extends DomainDevice_ConstructProps {
 }
-export class DomainSmartcard {
-    /* Fields of LibvirtGConfig.DomainSmartcard */
+class DomainSmartcard {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcard */
     parent: DomainDevice
     priv: DomainSmartcardPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4107,21 +4114,21 @@ export class DomainSmartcard {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainSmartcard, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainSmartcard, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4138,27 +4145,27 @@ export class DomainSmartcard {
 }
 export interface DomainSmartcardHost_ConstructProps extends DomainSmartcard_ConstructProps {
 }
-export class DomainSmartcardHost {
-    /* Fields of LibvirtGConfig.DomainSmartcardHost */
+class DomainSmartcardHost {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardHost */
     parent: DomainSmartcard
     priv: DomainSmartcardHostPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4166,21 +4173,21 @@ export class DomainSmartcardHost {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainSmartcardHost, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainSmartcardHost, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4200,30 +4207,30 @@ export class DomainSmartcardHost {
 }
 export interface DomainSmartcardHostCertificates_ConstructProps extends DomainSmartcard_ConstructProps {
 }
-export class DomainSmartcardHostCertificates {
-    /* Fields of LibvirtGConfig.DomainSmartcardHostCertificates */
+class DomainSmartcardHostCertificates {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardHostCertificates */
     parent: DomainSmartcard
     priv: DomainSmartcardHostCertificatesPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainSmartcardHostCertificates */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardHostCertificates */
     set_certificates(cert1?: string | null, cert2?: string | null, cert3?: string | null): void
     set_database(path?: string | null): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4231,21 +4238,21 @@ export class DomainSmartcardHostCertificates {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainSmartcardHostCertificates, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainSmartcardHostCertificates, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4265,29 +4272,29 @@ export class DomainSmartcardHostCertificates {
 }
 export interface DomainSmartcardPassthrough_ConstructProps extends DomainSmartcard_ConstructProps {
 }
-export class DomainSmartcardPassthrough {
-    /* Fields of LibvirtGConfig.DomainSmartcardPassthrough */
+class DomainSmartcardPassthrough {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardPassthrough */
     parent: DomainSmartcard
     priv: DomainSmartcardPassthroughPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainSmartcardPassthrough */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardPassthrough */
     set_source(source: DomainChardevSource): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4295,21 +4302,21 @@ export class DomainSmartcardPassthrough {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainSmartcardPassthrough, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainSmartcardPassthrough, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4329,13 +4336,13 @@ export class DomainSmartcardPassthrough {
 }
 export interface DomainSnapshot_ConstructProps extends Object_ConstructProps {
 }
-export class DomainSnapshot {
-    /* Fields of LibvirtGConfig.DomainSnapshot */
+class DomainSnapshot {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSnapshot */
     parent: Object
     priv: DomainSnapshotPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainSnapshot */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainSnapshot */
     add_disk(disk: DomainSnapshotDisk): void
     get_creation_time(): number
     get_description(): string
@@ -4351,19 +4358,19 @@ export class DomainSnapshot {
     set_memory_file(filename: string): void
     set_memory_state(state: DomainSnapshotMemoryState): void
     set_name(name: string): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4371,21 +4378,21 @@ export class DomainSnapshot {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainSnapshot, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainSnapshot, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4405,13 +4412,13 @@ export class DomainSnapshot {
 }
 export interface DomainSnapshotDisk_ConstructProps extends Object_ConstructProps {
 }
-export class DomainSnapshotDisk {
-    /* Fields of LibvirtGConfig.DomainSnapshotDisk */
+class DomainSnapshotDisk {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSnapshotDisk */
     parent: Object
     priv: DomainSnapshotDiskPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainSnapshotDisk */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainSnapshotDisk */
     get_driver_format(): DomainDiskFormat
     get_name(): string
     get_snapshot_type(): DomainDiskSnapshotType
@@ -4420,19 +4427,19 @@ export class DomainSnapshotDisk {
     set_name(name: string): void
     set_snapshot_type(type: DomainDiskSnapshotType): void
     set_source_file(filename: string): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4440,21 +4447,21 @@ export class DomainSnapshotDisk {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainSnapshotDisk, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainSnapshotDisk, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4474,29 +4481,29 @@ export class DomainSnapshotDisk {
 }
 export interface DomainSound_ConstructProps extends DomainDevice_ConstructProps {
 }
-export class DomainSound {
-    /* Fields of LibvirtGConfig.DomainSound */
+class DomainSound {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSound */
     parent: DomainDevice
     priv: DomainSoundPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainSound */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainSound */
     set_model(model: DomainSoundModel): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4504,21 +4511,21 @@ export class DomainSound {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainSound, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainSound, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4538,30 +4545,30 @@ export class DomainSound {
 }
 export interface DomainTimer_ConstructProps extends Object_ConstructProps {
 }
-export class DomainTimer {
-    /* Fields of LibvirtGConfig.DomainTimer */
+class DomainTimer {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimer */
     parent: Object
     priv: DomainTimerPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainTimer */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimer */
     get_present(): boolean
     get_tick_policy(): DomainTimerTickPolicy
     set_present(present: boolean): void
     set_tick_policy(policy: DomainTimerTickPolicy): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4569,21 +4576,21 @@ export class DomainTimer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainTimer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainTimer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4598,30 +4605,30 @@ export class DomainTimer {
 }
 export interface DomainTimerHpet_ConstructProps extends DomainTimer_ConstructProps {
 }
-export class DomainTimerHpet {
-    /* Fields of LibvirtGConfig.DomainTimerHpet */
+class DomainTimerHpet {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimerHpet */
     parent: DomainTimer
     priv: DomainTimerHpetPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainTimer */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimer */
     get_present(): boolean
     get_tick_policy(): DomainTimerTickPolicy
     set_present(present: boolean): void
     set_tick_policy(policy: DomainTimerTickPolicy): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4629,21 +4636,21 @@ export class DomainTimerHpet {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainTimerHpet, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainTimerHpet, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4663,30 +4670,30 @@ export class DomainTimerHpet {
 }
 export interface DomainTimerPit_ConstructProps extends DomainTimer_ConstructProps {
 }
-export class DomainTimerPit {
-    /* Fields of LibvirtGConfig.DomainTimerPit */
+class DomainTimerPit {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimerPit */
     parent: DomainTimer
     priv: DomainTimerPitPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainTimer */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimer */
     get_present(): boolean
     get_tick_policy(): DomainTimerTickPolicy
     set_present(present: boolean): void
     set_tick_policy(policy: DomainTimerTickPolicy): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4694,21 +4701,21 @@ export class DomainTimerPit {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainTimerPit, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainTimerPit, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4728,30 +4735,30 @@ export class DomainTimerPit {
 }
 export interface DomainTimerRtc_ConstructProps extends DomainTimer_ConstructProps {
 }
-export class DomainTimerRtc {
-    /* Fields of LibvirtGConfig.DomainTimerRtc */
+class DomainTimerRtc {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimerRtc */
     parent: DomainTimer
     priv: DomainTimerRtcPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainTimer */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimer */
     get_present(): boolean
     get_tick_policy(): DomainTimerTickPolicy
     set_present(present: boolean): void
     set_tick_policy(policy: DomainTimerTickPolicy): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4759,21 +4766,21 @@ export class DomainTimerRtc {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainTimerRtc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainTimerRtc, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4793,13 +4800,13 @@ export class DomainTimerRtc {
 }
 export interface DomainVideo_ConstructProps extends DomainDevice_ConstructProps {
 }
-export class DomainVideo {
-    /* Fields of LibvirtGConfig.DomainVideo */
+class DomainVideo {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainVideo */
     parent: DomainDevice
     priv: DomainVideoPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.DomainVideo */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainVideo */
     get_model(): DomainVideoModel
     set_accel3d(accel3d: boolean): void
     set_heads(head_count: number): void
@@ -4807,21 +4814,21 @@ export class DomainVideo {
     set_ram(kbytes: number): void
     set_vgamem(kbytes: number): void
     set_vram(kbytes: number): void
-    /* Methods of LibvirtGConfig.DomainDevice */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4829,21 +4836,21 @@ export class DomainVideo {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DomainVideo, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DomainVideo, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4863,25 +4870,25 @@ export class DomainVideo {
 }
 export interface Interface_ConstructProps extends Object_ConstructProps {
 }
-export class Interface {
-    /* Fields of LibvirtGConfig.Interface */
+class Interface {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Interface */
     parent: Object
     priv: InterfacePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4889,21 +4896,21 @@ export class Interface {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Interface, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Interface, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4923,25 +4930,25 @@ export class Interface {
 }
 export interface Network_ConstructProps extends Object_ConstructProps {
 }
-export class Network {
-    /* Fields of LibvirtGConfig.Network */
+class Network {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Network */
     parent: Object
     priv: NetworkPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4949,21 +4956,21 @@ export class Network {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Network, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Network, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4983,25 +4990,25 @@ export class Network {
 }
 export interface NetworkFilter_ConstructProps extends Object_ConstructProps {
 }
-export class NetworkFilter {
-    /* Fields of LibvirtGConfig.NetworkFilter */
+class NetworkFilter {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.NetworkFilter */
     parent: Object
     priv: NetworkFilterPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5009,21 +5016,21 @@ export class NetworkFilter {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: NetworkFilter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: NetworkFilter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5043,25 +5050,25 @@ export class NetworkFilter {
 }
 export interface NodeDevice_ConstructProps extends Object_ConstructProps {
 }
-export class NodeDevice {
-    /* Fields of LibvirtGConfig.NodeDevice */
+class NodeDevice {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.NodeDevice */
     parent: Object
     priv: NodeDevicePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5069,21 +5076,21 @@ export class NodeDevice {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: NodeDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: NodeDevice, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5105,25 +5112,25 @@ export interface Object_ConstructProps extends GObject.Object_ConstructProps {
     node?: object
     schema?: string
 }
-export class Object {
-    /* Fields of LibvirtGConfig.Object */
+class Object {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     parent: GObject.Object
     priv: ObjectPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5131,21 +5138,21 @@ export class Object {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5164,25 +5171,25 @@ export class Object {
 }
 export interface Secret_ConstructProps extends Object_ConstructProps {
 }
-export class Secret {
-    /* Fields of LibvirtGConfig.Secret */
+class Secret {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Secret */
     parent: Object
     priv: SecretPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5190,21 +5197,21 @@ export class Secret {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Secret, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Secret, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5224,13 +5231,13 @@ export class Secret {
 }
 export interface StoragePermissions_ConstructProps extends Object_ConstructProps {
 }
-export class StoragePermissions {
-    /* Fields of LibvirtGConfig.StoragePermissions */
+class StoragePermissions {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePermissions */
     parent: Object
     priv: StoragePermissionsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.StoragePermissions */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.StoragePermissions */
     get_group(): number
     get_label(): string
     get_mode(): number
@@ -5239,19 +5246,19 @@ export class StoragePermissions {
     set_label(label?: string | null): void
     set_mode(mode: number): void
     set_owner(owner: number): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5259,21 +5266,21 @@ export class StoragePermissions {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StoragePermissions, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StoragePermissions, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5293,13 +5300,13 @@ export class StoragePermissions {
 }
 export interface StoragePool_ConstructProps extends Object_ConstructProps {
 }
-export class StoragePool {
-    /* Fields of LibvirtGConfig.StoragePool */
+class StoragePool {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePool */
     parent: Object
     priv: StoragePoolPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.StoragePool */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.StoragePool */
     get_allocation(): number
     get_available(): number
     get_capacity(): number
@@ -5316,19 +5323,19 @@ export class StoragePool {
     set_source(source?: StoragePoolSource | null): void
     set_target(target?: StoragePoolTarget | null): void
     set_uuid(uuid?: string | null): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5336,21 +5343,21 @@ export class StoragePool {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StoragePool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StoragePool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5370,13 +5377,13 @@ export class StoragePool {
 }
 export interface StoragePoolSource_ConstructProps extends Object_ConstructProps {
 }
-export class StoragePoolSource {
-    /* Fields of LibvirtGConfig.StoragePoolSource */
+class StoragePoolSource {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePoolSource */
     parent: Object
     priv: StoragePoolSourcePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.StoragePoolSource */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.StoragePoolSource */
     get_adapter(): string
     get_device_path(): string
     get_directory(): string
@@ -5393,19 +5400,19 @@ export class StoragePoolSource {
     set_name(name?: string | null): void
     set_product(product: string): void
     set_vendor(vendor: string): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5413,21 +5420,21 @@ export class StoragePoolSource {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StoragePoolSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StoragePoolSource, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5447,30 +5454,30 @@ export class StoragePoolSource {
 }
 export interface StoragePoolTarget_ConstructProps extends Object_ConstructProps {
 }
-export class StoragePoolTarget {
-    /* Fields of LibvirtGConfig.StoragePoolTarget */
+class StoragePoolTarget {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePoolTarget */
     parent: Object
     priv: StoragePoolTargetPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.StoragePoolTarget */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.StoragePoolTarget */
     get_path(): string
     get_permissions(): StoragePermissions
     set_path(path?: string | null): void
     set_permissions(perms: StoragePermissions): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5478,21 +5485,21 @@ export class StoragePoolTarget {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StoragePoolTarget, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StoragePoolTarget, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5512,31 +5519,31 @@ export class StoragePoolTarget {
 }
 export interface StorageVol_ConstructProps extends Object_ConstructProps {
 }
-export class StorageVol {
-    /* Fields of LibvirtGConfig.StorageVol */
+class StorageVol {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StorageVol */
     parent: Object
     priv: StorageVolPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.StorageVol */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.StorageVol */
     set_allocation(allocation: number): void
     set_backing_store(backing_store?: StorageVolBackingStore | null): void
     set_capacity(capacity: number): void
     set_name(name?: string | null): void
     set_target(target?: StorageVolTarget | null): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5544,21 +5551,21 @@ export class StorageVol {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StorageVol, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StorageVol, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5578,28 +5585,28 @@ export class StorageVol {
 }
 export interface StorageVolBackingStore_ConstructProps extends Object_ConstructProps {
 }
-export class StorageVolBackingStore {
-    /* Fields of LibvirtGConfig.StorageVolBackingStore */
+class StorageVolBackingStore {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StorageVolBackingStore */
     parent: Object
     priv: StorageVolBackingStorePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.StorageVolBackingStore */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.StorageVolBackingStore */
     set_format(format: string): void
     set_path(path?: string | null): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5607,21 +5614,21 @@ export class StorageVolBackingStore {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StorageVolBackingStore, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StorageVolBackingStore, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5641,30 +5648,30 @@ export class StorageVolBackingStore {
 }
 export interface StorageVolTarget_ConstructProps extends Object_ConstructProps {
 }
-export class StorageVolTarget {
-    /* Fields of LibvirtGConfig.StorageVolTarget */
+class StorageVolTarget {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StorageVolTarget */
     parent: Object
     priv: StorageVolTargetPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of LibvirtGConfig.StorageVolTarget */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.StorageVolTarget */
     set_compat(compat?: string | null): void
     set_features(features: number): void
     set_format(format: string): void
     set_permissions(perms?: StoragePermissions | null): void
-    /* Methods of LibvirtGConfig.Object */
+    /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
     validate(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5672,21 +5679,21 @@ export class StorageVolTarget {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StorageVolTarget, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StorageVolTarget, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5704,743 +5711,745 @@ export class StorageVolTarget {
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): StorageVolTarget
     static $gtype: GObject.Type
 }
-export abstract class CapabilitiesClass {
-    /* Fields of LibvirtGConfig.CapabilitiesClass */
+abstract class CapabilitiesClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export abstract class CapabilitiesCpuClass {
-    /* Fields of LibvirtGConfig.CapabilitiesCpuClass */
+abstract class CapabilitiesCpuClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuClass */
     parent_class: ObjectClass
     get_features: (cpu: CapabilitiesCpu) => CapabilitiesCpuFeature[]
     padding: object[]
     static name: string
 }
-export abstract class CapabilitiesCpuFeatureClass {
-    /* Fields of LibvirtGConfig.CapabilitiesCpuFeatureClass */
+abstract class CapabilitiesCpuFeatureClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuFeatureClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class CapabilitiesCpuFeaturePrivate {
+class CapabilitiesCpuFeaturePrivate {
     static name: string
 }
-export abstract class CapabilitiesCpuModelClass {
-    /* Fields of LibvirtGConfig.CapabilitiesCpuModelClass */
+abstract class CapabilitiesCpuModelClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuModelClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class CapabilitiesCpuModelPrivate {
+class CapabilitiesCpuModelPrivate {
     static name: string
 }
-export class CapabilitiesCpuPrivate {
+class CapabilitiesCpuPrivate {
     static name: string
 }
-export abstract class CapabilitiesCpuTopologyClass {
-    /* Fields of LibvirtGConfig.CapabilitiesCpuTopologyClass */
+abstract class CapabilitiesCpuTopologyClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuTopologyClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class CapabilitiesCpuTopologyPrivate {
+class CapabilitiesCpuTopologyPrivate {
     static name: string
 }
-export abstract class CapabilitiesGuestArchClass {
-    /* Fields of LibvirtGConfig.CapabilitiesGuestArchClass */
+abstract class CapabilitiesGuestArchClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestArchClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class CapabilitiesGuestArchPrivate {
+class CapabilitiesGuestArchPrivate {
     static name: string
 }
-export abstract class CapabilitiesGuestClass {
-    /* Fields of LibvirtGConfig.CapabilitiesGuestClass */
+abstract class CapabilitiesGuestClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export abstract class CapabilitiesGuestDomainClass {
-    /* Fields of LibvirtGConfig.CapabilitiesGuestDomainClass */
+abstract class CapabilitiesGuestDomainClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestDomainClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class CapabilitiesGuestDomainPrivate {
+class CapabilitiesGuestDomainPrivate {
     static name: string
 }
-export abstract class CapabilitiesGuestFeatureClass {
-    /* Fields of LibvirtGConfig.CapabilitiesGuestFeatureClass */
+abstract class CapabilitiesGuestFeatureClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestFeatureClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class CapabilitiesGuestFeaturePrivate {
+class CapabilitiesGuestFeaturePrivate {
     static name: string
 }
-export class CapabilitiesGuestPrivate {
+class CapabilitiesGuestPrivate {
     static name: string
 }
-export abstract class CapabilitiesHostClass {
-    /* Fields of LibvirtGConfig.CapabilitiesHostClass */
+abstract class CapabilitiesHostClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesHostClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class CapabilitiesHostPrivate {
+class CapabilitiesHostPrivate {
     static name: string
 }
-export abstract class CapabilitiesHostSecModelClass {
-    /* Fields of LibvirtGConfig.CapabilitiesHostSecModelClass */
+abstract class CapabilitiesHostSecModelClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesHostSecModelClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class CapabilitiesHostSecModelPrivate {
+class CapabilitiesHostSecModelPrivate {
     static name: string
 }
-export class CapabilitiesPrivate {
+class CapabilitiesPrivate {
     static name: string
 }
-export abstract class DomainAddressClass {
-    /* Fields of LibvirtGConfig.DomainAddressClass */
+abstract class DomainAddressClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddressClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export abstract class DomainAddressPciClass {
-    /* Fields of LibvirtGConfig.DomainAddressPciClass */
+abstract class DomainAddressPciClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddressPciClass */
     parent_class: DomainAddressClass
     padding: object[]
     static name: string
 }
-export class DomainAddressPciPrivate {
+class DomainAddressPciPrivate {
     static name: string
 }
-export class DomainAddressPrivate {
+class DomainAddressPrivate {
     static name: string
 }
-export abstract class DomainAddressUsbClass {
-    /* Fields of LibvirtGConfig.DomainAddressUsbClass */
+abstract class DomainAddressUsbClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddressUsbClass */
     parent_class: DomainAddressClass
     padding: object[]
     static name: string
 }
-export class DomainAddressUsbPrivate {
+class DomainAddressUsbPrivate {
     static name: string
 }
-export abstract class DomainCapabilitiesClass {
-    /* Fields of LibvirtGConfig.DomainCapabilitiesClass */
+abstract class DomainCapabilitiesClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCapabilitiesClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export abstract class DomainCapabilitiesOsClass {
-    /* Fields of LibvirtGConfig.DomainCapabilitiesOsClass */
+abstract class DomainCapabilitiesOsClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCapabilitiesOsClass */
     parent_class: ObjectClass
     get_firmwares: (os: DomainCapabilitiesOs) => DomainOsFirmware[]
     padding: object[]
     static name: string
 }
-export class DomainCapabilitiesOsPrivate {
+class DomainCapabilitiesOsPrivate {
     static name: string
 }
-export class DomainCapabilitiesPrivate {
+class DomainCapabilitiesPrivate {
     static name: string
 }
-export abstract class DomainChannelClass {
-    /* Fields of LibvirtGConfig.DomainChannelClass */
+abstract class DomainChannelClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChannelClass */
     parent_class: DomainChardevClass
     padding: object[]
     static name: string
 }
-export class DomainChannelPrivate {
+class DomainChannelPrivate {
     static name: string
 }
-export abstract class DomainChardevClass {
-    /* Fields of LibvirtGConfig.DomainChardevClass */
+abstract class DomainChardevClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevClass */
     parent_class: DomainDeviceClass
     padding: object[]
     static name: string
 }
-export class DomainChardevPrivate {
+class DomainChardevPrivate {
     static name: string
 }
-export abstract class DomainChardevSourceClass {
-    /* Fields of LibvirtGConfig.DomainChardevSourceClass */
+abstract class DomainChardevSourceClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class DomainChardevSourcePrivate {
+class DomainChardevSourcePrivate {
     static name: string
 }
-export abstract class DomainChardevSourcePtyClass {
-    /* Fields of LibvirtGConfig.DomainChardevSourcePtyClass */
+abstract class DomainChardevSourcePtyClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourcePtyClass */
     parent_class: DomainChardevSourceClass
     padding: object[]
     static name: string
 }
-export class DomainChardevSourcePtyPrivate {
+class DomainChardevSourcePtyPrivate {
     static name: string
 }
-export abstract class DomainChardevSourceSpicePortClass {
-    /* Fields of LibvirtGConfig.DomainChardevSourceSpicePortClass */
+abstract class DomainChardevSourceSpicePortClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceSpicePortClass */
     parent_class: DomainChardevSourceClass
     padding: object[]
     static name: string
 }
-export class DomainChardevSourceSpicePortPrivate {
+class DomainChardevSourceSpicePortPrivate {
     static name: string
 }
-export abstract class DomainChardevSourceSpiceVmcClass {
-    /* Fields of LibvirtGConfig.DomainChardevSourceSpiceVmcClass */
+abstract class DomainChardevSourceSpiceVmcClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceSpiceVmcClass */
     parent_class: DomainChardevSourceClass
     padding: object[]
     static name: string
 }
-export class DomainChardevSourceSpiceVmcPrivate {
+class DomainChardevSourceSpiceVmcPrivate {
     static name: string
 }
-export abstract class DomainChardevSourceUnixClass {
-    /* Fields of LibvirtGConfig.DomainChardevSourceUnixClass */
+abstract class DomainChardevSourceUnixClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceUnixClass */
     parent_class: DomainChardevSourceClass
     padding: object[]
     static name: string
 }
-export class DomainChardevSourceUnixPrivate {
+class DomainChardevSourceUnixPrivate {
     static name: string
 }
-export abstract class DomainClass {
-    /* Fields of LibvirtGConfig.DomainClass */
+abstract class DomainClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export abstract class DomainClockClass {
-    /* Fields of LibvirtGConfig.DomainClockClass */
+abstract class DomainClockClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainClockClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class DomainClockPrivate {
+class DomainClockPrivate {
     static name: string
 }
-export abstract class DomainConsoleClass {
-    /* Fields of LibvirtGConfig.DomainConsoleClass */
+abstract class DomainConsoleClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainConsoleClass */
     parent_class: DomainChardevClass
     padding: object[]
     static name: string
 }
-export class DomainConsolePrivate {
+class DomainConsolePrivate {
     static name: string
 }
-export abstract class DomainControllerClass {
-    /* Fields of LibvirtGConfig.DomainControllerClass */
+abstract class DomainControllerClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainControllerClass */
     parent_class: DomainDeviceClass
     padding: object[]
     static name: string
 }
-export class DomainControllerPrivate {
+class DomainControllerPrivate {
     static name: string
 }
-export abstract class DomainControllerUsbClass {
-    /* Fields of LibvirtGConfig.DomainControllerUsbClass */
+abstract class DomainControllerUsbClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainControllerUsbClass */
     parent_class: DomainControllerClass
     padding: object[]
     static name: string
 }
-export class DomainControllerUsbPrivate {
+class DomainControllerUsbPrivate {
     static name: string
 }
-export abstract class DomainCpuClass {
-    /* Fields of LibvirtGConfig.DomainCpuClass */
+abstract class DomainCpuClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpuClass */
     parent_class: CapabilitiesCpuClass
     padding: object[]
     static name: string
 }
-export abstract class DomainCpuFeatureClass {
-    /* Fields of LibvirtGConfig.DomainCpuFeatureClass */
+abstract class DomainCpuFeatureClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpuFeatureClass */
     parent_class: CapabilitiesCpuClass
     padding: object[]
     static name: string
 }
-export class DomainCpuFeaturePrivate {
+class DomainCpuFeaturePrivate {
     static name: string
 }
-export abstract class DomainCpuModelClass {
-    /* Fields of LibvirtGConfig.DomainCpuModelClass */
+abstract class DomainCpuModelClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpuModelClass */
     parent_class: CapabilitiesCpuModelClass
     padding: object[]
     static name: string
 }
-export class DomainCpuModelPrivate {
+class DomainCpuModelPrivate {
     static name: string
 }
-export class DomainCpuPrivate {
+class DomainCpuPrivate {
     static name: string
 }
-export abstract class DomainDeviceClass {
-    /* Fields of LibvirtGConfig.DomainDeviceClass */
+abstract class DomainDeviceClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDeviceClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class DomainDevicePrivate {
+class DomainDevicePrivate {
     static name: string
 }
-export abstract class DomainDiskClass {
-    /* Fields of LibvirtGConfig.DomainDiskClass */
+abstract class DomainDiskClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDiskClass */
     parent_class: DomainDeviceClass
     padding: object[]
     static name: string
 }
-export abstract class DomainDiskDriverClass {
-    /* Fields of LibvirtGConfig.DomainDiskDriverClass */
+abstract class DomainDiskDriverClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDiskDriverClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class DomainDiskDriverPrivate {
+class DomainDiskDriverPrivate {
     static name: string
 }
-export class DomainDiskPrivate {
+class DomainDiskPrivate {
     static name: string
 }
-export abstract class DomainFilesysClass {
-    /* Fields of LibvirtGConfig.DomainFilesysClass */
+abstract class DomainFilesysClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainFilesysClass */
     parent_class: DomainDeviceClass
     padding: object[]
     static name: string
 }
-export class DomainFilesysPrivate {
+class DomainFilesysPrivate {
     static name: string
 }
-export abstract class DomainGraphicsClass {
-    /* Fields of LibvirtGConfig.DomainGraphicsClass */
+abstract class DomainGraphicsClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsClass */
     parent_class: DomainDeviceClass
     padding: object[]
     static name: string
 }
-export abstract class DomainGraphicsDesktopClass {
-    /* Fields of LibvirtGConfig.DomainGraphicsDesktopClass */
+abstract class DomainGraphicsDesktopClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsDesktopClass */
     parent_class: DomainGraphicsClass
     padding: object[]
     static name: string
 }
-export class DomainGraphicsDesktopPrivate {
+class DomainGraphicsDesktopPrivate {
     static name: string
 }
-export class DomainGraphicsPrivate {
+class DomainGraphicsPrivate {
     static name: string
 }
-export abstract class DomainGraphicsRdpClass {
-    /* Fields of LibvirtGConfig.DomainGraphicsRdpClass */
+abstract class DomainGraphicsRdpClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsRdpClass */
     parent_class: DomainGraphicsClass
     padding: object[]
     static name: string
 }
-export class DomainGraphicsRdpPrivate {
+class DomainGraphicsRdpPrivate {
     static name: string
 }
-export abstract class DomainGraphicsSdlClass {
-    /* Fields of LibvirtGConfig.DomainGraphicsSdlClass */
+abstract class DomainGraphicsSdlClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsSdlClass */
     parent_class: DomainGraphicsClass
     padding: object[]
     static name: string
 }
-export class DomainGraphicsSdlPrivate {
+class DomainGraphicsSdlPrivate {
     static name: string
 }
-export abstract class DomainGraphicsSpiceClass {
-    /* Fields of LibvirtGConfig.DomainGraphicsSpiceClass */
+abstract class DomainGraphicsSpiceClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsSpiceClass */
     parent_class: DomainGraphicsClass
     padding: object[]
     static name: string
 }
-export class DomainGraphicsSpicePrivate {
+class DomainGraphicsSpicePrivate {
     static name: string
 }
-export abstract class DomainGraphicsVncClass {
-    /* Fields of LibvirtGConfig.DomainGraphicsVncClass */
+abstract class DomainGraphicsVncClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsVncClass */
     parent_class: DomainGraphicsClass
     padding: object[]
     static name: string
 }
-export class DomainGraphicsVncPrivate {
+class DomainGraphicsVncPrivate {
     static name: string
 }
-export abstract class DomainHostdevClass {
-    /* Fields of LibvirtGConfig.DomainHostdevClass */
+abstract class DomainHostdevClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainHostdevClass */
     parent_class: DomainDeviceClass
     padding: object[]
     static name: string
 }
-export abstract class DomainHostdevPciClass {
-    /* Fields of LibvirtGConfig.DomainHostdevPciClass */
+abstract class DomainHostdevPciClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainHostdevPciClass */
     parent_class: DomainHostdevClass
     padding: object[]
     static name: string
 }
-export class DomainHostdevPciPrivate {
+class DomainHostdevPciPrivate {
     static name: string
 }
-export class DomainHostdevPrivate {
+class DomainHostdevPrivate {
     static name: string
 }
-export abstract class DomainInputClass {
-    /* Fields of LibvirtGConfig.DomainInputClass */
+abstract class DomainInputClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInputClass */
     parent_class: DomainDeviceClass
     padding: object[]
     static name: string
 }
-export class DomainInputPrivate {
+class DomainInputPrivate {
     static name: string
 }
-export abstract class DomainInterfaceBridgeClass {
-    /* Fields of LibvirtGConfig.DomainInterfaceBridgeClass */
+abstract class DomainInterfaceBridgeClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceBridgeClass */
     parent_class: DomainInterfaceClass
     padding: object[]
     static name: string
 }
-export class DomainInterfaceBridgePrivate {
+class DomainInterfaceBridgePrivate {
     static name: string
 }
-export abstract class DomainInterfaceClass {
-    /* Fields of LibvirtGConfig.DomainInterfaceClass */
+abstract class DomainInterfaceClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceClass */
     parent_class: DomainDeviceClass
     padding: object[]
     static name: string
 }
-export abstract class DomainInterfaceFilterrefClass {
-    /* Fields of LibvirtGConfig.DomainInterfaceFilterrefClass */
+abstract class DomainInterfaceFilterrefClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceFilterrefClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export abstract class DomainInterfaceFilterrefParameterClass {
-    /* Fields of LibvirtGConfig.DomainInterfaceFilterrefParameterClass */
+abstract class DomainInterfaceFilterrefParameterClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceFilterrefParameterClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class DomainInterfaceFilterrefParameterPrivate {
+class DomainInterfaceFilterrefParameterPrivate {
     static name: string
 }
-export class DomainInterfaceFilterrefPrivate {
+class DomainInterfaceFilterrefPrivate {
     static name: string
 }
-export abstract class DomainInterfaceNetworkClass {
-    /* Fields of LibvirtGConfig.DomainInterfaceNetworkClass */
+abstract class DomainInterfaceNetworkClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceNetworkClass */
     parent_class: DomainInterfaceClass
     padding: object[]
     static name: string
 }
-export class DomainInterfaceNetworkPrivate {
+class DomainInterfaceNetworkPrivate {
     static name: string
 }
-export class DomainInterfacePrivate {
+class DomainInterfacePrivate {
     static name: string
 }
-export abstract class DomainInterfaceUserClass {
-    /* Fields of LibvirtGConfig.DomainInterfaceUserClass */
+abstract class DomainInterfaceUserClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceUserClass */
     parent_class: DomainInterfaceClass
     padding: object[]
     static name: string
 }
-export class DomainInterfaceUserPrivate {
+class DomainInterfaceUserPrivate {
     static name: string
 }
-export abstract class DomainMemballoonClass {
-    /* Fields of LibvirtGConfig.DomainMemballoonClass */
+abstract class DomainMemballoonClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainMemballoonClass */
     parent_class: DomainDeviceClass
     padding: object[]
     static name: string
 }
-export class DomainMemballoonPrivate {
+class DomainMemballoonPrivate {
     static name: string
 }
-export abstract class DomainOsClass {
-    /* Fields of LibvirtGConfig.DomainOsClass */
+abstract class DomainOsClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainOsClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class DomainOsPrivate {
+class DomainOsPrivate {
     static name: string
 }
-export abstract class DomainParallelClass {
-    /* Fields of LibvirtGConfig.DomainParallelClass */
+abstract class DomainParallelClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainParallelClass */
     parent_class: DomainChardevClass
     padding: object[]
     static name: string
 }
-export class DomainParallelPrivate {
+class DomainParallelPrivate {
     static name: string
 }
-export abstract class DomainPowerManagementClass {
-    /* Fields of LibvirtGConfig.DomainPowerManagementClass */
+abstract class DomainPowerManagementClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainPowerManagementClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class DomainPowerManagementPrivate {
+class DomainPowerManagementPrivate {
     static name: string
 }
-export class DomainPrivate {
+class DomainPrivate {
     static name: string
 }
-export abstract class DomainRedirdevClass {
-    /* Fields of LibvirtGConfig.DomainRedirdevClass */
+abstract class DomainRedirdevClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainRedirdevClass */
     parent_class: DomainChardevClass
     padding: object[]
     static name: string
 }
-export class DomainRedirdevPrivate {
+class DomainRedirdevPrivate {
     static name: string
 }
-export abstract class DomainSeclabelClass {
-    /* Fields of LibvirtGConfig.DomainSeclabelClass */
+abstract class DomainSeclabelClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSeclabelClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class DomainSeclabelPrivate {
+class DomainSeclabelPrivate {
     static name: string
 }
-export abstract class DomainSerialClass {
-    /* Fields of LibvirtGConfig.DomainSerialClass */
+abstract class DomainSerialClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSerialClass */
     parent_class: DomainChardevClass
     padding: object[]
     static name: string
 }
-export class DomainSerialPrivate {
+class DomainSerialPrivate {
     static name: string
 }
-export abstract class DomainSmartcardClass {
-    /* Fields of LibvirtGConfig.DomainSmartcardClass */
+abstract class DomainSmartcardClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardClass */
     parent_class: DomainDeviceClass
     padding: object[]
     static name: string
 }
-export abstract class DomainSmartcardHostCertificatesClass {
-    /* Fields of LibvirtGConfig.DomainSmartcardHostCertificatesClass */
+abstract class DomainSmartcardHostCertificatesClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardHostCertificatesClass */
     parent_class: DomainSmartcardClass
     padding: object[]
     static name: string
 }
-export class DomainSmartcardHostCertificatesPrivate {
+class DomainSmartcardHostCertificatesPrivate {
     static name: string
 }
-export abstract class DomainSmartcardHostClass {
-    /* Fields of LibvirtGConfig.DomainSmartcardHostClass */
+abstract class DomainSmartcardHostClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardHostClass */
     parent_class: DomainSmartcardClass
     padding: object[]
     static name: string
 }
-export class DomainSmartcardHostPrivate {
+class DomainSmartcardHostPrivate {
     static name: string
 }
-export abstract class DomainSmartcardPassthroughClass {
-    /* Fields of LibvirtGConfig.DomainSmartcardPassthroughClass */
+abstract class DomainSmartcardPassthroughClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardPassthroughClass */
     parent_class: DomainSmartcardClass
     padding: object[]
     static name: string
 }
-export class DomainSmartcardPassthroughPrivate {
+class DomainSmartcardPassthroughPrivate {
     static name: string
 }
-export class DomainSmartcardPrivate {
+class DomainSmartcardPrivate {
     static name: string
 }
-export abstract class DomainSnapshotClass {
-    /* Fields of LibvirtGConfig.DomainSnapshotClass */
+abstract class DomainSnapshotClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSnapshotClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export abstract class DomainSnapshotDiskClass {
-    /* Fields of LibvirtGConfig.DomainSnapshotDiskClass */
+abstract class DomainSnapshotDiskClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSnapshotDiskClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class DomainSnapshotDiskPrivate {
+class DomainSnapshotDiskPrivate {
     static name: string
 }
-export class DomainSnapshotPrivate {
+class DomainSnapshotPrivate {
     static name: string
 }
-export abstract class DomainSoundClass {
-    /* Fields of LibvirtGConfig.DomainSoundClass */
+abstract class DomainSoundClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSoundClass */
     parent_class: DomainDeviceClass
     padding: object[]
     static name: string
 }
-export class DomainSoundPrivate {
+class DomainSoundPrivate {
     static name: string
 }
-export abstract class DomainTimerClass {
-    /* Fields of LibvirtGConfig.DomainTimerClass */
+abstract class DomainTimerClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimerClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export abstract class DomainTimerHpetClass {
-    /* Fields of LibvirtGConfig.DomainTimerHpetClass */
+abstract class DomainTimerHpetClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimerHpetClass */
     parent_class: DomainTimerClass
     padding: object[]
     static name: string
 }
-export class DomainTimerHpetPrivate {
+class DomainTimerHpetPrivate {
     static name: string
 }
-export abstract class DomainTimerPitClass {
-    /* Fields of LibvirtGConfig.DomainTimerPitClass */
+abstract class DomainTimerPitClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimerPitClass */
     parent_class: DomainTimerClass
     padding: object[]
     static name: string
 }
-export class DomainTimerPitPrivate {
+class DomainTimerPitPrivate {
     static name: string
 }
-export class DomainTimerPrivate {
+class DomainTimerPrivate {
     static name: string
 }
-export abstract class DomainTimerRtcClass {
-    /* Fields of LibvirtGConfig.DomainTimerRtcClass */
+abstract class DomainTimerRtcClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimerRtcClass */
     parent_class: DomainTimerClass
     padding: object[]
     static name: string
 }
-export class DomainTimerRtcPrivate {
+class DomainTimerRtcPrivate {
     static name: string
 }
-export abstract class DomainVideoClass {
-    /* Fields of LibvirtGConfig.DomainVideoClass */
+abstract class DomainVideoClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainVideoClass */
     parent_class: DomainDeviceClass
     padding: object[]
     static name: string
 }
-export class DomainVideoPrivate {
+class DomainVideoPrivate {
     static name: string
 }
-export abstract class InterfaceClass {
-    /* Fields of LibvirtGConfig.InterfaceClass */
+abstract class InterfaceClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.InterfaceClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class InterfacePrivate {
+class InterfacePrivate {
     static name: string
 }
-export abstract class NetworkClass {
-    /* Fields of LibvirtGConfig.NetworkClass */
+abstract class NetworkClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.NetworkClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export abstract class NetworkFilterClass {
-    /* Fields of LibvirtGConfig.NetworkFilterClass */
+abstract class NetworkFilterClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.NetworkFilterClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class NetworkFilterPrivate {
+class NetworkFilterPrivate {
     static name: string
 }
-export class NetworkPrivate {
+class NetworkPrivate {
     static name: string
 }
-export abstract class NodeDeviceClass {
-    /* Fields of LibvirtGConfig.NodeDeviceClass */
+abstract class NodeDeviceClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.NodeDeviceClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class NodeDevicePrivate {
+class NodeDevicePrivate {
     static name: string
 }
-export abstract class ObjectClass {
-    /* Fields of LibvirtGConfig.ObjectClass */
+abstract class ObjectClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.ObjectClass */
     parent_class: GObject.ObjectClass
     padding: object[]
     static name: string
 }
-export class ObjectPrivate {
+class ObjectPrivate {
     static name: string
 }
-export abstract class SecretClass {
-    /* Fields of LibvirtGConfig.SecretClass */
+abstract class SecretClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.SecretClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class SecretPrivate {
+class SecretPrivate {
     static name: string
 }
-export abstract class StoragePermissionsClass {
-    /* Fields of LibvirtGConfig.StoragePermissionsClass */
+abstract class StoragePermissionsClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePermissionsClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class StoragePermissionsPrivate {
+class StoragePermissionsPrivate {
     static name: string
 }
-export abstract class StoragePoolClass {
-    /* Fields of LibvirtGConfig.StoragePoolClass */
+abstract class StoragePoolClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePoolClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class StoragePoolPrivate {
+class StoragePoolPrivate {
     static name: string
 }
-export abstract class StoragePoolSourceClass {
-    /* Fields of LibvirtGConfig.StoragePoolSourceClass */
+abstract class StoragePoolSourceClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePoolSourceClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class StoragePoolSourcePrivate {
+class StoragePoolSourcePrivate {
     static name: string
 }
-export abstract class StoragePoolTargetClass {
-    /* Fields of LibvirtGConfig.StoragePoolTargetClass */
+abstract class StoragePoolTargetClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePoolTargetClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class StoragePoolTargetPrivate {
+class StoragePoolTargetPrivate {
     static name: string
 }
-export abstract class StorageVolBackingStoreClass {
-    /* Fields of LibvirtGConfig.StorageVolBackingStoreClass */
+abstract class StorageVolBackingStoreClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StorageVolBackingStoreClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class StorageVolBackingStorePrivate {
+class StorageVolBackingStorePrivate {
     static name: string
 }
-export abstract class StorageVolClass {
-    /* Fields of LibvirtGConfig.StorageVolClass */
+abstract class StorageVolClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StorageVolClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class StorageVolPrivate {
+class StorageVolPrivate {
     static name: string
 }
-export abstract class StorageVolTargetClass {
-    /* Fields of LibvirtGConfig.StorageVolTargetClass */
+abstract class StorageVolTargetClass {
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StorageVolTargetClass */
     parent_class: ObjectClass
     padding: object[]
     static name: string
 }
-export class StorageVolTargetPrivate {
+class StorageVolTargetPrivate {
     static name: string
 }
+}
+export default LibvirtGConfig;

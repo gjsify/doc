@@ -1,2 +1,2 @@
-imports.gi.versions.JSCore = '3.0'
-export default imports.gi.JSCore
+import JSCore from 'gi://JSCore?version=3.0';
+export default JSCore;

@@ -1,2 +1,2 @@
-imports.gi.versions.Cogl = '1.0'
-export default imports.gi.Cogl
+import Cogl from 'gi://Cogl?version=1.0';
+export default Cogl;

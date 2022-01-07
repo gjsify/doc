@@ -3,18 +3,20 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GLib from './GLib-2.0';
-import type * as Gee from './Gee-0.8';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as TelepathyGLib from './TelepathyGLib-0.12';
-import type * as Folks from './Folks-0.6';
+import type GLib from './GLib-2.0';
+import type Gee from './Gee-0.8';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type TelepathyGLib from './TelepathyGLib-0.12';
+import type Folks from './Folks-0.6';
+
+export namespace FolksTelepathy {
 
 export interface PersonaStore_ConstructProps extends Folks.PersonaStore_ConstructProps {
     account?: TelepathyGLib.Account
 }
-export class PersonaStore {
-    /* Properties of Folks.PersonaStore */
+class PersonaStore {
+    /* Properties of Folks-0.6.Folks.PersonaStore */
     readonly type_id: string
     readonly personas: Gee.Map
     readonly can_add_personas: Folks.MaybeBool
@@ -28,11 +30,11 @@ export class PersonaStore {
     readonly always_writeable_properties: string[]
     is_primary_store: boolean
     is_user_set_default: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of FolksTelepathy.PersonaStore */
+    /* Methods of FolksTelepathy-0.6.FolksTelepathy.PersonaStore */
     get_account(): TelepathyGLib.Account
-    /* Methods of Folks.PersonaStore */
+    /* Methods of Folks-0.6.Folks.PersonaStore */
     _emit_personas_changed(added: Gee.Set | null, removed: Gee.Set | null, message: string | null, actor: Folks.Persona | null, reason: Folks.GroupDetailsChangeReason): void
     prepare(_callback_?: Gio.AsyncReadyCallback | null): void
     prepare_finish(_res_: Gio.AsyncResult): void
@@ -59,15 +61,15 @@ export class PersonaStore {
     get_always_writeable_properties(): string[]
     get_is_primary_store(): boolean
     get_is_user_set_default(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -75,13 +77,13 @@ export class PersonaStore {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Folks.PersonaStore */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Folks-0.6.Folks.PersonaStore */
     vfunc_prepare(_callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_prepare_finish(_res_: Gio.AsyncResult): void
     vfunc_flush(_callback_?: Gio.AsyncReadyCallback | null): void
@@ -99,22 +101,22 @@ export class PersonaStore {
     vfunc_get_is_prepared(): boolean
     vfunc_get_is_quiescent(): boolean
     vfunc_get_always_writeable_properties(): string[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Folks.PersonaStore */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Folks-0.6.Folks.PersonaStore */
     connect(sigName: "personas-changed", callback: (($obj: PersonaStore, added: Gee.Set, removed: Gee.Set, message: string | null, actor: Folks.Persona | null, reason: Folks.GroupDetailsChangeReason) => void)): number
     connect_after(sigName: "personas-changed", callback: (($obj: PersonaStore, added: Gee.Set, removed: Gee.Set, message: string | null, actor: Folks.Persona | null, reason: Folks.GroupDetailsChangeReason) => void)): number
     emit(sigName: "personas-changed", added: Gee.Set, removed: Gee.Set, message: string | null, actor: Folks.Persona | null, reason: Folks.GroupDetailsChangeReason): void
     connect(sigName: "removed", callback: (($obj: PersonaStore) => void)): number
     connect_after(sigName: "removed", callback: (($obj: PersonaStore) => void)): number
     emit(sigName: "removed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PersonaStore, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PersonaStore, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -178,56 +180,56 @@ export interface Persona_ConstructProps extends Folks.Persona_ConstructProps {
     presence_status?: string
     urls?: Gee.Set
 }
-export class Persona {
-    /* Properties of FolksTelepathy.Persona */
+class Persona {
+    /* Properties of FolksTelepathy-0.6.FolksTelepathy.Persona */
     is_in_contact_list: boolean
-    /* Properties of Folks.Persona */
+    /* Properties of Folks-0.6.Folks.Persona */
     individual: Folks.Individual
     readonly linkable_properties: string[]
     readonly writeable_properties: string[]
-    /* Properties of Folks.AliasDetails */
+    /* Properties of Folks-0.6.Folks.AliasDetails */
     alias: string
-    /* Properties of Folks.AvatarDetails */
+    /* Properties of Folks-0.6.Folks.AvatarDetails */
     avatar: Gio.LoadableIcon
-    /* Properties of Folks.BirthdayDetails */
+    /* Properties of Folks-0.6.Folks.BirthdayDetails */
     birthday: GLib.DateTime
     calendar_event_id: string
-    /* Properties of Folks.EmailDetails */
+    /* Properties of Folks-0.6.Folks.EmailDetails */
     email_addresses: Gee.Set
-    /* Properties of Folks.FavouriteDetails */
+    /* Properties of Folks-0.6.Folks.FavouriteDetails */
     is_favourite: boolean
-    /* Properties of Folks.GroupDetails */
+    /* Properties of Folks-0.6.Folks.GroupDetails */
     groups: Gee.Set
-    /* Properties of Folks.InteractionDetails */
+    /* Properties of Folks-0.6.Folks.InteractionDetails */
     readonly im_interaction_count: number
     readonly last_im_interaction_datetime: GLib.DateTime
     readonly call_interaction_count: number
     readonly last_call_interaction_datetime: GLib.DateTime
-    /* Properties of Folks.ImDetails */
+    /* Properties of Folks-0.6.Folks.ImDetails */
     im_addresses: Gee.MultiMap
-    /* Properties of Folks.NameDetails */
+    /* Properties of Folks-0.6.Folks.NameDetails */
     structured_name: Folks.StructuredName
     full_name: string
     nickname: string
-    /* Properties of Folks.PhoneDetails */
+    /* Properties of Folks-0.6.Folks.PhoneDetails */
     phone_numbers: Gee.Set
-    /* Properties of Folks.PresenceDetails */
+    /* Properties of Folks-0.6.Folks.PresenceDetails */
     presence_type: Folks.PresenceType
     presence_message: string
     client_types: string[]
     presence_status: string
-    /* Properties of Folks.UrlDetails */
+    /* Properties of Folks-0.6.Folks.UrlDetails */
     urls: Gee.Set
-    /* Fields of FolksTelepathy.Persona */
+    /* Fields of FolksTelepathy-0.6.FolksTelepathy.Persona */
     _last_im_interaction_datetime: GLib.DateTime | null
     _last_call_interaction_datetime: GLib.DateTime | null
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of FolksTelepathy.Persona */
+    /* Methods of FolksTelepathy-0.6.FolksTelepathy.Persona */
     get_is_in_contact_list(): boolean
     set_is_in_contact_list(value: boolean): void
     get_contact(): TelepathyGLib.Contact | null
-    /* Methods of Folks.Persona */
+    /* Methods of Folks-0.6.Folks.Persona */
     linkable_property_to_links(prop_name: string, callback: any): void
     get_iid(): string
     get_uid(): string
@@ -237,15 +239,15 @@ export class Persona {
     get_individual(): Folks.Individual | null
     get_linkable_properties(): string[]
     get_writeable_properties(): string[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -253,23 +255,23 @@ export class Persona {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Folks.AliasDetails */
+    watch_closure(closure: Function): void
+    /* Methods of Folks-0.6.Folks.AliasDetails */
     change_alias(alias: string, _callback_?: Gio.AsyncReadyCallback | null): void
     change_alias_finish(_res_: Gio.AsyncResult): void
     get_alias(): string
     set_alias(value: string): void
-    /* Methods of Folks.AvatarDetails */
+    /* Methods of Folks-0.6.Folks.AvatarDetails */
     change_avatar(avatar?: Gio.LoadableIcon | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_avatar_finish(_res_: Gio.AsyncResult): void
     get_avatar(): Gio.LoadableIcon | null
     set_avatar(value?: Gio.LoadableIcon | null): void
-    /* Methods of Folks.BirthdayDetails */
+    /* Methods of Folks-0.6.Folks.BirthdayDetails */
     change_birthday(birthday?: GLib.DateTime | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_birthday_finish(_res_: Gio.AsyncResult): void
     change_calendar_event_id(event_id?: string | null, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -278,34 +280,34 @@ export class Persona {
     set_birthday(value?: GLib.DateTime | null): void
     get_calendar_event_id(): string | null
     set_calendar_event_id(value?: string | null): void
-    /* Methods of Folks.EmailDetails */
+    /* Methods of Folks-0.6.Folks.EmailDetails */
     change_email_addresses(email_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_email_addresses_finish(_res_: Gio.AsyncResult): void
     get_email_addresses(): Gee.Set
     set_email_addresses(value: Gee.Set): void
-    /* Methods of Folks.FavouriteDetails */
+    /* Methods of Folks-0.6.Folks.FavouriteDetails */
     change_is_favourite(is_favourite: boolean, _callback_?: Gio.AsyncReadyCallback | null): void
     change_is_favourite_finish(_res_: Gio.AsyncResult): void
     get_is_favourite(): boolean
     set_is_favourite(value: boolean): void
-    /* Methods of Folks.GroupDetails */
+    /* Methods of Folks-0.6.Folks.GroupDetails */
     change_group(group: string, is_member: boolean, _callback_?: Gio.AsyncReadyCallback | null): void
     change_group_finish(_res_: Gio.AsyncResult): void
     change_groups(groups: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_groups_finish(_res_: Gio.AsyncResult): void
     get_groups(): Gee.Set
     set_groups(value: Gee.Set): void
-    /* Methods of Folks.InteractionDetails */
+    /* Methods of Folks-0.6.Folks.InteractionDetails */
     get_im_interaction_count(): number
     get_last_im_interaction_datetime(): GLib.DateTime | null
     get_call_interaction_count(): number
     get_last_call_interaction_datetime(): GLib.DateTime | null
-    /* Methods of Folks.ImDetails */
+    /* Methods of Folks-0.6.Folks.ImDetails */
     change_im_addresses(im_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null): void
     change_im_addresses_finish(_res_: Gio.AsyncResult): void
     get_im_addresses(): Gee.MultiMap
     set_im_addresses(value: Gee.MultiMap): void
-    /* Methods of Folks.NameDetails */
+    /* Methods of Folks-0.6.Folks.NameDetails */
     change_structured_name(name?: Folks.StructuredName | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_structured_name_finish(_res_: Gio.AsyncResult): void
     change_full_name(full_name: string, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -318,12 +320,12 @@ export class Persona {
     set_full_name(value: string): void
     get_nickname(): string
     set_nickname(value: string): void
-    /* Methods of Folks.PhoneDetails */
+    /* Methods of Folks-0.6.Folks.PhoneDetails */
     change_phone_numbers(phone_numbers: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_phone_numbers_finish(_res_: Gio.AsyncResult): void
     get_phone_numbers(): Gee.Set
     set_phone_numbers(value: Gee.Set): void
-    /* Methods of Folks.PresenceDetails */
+    /* Methods of Folks-0.6.Folks.PresenceDetails */
     is_online(): boolean
     get_presence_type(): Folks.PresenceType
     set_presence_type(value: Folks.PresenceType): void
@@ -333,12 +335,12 @@ export class Persona {
     set_client_types(value: string[]): void
     get_presence_status(): string
     set_presence_status(value: string): void
-    /* Methods of Folks.UrlDetails */
+    /* Methods of Folks-0.6.Folks.UrlDetails */
     change_urls(urls: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_urls_finish(_res_: Gio.AsyncResult): void
     get_urls(): Gee.Set
     set_urls(value: Gee.Set): void
-    /* Virtual methods of FolksTelepathy.Persona */
+    /* Virtual methods of FolksTelepathy-0.6.FolksTelepathy.Persona */
     vfunc_change_alias(alias: string, _callback_?: Gio.AsyncReadyCallback | null): void
     vfunc_change_alias_finish(_res_: Gio.AsyncResult): void
     vfunc_get_alias(): string
@@ -405,23 +407,23 @@ export class Persona {
     vfunc_change_urls_finish(_res_: Gio.AsyncResult): void
     vfunc_get_urls(): Gee.Set
     vfunc_set_urls(value: Gee.Set): void
-    /* Virtual methods of Folks.Persona */
+    /* Virtual methods of Folks-0.6.Folks.Persona */
     vfunc_linkable_property_to_links(prop_name: string, callback: any): void
     vfunc_get_linkable_properties(): string[]
     vfunc_get_writeable_properties(): string[]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Persona, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Persona, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Folks.GroupDetails */
+    /* Signals of Folks-0.6.Folks.GroupDetails */
     connect(sigName: "group-changed", callback: (($obj: Persona, group: string, is_member: boolean) => void)): number
     connect_after(sigName: "group-changed", callback: (($obj: Persona, group: string, is_member: boolean) => void)): number
     emit(sigName: "group-changed", group: string, is_member: boolean): void
@@ -490,15 +492,17 @@ export class Persona {
     static typecmp(type_a: Folks.PresenceType, type_b: Folks.PresenceType): number
     static $gtype: GObject.Type
 }
-export abstract class PersonaStoreClass {
+abstract class PersonaStoreClass {
     static name: string
 }
-export class PersonaStorePrivate {
+class PersonaStorePrivate {
     static name: string
 }
-export abstract class PersonaClass {
+abstract class PersonaClass {
     static name: string
 }
-export class PersonaPrivate {
+class PersonaPrivate {
     static name: string
 }
+}
+export default FolksTelepathy;

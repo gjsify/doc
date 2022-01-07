@@ -3,25 +3,27 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Peas from './Peas-1.0';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as GIRepository from './GIRepository-2.0';
-import type * as Gtk from './Gtk-3.0';
-import type * as xlib from './xlib-2.0';
-import type * as Gdk from './Gdk-3.0';
-import type * as cairo from './cairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as Atk from './Atk-1.0';
+import type Peas from './Peas-1.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type GModule from './GModule-2.0';
+import type GIRepository from './GIRepository-2.0';
+import type Gtk from './Gtk-3.0';
+import type xlib from './xlib-2.0';
+import type Gdk from './Gdk-3.0';
+import type cairo from './cairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type Atk from './Atk-1.0';
 
-export class Configurable {
-    /* Methods of PeasGtk.Configurable */
+export namespace PeasGtk {
+
+class Configurable {
+    /* Methods of PeasGtk-1.0.PeasGtk.Configurable */
     create_configure_widget(): Gtk.Widget
-    /* Virtual methods of PeasGtk.Configurable */
+    /* Virtual methods of PeasGtk-1.0.PeasGtk.Configurable */
     vfunc_create_configure_widget(): Gtk.Widget
     static name: string
 }
@@ -30,16 +32,16 @@ export interface PluginManager_ConstructProps extends Gtk.Box_ConstructProps {
     view?: PluginManagerView
     orientation?: Gtk.Orientation
 }
-export class PluginManager {
-    /* Properties of Gtk.Box */
+class PluginManager {
+    /* Properties of Gtk-3.0.Gtk.Box */
     baseline_position: Gtk.BaselinePosition
     homogeneous: boolean
     spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -79,21 +81,21 @@ export class PluginManager {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Orientable */
+    /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of PeasGtk.PluginManager */
+    /* Fields of PeasGtk-1.0.PeasGtk.PluginManager */
     box: Gtk.Box
-    /* Fields of Gtk.Box */
+    /* Fields of Gtk-3.0.Gtk.Box */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of PeasGtk.PluginManager */
+    /* Methods of PeasGtk-1.0.PeasGtk.PluginManager */
     get_view(): Gtk.Widget
-    /* Methods of Gtk.Box */
+    /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
     get_homogeneous(): boolean
@@ -107,10 +109,11 @@ export class PluginManager {
     set_child_packing(child: Gtk.Widget, expand: boolean, fill: boolean, padding: number, pack_type: Gtk.PackType): void
     set_homogeneous(homogeneous: boolean): void
     set_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -135,7 +138,7 @@ export class PluginManager {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -394,15 +397,15 @@ export class PluginManager {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -410,13 +413,13 @@ export class PluginManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -425,10 +428,10 @@ export class PluginManager {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Orientable */
+    /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
-    /* Virtual methods of PeasGtk.PluginManager */
+    /* Virtual methods of PeasGtk-1.0.PeasGtk.PluginManager */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -439,7 +442,7 @@ export class PluginManager {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -450,7 +453,7 @@ export class PluginManager {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -533,15 +536,15 @@ export class PluginManager {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: PluginManager, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: PluginManager, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -554,7 +557,7 @@ export class PluginManager {
     connect(sigName: "set-focus-child", callback: (($obj: PluginManager, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: PluginManager, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: PluginManager) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: PluginManager) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -762,7 +765,7 @@ export class PluginManager {
     connect(sigName: "window-state-event", callback: (($obj: PluginManager, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: PluginManager, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PluginManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PluginManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -878,10 +881,10 @@ export interface PluginManagerView_ConstructProps extends Gtk.TreeView_Construct
     vadjustment?: Gtk.Adjustment
     vscroll_policy?: Gtk.ScrollablePolicy
 }
-export class PluginManagerView {
-    /* Properties of PeasGtk.PluginManagerView */
+class PluginManagerView {
+    /* Properties of PeasGtk-1.0.PeasGtk.PluginManagerView */
     show_builtin: boolean
-    /* Properties of Gtk.TreeView */
+    /* Properties of Gtk-3.0.Gtk.TreeView */
     activate_on_single_click: boolean
     enable_grid_lines: Gtk.TreeViewGridLines
     enable_search: boolean
@@ -900,11 +903,11 @@ export class PluginManagerView {
     search_column: number
     show_expanders: boolean
     tooltip_column: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -944,23 +947,23 @@ export class PluginManagerView {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Scrollable */
+    /* Properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment: Gtk.Adjustment
     hscroll_policy: Gtk.ScrollablePolicy
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of PeasGtk.PluginManagerView */
+    /* Methods of PeasGtk-1.0.PeasGtk.PluginManagerView */
     get_selected_plugin(): Peas.PluginInfo
     get_show_builtin(): boolean
     set_selected_plugin(info: Peas.PluginInfo): void
     set_show_builtin(show_builtin: boolean): void
-    /* Methods of Gtk.TreeView */
+    /* Methods of Gtk-3.0.Gtk.TreeView */
     append_column(column: Gtk.TreeViewColumn): number
     collapse_all(): void
     collapse_row(path: Gtk.TreePath): boolean
@@ -1056,10 +1059,11 @@ export class PluginManagerView {
     set_vadjustment(adjustment?: Gtk.Adjustment | null): void
     unset_rows_drag_dest(): void
     unset_rows_drag_source(): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1084,7 +1088,7 @@ export class PluginManagerView {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -1343,15 +1347,15 @@ export class PluginManagerView {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1359,13 +1363,13 @@ export class PluginManagerView {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -1374,7 +1378,7 @@ export class PluginManagerView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Scrollable */
+    /* Methods of Gtk-3.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     get_hscroll_policy(): Gtk.ScrollablePolicy
     get_vscroll_policy(): Gtk.ScrollablePolicy
@@ -1382,7 +1386,7 @@ export class PluginManagerView {
     set_hscroll_policy(policy: Gtk.ScrollablePolicy): void
     set_vadjustment(vadjustment?: Gtk.Adjustment | null): void
     set_vscroll_policy(policy: Gtk.ScrollablePolicy): void
-    /* Virtual methods of PeasGtk.PluginManagerView */
+    /* Virtual methods of PeasGtk-1.0.PeasGtk.PluginManagerView */
     vfunc_populate_popup(menu: Gtk.Menu): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -1395,7 +1399,7 @@ export class PluginManagerView {
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
     vfunc_get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
-    /* Virtual methods of Gtk.TreeView */
+    /* Virtual methods of Gtk-3.0.Gtk.TreeView */
     vfunc_columns_changed(): void
     vfunc_cursor_changed(): void
     vfunc_expand_collapse_cursor_row(logical: boolean, expand: boolean, open_all: boolean): boolean
@@ -1411,7 +1415,7 @@ export class PluginManagerView {
     vfunc_test_expand_row(iter: Gtk.TreeIter, path: Gtk.TreePath): boolean
     vfunc_toggle_cursor_row(): boolean
     vfunc_unselect_all(): boolean
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -1422,7 +1426,7 @@ export class PluginManagerView {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -1505,19 +1509,19 @@ export class PluginManagerView {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of PeasGtk.PluginManagerView */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of PeasGtk-1.0.PeasGtk.PluginManagerView */
     connect(sigName: "populate-popup", callback: (($obj: PluginManagerView, menu: Gtk.Menu) => void)): number
     connect_after(sigName: "populate-popup", callback: (($obj: PluginManagerView, menu: Gtk.Menu) => void)): number
     emit(sigName: "populate-popup", menu: Gtk.Menu): void
-    /* Signals of Gtk.TreeView */
+    /* Signals of Gtk-3.0.Gtk.TreeView */
     connect(sigName: "columns-changed", callback: (($obj: PluginManagerView) => void)): number
     connect_after(sigName: "columns-changed", callback: (($obj: PluginManagerView) => void)): number
     emit(sigName: "columns-changed"): void
@@ -1563,7 +1567,7 @@ export class PluginManagerView {
     connect(sigName: "unselect-all", callback: (($obj: PluginManagerView) => boolean)): number
     connect_after(sigName: "unselect-all", callback: (($obj: PluginManagerView) => boolean)): number
     emit(sigName: "unselect-all"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: PluginManagerView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: PluginManagerView, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -1576,7 +1580,7 @@ export class PluginManagerView {
     connect(sigName: "set-focus-child", callback: (($obj: PluginManagerView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: PluginManagerView, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: PluginManagerView) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: PluginManagerView) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -1784,7 +1788,7 @@ export class PluginManagerView {
     connect(sigName: "window-state-event", callback: (($obj: PluginManagerView, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: PluginManagerView, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PluginManagerView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PluginManagerView, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1930,26 +1934,28 @@ export class PluginManagerView {
     static new(): PluginManagerView
     static $gtype: GObject.Type
 }
-export abstract class ConfigurableInterface {
-    /* Fields of PeasGtk.ConfigurableInterface */
+abstract class ConfigurableInterface {
+    /* Fields of PeasGtk-1.0.PeasGtk.ConfigurableInterface */
     g_iface: GObject.TypeInterface
     create_configure_widget: (configurable: Configurable) => Gtk.Widget
     static name: string
 }
-export abstract class PluginManagerClass {
-    /* Fields of PeasGtk.PluginManagerClass */
+abstract class PluginManagerClass {
+    /* Fields of PeasGtk-1.0.PeasGtk.PluginManagerClass */
     parent_class: Gtk.BoxClass
     static name: string
 }
-export class PluginManagerPrivate {
+class PluginManagerPrivate {
     static name: string
 }
-export abstract class PluginManagerViewClass {
-    /* Fields of PeasGtk.PluginManagerViewClass */
+abstract class PluginManagerViewClass {
+    /* Fields of PeasGtk-1.0.PeasGtk.PluginManagerViewClass */
     parent_class: Gtk.TreeViewClass
     populate_popup: (view: PluginManagerView, menu: Gtk.Menu) => void
     static name: string
 }
-export class PluginManagerViewPrivate {
+class PluginManagerViewPrivate {
     static name: string
 }
+}
+export default PeasGtk;

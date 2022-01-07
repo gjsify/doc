@@ -3,59 +3,61 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gtk from './Gtk-3.0';
-import type * as xlib from './xlib-2.0';
-import type * as Gdk from './Gdk-3.0';
-import type * as cairo from './cairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as Atk from './Atk-1.0';
+import type Gtk from './Gtk-3.0';
+import type xlib from './xlib-2.0';
+import type Gdk from './Gdk-3.0';
+import type cairo from './cairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type GModule from './GModule-2.0';
+import type Atk from './Atk-1.0';
 
-export enum CheckerError {
+export namespace Gspell {
+
+enum CheckerError {
     DICTIONARY,
     NO_LANGUAGE_SET,
 }
-export function checker_error_quark(): GLib.Quark
-export function language_get_available(): Language[]
-export function language_get_default(): Language | null
-export function language_lookup(language_code: string): Language | null
-export class LanguageChooser {
-    /* Properties of Gspell.LanguageChooser */
+function checker_error_quark(): GLib.Quark
+function language_get_available(): Language[]
+function language_get_default(): Language | null
+function language_lookup(language_code: string): Language | null
+class LanguageChooser {
+    /* Properties of Gspell-1.Gspell.LanguageChooser */
     language: Language
     language_code: string
-    /* Methods of Gspell.LanguageChooser */
+    /* Methods of Gspell-1.Gspell.LanguageChooser */
     get_language(): Language | null
     get_language_code(): string
     set_language(language?: Language | null): void
     set_language_code(language_code?: string | null): void
-    /* Virtual methods of Gspell.LanguageChooser */
+    /* Virtual methods of Gspell-1.Gspell.LanguageChooser */
     vfunc_get_language_full(default_language: boolean): Language
     vfunc_set_language(language?: Language | null): void
     static name: string
 }
 export interface Navigator_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
 }
-export class Navigator {
-    /* Fields of GObject.InitiallyUnowned */
+class Navigator {
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gspell.Navigator */
+    /* Methods of Gspell-1.Gspell.Navigator */
     change(word: string, change_to: string): void
     change_all(word: string, change_to: string): void
     goto_next(): [ /* returnType */ boolean, /* word */ string | null, /* spell_checker */ Checker | null ]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -63,25 +65,25 @@ export class Navigator {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gspell.Navigator */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gspell-1.Gspell.Navigator */
     vfunc_change(word: string, change_to: string): void
     vfunc_change_all(word: string, change_to: string): void
     vfunc_goto_next(): [ /* returnType */ boolean, /* word */ string | null, /* spell_checker */ Checker | null ]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Navigator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Navigator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -97,14 +99,14 @@ export class Navigator {
 export interface Checker_ConstructProps extends GObject.Object_ConstructProps {
     language?: Language
 }
-export class Checker {
-    /* Properties of Gspell.Checker */
+class Checker {
+    /* Properties of Gspell-1.Gspell.Checker */
     language: Language
-    /* Fields of Gspell.Checker */
+    /* Fields of Gspell-1.Gspell.Checker */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gspell.Checker */
+    /* Methods of Gspell-1.Gspell.Checker */
     add_word_to_personal(word: string, word_length: number): void
     add_word_to_session(word: string, word_length: number): void
     check_word(word: string, word_length: number): boolean
@@ -113,15 +115,15 @@ export class Checker {
     get_suggestions(word: string, word_length: number): string[]
     set_correction(word: string, word_length: number, replacement: string, replacement_length: number): void
     set_language(language?: Language | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -129,25 +131,25 @@ export class Checker {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gspell.Checker */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gspell-1.Gspell.Checker */
     vfunc_session_cleared(): void
     vfunc_word_added_to_personal(word: string): void
     vfunc_word_added_to_session(word: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gspell.Checker */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gspell-1.Gspell.Checker */
     connect(sigName: "session-cleared", callback: (($obj: Checker) => void)): number
     connect_after(sigName: "session-cleared", callback: (($obj: Checker) => void)): number
     emit(sigName: "session-cleared"): void
@@ -157,7 +159,7 @@ export class Checker {
     connect(sigName: "word-added-to-session", callback: (($obj: Checker, word: string) => void)): number
     connect_after(sigName: "word-added-to-session", callback: (($obj: Checker, word: string) => void)): number
     emit(sigName: "word-added-to-session", word: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Checker, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Checker, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -177,8 +179,8 @@ export class Checker {
 export interface CheckerDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
     spell_navigator?: Navigator
 }
-export class CheckerDialog {
-    /* Properties of Gtk.Window */
+class CheckerDialog {
+    /* Properties of Gtk-3.0.Gtk.Window */
     accept_focus: boolean
     application: Gtk.Application
     attached_to: Gtk.Widget
@@ -211,11 +213,11 @@ export class CheckerDialog {
     type_hint: Gdk.WindowTypeHint
     urgency_hint: boolean
     window_position: Gtk.WindowPosition
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -255,20 +257,20 @@ export class CheckerDialog {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gspell.CheckerDialog */
+    /* Fields of Gspell-1.Gspell.CheckerDialog */
     parent_instance: Gtk.Dialog
-    /* Fields of Gtk.Window */
+    /* Fields of Gtk-3.0.Gtk.Window */
     bin: Gtk.Bin
     priv: Gtk.WindowPrivate
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gspell.CheckerDialog */
+    /* Methods of Gspell-1.Gspell.CheckerDialog */
     get_spell_navigator(): Navigator
-    /* Methods of Gtk.Dialog */
+    /* Methods of Gtk-3.0.Gtk.Dialog */
     add_action_widget(child: Gtk.Widget, response_id: number): void
     add_button(button_text: string, response_id: number): Gtk.Widget
     get_action_area(): Gtk.Box
@@ -281,7 +283,7 @@ export class CheckerDialog {
     set_alternative_button_order_from_array(new_order: number[]): void
     set_default_response(response_id: number): void
     set_response_sensitive(response_id: number, setting: boolean): void
-    /* Methods of Gtk.Window */
+    /* Methods of Gtk-3.0.Gtk.Window */
     activate_default(): boolean
     activate_focus(): boolean
     activate_key(event: Gdk.EventKey): boolean
@@ -388,12 +390,13 @@ export class CheckerDialog {
     unfullscreen(): void
     unmaximize(): void
     unstick(): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -418,7 +421,7 @@ export class CheckerDialog {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -674,15 +677,15 @@ export class CheckerDialog {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -690,13 +693,13 @@ export class CheckerDialog {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -705,7 +708,7 @@ export class CheckerDialog {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Gspell.CheckerDialog */
+    /* Virtual methods of Gspell-1.Gspell.CheckerDialog */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -716,16 +719,16 @@ export class CheckerDialog {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Dialog */
+    /* Virtual methods of Gtk-3.0.Gtk.Dialog */
     vfunc_close(): void
     vfunc_response(response_id: number): void
-    /* Virtual methods of Gtk.Window */
+    /* Virtual methods of Gtk-3.0.Gtk.Window */
     vfunc_activate_default(): void
     vfunc_activate_focus(): void
     vfunc_enable_debugging(toggle: boolean): boolean
     vfunc_keys_changed(): void
     vfunc_set_focus(focus?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -736,7 +739,7 @@ export class CheckerDialog {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -819,22 +822,22 @@ export class CheckerDialog {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Dialog */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Dialog */
     connect(sigName: "close", callback: (($obj: CheckerDialog) => void)): number
     connect_after(sigName: "close", callback: (($obj: CheckerDialog) => void)): number
     emit(sigName: "close"): void
     connect(sigName: "response", callback: (($obj: CheckerDialog, response_id: number) => void)): number
     connect_after(sigName: "response", callback: (($obj: CheckerDialog, response_id: number) => void)): number
     emit(sigName: "response", response_id: number): void
-    /* Signals of Gtk.Window */
+    /* Signals of Gtk-3.0.Gtk.Window */
     connect(sigName: "activate-default", callback: (($obj: CheckerDialog) => void)): number
     connect_after(sigName: "activate-default", callback: (($obj: CheckerDialog) => void)): number
     emit(sigName: "activate-default"): void
@@ -850,7 +853,7 @@ export class CheckerDialog {
     connect(sigName: "set-focus", callback: (($obj: CheckerDialog, widget?: Gtk.Widget | null) => void)): number
     connect_after(sigName: "set-focus", callback: (($obj: CheckerDialog, widget?: Gtk.Widget | null) => void)): number
     emit(sigName: "set-focus", widget?: Gtk.Widget | null): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: CheckerDialog, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: CheckerDialog, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -863,7 +866,7 @@ export class CheckerDialog {
     connect(sigName: "set-focus-child", callback: (($obj: CheckerDialog, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: CheckerDialog, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: CheckerDialog) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: CheckerDialog) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -1071,7 +1074,7 @@ export class CheckerDialog {
     connect(sigName: "window-state-event", callback: (($obj: CheckerDialog, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: CheckerDialog, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CheckerDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CheckerDialog, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1240,25 +1243,25 @@ export interface Entry_ConstructProps extends GObject.Object_ConstructProps {
     entry?: Gtk.Entry
     inline_spell_checking?: boolean
 }
-export class Entry {
-    /* Properties of Gspell.Entry */
+class Entry {
+    /* Properties of Gspell-1.Gspell.Entry */
     inline_spell_checking: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gspell.Entry */
+    /* Methods of Gspell-1.Gspell.Entry */
     basic_setup(): void
     get_entry(): Gtk.Entry
     get_inline_spell_checking(): boolean
     set_inline_spell_checking(enable: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1266,21 +1269,21 @@ export class Entry {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Entry, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Entry, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1301,24 +1304,24 @@ export interface EntryBuffer_ConstructProps extends GObject.Object_ConstructProp
     buffer?: Gtk.EntryBuffer
     spell_checker?: Checker
 }
-export class EntryBuffer {
-    /* Properties of Gspell.EntryBuffer */
+class EntryBuffer {
+    /* Properties of Gspell-1.Gspell.EntryBuffer */
     spell_checker: Checker
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gspell.EntryBuffer */
+    /* Methods of Gspell-1.Gspell.EntryBuffer */
     get_buffer(): Gtk.EntryBuffer
     get_spell_checker(): Checker | null
     set_spell_checker(spell_checker?: Checker | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1326,21 +1329,21 @@ export class EntryBuffer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: EntryBuffer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: EntryBuffer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1365,8 +1368,8 @@ export interface LanguageChooserButton_ConstructProps extends Gtk.Button_Constru
     related_action?: Gtk.Action
     use_action_appearance?: boolean
 }
-export class LanguageChooserButton {
-    /* Properties of Gtk.Button */
+class LanguageChooserButton {
+    /* Properties of Gtk-3.0.Gtk.Button */
     always_show_image: boolean
     image: Gtk.Widget
     image_position: Gtk.PositionType
@@ -1376,11 +1379,11 @@ export class LanguageChooserButton {
     use_underline: boolean
     xalign: number
     yalign: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -1420,24 +1423,24 @@ export class LanguageChooserButton {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gspell.LanguageChooser */
+    /* Properties of Gspell-1.Gspell.LanguageChooser */
     language: Language
     language_code: string
-    /* Properties of Gtk.Actionable */
+    /* Properties of Gtk-3.0.Gtk.Actionable */
     action_name: string
     action_target: GLib.Variant
-    /* Properties of Gtk.Activatable */
+    /* Properties of Gtk-3.0.Gtk.Activatable */
     related_action: Gtk.Action
     use_action_appearance: boolean
-    /* Fields of Gspell.LanguageChooserButton */
+    /* Fields of Gspell-1.Gspell.LanguageChooserButton */
     parent_instance: Gtk.Button
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gtk.Button */
+    /* Methods of Gtk-3.0.Gtk.Button */
     clicked(): void
     enter(): void
     get_alignment(): [ /* xalign */ number, /* yalign */ number ]
@@ -1462,12 +1465,13 @@ export class LanguageChooserButton {
     set_relief(relief: Gtk.ReliefStyle): void
     set_use_stock(use_stock: boolean): void
     set_use_underline(use_underline: boolean): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1492,7 +1496,7 @@ export class LanguageChooserButton {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -1749,15 +1753,15 @@ export class LanguageChooserButton {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1765,31 +1769,31 @@ export class LanguageChooserButton {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gspell.LanguageChooser */
+    watch_closure(closure: Function): void
+    /* Methods of Gspell-1.Gspell.LanguageChooser */
     get_language(): Language | null
     get_language_code(): string
     set_language(language?: Language | null): void
     set_language_code(language_code?: string | null): void
-    /* Methods of Gtk.Actionable */
+    /* Methods of Gtk-3.0.Gtk.Actionable */
     get_action_name(): string | null
     get_action_target_value(): GLib.Variant
     set_action_name(action_name?: string | null): void
     set_action_target_value(target_value?: GLib.Variant | null): void
     set_detailed_action_name(detailed_action_name: string): void
-    /* Methods of Gtk.Activatable */
+    /* Methods of Gtk-3.0.Gtk.Activatable */
     do_set_related_action(action: Gtk.Action): void
     get_related_action(): Gtk.Action
     get_use_action_appearance(): boolean
     set_related_action(action: Gtk.Action): void
     set_use_action_appearance(use_appearance: boolean): void
     sync_action_properties(action?: Gtk.Action | null): void
-    /* Methods of Gtk.Buildable */
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -1798,7 +1802,7 @@ export class LanguageChooserButton {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Gspell.LanguageChooserButton */
+    /* Virtual methods of Gspell-1.Gspell.LanguageChooserButton */
     vfunc_get_language_full(default_language: boolean): Language
     vfunc_set_language(language?: Language | null): void
     vfunc_get_action_name(): string | null
@@ -1817,14 +1821,14 @@ export class LanguageChooserButton {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Button */
+    /* Virtual methods of Gtk-3.0.Gtk.Button */
     vfunc_activate(): void
     vfunc_clicked(): void
     vfunc_enter(): void
     vfunc_leave(): void
     vfunc_pressed(): void
     vfunc_released(): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -1835,7 +1839,7 @@ export class LanguageChooserButton {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -1918,15 +1922,15 @@ export class LanguageChooserButton {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Button */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Button */
     connect(sigName: "activate", callback: (($obj: LanguageChooserButton) => void)): number
     connect_after(sigName: "activate", callback: (($obj: LanguageChooserButton) => void)): number
     emit(sigName: "activate"): void
@@ -1945,7 +1949,7 @@ export class LanguageChooserButton {
     connect(sigName: "released", callback: (($obj: LanguageChooserButton) => void)): number
     connect_after(sigName: "released", callback: (($obj: LanguageChooserButton) => void)): number
     emit(sigName: "released"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: LanguageChooserButton, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: LanguageChooserButton, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -1958,7 +1962,7 @@ export class LanguageChooserButton {
     connect(sigName: "set-focus-child", callback: (($obj: LanguageChooserButton, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: LanguageChooserButton, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: LanguageChooserButton) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: LanguageChooserButton) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -2166,7 +2170,7 @@ export class LanguageChooserButton {
     connect(sigName: "window-state-event", callback: (($obj: LanguageChooserButton, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: LanguageChooserButton, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: LanguageChooserButton, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: LanguageChooserButton, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2300,8 +2304,8 @@ export interface LanguageChooserDialog_ConstructProps extends Gtk.Dialog_Constru
     language?: Language
     language_code?: string
 }
-export class LanguageChooserDialog {
-    /* Properties of Gtk.Window */
+class LanguageChooserDialog {
+    /* Properties of Gtk-3.0.Gtk.Window */
     accept_focus: boolean
     application: Gtk.Application
     attached_to: Gtk.Widget
@@ -2334,11 +2338,11 @@ export class LanguageChooserDialog {
     type_hint: Gdk.WindowTypeHint
     urgency_hint: boolean
     window_position: Gtk.WindowPosition
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -2378,21 +2382,21 @@ export class LanguageChooserDialog {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gspell.LanguageChooser */
+    /* Properties of Gspell-1.Gspell.LanguageChooser */
     language: Language
     language_code: string
-    /* Fields of Gspell.LanguageChooserDialog */
+    /* Fields of Gspell-1.Gspell.LanguageChooserDialog */
     parent_instance: Gtk.Dialog
-    /* Fields of Gtk.Window */
+    /* Fields of Gtk-3.0.Gtk.Window */
     bin: Gtk.Bin
     priv: Gtk.WindowPrivate
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gtk.Dialog */
+    /* Methods of Gtk-3.0.Gtk.Dialog */
     add_action_widget(child: Gtk.Widget, response_id: number): void
     add_button(button_text: string, response_id: number): Gtk.Widget
     get_action_area(): Gtk.Box
@@ -2405,7 +2409,7 @@ export class LanguageChooserDialog {
     set_alternative_button_order_from_array(new_order: number[]): void
     set_default_response(response_id: number): void
     set_response_sensitive(response_id: number, setting: boolean): void
-    /* Methods of Gtk.Window */
+    /* Methods of Gtk-3.0.Gtk.Window */
     activate_default(): boolean
     activate_focus(): boolean
     activate_key(event: Gdk.EventKey): boolean
@@ -2512,12 +2516,13 @@ export class LanguageChooserDialog {
     unfullscreen(): void
     unmaximize(): void
     unstick(): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2542,7 +2547,7 @@ export class LanguageChooserDialog {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -2798,15 +2803,15 @@ export class LanguageChooserDialog {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2814,18 +2819,18 @@ export class LanguageChooserDialog {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gspell.LanguageChooser */
+    watch_closure(closure: Function): void
+    /* Methods of Gspell-1.Gspell.LanguageChooser */
     get_language(): Language | null
     get_language_code(): string
     set_language(language?: Language | null): void
     set_language_code(language_code?: string | null): void
-    /* Methods of Gtk.Buildable */
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2834,7 +2839,7 @@ export class LanguageChooserDialog {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Gspell.LanguageChooserDialog */
+    /* Virtual methods of Gspell-1.Gspell.LanguageChooserDialog */
     vfunc_get_language_full(default_language: boolean): Language
     vfunc_set_language(language?: Language | null): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -2847,16 +2852,16 @@ export class LanguageChooserDialog {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Dialog */
+    /* Virtual methods of Gtk-3.0.Gtk.Dialog */
     vfunc_close(): void
     vfunc_response(response_id: number): void
-    /* Virtual methods of Gtk.Window */
+    /* Virtual methods of Gtk-3.0.Gtk.Window */
     vfunc_activate_default(): void
     vfunc_activate_focus(): void
     vfunc_enable_debugging(toggle: boolean): boolean
     vfunc_keys_changed(): void
     vfunc_set_focus(focus?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -2867,7 +2872,7 @@ export class LanguageChooserDialog {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -2950,22 +2955,22 @@ export class LanguageChooserDialog {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Dialog */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Dialog */
     connect(sigName: "close", callback: (($obj: LanguageChooserDialog) => void)): number
     connect_after(sigName: "close", callback: (($obj: LanguageChooserDialog) => void)): number
     emit(sigName: "close"): void
     connect(sigName: "response", callback: (($obj: LanguageChooserDialog, response_id: number) => void)): number
     connect_after(sigName: "response", callback: (($obj: LanguageChooserDialog, response_id: number) => void)): number
     emit(sigName: "response", response_id: number): void
-    /* Signals of Gtk.Window */
+    /* Signals of Gtk-3.0.Gtk.Window */
     connect(sigName: "activate-default", callback: (($obj: LanguageChooserDialog) => void)): number
     connect_after(sigName: "activate-default", callback: (($obj: LanguageChooserDialog) => void)): number
     emit(sigName: "activate-default"): void
@@ -2981,7 +2986,7 @@ export class LanguageChooserDialog {
     connect(sigName: "set-focus", callback: (($obj: LanguageChooserDialog, widget?: Gtk.Widget | null) => void)): number
     connect_after(sigName: "set-focus", callback: (($obj: LanguageChooserDialog, widget?: Gtk.Widget | null) => void)): number
     emit(sigName: "set-focus", widget?: Gtk.Widget | null): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: LanguageChooserDialog, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: LanguageChooserDialog, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -2994,7 +2999,7 @@ export class LanguageChooserDialog {
     connect(sigName: "set-focus-child", callback: (($obj: LanguageChooserDialog, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: LanguageChooserDialog, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: LanguageChooserDialog) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: LanguageChooserDialog) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -3202,7 +3207,7 @@ export class LanguageChooserDialog {
     connect(sigName: "window-state-event", callback: (($obj: LanguageChooserDialog, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: LanguageChooserDialog, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3374,22 +3379,22 @@ export class LanguageChooserDialog {
 export interface NavigatorTextView_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
     view?: Gtk.TextView
 }
-export class NavigatorTextView {
-    /* Fields of Gspell.NavigatorTextView */
+class NavigatorTextView {
+    /* Fields of Gspell-1.Gspell.NavigatorTextView */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gspell.NavigatorTextView */
+    /* Methods of Gspell-1.Gspell.NavigatorTextView */
     get_view(): Gtk.TextView
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3397,29 +3402,29 @@ export class NavigatorTextView {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gspell.Navigator */
+    watch_closure(closure: Function): void
+    /* Methods of Gspell-1.Gspell.Navigator */
     change(word: string, change_to: string): void
     change_all(word: string, change_to: string): void
     goto_next(): [ /* returnType */ boolean, /* word */ string | null, /* spell_checker */ Checker | null ]
-    /* Virtual methods of Gspell.NavigatorTextView */
+    /* Virtual methods of Gspell-1.Gspell.NavigatorTextView */
     vfunc_change(word: string, change_to: string): void
     vfunc_change_all(word: string, change_to: string): void
     vfunc_goto_next(): [ /* returnType */ boolean, /* word */ string | null, /* spell_checker */ Checker | null ]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: NavigatorTextView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: NavigatorTextView, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3436,24 +3441,24 @@ export interface TextBuffer_ConstructProps extends GObject.Object_ConstructProps
     buffer?: Gtk.TextBuffer
     spell_checker?: Checker
 }
-export class TextBuffer {
-    /* Properties of Gspell.TextBuffer */
+class TextBuffer {
+    /* Properties of Gspell-1.Gspell.TextBuffer */
     spell_checker: Checker
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gspell.TextBuffer */
+    /* Methods of Gspell-1.Gspell.TextBuffer */
     get_buffer(): Gtk.TextBuffer
     get_spell_checker(): Checker | null
     set_spell_checker(spell_checker?: Checker | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3461,21 +3466,21 @@ export class TextBuffer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TextBuffer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TextBuffer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3497,30 +3502,30 @@ export interface TextView_ConstructProps extends GObject.Object_ConstructProps {
     inline_spell_checking?: boolean
     view?: Gtk.TextView
 }
-export class TextView {
-    /* Properties of Gspell.TextView */
+class TextView {
+    /* Properties of Gspell-1.Gspell.TextView */
     enable_language_menu: boolean
     inline_spell_checking: boolean
-    /* Fields of Gspell.TextView */
+    /* Fields of Gspell-1.Gspell.TextView */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gspell.TextView */
+    /* Methods of Gspell-1.Gspell.TextView */
     basic_setup(): void
     get_enable_language_menu(): boolean
     get_inline_spell_checking(): boolean
     get_view(): Gtk.TextView
     set_enable_language_menu(enable_language_menu: boolean): void
     set_inline_spell_checking(enable: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3528,21 +3533,21 @@ export class TextView {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TextView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TextView, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3561,8 +3566,8 @@ export class TextView {
     static get_from_gtk_text_view(gtk_view: Gtk.TextView): TextView
     static $gtype: GObject.Type
 }
-export abstract class CheckerClass {
-    /* Fields of Gspell.CheckerClass */
+abstract class CheckerClass {
+    /* Fields of Gspell-1.Gspell.CheckerClass */
     parent_class: GObject.ObjectClass
     word_added_to_personal: (checker: Checker, word: string) => void
     word_added_to_session: (checker: Checker, word: string) => void
@@ -3570,24 +3575,24 @@ export abstract class CheckerClass {
     padding: object[]
     static name: string
 }
-export abstract class CheckerDialogClass {
-    /* Fields of Gspell.CheckerDialogClass */
+abstract class CheckerDialogClass {
+    /* Fields of Gspell-1.Gspell.CheckerDialogClass */
     parent_class: Gtk.DialogClass
     padding: object[]
     static name: string
 }
-export abstract class EntryBufferClass {
-    /* Fields of Gspell.EntryBufferClass */
+abstract class EntryBufferClass {
+    /* Fields of Gspell-1.Gspell.EntryBufferClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class EntryClass {
-    /* Fields of Gspell.EntryClass */
+abstract class EntryClass {
+    /* Fields of Gspell-1.Gspell.EntryClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class Language {
-    /* Methods of Gspell.Language */
+class Language {
+    /* Methods of Gspell-1.Gspell.Language */
     compare(language_b: Language): number
     copy(): Language
     free(): void
@@ -3599,47 +3604,49 @@ export class Language {
     static get_default(): Language | null
     static lookup(language_code: string): Language | null
 }
-export abstract class LanguageChooserButtonClass {
-    /* Fields of Gspell.LanguageChooserButtonClass */
+abstract class LanguageChooserButtonClass {
+    /* Fields of Gspell-1.Gspell.LanguageChooserButtonClass */
     parent_class: Gtk.ButtonClass
     padding: object[]
     static name: string
 }
-export abstract class LanguageChooserDialogClass {
-    /* Fields of Gspell.LanguageChooserDialogClass */
+abstract class LanguageChooserDialogClass {
+    /* Fields of Gspell-1.Gspell.LanguageChooserDialogClass */
     parent_class: Gtk.DialogClass
     padding: object[]
     static name: string
 }
-export abstract class LanguageChooserInterface {
-    /* Fields of Gspell.LanguageChooserInterface */
+abstract class LanguageChooserInterface {
+    /* Fields of Gspell-1.Gspell.LanguageChooserInterface */
     parent_interface: GObject.TypeInterface
     get_language_full: (chooser: LanguageChooser, default_language: boolean) => Language
     set_language: (chooser: LanguageChooser, language?: Language | null) => void
     static name: string
 }
-export abstract class NavigatorInterface {
-    /* Fields of Gspell.NavigatorInterface */
+abstract class NavigatorInterface {
+    /* Fields of Gspell-1.Gspell.NavigatorInterface */
     parent_interface: GObject.TypeInterface
     goto_next: (navigator: Navigator) => [ /* returnType */ boolean, /* word */ string | null, /* spell_checker */ Checker | null ]
     change: (navigator: Navigator, word: string, change_to: string) => void
     change_all: (navigator: Navigator, word: string, change_to: string) => void
     static name: string
 }
-export abstract class NavigatorTextViewClass {
-    /* Fields of Gspell.NavigatorTextViewClass */
+abstract class NavigatorTextViewClass {
+    /* Fields of Gspell-1.Gspell.NavigatorTextViewClass */
     parent_class: GObject.InitiallyUnownedClass
     padding: object[]
     static name: string
 }
-export abstract class TextBufferClass {
-    /* Fields of Gspell.TextBufferClass */
+abstract class TextBufferClass {
+    /* Fields of Gspell-1.Gspell.TextBufferClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class TextViewClass {
-    /* Fields of Gspell.TextViewClass */
+abstract class TextViewClass {
+    /* Fields of Gspell-1.Gspell.TextViewClass */
     parent_class: GObject.ObjectClass
     padding: object[]
     static name: string
 }
+}
+export default Gspell;

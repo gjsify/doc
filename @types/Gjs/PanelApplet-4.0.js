@@ -1,2 +1,2 @@
-imports.gi.versions.PanelApplet = '4.0'
-export default imports.gi.PanelApplet
+import PanelApplet from 'gi://PanelApplet?version=4.0';
+export default PanelApplet;

@@ -1,2 +1,2 @@
-imports.gi.versions.Polkit = '1.0'
-export default imports.gi.Polkit
+import Polkit from 'gi://Polkit?version=1.0';
+export default Polkit;

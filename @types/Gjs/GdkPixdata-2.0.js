@@ -1,2 +1,2 @@
-imports.gi.versions.GdkPixdata = '2.0'
-export default imports.gi.GdkPixdata
+import GdkPixdata from 'gi://GdkPixdata?version=2.0';
+export default GdkPixdata;

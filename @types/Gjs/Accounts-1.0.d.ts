@@ -3,11 +3,13 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum AccountsError {
+export namespace Accounts {
+
+enum AccountsError {
     DB,
     DISPOSED,
     DELETED,
@@ -16,14 +18,14 @@ export enum AccountsError {
     STORE_IN_PROGRESS,
     READONLY,
 }
-export enum Error {
+enum Error {
     DB,
     DISPOSED,
     DELETED,
     DB_LOCKED,
     ACCOUNT_NOT_FOUND,
 }
-export enum SettingSource {
+enum SettingSource {
     NONE,
     ACCOUNT,
     PROFILE,
@@ -31,15 +33,15 @@ export enum SettingSource {
 export const MANAGER_INTERFACE: string
 export const MANAGER_OBJECT_PATH: string
 export const MANAGER_SERVICE_NAME: string
-export function accounts_error_quark(): GLib.Quark
-export function errors_quark(): GLib.Quark
-export function provider_list_free(list: Provider[]): void
-export function service_list_free(list: Service[]): void
-export function service_type_list_free(list: ServiceType[]): void
-export interface AccountNotifyCb {
+function accounts_error_quark(): GLib.Quark
+function errors_quark(): GLib.Quark
+function provider_list_free(list: Provider[]): void
+function service_list_free(list: Service[]): void
+function service_type_list_free(list: ServiceType[]): void
+interface AccountNotifyCb {
     (account: Account, key: string): void
 }
-export interface AccountStoreCb {
+interface AccountStoreCb {
     (account: Account, error: GLib.Error): void
 }
 export interface Account_ConstructProps extends GObject.Object_ConstructProps {
@@ -48,16 +50,16 @@ export interface Account_ConstructProps extends GObject.Object_ConstructProps {
     manager?: Manager
     provider?: string
 }
-export class Account {
-    /* Properties of Accounts.Account */
+class Account {
+    /* Properties of Accounts-1.0.Accounts.Account */
     readonly display_name: string
     readonly enabled: boolean
-    /* Fields of Accounts.Account */
+    /* Fields of Accounts-1.0.Accounts.Account */
     parent_instance: GObject.Object
     id: AccountId
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Accounts.Account */
+    /* Methods of Accounts-1.0.Accounts.Account */
     delete(): void
     get_display_name(): string
     get_enabled(): boolean
@@ -87,15 +89,15 @@ export class Account {
     verify_with_tokens(key: string, tokens: string): boolean
     watch_dir(key_prefix: string, callback: AccountNotifyCb): AccountWatch
     watch_key(key: string, callback: AccountNotifyCb): AccountWatch
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -103,25 +105,25 @@ export class Account {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Accounts.Account */
+    /* Virtual methods of Accounts-1.0.Accounts.Account */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Accounts.Account */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Accounts-1.0.Accounts.Account */
     connect(sigName: "deleted", callback: (($obj: Account) => void)): number
     connect_after(sigName: "deleted", callback: (($obj: Account) => void)): number
     emit(sigName: "deleted"): void
@@ -131,7 +133,7 @@ export class Account {
     connect(sigName: "enabled", callback: (($obj: Account, service: string, enabled: boolean) => void)): number
     connect_after(sigName: "enabled", callback: (($obj: Account, service: string, enabled: boolean) => void)): number
     emit(sigName: "enabled", service: string, enabled: boolean): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Account, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Account, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -154,15 +156,15 @@ export interface AccountService_ConstructProps extends GObject.Object_ConstructP
     account?: Account
     service?: Service
 }
-export class AccountService {
-    /* Properties of Accounts.AccountService */
+class AccountService {
+    /* Properties of Accounts-1.0.Accounts.AccountService */
     readonly enabled: boolean
-    /* Fields of Accounts.AccountService */
+    /* Fields of Accounts-1.0.Accounts.AccountService */
     parent_instance: GObject.Object
     priv: AccountServicePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Accounts.AccountService */
+    /* Methods of Accounts-1.0.Accounts.AccountService */
     get_account(): Account
     get_auth_data(): AuthData
     get_changed_fields(): string[]
@@ -174,15 +176,15 @@ export class AccountService {
     set_value(key: string, value?: any | null): void
     set_variant(key: string, value?: GLib.Variant | null): void
     settings_iter_init(iter: AccountSettingIter, key_prefix?: string | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -190,28 +192,28 @@ export class AccountService {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Accounts.AccountService */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Accounts-1.0.Accounts.AccountService */
     connect(sigName: "changed", callback: (($obj: AccountService) => void)): number
     connect_after(sigName: "changed", callback: (($obj: AccountService) => void)): number
     emit(sigName: "changed"): void
     connect(sigName: "enabled", callback: (($obj: AccountService, enabled: boolean) => void)): number
     connect_after(sigName: "enabled", callback: (($obj: AccountService, enabled: boolean) => void)): number
     emit(sigName: "enabled", enabled: boolean): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AccountService, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AccountService, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -235,15 +237,15 @@ export interface Manager_ConstructProps extends GObject.Object_ConstructProps {
     service_type?: string
     use_dbus?: boolean
 }
-export class Manager {
-    /* Properties of Accounts.Manager */
+class Manager {
+    /* Properties of Accounts-1.0.Accounts.Manager */
     abort_on_db_timeout: boolean
     db_timeout: number
-    /* Fields of Accounts.Manager */
+    /* Fields of Accounts-1.0.Accounts.Manager */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Accounts.Manager */
+    /* Methods of Accounts-1.0.Accounts.Manager */
     create_account(provider_name: string): Account
     get_abort_on_db_timeout(): boolean
     get_account(account_id: AccountId): Account
@@ -267,15 +269,15 @@ export class Manager {
     load_service_type(service_type: string): ServiceType
     set_abort_on_db_timeout(abort: boolean): void
     set_db_timeout(timeout_ms: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -283,26 +285,26 @@ export class Manager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Accounts.Manager */
+    /* Virtual methods of Accounts-1.0.Accounts.Manager */
     vfunc_account_deleted(id: AccountId): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Accounts.Manager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Accounts-1.0.Accounts.Manager */
     connect(sigName: "account-created", callback: (($obj: Manager, account_id: number) => void)): number
     connect_after(sigName: "account-created", callback: (($obj: Manager, account_id: number) => void)): number
     emit(sigName: "account-created", account_id: number): void
@@ -315,7 +317,7 @@ export class Manager {
     connect(sigName: "enabled-event", callback: (($obj: Manager, account_id: number) => void)): number
     connect_after(sigName: "enabled-event", callback: (($obj: Manager, account_id: number) => void)): number
     emit(sigName: "enabled-event", account_id: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Manager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Manager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -337,36 +339,36 @@ export class Manager {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export abstract class AccountClass {
-    /* Fields of Accounts.AccountClass */
+abstract class AccountClass {
+    /* Fields of Accounts-1.0.Accounts.AccountClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class AccountPrivate {
+class AccountPrivate {
     static name: string
 }
-export abstract class AccountServiceClass {
-    /* Fields of Accounts.AccountServiceClass */
+abstract class AccountServiceClass {
+    /* Fields of Accounts-1.0.Accounts.AccountServiceClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class AccountServicePrivate {
+class AccountServicePrivate {
     static name: string
 }
-export class AccountSettingIter {
-    /* Fields of Accounts.AccountSettingIter */
+class AccountSettingIter {
+    /* Fields of Accounts-1.0.Accounts.AccountSettingIter */
     account: Account
-    /* Methods of Accounts.AccountSettingIter */
+    /* Methods of Accounts-1.0.Accounts.AccountSettingIter */
     free(): void
     get_next(): [ /* returnType */ boolean, /* key */ string, /* value */ GLib.Variant ]
     next(): [ /* returnType */ boolean, /* key */ string, /* value */ any ]
     static name: string
 }
-export class AccountWatch {
+class AccountWatch {
     static name: string
 }
-export class Application {
-    /* Methods of Accounts.Application */
+class Application {
+    /* Methods of Accounts-1.0.Accounts.Application */
     get_description(): string
     get_desktop_app_info(): Gio.DesktopAppInfo
     get_i18n_domain(): string
@@ -376,8 +378,8 @@ export class Application {
     unref(): void
     static name: string
 }
-export class AuthData {
-    /* Methods of Accounts.AuthData */
+class AuthData {
+    /* Methods of Accounts-1.0.Accounts.AuthData */
     get_credentials_id(): number
     get_login_parameters(extra_parameters?: GLib.Variant | null): GLib.Variant
     get_mechanism(): string
@@ -388,17 +390,17 @@ export class AuthData {
     unref(): void
     static name: string
 }
-export abstract class ManagerClass {
-    /* Fields of Accounts.ManagerClass */
+abstract class ManagerClass {
+    /* Fields of Accounts-1.0.Accounts.ManagerClass */
     parent_class: GObject.ObjectClass
     account_deleted: (manager: Manager, id: AccountId) => void
     static name: string
 }
-export class ManagerPrivate {
+class ManagerPrivate {
     static name: string
 }
-export class Provider {
-    /* Methods of Accounts.Provider */
+class Provider {
+    /* Methods of Accounts-1.0.Accounts.Provider */
     get_description(): string
     get_display_name(): string
     get_domains_regex(): string
@@ -415,8 +417,8 @@ export class Provider {
     /* Static methods and pseudo-constructors */
     static list_free(list: Provider[]): void
 }
-export class Service {
-    /* Methods of Accounts.Service */
+class Service {
+    /* Methods of Accounts-1.0.Accounts.Service */
     get_description(): string
     get_display_name(): string
     get_file_contents(contents: string, data_offset: number): void
@@ -433,8 +435,8 @@ export class Service {
     /* Static methods and pseudo-constructors */
     static list_free(list: Service[]): void
 }
-export class ServiceType {
-    /* Methods of Accounts.ServiceType */
+class ServiceType {
+    /* Methods of Accounts-1.0.Accounts.ServiceType */
     get_description(): string
     get_display_name(): string
     get_file_contents(contents: string, len: number): void
@@ -449,4 +451,6 @@ export class ServiceType {
     /* Static methods and pseudo-constructors */
     static list_free(list: ServiceType[]): void
 }
-export type AccountId = number
+type AccountId = number
+}
+export default Accounts;

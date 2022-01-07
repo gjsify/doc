@@ -3,42 +3,44 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gst from './Gst-1.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as GModule from './GModule-2.0';
+import type Gst from './Gst-1.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type GModule from './GModule-2.0';
 
-export enum MIKEYCacheType {
+export namespace GstSdp {
+
+enum MIKEYCacheType {
     NONE,
     ALWAYS,
     FOR_CSB,
 }
-export enum MIKEYEncAlg {
+enum MIKEYEncAlg {
     NULL,
     AES_CM_128,
     AES_KW_128,
     AES_GCM_128,
 }
-export enum MIKEYKVType {
+enum MIKEYKVType {
     NULL,
     SPI,
     INTERVAL,
 }
-export enum MIKEYKeyDataType {
+enum MIKEYKeyDataType {
     TGK,
     TEK,
 }
-export enum MIKEYMacAlg {
+enum MIKEYMacAlg {
     NULL,
     HMAC_SHA_1_160,
 }
-export enum MIKEYMapType {
+enum MIKEYMapType {
     MIKEY_MAP_TYPE_SRTP,
 }
-export enum MIKEYPRFFunc {
+enum MIKEYPRFFunc {
     MIKEY_PRF_MIKEY_1,
 }
-export enum MIKEYPayloadType {
+enum MIKEYPayloadType {
     LAST,
     KEMAC,
     PKE,
@@ -55,10 +57,10 @@ export enum MIKEYPayloadType {
     KEY_DATA,
     GEN_EXT,
 }
-export enum MIKEYSecProto {
+enum MIKEYSecProto {
     MIKEY_SEC_PROTO_SRTP,
 }
-export enum MIKEYSecSRTP {
+enum MIKEYSecSRTP {
     ENC_ALG,
     ENC_KEY_LEN,
     AUTH_ALG,
@@ -74,12 +76,12 @@ export enum MIKEYSecSRTP {
     SRTP_PREFIX_LEN,
     AEAD_AUTH_TAG_LEN,
 }
-export enum MIKEYTSType {
+enum MIKEYTSType {
     NTP_UTC,
     NTP,
     COUNTER,
 }
-export enum MIKEYType {
+enum MIKEYType {
     INVALID,
     PSK_INIT,
     PSK_VERIFY,
@@ -89,7 +91,7 @@ export enum MIKEYType {
     DH_RESP,
     ERROR,
 }
-export enum SDPResult {
+enum SDPResult {
     OK,
     EINVAL,
 }
@@ -100,30 +102,30 @@ export const SDP_BWTYPE_EXT_PREFIX: string
 export const SDP_BWTYPE_RR: string
 export const SDP_BWTYPE_RS: string
 export const SDP_BWTYPE_TIAS: string
-export function sdp_address_is_multicast(nettype: string, addrtype: string, addr: string): boolean
-export function sdp_make_keymgmt(uri: string, base64: string): string
-export function sdp_media_new(): [ /* returnType */ SDPResult, /* media */ SDPMedia ]
-export function sdp_media_set_media_from_caps(caps: Gst.Caps, media: SDPMedia): SDPResult
-export function sdp_message_as_uri(scheme: string, msg: SDPMessage): string
-export function sdp_message_new(): [ /* returnType */ SDPResult, /* msg */ SDPMessage ]
-export function sdp_message_new_from_text(text: string): [ /* returnType */ SDPResult, /* msg */ SDPMessage ]
-export function sdp_message_parse_buffer(data: Uint8Array[], msg: SDPMessage): SDPResult
-export function sdp_message_parse_uri(uri: string, msg: SDPMessage): SDPResult
-export class MIKEYDecryptInfo {
+function sdp_address_is_multicast(nettype: string, addrtype: string, addr: string): boolean
+function sdp_make_keymgmt(uri: string, base64: string): string
+function sdp_media_new(): [ /* returnType */ SDPResult, /* media */ SDPMedia ]
+function sdp_media_set_media_from_caps(caps: Gst.Caps, media: SDPMedia): SDPResult
+function sdp_message_as_uri(scheme: string, msg: SDPMessage): string
+function sdp_message_new(): [ /* returnType */ SDPResult, /* msg */ SDPMessage ]
+function sdp_message_new_from_text(text: string): [ /* returnType */ SDPResult, /* msg */ SDPMessage ]
+function sdp_message_parse_buffer(data: Uint8Array[], msg: SDPMessage): SDPResult
+function sdp_message_parse_uri(uri: string, msg: SDPMessage): SDPResult
+class MIKEYDecryptInfo {
     static name: string
 }
-export class MIKEYEncryptInfo {
+class MIKEYEncryptInfo {
     static name: string
 }
-export class MIKEYMapSRTP {
-    /* Fields of GstSdp.MIKEYMapSRTP */
+class MIKEYMapSRTP {
+    /* Fields of GstSdp-1.0.GstSdp.MIKEYMapSRTP */
     policy: number
     ssrc: number
     roc: number
     static name: string
 }
-export class MIKEYMessage {
-    /* Fields of GstSdp.MIKEYMessage */
+class MIKEYMessage {
+    /* Fields of GstSdp-1.0.GstSdp.MIKEYMessage */
     version: number
     type: MIKEYType
     V: boolean
@@ -132,7 +134,7 @@ export class MIKEYMessage {
     map_type: MIKEYMapType
     map_info: object[]
     payloads: object[]
-    /* Methods of GstSdp.MIKEYMessage */
+    /* Methods of GstSdp-1.0.GstSdp.MIKEYMessage */
     add_cs_srtp(policy: number, ssrc: number, roc: number): boolean
     add_payload(payload: MIKEYPayload): boolean
     add_pke(C: MIKEYCacheType, data: Uint8Array[]): boolean
@@ -164,11 +166,11 @@ export class MIKEYMessage {
     static new_from_caps(caps: Gst.Caps): MIKEYMessage
     static new_from_data(data: Uint8Array[], info: MIKEYDecryptInfo): MIKEYMessage
 }
-export class MIKEYPayload {
-    /* Fields of GstSdp.MIKEYPayload */
+class MIKEYPayload {
+    /* Fields of GstSdp-1.0.GstSdp.MIKEYPayload */
     type: MIKEYPayloadType
     len: number
-    /* Methods of GstSdp.MIKEYPayload */
+    /* Methods of GstSdp-1.0.GstSdp.MIKEYPayload */
     kemac_add_sub(newpay: MIKEYPayload): boolean
     kemac_get_n_sub(): number
     kemac_get_sub(idx: number): MIKEYPayload
@@ -192,16 +194,16 @@ export class MIKEYPayload {
     /* Static methods and pseudo-constructors */
     static new(type: MIKEYPayloadType): MIKEYPayload
 }
-export class MIKEYPayloadKEMAC {
-    /* Fields of GstSdp.MIKEYPayloadKEMAC */
+class MIKEYPayloadKEMAC {
+    /* Fields of GstSdp-1.0.GstSdp.MIKEYPayloadKEMAC */
     pt: MIKEYPayload
     enc_alg: MIKEYEncAlg
     mac_alg: MIKEYMacAlg
     subpayloads: object[]
     static name: string
 }
-export class MIKEYPayloadKeyData {
-    /* Fields of GstSdp.MIKEYPayloadKeyData */
+class MIKEYPayloadKeyData {
+    /* Fields of GstSdp-1.0.GstSdp.MIKEYPayloadKeyData */
     pt: MIKEYPayload
     key_type: MIKEYKeyDataType
     key_len: number
@@ -213,81 +215,81 @@ export class MIKEYPayloadKeyData {
     kv_data: Uint8Array[]
     static name: string
 }
-export class MIKEYPayloadPKE {
-    /* Fields of GstSdp.MIKEYPayloadPKE */
+class MIKEYPayloadPKE {
+    /* Fields of GstSdp-1.0.GstSdp.MIKEYPayloadPKE */
     pt: MIKEYPayload
     C: MIKEYCacheType
     data_len: number
     data: number
     static name: string
 }
-export class MIKEYPayloadRAND {
-    /* Fields of GstSdp.MIKEYPayloadRAND */
+class MIKEYPayloadRAND {
+    /* Fields of GstSdp-1.0.GstSdp.MIKEYPayloadRAND */
     pt: MIKEYPayload
     len: number
     rand: number
     static name: string
 }
-export class MIKEYPayloadSP {
-    /* Fields of GstSdp.MIKEYPayloadSP */
+class MIKEYPayloadSP {
+    /* Fields of GstSdp-1.0.GstSdp.MIKEYPayloadSP */
     pt: MIKEYPayload
     policy: number
     proto: MIKEYSecProto
     params: object[]
     static name: string
 }
-export class MIKEYPayloadSPParam {
-    /* Fields of GstSdp.MIKEYPayloadSPParam */
+class MIKEYPayloadSPParam {
+    /* Fields of GstSdp-1.0.GstSdp.MIKEYPayloadSPParam */
     type: number
     len: number
     val: number
     static name: string
 }
-export class MIKEYPayloadT {
-    /* Fields of GstSdp.MIKEYPayloadT */
+class MIKEYPayloadT {
+    /* Fields of GstSdp-1.0.GstSdp.MIKEYPayloadT */
     pt: MIKEYPayload
     type: MIKEYTSType
     ts_value: number
     static name: string
 }
-export class SDPAttribute {
-    /* Fields of GstSdp.SDPAttribute */
+class SDPAttribute {
+    /* Fields of GstSdp-1.0.GstSdp.SDPAttribute */
     key: string
     value: string
-    /* Methods of GstSdp.SDPAttribute */
+    /* Methods of GstSdp-1.0.GstSdp.SDPAttribute */
     clear(): SDPResult
     set(key: string, value?: string | null): SDPResult
     static name: string
 }
-export class SDPBandwidth {
-    /* Fields of GstSdp.SDPBandwidth */
+class SDPBandwidth {
+    /* Fields of GstSdp-1.0.GstSdp.SDPBandwidth */
     bwtype: string
     bandwidth: number
-    /* Methods of GstSdp.SDPBandwidth */
+    /* Methods of GstSdp-1.0.GstSdp.SDPBandwidth */
     clear(): SDPResult
     set(bwtype: string, bandwidth: number): SDPResult
     static name: string
 }
-export class SDPConnection {
-    /* Fields of GstSdp.SDPConnection */
+class SDPConnection {
+    /* Fields of GstSdp-1.0.GstSdp.SDPConnection */
     nettype: string
     addrtype: string
     address: string
     ttl: number
     addr_number: number
-    /* Methods of GstSdp.SDPConnection */
+    /* Methods of GstSdp-1.0.GstSdp.SDPConnection */
     clear(): SDPResult
     set(nettype: string, addrtype: string, address: string, ttl: number, addr_number: number): SDPResult
     static name: string
 }
-export class SDPKey {
-    /* Fields of GstSdp.SDPKey */
+class SDPKey {
+    /* Fields of GstSdp-1.0.GstSdp.SDPKey */
     type: string
     data: string
     static name: string
 }
-export class SDPMedia {
-    /* Fields of GstSdp.SDPMedia */
+class SDPMedia {
+    /* Fields of GstSdp-1.0.GstSdp.SDPMedia */
     media: string
     port: number
     num_ports: number
@@ -298,7 +300,7 @@ export class SDPMedia {
     bandwidths: object[]
     key: SDPKey
     attributes: object[]
-    /* Methods of GstSdp.SDPMedia */
+    /* Methods of GstSdp-1.0.GstSdp.SDPMedia */
     add_attribute(key: string, value?: string | null): SDPResult
     add_bandwidth(bwtype: string, bandwidth: number): SDPResult
     add_connection(nettype: string, addrtype: string, address: string, ttl: number, addr_number: number): SDPResult
@@ -348,8 +350,8 @@ export class SDPMedia {
     /* Static methods and pseudo-constructors */
     static set_media_from_caps(caps: Gst.Caps, media: SDPMedia): SDPResult
 }
-export class SDPMessage {
-    /* Fields of GstSdp.SDPMessage */
+class SDPMessage {
+    /* Fields of GstSdp-1.0.GstSdp.SDPMessage */
     version: string
     origin: SDPOrigin
     session_name: string
@@ -364,7 +366,7 @@ export class SDPMessage {
     key: SDPKey
     attributes: object[]
     medias: object[]
-    /* Methods of GstSdp.SDPMessage */
+    /* Methods of GstSdp-1.0.GstSdp.SDPMessage */
     add_attribute(key: string, value?: string | null): SDPResult
     add_bandwidth(bwtype: string, bandwidth: number): SDPResult
     add_email(email: string): SDPResult
@@ -435,8 +437,8 @@ export class SDPMessage {
     static parse_buffer(data: Uint8Array[], msg: SDPMessage): SDPResult
     static parse_uri(uri: string, msg: SDPMessage): SDPResult
 }
-export class SDPOrigin {
-    /* Fields of GstSdp.SDPOrigin */
+class SDPOrigin {
+    /* Fields of GstSdp-1.0.GstSdp.SDPOrigin */
     username: string
     sess_id: string
     sess_version: string
@@ -445,22 +447,24 @@ export class SDPOrigin {
     addr: string
     static name: string
 }
-export class SDPTime {
-    /* Fields of GstSdp.SDPTime */
+class SDPTime {
+    /* Fields of GstSdp-1.0.GstSdp.SDPTime */
     start: string
     stop: string
     repeat: object[]
-    /* Methods of GstSdp.SDPTime */
+    /* Methods of GstSdp-1.0.GstSdp.SDPTime */
     clear(): SDPResult
     set(start: string, stop: string, repeat: string[]): SDPResult
     static name: string
 }
-export class SDPZone {
-    /* Fields of GstSdp.SDPZone */
+class SDPZone {
+    /* Fields of GstSdp-1.0.GstSdp.SDPZone */
     time: string
     typed_time: string
-    /* Methods of GstSdp.SDPZone */
+    /* Methods of GstSdp-1.0.GstSdp.SDPZone */
     clear(): SDPResult
     set(adj_time: string, typed_time: string): SDPResult
     static name: string
 }
+}
+export default GstSdp;

@@ -1,2 +1,2 @@
-imports.gi.versions.GIRepository = '2.0'
-export default imports.gi.GIRepository
+import GIRepository from 'gi://GIRepository?version=2.0';
+export default GIRepository;

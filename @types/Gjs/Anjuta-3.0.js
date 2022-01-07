@@ -1,2 +1,2 @@
-imports.gi.versions.Anjuta = '3.0'
-export default imports.gi.Anjuta
+import Anjuta from 'gi://Anjuta?version=3.0';
+export default Anjuta;

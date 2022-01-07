@@ -1,2 +1,2 @@
-imports.gi.versions.Tracker = '3.0'
-export default imports.gi.Tracker
+import Tracker from 'gi://Tracker?version=3.0';
+export default Tracker;

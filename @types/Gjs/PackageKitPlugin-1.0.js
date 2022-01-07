@@ -1,2 +1,2 @@
-imports.gi.versions.PackageKitPlugin = '1.0'
-export default imports.gi.PackageKitPlugin
+import PackageKitPlugin from 'gi://PackageKitPlugin?version=1.0';
+export default PackageKitPlugin;

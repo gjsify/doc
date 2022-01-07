@@ -1,2 +1,2 @@
-imports.gi.versions.GUPnPIgd = '1.0'
-export default imports.gi.GUPnPIgd
+import GUPnPIgd from 'gi://GUPnPIgd?version=1.0';
+export default GUPnPIgd;

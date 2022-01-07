@@ -1,2 +1,2 @@
-imports.gi.versions.NMClient = '1.0'
-export default imports.gi.NMClient
+import NMClient from 'gi://NMClient?version=1.0';
+export default NMClient;

@@ -1,2 +1,2 @@
-imports.gi.versions.Qmi = '1.0'
-export default imports.gi.Qmi
+import Qmi from 'gi://Qmi?version=1.0';
+export default Qmi;

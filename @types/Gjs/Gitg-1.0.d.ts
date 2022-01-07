@@ -3,27 +3,29 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as cairo from './cairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Gee from './Gee-0.8';
-import type * as Gio from './Gio-2.0';
-import type * as Gdk from './Gdk-3.0';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as Ggit from './Ggit-1.0';
-import type * as Gtk from './Gtk-3.0';
-import type * as xlib from './xlib-2.0';
-import type * as Atk from './Atk-1.0';
+import type cairo from './cairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Gee from './Gee-0.8';
+import type Gio from './Gio-2.0';
+import type Gdk from './Gdk-3.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type GModule from './GModule-2.0';
+import type Ggit from './Ggit-1.0';
+import type Gtk from './Gtk-3.0';
+import type xlib from './xlib-2.0';
+import type Atk from './Atk-1.0';
 
-export enum AuthenticationLifeTime {
+export namespace Gitg {
+
+enum AuthenticationLifeTime {
     FORGET,
     SESSION,
     FOREVER,
 }
-export enum CommitModelColumns {
+enum CommitModelColumns {
     SHA1,
     SUBJECT,
     MESSAGE,
@@ -38,65 +40,65 @@ export enum CommitModelColumns {
     COMMIT,
     NUM,
 }
-export enum RefType {
+enum RefType {
     NONE,
     BRANCH,
     REMOTE,
     TAG,
     STASH,
 }
-export enum RefState {
+enum RefState {
     NONE,
     SELECTED,
     PRELIGHT,
 }
-export enum RemoteState {
+enum RemoteState {
     DISCONNECTED,
     CONNECTING,
     CONNECTED,
     TRANSFERRING,
 }
-export enum SelectionMode {
+enum SelectionMode {
     NORMAL,
     SELECTION,
 }
-export enum SidebarHint {
+enum SidebarHint {
     NONE,
     HEADER,
     SEPARATOR,
     DUMMY,
 }
-export enum SidebarColumn {
+enum SidebarColumn {
     HINT,
     SECTION,
     ITEM,
 }
-export enum CredentialsError {
+enum CredentialsError {
     CANCELLED,
 }
-export enum DateError {
+enum DateError {
     INVALID_FORMAT,
 }
-export enum InitError {
+enum InitError {
     THREADS_UNSAFE,
 }
-export enum RemoteError {
+enum RemoteError {
     ALREADY_CONNECTED,
     ALREADY_CONNECTING,
     ALREADY_DISCONNECTED,
     STILL_CONNECTING,
 }
-export enum StageError {
+enum StageError {
     PRE_COMMIT_HOOK_FAILED,
     COMMIT_MSG_HOOK_FAILED,
     NOTHING_TO_COMMIT,
     INDEX_ENTRY_NOT_FOUND,
 }
-export enum PatchSetType {
+enum PatchSetType {
     ADD,
     REMOVE,
 }
-export enum LaneTag {
+enum LaneTag {
     NONE,
     START,
     END,
@@ -105,31 +107,31 @@ export enum LaneTag {
     SIGN_UNSTAGED,
     HIDDEN,
 }
-export enum StageCommitOptions {
+enum StageCommitOptions {
     NONE,
     SIGN_OFF,
     AMEND,
     SKIP_HOOKS,
 }
-export function commit_model_columns_type(): GObject.Type
-export function init(): void
+function commit_model_columns_type(): GObject.Type
+function init(): void
 export interface Branch_ConstructProps extends Ggit.Branch_ConstructProps {
 }
-export class Branch {
-    /* Fields of Ggit.Branch */
+class Branch {
+    /* Fields of Ggit-1.0.Ggit.Branch */
     parent_instance: Ggit.Ref
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.Branch */
+    /* Methods of Gitg-1.0.Gitg.Branch */
     get_upstream(): Ref
-    /* Methods of Ggit.Branch */
+    /* Methods of Ggit-1.0.Ggit.Branch */
     delete(): void
     get_name(): string | null
     get_upstream(): Ggit.Ref | null
     is_head(): boolean
     move(new_branch_name: string, flags: Ggit.CreateFlags): Ggit.Branch | null
     set_upstream(upstream_branch_name: string): void
-    /* Methods of Ggit.Ref */
+    /* Methods of Ggit-1.0.Ggit.Ref */
     delete_log(): void
     get_log(): Ggit.Reflog | null
     get_owner(): Ggit.Repository | null
@@ -148,15 +150,15 @@ export class Branch {
     set_symbolic_target(target: string, log_message: string): Ggit.Ref | null
     set_target(oid: Ggit.OId, log_message: string): Ggit.Ref | null
     to_string(): string | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -164,23 +166,23 @@ export class Branch {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gitg.Branch */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gitg-1.0.Gitg.Branch */
     vfunc_get_upstream(): Ref
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Branch, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Branch, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -199,17 +201,17 @@ export interface Ref_ConstructProps extends Ggit.Ref_ConstructProps {
     state?: RefState
     working?: boolean
 }
-export class Ref {
-    /* Properties of Gitg.Ref */
+class Ref {
+    /* Properties of Gitg-1.0.Gitg.Ref */
     d_parsed_name: ParsedRefName
     d_pushes: Ref[]
     state: RefState
     working: boolean
-    /* Fields of Ggit.Ref */
+    /* Fields of Ggit-1.0.Ggit.Ref */
     parent_instance: Ggit.Native
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.Ref */
+    /* Methods of Gitg-1.0.Gitg.Ref */
     get_owner(): Repository
     get_d_parsed_name(): ParsedRefName
     set_d_parsed_name(value: ParsedRefName): void
@@ -221,7 +223,7 @@ export class Ref {
     set_working(value: boolean): void
     get_parsed_name(): ParsedRefName
     get_pushes(): Ref[]
-    /* Methods of Ggit.Ref */
+    /* Methods of Ggit-1.0.Ggit.Ref */
     delete(): void
     delete_log(): void
     get_log(): Ggit.Reflog | null
@@ -242,15 +244,15 @@ export class Ref {
     set_symbolic_target(target: string, log_message: string): Ggit.Ref | null
     set_target(oid: Ggit.OId, log_message: string): Ggit.Ref | null
     to_string(): string | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -258,13 +260,13 @@ export class Ref {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gitg.Ref */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gitg-1.0.Gitg.Ref */
     vfunc_get_owner(): Repository
     vfunc_get_d_parsed_name(): ParsedRefName
     vfunc_set_d_parsed_name(value: ParsedRefName): void
@@ -274,15 +276,15 @@ export class Ref {
     vfunc_set_state(value: RefState): void
     vfunc_get_working(): boolean
     vfunc_set_working(value: boolean): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Ref, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Ref, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -305,20 +307,20 @@ export class Ref {
 }
 export interface CredentialsProvider_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class CredentialsProvider {
-    /* Fields of GObject.Object */
+class CredentialsProvider {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.CredentialsProvider */
+    /* Methods of Gitg-1.0.Gitg.CredentialsProvider */
     credentials(url: string, username_from_url: string | null, allowed_types: Ggit.Credtype): Ggit.Cred | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -326,23 +328,23 @@ export class CredentialsProvider {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gitg.CredentialsProvider */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gitg-1.0.Gitg.CredentialsProvider */
     vfunc_credentials(url: string, username_from_url: string | null, allowed_types: Ggit.Credtype): Ggit.Cred | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CredentialsProvider, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CredentialsProvider, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -357,25 +359,25 @@ export class CredentialsProvider {
 }
 export interface SidebarItem_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class SidebarItem {
-    /* Properties of Gitg.SidebarItem */
+class SidebarItem {
+    /* Properties of Gitg-1.0.Gitg.SidebarItem */
     readonly text: string
     readonly icon_name: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.SidebarItem */
+    /* Methods of Gitg-1.0.Gitg.SidebarItem */
     activate(numclick: number): void
     get_text(): string
     get_icon_name(): string | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -383,29 +385,29 @@ export class SidebarItem {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gitg.SidebarItem */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gitg-1.0.Gitg.SidebarItem */
     vfunc_activate(numclick: number): void
     vfunc_get_text(): string
     vfunc_get_icon_name(): string | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gitg.SidebarItem */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gitg-1.0.Gitg.SidebarItem */
     connect(sigName: "activated", callback: (($obj: SidebarItem, numclick: number) => void)): number
     connect_after(sigName: "activated", callback: (($obj: SidebarItem, numclick: number) => void)): number
     emit(sigName: "activated", numclick: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SidebarItem, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SidebarItem, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -424,30 +426,30 @@ export class SidebarItem {
 }
 export interface StageStatusItem_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class StageStatusItem {
-    /* Properties of Gitg.StageStatusItem */
+class StageStatusItem {
+    /* Properties of Gitg-1.0.Gitg.StageStatusItem */
     readonly path: string
     readonly is_staged: boolean
     readonly is_unstaged: boolean
     readonly is_untracked: boolean
     readonly icon_name: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.StageStatusItem */
+    /* Methods of Gitg-1.0.Gitg.StageStatusItem */
     get_path(): string
     get_is_staged(): boolean
     get_is_unstaged(): boolean
     get_is_untracked(): boolean
     get_icon_name(): string | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -455,27 +457,27 @@ export class StageStatusItem {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gitg.StageStatusItem */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gitg-1.0.Gitg.StageStatusItem */
     vfunc_get_path(): string
     vfunc_get_is_staged(): boolean
     vfunc_get_is_unstaged(): boolean
     vfunc_get_is_untracked(): boolean
     vfunc_get_icon_name(): string | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StageStatusItem, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StageStatusItem, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -498,8 +500,8 @@ export class StageStatusItem {
     _init (config?: StageStatusItem_ConstructProps): void
     static $gtype: GObject.Type
 }
-export class Async {
-    /* Fields of Gitg.Async */
+class Async {
+    /* Fields of Gitg-1.0.Gitg.Async */
     ref_count: number
     static name: string
     static new(): Async
@@ -513,12 +515,12 @@ export class Async {
 }
 export interface AuthenticationDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
 }
-export class AuthenticationDialog {
-    /* Properties of Gitg.AuthenticationDialog */
+class AuthenticationDialog {
+    /* Properties of Gitg-1.0.Gitg.AuthenticationDialog */
     readonly username: string
     readonly password: string
     readonly life_time: AuthenticationLifeTime
-    /* Properties of Gtk.Window */
+    /* Properties of Gtk-3.0.Gtk.Window */
     accept_focus: boolean
     application: Gtk.Application
     attached_to: Gtk.Widget
@@ -551,11 +553,11 @@ export class AuthenticationDialog {
     type_hint: Gdk.WindowTypeHint
     urgency_hint: boolean
     window_position: Gtk.WindowPosition
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -595,22 +597,22 @@ export class AuthenticationDialog {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Window */
+    /* Fields of Gtk-3.0.Gtk.Window */
     bin: Gtk.Bin
     priv: Gtk.WindowPrivate
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.AuthenticationDialog */
+    /* Methods of Gitg-1.0.Gitg.AuthenticationDialog */
     get_username(): string
     get_password(): string
     get_life_time(): AuthenticationLifeTime
-    /* Methods of Gtk.Dialog */
+    /* Methods of Gtk-3.0.Gtk.Dialog */
     add_action_widget(child: Gtk.Widget, response_id: number): void
     add_button(button_text: string, response_id: number): Gtk.Widget
     get_action_area(): Gtk.Box
@@ -623,7 +625,7 @@ export class AuthenticationDialog {
     set_alternative_button_order_from_array(new_order: number[]): void
     set_default_response(response_id: number): void
     set_response_sensitive(response_id: number, setting: boolean): void
-    /* Methods of Gtk.Window */
+    /* Methods of Gtk-3.0.Gtk.Window */
     activate_default(): boolean
     activate_focus(): boolean
     activate_key(event: Gdk.EventKey): boolean
@@ -730,12 +732,13 @@ export class AuthenticationDialog {
     unfullscreen(): void
     unmaximize(): void
     unstick(): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -760,7 +763,7 @@ export class AuthenticationDialog {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -1016,15 +1019,15 @@ export class AuthenticationDialog {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1032,22 +1035,22 @@ export class AuthenticationDialog {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Dialog */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Dialog */
     vfunc_close(): void
     vfunc_response(response_id: number): void
-    /* Virtual methods of Gtk.Window */
+    /* Virtual methods of Gtk-3.0.Gtk.Window */
     vfunc_activate_default(): void
     vfunc_activate_focus(): void
     vfunc_enable_debugging(toggle: boolean): boolean
     vfunc_keys_changed(): void
     vfunc_set_focus(focus?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -1058,7 +1061,7 @@ export class AuthenticationDialog {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -1141,22 +1144,22 @@ export class AuthenticationDialog {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Dialog */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Dialog */
     connect(sigName: "close", callback: (($obj: AuthenticationDialog) => void)): number
     connect_after(sigName: "close", callback: (($obj: AuthenticationDialog) => void)): number
     emit(sigName: "close"): void
     connect(sigName: "response", callback: (($obj: AuthenticationDialog, response_id: number) => void)): number
     connect_after(sigName: "response", callback: (($obj: AuthenticationDialog, response_id: number) => void)): number
     emit(sigName: "response", response_id: number): void
-    /* Signals of Gtk.Window */
+    /* Signals of Gtk-3.0.Gtk.Window */
     connect(sigName: "activate-default", callback: (($obj: AuthenticationDialog) => void)): number
     connect_after(sigName: "activate-default", callback: (($obj: AuthenticationDialog) => void)): number
     emit(sigName: "activate-default"): void
@@ -1172,7 +1175,7 @@ export class AuthenticationDialog {
     connect(sigName: "set-focus", callback: (($obj: AuthenticationDialog, widget?: Gtk.Widget | null) => void)): number
     connect_after(sigName: "set-focus", callback: (($obj: AuthenticationDialog, widget?: Gtk.Widget | null) => void)): number
     emit(sigName: "set-focus", widget?: Gtk.Widget | null): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: AuthenticationDialog, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: AuthenticationDialog, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -1185,7 +1188,7 @@ export class AuthenticationDialog {
     connect(sigName: "set-focus-child", callback: (($obj: AuthenticationDialog, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: AuthenticationDialog, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: AuthenticationDialog) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: AuthenticationDialog) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -1393,7 +1396,7 @@ export class AuthenticationDialog {
     connect(sigName: "window-state-event", callback: (($obj: AuthenticationDialog, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: AuthenticationDialog, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AuthenticationDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AuthenticationDialog, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1566,21 +1569,21 @@ export class AuthenticationDialog {
 }
 export interface AvatarCache_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class AvatarCache {
-    /* Fields of GObject.Object */
+class AvatarCache {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.AvatarCache */
+    /* Methods of Gitg-1.0.Gitg.AvatarCache */
     load(email: string, size: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
     load_finish(_res_: Gio.AsyncResult): GdkPixbuf.Pixbuf | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1588,21 +1591,21 @@ export class AvatarCache {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AvatarCache, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AvatarCache, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1623,24 +1626,24 @@ export interface BranchBase_ConstructProps extends Ggit.Branch_ConstructProps {
     state?: RefState
     working?: boolean
 }
-export class BranchBase {
-    /* Properties of Gitg.Ref */
+class BranchBase {
+    /* Properties of Gitg-1.0.Gitg.Ref */
     d_parsed_name: ParsedRefName
     d_pushes: Ref[]
     state: RefState
     working: boolean
-    /* Fields of Ggit.Branch */
+    /* Fields of Ggit-1.0.Ggit.Branch */
     parent_instance: Ggit.Ref
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Branch */
+    /* Methods of Ggit-1.0.Ggit.Branch */
     delete(): void
     get_name(): string | null
     get_upstream(): Ggit.Ref | null
     is_head(): boolean
     move(new_branch_name: string, flags: Ggit.CreateFlags): Ggit.Branch | null
     set_upstream(upstream_branch_name: string): void
-    /* Methods of Ggit.Ref */
+    /* Methods of Ggit-1.0.Ggit.Ref */
     delete_log(): void
     get_log(): Ggit.Reflog | null
     get_owner(): Ggit.Repository | null
@@ -1659,15 +1662,15 @@ export class BranchBase {
     set_symbolic_target(target: string, log_message: string): Ggit.Ref | null
     set_target(oid: Ggit.OId, log_message: string): Ggit.Ref | null
     to_string(): string | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1675,13 +1678,13 @@ export class BranchBase {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gitg.Ref */
+    watch_closure(closure: Function): void
+    /* Methods of Gitg-1.0.Gitg.Ref */
     get_owner(): Repository
     get_d_parsed_name(): ParsedRefName
     set_d_parsed_name(value: ParsedRefName): void
@@ -1693,9 +1696,9 @@ export class BranchBase {
     set_working(value: boolean): void
     get_parsed_name(): ParsedRefName
     get_pushes(): Ref[]
-    /* Methods of Gitg.Branch */
+    /* Methods of Gitg-1.0.Gitg.Branch */
     get_upstream(): Ref
-    /* Virtual methods of Gitg.BranchBase */
+    /* Virtual methods of Gitg-1.0.Gitg.BranchBase */
     vfunc_get_owner(): Repository
     vfunc_get_d_parsed_name(): ParsedRefName
     vfunc_set_d_parsed_name(value: ParsedRefName): void
@@ -1706,15 +1709,15 @@ export class BranchBase {
     vfunc_get_working(): boolean
     vfunc_set_working(value: boolean): void
     vfunc_get_upstream(): Ref
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BranchBase, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BranchBase, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1744,14 +1747,14 @@ export interface CellRendererLanes_ConstructProps extends Gtk.CellRendererText_C
     dot_width?: number
     labels?: Ref[]
 }
-export class CellRendererLanes {
-    /* Properties of Gitg.CellRendererLanes */
+class CellRendererLanes {
+    /* Properties of Gitg-1.0.Gitg.CellRendererLanes */
     commit: Commit
     next_commit: Commit
     lane_width: number
     dot_width: number
     labels: Ref[]
-    /* Properties of Gtk.CellRendererText */
+    /* Properties of Gtk-3.0.Gtk.CellRendererText */
     align_set: boolean
     alignment: Pango.Alignment
     attributes: Pango.AttrList
@@ -1800,7 +1803,7 @@ export class CellRendererLanes {
     width_chars: number
     wrap_mode: Pango.WrapMode
     wrap_width: number
-    /* Properties of Gtk.CellRenderer */
+    /* Properties of Gtk-3.0.Gtk.CellRenderer */
     cell_background: string
     cell_background_gdk: Gdk.Color
     cell_background_rgba: Gdk.RGBA
@@ -1817,13 +1820,13 @@ export class CellRendererLanes {
     xpad: number
     yalign: number
     ypad: number
-    /* Fields of Gtk.CellRendererText */
+    /* Fields of Gtk-3.0.Gtk.CellRendererText */
     parent: Gtk.CellRenderer
-    /* Fields of Gtk.CellRenderer */
+    /* Fields of Gtk-3.0.Gtk.CellRenderer */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.CellRendererLanes */
+    /* Methods of Gitg-1.0.Gitg.CellRendererLanes */
     get_ref_at_pos(widget: Gtk.Widget, x: number, cell_w: number): [ /* returnType */ Ref | null, /* hot_x */ number ]
     get_commit(): Commit | null
     set_commit(value?: Commit | null): void
@@ -1835,9 +1838,9 @@ export class CellRendererLanes {
     set_dot_width(value: number): void
     get_labels(): Ref[]
     set_labels(value: Ref[]): void
-    /* Methods of Gtk.CellRendererText */
+    /* Methods of Gtk-3.0.Gtk.CellRendererText */
     set_fixed_height_from_font(number_of_rows: number): void
-    /* Methods of Gtk.CellRenderer */
+    /* Methods of Gtk-3.0.Gtk.CellRenderer */
     activate(event: Gdk.Event, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): boolean
     get_aligned_area(widget: Gtk.Widget, flags: Gtk.CellRendererState, cell_area: Gdk.Rectangle): /* aligned_area */ Gdk.Rectangle
     get_alignment(): [ /* xalign */ number | null, /* yalign */ number | null ]
@@ -1862,15 +1865,15 @@ export class CellRendererLanes {
     set_visible(visible: boolean): void
     start_editing(event: Gdk.Event | null, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): Gtk.CellEditable | null
     stop_editing(canceled: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1878,15 +1881,15 @@ export class CellRendererLanes {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.CellRendererText */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.CellRendererText */
     vfunc_edited(path: string, new_text: string): void
-    /* Virtual methods of Gtk.CellRenderer */
+    /* Virtual methods of Gtk-3.0.Gtk.CellRenderer */
     vfunc_activate(event: Gdk.Event, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): boolean
     vfunc_editing_canceled(): void
     vfunc_editing_started(editable: Gtk.CellEditable, path: string): void
@@ -1899,26 +1902,26 @@ export class CellRendererLanes {
     vfunc_get_size(widget: Gtk.Widget, cell_area?: Gdk.Rectangle | null): [ /* x_offset */ number | null, /* y_offset */ number | null, /* width */ number | null, /* height */ number | null ]
     vfunc_render(cr: cairo.Context, widget: Gtk.Widget, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): void
     vfunc_start_editing(event: Gdk.Event | null, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): Gtk.CellEditable | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.CellRendererText */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.CellRendererText */
     connect(sigName: "edited", callback: (($obj: CellRendererLanes, path: string, new_text: string) => void)): number
     connect_after(sigName: "edited", callback: (($obj: CellRendererLanes, path: string, new_text: string) => void)): number
     emit(sigName: "edited", path: string, new_text: string): void
-    /* Signals of Gtk.CellRenderer */
+    /* Signals of Gtk-3.0.Gtk.CellRenderer */
     connect(sigName: "editing-canceled", callback: (($obj: CellRendererLanes) => void)): number
     connect_after(sigName: "editing-canceled", callback: (($obj: CellRendererLanes) => void)): number
     emit(sigName: "editing-canceled"): void
     connect(sigName: "editing-started", callback: (($obj: CellRendererLanes, editable: Gtk.CellEditable, path: string) => void)): number
     connect_after(sigName: "editing-started", callback: (($obj: CellRendererLanes, editable: Gtk.CellEditable, path: string) => void)): number
     emit(sigName: "editing-started", editable: Gtk.CellEditable, path: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CellRendererLanes, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CellRendererLanes, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2073,31 +2076,31 @@ export class CellRendererLanes {
 }
 export interface Color_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Color {
-    /* Properties of Gitg.Color */
+class Color {
+    /* Properties of Gitg-1.0.Gitg.Color */
     readonly r: number
     readonly g: number
     readonly b: number
-    /* Fields of Gitg.Color */
+    /* Fields of Gitg-1.0.Gitg.Color */
     idx: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.Color */
+    /* Methods of Gitg-1.0.Gitg.Color */
     components(): [ /* r */ number, /* g */ number, /* b */ number ]
     next_index(): Color
     copy(): Color
     get_r(): number
     get_g(): number
     get_b(): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2105,21 +2108,21 @@ export class Color {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Color, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Color, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2144,8 +2147,8 @@ export class Color {
 }
 export interface CommitListView_ConstructProps extends Gtk.TreeView_ConstructProps {
 }
-export class CommitListView {
-    /* Properties of Gtk.TreeView */
+class CommitListView {
+    /* Properties of Gtk-3.0.Gtk.TreeView */
     activate_on_single_click: boolean
     enable_grid_lines: Gtk.TreeViewGridLines
     enable_search: boolean
@@ -2164,11 +2167,11 @@ export class CommitListView {
     search_column: number
     show_expanders: boolean
     tooltip_column: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -2208,15 +2211,15 @@ export class CommitListView {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.CommitListView */
+    /* Methods of Gitg-1.0.Gitg.CommitListView */
     find_cell_at_pos(column: Gtk.TreeViewColumn, path: Gtk.TreePath, x: number): [ /* returnType */ Gtk.CellRenderer | null, /* width */ number ]
-    /* Methods of Gtk.TreeView */
+    /* Methods of Gtk-3.0.Gtk.TreeView */
     append_column(column: Gtk.TreeViewColumn): number
     collapse_all(): void
     collapse_row(path: Gtk.TreePath): boolean
@@ -2312,10 +2315,11 @@ export class CommitListView {
     set_vadjustment(adjustment?: Gtk.Adjustment | null): void
     unset_rows_drag_dest(): void
     unset_rows_drag_source(): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2340,7 +2344,7 @@ export class CommitListView {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -2599,15 +2603,15 @@ export class CommitListView {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2615,13 +2619,13 @@ export class CommitListView {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2630,7 +2634,7 @@ export class CommitListView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Gitg.CommitListView */
+    /* Virtual methods of Gitg-1.0.Gitg.CommitListView */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2641,7 +2645,7 @@ export class CommitListView {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.TreeView */
+    /* Virtual methods of Gtk-3.0.Gtk.TreeView */
     vfunc_columns_changed(): void
     vfunc_cursor_changed(): void
     vfunc_expand_collapse_cursor_row(logical: boolean, expand: boolean, open_all: boolean): boolean
@@ -2657,7 +2661,7 @@ export class CommitListView {
     vfunc_test_expand_row(iter: Gtk.TreeIter, path: Gtk.TreePath): boolean
     vfunc_toggle_cursor_row(): boolean
     vfunc_unselect_all(): boolean
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -2668,7 +2672,7 @@ export class CommitListView {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -2751,15 +2755,15 @@ export class CommitListView {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.TreeView */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.TreeView */
     connect(sigName: "columns-changed", callback: (($obj: CommitListView) => void)): number
     connect_after(sigName: "columns-changed", callback: (($obj: CommitListView) => void)): number
     emit(sigName: "columns-changed"): void
@@ -2805,7 +2809,7 @@ export class CommitListView {
     connect(sigName: "unselect-all", callback: (($obj: CommitListView) => boolean)): number
     connect_after(sigName: "unselect-all", callback: (($obj: CommitListView) => boolean)): number
     emit(sigName: "unselect-all"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: CommitListView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: CommitListView, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -2818,7 +2822,7 @@ export class CommitListView {
     connect(sigName: "set-focus-child", callback: (($obj: CommitListView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: CommitListView, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: CommitListView) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: CommitListView) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -3026,7 +3030,7 @@ export class CommitListView {
     connect(sigName: "window-state-event", callback: (($obj: CommitListView, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: CommitListView, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CommitListView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CommitListView, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3168,14 +3172,14 @@ export interface CommitModel_ConstructProps extends GObject.Object_ConstructProp
     sort_mode?: Ggit.SortMode
     repository?: Repository
 }
-export class CommitModel {
-    /* Properties of Gitg.CommitModel */
+class CommitModel {
+    /* Properties of Gitg-1.0.Gitg.CommitModel */
     limit: number
     sort_mode: Ggit.SortMode
     repository: Repository
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.CommitModel */
+    /* Methods of Gitg-1.0.Gitg.CommitModel */
     get_permanent_lanes(): Ggit.OId[]
     set_permanent_lanes(value: Ggit.OId[]): void
     reload(): void
@@ -3193,15 +3197,15 @@ export class CommitModel {
     set_sort_mode(value: Ggit.SortMode): void
     get_repository(): Repository
     set_repository(value: Repository): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3209,13 +3213,13 @@ export class CommitModel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.TreeModel */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.TreeModel */
     filter_new(root?: Gtk.TreePath | null): Gtk.TreeModel
     foreach(func: Gtk.TreeModelForeachFunc): void
     get_column_type(index_: number): GObject.Type
@@ -3241,7 +3245,7 @@ export class CommitModel {
     row_inserted(path: Gtk.TreePath, iter: Gtk.TreeIter): void
     rows_reordered(path: Gtk.TreePath, iter: Gtk.TreeIter | null, new_order: number[]): void
     unref_node(iter: Gtk.TreeIter): void
-    /* Virtual methods of Gitg.CommitModel */
+    /* Virtual methods of Gitg-1.0.Gitg.CommitModel */
     vfunc_get_column_type(index_: number): GObject.Type
     vfunc_get_flags(): Gtk.TreeModelFlags
     vfunc_get_iter(path: Gtk.TreePath): [ /* returnType */ boolean, /* iter */ Gtk.TreeIter ]
@@ -3261,15 +3265,15 @@ export class CommitModel {
     vfunc_row_has_child_toggled(path: Gtk.TreePath, iter: Gtk.TreeIter): void
     vfunc_row_inserted(path: Gtk.TreePath, iter: Gtk.TreeIter): void
     vfunc_unref_node(iter: Gtk.TreeIter): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gitg.CommitModel */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gitg-1.0.Gitg.CommitModel */
     connect(sigName: "started", callback: (($obj: CommitModel) => void)): number
     connect_after(sigName: "started", callback: (($obj: CommitModel) => void)): number
     emit(sigName: "started"): void
@@ -3285,11 +3289,11 @@ export class CommitModel {
     connect(sigName: "end-clear", callback: (($obj: CommitModel) => void)): number
     connect_after(sigName: "end-clear", callback: (($obj: CommitModel) => void)): number
     emit(sigName: "end-clear"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CommitModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CommitModel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.TreeModel */
+    /* Signals of Gtk-3.0.Gtk.TreeModel */
     connect(sigName: "row-changed", callback: (($obj: CommitModel, path: Gtk.TreePath, iter: Gtk.TreeIter) => void)): number
     connect_after(sigName: "row-changed", callback: (($obj: CommitModel, path: Gtk.TreePath, iter: Gtk.TreeIter) => void)): number
     emit(sigName: "row-changed", path: Gtk.TreePath, iter: Gtk.TreeIter): void
@@ -3326,19 +3330,19 @@ export interface Commit_ConstructProps extends Ggit.Commit_ConstructProps {
     tag?: LaneTag
     mylane?: number
 }
-export class Commit {
-    /* Properties of Gitg.Commit */
+class Commit {
+    /* Properties of Gitg-1.0.Gitg.Commit */
     tag: LaneTag
     mylane: number
     readonly lane: Lane
     readonly format_patch_name: string
     readonly committer_date_for_display: string
     readonly author_date_for_display: string
-    /* Fields of Ggit.Commit */
+    /* Fields of Ggit-1.0.Ggit.Commit */
     parent_instance: Ggit.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.Commit */
+    /* Methods of Gitg-1.0.Gitg.Commit */
     get_lanes(): Lane[]
     insert_lane(lane: Lane, idx: number): Lane[]
     remove_lane(lane: Lane): Lane[]
@@ -3353,7 +3357,7 @@ export class Commit {
     get_format_patch_name(): string
     get_committer_date_for_display(): string
     get_author_date_for_display(): string
-    /* Methods of Ggit.Commit */
+    /* Methods of Ggit-1.0.Ggit.Commit */
     amend(update_ref: string | null, author: Ggit.Signature, committer: Ggit.Signature, message_encoding: string | null, message: string, tree: Ggit.Tree): Ggit.OId | null
     get_author(): Ggit.Signature | null
     get_committer(): Ggit.Signature | null
@@ -3364,18 +3368,18 @@ export class Commit {
     get_subject(): string | null
     get_tree(): Ggit.Tree | null
     get_tree_id(): Ggit.OId | null
-    /* Methods of Ggit.Object */
+    /* Methods of Ggit-1.0.Ggit.Object */
     get_id(): Ggit.OId | null
     get_owner(): Ggit.Repository | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3383,21 +3387,21 @@ export class Commit {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Commit, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Commit, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3424,10 +3428,10 @@ export class Commit {
     static new(): Commit
     static $gtype: GObject.Type
 }
-export class CredentialsManager {
-    /* Fields of Gitg.CredentialsManager */
+class CredentialsManager {
+    /* Fields of Gitg-1.0.Gitg.CredentialsManager */
     ref_count: number
-    /* Methods of Gitg.CredentialsManager */
+    /* Methods of Gitg-1.0.Gitg.CredentialsManager */
     credentials(url: string, username: string | null, allowed_types: Ggit.Credtype): Ggit.Cred | null
     static name: string
     static new(config: Ggit.Config | null, window: Gtk.Window, save_user_in_config: boolean): CredentialsManager
@@ -3438,26 +3442,26 @@ export class CredentialsManager {
 export interface Date_ConstructProps extends GObject.Object_ConstructProps {
     date_string?: string
 }
-export class Date {
-    /* Properties of Gitg.Date */
+class Date {
+    /* Properties of Gitg-1.0.Gitg.Date */
     date_string: string
     readonly date: GLib.DateTime
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.Date */
+    /* Methods of Gitg-1.0.Gitg.Date */
     for_display(): string
     get_date_string(): string
     set_date_string(value: string): void
     get_date(): GLib.DateTime
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3465,25 +3469,25 @@ export class Date {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gitg.Date */
+    /* Virtual methods of Gitg-1.0.Gitg.Date */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Date, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Date, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3509,11 +3513,11 @@ export interface DiffStat_ConstructProps extends Gtk.DrawingArea_ConstructProps 
     added?: number
     removed?: number
 }
-export class DiffStat {
-    /* Properties of Gitg.DiffStat */
+class DiffStat {
+    /* Properties of Gitg-1.0.Gitg.DiffStat */
     added: number
     removed: number
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -3553,18 +3557,18 @@ export class DiffStat {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.DrawingArea */
+    /* Fields of Gtk-3.0.Gtk.DrawingArea */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.DiffStat */
+    /* Methods of Gitg-1.0.Gitg.DiffStat */
     get_added(): number
     set_added(value: number): void
     get_removed(): number
     set_removed(value: number): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -3823,15 +3827,15 @@ export class DiffStat {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3839,13 +3843,13 @@ export class DiffStat {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Widget */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -3928,15 +3932,15 @@ export class DiffStat {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Widget */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DiffStat) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DiffStat) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -4144,7 +4148,7 @@ export class DiffStat {
     connect(sigName: "window-state-event", callback: (($obj: DiffStat, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DiffStat, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DiffStat, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DiffStat, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4245,20 +4249,20 @@ export interface DiffViewOptions_ConstructProps extends Gtk.Toolbar_ConstructPro
     context_lines?: number
     view?: DiffView
 }
-export class DiffViewOptions {
-    /* Properties of Gitg.DiffViewOptions */
+class DiffViewOptions {
+    /* Properties of Gitg-1.0.Gitg.DiffViewOptions */
     context_lines: number
     view: DiffView
-    /* Properties of Gtk.Toolbar */
+    /* Properties of Gtk-3.0.Gtk.Toolbar */
     icon_size: Gtk.IconSize
     icon_size_set: boolean
     show_arrow: boolean
     toolbar_style: Gtk.ToolbarStyle
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -4298,21 +4302,21 @@ export class DiffViewOptions {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Toolbar */
+    /* Fields of Gtk-3.0.Gtk.Toolbar */
     container: Gtk.Container
     priv: Gtk.ToolbarPrivate
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.DiffViewOptions */
+    /* Methods of Gitg-1.0.Gitg.DiffViewOptions */
     get_context_lines(): number
     set_context_lines(value: number): void
     get_view(): DiffView | null
     set_view(value?: DiffView | null): void
-    /* Methods of Gtk.Toolbar */
+    /* Methods of Gtk-3.0.Gtk.Toolbar */
     get_drop_index(x: number, y: number): number
     get_icon_size(): Gtk.IconSize
     get_item_index(item: Gtk.ToolItem): number
@@ -4328,10 +4332,11 @@ export class DiffViewOptions {
     set_style(style: Gtk.ToolbarStyle): void
     unset_icon_size(): void
     unset_style(): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4356,7 +4361,7 @@ export class DiffViewOptions {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -4615,15 +4620,15 @@ export class DiffViewOptions {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4631,17 +4636,17 @@ export class DiffViewOptions {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Toolbar */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Toolbar */
     vfunc_orientation_changed(orientation: Gtk.Orientation): void
     vfunc_popup_context_menu(x: number, y: number, button_number: number): boolean
     vfunc_style_changed(style: Gtk.ToolbarStyle): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -4652,7 +4657,7 @@ export class DiffViewOptions {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -4735,15 +4740,15 @@ export class DiffViewOptions {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Toolbar */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Toolbar */
     connect(sigName: "focus-home-or-end", callback: (($obj: DiffViewOptions, focus_home: boolean) => boolean)): number
     connect_after(sigName: "focus-home-or-end", callback: (($obj: DiffViewOptions, focus_home: boolean) => boolean)): number
     emit(sigName: "focus-home-or-end", focus_home: boolean): void
@@ -4756,7 +4761,7 @@ export class DiffViewOptions {
     connect(sigName: "style-changed", callback: (($obj: DiffViewOptions, style: Gtk.ToolbarStyle) => void)): number
     connect_after(sigName: "style-changed", callback: (($obj: DiffViewOptions, style: Gtk.ToolbarStyle) => void)): number
     emit(sigName: "style-changed", style: Gtk.ToolbarStyle): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: DiffViewOptions, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: DiffViewOptions, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -4769,7 +4774,7 @@ export class DiffViewOptions {
     connect(sigName: "set-focus-child", callback: (($obj: DiffViewOptions, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: DiffViewOptions, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DiffViewOptions) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DiffViewOptions) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -4977,7 +4982,7 @@ export class DiffViewOptions {
     connect(sigName: "window-state-event", callback: (($obj: DiffViewOptions, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DiffViewOptions, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DiffViewOptions, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DiffViewOptions, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5108,8 +5113,8 @@ export interface DiffView_ConstructProps extends Gtk.Grid_ConstructProps {
     changes_inline?: boolean
     context_lines?: number
 }
-export class DiffView {
-    /* Properties of Gitg.DiffView */
+class DiffView {
+    /* Properties of Gitg-1.0.Gitg.DiffView */
     readonly options: Ggit.DiffOptions
     has_selection: boolean
     diff: Ggit.Diff
@@ -5128,17 +5133,17 @@ export class DiffView {
     ignore_whitespace: boolean
     changes_inline: boolean
     context_lines: number
-    /* Properties of Gtk.Grid */
+    /* Properties of Gtk-3.0.Gtk.Grid */
     baseline_row: number
     column_homogeneous: boolean
     column_spacing: number
     row_homogeneous: boolean
     row_spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -5178,13 +5183,13 @@ export class DiffView {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.DiffView */
+    /* Methods of Gitg-1.0.Gitg.DiffView */
     apply_link_tags(buffer: Gtk.TextBuffer, regex: GLib.Regex, replacement: string | null, custom_color_link: Gdk.RGBA, is_custom_color: boolean, is_custom_link: boolean): void
     follow_if_link(texview: Gtk.Widget, iter: Gtk.TextIter): void
     get_selection(): PatchSet[]
@@ -5222,7 +5227,7 @@ export class DiffView {
     set_changes_inline(value: boolean): void
     get_context_lines(): number
     set_context_lines(value: number): void
-    /* Methods of Gtk.Grid */
+    /* Methods of Gtk-3.0.Gtk.Grid */
     attach(child: Gtk.Widget, left: number, top: number, width: number, height: number): void
     attach_next_to(child: Gtk.Widget, sibling: Gtk.Widget | null, side: Gtk.PositionType, width: number, height: number): void
     get_baseline_row(): number
@@ -5243,10 +5248,11 @@ export class DiffView {
     set_row_baseline_position(row: number, pos: Gtk.BaselinePosition): void
     set_row_homogeneous(homogeneous: boolean): void
     set_row_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -5271,7 +5277,7 @@ export class DiffView {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -5530,15 +5536,15 @@ export class DiffView {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5546,13 +5552,15 @@ export class DiffView {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gitg-1.0.Gitg.DiffView */
+    vfunc_options_changed(): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -5563,7 +5571,7 @@ export class DiffView {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -5646,19 +5654,19 @@ export class DiffView {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gitg.DiffView */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gitg-1.0.Gitg.DiffView */
     connect(sigName: "options-changed", callback: (($obj: DiffView) => void)): number
     connect_after(sigName: "options-changed", callback: (($obj: DiffView) => void)): number
     emit(sigName: "options-changed"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: DiffView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: DiffView, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -5671,7 +5679,7 @@ export class DiffView {
     connect(sigName: "set-focus-child", callback: (($obj: DiffView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: DiffView, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DiffView) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DiffView) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -5879,7 +5887,7 @@ export class DiffView {
     connect(sigName: "window-state-event", callback: (($obj: DiffView, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DiffView, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DiffView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DiffView, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6026,18 +6034,18 @@ export class DiffView {
 }
 export interface FontManager_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class FontManager {
-    /* Fields of GObject.Object */
+class FontManager {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6045,21 +6053,21 @@ export class FontManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FontManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FontManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6079,15 +6087,15 @@ export interface Hook_ConstructProps extends GObject.Object_ConstructProps {
     name?: string
     working_directory?: Gio.File
 }
-export class Hook {
-    /* Properties of Gitg.Hook */
+class Hook {
+    /* Properties of Gitg-1.0.Gitg.Hook */
     environment: Gee.HashMap
     name: string
     working_directory: Gio.File
     readonly output: string[]
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.Hook */
+    /* Methods of Gitg-1.0.Gitg.Hook */
     add_argument(arg: string): void
     exists_in(repository: Ggit.Repository): boolean
     run_sync(repository: Ggit.Repository): number
@@ -6100,15 +6108,15 @@ export class Hook {
     get_working_directory(): Gio.File | null
     set_working_directory(value?: Gio.File | null): void
     get_output(): string[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6116,21 +6124,21 @@ export class Hook {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Hook, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Hook, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6153,8 +6161,8 @@ export class Hook {
     static new(name: string): Hook
     static $gtype: GObject.Type
 }
-export class LabelRenderer {
-    /* Fields of Gitg.LabelRenderer */
+class LabelRenderer {
+    /* Fields of Gitg-1.0.Gitg.LabelRenderer */
     ref_count: number
     static name: string
     static new(): LabelRenderer
@@ -6173,16 +6181,16 @@ export interface Lanes_ConstructProps extends GObject.Object_ConstructProps {
     inactive_enabled?: boolean
     miss_commits?: Gee.LinkedList
 }
-export class Lanes {
-    /* Properties of Gitg.Lanes */
+class Lanes {
+    /* Properties of Gitg-1.0.Gitg.Lanes */
     inactive_max: number
     inactive_collapse: number
     inactive_gap: number
     inactive_enabled: boolean
     miss_commits: Gee.LinkedList
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.Lanes */
+    /* Methods of Gitg-1.0.Gitg.Lanes */
     reset(reserved: Ggit.OId[] | null, roots?: Gee.HashSet | null): void
     next(next: Commit, save_miss: boolean): [ /* returnType */ boolean, /* lanes */ Lane[], /* nextpos */ number ]
     get_inactive_max(): number
@@ -6195,15 +6203,15 @@ export class Lanes {
     set_inactive_enabled(value: boolean): void
     get_miss_commits(): Gee.LinkedList
     set_miss_commits(value: Gee.LinkedList): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6211,21 +6219,21 @@ export class Lanes {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Lanes, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Lanes, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6252,26 +6260,26 @@ export class Lanes {
 }
 export interface Lane_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Lane {
-    /* Fields of Gitg.Lane */
+class Lane {
+    /* Fields of Gitg-1.0.Gitg.Lane */
     color: Color
     from: number[]
     tag: LaneTag
     boundary_id: Ggit.OId | null
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.Lane */
+    /* Methods of Gitg-1.0.Gitg.Lane */
     copy(): Lane
     dup(): Lane
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6279,21 +6287,21 @@ export class Lane {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Lane, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Lane, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6312,14 +6320,14 @@ export class Lane {
 export interface ProgressBin_ConstructProps extends Gtk.Bin_ConstructProps {
     fraction?: number
 }
-export class ProgressBin {
-    /* Properties of Gitg.ProgressBin */
+class ProgressBin {
+    /* Properties of Gitg-1.0.Gitg.ProgressBin */
     fraction: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -6359,23 +6367,24 @@ export class ProgressBin {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.ProgressBin */
+    /* Methods of Gitg-1.0.Gitg.ProgressBin */
     get_fraction(): number
     set_fraction(value: number): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -6400,7 +6409,7 @@ export class ProgressBin {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -6659,15 +6668,15 @@ export class ProgressBin {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6675,13 +6684,13 @@ export class ProgressBin {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -6692,7 +6701,7 @@ export class ProgressBin {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -6775,15 +6784,15 @@ export class ProgressBin {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: ProgressBin, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: ProgressBin, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -6796,7 +6805,7 @@ export class ProgressBin {
     connect(sigName: "set-focus-child", callback: (($obj: ProgressBin, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: ProgressBin, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: ProgressBin) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: ProgressBin) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -7004,7 +7013,7 @@ export class ProgressBin {
     connect(sigName: "window-state-event", callback: (($obj: ProgressBin, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: ProgressBin, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ProgressBin, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ProgressBin, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7111,17 +7120,17 @@ export interface RefBase_ConstructProps extends Ggit.Ref_ConstructProps {
     state?: RefState
     working?: boolean
 }
-export class RefBase {
-    /* Properties of Gitg.Ref */
+class RefBase {
+    /* Properties of Gitg-1.0.Gitg.Ref */
     d_parsed_name: ParsedRefName
     d_pushes: Ref[]
     state: RefState
     working: boolean
-    /* Fields of Ggit.Ref */
+    /* Fields of Ggit-1.0.Ggit.Ref */
     parent_instance: Ggit.Native
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Ref */
+    /* Methods of Ggit-1.0.Ggit.Ref */
     delete(): void
     delete_log(): void
     get_log(): Ggit.Reflog | null
@@ -7142,15 +7151,15 @@ export class RefBase {
     set_symbolic_target(target: string, log_message: string): Ggit.Ref | null
     set_target(oid: Ggit.OId, log_message: string): Ggit.Ref | null
     to_string(): string | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7158,13 +7167,13 @@ export class RefBase {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gitg.Ref */
+    watch_closure(closure: Function): void
+    /* Methods of Gitg-1.0.Gitg.Ref */
     get_owner(): Repository
     get_d_parsed_name(): ParsedRefName
     set_d_parsed_name(value: ParsedRefName): void
@@ -7176,7 +7185,7 @@ export class RefBase {
     set_working(value: boolean): void
     get_parsed_name(): ParsedRefName
     get_pushes(): Ref[]
-    /* Virtual methods of Gitg.RefBase */
+    /* Virtual methods of Gitg-1.0.Gitg.RefBase */
     vfunc_get_owner(): Repository
     vfunc_get_d_parsed_name(): ParsedRefName
     vfunc_set_d_parsed_name(value: ParsedRefName): void
@@ -7186,15 +7195,15 @@ export class RefBase {
     vfunc_set_state(value: RefState): void
     vfunc_get_working(): boolean
     vfunc_set_working(value: boolean): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RefBase, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RefBase, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7220,32 +7229,32 @@ export class RefBase {
 export interface ParsedRefName_ConstructProps extends GObject.Object_ConstructProps {
     rtype?: RefType
 }
-export class ParsedRefName {
-    /* Properties of Gitg.ParsedRefName */
+class ParsedRefName {
+    /* Properties of Gitg-1.0.Gitg.ParsedRefName */
     rtype: RefType
     readonly name: string
     readonly shortname: string
     readonly remote_name: string
     readonly remote_branch: string
     readonly prefix: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.ParsedRefName */
+    /* Methods of Gitg-1.0.Gitg.ParsedRefName */
     get_rtype(): RefType
     get_name(): string
     get_shortname(): string
     get_remote_name(): string | null
     get_remote_branch(): string | null
     get_prefix(): string | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7253,21 +7262,21 @@ export class ParsedRefName {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ParsedRefName, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ParsedRefName, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7300,18 +7309,18 @@ export interface Remote_ConstructProps extends Ggit.Remote_ConstructProps {
     push_specs?: string[]
     credentials_provider?: CredentialsProvider
 }
-export class Remote {
-    /* Properties of Gitg.Remote */
+class Remote {
+    /* Properties of Gitg-1.0.Gitg.Remote */
     readonly transfer_progress: number
     state: RemoteState
     fetch_specs: string[]
     push_specs: string[]
     credentials_provider: CredentialsProvider
-    /* Fields of Ggit.Remote */
+    /* Fields of Ggit-1.0.Ggit.Remote */
     parent_instance: Ggit.Native
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.Remote */
+    /* Methods of Gitg-1.0.Gitg.Remote */
     connect(direction: Ggit.Direction, callbacks?: Ggit.RemoteCallbacks | null, _callback_?: Gio.AsyncReadyCallback | null): void
     connect_finish(_res_: Gio.AsyncResult): void
     disconnect(_callback_?: Gio.AsyncReadyCallback | null): void
@@ -7330,7 +7339,7 @@ export class Remote {
     set_push_specs(value: string[] | null): void
     get_credentials_provider(): CredentialsProvider | null
     set_credentials_provider(value?: CredentialsProvider | null): void
-    /* Methods of Ggit.Remote */
+    /* Methods of Ggit-1.0.Ggit.Remote */
     connect(direction: Ggit.Direction, callbacks: Ggit.RemoteCallbacks, proxy_options?: Ggit.ProxyOptions | null, custom_headers?: string | null): void
     disconnect(): void
     download(specs: string[] | null, fetch_options: Ggit.FetchOptions): boolean
@@ -7343,15 +7352,15 @@ export class Remote {
     push(specs: string[] | null, push_options: Ggit.PushOptions): boolean
     update_tips(callbacks: Ggit.RemoteCallbacks, update_fetch_head: boolean, tags_type: Ggit.RemoteDownloadTagsType, message?: string | null): boolean
     upload(specs: string[] | null, push_options: Ggit.PushOptions): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7359,25 +7368,25 @@ export class Remote {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gitg.Remote */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gitg-1.0.Gitg.Remote */
     connect(sigName: "tip-updated", callback: (($obj: Remote, refname: string, a: Ggit.OId, b: Ggit.OId) => void)): number
     connect_after(sigName: "tip-updated", callback: (($obj: Remote, refname: string, a: Ggit.OId, b: Ggit.OId) => void)): number
     emit(sigName: "tip-updated", refname: string, a: Ggit.OId, b: Ggit.OId): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Remote, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Remote, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7408,20 +7417,20 @@ export interface RepositoryListBox_ConstructProps extends Gtk.ListBox_ConstructP
     bookmarks_from_recent_files?: boolean
     location?: Gio.File
 }
-export class RepositoryListBox {
-    /* Properties of Gitg.RepositoryListBox */
+class RepositoryListBox {
+    /* Properties of Gitg-1.0.Gitg.RepositoryListBox */
     mode: SelectionMode
     bookmarks_from_recent_files: boolean
     location: Gio.File
     readonly has_selection: boolean
-    /* Properties of Gtk.ListBox */
+    /* Properties of Gtk-3.0.Gtk.ListBox */
     activate_on_single_click: boolean
     selection_mode: Gtk.SelectionMode
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -7461,13 +7470,13 @@ export class RepositoryListBox {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.ListBox */
+    /* Fields of Gtk-3.0.Gtk.ListBox */
     parent_instance: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.RepositoryListBox */
+    /* Methods of Gitg-1.0.Gitg.RepositoryListBox */
     populate_bookmarks(): void
     end_cloning(row: RepositoryListBoxRow, repository?: Repository | null): void
     begin_cloning(location: Gio.File): RepositoryListBoxRow | null
@@ -7481,7 +7490,7 @@ export class RepositoryListBox {
     get_location(): Gio.File | null
     set_location(value?: Gio.File | null): void
     get_has_selection(): boolean
-    /* Methods of Gtk.ListBox */
+    /* Methods of Gtk-3.0.Gtk.ListBox */
     bind_model(model: Gio.ListModel | null, create_widget_func: Gtk.ListBoxCreateWidgetFunc | null): void
     drag_highlight_row(row: Gtk.ListBoxRow): void
     drag_unhighlight_row(): void
@@ -7509,10 +7518,11 @@ export class RepositoryListBox {
     set_sort_func(sort_func: Gtk.ListBoxSortFunc | null): void
     unselect_all(): void
     unselect_row(row: Gtk.ListBoxRow): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7537,7 +7547,7 @@ export class RepositoryListBox {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -7796,15 +7806,15 @@ export class RepositoryListBox {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7812,13 +7822,13 @@ export class RepositoryListBox {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.ListBox */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.ListBox */
     vfunc_activate_cursor_row(): void
     vfunc_move_cursor(step: Gtk.MovementStep, count: number): void
     vfunc_row_activated(row: Gtk.ListBoxRow): void
@@ -7827,7 +7837,7 @@ export class RepositoryListBox {
     vfunc_selected_rows_changed(): void
     vfunc_toggle_cursor_row(): void
     vfunc_unselect_all(): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -7838,7 +7848,7 @@ export class RepositoryListBox {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -7921,22 +7931,22 @@ export class RepositoryListBox {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gitg.RepositoryListBox */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gitg-1.0.Gitg.RepositoryListBox */
     connect(sigName: "repository-activated", callback: (($obj: RepositoryListBox, repository: Repository) => void)): number
     connect_after(sigName: "repository-activated", callback: (($obj: RepositoryListBox, repository: Repository) => void)): number
     emit(sigName: "repository-activated", repository: Repository): void
     connect(sigName: "show-error", callback: (($obj: RepositoryListBox, primary_message: string, secondary_message: string) => void)): number
     connect_after(sigName: "show-error", callback: (($obj: RepositoryListBox, primary_message: string, secondary_message: string) => void)): number
     emit(sigName: "show-error", primary_message: string, secondary_message: string): void
-    /* Signals of Gtk.ListBox */
+    /* Signals of Gtk-3.0.Gtk.ListBox */
     connect(sigName: "activate-cursor-row", callback: (($obj: RepositoryListBox) => void)): number
     connect_after(sigName: "activate-cursor-row", callback: (($obj: RepositoryListBox) => void)): number
     emit(sigName: "activate-cursor-row"): void
@@ -7961,7 +7971,7 @@ export class RepositoryListBox {
     connect(sigName: "unselect-all", callback: (($obj: RepositoryListBox) => void)): number
     connect_after(sigName: "unselect-all", callback: (($obj: RepositoryListBox) => void)): number
     emit(sigName: "unselect-all"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: RepositoryListBox, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: RepositoryListBox, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -7974,7 +7984,7 @@ export class RepositoryListBox {
     connect(sigName: "set-focus-child", callback: (($obj: RepositoryListBox, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: RepositoryListBox, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: RepositoryListBox) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: RepositoryListBox) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -8182,7 +8192,7 @@ export class RepositoryListBox {
     connect(sigName: "window-state-event", callback: (($obj: RepositoryListBox, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: RepositoryListBox, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RepositoryListBox, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RepositoryListBox, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -8305,8 +8315,8 @@ export interface RepositoryListBoxRow_ConstructProps extends Gtk.ListBoxRow_Cons
     branch_name?: string
     loading?: boolean
 }
-export class RepositoryListBoxRow {
-    /* Properties of Gitg.RepositoryListBoxRow */
+class RepositoryListBoxRow {
+    /* Properties of Gitg-1.0.Gitg.RepositoryListBoxRow */
     mode: SelectionMode
     selected: boolean
     repository: Repository
@@ -8317,14 +8327,14 @@ export class RepositoryListBoxRow {
     dirname: string
     branch_name: string
     loading: boolean
-    /* Properties of Gtk.ListBoxRow */
+    /* Properties of Gtk-3.0.Gtk.ListBoxRow */
     activatable: boolean
     selectable: boolean
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -8364,15 +8374,15 @@ export class RepositoryListBoxRow {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.ListBoxRow */
+    /* Fields of Gtk-3.0.Gtk.ListBoxRow */
     parent_instance: Gtk.Bin
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.RepositoryListBoxRow */
+    /* Methods of Gitg-1.0.Gitg.RepositoryListBoxRow */
     get_mode(): SelectionMode
     set_mode(value: SelectionMode): void
     get_selected(): boolean
@@ -8392,7 +8402,7 @@ export class RepositoryListBoxRow {
     set_branch_name(value?: string | null): void
     get_loading(): boolean
     set_loading(value: boolean): void
-    /* Methods of Gtk.ListBoxRow */
+    /* Methods of Gtk-3.0.Gtk.ListBoxRow */
     changed(): void
     get_activatable(): boolean
     get_header(): Gtk.Widget | null
@@ -8402,12 +8412,13 @@ export class RepositoryListBoxRow {
     set_activatable(activatable: boolean): void
     set_header(header?: Gtk.Widget | null): void
     set_selectable(selectable: boolean): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -8432,7 +8443,7 @@ export class RepositoryListBoxRow {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -8691,15 +8702,15 @@ export class RepositoryListBoxRow {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -8707,15 +8718,15 @@ export class RepositoryListBoxRow {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.ListBoxRow */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.ListBoxRow */
     vfunc_activate(): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -8726,7 +8737,7 @@ export class RepositoryListBoxRow {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -8809,23 +8820,23 @@ export class RepositoryListBoxRow {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gitg.RepositoryListBoxRow */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gitg-1.0.Gitg.RepositoryListBoxRow */
     connect(sigName: "request-remove", callback: (($obj: RepositoryListBoxRow) => void)): number
     connect_after(sigName: "request-remove", callback: (($obj: RepositoryListBoxRow) => void)): number
     emit(sigName: "request-remove"): void
-    /* Signals of Gtk.ListBoxRow */
+    /* Signals of Gtk-3.0.Gtk.ListBoxRow */
     connect(sigName: "activate", callback: (($obj: RepositoryListBoxRow) => void)): number
     connect_after(sigName: "activate", callback: (($obj: RepositoryListBoxRow) => void)): number
     emit(sigName: "activate"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: RepositoryListBoxRow, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: RepositoryListBoxRow, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -8838,7 +8849,7 @@ export class RepositoryListBoxRow {
     connect(sigName: "set-focus-child", callback: (($obj: RepositoryListBoxRow, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: RepositoryListBoxRow, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: RepositoryListBoxRow) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: RepositoryListBoxRow) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -9046,7 +9057,7 @@ export class RepositoryListBoxRow {
     connect(sigName: "window-state-event", callback: (($obj: RepositoryListBoxRow, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: RepositoryListBoxRow, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RepositoryListBoxRow, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RepositoryListBoxRow, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -9172,18 +9183,18 @@ export class RepositoryListBoxRow {
 }
 export interface Repository_ConstructProps extends Ggit.Repository_ConstructProps {
 }
-export class Repository {
-    /* Properties of Gitg.Repository */
+class Repository {
+    /* Properties of Gitg-1.0.Gitg.Repository */
     readonly name: string
     readonly stage: Stage
-    /* Properties of Ggit.Repository */
+    /* Properties of Ggit-1.0.Ggit.Repository */
     readonly head: Ggit.Ref
     workdir: Gio.File
-    /* Fields of Ggit.Native */
+    /* Fields of Ggit-1.0.Ggit.Native */
     parent_instance: Ggit.ObjectFactoryBase
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.Repository */
+    /* Methods of Gitg-1.0.Gitg.Repository */
     clear_refs_cache(): void
     refs_for_id(id: Ggit.OId): Ref[]
     lookup(t_type: GObject.Type, t_dup_func: GObject.BoxedCopyFunc, t_destroy_func: GLib.DestroyNotify, id: Ggit.OId): object | null
@@ -9196,7 +9207,7 @@ export class Repository {
     get_signature_with_environment(env: Gee.Map, envname: string): Ggit.Signature
     get_name(): string | null
     get_stage(): Stage
-    /* Methods of Ggit.Repository */
+    /* Methods of Ggit-1.0.Ggit.Repository */
     add_remote_fetch(remote: Ggit.Remote, refspec: string): void
     add_remote_push(remote: Ggit.Remote, refspec: string): void
     blame_file(file: Gio.File, blame_options?: Ggit.BlameOptions | null): Ggit.Blame | null
@@ -9276,6 +9287,7 @@ export class Repository {
     revparse(spec: string): Ggit.Object | null
     save_stash(stasher: Ggit.Signature, message: string, flags: Ggit.StashFlags): Ggit.OId | null
     set_head(ref_name: string): boolean
+    set_head_detached(oid: Ggit.OId): boolean
     set_remote_url(remote: string, url: string): boolean
     set_submodule_fetch_recurse(name: string, fetch_recurse_submodules: Ggit.SubmoduleRecurse): void
     set_submodule_ignore(name: string, ignore: Ggit.SubmoduleIgnore): void
@@ -9285,15 +9297,15 @@ export class Repository {
     stash_foreach(callback: Ggit.StashCallback): boolean
     submodule_foreach(callback: Ggit.SubmoduleCallback): boolean
     tag_foreach(callback: Ggit.TagCallback): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9301,23 +9313,23 @@ export class Repository {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Ggit.Repository */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Ggit-1.0.Ggit.Repository */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Repository, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Repository, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -9342,8 +9354,8 @@ export class Repository {
     static init_repository(location: Gio.File, is_bare: boolean): Ggit.Repository | null
     static $gtype: GObject.Type
 }
-export class Resource {
-    /* Fields of Gitg.Resource */
+class Resource {
+    /* Fields of Gitg-1.0.Gitg.Resource */
     ref_count: number
     static name: string
     static new(): Resource
@@ -9354,15 +9366,15 @@ export class Resource {
 }
 export interface SidebarStore_ConstructProps extends Gtk.TreeStore_ConstructProps {
 }
-export class SidebarStore {
-    /* Properties of Gitg.SidebarStore */
+class SidebarStore {
+    /* Properties of Gitg-1.0.Gitg.SidebarStore */
     readonly clearing: boolean
-    /* Fields of Gtk.TreeStore */
+    /* Fields of Gtk-3.0.Gtk.TreeStore */
     parent: GObject.Object
     priv: Gtk.TreeStorePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.SidebarStore */
+    /* Methods of Gitg-1.0.Gitg.SidebarStore */
     append_dummy(text: string): SidebarStore
     append(item: SidebarItem): SidebarStore
     begin_header(text: string, id: number): SidebarStoreSidebarHeader
@@ -9373,7 +9385,7 @@ export class SidebarStore {
     item_for_iter(iter: Gtk.TreeIter): SidebarItem
     activate(iter: Gtk.TreeIter, numclick: number): void
     get_clearing(): boolean
-    /* Methods of Gtk.TreeStore */
+    /* Methods of Gtk-3.0.Gtk.TreeStore */
     append(parent?: Gtk.TreeIter | null): /* iter */ Gtk.TreeIter
     insert(parent: Gtk.TreeIter | null, position: number): /* iter */ Gtk.TreeIter
     insert_after(parent?: Gtk.TreeIter | null, sibling?: Gtk.TreeIter | null): /* iter */ Gtk.TreeIter
@@ -9390,15 +9402,15 @@ export class SidebarStore {
     set_value(iter: Gtk.TreeIter, column: number, value: any): void
     set(iter: Gtk.TreeIter, columns: number[], values: any[]): void
     swap(a: Gtk.TreeIter, b: Gtk.TreeIter): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9406,21 +9418,21 @@ export class SidebarStore {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SidebarStore, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SidebarStore, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -9440,21 +9452,21 @@ export class SidebarStore {
 }
 export interface SidebarStoreSidebarText_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class SidebarStoreSidebarText {
-    /* Properties of Gitg.SidebarItem */
+class SidebarStoreSidebarText {
+    /* Properties of Gitg-1.0.Gitg.SidebarItem */
     readonly text: string
     readonly icon_name: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9462,33 +9474,33 @@ export class SidebarStoreSidebarText {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gitg.SidebarItem */
+    watch_closure(closure: Function): void
+    /* Methods of Gitg-1.0.Gitg.SidebarItem */
     activate(numclick: number): void
     get_text(): string
     get_icon_name(): string | null
-    /* Virtual methods of Gitg.SidebarStoreSidebarText */
+    /* Virtual methods of Gitg-1.0.Gitg.SidebarStoreSidebarText */
     vfunc_activate(numclick: number): void
     vfunc_get_text(): string
     vfunc_get_icon_name(): string | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SidebarStoreSidebarText, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SidebarStoreSidebarText, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gitg.SidebarItem */
+    /* Signals of Gitg-1.0.Gitg.SidebarItem */
     connect(sigName: "activated", callback: (($obj: SidebarStoreSidebarText, numclick: number) => void)): number
     connect_after(sigName: "activated", callback: (($obj: SidebarStoreSidebarText, numclick: number) => void)): number
     emit(sigName: "activated", numclick: number): void
@@ -9509,22 +9521,22 @@ export class SidebarStoreSidebarText {
 }
 export interface SidebarStoreSidebarHeader_ConstructProps extends SidebarStoreSidebarText_ConstructProps {
 }
-export class SidebarStoreSidebarHeader {
-    /* Properties of Gitg.SidebarStoreSidebarHeader */
+class SidebarStoreSidebarHeader {
+    /* Properties of Gitg-1.0.Gitg.SidebarStoreSidebarHeader */
     readonly id: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.SidebarStoreSidebarHeader */
+    /* Methods of Gitg-1.0.Gitg.SidebarStoreSidebarHeader */
     get_id(): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9532,25 +9544,25 @@ export class SidebarStoreSidebarHeader {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gitg.SidebarStoreSidebarText */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gitg-1.0.Gitg.SidebarStoreSidebarText */
     vfunc_activate(numclick: number): void
     vfunc_get_text(): string
     vfunc_get_icon_name(): string | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SidebarStoreSidebarHeader, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SidebarStoreSidebarHeader, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -9571,10 +9583,10 @@ export class SidebarStoreSidebarHeader {
 export interface Sidebar_ConstructProps extends Gtk.TreeView_ConstructProps {
     model?: SidebarStore
 }
-export class Sidebar {
-    /* Properties of Gitg.Sidebar */
+class Sidebar {
+    /* Properties of Gitg-1.0.Gitg.Sidebar */
     model: SidebarStore
-    /* Properties of Gtk.TreeView */
+    /* Properties of Gtk-3.0.Gtk.TreeView */
     activate_on_single_click: boolean
     enable_grid_lines: Gtk.TreeViewGridLines
     enable_search: boolean
@@ -9592,11 +9604,11 @@ export class Sidebar {
     search_column: number
     show_expanders: boolean
     tooltip_column: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -9636,13 +9648,13 @@ export class Sidebar {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.Sidebar */
+    /* Methods of Gitg-1.0.Gitg.Sidebar */
     select_function(sel: Gtk.TreeSelection, model: Gtk.TreeModel, path: Gtk.TreePath, cursel: boolean): boolean
     selection_changed(sel: Gtk.TreeSelection): void
     get_selected_iter(): [ /* returnType */ boolean, /* iter */ Gtk.TreeIter ]
@@ -9652,7 +9664,7 @@ export class Sidebar {
     is_selected(item: SidebarItem): boolean
     get_model(): SidebarStore
     set_model(value: SidebarStore): void
-    /* Methods of Gtk.TreeView */
+    /* Methods of Gtk-3.0.Gtk.TreeView */
     append_column(column: Gtk.TreeViewColumn): number
     collapse_all(): void
     collapse_row(path: Gtk.TreePath): boolean
@@ -9748,10 +9760,11 @@ export class Sidebar {
     set_vadjustment(adjustment?: Gtk.Adjustment | null): void
     unset_rows_drag_dest(): void
     unset_rows_drag_source(): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -9776,7 +9789,7 @@ export class Sidebar {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -10035,15 +10048,15 @@ export class Sidebar {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10051,16 +10064,16 @@ export class Sidebar {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gitg.Sidebar */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gitg-1.0.Gitg.Sidebar */
     vfunc_select_function(sel: Gtk.TreeSelection, model: Gtk.TreeModel, path: Gtk.TreePath, cursel: boolean): boolean
     vfunc_selection_changed(sel: Gtk.TreeSelection): void
-    /* Virtual methods of Gtk.TreeView */
+    /* Virtual methods of Gtk-3.0.Gtk.TreeView */
     vfunc_columns_changed(): void
     vfunc_cursor_changed(): void
     vfunc_expand_collapse_cursor_row(logical: boolean, expand: boolean, open_all: boolean): boolean
@@ -10076,7 +10089,7 @@ export class Sidebar {
     vfunc_test_expand_row(iter: Gtk.TreeIter, path: Gtk.TreePath): boolean
     vfunc_toggle_cursor_row(): boolean
     vfunc_unselect_all(): boolean
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -10087,7 +10100,7 @@ export class Sidebar {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -10170,22 +10183,22 @@ export class Sidebar {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gitg.Sidebar */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gitg-1.0.Gitg.Sidebar */
     connect(sigName: "deselected", callback: (($obj: Sidebar) => void)): number
     connect_after(sigName: "deselected", callback: (($obj: Sidebar) => void)): number
     emit(sigName: "deselected"): void
     connect(sigName: "populate-popup", callback: (($obj: Sidebar, menu: Gtk.Menu) => void)): number
     connect_after(sigName: "populate-popup", callback: (($obj: Sidebar, menu: Gtk.Menu) => void)): number
     emit(sigName: "populate-popup", menu: Gtk.Menu): void
-    /* Signals of Gtk.TreeView */
+    /* Signals of Gtk-3.0.Gtk.TreeView */
     connect(sigName: "columns-changed", callback: (($obj: Sidebar) => void)): number
     connect_after(sigName: "columns-changed", callback: (($obj: Sidebar) => void)): number
     emit(sigName: "columns-changed"): void
@@ -10231,7 +10244,7 @@ export class Sidebar {
     connect(sigName: "unselect-all", callback: (($obj: Sidebar) => boolean)): number
     connect_after(sigName: "unselect-all", callback: (($obj: Sidebar) => boolean)): number
     emit(sigName: "unselect-all"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: Sidebar, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: Sidebar, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -10244,7 +10257,7 @@ export class Sidebar {
     connect(sigName: "set-focus-child", callback: (($obj: Sidebar, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: Sidebar, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: Sidebar) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: Sidebar) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -10452,7 +10465,7 @@ export class Sidebar {
     connect(sigName: "window-state-event", callback: (($obj: Sidebar, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: Sidebar, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Sidebar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Sidebar, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -10589,28 +10602,28 @@ export class Sidebar {
 }
 export interface StageStatusFile_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class StageStatusFile {
-    /* Properties of Gitg.StageStatusFile */
+class StageStatusFile {
+    /* Properties of Gitg-1.0.Gitg.StageStatusFile */
     readonly flags: Ggit.StatusFlags
-    /* Properties of Gitg.StageStatusItem */
+    /* Properties of Gitg-1.0.Gitg.StageStatusItem */
     readonly path: string
     readonly is_staged: boolean
     readonly is_unstaged: boolean
     readonly is_untracked: boolean
     readonly icon_name: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.StageStatusFile */
+    /* Methods of Gitg-1.0.Gitg.StageStatusFile */
     get_flags(): Ggit.StatusFlags
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10618,33 +10631,33 @@ export class StageStatusFile {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gitg.StageStatusItem */
+    watch_closure(closure: Function): void
+    /* Methods of Gitg-1.0.Gitg.StageStatusItem */
     get_path(): string
     get_is_staged(): boolean
     get_is_unstaged(): boolean
     get_is_untracked(): boolean
     get_icon_name(): string | null
-    /* Virtual methods of Gitg.StageStatusFile */
+    /* Virtual methods of Gitg-1.0.Gitg.StageStatusFile */
     vfunc_get_path(): string
     vfunc_get_is_staged(): boolean
     vfunc_get_is_unstaged(): boolean
     vfunc_get_is_untracked(): boolean
     vfunc_get_icon_name(): string | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StageStatusFile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StageStatusFile, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -10673,32 +10686,32 @@ export class StageStatusFile {
 }
 export interface StageStatusSubmodule_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class StageStatusSubmodule {
-    /* Properties of Gitg.StageStatusSubmodule */
+class StageStatusSubmodule {
+    /* Properties of Gitg-1.0.Gitg.StageStatusSubmodule */
     readonly submodule: Ggit.Submodule
     readonly is_dirty: boolean
     readonly flags: Ggit.SubmoduleStatus
-    /* Properties of Gitg.StageStatusItem */
+    /* Properties of Gitg-1.0.Gitg.StageStatusItem */
     readonly path: string
     readonly is_staged: boolean
     readonly is_unstaged: boolean
     readonly is_untracked: boolean
     readonly icon_name: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.StageStatusSubmodule */
+    /* Methods of Gitg-1.0.Gitg.StageStatusSubmodule */
     get_submodule(): Ggit.Submodule
     get_is_dirty(): boolean
     get_flags(): Ggit.SubmoduleStatus
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10706,33 +10719,33 @@ export class StageStatusSubmodule {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gitg.StageStatusItem */
+    watch_closure(closure: Function): void
+    /* Methods of Gitg-1.0.Gitg.StageStatusItem */
     get_path(): string
     get_is_staged(): boolean
     get_is_unstaged(): boolean
     get_is_untracked(): boolean
     get_icon_name(): string | null
-    /* Virtual methods of Gitg.StageStatusSubmodule */
+    /* Virtual methods of Gitg-1.0.Gitg.StageStatusSubmodule */
     vfunc_get_path(): string
     vfunc_get_is_staged(): boolean
     vfunc_get_is_unstaged(): boolean
     vfunc_get_is_untracked(): boolean
     vfunc_get_icon_name(): string | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StageStatusSubmodule, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StageStatusSubmodule, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -10765,22 +10778,22 @@ export class StageStatusSubmodule {
 }
 export interface StageStatusEnumerator_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class StageStatusEnumerator {
-    /* Fields of GObject.Object */
+class StageStatusEnumerator {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.StageStatusEnumerator */
+    /* Methods of Gitg-1.0.Gitg.StageStatusEnumerator */
     cancel(): void
     next_items(num: number, _callback_?: Gio.AsyncReadyCallback | null): void
     next_items_finish(_res_: Gio.AsyncResult): StageStatusItem[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10788,21 +10801,21 @@ export class StageStatusEnumerator {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StageStatusEnumerator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StageStatusEnumerator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -10815,13 +10828,13 @@ export class StageStatusEnumerator {
     _init (config?: StageStatusEnumerator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export class PatchSet {
-    /* Fields of Gitg.PatchSet */
+class PatchSet {
+    /* Fields of Gitg-1.0.Gitg.PatchSet */
     ref_count: number
     filename: string
     patches: PatchSetPatch[]
     patches_length1: number
-    /* Methods of Gitg.PatchSet */
+    /* Methods of Gitg-1.0.Gitg.PatchSet */
     reversed(): PatchSet
     static name: string
     static new(): PatchSet
@@ -10831,10 +10844,10 @@ export class PatchSet {
 }
 export interface Stage_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Stage {
-    /* Fields of GObject.Object */
+class Stage {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.Stage */
+    /* Methods of Gitg-1.0.Gitg.Stage */
     refresh(_callback_?: Gio.AsyncReadyCallback | null): void
     refresh_finish(_res_: Gio.AsyncResult): void
     get_head_tree(_callback_?: Gio.AsyncReadyCallback | null): void
@@ -10880,15 +10893,15 @@ export class Stage {
     diff_workdir_all_finish(_res_: Gio.AsyncResult): Ggit.Diff | null
     diff_workdir(f: StageStatusItem, defopts?: Ggit.DiffOptions | null, _callback_?: Gio.AsyncReadyCallback | null): void
     diff_workdir_finish(_res_: Gio.AsyncResult): Ggit.Diff | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10896,21 +10909,21 @@ export class Stage {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Stage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Stage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -10925,8 +10938,8 @@ export class Stage {
 }
 export interface Theme_ConstructProps extends Gtk.Widget_ConstructProps {
 }
-export class Theme {
-    /* Properties of Gtk.Widget */
+class Theme {
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -10966,13 +10979,13 @@ export class Theme {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gitg.Theme */
+    /* Methods of Gitg-1.0.Gitg.Theme */
     is_theme_dark(): boolean
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -11231,15 +11244,15 @@ export class Theme {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11247,13 +11260,13 @@ export class Theme {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Widget */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -11336,15 +11349,15 @@ export class Theme {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Widget */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: Theme) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: Theme) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -11552,7 +11565,7 @@ export class Theme {
     connect(sigName: "window-state-event", callback: (($obj: Theme, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: Theme, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Theme, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Theme, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11646,8 +11659,8 @@ export class Theme {
     static instance(): Theme
     static $gtype: GObject.Type
 }
-export class Utils {
-    /* Fields of Gitg.Utils */
+class Utils {
+    /* Fields of Gitg-1.0.Gitg.Utils */
     ref_count: number
     static name: string
     static new(): Utils
@@ -11657,10 +11670,10 @@ export class Utils {
     static replace_home_dir_with_tilde(file: Gio.File): string
     static expand_home_dir(path: string): string
 }
-export class WhenMapped {
-    /* Fields of Gitg.WhenMapped */
+class WhenMapped {
+    /* Fields of Gitg-1.0.Gitg.WhenMapped */
     ref_count: number
-    /* Methods of Gitg.WhenMapped */
+    /* Methods of Gitg-1.0.Gitg.WhenMapped */
     update(mapped: any, lifetime?: GObject.Object | null): void
     static name: string
     static new(widget: Gtk.Widget): WhenMapped
@@ -11668,260 +11681,260 @@ export class WhenMapped {
     /* Static methods and pseudo-constructors */
     static new(widget: Gtk.Widget): WhenMapped
 }
-export abstract class AsyncClass {
+abstract class AsyncClass {
     static name: string
 }
-export class AsyncPrivate {
+class AsyncPrivate {
     static name: string
 }
-export abstract class AuthenticationDialogClass {
+abstract class AuthenticationDialogClass {
     static name: string
 }
-export class AuthenticationDialogPrivate {
+class AuthenticationDialogPrivate {
     static name: string
 }
-export abstract class AvatarCacheClass {
+abstract class AvatarCacheClass {
     static name: string
 }
-export class AvatarCachePrivate {
+class AvatarCachePrivate {
     static name: string
 }
-export abstract class BranchBaseClass {
+abstract class BranchBaseClass {
     static name: string
 }
-export class BranchBasePrivate {
+class BranchBasePrivate {
     static name: string
 }
-export abstract class CellRendererLanesClass {
+abstract class CellRendererLanesClass {
     static name: string
 }
-export class CellRendererLanesPrivate {
+class CellRendererLanesPrivate {
     static name: string
 }
-export abstract class ColorClass {
+abstract class ColorClass {
     static name: string
 }
-export class ColorPrivate {
+class ColorPrivate {
     static name: string
 }
-export abstract class CommitListViewClass {
+abstract class CommitListViewClass {
     static name: string
 }
-export class CommitListViewPrivate {
+class CommitListViewPrivate {
     static name: string
 }
-export abstract class CommitModelClass {
+abstract class CommitModelClass {
     static name: string
 }
-export class CommitModelPrivate {
+class CommitModelPrivate {
     static name: string
 }
-export abstract class CommitClass {
+abstract class CommitClass {
     static name: string
 }
-export class CommitPrivate {
+class CommitPrivate {
     static name: string
 }
-export abstract class CredentialsManagerClass {
+abstract class CredentialsManagerClass {
     static name: string
 }
-export class CredentialsManagerPrivate {
+class CredentialsManagerPrivate {
     static name: string
 }
-export abstract class DateClass {
+abstract class DateClass {
     static name: string
 }
-export class DatePrivate {
+class DatePrivate {
     static name: string
 }
-export abstract class DiffStatClass {
+abstract class DiffStatClass {
     static name: string
 }
-export class DiffStatPrivate {
+class DiffStatPrivate {
     static name: string
 }
-export abstract class DiffViewOptionsClass {
+abstract class DiffViewOptionsClass {
     static name: string
 }
-export class DiffViewOptionsPrivate {
+class DiffViewOptionsPrivate {
     static name: string
 }
-export abstract class DiffViewClass {
-    /* Fields of Gitg.DiffViewClass */
-    options_changed: () => void
+abstract class DiffViewClass {
+    /* Fields of Gitg-1.0.Gitg.DiffViewClass */
+    options_changed: (self: DiffView) => void
     static name: string
 }
-export class DiffViewPrivate {
+class DiffViewPrivate {
     static name: string
 }
-export abstract class FontManagerClass {
+abstract class FontManagerClass {
     static name: string
 }
-export class FontManagerPrivate {
+class FontManagerPrivate {
     static name: string
 }
-export abstract class HookClass {
+abstract class HookClass {
     static name: string
 }
-export class HookPrivate {
+class HookPrivate {
     static name: string
 }
-export abstract class LabelRendererClass {
+abstract class LabelRendererClass {
     static name: string
 }
-export class LabelRendererPrivate {
+class LabelRendererPrivate {
     static name: string
 }
-export abstract class LanesClass {
+abstract class LanesClass {
     static name: string
 }
-export class LanesPrivate {
+class LanesPrivate {
     static name: string
 }
-export abstract class LaneClass {
+abstract class LaneClass {
     static name: string
 }
-export class LanePrivate {
+class LanePrivate {
     static name: string
 }
-export abstract class ProgressBinClass {
+abstract class ProgressBinClass {
     static name: string
 }
-export class ProgressBinPrivate {
+class ProgressBinPrivate {
     static name: string
 }
-export abstract class RefBaseClass {
+abstract class RefBaseClass {
     static name: string
 }
-export class RefBasePrivate {
+class RefBasePrivate {
     static name: string
 }
-export abstract class ParsedRefNameClass {
+abstract class ParsedRefNameClass {
     static name: string
 }
-export class ParsedRefNamePrivate {
+class ParsedRefNamePrivate {
     static name: string
 }
-export abstract class RemoteClass {
+abstract class RemoteClass {
     static name: string
 }
-export class RemotePrivate {
+class RemotePrivate {
     static name: string
 }
-export abstract class RepositoryListBoxClass {
+abstract class RepositoryListBoxClass {
     static name: string
 }
-export class RepositoryListBoxPrivate {
+class RepositoryListBoxPrivate {
     static name: string
 }
-export abstract class RepositoryListBoxRowClass {
+abstract class RepositoryListBoxRowClass {
     static name: string
 }
-export class RepositoryListBoxRowPrivate {
+class RepositoryListBoxRowPrivate {
     static name: string
 }
-export abstract class RepositoryClass {
+abstract class RepositoryClass {
     static name: string
 }
-export class RepositoryPrivate {
+class RepositoryPrivate {
     static name: string
 }
-export abstract class ResourceClass {
+abstract class ResourceClass {
     static name: string
 }
-export class ResourcePrivate {
+class ResourcePrivate {
     static name: string
 }
-export abstract class SidebarStoreClass {
+abstract class SidebarStoreClass {
     static name: string
 }
-export class SidebarStorePrivate {
+class SidebarStorePrivate {
     static name: string
 }
-export abstract class SidebarStoreSidebarTextClass {
+abstract class SidebarStoreSidebarTextClass {
     static name: string
 }
-export class SidebarStoreSidebarTextPrivate {
+class SidebarStoreSidebarTextPrivate {
     static name: string
 }
-export abstract class SidebarStoreSidebarHeaderClass {
+abstract class SidebarStoreSidebarHeaderClass {
     static name: string
 }
-export class SidebarStoreSidebarHeaderPrivate {
+class SidebarStoreSidebarHeaderPrivate {
     static name: string
 }
-export abstract class SidebarClass {
-    /* Fields of Gitg.SidebarClass */
+abstract class SidebarClass {
+    /* Fields of Gitg-1.0.Gitg.SidebarClass */
     select_function: (self: Sidebar, sel: Gtk.TreeSelection, model: Gtk.TreeModel, path: Gtk.TreePath, cursel: boolean) => boolean
     selection_changed: (self: Sidebar, sel: Gtk.TreeSelection) => void
     static name: string
 }
-export class SidebarPrivate {
+class SidebarPrivate {
     static name: string
 }
-export abstract class StageStatusFileClass {
+abstract class StageStatusFileClass {
     static name: string
 }
-export class StageStatusFilePrivate {
+class StageStatusFilePrivate {
     static name: string
 }
-export abstract class StageStatusSubmoduleClass {
+abstract class StageStatusSubmoduleClass {
     static name: string
 }
-export class StageStatusSubmodulePrivate {
+class StageStatusSubmodulePrivate {
     static name: string
 }
-export abstract class StageStatusEnumeratorClass {
+abstract class StageStatusEnumeratorClass {
     static name: string
 }
-export class StageStatusEnumeratorPrivate {
+class StageStatusEnumeratorPrivate {
     static name: string
 }
-export abstract class PatchSetClass {
+abstract class PatchSetClass {
     static name: string
 }
-export class PatchSetPrivate {
+class PatchSetPrivate {
     static name: string
 }
-export class PatchSetPatch {
-    /* Fields of Gitg.PatchSetPatch */
+class PatchSetPatch {
+    /* Fields of Gitg-1.0.Gitg.PatchSetPatch */
     type: PatchSetType
     old_offset: number
     new_offset: number
     length: number
     static name: string
 }
-export abstract class StageClass {
+abstract class StageClass {
     static name: string
 }
-export class StagePrivate {
+class StagePrivate {
     static name: string
 }
-export abstract class ThemeClass {
+abstract class ThemeClass {
     static name: string
 }
-export class ThemePrivate {
+class ThemePrivate {
     static name: string
 }
-export abstract class UtilsClass {
+abstract class UtilsClass {
     static name: string
 }
-export class UtilsPrivate {
+class UtilsPrivate {
     static name: string
 }
-export abstract class WhenMappedClass {
+abstract class WhenMappedClass {
     static name: string
 }
-export class WhenMappedPrivate {
+class WhenMappedPrivate {
     static name: string
 }
-export abstract class BranchIface {
-    /* Fields of Gitg.BranchIface */
+abstract class BranchIface {
+    /* Fields of Gitg-1.0.Gitg.BranchIface */
     get_upstream: (self: Branch) => Ref
     static name: string
 }
-export abstract class RefIface {
-    /* Fields of Gitg.RefIface */
+abstract class RefIface {
+    /* Fields of Gitg-1.0.Gitg.RefIface */
     get_owner: (self: Ref) => Repository
     get_d_parsed_name: (self: Ref) => ParsedRefName
     set_d_parsed_name: (self: Ref, value: ParsedRefName) => void
@@ -11933,20 +11946,20 @@ export abstract class RefIface {
     set_working: (self: Ref, value: boolean) => void
     static name: string
 }
-export abstract class CredentialsProviderIface {
-    /* Fields of Gitg.CredentialsProviderIface */
+abstract class CredentialsProviderIface {
+    /* Fields of Gitg-1.0.Gitg.CredentialsProviderIface */
     credentials: (self: CredentialsProvider, url: string, username_from_url: string | null, allowed_types: Ggit.Credtype) => Ggit.Cred | null
     static name: string
 }
-export abstract class SidebarItemIface {
-    /* Fields of Gitg.SidebarItemIface */
+abstract class SidebarItemIface {
+    /* Fields of Gitg-1.0.Gitg.SidebarItemIface */
     activate: (self: SidebarItem, numclick: number) => void
     get_text: (self: SidebarItem) => string
     get_icon_name: (self: SidebarItem) => string | null
     static name: string
 }
-export abstract class StageStatusItemIface {
-    /* Fields of Gitg.StageStatusItemIface */
+abstract class StageStatusItemIface {
+    /* Fields of Gitg-1.0.Gitg.StageStatusItemIface */
     get_path: (self: StageStatusItem) => string
     get_is_staged: (self: StageStatusItem) => boolean
     get_is_unstaged: (self: StageStatusItem) => boolean
@@ -11954,3 +11967,5 @@ export abstract class StageStatusItemIface {
     get_icon_name: (self: StageStatusItem) => string | null
     static name: string
 }
+}
+export default Gitg;

@@ -1,2 +1,2 @@
-imports.gi.versions.GCalc = '1'
-export default imports.gi.GCalc
+import GCalc from 'gi://GCalc?version=1';
+export default GCalc;

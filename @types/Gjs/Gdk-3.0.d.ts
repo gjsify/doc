@@ -3,16 +3,18 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as cairo from './cairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as GModule from './GModule-2.0';
+import type cairo from './cairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type GModule from './GModule-2.0';
 
-export enum AxisUse {
+export namespace Gdk {
+
+enum AxisUse {
     IGNORE,
     X,
     Y,
@@ -25,11 +27,11 @@ export enum AxisUse {
     SLIDER,
     LAST,
 }
-export enum ByteOrder {
+enum ByteOrder {
     LSB_FIRST,
     MSB_FIRST,
 }
-export enum CrossingMode {
+enum CrossingMode {
     NORMAL,
     GRAB,
     UNGRAB,
@@ -40,7 +42,7 @@ export enum CrossingMode {
     TOUCH_END,
     DEVICE_SWITCH,
 }
-export enum CursorType {
+enum CursorType {
     X_CURSOR,
     ARROW,
     BASED_ARROW_DOWN,
@@ -122,12 +124,12 @@ export enum CursorType {
     BLANK_CURSOR,
     CURSOR_IS_PIXMAP,
 }
-export enum DevicePadFeature {
+enum DevicePadFeature {
     BUTTON,
     RING,
     STRIP,
 }
-export enum DeviceToolType {
+enum DeviceToolType {
     UNKNOWN,
     PEN,
     ERASER,
@@ -137,17 +139,17 @@ export enum DeviceToolType {
     MOUSE,
     LENS,
 }
-export enum DeviceType {
+enum DeviceType {
     MASTER,
     SLAVE,
     FLOATING,
 }
-export enum DragCancelReason {
+enum DragCancelReason {
     NO_TARGET,
     USER_CANCELLED,
     ERROR,
 }
-export enum DragProtocol {
+enum DragProtocol {
     NONE,
     MOTIF,
     XDND,
@@ -157,7 +159,7 @@ export enum DragProtocol {
     LOCAL,
     WAYLAND,
 }
-export enum EventType {
+enum EventType {
     NOTHING,
     DELETE,
     DESTROY,
@@ -210,26 +212,26 @@ export enum EventType {
     PAD_GROUP_MODE,
     EVENT_LAST,
 }
-export enum FilterReturn {
+enum FilterReturn {
     CONTINUE,
     TRANSLATE,
     REMOVE,
 }
-export enum FullscreenMode {
+enum FullscreenMode {
     CURRENT_MONITOR,
     ALL_MONITORS,
 }
-export enum GLError {
+enum GLError {
     NOT_AVAILABLE,
     UNSUPPORTED_FORMAT,
     UNSUPPORTED_PROFILE,
 }
-export enum GrabOwnership {
+enum GrabOwnership {
     NONE,
     WINDOW,
     APPLICATION,
 }
-export enum GrabStatus {
+enum GrabStatus {
     SUCCESS,
     ALREADY_GRABBED,
     INVALID_TIME,
@@ -237,7 +239,7 @@ export enum GrabStatus {
     FROZEN,
     FAILED,
 }
-export enum Gravity {
+enum Gravity {
     NORTH_WEST,
     NORTH,
     NORTH_EAST,
@@ -249,12 +251,12 @@ export enum Gravity {
     SOUTH_EAST,
     STATIC,
 }
-export enum InputMode {
+enum InputMode {
     DISABLED,
     SCREEN,
     WINDOW,
 }
-export enum InputSource {
+enum InputSource {
     MOUSE,
     PEN,
     ERASER,
@@ -265,7 +267,7 @@ export enum InputSource {
     TRACKPOINT,
     TABLET_PAD,
 }
-export enum ModifierIntent {
+enum ModifierIntent {
     PRIMARY_ACCELERATOR,
     CONTEXT_MENU,
     EXTEND_SELECTION,
@@ -274,7 +276,7 @@ export enum ModifierIntent {
     SHIFT_GROUP,
     DEFAULT_MOD_MASK,
 }
-export enum NotifyType {
+enum NotifyType {
     ANCESTOR,
     VIRTUAL,
     INFERIOR,
@@ -282,40 +284,40 @@ export enum NotifyType {
     NONLINEAR_VIRTUAL,
     UNKNOWN,
 }
-export enum OwnerChange {
+enum OwnerChange {
     NEW_OWNER,
     DESTROY,
     CLOSE,
 }
-export enum PropMode {
+enum PropMode {
     REPLACE,
     PREPEND,
     APPEND,
 }
-export enum PropertyState {
+enum PropertyState {
     NEW_VALUE,
     DELETE,
 }
-export enum ScrollDirection {
+enum ScrollDirection {
     UP,
     DOWN,
     LEFT,
     RIGHT,
     SMOOTH,
 }
-export enum SettingAction {
+enum SettingAction {
     NEW,
     CHANGED,
     DELETED,
 }
-export enum Status {
+enum Status {
     OK,
     ERROR,
     ERROR_PARAM,
     ERROR_FILE,
     ERROR_MEM,
 }
-export enum SubpixelLayout {
+enum SubpixelLayout {
     UNKNOWN,
     NONE,
     HORIZONTAL_RGB,
@@ -323,18 +325,18 @@ export enum SubpixelLayout {
     VERTICAL_RGB,
     VERTICAL_BGR,
 }
-export enum TouchpadGesturePhase {
+enum TouchpadGesturePhase {
     BEGIN,
     UPDATE,
     END,
     CANCEL,
 }
-export enum VisibilityState {
+enum VisibilityState {
     UNOBSCURED,
     PARTIAL,
     FULLY_OBSCURED,
 }
-export enum VisualType {
+enum VisualType {
     STATIC_GRAY,
     GRAYSCALE,
     STATIC_COLOR,
@@ -342,7 +344,7 @@ export enum VisualType {
     TRUE_COLOR,
     DIRECT_COLOR,
 }
-export enum WindowEdge {
+enum WindowEdge {
     NORTH_WEST,
     NORTH,
     NORTH_EAST,
@@ -352,7 +354,7 @@ export enum WindowEdge {
     SOUTH,
     SOUTH_EAST,
 }
-export enum WindowType {
+enum WindowType {
     ROOT,
     TOPLEVEL,
     CHILD,
@@ -361,7 +363,7 @@ export enum WindowType {
     OFFSCREEN,
     SUBSURFACE,
 }
-export enum WindowTypeHint {
+enum WindowTypeHint {
     NORMAL,
     DIALOG,
     MENU,
@@ -377,11 +379,11 @@ export enum WindowTypeHint {
     COMBO,
     DND,
 }
-export enum WindowWindowClass {
+enum WindowWindowClass {
     INPUT_OUTPUT,
     INPUT_ONLY,
 }
-export enum AnchorHints {
+enum AnchorHints {
     FLIP_X,
     FLIP_Y,
     SLIDE_X,
@@ -392,7 +394,7 @@ export enum AnchorHints {
     SLIDE,
     RESIZE,
 }
-export enum AxisFlags {
+enum AxisFlags {
     X,
     Y,
     PRESSURE,
@@ -403,7 +405,7 @@ export enum AxisFlags {
     ROTATION,
     SLIDER,
 }
-export enum DragAction {
+enum DragAction {
     DEFAULT,
     COPY,
     MOVE,
@@ -411,7 +413,7 @@ export enum DragAction {
     PRIVATE,
     ASK,
 }
-export enum EventMask {
+enum EventMask {
     EXPOSURE_MASK,
     POINTER_MOTION_MASK,
     POINTER_MOTION_HINT_MASK,
@@ -439,7 +441,7 @@ export enum EventMask {
     TABLET_PAD_MASK,
     ALL_EVENTS_MASK,
 }
-export enum FrameClockPhase {
+enum FrameClockPhase {
     NONE,
     FLUSH_EVENTS,
     BEFORE_PAINT,
@@ -449,7 +451,7 @@ export enum FrameClockPhase {
     RESUME_EVENTS,
     AFTER_PAINT,
 }
-export enum ModifierType {
+enum ModifierType {
     SHIFT_MASK,
     LOCK_MASK,
     CONTROL_MASK,
@@ -483,7 +485,7 @@ export enum ModifierType {
     RELEASE_MASK,
     MODIFIER_MASK,
 }
-export enum SeatCapabilities {
+enum SeatCapabilities {
     NONE,
     POINTER,
     TOUCH,
@@ -492,7 +494,7 @@ export enum SeatCapabilities {
     ALL_POINTING,
     ALL,
 }
-export enum WMDecoration {
+enum WMDecoration {
     ALL,
     BORDER,
     RESIZEH,
@@ -501,7 +503,7 @@ export enum WMDecoration {
     MINIMIZE,
     MAXIMIZE,
 }
-export enum WMFunction {
+enum WMFunction {
     ALL,
     RESIZE,
     MOVE,
@@ -509,7 +511,7 @@ export enum WMFunction {
     MAXIMIZE,
     CLOSE,
 }
-export enum WindowAttributesType {
+enum WindowAttributesType {
     TITLE,
     X,
     Y,
@@ -519,7 +521,7 @@ export enum WindowAttributesType {
     NOREDIR,
     TYPE_HINT,
 }
-export enum WindowHints {
+enum WindowHints {
     POS,
     MIN_SIZE,
     MAX_SIZE,
@@ -530,7 +532,7 @@ export enum WindowHints {
     USER_POS,
     USER_SIZE,
 }
-export enum WindowState {
+enum WindowState {
     WITHDRAWN,
     ICONIFIED,
     MAXIMIZED,
@@ -2839,145 +2841,145 @@ export const MICRO_VERSION: number
 export const MINOR_VERSION: number
 export const PARENT_RELATIVE: number
 export const PRIORITY_REDRAW: number
-export function add_option_entries_libgtk_only(group: GLib.OptionGroup): void
-export function atom_intern(atom_name: string, only_if_exists: boolean): Atom
-export function atom_intern_static_string(atom_name: string): Atom
-export function beep(): void
-export function cairo_create(window: Window): cairo.Context
-export function cairo_draw_from_gl(cr: cairo.Context, window: Window, source: number, source_type: number, buffer_scale: number, x: number, y: number, width: number, height: number): void
-export function cairo_get_clip_rectangle(cr: cairo.Context): [ /* returnType */ boolean, /* rect */ Rectangle | null ]
-export function cairo_get_drawing_context(cr: cairo.Context): DrawingContext | null
-export function cairo_rectangle(cr: cairo.Context, rectangle: Rectangle): void
-export function cairo_region(cr: cairo.Context, region: cairo.Region): void
-export function cairo_region_create_from_surface(surface: cairo.Surface): cairo.Region
-export function cairo_set_source_color(cr: cairo.Context, color: Color): void
-export function cairo_set_source_pixbuf(cr: cairo.Context, pixbuf: GdkPixbuf.Pixbuf, pixbuf_x: number, pixbuf_y: number): void
-export function cairo_set_source_rgba(cr: cairo.Context, rgba: RGBA): void
-export function cairo_set_source_window(cr: cairo.Context, window: Window, x: number, y: number): void
-export function cairo_surface_create_from_pixbuf(pixbuf: GdkPixbuf.Pixbuf, scale: number, for_window?: Window | null): cairo.Surface
-export function color_parse(spec: string): [ /* returnType */ boolean, /* color */ Color ]
-export function disable_multidevice(): void
-export function drag_abort(context: DragContext, time_: number): void
-export function drag_begin(window: Window, targets: Atom[]): DragContext
-export function drag_begin_for_device(window: Window, device: Device, targets: Atom[]): DragContext
-export function drag_begin_from_point(window: Window, device: Device, targets: Atom[], x_root: number, y_root: number): DragContext
-export function drag_drop(context: DragContext, time_: number): void
-export function drag_drop_done(context: DragContext, success: boolean): void
-export function drag_drop_succeeded(context: DragContext): boolean
-export function drag_find_window_for_screen(context: DragContext, drag_window: Window, screen: Screen, x_root: number, y_root: number): [ /* dest_window */ Window, /* protocol */ DragProtocol ]
-export function drag_get_selection(context: DragContext): Atom
-export function drag_motion(context: DragContext, dest_window: Window, protocol: DragProtocol, x_root: number, y_root: number, suggested_action: DragAction, possible_actions: DragAction, time_: number): boolean
-export function drag_status(context: DragContext, action: DragAction, time_: number): void
-export function drop_finish(context: DragContext, success: boolean, time_: number): void
-export function drop_reply(context: DragContext, accepted: boolean, time_: number): void
-export function error_trap_pop(): number
-export function error_trap_pop_ignored(): void
-export function error_trap_push(): void
-export function event_get(): Event | null
-export function event_handler_set(func: EventFunc): void
-export function event_peek(): Event | null
-export function event_request_motions(event: EventMotion): void
-export function events_get_angle(event1: Event, event2: Event): [ /* returnType */ boolean, /* angle */ number ]
-export function events_get_center(event1: Event, event2: Event): [ /* returnType */ boolean, /* x */ number, /* y */ number ]
-export function events_get_distance(event1: Event, event2: Event): [ /* returnType */ boolean, /* distance */ number ]
-export function events_pending(): boolean
-export function flush(): void
-export function get_default_root_window(): Window
-export function get_display(): string
-export function get_display_arg_name(): string | null
-export function get_program_class(): string
-export function get_show_events(): boolean
-export function gl_error_quark(): GLib.Quark
-export function init(argv: string[]): /* argv */ string[]
-export function init_check(argv: string[]): [ /* returnType */ boolean, /* argv */ string[] ]
-export function keyboard_grab(window: Window, owner_events: boolean, time_: number): GrabStatus
-export function keyboard_ungrab(time_: number): void
-export function keyval_convert_case(symbol: number): [ /* lower */ number, /* upper */ number ]
-export function keyval_from_name(keyval_name: string): number
-export function keyval_is_lower(keyval: number): boolean
-export function keyval_is_upper(keyval: number): boolean
-export function keyval_name(keyval: number): string | null
-export function keyval_to_lower(keyval: number): number
-export function keyval_to_unicode(keyval: number): number
-export function keyval_to_upper(keyval: number): number
-export function list_visuals(): Visual[]
-export function notify_startup_complete(): void
-export function notify_startup_complete_with_id(startup_id: string): void
-export function offscreen_window_get_embedder(window: Window): Window | null
-export function offscreen_window_get_surface(window: Window): cairo.Surface | null
-export function offscreen_window_set_embedder(window: Window, embedder: Window): void
-export function pango_context_get(): Pango.Context
-export function pango_context_get_for_display(display: Display): Pango.Context
-export function pango_context_get_for_screen(screen: Screen): Pango.Context
-export function parse_args(argv: string[]): /* argv */ string[]
-export function pixbuf_get_from_surface(surface: cairo.Surface, src_x: number, src_y: number, width: number, height: number): GdkPixbuf.Pixbuf | null
-export function pixbuf_get_from_window(window: Window, src_x: number, src_y: number, width: number, height: number): GdkPixbuf.Pixbuf | null
-export function pointer_grab(window: Window, owner_events: boolean, event_mask: EventMask, confine_to: Window | null, cursor: Cursor | null, time_: number): GrabStatus
-export function pointer_is_grabbed(): boolean
-export function pointer_ungrab(time_: number): void
-export function pre_parse_libgtk_only(): void
-export function property_delete(window: Window, property: Atom): void
-export function property_get(window: Window, property: Atom, type: Atom, offset: number, length: number, pdelete: number): [ /* returnType */ boolean, /* actual_property_type */ Atom, /* actual_format */ number, /* data */ Uint8Array[] ]
-export function query_depths(): /* depths */ number[]
-export function query_visual_types(): /* visual_types */ VisualType[]
-export function selection_convert(requestor: Window, selection: Atom, target: Atom, time_: number): void
-export function selection_owner_get(selection: Atom): Window | null
-export function selection_owner_get_for_display(display: Display, selection: Atom): Window | null
-export function selection_owner_set(owner: Window | null, selection: Atom, time_: number, send_event: boolean): boolean
-export function selection_owner_set_for_display(display: Display, owner: Window | null, selection: Atom, time_: number, send_event: boolean): boolean
-export function selection_send_notify(requestor: Window, selection: Atom, target: Atom, property: Atom, time_: number): void
-export function selection_send_notify_for_display(display: Display, requestor: Window, selection: Atom, target: Atom, property: Atom, time_: number): void
-export function set_allowed_backends(backends: string): void
-export function set_double_click_time(msec: number): void
-export function set_program_class(program_class: string): void
-export function set_show_events(show_events: boolean): void
-export function setting_get(name: string, value: any): boolean
-export function synthesize_window_state(window: Window, unset_flags: WindowState, set_flags: WindowState): void
-export function test_render_sync(window: Window): void
-export function test_simulate_button(window: Window, x: number, y: number, button: number, modifiers: ModifierType, button_pressrelease: EventType): boolean
-export function test_simulate_key(window: Window, x: number, y: number, keyval: number, modifiers: ModifierType, key_pressrelease: EventType): boolean
-export function text_property_to_utf8_list_for_display(display: Display, encoding: Atom, format: number, text: Uint8Array[]): [ /* returnType */ number, /* list */ string[] ]
-export function threads_add_idle(priority: number, function_: GLib.SourceFunc): number
-export function threads_add_timeout(priority: number, interval: number, function_: GLib.SourceFunc): number
-export function threads_add_timeout_seconds(priority: number, interval: number, function_: GLib.SourceFunc): number
-export function threads_enter(): void
-export function threads_init(): void
-export function threads_leave(): void
-export function unicode_to_keyval(wc: number): number
-export function utf8_to_string_target(str: string): string | null
-export interface EventFunc {
+function add_option_entries_libgtk_only(group: GLib.OptionGroup): void
+function atom_intern(atom_name: string, only_if_exists: boolean): Atom
+function atom_intern_static_string(atom_name: string): Atom
+function beep(): void
+function cairo_create(window: Window): cairo.Context
+function cairo_draw_from_gl(cr: cairo.Context, window: Window, source: number, source_type: number, buffer_scale: number, x: number, y: number, width: number, height: number): void
+function cairo_get_clip_rectangle(cr: cairo.Context): [ /* returnType */ boolean, /* rect */ Rectangle | null ]
+function cairo_get_drawing_context(cr: cairo.Context): DrawingContext | null
+function cairo_rectangle(cr: cairo.Context, rectangle: Rectangle): void
+function cairo_region(cr: cairo.Context, region: cairo.Region): void
+function cairo_region_create_from_surface(surface: cairo.Surface): cairo.Region
+function cairo_set_source_color(cr: cairo.Context, color: Color): void
+function cairo_set_source_pixbuf(cr: cairo.Context, pixbuf: GdkPixbuf.Pixbuf, pixbuf_x: number, pixbuf_y: number): void
+function cairo_set_source_rgba(cr: cairo.Context, rgba: RGBA): void
+function cairo_set_source_window(cr: cairo.Context, window: Window, x: number, y: number): void
+function cairo_surface_create_from_pixbuf(pixbuf: GdkPixbuf.Pixbuf, scale: number, for_window?: Window | null): cairo.Surface
+function color_parse(spec: string): [ /* returnType */ boolean, /* color */ Color ]
+function disable_multidevice(): void
+function drag_abort(context: DragContext, time_: number): void
+function drag_begin(window: Window, targets: Atom[]): DragContext
+function drag_begin_for_device(window: Window, device: Device, targets: Atom[]): DragContext
+function drag_begin_from_point(window: Window, device: Device, targets: Atom[], x_root: number, y_root: number): DragContext
+function drag_drop(context: DragContext, time_: number): void
+function drag_drop_done(context: DragContext, success: boolean): void
+function drag_drop_succeeded(context: DragContext): boolean
+function drag_find_window_for_screen(context: DragContext, drag_window: Window, screen: Screen, x_root: number, y_root: number): [ /* dest_window */ Window, /* protocol */ DragProtocol ]
+function drag_get_selection(context: DragContext): Atom
+function drag_motion(context: DragContext, dest_window: Window, protocol: DragProtocol, x_root: number, y_root: number, suggested_action: DragAction, possible_actions: DragAction, time_: number): boolean
+function drag_status(context: DragContext, action: DragAction, time_: number): void
+function drop_finish(context: DragContext, success: boolean, time_: number): void
+function drop_reply(context: DragContext, accepted: boolean, time_: number): void
+function error_trap_pop(): number
+function error_trap_pop_ignored(): void
+function error_trap_push(): void
+function event_get(): Event | null
+function event_handler_set(func: EventFunc): void
+function event_peek(): Event | null
+function event_request_motions(event: EventMotion): void
+function events_get_angle(event1: Event, event2: Event): [ /* returnType */ boolean, /* angle */ number ]
+function events_get_center(event1: Event, event2: Event): [ /* returnType */ boolean, /* x */ number, /* y */ number ]
+function events_get_distance(event1: Event, event2: Event): [ /* returnType */ boolean, /* distance */ number ]
+function events_pending(): boolean
+function flush(): void
+function get_default_root_window(): Window
+function get_display(): string
+function get_display_arg_name(): string | null
+function get_program_class(): string
+function get_show_events(): boolean
+function gl_error_quark(): GLib.Quark
+function init(argv: string[]): /* argv */ string[]
+function init_check(argv: string[]): [ /* returnType */ boolean, /* argv */ string[] ]
+function keyboard_grab(window: Window, owner_events: boolean, time_: number): GrabStatus
+function keyboard_ungrab(time_: number): void
+function keyval_convert_case(symbol: number): [ /* lower */ number, /* upper */ number ]
+function keyval_from_name(keyval_name: string): number
+function keyval_is_lower(keyval: number): boolean
+function keyval_is_upper(keyval: number): boolean
+function keyval_name(keyval: number): string | null
+function keyval_to_lower(keyval: number): number
+function keyval_to_unicode(keyval: number): number
+function keyval_to_upper(keyval: number): number
+function list_visuals(): Visual[]
+function notify_startup_complete(): void
+function notify_startup_complete_with_id(startup_id: string): void
+function offscreen_window_get_embedder(window: Window): Window | null
+function offscreen_window_get_surface(window: Window): cairo.Surface | null
+function offscreen_window_set_embedder(window: Window, embedder: Window): void
+function pango_context_get(): Pango.Context
+function pango_context_get_for_display(display: Display): Pango.Context
+function pango_context_get_for_screen(screen: Screen): Pango.Context
+function parse_args(argv: string[]): /* argv */ string[]
+function pixbuf_get_from_surface(surface: cairo.Surface, src_x: number, src_y: number, width: number, height: number): GdkPixbuf.Pixbuf | null
+function pixbuf_get_from_window(window: Window, src_x: number, src_y: number, width: number, height: number): GdkPixbuf.Pixbuf | null
+function pointer_grab(window: Window, owner_events: boolean, event_mask: EventMask, confine_to: Window | null, cursor: Cursor | null, time_: number): GrabStatus
+function pointer_is_grabbed(): boolean
+function pointer_ungrab(time_: number): void
+function pre_parse_libgtk_only(): void
+function property_delete(window: Window, property: Atom): void
+function property_get(window: Window, property: Atom, type: Atom, offset: number, length: number, pdelete: number): [ /* returnType */ boolean, /* actual_property_type */ Atom, /* actual_format */ number, /* data */ Uint8Array[] ]
+function query_depths(): /* depths */ number[]
+function query_visual_types(): /* visual_types */ VisualType[]
+function selection_convert(requestor: Window, selection: Atom, target: Atom, time_: number): void
+function selection_owner_get(selection: Atom): Window | null
+function selection_owner_get_for_display(display: Display, selection: Atom): Window | null
+function selection_owner_set(owner: Window | null, selection: Atom, time_: number, send_event: boolean): boolean
+function selection_owner_set_for_display(display: Display, owner: Window | null, selection: Atom, time_: number, send_event: boolean): boolean
+function selection_send_notify(requestor: Window, selection: Atom, target: Atom, property: Atom, time_: number): void
+function selection_send_notify_for_display(display: Display, requestor: Window, selection: Atom, target: Atom, property: Atom, time_: number): void
+function set_allowed_backends(backends: string): void
+function set_double_click_time(msec: number): void
+function set_program_class(program_class: string): void
+function set_show_events(show_events: boolean): void
+function setting_get(name: string, value: any): boolean
+function synthesize_window_state(window: Window, unset_flags: WindowState, set_flags: WindowState): void
+function test_render_sync(window: Window): void
+function test_simulate_button(window: Window, x: number, y: number, button: number, modifiers: ModifierType, button_pressrelease: EventType): boolean
+function test_simulate_key(window: Window, x: number, y: number, keyval: number, modifiers: ModifierType, key_pressrelease: EventType): boolean
+function text_property_to_utf8_list_for_display(display: Display, encoding: Atom, format: number, text: Uint8Array[]): [ /* returnType */ number, /* list */ string[] ]
+function threads_add_idle(priority: number, function_: GLib.SourceFunc): number
+function threads_add_timeout(priority: number, interval: number, function_: GLib.SourceFunc): number
+function threads_add_timeout_seconds(priority: number, interval: number, function_: GLib.SourceFunc): number
+function threads_enter(): void
+function threads_init(): void
+function threads_leave(): void
+function unicode_to_keyval(wc: number): number
+function utf8_to_string_target(str: string): string | null
+interface EventFunc {
     (event: Event): void
 }
-export interface FilterFunc {
+interface FilterFunc {
     (xevent: XEvent, event: Event): FilterReturn
 }
-export interface SeatGrabPrepareFunc {
+interface SeatGrabPrepareFunc {
     (seat: Seat, window: Window): void
 }
-export interface WindowChildFunc {
+interface WindowChildFunc {
     (window: Window): boolean
 }
-export interface WindowInvalidateHandlerFunc {
+interface WindowInvalidateHandlerFunc {
     (window: Window, region: cairo.Region): void
 }
 export interface DevicePad_ConstructProps extends Device_ConstructProps {
 }
-export class DevicePad {
-    /* Properties of Gdk.Device */
+class DevicePad {
+    /* Properties of Gdk-3.0.Gdk.Device */
     readonly associated_device: Device
     readonly axes: AxisFlags
     input_mode: InputMode
     readonly n_axes: number
     seat: Seat
     readonly tool: DeviceTool
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.DevicePad */
+    /* Methods of Gdk-3.0.Gdk.DevicePad */
     get_feature_group(feature: DevicePadFeature, feature_idx: number): number
     get_group_n_modes(group_idx: number): number
     get_n_features(feature: DevicePadFeature): number
     get_n_groups(): number
-    /* Methods of Gdk.Device */
+    /* Methods of Gdk-3.0.Gdk.Device */
     get_associated_device(): Device | null
     get_axes(): AxisFlags
     get_axis_use(index_: number): AxisUse
@@ -3006,15 +3008,15 @@ export class DevicePad {
     set_mode(mode: InputMode): boolean
     ungrab(time_: number): void
     warp(screen: Screen, x: number, y: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3022,28 +3024,28 @@ export class DevicePad {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gdk.Device */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gdk-3.0.Gdk.Device */
     connect(sigName: "changed", callback: (($obj: DevicePad) => void)): number
     connect_after(sigName: "changed", callback: (($obj: DevicePad) => void)): number
     emit(sigName: "changed"): void
     connect(sigName: "tool-changed", callback: (($obj: DevicePad, tool: DeviceTool) => void)): number
     connect_after(sigName: "tool-changed", callback: (($obj: DevicePad, tool: DeviceTool) => void)): number
     emit(sigName: "tool-changed", tool: DeviceTool): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DevicePad, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DevicePad, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3071,34 +3073,34 @@ export class DevicePad {
 export interface AppLaunchContext_ConstructProps extends Gio.AppLaunchContext_ConstructProps {
     display?: Display
 }
-export class AppLaunchContext {
-    /* Fields of Gio.AppLaunchContext */
+class AppLaunchContext {
+    /* Fields of Gio-2.0.Gio.AppLaunchContext */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.AppLaunchContext */
+    /* Methods of Gdk-3.0.Gdk.AppLaunchContext */
     set_desktop(desktop: number): void
     set_display(display: Display): void
     set_icon(icon?: Gio.Icon | null): void
     set_icon_name(icon_name?: string | null): void
     set_screen(screen: Screen): void
     set_timestamp(timestamp: number): void
-    /* Methods of Gio.AppLaunchContext */
-    get_display(info: Gio.AppInfo, files: Gio.File[]): string
+    /* Methods of Gio-2.0.Gio.AppLaunchContext */
+    get_display(info: Gio.AppInfo, files: Gio.File[]): string | null
     get_environment(): string[]
-    get_startup_notify_id(info: Gio.AppInfo, files: Gio.File[]): string
+    get_startup_notify_id(info: Gio.AppInfo, files: Gio.File[]): string | null
     launch_failed(startup_notify_id: string): void
     setenv(variable: string, value: string): void
     unsetenv(variable: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3106,33 +3108,37 @@ export class AppLaunchContext {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gio.AppLaunchContext */
-    vfunc_get_display(info: Gio.AppInfo, files: Gio.File[]): string
-    vfunc_get_startup_notify_id(info: Gio.AppInfo, files: Gio.File[]): string
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gio-2.0.Gio.AppLaunchContext */
+    vfunc_get_display(info: Gio.AppInfo, files: Gio.File[]): string | null
+    vfunc_get_startup_notify_id(info: Gio.AppInfo, files: Gio.File[]): string | null
     vfunc_launch_failed(startup_notify_id: string): void
+    vfunc_launch_started(info: Gio.AppInfo, platform_data: GLib.Variant): void
     vfunc_launched(info: Gio.AppInfo, platform_data: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.AppLaunchContext */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.AppLaunchContext */
     connect(sigName: "launch-failed", callback: (($obj: AppLaunchContext, startup_notify_id: string) => void)): number
     connect_after(sigName: "launch-failed", callback: (($obj: AppLaunchContext, startup_notify_id: string) => void)): number
     emit(sigName: "launch-failed", startup_notify_id: string): void
+    connect(sigName: "launch-started", callback: (($obj: AppLaunchContext, info: Gio.AppInfo, platform_data?: GLib.Variant | null) => void)): number
+    connect_after(sigName: "launch-started", callback: (($obj: AppLaunchContext, info: Gio.AppInfo, platform_data?: GLib.Variant | null) => void)): number
+    emit(sigName: "launch-started", info: Gio.AppInfo, platform_data?: GLib.Variant | null): void
     connect(sigName: "launched", callback: (($obj: AppLaunchContext, info: Gio.AppInfo, platform_data: GLib.Variant) => void)): number
     connect_after(sigName: "launched", callback: (($obj: AppLaunchContext, info: Gio.AppInfo, platform_data: GLib.Variant) => void)): number
     emit(sigName: "launched", info: Gio.AppInfo, platform_data: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AppLaunchContext, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AppLaunchContext, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3151,25 +3157,25 @@ export interface Cursor_ConstructProps extends GObject.Object_ConstructProps {
     cursor_type?: CursorType
     display?: Display
 }
-export class Cursor {
-    /* Fields of GObject.Object */
+class Cursor {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.Cursor */
+    /* Methods of Gdk-3.0.Gdk.Cursor */
     get_cursor_type(): CursorType
     get_display(): Display
     get_image(): GdkPixbuf.Pixbuf | null
     get_surface(): [ /* returnType */ cairo.Surface | null, /* x_hot */ number | null, /* y_hot */ number | null ]
     ref(): Cursor
     unref(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3177,20 +3183,20 @@ export class Cursor {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Cursor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Cursor, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3222,17 +3228,17 @@ export interface Device_ConstructProps extends GObject.Object_ConstructProps {
     type?: DeviceType
     vendor_id?: string
 }
-export class Device {
-    /* Properties of Gdk.Device */
+class Device {
+    /* Properties of Gdk-3.0.Gdk.Device */
     readonly associated_device: Device
     readonly axes: AxisFlags
     input_mode: InputMode
     readonly n_axes: number
     seat: Seat
     readonly tool: DeviceTool
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.Device */
+    /* Methods of Gdk-3.0.Gdk.Device */
     get_associated_device(): Device | null
     get_axes(): AxisFlags
     get_axis_use(index_: number): AxisUse
@@ -3261,15 +3267,15 @@ export class Device {
     set_mode(mode: InputMode): boolean
     ungrab(time_: number): void
     warp(screen: Screen, x: number, y: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3277,28 +3283,28 @@ export class Device {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gdk.Device */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gdk-3.0.Gdk.Device */
     connect(sigName: "changed", callback: (($obj: Device) => void)): number
     connect_after(sigName: "changed", callback: (($obj: Device) => void)): number
     emit(sigName: "changed"): void
     connect(sigName: "tool-changed", callback: (($obj: Device, tool: DeviceTool) => void)): number
     connect_after(sigName: "tool-changed", callback: (($obj: Device, tool: DeviceTool) => void)): number
     emit(sigName: "tool-changed", tool: DeviceTool): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3328,22 +3334,22 @@ export class Device {
 export interface DeviceManager_ConstructProps extends GObject.Object_ConstructProps {
     display?: Display
 }
-export class DeviceManager {
-    /* Fields of GObject.Object */
+class DeviceManager {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.DeviceManager */
+    /* Methods of Gdk-3.0.Gdk.DeviceManager */
     get_client_pointer(): Device
     get_display(): Display | null
     list_devices(type: DeviceType): Device[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3351,21 +3357,21 @@ export class DeviceManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gdk.DeviceManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gdk-3.0.Gdk.DeviceManager */
     connect(sigName: "device-added", callback: (($obj: DeviceManager, device: Device) => void)): number
     connect_after(sigName: "device-added", callback: (($obj: DeviceManager, device: Device) => void)): number
     emit(sigName: "device-added", device: Device): void
@@ -3375,7 +3381,7 @@ export class DeviceManager {
     connect(sigName: "device-removed", callback: (($obj: DeviceManager, device: Device) => void)): number
     connect_after(sigName: "device-removed", callback: (($obj: DeviceManager, device: Device) => void)): number
     emit(sigName: "device-removed", device: Device): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DeviceManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3394,22 +3400,22 @@ export interface DeviceTool_ConstructProps extends GObject.Object_ConstructProps
     serial?: number
     tool_type?: DeviceToolType
 }
-export class DeviceTool {
-    /* Fields of GObject.Object */
+class DeviceTool {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.DeviceTool */
+    /* Methods of Gdk-3.0.Gdk.DeviceTool */
     get_hardware_id(): number
     get_serial(): number
     get_tool_type(): DeviceToolType
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3417,21 +3423,21 @@ export class DeviceTool {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DeviceTool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceTool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3446,10 +3452,10 @@ export class DeviceTool {
 }
 export interface Display_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Display {
-    /* Fields of GObject.Object */
+class Display {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.Display */
+    /* Methods of Gdk-3.0.Gdk.Display */
     beep(): void
     close(): void
     device_is_grabbed(device: Device): boolean
@@ -3495,15 +3501,15 @@ export class Display {
     supports_shapes(): boolean
     sync(): void
     warp_pointer(screen: Screen, x: number, y: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3511,21 +3517,21 @@ export class Display {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gdk.Display */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gdk-3.0.Gdk.Display */
     connect(sigName: "closed", callback: (($obj: Display, is_error: boolean) => void)): number
     connect_after(sigName: "closed", callback: (($obj: Display, is_error: boolean) => void)): number
     emit(sigName: "closed", is_error: boolean): void
@@ -3544,7 +3550,7 @@ export class Display {
     connect(sigName: "seat-removed", callback: (($obj: Display, seat: Seat) => void)): number
     connect_after(sigName: "seat-removed", callback: (($obj: Display, seat: Seat) => void)): number
     emit(sigName: "seat-removed", seat: Seat): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Display, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Display, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3564,25 +3570,25 @@ export class Display {
 export interface DisplayManager_ConstructProps extends GObject.Object_ConstructProps {
     default_display?: Display
 }
-export class DisplayManager {
-    /* Properties of Gdk.DisplayManager */
+class DisplayManager {
+    /* Properties of Gdk-3.0.Gdk.DisplayManager */
     default_display: Display
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.DisplayManager */
+    /* Methods of Gdk-3.0.Gdk.DisplayManager */
     get_default_display(): Display | null
     list_displays(): Display[]
     open_display(name: string): Display | null
     set_default_display(display: Display): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3590,25 +3596,25 @@ export class DisplayManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gdk.DisplayManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gdk-3.0.Gdk.DisplayManager */
     connect(sigName: "display-opened", callback: (($obj: DisplayManager, display: Display) => void)): number
     connect_after(sigName: "display-opened", callback: (($obj: DisplayManager, display: Display) => void)): number
     emit(sigName: "display-opened", display: Display): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DisplayManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DisplayManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3627,10 +3633,10 @@ export class DisplayManager {
 }
 export interface DragContext_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class DragContext {
-    /* Fields of GObject.Object */
+class DragContext {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.DragContext */
+    /* Methods of Gdk-3.0.Gdk.DragContext */
     get_actions(): DragAction
     get_dest_window(): Window
     get_device(): Device
@@ -3643,15 +3649,15 @@ export class DragContext {
     manage_dnd(ipc_window: Window, actions: DragAction): boolean
     set_device(device: Device): void
     set_hotspot(hot_x: number, hot_y: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3659,21 +3665,21 @@ export class DragContext {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gdk.DragContext */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gdk-3.0.Gdk.DragContext */
     connect(sigName: "action-changed", callback: (($obj: DragContext, action: DragAction) => void)): number
     connect_after(sigName: "action-changed", callback: (($obj: DragContext, action: DragAction) => void)): number
     emit(sigName: "action-changed", action: DragAction): void
@@ -3686,7 +3692,7 @@ export class DragContext {
     connect(sigName: "drop-performed", callback: (($obj: DragContext, time: number) => void)): number
     connect_after(sigName: "drop-performed", callback: (($obj: DragContext, time: number) => void)): number
     emit(sigName: "drop-performed", time: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DragContext, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DragContext, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3703,23 +3709,23 @@ export interface DrawingContext_ConstructProps extends GObject.Object_ConstructP
     clip?: cairo.Region
     window?: Window
 }
-export class DrawingContext {
-    /* Fields of GObject.Object */
+class DrawingContext {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.DrawingContext */
+    /* Methods of Gdk-3.0.Gdk.DrawingContext */
     get_cairo_context(): cairo.Context
     get_clip(): cairo.Region | null
     get_window(): Window
     is_valid(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3727,21 +3733,21 @@ export class DrawingContext {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DrawingContext, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DrawingContext, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3756,10 +3762,10 @@ export class DrawingContext {
 }
 export interface FrameClock_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class FrameClock {
-    /* Fields of GObject.Object */
+class FrameClock {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.FrameClock */
+    /* Methods of Gdk-3.0.Gdk.FrameClock */
     begin_updating(): void
     end_updating(): void
     get_current_timings(): FrameTimings | null
@@ -3769,15 +3775,15 @@ export class FrameClock {
     get_refresh_info(base_time: number): [ /* refresh_interval_return */ number | null, /* presentation_time_return */ number ]
     get_timings(frame_counter: number): FrameTimings | null
     request_phase(phase: FrameClockPhase): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3785,21 +3791,21 @@ export class FrameClock {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gdk.FrameClock */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gdk-3.0.Gdk.FrameClock */
     connect(sigName: "after-paint", callback: (($obj: FrameClock) => void)): number
     connect_after(sigName: "after-paint", callback: (($obj: FrameClock) => void)): number
     emit(sigName: "after-paint"): void
@@ -3821,7 +3827,7 @@ export class FrameClock {
     connect(sigName: "update", callback: (($obj: FrameClock) => void)): number
     connect_after(sigName: "update", callback: (($obj: FrameClock) => void)): number
     emit(sigName: "update"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FrameClock, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FrameClock, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3839,10 +3845,10 @@ export interface GLContext_ConstructProps extends GObject.Object_ConstructProps 
     shared_context?: GLContext
     window?: Window
 }
-export class GLContext {
-    /* Fields of GObject.Object */
+class GLContext {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.GLContext */
+    /* Methods of Gdk-3.0.Gdk.GLContext */
     get_debug_enabled(): boolean
     get_display(): Display | null
     get_forward_compatible(): boolean
@@ -3858,15 +3864,15 @@ export class GLContext {
     set_forward_compatible(compatible: boolean): void
     set_required_version(major: number, minor: number): void
     set_use_es(use_es: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3874,21 +3880,21 @@ export class GLContext {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GLContext, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLContext, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3906,10 +3912,10 @@ export class GLContext {
 }
 export interface Keymap_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Keymap {
-    /* Fields of GObject.Object */
+class Keymap {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.Keymap */
+    /* Methods of Gdk-3.0.Gdk.Keymap */
     add_virtual_modifiers(state: ModifierType): /* state */ ModifierType
     get_caps_lock_state(): boolean
     get_direction(): Pango.Direction
@@ -3923,15 +3929,15 @@ export class Keymap {
     lookup_key(key: KeymapKey): number
     map_virtual_modifiers(state: ModifierType): [ /* returnType */ boolean, /* state */ ModifierType ]
     translate_keyboard_state(hardware_keycode: number, state: ModifierType, group: number): [ /* returnType */ boolean, /* keyval */ number | null, /* effective_group */ number | null, /* level */ number | null, /* consumed_modifiers */ ModifierType | null ]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3939,21 +3945,21 @@ export class Keymap {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gdk.Keymap */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gdk-3.0.Gdk.Keymap */
     connect(sigName: "direction-changed", callback: (($obj: Keymap) => void)): number
     connect_after(sigName: "direction-changed", callback: (($obj: Keymap) => void)): number
     emit(sigName: "direction-changed"): void
@@ -3963,7 +3969,7 @@ export class Keymap {
     connect(sigName: "state-changed", callback: (($obj: Keymap) => void)): number
     connect_after(sigName: "state-changed", callback: (($obj: Keymap) => void)): number
     emit(sigName: "state-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Keymap, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Keymap, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3982,8 +3988,8 @@ export class Keymap {
 export interface Monitor_ConstructProps extends GObject.Object_ConstructProps {
     display?: Display
 }
-export class Monitor {
-    /* Properties of Gdk.Monitor */
+class Monitor {
+    /* Properties of Gdk-3.0.Gdk.Monitor */
     readonly geometry: Rectangle
     readonly height_mm: number
     readonly manufacturer: string
@@ -3993,9 +3999,9 @@ export class Monitor {
     readonly subpixel_layout: SubpixelLayout
     readonly width_mm: number
     readonly workarea: Rectangle
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.Monitor */
+    /* Methods of Gdk-3.0.Gdk.Monitor */
     get_display(): Display
     get_geometry(): /* geometry */ Rectangle
     get_height_mm(): number
@@ -4007,15 +4013,15 @@ export class Monitor {
     get_width_mm(): number
     get_workarea(): /* workarea */ Rectangle
     is_primary(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4023,25 +4029,25 @@ export class Monitor {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gdk.Monitor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gdk-3.0.Gdk.Monitor */
     connect(sigName: "invalidate", callback: (($obj: Monitor) => void)): number
     connect_after(sigName: "invalidate", callback: (($obj: Monitor) => void)): number
     emit(sigName: "invalidate"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Monitor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Monitor, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4076,13 +4082,13 @@ export interface Screen_ConstructProps extends GObject.Object_ConstructProps {
     font_options?: object
     resolution?: number
 }
-export class Screen {
-    /* Properties of Gdk.Screen */
+class Screen {
+    /* Properties of Gdk-3.0.Gdk.Screen */
     font_options: object
     resolution: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.Screen */
+    /* Methods of Gdk-3.0.Gdk.Screen */
     get_active_window(): Window | null
     get_display(): Display
     get_font_options(): cairo.FontOptions | null
@@ -4113,15 +4119,15 @@ export class Screen {
     make_display_name(): string
     set_font_options(options?: cairo.FontOptions | null): void
     set_resolution(dpi: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4129,21 +4135,21 @@ export class Screen {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gdk.Screen */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gdk-3.0.Gdk.Screen */
     connect(sigName: "composited-changed", callback: (($obj: Screen) => void)): number
     connect_after(sigName: "composited-changed", callback: (($obj: Screen) => void)): number
     emit(sigName: "composited-changed"): void
@@ -4153,7 +4159,7 @@ export class Screen {
     connect(sigName: "size-changed", callback: (($obj: Screen) => void)): number
     connect_after(sigName: "size-changed", callback: (($obj: Screen) => void)): number
     emit(sigName: "size-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Screen, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Screen, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4179,12 +4185,12 @@ export class Screen {
 export interface Seat_ConstructProps extends GObject.Object_ConstructProps {
     display?: Display
 }
-export class Seat {
-    /* Fields of Gdk.Seat */
+class Seat {
+    /* Fields of Gdk-3.0.Gdk.Seat */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.Seat */
+    /* Methods of Gdk-3.0.Gdk.Seat */
     get_capabilities(): SeatCapabilities
     get_display(): Display
     get_keyboard(): Device | null
@@ -4192,15 +4198,15 @@ export class Seat {
     get_slaves(capabilities: SeatCapabilities): Device[]
     grab(window: Window, capabilities: SeatCapabilities, owner_events: boolean, cursor?: Cursor | null, event?: Event | null, prepare_func?: SeatGrabPrepareFunc | null): GrabStatus
     ungrab(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4208,21 +4214,21 @@ export class Seat {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gdk.Seat */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gdk-3.0.Gdk.Seat */
     connect(sigName: "device-added", callback: (($obj: Seat, device: Device) => void)): number
     connect_after(sigName: "device-added", callback: (($obj: Seat, device: Device) => void)): number
     emit(sigName: "device-added", device: Device): void
@@ -4235,7 +4241,7 @@ export class Seat {
     connect(sigName: "tool-removed", callback: (($obj: Seat, tool: DeviceTool) => void)): number
     connect_after(sigName: "tool-removed", callback: (($obj: Seat, tool: DeviceTool) => void)): number
     emit(sigName: "tool-removed", tool: DeviceTool): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Seat, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Seat, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4250,10 +4256,10 @@ export class Seat {
 }
 export interface Visual_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Visual {
-    /* Fields of GObject.Object */
+class Visual {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.Visual */
+    /* Methods of Gdk-3.0.Gdk.Visual */
     get_bits_per_rgb(): number
     get_blue_pixel_details(): [ /* mask */ number | null, /* shift */ number | null, /* precision */ number | null ]
     get_byte_order(): ByteOrder
@@ -4263,15 +4269,15 @@ export class Visual {
     get_red_pixel_details(): [ /* mask */ number | null, /* shift */ number | null, /* precision */ number | null ]
     get_screen(): Screen
     get_visual_type(): VisualType
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4279,21 +4285,21 @@ export class Visual {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Visual, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Visual, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4317,12 +4323,12 @@ export class Visual {
 export interface Window_ConstructProps extends GObject.Object_ConstructProps {
     cursor?: Cursor
 }
-export class Window {
-    /* Properties of Gdk.Window */
+class Window {
+    /* Properties of Gdk-3.0.Gdk.Window */
     cursor: Cursor
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdk.Window */
+    /* Methods of Gdk-3.0.Gdk.Window */
     beep(): void
     begin_draw_frame(region: cairo.Region): DrawingContext
     begin_move_drag(button: number, root_x: number, root_y: number, timestamp: number): void
@@ -4335,7 +4341,7 @@ export class Window {
     coords_from_parent(parent_x: number, parent_y: number): [ /* x */ number | null, /* y */ number | null ]
     coords_to_parent(x: number, y: number): [ /* parent_x */ number | null, /* parent_y */ number | null ]
     create_gl_context(): GLContext
-    create_similar_image_surface(format: number, width: number, height: number, scale: number): cairo.Surface
+    create_similar_image_surface(format: cairo.Format, width: number, height: number, scale: number): cairo.Surface
     create_similar_surface(content: cairo.Content, width: number, height: number): cairo.Surface
     deiconify(): void
     destroy(): void
@@ -4477,15 +4483,15 @@ export class Window {
     unmaximize(): void
     unstick(): void
     withdraw(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4493,25 +4499,25 @@ export class Window {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gdk.Window */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gdk-3.0.Gdk.Window */
     vfunc_create_surface(width: number, height: number): cairo.Surface
     vfunc_from_embedder(embedder_x: number, embedder_y: number, offscreen_x: number, offscreen_y: number): void
     vfunc_to_embedder(offscreen_x: number, offscreen_y: number, embedder_x: number, embedder_y: number): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gdk.Window */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gdk-3.0.Gdk.Window */
     connect(sigName: "create-surface", callback: (($obj: Window, width: number, height: number) => cairo.Surface)): number
     connect_after(sigName: "create-surface", callback: (($obj: Window, width: number, height: number) => cairo.Surface)): number
     emit(sigName: "create-surface", width: number, height: number): void
@@ -4527,7 +4533,7 @@ export class Window {
     connect(sigName: "to-embedder", callback: (($obj: Window, offscreen_x: number, offscreen_y: number) => void)): number
     connect_after(sigName: "to-embedder", callback: (($obj: Window, offscreen_x: number, offscreen_y: number) => void)): number
     emit(sigName: "to-embedder", offscreen_x: number, offscreen_y: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4548,21 +4554,21 @@ export class Window {
     static set_debug_updates(setting: boolean): void
     static $gtype: GObject.Type
 }
-export class Atom {
-    /* Methods of Gdk.Atom */
+class Atom {
+    /* Methods of Gdk-3.0.Gdk.Atom */
     name(): string
     static name: string
     /* Static methods and pseudo-constructors */
     static intern(atom_name: string, only_if_exists: boolean): Atom
     static intern_static_string(atom_name: string): Atom
 }
-export class Color {
-    /* Fields of Gdk.Color */
+class Color {
+    /* Fields of Gdk-3.0.Gdk.Color */
     pixel: number
     red: number
     green: number
     blue: number
-    /* Methods of Gdk.Color */
+    /* Methods of Gdk-3.0.Gdk.Color */
     copy(): Color
     equal(colorb: Color): boolean
     free(): void
@@ -4572,21 +4578,21 @@ export class Color {
     /* Static methods and pseudo-constructors */
     static parse(spec: string): [ /* returnType */ boolean, /* color */ Color ]
 }
-export abstract class DevicePadInterface {
+abstract class DevicePadInterface {
     static name: string
 }
-export abstract class DrawingContextClass {
+abstract class DrawingContextClass {
     static name: string
 }
-export class EventAny {
-    /* Fields of Gdk.EventAny */
+class EventAny {
+    /* Fields of Gdk-3.0.Gdk.EventAny */
     type: EventType
     window: Window
     send_event: number
     static name: string
 }
-export class EventButton {
-    /* Fields of Gdk.EventButton */
+class EventButton {
+    /* Fields of Gdk-3.0.Gdk.EventButton */
     type: EventType
     window: Window
     send_event: number
@@ -4601,8 +4607,8 @@ export class EventButton {
     y_root: number
     static name: string
 }
-export class EventConfigure {
-    /* Fields of Gdk.EventConfigure */
+class EventConfigure {
+    /* Fields of Gdk-3.0.Gdk.EventConfigure */
     type: EventType
     window: Window
     send_event: number
@@ -4612,8 +4618,8 @@ export class EventConfigure {
     height: number
     static name: string
 }
-export class EventCrossing {
-    /* Fields of Gdk.EventCrossing */
+class EventCrossing {
+    /* Fields of Gdk-3.0.Gdk.EventCrossing */
     type: EventType
     window: Window
     send_event: number
@@ -4629,8 +4635,8 @@ export class EventCrossing {
     state: ModifierType
     static name: string
 }
-export class EventDND {
-    /* Fields of Gdk.EventDND */
+class EventDND {
+    /* Fields of Gdk-3.0.Gdk.EventDND */
     type: EventType
     window: Window
     send_event: number
@@ -4640,8 +4646,8 @@ export class EventDND {
     y_root: number
     static name: string
 }
-export class EventExpose {
-    /* Fields of Gdk.EventExpose */
+class EventExpose {
+    /* Fields of Gdk-3.0.Gdk.EventExpose */
     type: EventType
     window: Window
     send_event: number
@@ -4650,16 +4656,16 @@ export class EventExpose {
     count: number
     static name: string
 }
-export class EventFocus {
-    /* Fields of Gdk.EventFocus */
+class EventFocus {
+    /* Fields of Gdk-3.0.Gdk.EventFocus */
     type: EventType
     window: Window
     send_event: number
     in_: number
     static name: string
 }
-export class EventGrabBroken {
-    /* Fields of Gdk.EventGrabBroken */
+class EventGrabBroken {
+    /* Fields of Gdk-3.0.Gdk.EventGrabBroken */
     type: EventType
     window: Window
     send_event: number
@@ -4668,8 +4674,8 @@ export class EventGrabBroken {
     grab_window: Window
     static name: string
 }
-export class EventKey {
-    /* Fields of Gdk.EventKey */
+class EventKey {
+    /* Fields of Gdk-3.0.Gdk.EventKey */
     type: EventType
     window: Window
     send_event: number
@@ -4683,8 +4689,8 @@ export class EventKey {
     is_modifier: number
     static name: string
 }
-export class EventMotion {
-    /* Fields of Gdk.EventMotion */
+class EventMotion {
+    /* Fields of Gdk-3.0.Gdk.EventMotion */
     type: EventType
     window: Window
     send_event: number
@@ -4699,8 +4705,8 @@ export class EventMotion {
     y_root: number
     static name: string
 }
-export class EventOwnerChange {
-    /* Fields of Gdk.EventOwnerChange */
+class EventOwnerChange {
+    /* Fields of Gdk-3.0.Gdk.EventOwnerChange */
     type: EventType
     window: Window
     send_event: number
@@ -4711,8 +4717,8 @@ export class EventOwnerChange {
     selection_time: number
     static name: string
 }
-export class EventPadAxis {
-    /* Fields of Gdk.EventPadAxis */
+class EventPadAxis {
+    /* Fields of Gdk-3.0.Gdk.EventPadAxis */
     type: EventType
     window: Window
     send_event: number
@@ -4723,8 +4729,8 @@ export class EventPadAxis {
     value: number
     static name: string
 }
-export class EventPadButton {
-    /* Fields of Gdk.EventPadButton */
+class EventPadButton {
+    /* Fields of Gdk-3.0.Gdk.EventPadButton */
     type: EventType
     window: Window
     send_event: number
@@ -4734,8 +4740,8 @@ export class EventPadButton {
     mode: number
     static name: string
 }
-export class EventPadGroupMode {
-    /* Fields of Gdk.EventPadGroupMode */
+class EventPadGroupMode {
+    /* Fields of Gdk-3.0.Gdk.EventPadGroupMode */
     type: EventType
     window: Window
     send_event: number
@@ -4744,8 +4750,8 @@ export class EventPadGroupMode {
     mode: number
     static name: string
 }
-export class EventProperty {
-    /* Fields of Gdk.EventProperty */
+class EventProperty {
+    /* Fields of Gdk-3.0.Gdk.EventProperty */
     type: EventType
     window: Window
     send_event: number
@@ -4754,8 +4760,8 @@ export class EventProperty {
     state: PropertyState
     static name: string
 }
-export class EventProximity {
-    /* Fields of Gdk.EventProximity */
+class EventProximity {
+    /* Fields of Gdk-3.0.Gdk.EventProximity */
     type: EventType
     window: Window
     send_event: number
@@ -4763,8 +4769,8 @@ export class EventProximity {
     device: Device
     static name: string
 }
-export class EventScroll {
-    /* Fields of Gdk.EventScroll */
+class EventScroll {
+    /* Fields of Gdk-3.0.Gdk.EventScroll */
     type: EventType
     window: Window
     send_event: number
@@ -4781,8 +4787,8 @@ export class EventScroll {
     is_stop: number
     static name: string
 }
-export class EventSelection {
-    /* Fields of Gdk.EventSelection */
+class EventSelection {
+    /* Fields of Gdk-3.0.Gdk.EventSelection */
     type: EventType
     window: Window
     send_event: number
@@ -4793,11 +4799,11 @@ export class EventSelection {
     requestor: Window
     static name: string
 }
-export class EventSequence {
+class EventSequence {
     static name: string
 }
-export class EventSetting {
-    /* Fields of Gdk.EventSetting */
+class EventSetting {
+    /* Fields of Gdk-3.0.Gdk.EventSetting */
     type: EventType
     window: Window
     send_event: number
@@ -4805,8 +4811,8 @@ export class EventSetting {
     name: string
     static name: string
 }
-export class EventTouch {
-    /* Fields of Gdk.EventTouch */
+class EventTouch {
+    /* Fields of Gdk-3.0.Gdk.EventTouch */
     type: EventType
     window: Window
     send_event: number
@@ -4822,8 +4828,8 @@ export class EventTouch {
     y_root: number
     static name: string
 }
-export class EventTouchpadPinch {
-    /* Fields of Gdk.EventTouchpadPinch */
+class EventTouchpadPinch {
+    /* Fields of Gdk-3.0.Gdk.EventTouchpadPinch */
     type: EventType
     window: Window
     send_event: number
@@ -4841,8 +4847,8 @@ export class EventTouchpadPinch {
     state: ModifierType
     static name: string
 }
-export class EventTouchpadSwipe {
-    /* Fields of Gdk.EventTouchpadSwipe */
+class EventTouchpadSwipe {
+    /* Fields of Gdk-3.0.Gdk.EventTouchpadSwipe */
     type: EventType
     window: Window
     send_event: number
@@ -4858,16 +4864,16 @@ export class EventTouchpadSwipe {
     state: ModifierType
     static name: string
 }
-export class EventVisibility {
-    /* Fields of Gdk.EventVisibility */
+class EventVisibility {
+    /* Fields of Gdk-3.0.Gdk.EventVisibility */
     type: EventType
     window: Window
     send_event: number
     state: VisibilityState
     static name: string
 }
-export class EventWindowState {
-    /* Fields of Gdk.EventWindowState */
+class EventWindowState {
+    /* Fields of Gdk-3.0.Gdk.EventWindowState */
     type: EventType
     window: Window
     send_event: number
@@ -4875,14 +4881,14 @@ export class EventWindowState {
     new_window_state: WindowState
     static name: string
 }
-export abstract class FrameClockClass {
+abstract class FrameClockClass {
     static name: string
 }
-export class FrameClockPrivate {
+class FrameClockPrivate {
     static name: string
 }
-export class FrameTimings {
-    /* Methods of Gdk.FrameTimings */
+class FrameTimings {
+    /* Methods of Gdk-3.0.Gdk.FrameTimings */
     get_complete(): boolean
     get_frame_counter(): number
     get_frame_time(): number
@@ -4893,8 +4899,8 @@ export class FrameTimings {
     unref(): void
     static name: string
 }
-export class Geometry {
-    /* Fields of Gdk.Geometry */
+class Geometry {
+    /* Fields of Gdk-3.0.Gdk.Geometry */
     min_width: number
     min_height: number
     max_width: number
@@ -4908,29 +4914,29 @@ export class Geometry {
     win_gravity: Gravity
     static name: string
 }
-export class KeymapKey {
-    /* Fields of Gdk.KeymapKey */
+class KeymapKey {
+    /* Fields of Gdk-3.0.Gdk.KeymapKey */
     keycode: number
     group: number
     level: number
     static name: string
 }
-export abstract class MonitorClass {
+abstract class MonitorClass {
     static name: string
 }
-export class Point {
-    /* Fields of Gdk.Point */
+class Point {
+    /* Fields of Gdk-3.0.Gdk.Point */
     x: number
     y: number
     static name: string
 }
-export class RGBA {
-    /* Fields of Gdk.RGBA */
+class RGBA {
+    /* Fields of Gdk-3.0.Gdk.RGBA */
     red: number
     green: number
     blue: number
     alpha: number
-    /* Methods of Gdk.RGBA */
+    /* Methods of Gdk-3.0.Gdk.RGBA */
     copy(): RGBA
     equal(p2: RGBA): boolean
     free(): void
@@ -4939,26 +4945,26 @@ export class RGBA {
     to_string(): string
     static name: string
 }
-export class Rectangle {
-    /* Fields of Gdk.Rectangle */
+class Rectangle {
+    /* Fields of Gdk-3.0.Gdk.Rectangle */
     x: number
     y: number
     width: number
     height: number
-    /* Methods of Gdk.Rectangle */
+    /* Methods of Gdk-3.0.Gdk.Rectangle */
     equal(rect2: Rectangle): boolean
     intersect(src2: Rectangle): [ /* returnType */ boolean, /* dest */ Rectangle | null ]
     union(src2: Rectangle): /* dest */ Rectangle
     static name: string
 }
-export class TimeCoord {
-    /* Fields of Gdk.TimeCoord */
+class TimeCoord {
+    /* Fields of Gdk-3.0.Gdk.TimeCoord */
     time: number
     axes: number[]
     static name: string
 }
-export class WindowAttr {
-    /* Fields of Gdk.WindowAttr */
+class WindowAttr {
+    /* Fields of Gdk-3.0.Gdk.WindowAttr */
     title: string
     event_mask: number
     x: number
@@ -4975,19 +4981,19 @@ export class WindowAttr {
     type_hint: WindowTypeHint
     static name: string
 }
-export abstract class WindowClass {
-    /* Fields of Gdk.WindowClass */
+abstract class WindowClass {
+    /* Fields of Gdk-3.0.Gdk.WindowClass */
     parent_class: GObject.ObjectClass
     to_embedder: (window: Window, offscreen_x: number, offscreen_y: number, embedder_x: number, embedder_y: number) => void
     from_embedder: (window: Window, embedder_x: number, embedder_y: number, offscreen_x: number, offscreen_y: number) => void
     create_surface: (window: Window, width: number, height: number) => cairo.Surface
     static name: string
 }
-export class WindowRedirect {
+class WindowRedirect {
     static name: string
 }
-export class Event {
-    /* Fields of Gdk.Event */
+class Event {
+    /* Fields of Gdk-3.0.Gdk.Event */
     type: EventType
     any: EventAny
     expose: EventExpose
@@ -5013,7 +5019,7 @@ export class Event {
     pad_button: EventPadButton
     pad_axis: EventPadAxis
     pad_group_mode: EventPadGroupMode
-    /* Methods of Gdk.Event */
+    /* Methods of Gdk-3.0.Gdk.Event */
     _get_angle(event2: Event): [ /* returnType */ boolean, /* angle */ number ]
     _get_center(event2: Event): [ /* returnType */ boolean, /* x */ number, /* y */ number ]
     _get_distance(event2: Event): [ /* returnType */ boolean, /* distance */ number ]
@@ -5057,4 +5063,6 @@ export class Event {
     static peek(): Event | null
     static request_motions(event: EventMotion): void
 }
-export type XEvent = void
+type XEvent = void
+}
+export default Gdk;

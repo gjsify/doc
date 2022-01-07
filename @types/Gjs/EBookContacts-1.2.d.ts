@@ -3,42 +3,47 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as libxml2 from './libxml2-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as EDataServer from './EDataServer-1.2';
-import type * as Soup from './Soup-2.4';
-import type * as Camel from './Camel-1.2';
+import type libxml2 from './libxml2-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type EDataServer from './EDataServer-1.2';
+import type Soup from './Soup-2.4';
+import type GData from './GData-0.0';
+import type Json from './Json-1.0';
+import type Goa from './Goa-1.0';
+import type Camel from './Camel-1.2';
 
-export enum BookChangeType {
+export namespace EBookContacts {
+
+enum BookChangeType {
     ADDED,
     DELETED,
     MODIFIED,
 }
-export enum BookClientError {
+enum BookClientError {
     NO_SUCH_BOOK,
     CONTACT_NOT_FOUND,
     CONTACT_ID_ALREADY_EXISTS,
     NO_SUCH_SOURCE,
     NO_SPACE,
 }
-export enum BookCursorOrigin {
+enum BookCursorOrigin {
     CURRENT,
     BEGIN,
     END,
 }
-export enum BookCursorSortType {
+enum BookCursorSortType {
     ASCENDING,
     DESCENDING,
 }
-export enum BookIndexType {
+enum BookIndexType {
     PREFIX,
     SUFFIX,
     PHONE,
     SORT_KEY,
 }
-export enum BookQueryTest {
+enum BookQueryTest {
     IS,
     CONTAINS,
     BEGINS_WITH,
@@ -50,7 +55,7 @@ export enum BookQueryTest {
     REGEX_RAW,
     LAST,
 }
-export enum BookViewStatus {
+enum BookViewStatus {
     STATUS_OK,
     STATUS_TIME_LIMIT_EXCEEDED,
     STATUS_SIZE_LIMIT_EXCEEDED,
@@ -58,7 +63,7 @@ export enum BookViewStatus {
     ERROR_QUERY_REFUSED,
     ERROR_OTHER_ERROR,
 }
-export enum ContactField {
+enum ContactField {
     UID,
     FILE_AS,
     BOOK_UID,
@@ -194,6 +199,13 @@ export enum ContactField {
     IM_GOOGLE_TALK_WORK_3,
     IM_GOOGLE_TALK,
     IM_TWITTER,
+    IM_MATRIX_HOME_1,
+    IM_MATRIX_HOME_2,
+    IM_MATRIX_HOME_3,
+    IM_MATRIX_WORK_1,
+    IM_MATRIX_WORK_2,
+    IM_MATRIX_WORK_3,
+    IM_MATRIX,
     FIELD_LAST,
     FIELD_FIRST,
     LAST_SIMPLE_STRING,
@@ -206,16 +218,16 @@ export enum ContactField {
     FIRST_LABEL_ID,
     LAST_LABEL_ID,
 }
-export enum ContactPhotoType {
+enum ContactPhotoType {
     INLINED,
     URI,
 }
-export enum PhoneNumberCountrySource {
+enum PhoneNumberCountrySource {
     FQTN,
     IDD,
     DEFAULT,
 }
-export enum PhoneNumberError {
+enum PhoneNumberError {
     NOT_IMPLEMENTED,
     UNKNOWN,
     NOT_A_NUMBER,
@@ -224,31 +236,31 @@ export enum PhoneNumberError {
     TOO_SHORT,
     TOO_LONG,
 }
-export enum PhoneNumberFormat {
+enum PhoneNumberFormat {
     E164,
     INTERNATIONAL,
     NATIONAL,
     RFC3966,
 }
-export enum PhoneNumberMatch {
+enum PhoneNumberMatch {
     NONE,
     EXACT,
     NATIONAL,
     SHORT,
 }
-export enum VCardFormat {
+enum VCardFormat {
     /* 21 (invalid, starts with a number) */
     /* 30 (invalid, starts with a number) */
 }
-export enum BookClientViewFlags {
+enum BookClientViewFlags {
     NONE,
     NOTIFY_INITIAL,
 }
-export enum BookCursorStepFlags {
+enum BookCursorStepFlags {
     MOVE,
     FETCH,
 }
-export enum BookOperationFlags {
+enum BookOperationFlags {
     NONE,
     CONFLICT_FAIL,
     CONFLICT_USE_NEWER,
@@ -317,6 +329,7 @@ export const EVC_X_LIST: string
 export const EVC_X_LIST_NAME: string
 export const EVC_X_LIST_SHOW_ADDRESSES: string
 export const EVC_X_MANAGER: string
+export const EVC_X_MATRIX: string
 export const EVC_X_MSN: string
 export const EVC_X_RADIO: string
 export const EVC_X_SIP: string
@@ -331,32 +344,33 @@ export const EVC_X_YAHOO: string
 export const SOURCE_EXTENSION_BACKEND_SUMMARY_SETUP: string
 export const VCARD_21_VALID_PARAMETERS: string
 export const VCARD_21_VALID_PROPERTIES: string
-export function address_western_parse(in_address: string): AddressWestern
-export function book_client_error_create(code: BookClientError, custom_msg: string): GLib.Error
-export function book_client_error_quark(): GLib.Quark
-export function book_client_error_to_string(code: BookClientError): string
-export function book_query_and(nqs: number, qs: BookQuery, unref: boolean): BookQuery
-export function book_query_any_field_contains(value: string): BookQuery
-export function book_query_field_exists(field: ContactField): BookQuery
-export function book_query_field_test(field: ContactField, test: BookQueryTest, value: string): BookQuery
-export function book_query_from_string(query_string: string): BookQuery
-export function book_query_or(nqs: number, qs: BookQuery, unref: boolean): BookQuery
-export function book_query_vcard_field_exists(field: string): BookQuery
-export function book_query_vcard_field_test(field: string, test: BookQueryTest, value: string): BookQuery
-export function book_util_conflict_resolution_to_operation_flags(conflict_resolution: EDataServer.ConflictResolution): number
-export function book_util_operation_flags_to_conflict_resolution(flags: number): EDataServer.ConflictResolution
-export function contact_attr_list_copy(list: string[]): string[]
-export function contact_attr_list_free(list: string[]): void
-export function contact_date_from_string(str: string): ContactDate
-export function contact_name_from_string(name_str: string): ContactName
-export function name_western_parse(full_name: string): NameWestern
-export function phone_number_compare_strings(first_number: string, second_number: string): PhoneNumberMatch
-export function phone_number_compare_strings_with_region(first_number: string, second_number: string, region_code?: string | null): PhoneNumberMatch
-export function phone_number_error_quark(): GLib.Quark
-export function phone_number_from_string(phone_number: string, region_code?: string | null): PhoneNumber
-export function phone_number_get_country_code_for_region(region_code?: string | null): number
-export function phone_number_get_default_region(): string
-export function phone_number_is_supported(): boolean
+function address_western_parse(in_address: string): AddressWestern
+function book_client_error_create(code: BookClientError, custom_msg: string): GLib.Error
+function book_client_error_quark(): GLib.Quark
+function book_client_error_to_string(code: BookClientError): string
+function book_query_and(nqs: number, qs: BookQuery, unref: boolean): BookQuery
+function book_query_any_field_contains(value: string): BookQuery
+function book_query_field_exists(field: ContactField): BookQuery
+function book_query_field_test(field: ContactField, test: BookQueryTest, value: string): BookQuery
+function book_query_from_string(query_string: string): BookQuery
+function book_query_or(nqs: number, qs: BookQuery, unref: boolean): BookQuery
+function book_query_vcard_field_exists(field: string): BookQuery
+function book_query_vcard_field_test(field: string, test: BookQueryTest, value: string): BookQuery
+function book_util_conflict_resolution_to_operation_flags(conflict_resolution: EDataServer.ConflictResolution): number
+function book_util_foreach_address(email_address: string, func: GLib.HRFunc): void
+function book_util_operation_flags_to_conflict_resolution(flags: number): EDataServer.ConflictResolution
+function contact_attr_list_copy(list: string[]): string[]
+function contact_attr_list_free(list: string[]): void
+function contact_date_from_string(str: string): ContactDate
+function contact_name_from_string(name_str: string): ContactName
+function name_western_parse(full_name: string): NameWestern
+function phone_number_compare_strings(first_number: string, second_number: string): PhoneNumberMatch
+function phone_number_compare_strings_with_region(first_number: string, second_number: string, region_code?: string | null): PhoneNumberMatch
+function phone_number_error_quark(): GLib.Quark
+function phone_number_from_string(phone_number: string, region_code?: string | null): PhoneNumber
+function phone_number_get_country_code_for_region(region_code?: string | null): number
+function phone_number_get_default_region(): string
+function phone_number_is_supported(): boolean
 export interface Contact_ConstructProps extends VCard_ConstructProps {
     Rev?: string
     address?: any
@@ -440,6 +454,13 @@ export interface Contact_ConstructProps extends VCard_ConstructProps {
     im_jabber_work_1?: string
     im_jabber_work_2?: string
     im_jabber_work_3?: string
+    im_matrix?: any
+    im_matrix_home_1?: string
+    im_matrix_home_2?: string
+    im_matrix_home_3?: string
+    im_matrix_work_1?: string
+    im_matrix_work_2?: string
+    im_matrix_work_3?: string
     im_msn?: any
     im_msn_home_1?: string
     im_msn_home_2?: string
@@ -493,8 +514,8 @@ export interface Contact_ConstructProps extends VCard_ConstructProps {
     wants_html?: boolean
     x509Cert?: ContactCert
 }
-export class Contact {
-    /* Properties of EBookContacts.Contact */
+class Contact {
+    /* Properties of EBookContacts-1.2.EBookContacts.Contact */
     Rev: string
     address: any
     address_home: ContactAddress
@@ -577,6 +598,13 @@ export class Contact {
     im_jabber_work_1: string
     im_jabber_work_2: string
     im_jabber_work_3: string
+    im_matrix: any
+    im_matrix_home_1: string
+    im_matrix_home_2: string
+    im_matrix_home_3: string
+    im_matrix_work_1: string
+    im_matrix_work_2: string
+    im_matrix_work_3: string
     im_msn: any
     im_msn_home_1: string
     im_msn_home_2: string
@@ -630,20 +658,20 @@ export class Contact {
     video_url: string
     wants_html: boolean
     x509Cert: ContactCert
-    /* Fields of EBookContacts.Contact */
+    /* Fields of EBookContacts-1.2.EBookContacts.Contact */
     parent: VCard
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBookContacts.Contact */
+    /* Methods of EBookContacts-1.2.EBookContacts.Contact */
     duplicate(): Contact
     get(field_id: ContactField): object | null
     get_attributes(field_id: ContactField): VCardAttribute[]
-    get_attributes_set(field_ids: ContactField, size: number): VCardAttribute[]
+    get_attributes_set(field_ids: ContactField[]): VCardAttribute[]
     get_const(field_id: ContactField): object | null
     inline_local_photos(): boolean
     set(field_id: ContactField, value?: object | null): void
     set_attributes(field_id: ContactField, attributes: VCardAttribute[]): void
-    /* Methods of EBookContacts.VCard */
+    /* Methods of EBookContacts-1.2.EBookContacts.VCard */
     add_attribute(attr: VCardAttribute): void
     add_attribute_with_value(attr: VCardAttribute, value: string): void
     append_attribute(attr: VCardAttribute): void
@@ -661,15 +689,15 @@ export class Contact {
     to_string(format: VCardFormat): string
     util_dup_x_attribute(x_name: string): string | null
     util_set_x_attribute(x_name: string, value?: string | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -677,21 +705,21 @@ export class Contact {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -859,6 +887,20 @@ export class Contact {
     connect_after(sigName: "notify::im-jabber-work-2", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::im-jabber-work-3", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::im-jabber-work-3", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::im-matrix", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::im-matrix", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::im-matrix-home-1", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::im-matrix-home-1", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::im-matrix-home-2", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::im-matrix-home-2", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::im-matrix-home-3", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::im-matrix-home-3", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::im-matrix-work-1", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::im-matrix-work-1", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::im-matrix-work-2", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::im-matrix-work-2", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::im-matrix-work-3", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::im-matrix-work-3", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::im-msn", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::im-msn", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::im-msn-home-1", callback: (($obj: Contact, pspec: GObject.ParamSpec) => void)): number
@@ -989,31 +1031,31 @@ export interface SourceBackendSummarySetup_ConstructProps extends EDataServer.So
     indexed_fields?: string
     summary_fields?: string
 }
-export class SourceBackendSummarySetup {
-    /* Properties of EBookContacts.SourceBackendSummarySetup */
+class SourceBackendSummarySetup {
+    /* Properties of EBookContacts-1.2.EBookContacts.SourceBackendSummarySetup */
     indexed_fields: string
     summary_fields: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBookContacts.SourceBackendSummarySetup */
+    /* Methods of EBookContacts-1.2.EBookContacts.SourceBackendSummarySetup */
     get_indexed_fields(): [ /* returnType */ ContactField, /* types */ BookIndexType, /* n_fields */ number ]
     get_summary_fields(): [ /* returnType */ ContactField, /* n_fields */ number ]
     set_indexed_fieldsv(fields: ContactField, types: BookIndexType, n_fields: number): void
     set_summary_fieldsv(fields: ContactField, n_fields: number): void
-    /* Methods of EDataServer.SourceExtension */
+    /* Methods of EDataServer-1.2.EDataServer.SourceExtension */
     get_source(): EDataServer.Source
     property_lock(): void
     property_unlock(): void
     ref_source(): EDataServer.Source
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1021,21 +1063,21 @@ export class SourceBackendSummarySetup {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SourceBackendSummarySetup, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SourceBackendSummarySetup, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1054,12 +1096,12 @@ export class SourceBackendSummarySetup {
 }
 export interface VCard_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class VCard {
-    /* Fields of EBookContacts.VCard */
+class VCard {
+    /* Fields of EBookContacts-1.2.EBookContacts.VCard */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of EBookContacts.VCard */
+    /* Methods of EBookContacts-1.2.EBookContacts.VCard */
     add_attribute(attr: VCardAttribute): void
     add_attribute_with_value(attr: VCardAttribute, value: string): void
     append_attribute(attr: VCardAttribute): void
@@ -1077,15 +1119,15 @@ export class VCard {
     to_string(format: VCardFormat): string
     util_dup_x_attribute(x_name: string): string | null
     util_set_x_attribute(x_name: string, value?: string | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1093,21 +1135,21 @@ export class VCard {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: VCard, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VCard, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1125,8 +1167,8 @@ export class VCard {
     static unescape_string(s: string): string
     static $gtype: GObject.Type
 }
-export class AddressWestern {
-    /* Fields of EBookContacts.AddressWestern */
+class AddressWestern {
+    /* Fields of EBookContacts-1.2.EBookContacts.AddressWestern */
     po_box: string
     extended: string
     street: string
@@ -1134,21 +1176,21 @@ export class AddressWestern {
     region: string
     postal_code: string
     country: string
-    /* Methods of EBookContacts.AddressWestern */
+    /* Methods of EBookContacts-1.2.EBookContacts.AddressWestern */
     copy(): AddressWestern
     free(): void
     static name: string
     /* Static methods and pseudo-constructors */
     static parse(in_address: string): AddressWestern
 }
-export class BookChange {
-    /* Fields of EBookContacts.BookChange */
+class BookChange {
+    /* Fields of EBookContacts-1.2.EBookContacts.BookChange */
     change_type: BookChangeType
     contact: Contact
     static name: string
 }
-export class BookQuery {
-    /* Methods of EBookContacts.BookQuery */
+class BookQuery {
+    /* Methods of EBookContacts-1.2.EBookContacts.BookQuery */
     copy(): BookQuery
     not(unref: boolean): BookQuery
     ref(): BookQuery
@@ -1165,8 +1207,8 @@ export class BookQuery {
     static vcard_field_exists(field: string): BookQuery
     static vcard_field_test(field: string, test: BookQueryTest, value: string): BookQuery
 }
-export class ContactAddress {
-    /* Fields of EBookContacts.ContactAddress */
+class ContactAddress {
+    /* Fields of EBookContacts-1.2.EBookContacts.ContactAddress */
     address_format: string
     po: string
     ext: string
@@ -1175,7 +1217,7 @@ export class ContactAddress {
     region: string
     code: string
     country: string
-    /* Methods of EBookContacts.ContactAddress */
+    /* Methods of EBookContacts-1.2.EBookContacts.ContactAddress */
     free(): void
     static name: string
     static new(): ContactAddress
@@ -1183,11 +1225,11 @@ export class ContactAddress {
     /* Static methods and pseudo-constructors */
     static new(): ContactAddress
 }
-export class ContactCert {
-    /* Fields of EBookContacts.ContactCert */
+class ContactCert {
+    /* Fields of EBookContacts-1.2.EBookContacts.ContactCert */
     length: number
     data: string
-    /* Methods of EBookContacts.ContactCert */
+    /* Methods of EBookContacts-1.2.EBookContacts.ContactCert */
     free(): void
     static name: string
     static new(): ContactCert
@@ -1195,17 +1237,17 @@ export class ContactCert {
     /* Static methods and pseudo-constructors */
     static new(): ContactCert
 }
-export abstract class ContactClass {
-    /* Fields of EBookContacts.ContactClass */
+abstract class ContactClass {
+    /* Fields of EBookContacts-1.2.EBookContacts.ContactClass */
     parent_class: VCardClass
     static name: string
 }
-export class ContactDate {
-    /* Fields of EBookContacts.ContactDate */
+class ContactDate {
+    /* Fields of EBookContacts-1.2.EBookContacts.ContactDate */
     year: number
     month: number
     day: number
-    /* Methods of EBookContacts.ContactDate */
+    /* Methods of EBookContacts-1.2.EBookContacts.ContactDate */
     equal(dt2: ContactDate): boolean
     free(): void
     to_string(): string
@@ -1216,11 +1258,11 @@ export class ContactDate {
     static new(): ContactDate
     static from_string(str: string): ContactDate
 }
-export class ContactGeo {
-    /* Fields of EBookContacts.ContactGeo */
+class ContactGeo {
+    /* Fields of EBookContacts-1.2.EBookContacts.ContactGeo */
     latitude: number
     longitude: number
-    /* Methods of EBookContacts.ContactGeo */
+    /* Methods of EBookContacts-1.2.EBookContacts.ContactGeo */
     free(): void
     static name: string
     static new(): ContactGeo
@@ -1228,14 +1270,14 @@ export class ContactGeo {
     /* Static methods and pseudo-constructors */
     static new(): ContactGeo
 }
-export class ContactName {
-    /* Fields of EBookContacts.ContactName */
+class ContactName {
+    /* Fields of EBookContacts-1.2.EBookContacts.ContactName */
     family: string
     given: string
     additional: string
     prefixes: string
     suffixes: string
-    /* Methods of EBookContacts.ContactName */
+    /* Methods of EBookContacts-1.2.EBookContacts.ContactName */
     copy(): ContactName
     free(): void
     to_string(): string
@@ -1246,10 +1288,10 @@ export class ContactName {
     static new(): ContactName
     static from_string(name_str: string): ContactName
 }
-export class ContactPhoto {
-    /* Fields of EBookContacts.ContactPhoto */
+class ContactPhoto {
+    /* Fields of EBookContacts-1.2.EBookContacts.ContactPhoto */
     type: ContactPhotoType
-    /* Methods of EBookContacts.ContactPhoto */
+    /* Methods of EBookContacts-1.2.EBookContacts.ContactPhoto */
     copy(): ContactPhoto
     free(): void
     get_inlined(): Uint8Array[] | null
@@ -1264,11 +1306,11 @@ export class ContactPhoto {
     /* Static methods and pseudo-constructors */
     static new(): ContactPhoto
 }
-export class ContactPrivate {
+class ContactPrivate {
     static name: string
 }
-export class NameWestern {
-    /* Fields of EBookContacts.NameWestern */
+class NameWestern {
+    /* Fields of EBookContacts-1.2.EBookContacts.NameWestern */
     prefix: string
     first: string
     middle: string
@@ -1276,19 +1318,19 @@ export class NameWestern {
     last: string
     suffix: string
     full: string
-    /* Methods of EBookContacts.NameWestern */
+    /* Methods of EBookContacts-1.2.EBookContacts.NameWestern */
     copy(): NameWestern
     free(): void
     static name: string
     /* Static methods and pseudo-constructors */
     static parse(full_name: string): NameWestern
 }
-export class PhoneNumber {
-    /* Methods of EBookContacts.PhoneNumber */
+class PhoneNumber {
+    /* Methods of EBookContacts-1.2.EBookContacts.PhoneNumber */
     compare(second_number: PhoneNumber): PhoneNumberMatch
     copy(): PhoneNumber
     free(): void
-    get_country_code(source: PhoneNumberCountrySource): number
+    get_country_code(source?: PhoneNumberCountrySource | null): number
     get_national_number(): string
     to_string(format: PhoneNumberFormat): string
     static name: string
@@ -1301,16 +1343,16 @@ export class PhoneNumber {
     static get_default_region(): string
     static is_supported(): boolean
 }
-export abstract class SourceBackendSummarySetupClass {
-    /* Fields of EBookContacts.SourceBackendSummarySetupClass */
+abstract class SourceBackendSummarySetupClass {
+    /* Fields of EBookContacts-1.2.EBookContacts.SourceBackendSummarySetupClass */
     parent_class: EDataServer.SourceBackendClass
     static name: string
 }
-export class SourceBackendSummarySetupPrivate {
+class SourceBackendSummarySetupPrivate {
     static name: string
 }
-export class VCardAttribute {
-    /* Methods of EBookContacts.VCardAttribute */
+class VCardAttribute {
+    /* Methods of EBookContacts-1.2.EBookContacts.VCardAttribute */
     add_param(param: VCardAttributeParam): void
     add_param_with_value(param: VCardAttributeParam, value: string): void
     add_value(value: string): void
@@ -1338,8 +1380,8 @@ export class VCardAttribute {
     /* Static methods and pseudo-constructors */
     static new(attr_group: string | null, attr_name: string): VCardAttribute
 }
-export class VCardAttributeParam {
-    /* Methods of EBookContacts.VCardAttributeParam */
+class VCardAttributeParam {
+    /* Methods of EBookContacts-1.2.EBookContacts.VCardAttributeParam */
     add_value(value: string): void
     copy(): VCardAttributeParam
     free(): void
@@ -1352,11 +1394,13 @@ export class VCardAttributeParam {
     /* Static methods and pseudo-constructors */
     static new(name: string): VCardAttributeParam
 }
-export abstract class VCardClass {
-    /* Fields of EBookContacts.VCardClass */
+abstract class VCardClass {
+    /* Fields of EBookContacts-1.2.EBookContacts.VCardClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class VCardPrivate {
+class VCardPrivate {
     static name: string
 }
+}
+export default EBookContacts;

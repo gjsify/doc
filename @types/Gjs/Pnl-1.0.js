@@ -1,2 +1,2 @@
-imports.gi.versions.Pnl = '1.0'
-export default imports.gi.Pnl
+import Pnl from 'gi://Pnl?version=1.0';
+export default Pnl;

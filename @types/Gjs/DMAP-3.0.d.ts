@@ -3,12 +3,14 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Soup from './Soup-2.4';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Soup from './Soup-2.4';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum ConnectionState {
+export namespace DMAP {
+
+enum ConnectionState {
     GET_INFO,
     LOGIN,
     GET_REVISION_NUMBER,
@@ -19,7 +21,7 @@ export enum ConnectionState {
     LOGOUT,
     DONE,
 }
-export enum ContentCode {
+enum ContentCode {
     CC_INVALID,
     RAW,
     CC_MDCL,
@@ -175,11 +177,11 @@ export enum ContentCode {
     CC_CAIV,
     CC_CAVC,
 }
-export enum MdnsBrowserError {
+enum MdnsBrowserError {
     NOT_RUNNING,
     FAILED,
 }
-export enum MdnsBrowserServiceType {
+enum MdnsBrowserServiceType {
     INVALID,
     DAAP,
     DPAP,
@@ -187,22 +189,22 @@ export enum MdnsBrowserServiceType {
     RAOP,
     LAST,
 }
-export enum MdnsBrowserTransportProtocol {
+enum MdnsBrowserTransportProtocol {
     TCP,
     UDP,
     LAST,
 }
-export enum MdnsPublisherError {
+enum MdnsPublisherError {
     NOT_RUNNING,
     FAILED,
 }
-export enum MediaKind {
+enum MediaKind {
     MUSIC,
     MOVIE,
     PODCAST,
     TV_SHOW,
 }
-export enum Type {
+enum Type {
     BYTE,
     SIGNED_INT,
     SHORT,
@@ -216,61 +218,61 @@ export enum Type {
 }
 export const HASH_SIZE: number
 export const STATUS_OK: number
-export function content_code_dmap_type(code: ContentCode): Type
-export function content_code_name(code: ContentCode): string
-export function content_code_read_from_buffer(buf: string): ContentCode
-export function content_code_string(code: ContentCode): string
-export function content_code_string_as_int32(str: string): number
-export function content_codes(number: number): ContentCodeDefinition
-export function hash_generate(version_major: number, url: number, hash_select: number, out: number, request_id: number): void
-export function hash_progressive_final(context: HashContext, digest: number): void
-export function hash_progressive_init(context: HashContext): void
-export function hash_progressive_to_string(digest: number, string: string): void
-export function hash_progressive_update(context: HashContext, buffer: number, length: number): void
-export function mdns_browser_error_quark(): GLib.Quark
-export function mdns_publisher_error_quark(): GLib.Quark
-export function mime_to_format(transcode_mimetype: string): string
-export function structure_destroy(structure: GLib.Node): void
-export function structure_get_size(structure: GLib.Node): number
-export function structure_increase_by_predicted_size(structure: GLib.Node, size: number): void
-export function structure_print(structure: GLib.Node): void
-export function structure_serialize(structure: GLib.Node, length: number): string
-export interface ConnectionCallback {
+function content_code_dmap_type(code: ContentCode): Type
+function content_code_name(code: ContentCode): string
+function content_code_read_from_buffer(buf: string): ContentCode
+function content_code_string(code: ContentCode): string
+function content_code_string_as_int32(str: string): number
+function content_codes(number: number): ContentCodeDefinition
+function hash_generate(version_major: number, url: number, hash_select: number, out: number, request_id: number): void
+function hash_progressive_final(context: HashContext, digest: number): void
+function hash_progressive_init(context: HashContext): void
+function hash_progressive_to_string(digest: number, string: string): void
+function hash_progressive_update(context: HashContext, buffer: number, length: number): void
+function mdns_browser_error_quark(): GLib.Quark
+function mdns_publisher_error_quark(): GLib.Quark
+function mime_to_format(transcode_mimetype: string): string
+function structure_destroy(structure: GLib.Node): void
+function structure_get_size(structure: GLib.Node): number
+function structure_increase_by_predicted_size(structure: GLib.Node, size: number): void
+function structure_print(structure: GLib.Node): void
+function structure_serialize(structure: GLib.Node, length: number): string
+interface ConnectionCallback {
     (connection: Connection, result: boolean, reason: string): boolean
 }
-export interface ResponseHandler {
+interface ResponseHandler {
     (connection: Connection, status: number, structure: GLib.Node): void
 }
-export class ContainerDb {
-    /* Methods of DMAP.ContainerDb */
+class ContainerDb {
+    /* Methods of DMAP-3.0.DMAP.ContainerDb */
     add(record: ContainerRecord): void
     count(): number
-    /* Virtual methods of DMAP.ContainerDb */
+    /* Virtual methods of DMAP-3.0.DMAP.ContainerDb */
     vfunc_add(record: ContainerRecord): void
     vfunc_count(): number
     static name: string
 }
-export class ContainerRecord {
-    /* Properties of DMAP.ContainerRecord */
+class ContainerRecord {
+    /* Properties of DMAP-3.0.DMAP.ContainerRecord */
     name: string
-    /* Methods of DMAP.ContainerRecord */
+    /* Methods of DMAP-3.0.DMAP.ContainerRecord */
     add_entry(record: Record, id: number): void
     get_entry_count(): number
     get_id(): number
-    /* Virtual methods of DMAP.ContainerRecord */
+    /* Virtual methods of DMAP-3.0.DMAP.ContainerRecord */
     vfunc_add_entry(record: Record, id: number): void
     vfunc_get_entry_count(): number
     vfunc_get_id(): number
     static name: string
 }
-export class Db {
-    /* Methods of DMAP.Db */
+class Db {
+    /* Methods of DMAP-3.0.DMAP.Db */
     add(record: Record): number
     add_path(path: string): number
     add_with_id(record: Record, id: number): number
     count(): number
     lookup_id_by_location(location: string): number
-    /* Virtual methods of DMAP.Db */
+    /* Virtual methods of DMAP-3.0.DMAP.Db */
     vfunc_add(record: Record): number
     vfunc_add_path(path: string): number
     vfunc_add_with_id(record: Record, id: number): number
@@ -278,14 +280,14 @@ export class Db {
     vfunc_lookup_id_by_location(location: string): number
     static name: string
 }
-export class Record {
-    /* Methods of DMAP.Record */
+class Record {
+    /* Methods of DMAP-3.0.DMAP.Record */
     set_from_blob(blob: Uint8Array[]): boolean
-    /* Virtual methods of DMAP.Record */
+    /* Virtual methods of DMAP-3.0.DMAP.Record */
     vfunc_set_from_blob(blob: Uint8Array[]): boolean
     static name: string
 }
-export class RecordFactory {
+class RecordFactory {
     static name: string
 }
 export interface Connection_ConstructProps extends GObject.Object_ConstructProps {
@@ -302,33 +304,33 @@ export interface Connection_ConstructProps extends GObject.Object_ConstructProps
     session_id?: number
     username?: string
 }
-export class Connection {
-    /* Properties of DMAP.Connection */
+class Connection {
+    /* Properties of DMAP-3.0.DMAP.Connection */
     base_uri: object
     database_id: number
     dmap_version: number
     password: string
     revision_number: number
     session_id: number
-    /* Fields of DMAP.Connection */
+    /* Fields of DMAP-3.0.DMAP.Connection */
     parent: GObject.Object
     priv: ConnectionPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of DMAP.Connection */
+    /* Methods of DMAP-3.0.DMAP.Connection */
     authenticate_message(session: Soup.Session, message: Soup.Message, auth: Soup.Auth, password: string): void
     get_headers(uri: string): Soup.MessageHeaders
     is_connected(): boolean
     setup(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -336,13 +338,13 @@ export class Connection {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of DMAP.Connection */
+    watch_closure(closure: Function): void
+    /* Virtual methods of DMAP-3.0.DMAP.Connection */
     vfunc_authenticate(name: string): string
     vfunc_connected(): void
     vfunc_connecting(state: ConnectionState, progress: number): void
@@ -350,15 +352,15 @@ export class Connection {
     vfunc_get_protocol_version_cc(): ContentCode
     vfunc_get_query_metadata(): string
     vfunc_operation_done(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of DMAP.Connection */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of DMAP-3.0.DMAP.Connection */
     connect(sigName: "authenticate", callback: (($obj: Connection, object: string, p0: Soup.Session, p1: Soup.Message, p2: Soup.Auth, p3: boolean) => void)): number
     connect_after(sigName: "authenticate", callback: (($obj: Connection, object: string, p0: Soup.Session, p1: Soup.Message, p2: Soup.Auth, p3: boolean) => void)): number
     emit(sigName: "authenticate", object: string, p0: Soup.Session, p1: Soup.Message, p2: Soup.Auth, p3: boolean): void
@@ -374,7 +376,7 @@ export class Connection {
     connect(sigName: "operation-done", callback: (($obj: Connection) => void)): number
     connect_after(sigName: "operation-done", callback: (($obj: Connection) => void)): number
     emit(sigName: "operation-done"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Connection, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Connection, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -401,15 +403,15 @@ export class Connection {
 }
 export interface GstInputStream_ConstructProps extends Gio.InputStream_ConstructProps {
 }
-export class GstInputStream {
-    /* Fields of DMAP.GstInputStream */
+class GstInputStream {
+    /* Fields of DMAP-3.0.DMAP.GstInputStream */
     parent: Gio.InputStream
     priv: GstInputStreamPrivate
-    /* Fields of Gio.InputStream */
+    /* Fields of Gio-2.0.Gio.InputStream */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.InputStream */
+    /* Methods of Gio-2.0.Gio.InputStream */
     clear_pending(): void
     close(cancellable?: Gio.Cancellable | null): boolean
     close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -429,15 +431,15 @@ export class GstInputStream {
     skip(count: number, cancellable?: Gio.Cancellable | null): number
     skip_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     skip_finish(result: Gio.AsyncResult): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -445,26 +447,26 @@ export class GstInputStream {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Seekable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Seekable */
     can_seek(): boolean
     can_truncate(): boolean
     seek(offset: number, type: GLib.SeekType, cancellable?: Gio.Cancellable | null): boolean
     tell(): number
     truncate(offset: number, cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of DMAP.GstInputStream */
+    /* Virtual methods of DMAP-3.0.DMAP.GstInputStream */
     vfunc_kill_pipeline(): void
     vfunc_can_seek(): boolean
     vfunc_can_truncate(): boolean
     vfunc_seek(offset: number, type: GLib.SeekType, cancellable?: Gio.Cancellable | null): boolean
     vfunc_tell(): number
     vfunc_truncate_fn(offset: number, cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.InputStream */
+    /* Virtual methods of Gio-2.0.Gio.InputStream */
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
@@ -474,15 +476,15 @@ export class GstInputStream {
     vfunc_skip(count: number, cancellable?: Gio.Cancellable | null): number
     vfunc_skip_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_skip_finish(result: Gio.AsyncResult): number
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GstInputStream, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GstInputStream, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -499,25 +501,25 @@ export class GstInputStream {
 }
 export interface MdnsBrowser_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class MdnsBrowser {
-    /* Fields of DMAP.MdnsBrowser */
+class MdnsBrowser {
+    /* Fields of DMAP-3.0.DMAP.MdnsBrowser */
     object: GObject.Object
     priv: MdnsBrowserPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of DMAP.MdnsBrowser */
+    /* Methods of DMAP-3.0.DMAP.MdnsBrowser */
     get_service_type(): MdnsBrowserServiceType
     start(): boolean
     stop(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -525,31 +527,31 @@ export class MdnsBrowser {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of DMAP.MdnsBrowser */
+    watch_closure(closure: Function): void
+    /* Virtual methods of DMAP-3.0.DMAP.MdnsBrowser */
     vfunc_service_added(service: MdnsBrowserService): void
     vfunc_service_removed(service: MdnsBrowserService): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of DMAP.MdnsBrowser */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of DMAP-3.0.DMAP.MdnsBrowser */
     connect(sigName: "service-added", callback: (($obj: MdnsBrowser, service: object) => void)): number
     connect_after(sigName: "service-added", callback: (($obj: MdnsBrowser, service: object) => void)): number
     emit(sigName: "service-added", service: object): void
     connect(sigName: "service-removed", callback: (($obj: MdnsBrowser, object: string) => void)): number
     connect_after(sigName: "service-removed", callback: (($obj: MdnsBrowser, object: string) => void)): number
     emit(sigName: "service-removed", object: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MdnsBrowser, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MdnsBrowser, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -566,25 +568,25 @@ export class MdnsBrowser {
 }
 export interface MdnsPublisher_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class MdnsPublisher {
-    /* Fields of DMAP.MdnsPublisher */
+class MdnsPublisher {
+    /* Fields of DMAP-3.0.DMAP.MdnsPublisher */
     object: GObject.Object
     priv: MdnsPublisherPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of DMAP.MdnsPublisher */
+    /* Methods of DMAP-3.0.DMAP.MdnsPublisher */
     publish(name: string, port: number, type_of_service: string, password_required: boolean, txt_records: string): boolean
     rename_at_port(port: number, name: string): boolean
     withdraw(port: number): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -592,31 +594,31 @@ export class MdnsPublisher {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of DMAP.MdnsPublisher */
+    watch_closure(closure: Function): void
+    /* Virtual methods of DMAP-3.0.DMAP.MdnsPublisher */
     vfunc_name_collision(name: string): void
     vfunc_published(name: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of DMAP.MdnsPublisher */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of DMAP-3.0.DMAP.MdnsPublisher */
     connect(sigName: "name-collision", callback: (($obj: MdnsPublisher, object: string) => void)): number
     connect_after(sigName: "name-collision", callback: (($obj: MdnsPublisher, object: string) => void)): number
     emit(sigName: "name-collision", object: string): void
     connect(sigName: "published", callback: (($obj: MdnsPublisher, object: string) => void)): number
     connect_after(sigName: "published", callback: (($obj: MdnsPublisher, object: string) => void)): number
     emit(sigName: "published", object: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MdnsPublisher, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MdnsPublisher, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -641,8 +643,8 @@ export interface Share_ConstructProps extends GObject.Object_ConstructProps {
     transcode_mimetype?: string
     txt_records?: string[]
 }
-export class Share {
-    /* Properties of DMAP.Share */
+class Share {
+    /* Properties of DMAP-3.0.DMAP.Share */
     auth_method: number
     name: string
     password: string
@@ -650,20 +652,20 @@ export class Share {
     readonly server_ipv4: Soup.Server
     readonly server_ipv6: Soup.Server
     txt_records: string[]
-    /* Fields of DMAP.Share */
+    /* Fields of DMAP-3.0.DMAP.Share */
     parent: GObject.Object
     priv: SharePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -671,13 +673,13 @@ export class Share {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of DMAP.Share */
+    watch_closure(closure: Function): void
+    /* Virtual methods of DMAP-3.0.DMAP.Share */
     vfunc_content_codes(server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext): void
     vfunc_ctrl_int(server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext): void
     vfunc_databases(server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, context: Soup.ClientContext): void
@@ -692,15 +694,15 @@ export class Share {
     vfunc_published(publisher: MdnsPublisher, name: string): void
     vfunc_server_info(server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext): void
     vfunc_update(server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Share, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Share, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -727,8 +729,8 @@ export class Share {
     _init (config?: Share_ConstructProps): void
     static $gtype: GObject.Type
 }
-export abstract class ConnectionClass {
-    /* Fields of DMAP.ConnectionClass */
+abstract class ConnectionClass {
+    /* Fields of DMAP-3.0.DMAP.ConnectionClass */
     parent: GObject.ObjectClass
     get_protocol_version_cc: (connection: Connection) => ContentCode
     get_query_metadata: (connection: Connection) => string
@@ -739,26 +741,26 @@ export abstract class ConnectionClass {
     operation_done: (connection: Connection) => void
     static name: string
 }
-export class ConnectionPrivate {
+class ConnectionPrivate {
     static name: string
 }
-export abstract class ContainerDbIface {
-    /* Fields of DMAP.ContainerDbIface */
+abstract class ContainerDbIface {
+    /* Fields of DMAP-3.0.DMAP.ContainerDbIface */
     parent: GObject.TypeInterface
     add: (db: ContainerDb, record: ContainerRecord) => void
     count: (db: ContainerDb) => number
     static name: string
 }
-export abstract class ContainerRecordIface {
-    /* Fields of DMAP.ContainerRecordIface */
+abstract class ContainerRecordIface {
+    /* Fields of DMAP-3.0.DMAP.ContainerRecordIface */
     parent: GObject.TypeInterface
     get_id: (record: ContainerRecord) => number
     add_entry: (container_record: ContainerRecord, record: Record, id: number) => void
     get_entry_count: (record: ContainerRecord) => number
     static name: string
 }
-export class ContentCodeDefinition {
-    /* Fields of DMAP.ContentCodeDefinition */
+class ContentCodeDefinition {
+    /* Fields of DMAP-3.0.DMAP.ContentCodeDefinition */
     code: ContentCode
     int_code: number
     name: string
@@ -766,15 +768,15 @@ export class ContentCodeDefinition {
     type: Type
     static name: string
 }
-export class DbFilterDefinition {
-    /* Fields of DMAP.DbFilterDefinition */
+class DbFilterDefinition {
+    /* Fields of DMAP-3.0.DMAP.DbFilterDefinition */
     key: string
     value: string
     negate: boolean
     static name: string
 }
-export abstract class DbIface {
-    /* Fields of DMAP.DbIface */
+abstract class DbIface {
+    /* Fields of DMAP-3.0.DMAP.DbIface */
     parent: GObject.TypeInterface
     add: (db: Db, record: Record) => number
     add_with_id: (db: Db, record: Record, id: number) => number
@@ -783,35 +785,35 @@ export abstract class DbIface {
     count: (db: Db) => number
     static name: string
 }
-export abstract class GstInputStreamClass {
-    /* Fields of DMAP.GstInputStreamClass */
+abstract class GstInputStreamClass {
+    /* Fields of DMAP-3.0.DMAP.GstInputStreamClass */
     parent: Gio.InputStreamClass
     kill_pipeline: (arg0: GstInputStream) => void
     static name: string
 }
-export class GstInputStreamPrivate {
+class GstInputStreamPrivate {
     static name: string
 }
-export class HashContext {
-    /* Fields of DMAP.HashContext */
+class HashContext {
+    /* Fields of DMAP-3.0.DMAP.HashContext */
     buf: number[]
     bits: number[]
     in_: number[]
     version: number
     static name: string
 }
-export abstract class MdnsBrowserClass {
-    /* Fields of DMAP.MdnsBrowserClass */
+abstract class MdnsBrowserClass {
+    /* Fields of DMAP-3.0.DMAP.MdnsBrowserClass */
     parent_class: GObject.ObjectClass
     service_added: (browser: MdnsBrowser, service: MdnsBrowserService) => void
     service_removed: (browser: MdnsBrowser, service: MdnsBrowserService) => void
     static name: string
 }
-export class MdnsBrowserPrivate {
+class MdnsBrowserPrivate {
     static name: string
 }
-export class MdnsBrowserService {
-    /* Fields of DMAP.MdnsBrowserService */
+class MdnsBrowserService {
+    /* Fields of DMAP-3.0.DMAP.MdnsBrowserService */
     service_name: string
     name: string
     host: string
@@ -821,42 +823,42 @@ export class MdnsBrowserService {
     transport_protocol: MdnsBrowserTransportProtocol
     static name: string
 }
-export abstract class MdnsPublisherClass {
-    /* Fields of DMAP.MdnsPublisherClass */
+abstract class MdnsPublisherClass {
+    /* Fields of DMAP-3.0.DMAP.MdnsPublisherClass */
     parent_class: GObject.ObjectClass
     published: (publisher: MdnsPublisher, name: string) => void
     name_collision: (publisher: MdnsPublisher, name: string) => void
     static name: string
 }
-export class MdnsPublisherPrivate {
+class MdnsPublisherPrivate {
     static name: string
 }
-export class MetaDataMap {
-    /* Fields of DMAP.MetaDataMap */
+class MetaDataMap {
+    /* Fields of DMAP-3.0.DMAP.MetaDataMap */
     tag: string
     md: number
     static name: string
 }
-export class Playlist {
-    /* Fields of DMAP.Playlist */
+class Playlist {
+    /* Fields of DMAP-3.0.DMAP.Playlist */
     name: string
     id: number
     uris: object[]
     static name: string
 }
-export abstract class RecordFactoryIface {
-    /* Fields of DMAP.RecordFactoryIface */
+abstract class RecordFactoryIface {
+    /* Fields of DMAP-3.0.DMAP.RecordFactoryIface */
     parent: GObject.TypeInterface
     static name: string
 }
-export abstract class RecordIface {
-    /* Fields of DMAP.RecordIface */
+abstract class RecordIface {
+    /* Fields of DMAP-3.0.DMAP.RecordIface */
     parent: GObject.TypeInterface
     set_from_blob: (record: Record, blob: Uint8Array[]) => boolean
     static name: string
 }
-export abstract class ShareClass {
-    /* Fields of DMAP.ShareClass */
+abstract class ShareClass {
+    /* Fields of DMAP-3.0.DMAP.ShareClass */
     parent: GObject.ObjectClass
     get_desired_port: (share: Share) => number
     get_type_of_service: (share: Share) => string
@@ -875,13 +877,15 @@ export abstract class ShareClass {
     databases: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, context: Soup.ClientContext) => void
     static name: string
 }
-export class SharePrivate {
+class SharePrivate {
     static name: string
 }
-export class StructureItem {
-    /* Fields of DMAP.StructureItem */
+class StructureItem {
+    /* Fields of DMAP-3.0.DMAP.StructureItem */
     content_code: ContentCode
     content: any
     size: number
     static name: string
 }
+}
+export default DMAP;

@@ -1,2 +1,2 @@
-imports.gi.versions.GstPbutils = '1.0'
-export default imports.gi.GstPbutils
+import GstPbutils from 'gi://GstPbutils?version=1.0';
+export default GstPbutils;

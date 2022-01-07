@@ -1,2 +1,2 @@
-imports.gi.versions.ICal = '3.0'
-export default imports.gi.ICal
+import ICal from 'gi://ICal?version=3.0';
+export default ICal;

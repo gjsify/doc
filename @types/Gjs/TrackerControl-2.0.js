@@ -1,2 +1,2 @@
-imports.gi.versions.TrackerControl = '2.0'
-export default imports.gi.TrackerControl
+import TrackerControl from 'gi://TrackerControl?version=2.0';
+export default TrackerControl;

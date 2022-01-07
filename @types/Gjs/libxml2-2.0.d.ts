@@ -3,30 +3,34 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GObject from './GObject-2.0';
+import type GObject from './GObject-2.0';
 
-export function dummy(): void
-export class Node {
+export namespace libxml2 {
+
+function dummy(): void
+class Node {
     static name: string
 }
-export class NodePtr {
+class NodePtr {
     static name: string
 }
-export class Doc {
+class Doc {
     static name: string
 }
-export class DocPtr {
+class DocPtr {
     static name: string
 }
-export class NsPtr {
+class NsPtr {
     static name: string
 }
-export class Char {
+class Char {
     static name: string
 }
-export class TextWriter {
+class TextWriter {
     static name: string
 }
-export class TextReader {
+class TextReader {
     static name: string
 }
+}
+export default libxml2;

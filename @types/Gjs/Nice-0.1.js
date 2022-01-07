@@ -1,2 +1,2 @@
-imports.gi.versions.Nice = '0.1'
-export default imports.gi.Nice
+import Nice from 'gi://Nice?version=0.1';
+export default Nice;

@@ -3,22 +3,24 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Soup from './Soup-2.4';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as JavaScriptCore from './JavaScriptCore-4.0';
-import type * as Gtk from './Gtk-3.0';
-import type * as xlib from './xlib-2.0';
-import type * as Gdk from './Gdk-3.0';
-import type * as cairo from './cairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as Atk from './Atk-1.0';
+import type Soup from './Soup-2.4';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type JavaScriptCore from './JavaScriptCore-4.0';
+import type Gtk from './Gtk-3.0';
+import type xlib from './xlib-2.0';
+import type Gdk from './Gdk-3.0';
+import type cairo from './cairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type GModule from './GModule-2.0';
+import type Atk from './Atk-1.0';
 
-export enum AuthenticationScheme {
+export namespace WebKit2 {
+
+enum AuthenticationScheme {
     DEFAULT,
     HTTP_BASIC,
     HTTP_DIGEST,
@@ -27,23 +29,24 @@ export enum AuthenticationScheme {
     NEGOTIATE,
     CLIENT_CERTIFICATE_REQUESTED,
     SERVER_TRUST_EVALUATION_REQUESTED,
+    CLIENT_CERTIFICATE_PIN_REQUESTED,
     UNKNOWN,
 }
-export enum AutomationBrowsingContextPresentation {
+enum AutomationBrowsingContextPresentation {
     WINDOW,
     TAB,
 }
-export enum AutoplayPolicy {
+enum AutoplayPolicy {
     ALLOW,
     ALLOW_WITHOUT_SOUND,
     DENY,
 }
-export enum CacheModel {
+enum CacheModel {
     DOCUMENT_VIEWER,
     WEB_BROWSER,
     DOCUMENT_BROWSER,
 }
-export enum ContextMenuAction {
+enum ContextMenuAction {
     NO_ACTION,
     OPEN_LINK,
     OPEN_LINK_IN_NEW_WINDOW,
@@ -92,36 +95,36 @@ export enum ContextMenuAction {
     PASTE_AS_PLAIN_TEXT,
     CUSTOM,
 }
-export enum CookieAcceptPolicy {
+enum CookieAcceptPolicy {
     ALWAYS,
     NEVER,
     NO_THIRD_PARTY,
 }
-export enum CookiePersistentStorage {
+enum CookiePersistentStorage {
     TEXT,
     SQLITE,
 }
-export enum CredentialPersistence {
+enum CredentialPersistence {
     NONE,
     FOR_SESSION,
     PERMANENT,
 }
-export enum DownloadError {
+enum DownloadError {
     NETWORK,
     CANCELLED_BY_USER,
     DESTINATION,
 }
-export enum FaviconDatabaseError {
+enum FaviconDatabaseError {
     NOT_INITIALIZED,
     FAVICON_NOT_FOUND,
     FAVICON_UNKNOWN,
 }
-export enum HardwareAccelerationPolicy {
+enum HardwareAccelerationPolicy {
     ON_DEMAND,
     ALWAYS,
     NEVER,
 }
-export enum InputPurpose {
+enum InputPurpose {
     FREE_FORM,
     DIGITS,
     NUMBER,
@@ -130,20 +133,25 @@ export enum InputPurpose {
     EMAIL,
     PASSWORD,
 }
-export enum InsecureContentEvent {
+enum InsecureContentEvent {
     RUN,
     DISPLAYED,
 }
-export enum JavascriptError {
+enum JavascriptError {
     FAILED,
 }
-export enum LoadEvent {
+enum LoadEvent {
     STARTED,
     REDIRECTED,
     COMMITTED,
     FINISHED,
 }
-export enum NavigationType {
+enum MediaCaptureState {
+    NONE,
+    ACTIVE,
+    MUTED,
+}
+enum NavigationType {
     LINK_CLICKED,
     FORM_SUBMITTED,
     BACK_FORWARD,
@@ -151,19 +159,19 @@ export enum NavigationType {
     FORM_RESUBMITTED,
     OTHER,
 }
-export enum NetworkError {
+enum NetworkError {
     FAILED,
     TRANSPORT,
     UNKNOWN_PROTOCOL,
     CANCELLED,
     FILE_DOES_NOT_EXIST,
 }
-export enum NetworkProxyMode {
+enum NetworkProxyMode {
     DEFAULT,
     NO_PROXY,
     CUSTOM,
 }
-export enum PluginError {
+enum PluginError {
     FAILED,
     CANNOT_FIND_PLUGIN,
     CANNOT_LOAD_PLUGIN,
@@ -171,82 +179,83 @@ export enum PluginError {
     CONNECTION_CANCELLED,
     WILL_HANDLE_LOAD,
 }
-export enum PolicyDecisionType {
+enum PolicyDecisionType {
     NAVIGATION_ACTION,
     NEW_WINDOW_ACTION,
     RESPONSE,
 }
-export enum PolicyError {
+enum PolicyError {
     FAILED,
     CANNOT_SHOW_MIME_TYPE,
     CANNOT_SHOW_URI,
     FRAME_LOAD_INTERRUPTED_BY_POLICY_CHANGE,
     CANNOT_USE_RESTRICTED_PORT,
 }
-export enum PrintError {
+enum PrintError {
     GENERAL,
     PRINTER_NOT_FOUND,
     INVALID_PAGE_RANGE,
 }
-export enum PrintOperationResponse {
+enum PrintOperationResponse {
     PRINT,
     CANCEL,
 }
-export enum ProcessModel {
+enum ProcessModel {
     SHARED_SECONDARY_PROCESS,
     MULTIPLE_SECONDARY_PROCESSES,
 }
-export enum SaveMode {
+enum SaveMode {
     MHTML,
 }
-export enum ScriptDialogType {
+enum ScriptDialogType {
     ALERT,
     CONFIRM,
     PROMPT,
     BEFORE_UNLOAD_CONFIRM,
 }
-export enum SnapshotError {
+enum SnapshotError {
     CREATE,
 }
-export enum SnapshotRegion {
+enum SnapshotRegion {
     VISIBLE,
     FULL_DOCUMENT,
 }
-export enum TLSErrorsPolicy {
+enum TLSErrorsPolicy {
     IGNORE,
     FAIL,
 }
-export enum UserContentFilterError {
+enum UserContentFilterError {
     INVALID_SOURCE,
     NOT_FOUND,
 }
-export enum UserContentInjectedFrames {
+enum UserContentInjectedFrames {
     ALL_FRAMES,
     TOP_FRAME,
 }
-export enum UserMessageError {
+enum UserMessageError {
     MESSAGE,
 }
-export enum UserScriptInjectionTime {
+enum UserScriptInjectionTime {
     START,
     END,
 }
-export enum UserStyleLevel {
+enum UserStyleLevel {
     USER,
     AUTHOR,
 }
-export enum WebProcessTerminationReason {
+enum WebProcessTerminationReason {
     CRASHED,
     EXCEEDED_MEMORY_LIMIT,
+    TERMINATED_BY_API,
 }
-export enum EditorTypingAttributes {
+enum EditorTypingAttributes {
     NONE,
     BOLD,
     ITALIC,
     UNDERLINE,
     STRIKETHROUGH,
 }
-export enum FindOptions {
+enum FindOptions {
     NONE,
     CASE_INSENSITIVE,
     AT_WORD_STARTS,
@@ -254,7 +263,7 @@ export enum FindOptions {
     BACKWARDS,
     WRAP_AROUND,
 }
-export enum HitTestResultContext {
+enum HitTestResultContext {
     DOCUMENT,
     LINK,
     IMAGE,
@@ -263,7 +272,7 @@ export enum HitTestResultContext {
     SCROLLBAR,
     SELECTION,
 }
-export enum InputHints {
+enum InputHints {
     NONE,
     SPELLCHECK,
     LOWERCASE,
@@ -272,12 +281,12 @@ export enum InputHints {
     UPPERCASE_SENTENCES,
     INHIBIT_OSK,
 }
-export enum SnapshotOptions {
+enum SnapshotOptions {
     NONE,
     INCLUDE_SELECTION_HIGHLIGHTING,
     TRANSPARENT_BACKGROUND,
 }
-export enum WebsiteDataTypes {
+enum WebsiteDataTypes {
     MEMORY_CACHE,
     DISK_CACHE,
     OFFLINE_APPLICATION_CACHE,
@@ -306,45 +315,48 @@ export const EDITING_COMMAND_UNDO: string
 export const MAJOR_VERSION: number
 export const MICRO_VERSION: number
 export const MINOR_VERSION: number
-export function download_error_quark(): GLib.Quark
-export function favicon_database_error_quark(): GLib.Quark
-export function get_major_version(): number
-export function get_micro_version(): number
-export function get_minor_version(): number
-export function javascript_error_quark(): GLib.Quark
-export function network_error_quark(): GLib.Quark
-export function plugin_error_quark(): GLib.Quark
-export function policy_error_quark(): GLib.Quark
-export function print_error_quark(): GLib.Quark
-export function snapshot_error_quark(): GLib.Quark
-export function uri_for_display(uri: string): string | null
-export function user_content_filter_error_quark(): GLib.Quark
-export function user_media_permission_is_for_audio_device(request: UserMediaPermissionRequest): boolean
-export function user_media_permission_is_for_video_device(request: UserMediaPermissionRequest): boolean
-export function user_message_error_quark(): GLib.Quark
-export interface URISchemeRequestCallback {
+function download_error_quark(): GLib.Quark
+function favicon_database_error_quark(): GLib.Quark
+function get_major_version(): number
+function get_micro_version(): number
+function get_minor_version(): number
+function javascript_error_quark(): GLib.Quark
+function media_key_system_permission_get_name(request: MediaKeySystemPermissionRequest): string
+function network_error_quark(): GLib.Quark
+function plugin_error_quark(): GLib.Quark
+function policy_error_quark(): GLib.Quark
+function print_error_quark(): GLib.Quark
+function snapshot_error_quark(): GLib.Quark
+function uri_for_display(uri: string): string | null
+function user_content_filter_error_quark(): GLib.Quark
+function user_media_permission_is_for_audio_device(request: UserMediaPermissionRequest): boolean
+function user_media_permission_is_for_display_device(request: UserMediaPermissionRequest): boolean
+function user_media_permission_is_for_video_device(request: UserMediaPermissionRequest): boolean
+function user_message_error_quark(): GLib.Quark
+interface URISchemeRequestCallback {
     (request: URISchemeRequest): void
 }
-export class PermissionRequest {
-    /* Methods of WebKit2.PermissionRequest */
+class PermissionRequest {
+    /* Methods of WebKit2-4.0.WebKit2.PermissionRequest */
     allow(): void
     deny(): void
-    /* Virtual methods of WebKit2.PermissionRequest */
+    /* Virtual methods of WebKit2-4.0.WebKit2.PermissionRequest */
     vfunc_allow(): void
     vfunc_deny(): void
     static name: string
 }
 export interface AuthenticationRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class AuthenticationRequest {
-    /* Fields of WebKit2.AuthenticationRequest */
+class AuthenticationRequest {
+    /* Fields of WebKit2-4.0.WebKit2.AuthenticationRequest */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.AuthenticationRequest */
+    /* Methods of WebKit2-4.0.WebKit2.AuthenticationRequest */
     authenticate(credential?: Credential | null): void
     can_save_credentials(): boolean
     cancel(): void
+    get_certificate_pin_flags(): Gio.TlsPasswordFlags
     get_host(): string
     get_port(): number
     get_proposed_credential(): Credential
@@ -355,15 +367,15 @@ export class AuthenticationRequest {
     is_retry(): boolean
     set_can_save_credentials(enabled: boolean): void
     set_proposed_credential(credential: Credential): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -371,28 +383,28 @@ export class AuthenticationRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.AuthenticationRequest */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.AuthenticationRequest */
     connect(sigName: "authenticated", callback: (($obj: AuthenticationRequest, credential: Credential) => void)): number
     connect_after(sigName: "authenticated", callback: (($obj: AuthenticationRequest, credential: Credential) => void)): number
     emit(sigName: "authenticated", credential: Credential): void
     connect(sigName: "cancelled", callback: (($obj: AuthenticationRequest) => void)): number
     connect_after(sigName: "cancelled", callback: (($obj: AuthenticationRequest) => void)): number
     emit(sigName: "cancelled"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AuthenticationRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AuthenticationRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -408,25 +420,25 @@ export class AuthenticationRequest {
 export interface AutomationSession_ConstructProps extends GObject.Object_ConstructProps {
     id?: string
 }
-export class AutomationSession {
-    /* Fields of WebKit2.AutomationSession */
+class AutomationSession {
+    /* Fields of WebKit2-4.0.WebKit2.AutomationSession */
     parent: GObject.Object
     priv: AutomationSessionPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.AutomationSession */
+    /* Methods of WebKit2-4.0.WebKit2.AutomationSession */
     get_application_info(): ApplicationInfo
     get_id(): string
     set_application_info(info: ApplicationInfo): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -434,25 +446,25 @@ export class AutomationSession {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.AutomationSession */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.AutomationSession */
     connect(sigName: "create-web-view", callback: (($obj: AutomationSession) => WebView)): number
     connect_after(sigName: "create-web-view", callback: (($obj: AutomationSession) => WebView)): number
     emit(sigName: "create-web-view"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AutomationSession, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AutomationSession, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -467,13 +479,13 @@ export class AutomationSession {
 }
 export interface BackForwardList_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class BackForwardList {
-    /* Fields of WebKit2.BackForwardList */
+class BackForwardList {
+    /* Fields of WebKit2-4.0.WebKit2.BackForwardList */
     parent: GObject.Object
     priv: BackForwardListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.BackForwardList */
+    /* Methods of WebKit2-4.0.WebKit2.BackForwardList */
     get_back_item(): BackForwardListItem | null
     get_back_list(): BackForwardListItem[]
     get_back_list_with_limit(limit: number): BackForwardListItem[]
@@ -483,15 +495,15 @@ export class BackForwardList {
     get_forward_list_with_limit(limit: number): BackForwardListItem[]
     get_length(): number
     get_nth_item(index: number): BackForwardListItem | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -499,25 +511,25 @@ export class BackForwardList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.BackForwardList */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.BackForwardList */
     connect(sigName: "changed", callback: (($obj: BackForwardList, item_added?: BackForwardListItem | null, items_removed?: object | null) => void)): number
     connect_after(sigName: "changed", callback: (($obj: BackForwardList, item_added?: BackForwardListItem | null, items_removed?: object | null) => void)): number
     emit(sigName: "changed", item_added?: BackForwardListItem | null, items_removed?: object | null): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BackForwardList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BackForwardList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -532,25 +544,25 @@ export class BackForwardList {
 }
 export interface BackForwardListItem_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
 }
-export class BackForwardListItem {
-    /* Fields of WebKit2.BackForwardListItem */
+class BackForwardListItem {
+    /* Fields of WebKit2-4.0.WebKit2.BackForwardListItem */
     parent: GObject.InitiallyUnowned
     priv: BackForwardListItemPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.BackForwardListItem */
+    /* Methods of WebKit2-4.0.WebKit2.BackForwardListItem */
     get_original_uri(): string
     get_title(): string
     get_uri(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -558,21 +570,21 @@ export class BackForwardListItem {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BackForwardListItem, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BackForwardListItem, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -588,28 +600,28 @@ export class BackForwardListItem {
 export interface ColorChooserRequest_ConstructProps extends GObject.Object_ConstructProps {
     rgba?: Gdk.RGBA
 }
-export class ColorChooserRequest {
-    /* Properties of WebKit2.ColorChooserRequest */
+class ColorChooserRequest {
+    /* Properties of WebKit2-4.0.WebKit2.ColorChooserRequest */
     rgba: Gdk.RGBA
-    /* Fields of WebKit2.ColorChooserRequest */
+    /* Fields of WebKit2-4.0.WebKit2.ColorChooserRequest */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.ColorChooserRequest */
+    /* Methods of WebKit2-4.0.WebKit2.ColorChooserRequest */
     cancel(): void
     finish(): void
     get_element_rectangle(): /* rect */ Gdk.Rectangle
     get_rgba(): /* rgba */ Gdk.RGBA
     set_rgba(rgba: Gdk.RGBA): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -617,25 +629,25 @@ export class ColorChooserRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.ColorChooserRequest */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.ColorChooserRequest */
     connect(sigName: "finished", callback: (($obj: ColorChooserRequest) => void)): number
     connect_after(sigName: "finished", callback: (($obj: ColorChooserRequest) => void)): number
     emit(sigName: "finished"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ColorChooserRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ColorChooserRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -652,13 +664,13 @@ export class ColorChooserRequest {
 }
 export interface ContextMenu_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ContextMenu {
-    /* Fields of WebKit2.ContextMenu */
+class ContextMenu {
+    /* Fields of WebKit2-4.0.WebKit2.ContextMenu */
     parent: GObject.Object
     priv: ContextMenuPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.ContextMenu */
+    /* Methods of WebKit2-4.0.WebKit2.ContextMenu */
     append(item: ContextMenuItem): void
     first(): ContextMenuItem
     get_item_at_position(position: number): ContextMenuItem
@@ -672,15 +684,15 @@ export class ContextMenu {
     remove(item: ContextMenuItem): void
     remove_all(): void
     set_user_data(user_data: GLib.Variant): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -688,21 +700,21 @@ export class ContextMenu {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ContextMenu, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ContextMenu, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -720,28 +732,28 @@ export class ContextMenu {
 }
 export interface ContextMenuItem_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
 }
-export class ContextMenuItem {
-    /* Fields of WebKit2.ContextMenuItem */
+class ContextMenuItem {
+    /* Fields of WebKit2-4.0.WebKit2.ContextMenuItem */
     parent: GObject.InitiallyUnowned
     priv: ContextMenuItemPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.ContextMenuItem */
+    /* Methods of WebKit2-4.0.WebKit2.ContextMenuItem */
     get_action(): Gtk.Action
     get_gaction(): Gio.Action
     get_stock_action(): ContextMenuAction
     get_submenu(): ContextMenu
     is_separator(): boolean
     set_submenu(submenu?: ContextMenu | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -749,21 +761,21 @@ export class ContextMenuItem {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ContextMenuItem, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ContextMenuItem, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -785,13 +797,13 @@ export class ContextMenuItem {
 }
 export interface CookieManager_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class CookieManager {
-    /* Fields of WebKit2.CookieManager */
+class CookieManager {
+    /* Fields of WebKit2-4.0.WebKit2.CookieManager */
     parent: GObject.Object
     priv: CookieManagerPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.CookieManager */
+    /* Methods of WebKit2-4.0.WebKit2.CookieManager */
     add_cookie(cookie: Soup.Cookie, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     add_cookie_finish(result: Gio.AsyncResult): boolean
     delete_all_cookies(): void
@@ -806,15 +818,15 @@ export class CookieManager {
     get_domains_with_cookies_finish(result: Gio.AsyncResult): string[]
     set_accept_policy(policy: CookieAcceptPolicy): void
     set_persistent_storage(filename: string, storage: CookiePersistentStorage): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -822,25 +834,25 @@ export class CookieManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.CookieManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.CookieManager */
     connect(sigName: "changed", callback: (($obj: CookieManager) => void)): number
     connect_after(sigName: "changed", callback: (($obj: CookieManager) => void)): number
     emit(sigName: "changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CookieManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CookieManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -855,20 +867,20 @@ export class CookieManager {
 }
 export interface DeviceInfoPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class DeviceInfoPermissionRequest {
-    /* Fields of WebKit2.DeviceInfoPermissionRequest */
+class DeviceInfoPermissionRequest {
+    /* Fields of WebKit2-4.0.WebKit2.DeviceInfoPermissionRequest */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -876,27 +888,27 @@ export class DeviceInfoPermissionRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of WebKit2.PermissionRequest */
+    watch_closure(closure: Function): void
+    /* Methods of WebKit2-4.0.WebKit2.PermissionRequest */
     allow(): void
     deny(): void
-    /* Virtual methods of WebKit2.DeviceInfoPermissionRequest */
+    /* Virtual methods of WebKit2-4.0.WebKit2.DeviceInfoPermissionRequest */
     vfunc_allow(): void
     vfunc_deny(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DeviceInfoPermissionRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceInfoPermissionRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -912,18 +924,18 @@ export class DeviceInfoPermissionRequest {
 export interface Download_ConstructProps extends GObject.Object_ConstructProps {
     allow_overwrite?: boolean
 }
-export class Download {
-    /* Properties of WebKit2.Download */
+class Download {
+    /* Properties of WebKit2-4.0.WebKit2.Download */
     allow_overwrite: boolean
     readonly destination: string
     readonly estimated_progress: number
     readonly response: URIResponse
-    /* Fields of WebKit2.Download */
+    /* Fields of WebKit2-4.0.WebKit2.Download */
     parent: GObject.Object
     priv: DownloadPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.Download */
+    /* Methods of WebKit2-4.0.WebKit2.Download */
     cancel(): void
     get_allow_overwrite(): boolean
     get_destination(): string
@@ -935,15 +947,15 @@ export class Download {
     get_web_view(): WebView
     set_allow_overwrite(allowed: boolean): void
     set_destination(uri: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -951,23 +963,23 @@ export class Download {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of WebKit2.Download */
+    watch_closure(closure: Function): void
+    /* Virtual methods of WebKit2-4.0.WebKit2.Download */
     vfunc_decide_destination(suggested_filename: string): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.Download */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.Download */
     connect(sigName: "created-destination", callback: (($obj: Download, destination: string) => void)): number
     connect_after(sigName: "created-destination", callback: (($obj: Download, destination: string) => void)): number
     emit(sigName: "created-destination", destination: string): void
@@ -983,7 +995,7 @@ export class Download {
     connect(sigName: "received-data", callback: (($obj: Download, data_length: number) => void)): number
     connect_after(sigName: "received-data", callback: (($obj: Download, data_length: number) => void)): number
     emit(sigName: "received-data", data_length: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Download, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Download, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1006,30 +1018,30 @@ export class Download {
 }
 export interface EditorState_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class EditorState {
-    /* Properties of WebKit2.EditorState */
+class EditorState {
+    /* Properties of WebKit2-4.0.WebKit2.EditorState */
     readonly typing_attributes: number
-    /* Fields of WebKit2.EditorState */
+    /* Fields of WebKit2-4.0.WebKit2.EditorState */
     parent: GObject.Object
     priv: EditorStatePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.EditorState */
+    /* Methods of WebKit2-4.0.WebKit2.EditorState */
     get_typing_attributes(): number
     is_copy_available(): boolean
     is_cut_available(): boolean
     is_paste_available(): boolean
     is_redo_available(): boolean
     is_undo_available(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1037,21 +1049,21 @@ export class EditorState {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: EditorState, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: EditorState, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1068,26 +1080,26 @@ export class EditorState {
 }
 export interface FaviconDatabase_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class FaviconDatabase {
-    /* Fields of WebKit2.FaviconDatabase */
+class FaviconDatabase {
+    /* Fields of WebKit2-4.0.WebKit2.FaviconDatabase */
     parent: GObject.Object
     priv: FaviconDatabasePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.FaviconDatabase */
+    /* Methods of WebKit2-4.0.WebKit2.FaviconDatabase */
     clear(): void
     get_favicon(page_uri: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_favicon_finish(result: Gio.AsyncResult): cairo.Surface
     get_favicon_uri(page_uri: string): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1095,25 +1107,25 @@ export class FaviconDatabase {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.FaviconDatabase */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.FaviconDatabase */
     connect(sigName: "favicon-changed", callback: (($obj: FaviconDatabase, page_uri: string, favicon_uri: string) => void)): number
     connect_after(sigName: "favicon-changed", callback: (($obj: FaviconDatabase, page_uri: string, favicon_uri: string) => void)): number
     emit(sigName: "favicon-changed", page_uri: string, favicon_uri: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FaviconDatabase, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FaviconDatabase, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1128,32 +1140,32 @@ export class FaviconDatabase {
 }
 export interface FileChooserRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class FileChooserRequest {
-    /* Properties of WebKit2.FileChooserRequest */
+class FileChooserRequest {
+    /* Properties of WebKit2-4.0.WebKit2.FileChooserRequest */
     readonly filter: Gtk.FileFilter
     readonly mime_types: string[]
     readonly select_multiple: boolean
     readonly selected_files: string[]
-    /* Fields of WebKit2.FileChooserRequest */
+    /* Fields of WebKit2-4.0.WebKit2.FileChooserRequest */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.FileChooserRequest */
+    /* Methods of WebKit2-4.0.WebKit2.FileChooserRequest */
     cancel(): void
     get_mime_types(): string[]
     get_mime_types_filter(): Gtk.FileFilter
     get_select_multiple(): boolean
     get_selected_files(): string[]
     select_files(files: string[]): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1161,21 +1173,21 @@ export class FileChooserRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FileChooserRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FileChooserRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1199,16 +1211,16 @@ export class FileChooserRequest {
 export interface FindController_ConstructProps extends GObject.Object_ConstructProps {
     web_view?: WebView
 }
-export class FindController {
-    /* Properties of WebKit2.FindController */
+class FindController {
+    /* Properties of WebKit2-4.0.WebKit2.FindController */
     readonly max_match_count: number
     readonly options: FindOptions
     readonly text: string
-    /* Fields of WebKit2.FindController */
+    /* Fields of WebKit2-4.0.WebKit2.FindController */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.FindController */
+    /* Methods of WebKit2-4.0.WebKit2.FindController */
     count_matches(search_text: string, find_options: number, max_match_count: number): void
     get_max_match_count(): number
     get_options(): number
@@ -1218,15 +1230,15 @@ export class FindController {
     search_finish(): void
     search_next(): void
     search_previous(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1234,21 +1246,21 @@ export class FindController {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.FindController */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.FindController */
     connect(sigName: "counted-matches", callback: (($obj: FindController, match_count: number) => void)): number
     connect_after(sigName: "counted-matches", callback: (($obj: FindController, match_count: number) => void)): number
     emit(sigName: "counted-matches", match_count: number): void
@@ -1258,7 +1270,7 @@ export class FindController {
     connect(sigName: "found-text", callback: (($obj: FindController, match_count: number) => void)): number
     connect_after(sigName: "found-text", callback: (($obj: FindController, match_count: number) => void)): number
     emit(sigName: "found-text", match_count: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FindController, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FindController, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1279,24 +1291,24 @@ export class FindController {
 }
 export interface FormSubmissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class FormSubmissionRequest {
-    /* Fields of WebKit2.FormSubmissionRequest */
+class FormSubmissionRequest {
+    /* Fields of WebKit2-4.0.WebKit2.FormSubmissionRequest */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.FormSubmissionRequest */
+    /* Methods of WebKit2-4.0.WebKit2.FormSubmissionRequest */
     get_text_fields(): GLib.HashTable | null
     list_text_fields(): [ /* returnType */ boolean, /* field_names */ string[] | null, /* field_values */ string[] | null ]
     submit(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1304,21 +1316,21 @@ export class FormSubmissionRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FormSubmissionRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FormSubmissionRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1333,26 +1345,26 @@ export class FormSubmissionRequest {
 }
 export interface GeolocationManager_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class GeolocationManager {
-    /* Properties of WebKit2.GeolocationManager */
+class GeolocationManager {
+    /* Properties of WebKit2-4.0.WebKit2.GeolocationManager */
     readonly enable_high_accuracy: boolean
-    /* Fields of WebKit2.GeolocationManager */
+    /* Fields of WebKit2-4.0.WebKit2.GeolocationManager */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.GeolocationManager */
+    /* Methods of WebKit2-4.0.WebKit2.GeolocationManager */
     failed(error_message: string): void
     get_enable_high_accuracy(): boolean
     update_position(position: GeolocationPosition): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1360,28 +1372,28 @@ export class GeolocationManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.GeolocationManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.GeolocationManager */
     connect(sigName: "start", callback: (($obj: GeolocationManager) => boolean)): number
     connect_after(sigName: "start", callback: (($obj: GeolocationManager) => boolean)): number
     emit(sigName: "start"): void
     connect(sigName: "stop", callback: (($obj: GeolocationManager) => void)): number
     connect_after(sigName: "stop", callback: (($obj: GeolocationManager) => void)): number
     emit(sigName: "stop"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GeolocationManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GeolocationManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1398,20 +1410,20 @@ export class GeolocationManager {
 }
 export interface GeolocationPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class GeolocationPermissionRequest {
-    /* Fields of WebKit2.GeolocationPermissionRequest */
+class GeolocationPermissionRequest {
+    /* Fields of WebKit2-4.0.WebKit2.GeolocationPermissionRequest */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1419,27 +1431,27 @@ export class GeolocationPermissionRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of WebKit2.PermissionRequest */
+    watch_closure(closure: Function): void
+    /* Methods of WebKit2-4.0.WebKit2.PermissionRequest */
     allow(): void
     deny(): void
-    /* Virtual methods of WebKit2.GeolocationPermissionRequest */
+    /* Virtual methods of WebKit2-4.0.WebKit2.GeolocationPermissionRequest */
     vfunc_allow(): void
     vfunc_deny(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GeolocationPermissionRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GeolocationPermissionRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1460,13 +1472,13 @@ export interface HitTestResult_ConstructProps extends GObject.Object_ConstructPr
     link_uri?: string
     media_uri?: string
 }
-export class HitTestResult {
-    /* Fields of WebKit2.HitTestResult */
+class HitTestResult {
+    /* Fields of WebKit2-4.0.WebKit2.HitTestResult */
     parent: GObject.Object
     priv: HitTestResultPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.HitTestResult */
+    /* Methods of WebKit2-4.0.WebKit2.HitTestResult */
     context_is_editable(): boolean
     context_is_image(): boolean
     context_is_link(): boolean
@@ -1479,15 +1491,15 @@ export class HitTestResult {
     get_link_title(): string
     get_link_uri(): string
     get_media_uri(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1495,21 +1507,21 @@ export class HitTestResult {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: HitTestResult, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: HitTestResult, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1526,15 +1538,15 @@ export interface InputMethodContext_ConstructProps extends GObject.Object_Constr
     input_hints?: InputHints
     input_purpose?: InputPurpose
 }
-export class InputMethodContext {
-    /* Properties of WebKit2.InputMethodContext */
+class InputMethodContext {
+    /* Properties of WebKit2-4.0.WebKit2.InputMethodContext */
     input_hints: InputHints
     input_purpose: InputPurpose
-    /* Fields of WebKit2.InputMethodContext */
+    /* Fields of WebKit2-4.0.WebKit2.InputMethodContext */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.InputMethodContext */
+    /* Methods of WebKit2-4.0.WebKit2.InputMethodContext */
     filter_key_event(key_event: Gdk.EventKey): boolean
     get_input_hints(): InputHints
     get_input_purpose(): InputPurpose
@@ -1547,15 +1559,15 @@ export class InputMethodContext {
     set_enable_preedit(enabled: boolean): void
     set_input_hints(hints: InputHints): void
     set_input_purpose(purpose: InputPurpose): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1563,13 +1575,13 @@ export class InputMethodContext {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of WebKit2.InputMethodContext */
+    watch_closure(closure: Function): void
+    /* Virtual methods of WebKit2-4.0.WebKit2.InputMethodContext */
     vfunc_committed(text: string): void
     vfunc_delete_surrounding(offset: number, n_chars: number): void
     vfunc_filter_key_event(key_event: Gdk.EventKey): boolean
@@ -1583,15 +1595,15 @@ export class InputMethodContext {
     vfunc_preedit_started(): void
     vfunc_reset(): void
     vfunc_set_enable_preedit(enabled: boolean): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.InputMethodContext */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.InputMethodContext */
     connect(sigName: "committed", callback: (($obj: InputMethodContext, text: string) => void)): number
     connect_after(sigName: "committed", callback: (($obj: InputMethodContext, text: string) => void)): number
     emit(sigName: "committed", text: string): void
@@ -1607,7 +1619,7 @@ export class InputMethodContext {
     connect(sigName: "preedit-started", callback: (($obj: InputMethodContext) => void)): number
     connect_after(sigName: "preedit-started", callback: (($obj: InputMethodContext) => void)): number
     emit(sigName: "preedit-started"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InputMethodContext, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputMethodContext, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1626,23 +1638,23 @@ export class InputMethodContext {
 }
 export interface InstallMissingMediaPluginsPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class InstallMissingMediaPluginsPermissionRequest {
-    /* Fields of WebKit2.InstallMissingMediaPluginsPermissionRequest */
+class InstallMissingMediaPluginsPermissionRequest {
+    /* Fields of WebKit2-4.0.WebKit2.InstallMissingMediaPluginsPermissionRequest */
     parent: GObject.Object
     priv: InstallMissingMediaPluginsPermissionRequestPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.InstallMissingMediaPluginsPermissionRequest */
+    /* Methods of WebKit2-4.0.WebKit2.InstallMissingMediaPluginsPermissionRequest */
     get_description(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1650,27 +1662,27 @@ export class InstallMissingMediaPluginsPermissionRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of WebKit2.PermissionRequest */
+    watch_closure(closure: Function): void
+    /* Methods of WebKit2-4.0.WebKit2.PermissionRequest */
     allow(): void
     deny(): void
-    /* Virtual methods of WebKit2.InstallMissingMediaPluginsPermissionRequest */
+    /* Virtual methods of WebKit2-4.0.WebKit2.InstallMissingMediaPluginsPermissionRequest */
     vfunc_allow(): void
     vfunc_deny(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InstallMissingMediaPluginsPermissionRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InstallMissingMediaPluginsPermissionRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1683,41 +1695,22 @@ export class InstallMissingMediaPluginsPermissionRequest {
     _init (config?: InstallMissingMediaPluginsPermissionRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface NavigationPolicyDecision_ConstructProps extends PolicyDecision_ConstructProps {
+export interface MediaKeySystemPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class NavigationPolicyDecision {
-    /* Properties of WebKit2.NavigationPolicyDecision */
-    readonly frame_name: string
-    readonly modifiers: number
-    readonly mouse_button: number
-    readonly navigation_action: NavigationAction
-    readonly navigation_type: NavigationType
-    readonly request: URIRequest
-    /* Fields of WebKit2.NavigationPolicyDecision */
-    parent: PolicyDecision
-    /* Fields of GObject.Object */
+class MediaKeySystemPermissionRequest {
+    /* Fields of WebKit2-4.0.WebKit2.MediaKeySystemPermissionRequest */
+    parent: GObject.Object
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.NavigationPolicyDecision */
-    get_frame_name(): string
-    get_modifiers(): number
-    get_mouse_button(): number
-    get_navigation_action(): NavigationAction
-    get_navigation_type(): NavigationType
-    get_request(): URIRequest
-    /* Methods of WebKit2.PolicyDecision */
-    download(): void
-    ignore(): void
-    use(): void
-    use_with_policies(policies: WebsitePolicies): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1725,21 +1718,96 @@ export class NavigationPolicyDecision {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Methods of WebKit2-4.0.WebKit2.PermissionRequest */
+    allow(): void
+    deny(): void
+    /* Virtual methods of WebKit2-4.0.WebKit2.MediaKeySystemPermissionRequest */
+    vfunc_allow(): void
+    vfunc_deny(): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: MediaKeySystemPermissionRequest, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: MediaKeySystemPermissionRequest, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: MediaKeySystemPermissionRequest_ConstructProps)
+    _init (config?: MediaKeySystemPermissionRequest_ConstructProps): void
+    static $gtype: GObject.Type
+}
+export interface NavigationPolicyDecision_ConstructProps extends PolicyDecision_ConstructProps {
+}
+class NavigationPolicyDecision {
+    /* Properties of WebKit2-4.0.WebKit2.NavigationPolicyDecision */
+    readonly frame_name: string
+    readonly modifiers: number
+    readonly mouse_button: number
+    readonly navigation_action: NavigationAction
+    readonly navigation_type: NavigationType
+    readonly request: URIRequest
+    /* Fields of WebKit2-4.0.WebKit2.NavigationPolicyDecision */
+    parent: PolicyDecision
+    /* Fields of GObject-2.0.GObject.Object */
+    g_type_instance: GObject.TypeInstance
+    /* Methods of WebKit2-4.0.WebKit2.NavigationPolicyDecision */
+    get_frame_name(): string
+    get_modifiers(): number
+    get_mouse_button(): number
+    get_navigation_action(): NavigationAction
+    get_navigation_type(): NavigationType
+    get_request(): URIRequest
+    /* Methods of WebKit2-4.0.WebKit2.PolicyDecision */
+    download(): void
+    ignore(): void
+    use(): void
+    use_with_policies(policies: WebsitePolicies): void
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: NavigationPolicyDecision, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: NavigationPolicyDecision, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1766,33 +1834,33 @@ export class NavigationPolicyDecision {
 }
 export interface Notification_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Notification {
-    /* Properties of WebKit2.Notification */
+class Notification {
+    /* Properties of WebKit2-4.0.WebKit2.Notification */
     readonly body: string
     readonly id: number
     readonly tag: string
     readonly title: string
-    /* Fields of WebKit2.Notification */
+    /* Fields of WebKit2-4.0.WebKit2.Notification */
     parent: GObject.Object
     priv: NotificationPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.Notification */
+    /* Methods of WebKit2-4.0.WebKit2.Notification */
     clicked(): void
     close(): void
     get_body(): string
     get_id(): number
     get_tag(): string | null
     get_title(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1800,28 +1868,28 @@ export class Notification {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.Notification */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.Notification */
     connect(sigName: "clicked", callback: (($obj: Notification) => void)): number
     connect_after(sigName: "clicked", callback: (($obj: Notification) => void)): number
     emit(sigName: "clicked"): void
     connect(sigName: "closed", callback: (($obj: Notification) => void)): number
     connect_after(sigName: "closed", callback: (($obj: Notification) => void)): number
     emit(sigName: "closed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Notification, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Notification, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1844,20 +1912,20 @@ export class Notification {
 }
 export interface NotificationPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class NotificationPermissionRequest {
-    /* Fields of WebKit2.NotificationPermissionRequest */
+class NotificationPermissionRequest {
+    /* Fields of WebKit2-4.0.WebKit2.NotificationPermissionRequest */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1865,27 +1933,27 @@ export class NotificationPermissionRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of WebKit2.PermissionRequest */
+    watch_closure(closure: Function): void
+    /* Methods of WebKit2-4.0.WebKit2.PermissionRequest */
     allow(): void
     deny(): void
-    /* Virtual methods of WebKit2.NotificationPermissionRequest */
+    /* Virtual methods of WebKit2-4.0.WebKit2.NotificationPermissionRequest */
     vfunc_allow(): void
     vfunc_deny(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: NotificationPermissionRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: NotificationPermissionRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1900,27 +1968,27 @@ export class NotificationPermissionRequest {
 }
 export interface OptionMenu_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class OptionMenu {
-    /* Fields of WebKit2.OptionMenu */
+class OptionMenu {
+    /* Fields of WebKit2-4.0.WebKit2.OptionMenu */
     parent: GObject.Object
     priv: OptionMenuPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.OptionMenu */
+    /* Methods of WebKit2-4.0.WebKit2.OptionMenu */
     activate_item(index: number): void
     close(): void
     get_item(index: number): OptionMenuItem
     get_n_items(): number
     select_item(index: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1928,25 +1996,25 @@ export class OptionMenu {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.OptionMenu */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.OptionMenu */
     connect(sigName: "close", callback: (($obj: OptionMenu) => void)): number
     connect_after(sigName: "close", callback: (($obj: OptionMenu) => void)): number
     emit(sigName: "close"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OptionMenu, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OptionMenu, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1961,26 +2029,26 @@ export class OptionMenu {
 }
 export interface Plugin_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Plugin {
-    /* Fields of WebKit2.Plugin */
+class Plugin {
+    /* Fields of WebKit2-4.0.WebKit2.Plugin */
     parent: GObject.Object
     priv: PluginPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.Plugin */
+    /* Methods of WebKit2-4.0.WebKit2.Plugin */
     get_description(): string
     get_mime_info_list(): MimeInfo[]
     get_name(): string
     get_path(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1988,21 +2056,21 @@ export class Plugin {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Plugin, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Plugin, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2017,20 +2085,20 @@ export class Plugin {
 }
 export interface PointerLockPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class PointerLockPermissionRequest {
-    /* Fields of WebKit2.PointerLockPermissionRequest */
+class PointerLockPermissionRequest {
+    /* Fields of WebKit2-4.0.WebKit2.PointerLockPermissionRequest */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2038,27 +2106,27 @@ export class PointerLockPermissionRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of WebKit2.PermissionRequest */
+    watch_closure(closure: Function): void
+    /* Methods of WebKit2-4.0.WebKit2.PermissionRequest */
     allow(): void
     deny(): void
-    /* Virtual methods of WebKit2.PointerLockPermissionRequest */
+    /* Virtual methods of WebKit2-4.0.WebKit2.PointerLockPermissionRequest */
     vfunc_allow(): void
     vfunc_deny(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PointerLockPermissionRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PointerLockPermissionRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2073,25 +2141,25 @@ export class PointerLockPermissionRequest {
 }
 export interface PolicyDecision_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class PolicyDecision {
-    /* Fields of WebKit2.PolicyDecision */
+class PolicyDecision {
+    /* Fields of WebKit2-4.0.WebKit2.PolicyDecision */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.PolicyDecision */
+    /* Methods of WebKit2-4.0.WebKit2.PolicyDecision */
     download(): void
     ignore(): void
     use(): void
     use_with_policies(policies: WebsitePolicies): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2099,21 +2167,21 @@ export class PolicyDecision {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PolicyDecision, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PolicyDecision, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2130,24 +2198,24 @@ export interface PrintCustomWidget_ConstructProps extends GObject.Object_Constru
     title?: string
     widget?: Gtk.Widget
 }
-export class PrintCustomWidget {
-    /* Fields of WebKit2.PrintCustomWidget */
+class PrintCustomWidget {
+    /* Fields of WebKit2-4.0.WebKit2.PrintCustomWidget */
     parent: GObject.Object
     priv: PrintCustomWidgetPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.PrintCustomWidget */
+    /* Methods of WebKit2-4.0.WebKit2.PrintCustomWidget */
     get_title(): string
     get_widget(): Gtk.Widget
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2155,31 +2223,31 @@ export class PrintCustomWidget {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of WebKit2.PrintCustomWidget */
+    watch_closure(closure: Function): void
+    /* Virtual methods of WebKit2-4.0.WebKit2.PrintCustomWidget */
     vfunc_apply(widget: Gtk.Widget): void
     vfunc_update(widget: Gtk.Widget, page_setup: Gtk.PageSetup, print_settings: Gtk.PrintSettings): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.PrintCustomWidget */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.PrintCustomWidget */
     connect(sigName: "apply", callback: (($obj: PrintCustomWidget) => void)): number
     connect_after(sigName: "apply", callback: (($obj: PrintCustomWidget) => void)): number
     emit(sigName: "apply"): void
     connect(sigName: "update", callback: (($obj: PrintCustomWidget, page_setup: Gtk.PageSetup, print_settings: Gtk.PrintSettings) => void)): number
     connect_after(sigName: "update", callback: (($obj: PrintCustomWidget, page_setup: Gtk.PageSetup, print_settings: Gtk.PrintSettings) => void)): number
     emit(sigName: "update", page_setup: Gtk.PageSetup, print_settings: Gtk.PrintSettings): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PrintCustomWidget, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PrintCustomWidget, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2199,31 +2267,31 @@ export interface PrintOperation_ConstructProps extends GObject.Object_ConstructP
     print_settings?: Gtk.PrintSettings
     web_view?: WebView
 }
-export class PrintOperation {
-    /* Properties of WebKit2.PrintOperation */
+class PrintOperation {
+    /* Properties of WebKit2-4.0.WebKit2.PrintOperation */
     page_setup: Gtk.PageSetup
     print_settings: Gtk.PrintSettings
-    /* Fields of WebKit2.PrintOperation */
+    /* Fields of WebKit2-4.0.WebKit2.PrintOperation */
     parent: GObject.Object
     priv: PrintOperationPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.PrintOperation */
+    /* Methods of WebKit2-4.0.WebKit2.PrintOperation */
     get_page_setup(): Gtk.PageSetup
     get_print_settings(): Gtk.PrintSettings
     print(): void
     run_dialog(parent?: Gtk.Window | null): PrintOperationResponse
     set_page_setup(page_setup: Gtk.PageSetup): void
     set_print_settings(print_settings: Gtk.PrintSettings): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2231,21 +2299,21 @@ export class PrintOperation {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.PrintOperation */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.PrintOperation */
     connect(sigName: "create-custom-widget", callback: (($obj: PrintOperation) => PrintCustomWidget)): number
     connect_after(sigName: "create-custom-widget", callback: (($obj: PrintOperation) => PrintCustomWidget)): number
     emit(sigName: "create-custom-widget"): void
@@ -2255,7 +2323,7 @@ export class PrintOperation {
     connect(sigName: "finished", callback: (($obj: PrintOperation) => void)): number
     connect_after(sigName: "finished", callback: (($obj: PrintOperation) => void)): number
     emit(sigName: "finished"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PrintOperation, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PrintOperation, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2276,32 +2344,32 @@ export class PrintOperation {
 }
 export interface ResponsePolicyDecision_ConstructProps extends PolicyDecision_ConstructProps {
 }
-export class ResponsePolicyDecision {
-    /* Properties of WebKit2.ResponsePolicyDecision */
+class ResponsePolicyDecision {
+    /* Properties of WebKit2-4.0.WebKit2.ResponsePolicyDecision */
     readonly request: URIRequest
     readonly response: URIResponse
-    /* Fields of WebKit2.ResponsePolicyDecision */
+    /* Fields of WebKit2-4.0.WebKit2.ResponsePolicyDecision */
     parent: PolicyDecision
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.ResponsePolicyDecision */
+    /* Methods of WebKit2-4.0.WebKit2.ResponsePolicyDecision */
     get_request(): URIRequest
     get_response(): URIResponse
     is_mime_type_supported(): boolean
-    /* Methods of WebKit2.PolicyDecision */
+    /* Methods of WebKit2-4.0.WebKit2.PolicyDecision */
     download(): void
     ignore(): void
     use(): void
     use_with_policies(policies: WebsitePolicies): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2309,21 +2377,21 @@ export class ResponsePolicyDecision {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ResponsePolicyDecision, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ResponsePolicyDecision, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2342,13 +2410,13 @@ export class ResponsePolicyDecision {
 }
 export interface SecurityManager_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class SecurityManager {
-    /* Fields of WebKit2.SecurityManager */
+class SecurityManager {
+    /* Fields of WebKit2-4.0.WebKit2.SecurityManager */
     parent: GObject.Object
     priv: SecurityManagerPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.SecurityManager */
+    /* Methods of WebKit2-4.0.WebKit2.SecurityManager */
     register_uri_scheme_as_cors_enabled(scheme: string): void
     register_uri_scheme_as_display_isolated(scheme: string): void
     register_uri_scheme_as_empty_document(scheme: string): void
@@ -2361,15 +2429,15 @@ export class SecurityManager {
     uri_scheme_is_local(scheme: string): boolean
     uri_scheme_is_no_access(scheme: string): boolean
     uri_scheme_is_secure(scheme: string): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2377,21 +2445,21 @@ export class SecurityManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SecurityManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SecurityManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2465,8 +2533,8 @@ export interface Settings_ConstructProps extends GObject.Object_ConstructProps {
     user_agent?: string
     zoom_text_only?: boolean
 }
-export class Settings {
-    /* Properties of WebKit2.Settings */
+class Settings {
+    /* Properties of WebKit2-4.0.WebKit2.Settings */
     allow_file_access_from_file_urls: boolean
     allow_modal_dialogs: boolean
     allow_top_navigation_to_data_urls: boolean
@@ -2526,12 +2594,12 @@ export class Settings {
     serif_font_family: string
     user_agent: string
     zoom_text_only: boolean
-    /* Fields of WebKit2.Settings */
+    /* Fields of WebKit2-4.0.WebKit2.Settings */
     parent_instance: GObject.Object
     priv: SettingsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.Settings */
+    /* Methods of WebKit2-4.0.WebKit2.Settings */
     get_allow_file_access_from_file_urls(): boolean
     get_allow_modal_dialogs(): boolean
     get_allow_top_navigation_to_data_urls(): boolean
@@ -2651,15 +2719,15 @@ export class Settings {
     set_user_agent(user_agent?: string | null): void
     set_user_agent_with_application_details(application_name?: string | null, application_version?: string | null): void
     set_zoom_text_only(zoom_text_only: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2667,21 +2735,21 @@ export class Settings {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Settings, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Settings, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2819,27 +2887,27 @@ export class Settings {
 export interface URIRequest_ConstructProps extends GObject.Object_ConstructProps {
     uri?: string
 }
-export class URIRequest {
-    /* Properties of WebKit2.URIRequest */
+class URIRequest {
+    /* Properties of WebKit2-4.0.WebKit2.URIRequest */
     uri: string
-    /* Fields of WebKit2.URIRequest */
+    /* Fields of WebKit2-4.0.WebKit2.URIRequest */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.URIRequest */
+    /* Methods of WebKit2-4.0.WebKit2.URIRequest */
     get_http_headers(): Soup.MessageHeaders
     get_http_method(): string
     get_uri(): string
     set_uri(uri: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2847,21 +2915,21 @@ export class URIRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: URIRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: URIRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2880,34 +2948,34 @@ export class URIRequest {
 }
 export interface URIResponse_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class URIResponse {
-    /* Properties of WebKit2.URIResponse */
+class URIResponse {
+    /* Properties of WebKit2-4.0.WebKit2.URIResponse */
     readonly content_length: number
     readonly http_headers: Soup.MessageHeaders
     readonly mime_type: string
     readonly status_code: number
     readonly suggested_filename: string
     readonly uri: string
-    /* Fields of WebKit2.URIResponse */
+    /* Fields of WebKit2-4.0.WebKit2.URIResponse */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.URIResponse */
+    /* Methods of WebKit2-4.0.WebKit2.URIResponse */
     get_content_length(): number
     get_http_headers(): Soup.MessageHeaders
     get_mime_type(): string
     get_status_code(): number
     get_suggested_filename(): string
     get_uri(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2915,21 +2983,21 @@ export class URIResponse {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: URIResponse, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: URIResponse, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2956,28 +3024,31 @@ export class URIResponse {
 }
 export interface URISchemeRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class URISchemeRequest {
-    /* Fields of WebKit2.URISchemeRequest */
+class URISchemeRequest {
+    /* Fields of WebKit2-4.0.WebKit2.URISchemeRequest */
     parent: GObject.Object
     priv: URISchemeRequestPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.URISchemeRequest */
+    /* Methods of WebKit2-4.0.WebKit2.URISchemeRequest */
     finish(stream: Gio.InputStream, stream_length: number, content_type?: string | null): void
     finish_error(error: GLib.Error): void
+    finish_with_response(response: URISchemeResponse): void
+    get_http_headers(): Soup.MessageHeaders
+    get_http_method(): string
     get_path(): string
     get_scheme(): string
     get_uri(): string
     get_web_view(): WebView
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2985,21 +3056,21 @@ export class URISchemeRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: URISchemeRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: URISchemeRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3012,15 +3083,74 @@ export class URISchemeRequest {
     _init (config?: URISchemeRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
+export interface URISchemeResponse_ConstructProps extends GObject.Object_ConstructProps {
+    stream?: Gio.InputStream
+    stream_length?: number
+}
+class URISchemeResponse {
+    /* Fields of WebKit2-4.0.WebKit2.URISchemeResponse */
+    parent: GObject.Object
+    priv: URISchemeResponsePrivate
+    /* Fields of GObject-2.0.GObject.Object */
+    g_type_instance: GObject.TypeInstance
+    /* Methods of WebKit2-4.0.WebKit2.URISchemeResponse */
+    set_content_type(content_type: string): void
+    set_http_headers(headers: Soup.MessageHeaders): void
+    set_status(status_code: number, reason_phrase?: string | null): void
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: URISchemeResponse, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: URISchemeResponse, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: URISchemeResponse_ConstructProps)
+    _init (config?: URISchemeResponse_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static new(input_stream: Gio.InputStream, stream_length: number): URISchemeResponse
+    static $gtype: GObject.Type
+}
 export interface UserContentFilterStore_ConstructProps extends GObject.Object_ConstructProps {
     path?: string
 }
-export class UserContentFilterStore {
-    /* Fields of WebKit2.UserContentFilterStore */
+class UserContentFilterStore {
+    /* Fields of WebKit2-4.0.WebKit2.UserContentFilterStore */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.UserContentFilterStore */
+    /* Methods of WebKit2-4.0.WebKit2.UserContentFilterStore */
     fetch_identifiers(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     fetch_identifiers_finish(result: Gio.AsyncResult): string[]
     get_path(): string
@@ -3032,15 +3162,15 @@ export class UserContentFilterStore {
     save_finish(result: Gio.AsyncResult): UserContentFilter
     save_from_file(identifier: string, file: Gio.File, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     save_from_file_finish(result: Gio.AsyncResult): UserContentFilter
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3048,21 +3178,21 @@ export class UserContentFilterStore {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UserContentFilterStore, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UserContentFilterStore, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3079,12 +3209,12 @@ export class UserContentFilterStore {
 }
 export interface UserContentManager_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class UserContentManager {
-    /* Fields of WebKit2.UserContentManager */
+class UserContentManager {
+    /* Fields of WebKit2-4.0.WebKit2.UserContentManager */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.UserContentManager */
+    /* Methods of WebKit2-4.0.WebKit2.UserContentManager */
     add_filter(filter: UserContentFilter): void
     add_script(script: UserScript): void
     add_style_sheet(stylesheet: UserStyleSheet): void
@@ -3095,17 +3225,19 @@ export class UserContentManager {
     remove_all_style_sheets(): void
     remove_filter(filter: UserContentFilter): void
     remove_filter_by_id(filter_id: string): void
+    remove_script(script: UserScript): void
+    remove_style_sheet(stylesheet: UserStyleSheet): void
     unregister_script_message_handler(name: string): void
     unregister_script_message_handler_in_world(name: string, world_name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3113,25 +3245,25 @@ export class UserContentManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.UserContentManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.UserContentManager */
     connect(sigName: "script-message-received", callback: (($obj: UserContentManager, js_result: JavascriptResult) => void)): number
     connect_after(sigName: "script-message-received", callback: (($obj: UserContentManager, js_result: JavascriptResult) => void)): number
     emit(sigName: "script-message-received", js_result: JavascriptResult): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UserContentManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UserContentManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3148,23 +3280,23 @@ export class UserContentManager {
 }
 export interface UserMediaPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class UserMediaPermissionRequest {
-    /* Properties of WebKit2.UserMediaPermissionRequest */
+class UserMediaPermissionRequest {
+    /* Properties of WebKit2-4.0.WebKit2.UserMediaPermissionRequest */
     readonly is_for_audio_device: boolean
     readonly is_for_video_device: boolean
-    /* Fields of WebKit2.UserMediaPermissionRequest */
+    /* Fields of WebKit2-4.0.WebKit2.UserMediaPermissionRequest */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3172,27 +3304,27 @@ export class UserMediaPermissionRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of WebKit2.PermissionRequest */
+    watch_closure(closure: Function): void
+    /* Methods of WebKit2-4.0.WebKit2.PermissionRequest */
     allow(): void
     deny(): void
-    /* Virtual methods of WebKit2.UserMediaPermissionRequest */
+    /* Virtual methods of WebKit2-4.0.WebKit2.UserMediaPermissionRequest */
     vfunc_allow(): void
     vfunc_deny(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UserMediaPermissionRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UserMediaPermissionRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3214,26 +3346,26 @@ export interface UserMessage_ConstructProps extends GObject.InitiallyUnowned_Con
     name?: string
     parameters?: GLib.Variant
 }
-export class UserMessage {
-    /* Fields of WebKit2.UserMessage */
+class UserMessage {
+    /* Fields of WebKit2-4.0.WebKit2.UserMessage */
     parent: GObject.InitiallyUnowned
     priv: UserMessagePrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.UserMessage */
-    get_fd_list(): Gio.UnixFDList
+    /* Methods of WebKit2-4.0.WebKit2.UserMessage */
+    get_fd_list(): Gio.UnixFDList | null
     get_name(): string
-    get_parameters(): GLib.Variant
+    get_parameters(): GLib.Variant | null
     send_reply(reply: UserMessage): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3241,21 +3373,21 @@ export class UserMessage {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UserMessage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UserMessage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3273,18 +3405,19 @@ export class UserMessage {
 }
 export interface WebContext_ConstructProps extends GObject.Object_ConstructProps {
     local_storage_directory?: string
+    memory_pressure_settings?: MemoryPressureSettings
     process_swap_on_cross_site_navigation_enabled?: boolean
     use_system_appearance_for_scrollbars?: boolean
     website_data_manager?: WebsiteDataManager
 }
-export class WebContext {
-    /* Properties of WebKit2.WebContext */
+class WebContext {
+    /* Properties of WebKit2-4.0.WebKit2.WebContext */
     use_system_appearance_for_scrollbars: boolean
-    /* Fields of WebKit2.WebContext */
+    /* Fields of WebKit2-4.0.WebKit2.WebContext */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.WebContext */
+    /* Methods of WebKit2-4.0.WebKit2.WebContext */
     add_path_to_sandbox(path: string, read_only: boolean): void
     allow_tls_certificate_for_host(certificate: Gio.TlsCertificate, host: string): void
     clear_cache(): void
@@ -3327,15 +3460,15 @@ export class WebContext {
     set_web_extensions_directory(directory: string): void
     set_web_extensions_initialization_user_data(user_data: GLib.Variant): void
     set_web_process_count_limit(limit: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3343,27 +3476,27 @@ export class WebContext {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of WebKit2.WebContext */
+    watch_closure(closure: Function): void
+    /* Virtual methods of WebKit2-4.0.WebKit2.WebContext */
     vfunc_automation_started(session: AutomationSession): void
     vfunc_download_started(download: Download): void
     vfunc_initialize_notification_permissions(): void
     vfunc_initialize_web_extensions(): void
     vfunc_user_message_received(message: UserMessage): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.WebContext */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.WebContext */
     connect(sigName: "automation-started", callback: (($obj: WebContext, session: AutomationSession) => void)): number
     connect_after(sigName: "automation-started", callback: (($obj: WebContext, session: AutomationSession) => void)): number
     emit(sigName: "automation-started", session: AutomationSession): void
@@ -3379,7 +3512,7 @@ export class WebContext {
     connect(sigName: "user-message-received", callback: (($obj: WebContext, message: UserMessage) => boolean)): number
     connect_after(sigName: "user-message-received", callback: (($obj: WebContext, message: UserMessage) => boolean)): number
     emit(sigName: "user-message-received", message: UserMessage): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WebContext, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WebContext, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3401,17 +3534,17 @@ export class WebContext {
 }
 export interface WebInspector_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class WebInspector {
-    /* Properties of WebKit2.WebInspector */
+class WebInspector {
+    /* Properties of WebKit2-4.0.WebKit2.WebInspector */
     readonly attached_height: number
     readonly can_attach: boolean
     readonly inspected_uri: string
-    /* Fields of WebKit2.WebInspector */
+    /* Fields of WebKit2-4.0.WebKit2.WebInspector */
     parent: GObject.Object
     priv: WebInspectorPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.WebInspector */
+    /* Methods of WebKit2-4.0.WebKit2.WebInspector */
     attach(): void
     close(): void
     detach(): void
@@ -3421,15 +3554,15 @@ export class WebInspector {
     get_web_view(): WebViewBase
     is_attached(): boolean
     show(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3437,21 +3570,21 @@ export class WebInspector {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.WebInspector */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.WebInspector */
     connect(sigName: "attach", callback: (($obj: WebInspector) => boolean)): number
     connect_after(sigName: "attach", callback: (($obj: WebInspector) => boolean)): number
     emit(sigName: "attach"): void
@@ -3467,7 +3600,7 @@ export class WebInspector {
     connect(sigName: "open-window", callback: (($obj: WebInspector) => boolean)): number
     connect_after(sigName: "open-window", callback: (($obj: WebInspector) => boolean)): number
     emit(sigName: "open-window"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WebInspector, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WebInspector, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3488,29 +3621,29 @@ export class WebInspector {
 }
 export interface WebResource_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class WebResource {
-    /* Properties of WebKit2.WebResource */
+class WebResource {
+    /* Properties of WebKit2-4.0.WebKit2.WebResource */
     readonly response: URIResponse
     readonly uri: string
-    /* Fields of WebKit2.WebResource */
+    /* Fields of WebKit2-4.0.WebKit2.WebResource */
     parent: GObject.Object
     priv: WebResourcePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.WebResource */
+    /* Methods of WebKit2-4.0.WebKit2.WebResource */
     get_data(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_data_finish(result: Gio.AsyncResult): Uint8Array[]
     get_response(): URIResponse
     get_uri(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3518,21 +3651,21 @@ export class WebResource {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.WebResource */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.WebResource */
     connect(sigName: "failed", callback: (($obj: WebResource, error: GLib.Error) => void)): number
     connect_after(sigName: "failed", callback: (($obj: WebResource, error: GLib.Error) => void)): number
     emit(sigName: "failed", error: GLib.Error): void
@@ -3548,7 +3681,7 @@ export class WebResource {
     connect(sigName: "sent-request", callback: (($obj: WebResource, request: URIRequest, redirected_response: URIResponse) => void)): number
     connect_after(sigName: "sent-request", callback: (($obj: WebResource, request: URIRequest, redirected_response: URIResponse) => void)): number
     emit(sigName: "sent-request", request: URIRequest, redirected_response: URIResponse): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WebResource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WebResource, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3567,10 +3700,13 @@ export class WebResource {
 }
 export interface WebView_ConstructProps extends WebViewBase_ConstructProps {
     automation_presentation_type?: AutomationBrowsingContextPresentation
+    camera_capture_state?: MediaCaptureState
+    display_capture_state?: MediaCaptureState
     editable?: boolean
     is_controlled_by_automation?: boolean
     is_ephemeral?: boolean
     is_muted?: boolean
+    microphone_capture_state?: MediaCaptureState
     related_view?: WebView
     settings?: Settings
     user_content_manager?: UserContentManager
@@ -3578,24 +3714,28 @@ export interface WebView_ConstructProps extends WebViewBase_ConstructProps {
     website_policies?: WebsitePolicies
     zoom_level?: number
 }
-export class WebView {
-    /* Properties of WebKit2.WebView */
+class WebView {
+    /* Properties of WebKit2-4.0.WebKit2.WebView */
+    camera_capture_state: MediaCaptureState
+    display_capture_state: MediaCaptureState
     editable: boolean
     readonly estimated_load_progress: number
     readonly favicon: object
     readonly is_loading: boolean
     is_muted: boolean
     readonly is_playing_audio: boolean
+    readonly is_web_process_responsive: boolean
+    microphone_capture_state: MediaCaptureState
     readonly page_id: number
     settings: Settings
     readonly title: string
     readonly uri: string
     zoom_level: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -3635,15 +3775,15 @@ export class WebView {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of WebKit2.WebViewBase */
+    /* Fields of WebKit2-4.0.WebKit2.WebViewBase */
     parentInstance: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.WebView */
+    /* Methods of WebKit2-4.0.WebKit2.WebView */
     can_execute_editing_command(command: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     can_execute_editing_command_finish(result: Gio.AsyncResult): boolean
     can_go_back(): boolean
@@ -3655,8 +3795,10 @@ export class WebView {
     get_automation_presentation_type(): AutomationBrowsingContextPresentation
     get_back_forward_list(): BackForwardList
     get_background_color(): /* rgba */ Gdk.RGBA
+    get_camera_capture_state(): MediaCaptureState
     get_context(): WebContext
     get_custom_charset(): string
+    get_display_capture_state(): MediaCaptureState
     get_editor_state(): EditorState
     get_estimated_load_progress(): number
     get_favicon(): cairo.Surface
@@ -3664,7 +3806,9 @@ export class WebView {
     get_input_method_context(): InputMethodContext | null
     get_inspector(): WebInspector
     get_is_muted(): boolean
+    get_is_web_process_responsive(): boolean
     get_main_resource(): WebResource
+    get_microphone_capture_state(): MediaCaptureState
     get_page_id(): number
     get_session_state(): WebViewSessionState
     get_settings(): Settings
@@ -3706,18 +3850,24 @@ export class WebView {
     send_message_to_page(message: UserMessage, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     send_message_to_page_finish(result: Gio.AsyncResult): UserMessage
     set_background_color(rgba: Gdk.RGBA): void
+    set_camera_capture_state(state: MediaCaptureState): void
+    set_cors_allowlist(allowlist?: string[] | null): void
     set_custom_charset(charset?: string | null): void
+    set_display_capture_state(state: MediaCaptureState): void
     set_editable(editable: boolean): void
     set_input_method_context(context?: InputMethodContext | null): void
     set_is_muted(muted: boolean): void
+    set_microphone_capture_state(state: MediaCaptureState): void
     set_settings(settings: Settings): void
     set_zoom_level(zoom_level: number): void
     stop_loading(): void
+    terminate_web_process(): void
     try_close(): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3742,7 +3892,7 @@ export class WebView {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -4001,15 +4151,15 @@ export class WebView {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4017,13 +4167,13 @@ export class WebView {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -4032,7 +4182,7 @@ export class WebView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of WebKit2.WebView */
+    /* Virtual methods of WebKit2-4.0.WebKit2.WebView */
     vfunc_authenticate(request: AuthenticationRequest): boolean
     vfunc_close(): void
     vfunc_context_menu(context_menu: ContextMenu, event: Gdk.Event, hit_test_result: HitTestResult): boolean
@@ -4059,7 +4209,7 @@ export class WebView {
     vfunc_user_message_received(message: UserMessage): boolean
     vfunc_web_process_crashed(): boolean
     vfunc_web_process_terminated(reason: WebProcessTerminationReason): void
-    /* Virtual methods of WebKit2.WebViewBase */
+    /* Virtual methods of WebKit2-4.0.WebKit2.WebViewBase */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -4070,7 +4220,7 @@ export class WebView {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -4081,7 +4231,7 @@ export class WebView {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -4164,15 +4314,15 @@ export class WebView {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of WebKit2.WebView */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of WebKit2-4.0.WebKit2.WebView */
     connect(sigName: "authenticate", callback: (($obj: WebView, request: AuthenticationRequest) => boolean)): number
     connect_after(sigName: "authenticate", callback: (($obj: WebView, request: AuthenticationRequest) => boolean)): number
     emit(sigName: "authenticate", request: AuthenticationRequest): void
@@ -4239,9 +4389,9 @@ export class WebView {
     connect(sigName: "show-notification", callback: (($obj: WebView, notification: Notification) => boolean)): number
     connect_after(sigName: "show-notification", callback: (($obj: WebView, notification: Notification) => boolean)): number
     emit(sigName: "show-notification", notification: Notification): void
-    connect(sigName: "show-option-menu", callback: (($obj: WebView, object: OptionMenu, p0: Gdk.Event, p1: Gdk.Rectangle) => boolean)): number
-    connect_after(sigName: "show-option-menu", callback: (($obj: WebView, object: OptionMenu, p0: Gdk.Event, p1: Gdk.Rectangle) => boolean)): number
-    emit(sigName: "show-option-menu", object: OptionMenu, p0: Gdk.Event, p1: Gdk.Rectangle): void
+    connect(sigName: "show-option-menu", callback: (($obj: WebView, menu: OptionMenu, event: Gdk.Event, rectangle: Gdk.Rectangle) => boolean)): number
+    connect_after(sigName: "show-option-menu", callback: (($obj: WebView, menu: OptionMenu, event: Gdk.Event, rectangle: Gdk.Rectangle) => boolean)): number
+    emit(sigName: "show-option-menu", menu: OptionMenu, event: Gdk.Event, rectangle: Gdk.Rectangle): void
     connect(sigName: "submit-form", callback: (($obj: WebView, request: FormSubmissionRequest) => void)): number
     connect_after(sigName: "submit-form", callback: (($obj: WebView, request: FormSubmissionRequest) => void)): number
     emit(sigName: "submit-form", request: FormSubmissionRequest): void
@@ -4254,7 +4404,7 @@ export class WebView {
     connect(sigName: "web-process-terminated", callback: (($obj: WebView, reason: WebProcessTerminationReason) => void)): number
     connect_after(sigName: "web-process-terminated", callback: (($obj: WebView, reason: WebProcessTerminationReason) => void)): number
     emit(sigName: "web-process-terminated", reason: WebProcessTerminationReason): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WebView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WebView, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -4267,7 +4417,7 @@ export class WebView {
     connect(sigName: "set-focus-child", callback: (($obj: WebView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WebView, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WebView) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WebView) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -4475,10 +4625,14 @@ export class WebView {
     connect(sigName: "window-state-event", callback: (($obj: WebView, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WebView, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::camera-capture-state", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::camera-capture-state", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::display-capture-state", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::display-capture-state", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::editable", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::editable", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::estimated-load-progress", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
@@ -4491,6 +4645,10 @@ export class WebView {
     connect_after(sigName: "notify::is-muted", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::is-playing-audio", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::is-playing-audio", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::is-web-process-responsive", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::is-web-process-responsive", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::microphone-capture-state", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::microphone-capture-state", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::page-id", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::page-id", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::settings", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
@@ -4602,12 +4760,12 @@ export class WebView {
 }
 export interface WebViewBase_ConstructProps extends Gtk.Container_ConstructProps {
 }
-export class WebViewBase {
-    /* Properties of Gtk.Container */
+class WebViewBase {
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -4647,18 +4805,19 @@ export class WebViewBase {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of WebKit2.WebViewBase */
+    /* Fields of WebKit2-4.0.WebKit2.WebViewBase */
     parentInstance: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4683,7 +4842,7 @@ export class WebViewBase {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -4942,15 +5101,15 @@ export class WebViewBase {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4958,13 +5117,13 @@ export class WebViewBase {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -4973,7 +5132,7 @@ export class WebViewBase {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of WebKit2.WebViewBase */
+    /* Virtual methods of WebKit2-4.0.WebKit2.WebViewBase */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -4984,7 +5143,7 @@ export class WebViewBase {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -4995,7 +5154,7 @@ export class WebViewBase {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -5078,15 +5237,15 @@ export class WebViewBase {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WebViewBase, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WebViewBase, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -5099,7 +5258,7 @@ export class WebViewBase {
     connect(sigName: "set-focus-child", callback: (($obj: WebViewBase, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WebViewBase, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WebViewBase) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WebViewBase) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -5307,7 +5466,7 @@ export class WebViewBase {
     connect(sigName: "window-state-event", callback: (($obj: WebViewBase, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WebViewBase, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WebViewBase, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WebViewBase, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5406,23 +5565,23 @@ export class WebViewBase {
 }
 export interface WebsiteDataAccessPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class WebsiteDataAccessPermissionRequest {
-    /* Fields of WebKit2.WebsiteDataAccessPermissionRequest */
+class WebsiteDataAccessPermissionRequest {
+    /* Fields of WebKit2-4.0.WebKit2.WebsiteDataAccessPermissionRequest */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.WebsiteDataAccessPermissionRequest */
+    /* Methods of WebKit2-4.0.WebKit2.WebsiteDataAccessPermissionRequest */
     get_current_domain(): string
     get_requesting_domain(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5430,27 +5589,27 @@ export class WebsiteDataAccessPermissionRequest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of WebKit2.PermissionRequest */
+    watch_closure(closure: Function): void
+    /* Methods of WebKit2-4.0.WebKit2.PermissionRequest */
     allow(): void
     deny(): void
-    /* Virtual methods of WebKit2.WebsiteDataAccessPermissionRequest */
+    /* Virtual methods of WebKit2-4.0.WebKit2.WebsiteDataAccessPermissionRequest */
     vfunc_allow(): void
     vfunc_deny(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WebsiteDataAccessPermissionRequest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WebsiteDataAccessPermissionRequest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5477,13 +5636,13 @@ export interface WebsiteDataManager_ConstructProps extends GObject.Object_Constr
     service_worker_registrations_directory?: string
     websql_directory?: string
 }
-export class WebsiteDataManager {
-    /* Fields of WebKit2.WebsiteDataManager */
+class WebsiteDataManager {
+    /* Fields of WebKit2-4.0.WebKit2.WebsiteDataManager */
     parent: GObject.Object
     priv: WebsiteDataManagerPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.WebsiteDataManager */
+    /* Methods of WebKit2-4.0.WebKit2.WebsiteDataManager */
     clear(types: WebsiteDataTypes, timespan: GLib.TimeSpan, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     clear_finish(result: Gio.AsyncResult): boolean
     fetch(types: WebsiteDataTypes, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -5503,21 +5662,24 @@ export class WebsiteDataManager {
     get_offline_application_cache_directory(): string | null
     get_persistent_credential_storage_enabled(): boolean
     get_service_worker_registrations_directory(): string | null
+    get_tls_errors_policy(): TLSErrorsPolicy
     get_websql_directory(): string | null
     is_ephemeral(): boolean
     remove(types: WebsiteDataTypes, website_data: WebsiteData[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     remove_finish(result: Gio.AsyncResult): boolean
     set_itp_enabled(enabled: boolean): void
+    set_network_proxy_settings(proxy_mode: NetworkProxyMode, proxy_settings?: NetworkProxySettings | null): void
     set_persistent_credential_storage_enabled(enabled: boolean): void
-    /* Methods of GObject.Object */
+    set_tls_errors_policy(policy: TLSErrorsPolicy): void
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5525,21 +5687,21 @@ export class WebsiteDataManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WebsiteDataManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WebsiteDataManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5552,28 +5714,29 @@ export class WebsiteDataManager {
     _init (config?: WebsiteDataManager_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_ephemeral(): WebsiteDataManager
+    static set_memory_pressure_settings(settings: MemoryPressureSettings): void
     static $gtype: GObject.Type
 }
 export interface WebsitePolicies_ConstructProps extends GObject.Object_ConstructProps {
     autoplay?: AutoplayPolicy
 }
-export class WebsitePolicies {
-    /* Fields of WebKit2.WebsitePolicies */
+class WebsitePolicies {
+    /* Fields of WebKit2-4.0.WebKit2.WebsitePolicies */
     parent: GObject.Object
     priv: WebsitePoliciesPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.WebsitePolicies */
+    /* Methods of WebKit2-4.0.WebKit2.WebsitePolicies */
     get_autoplay_policy(): AutoplayPolicy
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5581,21 +5744,21 @@ export class WebsitePolicies {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WebsitePolicies, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WebsitePolicies, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5620,12 +5783,12 @@ export interface WindowProperties_ConstructProps extends GObject.Object_Construc
     statusbar_visible?: boolean
     toolbar_visible?: boolean
 }
-export class WindowProperties {
-    /* Fields of WebKit2.WindowProperties */
+class WindowProperties {
+    /* Fields of WebKit2-4.0.WebKit2.WindowProperties */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of WebKit2.WindowProperties */
+    /* Methods of WebKit2-4.0.WebKit2.WindowProperties */
     get_fullscreen(): boolean
     get_geometry(): /* geometry */ Gdk.Rectangle
     get_locationbar_visible(): boolean
@@ -5634,15 +5797,15 @@ export class WindowProperties {
     get_scrollbars_visible(): boolean
     get_statusbar_visible(): boolean
     get_toolbar_visible(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5650,21 +5813,21 @@ export class WindowProperties {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WindowProperties, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WindowProperties, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5677,8 +5840,8 @@ export class WindowProperties {
     _init (config?: WindowProperties_ConstructProps): void
     static $gtype: GObject.Type
 }
-export class ApplicationInfo {
-    /* Methods of WebKit2.ApplicationInfo */
+class ApplicationInfo {
+    /* Methods of WebKit2-4.0.WebKit2.ApplicationInfo */
     get_name(): string
     get_version(): [ /* major */ number, /* minor */ number | null, /* micro */ number | null ]
     ref(): ApplicationInfo
@@ -5691,74 +5854,75 @@ export class ApplicationInfo {
     /* Static methods and pseudo-constructors */
     static new(): ApplicationInfo
 }
-export abstract class AuthenticationRequestClass {
-    /* Fields of WebKit2.AuthenticationRequestClass */
+abstract class AuthenticationRequestClass {
+    /* Fields of WebKit2-4.0.WebKit2.AuthenticationRequestClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class AuthenticationRequestPrivate {
+class AuthenticationRequestPrivate {
     static name: string
 }
-export abstract class AutomationSessionClass {
-    /* Fields of WebKit2.AutomationSessionClass */
+abstract class AutomationSessionClass {
+    /* Fields of WebKit2-4.0.WebKit2.AutomationSessionClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class AutomationSessionPrivate {
+class AutomationSessionPrivate {
     static name: string
 }
-export abstract class BackForwardListClass {
-    /* Fields of WebKit2.BackForwardListClass */
+abstract class BackForwardListClass {
+    /* Fields of WebKit2-4.0.WebKit2.BackForwardListClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class BackForwardListItemClass {
-    /* Fields of WebKit2.BackForwardListItemClass */
+abstract class BackForwardListItemClass {
+    /* Fields of WebKit2-4.0.WebKit2.BackForwardListItemClass */
     parent_class: GObject.InitiallyUnownedClass
     static name: string
 }
-export class BackForwardListItemPrivate {
+class BackForwardListItemPrivate {
     static name: string
 }
-export class BackForwardListPrivate {
+class BackForwardListPrivate {
     static name: string
 }
-export abstract class ColorChooserRequestClass {
-    /* Fields of WebKit2.ColorChooserRequestClass */
+abstract class ColorChooserRequestClass {
+    /* Fields of WebKit2-4.0.WebKit2.ColorChooserRequestClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class ColorChooserRequestPrivate {
+class ColorChooserRequestPrivate {
     static name: string
 }
-export abstract class ContextMenuClass {
-    /* Fields of WebKit2.ContextMenuClass */
+abstract class ContextMenuClass {
+    /* Fields of WebKit2-4.0.WebKit2.ContextMenuClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class ContextMenuItemClass {
-    /* Fields of WebKit2.ContextMenuItemClass */
+abstract class ContextMenuItemClass {
+    /* Fields of WebKit2-4.0.WebKit2.ContextMenuItemClass */
     parent_class: GObject.InitiallyUnownedClass
     static name: string
 }
-export class ContextMenuItemPrivate {
+class ContextMenuItemPrivate {
     static name: string
 }
-export class ContextMenuPrivate {
+class ContextMenuPrivate {
     static name: string
 }
-export abstract class CookieManagerClass {
-    /* Fields of WebKit2.CookieManagerClass */
+abstract class CookieManagerClass {
+    /* Fields of WebKit2-4.0.WebKit2.CookieManagerClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class CookieManagerPrivate {
+class CookieManagerPrivate {
     static name: string
 }
-export class Credential {
-    /* Methods of WebKit2.Credential */
+class Credential {
+    /* Methods of WebKit2-4.0.WebKit2.Credential */
     copy(): Credential
     free(): void
+    get_certificate(): Gio.TlsCertificate
     get_password(): string
     get_persistence(): CredentialPersistence
     get_username(): string
@@ -5768,82 +5932,84 @@ export class Credential {
     constructor(username: string, password: string, persistence: CredentialPersistence)
     /* Static methods and pseudo-constructors */
     static new(username: string, password: string, persistence: CredentialPersistence): Credential
+    static new_for_certificate(certificate: Gio.TlsCertificate | null, persistence: CredentialPersistence): Credential
+    static new_for_certificate_pin(pin: string, persistence: CredentialPersistence): Credential
 }
-export abstract class DeviceInfoPermissionRequestClass {
-    /* Fields of WebKit2.DeviceInfoPermissionRequestClass */
+abstract class DeviceInfoPermissionRequestClass {
+    /* Fields of WebKit2-4.0.WebKit2.DeviceInfoPermissionRequestClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class DeviceInfoPermissionRequestPrivate {
+class DeviceInfoPermissionRequestPrivate {
     static name: string
 }
-export abstract class DownloadClass {
-    /* Fields of WebKit2.DownloadClass */
+abstract class DownloadClass {
+    /* Fields of WebKit2-4.0.WebKit2.DownloadClass */
     parent_class: GObject.ObjectClass
     decide_destination: (download: Download, suggested_filename: string) => boolean
     static name: string
 }
-export class DownloadPrivate {
+class DownloadPrivate {
     static name: string
 }
-export abstract class EditorStateClass {
-    /* Fields of WebKit2.EditorStateClass */
+abstract class EditorStateClass {
+    /* Fields of WebKit2-4.0.WebKit2.EditorStateClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class EditorStatePrivate {
+class EditorStatePrivate {
     static name: string
 }
-export abstract class FaviconDatabaseClass {
-    /* Fields of WebKit2.FaviconDatabaseClass */
+abstract class FaviconDatabaseClass {
+    /* Fields of WebKit2-4.0.WebKit2.FaviconDatabaseClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class FaviconDatabasePrivate {
+class FaviconDatabasePrivate {
     static name: string
 }
-export abstract class FileChooserRequestClass {
-    /* Fields of WebKit2.FileChooserRequestClass */
+abstract class FileChooserRequestClass {
+    /* Fields of WebKit2-4.0.WebKit2.FileChooserRequestClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class FileChooserRequestPrivate {
+class FileChooserRequestPrivate {
     static name: string
 }
-export abstract class FindControllerClass {
-    /* Fields of WebKit2.FindControllerClass */
+abstract class FindControllerClass {
+    /* Fields of WebKit2-4.0.WebKit2.FindControllerClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class FindControllerPrivate {
+class FindControllerPrivate {
     static name: string
 }
-export abstract class FormSubmissionRequestClass {
-    /* Fields of WebKit2.FormSubmissionRequestClass */
+abstract class FormSubmissionRequestClass {
+    /* Fields of WebKit2-4.0.WebKit2.FormSubmissionRequestClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class FormSubmissionRequestPrivate {
+class FormSubmissionRequestPrivate {
     static name: string
 }
-export abstract class GeolocationManagerClass {
-    /* Fields of WebKit2.GeolocationManagerClass */
+abstract class GeolocationManagerClass {
+    /* Fields of WebKit2-4.0.WebKit2.GeolocationManagerClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class GeolocationManagerPrivate {
+class GeolocationManagerPrivate {
     static name: string
 }
-export abstract class GeolocationPermissionRequestClass {
-    /* Fields of WebKit2.GeolocationPermissionRequestClass */
+abstract class GeolocationPermissionRequestClass {
+    /* Fields of WebKit2-4.0.WebKit2.GeolocationPermissionRequestClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class GeolocationPermissionRequestPrivate {
+class GeolocationPermissionRequestPrivate {
     static name: string
 }
-export class GeolocationPosition {
-    /* Methods of WebKit2.GeolocationPosition */
+class GeolocationPosition {
+    /* Methods of WebKit2-4.0.WebKit2.GeolocationPosition */
     copy(): GeolocationPosition
     free(): void
     set_altitude(altitude: number): void
@@ -5857,16 +6023,16 @@ export class GeolocationPosition {
     /* Static methods and pseudo-constructors */
     static new(latitude: number, longitude: number, accuracy: number): GeolocationPosition
 }
-export abstract class HitTestResultClass {
-    /* Fields of WebKit2.HitTestResultClass */
+abstract class HitTestResultClass {
+    /* Fields of WebKit2-4.0.WebKit2.HitTestResultClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class HitTestResultPrivate {
+class HitTestResultPrivate {
     static name: string
 }
-export class ITPFirstParty {
-    /* Methods of WebKit2.ITPFirstParty */
+class ITPFirstParty {
+    /* Methods of WebKit2-4.0.WebKit2.ITPFirstParty */
     get_domain(): string
     get_last_update_time(): GLib.DateTime
     get_website_data_access_allowed(): boolean
@@ -5874,16 +6040,16 @@ export class ITPFirstParty {
     unref(): void
     static name: string
 }
-export class ITPThirdParty {
-    /* Methods of WebKit2.ITPThirdParty */
+class ITPThirdParty {
+    /* Methods of WebKit2-4.0.WebKit2.ITPThirdParty */
     get_domain(): string
     get_first_parties(): ITPFirstParty[]
     ref(): ITPThirdParty
     unref(): void
     static name: string
 }
-export abstract class InputMethodContextClass {
-    /* Fields of WebKit2.InputMethodContextClass */
+abstract class InputMethodContextClass {
+    /* Fields of WebKit2-4.0.WebKit2.InputMethodContextClass */
     parent_class: GObject.ObjectClass
     preedit_started: (context: InputMethodContext) => void
     preedit_changed: (context: InputMethodContext) => void
@@ -5900,11 +6066,11 @@ export abstract class InputMethodContextClass {
     reset: (context: InputMethodContext) => void
     static name: string
 }
-export class InputMethodContextPrivate {
+class InputMethodContextPrivate {
     static name: string
 }
-export class InputMethodUnderline {
-    /* Methods of WebKit2.InputMethodUnderline */
+class InputMethodUnderline {
+    /* Methods of WebKit2-4.0.WebKit2.InputMethodUnderline */
     copy(): InputMethodUnderline
     free(): void
     set_color(rgba?: Gdk.RGBA | null): void
@@ -5914,23 +6080,51 @@ export class InputMethodUnderline {
     /* Static methods and pseudo-constructors */
     static new(start_offset: number, end_offset: number): InputMethodUnderline
 }
-export abstract class InstallMissingMediaPluginsPermissionRequestClass {
-    /* Fields of WebKit2.InstallMissingMediaPluginsPermissionRequestClass */
+abstract class InstallMissingMediaPluginsPermissionRequestClass {
+    /* Fields of WebKit2-4.0.WebKit2.InstallMissingMediaPluginsPermissionRequestClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class InstallMissingMediaPluginsPermissionRequestPrivate {
+class InstallMissingMediaPluginsPermissionRequestPrivate {
     static name: string
 }
-export class JavascriptResult {
-    /* Methods of WebKit2.JavascriptResult */
+class JavascriptResult {
+    /* Methods of WebKit2-4.0.WebKit2.JavascriptResult */
     get_js_value(): JavaScriptCore.Value
     ref(): JavascriptResult
     unref(): void
     static name: string
 }
-export class MimeInfo {
-    /* Methods of WebKit2.MimeInfo */
+abstract class MediaKeySystemPermissionRequestClass {
+    /* Fields of WebKit2-4.0.WebKit2.MediaKeySystemPermissionRequestClass */
+    parent_class: GObject.ObjectClass
+    static name: string
+}
+class MediaKeySystemPermissionRequestPrivate {
+    static name: string
+}
+class MemoryPressureSettings {
+    /* Methods of WebKit2-4.0.WebKit2.MemoryPressureSettings */
+    copy(): MemoryPressureSettings
+    free(): void
+    get_conservative_threshold(): number
+    get_kill_threshold(): number
+    get_memory_limit(): number
+    get_poll_interval(): number
+    get_strict_threshold(): number
+    set_conservative_threshold(value: number): void
+    set_kill_threshold(value: number): void
+    set_memory_limit(memory_limit: number): void
+    set_poll_interval(value: number): void
+    set_strict_threshold(value: number): void
+    static name: string
+    static new(): MemoryPressureSettings
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MemoryPressureSettings
+}
+class MimeInfo {
+    /* Methods of WebKit2-4.0.WebKit2.MimeInfo */
     get_description(): string
     get_extensions(): string[]
     get_mime_type(): string
@@ -5938,8 +6132,8 @@ export class MimeInfo {
     unref(): void
     static name: string
 }
-export class NavigationAction {
-    /* Methods of WebKit2.NavigationAction */
+class NavigationAction {
+    /* Methods of WebKit2-4.0.WebKit2.NavigationAction */
     copy(): NavigationAction
     free(): void
     get_modifiers(): number
@@ -5950,16 +6144,16 @@ export class NavigationAction {
     is_user_gesture(): boolean
     static name: string
 }
-export abstract class NavigationPolicyDecisionClass {
-    /* Fields of WebKit2.NavigationPolicyDecisionClass */
+abstract class NavigationPolicyDecisionClass {
+    /* Fields of WebKit2-4.0.WebKit2.NavigationPolicyDecisionClass */
     parent_class: PolicyDecisionClass
     static name: string
 }
-export class NavigationPolicyDecisionPrivate {
+class NavigationPolicyDecisionPrivate {
     static name: string
 }
-export class NetworkProxySettings {
-    /* Methods of WebKit2.NetworkProxySettings */
+class NetworkProxySettings {
+    /* Methods of WebKit2-4.0.WebKit2.NetworkProxySettings */
     add_proxy_for_scheme(scheme: string, proxy_uri: string): void
     copy(): NetworkProxySettings
     free(): void
@@ -5969,29 +6163,29 @@ export class NetworkProxySettings {
     /* Static methods and pseudo-constructors */
     static new(default_proxy_uri?: string | null, ignore_hosts?: string[] | null): NetworkProxySettings
 }
-export abstract class NotificationClass {
-    /* Fields of WebKit2.NotificationClass */
+abstract class NotificationClass {
+    /* Fields of WebKit2-4.0.WebKit2.NotificationClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class NotificationPermissionRequestClass {
-    /* Fields of WebKit2.NotificationPermissionRequestClass */
+abstract class NotificationPermissionRequestClass {
+    /* Fields of WebKit2-4.0.WebKit2.NotificationPermissionRequestClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class NotificationPermissionRequestPrivate {
+class NotificationPermissionRequestPrivate {
     static name: string
 }
-export class NotificationPrivate {
+class NotificationPrivate {
     static name: string
 }
-export abstract class OptionMenuClass {
-    /* Fields of WebKit2.OptionMenuClass */
+abstract class OptionMenuClass {
+    /* Fields of WebKit2-4.0.WebKit2.OptionMenuClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class OptionMenuItem {
-    /* Methods of WebKit2.OptionMenuItem */
+class OptionMenuItem {
+    /* Methods of WebKit2-4.0.WebKit2.OptionMenuItem */
     copy(): OptionMenuItem
     free(): void
     get_label(): string
@@ -6002,68 +6196,68 @@ export class OptionMenuItem {
     is_selected(): boolean
     static name: string
 }
-export class OptionMenuPrivate {
+class OptionMenuPrivate {
     static name: string
 }
-export abstract class PermissionRequestIface {
-    /* Fields of WebKit2.PermissionRequestIface */
+abstract class PermissionRequestIface {
+    /* Fields of WebKit2-4.0.WebKit2.PermissionRequestIface */
     parent_interface: GObject.TypeInterface
     allow: (request: PermissionRequest) => void
     deny: (request: PermissionRequest) => void
     static name: string
 }
-export abstract class PluginClass {
-    /* Fields of WebKit2.PluginClass */
+abstract class PluginClass {
+    /* Fields of WebKit2-4.0.WebKit2.PluginClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class PluginPrivate {
+class PluginPrivate {
     static name: string
 }
-export abstract class PointerLockPermissionRequestClass {
-    /* Fields of WebKit2.PointerLockPermissionRequestClass */
+abstract class PointerLockPermissionRequestClass {
+    /* Fields of WebKit2-4.0.WebKit2.PointerLockPermissionRequestClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class PointerLockPermissionRequestPrivate {
+class PointerLockPermissionRequestPrivate {
     static name: string
 }
-export abstract class PolicyDecisionClass {
-    /* Fields of WebKit2.PolicyDecisionClass */
+abstract class PolicyDecisionClass {
+    /* Fields of WebKit2-4.0.WebKit2.PolicyDecisionClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class PolicyDecisionPrivate {
+class PolicyDecisionPrivate {
     static name: string
 }
-export abstract class PrintCustomWidgetClass {
-    /* Fields of WebKit2.PrintCustomWidgetClass */
+abstract class PrintCustomWidgetClass {
+    /* Fields of WebKit2-4.0.WebKit2.PrintCustomWidgetClass */
     parent_class: GObject.ObjectClass
     apply: (print_custom_widget: PrintCustomWidget, widget: Gtk.Widget) => void
     update: (print_custom_widget: PrintCustomWidget, widget: Gtk.Widget, page_setup: Gtk.PageSetup, print_settings: Gtk.PrintSettings) => void
     static name: string
 }
-export class PrintCustomWidgetPrivate {
+class PrintCustomWidgetPrivate {
     static name: string
 }
-export abstract class PrintOperationClass {
-    /* Fields of WebKit2.PrintOperationClass */
+abstract class PrintOperationClass {
+    /* Fields of WebKit2-4.0.WebKit2.PrintOperationClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class PrintOperationPrivate {
+class PrintOperationPrivate {
     static name: string
 }
-export abstract class ResponsePolicyDecisionClass {
-    /* Fields of WebKit2.ResponsePolicyDecisionClass */
+abstract class ResponsePolicyDecisionClass {
+    /* Fields of WebKit2-4.0.WebKit2.ResponsePolicyDecisionClass */
     parent_class: PolicyDecisionClass
     static name: string
 }
-export class ResponsePolicyDecisionPrivate {
+class ResponsePolicyDecisionPrivate {
     static name: string
 }
-export class ScriptDialog {
-    /* Methods of WebKit2.ScriptDialog */
+class ScriptDialog {
+    /* Methods of WebKit2-4.0.WebKit2.ScriptDialog */
     close(): void
     confirm_set_confirmed(confirmed: boolean): void
     get_dialog_type(): ScriptDialogType
@@ -6074,16 +6268,16 @@ export class ScriptDialog {
     unref(): void
     static name: string
 }
-export abstract class SecurityManagerClass {
-    /* Fields of WebKit2.SecurityManagerClass */
+abstract class SecurityManagerClass {
+    /* Fields of WebKit2-4.0.WebKit2.SecurityManagerClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class SecurityManagerPrivate {
+class SecurityManagerPrivate {
     static name: string
 }
-export class SecurityOrigin {
-    /* Methods of WebKit2.SecurityOrigin */
+class SecurityOrigin {
+    /* Methods of WebKit2-4.0.WebKit2.SecurityOrigin */
     get_host(): string | null
     get_port(): number
     get_protocol(): string | null
@@ -6098,79 +6292,87 @@ export class SecurityOrigin {
     static new(protocol: string, host: string, port: number): SecurityOrigin
     static new_for_uri(uri: string): SecurityOrigin
 }
-export abstract class SettingsClass {
-    /* Fields of WebKit2.SettingsClass */
+abstract class SettingsClass {
+    /* Fields of WebKit2-4.0.WebKit2.SettingsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class SettingsPrivate {
+class SettingsPrivate {
     static name: string
 }
-export abstract class URIRequestClass {
-    /* Fields of WebKit2.URIRequestClass */
+abstract class URIRequestClass {
+    /* Fields of WebKit2-4.0.WebKit2.URIRequestClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class URIRequestPrivate {
+class URIRequestPrivate {
     static name: string
 }
-export abstract class URIResponseClass {
-    /* Fields of WebKit2.URIResponseClass */
+abstract class URIResponseClass {
+    /* Fields of WebKit2-4.0.WebKit2.URIResponseClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class URIResponsePrivate {
+class URIResponsePrivate {
     static name: string
 }
-export abstract class URISchemeRequestClass {
-    /* Fields of WebKit2.URISchemeRequestClass */
+abstract class URISchemeRequestClass {
+    /* Fields of WebKit2-4.0.WebKit2.URISchemeRequestClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class URISchemeRequestPrivate {
+class URISchemeRequestPrivate {
     static name: string
 }
-export class UserContentFilter {
-    /* Methods of WebKit2.UserContentFilter */
+abstract class URISchemeResponseClass {
+    /* Fields of WebKit2-4.0.WebKit2.URISchemeResponseClass */
+    parent_class: GObject.ObjectClass
+    static name: string
+}
+class URISchemeResponsePrivate {
+    static name: string
+}
+class UserContentFilter {
+    /* Methods of WebKit2-4.0.WebKit2.UserContentFilter */
     get_identifier(): string
     ref(): UserContentFilter
     unref(): void
     static name: string
 }
-export abstract class UserContentFilterStoreClass {
-    /* Fields of WebKit2.UserContentFilterStoreClass */
+abstract class UserContentFilterStoreClass {
+    /* Fields of WebKit2-4.0.WebKit2.UserContentFilterStoreClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class UserContentFilterStorePrivate {
+class UserContentFilterStorePrivate {
     static name: string
 }
-export abstract class UserContentManagerClass {
-    /* Fields of WebKit2.UserContentManagerClass */
+abstract class UserContentManagerClass {
+    /* Fields of WebKit2-4.0.WebKit2.UserContentManagerClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class UserContentManagerPrivate {
+class UserContentManagerPrivate {
     static name: string
 }
-export abstract class UserMediaPermissionRequestClass {
-    /* Fields of WebKit2.UserMediaPermissionRequestClass */
+abstract class UserMediaPermissionRequestClass {
+    /* Fields of WebKit2-4.0.WebKit2.UserMediaPermissionRequestClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class UserMediaPermissionRequestPrivate {
+class UserMediaPermissionRequestPrivate {
     static name: string
 }
-export abstract class UserMessageClass {
-    /* Fields of WebKit2.UserMessageClass */
+abstract class UserMessageClass {
+    /* Fields of WebKit2-4.0.WebKit2.UserMessageClass */
     parent_class: GObject.InitiallyUnownedClass
     static name: string
 }
-export class UserMessagePrivate {
+class UserMessagePrivate {
     static name: string
 }
-export class UserScript {
-    /* Methods of WebKit2.UserScript */
+class UserScript {
+    /* Methods of WebKit2-4.0.WebKit2.UserScript */
     ref(): UserScript
     unref(): void
     static name: string
@@ -6180,8 +6382,8 @@ export class UserScript {
     static new(source: string, injected_frames: UserContentInjectedFrames, injection_time: UserScriptInjectionTime, allow_list?: string[] | null, block_list?: string[] | null): UserScript
     static new_for_world(source: string, injected_frames: UserContentInjectedFrames, injection_time: UserScriptInjectionTime, world_name: string, allow_list?: string[] | null, block_list?: string[] | null): UserScript
 }
-export class UserStyleSheet {
-    /* Methods of WebKit2.UserStyleSheet */
+class UserStyleSheet {
+    /* Methods of WebKit2-4.0.WebKit2.UserStyleSheet */
     ref(): UserStyleSheet
     unref(): void
     static name: string
@@ -6191,8 +6393,8 @@ export class UserStyleSheet {
     static new(source: string, injected_frames: UserContentInjectedFrames, level: UserStyleLevel, allow_list?: string[] | null, block_list?: string[] | null): UserStyleSheet
     static new_for_world(source: string, injected_frames: UserContentInjectedFrames, level: UserStyleLevel, world_name: string, allow_list?: string[] | null, block_list?: string[] | null): UserStyleSheet
 }
-export abstract class WebContextClass {
-    /* Fields of WebKit2.WebContextClass */
+abstract class WebContextClass {
+    /* Fields of WebKit2-4.0.WebKit2.WebContextClass */
     parent: GObject.ObjectClass
     download_started: (context: WebContext, download: Download) => void
     initialize_web_extensions: (context: WebContext) => void
@@ -6201,35 +6403,35 @@ export abstract class WebContextClass {
     user_message_received: (context: WebContext, message: UserMessage) => boolean
     static name: string
 }
-export class WebContextPrivate {
+class WebContextPrivate {
     static name: string
 }
-export abstract class WebInspectorClass {
-    /* Fields of WebKit2.WebInspectorClass */
+abstract class WebInspectorClass {
+    /* Fields of WebKit2-4.0.WebKit2.WebInspectorClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class WebInspectorPrivate {
+class WebInspectorPrivate {
     static name: string
 }
-export abstract class WebResourceClass {
-    /* Fields of WebKit2.WebResourceClass */
+abstract class WebResourceClass {
+    /* Fields of WebKit2-4.0.WebKit2.WebResourceClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class WebResourcePrivate {
+class WebResourcePrivate {
     static name: string
 }
-export abstract class WebViewBaseClass {
-    /* Fields of WebKit2.WebViewBaseClass */
+abstract class WebViewBaseClass {
+    /* Fields of WebKit2-4.0.WebKit2.WebViewBaseClass */
     parentClass: Gtk.ContainerClass
     static name: string
 }
-export class WebViewBasePrivate {
+class WebViewBasePrivate {
     static name: string
 }
-export abstract class WebViewClass {
-    /* Fields of WebKit2.WebViewClass */
+abstract class WebViewClass {
+    /* Fields of WebKit2-4.0.WebKit2.WebViewClass */
     parent: WebViewBaseClass
     load_changed: (web_view: WebView, load_event: LoadEvent) => void
     load_failed: (web_view: WebView, load_event: LoadEvent, failing_uri: string, error: GLib.Error) => boolean
@@ -6259,11 +6461,11 @@ export abstract class WebViewClass {
     user_message_received: (web_view: WebView, message: UserMessage) => boolean
     static name: string
 }
-export class WebViewPrivate {
+class WebViewPrivate {
     static name: string
 }
-export class WebViewSessionState {
-    /* Methods of WebKit2.WebViewSessionState */
+class WebViewSessionState {
+    /* Methods of WebKit2-4.0.WebKit2.WebViewSessionState */
     ref(): WebViewSessionState
     serialize(): GLib.Bytes
     unref(): void
@@ -6273,8 +6475,8 @@ export class WebViewSessionState {
     /* Static methods and pseudo-constructors */
     static new(data: GLib.Bytes): WebViewSessionState
 }
-export class WebsiteData {
-    /* Methods of WebKit2.WebsiteData */
+class WebsiteData {
+    /* Methods of WebKit2-4.0.WebKit2.WebsiteData */
     get_name(): string
     get_size(types: WebsiteDataTypes): number
     get_types(): WebsiteDataTypes
@@ -6282,35 +6484,37 @@ export class WebsiteData {
     unref(): void
     static name: string
 }
-export abstract class WebsiteDataAccessPermissionRequestClass {
-    /* Fields of WebKit2.WebsiteDataAccessPermissionRequestClass */
+abstract class WebsiteDataAccessPermissionRequestClass {
+    /* Fields of WebKit2-4.0.WebKit2.WebsiteDataAccessPermissionRequestClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class WebsiteDataAccessPermissionRequestPrivate {
+class WebsiteDataAccessPermissionRequestPrivate {
     static name: string
 }
-export abstract class WebsiteDataManagerClass {
-    /* Fields of WebKit2.WebsiteDataManagerClass */
+abstract class WebsiteDataManagerClass {
+    /* Fields of WebKit2-4.0.WebKit2.WebsiteDataManagerClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class WebsiteDataManagerPrivate {
+class WebsiteDataManagerPrivate {
     static name: string
 }
-export abstract class WebsitePoliciesClass {
-    /* Fields of WebKit2.WebsitePoliciesClass */
+abstract class WebsitePoliciesClass {
+    /* Fields of WebKit2-4.0.WebKit2.WebsitePoliciesClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class WebsitePoliciesPrivate {
+class WebsitePoliciesPrivate {
     static name: string
 }
-export abstract class WindowPropertiesClass {
-    /* Fields of WebKit2.WindowPropertiesClass */
+abstract class WindowPropertiesClass {
+    /* Fields of WebKit2-4.0.WebKit2.WindowPropertiesClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class WindowPropertiesPrivate {
+class WindowPropertiesPrivate {
     static name: string
 }
+}
+export default WebKit2;

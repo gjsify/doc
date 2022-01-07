@@ -1,2 +1,2 @@
-imports.gi.versions.GstTranscoder = '1.0'
-export default imports.gi.GstTranscoder
+import GstTranscoder from 'gi://GstTranscoder?version=1.0';
+export default GstTranscoder;

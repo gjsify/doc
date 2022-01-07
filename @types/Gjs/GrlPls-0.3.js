@@ -1,2 +1,2 @@
-imports.gi.versions.GrlPls = '0.3'
-export default imports.gi.GrlPls
+import GrlPls from 'gi://GrlPls?version=0.3';
+export default GrlPls;

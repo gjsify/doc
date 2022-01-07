@@ -3,25 +3,27 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum AddressFamily {
+export namespace Epc {
+
+enum AddressFamily {
     UNSPEC,
     IPV4,
     IPV6,
 }
-export enum CollisionHandling {
+enum CollisionHandling {
     IGNORE,
     CHANGE_NAME,
     UNIQUE_SERVICE,
 }
-export enum Protocol {
+enum Protocol {
     UNKNOWN,
     HTTP,
     HTTPS,
 }
-export enum AuthFlags {
+enum AuthFlags {
     DEFAULT,
     PASSWORD_TEXT_NEEDED,
 }
@@ -30,38 +32,38 @@ export const SERVICE_TYPE_HTTPS: string
 export const TLS_SECONDS_PER_DAY: number
 export const TLS_SECONDS_PER_HOUR: number
 export const TLS_SECONDS_PER_MINUTE: number
-export function address_family_to_string(value: AddressFamily): string
-export function auth_flags_to_string(value: AuthFlags): string
-export function avahi_error_quark(): GLib.Quark
-export function collision_handling_to_string(value: CollisionHandling): string
-export function http_error_quark(): GLib.Quark
-export function protocol_build_uri(protocol: Protocol, hostname: string, port: number, path: string): string
-export function protocol_from_name(name: string, fallback: Protocol): Protocol
-export function protocol_get_service_type(protocol: Protocol): string
-export function protocol_get_uri_scheme(protocol: Protocol): string
-export function protocol_to_string(value: Protocol): string
-export function service_type_get_base(type: string): string
-export function service_type_get_protocol(service_type: string): Protocol
-export function service_type_new(protocol: Protocol, application: string): string
-export function shell_get_debug_level(): number
-export function shell_get_host_name(): string
-export function shell_progress_begin(title: string, message: string): void
-export function shell_progress_end(): void
-export function shell_progress_update(percentage: number, message: string): void
-export function shell_restart_avahi_client(strloc: string): void
-export function shell_set_progress_hooks(hooks: ShellProgressHooks, user_data: object, destroy_data: GLib.DestroyNotify): void
-export function shell_watch_remove(id: number): void
-export function tls_error_quark(): GLib.Quark
-export function tls_get_certificate_filename(hostname: string): string
-export function tls_get_private_key_filename(hostname: string): string
-export function tls_get_server_credentials(hostname: string, crtfile: string, keyfile: string): boolean
-export interface AuthHandler {
+function address_family_to_string(value: AddressFamily): string
+function auth_flags_to_string(value: AuthFlags): string
+function avahi_error_quark(): GLib.Quark
+function collision_handling_to_string(value: CollisionHandling): string
+function http_error_quark(): GLib.Quark
+function protocol_build_uri(protocol: Protocol, hostname: string, port: number, path: string): string
+function protocol_from_name(name: string, fallback: Protocol): Protocol
+function protocol_get_service_type(protocol: Protocol): string
+function protocol_get_uri_scheme(protocol: Protocol): string
+function protocol_to_string(value: Protocol): string
+function service_type_get_base(type: string): string
+function service_type_get_protocol(service_type: string): Protocol
+function service_type_new(protocol: Protocol, application: string): string
+function shell_get_debug_level(): number
+function shell_get_host_name(): string
+function shell_progress_begin(title: string, message: string): void
+function shell_progress_end(): void
+function shell_progress_update(percentage: number, message: string): void
+function shell_restart_avahi_client(strloc: string): void
+function shell_set_progress_hooks(hooks: ShellProgressHooks, user_data: object, destroy_data: GLib.DestroyNotify): void
+function shell_watch_remove(id: number): void
+function tls_error_quark(): GLib.Quark
+function tls_get_certificate_filename(hostname: string): string
+function tls_get_private_key_filename(hostname: string): string
+function tls_get_server_credentials(hostname: string, crtfile: string, keyfile: string): boolean
+interface AuthHandler {
     (context: AuthContext, username: string): boolean
 }
-export interface ContentsHandler {
+interface ContentsHandler {
     (publisher: Publisher, key: string): Contents
 }
-export interface ContentsReadFunc {
+interface ContentsReadFunc {
     (contents: Contents, buffer: object, length: number): boolean
 }
 export interface Consumer_ConstructProps extends GObject.Object_ConstructProps {
@@ -75,14 +77,14 @@ export interface Consumer_ConstructProps extends GObject.Object_ConstructProps {
     protocol?: Protocol
     username?: string
 }
-export class Consumer {
-    /* Properties of Epc.Consumer */
+class Consumer {
+    /* Properties of Epc-1.0.Epc.Consumer */
     password: string
     protocol: Protocol
     username: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Epc.Consumer */
+    /* Methods of Epc-1.0.Epc.Consumer */
     get_password(): string
     get_protocol(): Protocol
     get_username(): string
@@ -91,15 +93,15 @@ export class Consumer {
     set_password(password: string): void
     set_protocol(protocol: Protocol): void
     set_username(username: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -107,31 +109,31 @@ export class Consumer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Epc.Consumer */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Epc-1.0.Epc.Consumer */
     vfunc_authenticate(realm: string): void
     vfunc_publisher_resolved(protocol: Protocol, hostname: string, port: number): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Epc.Consumer */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Epc-1.0.Epc.Consumer */
     connect(sigName: "authenticate", callback: (($obj: Consumer, object: string) => boolean)): number
     connect_after(sigName: "authenticate", callback: (($obj: Consumer, object: string) => boolean)): number
     emit(sigName: "authenticate", object: string): void
     connect(sigName: "publisher-resolved", callback: (($obj: Consumer, object: Protocol, p0: string, p1: number) => void)): number
     connect_after(sigName: "publisher-resolved", callback: (($obj: Consumer, object: Protocol, p0: string, p1: number) => void)): number
     emit(sigName: "publisher-resolved", object: Protocol, p0: string, p1: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Consumer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Consumer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -159,14 +161,14 @@ export interface Dispatcher_ConstructProps extends GObject.Object_ConstructProps
     cookie?: string
     name?: string
 }
-export class Dispatcher {
-    /* Properties of Epc.Dispatcher */
+class Dispatcher {
+    /* Properties of Epc-1.0.Epc.Dispatcher */
     collision_handling: CollisionHandling
     cookie: string
     name: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Epc.Dispatcher */
+    /* Methods of Epc-1.0.Epc.Dispatcher */
     add_service_subtype(type: string, subtype: string): void
     get_collision_handling(): CollisionHandling
     get_cookie(): string
@@ -176,15 +178,15 @@ export class Dispatcher {
     set_collision_handling(method: CollisionHandling): void
     set_cookie(cookie: string): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -192,21 +194,21 @@ export class Dispatcher {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Dispatcher, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Dispatcher, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -239,8 +241,8 @@ export interface Publisher_ConstructProps extends GObject.Object_ConstructProps 
     service_domain?: string
     service_name?: string
 }
-export class Publisher {
-    /* Properties of Epc.Publisher */
+class Publisher {
+    /* Properties of Epc-1.0.Epc.Publisher */
     application: string
     auth_flags: AuthFlags
     certificate_file: string
@@ -251,9 +253,9 @@ export class Publisher {
     service_cookie: string
     service_domain: string
     service_name: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Epc.Publisher */
+    /* Methods of Epc-1.0.Epc.Publisher */
     add(key: string, data: object, length: number): void
     add_bookmark(key: string, label: string): void
     add_file(key: string, filename: string): void
@@ -282,15 +284,15 @@ export class Publisher {
     set_protocol(protocol: Protocol): void
     set_service_cookie(cookie: string): void
     set_service_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -298,21 +300,21 @@ export class Publisher {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Publisher, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Publisher, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -354,23 +356,23 @@ export interface ServiceMonitor_ConstructProps extends GObject.Object_ConstructP
     service_types?: string[]
     skip_our_own?: boolean
 }
-export class ServiceMonitor {
-    /* Properties of Epc.ServiceMonitor */
+class ServiceMonitor {
+    /* Properties of Epc-1.0.Epc.ServiceMonitor */
     skip_our_own: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Epc.ServiceMonitor */
+    /* Methods of Epc-1.0.Epc.ServiceMonitor */
     get_skip_our_own(): boolean
     set_skip_our_own(setting: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -378,25 +380,25 @@ export class ServiceMonitor {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Epc.ServiceMonitor */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Epc-1.0.Epc.ServiceMonitor */
     vfunc_scanning_done(type: string): void
     vfunc_service_found(name: string, info: ServiceInfo): void
     vfunc_service_removed(name: string, type: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Epc.ServiceMonitor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Epc-1.0.Epc.ServiceMonitor */
     connect(sigName: "scanning-done", callback: (($obj: ServiceMonitor, object: string) => void)): number
     connect_after(sigName: "scanning-done", callback: (($obj: ServiceMonitor, object: string) => void)): number
     emit(sigName: "scanning-done", object: string): void
@@ -406,7 +408,7 @@ export class ServiceMonitor {
     connect(sigName: "service-removed", callback: (($obj: ServiceMonitor, object: string, p0: string) => void)): number
     connect_after(sigName: "service-removed", callback: (($obj: ServiceMonitor, object: string, p0: string) => void)): number
     emit(sigName: "service-removed", object: string, p0: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ServiceMonitor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ServiceMonitor, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -423,24 +425,24 @@ export class ServiceMonitor {
     static new_for_types_strv(domain: string, types: string): ServiceMonitor
     static $gtype: GObject.Type
 }
-export class AuthContext {
-    /* Methods of Epc.AuthContext */
+class AuthContext {
+    /* Methods of Epc-1.0.Epc.AuthContext */
     check_password(password: string): boolean
     get_key(): string
     get_password(): string
     static name: string
 }
-export abstract class ConsumerClass {
-    /* Fields of Epc.ConsumerClass */
+abstract class ConsumerClass {
+    /* Fields of Epc-1.0.Epc.ConsumerClass */
     authenticate: (consumer: Consumer, realm: string) => void
     publisher_resolved: (consumer: Consumer, protocol: Protocol, hostname: string, port: number) => void
     static name: string
 }
-export class ConsumerPrivate {
+class ConsumerPrivate {
     static name: string
 }
-export class Contents {
-    /* Methods of Epc.Contents */
+class Contents {
+    /* Methods of Epc-1.0.Epc.Contents */
     get_mime_type(): string
     is_stream(): boolean
     ref(): Contents
@@ -453,20 +455,20 @@ export class Contents {
     static new_dup(type: string, data: object, length: number): Contents
     static stream_new(type: string, callback: ContentsReadFunc): Contents
 }
-export abstract class DispatcherClass {
+abstract class DispatcherClass {
     static name: string
 }
-export class DispatcherPrivate {
+class DispatcherPrivate {
     static name: string
 }
-export abstract class PublisherClass {
+abstract class PublisherClass {
     static name: string
 }
-export class PublisherPrivate {
+class PublisherPrivate {
     static name: string
 }
-export class ServiceInfo {
-    /* Methods of Epc.ServiceInfo */
+class ServiceInfo {
+    /* Methods of Epc-1.0.Epc.ServiceInfo */
     get_address_family(): AddressFamily
     get_detail(name: string): string
     get_host(): string
@@ -477,20 +479,22 @@ export class ServiceInfo {
     unref(): void
     static name: string
 }
-export abstract class ServiceMonitorClass {
-    /* Fields of Epc.ServiceMonitorClass */
+abstract class ServiceMonitorClass {
+    /* Fields of Epc-1.0.Epc.ServiceMonitorClass */
     service_found: (monitor: ServiceMonitor, name: string, info: ServiceInfo) => void
     service_removed: (monitor: ServiceMonitor, name: string, type: string) => void
     scanning_done: (monitor: ServiceMonitor, type: string) => void
     static name: string
 }
-export class ServiceMonitorPrivate {
+class ServiceMonitorPrivate {
     static name: string
 }
-export class ShellProgressHooks {
-    /* Fields of Epc.ShellProgressHooks */
+class ShellProgressHooks {
+    /* Fields of Epc-1.0.Epc.ShellProgressHooks */
     begin: (title: string) => void
     update: (percentage: number, message: string) => void
     end: () => void
     static name: string
 }
+}
+export default Epc;

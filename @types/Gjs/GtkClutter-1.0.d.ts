@@ -3,37 +3,39 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gtk from './Gtk-3.0';
-import type * as xlib from './xlib-2.0';
-import type * as Gdk from './Gdk-3.0';
-import type * as cairo from './cairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as Atk from './Atk-1.0';
-import type * as Clutter from './Clutter-1.0';
-import type * as Json from './Json-1.0';
-import type * as GL from './GL-1.0';
-import type * as CoglPango from './CoglPango-1.0';
-import type * as PangoCairo from './PangoCairo-1.0';
-import type * as Cogl from './Cogl-1.0';
+import type Gtk from './Gtk-3.0';
+import type xlib from './xlib-2.0';
+import type Gdk from './Gdk-3.0';
+import type cairo from './cairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type GModule from './GModule-2.0';
+import type Atk from './Atk-1.0';
+import type Clutter from './Clutter-1.0';
+import type Json from './Json-1.0';
+import type GL from './GL-1.0';
+import type CoglPango from './CoglPango-1.0';
+import type PangoCairo from './PangoCairo-1.0';
+import type Cogl from './Cogl-1.0';
 
-export enum TextureError {
+export namespace GtkClutter {
+
+enum TextureError {
     TEXTURE_ERROR_INVALID_STOCK_ID,
 }
-export function init(argv?: string[] | null): [ /* returnType */ Clutter.InitError, /* argv */ string[] | null ]
-export function init_with_args(argv?: string[] | null, parameter_string?: string | null, entries?: GLib.OptionEntry[] | null, translation_domain?: string | null): [ /* returnType */ Clutter.InitError, /* argv */ string[] | null ]
+function init(argv?: string[] | null): [ /* returnType */ Clutter.InitError, /* argv */ string[] | null ]
+function init_with_args(argv?: string[] | null, parameter_string?: string | null, entries?: GLib.OptionEntry[] | null, translation_domain?: string | null): [ /* returnType */ Clutter.InitError, /* argv */ string[] | null ]
 export interface Actor_ConstructProps extends Clutter.Actor_ConstructProps {
     contents?: Gtk.Widget
 }
-export class Actor {
-    /* Properties of GtkClutter.Actor */
+class Actor {
+    /* Properties of GtkClutter-1.0.GtkClutter.Actor */
     contents: Gtk.Widget
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -116,14 +118,14 @@ export class Actor {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GtkClutter.Actor */
+    /* Methods of GtkClutter-1.0.GtkClutter.Actor */
     get_contents(): Gtk.Widget
     get_widget(): Gtk.Widget
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -359,15 +361,15 @@ export class Actor {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -375,19 +377,19 @@ export class Actor {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -402,12 +404,12 @@ export class Actor {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of GtkClutter.Actor */
+    /* Virtual methods of GtkClutter-1.0.GtkClutter.Actor */
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     vfunc_find_property(property_name: string): GObject.ParamSpec
     vfunc_get_initial_state(property_name: string, value: any): void
@@ -430,7 +432,7 @@ export class Actor {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -466,15 +468,15 @@ export class Actor {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Actor, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Actor, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -553,11 +555,11 @@ export class Actor {
     connect(sigName: "unrealize", callback: (($obj: Actor) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Actor) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Actor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Actor, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Actor, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Actor, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -750,14 +752,14 @@ export class Actor {
 export interface Embed_ConstructProps extends Gtk.Container_ConstructProps {
     use_layout_size?: boolean
 }
-export class Embed {
-    /* Properties of GtkClutter.Embed */
+class Embed {
+    /* Properties of GtkClutter-1.0.GtkClutter.Embed */
     use_layout_size: boolean
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -797,20 +799,21 @@ export class Embed {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GtkClutter.Embed */
+    /* Methods of GtkClutter-1.0.GtkClutter.Embed */
     get_stage(): Clutter.Actor
     get_use_layout_size(): boolean
     set_use_layout_size(use_layout_size: boolean): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -835,7 +838,7 @@ export class Embed {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -1094,15 +1097,15 @@ export class Embed {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1110,13 +1113,13 @@ export class Embed {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -1125,7 +1128,7 @@ export class Embed {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of GtkClutter.Embed */
+    /* Virtual methods of GtkClutter-1.0.GtkClutter.Embed */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -1136,7 +1139,7 @@ export class Embed {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -1147,7 +1150,7 @@ export class Embed {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -1230,15 +1233,15 @@ export class Embed {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: Embed, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: Embed, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -1251,7 +1254,7 @@ export class Embed {
     connect(sigName: "set-focus-child", callback: (($obj: Embed, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: Embed, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: Embed) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: Embed) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -1459,7 +1462,7 @@ export class Embed {
     connect(sigName: "window-state-event", callback: (($obj: Embed, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: Embed, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Embed, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Embed, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1562,8 +1565,8 @@ export class Embed {
 }
 export interface Texture_ConstructProps extends Clutter.Texture_ConstructProps {
 }
-export class Texture {
-    /* Properties of Clutter.Texture */
+class Texture {
+    /* Properties of Clutter-1.0.Clutter.Texture */
     filename: string
     filter_quality: Clutter.TextureQuality
     keep_aspect_ratio: boolean
@@ -1575,7 +1578,7 @@ export class Texture {
     repeat_y: boolean
     sync_size: boolean
     readonly tile_waste: number
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -1658,15 +1661,15 @@ export class Texture {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GtkClutter.Texture */
+    /* Methods of GtkClutter-1.0.GtkClutter.Texture */
     set_from_icon_name(widget: Gtk.Widget | null, icon_name: string, icon_size: Gtk.IconSize): boolean
     set_from_pixbuf(pixbuf: GdkPixbuf.Pixbuf): boolean
     set_from_stock(widget: Gtk.Widget, stock_id: string, icon_size: Gtk.IconSize): boolean
-    /* Methods of Clutter.Texture */
+    /* Methods of Clutter-1.0.Clutter.Texture */
     get_base_size(): [ /* width */ number, /* height */ number ]
     get_cogl_material(): Cogl.Handle
     get_cogl_texture(): Cogl.Handle
@@ -1692,7 +1695,7 @@ export class Texture {
     set_pick_with_alpha(pick_with_alpha: boolean): void
     set_repeat(repeat_x: boolean, repeat_y: boolean): void
     set_sync_size(sync_size: boolean): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -1928,15 +1931,15 @@ export class Texture {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1944,19 +1947,19 @@ export class Texture {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -1971,12 +1974,12 @@ export class Texture {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of GtkClutter.Texture */
+    /* Virtual methods of GtkClutter-1.0.GtkClutter.Texture */
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     vfunc_find_property(property_name: string): GObject.ParamSpec
     vfunc_get_initial_state(property_name: string, value: any): void
@@ -1999,11 +2002,11 @@ export class Texture {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Texture */
+    /* Virtual methods of Clutter-1.0.Clutter.Texture */
     vfunc_load_finished(error: GLib.Error): void
     vfunc_pixbuf_change(): void
     vfunc_size_change(width: number, height: number): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -2039,15 +2042,15 @@ export class Texture {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Texture */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Texture */
     connect(sigName: "load-finished", callback: (($obj: Texture, error: GLib.Error) => void)): number
     connect_after(sigName: "load-finished", callback: (($obj: Texture, error: GLib.Error) => void)): number
     emit(sigName: "load-finished", error: GLib.Error): void
@@ -2057,7 +2060,7 @@ export class Texture {
     connect(sigName: "size-change", callback: (($obj: Texture, width: number, height: number) => void)): number
     connect_after(sigName: "size-change", callback: (($obj: Texture, width: number, height: number) => void)): number
     emit(sigName: "size-change", width: number, height: number): void
-    /* Signals of Clutter.Actor */
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Texture, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Texture, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -2136,11 +2139,11 @@ export class Texture {
     connect(sigName: "unrealize", callback: (($obj: Texture) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Texture) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Texture, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Texture, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Texture, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Texture, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -2352,8 +2355,8 @@ export class Texture {
 }
 export interface Window_ConstructProps extends Gtk.Window_ConstructProps {
 }
-export class Window {
-    /* Properties of Gtk.Window */
+class Window {
+    /* Properties of Gtk-3.0.Gtk.Window */
     accept_focus: boolean
     application: Gtk.Application
     attached_to: Gtk.Widget
@@ -2386,11 +2389,11 @@ export class Window {
     type_hint: Gdk.WindowTypeHint
     urgency_hint: boolean
     window_position: Gtk.WindowPosition
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -2430,20 +2433,20 @@ export class Window {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Window */
+    /* Fields of Gtk-3.0.Gtk.Window */
     bin: Gtk.Bin
     priv: Gtk.WindowPrivate
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GtkClutter.Window */
+    /* Methods of GtkClutter-1.0.GtkClutter.Window */
     get_stage(): Clutter.Actor
-    /* Methods of Gtk.Window */
+    /* Methods of Gtk-3.0.Gtk.Window */
     activate_default(): boolean
     activate_focus(): boolean
     activate_key(event: Gdk.EventKey): boolean
@@ -2550,12 +2553,13 @@ export class Window {
     unfullscreen(): void
     unmaximize(): void
     unstick(): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2580,7 +2584,7 @@ export class Window {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -2836,15 +2840,15 @@ export class Window {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2852,13 +2856,13 @@ export class Window {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2867,7 +2871,7 @@ export class Window {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of GtkClutter.Window */
+    /* Virtual methods of GtkClutter-1.0.GtkClutter.Window */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2878,13 +2882,13 @@ export class Window {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Window */
+    /* Virtual methods of Gtk-3.0.Gtk.Window */
     vfunc_activate_default(): void
     vfunc_activate_focus(): void
     vfunc_enable_debugging(toggle: boolean): boolean
     vfunc_keys_changed(): void
     vfunc_set_focus(focus?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -2895,7 +2899,7 @@ export class Window {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -2978,15 +2982,15 @@ export class Window {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Window */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Window */
     connect(sigName: "activate-default", callback: (($obj: Window) => void)): number
     connect_after(sigName: "activate-default", callback: (($obj: Window) => void)): number
     emit(sigName: "activate-default"): void
@@ -3002,7 +3006,7 @@ export class Window {
     connect(sigName: "set-focus", callback: (($obj: Window, widget?: Gtk.Widget | null) => void)): number
     connect_after(sigName: "set-focus", callback: (($obj: Window, widget?: Gtk.Widget | null) => void)): number
     emit(sigName: "set-focus", widget?: Gtk.Widget | null): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: Window, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: Window, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -3015,7 +3019,7 @@ export class Window {
     connect(sigName: "set-focus-child", callback: (($obj: Window, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: Window, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: Window) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: Window) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -3223,7 +3227,7 @@ export class Window {
     connect(sigName: "window-state-event", callback: (($obj: Window, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: Window, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3387,24 +3391,26 @@ export class Window {
     static new(type: Gtk.WindowType): Window
     static $gtype: GObject.Type
 }
-export abstract class ActorClass {
+abstract class ActorClass {
     static name: string
 }
-export class ActorPrivate {
+class ActorPrivate {
     static name: string
 }
-export abstract class EmbedClass {
+abstract class EmbedClass {
     static name: string
 }
-export class EmbedPrivate {
+class EmbedPrivate {
     static name: string
 }
-export abstract class TextureClass {
+abstract class TextureClass {
     static name: string
 }
-export abstract class WindowClass {
+abstract class WindowClass {
     static name: string
 }
-export class WindowPrivate {
+class WindowPrivate {
     static name: string
 }
+}
+export default GtkClutter;

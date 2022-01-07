@@ -1,2 +1,2 @@
-imports.gi.versions.Signon = '2.0'
-export default imports.gi.Signon
+import Signon from 'gi://Signon?version=2.0';
+export default Signon;

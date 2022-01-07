@@ -1,2 +1,2 @@
-imports.gi.versions.PangoXft = '1.0'
-export default imports.gi.PangoXft
+import PangoXft from 'gi://PangoXft?version=1.0';
+export default PangoXft;

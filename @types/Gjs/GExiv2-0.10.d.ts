@@ -3,22 +3,24 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum ByteOrder {
+export namespace GExiv2 {
+
+enum ByteOrder {
     LITTLE,
     BIG,
 }
-export enum LogLevel {
+enum LogLevel {
     DEBUG,
     INFO,
     WARN,
     ERROR,
     MUTE,
 }
-export enum Orientation {
+enum Orientation {
     UNSPECIFIED,
     NORMAL,
     HFLIP,
@@ -29,14 +31,14 @@ export enum Orientation {
     ROT_90_VFLIP,
     ROT_270,
 }
-export enum StructureType {
+enum StructureType {
     NONE,
     ALT,
     BAG,
     SEQ,
     LANG,
 }
-export enum XmpFormatFlags {
+enum XmpFormatFlags {
     OMIT_PACKET_WRAPPER,
     READ_ONLY_PACKET,
     USE_COMPACT_FORMAT,
@@ -48,22 +50,22 @@ export enum XmpFormatFlags {
 export const MAJOR_VERSION: number
 export const MICRO_VERSION: number
 export const MINOR_VERSION: number
-export function get_version(): number
-export function initialize(): boolean
-export function log_get_level(): LogLevel
-export function log_set_level(level: LogLevel): void
-export function log_use_glib_logging(): void
-export interface LogHandler {
+function get_version(): number
+function initialize(): boolean
+function log_get_level(): LogLevel
+function log_set_level(level: LogLevel): void
+function log_use_glib_logging(): void
+interface LogHandler {
     (level: LogLevel, msg: string): void
 }
 export interface Metadata_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Metadata {
-    /* Fields of GExiv2.Metadata */
+class Metadata {
+    /* Fields of GExiv2-0.10.GExiv2.Metadata */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GExiv2.Metadata */
+    /* Methods of GExiv2-0.10.GExiv2.Metadata */
     clear(): void
     clear_comment(): void
     clear_exif(): void
@@ -128,16 +130,54 @@ export class Metadata {
     set_tag_multiple(tag: string, values: string[]): boolean
     set_tag_string(tag: string, value: string): boolean
     set_xmp_tag_struct(tag: string, type: StructureType): boolean
+    try_clear_tag(tag: string): boolean
+    try_delete_gps_info(): void
+    try_erase_exif_thumbnail(): void
+    try_generate_xmp_packet(xmp_format_flags: XmpFormatFlags, padding: number): string | null
+    try_get_comment(): string | null
+    try_get_exif_tag_rational(tag: string): [ /* returnType */ boolean, /* nom */ number, /* den */ number ]
+    try_get_exposure_time(): [ /* returnType */ boolean, /* nom */ number, /* den */ number ]
+    try_get_fnumber(): number
+    try_get_focal_length(): number
+    try_get_gps_altitude(): [ /* returnType */ boolean, /* altitude */ number ]
+    try_get_gps_info(): [ /* returnType */ boolean, /* longitude */ number, /* latitude */ number, /* altitude */ number ]
+    try_get_gps_latitude(): [ /* returnType */ boolean, /* latitude */ number ]
+    try_get_gps_longitude(): [ /* returnType */ boolean, /* longitude */ number ]
+    try_get_iso_speed(): number
+    try_get_metadata_pixel_height(): number
+    try_get_metadata_pixel_width(): number
+    try_get_orientation(): Orientation
+    try_get_preview_image(props: PreviewProperties): PreviewImage
+    try_get_tag_interpreted_string(tag: string): string | null
+    try_get_tag_long(tag: string): number
+    try_get_tag_multiple(tag: string): string[] | null
+    try_get_tag_raw(tag: string): GLib.Bytes | null
+    try_get_tag_string(tag: string): string | null
+    try_get_xmp_packet(): string | null
+    try_has_tag(tag: string): boolean
+    try_set_comment(comment: string): void
+    try_set_exif_tag_rational(tag: string, nom: number, den: number): boolean
+    try_set_exif_thumbnail_from_buffer(buffer: Uint8Array[]): void
+    try_set_gps_info(longitude: number, latitude: number, altitude: number): boolean
+    try_set_metadata_pixel_height(height: number): void
+    try_set_metadata_pixel_width(width: number): void
+    try_set_orientation(orientation: Orientation): void
+    try_set_tag_long(tag: string, value: number): boolean
+    try_set_tag_multiple(tag: string, values: string[]): boolean
+    try_set_tag_string(tag: string, value: string): boolean
+    try_set_xmp_tag_struct(tag: string, type: StructureType): boolean
+    try_tag_supports_multiple_values(tag: string): boolean
+    try_update_gps_info(longitude: number, latitude: number, altitude: number): boolean
     update_gps_info(longitude: number, latitude: number, altitude: number): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -145,21 +185,21 @@ export class Metadata {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Metadata, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Metadata, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -175,38 +215,47 @@ export class Metadata {
     static get_tag_description(tag: string): string | null
     static get_tag_label(tag: string): string | null
     static get_tag_type(tag: string): string | null
+    static get_xmp_namespace_for_tag(tag: string): string
     static is_exif_tag(tag: string): boolean
     static is_iptc_tag(tag: string): boolean
     static is_xmp_tag(tag: string): boolean
     static register_xmp_namespace(name: string, prefix: string): boolean
+    static try_get_tag_description(tag: string): string | null
+    static try_get_tag_label(tag: string): string | null
+    static try_get_tag_type(tag: string): string | null
+    static try_get_xmp_namespace_for_tag(tag: string): string
+    static try_register_xmp_namespace(name: string, prefix: string): boolean
+    static try_unregister_all_xmp_namespaces(): void
+    static try_unregister_xmp_namespace(name: string): boolean
     static unregister_all_xmp_namespaces(): void
     static unregister_xmp_namespace(name: string): boolean
     static $gtype: GObject.Type
 }
 export interface PreviewImage_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class PreviewImage {
-    /* Fields of GExiv2.PreviewImage */
+class PreviewImage {
+    /* Fields of GExiv2-0.10.GExiv2.PreviewImage */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GExiv2.PreviewImage */
+    /* Methods of GExiv2-0.10.GExiv2.PreviewImage */
     free(): void
     get_data(): Uint8Array[]
     get_extension(): string
     get_height(): number
     get_mime_type(): string
     get_width(): number
+    try_write_file(path: string): number
     write_file(path: string): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -214,21 +263,21 @@ export class PreviewImage {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PreviewImage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PreviewImage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -243,26 +292,26 @@ export class PreviewImage {
 }
 export interface PreviewProperties_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class PreviewProperties {
-    /* Fields of GExiv2.PreviewProperties */
+class PreviewProperties {
+    /* Fields of GExiv2-0.10.GExiv2.PreviewProperties */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GExiv2.PreviewProperties */
+    /* Methods of GExiv2-0.10.GExiv2.PreviewProperties */
     get_extension(): string
     get_height(): number
     get_mime_type(): string
     get_size(): number
     get_width(): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -270,21 +319,21 @@ export class PreviewProperties {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PreviewProperties, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PreviewProperties, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -297,27 +346,29 @@ export class PreviewProperties {
     _init (config?: PreviewProperties_ConstructProps): void
     static $gtype: GObject.Type
 }
-export abstract class MetadataClass {
-    /* Fields of GExiv2.MetadataClass */
+abstract class MetadataClass {
+    /* Fields of GExiv2-0.10.GExiv2.MetadataClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class MetadataPrivate {
+class MetadataPrivate {
     static name: string
 }
-export abstract class PreviewImageClass {
-    /* Fields of GExiv2.PreviewImageClass */
+abstract class PreviewImageClass {
+    /* Fields of GExiv2-0.10.GExiv2.PreviewImageClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class PreviewImagePrivate {
+class PreviewImagePrivate {
     static name: string
 }
-export abstract class PreviewPropertiesClass {
-    /* Fields of GExiv2.PreviewPropertiesClass */
+abstract class PreviewPropertiesClass {
+    /* Fields of GExiv2-0.10.GExiv2.PreviewPropertiesClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class PreviewPropertiesPrivate {
+class PreviewPropertiesPrivate {
     static name: string
 }
+}
+export default GExiv2;

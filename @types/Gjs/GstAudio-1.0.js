@@ -1,2 +1,2 @@
-imports.gi.versions.GstAudio = '1.0'
-export default imports.gi.GstAudio
+import GstAudio from 'gi://GstAudio?version=1.0';
+export default GstAudio;

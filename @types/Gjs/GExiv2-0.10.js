@@ -1,2 +1,2 @@
-imports.gi.versions.GExiv2 = '0.10'
-export default imports.gi.GExiv2
+import GExiv2 from 'gi://GExiv2?version=0.10';
+export default GExiv2;

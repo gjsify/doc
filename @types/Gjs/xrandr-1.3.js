@@ -1,2 +1,2 @@
-imports.gi.versions.xrandr = '1.3'
-export default imports.gi.xrandr
+import xrandr from 'gi://xrandr?version=1.3';
+export default xrandr;

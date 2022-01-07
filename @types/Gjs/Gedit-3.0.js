@@ -1,2 +1,2 @@
-imports.gi.versions.Gedit = '3.0'
-export default imports.gi.Gedit
+import Gedit from 'gi://Gedit?version=3.0';
+export default Gedit;

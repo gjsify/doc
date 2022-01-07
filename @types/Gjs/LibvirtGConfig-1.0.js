@@ -1,2 +1,2 @@
-imports.gi.versions.LibvirtGConfig = '1.0'
-export default imports.gi.LibvirtGConfig
+import LibvirtGConfig from 'gi://LibvirtGConfig?version=1.0';
+export default LibvirtGConfig;

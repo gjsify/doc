@@ -3,29 +3,31 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as libxml2 from './libxml2-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type libxml2 from './libxml2-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum DeviceDriverSigningReq {
+export namespace Libosinfo {
+
+enum DeviceDriverSigningReq {
     NONE,
     STRICT,
     WARN,
 }
-export enum Error {
+enum Error {
     GENERIC,
 }
-export enum InstallConfigParamPolicy {
+enum InstallConfigParamPolicy {
     NONE,
     REQUIRED,
     OPTIONAL,
 }
-export enum InstallScriptInstallationSource {
+enum InstallScriptInstallationSource {
     MEDIA,
     NETWORK,
 }
-export enum MediaError {
+enum MediaError {
     NO_DESCRIPTORS,
     NO_PVD,
     NO_SVD,
@@ -33,33 +35,33 @@ export enum MediaError {
     NOT_BOOTABLE,
     NO_DIRECTORY_RECORD_EXTENT,
 }
-export enum PathFormat {
+enum PathFormat {
     UNIX,
     DOS,
 }
-export enum ProductRelationship {
+enum ProductRelationship {
     DERIVES_FROM,
     UPGRADES,
     CLONES,
 }
-export enum ReleaseStatus {
+enum ReleaseStatus {
     RELEASED,
     SNAPSHOT,
     PRERELEASE,
     ROLLING,
 }
-export enum TreeError {
+enum TreeError {
     NO_TREEINFO,
     NOT_SUPPORTED_PROTOCOL,
 }
-export enum InstallScriptInjectionMethod {
+enum InstallScriptInjectionMethod {
     CDROM,
     DISK,
     FLOPPY,
     INITRD,
     WEB,
 }
-export enum MediaDetectFlags {
+enum MediaDetectFlags {
     BOOTABLE,
 }
 export const ARCHITECTURE_ALL: string
@@ -193,30 +195,30 @@ export const TREE_PROP_TREEINFO_VARIANT: string
 export const TREE_PROP_TREEINFO_VERSION: string
 export const TREE_PROP_URL: string
 export const TREE_PROP_VARIANT: string
-export function error_quark(): GLib.Quark
-export function media_error_quark(): GLib.Quark
-export function tree_error_quark(): GLib.Quark
+function error_quark(): GLib.Quark
+function media_error_quark(): GLib.Quark
+function tree_error_quark(): GLib.Quark
 export interface AvatarFormat_ConstructProps extends Entity_ConstructProps {
 }
-export class AvatarFormat {
-    /* Properties of Libosinfo.AvatarFormat */
+class AvatarFormat {
+    /* Properties of Libosinfo-1.0.Libosinfo.AvatarFormat */
     readonly alpha: boolean
     readonly height: number
     readonly mime_types: string[]
     readonly width: number
-    /* Properties of Libosinfo.Entity */
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.AvatarFormat */
+    /* Fields of Libosinfo-1.0.Libosinfo.AvatarFormat */
     parent_instance: Entity
     priv: AvatarFormatPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.AvatarFormat */
+    /* Methods of Libosinfo-1.0.Libosinfo.AvatarFormat */
     get_alpha(): boolean
     get_height(): number
     get_mime_types(): string[]
     get_width(): number
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -232,15 +234,15 @@ export class AvatarFormat {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -248,21 +250,21 @@ export class AvatarFormat {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AvatarFormat, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AvatarFormat, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -289,19 +291,19 @@ export class AvatarFormat {
 }
 export interface Datamap_ConstructProps extends Entity_ConstructProps {
 }
-export class Datamap {
-    /* Properties of Libosinfo.Entity */
+class Datamap {
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.Datamap */
+    /* Fields of Libosinfo-1.0.Libosinfo.Datamap */
     parent_instance: Entity
     priv: DatamapPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Datamap */
+    /* Methods of Libosinfo-1.0.Libosinfo.Datamap */
     insert(inval: string, outval: string): void
     lookup(inval: string): string
     reverse_lookup(outval: string): string
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -317,15 +319,15 @@ export class Datamap {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -333,21 +335,21 @@ export class Datamap {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Datamap, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Datamap, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -366,13 +368,13 @@ export class Datamap {
 }
 export interface DatamapList_ConstructProps extends List_ConstructProps {
 }
-export class DatamapList {
-    /* Fields of Libosinfo.DatamapList */
+class DatamapList {
+    /* Fields of Libosinfo-1.0.Libosinfo.DatamapList */
     parent_instance: List
     priv: DatamapListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -387,15 +389,15 @@ export class DatamapList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -403,21 +405,21 @@ export class DatamapList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DatamapList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DatamapList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -434,13 +436,13 @@ export class DatamapList {
 }
 export interface Db_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Db {
-    /* Fields of Libosinfo.Db */
+class Db {
+    /* Fields of Libosinfo-1.0.Libosinfo.Db */
     parent_instance: GObject.Object
     priv: DbPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Db */
+    /* Methods of Libosinfo-1.0.Libosinfo.Db */
     add_datamap(datamap: Datamap): void
     add_deployment(deployment: Deployment): void
     add_device(device: Device): void
@@ -470,15 +472,15 @@ export class Db {
     unique_values_for_property_in_device(propName: string): string[]
     unique_values_for_property_in_os(propName: string): string[]
     unique_values_for_property_in_platform(propName: string): string[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -486,21 +488,21 @@ export class Db {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Db, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Db, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -519,15 +521,15 @@ export interface Deployment_ConstructProps extends Entity_ConstructProps {
     os?: Os
     platform?: Platform
 }
-export class Deployment {
-    /* Properties of Libosinfo.Entity */
+class Deployment {
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.Deployment */
+    /* Fields of Libosinfo-1.0.Libosinfo.Deployment */
     parent_instance: Entity
     priv: DeploymentPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Deployment */
+    /* Methods of Libosinfo-1.0.Libosinfo.Deployment */
     add_device(dev: Device): DeviceLink
     get_device_links(filter?: Filter | null): DeviceLinkList
     get_devices(filter?: Filter | null): DeviceList
@@ -535,7 +537,7 @@ export class Deployment {
     get_platform(): Platform
     get_preferred_device(filter?: Filter | null): Device
     get_preferred_device_link(filter?: Filter | null): DeviceLink
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -551,15 +553,15 @@ export class Deployment {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -567,21 +569,21 @@ export class Deployment {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Deployment, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Deployment, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -600,18 +602,18 @@ export class Deployment {
 }
 export interface DeploymentList_ConstructProps extends List_ConstructProps {
 }
-export class DeploymentList {
-    /* Fields of Libosinfo.DeploymentList */
+class DeploymentList {
+    /* Fields of Libosinfo-1.0.Libosinfo.DeploymentList */
     parent_instance: List
     priv: DeploymentListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.DeploymentList */
+    /* Methods of Libosinfo-1.0.Libosinfo.DeploymentList */
     new_copy(): DeploymentList
     new_filtered(filter: Filter): DeploymentList
     new_intersection(sourceTwo: DeploymentList): DeploymentList
     new_union(sourceTwo: DeploymentList): DeploymentList
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -626,15 +628,15 @@ export class DeploymentList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -642,21 +644,21 @@ export class DeploymentList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DeploymentList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeploymentList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -673,15 +675,15 @@ export class DeploymentList {
 }
 export interface Device_ConstructProps extends Entity_ConstructProps {
 }
-export class Device {
-    /* Properties of Libosinfo.Entity */
+class Device {
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.Device */
+    /* Fields of Libosinfo-1.0.Libosinfo.Device */
     parent_instance: Entity
     priv: DevicePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Device */
+    /* Methods of Libosinfo-1.0.Libosinfo.Device */
     get_bus_type(): string
     get_class(): string
     get_name(): string
@@ -690,7 +692,7 @@ export class Device {
     get_subsystem(): string
     get_vendor(): string
     get_vendor_id(): string
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -706,15 +708,15 @@ export class Device {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -722,21 +724,21 @@ export class Device {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -755,15 +757,15 @@ export class Device {
 }
 export interface DeviceDriver_ConstructProps extends Entity_ConstructProps {
 }
-export class DeviceDriver {
-    /* Properties of Libosinfo.Entity */
+class DeviceDriver {
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.DeviceDriver */
+    /* Fields of Libosinfo-1.0.Libosinfo.DeviceDriver */
     parent_instance: Entity
     priv: DeviceDriverPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.DeviceDriver */
+    /* Methods of Libosinfo-1.0.Libosinfo.DeviceDriver */
     get_architecture(): string
     get_devices(): DeviceList
     get_files(): string[]
@@ -771,7 +773,7 @@ export class DeviceDriver {
     get_pre_installable(): boolean
     get_priority(): number
     get_signed(): boolean
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -787,15 +789,15 @@ export class DeviceDriver {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -803,21 +805,21 @@ export class DeviceDriver {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DeviceDriver, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceDriver, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -834,13 +836,13 @@ export class DeviceDriver {
 }
 export interface DeviceDriverList_ConstructProps extends List_ConstructProps {
 }
-export class DeviceDriverList {
-    /* Fields of Libosinfo.DeviceDriverList */
+class DeviceDriverList {
+    /* Fields of Libosinfo-1.0.Libosinfo.DeviceDriverList */
     parent_instance: List
     priv: DeviceDriverListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -855,15 +857,15 @@ export class DeviceDriverList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -871,21 +873,21 @@ export class DeviceDriverList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DeviceDriverList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceDriverList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -903,18 +905,18 @@ export class DeviceDriverList {
 export interface DeviceLink_ConstructProps extends Entity_ConstructProps {
     target?: Device
 }
-export class DeviceLink {
-    /* Properties of Libosinfo.Entity */
+class DeviceLink {
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.DeviceLink */
+    /* Fields of Libosinfo-1.0.Libosinfo.DeviceLink */
     parent_instance: Entity
     priv: DeviceLinkPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.DeviceLink */
+    /* Methods of Libosinfo-1.0.Libosinfo.DeviceLink */
     get_driver(): string
     get_target(): Device
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -930,15 +932,15 @@ export class DeviceLink {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -946,21 +948,21 @@ export class DeviceLink {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DeviceLink, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceLink, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -980,30 +982,30 @@ export class DeviceLink {
 export interface DeviceLinkFilter_ConstructProps extends Filter_ConstructProps {
     target_filter?: Filter
 }
-export class DeviceLinkFilter {
-    /* Fields of Libosinfo.DeviceLinkFilter */
+class DeviceLinkFilter {
+    /* Fields of Libosinfo-1.0.Libosinfo.DeviceLinkFilter */
     parent_instance: Filter
     priv: DeviceLinkFilterPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.DeviceLinkFilter */
+    /* Methods of Libosinfo-1.0.Libosinfo.DeviceLinkFilter */
     get_target_filter(): Filter
-    /* Methods of Libosinfo.Filter */
+    /* Methods of Libosinfo-1.0.Libosinfo.Filter */
     add_constraint(propName: string, propVal: string): void
     clear_constraint(propName: string): void
     clear_constraints(): void
     get_constraint_keys(): string[]
     get_constraint_values(propName: string): string[]
     matches(entity: Entity): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1011,23 +1013,23 @@ export class DeviceLinkFilter {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Libosinfo.Filter */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Libosinfo-1.0.Libosinfo.Filter */
     vfunc_matches(entity: Entity): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DeviceLinkFilter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceLinkFilter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1045,19 +1047,19 @@ export class DeviceLinkFilter {
 }
 export interface DeviceLinkList_ConstructProps extends List_ConstructProps {
 }
-export class DeviceLinkList {
-    /* Fields of Libosinfo.DeviceLinkList */
+class DeviceLinkList {
+    /* Fields of Libosinfo-1.0.Libosinfo.DeviceLinkList */
     parent_instance: List
     priv: DeviceLinkListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.DeviceLinkList */
+    /* Methods of Libosinfo-1.0.Libosinfo.DeviceLinkList */
     get_devices(filter?: Filter | null): DeviceList
     new_copy(): DeviceLinkList
     new_filtered(filter: Filter): DeviceLinkList
     new_intersection(sourceTwo: DeviceLinkList): DeviceLinkList
     new_union(sourceTwo: DeviceLinkList): DeviceLinkList
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -1072,15 +1074,15 @@ export class DeviceLinkList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1088,21 +1090,21 @@ export class DeviceLinkList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DeviceLinkList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceLinkList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1119,18 +1121,18 @@ export class DeviceLinkList {
 }
 export interface DeviceList_ConstructProps extends List_ConstructProps {
 }
-export class DeviceList {
-    /* Fields of Libosinfo.DeviceList */
+class DeviceList {
+    /* Fields of Libosinfo-1.0.Libosinfo.DeviceList */
     parent_instance: List
     priv: DeviceListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.DeviceList */
+    /* Methods of Libosinfo-1.0.Libosinfo.DeviceList */
     new_copy(): DeviceList
     new_filtered(filter: Filter): DeviceList
     new_intersection(sourceTwo: DeviceList): DeviceList
     new_union(sourceTwo: DeviceList): DeviceList
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -1145,15 +1147,15 @@ export class DeviceList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1161,21 +1163,21 @@ export class DeviceList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DeviceList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1193,15 +1195,15 @@ export class DeviceList {
 export interface Entity_ConstructProps extends GObject.Object_ConstructProps {
     id?: string
 }
-export class Entity {
-    /* Properties of Libosinfo.Entity */
+class Entity {
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.Entity */
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
     parent_instance: GObject.Object
     priv: EntityPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -1217,15 +1219,15 @@ export class Entity {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1233,21 +1235,21 @@ export class Entity {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Entity, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Entity, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1264,28 +1266,28 @@ export class Entity {
 }
 export interface Filter_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Filter {
-    /* Fields of Libosinfo.Filter */
+class Filter {
+    /* Fields of Libosinfo-1.0.Libosinfo.Filter */
     parent_instance: GObject.Object
     priv: FilterPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Filter */
+    /* Methods of Libosinfo-1.0.Libosinfo.Filter */
     add_constraint(propName: string, propVal: string): void
     clear_constraint(propName: string): void
     clear_constraints(): void
     get_constraint_keys(): string[]
     get_constraint_values(propName: string): string[]
     matches(entity: Entity): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1293,23 +1295,23 @@ export class Filter {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Libosinfo.Filter */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Libosinfo-1.0.Libosinfo.Filter */
     vfunc_matches(entity: Entity): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Filter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Filter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1328,22 +1330,22 @@ export interface Firmware_ConstructProps extends Entity_ConstructProps {
     architecture?: string
     type?: string
 }
-export class Firmware {
-    /* Properties of Libosinfo.Firmware */
+class Firmware {
+    /* Properties of Libosinfo-1.0.Libosinfo.Firmware */
     architecture: string
     type: string
-    /* Properties of Libosinfo.Entity */
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.Firmware */
+    /* Fields of Libosinfo-1.0.Libosinfo.Firmware */
     parent_instance: Entity
     priv: FirmwarePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Firmware */
+    /* Methods of Libosinfo-1.0.Libosinfo.Firmware */
     get_architecture(): string
     get_firmware_type(): string
     is_supported(): boolean
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -1359,15 +1361,15 @@ export class Firmware {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1375,21 +1377,21 @@ export class Firmware {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Firmware, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Firmware, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1412,13 +1414,13 @@ export class Firmware {
 }
 export interface FirmwareList_ConstructProps extends List_ConstructProps {
 }
-export class FirmwareList {
-    /* Fields of Libosinfo.FirmwareList */
+class FirmwareList {
+    /* Fields of Libosinfo-1.0.Libosinfo.FirmwareList */
     parent_instance: List
     priv: FirmwareListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -1433,15 +1435,15 @@ export class FirmwareList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1449,21 +1451,21 @@ export class FirmwareList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FirmwareList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FirmwareList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1484,20 +1486,20 @@ export interface Image_ConstructProps extends Entity_ConstructProps {
     format?: string
     url?: string
 }
-export class Image {
-    /* Properties of Libosinfo.Image */
+class Image {
+    /* Properties of Libosinfo-1.0.Libosinfo.Image */
     architecture: string
     cloud_init: string
     format: string
     url: string
-    /* Properties of Libosinfo.Entity */
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.Image */
+    /* Fields of Libosinfo-1.0.Libosinfo.Image */
     parent_instance: Entity
     priv: ImagePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Image */
+    /* Methods of Libosinfo-1.0.Libosinfo.Image */
     get_architecture(): string
     get_cloud_init(): boolean
     get_format(): string
@@ -1505,7 +1507,7 @@ export class Image {
     get_os_variants(): OsVariantList
     get_url(): string
     set_os(os: Os): void
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -1521,15 +1523,15 @@ export class Image {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1537,21 +1539,21 @@ export class Image {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Image, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Image, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1578,13 +1580,13 @@ export class Image {
 }
 export interface ImageList_ConstructProps extends List_ConstructProps {
 }
-export class ImageList {
-    /* Fields of Libosinfo.ImageList */
+class ImageList {
+    /* Fields of Libosinfo-1.0.Libosinfo.ImageList */
     parent_instance: List
     priv: ImageListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -1599,15 +1601,15 @@ export class ImageList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1615,21 +1617,21 @@ export class ImageList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ImageList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ImageList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1646,15 +1648,15 @@ export class ImageList {
 }
 export interface InstallConfig_ConstructProps extends Entity_ConstructProps {
 }
-export class InstallConfig {
-    /* Properties of Libosinfo.Entity */
+class InstallConfig {
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.InstallConfig */
+    /* Fields of Libosinfo-1.0.Libosinfo.InstallConfig */
     parent_instance: Entity
     priv: InstallConfigPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.InstallConfig */
+    /* Methods of Libosinfo-1.0.Libosinfo.InstallConfig */
     get_admin_password(): string
     get_avatar_disk(): string
     get_avatar_location(): string
@@ -1703,7 +1705,7 @@ export class InstallConfig {
     set_user_login(username: string): void
     set_user_password(password: string): void
     set_user_realname(name: string): void
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -1719,15 +1721,15 @@ export class InstallConfig {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1735,21 +1737,21 @@ export class InstallConfig {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InstallConfig, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InstallConfig, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1770,25 +1772,25 @@ export interface InstallConfigParam_ConstructProps extends Entity_ConstructProps
     name?: string
     value_map?: Datamap
 }
-export class InstallConfigParam {
-    /* Properties of Libosinfo.InstallConfigParam */
+class InstallConfigParam {
+    /* Properties of Libosinfo-1.0.Libosinfo.InstallConfigParam */
     readonly policy: InstallConfigParamPolicy
     value_map: Datamap
-    /* Properties of Libosinfo.Entity */
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.InstallConfigParam */
+    /* Fields of Libosinfo-1.0.Libosinfo.InstallConfigParam */
     parent_instance: Entity
     priv: InstallConfigParamPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.InstallConfigParam */
+    /* Methods of Libosinfo-1.0.Libosinfo.InstallConfigParam */
     get_name(): string
     get_policy(): InstallConfigParamPolicy
     get_value_map(): Datamap
     is_optional(): boolean
     is_required(): boolean
     set_value_map(datamap: Datamap): void
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -1804,15 +1806,15 @@ export class InstallConfigParam {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1820,21 +1822,21 @@ export class InstallConfigParam {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InstallConfigParam, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InstallConfigParam, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1857,13 +1859,13 @@ export class InstallConfigParam {
 }
 export interface InstallConfigParamList_ConstructProps extends List_ConstructProps {
 }
-export class InstallConfigParamList {
-    /* Fields of Libosinfo.InstallConfigParamList */
+class InstallConfigParamList {
+    /* Fields of Libosinfo-1.0.Libosinfo.InstallConfigParamList */
     parent_instance: List
     priv: InstallConfigParamListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -1878,15 +1880,15 @@ export class InstallConfigParamList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1894,21 +1896,21 @@ export class InstallConfigParamList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InstallConfigParamList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InstallConfigParamList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1929,21 +1931,21 @@ export interface InstallScript_ConstructProps extends Entity_ConstructProps {
     template_data?: string
     template_uri?: string
 }
-export class InstallScript {
-    /* Properties of Libosinfo.InstallScript */
+class InstallScript {
+    /* Properties of Libosinfo-1.0.Libosinfo.InstallScript */
     readonly avatar_format: AvatarFormat
     readonly installation_source: InstallScriptInstallationSource
     readonly path_format: PathFormat
     preferred_injection_method: InstallScriptInjectionMethod
     readonly product_key_format: string
-    /* Properties of Libosinfo.Entity */
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.InstallScript */
+    /* Fields of Libosinfo-1.0.Libosinfo.InstallScript */
     parent_instance: Entity
     priv: InstallScriptPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.InstallScript */
+    /* Methods of Libosinfo-1.0.Libosinfo.InstallScript */
     generate(os: Os, config: InstallConfig, cancellable?: Gio.Cancellable | null): string
     generate_async(os: Os, config: InstallConfig, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     generate_command_line(os: Os, config: InstallConfig): string
@@ -1990,7 +1992,7 @@ export class InstallScript {
     set_installation_source(source: InstallScriptInstallationSource): void
     set_output_prefix(prefix: string): void
     set_preferred_injection_method(method: InstallScriptInjectionMethod): void
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -2006,15 +2008,15 @@ export class InstallScript {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2022,21 +2024,21 @@ export class InstallScript {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InstallScript, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InstallScript, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2067,18 +2069,18 @@ export class InstallScript {
 }
 export interface InstallScriptList_ConstructProps extends List_ConstructProps {
 }
-export class InstallScriptList {
-    /* Fields of Libosinfo.InstallScriptList */
+class InstallScriptList {
+    /* Fields of Libosinfo-1.0.Libosinfo.InstallScriptList */
     parent_instance: List
     priv: InstallScriptListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.InstallScriptList */
+    /* Methods of Libosinfo-1.0.Libosinfo.InstallScriptList */
     new_copy(): InstallScriptList
     new_filtered(filter: Filter): InstallScriptList
     new_intersection(sourceTwo: InstallScriptList): InstallScriptList
     new_union(sourceTwo: InstallScriptList): InstallScriptList
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -2093,15 +2095,15 @@ export class InstallScriptList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2109,21 +2111,21 @@ export class InstallScriptList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InstallScriptList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InstallScriptList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2141,13 +2143,13 @@ export class InstallScriptList {
 export interface List_ConstructProps extends GObject.Object_ConstructProps {
     element_type?: GObject.Type
 }
-export class List {
-    /* Fields of Libosinfo.List */
+class List {
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
     parent_instance: GObject.Object
     priv: ListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -2162,15 +2164,15 @@ export class List {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2178,21 +2180,21 @@ export class List {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: List, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: List, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2207,13 +2209,13 @@ export class List {
 }
 export interface Loader_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Loader {
-    /* Fields of Libosinfo.Loader */
+class Loader {
+    /* Fields of Libosinfo-1.0.Libosinfo.Loader */
     parent_instance: GObject.Object
     priv: LoaderPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Loader */
+    /* Methods of Libosinfo-1.0.Libosinfo.Loader */
     get_db(): Db
     process_default_path(): void
     process_local_path(): void
@@ -2221,15 +2223,15 @@ export class Loader {
     process_system_path(): void
     process_uri(uri: string): void
     process_user_path(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2237,21 +2239,21 @@ export class Loader {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Loader, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Loader, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2283,8 +2285,8 @@ export interface Media_ConstructProps extends Entity_ConstructProps {
     volume_id?: string
     volume_size?: number
 }
-export class Media {
-    /* Properties of Libosinfo.Media */
+class Media {
+    /* Properties of Libosinfo-1.0.Libosinfo.Media */
     application_id: string
     architecture: string
     eject_after_install: boolean
@@ -2301,14 +2303,14 @@ export class Media {
     url: string
     volume_id: string
     volume_size: number
-    /* Properties of Libosinfo.Entity */
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.Media */
+    /* Fields of Libosinfo-1.0.Libosinfo.Media */
     parent_instance: Entity
     priv: MediaPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Media */
+    /* Methods of Libosinfo-1.0.Libosinfo.Media */
     add_install_script(script: InstallScript): void
     get_application_id(): string
     get_architecture(): string
@@ -2329,7 +2331,7 @@ export class Media {
     get_volume_size(): number
     is_bootable(): boolean
     supports_installer_script(): boolean
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -2345,15 +2347,15 @@ export class Media {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2361,21 +2363,21 @@ export class Media {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Media, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Media, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2432,18 +2434,18 @@ export class Media {
 }
 export interface MediaList_ConstructProps extends List_ConstructProps {
 }
-export class MediaList {
-    /* Fields of Libosinfo.MediaList */
+class MediaList {
+    /* Fields of Libosinfo-1.0.Libosinfo.MediaList */
     parent_instance: List
     priv: MediaListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.MediaList */
+    /* Methods of Libosinfo-1.0.Libosinfo.MediaList */
     new_copy(): MediaList
     new_filtered(filter: Filter): MediaList
     new_intersection(sourceTwo: MediaList): MediaList
     new_union(sourceTwo: MediaList): MediaList
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -2458,15 +2460,15 @@ export class MediaList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2474,21 +2476,21 @@ export class MediaList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MediaList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MediaList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2505,27 +2507,27 @@ export class MediaList {
 }
 export interface Os_ConstructProps extends Product_ConstructProps {
 }
-export class Os {
-    /* Properties of Libosinfo.Os */
+class Os {
+    /* Properties of Libosinfo-1.0.Libosinfo.Os */
     readonly cloud_image_username: string
     readonly distro: string
     readonly family: string
     readonly kernel_url_argument: string
-    /* Properties of Libosinfo.Product */
+    /* Properties of Libosinfo-1.0.Libosinfo.Product */
     readonly codename: string
     readonly logo: string
     readonly name: string
     readonly short_id: string
     readonly vendor: string
     readonly version: string
-    /* Properties of Libosinfo.Entity */
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.Os */
+    /* Fields of Libosinfo-1.0.Libosinfo.Os */
     parent_instance: Product
     priv: OsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Os */
+    /* Methods of Libosinfo-1.0.Libosinfo.Os */
     add_device(dev: Device): DeviceLink
     add_device_driver(driver: DeviceDriver): void
     add_firmware(firmware: Firmware): void
@@ -2561,7 +2563,7 @@ export class Os {
     get_release_status(): ReleaseStatus
     get_tree_list(): TreeList
     get_variant_list(): OsVariantList
-    /* Methods of Libosinfo.Product */
+    /* Methods of Libosinfo-1.0.Libosinfo.Product */
     add_related(relshp: ProductRelationship, otherproduct: Product): void
     get_codename(): string
     get_eol_date(): GLib.Date
@@ -2575,7 +2577,7 @@ export class Os {
     get_short_id_list(): string[]
     get_vendor(): string
     get_version(): string
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -2591,15 +2593,15 @@ export class Os {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2607,21 +2609,21 @@ export class Os {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Os, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Os, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2660,23 +2662,23 @@ export class Os {
 }
 export interface OsList_ConstructProps extends ProductList_ConstructProps {
 }
-export class OsList {
-    /* Fields of Libosinfo.OsList */
+class OsList {
+    /* Fields of Libosinfo-1.0.Libosinfo.OsList */
     parent_instance: ProductList
     priv: OsListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.OsList */
+    /* Methods of Libosinfo-1.0.Libosinfo.OsList */
     new_copy(): OsList
     new_filtered(filter: Filter): OsList
     new_intersection(sourceTwo: OsList): OsList
     new_union(sourceTwo: OsList): OsList
-    /* Methods of Libosinfo.ProductList */
+    /* Methods of Libosinfo-1.0.Libosinfo.ProductList */
     new_copy(): ProductList
     new_filtered(filter: Filter): ProductList
     new_intersection(sourceTwo: ProductList): ProductList
     new_union(sourceTwo: ProductList): ProductList
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -2691,15 +2693,15 @@ export class OsList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2707,21 +2709,21 @@ export class OsList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OsList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OsList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2739,19 +2741,19 @@ export class OsList {
 export interface OsVariant_ConstructProps extends Entity_ConstructProps {
     name?: string
 }
-export class OsVariant {
-    /* Properties of Libosinfo.OsVariant */
+class OsVariant {
+    /* Properties of Libosinfo-1.0.Libosinfo.OsVariant */
     name: string
-    /* Properties of Libosinfo.Entity */
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.OsVariant */
+    /* Fields of Libosinfo-1.0.Libosinfo.OsVariant */
     parent_instance: Entity
     priv: OsVariantPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.OsVariant */
+    /* Methods of Libosinfo-1.0.Libosinfo.OsVariant */
     get_name(): string
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -2767,15 +2769,15 @@ export class OsVariant {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2783,21 +2785,21 @@ export class OsVariant {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OsVariant, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OsVariant, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2818,13 +2820,13 @@ export class OsVariant {
 }
 export interface OsVariantList_ConstructProps extends List_ConstructProps {
 }
-export class OsVariantList {
-    /* Fields of Libosinfo.OsVariantList */
+class OsVariantList {
+    /* Fields of Libosinfo-1.0.Libosinfo.OsVariantList */
     parent_instance: List
     priv: OsVariantListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -2839,15 +2841,15 @@ export class OsVariantList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2855,21 +2857,21 @@ export class OsVariantList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OsVariantList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OsVariantList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2886,27 +2888,27 @@ export class OsVariantList {
 }
 export interface Platform_ConstructProps extends Product_ConstructProps {
 }
-export class Platform {
-    /* Properties of Libosinfo.Product */
+class Platform {
+    /* Properties of Libosinfo-1.0.Libosinfo.Product */
     readonly codename: string
     readonly logo: string
     readonly name: string
     readonly short_id: string
     readonly vendor: string
     readonly version: string
-    /* Properties of Libosinfo.Entity */
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.Platform */
+    /* Fields of Libosinfo-1.0.Libosinfo.Platform */
     parent_instance: Product
     priv: PlatformPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Platform */
+    /* Methods of Libosinfo-1.0.Libosinfo.Platform */
     add_device(dev: Device): DeviceLink
     get_all_devices(filter?: Filter | null): DeviceList
     get_device_links(filter?: Filter | null): DeviceLinkList
     get_devices(filter?: Filter | null): DeviceList
-    /* Methods of Libosinfo.Product */
+    /* Methods of Libosinfo-1.0.Libosinfo.Product */
     add_related(relshp: ProductRelationship, otherproduct: Product): void
     get_codename(): string
     get_eol_date(): GLib.Date
@@ -2920,7 +2922,7 @@ export class Platform {
     get_short_id_list(): string[]
     get_vendor(): string
     get_version(): string
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -2936,15 +2938,15 @@ export class Platform {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2952,21 +2954,21 @@ export class Platform {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Platform, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Platform, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2997,23 +2999,23 @@ export class Platform {
 }
 export interface PlatformList_ConstructProps extends ProductList_ConstructProps {
 }
-export class PlatformList {
-    /* Fields of Libosinfo.PlatformList */
+class PlatformList {
+    /* Fields of Libosinfo-1.0.Libosinfo.PlatformList */
     parent_instance: ProductList
     priv: PlatformListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.PlatformList */
+    /* Methods of Libosinfo-1.0.Libosinfo.PlatformList */
     new_copy(): PlatformList
     new_filtered(filter: Filter): PlatformList
     new_intersection(sourceTwo: PlatformList): PlatformList
     new_union(sourceTwo: PlatformList): PlatformList
-    /* Methods of Libosinfo.ProductList */
+    /* Methods of Libosinfo-1.0.Libosinfo.ProductList */
     new_copy(): ProductList
     new_filtered(filter: Filter): ProductList
     new_intersection(sourceTwo: ProductList): ProductList
     new_union(sourceTwo: ProductList): ProductList
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -3028,15 +3030,15 @@ export class PlatformList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3044,21 +3046,21 @@ export class PlatformList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PlatformList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PlatformList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3075,22 +3077,22 @@ export class PlatformList {
 }
 export interface Product_ConstructProps extends Entity_ConstructProps {
 }
-export class Product {
-    /* Properties of Libosinfo.Product */
+class Product {
+    /* Properties of Libosinfo-1.0.Libosinfo.Product */
     readonly codename: string
     readonly logo: string
     readonly name: string
     readonly short_id: string
     readonly vendor: string
     readonly version: string
-    /* Properties of Libosinfo.Entity */
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.Product */
+    /* Fields of Libosinfo-1.0.Libosinfo.Product */
     parent_instance: Entity
     priv: ProductPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Product */
+    /* Methods of Libosinfo-1.0.Libosinfo.Product */
     add_related(relshp: ProductRelationship, otherproduct: Product): void
     get_codename(): string
     get_eol_date(): GLib.Date
@@ -3104,7 +3106,7 @@ export class Product {
     get_short_id_list(): string[]
     get_vendor(): string
     get_version(): string
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -3120,15 +3122,15 @@ export class Product {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3136,21 +3138,21 @@ export class Product {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Product, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Product, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3179,34 +3181,34 @@ export class Product {
 }
 export interface ProductFilter_ConstructProps extends Filter_ConstructProps {
 }
-export class ProductFilter {
-    /* Fields of Libosinfo.ProductFilter */
+class ProductFilter {
+    /* Fields of Libosinfo-1.0.Libosinfo.ProductFilter */
     parent_instance: Filter
     priv: ProductFilterPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.ProductFilter */
+    /* Methods of Libosinfo-1.0.Libosinfo.ProductFilter */
     add_product_constraint(relshp: ProductRelationship, product: Product): number
     add_support_date_constraint(when: GLib.Date): void
     clear_product_constraint(relshp: ProductRelationship): void
     clear_product_constraints(): void
     get_product_constraint_values(relshp: ProductRelationship): Product[]
-    /* Methods of Libosinfo.Filter */
+    /* Methods of Libosinfo-1.0.Libosinfo.Filter */
     add_constraint(propName: string, propVal: string): void
     clear_constraint(propName: string): void
     clear_constraints(): void
     get_constraint_keys(): string[]
     get_constraint_values(propName: string): string[]
     matches(entity: Entity): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3214,23 +3216,23 @@ export class ProductFilter {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Libosinfo.Filter */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Libosinfo-1.0.Libosinfo.Filter */
     vfunc_matches(entity: Entity): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ProductFilter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ProductFilter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3247,18 +3249,18 @@ export class ProductFilter {
 }
 export interface ProductList_ConstructProps extends List_ConstructProps {
 }
-export class ProductList {
-    /* Fields of Libosinfo.ProductList */
+class ProductList {
+    /* Fields of Libosinfo-1.0.Libosinfo.ProductList */
     parent_instance: List
     priv: ProductListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.ProductList */
+    /* Methods of Libosinfo-1.0.Libosinfo.ProductList */
     new_copy(): ProductList
     new_filtered(filter: Filter): ProductList
     new_intersection(sourceTwo: ProductList): ProductList
     new_union(sourceTwo: ProductList): ProductList
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -3273,15 +3275,15 @@ export class ProductList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3289,21 +3291,21 @@ export class ProductList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ProductList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ProductList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3325,20 +3327,20 @@ export interface Resources_ConstructProps extends Entity_ConstructProps {
     ram?: number
     storage?: number
 }
-export class Resources {
-    /* Properties of Libosinfo.Resources */
+class Resources {
+    /* Properties of Libosinfo-1.0.Libosinfo.Resources */
     cpu: number
     n_cpus: number
     ram: number
     storage: number
-    /* Properties of Libosinfo.Entity */
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.Resources */
+    /* Fields of Libosinfo-1.0.Libosinfo.Resources */
     parent_instance: Entity
     priv: ResourcesPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Resources */
+    /* Methods of Libosinfo-1.0.Libosinfo.Resources */
     get_architecture(): string
     get_cpu(): number
     get_n_cpus(): number
@@ -3348,7 +3350,7 @@ export class Resources {
     set_n_cpus(n_cpus: number): void
     set_ram(ram: number): void
     set_storage(storage: number): void
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -3364,15 +3366,15 @@ export class Resources {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3380,21 +3382,21 @@ export class Resources {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Resources, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Resources, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3421,18 +3423,18 @@ export class Resources {
 }
 export interface ResourcesList_ConstructProps extends List_ConstructProps {
 }
-export class ResourcesList {
-    /* Fields of Libosinfo.ResourcesList */
+class ResourcesList {
+    /* Fields of Libosinfo-1.0.Libosinfo.ResourcesList */
     parent_instance: List
     priv: ResourcesListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.ResourcesList */
+    /* Methods of Libosinfo-1.0.Libosinfo.ResourcesList */
     new_copy(): ResourcesList
     new_filtered(filter: Filter): ResourcesList
     new_intersection(sourceTwo: ResourcesList): ResourcesList
     new_union(sourceTwo: ResourcesList): ResourcesList
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -3447,15 +3449,15 @@ export class ResourcesList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3463,21 +3465,21 @@ export class ResourcesList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ResourcesList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ResourcesList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3505,8 +3507,8 @@ export interface Tree_ConstructProps extends Entity_ConstructProps {
     treeinfo_version?: string
     url?: string
 }
-export class Tree {
-    /* Properties of Libosinfo.Tree */
+class Tree {
+    /* Properties of Libosinfo-1.0.Libosinfo.Tree */
     architecture: string
     boot_iso_path: string
     has_treeinfo: boolean
@@ -3518,14 +3520,14 @@ export class Tree {
     treeinfo_variant: string
     treeinfo_version: string
     url: string
-    /* Properties of Libosinfo.Entity */
+    /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo.Tree */
+    /* Fields of Libosinfo-1.0.Libosinfo.Tree */
     parent_instance: Entity
     priv: TreePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.Tree */
+    /* Methods of Libosinfo-1.0.Libosinfo.Tree */
     get_architecture(): string
     get_boot_iso_path(): string
     get_initrd_path(): string
@@ -3538,7 +3540,7 @@ export class Tree {
     get_treeinfo_version(): string
     get_url(): string
     set_os(os: Os): void
-    /* Methods of Libosinfo.Entity */
+    /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
     get_id(): string
@@ -3554,15 +3556,15 @@ export class Tree {
     set_param_boolean(key: string, value: boolean): void
     set_param_enum(key: string, value: number, enum_type: GObject.Type): void
     set_param_int64(key: string, value: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3570,21 +3572,21 @@ export class Tree {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Tree, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Tree, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3629,18 +3631,18 @@ export class Tree {
 }
 export interface TreeList_ConstructProps extends List_ConstructProps {
 }
-export class TreeList {
-    /* Fields of Libosinfo.TreeList */
+class TreeList {
+    /* Fields of Libosinfo-1.0.Libosinfo.TreeList */
     parent_instance: List
     priv: TreeListPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Libosinfo.TreeList */
+    /* Methods of Libosinfo-1.0.Libosinfo.TreeList */
     new_copy(): TreeList
     new_filtered(filter: Filter): TreeList
     new_intersection(sourceTwo: TreeList): TreeList
     new_union(sourceTwo: TreeList): TreeList
-    /* Methods of Libosinfo.List */
+    /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
     add_filtered(source: List, filter: Filter): void
@@ -3655,15 +3657,15 @@ export class TreeList {
     new_filtered(filter: Filter): List
     new_intersection(sourceTwo: List): List
     new_union(sourceTwo: List): List
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3671,21 +3673,21 @@ export class TreeList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TreeList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TreeList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3700,332 +3702,334 @@ export class TreeList {
     static new(): TreeList
     static $gtype: GObject.Type
 }
-export abstract class AvatarFormatClass {
-    /* Fields of Libosinfo.AvatarFormatClass */
+abstract class AvatarFormatClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.AvatarFormatClass */
     parent_class: EntityClass
     static name: string
 }
-export class AvatarFormatPrivate {
+class AvatarFormatPrivate {
     static name: string
 }
-export abstract class DatamapClass {
-    /* Fields of Libosinfo.DatamapClass */
+abstract class DatamapClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.DatamapClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class DatamapListClass {
-    /* Fields of Libosinfo.DatamapListClass */
+abstract class DatamapListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.DatamapListClass */
     parent_class: ListClass
     static name: string
 }
-export class DatamapListPrivate {
+class DatamapListPrivate {
     static name: string
 }
-export class DatamapPrivate {
+class DatamapPrivate {
     static name: string
 }
-export abstract class DbClass {
-    /* Fields of Libosinfo.DbClass */
+abstract class DbClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.DbClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class DbPrivate {
+class DbPrivate {
     static name: string
 }
-export abstract class DeploymentClass {
-    /* Fields of Libosinfo.DeploymentClass */
+abstract class DeploymentClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.DeploymentClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class DeploymentListClass {
-    /* Fields of Libosinfo.DeploymentListClass */
+abstract class DeploymentListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.DeploymentListClass */
     parent_class: ListClass
     static name: string
 }
-export class DeploymentListPrivate {
+class DeploymentListPrivate {
     static name: string
 }
-export class DeploymentPrivate {
+class DeploymentPrivate {
     static name: string
 }
-export abstract class DeviceClass {
-    /* Fields of Libosinfo.DeviceClass */
+abstract class DeviceClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.DeviceClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class DeviceDriverClass {
-    /* Fields of Libosinfo.DeviceDriverClass */
+abstract class DeviceDriverClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.DeviceDriverClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class DeviceDriverListClass {
-    /* Fields of Libosinfo.DeviceDriverListClass */
+abstract class DeviceDriverListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.DeviceDriverListClass */
     parent_class: ListClass
     static name: string
 }
-export class DeviceDriverListPrivate {
+class DeviceDriverListPrivate {
     static name: string
 }
-export class DeviceDriverPrivate {
+class DeviceDriverPrivate {
     static name: string
 }
-export abstract class DeviceLinkClass {
-    /* Fields of Libosinfo.DeviceLinkClass */
+abstract class DeviceLinkClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.DeviceLinkClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class DeviceLinkFilterClass {
-    /* Fields of Libosinfo.DeviceLinkFilterClass */
+abstract class DeviceLinkFilterClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.DeviceLinkFilterClass */
     parent_class: FilterClass
     static name: string
 }
-export class DeviceLinkFilterPrivate {
+class DeviceLinkFilterPrivate {
     static name: string
 }
-export abstract class DeviceLinkListClass {
-    /* Fields of Libosinfo.DeviceLinkListClass */
+abstract class DeviceLinkListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.DeviceLinkListClass */
     parent_class: ListClass
     static name: string
 }
-export class DeviceLinkListPrivate {
+class DeviceLinkListPrivate {
     static name: string
 }
-export class DeviceLinkPrivate {
+class DeviceLinkPrivate {
     static name: string
 }
-export abstract class DeviceListClass {
-    /* Fields of Libosinfo.DeviceListClass */
+abstract class DeviceListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.DeviceListClass */
     parent_class: ListClass
     static name: string
 }
-export class DeviceListPrivate {
+class DeviceListPrivate {
     static name: string
 }
-export class DevicePrivate {
+class DevicePrivate {
     static name: string
 }
-export abstract class EntityClass {
-    /* Fields of Libosinfo.EntityClass */
+abstract class EntityClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.EntityClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class EntityPrivate {
+class EntityPrivate {
     static name: string
 }
-export abstract class FilterClass {
-    /* Fields of Libosinfo.FilterClass */
+abstract class FilterClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.FilterClass */
     parent_class: GObject.ObjectClass
     matches: (filter: Filter, entity: Entity) => boolean
     static name: string
 }
-export class FilterPrivate {
+class FilterPrivate {
     static name: string
 }
-export abstract class FirmwareClass {
-    /* Fields of Libosinfo.FirmwareClass */
+abstract class FirmwareClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.FirmwareClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class FirmwareListClass {
-    /* Fields of Libosinfo.FirmwareListClass */
+abstract class FirmwareListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.FirmwareListClass */
     parent_class: ListClass
     static name: string
 }
-export class FirmwareListPrivate {
+class FirmwareListPrivate {
     static name: string
 }
-export class FirmwarePrivate {
+class FirmwarePrivate {
     static name: string
 }
-export abstract class ImageClass {
-    /* Fields of Libosinfo.ImageClass */
+abstract class ImageClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.ImageClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class ImageListClass {
-    /* Fields of Libosinfo.ImageListClass */
+abstract class ImageListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.ImageListClass */
     parent_class: ListClass
     static name: string
 }
-export class ImageListPrivate {
+class ImageListPrivate {
     static name: string
 }
-export class ImagePrivate {
+class ImagePrivate {
     static name: string
 }
-export abstract class InstallConfigClass {
-    /* Fields of Libosinfo.InstallConfigClass */
+abstract class InstallConfigClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.InstallConfigClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class InstallConfigParamClass {
-    /* Fields of Libosinfo.InstallConfigParamClass */
+abstract class InstallConfigParamClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.InstallConfigParamClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class InstallConfigParamListClass {
-    /* Fields of Libosinfo.InstallConfigParamListClass */
+abstract class InstallConfigParamListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.InstallConfigParamListClass */
     parent_class: ListClass
     static name: string
 }
-export class InstallConfigParamListPrivate {
+class InstallConfigParamListPrivate {
     static name: string
 }
-export class InstallConfigParamPrivate {
+class InstallConfigParamPrivate {
     static name: string
 }
-export class InstallConfigPrivate {
+class InstallConfigPrivate {
     static name: string
 }
-export abstract class InstallScriptClass {
-    /* Fields of Libosinfo.InstallScriptClass */
+abstract class InstallScriptClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.InstallScriptClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class InstallScriptListClass {
-    /* Fields of Libosinfo.InstallScriptListClass */
+abstract class InstallScriptListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.InstallScriptListClass */
     parent_class: ListClass
     static name: string
 }
-export class InstallScriptListPrivate {
+class InstallScriptListPrivate {
     static name: string
 }
-export class InstallScriptPrivate {
+class InstallScriptPrivate {
     static name: string
 }
-export abstract class ListClass {
-    /* Fields of Libosinfo.ListClass */
+abstract class ListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.ListClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class ListPrivate {
+class ListPrivate {
     static name: string
 }
-export abstract class LoaderClass {
-    /* Fields of Libosinfo.LoaderClass */
+abstract class LoaderClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.LoaderClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class LoaderPrivate {
+class LoaderPrivate {
     static name: string
 }
-export abstract class MediaClass {
-    /* Fields of Libosinfo.MediaClass */
+abstract class MediaClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.MediaClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class MediaListClass {
-    /* Fields of Libosinfo.MediaListClass */
+abstract class MediaListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.MediaListClass */
     parent_class: ListClass
     static name: string
 }
-export class MediaListPrivate {
+class MediaListPrivate {
     static name: string
 }
-export class MediaPrivate {
+class MediaPrivate {
     static name: string
 }
-export abstract class OsClass {
-    /* Fields of Libosinfo.OsClass */
+abstract class OsClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.OsClass */
     parent_class: ProductClass
     static name: string
 }
-export abstract class OsListClass {
-    /* Fields of Libosinfo.OsListClass */
+abstract class OsListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.OsListClass */
     parent_class: ProductListClass
     static name: string
 }
-export class OsListPrivate {
+class OsListPrivate {
     static name: string
 }
-export class OsPrivate {
+class OsPrivate {
     static name: string
 }
-export abstract class OsVariantClass {
-    /* Fields of Libosinfo.OsVariantClass */
+abstract class OsVariantClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.OsVariantClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class OsVariantListClass {
-    /* Fields of Libosinfo.OsVariantListClass */
+abstract class OsVariantListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.OsVariantListClass */
     parent_class: ListClass
     static name: string
 }
-export class OsVariantListPrivate {
+class OsVariantListPrivate {
     static name: string
 }
-export class OsVariantPrivate {
+class OsVariantPrivate {
     static name: string
 }
-export abstract class PlatformClass {
-    /* Fields of Libosinfo.PlatformClass */
+abstract class PlatformClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.PlatformClass */
     parent_class: ProductClass
     static name: string
 }
-export abstract class PlatformListClass {
-    /* Fields of Libosinfo.PlatformListClass */
+abstract class PlatformListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.PlatformListClass */
     parent_class: ProductListClass
     static name: string
 }
-export class PlatformListPrivate {
+class PlatformListPrivate {
     static name: string
 }
-export class PlatformPrivate {
+class PlatformPrivate {
     static name: string
 }
-export abstract class ProductClass {
-    /* Fields of Libosinfo.ProductClass */
+abstract class ProductClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.ProductClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class ProductFilterClass {
-    /* Fields of Libosinfo.ProductFilterClass */
+abstract class ProductFilterClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.ProductFilterClass */
     parent_class: FilterClass
     static name: string
 }
-export class ProductFilterPrivate {
+class ProductFilterPrivate {
     static name: string
 }
-export abstract class ProductListClass {
-    /* Fields of Libosinfo.ProductListClass */
+abstract class ProductListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.ProductListClass */
     parent_class: ListClass
     static name: string
 }
-export class ProductListPrivate {
+class ProductListPrivate {
     static name: string
 }
-export class ProductPrivate {
+class ProductPrivate {
     static name: string
 }
-export abstract class ResourcesClass {
-    /* Fields of Libosinfo.ResourcesClass */
+abstract class ResourcesClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.ResourcesClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class ResourcesListClass {
-    /* Fields of Libosinfo.ResourcesListClass */
+abstract class ResourcesListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.ResourcesListClass */
     parent_class: ListClass
     static name: string
 }
-export class ResourcesListPrivate {
+class ResourcesListPrivate {
     static name: string
 }
-export class ResourcesPrivate {
+class ResourcesPrivate {
     static name: string
 }
-export abstract class TreeClass {
-    /* Fields of Libosinfo.TreeClass */
+abstract class TreeClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.TreeClass */
     parent_class: EntityClass
     static name: string
 }
-export abstract class TreeListClass {
-    /* Fields of Libosinfo.TreeListClass */
+abstract class TreeListClass {
+    /* Fields of Libosinfo-1.0.Libosinfo.TreeListClass */
     parent_class: ListClass
     static name: string
 }
-export class TreeListPrivate {
+class TreeListPrivate {
     static name: string
 }
-export class TreePrivate {
+class TreePrivate {
     static name: string
 }
+}
+export default Libosinfo;

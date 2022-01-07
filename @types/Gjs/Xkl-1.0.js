@@ -1,2 +1,2 @@
-imports.gi.versions.Xkl = '1.0'
-export default imports.gi.Xkl
+import Xkl from 'gi://Xkl?version=1.0';
+export default Xkl;

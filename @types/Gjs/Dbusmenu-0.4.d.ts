@@ -3,14 +3,16 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum Status {
+export namespace Dbusmenu {
+
+enum Status {
     NORMAL,
     NOTICE,
 }
-export enum TextDirection {
+enum TextDirection {
     NONE,
     LTR,
     RTL,
@@ -77,13 +79,13 @@ export const SERVER_SIGNAL_ID_PROP_UPDATE: string
 export const SERVER_SIGNAL_ID_UPDATE: string
 export const SERVER_SIGNAL_ITEM_ACTIVATION: string
 export const SERVER_SIGNAL_LAYOUT_UPDATED: string
-export interface ClientTypeHandler {
+interface ClientTypeHandler {
     (newitem: Menuitem, parent: Menuitem, client: Client): boolean
 }
-export interface menuitem_about_to_show_cb {
+interface menuitem_about_to_show_cb {
     (mi: Menuitem): void
 }
-export interface menuitem_buildvariant_slot_t {
+interface menuitem_buildvariant_slot_t {
     (mi: Menuitem, properties?: string | null): GLib.Variant
 }
 export interface Client_ConstructProps extends GObject.Object_ConstructProps {
@@ -91,27 +93,27 @@ export interface Client_ConstructProps extends GObject.Object_ConstructProps {
     dbus_object?: string
     group_events?: boolean
 }
-export class Client {
-    /* Properties of Dbusmenu.Client */
+class Client {
+    /* Properties of Dbusmenu-0.4.Dbusmenu.Client */
     group_events: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Dbusmenu.Client */
+    /* Methods of Dbusmenu-0.4.Dbusmenu.Client */
     add_type_handler(type: string, newfunc: ClientTypeHandler): boolean
     add_type_handler_full(type: string, newfunc: ClientTypeHandler): boolean
     get_icon_paths(): string[]
     get_root(): Menuitem
     get_status(): Status
     get_text_direction(): TextDirection
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -119,21 +121,21 @@ export class Client {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Dbusmenu.Client */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Dbusmenu-0.4.Dbusmenu.Client */
     connect(sigName: "event-result", callback: (($obj: Client, object: GObject.Object, p0: string, p1: GLib.Variant, p2: number, p3?: object | null) => void)): number
     connect_after(sigName: "event-result", callback: (($obj: Client, object: GObject.Object, p0: string, p1: GLib.Variant, p2: number, p3?: object | null) => void)): number
     emit(sigName: "event-result", object: GObject.Object, p0: string, p1: GLib.Variant, p2: number, p3?: object | null): void
@@ -152,7 +154,7 @@ export class Client {
     connect(sigName: "root-changed", callback: (($obj: Client, arg1: GObject.Object) => void)): number
     connect_after(sigName: "root-changed", callback: (($obj: Client, arg1: GObject.Object) => void)): number
     emit(sigName: "root-changed", arg1: GObject.Object): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -172,13 +174,13 @@ export class Client {
 export interface Menuitem_ConstructProps extends GObject.Object_ConstructProps {
     id?: number
 }
-export class Menuitem {
-    /* Fields of Dbusmenu.Menuitem */
+class Menuitem {
+    /* Fields of Dbusmenu-0.4.Dbusmenu.Menuitem */
     parent: GObject.Object
     priv: MenuitemPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Dbusmenu.Menuitem */
+    /* Methods of Dbusmenu-0.4.Dbusmenu.Menuitem */
     child_add_position(child: Menuitem, position: number): boolean
     child_append(child: Menuitem): boolean
     child_delete(child: Menuitem): boolean
@@ -214,15 +216,15 @@ export class Menuitem {
     show_to_user(timestamp: number): void
     take_children(): Menuitem[]
     unparent(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -230,27 +232,27 @@ export class Menuitem {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Dbusmenu.Menuitem */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Dbusmenu-0.4.Dbusmenu.Menuitem */
     vfunc_child_added(position: number): void
     vfunc_child_moved(newpos: number, oldpos: number): void
     vfunc_child_removed(): void
     vfunc_handle_event(name: string, variant: GLib.Variant, timestamp: number): void
     vfunc_show_to_user(timestamp: number, cb_data?: object | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Dbusmenu.Menuitem */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Dbusmenu-0.4.Dbusmenu.Menuitem */
     connect(sigName: "about-to-show", callback: (($obj: Menuitem) => boolean)): number
     connect_after(sigName: "about-to-show", callback: (($obj: Menuitem) => boolean)): number
     emit(sigName: "about-to-show"): void
@@ -278,7 +280,7 @@ export class Menuitem {
     connect(sigName: "show-to-user", callback: (($obj: Menuitem, arg1: number) => void)): number
     connect_after(sigName: "show-to-user", callback: (($obj: Menuitem, arg1: number) => void)): number
     emit(sigName: "show-to-user", arg1: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Menuitem, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Menuitem, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -297,15 +299,15 @@ export class Menuitem {
 export interface MenuitemProxy_ConstructProps extends Menuitem_ConstructProps {
     menu_item?: Menuitem
 }
-export class MenuitemProxy {
-    /* Fields of Dbusmenu.Menuitem */
+class MenuitemProxy {
+    /* Fields of Dbusmenu-0.4.Dbusmenu.Menuitem */
     parent: GObject.Object
     priv: MenuitemPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Dbusmenu.MenuitemProxy */
+    /* Methods of Dbusmenu-0.4.Dbusmenu.MenuitemProxy */
     get_wrapped(): Menuitem
-    /* Methods of Dbusmenu.Menuitem */
+    /* Methods of Dbusmenu-0.4.Dbusmenu.Menuitem */
     child_add_position(child: Menuitem, position: number): boolean
     child_append(child: Menuitem): boolean
     child_delete(child: Menuitem): boolean
@@ -341,15 +343,15 @@ export class MenuitemProxy {
     show_to_user(timestamp: number): void
     take_children(): Menuitem[]
     unparent(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -357,27 +359,27 @@ export class MenuitemProxy {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Dbusmenu.Menuitem */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Dbusmenu-0.4.Dbusmenu.Menuitem */
     vfunc_child_added(position: number): void
     vfunc_child_moved(newpos: number, oldpos: number): void
     vfunc_child_removed(): void
     vfunc_handle_event(name: string, variant: GLib.Variant, timestamp: number): void
     vfunc_show_to_user(timestamp: number, cb_data?: object | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Dbusmenu.Menuitem */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Dbusmenu-0.4.Dbusmenu.Menuitem */
     connect(sigName: "about-to-show", callback: (($obj: MenuitemProxy) => boolean)): number
     connect_after(sigName: "about-to-show", callback: (($obj: MenuitemProxy) => boolean)): number
     emit(sigName: "about-to-show"): void
@@ -405,7 +407,7 @@ export class MenuitemProxy {
     connect(sigName: "show-to-user", callback: (($obj: MenuitemProxy, arg1: number) => void)): number
     connect_after(sigName: "show-to-user", callback: (($obj: MenuitemProxy, arg1: number) => void)): number
     emit(sigName: "show-to-user", arg1: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MenuitemProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MenuitemProxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -425,13 +427,13 @@ export interface Server_ConstructProps extends GObject.Object_ConstructProps {
     dbus_object?: string
     root_node?: Menuitem
 }
-export class Server {
-    /* Properties of Dbusmenu.Server */
+class Server {
+    /* Properties of Dbusmenu-0.4.Dbusmenu.Server */
     root_node: Menuitem
     readonly version: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Dbusmenu.Server */
+    /* Methods of Dbusmenu-0.4.Dbusmenu.Server */
     get_icon_paths(): string[]
     get_status(): Status
     get_text_direction(): TextDirection
@@ -439,15 +441,15 @@ export class Server {
     set_root(root: Menuitem): void
     set_status(status: Status): void
     set_text_direction(dir: TextDirection): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -455,21 +457,21 @@ export class Server {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Dbusmenu.Server */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Dbusmenu-0.4.Dbusmenu.Server */
     connect(sigName: "item-activation-requested", callback: (($obj: Server, arg1: number, arg2: number) => void)): number
     connect_after(sigName: "item-activation-requested", callback: (($obj: Server, arg1: number, arg2: number) => void)): number
     emit(sigName: "item-activation-requested", arg1: number, arg2: number): void
@@ -482,7 +484,7 @@ export class Server {
     connect(sigName: "layout-updated", callback: (($obj: Server, arg1: number, arg2: number) => void)): number
     connect_after(sigName: "layout-updated", callback: (($obj: Server, arg1: number, arg2: number) => void)): number
     emit(sigName: "layout-updated", arg1: number, arg2: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Server, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Server, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -501,8 +503,8 @@ export class Server {
     static new(object: string): Server
     static $gtype: GObject.Type
 }
-export abstract class ClientClass {
-    /* Fields of Dbusmenu.ClientClass */
+abstract class ClientClass {
+    /* Fields of Dbusmenu-0.4.Dbusmenu.ClientClass */
     parent_class: GObject.ObjectClass
     layout_updated: () => void
     root_changed: (newroot: Menuitem) => void
@@ -517,11 +519,11 @@ export abstract class ClientClass {
     reserved5: () => void
     static name: string
 }
-export class ClientPrivate {
+class ClientPrivate {
     static name: string
 }
-export abstract class MenuitemClass {
-    /* Fields of Dbusmenu.MenuitemClass */
+abstract class MenuitemClass {
+    /* Fields of Dbusmenu-0.4.Dbusmenu.MenuitemClass */
     parent_class: GObject.ObjectClass
     property_changed: (property: string, value: GLib.Variant) => void
     item_activated: (timestamp: number) => void
@@ -540,11 +542,11 @@ export abstract class MenuitemClass {
     reserved5: () => void
     static name: string
 }
-export class MenuitemPrivate {
+class MenuitemPrivate {
     static name: string
 }
-export abstract class MenuitemProxyClass {
-    /* Fields of Dbusmenu.MenuitemProxyClass */
+abstract class MenuitemProxyClass {
+    /* Fields of Dbusmenu-0.4.Dbusmenu.MenuitemProxyClass */
     parent_class: MenuitemClass
     reserved1: () => void
     reserved2: () => void
@@ -552,11 +554,11 @@ export abstract class MenuitemProxyClass {
     reserved4: () => void
     static name: string
 }
-export class MenuitemProxyPrivate {
+class MenuitemProxyPrivate {
     static name: string
 }
-export abstract class ServerClass {
-    /* Fields of Dbusmenu.ServerClass */
+abstract class ServerClass {
+    /* Fields of Dbusmenu-0.4.Dbusmenu.ServerClass */
     parent_class: GObject.ObjectClass
     id_prop_update: (id: number, property: string, value: string) => void
     id_update: (id: number) => void
@@ -570,6 +572,8 @@ export abstract class ServerClass {
     reserved6: () => void
     static name: string
 }
-export class ServerPrivate {
+class ServerPrivate {
     static name: string
 }
+}
+export default Dbusmenu;

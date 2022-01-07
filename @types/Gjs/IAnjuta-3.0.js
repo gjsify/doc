@@ -1,2 +1,2 @@
-imports.gi.versions.IAnjuta = '3.0'
-export default imports.gi.IAnjuta
+import IAnjuta from 'gi://IAnjuta?version=3.0';
+export default IAnjuta;

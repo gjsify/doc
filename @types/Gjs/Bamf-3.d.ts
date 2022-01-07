@@ -3,10 +3,12 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum ClickBehavior {
+export namespace Bamf {
+
+enum ClickBehavior {
     NONE,
     OPEN,
     FOCUS,
@@ -16,13 +18,13 @@ export enum ClickBehavior {
     RESTORE_ALL,
     PICKER,
 }
-export enum WindowMaximizationType {
+enum WindowMaximizationType {
     FLOATING,
     HORIZONTAL_MAXIMIZED,
     VERTICAL_MAXIMIZED,
     MAXIMIZED,
 }
-export enum WindowType {
+enum WindowType {
     NORMAL,
     DESKTOP,
     DOCK,
@@ -54,25 +56,25 @@ export const VIEW_SIGNAL_URGENT_CHANGED: string
 export const VIEW_SIGNAL_USER_VISIBLE_CHANGED: string
 export const WINDOW_SIGNAL_MAXIMIZED_CHANGED: string
 export const WINDOW_SIGNAL_MONITOR_CHANGED: string
-export interface TabPreviewReadyCallback {
+interface TabPreviewReadyCallback {
     (self: Tab, preview_data: string): void
 }
 export interface Application_ConstructProps extends View_ConstructProps {
 }
-export class Application {
-    /* Properties of Bamf.View */
+class Application {
+    /* Properties of Bamf-3.Bamf.View */
     readonly active: boolean
     readonly path: string
     readonly running: boolean
     readonly starting: boolean
     readonly urgent: boolean
     readonly user_visible: boolean
-    /* Fields of Bamf.Application */
+    /* Fields of Bamf-3.Bamf.Application */
     parent: View
     priv: ApplicationPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Bamf.Application */
+    /* Methods of Bamf-3.Bamf.Application */
     get_application_menu(): [ /* returnType */ boolean, /* name */ string, /* object_path */ string ]
     get_application_type(): string
     get_desktop_file(): string
@@ -82,7 +84,7 @@ export class Application {
     get_window_for_xid(xid: number): Window
     get_windows(): Window[]
     get_xids(): number[]
-    /* Methods of Bamf.View */
+    /* Methods of Bamf-3.Bamf.View */
     get_children(): View[]
     get_click_suggestion(): ClickBehavior
     get_icon(): string
@@ -98,15 +100,15 @@ export class Application {
     is_user_visible(): boolean
     peek_children(): View[]
     set_sticky(value: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -114,13 +116,13 @@ export class Application {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Bamf.View */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Bamf-3.Bamf.View */
     vfunc_active_changed(active: boolean): void
     vfunc_child_added(child: View): void
     vfunc_child_moved(child: View): void
@@ -144,15 +146,15 @@ export class Application {
     vfunc_urgent_changed(urgent: boolean): void
     vfunc_user_visible_changed(user_visible: boolean): void
     vfunc_view_type(): string
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Bamf.Application */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Bamf-3.Bamf.Application */
     connect(sigName: "desktop-file-updated", callback: (($obj: Application, object: string) => void)): number
     connect_after(sigName: "desktop-file-updated", callback: (($obj: Application, object: string) => void)): number
     emit(sigName: "desktop-file-updated", object: string): void
@@ -162,7 +164,7 @@ export class Application {
     connect(sigName: "window-removed", callback: (($obj: Application, object: Window) => void)): number
     connect_after(sigName: "window-removed", callback: (($obj: Application, object: Window) => void)): number
     emit(sigName: "window-removed", object: Window): void
-    /* Signals of Bamf.View */
+    /* Signals of Bamf-3.Bamf.View */
     connect(sigName: "active-changed", callback: (($obj: Application, object: boolean) => void)): number
     connect_after(sigName: "active-changed", callback: (($obj: Application, object: boolean) => void)): number
     emit(sigName: "active-changed", object: boolean): void
@@ -196,7 +198,7 @@ export class Application {
     connect(sigName: "user-visible-changed", callback: (($obj: Application, object: boolean) => void)): number
     connect_after(sigName: "user-visible-changed", callback: (($obj: Application, object: boolean) => void)): number
     emit(sigName: "user-visible-changed", object: boolean): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Application, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Application, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -223,26 +225,26 @@ export class Application {
 }
 export interface Control_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Control {
-    /* Fields of Bamf.Control */
+class Control {
+    /* Fields of Bamf-3.Bamf.Control */
     parent: GObject.Object
     priv: ControlPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Bamf.Control */
+    /* Methods of Bamf-3.Bamf.Control */
     create_local_desktop_file(application: Application): void
     insert_desktop_file(desktop_file: string): void
     register_application_for_pid(desktop_file: string, pid: number): void
     set_approver_behavior(behavior: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -250,21 +252,21 @@ export class Control {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Control, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Control, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -281,13 +283,13 @@ export class Control {
 }
 export interface Matcher_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Matcher {
-    /* Fields of Bamf.Matcher */
+class Matcher {
+    /* Fields of Bamf-3.Bamf.Matcher */
     parent: GObject.Object
     priv: MatcherPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Bamf.Matcher */
+    /* Methods of Bamf-3.Bamf.Matcher */
     application_is_running(desktop_file: string): boolean
     get_active_application(): Application
     get_active_window(): Window
@@ -302,15 +304,15 @@ export class Matcher {
     get_windows(): Window[]
     get_xids_for_application(desktop_file: string): number[]
     register_favorites(favorites: string[]): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -318,21 +320,21 @@ export class Matcher {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Bamf.Matcher */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Bamf-3.Bamf.Matcher */
     connect(sigName: "active-application-changed", callback: (($obj: Matcher, object: Application, p0: Application) => void)): number
     connect_after(sigName: "active-application-changed", callback: (($obj: Matcher, object: Application, p0: Application) => void)): number
     emit(sigName: "active-application-changed", object: Application, p0: Application): void
@@ -348,7 +350,7 @@ export class Matcher {
     connect(sigName: "view-opened", callback: (($obj: Matcher, object: View) => void)): number
     connect_after(sigName: "view-opened", callback: (($obj: Matcher, object: View) => void)): number
     emit(sigName: "view-opened", object: View): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Matcher, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Matcher, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -365,25 +367,25 @@ export class Matcher {
 }
 export interface Tab_ConstructProps extends View_ConstructProps {
 }
-export class Tab {
-    /* Properties of Bamf.Tab */
+class Tab {
+    /* Properties of Bamf-3.Bamf.Tab */
     readonly desktop_id: string
     readonly is_foreground_tab: boolean
     readonly location: string
     readonly xid: number
-    /* Properties of Bamf.View */
+    /* Properties of Bamf-3.Bamf.View */
     readonly active: boolean
     readonly path: string
     readonly running: boolean
     readonly starting: boolean
     readonly urgent: boolean
     readonly user_visible: boolean
-    /* Fields of Bamf.Tab */
+    /* Fields of Bamf-3.Bamf.Tab */
     parent: View
     priv: TabPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Bamf.Tab */
+    /* Methods of Bamf-3.Bamf.Tab */
     close(): boolean
     get_desktop_name(): string
     get_is_foreground_tab(): boolean
@@ -391,7 +393,7 @@ export class Tab {
     get_xid(): number
     raise(): boolean
     request_preview(callback: TabPreviewReadyCallback): void
-    /* Methods of Bamf.View */
+    /* Methods of Bamf-3.Bamf.View */
     get_children(): View[]
     get_click_suggestion(): ClickBehavior
     get_icon(): string
@@ -407,15 +409,15 @@ export class Tab {
     is_user_visible(): boolean
     peek_children(): View[]
     set_sticky(value: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -423,18 +425,18 @@ export class Tab {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Bamf.Tab */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Bamf-3.Bamf.Tab */
     vfunc_get_desktop_name(): string
     vfunc_get_is_foreground_tab(): boolean
     vfunc_get_location(): string
     vfunc_get_xid(): number
-    /* Virtual methods of Bamf.View */
+    /* Virtual methods of Bamf-3.Bamf.View */
     vfunc_active_changed(active: boolean): void
     vfunc_child_added(child: View): void
     vfunc_child_moved(child: View): void
@@ -458,15 +460,15 @@ export class Tab {
     vfunc_urgent_changed(urgent: boolean): void
     vfunc_user_visible_changed(user_visible: boolean): void
     vfunc_view_type(): string
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Bamf.View */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Bamf-3.Bamf.View */
     connect(sigName: "active-changed", callback: (($obj: Tab, object: boolean) => void)): number
     connect_after(sigName: "active-changed", callback: (($obj: Tab, object: boolean) => void)): number
     emit(sigName: "active-changed", object: boolean): void
@@ -500,7 +502,7 @@ export class Tab {
     connect(sigName: "user-visible-changed", callback: (($obj: Tab, object: boolean) => void)): number
     connect_after(sigName: "user-visible-changed", callback: (($obj: Tab, object: boolean) => void)): number
     emit(sigName: "user-visible-changed", object: boolean): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Tab, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Tab, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -535,20 +537,20 @@ export class Tab {
 }
 export interface View_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
 }
-export class View {
-    /* Properties of Bamf.View */
+class View {
+    /* Properties of Bamf-3.Bamf.View */
     readonly active: boolean
     readonly path: string
     readonly running: boolean
     readonly starting: boolean
     readonly urgent: boolean
     readonly user_visible: boolean
-    /* Fields of Bamf.View */
+    /* Fields of Bamf-3.Bamf.View */
     parent: GObject.InitiallyUnowned
     priv: ViewPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Bamf.View */
+    /* Methods of Bamf-3.Bamf.View */
     get_children(): View[]
     get_click_suggestion(): ClickBehavior
     get_icon(): string
@@ -564,15 +566,15 @@ export class View {
     is_user_visible(): boolean
     peek_children(): View[]
     set_sticky(value: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -580,13 +582,13 @@ export class View {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Bamf.View */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Bamf-3.Bamf.View */
     vfunc_active_changed(active: boolean): void
     vfunc_child_added(child: View): void
     vfunc_child_moved(child: View): void
@@ -610,15 +612,15 @@ export class View {
     vfunc_urgent_changed(urgent: boolean): void
     vfunc_user_visible_changed(user_visible: boolean): void
     vfunc_view_type(): string
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Bamf.View */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Bamf-3.Bamf.View */
     connect(sigName: "active-changed", callback: (($obj: View, object: boolean) => void)): number
     connect_after(sigName: "active-changed", callback: (($obj: View, object: boolean) => void)): number
     emit(sigName: "active-changed", object: boolean): void
@@ -652,7 +654,7 @@ export class View {
     connect(sigName: "user-visible-changed", callback: (($obj: View, object: boolean) => void)): number
     connect_after(sigName: "user-visible-changed", callback: (($obj: View, object: boolean) => void)): number
     emit(sigName: "user-visible-changed", object: boolean): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -679,20 +681,20 @@ export class View {
 }
 export interface Window_ConstructProps extends View_ConstructProps {
 }
-export class Window {
-    /* Properties of Bamf.View */
+class Window {
+    /* Properties of Bamf-3.Bamf.View */
     readonly active: boolean
     readonly path: string
     readonly running: boolean
     readonly starting: boolean
     readonly urgent: boolean
     readonly user_visible: boolean
-    /* Fields of Bamf.Window */
+    /* Fields of Bamf-3.Bamf.Window */
     parent: View
     priv: WindowPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Bamf.Window */
+    /* Methods of Bamf-3.Bamf.Window */
     get_monitor(): number
     get_pid(): number
     get_transient(): Window
@@ -701,7 +703,7 @@ export class Window {
     get_xid(): number
     last_active(): number
     maximized(): WindowMaximizationType
-    /* Methods of Bamf.View */
+    /* Methods of Bamf-3.Bamf.View */
     get_children(): View[]
     get_click_suggestion(): ClickBehavior
     get_icon(): string
@@ -717,15 +719,15 @@ export class Window {
     is_user_visible(): boolean
     peek_children(): View[]
     set_sticky(value: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -733,13 +735,13 @@ export class Window {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Bamf.Window */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Bamf-3.Bamf.Window */
     vfunc_get_monitor(): number
     vfunc_get_pid(): number
     vfunc_get_transient(): Window
@@ -750,7 +752,7 @@ export class Window {
     vfunc_maximized(): WindowMaximizationType
     vfunc_maximized_changed(old_value: number, new_value: number): void
     vfunc_monitor_changed(old_value: number, new_value: number): void
-    /* Virtual methods of Bamf.View */
+    /* Virtual methods of Bamf-3.Bamf.View */
     vfunc_active_changed(active: boolean): void
     vfunc_child_added(child: View): void
     vfunc_child_moved(child: View): void
@@ -774,22 +776,22 @@ export class Window {
     vfunc_urgent_changed(urgent: boolean): void
     vfunc_user_visible_changed(user_visible: boolean): void
     vfunc_view_type(): string
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Bamf.Window */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Bamf-3.Bamf.Window */
     connect(sigName: "maximized-changed", callback: (($obj: Window, object: number, p0: number) => void)): number
     connect_after(sigName: "maximized-changed", callback: (($obj: Window, object: number, p0: number) => void)): number
     emit(sigName: "maximized-changed", object: number, p0: number): void
     connect(sigName: "monitor-changed", callback: (($obj: Window, object: number, p0: number) => void)): number
     connect_after(sigName: "monitor-changed", callback: (($obj: Window, object: number, p0: number) => void)): number
     emit(sigName: "monitor-changed", object: number, p0: number): void
-    /* Signals of Bamf.View */
+    /* Signals of Bamf-3.Bamf.View */
     connect(sigName: "active-changed", callback: (($obj: Window, object: boolean) => void)): number
     connect_after(sigName: "active-changed", callback: (($obj: Window, object: boolean) => void)): number
     emit(sigName: "active-changed", object: boolean): void
@@ -823,7 +825,7 @@ export class Window {
     connect(sigName: "user-visible-changed", callback: (($obj: Window, object: boolean) => void)): number
     connect_after(sigName: "user-visible-changed", callback: (($obj: Window, object: boolean) => void)): number
     emit(sigName: "user-visible-changed", object: boolean): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -848,32 +850,32 @@ export class Window {
     _init (config?: Window_ConstructProps): void
     static $gtype: GObject.Type
 }
-export abstract class ApplicationClass {
-    /* Fields of Bamf.ApplicationClass */
+abstract class ApplicationClass {
+    /* Fields of Bamf-3.Bamf.ApplicationClass */
     parent_class: ViewClass
     static name: string
 }
-export class ApplicationPrivate {
+class ApplicationPrivate {
     static name: string
 }
-export abstract class ControlClass {
-    /* Fields of Bamf.ControlClass */
+abstract class ControlClass {
+    /* Fields of Bamf-3.Bamf.ControlClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class ControlPrivate {
+class ControlPrivate {
     static name: string
 }
-export abstract class MatcherClass {
-    /* Fields of Bamf.MatcherClass */
+abstract class MatcherClass {
+    /* Fields of Bamf-3.Bamf.MatcherClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class MatcherPrivate {
+class MatcherPrivate {
     static name: string
 }
-export abstract class TabClass {
-    /* Fields of Bamf.TabClass */
+abstract class TabClass {
+    /* Fields of Bamf-3.Bamf.TabClass */
     parent_class: ViewClass
     get_desktop_name: (self: Tab) => string
     get_location: (self: Tab) => string
@@ -881,11 +883,11 @@ export abstract class TabClass {
     get_is_foreground_tab: (self: Tab) => boolean
     static name: string
 }
-export class TabPrivate {
+class TabPrivate {
     static name: string
 }
-export abstract class ViewClass {
-    /* Fields of Bamf.ViewClass */
+abstract class ViewClass {
+    /* Fields of Bamf-3.Bamf.ViewClass */
     parent_class: GObject.InitiallyUnownedClass
     get_children: (view: View) => View[]
     is_active: (view: View) => boolean
@@ -912,11 +914,11 @@ export abstract class ViewClass {
     starting_changed: (view: View, starting: boolean) => void
     static name: string
 }
-export class ViewPrivate {
+class ViewPrivate {
     static name: string
 }
-export abstract class WindowClass {
-    /* Fields of Bamf.WindowClass */
+abstract class WindowClass {
+    /* Fields of Bamf-3.Bamf.WindowClass */
     parent_class: ViewClass
     get_transient: (self: Window) => Window
     get_window_type: (self: Window) => WindowType
@@ -930,6 +932,8 @@ export abstract class WindowClass {
     maximized_changed: (window: Window, old_value: number, new_value: number) => void
     static name: string
 }
-export class WindowPrivate {
+class WindowPrivate {
     static name: string
 }
+}
+export default Bamf;

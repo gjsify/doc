@@ -3,13 +3,15 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as GModule from './GModule-2.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type GModule from './GModule-2.0';
 
-export enum PixdataDumpType {
+export namespace GdkPixdata {
+
+enum PixdataDumpType {
     PIXDATA_STREAM,
     PIXDATA_STRUCT,
     MACROS,
@@ -19,7 +21,7 @@ export enum PixdataDumpType {
     CONST,
     RLE_DECODER,
 }
-export enum PixdataType {
+enum PixdataType {
     COLOR_TYPE_RGB,
     COLOR_TYPE_RGBA,
     COLOR_TYPE_MASK,
@@ -31,9 +33,9 @@ export enum PixdataType {
 }
 export const PIXBUF_MAGIC_NUMBER: number
 export const PIXDATA_HEADER_LENGTH: number
-export function pixbuf_from_pixdata(pixdata: Pixdata, copy_pixels: boolean): GdkPixbuf.Pixbuf
-export class Pixdata {
-    /* Fields of GdkPixdata.Pixdata */
+function pixbuf_from_pixdata(pixdata: Pixdata, copy_pixels: boolean): GdkPixbuf.Pixbuf
+class Pixdata {
+    /* Fields of GdkPixdata-2.0.GdkPixdata.Pixdata */
     magic: number
     length: number
     pixdata_type: number
@@ -41,9 +43,11 @@ export class Pixdata {
     width: number
     height: number
     pixel_data: Uint8Array[]
-    /* Methods of GdkPixdata.Pixdata */
+    /* Methods of GdkPixdata-2.0.GdkPixdata.Pixdata */
     deserialize(stream: Uint8Array[]): boolean
     serialize(): Uint8Array[]
     to_csource(name: string, dump_type: PixdataDumpType): GLib.String
     static name: string
 }
+}
+export default GdkPixdata;

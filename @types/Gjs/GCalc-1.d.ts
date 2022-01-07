@@ -3,39 +3,41 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as Gee from './Gee-0.8';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type Gee from './Gee-0.8';
 
-export enum AssigError {
+export namespace GCalc {
+
+enum AssigError {
     INVALID_STRUCTURE_ERROR,
 }
-export enum FunctionError {
+enum FunctionError {
     INVALID_PARAMETERS_ERROR,
     INVOCATION_ERROR,
 }
-export enum ParserError {
+enum ParserError {
     INVALID_TOKEN_ERROR,
     INVALID_EXPRESSION_ERROR,
 }
-export enum GroupError {
+enum GroupError {
     INVALID_POLYNOMIAL,
     INVALID_INTERNAL_TERM,
 }
-export enum SolverError {
+enum SolverError {
     EXPRESSION_ERROR,
 }
-export enum TermError {
+enum TermError {
     INVALID_OPERATOR,
     EVALUATION_FAIL,
 }
-export enum VariableError {
+enum VariableError {
     INVALID_PARENT,
     INVALID_EXPRESSION_DEFINITION,
     EVALUATION_FAIL,
 }
-export enum GParserTokenType {
+enum GParserTokenType {
     NONE,
     EOF,
     IDENTIFIER,
@@ -78,27 +80,27 @@ export enum GParserTokenType {
     INTERR,
     HASH,
 }
-export enum GroupLevel {
+enum GroupLevel {
     ONE,
     TWO,
     THREE,
 }
 export interface Assign_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Assign {
-    /* Fields of GObject.Object */
+class Assign {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.Assign */
+    /* Methods of GCalc-1.GCalc.Assign */
     evaluate(): Expression
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -106,21 +108,21 @@ export class Assign {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Assign, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Assign, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -135,18 +137,18 @@ export class Assign {
 }
 export interface BinaryOperator_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class BinaryOperator {
-    /* Fields of GObject.Object */
+class BinaryOperator {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -154,21 +156,21 @@ export class BinaryOperator {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BinaryOperator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BinaryOperator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -183,10 +185,10 @@ export class BinaryOperator {
 }
 export interface Constant_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Constant {
-    /* Fields of GObject.Object */
+class Constant {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.Constant */
+    /* Methods of GCalc-1.GCalc.Constant */
     real(): number
     imag(): number
     zero(): void
@@ -195,15 +197,15 @@ export class Constant {
     divide(c: Constant): Constant
     neg(): Constant
     pow(c: Constant): Constant
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -211,13 +213,13 @@ export class Constant {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.Constant */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.Constant */
     vfunc_real(): number
     vfunc_imag(): number
     vfunc_zero(): void
@@ -226,15 +228,15 @@ export class Constant {
     vfunc_divide(c: Constant): Constant
     vfunc_neg(): Constant
     vfunc_pow(c: Constant): Constant
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Constant, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Constant, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -249,18 +251,18 @@ export class Constant {
 }
 export interface Division_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Division {
-    /* Fields of GObject.Object */
+class Division {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -268,21 +270,21 @@ export class Division {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Division, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Division, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -298,27 +300,27 @@ export class Division {
 export interface Expression_ConstructProps extends GObject.Object_ConstructProps {
     parent?: Expression
 }
-export class Expression {
-    /* Properties of GCalc.Expression */
+class Expression {
+    /* Properties of GCalc-1.GCalc.Expression */
     parent: Expression
     readonly expressions: ExpressionContainer
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.Expression */
+    /* Methods of GCalc-1.GCalc.Expression */
     to_string(): string
     solve(): Result
     get_parent(): Expression
     set_parent(value: Expression): void
     get_expressions(): ExpressionContainer
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -326,27 +328,27 @@ export class Expression {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.Expression */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.Expression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Expression, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Expression, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -365,18 +367,18 @@ export class Expression {
 }
 export interface ErrorExpression_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ErrorExpression {
-    /* Fields of GObject.Object */
+class ErrorExpression {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -384,21 +386,21 @@ export class ErrorExpression {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ErrorExpression, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ErrorExpression, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -416,15 +418,15 @@ export interface Function_ConstructProps extends GObject.Object_ConstructProps {
     n_params?: number
     closed?: boolean
 }
-export class Function {
-    /* Properties of GCalc.Function */
+class Function {
+    /* Properties of GCalc-1.GCalc.Function */
     readonly param_types: ExpressionContainer
     name: string
     n_params: number
     closed: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.Function */
+    /* Methods of GCalc-1.GCalc.Function */
     evaluate(): Expression
     verify_params(): boolean
     get_param_types(): ExpressionContainer
@@ -434,15 +436,15 @@ export class Function {
     set_n_params(value: number): void
     get_closed(): boolean
     set_closed(value: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -450,13 +452,13 @@ export class Function {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.Function */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.Function */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -466,15 +468,15 @@ export class Function {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Function, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Function, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -497,22 +499,22 @@ export class Function {
 }
 export interface ErrorResult_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ErrorResult {
-    /* Properties of GCalc.ErrorResult */
+class ErrorResult {
+    /* Properties of GCalc-1.GCalc.ErrorResult */
     readonly message: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.ErrorResult */
+    /* Methods of GCalc-1.GCalc.ErrorResult */
     get_message(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -520,23 +522,23 @@ export class ErrorResult {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.ErrorResult */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.ErrorResult */
     vfunc_get_message(): string
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ErrorResult, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ErrorResult, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -555,27 +557,27 @@ export interface Group_ConstructProps extends GObject.Object_ConstructProps {
     level?: GroupLevel
     closed?: boolean
 }
-export class Group {
-    /* Properties of GCalc.Group */
+class Group {
+    /* Properties of GCalc-1.GCalc.Group */
     level: GroupLevel
     closed: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.Group */
+    /* Methods of GCalc-1.GCalc.Group */
     evaluate(): Expression
     get_level(): GroupLevel
     set_level(value: GroupLevel): void
     get_closed(): boolean
     set_closed(value: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -583,27 +585,27 @@ export class Group {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.Group */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.Group */
     vfunc_evaluate(): Expression
     vfunc_get_level(): GroupLevel
     vfunc_set_level(value: GroupLevel): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -622,20 +624,20 @@ export class Group {
 }
 export interface Hashable_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Hashable {
-    /* Fields of GObject.Object */
+class Hashable {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.Hashable */
+    /* Methods of GCalc-1.GCalc.Hashable */
     hash(): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -643,23 +645,23 @@ export class Hashable {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.Hashable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.Hashable */
     vfunc_hash(): number
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Hashable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Hashable, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -674,22 +676,22 @@ export class Hashable {
 }
 export interface MathEquation_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class MathEquation {
-    /* Properties of GCalc.MathEquation */
+class MathEquation {
+    /* Properties of GCalc-1.GCalc.MathEquation */
     readonly variables: ExpressionHashMap
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.MathEquation */
+    /* Methods of GCalc-1.GCalc.MathEquation */
     get_variables(): ExpressionHashMap
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -697,23 +699,23 @@ export class MathEquation {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.MathEquation */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.MathEquation */
     vfunc_get_variables(): ExpressionHashMap
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MathEquation, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathEquation, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -730,25 +732,25 @@ export class MathEquation {
 }
 export interface MathEquationManager_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class MathEquationManager {
-    /* Properties of GCalc.MathEquationManager */
+class MathEquationManager {
+    /* Properties of GCalc-1.GCalc.MathEquationManager */
     readonly equations: ExpressionContainer
     readonly functions: ExpressionContainer
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.MathEquationManager */
+    /* Methods of GCalc-1.GCalc.MathEquationManager */
     find_variable(name: string): Variable
     get_equations(): ExpressionContainer
     get_functions(): ExpressionContainer
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -756,25 +758,25 @@ export class MathEquationManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.MathEquationManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.MathEquationManager */
     vfunc_find_variable(name: string): Variable
     vfunc_get_equations(): ExpressionContainer
     vfunc_get_functions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MathEquationManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathEquationManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -793,18 +795,18 @@ export class MathEquationManager {
 }
 export interface Minus_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Minus {
-    /* Fields of GObject.Object */
+class Minus {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -812,21 +814,21 @@ export class Minus {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Minus, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Minus, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -841,18 +843,18 @@ export class Minus {
 }
 export interface Multiply_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Multiply {
-    /* Fields of GObject.Object */
+class Multiply {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -860,21 +862,21 @@ export class Multiply {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Multiply, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Multiply, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -889,18 +891,18 @@ export class Multiply {
 }
 export interface Operator_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Operator {
-    /* Fields of GObject.Object */
+class Operator {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -908,21 +910,21 @@ export class Operator {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Operator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Operator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -937,18 +939,18 @@ export class Operator {
 }
 export interface Plus_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Plus {
-    /* Fields of GObject.Object */
+class Plus {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -956,21 +958,21 @@ export class Plus {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Plus, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Plus, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -985,20 +987,20 @@ export class Plus {
 }
 export interface Polynomial_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Polynomial {
-    /* Fields of GObject.Object */
+class Polynomial {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.Polynomial */
+    /* Methods of GCalc-1.GCalc.Polynomial */
     evaluate(): Expression
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1006,23 +1008,23 @@ export class Polynomial {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.Polynomial */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.Polynomial */
     vfunc_evaluate(): Expression
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Polynomial, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Polynomial, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1037,18 +1039,18 @@ export class Polynomial {
 }
 export interface Pow_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Pow {
-    /* Fields of GObject.Object */
+class Pow {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1056,21 +1058,21 @@ export class Pow {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Pow, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Pow, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1085,23 +1087,23 @@ export class Pow {
 }
 export interface Result_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Result {
-    /* Properties of GCalc.Result */
+class Result {
+    /* Properties of GCalc-1.GCalc.Result */
     readonly expression: Expression
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.Result */
+    /* Methods of GCalc-1.GCalc.Result */
     to_string(): string
     get_expression(): Expression
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1109,24 +1111,24 @@ export class Result {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.Result */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.Result */
     vfunc_to_string(): string
     vfunc_get_expression(): Expression
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Result, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Result, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1144,24 +1146,24 @@ export class Result {
 export interface Solver_ConstructProps extends GObject.Object_ConstructProps {
     equation_manager?: MathEquationManager
 }
-export class Solver {
-    /* Properties of GCalc.Solver */
+class Solver {
+    /* Properties of GCalc-1.GCalc.Solver */
     equation_manager: MathEquationManager
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.Solver */
+    /* Methods of GCalc-1.GCalc.Solver */
     solve(str: string): Result
     get_equation_manager(): MathEquationManager
     set_equation_manager(value: MathEquationManager): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1169,25 +1171,25 @@ export class Solver {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.Solver */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.Solver */
     vfunc_solve(str: string): Result
     vfunc_get_equation_manager(): MathEquationManager
     vfunc_set_equation_manager(value: MathEquationManager): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Solver, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Solver, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1204,21 +1206,21 @@ export class Solver {
 }
 export interface Term_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Term {
-    /* Fields of GObject.Object */
+class Term {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.Term */
+    /* Methods of GCalc-1.GCalc.Term */
     add(t: Term): Expression
     evaluate(): Expression
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1226,24 +1228,24 @@ export class Term {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.Term */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.Term */
     vfunc_add(t: Term): Expression
     vfunc_evaluate(): Expression
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Term, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Term, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1263,14 +1265,14 @@ export interface Variable_ConstructProps extends GObject.Object_ConstructProps {
     value?: Constant
     bind?: Variable
 }
-export class Variable {
-    /* Properties of GCalc.Variable */
+class Variable {
+    /* Properties of GCalc-1.GCalc.Variable */
     name: string
     value: Constant
     bind: Variable
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.Variable */
+    /* Methods of GCalc-1.GCalc.Variable */
     evaluate(): Expression
     get_name(): string
     set_name(value: string): void
@@ -1279,15 +1281,15 @@ export class Variable {
     get_bind(): Variable
     set_bind(value: Variable): void
     get_binded(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1295,13 +1297,13 @@ export class Variable {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.Variable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.Variable */
     vfunc_evaluate(): Expression
     vfunc_get_name(): string
     vfunc_set_name(value: string): void
@@ -1310,15 +1312,15 @@ export class Variable {
     vfunc_get_bind(): Variable
     vfunc_set_bind(value: Variable): void
     vfunc_get_binded(): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Variable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Variable, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1340,24 +1342,24 @@ export class Variable {
 export interface ExpressionContainer_ConstructProps extends Gee.ArrayList_ConstructProps {
     parent?: Expression
 }
-export class ExpressionContainer {
-    /* Properties of GCalc.ExpressionContainer */
+class ExpressionContainer {
+    /* Properties of GCalc-1.GCalc.ExpressionContainer */
     parent: Expression
-    /* Properties of Gee.AbstractBidirList */
+    /* Properties of Gee-0.8.Gee.AbstractBidirList */
     readonly read_only_view: Gee.BidirList
-    /* Properties of Gee.AbstractCollection */
+    /* Properties of Gee-0.8.Gee.AbstractCollection */
     readonly size: number
     readonly read_only: boolean
-    /* Fields of GCalc.ExpressionContainer */
+    /* Fields of GCalc-1.GCalc.ExpressionContainer */
     parent_instance: Gee.ArrayList
     priv: ExpressionContainerPrivate
-    /* Fields of Gee.ArrayList */
+    /* Fields of Gee-0.8.Gee.ArrayList */
     _items: object[]
     _items_length1: number
     _size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.ExpressionContainer */
+    /* Methods of GCalc-1.GCalc.ExpressionContainer */
     add(exp: Expression): void
     remove_at(index: number): Expression
     remove(exp: Expression): Expression
@@ -1366,10 +1368,10 @@ export class ExpressionContainer {
     find_named(name: string): Expression | null
     get_parent(): Expression
     set_parent(value: Expression): void
-    /* Methods of Gee.ArrayList */
+    /* Methods of Gee-0.8.Gee.ArrayList */
     add_all(collection: Gee.Collection): boolean
     get_equal_func(): [ /* returnType */ Gee.EqualDataFunc, /* result_target */ object | null ]
-    /* Methods of Gee.AbstractBidirList */
+    /* Methods of Gee-0.8.Gee.AbstractBidirList */
     bidir_list_iterator(): Gee.BidirListIterator
     reserved0(): void
     reserved1(): void
@@ -1382,7 +1384,7 @@ export class ExpressionContainer {
     reserved8(): void
     reserved9(): void
     get_read_only_view(): Gee.BidirList
-    /* Methods of Gee.AbstractList */
+    /* Methods of Gee-0.8.Gee.AbstractList */
     list_iterator(): Gee.ListIterator
     get(index: number): object | null
     set(index: number, item?: object | null): void
@@ -1391,7 +1393,7 @@ export class ExpressionContainer {
     remove_at(index: number): object | null
     slice(start: number, stop: number): Gee.List | null
     get_read_only_view(): Gee.List
-    /* Methods of Gee.AbstractCollection */
+    /* Methods of Gee-0.8.Gee.AbstractCollection */
     contains(item?: object | null): boolean
     add(item?: object | null): boolean
     remove(item?: object | null): boolean
@@ -1401,15 +1403,15 @@ export class ExpressionContainer {
     get_size(): number
     get_read_only(): boolean
     get_read_only_view(): Gee.Collection
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1417,29 +1419,29 @@ export class ExpressionContainer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.ListModel */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.ListModel */
     get_item_type(): GObject.Type
     get_n_items(): number
     get_item(position: number): GObject.Object | null
     items_changed(position: number, removed: number, added: number): void
-    /* Virtual methods of GCalc.ExpressionContainer */
+    /* Virtual methods of GCalc-1.GCalc.ExpressionContainer */
     vfunc_get_item(position: number): GObject.Object | null
     vfunc_get_item_type(): GObject.Type
     vfunc_get_n_items(): number
     vfunc_get_read_only_view(): Gee.BidirList
     vfunc_get_read_only_view(): Gee.List
     vfunc_get_read_only_view(): Gee.Collection
-    /* Virtual methods of Gee.ArrayList */
+    /* Virtual methods of Gee-0.8.Gee.ArrayList */
     vfunc_get_read_only_view(): Gee.BidirList
     vfunc_get_read_only_view(): Gee.List
     vfunc_get_read_only_view(): Gee.Collection
-    /* Virtual methods of Gee.AbstractBidirList */
+    /* Virtual methods of Gee-0.8.Gee.AbstractBidirList */
     vfunc_bidir_list_iterator(): Gee.BidirListIterator
     vfunc_reserved0(): void
     vfunc_reserved1(): void
@@ -1454,7 +1456,7 @@ export class ExpressionContainer {
     vfunc_get_read_only_view(): Gee.BidirList
     vfunc_get_read_only_view(): Gee.List
     vfunc_get_read_only_view(): Gee.Collection
-    /* Virtual methods of Gee.AbstractList */
+    /* Virtual methods of Gee-0.8.Gee.AbstractList */
     vfunc_list_iterator(): Gee.ListIterator
     vfunc_get(index: number): object | null
     vfunc_set(index: number, item?: object | null): void
@@ -1478,7 +1480,7 @@ export class ExpressionContainer {
     vfunc_last(): object | null
     vfunc_insert_all(index: number, collection: Gee.Collection): void
     vfunc_sort(compare_func: GLib.CompareDataFunc | null): void
-    /* Virtual methods of Gee.AbstractCollection */
+    /* Virtual methods of Gee-0.8.Gee.AbstractCollection */
     vfunc_contains(item?: object | null): boolean
     vfunc_add(item?: object | null): boolean
     vfunc_remove(item?: object | null): boolean
@@ -1525,19 +1527,19 @@ export class ExpressionContainer {
     vfunc_contains_all_iterator(iter: Gee.Iterator): boolean
     vfunc_remove_all_iterator(iter: Gee.Iterator): boolean
     vfunc_get_is_empty(): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ExpressionContainer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ExpressionContainer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gio.ListModel */
+    /* Signals of Gio-2.0.Gio.ListModel */
     connect(sigName: "items-changed", callback: (($obj: ExpressionContainer, position: number, removed: number, added: number) => void)): number
     connect_after(sigName: "items-changed", callback: (($obj: ExpressionContainer, position: number, removed: number, added: number) => void)): number
     emit(sigName: "items-changed", position: number, removed: number, added: number): void
@@ -1564,32 +1566,32 @@ export class ExpressionContainer {
 export interface ExpressionHashMap_ConstructProps extends Gee.HashMap_ConstructProps {
     parent?: Expression
 }
-export class ExpressionHashMap {
-    /* Properties of GCalc.ExpressionHashMap */
+class ExpressionHashMap {
+    /* Properties of GCalc-1.GCalc.ExpressionHashMap */
     parent: Expression
-    /* Properties of Gee.AbstractMap */
+    /* Properties of Gee-0.8.Gee.AbstractMap */
     readonly size: number
     readonly read_only: boolean
     readonly keys: Gee.Set
     readonly values: Gee.Collection
     readonly entries: Gee.Set
     readonly read_only_view: Gee.Map
-    /* Fields of GCalc.ExpressionHashMap */
+    /* Fields of GCalc-1.GCalc.ExpressionHashMap */
     parent_instance: Gee.HashMap
     priv: ExpressionHashMapPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.ExpressionHashMap */
+    /* Methods of GCalc-1.GCalc.ExpressionHashMap */
     add(exp: Expression): void
     remove(exp: Expression): void
     find_named(name: string): Expression
     get_parent(): Expression
     set_parent(value: Expression): void
-    /* Methods of Gee.HashMap */
+    /* Methods of Gee-0.8.Gee.HashMap */
     get_key_hash_func(): [ /* returnType */ Gee.HashDataFunc, /* result_target */ object | null ]
     get_key_equal_func(): [ /* returnType */ Gee.EqualDataFunc, /* result_target */ object | null ]
     get_value_equal_func(): [ /* returnType */ Gee.EqualDataFunc, /* result_target */ object | null ]
-    /* Methods of Gee.AbstractMap */
+    /* Methods of Gee-0.8.Gee.AbstractMap */
     has_key(key?: object | null): boolean
     has(key?: object | null, value?: object | null): boolean
     get(key?: object | null): object | null
@@ -1615,15 +1617,15 @@ export class ExpressionHashMap {
     get_values(): Gee.Collection
     get_entries(): Gee.Set
     get_read_only_view(): Gee.Map
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1631,13 +1633,13 @@ export class ExpressionHashMap {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gee.AbstractMap */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gee-0.8.Gee.AbstractMap */
     vfunc_has_key(key?: object | null): boolean
     vfunc_has(key?: object | null, value?: object | null): boolean
     vfunc_get(key?: object | null): object | null
@@ -1682,15 +1684,15 @@ export class ExpressionHashMap {
     vfunc_unset_all(map: Gee.Map): boolean
     vfunc_has_all(map: Gee.Map): boolean
     vfunc_get_is_empty(): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ExpressionHashMap, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ExpressionHashMap, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1722,26 +1724,26 @@ export class ExpressionHashMap {
 }
 export interface GFunctionAcos_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionAcos {
-    /* Fields of GCalc.GFunctionAcos */
+class GFunctionAcos {
+    /* Fields of GCalc-1.GCalc.GFunctionAcos */
     parent_instance: GFunction
     priv: GFunctionAcosPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1749,13 +1751,13 @@ export class GFunctionAcos {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -1766,21 +1768,21 @@ export class GFunctionAcos {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionAcos, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionAcos, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1797,26 +1799,26 @@ export class GFunctionAcos {
 }
 export interface GFunctionAcosh_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionAcosh {
-    /* Fields of GCalc.GFunctionAcosh */
+class GFunctionAcosh {
+    /* Fields of GCalc-1.GCalc.GFunctionAcosh */
     parent_instance: GFunction
     priv: GFunctionAcoshPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1824,13 +1826,13 @@ export class GFunctionAcosh {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -1841,21 +1843,21 @@ export class GFunctionAcosh {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionAcosh, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionAcosh, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1872,26 +1874,26 @@ export class GFunctionAcosh {
 }
 export interface GFunctionAsin_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionAsin {
-    /* Fields of GCalc.GFunctionAsin */
+class GFunctionAsin {
+    /* Fields of GCalc-1.GCalc.GFunctionAsin */
     parent_instance: GFunction
     priv: GFunctionAsinPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1899,13 +1901,13 @@ export class GFunctionAsin {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -1916,21 +1918,21 @@ export class GFunctionAsin {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionAsin, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionAsin, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1947,26 +1949,26 @@ export class GFunctionAsin {
 }
 export interface GFunctionAsinh_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionAsinh {
-    /* Fields of GCalc.GFunctionAsinh */
+class GFunctionAsinh {
+    /* Fields of GCalc-1.GCalc.GFunctionAsinh */
     parent_instance: GFunction
     priv: GFunctionAsinhPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1974,13 +1976,13 @@ export class GFunctionAsinh {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -1991,21 +1993,21 @@ export class GFunctionAsinh {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionAsinh, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionAsinh, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2022,26 +2024,26 @@ export class GFunctionAsinh {
 }
 export interface GFunctionAtan_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionAtan {
-    /* Fields of GCalc.GFunctionAtan */
+class GFunctionAtan {
+    /* Fields of GCalc-1.GCalc.GFunctionAtan */
     parent_instance: GFunction
     priv: GFunctionAtanPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2049,13 +2051,13 @@ export class GFunctionAtan {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -2066,21 +2068,21 @@ export class GFunctionAtan {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionAtan, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionAtan, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2097,26 +2099,26 @@ export class GFunctionAtan {
 }
 export interface GFunctionAtanh_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionAtanh {
-    /* Fields of GCalc.GFunctionAtanh */
+class GFunctionAtanh {
+    /* Fields of GCalc-1.GCalc.GFunctionAtanh */
     parent_instance: GFunction
     priv: GFunctionAtanhPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2124,13 +2126,13 @@ export class GFunctionAtanh {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -2141,21 +2143,21 @@ export class GFunctionAtanh {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionAtanh, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionAtanh, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2172,26 +2174,26 @@ export class GFunctionAtanh {
 }
 export interface GFunctionCos_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionCos {
-    /* Fields of GCalc.GFunctionCos */
+class GFunctionCos {
+    /* Fields of GCalc-1.GCalc.GFunctionCos */
     parent_instance: GFunction
     priv: GFunctionCosPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2199,13 +2201,13 @@ export class GFunctionCos {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -2216,21 +2218,21 @@ export class GFunctionCos {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionCos, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionCos, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2247,26 +2249,26 @@ export class GFunctionCos {
 }
 export interface GFunctionCosh_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionCosh {
-    /* Fields of GCalc.GFunctionCosh */
+class GFunctionCosh {
+    /* Fields of GCalc-1.GCalc.GFunctionCosh */
     parent_instance: GFunction
     priv: GFunctionCoshPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2274,13 +2276,13 @@ export class GFunctionCosh {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -2291,21 +2293,21 @@ export class GFunctionCosh {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionCosh, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionCosh, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2322,26 +2324,26 @@ export class GFunctionCosh {
 }
 export interface GFunctionExp_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionExp {
-    /* Fields of GCalc.GFunctionExp */
+class GFunctionExp {
+    /* Fields of GCalc-1.GCalc.GFunctionExp */
     parent_instance: GFunction
     priv: GFunctionExpPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2349,13 +2351,13 @@ export class GFunctionExp {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -2366,21 +2368,21 @@ export class GFunctionExp {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionExp, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionExp, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2397,26 +2399,26 @@ export class GFunctionExp {
 }
 export interface GFunctionLog_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionLog {
-    /* Fields of GCalc.GFunctionLog */
+class GFunctionLog {
+    /* Fields of GCalc-1.GCalc.GFunctionLog */
     parent_instance: GFunction
     priv: GFunctionLogPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2424,13 +2426,13 @@ export class GFunctionLog {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -2441,21 +2443,21 @@ export class GFunctionLog {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionLog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionLog, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2472,26 +2474,26 @@ export class GFunctionLog {
 }
 export interface GFunctionSin_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionSin {
-    /* Fields of GCalc.GFunctionSin */
+class GFunctionSin {
+    /* Fields of GCalc-1.GCalc.GFunctionSin */
     parent_instance: GFunction
     priv: GFunctionSinPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2499,13 +2501,13 @@ export class GFunctionSin {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -2516,21 +2518,21 @@ export class GFunctionSin {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionSin, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionSin, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2547,26 +2549,26 @@ export class GFunctionSin {
 }
 export interface GFunctionSinh_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionSinh {
-    /* Fields of GCalc.GFunctionSinh */
+class GFunctionSinh {
+    /* Fields of GCalc-1.GCalc.GFunctionSinh */
     parent_instance: GFunction
     priv: GFunctionSinhPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2574,13 +2576,13 @@ export class GFunctionSinh {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -2591,21 +2593,21 @@ export class GFunctionSinh {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionSinh, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionSinh, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2622,26 +2624,26 @@ export class GFunctionSinh {
 }
 export interface GFunctionSqrt_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionSqrt {
-    /* Fields of GCalc.GFunctionSqrt */
+class GFunctionSqrt {
+    /* Fields of GCalc-1.GCalc.GFunctionSqrt */
     parent_instance: GFunction
     priv: GFunctionSqrtPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2649,13 +2651,13 @@ export class GFunctionSqrt {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -2666,21 +2668,21 @@ export class GFunctionSqrt {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionSqrt, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionSqrt, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2697,26 +2699,26 @@ export class GFunctionSqrt {
 }
 export interface GFunctionTan_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionTan {
-    /* Fields of GCalc.GFunctionTan */
+class GFunctionTan {
+    /* Fields of GCalc-1.GCalc.GFunctionTan */
     parent_instance: GFunction
     priv: GFunctionTanPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2724,13 +2726,13 @@ export class GFunctionTan {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -2741,21 +2743,21 @@ export class GFunctionTan {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionTan, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionTan, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2772,26 +2774,26 @@ export class GFunctionTan {
 }
 export interface GFunctionTanh_ConstructProps extends GFunction_ConstructProps {
 }
-export class GFunctionTanh {
-    /* Fields of GCalc.GFunctionTanh */
+class GFunctionTanh {
+    /* Fields of GCalc-1.GCalc.GFunctionTanh */
     parent_instance: GFunction
     priv: GFunctionTanhPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2799,13 +2801,13 @@ export class GFunctionTanh {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GFunction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -2816,21 +2818,21 @@ export class GFunctionTanh {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunctionTanh, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunctionTanh, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2848,27 +2850,27 @@ export class GFunctionTanh {
 export interface GExpression_ConstructProps extends GObject.Object_ConstructProps {
     parent?: Expression
 }
-export class GExpression {
-    /* Properties of GCalc.Expression */
+class GExpression {
+    /* Properties of GCalc-1.GCalc.Expression */
     parent: Expression
     readonly expressions: ExpressionContainer
-    /* Fields of GCalc.GExpression */
+    /* Fields of GCalc-1.GCalc.GExpression */
     parent_instance: GObject.Object
     priv: GExpressionPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2876,31 +2878,31 @@ export class GExpression {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GCalc.Expression */
+    watch_closure(closure: Function): void
+    /* Methods of GCalc-1.GCalc.Expression */
     get_parent(): Expression
     set_parent(value: Expression): void
     get_expressions(): ExpressionContainer
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GExpression, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GExpression, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2921,24 +2923,24 @@ export class GExpression {
 }
 export interface GErrorExpression_ConstructProps extends GExpression_ConstructProps {
 }
-export class GErrorExpression {
-    /* Fields of GCalc.GErrorExpression */
+class GErrorExpression {
+    /* Fields of GCalc-1.GCalc.GErrorExpression */
     parent_instance: GExpression
     priv: GErrorExpressionPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2946,27 +2948,27 @@ export class GErrorExpression {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GExpression */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GErrorExpression, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GErrorExpression, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2983,24 +2985,24 @@ export class GErrorExpression {
 }
 export interface GAssign_ConstructProps extends GExpression_ConstructProps {
 }
-export class GAssign {
-    /* Fields of GCalc.GAssign */
+class GAssign {
+    /* Fields of GCalc-1.GCalc.GAssign */
     parent_instance: GExpression
     priv: GAssignPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3008,29 +3010,29 @@ export class GAssign {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GCalc.Assign */
+    watch_closure(closure: Function): void
+    /* Methods of GCalc-1.GCalc.Assign */
     evaluate(): Expression
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GAssign, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GAssign, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3047,26 +3049,26 @@ export class GAssign {
 }
 export interface GConstant_ConstructProps extends GExpression_ConstructProps {
 }
-export class GConstant {
-    /* Fields of GCalc.GConstant */
+class GConstant {
+    /* Fields of GCalc-1.GCalc.GConstant */
     parent_instance: GExpression
     priv: GConstantPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GConstant */
+    /* Methods of GCalc-1.GCalc.GConstant */
     subtract(c: Constant): Constant
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3074,13 +3076,13 @@ export class GConstant {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GCalc.Constant */
+    watch_closure(closure: Function): void
+    /* Methods of GCalc-1.GCalc.Constant */
     real(): number
     imag(): number
     zero(): void
@@ -3089,7 +3091,7 @@ export class GConstant {
     divide(c: Constant): Constant
     neg(): Constant
     pow(c: Constant): Constant
-    /* Virtual methods of GCalc.GConstant */
+    /* Virtual methods of GCalc-1.GCalc.GConstant */
     vfunc_real(): number
     vfunc_imag(): number
     vfunc_zero(): void
@@ -3098,21 +3100,21 @@ export class GConstant {
     vfunc_divide(c: Constant): Constant
     vfunc_neg(): Constant
     vfunc_pow(c: Constant): Constant
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GConstant, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GConstant, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3133,24 +3135,24 @@ export class GConstant {
 }
 export interface GDivision_ConstructProps extends GExpression_ConstructProps {
 }
-export class GDivision {
-    /* Fields of GCalc.GDivision */
+class GDivision {
+    /* Fields of GCalc-1.GCalc.GDivision */
     parent_instance: GExpression
     priv: GDivisionPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3158,27 +3160,27 @@ export class GDivision {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GExpression */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GDivision, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GDivision, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3195,25 +3197,25 @@ export class GDivision {
 }
 export interface GErrorResult_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class GErrorResult {
-    /* Properties of GCalc.Result */
+class GErrorResult {
+    /* Properties of GCalc-1.GCalc.Result */
     readonly expression: Expression
-    /* Properties of GCalc.ErrorResult */
+    /* Properties of GCalc-1.GCalc.ErrorResult */
     readonly message: string
-    /* Fields of GCalc.GErrorResult */
+    /* Fields of GCalc-1.GCalc.GErrorResult */
     parent_instance: GObject.Object
     priv: GErrorResultPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3221,30 +3223,30 @@ export class GErrorResult {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GCalc.Result */
+    watch_closure(closure: Function): void
+    /* Methods of GCalc-1.GCalc.Result */
     to_string(): string
     get_expression(): Expression
-    /* Methods of GCalc.ErrorResult */
+    /* Methods of GCalc-1.GCalc.ErrorResult */
     get_message(): string
-    /* Virtual methods of GCalc.GErrorResult */
+    /* Virtual methods of GCalc-1.GCalc.GErrorResult */
     vfunc_to_string(): string
     vfunc_get_expression(): Expression
     vfunc_get_message(): string
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GErrorResult, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GErrorResult, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3268,31 +3270,31 @@ export interface GFunction_ConstructProps extends GExpression_ConstructProps {
     n_params?: number
     closed?: boolean
 }
-export class GFunction {
-    /* Properties of GCalc.Function */
+class GFunction {
+    /* Properties of GCalc-1.GCalc.Function */
     readonly param_types: ExpressionContainer
     name: string
     n_params: number
     closed: boolean
-    /* Fields of GCalc.GFunction */
+    /* Fields of GCalc-1.GCalc.GFunction */
     parent_instance: GExpression
     priv: GFunctionPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GFunction */
+    /* Methods of GCalc-1.GCalc.GFunction */
     evaluate(): Expression
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3300,13 +3302,13 @@ export class GFunction {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GCalc.Function */
+    watch_closure(closure: Function): void
+    /* Methods of GCalc-1.GCalc.Function */
     verify_params(): boolean
     get_param_types(): ExpressionContainer
     get_name(): string
@@ -3315,9 +3317,9 @@ export class GFunction {
     set_n_params(value: number): void
     get_closed(): boolean
     set_closed(value: boolean): void
-    /* Methods of GCalc.Hashable */
+    /* Methods of GCalc-1.GCalc.Hashable */
     hash(): number
-    /* Virtual methods of GCalc.GFunction */
+    /* Virtual methods of GCalc-1.GCalc.GFunction */
     vfunc_evaluate(): Expression
     vfunc_verify_params(): boolean
     vfunc_get_param_types(): ExpressionContainer
@@ -3328,21 +3330,21 @@ export class GFunction {
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GFunction, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GFunction, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3368,26 +3370,26 @@ export class GFunction {
 }
 export interface GMathEquation_ConstructProps extends GExpression_ConstructProps {
 }
-export class GMathEquation {
-    /* Properties of GCalc.MathEquation */
+class GMathEquation {
+    /* Properties of GCalc-1.GCalc.MathEquation */
     readonly variables: ExpressionHashMap
-    /* Fields of GCalc.GMathEquation */
+    /* Fields of GCalc-1.GCalc.GMathEquation */
     parent_instance: GExpression
     priv: GMathEquationPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3395,31 +3397,31 @@ export class GMathEquation {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GCalc.MathEquation */
+    watch_closure(closure: Function): void
+    /* Methods of GCalc-1.GCalc.MathEquation */
     get_variables(): ExpressionHashMap
-    /* Virtual methods of GCalc.GMathEquation */
+    /* Virtual methods of GCalc-1.GCalc.GMathEquation */
     vfunc_get_variables(): ExpressionHashMap
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GMathEquation, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GMathEquation, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3438,24 +3440,24 @@ export class GMathEquation {
 }
 export interface GMathEquationManager_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class GMathEquationManager {
-    /* Properties of GCalc.MathEquationManager */
+class GMathEquationManager {
+    /* Properties of GCalc-1.GCalc.MathEquationManager */
     readonly equations: ExpressionContainer
     readonly functions: ExpressionContainer
-    /* Fields of GCalc.GMathEquationManager */
+    /* Fields of GCalc-1.GCalc.GMathEquationManager */
     parent_instance: GObject.Object
     priv: GMathEquationManagerPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3463,29 +3465,29 @@ export class GMathEquationManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GCalc.MathEquationManager */
+    watch_closure(closure: Function): void
+    /* Methods of GCalc-1.GCalc.MathEquationManager */
     find_variable(name: string): Variable
     get_equations(): ExpressionContainer
     get_functions(): ExpressionContainer
-    /* Virtual methods of GCalc.GMathEquationManager */
+    /* Virtual methods of GCalc-1.GCalc.GMathEquationManager */
     vfunc_find_variable(name: string): Variable
     vfunc_get_equations(): ExpressionContainer
     vfunc_get_functions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GMathEquationManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GMathEquationManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3506,24 +3508,24 @@ export class GMathEquationManager {
 }
 export interface GMinus_ConstructProps extends GExpression_ConstructProps {
 }
-export class GMinus {
-    /* Fields of GCalc.GMinus */
+class GMinus {
+    /* Fields of GCalc-1.GCalc.GMinus */
     parent_instance: GExpression
     priv: GMinusPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3531,27 +3533,27 @@ export class GMinus {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GExpression */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GMinus, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GMinus, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3568,24 +3570,24 @@ export class GMinus {
 }
 export interface GMultiply_ConstructProps extends GExpression_ConstructProps {
 }
-export class GMultiply {
-    /* Fields of GCalc.GMultiply */
+class GMultiply {
+    /* Fields of GCalc-1.GCalc.GMultiply */
     parent_instance: GExpression
     priv: GMultiplyPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3593,27 +3595,27 @@ export class GMultiply {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GExpression */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GMultiply, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GMultiply, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3630,25 +3632,25 @@ export class GMultiply {
 }
 export interface GParser_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class GParser {
-    /* Fields of GCalc.GParser */
+class GParser {
+    /* Fields of GCalc-1.GCalc.GParser */
     parent_instance: GObject.Object
     priv: GParserPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GParser */
+    /* Methods of GCalc-1.GCalc.GParser */
     parse(str: string, eqman: MathEquationManager): void
     read_token(): GParserTokenType
     token_to_string(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3656,21 +3658,21 @@ export class GParser {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GParser, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GParser, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3687,24 +3689,24 @@ export class GParser {
 }
 export interface GPlus_ConstructProps extends GExpression_ConstructProps {
 }
-export class GPlus {
-    /* Fields of GCalc.GPlus */
+class GPlus {
+    /* Fields of GCalc-1.GCalc.GPlus */
     parent_instance: GExpression
     priv: GPlusPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3712,27 +3714,27 @@ export class GPlus {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GExpression */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GPlus, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GPlus, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3749,24 +3751,24 @@ export class GPlus {
 }
 export interface GPolynomial_ConstructProps extends GExpression_ConstructProps {
 }
-export class GPolynomial {
-    /* Fields of GCalc.GPolynomial */
+class GPolynomial {
+    /* Fields of GCalc-1.GCalc.GPolynomial */
     parent_instance: GExpression
     priv: GPolynomialPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3774,31 +3776,31 @@ export class GPolynomial {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GCalc.Polynomial */
+    watch_closure(closure: Function): void
+    /* Methods of GCalc-1.GCalc.Polynomial */
     evaluate(): Expression
-    /* Virtual methods of GCalc.GPolynomial */
+    /* Virtual methods of GCalc-1.GCalc.GPolynomial */
     vfunc_evaluate(): Expression
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GPolynomial, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GPolynomial, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3815,24 +3817,24 @@ export class GPolynomial {
 }
 export interface GPow_ConstructProps extends GExpression_ConstructProps {
 }
-export class GPow {
-    /* Fields of GCalc.GPow */
+class GPow {
+    /* Fields of GCalc-1.GCalc.GPow */
     parent_instance: GExpression
     priv: GPowPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3840,27 +3842,27 @@ export class GPow {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GCalc.GExpression */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GPow, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GPow, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3877,23 +3879,23 @@ export class GPow {
 }
 export interface GResult_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class GResult {
-    /* Properties of GCalc.Result */
+class GResult {
+    /* Properties of GCalc-1.GCalc.Result */
     readonly expression: Expression
-    /* Fields of GCalc.GResult */
+    /* Fields of GCalc-1.GCalc.GResult */
     parent_instance: GObject.Object
     priv: GResultPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3901,27 +3903,27 @@ export class GResult {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GCalc.Result */
+    watch_closure(closure: Function): void
+    /* Methods of GCalc-1.GCalc.Result */
     to_string(): string
     get_expression(): Expression
-    /* Virtual methods of GCalc.GResult */
+    /* Virtual methods of GCalc-1.GCalc.GResult */
     vfunc_to_string(): string
     vfunc_get_expression(): Expression
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GResult, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GResult, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3942,27 +3944,27 @@ export interface GGroup_ConstructProps extends GExpression_ConstructProps {
     level?: GroupLevel
     closed?: boolean
 }
-export class GGroup {
-    /* Properties of GCalc.Group */
+class GGroup {
+    /* Properties of GCalc-1.GCalc.Group */
     level: GroupLevel
     closed: boolean
-    /* Fields of GCalc.GGroup */
+    /* Fields of GCalc-1.GCalc.GGroup */
     parent_instance: GExpression
     priv: GGroupPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3970,39 +3972,39 @@ export class GGroup {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GCalc.Group */
+    watch_closure(closure: Function): void
+    /* Methods of GCalc-1.GCalc.Group */
     evaluate(): Expression
     get_level(): GroupLevel
     set_level(value: GroupLevel): void
     get_closed(): boolean
     set_closed(value: boolean): void
-    /* Virtual methods of GCalc.GGroup */
+    /* Virtual methods of GCalc-1.GCalc.GGroup */
     vfunc_evaluate(): Expression
     vfunc_get_level(): GroupLevel
     vfunc_set_level(value: GroupLevel): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GGroup, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GGroup, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4024,23 +4026,23 @@ export class GGroup {
 export interface GSolver_ConstructProps extends GObject.Object_ConstructProps {
     equation_manager?: MathEquationManager
 }
-export class GSolver {
-    /* Properties of GCalc.Solver */
+class GSolver {
+    /* Properties of GCalc-1.GCalc.Solver */
     equation_manager: MathEquationManager
-    /* Fields of GCalc.GSolver */
+    /* Fields of GCalc-1.GCalc.GSolver */
     parent_instance: GObject.Object
     priv: GSolverPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4048,29 +4050,29 @@ export class GSolver {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GCalc.Solver */
+    watch_closure(closure: Function): void
+    /* Methods of GCalc-1.GCalc.Solver */
     solve(str: string): Result
     get_equation_manager(): MathEquationManager
     set_equation_manager(value: MathEquationManager): void
-    /* Virtual methods of GCalc.GSolver */
+    /* Virtual methods of GCalc-1.GCalc.GSolver */
     vfunc_solve(str: string): Result
     vfunc_get_equation_manager(): MathEquationManager
     vfunc_set_equation_manager(value: MathEquationManager): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GSolver, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GSolver, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4089,24 +4091,24 @@ export class GSolver {
 }
 export interface GTerm_ConstructProps extends GExpression_ConstructProps {
 }
-export class GTerm {
-    /* Fields of GCalc.GTerm */
+class GTerm {
+    /* Fields of GCalc-1.GCalc.GTerm */
     parent_instance: GExpression
     priv: GTermPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4114,33 +4116,33 @@ export class GTerm {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GCalc.Term */
+    watch_closure(closure: Function): void
+    /* Methods of GCalc-1.GCalc.Term */
     add(t: Term): Expression
     evaluate(): Expression
-    /* Virtual methods of GCalc.GTerm */
+    /* Virtual methods of GCalc-1.GCalc.GTerm */
     vfunc_add(t: Term): Expression
     vfunc_evaluate(): Expression
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GTerm, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GTerm, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4161,28 +4163,28 @@ export interface GVariable_ConstructProps extends GExpression_ConstructProps {
     value?: Constant
     bind?: Variable
 }
-export class GVariable {
-    /* Properties of GCalc.Variable */
+class GVariable {
+    /* Properties of GCalc-1.GCalc.Variable */
     name: string
     value: Constant
     bind: Variable
-    /* Fields of GCalc.GVariable */
+    /* Fields of GCalc-1.GCalc.GVariable */
     parent_instance: GExpression
     priv: GVariablePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GCalc.GExpression */
+    /* Methods of GCalc-1.GCalc.GExpression */
     to_string(): string
     solve(): Result
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4190,13 +4192,13 @@ export class GVariable {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GCalc.Variable */
+    watch_closure(closure: Function): void
+    /* Methods of GCalc-1.GCalc.Variable */
     evaluate(): Expression
     get_name(): string
     set_name(value: string): void
@@ -4205,9 +4207,9 @@ export class GVariable {
     get_bind(): Variable
     set_bind(value: Variable): void
     get_binded(): boolean
-    /* Methods of GCalc.Hashable */
+    /* Methods of GCalc-1.GCalc.Hashable */
     hash(): number
-    /* Virtual methods of GCalc.GVariable */
+    /* Virtual methods of GCalc-1.GCalc.GVariable */
     vfunc_evaluate(): Expression
     vfunc_get_name(): string
     vfunc_set_name(value: string): void
@@ -4217,21 +4219,21 @@ export class GVariable {
     vfunc_set_bind(value: Variable): void
     vfunc_get_binded(): boolean
     vfunc_hash(): number
-    /* Virtual methods of GCalc.GExpression */
+    /* Virtual methods of GCalc-1.GCalc.GExpression */
     vfunc_to_string(): string
     vfunc_solve(): Result
     vfunc_get_parent(): Expression
     vfunc_set_parent(value: Expression): void
     vfunc_get_expressions(): ExpressionContainer
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GVariable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GVariable, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4253,317 +4255,317 @@ export class GVariable {
     static new(): GVariable
     static $gtype: GObject.Type
 }
-export abstract class ExpressionContainerClass {
-    /* Fields of GCalc.ExpressionContainerClass */
+abstract class ExpressionContainerClass {
+    /* Fields of GCalc-1.GCalc.ExpressionContainerClass */
     parent_class: Gee.ArrayListClass
     static name: string
 }
-export class ExpressionContainerPrivate {
+class ExpressionContainerPrivate {
     static name: string
 }
-export abstract class ExpressionHashMapClass {
-    /* Fields of GCalc.ExpressionHashMapClass */
+abstract class ExpressionHashMapClass {
+    /* Fields of GCalc-1.GCalc.ExpressionHashMapClass */
     parent_class: Gee.HashMapClass
     static name: string
 }
-export class ExpressionHashMapPrivate {
+class ExpressionHashMapPrivate {
     static name: string
 }
-export abstract class GFunctionAcosClass {
-    /* Fields of GCalc.GFunctionAcosClass */
+abstract class GFunctionAcosClass {
+    /* Fields of GCalc-1.GCalc.GFunctionAcosClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionAcosPrivate {
+class GFunctionAcosPrivate {
     static name: string
 }
-export abstract class GFunctionAcoshClass {
-    /* Fields of GCalc.GFunctionAcoshClass */
+abstract class GFunctionAcoshClass {
+    /* Fields of GCalc-1.GCalc.GFunctionAcoshClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionAcoshPrivate {
+class GFunctionAcoshPrivate {
     static name: string
 }
-export abstract class GFunctionAsinClass {
-    /* Fields of GCalc.GFunctionAsinClass */
+abstract class GFunctionAsinClass {
+    /* Fields of GCalc-1.GCalc.GFunctionAsinClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionAsinPrivate {
+class GFunctionAsinPrivate {
     static name: string
 }
-export abstract class GFunctionAsinhClass {
-    /* Fields of GCalc.GFunctionAsinhClass */
+abstract class GFunctionAsinhClass {
+    /* Fields of GCalc-1.GCalc.GFunctionAsinhClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionAsinhPrivate {
+class GFunctionAsinhPrivate {
     static name: string
 }
-export abstract class GFunctionAtanClass {
-    /* Fields of GCalc.GFunctionAtanClass */
+abstract class GFunctionAtanClass {
+    /* Fields of GCalc-1.GCalc.GFunctionAtanClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionAtanPrivate {
+class GFunctionAtanPrivate {
     static name: string
 }
-export abstract class GFunctionAtanhClass {
-    /* Fields of GCalc.GFunctionAtanhClass */
+abstract class GFunctionAtanhClass {
+    /* Fields of GCalc-1.GCalc.GFunctionAtanhClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionAtanhPrivate {
+class GFunctionAtanhPrivate {
     static name: string
 }
-export abstract class GFunctionCosClass {
-    /* Fields of GCalc.GFunctionCosClass */
+abstract class GFunctionCosClass {
+    /* Fields of GCalc-1.GCalc.GFunctionCosClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionCosPrivate {
+class GFunctionCosPrivate {
     static name: string
 }
-export abstract class GFunctionCoshClass {
-    /* Fields of GCalc.GFunctionCoshClass */
+abstract class GFunctionCoshClass {
+    /* Fields of GCalc-1.GCalc.GFunctionCoshClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionCoshPrivate {
+class GFunctionCoshPrivate {
     static name: string
 }
-export abstract class GFunctionExpClass {
-    /* Fields of GCalc.GFunctionExpClass */
+abstract class GFunctionExpClass {
+    /* Fields of GCalc-1.GCalc.GFunctionExpClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionExpPrivate {
+class GFunctionExpPrivate {
     static name: string
 }
-export abstract class GFunctionLogClass {
-    /* Fields of GCalc.GFunctionLogClass */
+abstract class GFunctionLogClass {
+    /* Fields of GCalc-1.GCalc.GFunctionLogClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionLogPrivate {
+class GFunctionLogPrivate {
     static name: string
 }
-export abstract class GFunctionSinClass {
-    /* Fields of GCalc.GFunctionSinClass */
+abstract class GFunctionSinClass {
+    /* Fields of GCalc-1.GCalc.GFunctionSinClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionSinPrivate {
+class GFunctionSinPrivate {
     static name: string
 }
-export abstract class GFunctionSinhClass {
-    /* Fields of GCalc.GFunctionSinhClass */
+abstract class GFunctionSinhClass {
+    /* Fields of GCalc-1.GCalc.GFunctionSinhClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionSinhPrivate {
+class GFunctionSinhPrivate {
     static name: string
 }
-export abstract class GFunctionSqrtClass {
-    /* Fields of GCalc.GFunctionSqrtClass */
+abstract class GFunctionSqrtClass {
+    /* Fields of GCalc-1.GCalc.GFunctionSqrtClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionSqrtPrivate {
+class GFunctionSqrtPrivate {
     static name: string
 }
-export abstract class GFunctionTanClass {
-    /* Fields of GCalc.GFunctionTanClass */
+abstract class GFunctionTanClass {
+    /* Fields of GCalc-1.GCalc.GFunctionTanClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionTanPrivate {
+class GFunctionTanPrivate {
     static name: string
 }
-export abstract class GFunctionTanhClass {
-    /* Fields of GCalc.GFunctionTanhClass */
+abstract class GFunctionTanhClass {
+    /* Fields of GCalc-1.GCalc.GFunctionTanhClass */
     parent_class: GFunctionClass
     static name: string
 }
-export class GFunctionTanhPrivate {
+class GFunctionTanhPrivate {
     static name: string
 }
-export abstract class GExpressionClass {
-    /* Fields of GCalc.GExpressionClass */
+abstract class GExpressionClass {
+    /* Fields of GCalc-1.GCalc.GExpressionClass */
     parent_class: GObject.ObjectClass
     to_string: (self: GExpression) => string
     solve: (self: GExpression) => Result
     static name: string
 }
-export class GExpressionPrivate {
+class GExpressionPrivate {
     static name: string
 }
-export abstract class GErrorExpressionClass {
-    /* Fields of GCalc.GErrorExpressionClass */
+abstract class GErrorExpressionClass {
+    /* Fields of GCalc-1.GCalc.GErrorExpressionClass */
     parent_class: GExpressionClass
     static name: string
 }
-export class GErrorExpressionPrivate {
+class GErrorExpressionPrivate {
     static name: string
 }
-export abstract class GAssignClass {
-    /* Fields of GCalc.GAssignClass */
+abstract class GAssignClass {
+    /* Fields of GCalc-1.GCalc.GAssignClass */
     parent_class: GExpressionClass
     static name: string
 }
-export class GAssignPrivate {
+class GAssignPrivate {
     static name: string
 }
-export abstract class GConstantClass {
-    /* Fields of GCalc.GConstantClass */
+abstract class GConstantClass {
+    /* Fields of GCalc-1.GCalc.GConstantClass */
     parent_class: GExpressionClass
     static name: string
 }
-export class GConstantPrivate {
+class GConstantPrivate {
     static name: string
 }
-export abstract class GDivisionClass {
-    /* Fields of GCalc.GDivisionClass */
+abstract class GDivisionClass {
+    /* Fields of GCalc-1.GCalc.GDivisionClass */
     parent_class: GExpressionClass
     static name: string
 }
-export class GDivisionPrivate {
+class GDivisionPrivate {
     static name: string
 }
-export abstract class GErrorResultClass {
-    /* Fields of GCalc.GErrorResultClass */
+abstract class GErrorResultClass {
+    /* Fields of GCalc-1.GCalc.GErrorResultClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class GErrorResultPrivate {
+class GErrorResultPrivate {
     static name: string
 }
-export abstract class GFunctionClass {
-    /* Fields of GCalc.GFunctionClass */
+abstract class GFunctionClass {
+    /* Fields of GCalc-1.GCalc.GFunctionClass */
     parent_class: GExpressionClass
     evaluate: (self: GFunction) => Expression
     static name: string
 }
-export class GFunctionPrivate {
+class GFunctionPrivate {
     static name: string
 }
-export abstract class GMathEquationClass {
-    /* Fields of GCalc.GMathEquationClass */
+abstract class GMathEquationClass {
+    /* Fields of GCalc-1.GCalc.GMathEquationClass */
     parent_class: GExpressionClass
     static name: string
 }
-export class GMathEquationPrivate {
+class GMathEquationPrivate {
     static name: string
 }
-export abstract class GMathEquationManagerClass {
-    /* Fields of GCalc.GMathEquationManagerClass */
+abstract class GMathEquationManagerClass {
+    /* Fields of GCalc-1.GCalc.GMathEquationManagerClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class GMathEquationManagerPrivate {
+class GMathEquationManagerPrivate {
     static name: string
 }
-export abstract class GMinusClass {
-    /* Fields of GCalc.GMinusClass */
+abstract class GMinusClass {
+    /* Fields of GCalc-1.GCalc.GMinusClass */
     parent_class: GExpressionClass
     static name: string
 }
-export class GMinusPrivate {
+class GMinusPrivate {
     static name: string
 }
-export abstract class GMultiplyClass {
-    /* Fields of GCalc.GMultiplyClass */
+abstract class GMultiplyClass {
+    /* Fields of GCalc-1.GCalc.GMultiplyClass */
     parent_class: GExpressionClass
     static name: string
 }
-export class GMultiplyPrivate {
+class GMultiplyPrivate {
     static name: string
 }
-export abstract class GParserClass {
-    /* Fields of GCalc.GParserClass */
+abstract class GParserClass {
+    /* Fields of GCalc-1.GCalc.GParserClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class GParserPrivate {
+class GParserPrivate {
     static name: string
 }
-export abstract class GPlusClass {
-    /* Fields of GCalc.GPlusClass */
+abstract class GPlusClass {
+    /* Fields of GCalc-1.GCalc.GPlusClass */
     parent_class: GExpressionClass
     static name: string
 }
-export class GPlusPrivate {
+class GPlusPrivate {
     static name: string
 }
-export abstract class GPolynomialClass {
-    /* Fields of GCalc.GPolynomialClass */
+abstract class GPolynomialClass {
+    /* Fields of GCalc-1.GCalc.GPolynomialClass */
     parent_class: GExpressionClass
     static name: string
 }
-export class GPolynomialPrivate {
+class GPolynomialPrivate {
     static name: string
 }
-export abstract class GPowClass {
-    /* Fields of GCalc.GPowClass */
+abstract class GPowClass {
+    /* Fields of GCalc-1.GCalc.GPowClass */
     parent_class: GExpressionClass
     static name: string
 }
-export class GPowPrivate {
+class GPowPrivate {
     static name: string
 }
-export abstract class GResultClass {
-    /* Fields of GCalc.GResultClass */
+abstract class GResultClass {
+    /* Fields of GCalc-1.GCalc.GResultClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class GResultPrivate {
+class GResultPrivate {
     static name: string
 }
-export abstract class GGroupClass {
-    /* Fields of GCalc.GGroupClass */
+abstract class GGroupClass {
+    /* Fields of GCalc-1.GCalc.GGroupClass */
     parent_class: GExpressionClass
     static name: string
 }
-export class GGroupPrivate {
+class GGroupPrivate {
     static name: string
 }
-export abstract class GSolverClass {
-    /* Fields of GCalc.GSolverClass */
+abstract class GSolverClass {
+    /* Fields of GCalc-1.GCalc.GSolverClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class GSolverPrivate {
+class GSolverPrivate {
     static name: string
 }
-export abstract class GTermClass {
-    /* Fields of GCalc.GTermClass */
+abstract class GTermClass {
+    /* Fields of GCalc-1.GCalc.GTermClass */
     parent_class: GExpressionClass
     static name: string
 }
-export class GTermPrivate {
+class GTermPrivate {
     static name: string
 }
-export abstract class GVariableClass {
-    /* Fields of GCalc.GVariableClass */
+abstract class GVariableClass {
+    /* Fields of GCalc-1.GCalc.GVariableClass */
     parent_class: GExpressionClass
     static name: string
 }
-export class GVariablePrivate {
+class GVariablePrivate {
     static name: string
 }
-export abstract class AssignIface {
-    /* Fields of GCalc.AssignIface */
+abstract class AssignIface {
+    /* Fields of GCalc-1.GCalc.AssignIface */
     parent_iface: GObject.TypeInterface
     static name: string
 }
-export abstract class BinaryOperatorIface {
-    /* Fields of GCalc.BinaryOperatorIface */
+abstract class BinaryOperatorIface {
+    /* Fields of GCalc-1.GCalc.BinaryOperatorIface */
     parent_iface: GObject.TypeInterface
     static name: string
 }
-export abstract class ConstantIface {
-    /* Fields of GCalc.ConstantIface */
+abstract class ConstantIface {
+    /* Fields of GCalc-1.GCalc.ConstantIface */
     parent_iface: GObject.TypeInterface
     real: (self: Constant) => number
     imag: (self: Constant) => number
@@ -4575,13 +4577,13 @@ export abstract class ConstantIface {
     pow: (self: Constant, c: Constant) => Constant
     static name: string
 }
-export abstract class DivisionIface {
-    /* Fields of GCalc.DivisionIface */
+abstract class DivisionIface {
+    /* Fields of GCalc-1.GCalc.DivisionIface */
     parent_iface: GObject.TypeInterface
     static name: string
 }
-export abstract class ExpressionIface {
-    /* Fields of GCalc.ExpressionIface */
+abstract class ExpressionIface {
+    /* Fields of GCalc-1.GCalc.ExpressionIface */
     parent_iface: GObject.TypeInterface
     to_string: (self: Expression) => string
     solve: (self: Expression) => Result
@@ -4590,13 +4592,13 @@ export abstract class ExpressionIface {
     get_expressions: (self: Expression) => ExpressionContainer
     static name: string
 }
-export abstract class ErrorExpressionIface {
-    /* Fields of GCalc.ErrorExpressionIface */
+abstract class ErrorExpressionIface {
+    /* Fields of GCalc-1.GCalc.ErrorExpressionIface */
     parent_iface: GObject.TypeInterface
     static name: string
 }
-export abstract class FunctionIface {
-    /* Fields of GCalc.FunctionIface */
+abstract class FunctionIface {
+    /* Fields of GCalc-1.GCalc.FunctionIface */
     parent_iface: GObject.TypeInterface
     evaluate: (self: Function) => Expression
     verify_params: (self: Function) => boolean
@@ -4609,14 +4611,14 @@ export abstract class FunctionIface {
     set_closed: (self: Function, value: boolean) => void
     static name: string
 }
-export abstract class ErrorResultIface {
-    /* Fields of GCalc.ErrorResultIface */
+abstract class ErrorResultIface {
+    /* Fields of GCalc-1.GCalc.ErrorResultIface */
     parent_iface: GObject.TypeInterface
     get_message: (self: ErrorResult) => string
     static name: string
 }
-export abstract class GroupIface {
-    /* Fields of GCalc.GroupIface */
+abstract class GroupIface {
+    /* Fields of GCalc-1.GCalc.GroupIface */
     parent_iface: GObject.TypeInterface
     evaluate: (self: Group) => Expression
     get_level: (self: Group) => GroupLevel
@@ -4625,81 +4627,81 @@ export abstract class GroupIface {
     set_closed: (self: Group, value: boolean) => void
     static name: string
 }
-export abstract class HashableIface {
-    /* Fields of GCalc.HashableIface */
+abstract class HashableIface {
+    /* Fields of GCalc-1.GCalc.HashableIface */
     parent_iface: GObject.TypeInterface
     hash: (self: Hashable) => number
     static name: string
 }
-export abstract class MathEquationIface {
-    /* Fields of GCalc.MathEquationIface */
+abstract class MathEquationIface {
+    /* Fields of GCalc-1.GCalc.MathEquationIface */
     parent_iface: GObject.TypeInterface
     get_variables: (self: MathEquation) => ExpressionHashMap
     static name: string
 }
-export abstract class MathEquationManagerIface {
-    /* Fields of GCalc.MathEquationManagerIface */
+abstract class MathEquationManagerIface {
+    /* Fields of GCalc-1.GCalc.MathEquationManagerIface */
     parent_iface: GObject.TypeInterface
     find_variable: (self: MathEquationManager, name: string) => Variable
     get_equations: (self: MathEquationManager) => ExpressionContainer
     get_functions: (self: MathEquationManager) => ExpressionContainer
     static name: string
 }
-export abstract class MinusIface {
-    /* Fields of GCalc.MinusIface */
+abstract class MinusIface {
+    /* Fields of GCalc-1.GCalc.MinusIface */
     parent_iface: GObject.TypeInterface
     static name: string
 }
-export abstract class MultiplyIface {
-    /* Fields of GCalc.MultiplyIface */
+abstract class MultiplyIface {
+    /* Fields of GCalc-1.GCalc.MultiplyIface */
     parent_iface: GObject.TypeInterface
     static name: string
 }
-export abstract class OperatorIface {
-    /* Fields of GCalc.OperatorIface */
+abstract class OperatorIface {
+    /* Fields of GCalc-1.GCalc.OperatorIface */
     parent_iface: GObject.TypeInterface
     static name: string
 }
-export abstract class PlusIface {
-    /* Fields of GCalc.PlusIface */
+abstract class PlusIface {
+    /* Fields of GCalc-1.GCalc.PlusIface */
     parent_iface: GObject.TypeInterface
     static name: string
 }
-export abstract class PolynomialIface {
-    /* Fields of GCalc.PolynomialIface */
+abstract class PolynomialIface {
+    /* Fields of GCalc-1.GCalc.PolynomialIface */
     parent_iface: GObject.TypeInterface
     evaluate: (self: Polynomial) => Expression
     static name: string
 }
-export abstract class PowIface {
-    /* Fields of GCalc.PowIface */
+abstract class PowIface {
+    /* Fields of GCalc-1.GCalc.PowIface */
     parent_iface: GObject.TypeInterface
     static name: string
 }
-export abstract class ResultIface {
-    /* Fields of GCalc.ResultIface */
+abstract class ResultIface {
+    /* Fields of GCalc-1.GCalc.ResultIface */
     parent_iface: GObject.TypeInterface
     to_string: (self: Result) => string
     get_expression: (self: Result) => Expression
     static name: string
 }
-export abstract class SolverIface {
-    /* Fields of GCalc.SolverIface */
+abstract class SolverIface {
+    /* Fields of GCalc-1.GCalc.SolverIface */
     parent_iface: GObject.TypeInterface
     solve: (self: Solver, str: string) => Result
     get_equation_manager: (self: Solver) => MathEquationManager
     set_equation_manager: (self: Solver, value: MathEquationManager) => void
     static name: string
 }
-export abstract class TermIface {
-    /* Fields of GCalc.TermIface */
+abstract class TermIface {
+    /* Fields of GCalc-1.GCalc.TermIface */
     parent_iface: GObject.TypeInterface
     add: (self: Term, t: Term) => Expression
     evaluate: (self: Term) => Expression
     static name: string
 }
-export abstract class VariableIface {
-    /* Fields of GCalc.VariableIface */
+abstract class VariableIface {
+    /* Fields of GCalc-1.GCalc.VariableIface */
     parent_iface: GObject.TypeInterface
     evaluate: (self: Variable) => Expression
     get_name: (self: Variable) => string
@@ -4711,3 +4713,5 @@ export abstract class VariableIface {
     get_binded: (self: Variable) => boolean
     static name: string
 }
+}
+export default GCalc;

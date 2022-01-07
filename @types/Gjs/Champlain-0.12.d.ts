@@ -3,35 +3,37 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Clutter from './Clutter-1.0';
-import type * as cairo from './cairo-1.0';
-import type * as Json from './Json-1.0';
-import type * as Gio from './Gio-2.0';
-import type * as GL from './GL-1.0';
-import type * as CoglPango from './CoglPango-1.0';
-import type * as PangoCairo from './PangoCairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as Cogl from './Cogl-1.0';
-import type * as Atk from './Atk-1.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Clutter from './Clutter-1.0';
+import type cairo from './cairo-1.0';
+import type Json from './Json-1.0';
+import type Gio from './Gio-2.0';
+import type GL from './GL-1.0';
+import type CoglPango from './CoglPango-1.0';
+import type PangoCairo from './PangoCairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type Cogl from './Cogl-1.0';
+import type Atk from './Atk-1.0';
 
-export enum MapProjection {
+export namespace Champlain {
+
+enum MapProjection {
     MERCATOR,
 }
-export enum SelectionMode {
+enum SelectionMode {
     NONE,
     SINGLE,
     MULTIPLE,
 }
-export enum State {
+enum State {
     NONE,
     LOADING,
     LOADED,
     DONE,
 }
-export enum Unit {
+enum Unit {
     KM,
     MILES,
 }
@@ -60,26 +62,26 @@ export const MIN_LONGITUDE: number
 export const VERSION: number
 export const VERSION_HEX: number
 export const VERSION_S: string
-export class Exportable {
-    /* Properties of Champlain.Exportable */
+class Exportable {
+    /* Properties of Champlain-0.12.Champlain.Exportable */
     surface: cairo.Surface
-    /* Methods of Champlain.Exportable */
+    /* Methods of Champlain-0.12.Champlain.Exportable */
     get_surface(): cairo.Surface
     set_surface(surface: cairo.Surface): void
-    /* Virtual methods of Champlain.Exportable */
+    /* Virtual methods of Champlain-0.12.Champlain.Exportable */
     vfunc_get_surface(): cairo.Surface
     vfunc_set_surface(surface: cairo.Surface): void
     static name: string
 }
-export class Location {
-    /* Properties of Champlain.Location */
+class Location {
+    /* Properties of Champlain-0.12.Champlain.Location */
     latitude: number
     longitude: number
-    /* Methods of Champlain.Location */
+    /* Methods of Champlain-0.12.Champlain.Location */
     get_latitude(): number
     get_longitude(): number
     set_location(latitude: number, longitude: number): void
-    /* Virtual methods of Champlain.Location */
+    /* Virtual methods of Champlain-0.12.Champlain.Location */
     vfunc_get_latitude(): number
     vfunc_get_longitude(): number
     vfunc_set_location(latitude: number, longitude: number): void
@@ -91,15 +93,15 @@ export interface Adjustment_ConstructProps extends GObject.Object_ConstructProps
     upper?: number
     value?: number
 }
-export class Adjustment {
-    /* Properties of Champlain.Adjustment */
+class Adjustment {
+    /* Properties of Champlain-0.12.Champlain.Adjustment */
     lower: number
     step_increment: number
     upper: number
     value: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.Adjustment */
+    /* Methods of Champlain-0.12.Champlain.Adjustment */
     clamp(interpolate: boolean, n_frames: number, fps: number): boolean
     get_value(): number
     get_values(value: number, lower: number, upper: number, step_increment: number): void
@@ -107,15 +109,15 @@ export class Adjustment {
     interpolate_stop(): void
     set_value(value: number): void
     set_values(value: number, lower: number, upper: number, step_increment: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -123,27 +125,27 @@ export class Adjustment {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Champlain.Adjustment */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Champlain-0.12.Champlain.Adjustment */
     vfunc_changed(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Champlain.Adjustment */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Champlain-0.12.Champlain.Adjustment */
     connect(sigName: "changed", callback: (($obj: Adjustment) => void)): number
     connect_after(sigName: "changed", callback: (($obj: Adjustment) => void)): number
     emit(sigName: "changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Adjustment, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Adjustment, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -170,24 +172,24 @@ export interface Coordinate_ConstructProps extends GObject.InitiallyUnowned_Cons
     latitude?: number
     longitude?: number
 }
-export class Coordinate {
-    /* Properties of Champlain.Location */
+class Coordinate {
+    /* Properties of Champlain-0.12.Champlain.Location */
     latitude: number
     longitude: number
-    /* Fields of Champlain.Coordinate */
+    /* Fields of Champlain-0.12.Champlain.Coordinate */
     parent: GObject.InitiallyUnowned
     priv: CoordinatePrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -195,29 +197,29 @@ export class Coordinate {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Champlain.Location */
+    watch_closure(closure: Function): void
+    /* Methods of Champlain-0.12.Champlain.Location */
     get_latitude(): number
     get_longitude(): number
     set_location(latitude: number, longitude: number): void
-    /* Virtual methods of Champlain.Coordinate */
+    /* Virtual methods of Champlain-0.12.Champlain.Coordinate */
     vfunc_get_latitude(): number
     vfunc_get_longitude(): number
     vfunc_set_location(latitude: number, longitude: number): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Coordinate, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Coordinate, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -241,12 +243,12 @@ export interface CustomMarker_ConstructProps extends Marker_ConstructProps {
     latitude?: number
     longitude?: number
 }
-export class CustomMarker {
-    /* Properties of Champlain.Marker */
+class CustomMarker {
+    /* Properties of Champlain-0.12.Champlain.Marker */
     draggable: boolean
     selectable: boolean
     selected: boolean
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -329,17 +331,17 @@ export class CustomMarker {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Properties of Champlain.Location */
+    /* Properties of Champlain-0.12.Champlain.Location */
     latitude: number
     longitude: number
-    /* Fields of Champlain.CustomMarker */
+    /* Fields of Champlain-0.12.Champlain.CustomMarker */
     parent: Marker
     priv: CustomMarkerPrivate
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.Marker */
+    /* Methods of Champlain-0.12.Champlain.Marker */
     animate_in(): void
     animate_in_with_delay(delay: number): void
     animate_out(): void
@@ -350,7 +352,7 @@ export class CustomMarker {
     set_draggable(value: boolean): void
     set_selectable(value: boolean): void
     set_selected(value: boolean): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -586,15 +588,15 @@ export class CustomMarker {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -602,23 +604,23 @@ export class CustomMarker {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Champlain.Location */
+    watch_closure(closure: Function): void
+    /* Methods of Champlain-0.12.Champlain.Location */
     get_latitude(): number
     get_longitude(): number
     set_location(latitude: number, longitude: number): void
-    /* Methods of Clutter.Animatable */
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -633,12 +635,12 @@ export class CustomMarker {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Champlain.Marker */
+    /* Virtual methods of Champlain-0.12.Champlain.Marker */
     vfunc_get_latitude(): number
     vfunc_get_longitude(): number
     vfunc_set_location(latitude: number, longitude: number): void
@@ -664,7 +666,7 @@ export class CustomMarker {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -700,15 +702,15 @@ export class CustomMarker {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Champlain.Marker */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Champlain-0.12.Champlain.Marker */
     connect(sigName: "button-press", callback: (($obj: CustomMarker, event: Clutter.Event) => void)): number
     connect_after(sigName: "button-press", callback: (($obj: CustomMarker, event: Clutter.Event) => void)): number
     emit(sigName: "button-press", event: Clutter.Event): void
@@ -721,7 +723,7 @@ export class CustomMarker {
     connect(sigName: "drag-motion", callback: (($obj: CustomMarker, dx: number, dy: number, event: Clutter.Event) => void)): number
     connect_after(sigName: "drag-motion", callback: (($obj: CustomMarker, dx: number, dy: number, event: Clutter.Event) => void)): number
     emit(sigName: "drag-motion", dx: number, dy: number, event: Clutter.Event): void
-    /* Signals of Clutter.Actor */
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: CustomMarker, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: CustomMarker, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -800,11 +802,11 @@ export class CustomMarker {
     connect(sigName: "unrealize", callback: (($obj: CustomMarker) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: CustomMarker) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CustomMarker, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CustomMarker, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: CustomMarker, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: CustomMarker, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -1002,29 +1004,29 @@ export class CustomMarker {
 export interface ErrorTileRenderer_ConstructProps extends Renderer_ConstructProps {
     tile_size?: number
 }
-export class ErrorTileRenderer {
-    /* Properties of Champlain.ErrorTileRenderer */
+class ErrorTileRenderer {
+    /* Properties of Champlain-0.12.Champlain.ErrorTileRenderer */
     tile_size: number
-    /* Fields of Champlain.ErrorTileRenderer */
+    /* Fields of Champlain-0.12.Champlain.ErrorTileRenderer */
     parent: Renderer
     priv: ErrorTileRendererPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.ErrorTileRenderer */
+    /* Methods of Champlain-0.12.Champlain.ErrorTileRenderer */
     get_tile_size(): number
     set_tile_size(size: number): void
-    /* Methods of Champlain.Renderer */
+    /* Methods of Champlain-0.12.Champlain.Renderer */
     render(tile: Tile): void
     set_data(data: Uint8Array[]): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1032,24 +1034,24 @@ export class ErrorTileRenderer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Champlain.Renderer */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Champlain-0.12.Champlain.Renderer */
     vfunc_render(tile: Tile): void
     vfunc_set_data(data: Uint8Array[]): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ErrorTileRenderer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ErrorTileRenderer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1070,28 +1072,28 @@ export interface FileCache_ConstructProps extends TileCache_ConstructProps {
     cache_dir?: string
     size_limit?: number
 }
-export class FileCache {
-    /* Properties of Champlain.FileCache */
+class FileCache {
+    /* Properties of Champlain-0.12.Champlain.FileCache */
     size_limit: number
-    /* Properties of Champlain.MapSource */
+    /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain.FileCache */
+    /* Fields of Champlain-0.12.Champlain.FileCache */
     parent_instance: TileCache
     priv: FileCachePrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.FileCache */
+    /* Methods of Champlain-0.12.Champlain.FileCache */
     get_cache_dir(): string
     get_size_limit(): number
     purge(): void
     purge_on_idle(): void
     set_size_limit(size_limit: number): void
-    /* Methods of Champlain.TileCache */
+    /* Methods of Champlain-0.12.Champlain.TileCache */
     on_tile_filled(tile: Tile): void
     refresh_tile_time(tile: Tile): void
     store_tile(tile: Tile, contents: string, size: number): void
-    /* Methods of Champlain.MapSource */
+    /* Methods of Champlain-0.12.Champlain.MapSource */
     fill_tile(tile: Tile): void
     get_column_count(zoom_level: number): number
     get_id(): string
@@ -1112,15 +1114,15 @@ export class FileCache {
     get_y(zoom_level: number, latitude: number): number
     set_next_source(next_source: MapSource): void
     set_renderer(renderer: Renderer): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1128,17 +1130,17 @@ export class FileCache {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Champlain.TileCache */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Champlain-0.12.Champlain.TileCache */
     vfunc_on_tile_filled(tile: Tile): void
     vfunc_refresh_tile_time(tile: Tile): void
     vfunc_store_tile(tile: Tile, contents: string, size: number): void
-    /* Virtual methods of Champlain.MapSource */
+    /* Virtual methods of Champlain-0.12.Champlain.MapSource */
     vfunc_fill_tile(tile: Tile): void
     vfunc_get_id(): string
     vfunc_get_license(): string
@@ -1148,15 +1150,15 @@ export class FileCache {
     vfunc_get_name(): string
     vfunc_get_projection(): MapProjection
     vfunc_get_tile_size(): number
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FileCache, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FileCache, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1179,8 +1181,8 @@ export class FileCache {
 }
 export interface FileTileSource_ConstructProps extends TileSource_ConstructProps {
 }
-export class FileTileSource {
-    /* Properties of Champlain.TileSource */
+class FileTileSource {
+    /* Properties of Champlain-0.12.Champlain.TileSource */
     cache: TileCache
     id: string
     license: string
@@ -1190,19 +1192,19 @@ export class FileTileSource {
     name: string
     projection: MapProjection
     tile_size: number
-    /* Properties of Champlain.MapSource */
+    /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain.FileTileSource */
+    /* Fields of Champlain-0.12.Champlain.FileTileSource */
     parent: TileSource
-    /* Fields of Champlain.TileSource */
+    /* Fields of Champlain-0.12.Champlain.TileSource */
     parent_instance: MapSource
     priv: TileSourcePrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.FileTileSource */
+    /* Methods of Champlain-0.12.Champlain.FileTileSource */
     load_map_data(map_path: string): void
-    /* Methods of Champlain.TileSource */
+    /* Methods of Champlain-0.12.Champlain.TileSource */
     get_cache(): TileCache
     set_cache(cache: TileCache): void
     set_id(id: string): void
@@ -1213,7 +1215,7 @@ export class FileTileSource {
     set_name(name: string): void
     set_projection(projection: MapProjection): void
     set_tile_size(tile_size: number): void
-    /* Methods of Champlain.MapSource */
+    /* Methods of Champlain-0.12.Champlain.MapSource */
     fill_tile(tile: Tile): void
     get_column_count(zoom_level: number): number
     get_id(): string
@@ -1234,15 +1236,15 @@ export class FileTileSource {
     get_y(zoom_level: number, latitude: number): number
     set_next_source(next_source: MapSource): void
     set_renderer(renderer: Renderer): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1250,13 +1252,13 @@ export class FileTileSource {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Champlain.MapSource */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Champlain-0.12.Champlain.MapSource */
     vfunc_fill_tile(tile: Tile): void
     vfunc_get_id(): string
     vfunc_get_license(): string
@@ -1266,15 +1268,15 @@ export class FileTileSource {
     vfunc_get_name(): string
     vfunc_get_projection(): MapProjection
     vfunc_get_tile_size(): number
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FileTileSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FileTileSource, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1313,24 +1315,24 @@ export class FileTileSource {
 }
 export interface ImageRenderer_ConstructProps extends Renderer_ConstructProps {
 }
-export class ImageRenderer {
-    /* Fields of Champlain.ImageRenderer */
+class ImageRenderer {
+    /* Fields of Champlain-0.12.Champlain.ImageRenderer */
     parent: Renderer
     priv: ImageRendererPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.Renderer */
+    /* Methods of Champlain-0.12.Champlain.Renderer */
     render(tile: Tile): void
     set_data(data: Uint8Array[]): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1338,24 +1340,24 @@ export class ImageRenderer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Champlain.Renderer */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Champlain-0.12.Champlain.Renderer */
     vfunc_render(tile: Tile): void
     vfunc_set_data(data: Uint8Array[]): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ImageRenderer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ImageRenderer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1375,12 +1377,12 @@ export interface KineticScrollView_ConstructProps extends Clutter.Actor_Construc
     mode?: boolean
     motion_buffer?: number
 }
-export class KineticScrollView {
-    /* Properties of Champlain.KineticScrollView */
+class KineticScrollView {
+    /* Properties of Champlain-0.12.Champlain.KineticScrollView */
     decel_rate: number
     mode: boolean
     motion_buffer: number
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -1463,13 +1465,13 @@ export class KineticScrollView {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.KineticScrollView */
+    /* Methods of Champlain-0.12.Champlain.KineticScrollView */
     stop(): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -1705,15 +1707,15 @@ export class KineticScrollView {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1721,19 +1723,19 @@ export class KineticScrollView {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -1748,12 +1750,12 @@ export class KineticScrollView {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Champlain.KineticScrollView */
+    /* Virtual methods of Champlain-0.12.Champlain.KineticScrollView */
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     vfunc_find_property(property_name: string): GObject.ParamSpec
     vfunc_get_initial_state(property_name: string, value: any): void
@@ -1776,7 +1778,7 @@ export class KineticScrollView {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -1812,19 +1814,19 @@ export class KineticScrollView {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Champlain.KineticScrollView */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Champlain-0.12.Champlain.KineticScrollView */
     connect(sigName: "panning-completed", callback: (($obj: KineticScrollView) => void)): number
     connect_after(sigName: "panning-completed", callback: (($obj: KineticScrollView) => void)): number
     emit(sigName: "panning-completed"): void
-    /* Signals of Clutter.Actor */
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: KineticScrollView, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: KineticScrollView, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -1903,11 +1905,11 @@ export class KineticScrollView {
     connect(sigName: "unrealize", callback: (($obj: KineticScrollView) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: KineticScrollView) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: KineticScrollView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: KineticScrollView, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: KineticScrollView, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: KineticScrollView, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -2118,8 +2120,8 @@ export interface Label_ConstructProps extends Marker_ConstructProps {
     latitude?: number
     longitude?: number
 }
-export class Label {
-    /* Properties of Champlain.Label */
+class Label {
+    /* Properties of Champlain-0.12.Champlain.Label */
     alignment: Pango.Alignment
     color: Clutter.Color
     draw_background: boolean
@@ -2133,11 +2135,11 @@ export class Label {
     use_markup: boolean
     wrap: boolean
     wrap_mode: Pango.WrapMode
-    /* Properties of Champlain.Marker */
+    /* Properties of Champlain-0.12.Champlain.Marker */
     draggable: boolean
     selectable: boolean
     selected: boolean
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -2220,17 +2222,17 @@ export class Label {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Properties of Champlain.Location */
+    /* Properties of Champlain-0.12.Champlain.Location */
     latitude: number
     longitude: number
-    /* Fields of Champlain.Label */
+    /* Fields of Champlain-0.12.Champlain.Label */
     parent: Marker
     priv: LabelPrivate
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.Label */
+    /* Methods of Champlain-0.12.Champlain.Label */
     get_alignment(): Pango.Alignment
     get_attributes(): Pango.AttrList
     get_color(): Clutter.Color
@@ -2259,7 +2261,7 @@ export class Label {
     set_use_markup(use_markup: boolean): void
     set_wrap(wrap: boolean): void
     set_wrap_mode(wrap_mode: Pango.WrapMode): void
-    /* Methods of Champlain.Marker */
+    /* Methods of Champlain-0.12.Champlain.Marker */
     animate_in(): void
     animate_in_with_delay(delay: number): void
     animate_out(): void
@@ -2270,7 +2272,7 @@ export class Label {
     set_draggable(value: boolean): void
     set_selectable(value: boolean): void
     set_selected(value: boolean): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -2506,15 +2508,15 @@ export class Label {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2522,23 +2524,23 @@ export class Label {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Champlain.Location */
+    watch_closure(closure: Function): void
+    /* Methods of Champlain-0.12.Champlain.Location */
     get_latitude(): number
     get_longitude(): number
     set_location(latitude: number, longitude: number): void
-    /* Methods of Clutter.Animatable */
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -2553,12 +2555,12 @@ export class Label {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Champlain.Marker */
+    /* Virtual methods of Champlain-0.12.Champlain.Marker */
     vfunc_get_latitude(): number
     vfunc_get_longitude(): number
     vfunc_set_location(latitude: number, longitude: number): void
@@ -2584,7 +2586,7 @@ export class Label {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -2620,15 +2622,15 @@ export class Label {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Champlain.Marker */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Champlain-0.12.Champlain.Marker */
     connect(sigName: "button-press", callback: (($obj: Label, event: Clutter.Event) => void)): number
     connect_after(sigName: "button-press", callback: (($obj: Label, event: Clutter.Event) => void)): number
     emit(sigName: "button-press", event: Clutter.Event): void
@@ -2641,7 +2643,7 @@ export class Label {
     connect(sigName: "drag-motion", callback: (($obj: Label, dx: number, dy: number, event: Clutter.Event) => void)): number
     connect_after(sigName: "drag-motion", callback: (($obj: Label, dx: number, dy: number, event: Clutter.Event) => void)): number
     emit(sigName: "drag-motion", dx: number, dy: number, event: Clutter.Event): void
-    /* Signals of Clutter.Actor */
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Label, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Label, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -2720,11 +2722,11 @@ export class Label {
     connect(sigName: "unrealize", callback: (($obj: Label) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Label) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Label, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Label, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Label, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Label, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -2951,8 +2953,8 @@ export class Label {
 }
 export interface Layer_ConstructProps extends Clutter.Actor_ConstructProps {
 }
-export class Layer {
-    /* Properties of Clutter.Actor */
+class Layer {
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -3035,16 +3037,16 @@ export class Layer {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Champlain.Layer */
+    /* Fields of Champlain-0.12.Champlain.Layer */
     parent: Clutter.Actor
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.Layer */
+    /* Methods of Champlain-0.12.Champlain.Layer */
     get_bounding_box(): BoundingBox
     set_view(view?: View | null): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -3280,15 +3282,15 @@ export class Layer {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3296,19 +3298,19 @@ export class Layer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -3323,12 +3325,12 @@ export class Layer {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Champlain.Layer */
+    /* Virtual methods of Champlain-0.12.Champlain.Layer */
     vfunc_get_bounding_box(): BoundingBox
     vfunc_set_view(view?: View | null): void
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
@@ -3353,7 +3355,7 @@ export class Layer {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -3389,15 +3391,15 @@ export class Layer {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Layer, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Layer, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -3476,11 +3478,11 @@ export class Layer {
     connect(sigName: "unrealize", callback: (($obj: Layer) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Layer) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Layer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Layer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Layer, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Layer, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -3670,11 +3672,11 @@ export interface License_ConstructProps extends Clutter.Actor_ConstructProps {
     alignment?: Pango.Alignment
     extra_text?: string
 }
-export class License {
-    /* Properties of Champlain.License */
+class License {
+    /* Properties of Champlain-0.12.Champlain.License */
     alignment: Pango.Alignment
     extra_text: string
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -3757,21 +3759,21 @@ export class License {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Champlain.License */
+    /* Fields of Champlain-0.12.Champlain.License */
     parent: Clutter.Actor
     priv: LicensePrivate
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.License */
+    /* Methods of Champlain-0.12.Champlain.License */
     connect_view(view: View): void
     disconnect_view(): void
     get_alignment(): Pango.Alignment
     get_extra_text(): string
     set_alignment(alignment: Pango.Alignment): void
     set_extra_text(text: string): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -4007,15 +4009,15 @@ export class License {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4023,19 +4025,19 @@ export class License {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -4050,12 +4052,12 @@ export class License {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Champlain.License */
+    /* Virtual methods of Champlain-0.12.Champlain.License */
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     vfunc_find_property(property_name: string): GObject.ParamSpec
     vfunc_get_initial_state(property_name: string, value: any): void
@@ -4078,7 +4080,7 @@ export class License {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -4114,15 +4116,15 @@ export class License {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: License, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: License, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -4201,11 +4203,11 @@ export class License {
     connect(sigName: "unrealize", callback: (($obj: License) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: License) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: License, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: License, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: License, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: License, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -4400,16 +4402,16 @@ export interface MapSource_ConstructProps extends GObject.InitiallyUnowned_Const
     next_source?: MapSource
     renderer?: Renderer
 }
-export class MapSource {
-    /* Properties of Champlain.MapSource */
+class MapSource {
+    /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain.MapSource */
+    /* Fields of Champlain-0.12.Champlain.MapSource */
     parent_instance: GObject.InitiallyUnowned
     priv: MapSourcePrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.MapSource */
+    /* Methods of Champlain-0.12.Champlain.MapSource */
     fill_tile(tile: Tile): void
     get_column_count(zoom_level: number): number
     get_id(): string
@@ -4430,15 +4432,15 @@ export class MapSource {
     get_y(zoom_level: number, latitude: number): number
     set_next_source(next_source: MapSource): void
     set_renderer(renderer: Renderer): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4446,13 +4448,13 @@ export class MapSource {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Champlain.MapSource */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Champlain-0.12.Champlain.MapSource */
     vfunc_fill_tile(tile: Tile): void
     vfunc_get_id(): string
     vfunc_get_license(): string
@@ -4462,15 +4464,15 @@ export class MapSource {
     vfunc_get_name(): string
     vfunc_get_projection(): MapProjection
     vfunc_get_tile_size(): number
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MapSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MapSource, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4489,19 +4491,19 @@ export class MapSource {
 }
 export interface MapSourceChain_ConstructProps extends MapSource_ConstructProps {
 }
-export class MapSourceChain {
-    /* Properties of Champlain.MapSource */
+class MapSourceChain {
+    /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain.MapSourceChain */
+    /* Fields of Champlain-0.12.Champlain.MapSourceChain */
     parent_instance: MapSource
     priv: MapSourceChainPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.MapSourceChain */
+    /* Methods of Champlain-0.12.Champlain.MapSourceChain */
     pop(): void
     push(map_source: MapSource): void
-    /* Methods of Champlain.MapSource */
+    /* Methods of Champlain-0.12.Champlain.MapSource */
     fill_tile(tile: Tile): void
     get_column_count(zoom_level: number): number
     get_id(): string
@@ -4522,15 +4524,15 @@ export class MapSourceChain {
     get_y(zoom_level: number, latitude: number): number
     set_next_source(next_source: MapSource): void
     set_renderer(renderer: Renderer): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4538,13 +4540,13 @@ export class MapSourceChain {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Champlain.MapSource */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Champlain-0.12.Champlain.MapSource */
     vfunc_fill_tile(tile: Tile): void
     vfunc_get_id(): string
     vfunc_get_license(): string
@@ -4554,15 +4556,15 @@ export class MapSourceChain {
     vfunc_get_name(): string
     vfunc_get_projection(): MapProjection
     vfunc_get_tile_size(): number
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MapSourceChain, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MapSourceChain, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4594,13 +4596,13 @@ export interface MapSourceDesc_ConstructProps extends GObject.Object_ConstructPr
     tile_size?: number
     uri_format?: string
 }
-export class MapSourceDesc {
-    /* Fields of Champlain.MapSourceDesc */
+class MapSourceDesc {
+    /* Fields of Champlain-0.12.Champlain.MapSourceDesc */
     parent_instance: GObject.Object
     priv: MapSourceDescPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.MapSourceDesc */
+    /* Methods of Champlain-0.12.Champlain.MapSourceDesc */
     get_data(): object | null
     get_id(): string
     get_license(): string
@@ -4611,15 +4613,15 @@ export class MapSourceDesc {
     get_projection(): MapProjection
     get_tile_size(): number
     get_uri_format(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4627,21 +4629,21 @@ export class MapSourceDesc {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MapSourceDesc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MapSourceDesc, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4656,28 +4658,28 @@ export class MapSourceDesc {
 }
 export interface MapSourceFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class MapSourceFactory {
-    /* Fields of Champlain.MapSourceFactory */
+class MapSourceFactory {
+    /* Fields of Champlain-0.12.Champlain.MapSourceFactory */
     parent: GObject.Object
     priv: MapSourceFactoryPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.MapSourceFactory */
+    /* Methods of Champlain-0.12.Champlain.MapSourceFactory */
     create(id: string): MapSource
     create_cached_source(id: string): MapSource
     create_error_source(tile_size: number): MapSource
     create_memcached_source(id: string): MapSource
     get_registered(): MapSourceDesc[]
     register(desc: MapSourceDesc): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4685,21 +4687,21 @@ export class MapSourceFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MapSourceFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MapSourceFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4721,12 +4723,12 @@ export interface Marker_ConstructProps extends Clutter.Actor_ConstructProps {
     latitude?: number
     longitude?: number
 }
-export class Marker {
-    /* Properties of Champlain.Marker */
+class Marker {
+    /* Properties of Champlain-0.12.Champlain.Marker */
     draggable: boolean
     selectable: boolean
     selected: boolean
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -4809,17 +4811,17 @@ export class Marker {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Properties of Champlain.Location */
+    /* Properties of Champlain-0.12.Champlain.Location */
     latitude: number
     longitude: number
-    /* Fields of Champlain.Marker */
+    /* Fields of Champlain-0.12.Champlain.Marker */
     parent: Clutter.Actor
     priv: MarkerPrivate
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.Marker */
+    /* Methods of Champlain-0.12.Champlain.Marker */
     animate_in(): void
     animate_in_with_delay(delay: number): void
     animate_out(): void
@@ -4830,7 +4832,7 @@ export class Marker {
     set_draggable(value: boolean): void
     set_selectable(value: boolean): void
     set_selected(value: boolean): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -5066,15 +5068,15 @@ export class Marker {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5082,23 +5084,23 @@ export class Marker {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Champlain.Location */
+    watch_closure(closure: Function): void
+    /* Methods of Champlain-0.12.Champlain.Location */
     get_latitude(): number
     get_longitude(): number
     set_location(latitude: number, longitude: number): void
-    /* Methods of Clutter.Animatable */
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -5113,12 +5115,12 @@ export class Marker {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Champlain.Marker */
+    /* Virtual methods of Champlain-0.12.Champlain.Marker */
     vfunc_get_latitude(): number
     vfunc_get_longitude(): number
     vfunc_set_location(latitude: number, longitude: number): void
@@ -5144,7 +5146,7 @@ export class Marker {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -5180,15 +5182,15 @@ export class Marker {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Champlain.Marker */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Champlain-0.12.Champlain.Marker */
     connect(sigName: "button-press", callback: (($obj: Marker, event: Clutter.Event) => void)): number
     connect_after(sigName: "button-press", callback: (($obj: Marker, event: Clutter.Event) => void)): number
     emit(sigName: "button-press", event: Clutter.Event): void
@@ -5201,7 +5203,7 @@ export class Marker {
     connect(sigName: "drag-motion", callback: (($obj: Marker, dx: number, dy: number, event: Clutter.Event) => void)): number
     connect_after(sigName: "drag-motion", callback: (($obj: Marker, dx: number, dy: number, event: Clutter.Event) => void)): number
     emit(sigName: "drag-motion", dx: number, dy: number, event: Clutter.Event): void
-    /* Signals of Clutter.Actor */
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Marker, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Marker, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -5280,11 +5282,11 @@ export class Marker {
     connect(sigName: "unrealize", callback: (($obj: Marker) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Marker) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Marker, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Marker, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Marker, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Marker, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -5489,10 +5491,10 @@ export interface MarkerLayer_ConstructProps extends Layer_ConstructProps {
     selection_mode?: SelectionMode
     surface?: cairo.Surface
 }
-export class MarkerLayer {
-    /* Properties of Champlain.MarkerLayer */
+class MarkerLayer {
+    /* Properties of Champlain-0.12.Champlain.MarkerLayer */
     selection_mode: SelectionMode
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -5575,16 +5577,16 @@ export class MarkerLayer {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Properties of Champlain.Exportable */
+    /* Properties of Champlain-0.12.Champlain.Exportable */
     surface: cairo.Surface
-    /* Fields of Champlain.MarkerLayer */
+    /* Fields of Champlain-0.12.Champlain.MarkerLayer */
     parent: Layer
     priv: MarkerLayerPrivate
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.MarkerLayer */
+    /* Methods of Champlain-0.12.Champlain.MarkerLayer */
     add_marker(marker: Marker): void
     animate_in_all_markers(): void
     animate_out_all_markers(): void
@@ -5600,10 +5602,10 @@ export class MarkerLayer {
     set_selection_mode(mode: SelectionMode): void
     show_all_markers(): void
     unselect_all_markers(): void
-    /* Methods of Champlain.Layer */
+    /* Methods of Champlain-0.12.Champlain.Layer */
     get_bounding_box(): BoundingBox
     set_view(view?: View | null): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -5839,15 +5841,15 @@ export class MarkerLayer {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5855,22 +5857,22 @@ export class MarkerLayer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Champlain.Exportable */
+    watch_closure(closure: Function): void
+    /* Methods of Champlain-0.12.Champlain.Exportable */
     get_surface(): cairo.Surface
     set_surface(surface: cairo.Surface): void
-    /* Methods of Clutter.Animatable */
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -5885,15 +5887,15 @@ export class MarkerLayer {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Champlain.MarkerLayer */
+    /* Virtual methods of Champlain-0.12.Champlain.MarkerLayer */
     vfunc_get_surface(): cairo.Surface
     vfunc_set_surface(surface: cairo.Surface): void
-    /* Virtual methods of Champlain.Layer */
+    /* Virtual methods of Champlain-0.12.Champlain.Layer */
     vfunc_get_bounding_box(): BoundingBox
     vfunc_set_view(view?: View | null): void
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
@@ -5918,7 +5920,7 @@ export class MarkerLayer {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -5954,15 +5956,15 @@ export class MarkerLayer {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: MarkerLayer, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: MarkerLayer, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -6041,11 +6043,11 @@ export class MarkerLayer {
     connect(sigName: "unrealize", callback: (($obj: MarkerLayer) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: MarkerLayer) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MarkerLayer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MarkerLayer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: MarkerLayer, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: MarkerLayer, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -6238,26 +6240,26 @@ export class MarkerLayer {
 export interface MemoryCache_ConstructProps extends TileCache_ConstructProps {
     size_limit?: number
 }
-export class MemoryCache {
-    /* Properties of Champlain.MemoryCache */
+class MemoryCache {
+    /* Properties of Champlain-0.12.Champlain.MemoryCache */
     size_limit: number
-    /* Properties of Champlain.MapSource */
+    /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain.MemoryCache */
+    /* Fields of Champlain-0.12.Champlain.MemoryCache */
     parent_instance: TileCache
     priv: MemoryCachePrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.MemoryCache */
+    /* Methods of Champlain-0.12.Champlain.MemoryCache */
     clean(): void
     get_size_limit(): number
     set_size_limit(size_limit: number): void
-    /* Methods of Champlain.TileCache */
+    /* Methods of Champlain-0.12.Champlain.TileCache */
     on_tile_filled(tile: Tile): void
     refresh_tile_time(tile: Tile): void
     store_tile(tile: Tile, contents: string, size: number): void
-    /* Methods of Champlain.MapSource */
+    /* Methods of Champlain-0.12.Champlain.MapSource */
     fill_tile(tile: Tile): void
     get_column_count(zoom_level: number): number
     get_id(): string
@@ -6278,15 +6280,15 @@ export class MemoryCache {
     get_y(zoom_level: number, latitude: number): number
     set_next_source(next_source: MapSource): void
     set_renderer(renderer: Renderer): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6294,17 +6296,17 @@ export class MemoryCache {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Champlain.TileCache */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Champlain-0.12.Champlain.TileCache */
     vfunc_on_tile_filled(tile: Tile): void
     vfunc_refresh_tile_time(tile: Tile): void
     vfunc_store_tile(tile: Tile, contents: string, size: number): void
-    /* Virtual methods of Champlain.MapSource */
+    /* Virtual methods of Champlain-0.12.Champlain.MapSource */
     vfunc_fill_tile(tile: Tile): void
     vfunc_get_id(): string
     vfunc_get_license(): string
@@ -6314,15 +6316,15 @@ export class MemoryCache {
     vfunc_get_name(): string
     vfunc_get_projection(): MapProjection
     vfunc_get_tile_size(): number
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MemoryCache, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MemoryCache, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6349,13 +6351,13 @@ export interface NetworkBboxTileSource_ConstructProps extends TileSource_Constru
     state?: State
     user_agent?: string
 }
-export class NetworkBboxTileSource {
-    /* Properties of Champlain.NetworkBboxTileSource */
+class NetworkBboxTileSource {
+    /* Properties of Champlain-0.12.Champlain.NetworkBboxTileSource */
     api_uri: string
     proxy_uri: string
     state: State
     user_agent: string
-    /* Properties of Champlain.TileSource */
+    /* Properties of Champlain-0.12.Champlain.TileSource */
     cache: TileCache
     id: string
     license: string
@@ -6365,22 +6367,22 @@ export class NetworkBboxTileSource {
     name: string
     projection: MapProjection
     tile_size: number
-    /* Properties of Champlain.MapSource */
+    /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain.NetworkBboxTileSource */
+    /* Fields of Champlain-0.12.Champlain.NetworkBboxTileSource */
     parent: TileSource
     priv: NetworkBboxTileSourcePrivate
-    /* Fields of Champlain.TileSource */
+    /* Fields of Champlain-0.12.Champlain.TileSource */
     parent_instance: MapSource
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.NetworkBboxTileSource */
+    /* Methods of Champlain-0.12.Champlain.NetworkBboxTileSource */
     get_api_uri(): string
     load_map_data(bbox: BoundingBox): void
     set_api_uri(api_uri: string): void
     set_user_agent(user_agent: string): void
-    /* Methods of Champlain.TileSource */
+    /* Methods of Champlain-0.12.Champlain.TileSource */
     get_cache(): TileCache
     set_cache(cache: TileCache): void
     set_id(id: string): void
@@ -6391,7 +6393,7 @@ export class NetworkBboxTileSource {
     set_name(name: string): void
     set_projection(projection: MapProjection): void
     set_tile_size(tile_size: number): void
-    /* Methods of Champlain.MapSource */
+    /* Methods of Champlain-0.12.Champlain.MapSource */
     fill_tile(tile: Tile): void
     get_column_count(zoom_level: number): number
     get_id(): string
@@ -6412,15 +6414,15 @@ export class NetworkBboxTileSource {
     get_y(zoom_level: number, latitude: number): number
     set_next_source(next_source: MapSource): void
     set_renderer(renderer: Renderer): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6428,13 +6430,13 @@ export class NetworkBboxTileSource {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Champlain.MapSource */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Champlain-0.12.Champlain.MapSource */
     vfunc_fill_tile(tile: Tile): void
     vfunc_get_id(): string
     vfunc_get_license(): string
@@ -6444,15 +6446,15 @@ export class NetworkBboxTileSource {
     vfunc_get_name(): string
     vfunc_get_projection(): MapProjection
     vfunc_get_tile_size(): number
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: NetworkBboxTileSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: NetworkBboxTileSource, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6504,14 +6506,14 @@ export interface NetworkTileSource_ConstructProps extends TileSource_ConstructPr
     uri_format?: string
     user_agent?: string
 }
-export class NetworkTileSource {
-    /* Properties of Champlain.NetworkTileSource */
+class NetworkTileSource {
+    /* Properties of Champlain-0.12.Champlain.NetworkTileSource */
     max_conns: number
     offline: boolean
     proxy_uri: string
     uri_format: string
     user_agent: string
-    /* Properties of Champlain.TileSource */
+    /* Properties of Champlain-0.12.Champlain.TileSource */
     cache: TileCache
     id: string
     license: string
@@ -6521,15 +6523,15 @@ export class NetworkTileSource {
     name: string
     projection: MapProjection
     tile_size: number
-    /* Properties of Champlain.MapSource */
+    /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain.NetworkTileSource */
+    /* Fields of Champlain-0.12.Champlain.NetworkTileSource */
     parent_instance: TileSource
     priv: NetworkTileSourcePrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.NetworkTileSource */
+    /* Methods of Champlain-0.12.Champlain.NetworkTileSource */
     get_max_conns(): number
     get_offline(): boolean
     get_proxy_uri(): string
@@ -6539,7 +6541,7 @@ export class NetworkTileSource {
     set_proxy_uri(proxy_uri: string): void
     set_uri_format(uri_format: string): void
     set_user_agent(user_agent: string): void
-    /* Methods of Champlain.TileSource */
+    /* Methods of Champlain-0.12.Champlain.TileSource */
     get_cache(): TileCache
     set_cache(cache: TileCache): void
     set_id(id: string): void
@@ -6550,7 +6552,7 @@ export class NetworkTileSource {
     set_name(name: string): void
     set_projection(projection: MapProjection): void
     set_tile_size(tile_size: number): void
-    /* Methods of Champlain.MapSource */
+    /* Methods of Champlain-0.12.Champlain.MapSource */
     fill_tile(tile: Tile): void
     get_column_count(zoom_level: number): number
     get_id(): string
@@ -6571,15 +6573,15 @@ export class NetworkTileSource {
     get_y(zoom_level: number, latitude: number): number
     set_next_source(next_source: MapSource): void
     set_renderer(renderer: Renderer): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6587,13 +6589,13 @@ export class NetworkTileSource {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Champlain.MapSource */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Champlain-0.12.Champlain.MapSource */
     vfunc_fill_tile(tile: Tile): void
     vfunc_get_id(): string
     vfunc_get_license(): string
@@ -6603,15 +6605,15 @@ export class NetworkTileSource {
     vfunc_get_name(): string
     vfunc_get_projection(): MapProjection
     vfunc_get_tile_size(): number
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: NetworkTileSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: NetworkTileSource, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6660,8 +6662,8 @@ export class NetworkTileSource {
 }
 export interface NullTileSource_ConstructProps extends TileSource_ConstructProps {
 }
-export class NullTileSource {
-    /* Properties of Champlain.TileSource */
+class NullTileSource {
+    /* Properties of Champlain-0.12.Champlain.TileSource */
     cache: TileCache
     id: string
     license: string
@@ -6671,17 +6673,17 @@ export class NullTileSource {
     name: string
     projection: MapProjection
     tile_size: number
-    /* Properties of Champlain.MapSource */
+    /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain.NullTileSource */
+    /* Fields of Champlain-0.12.Champlain.NullTileSource */
     parent: TileSource
-    /* Fields of Champlain.TileSource */
+    /* Fields of Champlain-0.12.Champlain.TileSource */
     parent_instance: MapSource
     priv: TileSourcePrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.TileSource */
+    /* Methods of Champlain-0.12.Champlain.TileSource */
     get_cache(): TileCache
     set_cache(cache: TileCache): void
     set_id(id: string): void
@@ -6692,7 +6694,7 @@ export class NullTileSource {
     set_name(name: string): void
     set_projection(projection: MapProjection): void
     set_tile_size(tile_size: number): void
-    /* Methods of Champlain.MapSource */
+    /* Methods of Champlain-0.12.Champlain.MapSource */
     fill_tile(tile: Tile): void
     get_column_count(zoom_level: number): number
     get_id(): string
@@ -6713,15 +6715,15 @@ export class NullTileSource {
     get_y(zoom_level: number, latitude: number): number
     set_next_source(next_source: MapSource): void
     set_renderer(renderer: Renderer): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6729,13 +6731,13 @@ export class NullTileSource {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Champlain.MapSource */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Champlain-0.12.Champlain.MapSource */
     vfunc_fill_tile(tile: Tile): void
     vfunc_get_id(): string
     vfunc_get_license(): string
@@ -6745,15 +6747,15 @@ export class NullTileSource {
     vfunc_get_name(): string
     vfunc_get_projection(): MapProjection
     vfunc_get_tile_size(): number
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: NullTileSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: NullTileSource, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6800,8 +6802,8 @@ export interface PathLayer_ConstructProps extends Layer_ConstructProps {
     visible?: boolean
     surface?: cairo.Surface
 }
-export class PathLayer {
-    /* Properties of Champlain.PathLayer */
+class PathLayer {
+    /* Properties of Champlain-0.12.Champlain.PathLayer */
     closed: boolean
     fill: boolean
     fill_color: Clutter.Color
@@ -6809,7 +6811,7 @@ export class PathLayer {
     stroke_color: Clutter.Color
     stroke_width: number
     visible: boolean
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -6891,16 +6893,16 @@ export class PathLayer {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Properties of Champlain.Exportable */
+    /* Properties of Champlain-0.12.Champlain.Exportable */
     surface: cairo.Surface
-    /* Fields of Champlain.PathLayer */
+    /* Fields of Champlain-0.12.Champlain.PathLayer */
     parent: Layer
     priv: PathLayerPrivate
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.PathLayer */
+    /* Methods of Champlain-0.12.Champlain.PathLayer */
     add_node(location: Location): void
     get_closed(): boolean
     get_dash(): number[]
@@ -6922,10 +6924,10 @@ export class PathLayer {
     set_stroke_color(color?: Clutter.Color | null): void
     set_stroke_width(value: number): void
     set_visible(value: boolean): void
-    /* Methods of Champlain.Layer */
+    /* Methods of Champlain-0.12.Champlain.Layer */
     get_bounding_box(): BoundingBox
     set_view(view?: View | null): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -7161,15 +7163,15 @@ export class PathLayer {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7177,22 +7179,22 @@ export class PathLayer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Champlain.Exportable */
+    watch_closure(closure: Function): void
+    /* Methods of Champlain-0.12.Champlain.Exportable */
     get_surface(): cairo.Surface
     set_surface(surface: cairo.Surface): void
-    /* Methods of Clutter.Animatable */
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -7207,15 +7209,15 @@ export class PathLayer {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Champlain.PathLayer */
+    /* Virtual methods of Champlain-0.12.Champlain.PathLayer */
     vfunc_get_surface(): cairo.Surface
     vfunc_set_surface(surface: cairo.Surface): void
-    /* Virtual methods of Champlain.Layer */
+    /* Virtual methods of Champlain-0.12.Champlain.Layer */
     vfunc_get_bounding_box(): BoundingBox
     vfunc_set_view(view?: View | null): void
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
@@ -7240,7 +7242,7 @@ export class PathLayer {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -7276,15 +7278,15 @@ export class PathLayer {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: PathLayer, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: PathLayer, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -7363,11 +7365,11 @@ export class PathLayer {
     connect(sigName: "unrealize", callback: (($obj: PathLayer) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: PathLayer) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PathLayer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PathLayer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: PathLayer, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: PathLayer, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -7573,15 +7575,15 @@ export interface Point_ConstructProps extends Marker_ConstructProps {
     latitude?: number
     longitude?: number
 }
-export class Point {
-    /* Properties of Champlain.Point */
+class Point {
+    /* Properties of Champlain-0.12.Champlain.Point */
     color: Clutter.Color
     size: number
-    /* Properties of Champlain.Marker */
+    /* Properties of Champlain-0.12.Champlain.Marker */
     draggable: boolean
     selectable: boolean
     selected: boolean
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -7663,24 +7665,24 @@ export class Point {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Properties of Champlain.Exportable */
+    /* Properties of Champlain-0.12.Champlain.Exportable */
     surface: cairo.Surface
-    /* Properties of Champlain.Location */
+    /* Properties of Champlain-0.12.Champlain.Location */
     latitude: number
     longitude: number
-    /* Fields of Champlain.Point */
+    /* Fields of Champlain-0.12.Champlain.Point */
     parent: Marker
     priv: PointPrivate
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.Point */
+    /* Methods of Champlain-0.12.Champlain.Point */
     get_color(): Clutter.Color
     get_size(): number
     set_color(color?: Clutter.Color | null): void
     set_size(size: number): void
-    /* Methods of Champlain.Marker */
+    /* Methods of Champlain-0.12.Champlain.Marker */
     animate_in(): void
     animate_in_with_delay(delay: number): void
     animate_out(): void
@@ -7691,7 +7693,7 @@ export class Point {
     set_draggable(value: boolean): void
     set_selectable(value: boolean): void
     set_selected(value: boolean): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -7927,15 +7929,15 @@ export class Point {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7943,26 +7945,26 @@ export class Point {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Champlain.Exportable */
+    watch_closure(closure: Function): void
+    /* Methods of Champlain-0.12.Champlain.Exportable */
     get_surface(): cairo.Surface
     set_surface(surface: cairo.Surface): void
-    /* Methods of Champlain.Location */
+    /* Methods of Champlain-0.12.Champlain.Location */
     get_latitude(): number
     get_longitude(): number
     set_location(latitude: number, longitude: number): void
-    /* Methods of Clutter.Animatable */
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -7977,15 +7979,15 @@ export class Point {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Champlain.Point */
+    /* Virtual methods of Champlain-0.12.Champlain.Point */
     vfunc_get_surface(): cairo.Surface
     vfunc_set_surface(surface: cairo.Surface): void
-    /* Virtual methods of Champlain.Marker */
+    /* Virtual methods of Champlain-0.12.Champlain.Marker */
     vfunc_get_latitude(): number
     vfunc_get_longitude(): number
     vfunc_set_location(latitude: number, longitude: number): void
@@ -8011,7 +8013,7 @@ export class Point {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -8047,15 +8049,15 @@ export class Point {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Champlain.Marker */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Champlain-0.12.Champlain.Marker */
     connect(sigName: "button-press", callback: (($obj: Point, event: Clutter.Event) => void)): number
     connect_after(sigName: "button-press", callback: (($obj: Point, event: Clutter.Event) => void)): number
     emit(sigName: "button-press", event: Clutter.Event): void
@@ -8068,7 +8070,7 @@ export class Point {
     connect(sigName: "drag-motion", callback: (($obj: Point, dx: number, dy: number, event: Clutter.Event) => void)): number
     connect_after(sigName: "drag-motion", callback: (($obj: Point, dx: number, dy: number, event: Clutter.Event) => void)): number
     emit(sigName: "drag-motion", dx: number, dy: number, event: Clutter.Event): void
-    /* Signals of Clutter.Actor */
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Point, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Point, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -8147,11 +8149,11 @@ export class Point {
     connect(sigName: "unrealize", callback: (($obj: Point) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Point) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Point, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Point, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Point, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Point, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -8353,23 +8355,23 @@ export class Point {
 }
 export interface Renderer_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
 }
-export class Renderer {
-    /* Fields of Champlain.Renderer */
+class Renderer {
+    /* Fields of Champlain-0.12.Champlain.Renderer */
     parent: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.Renderer */
+    /* Methods of Champlain-0.12.Champlain.Renderer */
     render(tile: Tile): void
     set_data(data: Uint8Array[]): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -8377,24 +8379,24 @@ export class Renderer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Champlain.Renderer */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Champlain-0.12.Champlain.Renderer */
     vfunc_render(tile: Tile): void
     vfunc_set_data(data: Uint8Array[]): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Renderer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Renderer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -8411,11 +8413,11 @@ export interface Scale_ConstructProps extends Clutter.Actor_ConstructProps {
     max_width?: number
     unit?: Unit
 }
-export class Scale {
-    /* Properties of Champlain.Scale */
+class Scale {
+    /* Properties of Champlain-0.12.Champlain.Scale */
     max_width: number
     unit: Unit
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -8498,21 +8500,21 @@ export class Scale {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Champlain.Scale */
+    /* Fields of Champlain-0.12.Champlain.Scale */
     parent: Clutter.Actor
     priv: ScalePrivate
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.Scale */
+    /* Methods of Champlain-0.12.Champlain.Scale */
     connect_view(view: View): void
     disconnect_view(): void
     get_max_width(): number
     get_unit(): Unit
     set_max_width(value: number): void
     set_unit(unit: Unit): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -8748,15 +8750,15 @@ export class Scale {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -8764,19 +8766,19 @@ export class Scale {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -8791,12 +8793,12 @@ export class Scale {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Champlain.Scale */
+    /* Virtual methods of Champlain-0.12.Champlain.Scale */
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     vfunc_find_property(property_name: string): GObject.ParamSpec
     vfunc_get_initial_state(property_name: string, value: any): void
@@ -8819,7 +8821,7 @@ export class Scale {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -8855,15 +8857,15 @@ export class Scale {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Scale, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Scale, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -8942,11 +8944,11 @@ export class Scale {
     connect(sigName: "unrealize", callback: (($obj: Scale) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Scale) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Scale, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Scale, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Scale, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Scale, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -9148,8 +9150,8 @@ export interface Tile_ConstructProps extends Clutter.Actor_ConstructProps {
     zoom_level?: number
     surface?: cairo.Surface
 }
-export class Tile {
-    /* Properties of Champlain.Tile */
+class Tile {
+    /* Properties of Champlain-0.12.Champlain.Tile */
     content: Clutter.Actor
     etag: string
     fade_in: boolean
@@ -9158,7 +9160,7 @@ export class Tile {
     x: number
     y: number
     zoom_level: number
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -9237,16 +9239,16 @@ export class Tile {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Properties of Champlain.Exportable */
+    /* Properties of Champlain-0.12.Champlain.Exportable */
     surface: cairo.Surface
-    /* Fields of Champlain.Tile */
+    /* Fields of Champlain-0.12.Champlain.Tile */
     parent: Clutter.Actor
     priv: TilePrivate
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.Tile */
+    /* Methods of Champlain-0.12.Champlain.Tile */
     display_content(): void
     get_content(): Clutter.Actor
     get_etag(): string
@@ -9266,7 +9268,7 @@ export class Tile {
     set_x(x: number): void
     set_y(y: number): void
     set_zoom_level(zoom_level: number): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -9498,15 +9500,15 @@ export class Tile {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9514,22 +9516,22 @@ export class Tile {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Champlain.Exportable */
+    watch_closure(closure: Function): void
+    /* Methods of Champlain-0.12.Champlain.Exportable */
     get_surface(): cairo.Surface
     set_surface(surface: cairo.Surface): void
-    /* Methods of Clutter.Animatable */
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -9544,12 +9546,12 @@ export class Tile {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Champlain.Tile */
+    /* Virtual methods of Champlain-0.12.Champlain.Tile */
     vfunc_get_surface(): cairo.Surface
     vfunc_set_surface(surface: cairo.Surface): void
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
@@ -9574,7 +9576,7 @@ export class Tile {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -9610,19 +9612,19 @@ export class Tile {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Champlain.Tile */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Champlain-0.12.Champlain.Tile */
     connect(sigName: "render-complete", callback: (($obj: Tile, data: object | null, size: number, error: boolean) => void)): number
     connect_after(sigName: "render-complete", callback: (($obj: Tile, data: object | null, size: number, error: boolean) => void)): number
     emit(sigName: "render-complete", data: object | null, size: number, error: boolean): void
-    /* Signals of Clutter.Actor */
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Tile, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Tile, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -9701,11 +9703,11 @@ export class Tile {
     connect(sigName: "unrealize", callback: (($obj: Tile) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Tile) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Tile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Tile, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Tile, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Tile, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -9905,20 +9907,20 @@ export class Tile {
 }
 export interface TileCache_ConstructProps extends MapSource_ConstructProps {
 }
-export class TileCache {
-    /* Properties of Champlain.MapSource */
+class TileCache {
+    /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain.TileCache */
+    /* Fields of Champlain-0.12.Champlain.TileCache */
     parent_instance: MapSource
     priv: TileCachePrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.TileCache */
+    /* Methods of Champlain-0.12.Champlain.TileCache */
     on_tile_filled(tile: Tile): void
     refresh_tile_time(tile: Tile): void
     store_tile(tile: Tile, contents: string, size: number): void
-    /* Methods of Champlain.MapSource */
+    /* Methods of Champlain-0.12.Champlain.MapSource */
     fill_tile(tile: Tile): void
     get_column_count(zoom_level: number): number
     get_id(): string
@@ -9939,15 +9941,15 @@ export class TileCache {
     get_y(zoom_level: number, latitude: number): number
     set_next_source(next_source: MapSource): void
     set_renderer(renderer: Renderer): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9955,17 +9957,17 @@ export class TileCache {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Champlain.TileCache */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Champlain-0.12.Champlain.TileCache */
     vfunc_on_tile_filled(tile: Tile): void
     vfunc_refresh_tile_time(tile: Tile): void
     vfunc_store_tile(tile: Tile, contents: string, size: number): void
-    /* Virtual methods of Champlain.MapSource */
+    /* Virtual methods of Champlain-0.12.Champlain.MapSource */
     vfunc_fill_tile(tile: Tile): void
     vfunc_get_id(): string
     vfunc_get_license(): string
@@ -9975,15 +9977,15 @@ export class TileCache {
     vfunc_get_name(): string
     vfunc_get_projection(): MapProjection
     vfunc_get_tile_size(): number
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TileCache, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TileCache, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -10011,8 +10013,8 @@ export interface TileSource_ConstructProps extends MapSource_ConstructProps {
     projection?: MapProjection
     tile_size?: number
 }
-export class TileSource {
-    /* Properties of Champlain.TileSource */
+class TileSource {
+    /* Properties of Champlain-0.12.Champlain.TileSource */
     cache: TileCache
     id: string
     license: string
@@ -10022,15 +10024,15 @@ export class TileSource {
     name: string
     projection: MapProjection
     tile_size: number
-    /* Properties of Champlain.MapSource */
+    /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain.TileSource */
+    /* Fields of Champlain-0.12.Champlain.TileSource */
     parent_instance: MapSource
     priv: TileSourcePrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.TileSource */
+    /* Methods of Champlain-0.12.Champlain.TileSource */
     get_cache(): TileCache
     set_cache(cache: TileCache): void
     set_id(id: string): void
@@ -10041,7 +10043,7 @@ export class TileSource {
     set_name(name: string): void
     set_projection(projection: MapProjection): void
     set_tile_size(tile_size: number): void
-    /* Methods of Champlain.MapSource */
+    /* Methods of Champlain-0.12.Champlain.MapSource */
     fill_tile(tile: Tile): void
     get_column_count(zoom_level: number): number
     get_id(): string
@@ -10062,15 +10064,15 @@ export class TileSource {
     get_y(zoom_level: number, latitude: number): number
     set_next_source(next_source: MapSource): void
     set_renderer(renderer: Renderer): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10078,13 +10080,13 @@ export class TileSource {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Champlain.MapSource */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Champlain-0.12.Champlain.MapSource */
     vfunc_fill_tile(tile: Tile): void
     vfunc_get_id(): string
     vfunc_get_license(): string
@@ -10094,15 +10096,15 @@ export class TileSource {
     vfunc_get_name(): string
     vfunc_get_projection(): MapProjection
     vfunc_get_tile_size(): number
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TileSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TileSource, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -10155,8 +10157,8 @@ export interface View_ConstructProps extends Clutter.Actor_ConstructProps {
     zoom_level?: number
     zoom_on_double_click?: boolean
 }
-export class View {
-    /* Properties of Champlain.View */
+class View {
+    /* Properties of Champlain-0.12.Champlain.View */
     animate_zoom: boolean
     background_pattern: Clutter.Actor
     deceleration: number
@@ -10174,7 +10176,7 @@ export class View {
     world: BoundingBox
     zoom_level: number
     zoom_on_double_click: boolean
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -10257,14 +10259,14 @@ export class View {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Champlain.View */
+    /* Fields of Champlain-0.12.Champlain.View */
     parent: Clutter.Actor
     priv: ViewPrivate
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.View */
+    /* Methods of Champlain-0.12.Champlain.View */
     add_layer(layer: Layer): void
     add_overlay_source(map_source: MapSource, opacity: number): void
     bin_layout_add(child: Clutter.Actor, x_align: Clutter.BinAlignment, y_align: Clutter.BinAlignment): void
@@ -10316,7 +10318,7 @@ export class View {
     y_to_latitude(y: number): number
     zoom_in(): void
     zoom_out(): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -10552,15 +10554,15 @@ export class View {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10568,19 +10570,19 @@ export class View {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -10595,12 +10597,12 @@ export class View {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Champlain.View */
+    /* Virtual methods of Champlain-0.12.Champlain.View */
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     vfunc_find_property(property_name: string): GObject.ParamSpec
     vfunc_get_initial_state(property_name: string, value: any): void
@@ -10623,7 +10625,7 @@ export class View {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -10659,22 +10661,22 @@ export class View {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Champlain.View */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Champlain-0.12.Champlain.View */
     connect(sigName: "animation-completed", callback: (($obj: View) => void)): number
     connect_after(sigName: "animation-completed", callback: (($obj: View) => void)): number
     emit(sigName: "animation-completed"): void
     connect(sigName: "layer-relocated", callback: (($obj: View) => void)): number
     connect_after(sigName: "layer-relocated", callback: (($obj: View) => void)): number
     emit(sigName: "layer-relocated"): void
-    /* Signals of Clutter.Actor */
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: View, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: View, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -10753,11 +10755,11 @@ export class View {
     connect(sigName: "unrealize", callback: (($obj: View) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: View) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: View, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: View, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -10984,13 +10986,13 @@ export interface Viewport_ConstructProps extends Clutter.Actor_ConstructProps {
     x_origin?: number
     y_origin?: number
 }
-export class Viewport {
-    /* Properties of Champlain.Viewport */
+class Viewport {
+    /* Properties of Champlain-0.12.Champlain.Viewport */
     hadjustment: Adjustment
     vadjustment: Adjustment
     x_origin: number
     y_origin: number
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Clutter.Action
     readonly allocation: Clutter.ActorBox
     anchor_gravity: Clutter.Gravity
@@ -11073,14 +11075,14 @@ export class Viewport {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Champlain.Viewport */
+    /* Fields of Champlain-0.12.Champlain.Viewport */
     parent: Clutter.Actor
     priv: ViewportPrivate
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Champlain.Viewport */
+    /* Methods of Champlain-0.12.Champlain.Viewport */
     get_adjustments(hadjustment: Adjustment, vadjustment: Adjustment): void
     get_anchor(x: number, y: number): void
     get_origin(x: number, y: number): void
@@ -11089,7 +11091,7 @@ export class Viewport {
     set_child(child: Clutter.Actor): void
     set_origin(x: number, y: number): void
     stop(): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Clutter.Action): void
     add_action_with_name(name: string, action: Clutter.Action): void
     add_child(child: Clutter.Actor): void
@@ -11325,15 +11327,15 @@ export class Viewport {
     unparent(): void
     unrealize(): void
     unset_flags(flags: Clutter.ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11341,19 +11343,19 @@ export class Viewport {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Clutter.Actor): void
     child_get_property(child: Clutter.Actor, property: string, value: any): void
     child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
@@ -11368,12 +11370,12 @@ export class Viewport {
     raise_child(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
     remove_actor(actor: Clutter.Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Champlain.Viewport */
+    /* Virtual methods of Champlain-0.12.Champlain.Viewport */
     vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     vfunc_find_property(property_name: string): GObject.ParamSpec
     vfunc_get_initial_state(property_name: string, value: any): void
@@ -11396,7 +11398,7 @@ export class Viewport {
     vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
     vfunc_apply_transform(matrix: Clutter.Matrix): void
     vfunc_button_press_event(event: Clutter.ButtonEvent): boolean
@@ -11432,19 +11434,19 @@ export class Viewport {
     vfunc_touch_event(event: Clutter.TouchEvent): boolean
     vfunc_unmap(): void
     vfunc_unrealize(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Champlain.Viewport */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Champlain-0.12.Champlain.Viewport */
     connect(sigName: "relocated", callback: (($obj: Viewport) => void)): number
     connect_after(sigName: "relocated", callback: (($obj: Viewport) => void)): number
     emit(sigName: "relocated"): void
-    /* Signals of Clutter.Actor */
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Viewport, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Viewport, box: Clutter.ActorBox, flags: Clutter.AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: Clutter.ActorBox, flags: Clutter.AllocationFlags): void
@@ -11523,11 +11525,11 @@ export class Viewport {
     connect(sigName: "unrealize", callback: (($obj: Viewport) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Viewport) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Viewport, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Viewport, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Viewport, actor: Clutter.Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Viewport, actor: Clutter.Actor) => void)): number
     emit(sigName: "actor-added", actor: Clutter.Actor): void
@@ -11722,21 +11724,21 @@ export class Viewport {
     static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export abstract class AdjustmentClass {
-    /* Fields of Champlain.AdjustmentClass */
+abstract class AdjustmentClass {
+    /* Fields of Champlain-0.12.Champlain.AdjustmentClass */
     changed: (adjustment: Adjustment) => void
     static name: string
 }
-export class AdjustmentPrivate {
+class AdjustmentPrivate {
     static name: string
 }
-export class BoundingBox {
-    /* Fields of Champlain.BoundingBox */
+class BoundingBox {
+    /* Fields of Champlain-0.12.Champlain.BoundingBox */
     left: number
     top: number
     right: number
     bottom: number
-    /* Methods of Champlain.BoundingBox */
+    /* Methods of Champlain-0.12.Champlain.BoundingBox */
     compose(other: BoundingBox): void
     copy(): BoundingBox
     covers(latitude: number, longitude: number): boolean
@@ -11750,108 +11752,108 @@ export class BoundingBox {
     /* Static methods and pseudo-constructors */
     static new(): BoundingBox
 }
-export abstract class CoordinateClass {
-    /* Fields of Champlain.CoordinateClass */
+abstract class CoordinateClass {
+    /* Fields of Champlain-0.12.Champlain.CoordinateClass */
     parent_class: GObject.InitiallyUnownedClass
     static name: string
 }
-export class CoordinatePrivate {
+class CoordinatePrivate {
     static name: string
 }
-export abstract class CustomMarkerClass {
-    /* Fields of Champlain.CustomMarkerClass */
+abstract class CustomMarkerClass {
+    /* Fields of Champlain-0.12.Champlain.CustomMarkerClass */
     parent_class: MarkerClass
     static name: string
 }
-export class CustomMarkerPrivate {
+class CustomMarkerPrivate {
     static name: string
 }
-export abstract class ErrorTileRendererClass {
-    /* Fields of Champlain.ErrorTileRendererClass */
+abstract class ErrorTileRendererClass {
+    /* Fields of Champlain-0.12.Champlain.ErrorTileRendererClass */
     parent_class: RendererClass
     static name: string
 }
-export class ErrorTileRendererPrivate {
+class ErrorTileRendererPrivate {
     static name: string
 }
-export abstract class ExportableIface {
-    /* Fields of Champlain.ExportableIface */
+abstract class ExportableIface {
+    /* Fields of Champlain-0.12.Champlain.ExportableIface */
     get_surface: (exportable: Exportable) => cairo.Surface
     set_surface: (exportable: Exportable, surface: cairo.Surface) => void
     static name: string
 }
-export abstract class FileCacheClass {
-    /* Fields of Champlain.FileCacheClass */
+abstract class FileCacheClass {
+    /* Fields of Champlain-0.12.Champlain.FileCacheClass */
     parent_class: TileCacheClass
     static name: string
 }
-export class FileCachePrivate {
+class FileCachePrivate {
     static name: string
 }
-export abstract class FileTileSourceClass {
-    /* Fields of Champlain.FileTileSourceClass */
+abstract class FileTileSourceClass {
+    /* Fields of Champlain-0.12.Champlain.FileTileSourceClass */
     parent_class: TileSourceClass
     static name: string
 }
-export class FileTileSourcePrivate {
+class FileTileSourcePrivate {
     static name: string
 }
-export abstract class ImageRendererClass {
-    /* Fields of Champlain.ImageRendererClass */
+abstract class ImageRendererClass {
+    /* Fields of Champlain-0.12.Champlain.ImageRendererClass */
     parent_class: RendererClass
     static name: string
 }
-export class ImageRendererPrivate {
+class ImageRendererPrivate {
     static name: string
 }
-export abstract class KineticScrollViewClass {
-    /* Fields of Champlain.KineticScrollViewClass */
+abstract class KineticScrollViewClass {
+    /* Fields of Champlain-0.12.Champlain.KineticScrollViewClass */
     parent_class: Clutter.ActorClass
     static name: string
 }
-export class KineticScrollViewPrivate {
+class KineticScrollViewPrivate {
     static name: string
 }
-export abstract class LabelClass {
-    /* Fields of Champlain.LabelClass */
+abstract class LabelClass {
+    /* Fields of Champlain-0.12.Champlain.LabelClass */
     parent_class: MarkerClass
     static name: string
 }
-export class LabelPrivate {
+class LabelPrivate {
     static name: string
 }
-export abstract class LayerClass {
-    /* Fields of Champlain.LayerClass */
+abstract class LayerClass {
+    /* Fields of Champlain-0.12.Champlain.LayerClass */
     parent_class: Clutter.ActorClass
     set_view: (layer: Layer, view?: View | null) => void
     get_bounding_box: (layer: Layer) => BoundingBox
     static name: string
 }
-export abstract class LicenseClass {
-    /* Fields of Champlain.LicenseClass */
+abstract class LicenseClass {
+    /* Fields of Champlain-0.12.Champlain.LicenseClass */
     parent_class: Clutter.ActorClass
     static name: string
 }
-export class LicensePrivate {
+class LicensePrivate {
     static name: string
 }
-export abstract class LocationIface {
-    /* Fields of Champlain.LocationIface */
+abstract class LocationIface {
+    /* Fields of Champlain-0.12.Champlain.LocationIface */
     get_latitude: (location: Location) => number
     get_longitude: (location: Location) => number
     set_location: (location: Location, latitude: number, longitude: number) => void
     static name: string
 }
-export abstract class MapSourceChainClass {
-    /* Fields of Champlain.MapSourceChainClass */
+abstract class MapSourceChainClass {
+    /* Fields of Champlain-0.12.Champlain.MapSourceChainClass */
     parent_class: MapSourceClass
     static name: string
 }
-export class MapSourceChainPrivate {
+class MapSourceChainPrivate {
     static name: string
 }
-export abstract class MapSourceClass {
-    /* Fields of Champlain.MapSourceClass */
+abstract class MapSourceClass {
+    /* Fields of Champlain-0.12.Champlain.MapSourceClass */
     parent_class: GObject.InitiallyUnownedClass
     get_id: (map_source: MapSource) => string
     get_name: (map_source: MapSource) => string
@@ -11864,144 +11866,146 @@ export abstract class MapSourceClass {
     fill_tile: (map_source: MapSource, tile: Tile) => void
     static name: string
 }
-export abstract class MapSourceDescClass {
-    /* Fields of Champlain.MapSourceDescClass */
+abstract class MapSourceDescClass {
+    /* Fields of Champlain-0.12.Champlain.MapSourceDescClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class MapSourceDescPrivate {
+class MapSourceDescPrivate {
     static name: string
 }
-export abstract class MapSourceFactoryClass {
-    /* Fields of Champlain.MapSourceFactoryClass */
+abstract class MapSourceFactoryClass {
+    /* Fields of Champlain-0.12.Champlain.MapSourceFactoryClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class MapSourceFactoryPrivate {
+class MapSourceFactoryPrivate {
     static name: string
 }
-export class MapSourcePrivate {
+class MapSourcePrivate {
     static name: string
 }
-export abstract class MarkerClass {
-    /* Fields of Champlain.MarkerClass */
+abstract class MarkerClass {
+    /* Fields of Champlain-0.12.Champlain.MarkerClass */
     parent_class: Clutter.ActorClass
     static name: string
 }
-export abstract class MarkerLayerClass {
-    /* Fields of Champlain.MarkerLayerClass */
+abstract class MarkerLayerClass {
+    /* Fields of Champlain-0.12.Champlain.MarkerLayerClass */
     parent_class: LayerClass
     static name: string
 }
-export class MarkerLayerPrivate {
+class MarkerLayerPrivate {
     static name: string
 }
-export class MarkerPrivate {
+class MarkerPrivate {
     static name: string
 }
-export abstract class MemoryCacheClass {
-    /* Fields of Champlain.MemoryCacheClass */
+abstract class MemoryCacheClass {
+    /* Fields of Champlain-0.12.Champlain.MemoryCacheClass */
     parent_class: TileCacheClass
     static name: string
 }
-export class MemoryCachePrivate {
+class MemoryCachePrivate {
     static name: string
 }
-export abstract class NetworkBboxTileSourceClass {
-    /* Fields of Champlain.NetworkBboxTileSourceClass */
+abstract class NetworkBboxTileSourceClass {
+    /* Fields of Champlain-0.12.Champlain.NetworkBboxTileSourceClass */
     parent_class: TileSourceClass
     static name: string
 }
-export class NetworkBboxTileSourcePrivate {
+class NetworkBboxTileSourcePrivate {
     static name: string
 }
-export abstract class NetworkTileSourceClass {
-    /* Fields of Champlain.NetworkTileSourceClass */
+abstract class NetworkTileSourceClass {
+    /* Fields of Champlain-0.12.Champlain.NetworkTileSourceClass */
     parent_class: TileSourceClass
     static name: string
 }
-export class NetworkTileSourcePrivate {
+class NetworkTileSourcePrivate {
     static name: string
 }
-export abstract class NullTileSourceClass {
-    /* Fields of Champlain.NullTileSourceClass */
+abstract class NullTileSourceClass {
+    /* Fields of Champlain-0.12.Champlain.NullTileSourceClass */
     parent_class: TileSourceClass
     static name: string
 }
-export class NullTileSourcePrivate {
+class NullTileSourcePrivate {
     static name: string
 }
-export abstract class PathLayerClass {
-    /* Fields of Champlain.PathLayerClass */
+abstract class PathLayerClass {
+    /* Fields of Champlain-0.12.Champlain.PathLayerClass */
     parent_class: LayerClass
     static name: string
 }
-export class PathLayerPrivate {
+class PathLayerPrivate {
     static name: string
 }
-export abstract class PointClass {
-    /* Fields of Champlain.PointClass */
+abstract class PointClass {
+    /* Fields of Champlain-0.12.Champlain.PointClass */
     parent_class: MarkerClass
     static name: string
 }
-export class PointPrivate {
+class PointPrivate {
     static name: string
 }
-export abstract class RendererClass {
-    /* Fields of Champlain.RendererClass */
+abstract class RendererClass {
+    /* Fields of Champlain-0.12.Champlain.RendererClass */
     parent_class: GObject.InitiallyUnownedClass
     set_data: (renderer: Renderer, data: Uint8Array[]) => void
     render: (renderer: Renderer, tile: Tile) => void
     static name: string
 }
-export abstract class ScaleClass {
-    /* Fields of Champlain.ScaleClass */
+abstract class ScaleClass {
+    /* Fields of Champlain-0.12.Champlain.ScaleClass */
     parent_class: Clutter.ActorClass
     static name: string
 }
-export class ScalePrivate {
+class ScalePrivate {
     static name: string
 }
-export abstract class TileCacheClass {
-    /* Fields of Champlain.TileCacheClass */
+abstract class TileCacheClass {
+    /* Fields of Champlain-0.12.Champlain.TileCacheClass */
     parent_class: MapSourceClass
     store_tile: (tile_cache: TileCache, tile: Tile, contents: string, size: number) => void
     refresh_tile_time: (tile_cache: TileCache, tile: Tile) => void
     on_tile_filled: (tile_cache: TileCache, tile: Tile) => void
     static name: string
 }
-export class TileCachePrivate {
+class TileCachePrivate {
     static name: string
 }
-export abstract class TileClass {
-    /* Fields of Champlain.TileClass */
+abstract class TileClass {
+    /* Fields of Champlain-0.12.Champlain.TileClass */
     parent_class: Clutter.ActorClass
     static name: string
 }
-export class TilePrivate {
+class TilePrivate {
     static name: string
 }
-export abstract class TileSourceClass {
-    /* Fields of Champlain.TileSourceClass */
+abstract class TileSourceClass {
+    /* Fields of Champlain-0.12.Champlain.TileSourceClass */
     parent_class: MapSourceClass
     static name: string
 }
-export class TileSourcePrivate {
+class TileSourcePrivate {
     static name: string
 }
-export abstract class ViewClass {
-    /* Fields of Champlain.ViewClass */
+abstract class ViewClass {
+    /* Fields of Champlain-0.12.Champlain.ViewClass */
     parent_class: Clutter.ActorClass
     static name: string
 }
-export class ViewPrivate {
+class ViewPrivate {
     static name: string
 }
-export abstract class ViewportClass {
-    /* Fields of Champlain.ViewportClass */
+abstract class ViewportClass {
+    /* Fields of Champlain-0.12.Champlain.ViewportClass */
     parent_class: Clutter.ActorClass
     static name: string
 }
-export class ViewportPrivate {
+class ViewportPrivate {
     static name: string
 }
+}
+export default Champlain;

@@ -1,2 +1,2 @@
-imports.gi.versions.ClutterGdk = '1.0'
-export default imports.gi.ClutterGdk
+import ClutterGdk from 'gi://ClutterGdk?version=1.0';
+export default ClutterGdk;

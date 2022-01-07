@@ -3,21 +3,23 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum BranchType {
+export namespace Ggit {
+
+enum BranchType {
     LOCAL,
     REMOTE,
 }
-export enum CloneLocal {
+enum CloneLocal {
     AUTO,
     LOCAL,
     NO_LOCAL,
     NO_LINKS,
 }
-export enum ConfigLevel {
+enum ConfigLevel {
     PROGRAMDATA,
     SYSTEM,
     XDG,
@@ -26,7 +28,7 @@ export enum ConfigLevel {
     APP,
     HIGHEST,
 }
-export enum DeltaType {
+enum DeltaType {
     UNMODIFIED,
     ADDED,
     DELETED,
@@ -36,19 +38,19 @@ export enum DeltaType {
     IGNORED,
     UNTRACKED,
 }
-export enum DiffBinaryType {
+enum DiffBinaryType {
     NONE,
     LITERAL,
     DELTA,
 }
-export enum DiffFormatType {
+enum DiffFormatType {
     PATCH,
     PATCH_HEADER,
     RAW,
     NAME_ONLY,
     NAME_STATUS,
 }
-export enum DiffLineType {
+enum DiffLineType {
     CONTEXT,
     ADDITION,
     DELETION,
@@ -59,11 +61,11 @@ export enum DiffLineType {
     HUNK_HDR,
     BINARY,
 }
-export enum Direction {
+enum Direction {
     FETCH,
     PUSH,
 }
-export enum Error {
+enum Error {
     GIT_ERROR,
     NOTFOUND,
     EXISTS,
@@ -72,7 +74,7 @@ export enum Error {
     PASSTHROUGH,
     ITEROVER,
 }
-export enum FileMode {
+enum FileMode {
     UNREADABLE,
     TREE,
     BLOB,
@@ -80,22 +82,22 @@ export enum FileMode {
     LINK,
     COMMIT,
 }
-export enum MergeFileFavor {
+enum MergeFileFavor {
     NORMAL,
     OURS,
     THEIRS,
     UNION,
 }
-export enum PackbuilderStage {
+enum PackbuilderStage {
     ADDING_OBJECTS,
     DELTAFICATION,
 }
-export enum ProxyType {
+enum ProxyType {
     NONE,
     AUTO,
     SPECIFIED,
 }
-export enum RebaseOperationType {
+enum RebaseOperationType {
     PICK,
     REWORD,
     EDIT,
@@ -103,67 +105,67 @@ export enum RebaseOperationType {
     FIXUP,
     EXEC,
 }
-export enum RefType {
+enum RefType {
     INVALID,
     OID,
     SYMBOLIC,
     LISTALL,
 }
-export enum RemoteCompletionType {
+enum RemoteCompletionType {
     DOWNLOAD,
     INDEXING,
     ERROR,
 }
-export enum RemoteDownloadTagsType {
+enum RemoteDownloadTagsType {
     UNSPECIFIED,
     AUTO,
     NONE,
     ALL,
 }
-export enum ResetType {
+enum ResetType {
     SOFT,
     MIXED,
     HARD,
 }
-export enum StatusShow {
+enum StatusShow {
     INDEX_AND_WORKDIR,
     INDEX_ONLY,
     WORKDIR_ONLY,
 }
-export enum SubmoduleIgnore {
+enum SubmoduleIgnore {
     UNSPECIFIED,
     NONE,
     UNTRACKED,
     DIRTY,
     ALL,
 }
-export enum SubmoduleRecurse {
+enum SubmoduleRecurse {
     NO,
     YES,
     ONDEMAND,
 }
-export enum SubmoduleUpdate {
+enum SubmoduleUpdate {
     CHECKOUT,
     REBASE,
     MERGE,
     NONE,
     DEFAULT,
 }
-export enum TreeWalkMode {
+enum TreeWalkMode {
     PRE,
     POST,
 }
-export enum AttributeCheckFlags {
+enum AttributeCheckFlags {
     FILE_THEN_INDEX,
     INDEX_THEN_FILE,
     INDEX_ONLY,
     NO_SYSTEM,
 }
-export enum BlameFlags {
+enum BlameFlags {
     NORMAL,
     TRACK_COPIES_SAME_FILE,
 }
-export enum CheckoutNotifyFlags {
+enum CheckoutNotifyFlags {
     NONE,
     CONFLICT,
     DIRTY,
@@ -172,7 +174,7 @@ export enum CheckoutNotifyFlags {
     IGNORED,
     ALL,
 }
-export enum CheckoutStrategy {
+enum CheckoutStrategy {
     NONE,
     SAFE,
     FORCE,
@@ -196,18 +198,18 @@ export enum CheckoutStrategy {
     UPDATE_SUBMODULES,
     UPDATE_SUBMODULES_IF_CHANGED,
 }
-export enum CreateFlags {
+enum CreateFlags {
     NONE,
     FORCE,
 }
-export enum Credtype {
+enum Credtype {
     USERPASS_PLAINTEXT,
     SSH_KEY,
     SSH_CUSTOM,
     DEFAULT,
     SSH_INTERACTIVE,
 }
-export enum DiffFindFlags {
+enum DiffFindFlags {
     FIND_BY_CONFIG,
     FIND_RENAMES,
     FIND_RENAMES_FROM_REWRITES,
@@ -225,16 +227,16 @@ export enum DiffFindFlags {
     BREAK_REWRITES_FOR_RENAMES_ONLY,
     FIND_REMOVE_UNMODIFIED,
 }
-export enum DiffFlag {
+enum DiffFlag {
     BINARY,
     NOT_BINARY,
     VALID_ID,
 }
-export enum DiffFormatEmailFlags {
+enum DiffFormatEmailFlags {
     NONE,
     EXCLUDE_SUBJECT_PATCH_MARKER,
 }
-export enum DiffOption {
+enum DiffOption {
     NORMAL,
     REVERSE,
     INCLUDE_IGNORED,
@@ -261,12 +263,12 @@ export enum DiffOption {
     MINIMAL,
     SHOW_BINARY,
 }
-export enum FeatureFlags {
+enum FeatureFlags {
     THREADS,
     HTTPS,
     SSH,
 }
-export enum MergeFileFlags {
+enum MergeFileFlags {
     DEFAULT,
     STYLE_MERGE,
     STYLE_DIFF3,
@@ -277,25 +279,25 @@ export enum MergeFileFlags {
     DIFF_PATIENCE,
     DIFF_MINIMAL,
 }
-export enum MergeFlags {
+enum MergeFlags {
     FIND_RENAMES,
     FAIL_ON_CONFLICT,
     SKIP_REUC,
     NO_RECURSIVE,
 }
-export enum SortMode {
+enum SortMode {
     NONE,
     TOPOLOGICAL,
     TIME,
     REVERSE,
 }
-export enum StashFlags {
+enum StashFlags {
     DEFAULT,
     KEEP_INDEX,
     INCLUDE_UNTRACKED,
     INCLUDE_IGNORED,
 }
-export enum StatusFlags {
+enum StatusFlags {
     CURRENT,
     INDEX_NEW,
     INDEX_MODIFIED,
@@ -308,7 +310,7 @@ export enum StatusFlags {
     WORKING_TREE_TYPECHANGE,
     IGNORED,
 }
-export enum StatusOption {
+enum StatusOption {
     INCLUDE_UNTRACKED,
     INCLUDE_IGNORED,
     INCLUDE_UNMODIFIED,
@@ -322,7 +324,7 @@ export enum StatusOption {
     SORT_CASE_INSENSITIVELY,
     DEFAULT,
 }
-export enum SubmoduleStatus {
+enum SubmoduleStatus {
     IN_HEAD,
     IN_INDEX,
     IN_CONFIG,
@@ -338,94 +340,94 @@ export enum SubmoduleStatus {
     WD_WD_MODIFIED,
     WD_UNTRACKED,
 }
-export function error_quark(): GLib.Quark
-export function get_features(): FeatureFlags
-export function init(): void
-export function message_prettify(message: string, strip_comments: boolean, comment_char: number): string
-export interface ConfigCallback {
+function error_quark(): GLib.Quark
+function get_features(): FeatureFlags
+function init(): void
+function message_prettify(message: string, strip_comments: boolean, comment_char: number): string
+interface ConfigCallback {
     (entry: ConfigEntry): number
 }
-export interface ConfigMatchCallback {
+interface ConfigMatchCallback {
     (match_info: GLib.MatchInfo, value: string): number
 }
-export interface CredAcquireCallback {
+interface CredAcquireCallback {
     (url: string, username_from_url: string | null, allowed_types: number, cred: Cred): number
 }
-export interface DiffBinaryCallback {
+interface DiffBinaryCallback {
     (delta: DiffDelta, binary: DiffBinary): number
 }
-export interface DiffFileCallback {
+interface DiffFileCallback {
     (delta: DiffDelta, progress: number): number
 }
-export interface DiffHunkCallback {
+interface DiffHunkCallback {
     (delta: DiffDelta, hunk: DiffHunk): number
 }
-export interface DiffLineCallback {
+interface DiffLineCallback {
     (delta: DiffDelta, hunk: DiffHunk | null, line: DiffLine): number
 }
-export interface DiffSimilarityMetricBufferSignatureCallback {
+interface DiffSimilarityMetricBufferSignatureCallback {
     (file: DiffFile, buf: string, buflen: number, out?: object | null): number
 }
-export interface DiffSimilarityMetricFileSignatureCallback {
+interface DiffSimilarityMetricFileSignatureCallback {
     (file: DiffFile, fullpath: string, out?: object | null): number
 }
-export interface DiffSimilarityMetricFreeSignatureCallback {
+interface DiffSimilarityMetricFreeSignatureCallback {
     (signature?: object | null): void
 }
-export interface DiffSimilarityMetricSimilarityCallback {
+interface DiffSimilarityMetricSimilarityCallback {
     (score: number, signature_a?: object | null, signature_b?: object | null): number
 }
-export interface NoteCallback {
+interface NoteCallback {
     (blob_id: OId, annotated_object_id: OId): number
 }
-export interface ReferencesCallback {
+interface ReferencesCallback {
     (reference: Ref): number
 }
-export interface ReferencesNameCallback {
+interface ReferencesNameCallback {
     (name: string): number
 }
-export interface RemoteListCallback {
+interface RemoteListCallback {
     (name: string, oid: OId, loid: OId, local: boolean): number
 }
-export interface StashCallback {
+interface StashCallback {
     (index: number, message: string, stash_oid: OId): number
 }
-export interface StatusCallback {
+interface StatusCallback {
     (path: string, status_flags: StatusFlags): number
 }
-export interface SubmoduleCallback {
+interface SubmoduleCallback {
     (submodule: Submodule, name: string): number
 }
-export interface TagCallback {
+interface TagCallback {
     (name: string, tag_oid: OId): number
 }
-export interface TransferProgressCallback {
+interface TransferProgressCallback {
     (stats: TransferProgress): number
 }
-export interface TreeWalkCallback {
+interface TreeWalkCallback {
     (root: string, entry: TreeEntry): number
 }
 export interface Blame_ConstructProps extends Native_ConstructProps {
 }
-export class Blame {
-    /* Fields of Ggit.Native */
+class Blame {
+    /* Fields of Ggit-1.0.Ggit.Native */
     parent_instance: ObjectFactoryBase
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Blame */
+    /* Methods of Ggit-1.0.Ggit.Blame */
     from_buffer(buffer: Uint8Array[]): Blame | null
     get_hunk_by_index(idx: number): BlameHunk
     get_hunk_by_line(line: number): BlameHunk
     get_hunk_count(): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -433,21 +435,21 @@ export class Blame {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Blame, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Blame, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -465,26 +467,26 @@ export class Blame {
 }
 export interface Blob_ConstructProps extends Object_ConstructProps {
 }
-export class Blob {
-    /* Fields of Ggit.Object */
+class Blob {
+    /* Fields of Ggit-1.0.Ggit.Object */
     parent_instance: Native
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Blob */
+    /* Methods of Ggit-1.0.Ggit.Blob */
     get_raw_content(): Uint8Array[] | null
     is_binary(): boolean
-    /* Methods of Ggit.Object */
+    /* Methods of Ggit-1.0.Ggit.Object */
     get_id(): OId | null
     get_owner(): Repository | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -492,21 +494,21 @@ export class Blob {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Blob, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Blob, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -522,14 +524,14 @@ export class Blob {
 export interface BlobOutputStream_ConstructProps extends Gio.OutputStream_ConstructProps {
     repository?: Repository
 }
-export class BlobOutputStream {
-    /* Fields of Ggit.BlobOutputStream */
+class BlobOutputStream {
+    /* Fields of Ggit-1.0.Ggit.BlobOutputStream */
     parent_instance: Gio.OutputStream
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.BlobOutputStream */
+    /* Methods of Ggit-1.0.Ggit.BlobOutputStream */
     get_id(): OId | null
-    /* Methods of Gio.OutputStream */
+    /* Methods of Gio-2.0.Gio.OutputStream */
     clear_pending(): void
     close(cancellable?: Gio.Cancellable | null): boolean
     close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -559,15 +561,15 @@ export class BlobOutputStream {
     writev_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     writev_async(vectors: Gio.OutputVector[], io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     writev_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -575,13 +577,13 @@ export class BlobOutputStream {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gio.OutputStream */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gio-2.0.Gio.OutputStream */
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
@@ -597,15 +599,15 @@ export class BlobOutputStream {
     vfunc_writev_async(vectors: Gio.OutputVector[], io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_writev_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     vfunc_writev_fn(vectors: Gio.OutputVector[], cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BlobOutputStream, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BlobOutputStream, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -620,19 +622,19 @@ export class BlobOutputStream {
 }
 export interface Branch_ConstructProps extends Ref_ConstructProps {
 }
-export class Branch {
-    /* Fields of Ggit.Branch */
+class Branch {
+    /* Fields of Ggit-1.0.Ggit.Branch */
     parent_instance: Ref
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Branch */
+    /* Methods of Ggit-1.0.Ggit.Branch */
     delete(): void
     get_name(): string | null
     get_upstream(): Ref | null
     is_head(): boolean
     move(new_branch_name: string, flags: CreateFlags): Branch | null
     set_upstream(upstream_branch_name: string): void
-    /* Methods of Ggit.Ref */
+    /* Methods of Ggit-1.0.Ggit.Ref */
     delete_log(): void
     get_log(): Reflog | null
     get_owner(): Repository | null
@@ -651,15 +653,15 @@ export class Branch {
     set_symbolic_target(target: string, log_message: string): Ref | null
     set_target(oid: OId, log_message: string): Ref | null
     to_string(): string | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -667,21 +669,21 @@ export class Branch {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Branch, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Branch, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -707,8 +709,8 @@ export interface CheckoutOptions_ConstructProps extends GObject.Object_Construct
     target_directory?: string
     their_label?: string
 }
-export class CheckoutOptions {
-    /* Properties of Ggit.CheckoutOptions */
+class CheckoutOptions {
+    /* Properties of Ggit-1.0.Ggit.CheckoutOptions */
     ancestor_label: string
     baseline: Tree
     dir_mode: number
@@ -720,11 +722,11 @@ export class CheckoutOptions {
     strategy: CheckoutStrategy
     target_directory: string
     their_label: string
-    /* Fields of Ggit.CheckoutOptions */
+    /* Fields of Ggit-1.0.Ggit.CheckoutOptions */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.CheckoutOptions */
+    /* Methods of Ggit-1.0.Ggit.CheckoutOptions */
     get_ancestor_label(): string | null
     get_baseline(): Tree | null
     get_dir_mode(): number
@@ -749,15 +751,15 @@ export class CheckoutOptions {
     set_strategy(strategy: CheckoutStrategy): void
     set_target_directory(directory?: string | null): void
     set_their_label(label?: string | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -765,25 +767,25 @@ export class CheckoutOptions {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Ggit.CheckoutOptions */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Ggit-1.0.Ggit.CheckoutOptions */
     vfunc_notify(why: CheckoutNotifyFlags, path: string, baseline: DiffFile, target: DiffFile, workdir: DiffFile): number
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_progress(path: string, completed_steps: number, total_steps: number): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CheckoutOptions, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CheckoutOptions, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -825,31 +827,31 @@ export interface CherryPickOptions_ConstructProps extends GObject.Object_Constru
     mainline?: number
     merge_options?: MergeOptions
 }
-export class CherryPickOptions {
-    /* Properties of Ggit.CherryPickOptions */
+class CherryPickOptions {
+    /* Properties of Ggit-1.0.Ggit.CherryPickOptions */
     checkout_options: CheckoutOptions
     mainline: number
     merge_options: MergeOptions
-    /* Fields of Ggit.CherryPickOptions */
+    /* Fields of Ggit-1.0.Ggit.CherryPickOptions */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.CherryPickOptions */
+    /* Methods of Ggit-1.0.Ggit.CherryPickOptions */
     get_checkout_options(): CheckoutOptions
     get_mainline(): number
     get_merge_options(): MergeOptions
     set_checkout_options(checkout_options?: CheckoutOptions | null): void
     set_mainline(mainline: number): void
     set_merge_options(merge_options?: MergeOptions | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -857,21 +859,21 @@ export class CherryPickOptions {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CherryPickOptions, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CherryPickOptions, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -894,12 +896,12 @@ export class CherryPickOptions {
 }
 export interface CloneOptions_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class CloneOptions {
-    /* Fields of Ggit.CloneOptions */
+class CloneOptions {
+    /* Fields of Ggit-1.0.Ggit.CloneOptions */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.CloneOptions */
+    /* Methods of Ggit-1.0.Ggit.CloneOptions */
     get_checkout_branch(): string
     get_fetch_options(): FetchOptions
     get_is_bare(): boolean
@@ -908,15 +910,15 @@ export class CloneOptions {
     set_fetch_options(fetch_options?: FetchOptions | null): void
     set_is_bare(bare: boolean): void
     set_local(local: CloneLocal): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -924,24 +926,24 @@ export class CloneOptions {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Ggit.CloneOptions */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Ggit-1.0.Ggit.CloneOptions */
     vfunc_create_remote(repository: Repository, name: string, url: string): Remote | null
     vfunc_create_repository(path: string, is_bare: boolean): Repository | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CloneOptions, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CloneOptions, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -958,12 +960,12 @@ export class CloneOptions {
 }
 export interface Commit_ConstructProps extends Object_ConstructProps {
 }
-export class Commit {
-    /* Fields of Ggit.Commit */
+class Commit {
+    /* Fields of Ggit-1.0.Ggit.Commit */
     parent_instance: Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Commit */
+    /* Methods of Ggit-1.0.Ggit.Commit */
     amend(update_ref: string | null, author: Signature, committer: Signature, message_encoding: string | null, message: string, tree: Tree): OId | null
     get_author(): Signature | null
     get_committer(): Signature | null
@@ -974,18 +976,18 @@ export class Commit {
     get_subject(): string | null
     get_tree(): Tree | null
     get_tree_id(): OId | null
-    /* Methods of Ggit.Object */
+    /* Methods of Ggit-1.0.Ggit.Object */
     get_id(): OId | null
     get_owner(): Repository | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -993,21 +995,21 @@ export class Commit {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Commit, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Commit, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1023,24 +1025,24 @@ export class Commit {
 export interface CommitParents_ConstructProps extends GObject.Object_ConstructProps {
     commit?: Commit
 }
-export class CommitParents {
-    /* Properties of Ggit.CommitParents */
+class CommitParents {
+    /* Properties of Ggit-1.0.Ggit.CommitParents */
     readonly size: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.CommitParents */
+    /* Methods of Ggit-1.0.Ggit.CommitParents */
     get(idx: number): Commit | null
     get_id(idx: number): OId | null
     get_size(): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1048,21 +1050,21 @@ export class CommitParents {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CommitParents, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CommitParents, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1081,12 +1083,12 @@ export class CommitParents {
 }
 export interface Config_ConstructProps extends Native_ConstructProps {
 }
-export class Config {
-    /* Fields of Ggit.Native */
+class Config {
+    /* Fields of Ggit-1.0.Ggit.Native */
     parent_instance: ObjectFactoryBase
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Config */
+    /* Methods of Ggit-1.0.Ggit.Config */
     add_file(file: Gio.File, level: ConfigLevel, force: boolean): void
     delete_entry(name: string): boolean
     foreach(callback: ConfigCallback): boolean
@@ -1103,15 +1105,15 @@ export class Config {
     set_int64(name: string, value: number): boolean
     set_string(name: string, value: string): boolean
     snapshot(): Config
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1119,21 +1121,21 @@ export class Config {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Config, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Config, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1154,20 +1156,20 @@ export class Config {
 }
 export interface Cred_ConstructProps extends Native_ConstructProps {
 }
-export class Cred {
-    /* Fields of Ggit.Cred */
+class Cred {
+    /* Fields of Ggit-1.0.Ggit.Cred */
     parent_instance: Native
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1175,21 +1177,21 @@ export class Cred {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Cred, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Cred, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1206,23 +1208,23 @@ export interface CredPlaintext_ConstructProps extends Cred_ConstructProps {
     password?: string
     username?: string
 }
-export class CredPlaintext {
-    /* Fields of Ggit.CredPlaintext */
+class CredPlaintext {
+    /* Fields of Ggit-1.0.Ggit.CredPlaintext */
     parent_instance: Cred
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.CredPlaintext */
+    /* Methods of Ggit-1.0.Ggit.CredPlaintext */
     get_password(): string
     get_username(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1230,25 +1232,25 @@ export class CredPlaintext {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Ggit.CredPlaintext */
+    /* Virtual methods of Ggit-1.0.Ggit.CredPlaintext */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CredPlaintext, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CredPlaintext, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1267,22 +1269,22 @@ export class CredPlaintext {
 export interface CredSshInteractive_ConstructProps extends Cred_ConstructProps {
     username?: string
 }
-export class CredSshInteractive {
-    /* Fields of Ggit.CredSshInteractive */
+class CredSshInteractive {
+    /* Fields of Ggit-1.0.Ggit.CredSshInteractive */
     parent_instance: Cred
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.CredSshInteractive */
+    /* Methods of Ggit-1.0.Ggit.CredSshInteractive */
     get_username(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1290,26 +1292,26 @@ export class CredSshInteractive {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Ggit.CredSshInteractive */
+    /* Virtual methods of Ggit-1.0.Ggit.CredSshInteractive */
     vfunc_prompt(prompts: CredSshInteractivePrompt[]): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CredSshInteractive, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CredSshInteractive, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1328,22 +1330,22 @@ export class CredSshInteractive {
 export interface CredSshKeyFromAgent_ConstructProps extends Cred_ConstructProps {
     username?: string
 }
-export class CredSshKeyFromAgent {
-    /* Fields of Ggit.Cred */
+class CredSshKeyFromAgent {
+    /* Fields of Ggit-1.0.Ggit.Cred */
     parent_instance: Native
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.CredSshKeyFromAgent */
+    /* Methods of Ggit-1.0.Ggit.CredSshKeyFromAgent */
     get_username(): string | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1351,25 +1353,25 @@ export class CredSshKeyFromAgent {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Ggit.CredSshKeyFromAgent */
+    /* Virtual methods of Ggit-1.0.Ggit.CredSshKeyFromAgent */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CredSshKeyFromAgent, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CredSshKeyFromAgent, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1388,12 +1390,12 @@ export class CredSshKeyFromAgent {
 export interface Diff_ConstructProps extends Native_ConstructProps {
     repository?: Repository
 }
-export class Diff {
-    /* Fields of Ggit.Diff */
+class Diff {
+    /* Fields of Ggit-1.0.Ggit.Diff */
     parent_instance: Native
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Diff */
+    /* Methods of Ggit-1.0.Ggit.Diff */
     find_similar(options?: DiffFindOptions | null): boolean
     foreach(file_cb?: DiffFileCallback | null, binary_cb?: DiffBinaryCallback | null, hunk_cb?: DiffHunkCallback | null, line_cb?: DiffLineCallback | null): void
     format_email(options: DiffFormatEmailOptions): string | null
@@ -1401,15 +1403,15 @@ export class Diff {
     get_num_deltas(): number
     merge(from: Diff): void
     print(type: DiffFormatType, print_cb: DiffLineCallback): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1417,21 +1419,21 @@ export class Diff {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Diff, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Diff, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1460,19 +1462,19 @@ export interface DiffFindOptions_ConstructProps extends GObject.Object_Construct
     rename_limit?: number
     rename_threshold?: number
 }
-export class DiffFindOptions {
-    /* Properties of Ggit.DiffFindOptions */
+class DiffFindOptions {
+    /* Properties of Ggit-1.0.Ggit.DiffFindOptions */
     copy_threshold: number
     flags: DiffFindFlags
     metric: DiffSimilarityMetric
     rename_from_rewrite_threshold: number
     rename_limit: number
     rename_threshold: number
-    /* Fields of Ggit.DiffFindOptions */
+    /* Fields of Ggit-1.0.Ggit.DiffFindOptions */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.DiffFindOptions */
+    /* Methods of Ggit-1.0.Ggit.DiffFindOptions */
     get_copy_threshold(): number
     get_flags(): DiffFindFlags
     get_metric(): DiffSimilarityMetric | null
@@ -1485,15 +1487,15 @@ export class DiffFindOptions {
     set_rename_from_rewrite_threshold(threshold: number): void
     set_rename_limit(limit: number): void
     set_rename_threshold(threshold: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1501,21 +1503,21 @@ export class DiffFindOptions {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DiffFindOptions, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DiffFindOptions, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1551,8 +1553,8 @@ export interface DiffFormatEmailOptions_ConstructProps extends GObject.Object_Co
     summary?: string
     total_patches?: number
 }
-export class DiffFormatEmailOptions {
-    /* Properties of Ggit.DiffFormatEmailOptions */
+class DiffFormatEmailOptions {
+    /* Properties of Ggit-1.0.Ggit.DiffFormatEmailOptions */
     author: Signature
     body: string
     flags: DiffFormatEmailFlags
@@ -1560,11 +1562,11 @@ export class DiffFormatEmailOptions {
     patch_number: number
     summary: string
     total_patches: number
-    /* Fields of Ggit.DiffFormatEmailOptions */
+    /* Fields of Ggit-1.0.Ggit.DiffFormatEmailOptions */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.DiffFormatEmailOptions */
+    /* Methods of Ggit-1.0.Ggit.DiffFormatEmailOptions */
     get_author(): Signature | null
     get_body(): string | null
     get_flags(): DiffFormatEmailFlags
@@ -1579,15 +1581,15 @@ export class DiffFormatEmailOptions {
     set_patch_number(number: number): void
     set_summary(summary?: string | null): void
     set_total_patches(patches: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1595,21 +1597,21 @@ export class DiffFormatEmailOptions {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DiffFormatEmailOptions, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DiffFormatEmailOptions, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1646,19 +1648,19 @@ export interface DiffOptions_ConstructProps extends GObject.Object_ConstructProp
     old_prefix?: string
     pathspec?: string[]
 }
-export class DiffOptions {
-    /* Properties of Ggit.DiffOptions */
+class DiffOptions {
+    /* Properties of Ggit-1.0.Ggit.DiffOptions */
     flags: DiffOption
     n_context_lines: number
     n_interhunk_lines: number
     new_prefix: string
     old_prefix: string
     pathspec: string[]
-    /* Fields of Ggit.DiffOptions */
+    /* Fields of Ggit-1.0.Ggit.DiffOptions */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.DiffOptions */
+    /* Methods of Ggit-1.0.Ggit.DiffOptions */
     get_flags(): DiffOption
     get_n_context_lines(): number
     get_n_interhunk_lines(): number
@@ -1671,15 +1673,15 @@ export class DiffOptions {
     set_new_prefix(prefix: string): void
     set_old_prefix(prefix: string): void
     set_pathspec(pathspec?: string[] | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1687,21 +1689,21 @@ export class DiffOptions {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DiffOptions, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DiffOptions, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1731,12 +1733,12 @@ export class DiffOptions {
 export interface Index_ConstructProps extends Native_ConstructProps {
     file?: Gio.File
 }
-export class Index {
-    /* Fields of Ggit.Native */
+class Index {
+    /* Fields of Ggit-1.0.Ggit.Native */
     parent_instance: ObjectFactoryBase
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Index */
+    /* Methods of Ggit-1.0.Ggit.Index */
     add(entry: IndexEntry): boolean
     add_file(file: Gio.File): boolean
     add_path(path: string): boolean
@@ -1749,15 +1751,15 @@ export class Index {
     write(): boolean
     write_tree(): OId | null
     write_tree_to(repository: Repository): OId | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1765,25 +1767,25 @@ export class Index {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Ggit.Index */
+    /* Virtual methods of Ggit-1.0.Ggit.Index */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Index, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Index, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1802,20 +1804,20 @@ export class Index {
 export interface Native_ConstructProps extends ObjectFactoryBase_ConstructProps {
     native?: object
 }
-export class Native {
-    /* Fields of Ggit.Native */
+class Native {
+    /* Fields of Ggit-1.0.Ggit.Native */
     parent_instance: ObjectFactoryBase
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1823,21 +1825,21 @@ export class Native {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Native, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Native, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1852,23 +1854,23 @@ export class Native {
 }
 export interface Object_ConstructProps extends Native_ConstructProps {
 }
-export class Object {
-    /* Fields of Ggit.Object */
+class Object {
+    /* Fields of Ggit-1.0.Ggit.Object */
     parent_instance: Native
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Object */
+    /* Methods of Ggit-1.0.Ggit.Object */
     get_id(): OId | null
     get_owner(): Repository | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1876,21 +1878,21 @@ export class Object {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1905,22 +1907,22 @@ export class Object {
 }
 export interface ObjectFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ObjectFactory {
-    /* Fields of GObject.Object */
+class ObjectFactory {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.ObjectFactory */
+    /* Methods of Ggit-1.0.Ggit.ObjectFactory */
     construct(parent_class: GObject.ObjectClass, basetype: GObject.Type, construct_properties: GObject.ObjectConstructParam[]): GObject.Object | null
     register(basetype: GObject.Type, subtype: GObject.Type): void
     unregister(basetype: GObject.Type, subtype: GObject.Type): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1928,21 +1930,21 @@ export class ObjectFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ObjectFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ObjectFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1959,20 +1961,20 @@ export class ObjectFactory {
 }
 export interface ObjectFactoryBase_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ObjectFactoryBase {
-    /* Fields of Ggit.ObjectFactoryBase */
+class ObjectFactoryBase {
+    /* Fields of Ggit-1.0.Ggit.ObjectFactoryBase */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1980,21 +1982,21 @@ export class ObjectFactoryBase {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ObjectFactoryBase, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ObjectFactoryBase, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2009,20 +2011,20 @@ export class ObjectFactoryBase {
 }
 export interface ProxyOptions_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ProxyOptions {
-    /* Fields of Ggit.ProxyOptions */
+class ProxyOptions {
+    /* Fields of Ggit-1.0.Ggit.ProxyOptions */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2030,21 +2032,21 @@ export class ProxyOptions {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ProxyOptions, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ProxyOptions, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2063,28 +2065,28 @@ export interface PushOptions_ConstructProps extends GObject.Object_ConstructProp
     callbacks?: RemoteCallbacks
     parallelism?: number
 }
-export class PushOptions {
-    /* Properties of Ggit.PushOptions */
+class PushOptions {
+    /* Properties of Ggit-1.0.Ggit.PushOptions */
     callbacks: RemoteCallbacks
     parallelism: number
-    /* Fields of Ggit.PushOptions */
+    /* Fields of Ggit-1.0.Ggit.PushOptions */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.PushOptions */
+    /* Methods of Ggit-1.0.Ggit.PushOptions */
     get_parallelism(): number
     get_remote_callbacks(): RemoteCallbacks | null
     set_parallelism(parallelism: number): void
     set_remote_callbacks(callbacks: RemoteCallbacks): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2092,21 +2094,21 @@ export class PushOptions {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PushOptions, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PushOptions, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2127,12 +2129,12 @@ export class PushOptions {
 }
 export interface Rebase_ConstructProps extends Native_ConstructProps {
 }
-export class Rebase {
-    /* Fields of Ggit.Native */
+class Rebase {
+    /* Fields of Ggit-1.0.Ggit.Native */
     parent_instance: ObjectFactoryBase
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Rebase */
+    /* Methods of Ggit-1.0.Ggit.Rebase */
     abort(): void
     commit(author: Signature | null, committer: Signature, message?: string | null): OId | null
     finish(signature?: Signature | null): void
@@ -2140,15 +2142,15 @@ export class Rebase {
     get_operation_entry_count(): number
     get_operation_index(): number
     next(): RebaseOperation | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2156,21 +2158,21 @@ export class Rebase {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Rebase, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Rebase, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2185,12 +2187,12 @@ export class Rebase {
 }
 export interface Ref_ConstructProps extends Native_ConstructProps {
 }
-export class Ref {
-    /* Fields of Ggit.Ref */
+class Ref {
+    /* Fields of Ggit-1.0.Ggit.Ref */
     parent_instance: Native
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Ref */
+    /* Methods of Ggit-1.0.Ggit.Ref */
     delete(): void
     delete_log(): void
     get_log(): Reflog | null
@@ -2211,15 +2213,15 @@ export class Ref {
     set_symbolic_target(target: string, log_message: string): Ref | null
     set_target(oid: OId, log_message: string): Ref | null
     to_string(): string | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2227,21 +2229,21 @@ export class Ref {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Ref, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Ref, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2258,12 +2260,12 @@ export class Ref {
 }
 export interface Remote_ConstructProps extends Native_ConstructProps {
 }
-export class Remote {
-    /* Fields of Ggit.Remote */
+class Remote {
+    /* Fields of Ggit-1.0.Ggit.Remote */
     parent_instance: Native
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Remote */
+    /* Methods of Ggit-1.0.Ggit.Remote */
     connect(direction: Direction, callbacks: RemoteCallbacks, proxy_options?: ProxyOptions | null, custom_headers?: string | null): void
     disconnect(): void
     download(specs: string[] | null, fetch_options: FetchOptions): boolean
@@ -2278,15 +2280,15 @@ export class Remote {
     push(specs: string[] | null, push_options: PushOptions): boolean
     update_tips(callbacks: RemoteCallbacks, update_fetch_head: boolean, tags_type: RemoteDownloadTagsType, message?: string | null): boolean
     upload(specs: string[] | null, push_options: PushOptions): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2294,21 +2296,21 @@ export class Remote {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Remote, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Remote, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2326,20 +2328,20 @@ export class Remote {
 }
 export interface RemoteCallbacks_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class RemoteCallbacks {
-    /* Fields of Ggit.RemoteCallbacks */
+class RemoteCallbacks {
+    /* Fields of Ggit-1.0.Ggit.RemoteCallbacks */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2347,27 +2349,27 @@ export class RemoteCallbacks {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Ggit.RemoteCallbacks */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Ggit-1.0.Ggit.RemoteCallbacks */
     vfunc_completion(type: RemoteCompletionType): void
     vfunc_credentials(url: string, username_from_url: string | null, allowed_types: Credtype): Cred | null
     vfunc_progress(message: string): void
     vfunc_transfer_progress(stats: TransferProgress): void
     vfunc_update_tips(refname: string, a: OId, b: OId): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Ggit.RemoteCallbacks */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Ggit-1.0.Ggit.RemoteCallbacks */
     connect(sigName: "completion", callback: (($obj: RemoteCallbacks, object: RemoteCompletionType) => void)): number
     connect_after(sigName: "completion", callback: (($obj: RemoteCallbacks, object: RemoteCompletionType) => void)): number
     emit(sigName: "completion", object: RemoteCompletionType): void
@@ -2380,7 +2382,7 @@ export class RemoteCallbacks {
     connect(sigName: "update-tips", callback: (($obj: RemoteCallbacks, object: string, p0: OId, p1: OId) => void)): number
     connect_after(sigName: "update-tips", callback: (($obj: RemoteCallbacks, object: string, p0: OId, p1: OId) => void)): number
     emit(sigName: "update-tips", object: string, p0: OId, p1: OId): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RemoteCallbacks, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RemoteCallbacks, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2401,15 +2403,15 @@ export interface Repository_ConstructProps extends Native_ConstructProps {
     url?: string
     workdir?: Gio.File
 }
-export class Repository {
-    /* Properties of Ggit.Repository */
+class Repository {
+    /* Properties of Ggit-1.0.Ggit.Repository */
     readonly head: Ref
     workdir: Gio.File
-    /* Fields of Ggit.Native */
+    /* Fields of Ggit-1.0.Ggit.Native */
     parent_instance: ObjectFactoryBase
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Repository */
+    /* Methods of Ggit-1.0.Ggit.Repository */
     add_remote_fetch(remote: Remote, refspec: string): void
     add_remote_push(remote: Remote, refspec: string): void
     blame_file(file: Gio.File, blame_options?: BlameOptions | null): Blame | null
@@ -2489,6 +2491,7 @@ export class Repository {
     revparse(spec: string): Object | null
     save_stash(stasher: Signature, message: string, flags: StashFlags): OId | null
     set_head(ref_name: string): boolean
+    set_head_detached(oid: OId): boolean
     set_remote_url(remote: string, url: string): boolean
     set_submodule_fetch_recurse(name: string, fetch_recurse_submodules: SubmoduleRecurse): void
     set_submodule_ignore(name: string, ignore: SubmoduleIgnore): void
@@ -2498,15 +2501,15 @@ export class Repository {
     stash_foreach(callback: StashCallback): boolean
     submodule_foreach(callback: SubmoduleCallback): boolean
     tag_foreach(callback: TagCallback): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2514,25 +2517,25 @@ export class Repository {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Ggit.Repository */
+    /* Virtual methods of Ggit-1.0.Ggit.Repository */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Repository, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Repository, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2559,14 +2562,14 @@ export class Repository {
 export interface RevisionWalker_ConstructProps extends Native_ConstructProps {
     repository?: Repository
 }
-export class RevisionWalker {
-    /* Properties of Ggit.RevisionWalker */
+class RevisionWalker {
+    /* Properties of Ggit-1.0.Ggit.RevisionWalker */
     repository: Repository
-    /* Fields of Ggit.RevisionWalker */
+    /* Fields of Ggit-1.0.Ggit.RevisionWalker */
     parent_instance: Native
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.RevisionWalker */
+    /* Methods of Ggit-1.0.Ggit.RevisionWalker */
     get_repository(): Repository | null
     hide(oid: OId): void
     hide_glob(item: string): void
@@ -2580,15 +2583,15 @@ export class RevisionWalker {
     push_ref(item: string): void
     reset(): void
     set_sort_mode(sort_mode: SortMode): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2596,25 +2599,25 @@ export class RevisionWalker {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.Initable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Ggit.RevisionWalker */
+    /* Virtual methods of Ggit-1.0.Ggit.RevisionWalker */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RevisionWalker, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RevisionWalker, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2635,26 +2638,26 @@ export class RevisionWalker {
 export interface Signature_ConstructProps extends Native_ConstructProps {
     encoding?: string
 }
-export class Signature {
-    /* Fields of Ggit.Native */
+class Signature {
+    /* Fields of Ggit-1.0.Ggit.Native */
     parent_instance: ObjectFactoryBase
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Signature */
+    /* Methods of Ggit-1.0.Ggit.Signature */
     copy(): Signature | null
     get_email(): string | null
     get_name(): string | null
     get_time(): GLib.DateTime | null
     get_time_zone(): GLib.TimeZone | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2662,21 +2665,21 @@ export class Signature {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Signature, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Signature, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2696,28 +2699,28 @@ export interface SubmoduleUpdateOptions_ConstructProps extends GObject.Object_Co
     checkout_options?: CheckoutOptions
     fetch_options?: FetchOptions
 }
-export class SubmoduleUpdateOptions {
-    /* Properties of Ggit.SubmoduleUpdateOptions */
+class SubmoduleUpdateOptions {
+    /* Properties of Ggit-1.0.Ggit.SubmoduleUpdateOptions */
     checkout_options: CheckoutOptions
     fetch_options: FetchOptions
-    /* Fields of Ggit.SubmoduleUpdateOptions */
+    /* Fields of Ggit-1.0.Ggit.SubmoduleUpdateOptions */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.SubmoduleUpdateOptions */
+    /* Methods of Ggit-1.0.Ggit.SubmoduleUpdateOptions */
     get_checkout_options(): CheckoutOptions | null
     get_fetch_options(): FetchOptions
     set_checkout_options(checkout_options?: CheckoutOptions | null): void
     set_fetch_options(fetch_options?: FetchOptions | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2725,21 +2728,21 @@ export class SubmoduleUpdateOptions {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SubmoduleUpdateOptions, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SubmoduleUpdateOptions, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2760,12 +2763,12 @@ export class SubmoduleUpdateOptions {
 }
 export interface Tag_ConstructProps extends Object_ConstructProps {
 }
-export class Tag {
-    /* Fields of Ggit.Tag */
+class Tag {
+    /* Fields of Ggit-1.0.Ggit.Tag */
     parent_instance: Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Tag */
+    /* Methods of Ggit-1.0.Ggit.Tag */
     get_message(): string | null
     get_name(): string | null
     get_tagger(): Signature | null
@@ -2773,18 +2776,18 @@ export class Tag {
     get_target_id(): OId | null
     get_target_type(): GObject.Type
     peel(): Object | null
-    /* Methods of Ggit.Object */
+    /* Methods of Ggit-1.0.Ggit.Object */
     get_id(): OId | null
     get_owner(): Repository | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2792,21 +2795,21 @@ export class Tag {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Tag, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Tag, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2821,29 +2824,29 @@ export class Tag {
 }
 export interface Tree_ConstructProps extends Object_ConstructProps {
 }
-export class Tree {
-    /* Fields of Ggit.Tree */
+class Tree {
+    /* Fields of Ggit-1.0.Ggit.Tree */
     parent_instance: Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.Tree */
+    /* Methods of Ggit-1.0.Ggit.Tree */
     get(i: number): TreeEntry | null
     get_by_name(name: string): TreeEntry | null
     get_by_path(path: string): TreeEntry | null
     get_id(): OId | null
     size(): number
     walk(mode: TreeWalkMode, callback: TreeWalkCallback): void
-    /* Methods of Ggit.Object */
+    /* Methods of Ggit-1.0.Ggit.Object */
     get_owner(): Repository | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2851,21 +2854,21 @@ export class Tree {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Tree, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Tree, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2880,26 +2883,26 @@ export class Tree {
 }
 export interface TreeBuilder_ConstructProps extends Native_ConstructProps {
 }
-export class TreeBuilder {
-    /* Fields of Ggit.TreeBuilder */
+class TreeBuilder {
+    /* Fields of Ggit-1.0.Ggit.TreeBuilder */
     parent_instance: Native
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Ggit.TreeBuilder */
+    /* Methods of Ggit-1.0.Ggit.TreeBuilder */
     clear(): void
     get_entry(path: string): TreeEntry | null
     insert(filename: string, oid: OId, file_mode: FileMode): TreeEntry | null
     remove(path: string): void
     write(): OId | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2907,21 +2910,21 @@ export class TreeBuilder {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TreeBuilder, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TreeBuilder, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2934,8 +2937,8 @@ export class TreeBuilder {
     _init (config?: TreeBuilder_ConstructProps): void
     static $gtype: GObject.Type
 }
-export class AnnotatedCommit {
-    /* Methods of Ggit.AnnotatedCommit */
+class AnnotatedCommit {
+    /* Methods of Ggit-1.0.Ggit.AnnotatedCommit */
     get_id(): OId | null
     ref(): AnnotatedCommit | null
     unref(): void
@@ -2943,13 +2946,13 @@ export class AnnotatedCommit {
     /* Static methods and pseudo-constructors */
     static new_from_ref(repository: Repository, ref: Ref): AnnotatedCommit
 }
-export abstract class BlameClass {
-    /* Fields of Ggit.BlameClass */
+abstract class BlameClass {
+    /* Fields of Ggit-1.0.Ggit.BlameClass */
     parent_class: NativeClass
     static name: string
 }
-export class BlameHunk {
-    /* Methods of Ggit.BlameHunk */
+class BlameHunk {
+    /* Methods of Ggit-1.0.Ggit.BlameHunk */
     get_final_commit_id(): OId | null
     get_final_signature(): Signature | null
     get_final_start_line_number(): number
@@ -2963,8 +2966,8 @@ export class BlameHunk {
     unref(): void
     static name: string
 }
-export class BlameOptions {
-    /* Methods of Ggit.BlameOptions */
+class BlameOptions {
+    /* Methods of Ggit-1.0.Ggit.BlameOptions */
     copy(): BlameOptions | null
     free(): void
     get_maximum_line(): number
@@ -2983,19 +2986,19 @@ export class BlameOptions {
     /* Static methods and pseudo-constructors */
     static new(): BlameOptions
 }
-export abstract class BlobClass {
-    /* Fields of Ggit.BlobClass */
+abstract class BlobClass {
+    /* Fields of Ggit-1.0.Ggit.BlobClass */
     parent_class: ObjectClass
     static name: string
 }
-export abstract class BlobOutputStreamClass {
+abstract class BlobOutputStreamClass {
     static name: string
 }
-export abstract class BranchClass {
+abstract class BranchClass {
     static name: string
 }
-export class BranchEnumerator {
-    /* Methods of Ggit.BranchEnumerator */
+class BranchEnumerator {
+    /* Methods of Ggit-1.0.Ggit.BranchEnumerator */
     get(): Ref | null
     iterator(): BranchEnumerator | null
     next(): boolean
@@ -3003,40 +3006,40 @@ export class BranchEnumerator {
     unref(): void
     static name: string
 }
-export abstract class CheckoutOptionsClass {
-    /* Fields of Ggit.CheckoutOptionsClass */
+abstract class CheckoutOptionsClass {
+    /* Fields of Ggit-1.0.Ggit.CheckoutOptionsClass */
     parent_class: GObject.ObjectClass
     notify: (options: CheckoutOptions, why: CheckoutNotifyFlags, path: string, baseline: DiffFile, target: DiffFile, workdir: DiffFile) => number
     progress: (options: CheckoutOptions, path: string, completed_steps: number, total_steps: number) => void
     static name: string
 }
-export abstract class CherryPickOptionsClass {
-    /* Fields of Ggit.CherryPickOptionsClass */
+abstract class CherryPickOptionsClass {
+    /* Fields of Ggit-1.0.Ggit.CherryPickOptionsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class CloneOptionsClass {
-    /* Fields of Ggit.CloneOptionsClass */
+abstract class CloneOptionsClass {
+    /* Fields of Ggit-1.0.Ggit.CloneOptionsClass */
     parent_class: GObject.ObjectClass
     create_repository: (options: CloneOptions, path: string, is_bare: boolean) => Repository | null
     create_remote: (options: CloneOptions, repository: Repository, name: string, url: string) => Remote | null
     static name: string
 }
-export abstract class CommitClass {
+abstract class CommitClass {
     static name: string
 }
-export abstract class CommitParentsClass {
-    /* Fields of Ggit.CommitParentsClass */
+abstract class CommitParentsClass {
+    /* Fields of Ggit-1.0.Ggit.CommitParentsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class ConfigClass {
-    /* Fields of Ggit.ConfigClass */
+abstract class ConfigClass {
+    /* Fields of Ggit-1.0.Ggit.ConfigClass */
     parent_class: NativeClass
     static name: string
 }
-export class ConfigEntry {
-    /* Methods of Ggit.ConfigEntry */
+class ConfigEntry {
+    /* Methods of Ggit-1.0.Ggit.ConfigEntry */
     get_level(): ConfigLevel
     get_name(): string | null
     get_value(): string | null
@@ -3044,19 +3047,19 @@ export class ConfigEntry {
     unref(): void
     static name: string
 }
-export abstract class CredClass {
+abstract class CredClass {
     static name: string
 }
-export abstract class CredPlaintextClass {
+abstract class CredPlaintextClass {
     static name: string
 }
-export abstract class CredSshInteractiveClass {
-    /* Fields of Ggit.CredSshInteractiveClass */
+abstract class CredSshInteractiveClass {
+    /* Fields of Ggit-1.0.Ggit.CredSshInteractiveClass */
     prompt: (cred: CredSshInteractive, prompts: CredSshInteractivePrompt[]) => void
     static name: string
 }
-export class CredSshInteractivePrompt {
-    /* Methods of Ggit.CredSshInteractivePrompt */
+class CredSshInteractivePrompt {
+    /* Methods of Ggit-1.0.Ggit.CredSshInteractivePrompt */
     get_instruction(): string
     get_name(): string
     get_response(): string
@@ -3071,21 +3074,21 @@ export class CredSshInteractivePrompt {
     /* Static methods and pseudo-constructors */
     static new(name: string, instruction: string, text: string, is_masked: boolean): CredSshInteractivePrompt
 }
-export abstract class CredSshKeyFromAgentClass {
-    /* Fields of Ggit.CredSshKeyFromAgentClass */
+abstract class CredSshKeyFromAgentClass {
+    /* Fields of Ggit-1.0.Ggit.CredSshKeyFromAgentClass */
     parent_class: CredClass
     static name: string
 }
-export class DiffBinary {
-    /* Methods of Ggit.DiffBinary */
+class DiffBinary {
+    /* Methods of Ggit-1.0.Ggit.DiffBinary */
     get_new_file(): DiffBinaryFile | null
     get_old_file(): DiffBinaryFile | null
     ref(): DiffBinary | null
     unref(): void
     static name: string
 }
-export class DiffBinaryFile {
-    /* Methods of Ggit.DiffBinaryFile */
+class DiffBinaryFile {
+    /* Methods of Ggit-1.0.Ggit.DiffBinaryFile */
     get_binary_type(): DiffBinaryType
     get_data(size?: number | null): number
     get_inflated_size(): number
@@ -3093,11 +3096,11 @@ export class DiffBinaryFile {
     unref(): void
     static name: string
 }
-export abstract class DiffClass {
+abstract class DiffClass {
     static name: string
 }
-export class DiffDelta {
-    /* Methods of Ggit.DiffDelta */
+class DiffDelta {
+    /* Methods of Ggit-1.0.Ggit.DiffDelta */
     get_flags(): DiffFlag
     get_new_file(): DiffFile | null
     get_old_file(): DiffFile | null
@@ -3107,8 +3110,8 @@ export class DiffDelta {
     unref(): void
     static name: string
 }
-export class DiffFile {
-    /* Methods of Ggit.DiffFile */
+class DiffFile {
+    /* Methods of Ggit-1.0.Ggit.DiffFile */
     get_flags(): DiffFlag
     get_mode(): number
     get_oid(): OId | null
@@ -3118,18 +3121,18 @@ export class DiffFile {
     unref(): void
     static name: string
 }
-export abstract class DiffFindOptionsClass {
-    /* Fields of Ggit.DiffFindOptionsClass */
+abstract class DiffFindOptionsClass {
+    /* Fields of Ggit-1.0.Ggit.DiffFindOptionsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class DiffFormatEmailOptionsClass {
-    /* Fields of Ggit.DiffFormatEmailOptionsClass */
+abstract class DiffFormatEmailOptionsClass {
+    /* Fields of Ggit-1.0.Ggit.DiffFormatEmailOptionsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class DiffHunk {
-    /* Methods of Ggit.DiffHunk */
+class DiffHunk {
+    /* Methods of Ggit-1.0.Ggit.DiffHunk */
     get_header(): string
     get_new_lines(): number
     get_new_start(): number
@@ -3139,8 +3142,8 @@ export class DiffHunk {
     unref(): void
     static name: string
 }
-export class DiffLine {
-    /* Methods of Ggit.DiffLine */
+class DiffLine {
+    /* Methods of Ggit-1.0.Ggit.DiffLine */
     get_content(): Uint8Array[]
     get_content_offset(): number
     get_new_lineno(): number
@@ -3151,13 +3154,13 @@ export class DiffLine {
     unref(): void
     static name: string
 }
-export abstract class DiffOptionsClass {
-    /* Fields of Ggit.DiffOptionsClass */
+abstract class DiffOptionsClass {
+    /* Fields of Ggit-1.0.Ggit.DiffOptionsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class DiffSimilarityMetric {
-    /* Methods of Ggit.DiffSimilarityMetric */
+class DiffSimilarityMetric {
+    /* Methods of Ggit-1.0.Ggit.DiffSimilarityMetric */
     copy(): DiffSimilarityMetric | null
     free(): void
     static name: string
@@ -3166,8 +3169,8 @@ export class DiffSimilarityMetric {
     /* Static methods and pseudo-constructors */
     static new(file_signature: DiffSimilarityMetricFileSignatureCallback, buffer_signature: DiffSimilarityMetricBufferSignatureCallback, free_signature: DiffSimilarityMetricFreeSignatureCallback, similarity: DiffSimilarityMetricSimilarityCallback): DiffSimilarityMetric
 }
-export class FetchOptions {
-    /* Methods of Ggit.FetchOptions */
+class FetchOptions {
+    /* Methods of Ggit-1.0.Ggit.FetchOptions */
     copy(): FetchOptions | null
     free(): void
     get_download_tags(): RemoteDownloadTagsType
@@ -3180,13 +3183,13 @@ export class FetchOptions {
     /* Static methods and pseudo-constructors */
     static new(): FetchOptions
 }
-export abstract class IndexClass {
-    /* Fields of Ggit.IndexClass */
+abstract class IndexClass {
+    /* Fields of Ggit-1.0.Ggit.IndexClass */
     parent_class: NativeClass
     static name: string
 }
-export class IndexEntries {
-    /* Methods of Ggit.IndexEntries */
+class IndexEntries {
+    /* Methods of Ggit-1.0.Ggit.IndexEntries */
     get_by_index(idx: number): IndexEntry | null
     get_by_path(file: Gio.File, stage: number): IndexEntry | null
     ref(): IndexEntries | null
@@ -3194,8 +3197,8 @@ export class IndexEntries {
     unref(): void
     static name: string
 }
-export class IndexEntriesResolveUndo {
-    /* Methods of Ggit.IndexEntriesResolveUndo */
+class IndexEntriesResolveUndo {
+    /* Methods of Ggit-1.0.Ggit.IndexEntriesResolveUndo */
     get(idx: number): IndexEntryResolveUndo | null
     get_by_file(file: Gio.File): IndexEntryResolveUndo | null
     ref(): IndexEntriesResolveUndo | null
@@ -3203,8 +3206,8 @@ export class IndexEntriesResolveUndo {
     unref(): void
     static name: string
 }
-export class IndexEntry {
-    /* Methods of Ggit.IndexEntry */
+class IndexEntry {
+    /* Methods of Ggit-1.0.Ggit.IndexEntry */
     get_dev(): number
     get_file_size(): number
     get_flags(): number
@@ -3232,8 +3235,8 @@ export class IndexEntry {
     unref(): void
     static name: string
 }
-export class IndexEntryResolveUndo {
-    /* Methods of Ggit.IndexEntryResolveUndo */
+class IndexEntryResolveUndo {
+    /* Methods of Ggit-1.0.Ggit.IndexEntryResolveUndo */
     get_file(): Gio.File | null
     get_id(stage: number): OId | null
     get_mode(stage: number): number
@@ -3241,8 +3244,8 @@ export class IndexEntryResolveUndo {
     unref(): void
     static name: string
 }
-export class MergeOptions {
-    /* Methods of Ggit.MergeOptions */
+class MergeOptions {
+    /* Methods of Ggit-1.0.Ggit.MergeOptions */
     copy(): MergeOptions | null
     free(): void
     get_file_favor(): MergeFileFavor
@@ -3263,19 +3266,19 @@ export class MergeOptions {
     /* Static methods and pseudo-constructors */
     static new(): MergeOptions
 }
-export abstract class NativeClass {
+abstract class NativeClass {
     static name: string
 }
-export class Note {
-    /* Methods of Ggit.Note */
+class Note {
+    /* Methods of Ggit-1.0.Ggit.Note */
     get_id(): OId | null
     get_message(): string | null
     ref(): Note | null
     unref(): void
     static name: string
 }
-export class OId {
-    /* Methods of Ggit.OId */
+class OId {
+    /* Methods of Ggit-1.0.Ggit.OId */
     compare(b: OId): number
     copy(): OId | null
     equal(b: OId): boolean
@@ -3289,19 +3292,19 @@ export class OId {
     static new_from_raw(raw: Uint8Array[]): OId
     static new_from_string(str: string): OId
 }
-export abstract class ObjectClass {
+abstract class ObjectClass {
     static name: string
 }
-export abstract class ObjectFactoryBaseClass {
+abstract class ObjectFactoryBaseClass {
     static name: string
 }
-export abstract class ObjectFactoryClass {
-    /* Fields of Ggit.ObjectFactoryClass */
+abstract class ObjectFactoryClass {
+    /* Fields of Ggit-1.0.Ggit.ObjectFactoryClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class Patch {
-    /* Methods of Ggit.Patch */
+class Patch {
+    /* Methods of Ggit-1.0.Ggit.Patch */
     get_delta(): DiffDelta | null
     get_hunk(idx: number): DiffHunk | null
     get_line_stats(): [ /* returnType */ boolean, /* total_context */ number | null, /* total_additions */ number | null, /* total_deletions */ number | null ]
@@ -3316,23 +3319,23 @@ export class Patch {
     static new_from_blobs(old_blob?: Blob | null, old_as_path?: string | null, new_blob?: Blob | null, new_as_path?: string | null, diff_options?: DiffOptions | null): Patch
     static new_from_diff(diff: Diff, idx: number): Patch
 }
-export abstract class ProxyOptionsClass {
-    /* Fields of Ggit.ProxyOptionsClass */
+abstract class ProxyOptionsClass {
+    /* Fields of Ggit-1.0.Ggit.ProxyOptionsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class PushOptionsClass {
-    /* Fields of Ggit.PushOptionsClass */
+abstract class PushOptionsClass {
+    /* Fields of Ggit-1.0.Ggit.PushOptionsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class RebaseClass {
-    /* Fields of Ggit.RebaseClass */
+abstract class RebaseClass {
+    /* Fields of Ggit-1.0.Ggit.RebaseClass */
     parent_class: NativeClass
     static name: string
 }
-export class RebaseOperation {
-    /* Methods of Ggit.RebaseOperation */
+class RebaseOperation {
+    /* Methods of Ggit-1.0.Ggit.RebaseOperation */
     get_exec(): string | null
     get_id(): OId | null
     get_operation_type(): RebaseOperationType
@@ -3340,8 +3343,8 @@ export class RebaseOperation {
     unref(): void
     static name: string
 }
-export class RebaseOptions {
-    /* Methods of Ggit.RebaseOptions */
+class RebaseOptions {
+    /* Methods of Ggit-1.0.Ggit.RebaseOptions */
     copy(): RebaseOptions | null
     free(): void
     get_checkout_options(): CheckoutOptions | null
@@ -3356,11 +3359,11 @@ export class RebaseOptions {
     /* Static methods and pseudo-constructors */
     static new(): RebaseOptions
 }
-export abstract class RefClass {
+abstract class RefClass {
     static name: string
 }
-export class RefSpec {
-    /* Methods of Ggit.RefSpec */
+class RefSpec {
+    /* Methods of Ggit-1.0.Ggit.RefSpec */
     get_destination(): string | null
     get_source(): string | null
     is_forced(): boolean
@@ -3368,8 +3371,8 @@ export class RefSpec {
     unref(): void
     static name: string
 }
-export class Reflog {
-    /* Methods of Ggit.Reflog */
+class Reflog {
+    /* Methods of Ggit-1.0.Ggit.Reflog */
     append(oid: OId, committer: Signature, message: string): boolean
     get_entry_count(): number
     get_entry_from_index(idx: number): ReflogEntry | null
@@ -3379,8 +3382,8 @@ export class Reflog {
     write(): boolean
     static name: string
 }
-export class ReflogEntry {
-    /* Methods of Ggit.ReflogEntry */
+class ReflogEntry {
+    /* Methods of Ggit-1.0.Ggit.ReflogEntry */
     get_committer(): Signature | null
     get_message(): string | null
     get_new_id(): OId | null
@@ -3389,8 +3392,8 @@ export class ReflogEntry {
     unref(): void
     static name: string
 }
-export abstract class RemoteCallbacksClass {
-    /* Fields of Ggit.RemoteCallbacksClass */
+abstract class RemoteCallbacksClass {
+    /* Fields of Ggit-1.0.Ggit.RemoteCallbacksClass */
     parent_class: GObject.ObjectClass
     progress: (callbacks: RemoteCallbacks, message: string) => void
     transfer_progress: (callbacks: RemoteCallbacks, stats: TransferProgress) => void
@@ -3399,11 +3402,11 @@ export abstract class RemoteCallbacksClass {
     credentials: (callbacks: RemoteCallbacks, url: string, username_from_url: string | null, allowed_types: Credtype) => Cred | null
     static name: string
 }
-export abstract class RemoteClass {
+abstract class RemoteClass {
     static name: string
 }
-export class RemoteHead {
-    /* Methods of Ggit.RemoteHead */
+class RemoteHead {
+    /* Methods of Ggit-1.0.Ggit.RemoteHead */
     get_local_oid(): OId | null
     get_name(): string | null
     get_oid(): OId | null
@@ -3412,11 +3415,11 @@ export class RemoteHead {
     unref(): void
     static name: string
 }
-export abstract class RepositoryClass {
+abstract class RepositoryClass {
     static name: string
 }
-export class RevertOptions {
-    /* Methods of Ggit.RevertOptions */
+class RevertOptions {
+    /* Methods of Ggit-1.0.Ggit.RevertOptions */
     copy(): RevertOptions | null
     free(): void
     static name: string
@@ -3425,16 +3428,16 @@ export class RevertOptions {
     /* Static methods and pseudo-constructors */
     static new(mainline: number, merge_options?: MergeOptions | null, checkout_options?: CheckoutOptions | null): RevertOptions
 }
-export abstract class RevisionWalkerClass {
+abstract class RevisionWalkerClass {
     static name: string
 }
-export abstract class SignatureClass {
-    /* Fields of Ggit.SignatureClass */
+abstract class SignatureClass {
+    /* Fields of Ggit-1.0.Ggit.SignatureClass */
     parent_class: NativeClass
     static name: string
 }
-export class StatusOptions {
-    /* Methods of Ggit.StatusOptions */
+class StatusOptions {
+    /* Methods of Ggit-1.0.Ggit.StatusOptions */
     copy(): StatusOptions | null
     free(): void
     static name: string
@@ -3443,8 +3446,8 @@ export class StatusOptions {
     /* Static methods and pseudo-constructors */
     static new(options: StatusOption, show: StatusShow, pathspec?: string[] | null): StatusOptions
 }
-export class Submodule {
-    /* Methods of Ggit.Submodule */
+class Submodule {
+    /* Methods of Ggit-1.0.Ggit.Submodule */
     get_fetch_recurse(): boolean
     get_head_id(): OId
     get_ignore(): SubmoduleIgnore
@@ -3464,16 +3467,16 @@ export class Submodule {
     update(init: boolean, options: SubmoduleUpdateOptions): void
     static name: string
 }
-export abstract class SubmoduleUpdateOptionsClass {
-    /* Fields of Ggit.SubmoduleUpdateOptionsClass */
+abstract class SubmoduleUpdateOptionsClass {
+    /* Fields of Ggit-1.0.Ggit.SubmoduleUpdateOptionsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class TagClass {
+abstract class TagClass {
     static name: string
 }
-export class TransferProgress {
-    /* Methods of Ggit.TransferProgress */
+class TransferProgress {
+    /* Methods of Ggit-1.0.Ggit.TransferProgress */
     copy(): TransferProgress | null
     free(): void
     get_indexed_objects(): number
@@ -3482,14 +3485,14 @@ export class TransferProgress {
     get_total_objects(): number
     static name: string
 }
-export abstract class TreeBuilderClass {
+abstract class TreeBuilderClass {
     static name: string
 }
-export abstract class TreeClass {
+abstract class TreeClass {
     static name: string
 }
-export class TreeEntry {
-    /* Methods of Ggit.TreeEntry */
+class TreeEntry {
+    /* Methods of Ggit-1.0.Ggit.TreeEntry */
     get_file_mode(): FileMode
     get_id(): OId | null
     get_name(): string | null
@@ -3498,3 +3501,5 @@ export class TreeEntry {
     unref(): void
     static name: string
 }
+}
+export default Ggit;

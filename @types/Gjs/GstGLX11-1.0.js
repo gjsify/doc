@@ -1,2 +1,2 @@
-imports.gi.versions.GstGLX11 = '1.0'
-export default imports.gi.GstGLX11
+import GstGLX11 from 'gi://GstGLX11?version=1.0';
+export default GstGLX11;

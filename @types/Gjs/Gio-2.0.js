@@ -1,2 +1,2 @@
-imports.gi.versions.Gio = '2.0'
-export default imports.gi.Gio
+import Gio from 'gi://Gio?version=2.0';
+export default Gio;

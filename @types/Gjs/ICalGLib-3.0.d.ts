@@ -3,10 +3,12 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum ComponentKind {
+export namespace ICalGLib {
+
+enum ComponentKind {
     NO_COMPONENT,
     ANY_COMPONENT,
     XROOT_COMPONENT,
@@ -39,7 +41,7 @@ export enum ComponentKind {
     VVOTER_COMPONENT,
     XVOTE_COMPONENT,
 }
-export enum ErrorEnum {
+enum ErrorEnum {
     NO_ERROR,
     BADARG_ERROR,
     NEWFAILED_ERROR,
@@ -52,19 +54,19 @@ export enum ErrorEnum {
     UNIMPLEMENTED_ERROR,
     UNKNOWN_ERROR,
 }
-export enum ErrorState {
+enum ErrorState {
     FATAL,
     NONFATAL,
     DEFAULT,
     UNKNOWN,
 }
-export enum ParameterAction {
+enum ParameterAction {
     X,
     ASK,
     ABORT,
     NONE,
 }
-export enum ParameterCutype {
+enum ParameterCutype {
     X,
     INDIVIDUAL,
     GROUP,
@@ -73,19 +75,19 @@ export enum ParameterCutype {
     UNKNOWN,
     NONE,
 }
-export enum ParameterEnable {
+enum ParameterEnable {
     X,
     TRUE,
     FALSE,
     NONE,
 }
-export enum ParameterEncoding {
+enum ParameterEncoding {
     X,
     /* 8BIT (invalid, starts with a number) */
     BASE64,
     NONE,
 }
-export enum ParameterFbtype {
+enum ParameterFbtype {
     X,
     FREE,
     BUSY,
@@ -93,7 +95,7 @@ export enum ParameterFbtype {
     BUSYTENTATIVE,
     NONE,
 }
-export enum ParameterKind {
+enum ParameterKind {
     ANY_PARAMETER,
     ACTIONPARAM_PARAMETER,
     ALTREP_PARAMETER,
@@ -142,13 +144,13 @@ export enum ParameterKind {
     XLICERRORTYPE_PARAMETER,
     NO_PARAMETER,
 }
-export enum ParameterLocal {
+enum ParameterLocal {
     X,
     TRUE,
     FALSE,
     NONE,
 }
-export enum ParameterPartstat {
+enum ParameterPartstat {
     X,
     NEEDSACTION,
     ACCEPTED,
@@ -160,19 +162,19 @@ export enum ParameterPartstat {
     FAILED,
     NONE,
 }
-export enum ParameterRange {
+enum ParameterRange {
     X,
     THISANDPRIOR,
     THISANDFUTURE,
     NONE,
 }
-export enum ParameterRelated {
+enum ParameterRelated {
     X,
     START,
     END,
     NONE,
 }
-export enum ParameterReltype {
+enum ParameterReltype {
     X,
     PARENT,
     CHILD,
@@ -180,13 +182,13 @@ export enum ParameterReltype {
     POLL,
     NONE,
 }
-export enum ParameterRequired {
+enum ParameterRequired {
     X,
     TRUE,
     FALSE,
     NONE,
 }
-export enum ParameterRole {
+enum ParameterRole {
     X,
     CHAIR,
     REQPARTICIPANT,
@@ -194,38 +196,38 @@ export enum ParameterRole {
     NONPARTICIPANT,
     NONE,
 }
-export enum ParameterRsvp {
+enum ParameterRsvp {
     X,
     TRUE,
     FALSE,
     NONE,
 }
-export enum ParameterScheduleagent {
+enum ParameterScheduleagent {
     X,
     SERVER,
     CLIENT,
     NONE,
 }
-export enum ParameterScheduleforcesend {
+enum ParameterScheduleforcesend {
     X,
     REQUEST,
     REPLY,
     NONE,
 }
-export enum ParameterStayinformed {
+enum ParameterStayinformed {
     X,
     TRUE,
     FALSE,
     NONE,
 }
-export enum ParameterSubstate {
+enum ParameterSubstate {
     X,
     OK,
     ERROR,
     SUSPENDED,
     NONE,
 }
-export enum ParameterValue {
+enum ParameterValue {
     X,
     BINARY,
     BOOLEAN,
@@ -243,7 +245,7 @@ export enum ParameterValue {
     CALADDRESS,
     NONE,
 }
-export enum ParameterXliccomparetype {
+enum ParameterXliccomparetype {
     X,
     EQUAL,
     NOTEQUAL,
@@ -256,7 +258,7 @@ export enum ParameterXliccomparetype {
     ISNOTNULL,
     NONE,
 }
-export enum ParameterXlicerrortype {
+enum ParameterXlicerrortype {
     X,
     COMPONENTPARSEERROR,
     PROPERTYPARSEERROR,
@@ -269,14 +271,14 @@ export enum ParameterXlicerrortype {
     VCALPROPPARSEERROR,
     NONE,
 }
-export enum ParserState {
+enum ParserState {
     ERROR,
     SUCCESS,
     BEGIN_COMP,
     END_COMP,
     IN_PROGRESS,
 }
-export enum PropertyAction {
+enum PropertyAction {
     X,
     AUDIO,
     DISPLAY,
@@ -284,21 +286,21 @@ export enum PropertyAction {
     PROCEDURE,
     NONE,
 }
-export enum PropertyBusytype {
+enum PropertyBusytype {
     X,
     BUSY,
     BUSYUNAVAILABLE,
     BUSYTENTATIVE,
     NONE,
 }
-export enum PropertyCarlevel {
+enum PropertyCarlevel {
     X,
     CARNONE,
     CARMIN,
     CARFULL1,
     NONE,
 }
-export enum PropertyCmd {
+enum PropertyCmd {
     X,
     ABORT,
     CONTINUE,
@@ -314,7 +316,7 @@ export enum PropertyCmd {
     SETLOCALE,
     NONE,
 }
-export enum PropertyKind {
+enum PropertyKind {
     ANY_PROPERTY,
     ACCEPTRESPONSE_PROPERTY,
     ACKNOWLEDGED_PROPERTY,
@@ -432,7 +434,7 @@ export enum PropertyKind {
     XLICMIMEOPTINFO_PROPERTY,
     NO_PROPERTY,
 }
-export enum PropertyMethod {
+enum PropertyMethod {
     X,
     PUBLISH,
     REQUEST,
@@ -451,7 +453,7 @@ export enum PropertyMethod {
     DELETE,
     NONE,
 }
-export enum PropertyPollcompletion {
+enum PropertyPollcompletion {
     X,
     SERVER,
     SERVERSUBMIT,
@@ -459,18 +461,18 @@ export enum PropertyPollcompletion {
     CLIENT,
     NONE,
 }
-export enum PropertyPollmode {
+enum PropertyPollmode {
     X,
     BASIC,
     NONE,
 }
-export enum PropertyQuerylevel {
+enum PropertyQuerylevel {
     X,
     CALQL1,
     CALQLNONE,
     NONE,
 }
-export enum PropertyStatus {
+enum PropertyStatus {
     X,
     TENTATIVE,
     CONFIRMED,
@@ -486,14 +488,14 @@ export enum PropertyStatus {
     DELETED,
     NONE,
 }
-export enum PropertyTaskmode {
+enum PropertyTaskmode {
     X,
     AUTOMATICCOMPLETION,
     AUTOMATICFAILURE,
     AUTOMATICSTATUS,
     NONE,
 }
-export enum PropertyTransp {
+enum PropertyTransp {
     X,
     OPAQUE,
     OPAQUENOCONFLICT,
@@ -501,7 +503,7 @@ export enum PropertyTransp {
     TRANSPARENTNOCONFLICT,
     NONE,
 }
-export enum PropertyXlicclass {
+enum PropertyXlicclass {
     X,
     PUBLISHNEW,
     PUBLISHUPDATE,
@@ -532,17 +534,17 @@ export enum PropertyXlicclass {
     UNKNOWN,
     NONE,
 }
-export enum Property_Class {
+enum Property_Class {
     X,
     PUBLIC,
     PRIVATE,
     CONFIDENTIAL,
     NONE,
 }
-export enum RecurrenceArrayMaxValues {
+enum RecurrenceArrayMaxValues {
     RECURRENCE_ARRAY_MAX,
 }
-export enum RecurrenceArraySizes {
+enum RecurrenceArraySizes {
     SECOND_SIZE,
     MINUTE_SIZE,
     HOUR_SIZE,
@@ -553,7 +555,7 @@ export enum RecurrenceArraySizes {
     SETPOS_SIZE,
     DAY_SIZE,
 }
-export enum RecurrenceFrequency {
+enum RecurrenceFrequency {
     SECONDLY_RECURRENCE,
     MINUTELY_RECURRENCE,
     HOURLY_RECURRENCE,
@@ -563,13 +565,13 @@ export enum RecurrenceFrequency {
     YEARLY_RECURRENCE,
     NO_RECURRENCE,
 }
-export enum RecurrenceSkip {
+enum RecurrenceSkip {
     BACKWARD,
     FORWARD,
     OMIT,
     UNDEFINED,
 }
-export enum RecurrenceWeekday {
+enum RecurrenceWeekday {
     NO_WEEKDAY,
     SUNDAY_WEEKDAY,
     MONDAY_WEEKDAY,
@@ -579,7 +581,7 @@ export enum RecurrenceWeekday {
     FRIDAY_WEEKDAY,
     SATURDAY_WEEKDAY,
 }
-export enum RequestStatus {
+enum RequestStatus {
     UNKNOWN_STATUS,
     /* 2_0_SUCCESS_STATUS (invalid, starts with a number) */
     /* 2_1_FALLBACK_STATUS (invalid, starts with a number) */
@@ -620,7 +622,7 @@ export enum RequestStatus {
     /* 6_1_CONTAINER_NOT_FOUND (invalid, starts with a number) */
     /* 9_0_UNRECOGNIZED_COMMAND (invalid, starts with a number) */
 }
-export enum RestrictionKind {
+enum RestrictionKind {
     NONE,
     ZERO,
     ONE,
@@ -631,12 +633,12 @@ export enum RestrictionKind {
     ONEMUTUAL,
     UNKNOWN,
 }
-export enum Unknowntokenhandling {
+enum Unknowntokenhandling {
     ASSUME_IANA_TOKEN,
     DISCARD_TOKEN,
     TREAT_AS_ERROR,
 }
-export enum ValueKind {
+enum ValueKind {
     ANY_VALUE,
     ACTION_VALUE,
     ATTACH_VALUE,
@@ -675,80 +677,83 @@ export enum ValueKind {
     XLICCLASS_VALUE,
     NO_VALUE,
 }
-export function bt(): void
-export function errno_return(): ErrorEnum
-export function error_clear_errno(): void
-export function error_crash_here(): void
-export function error_get_error_state(error: ErrorEnum): ErrorState
-export function error_perror(): string
-export function error_restore(error: string, es: ErrorState): void
-export function error_set_errno(x: ErrorEnum): void
-export function error_set_error_state(error: ErrorEnum, state: ErrorState): void
-export function error_stop_here(): void
-export function error_strerror(e: ErrorEnum): string
-export function error_supress(error: string): ErrorState
-export function get_unknown_token_handling_setting(): Unknowntokenhandling
-export function memory_add_tmp_buffer(buf?: object | null): void
-export function memory_append_char(buf: number[], pos: number[], ch: number): [ /* buf */ number[], /* pos */ number[] ]
-export function memory_append_string(buf: number[], pos: number[], str: string): [ /* buf */ number[], /* pos */ number[] ]
-export function memory_free_buffer(buf?: object | null): void
-export function memory_new_buffer(size: number): object | null
-export function memory_resize_buffer(buf: object | null, size: number): object | null
-export function memory_strdup(s: string): string
-export function memory_tmp_buffer(size: number): object | null
-export function memory_tmp_copy(str: string): string
-export function mime_parse(func: MimeParseFunc): Component
-export function recur_expand_recurrence(rule: string, start: number, count: number): number[]
-export function request_status_code(stat: RequestStatus): string
-export function request_status_desc(stat: RequestStatus): string
-export function request_status_from_num(major: number, minor: number): RequestStatus
-export function request_status_major(stat: RequestStatus): number
-export function request_status_minor(stat: RequestStatus): number
-export function restriction_check(comp: Component): number
-export function restriction_compare(restr: RestrictionKind, count: number): number
-export function set_unknown_token_handling_setting(newSetting: Unknowntokenhandling): void
-export interface ComponentForeachRecurrenceFunc {
+function bt(): void
+function errno_return(): ErrorEnum
+function error_clear_errno(): void
+function error_crash_here(): void
+function error_get_error_state(error: ErrorEnum): ErrorState
+function error_perror(): string
+function error_restore(error: string, es: ErrorState): void
+function error_set_errno(x: ErrorEnum): void
+function error_set_error_state(error: ErrorEnum, state: ErrorState): void
+function error_stop_here(): void
+function error_strerror(e: ErrorEnum): string
+function error_supress(error: string): ErrorState
+function get_unknown_token_handling_setting(): Unknowntokenhandling
+function memory_add_tmp_buffer(buf?: object | null): void
+function memory_append_char(buf: number[], pos: number[], ch: number): [ /* buf */ number[], /* pos */ number[] ]
+function memory_append_string(buf: number[], pos: number[], str: string): [ /* buf */ number[], /* pos */ number[] ]
+function memory_free_buffer(buf?: object | null): void
+function memory_new_buffer(size: number): object | null
+function memory_resize_buffer(buf: object | null, size: number): object | null
+function memory_strdup(s: string): string
+function memory_tmp_buffer(size: number): object | null
+function memory_tmp_copy(str: string): string
+function mime_parse(func: MimeParseFunc): Component
+function recur_expand_recurrence(rule: string, start: number, count: number): number[]
+function request_status_code(stat: RequestStatus): string
+function request_status_desc(stat: RequestStatus): string
+function request_status_from_num(major: number, minor: number): RequestStatus
+function request_status_major(stat: RequestStatus): number
+function request_status_minor(stat: RequestStatus): number
+function restriction_check(comp: Component): number
+function restriction_compare(restr: RestrictionKind, count: number): number
+function set_unknown_token_handling_setting(newSetting: Unknowntokenhandling): void
+interface ComponentForeachRecurrenceFunc {
     (comp: Component, span: TimeSpan): void
 }
-export interface ComponentForeachTZIDFunc {
+interface ComponentForeachTZIDFunc {
     (param: Parameter): void
 }
-export interface MimeParseFunc {
+interface MimeParseFunc {
     (bytes: number[]): string
 }
-export interface ParserLineGenFunc {
+interface ParserLineGenFunc {
     (bytes: number[]): string
 }
 export interface Array_ConstructProps extends Object_ConstructProps {
 }
-export class Array {
-    /* Properties of ICalGLib.Object */
+class Array {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Array */
+    /* Methods of ICalGLib-3.0.ICalGLib.Array */
     copy(): Array
     remove_element_at(position: number): void
     size(): number
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -756,24 +761,26 @@ export class Array {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Array, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Array, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Array, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Array, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Array, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Array, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Array, pspec: GObject.ParamSpec) => void)): number
@@ -789,34 +796,37 @@ export class Array {
 }
 export interface Attach_ConstructProps extends Object_ConstructProps {
 }
-export class Attach {
-    /* Properties of ICalGLib.Object */
+class Attach {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Attach */
+    /* Methods of ICalGLib-3.0.ICalGLib.Attach */
     get_data(): string | null
     get_is_url(): boolean
     get_url(): string | null
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -824,24 +834,26 @@ export class Attach {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Attach, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Attach, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Attach, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Attach, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Attach, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Attach, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Attach, pspec: GObject.ParamSpec) => void)): number
@@ -861,34 +873,37 @@ export class Attach {
 }
 export interface CompIter_ConstructProps extends Object_ConstructProps {
 }
-export class CompIter {
-    /* Properties of ICalGLib.Object */
+class CompIter {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.CompIter */
+    /* Methods of ICalGLib-3.0.ICalGLib.CompIter */
     deref(): Component
     next(): Component
     prior(): Component
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -896,24 +911,26 @@ export class CompIter {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CompIter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CompIter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: CompIter, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: CompIter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: CompIter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: CompIter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: CompIter, pspec: GObject.ParamSpec) => void)): number
@@ -929,13 +946,14 @@ export class CompIter {
 }
 export interface Component_ConstructProps extends Object_ConstructProps {
 }
-export class Component {
-    /* Properties of ICalGLib.Object */
+class Component {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Component */
+    /* Methods of ICalGLib-3.0.ICalGLib.Component */
     add_component(child: Component): void
     add_property(property: Property): void
     as_ical_string(): string
@@ -998,24 +1016,26 @@ export class Component {
     set_summary(v: string): void
     set_uid(v: string): void
     strip_errors(): void
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1023,24 +1043,26 @@ export class Component {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Component, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Component, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Component, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Component, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Component, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Component, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Component, pspec: GObject.ParamSpec) => void)): number
@@ -1079,35 +1101,38 @@ export class Component {
 }
 export interface Datetimeperiod_ConstructProps extends Object_ConstructProps {
 }
-export class Datetimeperiod {
-    /* Properties of ICalGLib.Object */
+class Datetimeperiod {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Datetimeperiod */
+    /* Methods of ICalGLib-3.0.ICalGLib.Datetimeperiod */
     get_period(): Period
     get_time(): Time
     set_period(period: Period): void
     set_time(time: Time): void
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1115,24 +1140,26 @@ export class Datetimeperiod {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Datetimeperiod, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Datetimeperiod, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Datetimeperiod, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Datetimeperiod, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Datetimeperiod, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Datetimeperiod, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Datetimeperiod, pspec: GObject.ParamSpec) => void)): number
@@ -1150,13 +1177,14 @@ export class Datetimeperiod {
 }
 export interface Duration_ConstructProps extends Object_ConstructProps {
 }
-export class Duration {
-    /* Properties of ICalGLib.Object */
+class Duration {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Duration */
+    /* Methods of ICalGLib-3.0.ICalGLib.Duration */
     as_ical_string(): string
     as_int(): number
     get_days(): number
@@ -1173,24 +1201,26 @@ export class Duration {
     set_minutes(minutes: number): void
     set_seconds(seconds: number): void
     set_weeks(weeks: number): void
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1198,24 +1228,26 @@ export class Duration {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Duration, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Duration, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Duration, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Duration, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Duration, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Duration, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Duration, pspec: GObject.ParamSpec) => void)): number
@@ -1236,36 +1268,39 @@ export class Duration {
 }
 export interface Geo_ConstructProps extends Object_ConstructProps {
 }
-export class Geo {
-    /* Properties of ICalGLib.Object */
+class Geo {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Geo */
+    /* Methods of ICalGLib-3.0.ICalGLib.Geo */
     clone(): Geo
     get_lat(): number
     get_lon(): number
     set_lat(lat: number): void
     set_lon(lon: number): void
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1273,24 +1308,26 @@ export class Geo {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Geo, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Geo, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Geo, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Geo, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Geo, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Geo, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Geo, pspec: GObject.ParamSpec) => void)): number
@@ -1307,35 +1344,39 @@ export class Geo {
     static $gtype: GObject.Type
 }
 export interface Object_ConstructProps extends GObject.Object_ConstructProps {
+    always_destroy?: boolean
     is_global_memory?: boolean
     native?: object
     native_destroy_func?: object
     owner?: GObject.Object
 }
-export class Object {
-    /* Properties of ICalGLib.Object */
+class Object {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1343,24 +1384,26 @@ export class Object {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
@@ -1378,13 +1421,14 @@ export class Object {
 }
 export interface Parameter_ConstructProps extends Object_ConstructProps {
 }
-export class Parameter {
-    /* Properties of ICalGLib.Object */
+class Parameter {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Parameter */
+    /* Methods of ICalGLib-3.0.ICalGLib.Parameter */
     as_ical_string(): string
     clone(): Parameter
     get_actionparam(): ParameterAction
@@ -1490,24 +1534,26 @@ export class Parameter {
     set_xlicerrortype(v: ParameterXlicerrortype): void
     set_xname(v: string): void
     set_xvalue(v: string): void
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1515,24 +1561,26 @@ export class Parameter {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
@@ -1601,37 +1649,40 @@ export class Parameter {
 }
 export interface Parser_ConstructProps extends Object_ConstructProps {
 }
-export class Parser {
-    /* Properties of ICalGLib.Object */
+class Parser {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Parser */
+    /* Methods of ICalGLib-3.0.ICalGLib.Parser */
     add_line(str?: string | null): Component | null
     clean(): Component | null
     free(): void
     get_line(func: ParserLineGenFunc): string
     get_state(): ParserState
     parse(func: ParserLineGenFunc): Component
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1639,24 +1690,26 @@ export class Parser {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Parser, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Parser, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Parser, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Parser, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Parser, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Parser, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Parser, pspec: GObject.ParamSpec) => void)): number
@@ -1675,13 +1728,14 @@ export class Parser {
 }
 export interface Period_ConstructProps extends Object_ConstructProps {
 }
-export class Period {
-    /* Properties of ICalGLib.Object */
+class Period {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Period */
+    /* Methods of ICalGLib-3.0.ICalGLib.Period */
     as_ical_string(): string
     get_duration(): Duration
     get_end(): Time
@@ -1691,24 +1745,26 @@ export class Period {
     set_duration(duration: Duration): void
     set_end(end: Time): void
     set_start(start: Time): void
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1716,24 +1772,26 @@ export class Period {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Period, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Period, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Period, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Period, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Period, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Period, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Period, pspec: GObject.ParamSpec) => void)): number
@@ -1752,13 +1810,14 @@ export class Period {
 }
 export interface Property_ConstructProps extends Object_ConstructProps {
 }
-export class Property {
-    /* Properties of ICalGLib.Object */
+class Property {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Property */
+    /* Methods of ICalGLib-3.0.ICalGLib.Property */
     add_parameter(parameter: Parameter): void
     as_ical_string(): string
     clone(): Property
@@ -2011,24 +2070,26 @@ export class Property {
     set_xlicmimeencoding(v: string): void
     set_xlicmimefilename(v: string): void
     set_xlicmimeoptinfo(v: string): void
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2036,24 +2097,26 @@ export class Property {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Property, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Property, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Property, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Property, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Property, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Property, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Property, pspec: GObject.ParamSpec) => void)): number
@@ -2198,34 +2261,36 @@ export class Property {
 }
 export interface RecurIterator_ConstructProps extends Object_ConstructProps {
 }
-export class RecurIterator {
-    /* Properties of ICalGLib.Object */
+class RecurIterator {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.RecurIterator */
+    /* Methods of ICalGLib-3.0.ICalGLib.RecurIterator */
     next(): Time
-    set_end(end: Time): number
     set_start(start: Time): number
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2233,24 +2298,26 @@ export class RecurIterator {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RecurIterator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RecurIterator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: RecurIterator, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: RecurIterator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: RecurIterator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: RecurIterator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: RecurIterator, pspec: GObject.ParamSpec) => void)): number
@@ -2268,13 +2335,14 @@ export class RecurIterator {
 }
 export interface Recurrence_ConstructProps extends Object_ConstructProps {
 }
-export class Recurrence {
-    /* Properties of ICalGLib.Object */
+class Recurrence {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Recurrence */
+    /* Methods of ICalGLib-3.0.ICalGLib.Recurrence */
     clear(): void
     get_by_day(index: number): number
     get_by_day_array(): number[]
@@ -2323,24 +2391,26 @@ export class Recurrence {
     set_until(until: Time): void
     set_week_start(week_start: RecurrenceWeekday): void
     to_string(): string
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2348,24 +2418,26 @@ export class Recurrence {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Recurrence, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Recurrence, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Recurrence, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Recurrence, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Recurrence, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Recurrence, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Recurrence, pspec: GObject.ParamSpec) => void)): number
@@ -2382,8 +2454,6 @@ export class Recurrence {
     static new_from_string(str: string): Recurrence
     static day_day_of_week(day: number): RecurrenceWeekday
     static day_position(day: number): number
-    static encode_day(weekday: RecurrenceWeekday, position: number): number
-    static encode_month(month: number, is_leap: boolean): number
     static frequency_from_string(str: string): RecurrenceFrequency
     static frequency_to_string(kind: RecurrenceFrequency): string
     static month_is_leap(month: number): boolean
@@ -2398,36 +2468,39 @@ export class Recurrence {
 }
 export interface Reqstat_ConstructProps extends Object_ConstructProps {
 }
-export class Reqstat {
-    /* Properties of ICalGLib.Object */
+class Reqstat {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Reqstat */
+    /* Methods of ICalGLib-3.0.ICalGLib.Reqstat */
     get_code(): RequestStatus
     get_debug(): string
     get_desc(): string
     set_code(code: RequestStatus): void
     to_string(): string
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2435,24 +2508,26 @@ export class Reqstat {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Reqstat, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Reqstat, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Reqstat, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Reqstat, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Reqstat, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Reqstat, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Reqstat, pspec: GObject.ParamSpec) => void)): number
@@ -2470,13 +2545,14 @@ export class Reqstat {
 }
 export interface Time_ConstructProps extends Object_ConstructProps {
 }
-export class Time {
-    /* Properties of ICalGLib.Object */
+class Time {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Time */
+    /* Methods of ICalGLib-3.0.ICalGLib.Time */
     add(d: Duration): Time
     adjust(days: number, hours: number, minutes: number, seconds: number): void
     as_ical_string(): string
@@ -2522,24 +2598,26 @@ export class Time {
     start_doy_week(fdow: number): number
     subtract(t2: Time): Duration
     week_number(): number
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2547,24 +2625,26 @@ export class Time {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Time, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Time, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Time, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Time, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Time, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Time, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Time, pspec: GObject.ParamSpec) => void)): number
@@ -2593,13 +2673,14 @@ export class Time {
 }
 export interface TimeSpan_ConstructProps extends Object_ConstructProps {
 }
-export class TimeSpan {
-    /* Properties of ICalGLib.Object */
+class TimeSpan {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.TimeSpan */
+    /* Methods of ICalGLib-3.0.ICalGLib.TimeSpan */
     clone(): TimeSpan
     contains(container: TimeSpan): number
     get_end(): number
@@ -2609,24 +2690,26 @@ export class TimeSpan {
     set_end(end: number): void
     set_is_busy(is_busy: boolean): void
     set_start(start: number): void
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2634,24 +2717,26 @@ export class TimeSpan {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TimeSpan, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TimeSpan, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: TimeSpan, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: TimeSpan, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: TimeSpan, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: TimeSpan, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: TimeSpan, pspec: GObject.ParamSpec) => void)): number
@@ -2670,13 +2755,14 @@ export class TimeSpan {
 }
 export interface Timezone_ConstructProps extends Object_ConstructProps {
 }
-export class Timezone {
-    /* Properties of ICalGLib.Object */
+class Timezone {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Timezone */
+    /* Methods of ICalGLib-3.0.ICalGLib.Timezone */
     copy(): Timezone
     dump_changes(max_year: number, fp?: object | null): number
     get_component(): Component
@@ -2689,24 +2775,26 @@ export class Timezone {
     get_utc_offset(tt?: Time | null): [ /* returnType */ number, /* is_daylight */ number | null ]
     get_utc_offset_of_utc_time(tt: Time): [ /* returnType */ number, /* is_daylight */ number | null ]
     set_component(comp: Component): number
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2714,24 +2802,26 @@ export class Timezone {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Timezone, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Timezone, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Timezone, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Timezone, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Timezone, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Timezone, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Timezone, pspec: GObject.ParamSpec) => void)): number
@@ -2766,37 +2856,40 @@ export class Timezone {
 }
 export interface Trigger_ConstructProps extends Object_ConstructProps {
 }
-export class Trigger {
-    /* Properties of ICalGLib.Object */
+class Trigger {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Trigger */
+    /* Methods of ICalGLib-3.0.ICalGLib.Trigger */
     get_duration(): Duration
     get_time(): Time
     is_bad_trigger(): boolean
     is_null_trigger(): boolean
     set_duration(duration: Duration): void
     set_time(time: Time): void
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2804,24 +2897,26 @@ export class Trigger {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Trigger, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Trigger, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Trigger, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Trigger, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Trigger, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Trigger, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Trigger, pspec: GObject.ParamSpec) => void)): number
@@ -2840,13 +2935,14 @@ export class Trigger {
 }
 export interface Value_ConstructProps extends Object_ConstructProps {
 }
-export class Value {
-    /* Properties of ICalGLib.Object */
+class Value {
+    /* Properties of ICalGLib-3.0.ICalGLib.Object */
+    always_destroy: boolean
     native_destroy_func: object
     owner: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of ICalGLib.Value */
+    /* Methods of ICalGLib-3.0.ICalGLib.Value */
     as_ical_string(): string
     clone(): Value
     compare(b: Value): ParameterXliccomparetype
@@ -2926,24 +3022,26 @@ export class Value {
     set_utcoffset(v: number): void
     set_x(v: string): void
     set_xlicclass(v: PropertyXlicclass): void
-    /* Methods of ICalGLib.Object */
+    /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
+    get_always_destroy(): boolean
     get_is_global_memory(): boolean
     ref_owner(): GObject.Object | null
     remove_depender(depender: GObject.Object): void
     remove_owner(): void
+    set_always_destroy(value: boolean): void
     set_native_destroy_func(native_destroy_func: GLib.DestroyNotify): void
     set_owner(owner: GObject.Object): void
     steal_native(): object | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2951,24 +3049,26 @@ export class Value {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Value, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Value, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::always-destroy", callback: (($obj: Value, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-destroy", callback: (($obj: Value, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::native-destroy-func", callback: (($obj: Value, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::native-destroy-func", callback: (($obj: Value, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::owner", callback: (($obj: Value, pspec: GObject.ParamSpec) => void)): number
@@ -3026,123 +3126,125 @@ export class Value {
     static kind_to_string(kind: ValueKind): string
     static $gtype: GObject.Type
 }
-export abstract class ArrayClass {
+abstract class ArrayClass {
     static name: string
 }
-export abstract class AttachClass {
+abstract class AttachClass {
     static name: string
 }
-export abstract class CompIterClass {
+abstract class CompIterClass {
     static name: string
 }
-export abstract class ComponentClass {
+abstract class ComponentClass {
     static name: string
 }
-export abstract class DatetimeperiodClass {
+abstract class DatetimeperiodClass {
     static name: string
 }
-export abstract class DurationClass {
+abstract class DurationClass {
     static name: string
 }
-export abstract class GeoClass {
+abstract class GeoClass {
     static name: string
 }
-export abstract class ObjectClass {
+abstract class ObjectClass {
     static name: string
 }
-export class ObjectPrivate {
+class ObjectPrivate {
     static name: string
 }
-export abstract class ParameterClass {
+abstract class ParameterClass {
     static name: string
 }
-export abstract class ParserClass {
+abstract class ParserClass {
     static name: string
 }
-export abstract class PeriodClass {
+abstract class PeriodClass {
     static name: string
 }
-export abstract class PropertyClass {
+abstract class PropertyClass {
     static name: string
 }
-export abstract class RecurIteratorClass {
+abstract class RecurIteratorClass {
     static name: string
 }
-export abstract class RecurrenceClass {
+abstract class RecurrenceClass {
     static name: string
 }
-export abstract class ReqstatClass {
+abstract class ReqstatClass {
     static name: string
 }
-export abstract class TimeClass {
+abstract class TimeClass {
     static name: string
 }
-export abstract class TimeSpanClass {
+abstract class TimeSpanClass {
     static name: string
 }
-export abstract class TimezoneClass {
+abstract class TimezoneClass {
     static name: string
 }
-export abstract class TriggerClass {
+abstract class TriggerClass {
     static name: string
 }
-export abstract class ValueClass {
+abstract class ValueClass {
     static name: string
 }
-export class _Array {
+class _Array {
     static name: string
 }
-export class _Attach {
+class _Attach {
     static name: string
 }
-export class _CompIter {
+class _CompIter {
     static name: string
 }
-export class _Component {
+class _Component {
     static name: string
 }
-export class _Datetimeperiod {
+class _Datetimeperiod {
     static name: string
 }
-export class _Duration {
+class _Duration {
     static name: string
 }
-export class _Geo {
+class _Geo {
     static name: string
 }
-export class _Parameter {
+class _Parameter {
     static name: string
 }
-export class _Parser {
+class _Parser {
     static name: string
 }
-export class _Period {
+class _Period {
     static name: string
 }
-export class _Property {
+class _Property {
     static name: string
 }
-export class _RecurIterator {
+class _RecurIterator {
     static name: string
 }
-export class _Recurrence {
+class _Recurrence {
     static name: string
 }
-export class _Reqstat {
+class _Reqstat {
     static name: string
 }
-export class _Time {
+class _Time {
     static name: string
 }
-export class _TimeSpan {
+class _TimeSpan {
     static name: string
 }
-export class _Timezone {
+class _Timezone {
     static name: string
 }
-export class _Trigger {
+class _Trigger {
     static name: string
 }
-export class _Value {
+class _Value {
     static name: string
 }
+}
+export default ICalGLib;

@@ -3,71 +3,73 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gtk from './Gtk-3.0';
-import type * as xlib from './xlib-2.0';
-import type * as Gdk from './Gdk-3.0';
-import type * as cairo from './cairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Gio from './Gio-2.0';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as Atk from './Atk-1.0';
-import type * as Gdl from './Gdl-3';
+import type Gtk from './Gtk-3.0';
+import type xlib from './xlib-2.0';
+import type Gdk from './Gdk-3.0';
+import type cairo from './cairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type GModule from './GModule-2.0';
+import type Atk from './Atk-1.0';
+import type Gdl from './Gdl-3';
 
-export enum CommandBarEntryType {
+export namespace Anjuta {
+
+enum CommandBarEntryType {
     FRAME,
     BUTTON,
 }
-export enum CommandQueueExecuteMode {
+enum CommandQueueExecuteMode {
     AUTOMATIC,
     MANUAL,
 }
-export enum ConvertError {
+enum ConvertError {
     FAILED,
 }
-export enum LauncherOutputType {
+enum LauncherOutputType {
     STDOUT,
     STDERR,
     PTY,
 }
-export enum PluginDescriptionParseError {
+enum PluginDescriptionParseError {
     SYNTAX,
     ESCAPES,
     CHARS,
 }
-export enum PluginManagerError {
+enum PluginManagerError {
     MISSING_FACTORY,
     ERROR_UNKNOWN,
 }
-export enum ProfileError {
+enum ProfileError {
     URI_READ_FAILED,
     URI_WRITE_FAILED,
     PLUGIN_MISSING,
 }
-export enum ProjectValueType {
+enum ProjectValueType {
     STRING,
     LIST,
     BOOLEAN,
     MAP,
 }
-export enum SerializerMode {
+enum SerializerMode {
     READ,
     WRITE,
 }
-export enum SessionPhase {
+enum SessionPhase {
     START,
     FIRST,
     NORMAL,
     LAST,
     END,
 }
-export enum ShellError {
+enum ShellError {
     EXIST,
 }
-export enum ShellPlacement {
+enum ShellPlacement {
     NONE,
     TOP,
     BOTTOM,
@@ -76,7 +78,7 @@ export enum ShellPlacement {
     CENTER,
     FLOATING,
 }
-export enum ProjectNodeState {
+enum ProjectNodeState {
     OK,
     MODIFIED,
     INCOMPLETE,
@@ -91,7 +93,7 @@ export enum ProjectNodeState {
     CAN_SAVE,
     REMOVE_FILE,
 }
-export enum ProjectNodeType {
+enum ProjectNodeType {
     UNKNOWN,
     SHAREDLIB,
     STATICLIB,
@@ -131,13 +133,13 @@ export enum ProjectNodeType {
     VARIABLE,
     OBJECT,
 }
-export enum ProjectPropertyFlags {
+enum ProjectPropertyFlags {
     READ_ONLY,
     READ_WRITE,
     HIDDEN,
     STATIC,
 }
-export enum TokenType {
+enum TokenType {
     NONE,
     EOL,
     COMMA,
@@ -186,7 +188,7 @@ export enum TokenType {
     REMOVED,
     ADDED,
 }
-export enum VcsStatus {
+enum VcsStatus {
     MODIFIED,
     ADDED,
     DELETED,
@@ -200,120 +202,120 @@ export enum VcsStatus {
 }
 export const SYSTEM_PROFILE_NAME: string
 export const VCS_DEFAULT_STATUS_CODES: number
-export function cclosure_marshal_VOID__BOXED_ENUM(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
-export function cclosure_marshal_VOID__INT_INT_ULONG(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
-export function cclosure_marshal_VOID__INT_OBJECT(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
-export function cclosure_marshal_VOID__INT_STRING(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
-export function cclosure_marshal_VOID__POINTER_OBJECT(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
-export function cclosure_marshal_VOID__STRING_BOXED(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
-export function cclosure_marshal_VOID__STRING_INT(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
-export function cclosure_marshal_VOID__STRING_INT_STRING(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
-export function cclosure_marshal_VOID__STRING_POINTER(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
-export function check_autogen(): boolean
-export function convert_error_quark(): GLib.Quark
-export function convert_from_utf8(content: string, len: number, encoding: Encoding, new_len: number): string
-export function convert_to_utf8(content: string, len: number, encoding: Encoding, new_len: number): string
-export function encoding_get_current(): Encoding
-export function encoding_get_from_charset(charset: string): Encoding
-export function encoding_get_from_index(index: number): Encoding
-export function encoding_get_utf8(): Encoding
-export function pkg_config_get_version(package: string): string
-export function pkg_config_ignore_package(name: string): boolean
-export function plugin_description_parse_error_quark(): GLib.Quark
-export function plugin_manager_error_quark(): GLib.Quark
-export function profile_error_quark(): GLib.Quark
-export function res_get_data_dir(): string
-export function res_get_data_file(pixfile: string): string
-export function res_get_doc_dir(): string
-export function res_get_doc_file(docfile: string): string
-export function res_get_help_dir(): string
-export function res_get_help_dir_locale(locale: string): string
-export function res_get_help_file(helpfile: string): string
-export function res_get_help_file_locale(helpfile: string, locale: string): string
-export function res_get_pixmap_dir(): string
-export function res_get_pixmap_file(pixfile: string): string
-export function res_help_search(word: string): void
-export function res_url_show(url: string): void
-export function shell_error_quark(): GLib.Quark
-export function util_color_from_string(val: string, r: number, g: number, b: number): void
-export function util_convert_to_utf8(str: string): string
-export function util_copy_file(src: string, dest: string, show_error: boolean): boolean
-export function util_create_dir(d: string): boolean
-export function util_dialog_input(parent: Gtk.Window, label: string, default_value: string, value: string): boolean
-export function util_diff(uri: string, text: string): boolean
-export function util_escape_quotes(str: string): string
-export function util_execute_shell(dir: string, command: string): GLib.Pid
-export function util_execute_terminal_shell(dir: string, command: string): GLib.Pid
-export function util_file_new_for_commandline_arg(arg: string): Gio.File
-export function util_get_a_tmp_file(): string
-export function util_get_current_dir(): string
-export function util_get_file_info_mime_type(info: Gio.FileInfo): string
-export function util_get_file_mime_type(file: Gio.File): string
-export function util_get_local_path_from_uri(uri: string): string
-export function util_get_real_path(path: string): string
-export function util_get_user_mail(): string
-export function util_help_display(parent: Gtk.Widget, doc_id: string, item: string): void
-export function util_install_files(names: string): boolean
-export function util_is_project_file(filename: string): boolean
-export function util_is_template_file(filename: string): boolean
-export function util_package_is_installed(lib: string, show: boolean): boolean
-export function util_parse_args_from_string(string: string): string[]
-export function util_prog_is_installed(prog: string, show: boolean): boolean
-export function util_replace_home_dir_with_tilde(uri: string): string
-export function util_set_anjuta_prefix(name: string): void
-export function util_set_user_mail(id: string): void
-export function util_shell_expand(string: string): string
-export function util_str_middle_truncate(string: string, truncate_length: number): string
-export function util_string_from_color(r: number, g: number, b: number): string
-export function util_string_from_type(map: UtilStringMap, type: number): string
-export function util_type_from_string(map: UtilStringMap, str: string): number
-export function util_uri_get_dirname(uri: string): string
-export function util_user_shell(): string
-export function util_user_terminal(): string[]
-export interface AutogenFunc {
+function cclosure_marshal_VOID__BOXED_ENUM(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
+function cclosure_marshal_VOID__INT_INT_ULONG(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
+function cclosure_marshal_VOID__INT_OBJECT(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
+function cclosure_marshal_VOID__INT_STRING(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
+function cclosure_marshal_VOID__POINTER_OBJECT(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
+function cclosure_marshal_VOID__STRING_BOXED(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
+function cclosure_marshal_VOID__STRING_INT(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
+function cclosure_marshal_VOID__STRING_INT_STRING(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
+function cclosure_marshal_VOID__STRING_POINTER(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
+function check_autogen(): boolean
+function convert_error_quark(): GLib.Quark
+function convert_from_utf8(content: string, len: number, encoding: Encoding, new_len: number): string
+function convert_to_utf8(content: string, len: number, encoding: Encoding, new_len: number): string
+function encoding_get_current(): Encoding
+function encoding_get_from_charset(charset: string): Encoding
+function encoding_get_from_index(index: number): Encoding
+function encoding_get_utf8(): Encoding
+function pkg_config_get_version(package: string): string
+function pkg_config_ignore_package(name: string): boolean
+function plugin_description_parse_error_quark(): GLib.Quark
+function plugin_manager_error_quark(): GLib.Quark
+function profile_error_quark(): GLib.Quark
+function res_get_data_dir(): string
+function res_get_data_file(pixfile: string): string
+function res_get_doc_dir(): string
+function res_get_doc_file(docfile: string): string
+function res_get_help_dir(): string
+function res_get_help_dir_locale(locale: string): string
+function res_get_help_file(helpfile: string): string
+function res_get_help_file_locale(helpfile: string, locale: string): string
+function res_get_pixmap_dir(): string
+function res_get_pixmap_file(pixfile: string): string
+function res_help_search(word: string): void
+function res_url_show(url: string): void
+function shell_error_quark(): GLib.Quark
+function util_color_from_string(val: string, r: number, g: number, b: number): void
+function util_convert_to_utf8(str: string): string
+function util_copy_file(src: string, dest: string, show_error: boolean): boolean
+function util_create_dir(d: string): boolean
+function util_dialog_input(parent: Gtk.Window, label: string, default_value: string, value: string): boolean
+function util_diff(uri: string, text: string): boolean
+function util_escape_quotes(str: string): string
+function util_execute_shell(dir: string, command: string): GLib.Pid
+function util_execute_terminal_shell(dir: string, command: string): GLib.Pid
+function util_file_new_for_commandline_arg(arg: string): Gio.File
+function util_get_a_tmp_file(): string
+function util_get_current_dir(): string
+function util_get_file_info_mime_type(info: Gio.FileInfo): string
+function util_get_file_mime_type(file: Gio.File): string
+function util_get_local_path_from_uri(uri: string): string
+function util_get_real_path(path: string): string
+function util_get_user_mail(): string
+function util_help_display(parent: Gtk.Widget, doc_id: string, item: string): void
+function util_install_files(names: string): boolean
+function util_is_project_file(filename: string): boolean
+function util_is_template_file(filename: string): boolean
+function util_package_is_installed(lib: string, show: boolean): boolean
+function util_parse_args_from_string(string: string): string[]
+function util_prog_is_installed(prog: string, show: boolean): boolean
+function util_replace_home_dir_with_tilde(uri: string): string
+function util_set_anjuta_prefix(name: string): void
+function util_set_user_mail(id: string): void
+function util_shell_expand(string: string): string
+function util_str_middle_truncate(string: string, truncate_length: number): string
+function util_string_from_color(r: number, g: number, b: number): string
+function util_string_from_type(map: UtilStringMap, type: number): string
+function util_type_from_string(map: UtilStringMap, str: string): number
+function util_uri_get_dirname(uri: string): string
+function util_user_shell(): string
+function util_user_terminal(): string[]
+interface AutogenFunc {
     (autogen: Autogen, data?: object | null): void
 }
-export interface AutogenOutputFunc {
+interface AutogenOutputFunc {
     (output: string, data?: object | null): void
 }
-export interface CompletionFilterFunc {
+interface CompletionFilterFunc {
     (item?: object | null): boolean
 }
-export interface CompletionNameFunc {
+interface CompletionNameFunc {
     (item?: object | null): string
 }
-export interface LauncherOutputCallback {
+interface LauncherOutputCallback {
     (launcher: Launcher, output_type: LauncherOutputType, chars: string): void
 }
-export interface PluginDescriptionLineFunc {
+interface PluginDescriptionLineFunc {
     (df: PluginDescription, key: string, locale: string, value: string, data?: object | null): void
 }
-export interface PluginDescriptionSectionFunc {
+interface PluginDescriptionSectionFunc {
     (df: PluginDescription, name: string): void
 }
-export interface PluginValueAdded {
+interface PluginValueAdded {
     (plugin: Plugin, name: string, value: any): void
 }
-export interface PluginValueRemoved {
+interface PluginValueRemoved {
     (plugin: Plugin, name: string): void
 }
-export interface PreferencesCallback {
+interface PreferencesCallback {
     (pr: Preferences, key: string, data?: object | null): boolean
 }
-export interface ProjectNodeForeachFunc {
+interface ProjectNodeForeachFunc {
     (node: ProjectNode): void
 }
-export interface ProjectNodeTraverseFunc {
+interface ProjectNodeTraverseFunc {
     (node: ProjectNode, data?: object | null): boolean
 }
-export interface SavePromptSaveFunc {
+interface SavePromptSaveFunc {
     (save_prompt: SavePrompt, item?: object | null): boolean
 }
-export interface TokenForeachFunc {
+interface TokenForeachFunc {
     (token: Token, data?: object | null): void
 }
-export class Shell {
-    /* Methods of Anjuta.Shell */
+class Shell {
+    /* Methods of Anjuta-3.0.Anjuta.Shell */
     add_value(name: string, value: any): void
     add_widget(widget: Gtk.Widget, name: string, title: string, stock_id: string, placement: ShellPlacement): void
     add_widget_custom(widget: Gtk.Widget, name: string, title: string, stock_id: string, label: Gtk.Widget, placement: ShellPlacement): void
@@ -340,7 +342,7 @@ export class Shell {
     show_dockable_widget(widget: Gtk.Widget): void
     thaw(): void
     unmaximize(): void
-    /* Virtual methods of Anjuta.Shell */
+    /* Virtual methods of Anjuta-3.0.Anjuta.Shell */
     vfunc_add_value(name: string, value: any): void
     vfunc_add_widget_custom(widget: Gtk.Widget, name: string, title: string, stock_id: string, label: Gtk.Widget, placement: ShellPlacement): void
     vfunc_add_widget_full(widget: Gtk.Widget, name: string, title: string, stock_id: string, placement: ShellPlacement, locked: boolean): void
@@ -366,7 +368,7 @@ export class Shell {
     vfunc_unmaximize(): void
     vfunc_value_added(name: string, value: any): void
     vfunc_value_removed(name: string): void
-    /* Signals of Anjuta.Shell */
+    /* Signals of Anjuta-3.0.Anjuta.Shell */
     connect(sigName: "load-session", callback: (($obj: Shell, object: number, p0: GObject.Object) => void)): number
     connect_after(sigName: "load-session", callback: (($obj: Shell, object: number, p0: GObject.Object) => void)): number
     emit(sigName: "load-session", object: number, p0: GObject.Object): void
@@ -386,16 +388,16 @@ export class Shell {
 }
 export interface AsyncCommand_ConstructProps extends Command_ConstructProps {
 }
-export class AsyncCommand {
-    /* Fields of Anjuta.AsyncCommand */
+class AsyncCommand {
+    /* Fields of Anjuta-3.0.Anjuta.AsyncCommand */
     parent_instance: Command
     priv: AsyncCommandPriv
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.AsyncCommand */
+    /* Methods of Anjuta-3.0.Anjuta.AsyncCommand */
     lock(): void
     unlock(): void
-    /* Methods of Anjuta.Command */
+    /* Methods of Anjuta-3.0.Anjuta.Command */
     cancel(): void
     get_error_message(): string | null
     is_running(): boolean
@@ -406,15 +408,15 @@ export class AsyncCommand {
     start(): void
     start_automatic_monitor(): boolean
     stop_automatic_monitor(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -422,13 +424,13 @@ export class AsyncCommand {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Anjuta.Command */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.Command */
     vfunc_cancel(): void
     vfunc_command_finished(return_code: number): void
     vfunc_command_started(): void
@@ -443,15 +445,15 @@ export class AsyncCommand {
     vfunc_start(): void
     vfunc_start_automatic_monitor(): boolean
     vfunc_stop_automatic_monitor(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.Command */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.Command */
     connect(sigName: "command-finished", callback: (($obj: AsyncCommand, return_code: number) => void)): number
     connect_after(sigName: "command-finished", callback: (($obj: AsyncCommand, return_code: number) => void)): number
     emit(sigName: "command-finished", return_code: number): void
@@ -464,7 +466,7 @@ export class AsyncCommand {
     connect(sigName: "progress", callback: (($obj: AsyncCommand, progress: number) => void)): number
     connect_after(sigName: "progress", callback: (($obj: AsyncCommand, progress: number) => void)): number
     emit(sigName: "progress", progress: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AsyncCommand, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AsyncCommand, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -482,25 +484,25 @@ export class AsyncCommand {
 }
 export interface AsyncNotify_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class AsyncNotify {
-    /* Fields of Anjuta.AsyncNotify */
+class AsyncNotify {
+    /* Fields of Anjuta-3.0.Anjuta.AsyncNotify */
     parent_instance: GObject.Object
     priv: AsyncNotifyPriv
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.AsyncNotify */
+    /* Methods of Anjuta-3.0.Anjuta.AsyncNotify */
     get_error(): void
     notify_finished(): void
     set_error(error: GLib.Error): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -508,27 +510,27 @@ export class AsyncNotify {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Anjuta.AsyncNotify */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.AsyncNotify */
     vfunc_finished(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.AsyncNotify */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.AsyncNotify */
     connect(sigName: "finished", callback: (($obj: AsyncNotify) => void)): number
     connect_after(sigName: "finished", callback: (($obj: AsyncNotify) => void)): number
     emit(sigName: "finished"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AsyncNotify, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AsyncNotify, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -545,10 +547,10 @@ export class AsyncNotify {
 }
 export interface Autogen_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Autogen {
-    /* Fields of GObject.Object */
+class Autogen {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Autogen */
+    /* Methods of Anjuta-3.0.Anjuta.Autogen */
     clear_library_path(): void
     execute(func?: AutogenFunc | null): boolean
     get_library_paths(): string[]
@@ -557,15 +559,15 @@ export class Autogen {
     set_output_callback(func: AutogenOutputFunc): boolean
     set_output_file(filename: string): boolean
     write_definition_file(values: GLib.HashTable): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -573,21 +575,21 @@ export class Autogen {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Autogen, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Autogen, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -604,18 +606,18 @@ export class Autogen {
 }
 export interface CModule_ConstructProps extends GObject.TypeModule_ConstructProps {
 }
-export class CModule {
-    /* Fields of GObject.TypeModule */
+class CModule {
+    /* Fields of GObject-2.0.GObject.TypeModule */
     parent_instance: GObject.Object
     use_count: number
     type_infos: object[]
     interface_infos: object[]
     name: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.CModule */
+    /* Methods of Anjuta-3.0.Anjuta.CModule */
     get_last_error(): boolean
-    /* Methods of GObject.TypeModule */
+    /* Methods of GObject-2.0.GObject.TypeModule */
     add_interface(instance_type: GObject.Type, interface_type: GObject.Type, interface_info: GObject.InterfaceInfo): void
     register_enum(name: string, const_static_values: GObject.EnumValue): GObject.Type
     register_flags(name: string, const_static_values: GObject.FlagsValue): GObject.Type
@@ -623,15 +625,15 @@ export class CModule {
     set_name(name: string): void
     unuse(): void
     use(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -639,28 +641,28 @@ export class CModule {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of GObject.TypePlugin */
+    watch_closure(closure: Function): void
+    /* Methods of GObject-2.0.GObject.TypePlugin */
     complete_interface_info(instance_type: GObject.Type, interface_type: GObject.Type, info: GObject.InterfaceInfo): void
     complete_type_info(g_type: GObject.Type, info: GObject.TypeInfo, value_table: GObject.TypeValueTable): void
     use(): void
-    /* Virtual methods of GObject.TypeModule */
+    /* Virtual methods of GObject-2.0.GObject.TypeModule */
     vfunc_load(): boolean
     vfunc_unload(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CModule, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CModule, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -677,20 +679,20 @@ export class CModule {
 }
 export interface CPluginFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class CPluginFactory {
-    /* Fields of GObject.Object */
+class CPluginFactory {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.CPluginFactory */
+    /* Methods of Anjuta-3.0.Anjuta.CPluginFactory */
     free(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -698,21 +700,21 @@ export class CPluginFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CPluginFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CPluginFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -731,11 +733,11 @@ export interface CellRendererCaptionedImage_ConstructProps extends Gtk.CellRende
     pixbuf?: GdkPixbuf.Pixbuf
     text?: string
 }
-export class CellRendererCaptionedImage {
-    /* Properties of Anjuta.CellRendererCaptionedImage */
+class CellRendererCaptionedImage {
+    /* Properties of Anjuta-3.0.Anjuta.CellRendererCaptionedImage */
     pixbuf: GdkPixbuf.Pixbuf
     text: string
-    /* Properties of Gtk.CellRenderer */
+    /* Properties of Gtk-3.0.Gtk.CellRenderer */
     cell_background: string
     cell_background_gdk: Gdk.Color
     cell_background_rgba: Gdk.RGBA
@@ -752,15 +754,15 @@ export class CellRendererCaptionedImage {
     xpad: number
     yalign: number
     ypad: number
-    /* Fields of Anjuta.CellRendererCaptionedImage */
+    /* Fields of Anjuta-3.0.Anjuta.CellRendererCaptionedImage */
     parent: Gtk.CellRenderer
     image: Gtk.CellRenderer
     caption: Gtk.CellRenderer
-    /* Fields of Gtk.CellRenderer */
+    /* Fields of Gtk-3.0.Gtk.CellRenderer */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gtk.CellRenderer */
+    /* Methods of Gtk-3.0.Gtk.CellRenderer */
     activate(event: Gdk.Event, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): boolean
     get_aligned_area(widget: Gtk.Widget, flags: Gtk.CellRendererState, cell_area: Gdk.Rectangle): /* aligned_area */ Gdk.Rectangle
     get_alignment(): [ /* xalign */ number | null, /* yalign */ number | null ]
@@ -785,15 +787,15 @@ export class CellRendererCaptionedImage {
     set_visible(visible: boolean): void
     start_editing(event: Gdk.Event | null, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): Gtk.CellEditable | null
     stop_editing(canceled: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -801,13 +803,13 @@ export class CellRendererCaptionedImage {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.CellRenderer */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.CellRenderer */
     vfunc_activate(event: Gdk.Event, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): boolean
     vfunc_editing_canceled(): void
     vfunc_editing_started(editable: Gtk.CellEditable, path: string): void
@@ -820,22 +822,22 @@ export class CellRendererCaptionedImage {
     vfunc_get_size(widget: Gtk.Widget, cell_area?: Gdk.Rectangle | null): [ /* x_offset */ number | null, /* y_offset */ number | null, /* width */ number | null, /* height */ number | null ]
     vfunc_render(cr: cairo.Context, widget: Gtk.Widget, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): void
     vfunc_start_editing(event: Gdk.Event | null, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): Gtk.CellEditable | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.CellRenderer */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.CellRenderer */
     connect(sigName: "editing-canceled", callback: (($obj: CellRendererCaptionedImage) => void)): number
     connect_after(sigName: "editing-canceled", callback: (($obj: CellRendererCaptionedImage) => void)): number
     emit(sigName: "editing-canceled"): void
     connect(sigName: "editing-started", callback: (($obj: CellRendererCaptionedImage, editable: Gtk.CellEditable, path: string) => void)): number
     connect_after(sigName: "editing-started", callback: (($obj: CellRendererCaptionedImage, editable: Gtk.CellEditable, path: string) => void)): number
     emit(sigName: "editing-started", editable: Gtk.CellEditable, path: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CellRendererCaptionedImage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CellRendererCaptionedImage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -889,10 +891,10 @@ export class CellRendererCaptionedImage {
 export interface CellRendererDiff_ConstructProps extends Gtk.CellRenderer_ConstructProps {
     diff?: string
 }
-export class CellRendererDiff {
-    /* Properties of Anjuta.CellRendererDiff */
+class CellRendererDiff {
+    /* Properties of Anjuta-3.0.Anjuta.CellRendererDiff */
     diff: string
-    /* Properties of Gtk.CellRenderer */
+    /* Properties of Gtk-3.0.Gtk.CellRenderer */
     cell_background: string
     cell_background_gdk: Gdk.Color
     cell_background_rgba: Gdk.RGBA
@@ -909,14 +911,14 @@ export class CellRendererDiff {
     xpad: number
     yalign: number
     ypad: number
-    /* Fields of Anjuta.CellRendererDiff */
+    /* Fields of Anjuta-3.0.Anjuta.CellRendererDiff */
     parent_instance: Gtk.CellRenderer
     priv: CellRendererDiffPrivate
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.CellRendererDiff */
+    /* Methods of Anjuta-3.0.Anjuta.CellRendererDiff */
     set_diff(diff: string): void
-    /* Methods of Gtk.CellRenderer */
+    /* Methods of Gtk-3.0.Gtk.CellRenderer */
     activate(event: Gdk.Event, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): boolean
     get_aligned_area(widget: Gtk.Widget, flags: Gtk.CellRendererState, cell_area: Gdk.Rectangle): /* aligned_area */ Gdk.Rectangle
     get_alignment(): [ /* xalign */ number | null, /* yalign */ number | null ]
@@ -941,15 +943,15 @@ export class CellRendererDiff {
     set_visible(visible: boolean): void
     start_editing(event: Gdk.Event | null, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): Gtk.CellEditable | null
     stop_editing(canceled: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -957,13 +959,13 @@ export class CellRendererDiff {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.CellRenderer */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.CellRenderer */
     vfunc_activate(event: Gdk.Event, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): boolean
     vfunc_editing_canceled(): void
     vfunc_editing_started(editable: Gtk.CellEditable, path: string): void
@@ -976,22 +978,22 @@ export class CellRendererDiff {
     vfunc_get_size(widget: Gtk.Widget, cell_area?: Gdk.Rectangle | null): [ /* x_offset */ number | null, /* y_offset */ number | null, /* width */ number | null, /* height */ number | null ]
     vfunc_render(cr: cairo.Context, widget: Gtk.Widget, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): void
     vfunc_start_editing(event: Gdk.Event | null, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): Gtk.CellEditable | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.CellRenderer */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.CellRenderer */
     connect(sigName: "editing-canceled", callback: (($obj: CellRendererDiff) => void)): number
     connect_after(sigName: "editing-canceled", callback: (($obj: CellRendererDiff) => void)): number
     emit(sigName: "editing-canceled"): void
     connect(sigName: "editing-started", callback: (($obj: CellRendererDiff, editable: Gtk.CellEditable, path: string) => void)): number
     connect_after(sigName: "editing-started", callback: (($obj: CellRendererDiff, editable: Gtk.CellEditable, path: string) => void)): number
     emit(sigName: "editing-started", editable: Gtk.CellEditable, path: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CellRendererDiff, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CellRendererDiff, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1046,8 +1048,8 @@ export interface CloseButton_ConstructProps extends Gtk.Button_ConstructProps {
     related_action?: Gtk.Action
     use_action_appearance?: boolean
 }
-export class CloseButton {
-    /* Properties of Gtk.Button */
+class CloseButton {
+    /* Properties of Gtk-3.0.Gtk.Button */
     always_show_image: boolean
     image: Gtk.Widget
     image_position: Gtk.PositionType
@@ -1057,11 +1059,11 @@ export class CloseButton {
     use_underline: boolean
     xalign: number
     yalign: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -1101,21 +1103,21 @@ export class CloseButton {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Actionable */
+    /* Properties of Gtk-3.0.Gtk.Actionable */
     action_name: string
     action_target: GLib.Variant
-    /* Properties of Gtk.Activatable */
+    /* Properties of Gtk-3.0.Gtk.Activatable */
     related_action: Gtk.Action
     use_action_appearance: boolean
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gtk.Button */
+    /* Methods of Gtk-3.0.Gtk.Button */
     clicked(): void
     enter(): void
     get_alignment(): [ /* xalign */ number, /* yalign */ number ]
@@ -1140,12 +1142,13 @@ export class CloseButton {
     set_relief(relief: Gtk.ReliefStyle): void
     set_use_stock(use_stock: boolean): void
     set_use_underline(use_underline: boolean): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1170,7 +1173,7 @@ export class CloseButton {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -1427,15 +1430,15 @@ export class CloseButton {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1443,26 +1446,26 @@ export class CloseButton {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Actionable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Actionable */
     get_action_name(): string | null
     get_action_target_value(): GLib.Variant
     set_action_name(action_name?: string | null): void
     set_action_target_value(target_value?: GLib.Variant | null): void
     set_detailed_action_name(detailed_action_name: string): void
-    /* Methods of Gtk.Activatable */
+    /* Methods of Gtk-3.0.Gtk.Activatable */
     do_set_related_action(action: Gtk.Action): void
     get_related_action(): Gtk.Action
     get_use_action_appearance(): boolean
     set_related_action(action: Gtk.Action): void
     set_use_action_appearance(use_appearance: boolean): void
     sync_action_properties(action?: Gtk.Action | null): void
-    /* Methods of Gtk.Buildable */
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -1471,7 +1474,7 @@ export class CloseButton {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Anjuta.CloseButton */
+    /* Virtual methods of Anjuta-3.0.Anjuta.CloseButton */
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant
     vfunc_set_action_name(action_name?: string | null): void
@@ -1488,14 +1491,14 @@ export class CloseButton {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Button */
+    /* Virtual methods of Gtk-3.0.Gtk.Button */
     vfunc_activate(): void
     vfunc_clicked(): void
     vfunc_enter(): void
     vfunc_leave(): void
     vfunc_pressed(): void
     vfunc_released(): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -1506,7 +1509,7 @@ export class CloseButton {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -1589,15 +1592,15 @@ export class CloseButton {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Button */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Button */
     connect(sigName: "activate", callback: (($obj: CloseButton) => void)): number
     connect_after(sigName: "activate", callback: (($obj: CloseButton) => void)): number
     emit(sigName: "activate"): void
@@ -1616,7 +1619,7 @@ export class CloseButton {
     connect(sigName: "released", callback: (($obj: CloseButton) => void)): number
     connect_after(sigName: "released", callback: (($obj: CloseButton) => void)): number
     emit(sigName: "released"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: CloseButton, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: CloseButton, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -1629,7 +1632,7 @@ export class CloseButton {
     connect(sigName: "set-focus-child", callback: (($obj: CloseButton, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: CloseButton, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: CloseButton) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: CloseButton) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -1837,7 +1840,7 @@ export class CloseButton {
     connect(sigName: "window-state-event", callback: (($obj: CloseButton, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: CloseButton, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CloseButton, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CloseButton, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1965,16 +1968,16 @@ export class CloseButton {
 export interface ColumnTextView_ConstructProps extends Gtk.Box_ConstructProps {
     orientation?: Gtk.Orientation
 }
-export class ColumnTextView {
-    /* Properties of Gtk.Box */
+class ColumnTextView {
+    /* Properties of Gtk-3.0.Gtk.Box */
     baseline_position: Gtk.BaselinePosition
     homogeneous: boolean
     spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -2014,20 +2017,20 @@ export class ColumnTextView {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Orientable */
+    /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Anjuta.ColumnTextView */
+    /* Fields of Anjuta-3.0.Anjuta.ColumnTextView */
     parent_instance: Gtk.Box
     priv: ColumnTextViewPriv
-    /* Fields of Gtk.Box */
+    /* Fields of Gtk-3.0.Gtk.Box */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.ColumnTextView */
+    /* Methods of Anjuta-3.0.Anjuta.ColumnTextView */
     get_text(): string
-    /* Methods of Gtk.Box */
+    /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
     get_homogeneous(): boolean
@@ -2041,10 +2044,11 @@ export class ColumnTextView {
     set_child_packing(child: Gtk.Widget, expand: boolean, fill: boolean, padding: number, pack_type: Gtk.PackType): void
     set_homogeneous(homogeneous: boolean): void
     set_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2069,7 +2073,7 @@ export class ColumnTextView {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -2328,15 +2332,15 @@ export class ColumnTextView {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2344,13 +2348,13 @@ export class ColumnTextView {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2359,10 +2363,10 @@ export class ColumnTextView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Orientable */
+    /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
-    /* Virtual methods of Anjuta.ColumnTextView */
+    /* Virtual methods of Anjuta-3.0.Anjuta.ColumnTextView */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2373,7 +2377,7 @@ export class ColumnTextView {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -2384,7 +2388,7 @@ export class ColumnTextView {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -2467,15 +2471,15 @@ export class ColumnTextView {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: ColumnTextView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: ColumnTextView, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -2488,7 +2492,7 @@ export class ColumnTextView {
     connect(sigName: "set-focus-child", callback: (($obj: ColumnTextView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: ColumnTextView, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: ColumnTextView) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: ColumnTextView) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -2696,7 +2700,7 @@ export class ColumnTextView {
     connect(sigName: "window-state-event", callback: (($obj: ColumnTextView, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: ColumnTextView, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ColumnTextView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ColumnTextView, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2806,13 +2810,13 @@ export class ColumnTextView {
 }
 export interface Command_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Command {
-    /* Fields of Anjuta.Command */
+class Command {
+    /* Fields of Anjuta-3.0.Anjuta.Command */
     parent_instance: GObject.Object
     priv: CommandPriv
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Command */
+    /* Methods of Anjuta-3.0.Anjuta.Command */
     cancel(): void
     get_error_message(): string | null
     is_running(): boolean
@@ -2823,15 +2827,15 @@ export class Command {
     start(): void
     start_automatic_monitor(): boolean
     stop_automatic_monitor(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2839,13 +2843,13 @@ export class Command {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Anjuta.Command */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.Command */
     vfunc_cancel(): void
     vfunc_command_finished(return_code: number): void
     vfunc_command_started(): void
@@ -2860,15 +2864,15 @@ export class Command {
     vfunc_start(): void
     vfunc_start_automatic_monitor(): boolean
     vfunc_stop_automatic_monitor(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.Command */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.Command */
     connect(sigName: "command-finished", callback: (($obj: Command, return_code: number) => void)): number
     connect_after(sigName: "command-finished", callback: (($obj: Command, return_code: number) => void)): number
     emit(sigName: "command-finished", return_code: number): void
@@ -2881,7 +2885,7 @@ export class Command {
     connect(sigName: "progress", callback: (($obj: Command, progress: number) => void)): number
     connect_after(sigName: "progress", callback: (($obj: Command, progress: number) => void)): number
     emit(sigName: "progress", progress: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Command, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Command, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2897,8 +2901,8 @@ export class Command {
 export interface CommandBar_ConstructProps extends Gtk.Notebook_ConstructProps {
     max_text_width?: number
 }
-export class CommandBar {
-    /* Properties of Gtk.Notebook */
+class CommandBar {
+    /* Properties of Gtk-3.0.Gtk.Notebook */
     enable_popup: boolean
     group_name: string
     page: number
@@ -2906,11 +2910,11 @@ export class CommandBar {
     show_border: boolean
     show_tabs: boolean
     tab_pos: Gtk.PositionType
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -2950,18 +2954,18 @@ export class CommandBar {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Anjuta.CommandBar */
+    /* Fields of Anjuta-3.0.Anjuta.CommandBar */
     parent_instance: Gtk.Notebook
     priv: CommandBarPriv
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.CommandBar */
+    /* Methods of Anjuta-3.0.Anjuta.CommandBar */
     add_action_group(group_name: string, entries: CommandBarEntry[], user_data?: object | null): void
     remove_action_group(group_name: string): void
     show_action_group(group_name: string): void
-    /* Methods of Gtk.Notebook */
+    /* Methods of Gtk-3.0.Gtk.Notebook */
     append_page(child: Gtk.Widget, tab_label?: Gtk.Widget | null): number
     append_page_menu(child: Gtk.Widget, tab_label?: Gtk.Widget | null, menu_label?: Gtk.Widget | null): number
     detach_tab(child: Gtk.Widget): void
@@ -3006,10 +3010,11 @@ export class CommandBar {
     set_tab_label_text(child: Gtk.Widget, tab_text: string): void
     set_tab_pos(pos: Gtk.PositionType): void
     set_tab_reorderable(child: Gtk.Widget, reorderable: boolean): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3034,7 +3039,7 @@ export class CommandBar {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -3293,15 +3298,15 @@ export class CommandBar {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3309,13 +3314,13 @@ export class CommandBar {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -3324,7 +3329,7 @@ export class CommandBar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Anjuta.CommandBar */
+    /* Virtual methods of Anjuta-3.0.Anjuta.CommandBar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -3335,7 +3340,7 @@ export class CommandBar {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Notebook */
+    /* Virtual methods of Gtk-3.0.Gtk.Notebook */
     vfunc_change_current_page(offset: number): boolean
     vfunc_focus_tab(type: Gtk.NotebookTab): boolean
     vfunc_insert_page(child: Gtk.Widget, tab_label: Gtk.Widget, menu_label: Gtk.Widget, position: number): number
@@ -3346,7 +3351,7 @@ export class CommandBar {
     vfunc_reorder_tab(direction: Gtk.DirectionType, move_to_last: boolean): boolean
     vfunc_select_page(move_focus: boolean): boolean
     vfunc_switch_page(page: Gtk.Widget, page_num: number): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -3357,7 +3362,7 @@ export class CommandBar {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -3440,15 +3445,15 @@ export class CommandBar {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Notebook */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Notebook */
     connect(sigName: "change-current-page", callback: (($obj: CommandBar, object: number) => boolean)): number
     connect_after(sigName: "change-current-page", callback: (($obj: CommandBar, object: number) => boolean)): number
     emit(sigName: "change-current-page", object: number): void
@@ -3479,7 +3484,7 @@ export class CommandBar {
     connect(sigName: "switch-page", callback: (($obj: CommandBar, page: Gtk.Widget, page_num: number) => void)): number
     connect_after(sigName: "switch-page", callback: (($obj: CommandBar, page: Gtk.Widget, page_num: number) => void)): number
     emit(sigName: "switch-page", page: Gtk.Widget, page_num: number): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: CommandBar, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: CommandBar, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -3492,7 +3497,7 @@ export class CommandBar {
     connect(sigName: "set-focus-child", callback: (($obj: CommandBar, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: CommandBar, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: CommandBar) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: CommandBar) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -3700,7 +3705,7 @@ export class CommandBar {
     connect(sigName: "window-state-event", callback: (($obj: CommandBar, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: CommandBar, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CommandBar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CommandBar, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3815,24 +3820,24 @@ export class CommandBar {
 }
 export interface CommandQueue_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class CommandQueue {
-    /* Fields of Anjuta.CommandQueue */
+class CommandQueue {
+    /* Fields of Anjuta-3.0.Anjuta.CommandQueue */
     parent_instance: GObject.Object
     priv: CommandQueuePriv
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.CommandQueue */
+    /* Methods of Anjuta-3.0.Anjuta.CommandQueue */
     push(command: Command): void
     start(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3840,27 +3845,27 @@ export class CommandQueue {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Anjuta.CommandQueue */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.CommandQueue */
     vfunc_finished(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.CommandQueue */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.CommandQueue */
     connect(sigName: "finished", callback: (($obj: CommandQueue) => void)): number
     connect_after(sigName: "finished", callback: (($obj: CommandQueue) => void)): number
     emit(sigName: "finished"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CommandQueue, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CommandQueue, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3878,29 +3883,29 @@ export class CommandQueue {
 export interface Completion_ConstructProps extends GObject.Object_ConstructProps {
     case_sensitive?: boolean
 }
-export class Completion {
-    /* Properties of Anjuta.Completion */
+class Completion {
+    /* Properties of Anjuta-3.0.Anjuta.Completion */
     case_sensitive: boolean
-    /* Fields of Anjuta.Completion */
+    /* Fields of Anjuta-3.0.Anjuta.Completion */
     parent_instance: GObject.Object
     priv: CompletionPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Completion */
+    /* Methods of Anjuta-3.0.Anjuta.Completion */
     add_item(item?: object | null): void
     clear(): void
     get_case_sensitive(): boolean
     set_case_sensitive(case_sensitive: boolean): void
     set_item_destroy_func(item_destroy_func?: GLib.DestroyNotify | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3908,21 +3913,21 @@ export class Completion {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Completion, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Completion, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3939,24 +3944,24 @@ export class Completion {
 }
 export interface Dock_ConstructProps extends Gdl.Dock_ConstructProps {
 }
-export class Dock {
-    /* Properties of Gdl.Dock */
+class Dock {
+    /* Properties of Gdl-3.Gdl.Dock */
     default_title: string
     floatx: number
     floaty: number
     height: number
     skip_taskbar: boolean
     width: number
-    /* Properties of Gdl.DockObject */
+    /* Properties of Gdl-3.Gdl.DockObject */
     long_name: string
     master: Gdl.DockMaster
     pixbuf_icon: object
     stock_id: string
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -3996,20 +4001,20 @@ export class Dock {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Anjuta.Dock */
+    /* Fields of Anjuta-3.0.Anjuta.Dock */
     parent_instance: Gdl.Dock
     priv: DockPriv
-    /* Fields of Gdl.Dock */
+    /* Fields of Gdl-3.Gdl.Dock */
     object: Gdl.DockObject
-    /* Fields of Gdl.DockObject */
+    /* Fields of Gdl-3.Gdl.DockObject */
     container: Gtk.Container
     deprecated_flags: Gdl.DockObjectFlags
     deprecated_master: GObject.Object
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Dock */
+    /* Methods of Anjuta-3.0.Anjuta.Dock */
     add_pane(pane_name: string, pane_label: string, stock_icon: string, pane: DockPane, placement: Gdl.DockPlacement, entries: CommandBarEntry[] | null, user_data?: object | null): boolean
     add_pane_full(pane_name: string, pane_label: string, stock_icon: string, pane: DockPane, placement: Gdl.DockPlacement, entries: CommandBarEntry[] | null, user_data: object | null, behavior: Gdl.DockItemBehavior): boolean
     get_command_bar(): CommandBar | null
@@ -4019,7 +4024,7 @@ export class Dock {
     replace_command_pane(pane_name: string, pane_label: string, stock_icon: string, pane: DockPane, placement: Gdl.DockPlacement, entries: CommandBarEntry[] | null, user_data?: object | null): void
     set_command_bar(command_bar: CommandBar): void
     show_pane(pane: DockPane): void
-    /* Methods of Gdl.Dock */
+    /* Methods of Gdl-3.Gdl.Dock */
     add_floating_item(item: Gdl.DockItem, x: number, y: number, width: number, height: number): void
     add_item(item: Gdl.DockItem, placement: Gdl.DockPlacement): void
     get_item_by_name(name: string): Gdl.DockItem
@@ -4032,7 +4037,7 @@ export class Dock {
     show_preview(rect: Gdk.Rectangle): void
     xor_rect(rect: Gdk.Rectangle): void
     xor_rect_hide(): void
-    /* Methods of Gdl.DockObject */
+    /* Methods of Gdl-3.Gdl.DockObject */
     bind(master: GObject.Object): void
     child_placement(child: Gdl.DockObject, placement?: Gdl.DockPlacement | null): boolean
     detach(recursive: boolean): void
@@ -4063,10 +4068,11 @@ export class Dock {
     set_stock_id(stock_id: string): void
     thaw(): void
     unbind(): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4091,7 +4097,7 @@ export class Dock {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -4348,15 +4354,15 @@ export class Dock {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4364,13 +4370,13 @@ export class Dock {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -4379,9 +4385,9 @@ export class Dock {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Gdl.Dock */
+    /* Virtual methods of Gdl-3.Gdl.Dock */
     vfunc_layout_changed(): void
-    /* Virtual methods of Gdl.DockObject */
+    /* Virtual methods of Gdl-3.Gdl.DockObject */
     vfunc_child_placement(child: Gdl.DockObject, placement?: Gdl.DockPlacement | null): boolean
     vfunc_detach(recursive: boolean): void
     vfunc_dock(requestor: Gdl.DockObject, position: Gdl.DockPlacement, other_data?: any | null): void
@@ -4399,7 +4405,7 @@ export class Dock {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -4410,7 +4416,7 @@ export class Dock {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -4493,26 +4499,26 @@ export class Dock {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gdl.Dock */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gdl-3.Gdl.Dock */
     connect(sigName: "layout-changed", callback: (($obj: Dock) => void)): number
     connect_after(sigName: "layout-changed", callback: (($obj: Dock) => void)): number
     emit(sigName: "layout-changed"): void
-    /* Signals of Gdl.DockObject */
+    /* Signals of Gdl-3.Gdl.DockObject */
     connect(sigName: "detach", callback: (($obj: Dock, recursive: boolean) => void)): number
     connect_after(sigName: "detach", callback: (($obj: Dock, recursive: boolean) => void)): number
     emit(sigName: "detach", recursive: boolean): void
     connect(sigName: "dock", callback: (($obj: Dock, requestor: Gdl.DockObject, position: Gdl.DockPlacement, other_data?: any | null) => void)): number
     connect_after(sigName: "dock", callback: (($obj: Dock, requestor: Gdl.DockObject, position: Gdl.DockPlacement, other_data?: any | null) => void)): number
     emit(sigName: "dock", requestor: Gdl.DockObject, position: Gdl.DockPlacement, other_data?: any | null): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: Dock, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: Dock, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -4525,7 +4531,7 @@ export class Dock {
     connect(sigName: "set-focus-child", callback: (($obj: Dock, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: Dock, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: Dock) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: Dock) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -4733,7 +4739,7 @@ export class Dock {
     connect(sigName: "window-state-event", callback: (($obj: Dock, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: Dock, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Dock, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Dock, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4855,27 +4861,27 @@ export class Dock {
 export interface DockPane_ConstructProps extends GObject.Object_ConstructProps {
     plugin?: Plugin
 }
-export class DockPane {
-    /* Properties of Anjuta.DockPane */
+class DockPane {
+    /* Properties of Anjuta-3.0.Anjuta.DockPane */
     plugin: Plugin
-    /* Fields of Anjuta.DockPane */
+    /* Fields of Anjuta-3.0.Anjuta.DockPane */
     parent_instance: GObject.Object
     priv: DockPanePriv
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.DockPane */
+    /* Methods of Anjuta-3.0.Anjuta.DockPane */
     notify_multiple_selection_changed(): void
     notify_single_selection_changed(): void
     refresh(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4883,32 +4889,32 @@ export class DockPane {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Anjuta.DockPane */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.DockPane */
     vfunc_multiple_selection_changed(): void
     vfunc_refresh(): void
     vfunc_single_selection_changed(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.DockPane */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.DockPane */
     connect(sigName: "multiple-selection-changed", callback: (($obj: DockPane) => void)): number
     connect_after(sigName: "multiple-selection-changed", callback: (($obj: DockPane) => void)): number
     emit(sigName: "multiple-selection-changed"): void
     connect(sigName: "single-selection-changed", callback: (($obj: DockPane) => void)): number
     connect_after(sigName: "single-selection-changed", callback: (($obj: DockPane) => void)): number
     emit(sigName: "single-selection-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DockPane, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DockPane, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4926,10 +4932,10 @@ export class DockPane {
 export interface DropEntry_ConstructProps extends Entry_ConstructProps {
     editing_canceled?: boolean
 }
-export class DropEntry {
-    /* Properties of Anjuta.Entry */
+class DropEntry {
+    /* Properties of Anjuta-3.0.Anjuta.Entry */
     help_text: string
-    /* Properties of Gtk.Entry */
+    /* Properties of Gtk-3.0.Gtk.Entry */
     activates_default: boolean
     attributes: Pango.AttrList
     buffer: Gtk.EntryBuffer
@@ -4981,7 +4987,7 @@ export class DropEntry {
     visibility: boolean
     width_chars: number
     xalign: number
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -5021,20 +5027,20 @@ export class DropEntry {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.CellEditable */
+    /* Properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled: boolean
-    /* Fields of Anjuta.DropEntry */
+    /* Fields of Anjuta-3.0.Anjuta.DropEntry */
     parent_instance: Entry
-    /* Fields of Anjuta.Entry */
+    /* Fields of Anjuta-3.0.Anjuta.Entry */
     priv: EntryPriv
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Entry */
+    /* Methods of Anjuta-3.0.Anjuta.Entry */
     dup_text(): string
     get_text(): string
     is_showing_help_text(): boolean
     set_text(text: string): void
-    /* Methods of Gtk.Entry */
+    /* Methods of Gtk-3.0.Gtk.Entry */
     get_activates_default(): boolean
     get_alignment(): number
     get_attributes(): Pango.AttrList | null
@@ -5107,7 +5113,7 @@ export class DropEntry {
     set_width_chars(n_chars: number): void
     text_index_to_layout_index(text_index: number): number
     unset_invisible_char(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -5366,15 +5372,15 @@ export class DropEntry {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5382,13 +5388,13 @@ export class DropEntry {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -5397,11 +5403,11 @@ export class DropEntry {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.CellEditable */
+    /* Methods of Gtk-3.0.Gtk.CellEditable */
     editing_done(): void
     remove_widget(): void
     start_editing(event?: Gdk.Event | null): void
-    /* Methods of Gtk.Editable */
+    /* Methods of Gtk-3.0.Gtk.Editable */
     copy_clipboard(): void
     cut_clipboard(): void
     delete_selection(): void
@@ -5415,7 +5421,7 @@ export class DropEntry {
     select_region(start_pos: number, end_pos: number): void
     set_editable(is_editable: boolean): void
     set_position(position: number): void
-    /* Virtual methods of Anjuta.Entry */
+    /* Virtual methods of Anjuta-3.0.Anjuta.Entry */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -5439,7 +5445,7 @@ export class DropEntry {
     vfunc_insert_text(new_text: string, new_text_length: number, position: number): /* position */ number
     vfunc_set_position(position: number): void
     vfunc_set_selection_bounds(start_pos: number, end_pos: number): void
-    /* Virtual methods of Gtk.Entry */
+    /* Virtual methods of Gtk-3.0.Gtk.Entry */
     vfunc_activate(): void
     vfunc_backspace(): void
     vfunc_copy_clipboard(): void
@@ -5453,7 +5459,7 @@ export class DropEntry {
     vfunc_paste_clipboard(): void
     vfunc_populate_popup(popup: Gtk.Widget): void
     vfunc_toggle_overwrite(): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -5536,15 +5542,15 @@ export class DropEntry {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Entry */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Entry */
     connect(sigName: "activate", callback: (($obj: DropEntry) => void)): number
     connect_after(sigName: "activate", callback: (($obj: DropEntry) => void)): number
     emit(sigName: "activate"): void
@@ -5560,12 +5566,12 @@ export class DropEntry {
     connect(sigName: "delete-from-cursor", callback: (($obj: DropEntry, type: Gtk.DeleteType, count: number) => void)): number
     connect_after(sigName: "delete-from-cursor", callback: (($obj: DropEntry, type: Gtk.DeleteType, count: number) => void)): number
     emit(sigName: "delete-from-cursor", type: Gtk.DeleteType, count: number): void
-    connect(sigName: "icon-press", callback: (($obj: DropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    connect_after(sigName: "icon-press", callback: (($obj: DropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    emit(sigName: "icon-press", icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton): void
-    connect(sigName: "icon-release", callback: (($obj: DropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    connect_after(sigName: "icon-release", callback: (($obj: DropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    emit(sigName: "icon-release", icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton): void
+    connect(sigName: "icon-press", callback: (($obj: DropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    connect_after(sigName: "icon-press", callback: (($obj: DropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    emit(sigName: "icon-press", icon_pos: Gtk.EntryIconPosition, event: Gdk.Event): void
+    connect(sigName: "icon-release", callback: (($obj: DropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    connect_after(sigName: "icon-release", callback: (($obj: DropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    emit(sigName: "icon-release", icon_pos: Gtk.EntryIconPosition, event: Gdk.Event): void
     connect(sigName: "insert-at-cursor", callback: (($obj: DropEntry, string: string) => void)): number
     connect_after(sigName: "insert-at-cursor", callback: (($obj: DropEntry, string: string) => void)): number
     emit(sigName: "insert-at-cursor", string: string): void
@@ -5587,7 +5593,7 @@ export class DropEntry {
     connect(sigName: "toggle-overwrite", callback: (($obj: DropEntry) => void)): number
     connect_after(sigName: "toggle-overwrite", callback: (($obj: DropEntry) => void)): number
     emit(sigName: "toggle-overwrite"): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: DropEntry) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: DropEntry) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -5795,18 +5801,18 @@ export class DropEntry {
     connect(sigName: "window-state-event", callback: (($obj: DropEntry, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: DropEntry, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DropEntry, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DropEntry, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.CellEditable */
+    /* Signals of Gtk-3.0.Gtk.CellEditable */
     connect(sigName: "editing-done", callback: (($obj: DropEntry) => void)): number
     connect_after(sigName: "editing-done", callback: (($obj: DropEntry) => void)): number
     emit(sigName: "editing-done"): void
     connect(sigName: "remove-widget", callback: (($obj: DropEntry) => void)): number
     connect_after(sigName: "remove-widget", callback: (($obj: DropEntry) => void)): number
     emit(sigName: "remove-widget"): void
-    /* Signals of Gtk.Editable */
+    /* Signals of Gtk-3.0.Gtk.Editable */
     connect(sigName: "changed", callback: (($obj: DropEntry) => void)): number
     connect_after(sigName: "changed", callback: (($obj: DropEntry) => void)): number
     emit(sigName: "changed"): void
@@ -6015,10 +6021,10 @@ export interface Entry_ConstructProps extends Gtk.Entry_ConstructProps {
     help_text?: string
     editing_canceled?: boolean
 }
-export class Entry {
-    /* Properties of Anjuta.Entry */
+class Entry {
+    /* Properties of Anjuta-3.0.Anjuta.Entry */
     help_text: string
-    /* Properties of Gtk.Entry */
+    /* Properties of Gtk-3.0.Gtk.Entry */
     activates_default: boolean
     attributes: Pango.AttrList
     buffer: Gtk.EntryBuffer
@@ -6070,7 +6076,7 @@ export class Entry {
     visibility: boolean
     width_chars: number
     xalign: number
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -6110,19 +6116,19 @@ export class Entry {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.CellEditable */
+    /* Properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled: boolean
-    /* Fields of Anjuta.Entry */
+    /* Fields of Anjuta-3.0.Anjuta.Entry */
     parent_instance: Gtk.Entry
     priv: EntryPriv
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Entry */
+    /* Methods of Anjuta-3.0.Anjuta.Entry */
     dup_text(): string
     get_text(): string
     is_showing_help_text(): boolean
     set_text(text: string): void
-    /* Methods of Gtk.Entry */
+    /* Methods of Gtk-3.0.Gtk.Entry */
     get_activates_default(): boolean
     get_alignment(): number
     get_attributes(): Pango.AttrList | null
@@ -6195,7 +6201,7 @@ export class Entry {
     set_width_chars(n_chars: number): void
     text_index_to_layout_index(text_index: number): number
     unset_invisible_char(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -6454,15 +6460,15 @@ export class Entry {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6470,13 +6476,13 @@ export class Entry {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -6485,11 +6491,11 @@ export class Entry {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.CellEditable */
+    /* Methods of Gtk-3.0.Gtk.CellEditable */
     editing_done(): void
     remove_widget(): void
     start_editing(event?: Gdk.Event | null): void
-    /* Methods of Gtk.Editable */
+    /* Methods of Gtk-3.0.Gtk.Editable */
     copy_clipboard(): void
     cut_clipboard(): void
     delete_selection(): void
@@ -6503,7 +6509,7 @@ export class Entry {
     select_region(start_pos: number, end_pos: number): void
     set_editable(is_editable: boolean): void
     set_position(position: number): void
-    /* Virtual methods of Anjuta.Entry */
+    /* Virtual methods of Anjuta-3.0.Anjuta.Entry */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -6527,7 +6533,7 @@ export class Entry {
     vfunc_insert_text(new_text: string, new_text_length: number, position: number): /* position */ number
     vfunc_set_position(position: number): void
     vfunc_set_selection_bounds(start_pos: number, end_pos: number): void
-    /* Virtual methods of Gtk.Entry */
+    /* Virtual methods of Gtk-3.0.Gtk.Entry */
     vfunc_activate(): void
     vfunc_backspace(): void
     vfunc_copy_clipboard(): void
@@ -6541,7 +6547,7 @@ export class Entry {
     vfunc_paste_clipboard(): void
     vfunc_populate_popup(popup: Gtk.Widget): void
     vfunc_toggle_overwrite(): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -6624,15 +6630,15 @@ export class Entry {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Entry */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Entry */
     connect(sigName: "activate", callback: (($obj: Entry) => void)): number
     connect_after(sigName: "activate", callback: (($obj: Entry) => void)): number
     emit(sigName: "activate"): void
@@ -6648,12 +6654,12 @@ export class Entry {
     connect(sigName: "delete-from-cursor", callback: (($obj: Entry, type: Gtk.DeleteType, count: number) => void)): number
     connect_after(sigName: "delete-from-cursor", callback: (($obj: Entry, type: Gtk.DeleteType, count: number) => void)): number
     emit(sigName: "delete-from-cursor", type: Gtk.DeleteType, count: number): void
-    connect(sigName: "icon-press", callback: (($obj: Entry, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    connect_after(sigName: "icon-press", callback: (($obj: Entry, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    emit(sigName: "icon-press", icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton): void
-    connect(sigName: "icon-release", callback: (($obj: Entry, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    connect_after(sigName: "icon-release", callback: (($obj: Entry, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    emit(sigName: "icon-release", icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton): void
+    connect(sigName: "icon-press", callback: (($obj: Entry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    connect_after(sigName: "icon-press", callback: (($obj: Entry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    emit(sigName: "icon-press", icon_pos: Gtk.EntryIconPosition, event: Gdk.Event): void
+    connect(sigName: "icon-release", callback: (($obj: Entry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    connect_after(sigName: "icon-release", callback: (($obj: Entry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    emit(sigName: "icon-release", icon_pos: Gtk.EntryIconPosition, event: Gdk.Event): void
     connect(sigName: "insert-at-cursor", callback: (($obj: Entry, string: string) => void)): number
     connect_after(sigName: "insert-at-cursor", callback: (($obj: Entry, string: string) => void)): number
     emit(sigName: "insert-at-cursor", string: string): void
@@ -6675,7 +6681,7 @@ export class Entry {
     connect(sigName: "toggle-overwrite", callback: (($obj: Entry) => void)): number
     connect_after(sigName: "toggle-overwrite", callback: (($obj: Entry) => void)): number
     emit(sigName: "toggle-overwrite"): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: Entry) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: Entry) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -6883,18 +6889,18 @@ export class Entry {
     connect(sigName: "window-state-event", callback: (($obj: Entry, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: Entry, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Entry, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Entry, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.CellEditable */
+    /* Signals of Gtk-3.0.Gtk.CellEditable */
     connect(sigName: "editing-done", callback: (($obj: Entry) => void)): number
     connect_after(sigName: "editing-done", callback: (($obj: Entry) => void)): number
     emit(sigName: "editing-done"): void
     connect(sigName: "remove-widget", callback: (($obj: Entry) => void)): number
     connect_after(sigName: "remove-widget", callback: (($obj: Entry) => void)): number
     emit(sigName: "remove-widget"): void
-    /* Signals of Gtk.Editable */
+    /* Signals of Gtk-3.0.Gtk.Editable */
     connect(sigName: "changed", callback: (($obj: Entry) => void)): number
     connect_after(sigName: "changed", callback: (($obj: Entry) => void)): number
     emit(sigName: "changed"): void
@@ -7101,12 +7107,12 @@ export class Entry {
 }
 export interface EnvironmentEditor_ConstructProps extends Gtk.Bin_ConstructProps {
 }
-export class EnvironmentEditor {
-    /* Properties of Gtk.Container */
+class EnvironmentEditor {
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -7146,23 +7152,24 @@ export class EnvironmentEditor {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.EnvironmentEditor */
+    /* Methods of Anjuta-3.0.Anjuta.EnvironmentEditor */
     reset(): void
     set_variable(variable: string): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7187,7 +7194,7 @@ export class EnvironmentEditor {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -7446,15 +7453,15 @@ export class EnvironmentEditor {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7462,13 +7469,13 @@ export class EnvironmentEditor {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -7477,7 +7484,7 @@ export class EnvironmentEditor {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Anjuta.EnvironmentEditor */
+    /* Virtual methods of Anjuta-3.0.Anjuta.EnvironmentEditor */
     vfunc_changed(): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -7489,7 +7496,7 @@ export class EnvironmentEditor {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -7500,7 +7507,7 @@ export class EnvironmentEditor {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -7583,19 +7590,19 @@ export class EnvironmentEditor {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.EnvironmentEditor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.EnvironmentEditor */
     connect(sigName: "changed", callback: (($obj: EnvironmentEditor) => void)): number
     connect_after(sigName: "changed", callback: (($obj: EnvironmentEditor) => void)): number
     emit(sigName: "changed"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: EnvironmentEditor, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: EnvironmentEditor, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -7608,7 +7615,7 @@ export class EnvironmentEditor {
     connect(sigName: "set-focus-child", callback: (($obj: EnvironmentEditor, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: EnvironmentEditor, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: EnvironmentEditor) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: EnvironmentEditor) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -7816,7 +7823,7 @@ export class EnvironmentEditor {
     connect(sigName: "window-state-event", callback: (($obj: EnvironmentEditor, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: EnvironmentEditor, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: EnvironmentEditor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: EnvironmentEditor, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7919,12 +7926,12 @@ export interface FileDropEntry_ConstructProps extends DropEntry_ConstructProps {
     relative_path?: string
     editing_canceled?: boolean
 }
-export class FileDropEntry {
-    /* Properties of Anjuta.FileDropEntry */
+class FileDropEntry {
+    /* Properties of Anjuta-3.0.Anjuta.FileDropEntry */
     relative_path: string
-    /* Properties of Anjuta.Entry */
+    /* Properties of Anjuta-3.0.Anjuta.Entry */
     help_text: string
-    /* Properties of Gtk.Entry */
+    /* Properties of Gtk-3.0.Gtk.Entry */
     activates_default: boolean
     attributes: Pango.AttrList
     buffer: Gtk.EntryBuffer
@@ -7976,7 +7983,7 @@ export class FileDropEntry {
     visibility: boolean
     width_chars: number
     xalign: number
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -8016,21 +8023,21 @@ export class FileDropEntry {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.CellEditable */
+    /* Properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled: boolean
-    /* Fields of Anjuta.FileDropEntry */
+    /* Fields of Anjuta-3.0.Anjuta.FileDropEntry */
     parent_instance: DropEntry
     priv: FileDropEntryPriv
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.FileDropEntry */
+    /* Methods of Anjuta-3.0.Anjuta.FileDropEntry */
     set_relative_path(path: string): void
-    /* Methods of Anjuta.Entry */
+    /* Methods of Anjuta-3.0.Anjuta.Entry */
     dup_text(): string
     get_text(): string
     is_showing_help_text(): boolean
     set_text(text: string): void
-    /* Methods of Gtk.Entry */
+    /* Methods of Gtk-3.0.Gtk.Entry */
     get_activates_default(): boolean
     get_alignment(): number
     get_attributes(): Pango.AttrList | null
@@ -8103,7 +8110,7 @@ export class FileDropEntry {
     set_width_chars(n_chars: number): void
     text_index_to_layout_index(text_index: number): number
     unset_invisible_char(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -8362,15 +8369,15 @@ export class FileDropEntry {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -8378,13 +8385,13 @@ export class FileDropEntry {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -8393,11 +8400,11 @@ export class FileDropEntry {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.CellEditable */
+    /* Methods of Gtk-3.0.Gtk.CellEditable */
     editing_done(): void
     remove_widget(): void
     start_editing(event?: Gdk.Event | null): void
-    /* Methods of Gtk.Editable */
+    /* Methods of Gtk-3.0.Gtk.Editable */
     copy_clipboard(): void
     cut_clipboard(): void
     delete_selection(): void
@@ -8411,7 +8418,7 @@ export class FileDropEntry {
     select_region(start_pos: number, end_pos: number): void
     set_editable(is_editable: boolean): void
     set_position(position: number): void
-    /* Virtual methods of Anjuta.Entry */
+    /* Virtual methods of Anjuta-3.0.Anjuta.Entry */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -8435,7 +8442,7 @@ export class FileDropEntry {
     vfunc_insert_text(new_text: string, new_text_length: number, position: number): /* position */ number
     vfunc_set_position(position: number): void
     vfunc_set_selection_bounds(start_pos: number, end_pos: number): void
-    /* Virtual methods of Gtk.Entry */
+    /* Virtual methods of Gtk-3.0.Gtk.Entry */
     vfunc_activate(): void
     vfunc_backspace(): void
     vfunc_copy_clipboard(): void
@@ -8449,7 +8456,7 @@ export class FileDropEntry {
     vfunc_paste_clipboard(): void
     vfunc_populate_popup(popup: Gtk.Widget): void
     vfunc_toggle_overwrite(): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -8532,15 +8539,15 @@ export class FileDropEntry {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Entry */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Entry */
     connect(sigName: "activate", callback: (($obj: FileDropEntry) => void)): number
     connect_after(sigName: "activate", callback: (($obj: FileDropEntry) => void)): number
     emit(sigName: "activate"): void
@@ -8556,12 +8563,12 @@ export class FileDropEntry {
     connect(sigName: "delete-from-cursor", callback: (($obj: FileDropEntry, type: Gtk.DeleteType, count: number) => void)): number
     connect_after(sigName: "delete-from-cursor", callback: (($obj: FileDropEntry, type: Gtk.DeleteType, count: number) => void)): number
     emit(sigName: "delete-from-cursor", type: Gtk.DeleteType, count: number): void
-    connect(sigName: "icon-press", callback: (($obj: FileDropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    connect_after(sigName: "icon-press", callback: (($obj: FileDropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    emit(sigName: "icon-press", icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton): void
-    connect(sigName: "icon-release", callback: (($obj: FileDropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    connect_after(sigName: "icon-release", callback: (($obj: FileDropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    emit(sigName: "icon-release", icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton): void
+    connect(sigName: "icon-press", callback: (($obj: FileDropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    connect_after(sigName: "icon-press", callback: (($obj: FileDropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    emit(sigName: "icon-press", icon_pos: Gtk.EntryIconPosition, event: Gdk.Event): void
+    connect(sigName: "icon-release", callback: (($obj: FileDropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    connect_after(sigName: "icon-release", callback: (($obj: FileDropEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    emit(sigName: "icon-release", icon_pos: Gtk.EntryIconPosition, event: Gdk.Event): void
     connect(sigName: "insert-at-cursor", callback: (($obj: FileDropEntry, string: string) => void)): number
     connect_after(sigName: "insert-at-cursor", callback: (($obj: FileDropEntry, string: string) => void)): number
     emit(sigName: "insert-at-cursor", string: string): void
@@ -8583,7 +8590,7 @@ export class FileDropEntry {
     connect(sigName: "toggle-overwrite", callback: (($obj: FileDropEntry) => void)): number
     connect_after(sigName: "toggle-overwrite", callback: (($obj: FileDropEntry) => void)): number
     emit(sigName: "toggle-overwrite"): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: FileDropEntry) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: FileDropEntry) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -8791,18 +8798,18 @@ export class FileDropEntry {
     connect(sigName: "window-state-event", callback: (($obj: FileDropEntry, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: FileDropEntry, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FileDropEntry, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FileDropEntry, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.CellEditable */
+    /* Signals of Gtk-3.0.Gtk.CellEditable */
     connect(sigName: "editing-done", callback: (($obj: FileDropEntry) => void)): number
     connect_after(sigName: "editing-done", callback: (($obj: FileDropEntry) => void)): number
     emit(sigName: "editing-done"): void
     connect(sigName: "remove-widget", callback: (($obj: FileDropEntry) => void)): number
     connect_after(sigName: "remove-widget", callback: (($obj: FileDropEntry) => void)): number
     emit(sigName: "remove-widget"): void
-    /* Signals of Gtk.Editable */
+    /* Signals of Gtk-3.0.Gtk.Editable */
     connect(sigName: "changed", callback: (($obj: FileDropEntry) => void)): number
     connect_after(sigName: "changed", callback: (($obj: FileDropEntry) => void)): number
     emit(sigName: "changed"): void
@@ -9014,19 +9021,19 @@ export interface FileList_ConstructProps extends Gtk.Box_ConstructProps {
     show_add_button?: boolean
     orientation?: Gtk.Orientation
 }
-export class FileList {
-    /* Properties of Anjuta.FileList */
+class FileList {
+    /* Properties of Anjuta-3.0.Anjuta.FileList */
     relative_path: string
     show_add_button: boolean
-    /* Properties of Gtk.Box */
+    /* Properties of Gtk-3.0.Gtk.Box */
     baseline_position: Gtk.BaselinePosition
     homogeneous: boolean
     spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -9066,21 +9073,21 @@ export class FileList {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Orientable */
+    /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Anjuta.FileList */
+    /* Fields of Anjuta-3.0.Anjuta.FileList */
     parent_instance: Gtk.Box
     priv: FileListPriv
-    /* Fields of Gtk.Box */
+    /* Fields of Gtk-3.0.Gtk.Box */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.FileList */
+    /* Methods of Anjuta-3.0.Anjuta.FileList */
     clear(): void
     set_relative_path(path: string): void
-    /* Methods of Gtk.Box */
+    /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
     get_homogeneous(): boolean
@@ -9094,10 +9101,11 @@ export class FileList {
     set_child_packing(child: Gtk.Widget, expand: boolean, fill: boolean, padding: number, pack_type: Gtk.PackType): void
     set_homogeneous(homogeneous: boolean): void
     set_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -9122,7 +9130,7 @@ export class FileList {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -9381,15 +9389,15 @@ export class FileList {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9397,13 +9405,13 @@ export class FileList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -9412,10 +9420,10 @@ export class FileList {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Orientable */
+    /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
-    /* Virtual methods of Anjuta.FileList */
+    /* Virtual methods of Anjuta-3.0.Anjuta.FileList */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -9426,7 +9434,7 @@ export class FileList {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -9437,7 +9445,7 @@ export class FileList {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -9520,15 +9528,15 @@ export class FileList {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: FileList, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: FileList, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -9541,7 +9549,7 @@ export class FileList {
     connect(sigName: "set-focus-child", callback: (($obj: FileList, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: FileList, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: FileList) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: FileList) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -9749,7 +9757,7 @@ export class FileList {
     connect(sigName: "window-state-event", callback: (($obj: FileList, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: FileList, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FileList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FileList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -9863,27 +9871,27 @@ export class FileList {
 }
 export interface LanguageProvider_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class LanguageProvider {
-    /* Fields of Anjuta.LanguageProvider */
+class LanguageProvider {
+    /* Fields of Anjuta-3.0.Anjuta.LanguageProvider */
     parent: GObject.Object
     priv: LanguageProviderPriv
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.LanguageProvider */
+    /* Methods of Anjuta-3.0.Anjuta.LanguageProvider */
     activate(iprov: GObject.Object, iter: GObject.Object, data?: object | null): void
     get_calltip_context(itip: GObject.Object, iter: GObject.Object, scope_context_ch: string): string
     get_pre_word(editor: GObject.Object, iter: GObject.Object, start_iter: GObject.Object, word_characters: string): string | null
     install(ieditor: GObject.Object, settings: Gio.Settings): void
     populate(iprov: GObject.Object, cursor: GObject.Object): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9891,21 +9899,21 @@ export class LanguageProvider {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: LanguageProvider, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: LanguageProvider, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -9920,13 +9928,13 @@ export class LanguageProvider {
 }
 export interface Launcher_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Launcher {
-    /* Fields of Anjuta.Launcher */
+class Launcher {
+    /* Fields of Anjuta-3.0.Anjuta.Launcher */
     parent: GObject.Object
     priv: LauncherPriv
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Launcher */
+    /* Methods of Anjuta-3.0.Anjuta.Launcher */
     get_child_pid(): number
     is_busy(): boolean
     reset(): void
@@ -9939,15 +9947,15 @@ export class Launcher {
     set_terminal_echo(echo_on: boolean): boolean
     set_terminate_on_exit(terminate_on_exit: boolean): boolean
     signal(sig: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9955,31 +9963,31 @@ export class Launcher {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Anjuta.Launcher */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.Launcher */
     vfunc_busy(busy_flag: boolean): void
     vfunc_child_exited(child_pid: number, exit_status: number, time_taken_in_seconds: number): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.Launcher */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.Launcher */
     connect(sigName: "busy", callback: (($obj: Launcher, busy: boolean) => void)): number
     connect_after(sigName: "busy", callback: (($obj: Launcher, busy: boolean) => void)): number
     emit(sigName: "busy", busy: boolean): void
     connect(sigName: "child-exited", callback: (($obj: Launcher, child_pid: number, status: number, time: number) => void)): number
     connect_after(sigName: "child-exited", callback: (($obj: Launcher, child_pid: number, status: number, time: number) => void)): number
     emit(sigName: "child-exited", child_pid: number, status: number, time: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Launcher, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Launcher, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -10000,8 +10008,8 @@ export interface PkgConfigChooser_ConstructProps extends Gtk.TreeView_ConstructP
     vadjustment?: Gtk.Adjustment
     vscroll_policy?: Gtk.ScrollablePolicy
 }
-export class PkgConfigChooser {
-    /* Properties of Gtk.TreeView */
+class PkgConfigChooser {
+    /* Properties of Gtk-3.0.Gtk.TreeView */
     activate_on_single_click: boolean
     enable_grid_lines: Gtk.TreeViewGridLines
     enable_search: boolean
@@ -10020,11 +10028,11 @@ export class PkgConfigChooser {
     search_column: number
     show_expanders: boolean
     tooltip_column: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -10064,23 +10072,23 @@ export class PkgConfigChooser {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Scrollable */
+    /* Properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment: Gtk.Adjustment
     hscroll_policy: Gtk.ScrollablePolicy
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
-    /* Fields of Anjuta.PkgConfigChooser */
+    /* Fields of Anjuta-3.0.Anjuta.PkgConfigChooser */
     parent_instance: Gtk.TreeView
     priv: PkgConfigChooserPrivate
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.PkgConfigChooser */
+    /* Methods of Anjuta-3.0.Anjuta.PkgConfigChooser */
     get_selected_package(): string
     show_active_column(show_column: boolean): void
     show_active_only(show_selected: boolean): void
-    /* Methods of Gtk.TreeView */
+    /* Methods of Gtk-3.0.Gtk.TreeView */
     append_column(column: Gtk.TreeViewColumn): number
     collapse_all(): void
     collapse_row(path: Gtk.TreePath): boolean
@@ -10176,10 +10184,11 @@ export class PkgConfigChooser {
     set_vadjustment(adjustment?: Gtk.Adjustment | null): void
     unset_rows_drag_dest(): void
     unset_rows_drag_source(): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -10204,7 +10213,7 @@ export class PkgConfigChooser {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -10463,15 +10472,15 @@ export class PkgConfigChooser {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10479,13 +10488,13 @@ export class PkgConfigChooser {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -10494,7 +10503,7 @@ export class PkgConfigChooser {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Scrollable */
+    /* Methods of Gtk-3.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     get_hscroll_policy(): Gtk.ScrollablePolicy
     get_vscroll_policy(): Gtk.ScrollablePolicy
@@ -10502,7 +10511,7 @@ export class PkgConfigChooser {
     set_hscroll_policy(policy: Gtk.ScrollablePolicy): void
     set_vadjustment(vadjustment?: Gtk.Adjustment | null): void
     set_vscroll_policy(policy: Gtk.ScrollablePolicy): void
-    /* Virtual methods of Anjuta.PkgConfigChooser */
+    /* Virtual methods of Anjuta-3.0.Anjuta.PkgConfigChooser */
     vfunc_package_activated(package: string): void
     vfunc_package_deactivated(package: string): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -10516,7 +10525,7 @@ export class PkgConfigChooser {
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
     vfunc_get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
-    /* Virtual methods of Gtk.TreeView */
+    /* Virtual methods of Gtk-3.0.Gtk.TreeView */
     vfunc_columns_changed(): void
     vfunc_cursor_changed(): void
     vfunc_expand_collapse_cursor_row(logical: boolean, expand: boolean, open_all: boolean): boolean
@@ -10532,7 +10541,7 @@ export class PkgConfigChooser {
     vfunc_test_expand_row(iter: Gtk.TreeIter, path: Gtk.TreePath): boolean
     vfunc_toggle_cursor_row(): boolean
     vfunc_unselect_all(): boolean
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -10543,7 +10552,7 @@ export class PkgConfigChooser {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -10626,22 +10635,22 @@ export class PkgConfigChooser {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.PkgConfigChooser */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.PkgConfigChooser */
     connect(sigName: "package-activated", callback: (($obj: PkgConfigChooser, package: string) => void)): number
     connect_after(sigName: "package-activated", callback: (($obj: PkgConfigChooser, package: string) => void)): number
     emit(sigName: "package-activated", package: string): void
     connect(sigName: "package-deactivated", callback: (($obj: PkgConfigChooser, package: string) => void)): number
     connect_after(sigName: "package-deactivated", callback: (($obj: PkgConfigChooser, package: string) => void)): number
     emit(sigName: "package-deactivated", package: string): void
-    /* Signals of Gtk.TreeView */
+    /* Signals of Gtk-3.0.Gtk.TreeView */
     connect(sigName: "columns-changed", callback: (($obj: PkgConfigChooser) => void)): number
     connect_after(sigName: "columns-changed", callback: (($obj: PkgConfigChooser) => void)): number
     emit(sigName: "columns-changed"): void
@@ -10687,7 +10696,7 @@ export class PkgConfigChooser {
     connect(sigName: "unselect-all", callback: (($obj: PkgConfigChooser) => boolean)): number
     connect_after(sigName: "unselect-all", callback: (($obj: PkgConfigChooser) => boolean)): number
     emit(sigName: "unselect-all"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: PkgConfigChooser, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: PkgConfigChooser, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -10700,7 +10709,7 @@ export class PkgConfigChooser {
     connect(sigName: "set-focus-child", callback: (($obj: PkgConfigChooser, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: PkgConfigChooser, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: PkgConfigChooser) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: PkgConfigChooser) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -10908,7 +10917,7 @@ export class PkgConfigChooser {
     connect(sigName: "window-state-event", callback: (($obj: PkgConfigChooser, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: PkgConfigChooser, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PkgConfigChooser, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PkgConfigChooser, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11055,22 +11064,22 @@ export interface PkgScanner_ConstructProps extends AsyncCommand_ConstructProps {
     package?: string
     version?: string
 }
-export class PkgScanner {
-    /* Properties of Anjuta.PkgScanner */
+class PkgScanner {
+    /* Properties of Anjuta-3.0.Anjuta.PkgScanner */
     package: string
     version: string
-    /* Fields of Anjuta.PkgScanner */
+    /* Fields of Anjuta-3.0.Anjuta.PkgScanner */
     parent_instance: AsyncCommand
     priv: PkgScannerPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.PkgScanner */
+    /* Methods of Anjuta-3.0.Anjuta.PkgScanner */
     get_package(): string
     get_version(): string
-    /* Methods of Anjuta.AsyncCommand */
+    /* Methods of Anjuta-3.0.Anjuta.AsyncCommand */
     lock(): void
     unlock(): void
-    /* Methods of Anjuta.Command */
+    /* Methods of Anjuta-3.0.Anjuta.Command */
     cancel(): void
     get_error_message(): string | null
     is_running(): boolean
@@ -11081,15 +11090,15 @@ export class PkgScanner {
     start(): void
     start_automatic_monitor(): boolean
     stop_automatic_monitor(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11097,13 +11106,13 @@ export class PkgScanner {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Anjuta.Command */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.Command */
     vfunc_cancel(): void
     vfunc_command_finished(return_code: number): void
     vfunc_command_started(): void
@@ -11118,15 +11127,15 @@ export class PkgScanner {
     vfunc_start(): void
     vfunc_start_automatic_monitor(): boolean
     vfunc_stop_automatic_monitor(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.Command */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.Command */
     connect(sigName: "command-finished", callback: (($obj: PkgScanner, return_code: number) => void)): number
     connect_after(sigName: "command-finished", callback: (($obj: PkgScanner, return_code: number) => void)): number
     emit(sigName: "command-finished", return_code: number): void
@@ -11139,7 +11148,7 @@ export class PkgScanner {
     connect(sigName: "progress", callback: (($obj: PkgScanner, progress: number) => void)): number
     connect_after(sigName: "progress", callback: (($obj: PkgScanner, progress: number) => void)): number
     emit(sigName: "progress", progress: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PkgScanner, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PkgScanner, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11161,29 +11170,29 @@ export class PkgScanner {
 export interface Plugin_ConstructProps extends GObject.Object_ConstructProps {
     shell?: Shell
 }
-export class Plugin {
-    /* Properties of Anjuta.Plugin */
+class Plugin {
+    /* Properties of Anjuta-3.0.Anjuta.Plugin */
     shell: Shell
-    /* Fields of Anjuta.Plugin */
+    /* Fields of Anjuta-3.0.Anjuta.Plugin */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Plugin */
+    /* Methods of Anjuta-3.0.Anjuta.Plugin */
     activate(): boolean
     add_watch(name: string, added: PluginValueAdded, removed: PluginValueRemoved): number
     deactivate(): boolean
     get_shell(): Shell
     is_active(): boolean
     remove_watch(id: number, send_remove: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11191,33 +11200,33 @@ export class Plugin {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Anjuta.Plugin */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.Plugin */
     vfunc_activate(): boolean
     vfunc_activated(): void
     vfunc_deactivate(): boolean
     vfunc_deactivated(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.Plugin */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.Plugin */
     connect(sigName: "activated", callback: (($obj: Plugin) => void)): number
     connect_after(sigName: "activated", callback: (($obj: Plugin) => void)): number
     emit(sigName: "activated"): void
     connect(sigName: "deactivated", callback: (($obj: Plugin) => void)): number
     connect_after(sigName: "deactivated", callback: (($obj: Plugin) => void)): number
     emit(sigName: "deactivated"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Plugin, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Plugin, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11234,8 +11243,8 @@ export class Plugin {
 }
 export interface PluginHandle_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class PluginHandle {
-    /* Properties of Anjuta.PluginHandle */
+class PluginHandle {
+    /* Properties of Anjuta-3.0.Anjuta.PluginHandle */
     readonly about: string
     readonly can_load: boolean
     readonly can_unload: boolean
@@ -11253,12 +11262,12 @@ export class PluginHandle {
     readonly resident: boolean
     readonly resolve_pass: number
     readonly user_activatable: boolean
-    /* Fields of Anjuta.PluginHandle */
+    /* Fields of Anjuta-3.0.Anjuta.PluginHandle */
     parent_instance: GObject.Object
     priv: PluginHandlePriv
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.PluginHandle */
+    /* Methods of Anjuta-3.0.Anjuta.PluginHandle */
     get_about(): string
     get_can_load(): boolean
     get_can_unload(): boolean
@@ -11277,15 +11286,15 @@ export class PluginHandle {
     set_checked(checked: boolean): void
     set_resolve_pass(resolve_pass: boolean): void
     unresolve_dependencies(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11293,21 +11302,21 @@ export class PluginHandle {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PluginHandle, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PluginHandle, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11360,34 +11369,34 @@ export interface PluginManager_ConstructProps extends GObject.Object_ConstructPr
     shell?: GObject.Object
     status?: Status
 }
-export class PluginManager {
-    /* Properties of Anjuta.PluginManager */
+class PluginManager {
+    /* Properties of Anjuta-3.0.Anjuta.PluginManager */
     readonly activated_plugins: object
     readonly available_plugins: object
     readonly profiles: object
     shell: GObject.Object
     status: Status
-    /* Fields of Anjuta.PluginManager */
+    /* Fields of Anjuta-3.0.Anjuta.PluginManager */
     parent_instance: GObject.Object
     priv: PluginManagerPriv
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.PluginManager */
+    /* Methods of Anjuta-3.0.Anjuta.PluginManager */
     get_remembered_plugins(): string
     is_active_plugin(iface_name: string): boolean
     set_remembered_plugins(remembered_plugins: string): void
     unload_all_plugins(): void
     unload_plugin(plugin_object: GObject.Object): boolean
     unload_plugin_by_handle(handle: PluginHandle): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11395,31 +11404,31 @@ export class PluginManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Anjuta.PluginManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.PluginManager */
     vfunc_plugin_activated(handle: PluginHandle, plugin: GObject.Object): void
     vfunc_plugin_deactivated(handle: PluginHandle, plugin: GObject.Object): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.PluginManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.PluginManager */
     connect(sigName: "plugin-activated", callback: (($obj: PluginManager, object: object | null, p0: Plugin) => void)): number
     connect_after(sigName: "plugin-activated", callback: (($obj: PluginManager, object: object | null, p0: Plugin) => void)): number
     emit(sigName: "plugin-activated", object: object | null, p0: Plugin): void
     connect(sigName: "plugin-deactivated", callback: (($obj: PluginManager, object: object | null, p0: Plugin) => void)): number
     connect_after(sigName: "plugin-deactivated", callback: (($obj: PluginManager, object: object | null, p0: Plugin) => void)): number
     emit(sigName: "plugin-deactivated", object: object | null, p0: Plugin): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PluginManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PluginManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11444,26 +11453,26 @@ export class PluginManager {
 }
 export interface Preferences_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Preferences {
-    /* Fields of Anjuta.Preferences */
+class Preferences {
+    /* Fields of Anjuta-3.0.Anjuta.Preferences */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Preferences */
+    /* Methods of Anjuta-3.0.Anjuta.Preferences */
     add_from_builder(builder: Gtk.Builder, settings: Gio.Settings, glade_widget_name: string, stitle: string, icon_filename: string): void
     is_dialog_created(): boolean
     register_all_properties_from_builder_xml(builder: Gtk.Builder, settings: Gio.Settings, parent: Gtk.Widget): void
     register_property(settings: Gio.Settings, object: Gtk.Widget, key: string): boolean
     remove_page(page_name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11471,21 +11480,21 @@ export class Preferences {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Preferences, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Preferences, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11502,8 +11511,8 @@ export class Preferences {
 }
 export interface PreferencesDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
 }
-export class PreferencesDialog {
-    /* Properties of Gtk.Window */
+class PreferencesDialog {
+    /* Properties of Gtk-3.0.Gtk.Window */
     accept_focus: boolean
     application: Gtk.Application
     attached_to: Gtk.Widget
@@ -11536,11 +11545,11 @@ export class PreferencesDialog {
     type_hint: Gdk.WindowTypeHint
     urgency_hint: boolean
     window_position: Gtk.WindowPosition
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -11580,22 +11589,22 @@ export class PreferencesDialog {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Anjuta.PreferencesDialog */
+    /* Fields of Anjuta-3.0.Anjuta.PreferencesDialog */
     priv: PreferencesDialogPrivate
-    /* Fields of Gtk.Window */
+    /* Fields of Gtk-3.0.Gtk.Window */
     bin: Gtk.Bin
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.PreferencesDialog */
+    /* Methods of Anjuta-3.0.Anjuta.PreferencesDialog */
     add_page(name: string, title: string, icon: GdkPixbuf.Pixbuf, page: Gtk.Widget): void
     remove_page(title: string): void
-    /* Methods of Gtk.Dialog */
+    /* Methods of Gtk-3.0.Gtk.Dialog */
     add_action_widget(child: Gtk.Widget, response_id: number): void
     add_button(button_text: string, response_id: number): Gtk.Widget
     get_action_area(): Gtk.Box
@@ -11608,7 +11617,7 @@ export class PreferencesDialog {
     set_alternative_button_order_from_array(new_order: number[]): void
     set_default_response(response_id: number): void
     set_response_sensitive(response_id: number, setting: boolean): void
-    /* Methods of Gtk.Window */
+    /* Methods of Gtk-3.0.Gtk.Window */
     activate_default(): boolean
     activate_focus(): boolean
     activate_key(event: Gdk.EventKey): boolean
@@ -11715,12 +11724,13 @@ export class PreferencesDialog {
     unfullscreen(): void
     unmaximize(): void
     unstick(): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -11745,7 +11755,7 @@ export class PreferencesDialog {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -12001,15 +12011,15 @@ export class PreferencesDialog {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -12017,13 +12027,13 @@ export class PreferencesDialog {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -12032,7 +12042,7 @@ export class PreferencesDialog {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Anjuta.PreferencesDialog */
+    /* Virtual methods of Anjuta-3.0.Anjuta.PreferencesDialog */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -12043,16 +12053,16 @@ export class PreferencesDialog {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Dialog */
+    /* Virtual methods of Gtk-3.0.Gtk.Dialog */
     vfunc_close(): void
     vfunc_response(response_id: number): void
-    /* Virtual methods of Gtk.Window */
+    /* Virtual methods of Gtk-3.0.Gtk.Window */
     vfunc_activate_default(): void
     vfunc_activate_focus(): void
     vfunc_enable_debugging(toggle: boolean): boolean
     vfunc_keys_changed(): void
     vfunc_set_focus(focus?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -12063,7 +12073,7 @@ export class PreferencesDialog {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -12146,22 +12156,22 @@ export class PreferencesDialog {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Dialog */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Dialog */
     connect(sigName: "close", callback: (($obj: PreferencesDialog) => void)): number
     connect_after(sigName: "close", callback: (($obj: PreferencesDialog) => void)): number
     emit(sigName: "close"): void
     connect(sigName: "response", callback: (($obj: PreferencesDialog, response_id: number) => void)): number
     connect_after(sigName: "response", callback: (($obj: PreferencesDialog, response_id: number) => void)): number
     emit(sigName: "response", response_id: number): void
-    /* Signals of Gtk.Window */
+    /* Signals of Gtk-3.0.Gtk.Window */
     connect(sigName: "activate-default", callback: (($obj: PreferencesDialog) => void)): number
     connect_after(sigName: "activate-default", callback: (($obj: PreferencesDialog) => void)): number
     emit(sigName: "activate-default"): void
@@ -12177,7 +12187,7 @@ export class PreferencesDialog {
     connect(sigName: "set-focus", callback: (($obj: PreferencesDialog, widget?: Gtk.Widget | null) => void)): number
     connect_after(sigName: "set-focus", callback: (($obj: PreferencesDialog, widget?: Gtk.Widget | null) => void)): number
     emit(sigName: "set-focus", widget?: Gtk.Widget | null): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: PreferencesDialog, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: PreferencesDialog, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -12190,7 +12200,7 @@ export class PreferencesDialog {
     connect(sigName: "set-focus-child", callback: (($obj: PreferencesDialog, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: PreferencesDialog, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: PreferencesDialog) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: PreferencesDialog) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -12398,7 +12408,7 @@ export class PreferencesDialog {
     connect(sigName: "window-state-event", callback: (($obj: PreferencesDialog, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: PreferencesDialog, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PreferencesDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PreferencesDialog, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -12567,17 +12577,17 @@ export interface Profile_ConstructProps extends GObject.Object_ConstructProps {
     profile_name?: string
     sync_file?: Gio.File
 }
-export class Profile {
-    /* Properties of Anjuta.Profile */
+class Profile {
+    /* Properties of Anjuta-3.0.Anjuta.Profile */
     plugin_manager: PluginManager
     profile_name: string
     sync_file: Gio.File
-    /* Fields of Anjuta.Profile */
+    /* Fields of Anjuta-3.0.Anjuta.Profile */
     parent_instance: GObject.Object
     priv: ProfilePriv
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Profile */
+    /* Methods of Anjuta-3.0.Anjuta.Profile */
     add_plugin(plugin: PluginHandle): void
     add_plugins_from_xml(profile_xml_file: Gio.File, exclude_from_sync: boolean): boolean
     get_name(): string
@@ -12587,15 +12597,15 @@ export class Profile {
     set_sync_file(sync_file: Gio.File): void
     sync(): boolean
     unload(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -12603,27 +12613,27 @@ export class Profile {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Anjuta.Profile */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.Profile */
     vfunc_changed(): void
     vfunc_descoped(): void
     vfunc_plugin_added(plugin: PluginHandle): void
     vfunc_plugin_removed(plugin: PluginHandle): void
     vfunc_scoped(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.Profile */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.Profile */
     connect(sigName: "changed", callback: (($obj: Profile) => void)): number
     connect_after(sigName: "changed", callback: (($obj: Profile) => void)): number
     emit(sigName: "changed"): void
@@ -12639,7 +12649,7 @@ export class Profile {
     connect(sigName: "scoped", callback: (($obj: Profile) => void)): number
     connect_after(sigName: "scoped", callback: (($obj: Profile) => void)): number
     emit(sigName: "scoped"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Profile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Profile, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -12663,30 +12673,30 @@ export class Profile {
 export interface ProfileManager_ConstructProps extends GObject.Object_ConstructProps {
     plugin_manager?: PluginManager
 }
-export class ProfileManager {
-    /* Properties of Anjuta.ProfileManager */
+class ProfileManager {
+    /* Properties of Anjuta-3.0.Anjuta.ProfileManager */
     plugin_manager: PluginManager
-    /* Fields of Anjuta.ProfileManager */
+    /* Fields of Anjuta-3.0.Anjuta.ProfileManager */
     parent_instance: GObject.Object
     priv: ProfileManagerPriv
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.ProfileManager */
+    /* Methods of Anjuta-3.0.Anjuta.ProfileManager */
     close(): void
     freeze(): void
     get_current(): Profile | null
     pop(profile: Profile): boolean
     push(profile: Profile): boolean
     thaw(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -12694,31 +12704,31 @@ export class ProfileManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Anjuta.ProfileManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.ProfileManager */
     vfunc_profile_popped(profile: Profile): void
     vfunc_profile_pushed(profile: Profile): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.ProfileManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.ProfileManager */
     connect(sigName: "profile-popped", callback: (($obj: ProfileManager, profile: Profile) => void)): number
     connect_after(sigName: "profile-popped", callback: (($obj: ProfileManager, profile: Profile) => void)): number
     emit(sigName: "profile-popped", profile: Profile): void
     connect(sigName: "profile-pushed", callback: (($obj: ProfileManager, profile: Profile) => void)): number
     connect_after(sigName: "profile-pushed", callback: (($obj: ProfileManager, profile: Profile) => void)): number
     emit(sigName: "profile-pushed", profile: Profile): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ProfileManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ProfileManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -12741,17 +12751,17 @@ export interface ProjectNode_ConstructProps extends GObject.InitiallyUnowned_Con
     state?: ProjectNodeState
     type?: ProjectNodeType
 }
-export class ProjectNode {
-    /* Properties of Anjuta.ProjectNode */
+class ProjectNode {
+    /* Properties of Anjuta-3.0.Anjuta.ProjectNode */
     file: Gio.File
     name: string
     state: ProjectNodeState
     type: ProjectNodeType
-    /* Fields of Anjuta.ProjectNode */
+    /* Fields of Anjuta-3.0.Anjuta.ProjectNode */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.ProjectNode */
+    /* Methods of Anjuta-3.0.Anjuta.ProjectNode */
     append(node: ProjectNode): ProjectNode
     check(): void
     children_foreach(func: ProjectNodeForeachFunc): void
@@ -12788,15 +12798,15 @@ export class ProjectNode {
     root(): ProjectNode
     set_state(state: ProjectNodeState): boolean
     traverse(order: GLib.TraverseType, func: ProjectNodeTraverseFunc): ProjectNode
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -12804,28 +12814,28 @@ export class ProjectNode {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.ProjectNode */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.ProjectNode */
     connect(sigName: "loaded", callback: (($obj: ProjectNode, object: object | null, p0: GLib.Error) => void)): number
     connect_after(sigName: "loaded", callback: (($obj: ProjectNode, object: object | null, p0: GLib.Error) => void)): number
     emit(sigName: "loaded", object: object | null, p0: GLib.Error): void
     connect(sigName: "updated", callback: (($obj: ProjectNode, object: object | null, p0: GLib.Error) => void)): number
     connect_after(sigName: "updated", callback: (($obj: ProjectNode, object: object | null, p0: GLib.Error) => void)): number
     emit(sigName: "updated", object: object | null, p0: GLib.Error): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ProjectNode, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ProjectNode, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -12848,8 +12858,8 @@ export class ProjectNode {
 }
 export interface SavePrompt_ConstructProps extends Gtk.MessageDialog_ConstructProps {
 }
-export class SavePrompt {
-    /* Properties of Gtk.MessageDialog */
+class SavePrompt {
+    /* Properties of Gtk-3.0.Gtk.MessageDialog */
     image: Gtk.Widget
     readonly message_area: Gtk.Widget
     message_type: Gtk.MessageType
@@ -12857,7 +12867,7 @@ export class SavePrompt {
     secondary_use_markup: boolean
     text: string
     use_markup: boolean
-    /* Properties of Gtk.Window */
+    /* Properties of Gtk-3.0.Gtk.Window */
     accept_focus: boolean
     application: Gtk.Application
     attached_to: Gtk.Widget
@@ -12890,11 +12900,11 @@ export class SavePrompt {
     type_hint: Gdk.WindowTypeHint
     urgency_hint: boolean
     window_position: Gtk.WindowPosition
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -12934,26 +12944,26 @@ export class SavePrompt {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Anjuta.SavePrompt */
+    /* Fields of Anjuta-3.0.Anjuta.SavePrompt */
     priv: SavePromptPrivate
-    /* Fields of Gtk.MessageDialog */
+    /* Fields of Gtk-3.0.Gtk.MessageDialog */
     parent_instance: Gtk.Dialog
-    /* Fields of Gtk.Window */
+    /* Fields of Gtk-3.0.Gtk.Window */
     bin: Gtk.Bin
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.SavePrompt */
+    /* Methods of Anjuta-3.0.Anjuta.SavePrompt */
     get_items_count(): number
-    /* Methods of Gtk.MessageDialog */
+    /* Methods of Gtk-3.0.Gtk.MessageDialog */
     get_image(): Gtk.Widget
     get_message_area(): Gtk.Widget
     set_image(image: Gtk.Widget): void
     set_markup(str: string): void
-    /* Methods of Gtk.Dialog */
+    /* Methods of Gtk-3.0.Gtk.Dialog */
     add_action_widget(child: Gtk.Widget, response_id: number): void
     add_button(button_text: string, response_id: number): Gtk.Widget
     get_action_area(): Gtk.Box
@@ -12966,7 +12976,7 @@ export class SavePrompt {
     set_alternative_button_order_from_array(new_order: number[]): void
     set_default_response(response_id: number): void
     set_response_sensitive(response_id: number, setting: boolean): void
-    /* Methods of Gtk.Window */
+    /* Methods of Gtk-3.0.Gtk.Window */
     activate_default(): boolean
     activate_focus(): boolean
     activate_key(event: Gdk.EventKey): boolean
@@ -13073,12 +13083,13 @@ export class SavePrompt {
     unfullscreen(): void
     unmaximize(): void
     unstick(): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -13103,7 +13114,7 @@ export class SavePrompt {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -13359,15 +13370,15 @@ export class SavePrompt {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -13375,13 +13386,13 @@ export class SavePrompt {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -13390,7 +13401,7 @@ export class SavePrompt {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Anjuta.SavePrompt */
+    /* Virtual methods of Anjuta-3.0.Anjuta.SavePrompt */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -13401,16 +13412,16 @@ export class SavePrompt {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Dialog */
+    /* Virtual methods of Gtk-3.0.Gtk.Dialog */
     vfunc_close(): void
     vfunc_response(response_id: number): void
-    /* Virtual methods of Gtk.Window */
+    /* Virtual methods of Gtk-3.0.Gtk.Window */
     vfunc_activate_default(): void
     vfunc_activate_focus(): void
     vfunc_enable_debugging(toggle: boolean): boolean
     vfunc_keys_changed(): void
     vfunc_set_focus(focus?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -13421,7 +13432,7 @@ export class SavePrompt {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -13504,22 +13515,22 @@ export class SavePrompt {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Dialog */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Dialog */
     connect(sigName: "close", callback: (($obj: SavePrompt) => void)): number
     connect_after(sigName: "close", callback: (($obj: SavePrompt) => void)): number
     emit(sigName: "close"): void
     connect(sigName: "response", callback: (($obj: SavePrompt, response_id: number) => void)): number
     connect_after(sigName: "response", callback: (($obj: SavePrompt, response_id: number) => void)): number
     emit(sigName: "response", response_id: number): void
-    /* Signals of Gtk.Window */
+    /* Signals of Gtk-3.0.Gtk.Window */
     connect(sigName: "activate-default", callback: (($obj: SavePrompt) => void)): number
     connect_after(sigName: "activate-default", callback: (($obj: SavePrompt) => void)): number
     emit(sigName: "activate-default"): void
@@ -13535,7 +13546,7 @@ export class SavePrompt {
     connect(sigName: "set-focus", callback: (($obj: SavePrompt, widget?: Gtk.Widget | null) => void)): number
     connect_after(sigName: "set-focus", callback: (($obj: SavePrompt, widget?: Gtk.Widget | null) => void)): number
     emit(sigName: "set-focus", widget?: Gtk.Widget | null): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: SavePrompt, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: SavePrompt, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -13548,7 +13559,7 @@ export class SavePrompt {
     connect(sigName: "set-focus-child", callback: (($obj: SavePrompt, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: SavePrompt, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: SavePrompt) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: SavePrompt) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -13756,7 +13767,7 @@ export class SavePrompt {
     connect(sigName: "window-state-event", callback: (($obj: SavePrompt, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: SavePrompt, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SavePrompt, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SavePrompt, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -13939,28 +13950,28 @@ export interface Serializer_ConstructProps extends GObject.Object_ConstructProps
     filepath?: string
     mode?: SerializerMode
 }
-export class Serializer {
-    /* Fields of Anjuta.Serializer */
+class Serializer {
+    /* Fields of Anjuta-3.0.Anjuta.Serializer */
     parent: GObject.Object
     priv: SerializerPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Serializer */
+    /* Methods of Anjuta-3.0.Anjuta.Serializer */
     read_float(name: string, value: number): boolean
     read_int(name: string, value: number): boolean
     read_string(name: string, value: string, replace: boolean): boolean
     write_float(name: string, value: number): boolean
     write_int(name: string, value: number): boolean
     write_string(name: string, value: string): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -13968,21 +13979,21 @@ export class Serializer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Serializer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Serializer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -13999,13 +14010,13 @@ export class Serializer {
 }
 export interface Session_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Session {
-    /* Fields of Anjuta.Session */
+class Session {
+    /* Fields of Anjuta-3.0.Anjuta.Session */
     parent: GObject.Object
     priv: SessionPriv
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Session */
+    /* Methods of Anjuta-3.0.Anjuta.Session */
     clear(): void
     clear_section(section: string): void
     get_file_from_relative_uri(uri: string, fragment?: string | null): Gio.File
@@ -14019,15 +14030,15 @@ export class Session {
     set_int(section: string, key: string, value: number): void
     set_string(section: string, key: string, value: string): void
     sync(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -14035,21 +14046,21 @@ export class Session {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Session, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Session, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -14067,16 +14078,16 @@ export class Session {
 export interface Status_ConstructProps extends Gtk.Box_ConstructProps {
     orientation?: Gtk.Orientation
 }
-export class Status {
-    /* Properties of Gtk.Box */
+class Status {
+    /* Properties of Gtk-3.0.Gtk.Box */
     baseline_position: Gtk.BaselinePosition
     homogeneous: boolean
     spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -14116,19 +14127,19 @@ export class Status {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Orientable */
+    /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Anjuta.Status */
+    /* Fields of Anjuta-3.0.Anjuta.Status */
     priv: StatusPriv
-    /* Fields of Gtk.Box */
+    /* Fields of Gtk-3.0.Gtk.Box */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Status */
+    /* Methods of Anjuta-3.0.Anjuta.Status */
     add_widget(widget: Gtk.Widget): void
     busy_pop(): void
     busy_push(): void
@@ -14143,7 +14154,7 @@ export class Status {
     set_splash(splash_file: string, splash_progress_position: number): void
     set_title(title: string): void
     set_title_window(window: Gtk.Widget): void
-    /* Methods of Gtk.Box */
+    /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
     get_homogeneous(): boolean
@@ -14157,10 +14168,11 @@ export class Status {
     set_child_packing(child: Gtk.Widget, expand: boolean, fill: boolean, padding: number, pack_type: Gtk.PackType): void
     set_homogeneous(homogeneous: boolean): void
     set_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -14185,7 +14197,7 @@ export class Status {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -14444,15 +14456,15 @@ export class Status {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -14460,13 +14472,13 @@ export class Status {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -14475,10 +14487,10 @@ export class Status {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Orientable */
+    /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
-    /* Virtual methods of Anjuta.Status */
+    /* Virtual methods of Anjuta-3.0.Anjuta.Status */
     vfunc_busy(state: boolean): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -14490,7 +14502,7 @@ export class Status {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -14501,7 +14513,7 @@ export class Status {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -14584,19 +14596,19 @@ export class Status {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.Status */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.Status */
     connect(sigName: "busy", callback: (($obj: Status, object: boolean) => void)): number
     connect_after(sigName: "busy", callback: (($obj: Status, object: boolean) => void)): number
     emit(sigName: "busy", object: boolean): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: Status, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: Status, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -14609,7 +14621,7 @@ export class Status {
     connect(sigName: "set-focus-child", callback: (($obj: Status, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: Status, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: Status) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: Status) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -14817,7 +14829,7 @@ export class Status {
     connect(sigName: "window-state-event", callback: (($obj: Status, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: Status, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Status, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Status, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -14927,14 +14939,14 @@ export class Status {
 }
 export interface SyncCommand_ConstructProps extends Command_ConstructProps {
 }
-export class SyncCommand {
-    /* Fields of Anjuta.SyncCommand */
+class SyncCommand {
+    /* Fields of Anjuta-3.0.Anjuta.SyncCommand */
     parent_instance: Command
-    /* Fields of Anjuta.Command */
+    /* Fields of Anjuta-3.0.Anjuta.Command */
     priv: CommandPriv
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Command */
+    /* Methods of Anjuta-3.0.Anjuta.Command */
     cancel(): void
     get_error_message(): string | null
     is_running(): boolean
@@ -14945,15 +14957,15 @@ export class SyncCommand {
     start(): void
     start_automatic_monitor(): boolean
     stop_automatic_monitor(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -14961,13 +14973,13 @@ export class SyncCommand {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Anjuta.Command */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.Command */
     vfunc_cancel(): void
     vfunc_command_finished(return_code: number): void
     vfunc_command_started(): void
@@ -14982,15 +14994,15 @@ export class SyncCommand {
     vfunc_start(): void
     vfunc_start_automatic_monitor(): boolean
     vfunc_stop_automatic_monitor(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.Command */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.Command */
     connect(sigName: "command-finished", callback: (($obj: SyncCommand, return_code: number) => void)): number
     connect_after(sigName: "command-finished", callback: (($obj: SyncCommand, return_code: number) => void)): number
     emit(sigName: "command-finished", return_code: number): void
@@ -15003,7 +15015,7 @@ export class SyncCommand {
     connect(sigName: "progress", callback: (($obj: SyncCommand, progress: number) => void)): number
     connect_after(sigName: "progress", callback: (($obj: SyncCommand, progress: number) => void)): number
     emit(sigName: "progress", progress: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SyncCommand, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SyncCommand, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -15019,12 +15031,12 @@ export class SyncCommand {
 export interface Tabber_ConstructProps extends Gtk.Container_ConstructProps {
     notebook?: GObject.Object
 }
-export class Tabber {
-    /* Properties of Gtk.Container */
+class Tabber {
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -15064,20 +15076,21 @@ export class Tabber {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Anjuta.Tabber */
+    /* Fields of Anjuta-3.0.Anjuta.Tabber */
     parent_instance: Gtk.Container
     priv: TabberPriv
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.Tabber */
+    /* Methods of Anjuta-3.0.Anjuta.Tabber */
     add_tab(tab_label: Gtk.Widget): void
     prepend_tab(tab_label: Gtk.Widget): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -15102,7 +15115,7 @@ export class Tabber {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -15361,15 +15374,15 @@ export class Tabber {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -15377,13 +15390,13 @@ export class Tabber {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -15392,7 +15405,7 @@ export class Tabber {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Anjuta.Tabber */
+    /* Virtual methods of Anjuta-3.0.Anjuta.Tabber */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -15403,7 +15416,7 @@ export class Tabber {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -15414,7 +15427,7 @@ export class Tabber {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -15497,15 +15510,15 @@ export class Tabber {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: Tabber, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: Tabber, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -15518,7 +15531,7 @@ export class Tabber {
     connect(sigName: "set-focus-child", callback: (($obj: Tabber, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: Tabber, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: Tabber) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: Tabber) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -15726,7 +15739,7 @@ export class Tabber {
     connect(sigName: "window-state-event", callback: (($obj: Tabber, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: Tabber, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Tabber, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Tabber, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -15827,10 +15840,10 @@ export class Tabber {
 }
 export interface TokenFile_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class TokenFile {
-    /* Fields of GObject.Object */
+class TokenFile {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.TokenFile */
+    /* Methods of Anjuta-3.0.Anjuta.TokenFile */
     free(): void
     get_token_location(location: TokenFileLocation, token: Token): boolean
     get_token_position(token: Token): number
@@ -15839,15 +15852,15 @@ export class TokenFile {
     save(): boolean
     unload(): boolean
     update(token: Token): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -15855,21 +15868,21 @@ export class TokenFile {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TokenFile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TokenFile, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -15891,14 +15904,14 @@ export interface TreeComboBox_ConstructProps extends Gtk.ToggleButton_ConstructP
     related_action?: Gtk.Action
     use_action_appearance?: boolean
 }
-export class TreeComboBox {
-    /* Properties of Anjuta.TreeComboBox */
+class TreeComboBox {
+    /* Properties of Anjuta-3.0.Anjuta.TreeComboBox */
     model: Gtk.TreeModel
-    /* Properties of Gtk.ToggleButton */
+    /* Properties of Gtk-3.0.Gtk.ToggleButton */
     active: boolean
     draw_indicator: boolean
     inconsistent: boolean
-    /* Properties of Gtk.Button */
+    /* Properties of Gtk-3.0.Gtk.Button */
     always_show_image: boolean
     image: Gtk.Widget
     image_position: Gtk.PositionType
@@ -15908,11 +15921,11 @@ export class TreeComboBox {
     use_underline: boolean
     xalign: number
     yalign: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -15952,28 +15965,28 @@ export class TreeComboBox {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Actionable */
+    /* Properties of Gtk-3.0.Gtk.Actionable */
     action_name: string
     action_target: GLib.Variant
-    /* Properties of Gtk.Activatable */
+    /* Properties of Gtk-3.0.Gtk.Activatable */
     related_action: Gtk.Action
     use_action_appearance: boolean
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.TreeComboBox */
+    /* Methods of Anjuta-3.0.Anjuta.TreeComboBox */
     get_active_iter(iter: Gtk.TreeIter): boolean
     set_active(index: number): void
     set_active_iter(iter: Gtk.TreeIter): void
     set_invalid_text(str: string): void
     set_model(model: Gtk.TreeModel): void
     set_valid_function(func: Gtk.TreeModelFilterVisibleFunc): void
-    /* Methods of Gtk.ToggleButton */
+    /* Methods of Gtk-3.0.Gtk.ToggleButton */
     get_active(): boolean
     get_inconsistent(): boolean
     get_mode(): boolean
@@ -15981,7 +15994,7 @@ export class TreeComboBox {
     set_inconsistent(setting: boolean): void
     set_mode(draw_indicator: boolean): void
     toggled(): void
-    /* Methods of Gtk.Button */
+    /* Methods of Gtk-3.0.Gtk.Button */
     clicked(): void
     enter(): void
     get_alignment(): [ /* xalign */ number, /* yalign */ number ]
@@ -16006,12 +16019,13 @@ export class TreeComboBox {
     set_relief(relief: Gtk.ReliefStyle): void
     set_use_stock(use_stock: boolean): void
     set_use_underline(use_underline: boolean): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -16036,7 +16050,7 @@ export class TreeComboBox {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -16293,15 +16307,15 @@ export class TreeComboBox {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -16309,26 +16323,26 @@ export class TreeComboBox {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Actionable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Actionable */
     get_action_name(): string | null
     get_action_target_value(): GLib.Variant
     set_action_name(action_name?: string | null): void
     set_action_target_value(target_value?: GLib.Variant | null): void
     set_detailed_action_name(detailed_action_name: string): void
-    /* Methods of Gtk.Activatable */
+    /* Methods of Gtk-3.0.Gtk.Activatable */
     do_set_related_action(action: Gtk.Action): void
     get_related_action(): Gtk.Action
     get_use_action_appearance(): boolean
     set_related_action(action: Gtk.Action): void
     set_use_action_appearance(use_appearance: boolean): void
     sync_action_properties(action?: Gtk.Action | null): void
-    /* Methods of Gtk.Buildable */
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -16337,7 +16351,7 @@ export class TreeComboBox {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.CellLayout */
+    /* Methods of Gtk-3.0.Gtk.CellLayout */
     add_attribute(cell: Gtk.CellRenderer, attribute: string, column: number): void
     clear(): void
     clear_attributes(cell: Gtk.CellRenderer): void
@@ -16347,7 +16361,7 @@ export class TreeComboBox {
     pack_start(cell: Gtk.CellRenderer, expand: boolean): void
     reorder(cell: Gtk.CellRenderer, position: number): void
     set_cell_data_func(cell: Gtk.CellRenderer, func: Gtk.CellLayoutDataFunc | null): void
-    /* Virtual methods of Anjuta.TreeComboBox */
+    /* Virtual methods of Anjuta-3.0.Anjuta.TreeComboBox */
     vfunc_changed(): void
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant
@@ -16374,16 +16388,16 @@ export class TreeComboBox {
     vfunc_pack_start(cell: Gtk.CellRenderer, expand: boolean): void
     vfunc_reorder(cell: Gtk.CellRenderer, position: number): void
     vfunc_set_cell_data_func(cell: Gtk.CellRenderer, func: Gtk.CellLayoutDataFunc | null): void
-    /* Virtual methods of Gtk.ToggleButton */
+    /* Virtual methods of Gtk-3.0.Gtk.ToggleButton */
     vfunc_toggled(): void
-    /* Virtual methods of Gtk.Button */
+    /* Virtual methods of Gtk-3.0.Gtk.Button */
     vfunc_activate(): void
     vfunc_clicked(): void
     vfunc_enter(): void
     vfunc_leave(): void
     vfunc_pressed(): void
     vfunc_released(): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -16394,7 +16408,7 @@ export class TreeComboBox {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -16477,15 +16491,15 @@ export class TreeComboBox {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Anjuta.TreeComboBox */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Anjuta-3.0.Anjuta.TreeComboBox */
     connect(sigName: "changed", callback: (($obj: TreeComboBox) => void)): number
     connect_after(sigName: "changed", callback: (($obj: TreeComboBox) => void)): number
     emit(sigName: "changed"): void
@@ -16495,11 +16509,11 @@ export class TreeComboBox {
     connect(sigName: "popup", callback: (($obj: TreeComboBox) => void)): number
     connect_after(sigName: "popup", callback: (($obj: TreeComboBox) => void)): number
     emit(sigName: "popup"): void
-    /* Signals of Gtk.ToggleButton */
+    /* Signals of Gtk-3.0.Gtk.ToggleButton */
     connect(sigName: "toggled", callback: (($obj: TreeComboBox) => void)): number
     connect_after(sigName: "toggled", callback: (($obj: TreeComboBox) => void)): number
     emit(sigName: "toggled"): void
-    /* Signals of Gtk.Button */
+    /* Signals of Gtk-3.0.Gtk.Button */
     connect(sigName: "activate", callback: (($obj: TreeComboBox) => void)): number
     connect_after(sigName: "activate", callback: (($obj: TreeComboBox) => void)): number
     emit(sigName: "activate"): void
@@ -16518,7 +16532,7 @@ export class TreeComboBox {
     connect(sigName: "released", callback: (($obj: TreeComboBox) => void)): number
     connect_after(sigName: "released", callback: (($obj: TreeComboBox) => void)): number
     emit(sigName: "released"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: TreeComboBox, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: TreeComboBox, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -16531,7 +16545,7 @@ export class TreeComboBox {
     connect(sigName: "set-focus-child", callback: (($obj: TreeComboBox, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: TreeComboBox, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: TreeComboBox) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: TreeComboBox) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -16739,7 +16753,7 @@ export class TreeComboBox {
     connect(sigName: "window-state-event", callback: (($obj: TreeComboBox, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: TreeComboBox, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TreeComboBox, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TreeComboBox, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -16874,16 +16888,16 @@ export class TreeComboBox {
 }
 export interface UI_ConstructProps extends Gtk.UIManager_ConstructProps {
 }
-export class UI {
-    /* Properties of Gtk.UIManager */
+class UI {
+    /* Properties of Gtk-3.0.Gtk.UIManager */
     add_tearoffs: boolean
     readonly ui: string
-    /* Fields of Anjuta.UI */
+    /* Fields of Anjuta-3.0.Anjuta.UI */
     parent: Gtk.UIManager
     priv: UIPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.UI */
+    /* Methods of Anjuta-3.0.Anjuta.UI */
     activate_action_by_group(action_group: Gtk.ActionGroup, action_name: string): void
     activate_action_by_path(action_path: string): void
     add_action_group(action_group_name: string, action_group_label: string, action_group: Gtk.ActionGroup, can_customize: boolean): void
@@ -16898,7 +16912,7 @@ export class UI {
     remove_action_group(action_group: Gtk.ActionGroup): void
     unload_accels(): void
     unmerge(id: number): void
-    /* Methods of Gtk.UIManager */
+    /* Methods of Gtk-3.0.Gtk.UIManager */
     add_ui(merge_id: number, path: string, name: string, action: string | null, type: Gtk.UIManagerItemType, top: boolean): void
     add_ui_from_file(filename: string): number
     add_ui_from_resource(resource_path: string): number
@@ -16914,15 +16928,15 @@ export class UI {
     new_merge_id(): number
     remove_ui(merge_id: number): void
     set_add_tearoffs(add_tearoffs: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -16930,13 +16944,13 @@ export class UI {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -16947,7 +16961,7 @@ export class UI {
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     set_name(name: string): void
-    /* Virtual methods of Anjuta.UI */
+    /* Virtual methods of Anjuta-3.0.Anjuta.UI */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -16958,7 +16972,7 @@ export class UI {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.UIManager */
+    /* Virtual methods of Gtk-3.0.Gtk.UIManager */
     vfunc_actions_changed(): void
     vfunc_add_widget(widget: Gtk.Widget): void
     vfunc_connect_proxy(action: Gtk.Action, proxy: Gtk.Widget): void
@@ -16967,15 +16981,15 @@ export class UI {
     vfunc_get_widget(path: string): Gtk.Widget
     vfunc_post_activate(action: Gtk.Action): void
     vfunc_pre_activate(action: Gtk.Action): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.UIManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.UIManager */
     connect(sigName: "actions-changed", callback: (($obj: UI) => void)): number
     connect_after(sigName: "actions-changed", callback: (($obj: UI) => void)): number
     emit(sigName: "actions-changed"): void
@@ -16994,7 +17008,7 @@ export class UI {
     connect(sigName: "pre-activate", callback: (($obj: UI, action: Gtk.Action) => void)): number
     connect_after(sigName: "pre-activate", callback: (($obj: UI, action: Gtk.Action) => void)): number
     emit(sigName: "pre-activate", action: Gtk.Action): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UI, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UI, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -17024,10 +17038,10 @@ export interface VcsStatusTreeView_ConstructProps extends Gtk.TreeView_Construct
     vadjustment?: Gtk.Adjustment
     vscroll_policy?: Gtk.ScrollablePolicy
 }
-export class VcsStatusTreeView {
-    /* Properties of Anjuta.VcsStatusTreeView */
+class VcsStatusTreeView {
+    /* Properties of Anjuta-3.0.Anjuta.VcsStatusTreeView */
     show_status: boolean
-    /* Properties of Gtk.TreeView */
+    /* Properties of Gtk-3.0.Gtk.TreeView */
     activate_on_single_click: boolean
     enable_grid_lines: Gtk.TreeViewGridLines
     enable_search: boolean
@@ -17046,11 +17060,11 @@ export class VcsStatusTreeView {
     search_column: number
     show_expanders: boolean
     tooltip_column: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -17090,24 +17104,24 @@ export class VcsStatusTreeView {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk.Scrollable */
+    /* Properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment: Gtk.Adjustment
     hscroll_policy: Gtk.ScrollablePolicy
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
-    /* Fields of Anjuta.VcsStatusTreeView */
+    /* Fields of Anjuta-3.0.Anjuta.VcsStatusTreeView */
     parent_instance: Gtk.TreeView
     priv: VcsStatusTreeViewPriv
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Anjuta.VcsStatusTreeView */
+    /* Methods of Anjuta-3.0.Anjuta.VcsStatusTreeView */
     add(path: string, status: VcsStatus, selected: boolean): void
     destroy(): void
     select_all(): void
     unselect_all(): void
-    /* Methods of Gtk.TreeView */
+    /* Methods of Gtk-3.0.Gtk.TreeView */
     append_column(column: Gtk.TreeViewColumn): number
     collapse_all(): void
     collapse_row(path: Gtk.TreePath): boolean
@@ -17203,10 +17217,11 @@ export class VcsStatusTreeView {
     set_vadjustment(adjustment?: Gtk.Adjustment | null): void
     unset_rows_drag_dest(): void
     unset_rows_drag_source(): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -17231,7 +17246,7 @@ export class VcsStatusTreeView {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -17489,15 +17504,15 @@ export class VcsStatusTreeView {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -17505,13 +17520,13 @@ export class VcsStatusTreeView {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -17520,7 +17535,7 @@ export class VcsStatusTreeView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk.Scrollable */
+    /* Methods of Gtk-3.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     get_hscroll_policy(): Gtk.ScrollablePolicy
     get_vscroll_policy(): Gtk.ScrollablePolicy
@@ -17528,7 +17543,7 @@ export class VcsStatusTreeView {
     set_hscroll_policy(policy: Gtk.ScrollablePolicy): void
     set_vadjustment(vadjustment?: Gtk.Adjustment | null): void
     set_vscroll_policy(policy: Gtk.ScrollablePolicy): void
-    /* Virtual methods of Anjuta.VcsStatusTreeView */
+    /* Virtual methods of Anjuta-3.0.Anjuta.VcsStatusTreeView */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -17540,7 +17555,7 @@ export class VcsStatusTreeView {
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
     vfunc_get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
-    /* Virtual methods of Gtk.TreeView */
+    /* Virtual methods of Gtk-3.0.Gtk.TreeView */
     vfunc_columns_changed(): void
     vfunc_cursor_changed(): void
     vfunc_expand_collapse_cursor_row(logical: boolean, expand: boolean, open_all: boolean): boolean
@@ -17556,7 +17571,7 @@ export class VcsStatusTreeView {
     vfunc_test_expand_row(iter: Gtk.TreeIter, path: Gtk.TreePath): boolean
     vfunc_toggle_cursor_row(): boolean
     vfunc_unselect_all(): boolean
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -17567,7 +17582,7 @@ export class VcsStatusTreeView {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -17650,15 +17665,15 @@ export class VcsStatusTreeView {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.TreeView */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.TreeView */
     connect(sigName: "columns-changed", callback: (($obj: VcsStatusTreeView) => void)): number
     connect_after(sigName: "columns-changed", callback: (($obj: VcsStatusTreeView) => void)): number
     emit(sigName: "columns-changed"): void
@@ -17704,7 +17719,7 @@ export class VcsStatusTreeView {
     connect(sigName: "unselect-all", callback: (($obj: VcsStatusTreeView) => boolean)): number
     connect_after(sigName: "unselect-all", callback: (($obj: VcsStatusTreeView) => boolean)): number
     emit(sigName: "unselect-all"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: VcsStatusTreeView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: VcsStatusTreeView, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -17717,7 +17732,7 @@ export class VcsStatusTreeView {
     connect(sigName: "set-focus-child", callback: (($obj: VcsStatusTreeView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: VcsStatusTreeView, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: VcsStatusTreeView) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: VcsStatusTreeView) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -17925,7 +17940,7 @@ export class VcsStatusTreeView {
     connect(sigName: "window-state-event", callback: (($obj: VcsStatusTreeView, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: VcsStatusTreeView, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: VcsStatusTreeView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VcsStatusTreeView, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -18070,69 +18085,69 @@ export class VcsStatusTreeView {
     static new(): VcsStatusTreeView
     static $gtype: GObject.Type
 }
-export abstract class AsyncCommandClass {
-    /* Fields of Anjuta.AsyncCommandClass */
+abstract class AsyncCommandClass {
+    /* Fields of Anjuta-3.0.Anjuta.AsyncCommandClass */
     parent_class: CommandClass
     static name: string
 }
-export class AsyncCommandPriv {
+class AsyncCommandPriv {
     static name: string
 }
-export abstract class AsyncNotifyClass {
-    /* Fields of Anjuta.AsyncNotifyClass */
+abstract class AsyncNotifyClass {
+    /* Fields of Anjuta-3.0.Anjuta.AsyncNotifyClass */
     parent_class: GObject.ObjectClass
     finished: (self: AsyncNotify) => void
     static name: string
 }
-export class AsyncNotifyPriv {
+class AsyncNotifyPriv {
     static name: string
 }
-export abstract class AutogenClass {
+abstract class AutogenClass {
     static name: string
 }
-export abstract class CModuleClass {
+abstract class CModuleClass {
     static name: string
 }
-export abstract class CPluginFactoryClass {
+abstract class CPluginFactoryClass {
     static name: string
 }
-export abstract class CellRendererCaptionedImageClass {
-    /* Fields of Anjuta.CellRendererCaptionedImageClass */
+abstract class CellRendererCaptionedImageClass {
+    /* Fields of Anjuta-3.0.Anjuta.CellRendererCaptionedImageClass */
     parent_class: Gtk.CellRendererClass
     static name: string
 }
-export abstract class CellRendererDiffClass {
-    /* Fields of Anjuta.CellRendererDiffClass */
+abstract class CellRendererDiffClass {
+    /* Fields of Anjuta-3.0.Anjuta.CellRendererDiffClass */
     parent_class: Gtk.CellRendererClass
     static name: string
 }
-export class CellRendererDiffPrivate {
+class CellRendererDiffPrivate {
     static name: string
 }
-export abstract class CloseButtonClass {
-    /* Fields of Anjuta.CloseButtonClass */
+abstract class CloseButtonClass {
+    /* Fields of Anjuta-3.0.Anjuta.CloseButtonClass */
     parent_class: Gtk.ButtonClass
     priv: CloseButtonClassPrivate
     static name: string
 }
-export class CloseButtonClassPrivate {
+class CloseButtonClassPrivate {
     static name: string
 }
-export abstract class ColumnTextViewClass {
-    /* Fields of Anjuta.ColumnTextViewClass */
+abstract class ColumnTextViewClass {
+    /* Fields of Anjuta-3.0.Anjuta.ColumnTextViewClass */
     parent_class: Gtk.BoxClass
     static name: string
 }
-export class ColumnTextViewPriv {
+class ColumnTextViewPriv {
     static name: string
 }
-export abstract class CommandBarClass {
-    /* Fields of Anjuta.CommandBarClass */
+abstract class CommandBarClass {
+    /* Fields of Anjuta-3.0.Anjuta.CommandBarClass */
     parent_class: Gtk.NotebookClass
     static name: string
 }
-export class CommandBarEntry {
-    /* Fields of Anjuta.CommandBarEntry */
+class CommandBarEntry {
+    /* Fields of Anjuta-3.0.Anjuta.CommandBarEntry */
     type: CommandBarEntryType
     action_name: string
     label: string
@@ -18141,11 +18156,11 @@ export class CommandBarEntry {
     callback: GObject.Callback
     static name: string
 }
-export class CommandBarPriv {
+class CommandBarPriv {
     static name: string
 }
-export abstract class CommandClass {
-    /* Fields of Anjuta.CommandClass */
+abstract class CommandClass {
+    /* Fields of Anjuta-3.0.Anjuta.CommandClass */
     parent_class: GObject.ObjectClass
     run: (self: Command) => number
     start: (self: Command) => void
@@ -18163,52 +18178,52 @@ export abstract class CommandClass {
     progress: (command: Command, progress: number) => void
     static name: string
 }
-export class CommandPriv {
+class CommandPriv {
     static name: string
 }
-export abstract class CommandQueueClass {
-    /* Fields of Anjuta.CommandQueueClass */
+abstract class CommandQueueClass {
+    /* Fields of Anjuta-3.0.Anjuta.CommandQueueClass */
     parent_class: GObject.ObjectClass
     finished: (queue: CommandQueue) => void
     static name: string
 }
-export class CommandQueuePriv {
+class CommandQueuePriv {
     static name: string
 }
-export abstract class CompletionClass {
-    /* Fields of Anjuta.CompletionClass */
+abstract class CompletionClass {
+    /* Fields of Anjuta-3.0.Anjuta.CompletionClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class CompletionPrivate {
+class CompletionPrivate {
     static name: string
 }
-export abstract class DockClass {
-    /* Fields of Anjuta.DockClass */
+abstract class DockClass {
+    /* Fields of Anjuta-3.0.Anjuta.DockClass */
     parent_class: Gdl.DockClass
     static name: string
 }
-export abstract class DockPaneClass {
-    /* Fields of Anjuta.DockPaneClass */
+abstract class DockPaneClass {
+    /* Fields of Anjuta-3.0.Anjuta.DockPaneClass */
     parent_class: GObject.ObjectClass
     refresh: (self: DockPane) => void
     single_selection_changed: (self: DockPane) => void
     multiple_selection_changed: (self: DockPane) => void
     static name: string
 }
-export class DockPanePriv {
+class DockPanePriv {
     static name: string
 }
-export class DockPriv {
+class DockPriv {
     static name: string
 }
-export abstract class DropEntryClass {
-    /* Fields of Anjuta.DropEntryClass */
+abstract class DropEntryClass {
+    /* Fields of Anjuta-3.0.Anjuta.DropEntryClass */
     parent_class: EntryClass
     static name: string
 }
-export class Encoding {
-    /* Methods of Anjuta.Encoding */
+class Encoding {
+    /* Methods of Anjuta-3.0.Anjuta.Encoding */
     copy(): Encoding
     free(): void
     get_charset(): string
@@ -18221,43 +18236,43 @@ export class Encoding {
     static get_from_index(index: number): Encoding
     static get_utf8(): Encoding
 }
-export abstract class EntryClass {
-    /* Fields of Anjuta.EntryClass */
+abstract class EntryClass {
+    /* Fields of Anjuta-3.0.Anjuta.EntryClass */
     parent_class: Gtk.EntryClass
     static name: string
 }
-export class EntryPriv {
+class EntryPriv {
     static name: string
 }
-export abstract class EnvironmentEditorClass {
-    /* Fields of Anjuta.EnvironmentEditorClass */
+abstract class EnvironmentEditorClass {
+    /* Fields of Anjuta-3.0.Anjuta.EnvironmentEditorClass */
     parent_class: Gtk.BinClass
     changed: (self: EnvironmentEditor) => void
     static name: string
 }
-export abstract class FileDropEntryClass {
-    /* Fields of Anjuta.FileDropEntryClass */
+abstract class FileDropEntryClass {
+    /* Fields of Anjuta-3.0.Anjuta.FileDropEntryClass */
     parent_class: DropEntryClass
     static name: string
 }
-export class FileDropEntryPriv {
+class FileDropEntryPriv {
     static name: string
 }
-export abstract class FileListClass {
-    /* Fields of Anjuta.FileListClass */
+abstract class FileListClass {
+    /* Fields of Anjuta-3.0.Anjuta.FileListClass */
     parent_class: Gtk.BoxClass
     static name: string
 }
-export class FileListPriv {
+class FileListPriv {
     static name: string
 }
-export class LanguageProposalData {
-    /* Fields of Anjuta.LanguageProposalData */
+class LanguageProposalData {
+    /* Fields of Anjuta-3.0.Anjuta.LanguageProposalData */
     name: string
     info: string
     is_func: boolean
     has_para: boolean
-    /* Methods of Anjuta.LanguageProposalData */
+    /* Methods of Anjuta-3.0.Anjuta.LanguageProposalData */
     free(): void
     static name: string
     static new(name: string): LanguageProposalData
@@ -18265,44 +18280,44 @@ export class LanguageProposalData {
     /* Static methods and pseudo-constructors */
     static new(name: string): LanguageProposalData
 }
-export abstract class LanguageProviderClass {
-    /* Fields of Anjuta.LanguageProviderClass */
+abstract class LanguageProviderClass {
+    /* Fields of Anjuta-3.0.Anjuta.LanguageProviderClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class LanguageProviderPriv {
+class LanguageProviderPriv {
     static name: string
 }
-export abstract class LauncherClass {
-    /* Fields of Anjuta.LauncherClass */
+abstract class LauncherClass {
+    /* Fields of Anjuta-3.0.Anjuta.LauncherClass */
     parent_class: GObject.ObjectClass
     child_exited: (launcher: Launcher, child_pid: number, exit_status: number, time_taken_in_seconds: number) => void
     busy: (launcher: Launcher, busy_flag: boolean) => void
     static name: string
 }
-export class LauncherPriv {
+class LauncherPriv {
     static name: string
 }
-export abstract class PkgConfigChooserClass {
-    /* Fields of Anjuta.PkgConfigChooserClass */
+abstract class PkgConfigChooserClass {
+    /* Fields of Anjuta-3.0.Anjuta.PkgConfigChooserClass */
     parent_class: Gtk.TreeViewClass
     package_activated: (self: PkgConfigChooser, package: string) => void
     package_deactivated: (self: PkgConfigChooser, package: string) => void
     static name: string
 }
-export class PkgConfigChooserPrivate {
+class PkgConfigChooserPrivate {
     static name: string
 }
-export abstract class PkgScannerClass {
-    /* Fields of Anjuta.PkgScannerClass */
+abstract class PkgScannerClass {
+    /* Fields of Anjuta-3.0.Anjuta.PkgScannerClass */
     parent_class: AsyncCommandClass
     static name: string
 }
-export class PkgScannerPrivate {
+class PkgScannerPrivate {
     static name: string
 }
-export abstract class PluginClass {
-    /* Fields of Anjuta.PluginClass */
+abstract class PluginClass {
+    /* Fields of Anjuta-3.0.Anjuta.PluginClass */
     parent_class: GObject.ObjectClass
     activated: (plugin: Plugin) => void
     deactivated: (plugin: Plugin) => void
@@ -18310,8 +18325,8 @@ export abstract class PluginClass {
     deactivate: (plugin: Plugin) => boolean
     static name: string
 }
-export class PluginDescription {
-    /* Methods of Anjuta.PluginDescription */
+class PluginDescription {
+    /* Methods of Anjuta-3.0.Anjuta.PluginDescription */
     copy(): PluginDescription
     free(): void
     get_boolean(section: string, keyname: string, val: boolean): boolean
@@ -18329,45 +18344,45 @@ export class PluginDescription {
     static new(filename: string): PluginDescription
     static new_from_string(data: string): PluginDescription
 }
-export abstract class PluginHandleClass {
-    /* Fields of Anjuta.PluginHandleClass */
+abstract class PluginHandleClass {
+    /* Fields of Anjuta-3.0.Anjuta.PluginHandleClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class PluginHandlePriv {
+class PluginHandlePriv {
     static name: string
 }
-export abstract class PluginManagerClass {
-    /* Fields of Anjuta.PluginManagerClass */
+abstract class PluginManagerClass {
+    /* Fields of Anjuta-3.0.Anjuta.PluginManagerClass */
     parent_class: GObject.ObjectClass
     plugin_activated: (self: PluginManager, handle: PluginHandle, plugin: GObject.Object) => void
     plugin_deactivated: (self: PluginManager, handle: PluginHandle, plugin: GObject.Object) => void
     static name: string
 }
-export class PluginManagerPriv {
+class PluginManagerPriv {
     static name: string
 }
-export class PluginPrivate {
+class PluginPrivate {
     static name: string
 }
-export abstract class PreferencesClass {
-    /* Fields of Anjuta.PreferencesClass */
+abstract class PreferencesClass {
+    /* Fields of Anjuta-3.0.Anjuta.PreferencesClass */
     parent: GObject.ObjectClass
     static name: string
 }
-export abstract class PreferencesDialogClass {
-    /* Fields of Anjuta.PreferencesDialogClass */
+abstract class PreferencesDialogClass {
+    /* Fields of Anjuta-3.0.Anjuta.PreferencesDialogClass */
     parent: Gtk.DialogClass
     static name: string
 }
-export class PreferencesDialogPrivate {
+class PreferencesDialogPrivate {
     static name: string
 }
-export class PreferencesPriv {
+class PreferencesPriv {
     static name: string
 }
-export abstract class ProfileClass {
-    /* Fields of Anjuta.ProfileClass */
+abstract class ProfileClass {
+    /* Fields of Anjuta-3.0.Anjuta.ProfileClass */
     parent_class: GObject.ObjectClass
     plugin_added: (self: Profile, plugin: PluginHandle) => void
     plugin_removed: (self: Profile, plugin: PluginHandle) => void
@@ -18376,33 +18391,33 @@ export abstract class ProfileClass {
     scoped: (self: Profile) => void
     static name: string
 }
-export abstract class ProfileManagerClass {
-    /* Fields of Anjuta.ProfileManagerClass */
+abstract class ProfileManagerClass {
+    /* Fields of Anjuta-3.0.Anjuta.ProfileManagerClass */
     parent_class: GObject.ObjectClass
     profile_pushed: (self: ProfileManager, profile: Profile) => void
     profile_popped: (self: ProfileManager, profile: Profile) => void
     static name: string
 }
-export class ProfileManagerPriv {
+class ProfileManagerPriv {
     static name: string
 }
-export class ProfilePriv {
+class ProfilePriv {
     static name: string
 }
-export abstract class ProjectNodeClass {
-    /* Fields of Anjuta.ProjectNodeClass */
+abstract class ProjectNodeClass {
+    /* Fields of Anjuta-3.0.Anjuta.ProjectNodeClass */
     parent_class: GObject.InitiallyUnownedClass
     updated: (error: GLib.Error) => void
     loaded: (error: GLib.Error) => void
     static name: string
 }
-export class ProjectNodeInfo {
-    /* Fields of Anjuta.ProjectNodeInfo */
+class ProjectNodeInfo {
+    /* Fields of Anjuta-3.0.Anjuta.ProjectNodeInfo */
     type: ProjectNodeType
     name: string
     mime_type: string
     property_help_id: string
-    /* Methods of Anjuta.ProjectNodeInfo */
+    /* Methods of Anjuta-3.0.Anjuta.ProjectNodeInfo */
     copy(): ProjectNodeInfo
     free(): void
     mime(): string
@@ -18412,13 +18427,13 @@ export class ProjectNodeInfo {
     /* Static methods and pseudo-constructors */
     static new(type: ProjectNodeType, name: string, mime_type: string): ProjectNodeInfo
 }
-export class ProjectProperty {
-    /* Fields of Anjuta.ProjectProperty */
+class ProjectProperty {
+    /* Fields of Anjuta-3.0.Anjuta.ProjectProperty */
     name: string
     value: string
     info: ProjectPropertyInfo
     user_data: object
-    /* Methods of Anjuta.ProjectProperty */
+    /* Methods of Anjuta-3.0.Anjuta.ProjectProperty */
     copy(): ProjectProperty
     free(): void
     static name: string
@@ -18427,8 +18442,8 @@ export class ProjectProperty {
     /* Static methods and pseudo-constructors */
     static new(value: string, name?: string | null, user_data?: object | null): ProjectProperty
 }
-export class ProjectPropertyInfo {
-    /* Fields of Anjuta.ProjectPropertyInfo */
+class ProjectPropertyInfo {
+    /* Fields of Anjuta-3.0.Anjuta.ProjectPropertyInfo */
     id: string
     name: string
     type: ProjectValueType
@@ -18436,7 +18451,7 @@ export class ProjectPropertyInfo {
     description: string
     default_value: ProjectProperty
     user_data: object
-    /* Methods of Anjuta.ProjectPropertyInfo */
+    /* Methods of Anjuta-3.0.Anjuta.ProjectPropertyInfo */
     copy(): ProjectPropertyInfo
     free(): void
     static name: string
@@ -18445,35 +18460,35 @@ export class ProjectPropertyInfo {
     /* Static methods and pseudo-constructors */
     static new(id: string, name: string, type: ProjectValueType, flags: ProjectPropertyFlags, description: string, default_value: ProjectProperty, user_data?: object | null): ProjectPropertyInfo
 }
-export class Property {
+class Property {
     static name: string
 }
-export abstract class SavePromptClass {
-    /* Fields of Anjuta.SavePromptClass */
+abstract class SavePromptClass {
+    /* Fields of Anjuta-3.0.Anjuta.SavePromptClass */
     parent_class: Gtk.MessageDialogClass
     static name: string
 }
-export class SavePromptPrivate {
+class SavePromptPrivate {
     static name: string
 }
-export abstract class SerializerClass {
-    /* Fields of Anjuta.SerializerClass */
+abstract class SerializerClass {
+    /* Fields of Anjuta-3.0.Anjuta.SerializerClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class SerializerPrivate {
+class SerializerPrivate {
     static name: string
 }
-export abstract class SessionClass {
-    /* Fields of Anjuta.SessionClass */
+abstract class SessionClass {
+    /* Fields of Anjuta-3.0.Anjuta.SessionClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class SessionPriv {
+class SessionPriv {
     static name: string
 }
-export abstract class ShellIface {
-    /* Fields of Anjuta.ShellIface */
+abstract class ShellIface {
+    /* Fields of Anjuta-3.0.Anjuta.ShellIface */
     g_iface: GObject.TypeInterface
     value_added: (shell: Shell, name: string, value: any) => void
     value_removed: (shell: Shell, name: string) => void
@@ -18502,30 +18517,30 @@ export abstract class ShellIface {
     get_object: (shell: Shell, iface_name: string) => GObject.Object
     static name: string
 }
-export abstract class StatusClass {
-    /* Fields of Anjuta.StatusClass */
+abstract class StatusClass {
+    /* Fields of Anjuta-3.0.Anjuta.StatusClass */
     parent_class: Gtk.BoxClass
     busy: (status: Status, state: boolean) => void
     static name: string
 }
-export class StatusPriv {
+class StatusPriv {
     static name: string
 }
-export abstract class SyncCommandClass {
-    /* Fields of Anjuta.SyncCommandClass */
+abstract class SyncCommandClass {
+    /* Fields of Anjuta-3.0.Anjuta.SyncCommandClass */
     parent_class: CommandClass
     static name: string
 }
-export abstract class TabberClass {
-    /* Fields of Anjuta.TabberClass */
+abstract class TabberClass {
+    /* Fields of Anjuta-3.0.Anjuta.TabberClass */
     parent_class: Gtk.ContainerClass
     static name: string
 }
-export class TabberPriv {
+class TabberPriv {
     static name: string
 }
-export class Token {
-    /* Methods of Anjuta.Token */
+class Token {
+    /* Methods of Anjuta-3.0.Anjuta.Token */
     check(): boolean
     clear_flags(flags: number): void
     compare(tokenb: Token): boolean
@@ -18545,18 +18560,18 @@ export class Token {
     set_type(type: number): void
     static name: string
 }
-export abstract class TokenFileClass {
+abstract class TokenFileClass {
     static name: string
 }
-export class TokenFileLocation {
-    /* Fields of Anjuta.TokenFileLocation */
+class TokenFileLocation {
+    /* Fields of Anjuta-3.0.Anjuta.TokenFileLocation */
     filename: string
     line: number
     column: number
     static name: string
 }
-export class TokenStream {
-    /* Methods of Anjuta.TokenStream */
+class TokenStream {
+    /* Methods of Anjuta-3.0.Anjuta.TokenStream */
     append_token(token: Token): void
     get_current_directory(): Gio.File
     get_current_file(): Gio.File
@@ -18566,41 +18581,43 @@ export class TokenStream {
     read(buffer: string, max_size: number): number
     static name: string
 }
-export class TokenStyle {
-    /* Methods of Anjuta.TokenStyle */
+class TokenStyle {
+    /* Methods of Anjuta-3.0.Anjuta.TokenStyle */
     format(list: Token): void
     free(): void
     update(list: Token): void
     static name: string
 }
-export abstract class TreeComboBoxClass {
-    /* Fields of Anjuta.TreeComboBoxClass */
+abstract class TreeComboBoxClass {
+    /* Fields of Anjuta-3.0.Anjuta.TreeComboBoxClass */
     changed: (combo: TreeComboBox) => void
     static name: string
 }
-export class TreeComboBoxPrivate {
+class TreeComboBoxPrivate {
     static name: string
 }
-export abstract class UIClass {
-    /* Fields of Anjuta.UIClass */
+abstract class UIClass {
+    /* Fields of Anjuta-3.0.Anjuta.UIClass */
     parent: Gtk.UIManagerClass
     static name: string
 }
-export class UIPrivate {
+class UIPrivate {
     static name: string
 }
-export class UtilStringMap {
-    /* Fields of Anjuta.UtilStringMap */
+class UtilStringMap {
+    /* Fields of Anjuta-3.0.Anjuta.UtilStringMap */
     type: number
     name: string
     static name: string
 }
-export abstract class VcsStatusTreeViewClass {
-    /* Fields of Anjuta.VcsStatusTreeViewClass */
+abstract class VcsStatusTreeViewClass {
+    /* Fields of Anjuta-3.0.Anjuta.VcsStatusTreeViewClass */
     parent_class: Gtk.TreeViewClass
     static name: string
 }
-export class VcsStatusTreeViewPriv {
+class VcsStatusTreeViewPriv {
     static name: string
 }
-export type GluePlugin = GObject.TypeModule
+type GluePlugin = GObject.TypeModule
+}
+export default Anjuta;

@@ -1,2 +1,2 @@
-imports.gi.versions.GjsDBus = '1.0'
-export default imports.gi.GjsDBus
+import GjsDBus from 'gi://GjsDBus?version=1.0';
+export default GjsDBus;

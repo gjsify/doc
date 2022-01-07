@@ -3,11 +3,13 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum Error {
+export namespace GSignond {
+
+enum Error {
     NONE,
     UNKNOWN,
     INTERNAL_SERVER,
@@ -49,7 +51,7 @@ export enum Error {
     INCORRECT_DATE,
     USER_ERR,
 }
-export enum PluginState {
+enum PluginState {
     NONE,
     RESOLVING,
     CONNECTING,
@@ -63,7 +65,7 @@ export enum PluginState {
     DONE,
     HOLDING,
 }
-export enum SignonuiError {
+enum SignonuiError {
     NONE,
     GENERAL,
     NO_SIGNONUI,
@@ -77,7 +79,7 @@ export enum SignonuiError {
     FORBIDDEN,
     FORGOT_PASSWORD,
 }
-export enum UiPolicy {
+enum UiPolicy {
     DEFAULT,
     REQUEST_PASSWORD,
     NO_USER_INTERACTION,
@@ -85,21 +87,21 @@ export enum UiPolicy {
 }
 export const CONFIG_DBUS_TIMEOUTS: string
 export const CONFIG_GENERAL: string
-export function error_new_from_variant(var_: GLib.Variant): GLib.Error | null
-export function error_quark(): GLib.Quark
-export function error_to_variant(error: GLib.Error): GLib.Variant | null
-export function generate_nonce(): string
-export function is_host_in_domain(host: string, domain: string): boolean
-export function new_io_stream_from_fd(in_fd: number, out_fd: number, close_fds: boolean): Gio.IOStream
-export function security_context_from_variant(variant: GLib.Variant): SecurityContext
-export function sequence_to_array(seq: GLib.Sequence): string[]
-export function wipe_directory(dirname: string): boolean
-export function wipe_file(filename: string): boolean
-export class Plugin {
-    /* Properties of GSignond.Plugin */
+function error_new_from_variant(var_: GLib.Variant): GLib.Error | null
+function error_quark(): GLib.Quark
+function error_to_variant(error: GLib.Error): GLib.Variant | null
+function generate_nonce(): string
+function is_host_in_domain(host: string, domain: string): boolean
+function new_io_stream_from_fd(in_fd: number, out_fd: number, close_fds: boolean): Gio.IOStream
+function security_context_from_variant(variant: GLib.Variant): SecurityContext
+function sequence_to_array(seq: GLib.Sequence): string[]
+function wipe_directory(dirname: string): boolean
+function wipe_file(filename: string): boolean
+class Plugin {
+    /* Properties of GSignond-1.0.GSignond.Plugin */
     readonly mechanisms: string[]
     readonly type: string
-    /* Methods of GSignond.Plugin */
+    /* Methods of GSignond-1.0.GSignond.Plugin */
     cancel(): void
     error(error: GLib.Error): void
     refresh(ui_data: SignonuiData): void
@@ -112,13 +114,13 @@ export class Plugin {
     store(identity_method_cache: Dictionary): void
     user_action_finished(ui_data: SignonuiData): void
     user_action_required(ui_data: SignonuiData): void
-    /* Virtual methods of GSignond.Plugin */
+    /* Virtual methods of GSignond-1.0.GSignond.Plugin */
     vfunc_cancel(): void
     vfunc_refresh(ui_data: SignonuiData): void
     vfunc_request(session_data: SessionData): void
     vfunc_request_initial(session_data: SessionData, identity_method_cache: Dictionary, mechanism: string): void
     vfunc_user_action_finished(ui_data: SignonuiData): void
-    /* Signals of GSignond.Plugin */
+    /* Signals of GSignond-1.0.GSignond.Plugin */
     connect(sigName: "error", callback: (($obj: Plugin, error: GLib.Error) => void)): number
     connect_after(sigName: "error", callback: (($obj: Plugin, error: GLib.Error) => void)): number
     emit(sigName: "error", error: GLib.Error): void
@@ -145,28 +147,28 @@ export class Plugin {
 export interface AccessControlManager_ConstructProps extends GObject.Object_ConstructProps {
     config?: Config
 }
-export class AccessControlManager {
-    /* Fields of GSignond.AccessControlManager */
+class AccessControlManager {
+    /* Fields of GSignond-1.0.GSignond.AccessControlManager */
     parent_instance: GObject.Object
     config: Config
     priv: AccessControlManagerPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GSignond.AccessControlManager */
+    /* Methods of GSignond-1.0.GSignond.AccessControlManager */
     acl_is_valid(peer_ctx: SecurityContext, identity_acl: SecurityContext[]): boolean
     peer_is_allowed_to_use_identity(peer_ctx: SecurityContext, owner_ctx: SecurityContext, identity_acl: SecurityContext[]): boolean
     peer_is_owner_of_identity(peer_ctx: SecurityContext, owner_ctx: SecurityContext): boolean
     security_context_of_keychain(): SecurityContext
     security_context_of_peer(peer_ctx: SecurityContext, peer_fd: number, peer_service: string, peer_app_ctx: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -174,27 +176,27 @@ export class AccessControlManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GSignond.AccessControlManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GSignond-1.0.GSignond.AccessControlManager */
     vfunc_acl_is_valid(peer_ctx: SecurityContext, identity_acl: SecurityContext[]): boolean
     vfunc_peer_is_allowed_to_use_identity(peer_ctx: SecurityContext, owner_ctx: SecurityContext, identity_acl: SecurityContext[]): boolean
     vfunc_peer_is_owner_of_identity(peer_ctx: SecurityContext, owner_ctx: SecurityContext): boolean
     vfunc_security_context_of_keychain(): SecurityContext
     vfunc_security_context_of_peer(peer_ctx: SecurityContext, peer_fd: number, peer_service: string, peer_app_ctx: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AccessControlManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AccessControlManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -209,23 +211,23 @@ export class AccessControlManager {
 }
 export interface Config_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Config {
-    /* Fields of GObject.Object */
+class Config {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GSignond.Config */
+    /* Methods of GSignond-1.0.GSignond.Config */
     get_integer(key: string): number
     get_string(key: string): string | null
     set_integer(key: string, value: number): void
     set_string(key: string, value: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -233,21 +235,21 @@ export class Config {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Config, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Config, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -264,12 +266,12 @@ export class Config {
 }
 export interface Credentials_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Credentials {
-    /* Fields of GSignond.Credentials */
+class Credentials {
+    /* Fields of GSignond-1.0.GSignond.Credentials */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GSignond.Credentials */
+    /* Methods of GSignond-1.0.GSignond.Credentials */
     equal(two: Credentials): boolean
     get_id(): number
     get_password(): string | null
@@ -278,15 +280,15 @@ export class Credentials {
     set_id(id: number): boolean
     set_password(password?: string | null): boolean
     set_username(username?: string | null): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -294,21 +296,21 @@ export class Credentials {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Credentials, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Credentials, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -325,12 +327,12 @@ export class Credentials {
 }
 export interface Dictionary_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Dictionary {
-    /* Fields of GSignond.Dictionary */
+class Dictionary {
+    /* Fields of GSignond-1.0.GSignond.Dictionary */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GSignond.Dictionary */
+    /* Methods of GSignond-1.0.GSignond.Dictionary */
     contains(key: string): boolean
     copy(): Dictionary
     get(key: string): GLib.Variant | null
@@ -351,15 +353,15 @@ export class Dictionary {
     set_uint64(key: string, value: number): boolean
     to_variant(): GLib.Variant | null
     to_variant_builder(): GLib.VariantBuilder | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -367,21 +369,21 @@ export class Dictionary {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Dictionary, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Dictionary, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -399,26 +401,26 @@ export class Dictionary {
 }
 export interface Extension_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Extension {
-    /* Fields of GSignond.Extension */
+class Extension {
+    /* Fields of GSignond-1.0.GSignond.Extension */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GSignond.Extension */
+    /* Methods of GSignond-1.0.GSignond.Extension */
     get_access_control_manager(config: Config): AccessControlManager
     get_name(): string
     get_secret_storage(config: Config): SecretStorage
     get_storage_manager(config: Config): StorageManager
     get_version(): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -426,27 +428,27 @@ export class Extension {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GSignond.Extension */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GSignond-1.0.GSignond.Extension */
     vfunc_get_access_control_manager(config: Config): AccessControlManager
     vfunc_get_extension_name(): string
     vfunc_get_extension_version(): number
     vfunc_get_secret_storage(config: Config): SecretStorage
     vfunc_get_storage_manager(config: Config): StorageManager
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Extension, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Extension, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -462,12 +464,12 @@ export class Extension {
 export interface SecretStorage_ConstructProps extends GObject.Object_ConstructProps {
     config?: Config
 }
-export class SecretStorage {
-    /* Fields of GSignond.SecretStorage */
+class SecretStorage {
+    /* Fields of GSignond-1.0.GSignond.SecretStorage */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GSignond.SecretStorage */
+    /* Methods of GSignond-1.0.GSignond.SecretStorage */
     check_credentials(creds: Credentials): boolean
     clear_db(): boolean
     close_db(): boolean
@@ -480,15 +482,15 @@ export class SecretStorage {
     remove_data(id: number, method: number): boolean
     update_credentials(creds: Credentials): boolean
     update_data(id: number, method: number, data: Dictionary): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -496,13 +498,13 @@ export class SecretStorage {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GSignond.SecretStorage */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GSignond-1.0.GSignond.SecretStorage */
     vfunc_check_credentials(creds: Credentials): boolean
     vfunc_clear_db(): boolean
     vfunc_close_db(): boolean
@@ -515,15 +517,15 @@ export class SecretStorage {
     vfunc_remove_data(id: number, method: number): boolean
     vfunc_update_credentials(creds: Credentials): boolean
     vfunc_update_data(id: number, method: number, data: Dictionary): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SecretStorage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SecretStorage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -538,12 +540,12 @@ export class SecretStorage {
 }
 export interface SessionData_ConstructProps extends Dictionary_ConstructProps {
 }
-export class SessionData {
-    /* Fields of GSignond.SessionData */
+class SessionData {
+    /* Fields of GSignond-1.0.GSignond.SessionData */
     parent_instance: Dictionary
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GSignond.SessionData */
+    /* Methods of GSignond-1.0.GSignond.SessionData */
     copy(): SessionData
     get_caption(): string
     get_network_proxy(): string
@@ -564,7 +566,7 @@ export class SessionData {
     set_ui_policy(ui_policy: UiPolicy): void
     set_username(username: string): void
     set_window_id(window_id: number): void
-    /* Methods of GSignond.Dictionary */
+    /* Methods of GSignond-1.0.GSignond.Dictionary */
     contains(key: string): boolean
     copy(): Dictionary
     get(key: string): GLib.Variant | null
@@ -585,15 +587,15 @@ export class SessionData {
     set_uint64(key: string, value: number): boolean
     to_variant(): GLib.Variant | null
     to_variant_builder(): GLib.VariantBuilder | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -601,21 +603,21 @@ export class SessionData {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SessionData, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SessionData, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -633,12 +635,12 @@ export class SessionData {
 }
 export interface SignonuiData_ConstructProps extends Dictionary_ConstructProps {
 }
-export class SignonuiData {
-    /* Fields of GSignond.SignonuiData */
+class SignonuiData {
+    /* Fields of GSignond-1.0.GSignond.SignonuiData */
     parent_instance: Dictionary
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GSignond.SignonuiData */
+    /* Methods of GSignond-1.0.GSignond.SignonuiData */
     copy(): SignonuiData
     get_captcha_response(): string | null
     get_captcha_url(): string | null
@@ -678,7 +680,7 @@ export class SignonuiData {
     set_title(title: string): void
     set_url_response(response: string): void
     set_username(username: string): void
-    /* Methods of GSignond.Dictionary */
+    /* Methods of GSignond-1.0.GSignond.Dictionary */
     contains(key: string): boolean
     copy(): Dictionary
     get(key: string): GLib.Variant | null
@@ -699,15 +701,15 @@ export class SignonuiData {
     set_uint64(key: string, value: number): boolean
     to_variant(): GLib.Variant | null
     to_variant_builder(): GLib.VariantBuilder | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -715,21 +717,21 @@ export class SignonuiData {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SignonuiData, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SignonuiData, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -748,30 +750,30 @@ export class SignonuiData {
 export interface StorageManager_ConstructProps extends GObject.Object_ConstructProps {
     config?: Config
 }
-export class StorageManager {
-    /* Fields of GSignond.StorageManager */
+class StorageManager {
+    /* Fields of GSignond-1.0.GSignond.StorageManager */
     parent_instance: GObject.Object
     config: Config
     location: string
     priv: StorageManagerPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GSignond.StorageManager */
+    /* Methods of GSignond-1.0.GSignond.StorageManager */
     delete_storage(): boolean
     filesystem_is_mounted(): boolean
     initialize_storage(): boolean
     mount_filesystem(): string
     storage_is_initialized(): boolean
     unmount_filesystem(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -779,28 +781,28 @@ export class StorageManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GSignond.StorageManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GSignond-1.0.GSignond.StorageManager */
     vfunc_delete_storage(): boolean
     vfunc_filesystem_is_mounted(): boolean
     vfunc_initialize_storage(): boolean
     vfunc_mount_filesystem(): string
     vfunc_storage_is_initialized(): boolean
     vfunc_unmount_filesystem(): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StorageManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StorageManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -813,8 +815,8 @@ export class StorageManager {
     _init (config?: StorageManager_ConstructProps): void
     static $gtype: GObject.Type
 }
-export abstract class AccessControlManagerClass {
-    /* Fields of GSignond.AccessControlManagerClass */
+abstract class AccessControlManagerClass {
+    /* Fields of GSignond-1.0.GSignond.AccessControlManagerClass */
     parent_class: GObject.ObjectClass
     security_context_of_peer: (self: AccessControlManager, peer_ctx: SecurityContext, peer_fd: number, peer_service: string, peer_app_ctx: string) => void
     peer_is_allowed_to_use_identity: (self: AccessControlManager, peer_ctx: SecurityContext, owner_ctx: SecurityContext, identity_acl: SecurityContext[]) => boolean
@@ -823,22 +825,22 @@ export abstract class AccessControlManagerClass {
     security_context_of_keychain: (self: AccessControlManager) => SecurityContext
     static name: string
 }
-export class AccessControlManagerPrivate {
+class AccessControlManagerPrivate {
     static name: string
 }
-export abstract class ConfigClass {
-    /* Fields of GSignond.ConfigClass */
+abstract class ConfigClass {
+    /* Fields of GSignond-1.0.GSignond.ConfigClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class CredentialsClass {
+abstract class CredentialsClass {
     static name: string
 }
-export abstract class DictionaryClass {
+abstract class DictionaryClass {
     static name: string
 }
-export abstract class ExtensionClass {
-    /* Fields of GSignond.ExtensionClass */
+abstract class ExtensionClass {
+    /* Fields of GSignond-1.0.GSignond.ExtensionClass */
     parent_class: GObject.ObjectClass
     get_extension_name: (self: Extension) => string
     get_extension_version: (self: Extension) => number
@@ -847,8 +849,8 @@ export abstract class ExtensionClass {
     get_access_control_manager: (self: Extension, config: Config) => AccessControlManager
     static name: string
 }
-export abstract class PluginInterface {
-    /* Fields of GSignond.PluginInterface */
+abstract class PluginInterface {
+    /* Fields of GSignond-1.0.GSignond.PluginInterface */
     parent: GObject.TypeInterface
     cancel: (self: Plugin) => void
     request_initial: (self: Plugin, session_data: SessionData, identity_method_cache: Dictionary, mechanism: string) => void
@@ -857,8 +859,8 @@ export abstract class PluginInterface {
     refresh: (self: Plugin, ui_data: SignonuiData) => void
     static name: string
 }
-export abstract class SecretStorageClass {
-    /* Fields of GSignond.SecretStorageClass */
+abstract class SecretStorageClass {
+    /* Fields of GSignond-1.0.GSignond.SecretStorageClass */
     parent_class: GObject.ObjectClass
     open_db: (self: SecretStorage) => boolean
     close_db: (self: SecretStorage) => boolean
@@ -874,14 +876,14 @@ export abstract class SecretStorageClass {
     get_last_error: (self: SecretStorage) => GLib.Error
     static name: string
 }
-export class SecretStoragePrivate {
+class SecretStoragePrivate {
     static name: string
 }
-export class SecurityContext {
-    /* Fields of GSignond.SecurityContext */
+class SecurityContext {
+    /* Fields of GSignond-1.0.GSignond.SecurityContext */
     sys_ctx: string
     app_ctx: string
-    /* Methods of GSignond.SecurityContext */
+    /* Methods of GSignond-1.0.GSignond.SecurityContext */
     check(test: SecurityContext): boolean
     compare(ctx2: SecurityContext): number
     copy(): SecurityContext
@@ -900,14 +902,14 @@ export class SecurityContext {
     static new_from_values(system_context: string, application_context: string): SecurityContext
     static from_variant(variant: GLib.Variant): SecurityContext
 }
-export abstract class SessionDataClass {
+abstract class SessionDataClass {
     static name: string
 }
-export abstract class SignonuiDataClass {
+abstract class SignonuiDataClass {
     static name: string
 }
-export abstract class StorageManagerClass {
-    /* Fields of GSignond.StorageManagerClass */
+abstract class StorageManagerClass {
+    /* Fields of GSignond-1.0.GSignond.StorageManagerClass */
     parent_class: GObject.ObjectClass
     initialize_storage: (self: StorageManager) => boolean
     delete_storage: (self: StorageManager) => boolean
@@ -917,6 +919,8 @@ export abstract class StorageManagerClass {
     filesystem_is_mounted: (self: StorageManager) => boolean
     static name: string
 }
-export class StorageManagerPrivate {
+class StorageManagerPrivate {
     static name: string
 }
+}
+export default GSignond;

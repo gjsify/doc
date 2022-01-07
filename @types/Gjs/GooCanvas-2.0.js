@@ -1,2 +1,2 @@
-imports.gi.versions.GooCanvas = '2.0'
-export default imports.gi.GooCanvas
+import GooCanvas from 'gi://GooCanvas?version=2.0';
+export default GooCanvas;

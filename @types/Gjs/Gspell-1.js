@@ -1,2 +1,2 @@
-imports.gi.versions.Gspell = '1'
-export default imports.gi.Gspell
+import Gspell from 'gi://Gspell?version=1';
+export default Gspell;

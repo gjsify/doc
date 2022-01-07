@@ -1,2 +1,2 @@
-imports.gi.versions.ClutterX11 = '1.0'
-export default imports.gi.ClutterX11
+import ClutterX11 from 'gi://ClutterX11?version=1.0';
+export default ClutterX11;

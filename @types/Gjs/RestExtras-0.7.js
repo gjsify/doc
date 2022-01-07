@@ -1,2 +1,2 @@
-imports.gi.versions.RestExtras = '0.7'
-export default imports.gi.RestExtras
+import RestExtras from 'gi://RestExtras?version=0.7';
+export default RestExtras;

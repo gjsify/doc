@@ -1,2 +1,2 @@
-imports.gi.versions.Retro = '1'
-export default imports.gi.Retro
+import Retro from 'gi://Retro?version=1';
+export default Retro;

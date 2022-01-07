@@ -3,31 +3,33 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as cairo from './cairo-1.0';
-import type * as Json from './Json-1.0';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as GL from './GL-1.0';
-import type * as CoglPango from './CoglPango-1.0';
-import type * as PangoCairo from './PangoCairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as Cogl from './Cogl-1.0';
-import type * as Atk from './Atk-1.0';
+import type cairo from './cairo-1.0';
+import type Json from './Json-1.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type GL from './GL-1.0';
+import type CoglPango from './CoglPango-1.0';
+import type PangoCairo from './PangoCairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type Cogl from './Cogl-1.0';
+import type Atk from './Atk-1.0';
 
-export enum ActorAlign {
+export namespace Clutter {
+
+enum ActorAlign {
     FILL,
     START,
     CENTER,
     END,
 }
-export enum AlignAxis {
+enum AlignAxis {
     X_AXIS,
     Y_AXIS,
     BOTH,
 }
-export enum AnimationMode {
+enum AnimationMode {
     CUSTOM_MODE,
     LINEAR,
     EASE_IN_QUAD,
@@ -70,14 +72,14 @@ export enum AnimationMode {
     EASE_IN_OUT,
     ANIMATION_LAST,
 }
-export enum BinAlignment {
+enum BinAlignment {
     FIXED,
     FILL,
     START,
     END,
     CENTER,
 }
-export enum BindCoordinate {
+enum BindCoordinate {
     X,
     Y,
     WIDTH,
@@ -86,12 +88,12 @@ export enum BindCoordinate {
     SIZE,
     ALL,
 }
-export enum BoxAlignment {
+enum BoxAlignment {
     START,
     END,
     CENTER,
 }
-export enum ContentGravity {
+enum ContentGravity {
     TOP_LEFT,
     TOP,
     TOP_RIGHT,
@@ -104,12 +106,12 @@ export enum ContentGravity {
     RESIZE_FILL,
     RESIZE_ASPECT,
 }
-export enum DragAxis {
+enum DragAxis {
     AXIS_NONE,
     X_AXIS,
     Y_AXIS,
 }
-export enum EventType {
+enum EventType {
     NOTHING,
     KEY_PRESS,
     KEY_RELEASE,
@@ -131,16 +133,16 @@ export enum EventType {
     TOUCHPAD_SWIPE,
     EVENT_LAST,
 }
-export enum FlowOrientation {
+enum FlowOrientation {
     HORIZONTAL,
     VERTICAL,
 }
-export enum GestureTriggerEdge {
+enum GestureTriggerEdge {
     NONE,
     AFTER,
     BEFORE,
 }
-export enum Gravity {
+enum Gravity {
     NONE,
     NORTH,
     NORTH_EAST,
@@ -152,23 +154,23 @@ export enum Gravity {
     NORTH_WEST,
     CENTER,
 }
-export enum GridPosition {
+enum GridPosition {
     LEFT,
     RIGHT,
     TOP,
     BOTTOM,
 }
-export enum ImageError {
+enum ImageError {
     DATA,
 }
-export enum InitError {
+enum InitError {
     SUCCESS,
     ERROR_UNKNOWN,
     ERROR_THREADS,
     ERROR_BACKEND,
     ERROR_INTERNAL,
 }
-export enum InputAxis {
+enum InputAxis {
     IGNORE,
     X,
     Y,
@@ -179,7 +181,7 @@ export enum InputAxis {
     DISTANCE,
     LAST,
 }
-export enum InputDeviceType {
+enum InputDeviceType {
     POINTER_DEVICE,
     KEYBOARD_DEVICE,
     EXTENSION_DEVICE,
@@ -192,31 +194,31 @@ export enum InputDeviceType {
     CURSOR_DEVICE,
     N_DEVICE_TYPES,
 }
-export enum InputMode {
+enum InputMode {
     MASTER,
     SLAVE,
     FLOATING,
 }
-export enum Interpolation {
+enum Interpolation {
     LINEAR,
     CUBIC,
 }
-export enum LongPressState {
+enum LongPressState {
     QUERY,
     ACTIVATE,
     CANCEL,
 }
-export enum Orientation {
+enum Orientation {
     HORIZONTAL,
     VERTICAL,
 }
-export enum PanAxis {
+enum PanAxis {
     AXIS_NONE,
     X_AXIS,
     Y_AXIS,
     AXIS_AUTO,
 }
-export enum PathNodeType {
+enum PathNodeType {
     MOVE_TO,
     LINE_TO,
     CURVE_TO,
@@ -225,64 +227,64 @@ export enum PathNodeType {
     REL_LINE_TO,
     REL_CURVE_TO,
 }
-export enum PickMode {
+enum PickMode {
     NONE,
     REACTIVE,
     ALL,
 }
-export enum RequestMode {
+enum RequestMode {
     HEIGHT_FOR_WIDTH,
     WIDTH_FOR_HEIGHT,
     CONTENT_SIZE,
 }
-export enum RotateAxis {
+enum RotateAxis {
     X_AXIS,
     Y_AXIS,
     Z_AXIS,
 }
-export enum RotateDirection {
+enum RotateDirection {
     CW,
     CCW,
 }
-export enum ScalingFilter {
+enum ScalingFilter {
     LINEAR,
     NEAREST,
     TRILINEAR,
 }
-export enum ScriptError {
+enum ScriptError {
     TYPE_FUNCTION,
     PROPERTY,
     VALUE,
 }
-export enum ScrollDirection {
+enum ScrollDirection {
     UP,
     DOWN,
     LEFT,
     RIGHT,
     SMOOTH,
 }
-export enum ScrollSource {
+enum ScrollSource {
     UNKNOWN,
     WHEEL,
     FINGER,
     CONTINUOUS,
 }
-export enum ShaderError {
+enum ShaderError {
     NO_ASM,
     NO_GLSL,
     COMPILE,
 }
-export enum ShaderType {
+enum ShaderType {
     VERTEX_SHADER,
     FRAGMENT_SHADER,
 }
-export enum SnapEdge {
+enum SnapEdge {
     TOP,
     RIGHT,
     BOTTOM,
     LEFT,
 }
-export enum StaticColor {
+enum StaticColor {
     WHITE,
     BLACK,
     RED,
@@ -329,78 +331,78 @@ export enum StaticColor {
     ALUMINIUM_6,
     TRANSPARENT,
 }
-export enum StepMode {
+enum StepMode {
     START,
     END,
 }
-export enum TableAlignment {
+enum TableAlignment {
     START,
     CENTER,
     END,
 }
-export enum TextDirection {
+enum TextDirection {
     DEFAULT,
     LTR,
     RTL,
 }
-export enum TextureError {
+enum TextureError {
     OUT_OF_MEMORY,
     NO_YUV,
     BAD_FORMAT,
 }
-export enum TextureQuality {
+enum TextureQuality {
     LOW,
     MEDIUM,
     HIGH,
 }
-export enum TimelineDirection {
+enum TimelineDirection {
     FORWARD,
     BACKWARD,
 }
-export enum TouchpadGesturePhase {
+enum TouchpadGesturePhase {
     BEGIN,
     UPDATE,
     END,
     CANCEL,
 }
-export enum UnitType {
+enum UnitType {
     PIXEL,
     EM,
     MM,
     POINT,
     CM,
 }
-export enum ZoomAxis {
+enum ZoomAxis {
     X_AXIS,
     Y_AXIS,
     BOTH,
 }
-export enum ActorFlags {
+enum ActorFlags {
     MAPPED,
     REALIZED,
     REACTIVE,
     VISIBLE,
     NO_LAYOUT,
 }
-export enum AllocationFlags {
+enum AllocationFlags {
     ALLOCATION_NONE,
     ABSOLUTE_ORIGIN_CHANGED,
     DELEGATE_LAYOUT,
 }
-export enum ContentRepeat {
+enum ContentRepeat {
     NONE,
     X_AXIS,
     Y_AXIS,
     BOTH,
 }
-export enum EffectPaintFlags {
+enum EffectPaintFlags {
     ACTOR_DIRTY,
 }
-export enum EventFlags {
+enum EventFlags {
     NONE,
     FLAG_SYNTHETIC,
 }
-export enum FeatureFlags {
+enum FeatureFlags {
     TEXTURE_NPOT,
     SYNC_TO_VBLANK,
     TEXTURE_YUV,
@@ -413,11 +415,11 @@ export enum FeatureFlags {
     STAGE_MULTIPLE,
     SWAP_EVENTS,
 }
-export enum FontFlags {
+enum FontFlags {
     MIPMAPPING,
     HINTING,
 }
-export enum ModifierType {
+enum ModifierType {
     SHIFT_MASK,
     LOCK_MASK,
     CONTROL_MASK,
@@ -451,38 +453,38 @@ export enum ModifierType {
     RELEASE_MASK,
     MODIFIER_MASK,
 }
-export enum OffscreenRedirect {
+enum OffscreenRedirect {
     AUTOMATIC_FOR_OPACITY,
     ALWAYS,
 }
-export enum RepaintFlags {
+enum RepaintFlags {
     PRE_PAINT,
     POST_PAINT,
     QUEUE_REDRAW_ON_ADD,
 }
-export enum ScrollFinishFlags {
+enum ScrollFinishFlags {
     NONE,
     HORIZONTAL,
     VERTICAL,
 }
-export enum ScrollMode {
+enum ScrollMode {
     NONE,
     HORIZONTALLY,
     VERTICALLY,
     BOTH,
 }
-export enum StageState {
+enum StageState {
     FULLSCREEN,
     OFFSCREEN,
     ACTIVATED,
 }
-export enum SwipeDirection {
+enum SwipeDirection {
     UP,
     DOWN,
     LEFT,
     RIGHT,
 }
-export enum TextureFlags {
+enum TextureFlags {
     NONE,
     RGB_FLAG_BGR,
     RGB_FLAG_PREMULT,
@@ -5065,156 +5067,156 @@ export const zcaron: number
 export const zerosubscript: number
 export const zerosuperior: number
 export const zstroke: number
-export function actor_box_alloc(): ActorBox
-export function base_init(): void
-export function cairo_clear(cr: cairo.Context): void
-export function cairo_set_source_color(cr: cairo.Context, color: Color): void
-export function check_version(major: number, minor: number, micro: number): boolean
-export function check_windowing_backend(backend_type: string): boolean
-export function clear_glyph_cache(): void
-export function color_from_hls(hue: number, luminance: number, saturation: number): /* color */ Color
-export function color_from_pixel(pixel: number): /* color */ Color
-export function color_from_string(str: string): [ /* returnType */ boolean, /* color */ Color ]
-export function color_get_static(color: StaticColor): Color
-export function container_class_find_child_property(klass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
-export function container_class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
-export function disable_accessibility(): void
-export function do_event(event: Event): void
-export function event_add_filter(stage: Stage | null, func: EventFilterFunc): number
-export function event_get(): Event
-export function event_peek(): Event
-export function event_remove_filter(id: number): void
-export function events_pending(): boolean
-export function feature_available(feature: FeatureFlags): boolean
-export function feature_get_all(): FeatureFlags
-export function frame_source_add(priority: number, fps: number, func: GLib.SourceFunc): number
-export function get_accessibility_enabled(): boolean
-export function get_actor_by_gid(id_: number): Actor
-export function get_current_event(): Event
-export function get_current_event_time(): number
-export function get_debug_enabled(): boolean
-export function get_default_backend(): Backend
-export function get_default_frame_rate(): number
-export function get_default_text_direction(): TextDirection
-export function get_font_flags(): FontFlags
-export function get_font_map(): Pango.FontMap
-export function get_input_device_for_id(id_: number): InputDevice
-export function get_keyboard_grab(): Actor
-export function get_motion_events_enabled(): boolean
-export function get_pointer_grab(): Actor
-export function get_script_id(gobject: GObject.Object): string
-export function get_show_fps(): boolean
-export function get_timestamp(): number
-export function grab_keyboard(actor: Actor): void
-export function grab_pointer(actor: Actor): void
-export function grab_pointer_for_device(actor: Actor, id_: number): void
-export function image_error_quark(): GLib.Quark
-export function init(argv?: string[] | null): [ /* returnType */ InitError, /* argv */ string[] | null ]
-export function init_error_quark(): GLib.Quark
-export function init_with_args(argv?: string[] | null, parameter_string?: string | null, entries?: GLib.OptionEntry[] | null, translation_domain?: string | null): [ /* returnType */ InitError, /* argv */ string[] | null ]
-export function keysym_to_unicode(keyval: number): number
-export function main(): void
-export function main_level(): number
-export function main_quit(): void
-export function matrix_alloc(): Matrix
-export function point_zero(): Point
-export function rect_zero(): Rect
-export function redraw(stage: Stage): void
-export function script_error_quark(): GLib.Quark
-export function set_default_frame_rate(frames_per_sec: number): void
-export function set_font_flags(flags: FontFlags): void
-export function set_motion_events_enabled(enable: boolean): void
-export function set_windowing_backend(backend_type: string): void
-export function shader_error_quark(): GLib.Quark
-export function test_add_data_full(test_path: string, test_func: GLib.TestDataFunc): void
-export function test_check_actor_at_point(stage: Actor, point: Point, actor: Actor): [ /* returnType */ boolean, /* result */ Actor | null ]
-export function test_check_color_at_point(stage: Actor, point: Point, color: Color): [ /* returnType */ boolean, /* result */ Color ]
-export function test_get_stage(): Actor
-export function test_init(argc: number, argv: string): void
-export function test_run(): number
-export function texture_error_quark(): GLib.Quark
-export function threads_add_frame_source(priority: number, fps: number, func: GLib.SourceFunc): number
-export function threads_add_idle(priority: number, func: GLib.SourceFunc): number
-export function threads_add_repaint_func(func: GLib.SourceFunc): number
-export function threads_add_repaint_func_full(flags: RepaintFlags, func: GLib.SourceFunc): number
-export function threads_add_timeout(priority: number, interval: number, func: GLib.SourceFunc): number
-export function threads_enter(): void
-export function threads_init(): void
-export function threads_leave(): void
-export function threads_remove_repaint_func(handle_id: number): void
-export function ungrab_keyboard(): void
-export function ungrab_pointer(): void
-export function ungrab_pointer_for_device(id_: number): void
-export function unicode_to_keysym(wc: number): number
-export function units_from_cm(cm: number): /* units */ Units
-export function units_from_em(em: number): /* units */ Units
-export function units_from_em_for_font(font_name: string | null, em: number): /* units */ Units
-export function units_from_mm(mm: number): /* units */ Units
-export function units_from_pixels(px: number): /* units */ Units
-export function units_from_pt(pt: number): /* units */ Units
-export function units_from_string(str: string): [ /* returnType */ boolean, /* units */ Units ]
-export function util_next_p2(a: number): number
-export function value_dup_paint_node(value: any): PaintNode
-export function value_get_color(value: any): Color
-export function value_get_paint_node(value: any): PaintNode
-export function value_get_shader_float(value: any): number[]
-export function value_get_shader_int(value: any): number[]
-export function value_get_shader_matrix(value: any): number[]
-export function value_get_units(value: any): Units
-export function value_set_color(value: any, color: Color): void
-export function value_set_paint_node(value: any, node?: PaintNode | null): void
-export function value_set_shader_float(value: any, floats: number[]): void
-export function value_set_shader_int(value: any, ints: number[]): void
-export function value_set_shader_matrix(value: any, matrix: number[]): void
-export function value_set_units(value: any, units: Units): void
-export function value_take_paint_node(value: any, node?: PaintNode | null): void
-export interface ActorCreateChildFunc {
+function actor_box_alloc(): ActorBox
+function base_init(): void
+function cairo_clear(cr: cairo.Context): void
+function cairo_set_source_color(cr: cairo.Context, color: Color): void
+function check_version(major: number, minor: number, micro: number): boolean
+function check_windowing_backend(backend_type: string): boolean
+function clear_glyph_cache(): void
+function color_from_hls(hue: number, luminance: number, saturation: number): /* color */ Color
+function color_from_pixel(pixel: number): /* color */ Color
+function color_from_string(str: string): [ /* returnType */ boolean, /* color */ Color ]
+function color_get_static(color: StaticColor): Color
+function container_class_find_child_property(klass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+function container_class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
+function disable_accessibility(): void
+function do_event(event: Event): void
+function event_add_filter(stage: Stage | null, func: EventFilterFunc): number
+function event_get(): Event
+function event_peek(): Event
+function event_remove_filter(id: number): void
+function events_pending(): boolean
+function feature_available(feature: FeatureFlags): boolean
+function feature_get_all(): FeatureFlags
+function frame_source_add(priority: number, fps: number, func: GLib.SourceFunc): number
+function get_accessibility_enabled(): boolean
+function get_actor_by_gid(id_: number): Actor
+function get_current_event(): Event
+function get_current_event_time(): number
+function get_debug_enabled(): boolean
+function get_default_backend(): Backend
+function get_default_frame_rate(): number
+function get_default_text_direction(): TextDirection
+function get_font_flags(): FontFlags
+function get_font_map(): Pango.FontMap
+function get_input_device_for_id(id_: number): InputDevice
+function get_keyboard_grab(): Actor
+function get_motion_events_enabled(): boolean
+function get_pointer_grab(): Actor
+function get_script_id(gobject: GObject.Object): string
+function get_show_fps(): boolean
+function get_timestamp(): number
+function grab_keyboard(actor: Actor): void
+function grab_pointer(actor: Actor): void
+function grab_pointer_for_device(actor: Actor, id_: number): void
+function image_error_quark(): GLib.Quark
+function init(argv?: string[] | null): [ /* returnType */ InitError, /* argv */ string[] | null ]
+function init_error_quark(): GLib.Quark
+function init_with_args(argv?: string[] | null, parameter_string?: string | null, entries?: GLib.OptionEntry[] | null, translation_domain?: string | null): [ /* returnType */ InitError, /* argv */ string[] | null ]
+function keysym_to_unicode(keyval: number): number
+function main(): void
+function main_level(): number
+function main_quit(): void
+function matrix_alloc(): Matrix
+function point_zero(): Point
+function rect_zero(): Rect
+function redraw(stage: Stage): void
+function script_error_quark(): GLib.Quark
+function set_default_frame_rate(frames_per_sec: number): void
+function set_font_flags(flags: FontFlags): void
+function set_motion_events_enabled(enable: boolean): void
+function set_windowing_backend(backend_type: string): void
+function shader_error_quark(): GLib.Quark
+function test_add_data_full(test_path: string, test_func: GLib.TestDataFunc): void
+function test_check_actor_at_point(stage: Actor, point: Point, actor: Actor): [ /* returnType */ boolean, /* result */ Actor | null ]
+function test_check_color_at_point(stage: Actor, point: Point, color: Color): [ /* returnType */ boolean, /* result */ Color ]
+function test_get_stage(): Actor
+function test_init(argc: number, argv: string): void
+function test_run(): number
+function texture_error_quark(): GLib.Quark
+function threads_add_frame_source(priority: number, fps: number, func: GLib.SourceFunc): number
+function threads_add_idle(priority: number, func: GLib.SourceFunc): number
+function threads_add_repaint_func(func: GLib.SourceFunc): number
+function threads_add_repaint_func_full(flags: RepaintFlags, func: GLib.SourceFunc): number
+function threads_add_timeout(priority: number, interval: number, func: GLib.SourceFunc): number
+function threads_enter(): void
+function threads_init(): void
+function threads_leave(): void
+function threads_remove_repaint_func(handle_id: number): void
+function ungrab_keyboard(): void
+function ungrab_pointer(): void
+function ungrab_pointer_for_device(id_: number): void
+function unicode_to_keysym(wc: number): number
+function units_from_cm(cm: number): /* units */ Units
+function units_from_em(em: number): /* units */ Units
+function units_from_em_for_font(font_name: string | null, em: number): /* units */ Units
+function units_from_mm(mm: number): /* units */ Units
+function units_from_pixels(px: number): /* units */ Units
+function units_from_pt(pt: number): /* units */ Units
+function units_from_string(str: string): [ /* returnType */ boolean, /* units */ Units ]
+function util_next_p2(a: number): number
+function value_dup_paint_node(value: any): PaintNode
+function value_get_color(value: any): Color
+function value_get_paint_node(value: any): PaintNode
+function value_get_shader_float(value: any): number[]
+function value_get_shader_int(value: any): number[]
+function value_get_shader_matrix(value: any): number[]
+function value_get_units(value: any): Units
+function value_set_color(value: any, color: Color): void
+function value_set_paint_node(value: any, node?: PaintNode | null): void
+function value_set_shader_float(value: any, floats: number[]): void
+function value_set_shader_int(value: any, ints: number[]): void
+function value_set_shader_matrix(value: any, matrix: number[]): void
+function value_set_units(value: any, units: Units): void
+function value_take_paint_node(value: any, node?: PaintNode | null): void
+interface ActorCreateChildFunc {
     (item: GObject.Object): Actor
 }
-export interface AlphaFunc {
+interface AlphaFunc {
     (alpha: Alpha): number
 }
-export interface BehaviourForeachFunc {
+interface BehaviourForeachFunc {
     (behaviour: Behaviour, actor: Actor): void
 }
-export interface BindingActionFunc {
+interface BindingActionFunc {
     (gobject: GObject.Object, action_name: string, key_val: number, modifiers: ModifierType): boolean
 }
-export interface Callback {
+interface Callback {
     (actor: Actor): void
 }
-export interface EventFilterFunc {
+interface EventFilterFunc {
     (event: Event): boolean
 }
-export interface ModelFilterFunc {
+interface ModelFilterFunc {
     (model: Model, iter: ModelIter): boolean
 }
-export interface ModelForeachFunc {
+interface ModelForeachFunc {
     (model: Model, iter: ModelIter): boolean
 }
-export interface ModelSortFunc {
+interface ModelSortFunc {
     (model: Model, a: any, b: any): number
 }
-export interface PathCallback {
+interface PathCallback {
     (node: PathNode): void
 }
-export interface ProgressFunc {
+interface ProgressFunc {
     (a: any, b: any, progress: number, retval: any): boolean
 }
-export interface ScriptConnectFunc {
+interface ScriptConnectFunc {
     (script: Script, object: GObject.Object, signal_name: string, handler_name: string, connect_object: GObject.Object, flags: GObject.ConnectFlags): void
 }
-export interface TimelineProgressFunc {
+interface TimelineProgressFunc {
     (timeline: Timeline, elapsed: number, total: number): number
 }
-export class Animatable {
-    /* Methods of Clutter.Animatable */
+class Animatable {
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Virtual methods of Clutter.Animatable */
+    /* Virtual methods of Clutter-1.0.Clutter.Animatable */
     vfunc_animate_property(animation: Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     vfunc_find_property(property_name: string): GObject.ParamSpec
     vfunc_get_initial_state(property_name: string, value: any): void
@@ -5222,8 +5224,8 @@ export class Animatable {
     vfunc_set_final_state(property_name: string, value: any): void
     static name: string
 }
-export class Container {
-    /* Methods of Clutter.Container */
+class Container {
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Actor): void
     child_get_property(child: Actor, property: string, value: any): void
     child_notify(child: Actor, pspec: GObject.ParamSpec): void
@@ -5239,7 +5241,7 @@ export class Container {
     raise_child(actor: Actor, sibling?: Actor | null): void
     remove_actor(actor: Actor): void
     sort_depth_order(): void
-    /* Virtual methods of Clutter.Container */
+    /* Virtual methods of Clutter-1.0.Clutter.Container */
     vfunc_actor_added(actor: Actor): void
     vfunc_actor_removed(actor: Actor): void
     vfunc_add(actor: Actor): void
@@ -5253,7 +5255,7 @@ export class Container {
     vfunc_raise(actor: Actor, sibling?: Actor | null): void
     vfunc_remove(actor: Actor): void
     vfunc_sort_depth_order(): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Container, actor: Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Container, actor: Actor) => void)): number
     emit(sigName: "actor-added", actor: Actor): void
@@ -5268,17 +5270,17 @@ export class Container {
     static class_find_child_property(klass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
     static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
 }
-export class Content {
-    /* Methods of Clutter.Content */
+class Content {
+    /* Methods of Clutter-1.0.Clutter.Content */
     get_preferred_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     invalidate(): void
-    /* Virtual methods of Clutter.Content */
+    /* Virtual methods of Clutter-1.0.Clutter.Content */
     vfunc_attached(actor: Actor): void
     vfunc_detached(actor: Actor): void
     vfunc_get_preferred_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     vfunc_invalidate(): void
     vfunc_paint_content(actor: Actor, node: PaintNode): void
-    /* Signals of Clutter.Content */
+    /* Signals of Clutter-1.0.Clutter.Content */
     connect(sigName: "attached", callback: (($obj: Content, actor: Actor) => void)): number
     connect_after(sigName: "attached", callback: (($obj: Content, actor: Actor) => void)): number
     emit(sigName: "attached", actor: Actor): void
@@ -5287,8 +5289,8 @@ export class Content {
     emit(sigName: "detached", actor: Actor): void
     static name: string
 }
-export class Media {
-    /* Properties of Clutter.Media */
+class Media {
+    /* Properties of Clutter-1.0.Clutter.Media */
     audio_volume: number
     readonly buffer_fill: number
     readonly can_seek: boolean
@@ -5298,7 +5300,7 @@ export class Media {
     subtitle_font_name: string
     subtitle_uri: string
     uri: string
-    /* Methods of Clutter.Media */
+    /* Methods of Clutter-1.0.Clutter.Media */
     get_audio_volume(): number
     get_buffer_fill(): number
     get_can_seek(): boolean
@@ -5315,10 +5317,10 @@ export class Media {
     set_subtitle_font_name(font_name: string): void
     set_subtitle_uri(uri: string): void
     set_uri(uri: string): void
-    /* Virtual methods of Clutter.Media */
+    /* Virtual methods of Clutter-1.0.Clutter.Media */
     vfunc_eos(): void
     vfunc_error(error: GLib.Error): void
-    /* Signals of Clutter.Media */
+    /* Signals of Clutter-1.0.Clutter.Media */
     connect(sigName: "eos", callback: (($obj: Media) => void)): number
     connect_after(sigName: "eos", callback: (($obj: Media) => void)): number
     emit(sigName: "eos"): void
@@ -5327,13 +5329,13 @@ export class Media {
     emit(sigName: "error", error: GLib.Error): void
     static name: string
 }
-export class Scriptable {
-    /* Methods of Clutter.Scriptable */
+class Scriptable {
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Scriptable */
+    /* Virtual methods of Clutter-1.0.Clutter.Scriptable */
     vfunc_get_id(): string
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
@@ -5342,28 +5344,28 @@ export class Scriptable {
 }
 export interface Action_ConstructProps extends ActorMeta_ConstructProps {
 }
-export class Action {
-    /* Properties of Clutter.ActorMeta */
+class Action {
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5371,23 +5373,23 @@ export class Action {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.ActorMeta */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Action, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Action, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5479,8 +5481,8 @@ export interface Actor_ConstructProps extends GObject.InitiallyUnowned_Construct
     y_expand?: boolean
     z_position?: number
 }
-export class Actor {
-    /* Properties of Clutter.Actor */
+class Actor {
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Action
     readonly allocation: ActorBox
     anchor_gravity: Gravity
@@ -5563,11 +5565,11 @@ export class Actor {
     y_align: ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Action): void
     add_action_with_name(name: string, action: Action): void
     add_child(child: Actor): void
@@ -5803,15 +5805,15 @@ export class Actor {
     unparent(): void
     unrealize(): void
     unset_flags(flags: ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5819,19 +5821,19 @@ export class Actor {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Actor): void
     child_get_property(child: Actor, property: string, value: any): void
     child_notify(child: Actor, pspec: GObject.ParamSpec): void
@@ -5846,12 +5848,12 @@ export class Actor {
     raise_child(actor: Actor, sibling?: Actor | null): void
     remove_actor(actor: Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: ActorBox, flags: AllocationFlags): void
     vfunc_apply_transform(matrix: Matrix): void
     vfunc_button_press_event(event: ButtonEvent): boolean
@@ -5909,15 +5911,15 @@ export class Actor {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Actor, box: ActorBox, flags: AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Actor, box: ActorBox, flags: AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: ActorBox, flags: AllocationFlags): void
@@ -5996,11 +5998,11 @@ export class Actor {
     connect(sigName: "unrealize", callback: (($obj: Actor) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Actor) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Actor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Actor, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Actor, actor: Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Actor, actor: Actor) => void)): number
     emit(sigName: "actor-added", actor: Actor): void
@@ -6191,28 +6193,28 @@ export interface ActorMeta_ConstructProps extends GObject.InitiallyUnowned_Const
     enabled?: boolean
     name?: string
 }
-export class ActorMeta {
-    /* Properties of Clutter.ActorMeta */
+class ActorMeta {
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6220,23 +6222,23 @@ export class ActorMeta {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.ActorMeta */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ActorMeta, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ActorMeta, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6260,39 +6262,39 @@ export interface AlignConstraint_ConstructProps extends Constraint_ConstructProp
     factor?: number
     source?: Actor
 }
-export class AlignConstraint {
-    /* Properties of Clutter.AlignConstraint */
+class AlignConstraint {
+    /* Properties of Clutter-1.0.Clutter.AlignConstraint */
     align_axis: AlignAxis
     factor: number
     source: Actor
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.AlignConstraint */
+    /* Methods of Clutter-1.0.Clutter.AlignConstraint */
     get_align_axis(): AlignAxis
     get_factor(): number
     get_source(): Actor
     set_align_axis(axis: AlignAxis): void
     set_factor(factor: number): void
     set_source(source?: Actor | null): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6300,26 +6302,26 @@ export class AlignConstraint {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.Constraint */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.Constraint */
     vfunc_update_allocation(actor: Actor, allocation: ActorBox): void
     vfunc_update_preferred_size(actor: Actor, direction: Orientation, for_size: number, minimum_size: number, natural_size: number): void
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AlignConstraint, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AlignConstraint, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6350,14 +6352,14 @@ export interface Alpha_ConstructProps extends GObject.InitiallyUnowned_Construct
     mode?: number
     timeline?: Timeline
 }
-export class Alpha {
-    /* Properties of Clutter.Alpha */
+class Alpha {
+    /* Properties of Clutter-1.0.Clutter.Alpha */
     readonly alpha: number
     mode: number
     timeline: Timeline
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Alpha */
+    /* Methods of Clutter-1.0.Clutter.Alpha */
     get_alpha(): number
     get_mode(): number
     get_timeline(): Timeline
@@ -6365,15 +6367,15 @@ export class Alpha {
     set_func(func: AlphaFunc): void
     set_mode(mode: number): void
     set_timeline(timeline: Timeline): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6381,31 +6383,31 @@ export class Alpha {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Alpha */
+    /* Virtual methods of Clutter-1.0.Clutter.Alpha */
     vfunc_get_id(): string
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Alpha, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Alpha, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6437,17 +6439,17 @@ export interface Animation_ConstructProps extends GObject.Object_ConstructProps 
     object?: GObject.Object
     timeline?: Timeline
 }
-export class Animation {
-    /* Properties of Clutter.Animation */
+class Animation {
+    /* Properties of Clutter-1.0.Clutter.Animation */
     alpha: Alpha
     duration: number
     loop: boolean
     mode: number
     object: GObject.Object
     timeline: Timeline
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Animation */
+    /* Methods of Clutter-1.0.Clutter.Animation */
     bind(property_name: string, final: any): Animation
     bind_interval(property_name: string, interval: Interval): Animation
     completed(): void
@@ -6468,15 +6470,15 @@ export class Animation {
     unbind_property(property_name: string): void
     update(property_name: string, final: any): Animation
     update_interval(property_name: string, interval: Interval): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6484,40 +6486,40 @@ export class Animation {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Animation */
+    /* Virtual methods of Clutter-1.0.Clutter.Animation */
     vfunc_completed(): void
     vfunc_started(): void
     vfunc_get_id(): string
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Animation */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Animation */
     connect(sigName: "completed", callback: (($obj: Animation) => void)): number
     connect_after(sigName: "completed", callback: (($obj: Animation) => void)): number
     emit(sigName: "completed"): void
     connect(sigName: "started", callback: (($obj: Animation) => void)): number
     connect_after(sigName: "started", callback: (($obj: Animation) => void)): number
     emit(sigName: "started"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Animation, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Animation, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6548,13 +6550,13 @@ export interface Animator_ConstructProps extends GObject.Object_ConstructProps {
     duration?: number
     timeline?: Timeline
 }
-export class Animator {
-    /* Properties of Clutter.Animator */
+class Animator {
+    /* Properties of Clutter-1.0.Clutter.Animator */
     duration: number
     timeline: Timeline
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Animator */
+    /* Methods of Clutter-1.0.Clutter.Animator */
     compute_value(object: GObject.Object, property_name: string, progress: number, value: any): boolean
     get_duration(): number
     get_keys(object: GObject.Object | null, property_name: string | null, progress: number): AnimatorKey[]
@@ -6568,15 +6570,15 @@ export class Animator {
     set_key(object: GObject.Object, property_name: string, mode: number, progress: number, value: any): Animator
     set_timeline(timeline: Timeline): void
     start(): Timeline
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6584,31 +6586,31 @@ export class Animator {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Animator */
+    /* Virtual methods of Clutter-1.0.Clutter.Animator */
     vfunc_get_id(): string
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Animator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Animator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6629,10 +6631,10 @@ export class Animator {
 }
 export interface Backend_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Backend {
-    /* Fields of GObject.Object */
+class Backend {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Backend */
+    /* Methods of Clutter-1.0.Clutter.Backend */
     get_double_click_distance(): number
     get_double_click_time(): number
     get_font_name(): string
@@ -6643,15 +6645,15 @@ export class Backend {
     set_font_name(font_name: string): void
     set_font_options(options: cairo.FontOptions): void
     set_resolution(dpi: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6659,21 +6661,21 @@ export class Backend {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Backend */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Backend */
     connect(sigName: "font-changed", callback: (($obj: Backend) => void)): number
     connect_after(sigName: "font-changed", callback: (($obj: Backend) => void)): number
     emit(sigName: "font-changed"): void
@@ -6683,7 +6685,7 @@ export class Backend {
     connect(sigName: "settings-changed", callback: (($obj: Backend) => void)): number
     connect_after(sigName: "settings-changed", callback: (($obj: Backend) => void)): number
     emit(sigName: "settings-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Backend, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Backend, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6699,12 +6701,12 @@ export class Backend {
 export interface Behaviour_ConstructProps extends GObject.Object_ConstructProps {
     alpha?: Alpha
 }
-export class Behaviour {
-    /* Properties of Clutter.Behaviour */
+class Behaviour {
+    /* Properties of Clutter-1.0.Clutter.Behaviour */
     alpha: Alpha
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Behaviour */
+    /* Methods of Clutter-1.0.Clutter.Behaviour */
     actors_foreach(func: BehaviourForeachFunc): void
     apply(actor: Actor): void
     get_actors(): Actor[]
@@ -6715,15 +6717,15 @@ export class Behaviour {
     remove(actor: Actor): void
     remove_all(): void
     set_alpha(alpha: Alpha): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6731,18 +6733,18 @@ export class Behaviour {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Behaviour */
+    /* Virtual methods of Clutter-1.0.Clutter.Behaviour */
     vfunc_alpha_notify(alpha_value: number): void
     vfunc_applied(actor: Actor): void
     vfunc_removed(actor: Actor): void
@@ -6750,22 +6752,22 @@ export class Behaviour {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Behaviour */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Behaviour */
     connect(sigName: "applied", callback: (($obj: Behaviour, actor: Actor) => void)): number
     connect_after(sigName: "applied", callback: (($obj: Behaviour, actor: Actor) => void)): number
     emit(sigName: "applied", actor: Actor): void
     connect(sigName: "removed", callback: (($obj: Behaviour, actor: Actor) => void)): number
     connect_after(sigName: "removed", callback: (($obj: Behaviour, actor: Actor) => void)): number
     emit(sigName: "removed", actor: Actor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Behaviour, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Behaviour, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6784,18 +6786,18 @@ export interface BehaviourDepth_ConstructProps extends Behaviour_ConstructProps 
     depth_end?: number
     depth_start?: number
 }
-export class BehaviourDepth {
-    /* Properties of Clutter.BehaviourDepth */
+class BehaviourDepth {
+    /* Properties of Clutter-1.0.Clutter.BehaviourDepth */
     depth_end: number
     depth_start: number
-    /* Properties of Clutter.Behaviour */
+    /* Properties of Clutter-1.0.Clutter.Behaviour */
     alpha: Alpha
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.BehaviourDepth */
+    /* Methods of Clutter-1.0.Clutter.BehaviourDepth */
     get_bounds(): [ /* depth_start */ number, /* depth_end */ number ]
     set_bounds(depth_start: number, depth_end: number): void
-    /* Methods of Clutter.Behaviour */
+    /* Methods of Clutter-1.0.Clutter.Behaviour */
     actors_foreach(func: BehaviourForeachFunc): void
     apply(actor: Actor): void
     get_actors(): Actor[]
@@ -6806,15 +6808,15 @@ export class BehaviourDepth {
     remove(actor: Actor): void
     remove_all(): void
     set_alpha(alpha: Alpha): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6822,18 +6824,18 @@ export class BehaviourDepth {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Behaviour */
+    /* Virtual methods of Clutter-1.0.Clutter.Behaviour */
     vfunc_alpha_notify(alpha_value: number): void
     vfunc_applied(actor: Actor): void
     vfunc_removed(actor: Actor): void
@@ -6841,22 +6843,22 @@ export class BehaviourDepth {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Behaviour */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Behaviour */
     connect(sigName: "applied", callback: (($obj: BehaviourDepth, actor: Actor) => void)): number
     connect_after(sigName: "applied", callback: (($obj: BehaviourDepth, actor: Actor) => void)): number
     emit(sigName: "applied", actor: Actor): void
     connect(sigName: "removed", callback: (($obj: BehaviourDepth, actor: Actor) => void)): number
     connect_after(sigName: "removed", callback: (($obj: BehaviourDepth, actor: Actor) => void)): number
     emit(sigName: "removed", actor: Actor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BehaviourDepth, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BehaviourDepth, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6888,8 +6890,8 @@ export interface BehaviourEllipse_ConstructProps extends Behaviour_ConstructProp
     height?: number
     width?: number
 }
-export class BehaviourEllipse {
-    /* Properties of Clutter.BehaviourEllipse */
+class BehaviourEllipse {
+    /* Properties of Clutter-1.0.Clutter.BehaviourEllipse */
     angle_end: number
     angle_start: number
     angle_tilt_x: number
@@ -6899,11 +6901,11 @@ export class BehaviourEllipse {
     direction: RotateDirection
     height: number
     width: number
-    /* Properties of Clutter.Behaviour */
+    /* Properties of Clutter-1.0.Clutter.Behaviour */
     alpha: Alpha
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.BehaviourEllipse */
+    /* Methods of Clutter-1.0.Clutter.BehaviourEllipse */
     get_angle_end(): number
     get_angle_start(): number
     get_angle_tilt(axis: RotateAxis): number
@@ -6920,7 +6922,7 @@ export class BehaviourEllipse {
     set_height(height: number): void
     set_tilt(angle_tilt_x: number, angle_tilt_y: number, angle_tilt_z: number): void
     set_width(width: number): void
-    /* Methods of Clutter.Behaviour */
+    /* Methods of Clutter-1.0.Clutter.Behaviour */
     actors_foreach(func: BehaviourForeachFunc): void
     apply(actor: Actor): void
     get_actors(): Actor[]
@@ -6931,15 +6933,15 @@ export class BehaviourEllipse {
     remove(actor: Actor): void
     remove_all(): void
     set_alpha(alpha: Alpha): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6947,18 +6949,18 @@ export class BehaviourEllipse {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Behaviour */
+    /* Virtual methods of Clutter-1.0.Clutter.Behaviour */
     vfunc_alpha_notify(alpha_value: number): void
     vfunc_applied(actor: Actor): void
     vfunc_removed(actor: Actor): void
@@ -6966,22 +6968,22 @@ export class BehaviourEllipse {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Behaviour */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Behaviour */
     connect(sigName: "applied", callback: (($obj: BehaviourEllipse, actor: Actor) => void)): number
     connect_after(sigName: "applied", callback: (($obj: BehaviourEllipse, actor: Actor) => void)): number
     emit(sigName: "applied", actor: Actor): void
     connect(sigName: "removed", callback: (($obj: BehaviourEllipse, actor: Actor) => void)): number
     connect_after(sigName: "removed", callback: (($obj: BehaviourEllipse, actor: Actor) => void)): number
     emit(sigName: "removed", actor: Actor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BehaviourEllipse, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BehaviourEllipse, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7020,18 +7022,18 @@ export interface BehaviourOpacity_ConstructProps extends Behaviour_ConstructProp
     opacity_end?: number
     opacity_start?: number
 }
-export class BehaviourOpacity {
-    /* Properties of Clutter.BehaviourOpacity */
+class BehaviourOpacity {
+    /* Properties of Clutter-1.0.Clutter.BehaviourOpacity */
     opacity_end: number
     opacity_start: number
-    /* Properties of Clutter.Behaviour */
+    /* Properties of Clutter-1.0.Clutter.Behaviour */
     alpha: Alpha
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.BehaviourOpacity */
+    /* Methods of Clutter-1.0.Clutter.BehaviourOpacity */
     get_bounds(): [ /* opacity_start */ number, /* opacity_end */ number ]
     set_bounds(opacity_start: number, opacity_end: number): void
-    /* Methods of Clutter.Behaviour */
+    /* Methods of Clutter-1.0.Clutter.Behaviour */
     actors_foreach(func: BehaviourForeachFunc): void
     apply(actor: Actor): void
     get_actors(): Actor[]
@@ -7042,15 +7044,15 @@ export class BehaviourOpacity {
     remove(actor: Actor): void
     remove_all(): void
     set_alpha(alpha: Alpha): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7058,18 +7060,18 @@ export class BehaviourOpacity {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Behaviour */
+    /* Virtual methods of Clutter-1.0.Clutter.Behaviour */
     vfunc_alpha_notify(alpha_value: number): void
     vfunc_applied(actor: Actor): void
     vfunc_removed(actor: Actor): void
@@ -7077,22 +7079,22 @@ export class BehaviourOpacity {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Behaviour */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Behaviour */
     connect(sigName: "applied", callback: (($obj: BehaviourOpacity, actor: Actor) => void)): number
     connect_after(sigName: "applied", callback: (($obj: BehaviourOpacity, actor: Actor) => void)): number
     emit(sigName: "applied", actor: Actor): void
     connect(sigName: "removed", callback: (($obj: BehaviourOpacity, actor: Actor) => void)): number
     connect_after(sigName: "removed", callback: (($obj: BehaviourOpacity, actor: Actor) => void)): number
     emit(sigName: "removed", actor: Actor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BehaviourOpacity, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BehaviourOpacity, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7116,17 +7118,17 @@ export class BehaviourOpacity {
 export interface BehaviourPath_ConstructProps extends Behaviour_ConstructProps {
     path?: Path
 }
-export class BehaviourPath {
-    /* Properties of Clutter.BehaviourPath */
+class BehaviourPath {
+    /* Properties of Clutter-1.0.Clutter.BehaviourPath */
     path: Path
-    /* Properties of Clutter.Behaviour */
+    /* Properties of Clutter-1.0.Clutter.Behaviour */
     alpha: Alpha
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.BehaviourPath */
+    /* Methods of Clutter-1.0.Clutter.BehaviourPath */
     get_path(): Path
     set_path(path: Path): void
-    /* Methods of Clutter.Behaviour */
+    /* Methods of Clutter-1.0.Clutter.Behaviour */
     actors_foreach(func: BehaviourForeachFunc): void
     apply(actor: Actor): void
     get_actors(): Actor[]
@@ -7137,15 +7139,15 @@ export class BehaviourPath {
     remove(actor: Actor): void
     remove_all(): void
     set_alpha(alpha: Alpha): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7153,20 +7155,20 @@ export class BehaviourPath {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.BehaviourPath */
+    /* Virtual methods of Clutter-1.0.Clutter.BehaviourPath */
     vfunc_knot_reached(knot_num: number): void
-    /* Virtual methods of Clutter.Behaviour */
+    /* Virtual methods of Clutter-1.0.Clutter.Behaviour */
     vfunc_alpha_notify(alpha_value: number): void
     vfunc_applied(actor: Actor): void
     vfunc_removed(actor: Actor): void
@@ -7174,26 +7176,26 @@ export class BehaviourPath {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.BehaviourPath */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.BehaviourPath */
     connect(sigName: "knot-reached", callback: (($obj: BehaviourPath, knot_num: number) => void)): number
     connect_after(sigName: "knot-reached", callback: (($obj: BehaviourPath, knot_num: number) => void)): number
     emit(sigName: "knot-reached", knot_num: number): void
-    /* Signals of Clutter.Behaviour */
+    /* Signals of Clutter-1.0.Clutter.Behaviour */
     connect(sigName: "applied", callback: (($obj: BehaviourPath, actor: Actor) => void)): number
     connect_after(sigName: "applied", callback: (($obj: BehaviourPath, actor: Actor) => void)): number
     emit(sigName: "applied", actor: Actor): void
     connect(sigName: "removed", callback: (($obj: BehaviourPath, actor: Actor) => void)): number
     connect_after(sigName: "removed", callback: (($obj: BehaviourPath, actor: Actor) => void)): number
     emit(sigName: "removed", actor: Actor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BehaviourPath, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BehaviourPath, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7223,8 +7225,8 @@ export interface BehaviourRotate_ConstructProps extends Behaviour_ConstructProps
     center_z?: number
     direction?: RotateDirection
 }
-export class BehaviourRotate {
-    /* Properties of Clutter.BehaviourRotate */
+class BehaviourRotate {
+    /* Properties of Clutter-1.0.Clutter.BehaviourRotate */
     angle_end: number
     angle_start: number
     axis: RotateAxis
@@ -7232,11 +7234,11 @@ export class BehaviourRotate {
     center_y: number
     center_z: number
     direction: RotateDirection
-    /* Properties of Clutter.Behaviour */
+    /* Properties of Clutter-1.0.Clutter.Behaviour */
     alpha: Alpha
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.BehaviourRotate */
+    /* Methods of Clutter-1.0.Clutter.BehaviourRotate */
     get_axis(): RotateAxis
     get_bounds(): [ /* angle_start */ number, /* angle_end */ number ]
     get_center(): [ /* x */ number, /* y */ number, /* z */ number ]
@@ -7245,7 +7247,7 @@ export class BehaviourRotate {
     set_bounds(angle_start: number, angle_end: number): void
     set_center(x: number, y: number, z: number): void
     set_direction(direction: RotateDirection): void
-    /* Methods of Clutter.Behaviour */
+    /* Methods of Clutter-1.0.Clutter.Behaviour */
     actors_foreach(func: BehaviourForeachFunc): void
     apply(actor: Actor): void
     get_actors(): Actor[]
@@ -7256,15 +7258,15 @@ export class BehaviourRotate {
     remove(actor: Actor): void
     remove_all(): void
     set_alpha(alpha: Alpha): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7272,18 +7274,18 @@ export class BehaviourRotate {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Behaviour */
+    /* Virtual methods of Clutter-1.0.Clutter.Behaviour */
     vfunc_alpha_notify(alpha_value: number): void
     vfunc_applied(actor: Actor): void
     vfunc_removed(actor: Actor): void
@@ -7291,22 +7293,22 @@ export class BehaviourRotate {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Behaviour */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Behaviour */
     connect(sigName: "applied", callback: (($obj: BehaviourRotate, actor: Actor) => void)): number
     connect_after(sigName: "applied", callback: (($obj: BehaviourRotate, actor: Actor) => void)): number
     emit(sigName: "applied", actor: Actor): void
     connect(sigName: "removed", callback: (($obj: BehaviourRotate, actor: Actor) => void)): number
     connect_after(sigName: "removed", callback: (($obj: BehaviourRotate, actor: Actor) => void)): number
     emit(sigName: "removed", actor: Actor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BehaviourRotate, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BehaviourRotate, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7343,20 +7345,20 @@ export interface BehaviourScale_ConstructProps extends Behaviour_ConstructProps 
     y_scale_end?: number
     y_scale_start?: number
 }
-export class BehaviourScale {
-    /* Properties of Clutter.BehaviourScale */
+class BehaviourScale {
+    /* Properties of Clutter-1.0.Clutter.BehaviourScale */
     x_scale_end: number
     x_scale_start: number
     y_scale_end: number
     y_scale_start: number
-    /* Properties of Clutter.Behaviour */
+    /* Properties of Clutter-1.0.Clutter.Behaviour */
     alpha: Alpha
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.BehaviourScale */
+    /* Methods of Clutter-1.0.Clutter.BehaviourScale */
     get_bounds(): [ /* x_scale_start */ number, /* y_scale_start */ number, /* x_scale_end */ number, /* y_scale_end */ number ]
     set_bounds(x_scale_start: number, y_scale_start: number, x_scale_end: number, y_scale_end: number): void
-    /* Methods of Clutter.Behaviour */
+    /* Methods of Clutter-1.0.Clutter.Behaviour */
     actors_foreach(func: BehaviourForeachFunc): void
     apply(actor: Actor): void
     get_actors(): Actor[]
@@ -7367,15 +7369,15 @@ export class BehaviourScale {
     remove(actor: Actor): void
     remove_all(): void
     set_alpha(alpha: Alpha): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7383,18 +7385,18 @@ export class BehaviourScale {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Behaviour */
+    /* Virtual methods of Clutter-1.0.Clutter.Behaviour */
     vfunc_alpha_notify(alpha_value: number): void
     vfunc_applied(actor: Actor): void
     vfunc_removed(actor: Actor): void
@@ -7402,22 +7404,22 @@ export class BehaviourScale {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Behaviour */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Behaviour */
     connect(sigName: "applied", callback: (($obj: BehaviourScale, actor: Actor) => void)): number
     connect_after(sigName: "applied", callback: (($obj: BehaviourScale, actor: Actor) => void)): number
     emit(sigName: "applied", actor: Actor): void
     connect(sigName: "removed", callback: (($obj: BehaviourScale, actor: Actor) => void)): number
     connect_after(sigName: "removed", callback: (($obj: BehaviourScale, actor: Actor) => void)): number
     emit(sigName: "removed", actor: Actor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BehaviourScale, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BehaviourScale, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7446,17 +7448,17 @@ export interface BinLayout_ConstructProps extends LayoutManager_ConstructProps {
     x_align?: BinAlignment
     y_align?: BinAlignment
 }
-export class BinLayout {
-    /* Properties of Clutter.BinLayout */
+class BinLayout {
+    /* Properties of Clutter-1.0.Clutter.BinLayout */
     x_align: BinAlignment
     y_align: BinAlignment
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.BinLayout */
+    /* Methods of Clutter-1.0.Clutter.BinLayout */
     add(child: Actor, x_align: BinAlignment, y_align: BinAlignment): void
     get_alignment(child?: Actor | null): [ /* x_align */ BinAlignment | null, /* y_align */ BinAlignment | null ]
     set_alignment(child: Actor | null, x_align: BinAlignment, y_align: BinAlignment): void
-    /* Methods of Clutter.LayoutManager */
+    /* Methods of Clutter-1.0.Clutter.LayoutManager */
     allocate(container: Container, allocation: ActorBox, flags: AllocationFlags): void
     begin_animation(duration: number, mode: number): Alpha
     child_get_property(container: Container, actor: Actor, property_name: string, value: any): void
@@ -7470,15 +7472,15 @@ export class BinLayout {
     layout_changed(): void
     list_child_properties(): GObject.ParamSpec[]
     set_container(container?: Container | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7486,13 +7488,13 @@ export class BinLayout {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.LayoutManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.LayoutManager */
     vfunc_allocate(container: Container, allocation: ActorBox, flags: AllocationFlags): void
     vfunc_begin_animation(duration: number, mode: number): Alpha
     vfunc_end_animation(): void
@@ -7502,19 +7504,19 @@ export class BinLayout {
     vfunc_get_preferred_width(container: Container, for_height: number): [ /* min_width_p */ number | null, /* nat_width_p */ number | null ]
     vfunc_layout_changed(): void
     vfunc_set_container(container?: Container | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.LayoutManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.LayoutManager */
     connect(sigName: "layout-changed", callback: (($obj: BinLayout) => void)): number
     connect_after(sigName: "layout-changed", callback: (($obj: BinLayout) => void)): number
     emit(sigName: "layout-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BinLayout, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BinLayout, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7538,39 +7540,39 @@ export interface BindConstraint_ConstructProps extends Constraint_ConstructProps
     offset?: number
     source?: Actor
 }
-export class BindConstraint {
-    /* Properties of Clutter.BindConstraint */
+class BindConstraint {
+    /* Properties of Clutter-1.0.Clutter.BindConstraint */
     coordinate: BindCoordinate
     offset: number
     source: Actor
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.BindConstraint */
+    /* Methods of Clutter-1.0.Clutter.BindConstraint */
     get_coordinate(): BindCoordinate
     get_offset(): number
     get_source(): Actor
     set_coordinate(coordinate: BindCoordinate): void
     set_offset(offset: number): void
     set_source(source?: Actor | null): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7578,26 +7580,26 @@ export class BindConstraint {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.Constraint */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.Constraint */
     vfunc_update_allocation(actor: Actor, allocation: ActorBox): void
     vfunc_update_preferred_size(actor: Actor, direction: Orientation, for_size: number, minimum_size: number, natural_size: number): void
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BindConstraint, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BindConstraint, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7627,10 +7629,10 @@ export class BindConstraint {
 export interface BindingPool_ConstructProps extends GObject.Object_ConstructProps {
     name?: string
 }
-export class BindingPool {
-    /* Fields of GObject.Object */
+class BindingPool {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.BindingPool */
+    /* Methods of Clutter-1.0.Clutter.BindingPool */
     activate(key_val: number, modifiers: ModifierType, gobject: GObject.Object): boolean
     block_action(action_name: string): void
     find_action(key_val: number, modifiers: ModifierType): string
@@ -7640,15 +7642,15 @@ export class BindingPool {
     override_closure(key_val: number, modifiers: ModifierType, closure: Function): void
     remove_action(key_val: number, modifiers: ModifierType): void
     unblock_action(action_name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7656,21 +7658,21 @@ export class BindingPool {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BindingPool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BindingPool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7689,37 +7691,37 @@ export class BindingPool {
 }
 export interface BlurEffect_ConstructProps extends OffscreenEffect_ConstructProps {
 }
-export class BlurEffect {
-    /* Properties of Clutter.ActorMeta */
+class BlurEffect {
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.OffscreenEffect */
+    /* Methods of Clutter-1.0.Clutter.OffscreenEffect */
     create_texture(width: number, height: number): Cogl.Handle
     get_target(): Cogl.Material
     get_target_rect(): [ /* returnType */ boolean, /* rect */ Rect ]
     get_target_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     get_texture(): Cogl.Handle
     paint_target(): void
-    /* Methods of Clutter.Effect */
+    /* Methods of Clutter-1.0.Clutter.Effect */
     queue_repaint(): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7727,32 +7729,32 @@ export class BlurEffect {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.OffscreenEffect */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.OffscreenEffect */
     vfunc_create_texture(width: number, height: number): Cogl.Handle
     vfunc_paint_target(): void
-    /* Virtual methods of Clutter.Effect */
+    /* Virtual methods of Clutter-1.0.Clutter.Effect */
     vfunc_get_paint_volume(volume: PaintVolume): boolean
     vfunc_paint(flags: EffectPaintFlags): void
     vfunc_pick(flags: EffectPaintFlags): void
     vfunc_post_paint(): void
     vfunc_pre_paint(): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BlurEffect, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BlurEffect, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7777,11 +7779,11 @@ export interface Box_ConstructProps extends Actor_ConstructProps {
     color?: Color
     color_set?: boolean
 }
-export class Box {
-    /* Properties of Clutter.Box */
+class Box {
+    /* Properties of Clutter-1.0.Clutter.Box */
     color: Color
     color_set: boolean
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Action
     readonly allocation: ActorBox
     anchor_gravity: Gravity
@@ -7864,17 +7866,17 @@ export class Box {
     y_align: ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Box */
+    /* Methods of Clutter-1.0.Clutter.Box */
     get_color(): /* color */ Color
     get_layout_manager(): LayoutManager
     packv(actor: Actor, properties: string[], values: any[]): void
     set_color(color?: Color | null): void
     set_layout_manager(manager: LayoutManager): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Action): void
     add_action_with_name(name: string, action: Action): void
     add_child(child: Actor): void
@@ -8109,15 +8111,15 @@ export class Box {
     unparent(): void
     unrealize(): void
     unset_flags(flags: ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -8125,19 +8127,19 @@ export class Box {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Actor): void
     child_get_property(child: Actor, property: string, value: any): void
     child_notify(child: Actor, pspec: GObject.ParamSpec): void
@@ -8152,12 +8154,12 @@ export class Box {
     raise_child(actor: Actor, sibling?: Actor | null): void
     remove_actor(actor: Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: ActorBox, flags: AllocationFlags): void
     vfunc_apply_transform(matrix: Matrix): void
     vfunc_button_press_event(event: ButtonEvent): boolean
@@ -8215,15 +8217,15 @@ export class Box {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Box, box: ActorBox, flags: AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Box, box: ActorBox, flags: AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: ActorBox, flags: AllocationFlags): void
@@ -8302,11 +8304,11 @@ export class Box {
     connect(sigName: "unrealize", callback: (($obj: Box) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Box) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Box, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Box, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Box, actor: Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Box, actor: Actor) => void)): number
     emit(sigName: "actor-added", actor: Actor): void
@@ -8506,8 +8508,8 @@ export interface BoxLayout_ConstructProps extends LayoutManager_ConstructProps {
     use_animations?: boolean
     vertical?: boolean
 }
-export class BoxLayout {
-    /* Properties of Clutter.BoxLayout */
+class BoxLayout {
+    /* Properties of Clutter-1.0.Clutter.BoxLayout */
     easing_duration: number
     easing_mode: number
     homogeneous: boolean
@@ -8516,9 +8518,9 @@ export class BoxLayout {
     spacing: number
     use_animations: boolean
     vertical: boolean
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.BoxLayout */
+    /* Methods of Clutter-1.0.Clutter.BoxLayout */
     get_alignment(actor: Actor): [ /* x_align */ BoxAlignment, /* y_align */ BoxAlignment ]
     get_easing_duration(): number
     get_easing_mode(): number
@@ -8542,7 +8544,7 @@ export class BoxLayout {
     set_spacing(spacing: number): void
     set_use_animations(animate: boolean): void
     set_vertical(vertical: boolean): void
-    /* Methods of Clutter.LayoutManager */
+    /* Methods of Clutter-1.0.Clutter.LayoutManager */
     allocate(container: Container, allocation: ActorBox, flags: AllocationFlags): void
     begin_animation(duration: number, mode: number): Alpha
     child_get_property(container: Container, actor: Actor, property_name: string, value: any): void
@@ -8556,15 +8558,15 @@ export class BoxLayout {
     layout_changed(): void
     list_child_properties(): GObject.ParamSpec[]
     set_container(container?: Container | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -8572,13 +8574,13 @@ export class BoxLayout {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.LayoutManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.LayoutManager */
     vfunc_allocate(container: Container, allocation: ActorBox, flags: AllocationFlags): void
     vfunc_begin_animation(duration: number, mode: number): Alpha
     vfunc_end_animation(): void
@@ -8588,19 +8590,19 @@ export class BoxLayout {
     vfunc_get_preferred_width(container: Container, for_height: number): [ /* min_width_p */ number | null, /* nat_width_p */ number | null ]
     vfunc_layout_changed(): void
     vfunc_set_container(container?: Container | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.LayoutManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.LayoutManager */
     connect(sigName: "layout-changed", callback: (($obj: BoxLayout) => void)): number
     connect_after(sigName: "layout-changed", callback: (($obj: BoxLayout) => void)): number
     emit(sigName: "layout-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BoxLayout, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BoxLayout, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -8635,47 +8637,47 @@ export interface BrightnessContrastEffect_ConstructProps extends OffscreenEffect
     brightness?: Color
     contrast?: Color
 }
-export class BrightnessContrastEffect {
-    /* Properties of Clutter.BrightnessContrastEffect */
+class BrightnessContrastEffect {
+    /* Properties of Clutter-1.0.Clutter.BrightnessContrastEffect */
     brightness: Color
     contrast: Color
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.BrightnessContrastEffect */
+    /* Methods of Clutter-1.0.Clutter.BrightnessContrastEffect */
     get_brightness(): [ /* red */ number | null, /* green */ number | null, /* blue */ number | null ]
     get_contrast(): [ /* red */ number | null, /* green */ number | null, /* blue */ number | null ]
     set_brightness(brightness: number): void
     set_brightness_full(red: number, green: number, blue: number): void
     set_contrast(contrast: number): void
     set_contrast_full(red: number, green: number, blue: number): void
-    /* Methods of Clutter.OffscreenEffect */
+    /* Methods of Clutter-1.0.Clutter.OffscreenEffect */
     create_texture(width: number, height: number): Cogl.Handle
     get_target(): Cogl.Material
     get_target_rect(): [ /* returnType */ boolean, /* rect */ Rect ]
     get_target_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     get_texture(): Cogl.Handle
     paint_target(): void
-    /* Methods of Clutter.Effect */
+    /* Methods of Clutter-1.0.Clutter.Effect */
     queue_repaint(): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -8683,32 +8685,32 @@ export class BrightnessContrastEffect {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.OffscreenEffect */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.OffscreenEffect */
     vfunc_create_texture(width: number, height: number): Cogl.Handle
     vfunc_paint_target(): void
-    /* Virtual methods of Clutter.Effect */
+    /* Virtual methods of Clutter-1.0.Clutter.Effect */
     vfunc_get_paint_volume(volume: PaintVolume): boolean
     vfunc_paint(flags: EffectPaintFlags): void
     vfunc_pick(flags: EffectPaintFlags): void
     vfunc_post_paint(): void
     vfunc_pre_paint(): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BrightnessContrastEffect, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BrightnessContrastEffect, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -8738,12 +8740,12 @@ export interface CairoTexture_ConstructProps extends Texture_ConstructProps {
     surface_height?: number
     surface_width?: number
 }
-export class CairoTexture {
-    /* Properties of Clutter.CairoTexture */
+class CairoTexture {
+    /* Properties of Clutter-1.0.Clutter.CairoTexture */
     auto_resize: boolean
     surface_height: number
     surface_width: number
-    /* Properties of Clutter.Texture */
+    /* Properties of Clutter-1.0.Clutter.Texture */
     filename: string
     filter_quality: TextureQuality
     keep_aspect_ratio: boolean
@@ -8755,7 +8757,7 @@ export class CairoTexture {
     repeat_y: boolean
     sync_size: boolean
     readonly tile_waste: number
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Action
     readonly allocation: ActorBox
     anchor_gravity: Gravity
@@ -8838,11 +8840,11 @@ export class CairoTexture {
     y_align: ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.CairoTexture */
+    /* Methods of Clutter-1.0.Clutter.CairoTexture */
     clear(): void
     create(): cairo.Context
     create_region(x_offset: number, y_offset: number, width: number, height: number): cairo.Context
@@ -8852,7 +8854,7 @@ export class CairoTexture {
     invalidate_rectangle(rect?: cairo.RectangleInt | null): void
     set_auto_resize(value: boolean): void
     set_surface_size(width: number, height: number): void
-    /* Methods of Clutter.Texture */
+    /* Methods of Clutter-1.0.Clutter.Texture */
     get_base_size(): [ /* width */ number, /* height */ number ]
     get_cogl_material(): Cogl.Handle
     get_cogl_texture(): Cogl.Handle
@@ -8878,7 +8880,7 @@ export class CairoTexture {
     set_pick_with_alpha(pick_with_alpha: boolean): void
     set_repeat(repeat_x: boolean, repeat_y: boolean): void
     set_sync_size(sync_size: boolean): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Action): void
     add_action_with_name(name: string, action: Action): void
     add_child(child: Actor): void
@@ -9114,15 +9116,15 @@ export class CairoTexture {
     unparent(): void
     unrealize(): void
     unset_flags(flags: ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9130,19 +9132,19 @@ export class CairoTexture {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Actor): void
     child_get_property(child: Actor, property: string, value: any): void
     child_notify(child: Actor, pspec: GObject.ParamSpec): void
@@ -9157,19 +9159,19 @@ export class CairoTexture {
     raise_child(actor: Actor, sibling?: Actor | null): void
     remove_actor(actor: Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.CairoTexture */
+    /* Virtual methods of Clutter-1.0.Clutter.CairoTexture */
     vfunc_create_surface(width: number, height: number): cairo.Surface
     vfunc_draw(cr: cairo.Context): boolean
-    /* Virtual methods of Clutter.Texture */
+    /* Virtual methods of Clutter-1.0.Clutter.Texture */
     vfunc_load_finished(error: GLib.Error): void
     vfunc_pixbuf_change(): void
     vfunc_size_change(width: number, height: number): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: ActorBox, flags: AllocationFlags): void
     vfunc_apply_transform(matrix: Matrix): void
     vfunc_button_press_event(event: ButtonEvent): boolean
@@ -9227,22 +9229,22 @@ export class CairoTexture {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.CairoTexture */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.CairoTexture */
     connect(sigName: "create-surface", callback: (($obj: CairoTexture, width: number, height: number) => cairo.Surface)): number
     connect_after(sigName: "create-surface", callback: (($obj: CairoTexture, width: number, height: number) => cairo.Surface)): number
     emit(sigName: "create-surface", width: number, height: number): void
     connect(sigName: "draw", callback: (($obj: CairoTexture, cr: cairo.Context) => boolean)): number
     connect_after(sigName: "draw", callback: (($obj: CairoTexture, cr: cairo.Context) => boolean)): number
     emit(sigName: "draw", cr: cairo.Context): void
-    /* Signals of Clutter.Texture */
+    /* Signals of Clutter-1.0.Clutter.Texture */
     connect(sigName: "load-finished", callback: (($obj: CairoTexture, error: GLib.Error) => void)): number
     connect_after(sigName: "load-finished", callback: (($obj: CairoTexture, error: GLib.Error) => void)): number
     emit(sigName: "load-finished", error: GLib.Error): void
@@ -9252,7 +9254,7 @@ export class CairoTexture {
     connect(sigName: "size-change", callback: (($obj: CairoTexture, width: number, height: number) => void)): number
     connect_after(sigName: "size-change", callback: (($obj: CairoTexture, width: number, height: number) => void)): number
     emit(sigName: "size-change", width: number, height: number): void
-    /* Signals of Clutter.Actor */
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: CairoTexture, box: ActorBox, flags: AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: CairoTexture, box: ActorBox, flags: AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: ActorBox, flags: AllocationFlags): void
@@ -9331,11 +9333,11 @@ export class CairoTexture {
     connect(sigName: "unrealize", callback: (($obj: CairoTexture) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: CairoTexture) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CairoTexture, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CairoTexture, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: CairoTexture, actor: Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: CairoTexture, actor: Actor) => void)): number
     emit(sigName: "actor-added", actor: Actor): void
@@ -9554,27 +9556,27 @@ export interface Canvas_ConstructProps extends GObject.Object_ConstructProps {
     scale_factor?: number
     width?: number
 }
-export class Canvas {
-    /* Properties of Clutter.Canvas */
+class Canvas {
+    /* Properties of Clutter-1.0.Clutter.Canvas */
     height: number
     scale_factor: number
     readonly scale_factor_set: boolean
     width: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Canvas */
+    /* Methods of Clutter-1.0.Clutter.Canvas */
     get_scale_factor(): number
     set_scale_factor(scale: number): void
     set_size(width: number, height: number): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9582,39 +9584,39 @@ export class Canvas {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Content */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Content */
     get_preferred_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     invalidate(): void
-    /* Virtual methods of Clutter.Canvas */
+    /* Virtual methods of Clutter-1.0.Clutter.Canvas */
     vfunc_draw(cr: cairo.Context, width: number, height: number): boolean
     vfunc_attached(actor: Actor): void
     vfunc_detached(actor: Actor): void
     vfunc_get_preferred_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     vfunc_invalidate(): void
     vfunc_paint_content(actor: Actor, node: PaintNode): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Canvas */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Canvas */
     connect(sigName: "draw", callback: (($obj: Canvas, cr: cairo.Context, width: number, height: number) => boolean)): number
     connect_after(sigName: "draw", callback: (($obj: Canvas, cr: cairo.Context, width: number, height: number) => boolean)): number
     emit(sigName: "draw", cr: cairo.Context, width: number, height: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Canvas, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Canvas, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Content */
+    /* Signals of Clutter-1.0.Clutter.Content */
     connect(sigName: "attached", callback: (($obj: Canvas, actor: Actor) => void)): number
     connect_after(sigName: "attached", callback: (($obj: Canvas, actor: Actor) => void)): number
     emit(sigName: "attached", actor: Actor): void
@@ -9642,24 +9644,24 @@ export interface ChildMeta_ConstructProps extends GObject.Object_ConstructProps 
     actor?: Actor
     container?: Container
 }
-export class ChildMeta {
-    /* Fields of Clutter.ChildMeta */
+class ChildMeta {
+    /* Fields of Clutter-1.0.Clutter.ChildMeta */
     container: Container
     actor: Actor
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.ChildMeta */
+    /* Methods of Clutter-1.0.Clutter.ChildMeta */
     get_actor(): Actor
     get_container(): Container
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9667,21 +9669,21 @@ export class ChildMeta {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ChildMeta, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ChildMeta, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -9698,38 +9700,38 @@ export interface ClickAction_ConstructProps extends Action_ConstructProps {
     long_press_duration?: number
     long_press_threshold?: number
 }
-export class ClickAction {
-    /* Properties of Clutter.ClickAction */
+class ClickAction {
+    /* Properties of Clutter-1.0.Clutter.ClickAction */
     readonly held: boolean
     long_press_duration: number
     long_press_threshold: number
     readonly pressed: boolean
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.ClickAction */
+    /* Methods of Clutter-1.0.Clutter.ClickAction */
     get_button(): number
     get_coords(): [ /* press_x */ number, /* press_y */ number ]
     get_state(): ModifierType
     release(): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9737,33 +9739,33 @@ export class ClickAction {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.ClickAction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.ClickAction */
     vfunc_clicked(actor: Actor): void
     vfunc_long_press(actor: Actor, state: LongPressState): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.ClickAction */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.ClickAction */
     connect(sigName: "clicked", callback: (($obj: ClickAction, actor: Actor) => void)): number
     connect_after(sigName: "clicked", callback: (($obj: ClickAction, actor: Actor) => void)): number
     emit(sigName: "clicked", actor: Actor): void
     connect(sigName: "long-press", callback: (($obj: ClickAction, actor: Actor, state: LongPressState) => boolean)): number
     connect_after(sigName: "long-press", callback: (($obj: ClickAction, actor: Actor, state: LongPressState) => boolean)): number
     emit(sigName: "long-press", actor: Actor, state: LongPressState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClickAction, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClickAction, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -9792,8 +9794,8 @@ export class ClickAction {
     static new(): ClickAction
     static $gtype: GObject.Type
 }
-export class ClipNode {
-    /* Methods of Clutter.PaintNode */
+class ClipNode {
+    /* Methods of Clutter-1.0.Clutter.PaintNode */
     add_child(child: PaintNode): void
     add_rectangle(rect: ActorBox): void
     add_texture_rectangle(rect: ActorBox, x_1: number, y_1: number, x_2: number, y_2: number): void
@@ -9809,10 +9811,10 @@ export class ClipNode {
 export interface Clone_ConstructProps extends Actor_ConstructProps {
     source?: Actor
 }
-export class Clone {
-    /* Properties of Clutter.Clone */
+class Clone {
+    /* Properties of Clutter-1.0.Clutter.Clone */
     source: Actor
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Action
     readonly allocation: ActorBox
     anchor_gravity: Gravity
@@ -9895,14 +9897,14 @@ export class Clone {
     y_align: ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Clone */
+    /* Methods of Clutter-1.0.Clutter.Clone */
     get_source(): Actor
     set_source(source?: Actor | null): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Action): void
     add_action_with_name(name: string, action: Action): void
     add_child(child: Actor): void
@@ -10138,15 +10140,15 @@ export class Clone {
     unparent(): void
     unrealize(): void
     unset_flags(flags: ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10154,19 +10156,19 @@ export class Clone {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Actor): void
     child_get_property(child: Actor, property: string, value: any): void
     child_notify(child: Actor, pspec: GObject.ParamSpec): void
@@ -10181,12 +10183,12 @@ export class Clone {
     raise_child(actor: Actor, sibling?: Actor | null): void
     remove_actor(actor: Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: ActorBox, flags: AllocationFlags): void
     vfunc_apply_transform(matrix: Matrix): void
     vfunc_button_press_event(event: ButtonEvent): boolean
@@ -10244,15 +10246,15 @@ export class Clone {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Clone, box: ActorBox, flags: AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Clone, box: ActorBox, flags: AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: ActorBox, flags: AllocationFlags): void
@@ -10331,11 +10333,11 @@ export class Clone {
     connect(sigName: "unrealize", callback: (($obj: Clone) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Clone) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Clone, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Clone, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Clone, actor: Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Clone, actor: Actor) => void)): number
     emit(sigName: "actor-added", actor: Actor): void
@@ -10523,8 +10525,8 @@ export class Clone {
     static new(): Clone
     static $gtype: GObject.Type
 }
-export class ColorNode {
-    /* Methods of Clutter.PaintNode */
+class ColorNode {
+    /* Methods of Clutter-1.0.Clutter.PaintNode */
     add_child(child: PaintNode): void
     add_rectangle(rect: ActorBox): void
     add_texture_rectangle(rect: ActorBox, x_1: number, y_1: number, x_2: number, y_2: number): void
@@ -10540,42 +10542,42 @@ export class ColorNode {
 export interface ColorizeEffect_ConstructProps extends OffscreenEffect_ConstructProps {
     tint?: Color
 }
-export class ColorizeEffect {
-    /* Properties of Clutter.ColorizeEffect */
+class ColorizeEffect {
+    /* Properties of Clutter-1.0.Clutter.ColorizeEffect */
     tint: Color
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.ColorizeEffect */
+    /* Methods of Clutter-1.0.Clutter.ColorizeEffect */
     get_tint(): /* tint */ Color
     set_tint(tint: Color): void
-    /* Methods of Clutter.OffscreenEffect */
+    /* Methods of Clutter-1.0.Clutter.OffscreenEffect */
     create_texture(width: number, height: number): Cogl.Handle
     get_target(): Cogl.Material
     get_target_rect(): [ /* returnType */ boolean, /* rect */ Rect ]
     get_target_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     get_texture(): Cogl.Handle
     paint_target(): void
-    /* Methods of Clutter.Effect */
+    /* Methods of Clutter-1.0.Clutter.Effect */
     queue_repaint(): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10583,32 +10585,32 @@ export class ColorizeEffect {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.OffscreenEffect */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.OffscreenEffect */
     vfunc_create_texture(width: number, height: number): Cogl.Handle
     vfunc_paint_target(): void
-    /* Virtual methods of Clutter.Effect */
+    /* Virtual methods of Clutter-1.0.Clutter.Effect */
     vfunc_get_paint_volume(volume: PaintVolume): boolean
     vfunc_paint(flags: EffectPaintFlags): void
     vfunc_pick(flags: EffectPaintFlags): void
     vfunc_post_paint(): void
     vfunc_pre_paint(): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ColorizeEffect, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ColorizeEffect, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -10633,28 +10635,28 @@ export class ColorizeEffect {
 }
 export interface Constraint_ConstructProps extends ActorMeta_ConstructProps {
 }
-export class Constraint {
-    /* Properties of Clutter.ActorMeta */
+class Constraint {
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10662,26 +10664,26 @@ export class Constraint {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.Constraint */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.Constraint */
     vfunc_update_allocation(actor: Actor, allocation: ActorBox): void
     vfunc_update_preferred_size(actor: Actor, direction: Orientation, for_size: number, minimum_size: number, natural_size: number): void
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Constraint, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Constraint, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -10704,46 +10706,46 @@ export interface DeformEffect_ConstructProps extends OffscreenEffect_ConstructPr
     x_tiles?: number
     y_tiles?: number
 }
-export class DeformEffect {
-    /* Properties of Clutter.DeformEffect */
+class DeformEffect {
+    /* Properties of Clutter-1.0.Clutter.DeformEffect */
     x_tiles: number
     y_tiles: number
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.DeformEffect */
+    /* Methods of Clutter-1.0.Clutter.DeformEffect */
     get_back_material(): Cogl.Handle
     get_n_tiles(): [ /* x_tiles */ number, /* y_tiles */ number ]
     invalidate(): void
     set_back_material(material?: Cogl.Handle | null): void
     set_n_tiles(x_tiles: number, y_tiles: number): void
-    /* Methods of Clutter.OffscreenEffect */
+    /* Methods of Clutter-1.0.Clutter.OffscreenEffect */
     create_texture(width: number, height: number): Cogl.Handle
     get_target(): Cogl.Material
     get_target_rect(): [ /* returnType */ boolean, /* rect */ Rect ]
     get_target_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     get_texture(): Cogl.Handle
     paint_target(): void
-    /* Methods of Clutter.Effect */
+    /* Methods of Clutter-1.0.Clutter.Effect */
     queue_repaint(): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10751,34 +10753,34 @@ export class DeformEffect {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.DeformEffect */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.DeformEffect */
     vfunc_deform_vertex(width: number, height: number, vertex: Cogl.TextureVertex): void
-    /* Virtual methods of Clutter.OffscreenEffect */
+    /* Virtual methods of Clutter-1.0.Clutter.OffscreenEffect */
     vfunc_create_texture(width: number, height: number): Cogl.Handle
     vfunc_paint_target(): void
-    /* Virtual methods of Clutter.Effect */
+    /* Virtual methods of Clutter-1.0.Clutter.Effect */
     vfunc_get_paint_volume(volume: PaintVolume): boolean
     vfunc_paint(flags: EffectPaintFlags): void
     vfunc_pick(flags: EffectPaintFlags): void
     vfunc_post_paint(): void
     vfunc_pre_paint(): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DeformEffect, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeformEffect, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -10804,42 +10806,42 @@ export class DeformEffect {
 export interface DesaturateEffect_ConstructProps extends OffscreenEffect_ConstructProps {
     factor?: number
 }
-export class DesaturateEffect {
-    /* Properties of Clutter.DesaturateEffect */
+class DesaturateEffect {
+    /* Properties of Clutter-1.0.Clutter.DesaturateEffect */
     factor: number
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.DesaturateEffect */
+    /* Methods of Clutter-1.0.Clutter.DesaturateEffect */
     get_factor(): number
     set_factor(factor: number): void
-    /* Methods of Clutter.OffscreenEffect */
+    /* Methods of Clutter-1.0.Clutter.OffscreenEffect */
     create_texture(width: number, height: number): Cogl.Handle
     get_target(): Cogl.Material
     get_target_rect(): [ /* returnType */ boolean, /* rect */ Rect ]
     get_target_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     get_texture(): Cogl.Handle
     paint_target(): void
-    /* Methods of Clutter.Effect */
+    /* Methods of Clutter-1.0.Clutter.Effect */
     queue_repaint(): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10847,32 +10849,32 @@ export class DesaturateEffect {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.OffscreenEffect */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.OffscreenEffect */
     vfunc_create_texture(width: number, height: number): Cogl.Handle
     vfunc_paint_target(): void
-    /* Virtual methods of Clutter.Effect */
+    /* Virtual methods of Clutter-1.0.Clutter.Effect */
     vfunc_get_paint_volume(volume: PaintVolume): boolean
     vfunc_paint(flags: EffectPaintFlags): void
     vfunc_pick(flags: EffectPaintFlags): void
     vfunc_post_paint(): void
     vfunc_pre_paint(): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DesaturateEffect, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DesaturateEffect, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -10898,23 +10900,23 @@ export class DesaturateEffect {
 export interface DeviceManager_ConstructProps extends GObject.Object_ConstructProps {
     backend?: Backend
 }
-export class DeviceManager {
-    /* Fields of GObject.Object */
+class DeviceManager {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.DeviceManager */
+    /* Methods of Clutter-1.0.Clutter.DeviceManager */
     get_core_device(device_type: InputDeviceType): InputDevice
     get_device(device_id: number): InputDevice
     list_devices(): InputDevice[]
     peek_devices(): InputDevice[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10922,34 +10924,34 @@ export class DeviceManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.DeviceManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.DeviceManager */
     vfunc_add_device(device: InputDevice): void
     vfunc_get_core_device(device_type: InputDeviceType): InputDevice
     vfunc_get_device(device_id: number): InputDevice
     vfunc_remove_device(device: InputDevice): void
     vfunc_select_stage_events(stage: Stage): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.DeviceManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.DeviceManager */
     connect(sigName: "device-added", callback: (($obj: DeviceManager, device: InputDevice) => void)): number
     connect_after(sigName: "device-added", callback: (($obj: DeviceManager, device: InputDevice) => void)): number
     emit(sigName: "device-added", device: InputDevice): void
     connect(sigName: "device-removed", callback: (($obj: DeviceManager, device: InputDevice) => void)): number
     connect_after(sigName: "device-removed", callback: (($obj: DeviceManager, device: InputDevice) => void)): number
     emit(sigName: "device-removed", device: InputDevice): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DeviceManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -10971,21 +10973,21 @@ export interface DragAction_ConstructProps extends Action_ConstructProps {
     x_drag_threshold?: number
     y_drag_threshold?: number
 }
-export class DragAction {
-    /* Properties of Clutter.DragAction */
+class DragAction {
+    /* Properties of Clutter-1.0.Clutter.DragAction */
     drag_area: Rect
     readonly drag_area_set: boolean
     drag_axis: DragAxis
     drag_handle: Actor
     x_drag_threshold: number
     y_drag_threshold: number
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.DragAction */
+    /* Methods of Clutter-1.0.Clutter.DragAction */
     get_drag_area(): [ /* returnType */ boolean, /* drag_area */ Rect ]
     get_drag_axis(): DragAxis
     get_drag_handle(): Actor
@@ -10996,21 +10998,21 @@ export class DragAction {
     set_drag_axis(axis: DragAxis): void
     set_drag_handle(handle?: Actor | null): void
     set_drag_threshold(x_threshold: number, y_threshold: number): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11018,28 +11020,28 @@ export class DragAction {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.DragAction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.DragAction */
     vfunc_drag_begin(actor: Actor, event_x: number, event_y: number, modifiers: ModifierType): void
     vfunc_drag_end(actor: Actor, event_x: number, event_y: number, modifiers: ModifierType): void
     vfunc_drag_motion(actor: Actor, delta_x: number, delta_y: number): void
     vfunc_drag_progress(actor: Actor, delta_x: number, delta_y: number): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.DragAction */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.DragAction */
     connect(sigName: "drag-begin", callback: (($obj: DragAction, actor: Actor, event_x: number, event_y: number, modifiers: ModifierType) => void)): number
     connect_after(sigName: "drag-begin", callback: (($obj: DragAction, actor: Actor, event_x: number, event_y: number, modifiers: ModifierType) => void)): number
     emit(sigName: "drag-begin", actor: Actor, event_x: number, event_y: number, modifiers: ModifierType): void
@@ -11052,7 +11054,7 @@ export class DragAction {
     connect(sigName: "drag-progress", callback: (($obj: DragAction, actor: Actor, delta_x: number, delta_y: number) => boolean)): number
     connect_after(sigName: "drag-progress", callback: (($obj: DragAction, actor: Actor, delta_x: number, delta_y: number) => boolean)): number
     emit(sigName: "drag-progress", actor: Actor, delta_x: number, delta_y: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DragAction, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DragAction, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11087,28 +11089,28 @@ export class DragAction {
 }
 export interface DropAction_ConstructProps extends Action_ConstructProps {
 }
-export class DropAction {
-    /* Properties of Clutter.ActorMeta */
+class DropAction {
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11116,28 +11118,28 @@ export class DropAction {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.DropAction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.DropAction */
     vfunc_can_drop(actor: Actor, event_x: number, event_y: number): boolean
     vfunc_drop(actor: Actor, event_x: number, event_y: number): void
     vfunc_over_in(actor: Actor): void
     vfunc_over_out(actor: Actor): void
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.DropAction */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.DropAction */
     connect(sigName: "can-drop", callback: (($obj: DropAction, actor: Actor, event_x: number, event_y: number) => boolean)): number
     connect_after(sigName: "can-drop", callback: (($obj: DropAction, actor: Actor, event_x: number, event_y: number) => boolean)): number
     emit(sigName: "can-drop", actor: Actor, event_x: number, event_y: number): void
@@ -11153,7 +11155,7 @@ export class DropAction {
     connect(sigName: "over-out", callback: (($obj: DropAction, actor: Actor) => void)): number
     connect_after(sigName: "over-out", callback: (($obj: DropAction, actor: Actor) => void)): number
     emit(sigName: "over-out", actor: Actor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DropAction, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DropAction, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11176,30 +11178,30 @@ export class DropAction {
 }
 export interface Effect_ConstructProps extends ActorMeta_ConstructProps {
 }
-export class Effect {
-    /* Properties of Clutter.ActorMeta */
+class Effect {
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Effect */
+    /* Methods of Clutter-1.0.Clutter.Effect */
     queue_repaint(): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11207,29 +11209,29 @@ export class Effect {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.Effect */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.Effect */
     vfunc_get_paint_volume(volume: PaintVolume): boolean
     vfunc_paint(flags: EffectPaintFlags): void
     vfunc_pick(flags: EffectPaintFlags): void
     vfunc_post_paint(): void
     vfunc_pre_paint(): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Effect, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Effect, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11250,10 +11252,10 @@ export class Effect {
 }
 export interface FixedLayout_ConstructProps extends LayoutManager_ConstructProps {
 }
-export class FixedLayout {
-    /* Fields of GObject.InitiallyUnowned */
+class FixedLayout {
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.LayoutManager */
+    /* Methods of Clutter-1.0.Clutter.LayoutManager */
     allocate(container: Container, allocation: ActorBox, flags: AllocationFlags): void
     begin_animation(duration: number, mode: number): Alpha
     child_get_property(container: Container, actor: Actor, property_name: string, value: any): void
@@ -11267,15 +11269,15 @@ export class FixedLayout {
     layout_changed(): void
     list_child_properties(): GObject.ParamSpec[]
     set_container(container?: Container | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11283,13 +11285,13 @@ export class FixedLayout {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.LayoutManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.LayoutManager */
     vfunc_allocate(container: Container, allocation: ActorBox, flags: AllocationFlags): void
     vfunc_begin_animation(duration: number, mode: number): Alpha
     vfunc_end_animation(): void
@@ -11299,19 +11301,19 @@ export class FixedLayout {
     vfunc_get_preferred_width(container: Container, for_height: number): [ /* min_width_p */ number | null, /* nat_width_p */ number | null ]
     vfunc_layout_changed(): void
     vfunc_set_container(container?: Container | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.LayoutManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.LayoutManager */
     connect(sigName: "layout-changed", callback: (($obj: FixedLayout) => void)): number
     connect_after(sigName: "layout-changed", callback: (($obj: FixedLayout) => void)): number
     emit(sigName: "layout-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FixedLayout, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FixedLayout, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11337,8 +11339,8 @@ export interface FlowLayout_ConstructProps extends LayoutManager_ConstructProps 
     row_spacing?: number
     snap_to_grid?: boolean
 }
-export class FlowLayout {
-    /* Properties of Clutter.FlowLayout */
+class FlowLayout {
+    /* Properties of Clutter-1.0.Clutter.FlowLayout */
     column_spacing: number
     homogeneous: boolean
     max_column_width: number
@@ -11348,9 +11350,9 @@ export class FlowLayout {
     orientation: FlowOrientation
     row_spacing: number
     snap_to_grid: boolean
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.FlowLayout */
+    /* Methods of Clutter-1.0.Clutter.FlowLayout */
     get_column_spacing(): number
     get_column_width(): [ /* min_width */ number, /* max_width */ number ]
     get_homogeneous(): boolean
@@ -11365,7 +11367,7 @@ export class FlowLayout {
     set_row_height(min_height: number, max_height: number): void
     set_row_spacing(spacing: number): void
     set_snap_to_grid(snap_to_grid: boolean): void
-    /* Methods of Clutter.LayoutManager */
+    /* Methods of Clutter-1.0.Clutter.LayoutManager */
     allocate(container: Container, allocation: ActorBox, flags: AllocationFlags): void
     begin_animation(duration: number, mode: number): Alpha
     child_get_property(container: Container, actor: Actor, property_name: string, value: any): void
@@ -11379,15 +11381,15 @@ export class FlowLayout {
     layout_changed(): void
     list_child_properties(): GObject.ParamSpec[]
     set_container(container?: Container | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11395,13 +11397,13 @@ export class FlowLayout {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.LayoutManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.LayoutManager */
     vfunc_allocate(container: Container, allocation: ActorBox, flags: AllocationFlags): void
     vfunc_begin_animation(duration: number, mode: number): Alpha
     vfunc_end_animation(): void
@@ -11411,19 +11413,19 @@ export class FlowLayout {
     vfunc_get_preferred_width(container: Container, for_height: number): [ /* min_width_p */ number | null, /* nat_width_p */ number | null ]
     vfunc_layout_changed(): void
     vfunc_set_container(container?: Container | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.LayoutManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.LayoutManager */
     connect(sigName: "layout-changed", callback: (($obj: FlowLayout) => void)): number
     connect_after(sigName: "layout-changed", callback: (($obj: FlowLayout) => void)): number
     emit(sigName: "layout-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: FlowLayout, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: FlowLayout, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11462,16 +11464,16 @@ export interface GestureAction_ConstructProps extends Action_ConstructProps {
     threshold_trigger_distance_y?: number
     threshold_trigger_edge?: GestureTriggerEdge
 }
-export class GestureAction {
-    /* Properties of Clutter.GestureAction */
+class GestureAction {
+    /* Properties of Clutter-1.0.Clutter.GestureAction */
     n_touch_points: number
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.GestureAction */
+    /* Methods of Clutter-1.0.Clutter.GestureAction */
     cancel(): void
     get_device(point: number): InputDevice
     get_last_event(point: number): Event
@@ -11489,21 +11491,21 @@ export class GestureAction {
     set_n_touch_points(nb_points: number): void
     set_threshold_trigger_distance(x: number, y: number): void
     set_threshold_trigger_edge(edge: GestureTriggerEdge): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11511,29 +11513,29 @@ export class GestureAction {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.GestureAction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.GestureAction */
     vfunc_gesture_begin(actor: Actor): boolean
     vfunc_gesture_cancel(actor: Actor): void
     vfunc_gesture_end(actor: Actor): void
     vfunc_gesture_prepare(actor: Actor): boolean
     vfunc_gesture_progress(actor: Actor): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.GestureAction */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.GestureAction */
     connect(sigName: "gesture-begin", callback: (($obj: GestureAction, actor: Actor) => boolean)): number
     connect_after(sigName: "gesture-begin", callback: (($obj: GestureAction, actor: Actor) => boolean)): number
     emit(sigName: "gesture-begin", actor: Actor): void
@@ -11546,7 +11548,7 @@ export class GestureAction {
     connect(sigName: "gesture-progress", callback: (($obj: GestureAction, actor: Actor) => boolean)): number
     connect_after(sigName: "gesture-progress", callback: (($obj: GestureAction, actor: Actor) => boolean)): number
     emit(sigName: "gesture-progress", actor: Actor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GestureAction, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GestureAction, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11576,16 +11578,16 @@ export interface GridLayout_ConstructProps extends LayoutManager_ConstructProps 
     row_homogeneous?: boolean
     row_spacing?: number
 }
-export class GridLayout {
-    /* Properties of Clutter.GridLayout */
+class GridLayout {
+    /* Properties of Clutter-1.0.Clutter.GridLayout */
     column_homogeneous: boolean
     column_spacing: number
     orientation: Orientation
     row_homogeneous: boolean
     row_spacing: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.GridLayout */
+    /* Methods of Clutter-1.0.Clutter.GridLayout */
     attach(child: Actor, left: number, top: number, width: number, height: number): void
     attach_next_to(child: Actor, sibling: Actor | null, side: GridPosition, width: number, height: number): void
     get_child_at(left: number, top: number): Actor
@@ -11602,7 +11604,7 @@ export class GridLayout {
     set_orientation(orientation: Orientation): void
     set_row_homogeneous(homogeneous: boolean): void
     set_row_spacing(spacing: number): void
-    /* Methods of Clutter.LayoutManager */
+    /* Methods of Clutter-1.0.Clutter.LayoutManager */
     allocate(container: Container, allocation: ActorBox, flags: AllocationFlags): void
     begin_animation(duration: number, mode: number): Alpha
     child_get_property(container: Container, actor: Actor, property_name: string, value: any): void
@@ -11616,15 +11618,15 @@ export class GridLayout {
     layout_changed(): void
     list_child_properties(): GObject.ParamSpec[]
     set_container(container?: Container | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11632,13 +11634,13 @@ export class GridLayout {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.LayoutManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.LayoutManager */
     vfunc_allocate(container: Container, allocation: ActorBox, flags: AllocationFlags): void
     vfunc_begin_animation(duration: number, mode: number): Alpha
     vfunc_end_animation(): void
@@ -11648,19 +11650,19 @@ export class GridLayout {
     vfunc_get_preferred_width(container: Container, for_height: number): [ /* min_width_p */ number | null, /* nat_width_p */ number | null ]
     vfunc_layout_changed(): void
     vfunc_set_container(container?: Container | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.LayoutManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.LayoutManager */
     connect(sigName: "layout-changed", callback: (($obj: GridLayout) => void)): number
     connect_after(sigName: "layout-changed", callback: (($obj: GridLayout) => void)): number
     emit(sigName: "layout-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GridLayout, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GridLayout, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11687,8 +11689,8 @@ export class GridLayout {
 }
 export interface Group_ConstructProps extends Actor_ConstructProps {
 }
-export class Group {
-    /* Properties of Clutter.Actor */
+class Group {
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Action
     readonly allocation: ActorBox
     anchor_gravity: Gravity
@@ -11771,15 +11773,15 @@ export class Group {
     y_align: ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Group */
+    /* Methods of Clutter-1.0.Clutter.Group */
     get_n_children(): number
     get_nth_child(index_: number): Actor
     remove_all(): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Action): void
     add_action_with_name(name: string, action: Action): void
     add_child(child: Actor): void
@@ -12014,15 +12016,15 @@ export class Group {
     unparent(): void
     unrealize(): void
     unset_flags(flags: ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -12030,19 +12032,19 @@ export class Group {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Actor): void
     child_get_property(child: Actor, property: string, value: any): void
     child_notify(child: Actor, pspec: GObject.ParamSpec): void
@@ -12057,12 +12059,12 @@ export class Group {
     raise_child(actor: Actor, sibling?: Actor | null): void
     remove_actor(actor: Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: ActorBox, flags: AllocationFlags): void
     vfunc_apply_transform(matrix: Matrix): void
     vfunc_button_press_event(event: ButtonEvent): boolean
@@ -12120,15 +12122,15 @@ export class Group {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Group, box: ActorBox, flags: AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Group, box: ActorBox, flags: AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: ActorBox, flags: AllocationFlags): void
@@ -12207,11 +12209,11 @@ export class Group {
     connect(sigName: "unrealize", callback: (($obj: Group) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Group) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Group, actor: Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Group, actor: Actor) => void)): number
     emit(sigName: "actor-added", actor: Actor): void
@@ -12398,22 +12400,22 @@ export class Group {
 }
 export interface Image_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Image {
-    /* Fields of GObject.Object */
+class Image {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Image */
+    /* Methods of Clutter-1.0.Clutter.Image */
     set_area(data: Uint8Array[], pixel_format: Cogl.PixelFormat, rect: cairo.RectangleInt, row_stride: number): boolean
     set_bytes(data: GLib.Bytes, pixel_format: Cogl.PixelFormat, width: number, height: number, row_stride: number): boolean
     set_data(data: Uint8Array[], pixel_format: Cogl.PixelFormat, width: number, height: number, row_stride: number): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -12421,34 +12423,34 @@ export class Image {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Content */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Content */
     get_preferred_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     invalidate(): void
-    /* Virtual methods of Clutter.Image */
+    /* Virtual methods of Clutter-1.0.Clutter.Image */
     vfunc_attached(actor: Actor): void
     vfunc_detached(actor: Actor): void
     vfunc_get_preferred_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     vfunc_invalidate(): void
     vfunc_paint_content(actor: Actor, node: PaintNode): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Image, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Image, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Content */
+    /* Signals of Clutter-1.0.Clutter.Content */
     connect(sigName: "attached", callback: (($obj: Image, actor: Actor) => void)): number
     connect_after(sigName: "attached", callback: (($obj: Image, actor: Actor) => void)): number
     emit(sigName: "attached", actor: Actor): void
@@ -12476,13 +12478,13 @@ export interface InputDevice_ConstructProps extends GObject.Object_ConstructProp
     product_id?: string
     vendor_id?: string
 }
-export class InputDevice {
-    /* Properties of Clutter.InputDevice */
+class InputDevice {
+    /* Properties of Clutter-1.0.Clutter.InputDevice */
     enabled: boolean
     readonly n_axes: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.InputDevice */
+    /* Methods of Clutter-1.0.Clutter.InputDevice */
     get_associated_device(): InputDevice
     get_axis(index_: number): InputAxis
     get_axis_value(axes: number[], axis: InputAxis): [ /* returnType */ boolean, /* value */ number ]
@@ -12513,15 +12515,15 @@ export class InputDevice {
     set_key(index_: number, keyval: number, modifiers: ModifierType): void
     ungrab(): void
     update_from_event(event: Event, update_stage: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -12529,21 +12531,21 @@ export class InputDevice {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InputDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputDevice, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -12565,13 +12567,13 @@ export interface Interval_ConstructProps extends GObject.InitiallyUnowned_Constr
     initial?: any
     value_type?: GObject.Type
 }
-export class Interval {
-    /* Properties of Clutter.Interval */
+class Interval {
+    /* Properties of Clutter-1.0.Clutter.Interval */
     final: any
     initial: any
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Interval */
+    /* Methods of Clutter-1.0.Clutter.Interval */
     clone(): Interval
     compute(factor: number): any
     compute_value(factor: number): [ /* returnType */ boolean, /* value */ any ]
@@ -12584,15 +12586,15 @@ export class Interval {
     set_final(value: any): void
     set_initial(value: any): void
     validate(pspec: GObject.ParamSpec): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -12600,33 +12602,33 @@ export class Interval {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Interval */
+    /* Virtual methods of Clutter-1.0.Clutter.Interval */
     vfunc_compute_value(factor: number): [ /* returnType */ boolean, /* value */ any ]
     vfunc_validate(pspec: GObject.ParamSpec): boolean
     vfunc_get_id(): string
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Interval, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Interval, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -12647,14 +12649,14 @@ export class Interval {
 }
 export interface KeyframeTransition_ConstructProps extends PropertyTransition_ConstructProps {
 }
-export class KeyframeTransition {
-    /* Properties of Clutter.PropertyTransition */
+class KeyframeTransition {
+    /* Properties of Clutter-1.0.Clutter.PropertyTransition */
     property_name: string
-    /* Properties of Clutter.Transition */
+    /* Properties of Clutter-1.0.Clutter.Transition */
     animatable: Animatable
     interval: Interval
     remove_on_complete: boolean
-    /* Properties of Clutter.Timeline */
+    /* Properties of Clutter-1.0.Clutter.Timeline */
     auto_reverse: boolean
     delay: number
     direction: TimelineDirection
@@ -12662,9 +12664,9 @@ export class KeyframeTransition {
     loop: boolean
     progress_mode: AnimationMode
     repeat_count: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.KeyframeTransition */
+    /* Methods of Clutter-1.0.Clutter.KeyframeTransition */
     clear(): void
     get_key_frame(index_: number): [ /* key */ number | null, /* mode */ AnimationMode | null, /* value */ any ]
     get_n_key_frames(): number
@@ -12672,10 +12674,10 @@ export class KeyframeTransition {
     set_key_frames(key_frames: number[]): void
     set_modes(modes: AnimationMode[]): void
     set_values(values: any[]): void
-    /* Methods of Clutter.PropertyTransition */
+    /* Methods of Clutter-1.0.Clutter.PropertyTransition */
     get_property_name(): string
     set_property_name(property_name?: string | null): void
-    /* Methods of Clutter.Transition */
+    /* Methods of Clutter-1.0.Clutter.Transition */
     get_animatable(): Animatable
     get_interval(): Interval
     get_remove_on_complete(): boolean
@@ -12684,7 +12686,7 @@ export class KeyframeTransition {
     set_interval(interval?: Interval | null): void
     set_remove_on_complete(remove_complete: boolean): void
     set_to(value: any): void
-    /* Methods of Clutter.Timeline */
+    /* Methods of Clutter-1.0.Clutter.Timeline */
     add_marker(marker_name: string, progress: number): void
     add_marker_at_time(marker_name: string, msecs: number): void
     advance(msecs: number): void
@@ -12723,15 +12725,15 @@ export class KeyframeTransition {
     skip(msecs: number): void
     start(): void
     stop(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -12739,22 +12741,22 @@ export class KeyframeTransition {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Transition */
+    /* Virtual methods of Clutter-1.0.Clutter.Transition */
     vfunc_attached(animatable: Animatable): void
     vfunc_compute_value(animatable: Animatable, interval: Interval, progress: number): void
     vfunc_detached(animatable: Animatable): void
-    /* Virtual methods of Clutter.Timeline */
+    /* Virtual methods of Clutter-1.0.Clutter.Timeline */
     vfunc_completed(): void
     vfunc_marker_reached(marker_name: string, msecs: number): void
     vfunc_new_frame(msecs: number): void
@@ -12765,15 +12767,15 @@ export class KeyframeTransition {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Timeline */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Timeline */
     connect(sigName: "completed", callback: (($obj: KeyframeTransition) => void)): number
     connect_after(sigName: "completed", callback: (($obj: KeyframeTransition) => void)): number
     emit(sigName: "completed"): void
@@ -12792,7 +12794,7 @@ export class KeyframeTransition {
     connect(sigName: "stopped", callback: (($obj: KeyframeTransition, is_finished: boolean) => void)): number
     connect_after(sigName: "stopped", callback: (($obj: KeyframeTransition, is_finished: boolean) => void)): number
     emit(sigName: "stopped", is_finished: boolean): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: KeyframeTransition, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: KeyframeTransition, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -12833,10 +12835,10 @@ export class KeyframeTransition {
 }
 export interface LayoutManager_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
 }
-export class LayoutManager {
-    /* Fields of GObject.InitiallyUnowned */
+class LayoutManager {
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.LayoutManager */
+    /* Methods of Clutter-1.0.Clutter.LayoutManager */
     allocate(container: Container, allocation: ActorBox, flags: AllocationFlags): void
     begin_animation(duration: number, mode: number): Alpha
     child_get_property(container: Container, actor: Actor, property_name: string, value: any): void
@@ -12850,15 +12852,15 @@ export class LayoutManager {
     layout_changed(): void
     list_child_properties(): GObject.ParamSpec[]
     set_container(container?: Container | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -12866,13 +12868,13 @@ export class LayoutManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.LayoutManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.LayoutManager */
     vfunc_allocate(container: Container, allocation: ActorBox, flags: AllocationFlags): void
     vfunc_begin_animation(duration: number, mode: number): Alpha
     vfunc_end_animation(): void
@@ -12882,19 +12884,19 @@ export class LayoutManager {
     vfunc_get_preferred_width(container: Container, for_height: number): [ /* min_width_p */ number | null, /* nat_width_p */ number | null ]
     vfunc_layout_changed(): void
     vfunc_set_container(container?: Container | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.LayoutManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.LayoutManager */
     connect(sigName: "layout-changed", callback: (($obj: LayoutManager) => void)): number
     connect_after(sigName: "layout-changed", callback: (($obj: LayoutManager) => void)): number
     emit(sigName: "layout-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: LayoutManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: LayoutManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -12910,28 +12912,28 @@ export class LayoutManager {
 export interface LayoutMeta_ConstructProps extends ChildMeta_ConstructProps {
     manager?: LayoutManager
 }
-export class LayoutMeta {
-    /* Fields of Clutter.LayoutMeta */
+class LayoutMeta {
+    /* Fields of Clutter-1.0.Clutter.LayoutMeta */
     manager: LayoutManager
-    /* Fields of Clutter.ChildMeta */
+    /* Fields of Clutter-1.0.Clutter.ChildMeta */
     container: Container
     actor: Actor
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.LayoutMeta */
+    /* Methods of Clutter-1.0.Clutter.LayoutMeta */
     get_manager(): LayoutManager
-    /* Methods of Clutter.ChildMeta */
+    /* Methods of Clutter-1.0.Clutter.ChildMeta */
     get_actor(): Actor
     get_container(): Container
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -12939,21 +12941,21 @@ export class LayoutMeta {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: LayoutMeta, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: LayoutMeta, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -12968,12 +12970,12 @@ export class LayoutMeta {
 }
 export interface ListModel_ConstructProps extends Model_ConstructProps {
 }
-export class ListModel {
-    /* Properties of Clutter.Model */
+class ListModel {
+    /* Properties of Clutter-1.0.Clutter.Model */
     readonly filter_set: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Model */
+    /* Methods of Clutter-1.0.Clutter.Model */
     appendv(columns: number[], values: any[]): void
     filter_iter(iter: ModelIter): boolean
     filter_row(row: number): boolean
@@ -12997,15 +12999,15 @@ export class ListModel {
     set_sort(column: number, func: ModelSortFunc | null): void
     set_sorting_column(column: number): void
     set_types(types: GObject.Type[]): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -13013,18 +13015,18 @@ export class ListModel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Model */
+    /* Virtual methods of Clutter-1.0.Clutter.Model */
     vfunc_filter_changed(): void
     vfunc_get_column_name(column: number): string
     vfunc_get_column_type(column: number): GObject.Type
@@ -13040,15 +13042,15 @@ export class ListModel {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Model */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Model */
     connect(sigName: "filter-changed", callback: (($obj: ListModel) => void)): number
     connect_after(sigName: "filter-changed", callback: (($obj: ListModel) => void)): number
     emit(sigName: "filter-changed"): void
@@ -13064,7 +13066,7 @@ export class ListModel {
     connect(sigName: "sort-changed", callback: (($obj: ListModel) => void)): number
     connect_after(sigName: "sort-changed", callback: (($obj: ListModel) => void)): number
     emit(sigName: "sort-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ListModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ListModel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -13084,12 +13086,12 @@ export class ListModel {
 }
 export interface Model_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Model {
-    /* Properties of Clutter.Model */
+class Model {
+    /* Properties of Clutter-1.0.Clutter.Model */
     readonly filter_set: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Model */
+    /* Methods of Clutter-1.0.Clutter.Model */
     appendv(columns: number[], values: any[]): void
     filter_iter(iter: ModelIter): boolean
     filter_row(row: number): boolean
@@ -13113,15 +13115,15 @@ export class Model {
     set_sort(column: number, func: ModelSortFunc | null): void
     set_sorting_column(column: number): void
     set_types(types: GObject.Type[]): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -13129,18 +13131,18 @@ export class Model {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Model */
+    /* Virtual methods of Clutter-1.0.Clutter.Model */
     vfunc_filter_changed(): void
     vfunc_get_column_name(column: number): string
     vfunc_get_column_type(column: number): GObject.Type
@@ -13156,15 +13158,15 @@ export class Model {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Model */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Model */
     connect(sigName: "filter-changed", callback: (($obj: Model) => void)): number
     connect_after(sigName: "filter-changed", callback: (($obj: Model) => void)): number
     emit(sigName: "filter-changed"): void
@@ -13180,7 +13182,7 @@ export class Model {
     connect(sigName: "sort-changed", callback: (($obj: Model) => void)): number
     connect_after(sigName: "sort-changed", callback: (($obj: Model) => void)): number
     emit(sigName: "sort-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Model, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Model, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -13199,13 +13201,13 @@ export interface ModelIter_ConstructProps extends GObject.Object_ConstructProps 
     model?: Model
     row?: number
 }
-export class ModelIter {
-    /* Properties of Clutter.ModelIter */
+class ModelIter {
+    /* Properties of Clutter-1.0.Clutter.ModelIter */
     model: Model
     row: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.ModelIter */
+    /* Methods of Clutter-1.0.Clutter.ModelIter */
     copy(): ModelIter
     get_model(): Model
     get_row(): number
@@ -13215,15 +13217,15 @@ export class ModelIter {
     next(): ModelIter
     prev(): ModelIter
     set_value(column: number, value: any): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -13231,13 +13233,13 @@ export class ModelIter {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.ModelIter */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.ModelIter */
     vfunc_copy(): ModelIter
     vfunc_get_model(): Model
     vfunc_get_row(): number
@@ -13247,15 +13249,15 @@ export class ModelIter {
     vfunc_next(): ModelIter
     vfunc_prev(): ModelIter
     vfunc_set_value(column: number, value: any): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ModelIter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ModelIter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -13274,37 +13276,37 @@ export class ModelIter {
 }
 export interface OffscreenEffect_ConstructProps extends Effect_ConstructProps {
 }
-export class OffscreenEffect {
-    /* Properties of Clutter.ActorMeta */
+class OffscreenEffect {
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.OffscreenEffect */
+    /* Methods of Clutter-1.0.Clutter.OffscreenEffect */
     create_texture(width: number, height: number): Cogl.Handle
     get_target(): Cogl.Material
     get_target_rect(): [ /* returnType */ boolean, /* rect */ Rect ]
     get_target_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     get_texture(): Cogl.Handle
     paint_target(): void
-    /* Methods of Clutter.Effect */
+    /* Methods of Clutter-1.0.Clutter.Effect */
     queue_repaint(): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -13312,32 +13314,32 @@ export class OffscreenEffect {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.OffscreenEffect */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.OffscreenEffect */
     vfunc_create_texture(width: number, height: number): Cogl.Handle
     vfunc_paint_target(): void
-    /* Virtual methods of Clutter.Effect */
+    /* Virtual methods of Clutter-1.0.Clutter.Effect */
     vfunc_get_paint_volume(volume: PaintVolume): boolean
     vfunc_paint(flags: EffectPaintFlags): void
     vfunc_pick(flags: EffectPaintFlags): void
     vfunc_post_paint(): void
     vfunc_pre_paint(): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: OffscreenEffect, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OffscreenEffect, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -13361,57 +13363,57 @@ export interface PageTurnEffect_ConstructProps extends DeformEffect_ConstructPro
     period?: number
     radius?: number
 }
-export class PageTurnEffect {
-    /* Properties of Clutter.PageTurnEffect */
+class PageTurnEffect {
+    /* Properties of Clutter-1.0.Clutter.PageTurnEffect */
     angle: number
     period: number
     radius: number
-    /* Properties of Clutter.DeformEffect */
+    /* Properties of Clutter-1.0.Clutter.DeformEffect */
     x_tiles: number
     y_tiles: number
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.PageTurnEffect */
+    /* Methods of Clutter-1.0.Clutter.PageTurnEffect */
     get_angle(): number
     get_period(): number
     get_radius(): number
     set_angle(angle: number): void
     set_period(period: number): void
     set_radius(radius: number): void
-    /* Methods of Clutter.DeformEffect */
+    /* Methods of Clutter-1.0.Clutter.DeformEffect */
     get_back_material(): Cogl.Handle
     get_n_tiles(): [ /* x_tiles */ number, /* y_tiles */ number ]
     invalidate(): void
     set_back_material(material?: Cogl.Handle | null): void
     set_n_tiles(x_tiles: number, y_tiles: number): void
-    /* Methods of Clutter.OffscreenEffect */
+    /* Methods of Clutter-1.0.Clutter.OffscreenEffect */
     create_texture(width: number, height: number): Cogl.Handle
     get_target(): Cogl.Material
     get_target_rect(): [ /* returnType */ boolean, /* rect */ Rect ]
     get_target_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     get_texture(): Cogl.Handle
     paint_target(): void
-    /* Methods of Clutter.Effect */
+    /* Methods of Clutter-1.0.Clutter.Effect */
     queue_repaint(): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -13419,34 +13421,34 @@ export class PageTurnEffect {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.DeformEffect */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.DeformEffect */
     vfunc_deform_vertex(width: number, height: number, vertex: Cogl.TextureVertex): void
-    /* Virtual methods of Clutter.OffscreenEffect */
+    /* Virtual methods of Clutter-1.0.Clutter.OffscreenEffect */
     vfunc_create_texture(width: number, height: number): Cogl.Handle
     vfunc_paint_target(): void
-    /* Virtual methods of Clutter.Effect */
+    /* Virtual methods of Clutter-1.0.Clutter.Effect */
     vfunc_get_paint_volume(volume: PaintVolume): boolean
     vfunc_paint(flags: EffectPaintFlags): void
     vfunc_pick(flags: EffectPaintFlags): void
     vfunc_post_paint(): void
     vfunc_pre_paint(): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PageTurnEffect, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PageTurnEffect, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -13477,8 +13479,8 @@ export class PageTurnEffect {
     static new(period: number, angle: number, radius: number): PageTurnEffect
     static $gtype: GObject.Type
 }
-export class PaintNode {
-    /* Methods of Clutter.PaintNode */
+class PaintNode {
+    /* Methods of Clutter-1.0.Clutter.PaintNode */
     add_child(child: PaintNode): void
     add_rectangle(rect: ActorBox): void
     add_texture_rectangle(rect: ActorBox, x_1: number, y_1: number, x_2: number, y_2: number): void
@@ -13493,21 +13495,21 @@ export interface PanAction_ConstructProps extends GestureAction_ConstructProps {
     interpolate?: boolean
     pan_axis?: PanAxis
 }
-export class PanAction {
-    /* Properties of Clutter.PanAction */
+class PanAction {
+    /* Properties of Clutter-1.0.Clutter.PanAction */
     acceleration_factor: number
     deceleration: number
     interpolate: boolean
     pan_axis: PanAxis
-    /* Properties of Clutter.GestureAction */
+    /* Properties of Clutter-1.0.Clutter.GestureAction */
     n_touch_points: number
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.PanAction */
+    /* Methods of Clutter-1.0.Clutter.PanAction */
     get_acceleration_factor(): number
     get_constrained_motion_delta(point: number): [ /* returnType */ number, /* delta_x */ number | null, /* delta_y */ number | null ]
     get_deceleration(): number
@@ -13521,7 +13523,7 @@ export class PanAction {
     set_deceleration(rate: number): void
     set_interpolate(should_interpolate: boolean): void
     set_pan_axis(axis: PanAxis): void
-    /* Methods of Clutter.GestureAction */
+    /* Methods of Clutter-1.0.Clutter.GestureAction */
     cancel(): void
     get_device(point: number): InputDevice
     get_last_event(point: number): Event
@@ -13537,21 +13539,21 @@ export class PanAction {
     set_n_touch_points(nb_points: number): void
     set_threshold_trigger_distance(x: number, y: number): void
     set_threshold_trigger_edge(edge: GestureTriggerEdge): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -13559,39 +13561,39 @@ export class PanAction {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.PanAction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.PanAction */
     vfunc_pan(actor: Actor, is_interpolated: boolean): boolean
     vfunc_pan_stopped(actor: Actor): void
-    /* Virtual methods of Clutter.GestureAction */
+    /* Virtual methods of Clutter-1.0.Clutter.GestureAction */
     vfunc_gesture_begin(actor: Actor): boolean
     vfunc_gesture_cancel(actor: Actor): void
     vfunc_gesture_end(actor: Actor): void
     vfunc_gesture_prepare(actor: Actor): boolean
     vfunc_gesture_progress(actor: Actor): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.PanAction */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.PanAction */
     connect(sigName: "pan", callback: (($obj: PanAction, actor: Actor, is_interpolated: boolean) => boolean)): number
     connect_after(sigName: "pan", callback: (($obj: PanAction, actor: Actor, is_interpolated: boolean) => boolean)): number
     emit(sigName: "pan", actor: Actor, is_interpolated: boolean): void
     connect(sigName: "pan-stopped", callback: (($obj: PanAction, actor: Actor) => void)): number
     connect_after(sigName: "pan-stopped", callback: (($obj: PanAction, actor: Actor) => void)): number
     emit(sigName: "pan-stopped", actor: Actor): void
-    /* Signals of Clutter.GestureAction */
+    /* Signals of Clutter-1.0.Clutter.GestureAction */
     connect(sigName: "gesture-begin", callback: (($obj: PanAction, actor: Actor) => boolean)): number
     connect_after(sigName: "gesture-begin", callback: (($obj: PanAction, actor: Actor) => boolean)): number
     emit(sigName: "gesture-begin", actor: Actor): void
@@ -13604,7 +13606,7 @@ export class PanAction {
     connect(sigName: "gesture-progress", callback: (($obj: PanAction, actor: Actor) => boolean)): number
     connect_after(sigName: "gesture-progress", callback: (($obj: PanAction, actor: Actor) => boolean)): number
     emit(sigName: "gesture-progress", actor: Actor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PanAction, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PanAction, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -13635,97 +13637,97 @@ export class PanAction {
     static new(): PanAction
     static $gtype: GObject.Type
 }
-export class ParamSpecColor {
-    /* Fields of Clutter.ParamSpecColor */
+class ParamSpecColor {
+    /* Fields of Clutter-1.0.Clutter.ParamSpecColor */
     default_value: Color
-    /* Fields of GObject.ParamSpec */
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export class ParamSpecFixed {
-    /* Fields of Clutter.ParamSpecFixed */
+class ParamSpecFixed {
+    /* Fields of Clutter-1.0.Clutter.ParamSpecFixed */
     minimum: Cogl.Fixed
     maximum: Cogl.Fixed
     default_value: Cogl.Fixed
-    /* Fields of GObject.ParamSpec */
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export class ParamSpecUnit {
-    /* Fields of GObject.ParamSpec */
+class ParamSpecUnit {
+    /* Fields of GObject-2.0.GObject.ParamSpec */
     g_type_instance: GObject.TypeInstance
     name: string
     flags: GObject.ParamFlags
     value_type: GObject.Type
     owner_type: GObject.Type
-    /* Methods of GObject.ParamSpec */
-    get_blurb(): string
-    get_default_value(): GObject.Value
+    /* Methods of GObject-2.0.GObject.ParamSpec */
+    get_blurb(): string | null
+    get_default_value(): any
     get_name(): string
     get_name_quark(): GLib.Quark
     get_nick(): string
     get_qdata(quark: GLib.Quark): object | null
-    get_redirect_target(): GObject.ParamSpec
+    get_redirect_target(): GObject.ParamSpec | null
     set_qdata(quark: GLib.Quark, data?: object | null): void
     sink(): void
     steal_qdata(quark: GLib.Quark): object | null
-    /* Virtual methods of GObject.ParamSpec */
+    /* Virtual methods of GObject-2.0.GObject.ParamSpec */
     vfunc_finalize(): void
-    vfunc_value_set_default(value: GObject.Value): void
-    vfunc_value_validate(value: GObject.Value): boolean
-    vfunc_values_cmp(value1: GObject.Value, value2: GObject.Value): number
+    vfunc_value_set_default(value: any): void
+    vfunc_value_validate(value: any): boolean
+    vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
 export interface Path_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
     description?: string
 }
-export class Path {
-    /* Properties of Clutter.Path */
+class Path {
+    /* Properties of Clutter-1.0.Clutter.Path */
     description: string
     readonly length: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Path */
+    /* Methods of Clutter-1.0.Clutter.Path */
     add_cairo_path(cpath: cairo.Path): void
     add_close(): void
     add_curve_to(x_1: number, y_1: number, x_2: number, y_2: number, x_3: number, y_3: number): void
@@ -13749,15 +13751,15 @@ export class Path {
     replace_node(index_: number, node: PathNode): void
     set_description(str: string): boolean
     to_cairo_path(cr: cairo.Context): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -13765,21 +13767,21 @@ export class Path {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Path, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Path, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -13803,36 +13805,36 @@ export interface PathConstraint_ConstructProps extends Constraint_ConstructProps
     offset?: number
     path?: Path
 }
-export class PathConstraint {
-    /* Properties of Clutter.PathConstraint */
+class PathConstraint {
+    /* Properties of Clutter-1.0.Clutter.PathConstraint */
     offset: number
     path: Path
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.PathConstraint */
+    /* Methods of Clutter-1.0.Clutter.PathConstraint */
     get_offset(): number
     get_path(): Path
     set_offset(offset: number): void
     set_path(path?: Path | null): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -13840,30 +13842,30 @@ export class PathConstraint {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.Constraint */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.Constraint */
     vfunc_update_allocation(actor: Actor, allocation: ActorBox): void
     vfunc_update_preferred_size(actor: Actor, direction: Orientation, for_size: number, minimum_size: number, natural_size: number): void
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.PathConstraint */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.PathConstraint */
     connect(sigName: "node-reached", callback: (($obj: PathConstraint, actor: Actor, index: number) => void)): number
     connect_after(sigName: "node-reached", callback: (($obj: PathConstraint, actor: Actor, index: number) => void)): number
     emit(sigName: "node-reached", actor: Actor, index: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PathConstraint, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PathConstraint, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -13888,8 +13890,8 @@ export class PathConstraint {
     static new(path: Path | null, offset: number): PathConstraint
     static $gtype: GObject.Type
 }
-export class PipelineNode {
-    /* Methods of Clutter.PaintNode */
+class PipelineNode {
+    /* Methods of Clutter-1.0.Clutter.PaintNode */
     add_child(child: PaintNode): void
     add_rectangle(rect: ActorBox): void
     add_texture_rectangle(rect: ActorBox, x_1: number, y_1: number, x_2: number, y_2: number): void
@@ -13901,14 +13903,14 @@ export class PipelineNode {
 export interface PropertyTransition_ConstructProps extends Transition_ConstructProps {
     property_name?: string
 }
-export class PropertyTransition {
-    /* Properties of Clutter.PropertyTransition */
+class PropertyTransition {
+    /* Properties of Clutter-1.0.Clutter.PropertyTransition */
     property_name: string
-    /* Properties of Clutter.Transition */
+    /* Properties of Clutter-1.0.Clutter.Transition */
     animatable: Animatable
     interval: Interval
     remove_on_complete: boolean
-    /* Properties of Clutter.Timeline */
+    /* Properties of Clutter-1.0.Clutter.Timeline */
     auto_reverse: boolean
     delay: number
     direction: TimelineDirection
@@ -13916,12 +13918,12 @@ export class PropertyTransition {
     loop: boolean
     progress_mode: AnimationMode
     repeat_count: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.PropertyTransition */
+    /* Methods of Clutter-1.0.Clutter.PropertyTransition */
     get_property_name(): string
     set_property_name(property_name?: string | null): void
-    /* Methods of Clutter.Transition */
+    /* Methods of Clutter-1.0.Clutter.Transition */
     get_animatable(): Animatable
     get_interval(): Interval
     get_remove_on_complete(): boolean
@@ -13930,7 +13932,7 @@ export class PropertyTransition {
     set_interval(interval?: Interval | null): void
     set_remove_on_complete(remove_complete: boolean): void
     set_to(value: any): void
-    /* Methods of Clutter.Timeline */
+    /* Methods of Clutter-1.0.Clutter.Timeline */
     add_marker(marker_name: string, progress: number): void
     add_marker_at_time(marker_name: string, msecs: number): void
     advance(msecs: number): void
@@ -13969,15 +13971,15 @@ export class PropertyTransition {
     skip(msecs: number): void
     start(): void
     stop(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -13985,22 +13987,22 @@ export class PropertyTransition {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Transition */
+    /* Virtual methods of Clutter-1.0.Clutter.Transition */
     vfunc_attached(animatable: Animatable): void
     vfunc_compute_value(animatable: Animatable, interval: Interval, progress: number): void
     vfunc_detached(animatable: Animatable): void
-    /* Virtual methods of Clutter.Timeline */
+    /* Virtual methods of Clutter-1.0.Clutter.Timeline */
     vfunc_completed(): void
     vfunc_marker_reached(marker_name: string, msecs: number): void
     vfunc_new_frame(msecs: number): void
@@ -14011,15 +14013,15 @@ export class PropertyTransition {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Timeline */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Timeline */
     connect(sigName: "completed", callback: (($obj: PropertyTransition) => void)): number
     connect_after(sigName: "completed", callback: (($obj: PropertyTransition) => void)): number
     emit(sigName: "completed"): void
@@ -14038,7 +14040,7 @@ export class PropertyTransition {
     connect(sigName: "stopped", callback: (($obj: PropertyTransition, is_finished: boolean) => void)): number
     connect_after(sigName: "stopped", callback: (($obj: PropertyTransition, is_finished: boolean) => void)): number
     emit(sigName: "stopped", is_finished: boolean): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: PropertyTransition, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PropertyTransition, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -14082,13 +14084,13 @@ export interface Rectangle_ConstructProps extends Actor_ConstructProps {
     color?: Color
     has_border?: boolean
 }
-export class Rectangle {
-    /* Properties of Clutter.Rectangle */
+class Rectangle {
+    /* Properties of Clutter-1.0.Clutter.Rectangle */
     border_color: Color
     border_width: number
     color: Color
     has_border: boolean
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Action
     readonly allocation: ActorBox
     anchor_gravity: Gravity
@@ -14171,18 +14173,18 @@ export class Rectangle {
     y_align: ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Rectangle */
+    /* Methods of Clutter-1.0.Clutter.Rectangle */
     get_border_color(): /* color */ Color
     get_border_width(): number
     get_color(): /* color */ Color
     set_border_color(color: Color): void
     set_border_width(width: number): void
     set_color(color: Color): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Action): void
     add_action_with_name(name: string, action: Action): void
     add_child(child: Actor): void
@@ -14418,15 +14420,15 @@ export class Rectangle {
     unparent(): void
     unrealize(): void
     unset_flags(flags: ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -14434,19 +14436,19 @@ export class Rectangle {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Actor): void
     child_get_property(child: Actor, property: string, value: any): void
     child_notify(child: Actor, pspec: GObject.ParamSpec): void
@@ -14461,12 +14463,12 @@ export class Rectangle {
     raise_child(actor: Actor, sibling?: Actor | null): void
     remove_actor(actor: Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: ActorBox, flags: AllocationFlags): void
     vfunc_apply_transform(matrix: Matrix): void
     vfunc_button_press_event(event: ButtonEvent): boolean
@@ -14524,15 +14526,15 @@ export class Rectangle {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Rectangle, box: ActorBox, flags: AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Rectangle, box: ActorBox, flags: AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: ActorBox, flags: AllocationFlags): void
@@ -14611,11 +14613,11 @@ export class Rectangle {
     connect(sigName: "unrealize", callback: (($obj: Rectangle) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Rectangle) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Rectangle, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Rectangle, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Rectangle, actor: Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Rectangle, actor: Actor) => void)): number
     emit(sigName: "actor-added", actor: Actor): void
@@ -14811,16 +14813,16 @@ export class Rectangle {
 }
 export interface RotateAction_ConstructProps extends GestureAction_ConstructProps {
 }
-export class RotateAction {
-    /* Properties of Clutter.GestureAction */
+class RotateAction {
+    /* Properties of Clutter-1.0.Clutter.GestureAction */
     n_touch_points: number
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.GestureAction */
+    /* Methods of Clutter-1.0.Clutter.GestureAction */
     cancel(): void
     get_device(point: number): InputDevice
     get_last_event(point: number): Event
@@ -14838,21 +14840,21 @@ export class RotateAction {
     set_n_touch_points(nb_points: number): void
     set_threshold_trigger_distance(x: number, y: number): void
     set_threshold_trigger_edge(edge: GestureTriggerEdge): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -14860,35 +14862,35 @@ export class RotateAction {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.RotateAction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.RotateAction */
     vfunc_rotate(actor: Actor, angle: number): boolean
-    /* Virtual methods of Clutter.GestureAction */
+    /* Virtual methods of Clutter-1.0.Clutter.GestureAction */
     vfunc_gesture_begin(actor: Actor): boolean
     vfunc_gesture_cancel(actor: Actor): void
     vfunc_gesture_end(actor: Actor): void
     vfunc_gesture_prepare(actor: Actor): boolean
     vfunc_gesture_progress(actor: Actor): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.RotateAction */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.RotateAction */
     connect(sigName: "rotate", callback: (($obj: RotateAction, actor: Actor, angle: number) => boolean)): number
     connect_after(sigName: "rotate", callback: (($obj: RotateAction, actor: Actor, angle: number) => boolean)): number
     emit(sigName: "rotate", actor: Actor, angle: number): void
-    /* Signals of Clutter.GestureAction */
+    /* Signals of Clutter-1.0.Clutter.GestureAction */
     connect(sigName: "gesture-begin", callback: (($obj: RotateAction, actor: Actor) => boolean)): number
     connect_after(sigName: "gesture-begin", callback: (($obj: RotateAction, actor: Actor) => boolean)): number
     emit(sigName: "gesture-begin", actor: Actor): void
@@ -14901,7 +14903,7 @@ export class RotateAction {
     connect(sigName: "gesture-progress", callback: (($obj: RotateAction, actor: Actor) => boolean)): number
     connect_after(sigName: "gesture-progress", callback: (($obj: RotateAction, actor: Actor) => boolean)): number
     emit(sigName: "gesture-progress", actor: Actor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RotateAction, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RotateAction, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -14927,12 +14929,12 @@ export class RotateAction {
 export interface Score_ConstructProps extends GObject.Object_ConstructProps {
     loop?: boolean
 }
-export class Score {
-    /* Properties of Clutter.Score */
+class Score {
+    /* Properties of Clutter-1.0.Clutter.Score */
     loop: boolean
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Score */
+    /* Methods of Clutter-1.0.Clutter.Score */
     append(parent: Timeline | null, timeline: Timeline): number
     append_at_marker(parent: Timeline, marker_name: string, timeline: Timeline): number
     get_loop(): boolean
@@ -14946,15 +14948,15 @@ export class Score {
     set_loop(loop: boolean): void
     start(): void
     stop(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -14962,27 +14964,27 @@ export class Score {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.Score */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.Score */
     vfunc_completed(): void
     vfunc_paused(): void
     vfunc_started(): void
     vfunc_timeline_completed(timeline: Timeline): void
     vfunc_timeline_started(timeline: Timeline): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Score */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Score */
     connect(sigName: "completed", callback: (($obj: Score) => void)): number
     connect_after(sigName: "completed", callback: (($obj: Score) => void)): number
     emit(sigName: "completed"): void
@@ -14998,7 +15000,7 @@ export class Score {
     connect(sigName: "timeline-started", callback: (($obj: Score, timeline: Timeline) => void)): number
     connect_after(sigName: "timeline-started", callback: (($obj: Score, timeline: Timeline) => void)): number
     emit(sigName: "timeline-started", timeline: Timeline): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Score, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Score, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -15018,14 +15020,14 @@ export class Score {
 export interface Script_ConstructProps extends GObject.Object_ConstructProps {
     translation_domain?: string
 }
-export class Script {
-    /* Properties of Clutter.Script */
+class Script {
+    /* Properties of Clutter-1.0.Clutter.Script */
     readonly filename: string
     readonly filename_set: boolean
     translation_domain: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Script */
+    /* Methods of Clutter-1.0.Clutter.Script */
     add_search_paths(paths: string[]): void
     add_states(name: string | null, state: State): void
     connect_signals(user_data?: object | null): void
@@ -15042,15 +15044,15 @@ export class Script {
     lookup_filename(filename: string): string
     set_translation_domain(domain?: string | null): void
     unmerge_objects(merge_id: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -15058,23 +15060,23 @@ export class Script {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.Script */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.Script */
     vfunc_get_type_from_name(type_name: string): GObject.Type
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Script, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Script, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -15098,10 +15100,10 @@ export class Script {
 export interface ScrollActor_ConstructProps extends Actor_ConstructProps {
     scroll_mode?: ScrollMode
 }
-export class ScrollActor {
-    /* Properties of Clutter.ScrollActor */
+class ScrollActor {
+    /* Properties of Clutter-1.0.Clutter.ScrollActor */
     scroll_mode: ScrollMode
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Action
     readonly allocation: ActorBox
     anchor_gravity: Gravity
@@ -15184,16 +15186,16 @@ export class ScrollActor {
     y_align: ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.ScrollActor */
+    /* Methods of Clutter-1.0.Clutter.ScrollActor */
     get_scroll_mode(): ScrollMode
     scroll_to_point(point: Point): void
     scroll_to_rect(rect: Rect): void
     set_scroll_mode(mode: ScrollMode): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Action): void
     add_action_with_name(name: string, action: Action): void
     add_child(child: Actor): void
@@ -15429,15 +15431,15 @@ export class ScrollActor {
     unparent(): void
     unrealize(): void
     unset_flags(flags: ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -15445,19 +15447,19 @@ export class ScrollActor {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Actor): void
     child_get_property(child: Actor, property: string, value: any): void
     child_notify(child: Actor, pspec: GObject.ParamSpec): void
@@ -15472,12 +15474,12 @@ export class ScrollActor {
     raise_child(actor: Actor, sibling?: Actor | null): void
     remove_actor(actor: Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: ActorBox, flags: AllocationFlags): void
     vfunc_apply_transform(matrix: Matrix): void
     vfunc_button_press_event(event: ButtonEvent): boolean
@@ -15535,15 +15537,15 @@ export class ScrollActor {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Actor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: ScrollActor, box: ActorBox, flags: AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: ScrollActor, box: ActorBox, flags: AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: ActorBox, flags: AllocationFlags): void
@@ -15622,11 +15624,11 @@ export class ScrollActor {
     connect(sigName: "unrealize", callback: (($obj: ScrollActor) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: ScrollActor) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ScrollActor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ScrollActor, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: ScrollActor, actor: Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: ScrollActor, actor: Actor) => void)): number
     emit(sigName: "actor-added", actor: Actor): void
@@ -15830,8 +15832,8 @@ export interface Settings_ConstructProps extends GObject.Object_ConstructProps {
     unscaled_font_dpi?: number
     window_scaling_factor?: number
 }
-export class Settings {
-    /* Properties of Clutter.Settings */
+class Settings {
+    /* Properties of Clutter-1.0.Clutter.Settings */
     dnd_drag_threshold: number
     double_click_distance: number
     double_click_time: number
@@ -15846,17 +15848,17 @@ export class Settings {
     password_hint_time: number
     unscaled_font_dpi: number
     window_scaling_factor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -15864,21 +15866,21 @@ export class Settings {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Settings, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Settings, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -15926,15 +15928,15 @@ export interface Shader_ConstructProps extends GObject.Object_ConstructProps {
     fragment_source?: string
     vertex_source?: string
 }
-export class Shader {
-    /* Properties of Clutter.Shader */
+class Shader {
+    /* Properties of Clutter-1.0.Clutter.Shader */
     readonly compiled: boolean
     enabled: boolean
     fragment_source: string
     vertex_source: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Shader */
+    /* Methods of Clutter-1.0.Clutter.Shader */
     compile(): boolean
     get_cogl_fragment_shader(): Cogl.Handle
     get_cogl_program(): Cogl.Handle
@@ -15948,15 +15950,15 @@ export class Shader {
     set_is_enabled(enabled: boolean): void
     set_uniform(name: string, value: any): void
     set_vertex_source(data: string, length: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -15964,21 +15966,21 @@ export class Shader {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Shader, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Shader, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -16004,42 +16006,42 @@ export class Shader {
 export interface ShaderEffect_ConstructProps extends OffscreenEffect_ConstructProps {
     shader_type?: ShaderType
 }
-export class ShaderEffect {
-    /* Properties of Clutter.ActorMeta */
+class ShaderEffect {
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.ShaderEffect */
+    /* Methods of Clutter-1.0.Clutter.ShaderEffect */
     get_program(): Cogl.Handle
     get_shader(): Cogl.Handle
     set_shader_source(source: string): boolean
     set_uniform_value(name: string, value: any): void
-    /* Methods of Clutter.OffscreenEffect */
+    /* Methods of Clutter-1.0.Clutter.OffscreenEffect */
     create_texture(width: number, height: number): Cogl.Handle
     get_target(): Cogl.Material
     get_target_rect(): [ /* returnType */ boolean, /* rect */ Rect ]
     get_target_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     get_texture(): Cogl.Handle
     paint_target(): void
-    /* Methods of Clutter.Effect */
+    /* Methods of Clutter-1.0.Clutter.Effect */
     queue_repaint(): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -16047,34 +16049,34 @@ export class ShaderEffect {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.ShaderEffect */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.ShaderEffect */
     vfunc_get_static_shader_source(): string
-    /* Virtual methods of Clutter.OffscreenEffect */
+    /* Virtual methods of Clutter-1.0.Clutter.OffscreenEffect */
     vfunc_create_texture(width: number, height: number): Cogl.Handle
     vfunc_paint_target(): void
-    /* Virtual methods of Clutter.Effect */
+    /* Virtual methods of Clutter-1.0.Clutter.Effect */
     vfunc_get_paint_volume(volume: PaintVolume): boolean
     vfunc_paint(flags: EffectPaintFlags): void
     vfunc_pick(flags: EffectPaintFlags): void
     vfunc_post_paint(): void
     vfunc_pre_paint(): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ShaderEffect, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ShaderEffect, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -16095,13 +16097,13 @@ export class ShaderEffect {
     static new(shader_type: ShaderType): ShaderEffect
     static $gtype: GObject.Type
 }
-export class ShaderFloat {
+class ShaderFloat {
     static name: string
 }
-export class ShaderInt {
+class ShaderInt {
     static name: string
 }
-export class ShaderMatrix {
+class ShaderMatrix {
     static name: string
 }
 export interface SnapConstraint_ConstructProps extends Constraint_ConstructProps {
@@ -16110,40 +16112,40 @@ export interface SnapConstraint_ConstructProps extends Constraint_ConstructProps
     source?: Actor
     to_edge?: SnapEdge
 }
-export class SnapConstraint {
-    /* Properties of Clutter.SnapConstraint */
+class SnapConstraint {
+    /* Properties of Clutter-1.0.Clutter.SnapConstraint */
     from_edge: SnapEdge
     offset: number
     source: Actor
     to_edge: SnapEdge
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.SnapConstraint */
+    /* Methods of Clutter-1.0.Clutter.SnapConstraint */
     get_edges(): [ /* from_edge */ SnapEdge, /* to_edge */ SnapEdge ]
     get_offset(): number
     get_source(): Actor
     set_edges(from_edge: SnapEdge, to_edge: SnapEdge): void
     set_offset(offset: number): void
     set_source(source?: Actor | null): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -16151,26 +16153,26 @@ export class SnapConstraint {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.Constraint */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.Constraint */
     vfunc_update_allocation(actor: Actor, allocation: ActorBox): void
     vfunc_update_preferred_size(actor: Actor, direction: Orientation, for_size: number, minimum_size: number, natural_size: number): void
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SnapConstraint, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SnapConstraint, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -16213,8 +16215,8 @@ export interface Stage_ConstructProps extends Group_ConstructProps {
     use_fog?: boolean
     user_resizable?: boolean
 }
-export class Stage {
-    /* Properties of Clutter.Stage */
+class Stage {
+    /* Properties of Clutter-1.0.Clutter.Stage */
     accept_focus: boolean
     color: Color
     cursor_visible: boolean
@@ -16228,7 +16230,7 @@ export class Stage {
     use_alpha: boolean
     use_fog: boolean
     user_resizable: boolean
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Action
     readonly allocation: ActorBox
     anchor_gravity: Gravity
@@ -16311,11 +16313,11 @@ export class Stage {
     y_align: ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Stage */
+    /* Methods of Clutter-1.0.Clutter.Stage */
     ensure_current(): void
     ensure_redraw(): void
     ensure_viewport(): void
@@ -16355,11 +16357,11 @@ export class Stage {
     set_use_fog(fog: boolean): void
     set_user_resizable(resizable: boolean): void
     show_cursor(): void
-    /* Methods of Clutter.Group */
+    /* Methods of Clutter-1.0.Clutter.Group */
     get_n_children(): number
     get_nth_child(index_: number): Actor
     remove_all(): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Action): void
     add_action_with_name(name: string, action: Action): void
     add_child(child: Actor): void
@@ -16593,15 +16595,15 @@ export class Stage {
     unparent(): void
     unrealize(): void
     unset_flags(flags: ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -16609,19 +16611,19 @@ export class Stage {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Actor): void
     child_get_property(child: Actor, property: string, value: any): void
     child_notify(child: Actor, pspec: GObject.ParamSpec): void
@@ -16636,18 +16638,18 @@ export class Stage {
     raise_child(actor: Actor, sibling?: Actor | null): void
     remove_actor(actor: Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Stage */
+    /* Virtual methods of Clutter-1.0.Clutter.Stage */
     vfunc_activate(): void
     vfunc_deactivate(): void
     vfunc_delete_event(event: Event): boolean
     vfunc_fullscreen(): void
     vfunc_unfullscreen(): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: ActorBox, flags: AllocationFlags): void
     vfunc_apply_transform(matrix: Matrix): void
     vfunc_button_press_event(event: ButtonEvent): boolean
@@ -16705,15 +16707,15 @@ export class Stage {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Stage */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Stage */
     connect(sigName: "activate", callback: (($obj: Stage) => void)): number
     connect_after(sigName: "activate", callback: (($obj: Stage) => void)): number
     emit(sigName: "activate"): void
@@ -16732,7 +16734,7 @@ export class Stage {
     connect(sigName: "unfullscreen", callback: (($obj: Stage) => void)): number
     connect_after(sigName: "unfullscreen", callback: (($obj: Stage) => void)): number
     emit(sigName: "unfullscreen"): void
-    /* Signals of Clutter.Actor */
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Stage, box: ActorBox, flags: AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Stage, box: ActorBox, flags: AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: ActorBox, flags: AllocationFlags): void
@@ -16811,11 +16813,11 @@ export class Stage {
     connect(sigName: "unrealize", callback: (($obj: Stage) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Stage) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Stage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Stage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Stage, actor: Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Stage, actor: Actor) => void)): number
     emit(sigName: "actor-added", actor: Actor): void
@@ -17029,25 +17031,25 @@ export class Stage {
 }
 export interface StageManager_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class StageManager {
-    /* Properties of Clutter.StageManager */
+class StageManager {
+    /* Properties of Clutter-1.0.Clutter.StageManager */
     readonly default_stage: Stage
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.StageManager */
+    /* Methods of Clutter-1.0.Clutter.StageManager */
     get_default_stage(): Stage
     list_stages(): Stage[]
     peek_stages(): Stage[]
     set_default_stage(stage: Stage): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -17055,31 +17057,31 @@ export class StageManager {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.StageManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.StageManager */
     vfunc_stage_added(stage: Stage): void
     vfunc_stage_removed(stage: Stage): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.StageManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.StageManager */
     connect(sigName: "stage-added", callback: (($obj: StageManager, stage: Stage) => void)): number
     connect_after(sigName: "stage-added", callback: (($obj: StageManager, stage: Stage) => void)): number
     emit(sigName: "stage-added", stage: Stage): void
     connect(sigName: "stage-removed", callback: (($obj: StageManager, stage: Stage) => void)): number
     connect_after(sigName: "stage-removed", callback: (($obj: StageManager, stage: Stage) => void)): number
     emit(sigName: "stage-removed", stage: Stage): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: StageManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StageManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -17100,13 +17102,13 @@ export interface State_ConstructProps extends GObject.Object_ConstructProps {
     duration?: number
     state?: string
 }
-export class State {
-    /* Properties of Clutter.State */
+class State {
+    /* Properties of Clutter-1.0.Clutter.State */
     duration: number
     state: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.State */
+    /* Methods of Clutter-1.0.Clutter.State */
     get_animator(source_state_name: string, target_state_name: string): Animator
     get_duration(source_state_name?: string | null, target_state_name?: string | null): number
     get_keys(source_state_name?: string | null, target_state_name?: string | null, object?: GObject.Object | null, property_name?: string | null): StateKey[]
@@ -17119,15 +17121,15 @@ export class State {
     set_key(source_state_name: string | null, target_state_name: string, object: GObject.Object, property_name: string, mode: number, value: any, pre_delay: number, post_delay: number): State
     set_state(target_state_name: string): Timeline
     warp_to_state(target_state_name: string): Timeline
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -17135,36 +17137,36 @@ export class State {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.State */
+    /* Virtual methods of Clutter-1.0.Clutter.State */
     vfunc_completed(): void
     vfunc_get_id(): string
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.State */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.State */
     connect(sigName: "completed", callback: (($obj: State) => void)): number
     connect_after(sigName: "completed", callback: (($obj: State) => void)): number
     emit(sigName: "completed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: State, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: State, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -17185,16 +17187,16 @@ export class State {
 }
 export interface SwipeAction_ConstructProps extends GestureAction_ConstructProps {
 }
-export class SwipeAction {
-    /* Properties of Clutter.GestureAction */
+class SwipeAction {
+    /* Properties of Clutter-1.0.Clutter.GestureAction */
     n_touch_points: number
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.GestureAction */
+    /* Methods of Clutter-1.0.Clutter.GestureAction */
     cancel(): void
     get_device(point: number): InputDevice
     get_last_event(point: number): Event
@@ -17212,21 +17214,21 @@ export class SwipeAction {
     set_n_touch_points(nb_points: number): void
     set_threshold_trigger_distance(x: number, y: number): void
     set_threshold_trigger_edge(edge: GestureTriggerEdge): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -17234,39 +17236,39 @@ export class SwipeAction {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.SwipeAction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.SwipeAction */
     vfunc_swept(actor: Actor, direction: SwipeDirection): void
     vfunc_swipe(actor: Actor, direction: SwipeDirection): boolean
-    /* Virtual methods of Clutter.GestureAction */
+    /* Virtual methods of Clutter-1.0.Clutter.GestureAction */
     vfunc_gesture_begin(actor: Actor): boolean
     vfunc_gesture_cancel(actor: Actor): void
     vfunc_gesture_end(actor: Actor): void
     vfunc_gesture_prepare(actor: Actor): boolean
     vfunc_gesture_progress(actor: Actor): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.SwipeAction */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.SwipeAction */
     connect(sigName: "swept", callback: (($obj: SwipeAction, actor: Actor, direction: SwipeDirection) => void)): number
     connect_after(sigName: "swept", callback: (($obj: SwipeAction, actor: Actor, direction: SwipeDirection) => void)): number
     emit(sigName: "swept", actor: Actor, direction: SwipeDirection): void
     connect(sigName: "swipe", callback: (($obj: SwipeAction, actor: Actor, direction: SwipeDirection) => boolean)): number
     connect_after(sigName: "swipe", callback: (($obj: SwipeAction, actor: Actor, direction: SwipeDirection) => boolean)): number
     emit(sigName: "swipe", actor: Actor, direction: SwipeDirection): void
-    /* Signals of Clutter.GestureAction */
+    /* Signals of Clutter-1.0.Clutter.GestureAction */
     connect(sigName: "gesture-begin", callback: (($obj: SwipeAction, actor: Actor) => boolean)): number
     connect_after(sigName: "gesture-begin", callback: (($obj: SwipeAction, actor: Actor) => boolean)): number
     emit(sigName: "gesture-begin", actor: Actor): void
@@ -17279,7 +17281,7 @@ export class SwipeAction {
     connect(sigName: "gesture-progress", callback: (($obj: SwipeAction, actor: Actor) => boolean)): number
     connect_after(sigName: "gesture-progress", callback: (($obj: SwipeAction, actor: Actor) => boolean)): number
     emit(sigName: "gesture-progress", actor: Actor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SwipeAction, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SwipeAction, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -17309,16 +17311,16 @@ export interface TableLayout_ConstructProps extends LayoutManager_ConstructProps
     row_spacing?: number
     use_animations?: boolean
 }
-export class TableLayout {
-    /* Properties of Clutter.TableLayout */
+class TableLayout {
+    /* Properties of Clutter-1.0.Clutter.TableLayout */
     column_spacing: number
     easing_duration: number
     easing_mode: number
     row_spacing: number
     use_animations: boolean
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.TableLayout */
+    /* Methods of Clutter-1.0.Clutter.TableLayout */
     get_alignment(actor: Actor): [ /* x_align */ TableAlignment, /* y_align */ TableAlignment ]
     get_column_count(): number
     get_column_spacing(): number
@@ -17340,7 +17342,7 @@ export class TableLayout {
     set_row_spacing(spacing: number): void
     set_span(actor: Actor, column_span: number, row_span: number): void
     set_use_animations(animate: boolean): void
-    /* Methods of Clutter.LayoutManager */
+    /* Methods of Clutter-1.0.Clutter.LayoutManager */
     allocate(container: Container, allocation: ActorBox, flags: AllocationFlags): void
     begin_animation(duration: number, mode: number): Alpha
     child_get_property(container: Container, actor: Actor, property_name: string, value: any): void
@@ -17354,15 +17356,15 @@ export class TableLayout {
     layout_changed(): void
     list_child_properties(): GObject.ParamSpec[]
     set_container(container?: Container | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -17370,13 +17372,13 @@ export class TableLayout {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.LayoutManager */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.LayoutManager */
     vfunc_allocate(container: Container, allocation: ActorBox, flags: AllocationFlags): void
     vfunc_begin_animation(duration: number, mode: number): Alpha
     vfunc_end_animation(): void
@@ -17386,19 +17388,19 @@ export class TableLayout {
     vfunc_get_preferred_width(container: Container, for_height: number): [ /* min_width_p */ number | null, /* nat_width_p */ number | null ]
     vfunc_layout_changed(): void
     vfunc_set_container(container?: Container | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.LayoutManager */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.LayoutManager */
     connect(sigName: "layout-changed", callback: (($obj: TableLayout) => void)): number
     connect_after(sigName: "layout-changed", callback: (($obj: TableLayout) => void)): number
     emit(sigName: "layout-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TableLayout, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TableLayout, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -17425,16 +17427,16 @@ export class TableLayout {
 }
 export interface TapAction_ConstructProps extends GestureAction_ConstructProps {
 }
-export class TapAction {
-    /* Properties of Clutter.GestureAction */
+class TapAction {
+    /* Properties of Clutter-1.0.Clutter.GestureAction */
     n_touch_points: number
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.GestureAction */
+    /* Methods of Clutter-1.0.Clutter.GestureAction */
     cancel(): void
     get_device(point: number): InputDevice
     get_last_event(point: number): Event
@@ -17452,21 +17454,21 @@ export class TapAction {
     set_n_touch_points(nb_points: number): void
     set_threshold_trigger_distance(x: number, y: number): void
     set_threshold_trigger_edge(edge: GestureTriggerEdge): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -17474,35 +17476,35 @@ export class TapAction {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.TapAction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.TapAction */
     vfunc_tap(actor: Actor): boolean
-    /* Virtual methods of Clutter.GestureAction */
+    /* Virtual methods of Clutter-1.0.Clutter.GestureAction */
     vfunc_gesture_begin(actor: Actor): boolean
     vfunc_gesture_cancel(actor: Actor): void
     vfunc_gesture_end(actor: Actor): void
     vfunc_gesture_prepare(actor: Actor): boolean
     vfunc_gesture_progress(actor: Actor): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.TapAction */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.TapAction */
     connect(sigName: "tap", callback: (($obj: TapAction, actor: Actor) => void)): number
     connect_after(sigName: "tap", callback: (($obj: TapAction, actor: Actor) => void)): number
     emit(sigName: "tap", actor: Actor): void
-    /* Signals of Clutter.GestureAction */
+    /* Signals of Clutter-1.0.Clutter.GestureAction */
     connect(sigName: "gesture-begin", callback: (($obj: TapAction, actor: Actor) => boolean)): number
     connect_after(sigName: "gesture-begin", callback: (($obj: TapAction, actor: Actor) => boolean)): number
     emit(sigName: "gesture-begin", actor: Actor): void
@@ -17515,7 +17517,7 @@ export class TapAction {
     connect(sigName: "gesture-progress", callback: (($obj: TapAction, actor: Actor) => boolean)): number
     connect_after(sigName: "gesture-progress", callback: (($obj: TapAction, actor: Actor) => boolean)): number
     emit(sigName: "gesture-progress", actor: Actor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TapAction, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TapAction, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -17566,8 +17568,8 @@ export interface Text_ConstructProps extends Actor_ConstructProps {
     text?: string
     use_markup?: boolean
 }
-export class Text {
-    /* Properties of Clutter.Text */
+class Text {
+    /* Properties of Clutter-1.0.Clutter.Text */
     activatable: boolean
     attributes: Pango.AttrList
     buffer: TextBuffer
@@ -17597,7 +17599,7 @@ export class Text {
     single_line_mode: boolean
     text: string
     use_markup: boolean
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Action
     readonly allocation: ActorBox
     anchor_gravity: Gravity
@@ -17679,11 +17681,11 @@ export class Text {
     y_align: ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Text */
+    /* Methods of Clutter-1.0.Clutter.Text */
     activate(): boolean
     coords_to_position(x: number, y: number): number
     delete_chars(n_chars: number): void
@@ -17750,7 +17752,7 @@ export class Text {
     set_single_line_mode(single_line: boolean): void
     set_text(text?: string | null): void
     set_use_markup(setting: boolean): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Action): void
     add_action_with_name(name: string, action: Action): void
     add_child(child: Actor): void
@@ -17986,15 +17988,15 @@ export class Text {
     unparent(): void
     unrealize(): void
     unset_flags(flags: ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -18002,19 +18004,19 @@ export class Text {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Actor): void
     child_get_property(child: Actor, property: string, value: any): void
     child_notify(child: Actor, pspec: GObject.ParamSpec): void
@@ -18029,17 +18031,17 @@ export class Text {
     raise_child(actor: Actor, sibling?: Actor | null): void
     remove_actor(actor: Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Text */
+    /* Virtual methods of Clutter-1.0.Clutter.Text */
     vfunc_activate(): void
     vfunc_cursor_changed(): void
     vfunc_cursor_event(geometry: Geometry): void
     vfunc_text_changed(): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: ActorBox, flags: AllocationFlags): void
     vfunc_apply_transform(matrix: Matrix): void
     vfunc_button_press_event(event: ButtonEvent): boolean
@@ -18097,15 +18099,15 @@ export class Text {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Text */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Text */
     connect(sigName: "activate", callback: (($obj: Text) => void)): number
     connect_after(sigName: "activate", callback: (($obj: Text) => void)): number
     emit(sigName: "activate"): void
@@ -18124,7 +18126,7 @@ export class Text {
     connect(sigName: "text-changed", callback: (($obj: Text) => void)): number
     connect_after(sigName: "text-changed", callback: (($obj: Text) => void)): number
     emit(sigName: "text-changed"): void
-    /* Signals of Clutter.Actor */
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Text, box: ActorBox, flags: AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Text, box: ActorBox, flags: AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: ActorBox, flags: AllocationFlags): void
@@ -18203,11 +18205,11 @@ export class Text {
     connect(sigName: "unrealize", callback: (($obj: Text) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Text) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Text, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Text, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Text, actor: Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Text, actor: Actor) => void)): number
     emit(sigName: "actor-added", actor: Actor): void
@@ -18454,14 +18456,14 @@ export class Text {
 export interface TextBuffer_ConstructProps extends GObject.Object_ConstructProps {
     max_length?: number
 }
-export class TextBuffer {
-    /* Properties of Clutter.TextBuffer */
+class TextBuffer {
+    /* Properties of Clutter-1.0.Clutter.TextBuffer */
     readonly length: number
     max_length: number
     readonly text: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.TextBuffer */
+    /* Methods of Clutter-1.0.Clutter.TextBuffer */
     delete_text(position: number, n_chars: number): number
     emit_deleted_text(position: number, n_chars: number): void
     emit_inserted_text(position: number, chars: string, n_chars: number): void
@@ -18472,15 +18474,15 @@ export class TextBuffer {
     insert_text(position: number, chars: string, n_chars: number): number
     set_max_length(max_length: number): void
     set_text(chars: string, n_chars: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -18488,35 +18490,35 @@ export class TextBuffer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.TextBuffer */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.TextBuffer */
     vfunc_delete_text(position: number, n_chars: number): number
     vfunc_deleted_text(position: number, n_chars: number): void
     vfunc_get_length(): number
     vfunc_get_text(n_bytes: number): string
     vfunc_insert_text(position: number, chars: string, n_chars: number): number
     vfunc_inserted_text(position: number, chars: string, n_chars: number): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.TextBuffer */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.TextBuffer */
     connect(sigName: "deleted-text", callback: (($obj: TextBuffer, position: number, n_chars: number) => void)): number
     connect_after(sigName: "deleted-text", callback: (($obj: TextBuffer, position: number, n_chars: number) => void)): number
     emit(sigName: "deleted-text", position: number, n_chars: number): void
     connect(sigName: "inserted-text", callback: (($obj: TextBuffer, position: number, chars: string, n_chars: number) => void)): number
     connect_after(sigName: "inserted-text", callback: (($obj: TextBuffer, position: number, chars: string, n_chars: number) => void)): number
     emit(sigName: "inserted-text", position: number, chars: string, n_chars: number): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TextBuffer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TextBuffer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -18538,8 +18540,8 @@ export class TextBuffer {
     static new_with_text(text: string | null, text_len: number): TextBuffer
     static $gtype: GObject.Type
 }
-export class TextNode {
-    /* Methods of Clutter.PaintNode */
+class TextNode {
+    /* Methods of Clutter-1.0.Clutter.PaintNode */
     add_child(child: PaintNode): void
     add_rectangle(rect: ActorBox): void
     add_texture_rectangle(rect: ActorBox, x_1: number, y_1: number, x_2: number, y_2: number): void
@@ -18564,8 +18566,8 @@ export interface Texture_ConstructProps extends Actor_ConstructProps {
     repeat_y?: boolean
     sync_size?: boolean
 }
-export class Texture {
-    /* Properties of Clutter.Texture */
+class Texture {
+    /* Properties of Clutter-1.0.Clutter.Texture */
     filename: string
     filter_quality: TextureQuality
     keep_aspect_ratio: boolean
@@ -18577,7 +18579,7 @@ export class Texture {
     repeat_y: boolean
     sync_size: boolean
     readonly tile_waste: number
-    /* Properties of Clutter.Actor */
+    /* Properties of Clutter-1.0.Clutter.Actor */
     actions: Action
     readonly allocation: ActorBox
     anchor_gravity: Gravity
@@ -18660,11 +18662,11 @@ export class Texture {
     y_align: ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Clutter.Actor */
+    /* Fields of Clutter-1.0.Clutter.Actor */
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Texture */
+    /* Methods of Clutter-1.0.Clutter.Texture */
     get_base_size(): [ /* width */ number, /* height */ number ]
     get_cogl_material(): Cogl.Handle
     get_cogl_texture(): Cogl.Handle
@@ -18690,7 +18692,7 @@ export class Texture {
     set_pick_with_alpha(pick_with_alpha: boolean): void
     set_repeat(repeat_x: boolean, repeat_y: boolean): void
     set_sync_size(sync_size: boolean): void
-    /* Methods of Clutter.Actor */
+    /* Methods of Clutter-1.0.Clutter.Actor */
     add_action(action: Action): void
     add_action_with_name(name: string, action: Action): void
     add_child(child: Actor): void
@@ -18926,15 +18928,15 @@ export class Texture {
     unparent(): void
     unrealize(): void
     unset_flags(flags: ActorFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -18942,19 +18944,19 @@ export class Texture {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Animatable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Animatable */
     animate_property(animation: Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
     find_property(property_name: string): GObject.ParamSpec
     get_initial_state(property_name: string, value: any): void
     interpolate_value(property_name: string, interval: Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
     set_final_state(property_name: string, value: any): void
-    /* Methods of Clutter.Container */
+    /* Methods of Clutter-1.0.Clutter.Container */
     add_actor(actor: Actor): void
     child_get_property(child: Actor, property: string, value: any): void
     child_notify(child: Actor, pspec: GObject.ParamSpec): void
@@ -18969,16 +18971,16 @@ export class Texture {
     raise_child(actor: Actor, sibling?: Actor | null): void
     remove_actor(actor: Actor): void
     sort_depth_order(): void
-    /* Methods of Clutter.Scriptable */
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Texture */
+    /* Virtual methods of Clutter-1.0.Clutter.Texture */
     vfunc_load_finished(error: GLib.Error): void
     vfunc_pixbuf_change(): void
     vfunc_size_change(width: number, height: number): void
-    /* Virtual methods of Clutter.Actor */
+    /* Virtual methods of Clutter-1.0.Clutter.Actor */
     vfunc_allocate(box: ActorBox, flags: AllocationFlags): void
     vfunc_apply_transform(matrix: Matrix): void
     vfunc_button_press_event(event: ButtonEvent): boolean
@@ -19036,15 +19038,15 @@ export class Texture {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Texture */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Texture */
     connect(sigName: "load-finished", callback: (($obj: Texture, error: GLib.Error) => void)): number
     connect_after(sigName: "load-finished", callback: (($obj: Texture, error: GLib.Error) => void)): number
     emit(sigName: "load-finished", error: GLib.Error): void
@@ -19054,7 +19056,7 @@ export class Texture {
     connect(sigName: "size-change", callback: (($obj: Texture, width: number, height: number) => void)): number
     connect_after(sigName: "size-change", callback: (($obj: Texture, width: number, height: number) => void)): number
     emit(sigName: "size-change", width: number, height: number): void
-    /* Signals of Clutter.Actor */
+    /* Signals of Clutter-1.0.Clutter.Actor */
     connect(sigName: "allocation-changed", callback: (($obj: Texture, box: ActorBox, flags: AllocationFlags) => void)): number
     connect_after(sigName: "allocation-changed", callback: (($obj: Texture, box: ActorBox, flags: AllocationFlags) => void)): number
     emit(sigName: "allocation-changed", box: ActorBox, flags: AllocationFlags): void
@@ -19133,11 +19135,11 @@ export class Texture {
     connect(sigName: "unrealize", callback: (($obj: Texture) => void)): number
     connect_after(sigName: "unrealize", callback: (($obj: Texture) => void)): number
     emit(sigName: "unrealize"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Texture, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Texture, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Container */
+    /* Signals of Clutter-1.0.Clutter.Container */
     connect(sigName: "actor-added", callback: (($obj: Texture, actor: Actor) => void)): number
     connect_after(sigName: "actor-added", callback: (($obj: Texture, actor: Actor) => void)): number
     emit(sigName: "actor-added", actor: Actor): void
@@ -19346,8 +19348,8 @@ export class Texture {
     static new_from_file(filename: string): Texture
     static $gtype: GObject.Type
 }
-export class TextureNode {
-    /* Methods of Clutter.PaintNode */
+class TextureNode {
+    /* Methods of Clutter-1.0.Clutter.PaintNode */
     add_child(child: PaintNode): void
     add_rectangle(rect: ActorBox): void
     add_texture_rectangle(rect: ActorBox, x_1: number, y_1: number, x_2: number, y_2: number): void
@@ -19369,8 +19371,8 @@ export interface Timeline_ConstructProps extends GObject.Object_ConstructProps {
     progress_mode?: AnimationMode
     repeat_count?: number
 }
-export class Timeline {
-    /* Properties of Clutter.Timeline */
+class Timeline {
+    /* Properties of Clutter-1.0.Clutter.Timeline */
     auto_reverse: boolean
     delay: number
     direction: TimelineDirection
@@ -19378,9 +19380,9 @@ export class Timeline {
     loop: boolean
     progress_mode: AnimationMode
     repeat_count: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Timeline */
+    /* Methods of Clutter-1.0.Clutter.Timeline */
     add_marker(marker_name: string, progress: number): void
     add_marker_at_time(marker_name: string, msecs: number): void
     advance(msecs: number): void
@@ -19419,15 +19421,15 @@ export class Timeline {
     skip(msecs: number): void
     start(): void
     stop(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -19435,18 +19437,18 @@ export class Timeline {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Timeline */
+    /* Virtual methods of Clutter-1.0.Clutter.Timeline */
     vfunc_completed(): void
     vfunc_marker_reached(marker_name: string, msecs: number): void
     vfunc_new_frame(msecs: number): void
@@ -19457,15 +19459,15 @@ export class Timeline {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Timeline */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Timeline */
     connect(sigName: "completed", callback: (($obj: Timeline) => void)): number
     connect_after(sigName: "completed", callback: (($obj: Timeline) => void)): number
     emit(sigName: "completed"): void
@@ -19484,7 +19486,7 @@ export class Timeline {
     connect(sigName: "stopped", callback: (($obj: Timeline, is_finished: boolean) => void)): number
     connect_after(sigName: "stopped", callback: (($obj: Timeline, is_finished: boolean) => void)): number
     emit(sigName: "stopped", is_finished: boolean): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Timeline, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Timeline, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -19518,12 +19520,12 @@ export interface Transition_ConstructProps extends Timeline_ConstructProps {
     interval?: Interval
     remove_on_complete?: boolean
 }
-export class Transition {
-    /* Properties of Clutter.Transition */
+class Transition {
+    /* Properties of Clutter-1.0.Clutter.Transition */
     animatable: Animatable
     interval: Interval
     remove_on_complete: boolean
-    /* Properties of Clutter.Timeline */
+    /* Properties of Clutter-1.0.Clutter.Timeline */
     auto_reverse: boolean
     delay: number
     direction: TimelineDirection
@@ -19531,9 +19533,9 @@ export class Transition {
     loop: boolean
     progress_mode: AnimationMode
     repeat_count: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.Transition */
+    /* Methods of Clutter-1.0.Clutter.Transition */
     get_animatable(): Animatable
     get_interval(): Interval
     get_remove_on_complete(): boolean
@@ -19542,7 +19544,7 @@ export class Transition {
     set_interval(interval?: Interval | null): void
     set_remove_on_complete(remove_complete: boolean): void
     set_to(value: any): void
-    /* Methods of Clutter.Timeline */
+    /* Methods of Clutter-1.0.Clutter.Timeline */
     add_marker(marker_name: string, progress: number): void
     add_marker_at_time(marker_name: string, msecs: number): void
     advance(msecs: number): void
@@ -19581,15 +19583,15 @@ export class Transition {
     skip(msecs: number): void
     start(): void
     stop(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -19597,22 +19599,22 @@ export class Transition {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Transition */
+    /* Virtual methods of Clutter-1.0.Clutter.Transition */
     vfunc_attached(animatable: Animatable): void
     vfunc_compute_value(animatable: Animatable, interval: Interval, progress: number): void
     vfunc_detached(animatable: Animatable): void
-    /* Virtual methods of Clutter.Timeline */
+    /* Virtual methods of Clutter-1.0.Clutter.Timeline */
     vfunc_completed(): void
     vfunc_marker_reached(marker_name: string, msecs: number): void
     vfunc_new_frame(msecs: number): void
@@ -19623,15 +19625,15 @@ export class Transition {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Timeline */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Timeline */
     connect(sigName: "completed", callback: (($obj: Transition) => void)): number
     connect_after(sigName: "completed", callback: (($obj: Transition) => void)): number
     emit(sigName: "completed"): void
@@ -19650,7 +19652,7 @@ export class Transition {
     connect(sigName: "stopped", callback: (($obj: Transition, is_finished: boolean) => void)): number
     connect_after(sigName: "stopped", callback: (($obj: Transition, is_finished: boolean) => void)): number
     emit(sigName: "stopped", is_finished: boolean): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Transition, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Transition, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -19685,12 +19687,12 @@ export class Transition {
 }
 export interface TransitionGroup_ConstructProps extends Transition_ConstructProps {
 }
-export class TransitionGroup {
-    /* Properties of Clutter.Transition */
+class TransitionGroup {
+    /* Properties of Clutter-1.0.Clutter.Transition */
     animatable: Animatable
     interval: Interval
     remove_on_complete: boolean
-    /* Properties of Clutter.Timeline */
+    /* Properties of Clutter-1.0.Clutter.Timeline */
     auto_reverse: boolean
     delay: number
     direction: TimelineDirection
@@ -19698,13 +19700,13 @@ export class TransitionGroup {
     loop: boolean
     progress_mode: AnimationMode
     repeat_count: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.TransitionGroup */
+    /* Methods of Clutter-1.0.Clutter.TransitionGroup */
     add_transition(transition: Transition): void
     remove_all(): void
     remove_transition(transition: Transition): void
-    /* Methods of Clutter.Transition */
+    /* Methods of Clutter-1.0.Clutter.Transition */
     get_animatable(): Animatable
     get_interval(): Interval
     get_remove_on_complete(): boolean
@@ -19713,7 +19715,7 @@ export class TransitionGroup {
     set_interval(interval?: Interval | null): void
     set_remove_on_complete(remove_complete: boolean): void
     set_to(value: any): void
-    /* Methods of Clutter.Timeline */
+    /* Methods of Clutter-1.0.Clutter.Timeline */
     add_marker(marker_name: string, progress: number): void
     add_marker_at_time(marker_name: string, msecs: number): void
     advance(msecs: number): void
@@ -19752,15 +19754,15 @@ export class TransitionGroup {
     skip(msecs: number): void
     start(): void
     stop(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -19768,22 +19770,22 @@ export class TransitionGroup {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Clutter.Scriptable */
+    watch_closure(closure: Function): void
+    /* Methods of Clutter-1.0.Clutter.Scriptable */
     get_id(): string
     parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Script, name: string, value: any): void
     set_id(id_: string): void
-    /* Virtual methods of Clutter.Transition */
+    /* Virtual methods of Clutter-1.0.Clutter.Transition */
     vfunc_attached(animatable: Animatable): void
     vfunc_compute_value(animatable: Animatable, interval: Interval, progress: number): void
     vfunc_detached(animatable: Animatable): void
-    /* Virtual methods of Clutter.Timeline */
+    /* Virtual methods of Clutter-1.0.Clutter.Timeline */
     vfunc_completed(): void
     vfunc_marker_reached(marker_name: string, msecs: number): void
     vfunc_new_frame(msecs: number): void
@@ -19794,15 +19796,15 @@ export class TransitionGroup {
     vfunc_parse_custom_node(script: Script, value: any, name: string, node: Json.Node): boolean
     vfunc_set_custom_property(script: Script, name: string, value: any): void
     vfunc_set_id(id_: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.Timeline */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.Timeline */
     connect(sigName: "completed", callback: (($obj: TransitionGroup) => void)): number
     connect_after(sigName: "completed", callback: (($obj: TransitionGroup) => void)): number
     emit(sigName: "completed"): void
@@ -19821,7 +19823,7 @@ export class TransitionGroup {
     connect(sigName: "stopped", callback: (($obj: TransitionGroup, is_finished: boolean) => void)): number
     connect_after(sigName: "stopped", callback: (($obj: TransitionGroup, is_finished: boolean) => void)): number
     emit(sigName: "stopped", is_finished: boolean): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TransitionGroup, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TransitionGroup, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -19860,23 +19862,23 @@ export class TransitionGroup {
 export interface ZoomAction_ConstructProps extends GestureAction_ConstructProps {
     zoom_axis?: ZoomAxis
 }
-export class ZoomAction {
-    /* Properties of Clutter.ZoomAction */
+class ZoomAction {
+    /* Properties of Clutter-1.0.Clutter.ZoomAction */
     zoom_axis: ZoomAxis
-    /* Properties of Clutter.GestureAction */
+    /* Properties of Clutter-1.0.Clutter.GestureAction */
     n_touch_points: number
-    /* Properties of Clutter.ActorMeta */
+    /* Properties of Clutter-1.0.Clutter.ActorMeta */
     readonly actor: Actor
     enabled: boolean
     name: string
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Clutter.ZoomAction */
+    /* Methods of Clutter-1.0.Clutter.ZoomAction */
     get_focal_point(): /* point */ Point
     get_transformed_focal_point(): /* point */ Point
     get_zoom_axis(): ZoomAxis
     set_zoom_axis(axis: ZoomAxis): void
-    /* Methods of Clutter.GestureAction */
+    /* Methods of Clutter-1.0.Clutter.GestureAction */
     cancel(): void
     get_device(point: number): InputDevice
     get_last_event(point: number): Event
@@ -19894,21 +19896,21 @@ export class ZoomAction {
     set_n_touch_points(nb_points: number): void
     set_threshold_trigger_distance(x: number, y: number): void
     set_threshold_trigger_edge(edge: GestureTriggerEdge): void
-    /* Methods of Clutter.ActorMeta */
+    /* Methods of Clutter-1.0.Clutter.ActorMeta */
     get_actor(): Actor
     get_enabled(): boolean
     get_name(): string
     set_enabled(is_enabled: boolean): void
     set_name(name: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -19916,35 +19918,35 @@ export class ZoomAction {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Clutter.ZoomAction */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Clutter-1.0.Clutter.ZoomAction */
     vfunc_zoom(actor: Actor, focal_point: Point, factor: number): boolean
-    /* Virtual methods of Clutter.GestureAction */
+    /* Virtual methods of Clutter-1.0.Clutter.GestureAction */
     vfunc_gesture_begin(actor: Actor): boolean
     vfunc_gesture_cancel(actor: Actor): void
     vfunc_gesture_end(actor: Actor): void
     vfunc_gesture_prepare(actor: Actor): boolean
     vfunc_gesture_progress(actor: Actor): boolean
-    /* Virtual methods of Clutter.ActorMeta */
+    /* Virtual methods of Clutter-1.0.Clutter.ActorMeta */
     vfunc_set_actor(actor?: Actor | null): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Clutter.ZoomAction */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Clutter-1.0.Clutter.ZoomAction */
     connect(sigName: "zoom", callback: (($obj: ZoomAction, actor: Actor, focal_point: Point, factor: number) => boolean)): number
     connect_after(sigName: "zoom", callback: (($obj: ZoomAction, actor: Actor, focal_point: Point, factor: number) => boolean)): number
     emit(sigName: "zoom", actor: Actor, focal_point: Point, factor: number): void
-    /* Signals of Clutter.GestureAction */
+    /* Signals of Clutter-1.0.Clutter.GestureAction */
     connect(sigName: "gesture-begin", callback: (($obj: ZoomAction, actor: Actor) => boolean)): number
     connect_after(sigName: "gesture-begin", callback: (($obj: ZoomAction, actor: Actor) => boolean)): number
     emit(sigName: "gesture-begin", actor: Actor): void
@@ -19957,7 +19959,7 @@ export class ZoomAction {
     connect(sigName: "gesture-progress", callback: (($obj: ZoomAction, actor: Actor) => boolean)): number
     connect_after(sigName: "gesture-progress", callback: (($obj: ZoomAction, actor: Actor) => boolean)): number
     emit(sigName: "gesture-progress", actor: Actor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ZoomAction, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ZoomAction, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -19982,16 +19984,16 @@ export class ZoomAction {
     static new(): ZoomAction
     static $gtype: GObject.Type
 }
-export abstract class ActionClass {
+abstract class ActionClass {
     static name: string
 }
-export class ActorBox {
-    /* Fields of Clutter.ActorBox */
+class ActorBox {
+    /* Fields of Clutter-1.0.Clutter.ActorBox */
     x1: number
     y1: number
     x2: number
     y2: number
-    /* Methods of Clutter.ActorBox */
+    /* Methods of Clutter-1.0.Clutter.ActorBox */
     clamp_to_pixel(): void
     contains(x: number, y: number): boolean
     copy(): ActorBox
@@ -20018,8 +20020,8 @@ export class ActorBox {
     static new(x_1: number, y_1: number, x_2: number, y_2: number): ActorBox
     static alloc(): ActorBox
 }
-export abstract class ActorClass {
-    /* Fields of Clutter.ActorClass */
+abstract class ActorClass {
+    /* Fields of Clutter-1.0.Clutter.ActorClass */
     show: (self: Actor) => void
     show_all: (self: Actor) => void
     hide: (self: Actor) => void
@@ -20057,8 +20059,8 @@ export abstract class ActorClass {
     touch_event: (self: Actor, event: TouchEvent) => boolean
     static name: string
 }
-export class ActorIter {
-    /* Methods of Clutter.ActorIter */
+class ActorIter {
+    /* Methods of Clutter-1.0.Clutter.ActorIter */
     destroy(): void
     init(root: Actor): void
     is_valid(): boolean
@@ -20067,28 +20069,28 @@ export class ActorIter {
     remove(): void
     static name: string
 }
-export abstract class ActorMetaClass {
-    /* Fields of Clutter.ActorMetaClass */
+abstract class ActorMetaClass {
+    /* Fields of Clutter-1.0.Clutter.ActorMetaClass */
     set_actor: (meta: ActorMeta, actor?: Actor | null) => void
     static name: string
 }
-export class ActorMetaPrivate {
+class ActorMetaPrivate {
     static name: string
 }
-export class ActorPrivate {
+class ActorPrivate {
     static name: string
 }
-export abstract class AlignConstraintClass {
+abstract class AlignConstraintClass {
     static name: string
 }
-export abstract class AlphaClass {
+abstract class AlphaClass {
     static name: string
 }
-export class AlphaPrivate {
+class AlphaPrivate {
     static name: string
 }
-export abstract class AnimatableIface {
-    /* Fields of Clutter.AnimatableIface */
+abstract class AnimatableIface {
+    /* Fields of Clutter-1.0.Clutter.AnimatableIface */
     animate_property: (animatable: Animatable, animation: Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any) => boolean
     find_property: (animatable: Animatable, property_name: string) => GObject.ParamSpec
     get_initial_state: (animatable: Animatable, property_name: string, value: any) => void
@@ -20096,20 +20098,20 @@ export abstract class AnimatableIface {
     interpolate_value: (animatable: Animatable, property_name: string, interval: Interval, progress: number) => [ /* returnType */ boolean, /* value */ any ]
     static name: string
 }
-export abstract class AnimationClass {
-    /* Fields of Clutter.AnimationClass */
+abstract class AnimationClass {
+    /* Fields of Clutter-1.0.Clutter.AnimationClass */
     started: (animation: Animation) => void
     completed: (animation: Animation) => void
     static name: string
 }
-export class AnimationPrivate {
+class AnimationPrivate {
     static name: string
 }
-export abstract class AnimatorClass {
+abstract class AnimatorClass {
     static name: string
 }
-export class AnimatorKey {
-    /* Methods of Clutter.AnimatorKey */
+class AnimatorKey {
+    /* Methods of Clutter-1.0.Clutter.AnimatorKey */
     get_mode(): number
     get_object(): GObject.Object
     get_progress(): number
@@ -20118,11 +20120,11 @@ export class AnimatorKey {
     get_value(value: any): boolean
     static name: string
 }
-export class AnimatorPrivate {
+class AnimatorPrivate {
     static name: string
 }
-export class AnyEvent {
-    /* Fields of Clutter.AnyEvent */
+class AnyEvent {
+    /* Fields of Clutter-1.0.Clutter.AnyEvent */
     type: EventType
     time: number
     flags: EventFlags
@@ -20130,74 +20132,74 @@ export class AnyEvent {
     source: Actor
     static name: string
 }
-export abstract class BackendClass {
+abstract class BackendClass {
     static name: string
 }
-export abstract class BehaviourClass {
-    /* Fields of Clutter.BehaviourClass */
+abstract class BehaviourClass {
+    /* Fields of Clutter-1.0.Clutter.BehaviourClass */
     alpha_notify: (behave: Behaviour, alpha_value: number) => void
     applied: (behave: Behaviour, actor: Actor) => void
     removed: (behave: Behaviour, actor: Actor) => void
     static name: string
 }
-export abstract class BehaviourDepthClass {
+abstract class BehaviourDepthClass {
     static name: string
 }
-export class BehaviourDepthPrivate {
+class BehaviourDepthPrivate {
     static name: string
 }
-export abstract class BehaviourEllipseClass {
+abstract class BehaviourEllipseClass {
     static name: string
 }
-export class BehaviourEllipsePrivate {
+class BehaviourEllipsePrivate {
     static name: string
 }
-export abstract class BehaviourOpacityClass {
+abstract class BehaviourOpacityClass {
     static name: string
 }
-export class BehaviourOpacityPrivate {
+class BehaviourOpacityPrivate {
     static name: string
 }
-export abstract class BehaviourPathClass {
-    /* Fields of Clutter.BehaviourPathClass */
+abstract class BehaviourPathClass {
+    /* Fields of Clutter-1.0.Clutter.BehaviourPathClass */
     knot_reached: (pathb: BehaviourPath, knot_num: number) => void
     static name: string
 }
-export class BehaviourPathPrivate {
+class BehaviourPathPrivate {
     static name: string
 }
-export class BehaviourPrivate {
+class BehaviourPrivate {
     static name: string
 }
-export abstract class BehaviourRotateClass {
+abstract class BehaviourRotateClass {
     static name: string
 }
-export class BehaviourRotatePrivate {
+class BehaviourRotatePrivate {
     static name: string
 }
-export abstract class BehaviourScaleClass {
+abstract class BehaviourScaleClass {
     static name: string
 }
-export class BehaviourScalePrivate {
+class BehaviourScalePrivate {
     static name: string
 }
-export abstract class BinLayoutClass {
+abstract class BinLayoutClass {
     static name: string
 }
-export class BinLayoutPrivate {
+class BinLayoutPrivate {
     static name: string
 }
-export abstract class BindConstraintClass {
+abstract class BindConstraintClass {
     static name: string
 }
-export abstract class BindingPoolClass {
+abstract class BindingPoolClass {
     static name: string
 }
-export abstract class BlurEffectClass {
+abstract class BlurEffectClass {
     static name: string
 }
-export abstract class BoxClass {
-    /* Fields of Clutter.BoxClass */
+abstract class BoxClass {
+    /* Fields of Clutter-1.0.Clutter.BoxClass */
     clutter_padding_1: () => void
     clutter_padding_2: () => void
     clutter_padding_3: () => void
@@ -20206,20 +20208,20 @@ export abstract class BoxClass {
     clutter_padding_6: () => void
     static name: string
 }
-export abstract class BoxLayoutClass {
+abstract class BoxLayoutClass {
     static name: string
 }
-export class BoxLayoutPrivate {
+class BoxLayoutPrivate {
     static name: string
 }
-export class BoxPrivate {
+class BoxPrivate {
     static name: string
 }
-export abstract class BrightnessContrastEffectClass {
+abstract class BrightnessContrastEffectClass {
     static name: string
 }
-export class ButtonEvent {
-    /* Fields of Clutter.ButtonEvent */
+class ButtonEvent {
+    /* Fields of Clutter-1.0.Clutter.ButtonEvent */
     type: EventType
     time: number
     flags: EventFlags
@@ -20234,51 +20236,51 @@ export class ButtonEvent {
     device: InputDevice
     static name: string
 }
-export abstract class CairoTextureClass {
-    /* Fields of Clutter.CairoTextureClass */
+abstract class CairoTextureClass {
+    /* Fields of Clutter-1.0.Clutter.CairoTextureClass */
     create_surface: (texture: CairoTexture, width: number, height: number) => cairo.Surface
     draw: (texture: CairoTexture, cr: cairo.Context) => boolean
     static name: string
 }
-export class CairoTexturePrivate {
+class CairoTexturePrivate {
     static name: string
 }
-export abstract class CanvasClass {
-    /* Fields of Clutter.CanvasClass */
+abstract class CanvasClass {
+    /* Fields of Clutter-1.0.Clutter.CanvasClass */
     draw: (canvas: Canvas, cr: cairo.Context, width: number, height: number) => boolean
     static name: string
 }
-export class CanvasPrivate {
+class CanvasPrivate {
     static name: string
 }
-export abstract class ChildMetaClass {
+abstract class ChildMetaClass {
     static name: string
 }
-export abstract class ClickActionClass {
-    /* Fields of Clutter.ClickActionClass */
+abstract class ClickActionClass {
+    /* Fields of Clutter-1.0.Clutter.ClickActionClass */
     clicked: (action: ClickAction, actor: Actor) => void
     long_press: (action: ClickAction, actor: Actor, state: LongPressState) => boolean
     static name: string
 }
-export class ClickActionPrivate {
+class ClickActionPrivate {
     static name: string
 }
-export abstract class ClipNodeClass {
+abstract class ClipNodeClass {
     static name: string
 }
-export abstract class CloneClass {
+abstract class CloneClass {
     static name: string
 }
-export class ClonePrivate {
+class ClonePrivate {
     static name: string
 }
-export class Color {
-    /* Fields of Clutter.Color */
+class Color {
+    /* Fields of Clutter-1.0.Clutter.Color */
     red: number
     green: number
     blue: number
     alpha: number
-    /* Methods of Clutter.Color */
+    /* Methods of Clutter-1.0.Clutter.Color */
     add(b: Color): /* result */ Color
     copy(): Color
     darken(): /* result */ Color
@@ -20304,20 +20306,20 @@ export class Color {
     static from_string(str: string): [ /* returnType */ boolean, /* color */ Color ]
     static get_static(color: StaticColor): Color
 }
-export abstract class ColorNodeClass {
+abstract class ColorNodeClass {
     static name: string
 }
-export abstract class ColorizeEffectClass {
+abstract class ColorizeEffectClass {
     static name: string
 }
-export abstract class ConstraintClass {
-    /* Fields of Clutter.ConstraintClass */
+abstract class ConstraintClass {
+    /* Fields of Clutter-1.0.Clutter.ConstraintClass */
     update_allocation: (constraint: Constraint, actor: Actor, allocation: ActorBox) => void
     update_preferred_size: (constraint: Constraint, actor: Actor, direction: Orientation, for_size: number, minimum_size: number, natural_size: number) => void
     static name: string
 }
-export abstract class ContainerIface {
-    /* Fields of Clutter.ContainerIface */
+abstract class ContainerIface {
+    /* Fields of Clutter-1.0.Clutter.ContainerIface */
     add: (container: Container, actor: Actor) => void
     remove: (container: Container, actor: Actor) => void
     foreach: (container: Container, callback: Callback) => void
@@ -20334,8 +20336,8 @@ export abstract class ContainerIface {
     child_notify: (container: Container, child: Actor, pspec: GObject.ParamSpec) => void
     static name: string
 }
-export abstract class ContentIface {
-    /* Fields of Clutter.ContentIface */
+abstract class ContentIface {
+    /* Fields of Clutter-1.0.Clutter.ContentIface */
     get_preferred_size: (content: Content) => [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     paint_content: (content: Content, actor: Actor, node: PaintNode) => void
     attached: (content: Content, actor: Actor) => void
@@ -20343,8 +20345,8 @@ export abstract class ContentIface {
     invalidate: (content: Content) => void
     static name: string
 }
-export class CrossingEvent {
-    /* Fields of Clutter.CrossingEvent */
+class CrossingEvent {
+    /* Fields of Clutter-1.0.Clutter.CrossingEvent */
     type: EventType
     time: number
     flags: EventFlags
@@ -20356,19 +20358,19 @@ export class CrossingEvent {
     related: Actor
     static name: string
 }
-export abstract class DeformEffectClass {
-    /* Fields of Clutter.DeformEffectClass */
+abstract class DeformEffectClass {
+    /* Fields of Clutter-1.0.Clutter.DeformEffectClass */
     deform_vertex: (effect: DeformEffect, width: number, height: number, vertex: Cogl.TextureVertex) => void
     static name: string
 }
-export class DeformEffectPrivate {
+class DeformEffectPrivate {
     static name: string
 }
-export abstract class DesaturateEffectClass {
+abstract class DesaturateEffectClass {
     static name: string
 }
-export abstract class DeviceManagerClass {
-    /* Fields of Clutter.DeviceManagerClass */
+abstract class DeviceManagerClass {
+    /* Fields of Clutter-1.0.Clutter.DeviceManagerClass */
     get_core_device: (device_manager: DeviceManager, device_type: InputDeviceType) => InputDevice
     get_device: (device_manager: DeviceManager, device_id: number) => InputDevice
     add_device: (manager: DeviceManager, device: InputDevice) => void
@@ -20376,33 +20378,33 @@ export abstract class DeviceManagerClass {
     select_stage_events: (manager: DeviceManager, stage: Stage) => void
     static name: string
 }
-export class DeviceManagerPrivate {
+class DeviceManagerPrivate {
     static name: string
 }
-export abstract class DragActionClass {
-    /* Fields of Clutter.DragActionClass */
+abstract class DragActionClass {
+    /* Fields of Clutter-1.0.Clutter.DragActionClass */
     drag_begin: (action: DragAction, actor: Actor, event_x: number, event_y: number, modifiers: ModifierType) => void
     drag_motion: (action: DragAction, actor: Actor, delta_x: number, delta_y: number) => void
     drag_end: (action: DragAction, actor: Actor, event_x: number, event_y: number, modifiers: ModifierType) => void
     drag_progress: (action: DragAction, actor: Actor, delta_x: number, delta_y: number) => boolean
     static name: string
 }
-export class DragActionPrivate {
+class DragActionPrivate {
     static name: string
 }
-export abstract class DropActionClass {
-    /* Fields of Clutter.DropActionClass */
+abstract class DropActionClass {
+    /* Fields of Clutter-1.0.Clutter.DropActionClass */
     can_drop: (action: DropAction, actor: Actor, event_x: number, event_y: number) => boolean
     over_in: (action: DropAction, actor: Actor) => void
     over_out: (action: DropAction, actor: Actor) => void
     drop: (action: DropAction, actor: Actor, event_x: number, event_y: number) => void
     static name: string
 }
-export class DropActionPrivate {
+class DropActionPrivate {
     static name: string
 }
-export abstract class EffectClass {
-    /* Fields of Clutter.EffectClass */
+abstract class EffectClass {
+    /* Fields of Clutter-1.0.Clutter.EffectClass */
     pre_paint: (effect: Effect) => boolean
     post_paint: (effect: Effect) => void
     get_paint_volume: (effect: Effect, volume: PaintVolume) => boolean
@@ -20410,37 +20412,37 @@ export abstract class EffectClass {
     pick: (effect: Effect, flags: EffectPaintFlags) => void
     static name: string
 }
-export class EventSequence {
+class EventSequence {
     static name: string
 }
-export abstract class FixedLayoutClass {
+abstract class FixedLayoutClass {
     static name: string
 }
-export abstract class FlowLayoutClass {
+abstract class FlowLayoutClass {
     static name: string
 }
-export class FlowLayoutPrivate {
+class FlowLayoutPrivate {
     static name: string
 }
-export class Fog {
-    /* Fields of Clutter.Fog */
+class Fog {
+    /* Fields of Clutter-1.0.Clutter.Fog */
     z_near: number
     z_far: number
     static name: string
 }
-export class Geometry {
-    /* Fields of Clutter.Geometry */
+class Geometry {
+    /* Fields of Clutter-1.0.Clutter.Geometry */
     x: number
     y: number
     width: number
     height: number
-    /* Methods of Clutter.Geometry */
+    /* Methods of Clutter-1.0.Clutter.Geometry */
     intersects(geometry1: Geometry): boolean
     union(geometry_b: Geometry): /* result */ Geometry
     static name: string
 }
-export abstract class GestureActionClass {
-    /* Fields of Clutter.GestureActionClass */
+abstract class GestureActionClass {
+    /* Fields of Clutter-1.0.Clutter.GestureActionClass */
     gesture_begin: (action: GestureAction, actor: Actor) => boolean
     gesture_progress: (action: GestureAction, actor: Actor) => boolean
     gesture_end: (action: GestureAction, actor: Actor) => void
@@ -20448,41 +20450,41 @@ export abstract class GestureActionClass {
     gesture_prepare: (action: GestureAction, actor: Actor) => boolean
     static name: string
 }
-export class GestureActionPrivate {
+class GestureActionPrivate {
     static name: string
 }
-export abstract class GridLayoutClass {
+abstract class GridLayoutClass {
     static name: string
 }
-export class GridLayoutPrivate {
+class GridLayoutPrivate {
     static name: string
 }
-export abstract class GroupClass {
+abstract class GroupClass {
     static name: string
 }
-export class GroupPrivate {
+class GroupPrivate {
     static name: string
 }
-export abstract class ImageClass {
+abstract class ImageClass {
     static name: string
 }
-export class ImagePrivate {
+class ImagePrivate {
     static name: string
 }
-export abstract class InputDeviceClass {
+abstract class InputDeviceClass {
     static name: string
 }
-export abstract class IntervalClass {
-    /* Fields of Clutter.IntervalClass */
+abstract class IntervalClass {
+    /* Fields of Clutter-1.0.Clutter.IntervalClass */
     validate: (interval: Interval, pspec: GObject.ParamSpec) => boolean
     compute_value: (interval: Interval, factor: number) => [ /* returnType */ boolean, /* value */ any ]
     static name: string
 }
-export class IntervalPrivate {
+class IntervalPrivate {
     static name: string
 }
-export class KeyEvent {
-    /* Fields of Clutter.KeyEvent */
+class KeyEvent {
+    /* Fields of Clutter-1.0.Clutter.KeyEvent */
     type: EventType
     time: number
     flags: EventFlags
@@ -20495,24 +20497,24 @@ export class KeyEvent {
     device: InputDevice
     static name: string
 }
-export abstract class KeyframeTransitionClass {
+abstract class KeyframeTransitionClass {
     static name: string
 }
-export class KeyframeTransitionPrivate {
+class KeyframeTransitionPrivate {
     static name: string
 }
-export class Knot {
-    /* Fields of Clutter.Knot */
+class Knot {
+    /* Fields of Clutter-1.0.Clutter.Knot */
     x: number
     y: number
-    /* Methods of Clutter.Knot */
+    /* Methods of Clutter-1.0.Clutter.Knot */
     copy(): Knot
     equal(knot_b: Knot): boolean
     free(): void
     static name: string
 }
-export abstract class LayoutManagerClass {
-    /* Fields of Clutter.LayoutManagerClass */
+abstract class LayoutManagerClass {
+    /* Fields of Clutter-1.0.Clutter.LayoutManagerClass */
     get_preferred_width: (manager: LayoutManager, container: Container, for_height: number) => [ /* min_width_p */ number | null, /* nat_width_p */ number | null ]
     get_preferred_height: (manager: LayoutManager, container: Container, for_width: number) => [ /* min_height_p */ number | null, /* nat_height_p */ number | null ]
     allocate: (manager: LayoutManager, container: Container, allocation: ActorBox, flags: AllocationFlags) => void
@@ -20524,22 +20526,22 @@ export abstract class LayoutManagerClass {
     layout_changed: (manager: LayoutManager) => void
     static name: string
 }
-export abstract class LayoutMetaClass {
+abstract class LayoutMetaClass {
     static name: string
 }
-export abstract class ListModelClass {
+abstract class ListModelClass {
     static name: string
 }
-export class ListModelPrivate {
+class ListModelPrivate {
     static name: string
 }
-export class Margin {
-    /* Fields of Clutter.Margin */
+class Margin {
+    /* Fields of Clutter-1.0.Clutter.Margin */
     left: number
     right: number
     top: number
     bottom: number
-    /* Methods of Clutter.Margin */
+    /* Methods of Clutter-1.0.Clutter.Margin */
     copy(): Margin
     free(): void
     static name: string
@@ -20548,8 +20550,8 @@ export class Margin {
     /* Static methods and pseudo-constructors */
     static new(): Margin
 }
-export class Matrix {
-    /* Methods of Clutter.Matrix */
+class Matrix {
+    /* Methods of Clutter-1.0.Clutter.Matrix */
     free(): void
     init_from_array(values: number[]): Matrix
     init_from_matrix(b: Matrix): Matrix
@@ -20558,14 +20560,14 @@ export class Matrix {
     /* Static methods and pseudo-constructors */
     static alloc(): Matrix
 }
-export abstract class MediaIface {
-    /* Fields of Clutter.MediaIface */
+abstract class MediaIface {
+    /* Fields of Clutter-1.0.Clutter.MediaIface */
     eos: (media: Media) => void
     error: (media: Media, error: GLib.Error) => void
     static name: string
 }
-export abstract class ModelClass {
-    /* Fields of Clutter.ModelClass */
+abstract class ModelClass {
+    /* Fields of Clutter-1.0.Clutter.ModelClass */
     get_n_rows: (model: Model) => number
     get_n_columns: (model: Model) => number
     get_column_name: (model: Model, column: number) => string
@@ -20579,8 +20581,8 @@ export abstract class ModelClass {
     filter_changed: (model: Model) => void
     static name: string
 }
-export abstract class ModelIterClass {
-    /* Fields of Clutter.ModelIterClass */
+abstract class ModelIterClass {
+    /* Fields of Clutter-1.0.Clutter.ModelIterClass */
     get_value: (iter: ModelIter, column: number) => /* value */ any
     set_value: (iter: ModelIter, column: number, value: any) => void
     is_first: (iter: ModelIter) => boolean
@@ -20592,14 +20594,14 @@ export abstract class ModelIterClass {
     copy: (iter: ModelIter) => ModelIter
     static name: string
 }
-export class ModelIterPrivate {
+class ModelIterPrivate {
     static name: string
 }
-export class ModelPrivate {
+class ModelPrivate {
     static name: string
 }
-export class MotionEvent {
-    /* Fields of Clutter.MotionEvent */
+class MotionEvent {
+    /* Fields of Clutter-1.0.Clutter.MotionEvent */
     type: EventType
     time: number
     flags: EventFlags
@@ -20612,26 +20614,26 @@ export class MotionEvent {
     device: InputDevice
     static name: string
 }
-export abstract class OffscreenEffectClass {
-    /* Fields of Clutter.OffscreenEffectClass */
+abstract class OffscreenEffectClass {
+    /* Fields of Clutter-1.0.Clutter.OffscreenEffectClass */
     create_texture: (effect: OffscreenEffect, width: number, height: number) => Cogl.Handle
     paint_target: (effect: OffscreenEffect) => void
     static name: string
 }
-export class OffscreenEffectPrivate {
+class OffscreenEffectPrivate {
     static name: string
 }
-export abstract class PageTurnEffectClass {
+abstract class PageTurnEffectClass {
     static name: string
 }
-export abstract class PaintNodeClass {
+abstract class PaintNodeClass {
     static name: string
 }
-export class PaintNodePrivate {
+class PaintNodePrivate {
     static name: string
 }
-export class PaintVolume {
-    /* Methods of Clutter.PaintVolume */
+class PaintVolume {
+    /* Methods of Clutter-1.0.Clutter.PaintVolume */
     copy(): PaintVolume
     free(): void
     get_depth(): number
@@ -20647,58 +20649,58 @@ export class PaintVolume {
     union_box(box: ActorBox): void
     static name: string
 }
-export abstract class PanActionClass {
-    /* Fields of Clutter.PanActionClass */
+abstract class PanActionClass {
+    /* Fields of Clutter-1.0.Clutter.PanActionClass */
     pan: (action: PanAction, actor: Actor, is_interpolated: boolean) => boolean
     pan_stopped: (action: PanAction, actor: Actor) => void
     static name: string
 }
-export class PanActionPrivate {
+class PanActionPrivate {
     static name: string
 }
-export class ParamSpecUnits {
-    /* Fields of Clutter.ParamSpecUnits */
+class ParamSpecUnits {
+    /* Fields of Clutter-1.0.Clutter.ParamSpecUnits */
     default_type: UnitType
     default_value: number
     minimum: number
     maximum: number
     static name: string
 }
-export abstract class PathClass {
+abstract class PathClass {
     static name: string
 }
-export abstract class PathConstraintClass {
+abstract class PathConstraintClass {
     static name: string
 }
-export class PathNode {
-    /* Fields of Clutter.PathNode */
+class PathNode {
+    /* Fields of Clutter-1.0.Clutter.PathNode */
     type: PathNodeType
     points: Knot[]
-    /* Methods of Clutter.PathNode */
+    /* Methods of Clutter-1.0.Clutter.PathNode */
     copy(): PathNode
     equal(node_b: PathNode): boolean
     free(): void
     static name: string
 }
-export class PathPrivate {
+class PathPrivate {
     static name: string
 }
-export class Perspective {
-    /* Fields of Clutter.Perspective */
+class Perspective {
+    /* Fields of Clutter-1.0.Clutter.Perspective */
     fovy: number
     aspect: number
     z_near: number
     z_far: number
     static name: string
 }
-export abstract class PipelineNodeClass {
+abstract class PipelineNodeClass {
     static name: string
 }
-export class Point {
-    /* Fields of Clutter.Point */
+class Point {
+    /* Fields of Clutter-1.0.Clutter.Point */
     x: number
     y: number
-    /* Methods of Clutter.Point */
+    /* Methods of Clutter-1.0.Clutter.Point */
     copy(): Point
     distance(b: Point): [ /* returnType */ number, /* x_distance */ number | null, /* y_distance */ number | null ]
     equals(b: Point): boolean
@@ -20709,17 +20711,17 @@ export class Point {
     static alloc(): Point
     static zero(): Point
 }
-export abstract class PropertyTransitionClass {
+abstract class PropertyTransitionClass {
     static name: string
 }
-export class PropertyTransitionPrivate {
+class PropertyTransitionPrivate {
     static name: string
 }
-export class Rect {
-    /* Fields of Clutter.Rect */
+class Rect {
+    /* Fields of Clutter-1.0.Clutter.Rect */
     origin: Point
     size: Size
-    /* Methods of Clutter.Rect */
+    /* Methods of Clutter-1.0.Clutter.Rect */
     clamp_to_pixel(): void
     contains_point(point: Point): boolean
     contains_rect(b: Rect): boolean
@@ -20742,22 +20744,22 @@ export class Rect {
     static alloc(): Rect
     static zero(): Rect
 }
-export abstract class RectangleClass {
+abstract class RectangleClass {
     static name: string
 }
-export class RectanglePrivate {
+class RectanglePrivate {
     static name: string
 }
-export abstract class RotateActionClass {
-    /* Fields of Clutter.RotateActionClass */
+abstract class RotateActionClass {
+    /* Fields of Clutter-1.0.Clutter.RotateActionClass */
     rotate: (action: RotateAction, actor: Actor, angle: number) => boolean
     static name: string
 }
-export class RotateActionPrivate {
+class RotateActionPrivate {
     static name: string
 }
-export abstract class ScoreClass {
-    /* Fields of Clutter.ScoreClass */
+abstract class ScoreClass {
+    /* Fields of Clutter-1.0.Clutter.ScoreClass */
     timeline_started: (score: Score, timeline: Timeline) => void
     timeline_completed: (score: Score, timeline: Timeline) => void
     started: (score: Score) => void
@@ -20765,33 +20767,33 @@ export abstract class ScoreClass {
     paused: (score: Score) => void
     static name: string
 }
-export class ScorePrivate {
+class ScorePrivate {
     static name: string
 }
-export abstract class ScriptClass {
-    /* Fields of Clutter.ScriptClass */
+abstract class ScriptClass {
+    /* Fields of Clutter-1.0.Clutter.ScriptClass */
     get_type_from_name: (script: Script, type_name: string) => GObject.Type
     static name: string
 }
-export class ScriptPrivate {
+class ScriptPrivate {
     static name: string
 }
-export abstract class ScriptableIface {
-    /* Fields of Clutter.ScriptableIface */
+abstract class ScriptableIface {
+    /* Fields of Clutter-1.0.Clutter.ScriptableIface */
     set_id: (scriptable: Scriptable, id_: string) => void
     get_id: (scriptable: Scriptable) => string
     parse_custom_node: (scriptable: Scriptable, script: Script, value: any, name: string, node: Json.Node) => boolean
     set_custom_property: (scriptable: Scriptable, script: Script, name: string, value: any) => void
     static name: string
 }
-export abstract class ScrollActorClass {
+abstract class ScrollActorClass {
     static name: string
 }
-export class ScrollActorPrivate {
+class ScrollActorPrivate {
     static name: string
 }
-export class ScrollEvent {
-    /* Fields of Clutter.ScrollEvent */
+class ScrollEvent {
+    /* Fields of Clutter-1.0.Clutter.ScrollEvent */
     type: EventType
     time: number
     flags: EventFlags
@@ -20807,28 +20809,28 @@ export class ScrollEvent {
     finish_flags: ScrollFinishFlags
     static name: string
 }
-export abstract class SettingsClass {
+abstract class SettingsClass {
     static name: string
 }
-export abstract class ShaderClass {
+abstract class ShaderClass {
     static name: string
 }
-export abstract class ShaderEffectClass {
-    /* Fields of Clutter.ShaderEffectClass */
+abstract class ShaderEffectClass {
+    /* Fields of Clutter-1.0.Clutter.ShaderEffectClass */
     get_static_shader_source: (effect: ShaderEffect) => string
     static name: string
 }
-export class ShaderEffectPrivate {
+class ShaderEffectPrivate {
     static name: string
 }
-export class ShaderPrivate {
+class ShaderPrivate {
     static name: string
 }
-export class Size {
-    /* Fields of Clutter.Size */
+class Size {
+    /* Fields of Clutter-1.0.Clutter.Size */
     width: number
     height: number
-    /* Methods of Clutter.Size */
+    /* Methods of Clutter-1.0.Clutter.Size */
     copy(): Size
     equals(b: Size): boolean
     free(): void
@@ -20837,11 +20839,11 @@ export class Size {
     /* Static methods and pseudo-constructors */
     static alloc(): Size
 }
-export abstract class SnapConstraintClass {
+abstract class SnapConstraintClass {
     static name: string
 }
-export abstract class StageClass {
-    /* Fields of Clutter.StageClass */
+abstract class StageClass {
+    /* Fields of Clutter-1.0.Clutter.StageClass */
     fullscreen: (stage: Stage) => void
     unfullscreen: (stage: Stage) => void
     activate: (stage: Stage) => void
@@ -20849,17 +20851,17 @@ export abstract class StageClass {
     delete_event: (stage: Stage, event: Event) => boolean
     static name: string
 }
-export abstract class StageManagerClass {
-    /* Fields of Clutter.StageManagerClass */
+abstract class StageManagerClass {
+    /* Fields of Clutter-1.0.Clutter.StageManagerClass */
     stage_added: (stage_manager: StageManager, stage: Stage) => void
     stage_removed: (stage_manager: StageManager, stage: Stage) => void
     static name: string
 }
-export class StagePrivate {
+class StagePrivate {
     static name: string
 }
-export class StageStateEvent {
-    /* Fields of Clutter.StageStateEvent */
+class StageStateEvent {
+    /* Fields of Clutter-1.0.Clutter.StageStateEvent */
     type: EventType
     time: number
     flags: EventFlags
@@ -20869,13 +20871,13 @@ export class StageStateEvent {
     new_state: StageState
     static name: string
 }
-export abstract class StateClass {
-    /* Fields of Clutter.StateClass */
+abstract class StateClass {
+    /* Fields of Clutter-1.0.Clutter.StateClass */
     completed: (state: State) => void
     static name: string
 }
-export class StateKey {
-    /* Methods of Clutter.StateKey */
+class StateKey {
+    /* Methods of Clutter-1.0.Clutter.StateKey */
     get_mode(): number
     get_object(): GObject.Object
     get_post_delay(): number
@@ -20887,34 +20889,34 @@ export class StateKey {
     get_value(value: any): boolean
     static name: string
 }
-export class StatePrivate {
+class StatePrivate {
     static name: string
 }
-export abstract class SwipeActionClass {
-    /* Fields of Clutter.SwipeActionClass */
+abstract class SwipeActionClass {
+    /* Fields of Clutter-1.0.Clutter.SwipeActionClass */
     swept: (action: SwipeAction, actor: Actor, direction: SwipeDirection) => void
     swipe: (action: SwipeAction, actor: Actor, direction: SwipeDirection) => boolean
     static name: string
 }
-export class SwipeActionPrivate {
+class SwipeActionPrivate {
     static name: string
 }
-export abstract class TableLayoutClass {
+abstract class TableLayoutClass {
     static name: string
 }
-export class TableLayoutPrivate {
+class TableLayoutPrivate {
     static name: string
 }
-export abstract class TapActionClass {
-    /* Fields of Clutter.TapActionClass */
+abstract class TapActionClass {
+    /* Fields of Clutter-1.0.Clutter.TapActionClass */
     tap: (action: TapAction, actor: Actor) => boolean
     static name: string
 }
-export class TapActionPrivate {
+class TapActionPrivate {
     static name: string
 }
-export abstract class TextBufferClass {
-    /* Fields of Clutter.TextBufferClass */
+abstract class TextBufferClass {
+    /* Fields of Clutter-1.0.Clutter.TextBufferClass */
     inserted_text: (buffer: TextBuffer, position: number, chars: string, n_chars: number) => void
     deleted_text: (buffer: TextBuffer, position: number, n_chars: number) => void
     get_text: (buffer: TextBuffer, n_bytes: number) => string
@@ -20923,38 +20925,38 @@ export abstract class TextBufferClass {
     delete_text: (buffer: TextBuffer, position: number, n_chars: number) => number
     static name: string
 }
-export class TextBufferPrivate {
+class TextBufferPrivate {
     static name: string
 }
-export abstract class TextClass {
-    /* Fields of Clutter.TextClass */
+abstract class TextClass {
+    /* Fields of Clutter-1.0.Clutter.TextClass */
     text_changed: (self: Text) => void
     activate: (self: Text) => void
     cursor_event: (self: Text, geometry: Geometry) => void
     cursor_changed: (self: Text) => void
     static name: string
 }
-export abstract class TextNodeClass {
+abstract class TextNodeClass {
     static name: string
 }
-export class TextPrivate {
+class TextPrivate {
     static name: string
 }
-export abstract class TextureClass {
-    /* Fields of Clutter.TextureClass */
+abstract class TextureClass {
+    /* Fields of Clutter-1.0.Clutter.TextureClass */
     size_change: (texture: Texture, width: number, height: number) => void
     pixbuf_change: (texture: Texture) => void
     load_finished: (texture: Texture, error: GLib.Error) => void
     static name: string
 }
-export abstract class TextureNodeClass {
+abstract class TextureNodeClass {
     static name: string
 }
-export class TexturePrivate {
+class TexturePrivate {
     static name: string
 }
-export abstract class TimelineClass {
-    /* Fields of Clutter.TimelineClass */
+abstract class TimelineClass {
+    /* Fields of Clutter-1.0.Clutter.TimelineClass */
     started: (timeline: Timeline) => void
     completed: (timeline: Timeline) => void
     paused: (timeline: Timeline) => void
@@ -20963,17 +20965,17 @@ export abstract class TimelineClass {
     stopped: (timeline: Timeline, is_finished: boolean) => void
     static name: string
 }
-export class TimelinePrivate {
+class TimelinePrivate {
     static name: string
 }
-export class TimeoutPool {
-    /* Methods of Clutter.TimeoutPool */
+class TimeoutPool {
+    /* Methods of Clutter-1.0.Clutter.TimeoutPool */
     add(fps: number, func: GLib.SourceFunc): number
     remove(id_: number): void
     static name: string
 }
-export class TouchEvent {
-    /* Fields of Clutter.TouchEvent */
+class TouchEvent {
+    /* Fields of Clutter-1.0.Clutter.TouchEvent */
     type: EventType
     time: number
     flags: EventFlags
@@ -20987,8 +20989,8 @@ export class TouchEvent {
     device: InputDevice
     static name: string
 }
-export class TouchpadPinchEvent {
-    /* Fields of Clutter.TouchpadPinchEvent */
+class TouchpadPinchEvent {
+    /* Fields of Clutter-1.0.Clutter.TouchpadPinchEvent */
     type: EventType
     time: number
     flags: EventFlags
@@ -21003,8 +21005,8 @@ export class TouchpadPinchEvent {
     scale: number
     static name: string
 }
-export class TouchpadSwipeEvent {
-    /* Fields of Clutter.TouchpadSwipeEvent */
+class TouchpadSwipeEvent {
+    /* Fields of Clutter-1.0.Clutter.TouchpadSwipeEvent */
     type: EventType
     time: number
     flags: EventFlags
@@ -21018,24 +21020,24 @@ export class TouchpadSwipeEvent {
     dy: number
     static name: string
 }
-export abstract class TransitionClass {
-    /* Fields of Clutter.TransitionClass */
+abstract class TransitionClass {
+    /* Fields of Clutter-1.0.Clutter.TransitionClass */
     attached: (transition: Transition, animatable: Animatable) => void
     detached: (transition: Transition, animatable: Animatable) => void
     compute_value: (transition: Transition, animatable: Animatable, interval: Interval, progress: number) => void
     static name: string
 }
-export abstract class TransitionGroupClass {
+abstract class TransitionGroupClass {
     static name: string
 }
-export class TransitionGroupPrivate {
+class TransitionGroupPrivate {
     static name: string
 }
-export class TransitionPrivate {
+class TransitionPrivate {
     static name: string
 }
-export class Units {
-    /* Methods of Clutter.Units */
+class Units {
+    /* Methods of Clutter-1.0.Clutter.Units */
     copy(): Units
     free(): void
     get_unit_type(): UnitType
@@ -21052,12 +21054,12 @@ export class Units {
     static from_pt(pt: number): /* units */ Units
     static from_string(str: string): [ /* returnType */ boolean, /* units */ Units ]
 }
-export class Vertex {
-    /* Fields of Clutter.Vertex */
+class Vertex {
+    /* Fields of Clutter-1.0.Clutter.Vertex */
     x: number
     y: number
     z: number
-    /* Methods of Clutter.Vertex */
+    /* Methods of Clutter-1.0.Clutter.Vertex */
     copy(): Vertex
     equal(vertex_b: Vertex): boolean
     free(): void
@@ -21069,16 +21071,16 @@ export class Vertex {
     static alloc(): Vertex
     static new(x: number, y: number, z: number): Vertex
 }
-export abstract class ZoomActionClass {
-    /* Fields of Clutter.ZoomActionClass */
+abstract class ZoomActionClass {
+    /* Fields of Clutter-1.0.Clutter.ZoomActionClass */
     zoom: (action: ZoomAction, actor: Actor, focal_point: Point, factor: number) => boolean
     static name: string
 }
-export class ZoomActionPrivate {
+class ZoomActionPrivate {
     static name: string
 }
-export class Event {
-    /* Methods of Clutter.Event */
+class Event {
+    /* Methods of Clutter-1.0.Clutter.Event */
     copy(): Event
     free(): void
     get_angle(target: Event): number
@@ -21142,3 +21144,5 @@ export class Event {
     static peek(): Event
     static remove_filter(id: number): void
 }
+}
+export default Clutter;

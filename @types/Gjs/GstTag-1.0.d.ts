@@ -3,18 +3,20 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GstBase from './GstBase-1.0';
-import type * as Gst from './Gst-1.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as GModule from './GModule-2.0';
+import type GstBase from './GstBase-1.0';
+import type Gst from './Gst-1.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type GModule from './GModule-2.0';
 
-export enum TagDemuxResult {
+export namespace GstTag {
+
+enum TagDemuxResult {
     BROKEN_TAG,
     AGAIN,
     OK,
 }
-export enum TagImageType {
+enum TagImageType {
     NONE,
     UNDEFINED,
     FRONT_COVER,
@@ -36,7 +38,7 @@ export enum TagImageType {
     BAND_ARTIST_LOGO,
     PUBLISHER_STUDIO_LOGO,
 }
-export enum TagLicenseFlags {
+enum TagLicenseFlags {
     PERMITS_REPRODUCTION,
     PERMITS_DISTRIBUTION,
     PERMITS_DERIVATIVE_WORKS,
@@ -91,53 +93,53 @@ export const TAG_MUSICBRAINZ_RELEASEGROUPID: string
 export const TAG_MUSICBRAINZ_RELEASETRACKID: string
 export const TAG_MUSICBRAINZ_TRACKID: string
 export const TAG_MUSICBRAINZ_TRMID: string
-export function tag_check_language_code(lang_code: string): boolean
-export function tag_freeform_string_to_utf8(data: number[], env_vars: string[]): string
-export function tag_from_id3_tag(id3_tag: string): string
-export function tag_from_id3_user_tag(type: string, id3_user_tag: string): string
-export function tag_from_vorbis_tag(vorbis_tag: string): string
-export function tag_get_id3v2_tag_size(buffer: Gst.Buffer): number
-export function tag_get_language_code_iso_639_1(lang_code: string): string
-export function tag_get_language_code_iso_639_2B(lang_code: string): string
-export function tag_get_language_code_iso_639_2T(lang_code: string): string
-export function tag_get_language_codes(): string[]
-export function tag_get_language_name(language_code: string): string
-export function tag_get_license_description(license_ref: string): string
-export function tag_get_license_flags(license_ref: string): TagLicenseFlags
-export function tag_get_license_jurisdiction(license_ref: string): string
-export function tag_get_license_nick(license_ref: string): string
-export function tag_get_license_title(license_ref: string): string
-export function tag_get_license_version(license_ref: string): string
-export function tag_get_licenses(): string[]
-export function tag_id3_genre_count(): number
-export function tag_id3_genre_get(id: number): string
-export function tag_image_data_to_image_sample(image_data: Uint8Array[], image_type: TagImageType): Gst.Sample
-export function tag_list_add_id3_image(tag_list: Gst.TagList, image_data: Uint8Array[], id3_picture_type: number): boolean
-export function tag_list_from_exif_buffer(buffer: Gst.Buffer, byte_order: number, base_offset: number): Gst.TagList
-export function tag_list_from_exif_buffer_with_tiff_header(buffer: Gst.Buffer): Gst.TagList
-export function tag_list_from_id3v2_tag(buffer: Gst.Buffer): Gst.TagList
-export function tag_list_from_vorbiscomment(data: Uint8Array[], id_data: Uint8Array[]): [ /* returnType */ Gst.TagList, /* vendor_string */ string | null ]
-export function tag_list_from_vorbiscomment_buffer(buffer: Gst.Buffer, id_data: Uint8Array[]): [ /* returnType */ Gst.TagList, /* vendor_string */ string | null ]
-export function tag_list_from_xmp_buffer(buffer: Gst.Buffer): Gst.TagList
-export function tag_list_new_from_id3v1(data: Uint8Array[]): Gst.TagList
-export function tag_list_to_exif_buffer(taglist: Gst.TagList, byte_order: number, base_offset: number): Gst.Buffer
-export function tag_list_to_exif_buffer_with_tiff_header(taglist: Gst.TagList): Gst.Buffer
-export function tag_list_to_vorbiscomment_buffer(list: Gst.TagList, id_data: Uint8Array[], vendor_string?: string | null): Gst.Buffer
-export function tag_list_to_xmp_buffer(list: Gst.TagList, read_only: boolean, schemas: string[]): Gst.Buffer
-export function tag_parse_extended_comment(ext_comment: string, fail_if_no_key: boolean): [ /* returnType */ boolean, /* key */ string | null, /* lang */ string | null, /* value */ string ]
-export function tag_register_musicbrainz_tags(): void
-export function tag_to_id3_tag(gst_tag: string): string
-export function tag_to_vorbis_comments(list: Gst.TagList, tag: string): string[]
-export function tag_to_vorbis_tag(gst_tag: string): string
-export function tag_xmp_list_schemas(): string[]
-export function vorbis_tag_add(list: Gst.TagList, tag: string, value: string): void
+function tag_check_language_code(lang_code: string): boolean
+function tag_freeform_string_to_utf8(data: number[], env_vars: string[]): string
+function tag_from_id3_tag(id3_tag: string): string
+function tag_from_id3_user_tag(type: string, id3_user_tag: string): string
+function tag_from_vorbis_tag(vorbis_tag: string): string
+function tag_get_id3v2_tag_size(buffer: Gst.Buffer): number
+function tag_get_language_code_iso_639_1(lang_code: string): string
+function tag_get_language_code_iso_639_2B(lang_code: string): string
+function tag_get_language_code_iso_639_2T(lang_code: string): string
+function tag_get_language_codes(): string[]
+function tag_get_language_name(language_code: string): string
+function tag_get_license_description(license_ref: string): string
+function tag_get_license_flags(license_ref: string): TagLicenseFlags
+function tag_get_license_jurisdiction(license_ref: string): string
+function tag_get_license_nick(license_ref: string): string
+function tag_get_license_title(license_ref: string): string
+function tag_get_license_version(license_ref: string): string
+function tag_get_licenses(): string[]
+function tag_id3_genre_count(): number
+function tag_id3_genre_get(id: number): string
+function tag_image_data_to_image_sample(image_data: Uint8Array[], image_type: TagImageType): Gst.Sample
+function tag_list_add_id3_image(tag_list: Gst.TagList, image_data: Uint8Array[], id3_picture_type: number): boolean
+function tag_list_from_exif_buffer(buffer: Gst.Buffer, byte_order: number, base_offset: number): Gst.TagList
+function tag_list_from_exif_buffer_with_tiff_header(buffer: Gst.Buffer): Gst.TagList
+function tag_list_from_id3v2_tag(buffer: Gst.Buffer): Gst.TagList
+function tag_list_from_vorbiscomment(data: Uint8Array[], id_data: Uint8Array[]): [ /* returnType */ Gst.TagList, /* vendor_string */ string | null ]
+function tag_list_from_vorbiscomment_buffer(buffer: Gst.Buffer, id_data: Uint8Array[]): [ /* returnType */ Gst.TagList, /* vendor_string */ string | null ]
+function tag_list_from_xmp_buffer(buffer: Gst.Buffer): Gst.TagList
+function tag_list_new_from_id3v1(data: Uint8Array[]): Gst.TagList
+function tag_list_to_exif_buffer(taglist: Gst.TagList, byte_order: number, base_offset: number): Gst.Buffer
+function tag_list_to_exif_buffer_with_tiff_header(taglist: Gst.TagList): Gst.Buffer
+function tag_list_to_vorbiscomment_buffer(list: Gst.TagList, id_data: Uint8Array[], vendor_string?: string | null): Gst.Buffer
+function tag_list_to_xmp_buffer(list: Gst.TagList, read_only: boolean, schemas: string[]): Gst.Buffer
+function tag_parse_extended_comment(ext_comment: string, fail_if_no_key: boolean): [ /* returnType */ boolean, /* key */ string | null, /* lang */ string | null, /* value */ string ]
+function tag_register_musicbrainz_tags(): void
+function tag_to_id3_tag(gst_tag: string): string
+function tag_to_vorbis_comments(list: Gst.TagList, tag: string): string[]
+function tag_to_vorbis_tag(gst_tag: string): string
+function tag_xmp_list_schemas(): string[]
+function vorbis_tag_add(list: Gst.TagList, tag: string, value: string): void
 export interface TagXmpWriter_ConstructProps extends Gst.Element_ConstructProps {
 }
-export class TagXmpWriter {
-    /* Properties of Gst.Object */
+class TagXmpWriter {
+    /* Properties of Gst-1.0.Gst.Object */
     name: string
     parent: Gst.Object
-    /* Fields of Gst.Element */
+    /* Fields of Gst-1.0.Gst.Element */
     object: Gst.Object
     state_lock: GLib.RecMutex
     state_cond: GLib.Cond
@@ -159,19 +161,19 @@ export class TagXmpWriter {
     sinkpads: Gst.Pad[]
     pads_cookie: number
     contexts: Gst.Context[]
-    /* Fields of Gst.Object */
+    /* Fields of Gst-1.0.Gst.Object */
     lock: GLib.Mutex
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GstTag.TagXmpWriter */
+    /* Methods of GstTag-1.0.GstTag.TagXmpWriter */
     add_all_schemas(): void
     add_schema(schema: string): void
     has_schema(schema: string): boolean
     remove_all_schemas(): void
     remove_schema(schema: string): void
     tag_list_to_xmp_buffer(taglist: Gst.TagList, read_only: boolean): Gst.Buffer
-    /* Methods of Gst.Element */
+    /* Methods of Gst-1.0.Gst.Element */
     abort_state(): void
     add_pad(pad: Gst.Pad): boolean
     add_property_deep_notify_watch(property_name: string | null, include_value: boolean): number
@@ -188,7 +190,7 @@ export class TagXmpWriter {
     get_clock(): Gst.Clock | null
     get_compatible_pad(pad: Gst.Pad, caps?: Gst.Caps | null): Gst.Pad | null
     get_compatible_pad_template(compattempl: Gst.PadTemplate): Gst.PadTemplate | null
-    get_context(context_type: string): Gst.Context
+    get_context(context_type: string): Gst.Context | null
     get_context_unlocked(context_type: string): Gst.Context | null
     get_contexts(): Gst.Context[]
     get_current_clock_time(): Gst.ClockTime
@@ -224,6 +226,7 @@ export class TagXmpWriter {
     remove_pad(pad: Gst.Pad): boolean
     remove_property_notify_watch(watch_id: number): void
     request_pad(templ: Gst.PadTemplate, name?: string | null, caps?: Gst.Caps | null): Gst.Pad | null
+    request_pad_simple(name: string): Gst.Pad | null
     seek(rate: number, format: Gst.Format, flags: Gst.SeekFlags, start_type: Gst.SeekType, start: number, stop_type: Gst.SeekType, stop: number): boolean
     seek_simple(format: Gst.Format, seek_flags: Gst.SeekFlags, seek_pos: number): boolean
     send_event(event: Gst.Event): boolean
@@ -237,7 +240,7 @@ export class TagXmpWriter {
     sync_state_with_parent(): boolean
     unlink(dest: Gst.Element): void
     unlink_pads(srcpadname: string, dest: Gst.Element, destpadname: string): void
-    /* Methods of Gst.Object */
+    /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: Gst.ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
     get_control_binding(property_name: string): Gst.ControlBinding | null
@@ -262,15 +265,15 @@ export class TagXmpWriter {
     sync_values(timestamp: Gst.ClockTime): boolean
     unparent(): void
     unref(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -278,12 +281,12 @@ export class TagXmpWriter {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gst.Element */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gst-1.0.Gst.Element */
     vfunc_change_state(transition: Gst.StateChange): Gst.StateChangeReturn
     vfunc_get_state(timeout: Gst.ClockTime): [ /* returnType */ Gst.StateChangeReturn, /* state */ Gst.State | null, /* pending */ Gst.State | null ]
     vfunc_no_more_pads(): void
@@ -300,17 +303,17 @@ export class TagXmpWriter {
     vfunc_set_context(context: Gst.Context): void
     vfunc_set_state(state: Gst.State): Gst.StateChangeReturn
     vfunc_state_changed(oldstate: Gst.State, newstate: Gst.State, pending: Gst.State): void
-    /* Virtual methods of Gst.Object */
+    /* Virtual methods of Gst-1.0.Gst.Object */
     vfunc_deep_notify(orig: Gst.Object, pspec: GObject.ParamSpec): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gst.Element */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gst-1.0.Gst.Element */
     connect(sigName: "no-more-pads", callback: (($obj: TagXmpWriter) => void)): number
     connect_after(sigName: "no-more-pads", callback: (($obj: TagXmpWriter) => void)): number
     emit(sigName: "no-more-pads"): void
@@ -320,11 +323,11 @@ export class TagXmpWriter {
     connect(sigName: "pad-removed", callback: (($obj: TagXmpWriter, old_pad: Gst.Pad) => void)): number
     connect_after(sigName: "pad-removed", callback: (($obj: TagXmpWriter, old_pad: Gst.Pad) => void)): number
     emit(sigName: "pad-removed", old_pad: Gst.Pad): void
-    /* Signals of Gst.Object */
+    /* Signals of Gst-1.0.Gst.Object */
     connect(sigName: "deep-notify", callback: (($obj: TagXmpWriter, prop_object: Gst.Object, prop: GObject.ParamSpec) => void)): number
     connect_after(sigName: "deep-notify", callback: (($obj: TagXmpWriter, prop_object: Gst.Object, prop: GObject.ParamSpec) => void)): number
     emit(sigName: "deep-notify", prop_object: Gst.Object, prop: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TagXmpWriter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TagXmpWriter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -343,13 +346,13 @@ export class TagXmpWriter {
 }
 export interface TagDemux_ConstructProps extends Gst.Element_ConstructProps {
 }
-export class TagDemux {
-    /* Properties of Gst.Object */
+class TagDemux {
+    /* Properties of Gst-1.0.Gst.Object */
     name: string
     parent: Gst.Object
-    /* Fields of GstTag.TagDemux */
+    /* Fields of GstTag-1.0.GstTag.TagDemux */
     element: Gst.Element
-    /* Fields of Gst.Element */
+    /* Fields of Gst-1.0.Gst.Element */
     object: Gst.Object
     state_lock: GLib.RecMutex
     state_cond: GLib.Cond
@@ -371,12 +374,12 @@ export class TagDemux {
     sinkpads: Gst.Pad[]
     pads_cookie: number
     contexts: Gst.Context[]
-    /* Fields of Gst.Object */
+    /* Fields of Gst-1.0.Gst.Object */
     lock: GLib.Mutex
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gst.Element */
+    /* Methods of Gst-1.0.Gst.Element */
     abort_state(): void
     add_pad(pad: Gst.Pad): boolean
     add_property_deep_notify_watch(property_name: string | null, include_value: boolean): number
@@ -393,7 +396,7 @@ export class TagDemux {
     get_clock(): Gst.Clock | null
     get_compatible_pad(pad: Gst.Pad, caps?: Gst.Caps | null): Gst.Pad | null
     get_compatible_pad_template(compattempl: Gst.PadTemplate): Gst.PadTemplate | null
-    get_context(context_type: string): Gst.Context
+    get_context(context_type: string): Gst.Context | null
     get_context_unlocked(context_type: string): Gst.Context | null
     get_contexts(): Gst.Context[]
     get_current_clock_time(): Gst.ClockTime
@@ -429,6 +432,7 @@ export class TagDemux {
     remove_pad(pad: Gst.Pad): boolean
     remove_property_notify_watch(watch_id: number): void
     request_pad(templ: Gst.PadTemplate, name?: string | null, caps?: Gst.Caps | null): Gst.Pad | null
+    request_pad_simple(name: string): Gst.Pad | null
     seek(rate: number, format: Gst.Format, flags: Gst.SeekFlags, start_type: Gst.SeekType, start: number, stop_type: Gst.SeekType, stop: number): boolean
     seek_simple(format: Gst.Format, seek_flags: Gst.SeekFlags, seek_pos: number): boolean
     send_event(event: Gst.Event): boolean
@@ -442,7 +446,7 @@ export class TagDemux {
     sync_state_with_parent(): boolean
     unlink(dest: Gst.Element): void
     unlink_pads(srcpadname: string, dest: Gst.Element, destpadname: string): void
-    /* Methods of Gst.Object */
+    /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: Gst.ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
     get_control_binding(property_name: string): Gst.ControlBinding | null
@@ -467,15 +471,15 @@ export class TagDemux {
     sync_values(timestamp: Gst.ClockTime): boolean
     unparent(): void
     unref(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -483,16 +487,16 @@ export class TagDemux {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GstTag.TagDemux */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GstTag-1.0.GstTag.TagDemux */
     vfunc_identify_tag(buffer: Gst.Buffer, start_tag: boolean, tag_size: number): boolean
     vfunc_merge_tags(start_tags: Gst.TagList, end_tags: Gst.TagList): Gst.TagList
     vfunc_parse_tag(buffer: Gst.Buffer, start_tag: boolean, tag_size: number, tags: Gst.TagList): TagDemuxResult
-    /* Virtual methods of Gst.Element */
+    /* Virtual methods of Gst-1.0.Gst.Element */
     vfunc_change_state(transition: Gst.StateChange): Gst.StateChangeReturn
     vfunc_get_state(timeout: Gst.ClockTime): [ /* returnType */ Gst.StateChangeReturn, /* state */ Gst.State | null, /* pending */ Gst.State | null ]
     vfunc_no_more_pads(): void
@@ -509,17 +513,17 @@ export class TagDemux {
     vfunc_set_context(context: Gst.Context): void
     vfunc_set_state(state: Gst.State): Gst.StateChangeReturn
     vfunc_state_changed(oldstate: Gst.State, newstate: Gst.State, pending: Gst.State): void
-    /* Virtual methods of Gst.Object */
+    /* Virtual methods of Gst-1.0.Gst.Object */
     vfunc_deep_notify(orig: Gst.Object, pspec: GObject.ParamSpec): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gst.Element */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gst-1.0.Gst.Element */
     connect(sigName: "no-more-pads", callback: (($obj: TagDemux) => void)): number
     connect_after(sigName: "no-more-pads", callback: (($obj: TagDemux) => void)): number
     emit(sigName: "no-more-pads"): void
@@ -529,11 +533,11 @@ export class TagDemux {
     connect(sigName: "pad-removed", callback: (($obj: TagDemux, old_pad: Gst.Pad) => void)): number
     connect_after(sigName: "pad-removed", callback: (($obj: TagDemux, old_pad: Gst.Pad) => void)): number
     emit(sigName: "pad-removed", old_pad: Gst.Pad): void
-    /* Signals of Gst.Object */
+    /* Signals of Gst-1.0.Gst.Object */
     connect(sigName: "deep-notify", callback: (($obj: TagDemux, prop_object: Gst.Object, prop: GObject.ParamSpec) => void)): number
     connect_after(sigName: "deep-notify", callback: (($obj: TagDemux, prop_object: Gst.Object, prop: GObject.ParamSpec) => void)): number
     emit(sigName: "deep-notify", prop_object: Gst.Object, prop: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TagDemux, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TagDemux, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -552,13 +556,13 @@ export class TagDemux {
 }
 export interface TagMux_ConstructProps extends Gst.Element_ConstructProps {
 }
-export class TagMux {
-    /* Properties of Gst.Object */
+class TagMux {
+    /* Properties of Gst-1.0.Gst.Object */
     name: string
     parent: Gst.Object
-    /* Fields of GstTag.TagMux */
+    /* Fields of GstTag-1.0.GstTag.TagMux */
     element: Gst.Element
-    /* Fields of Gst.Element */
+    /* Fields of Gst-1.0.Gst.Element */
     object: Gst.Object
     state_lock: GLib.RecMutex
     state_cond: GLib.Cond
@@ -580,12 +584,12 @@ export class TagMux {
     sinkpads: Gst.Pad[]
     pads_cookie: number
     contexts: Gst.Context[]
-    /* Fields of Gst.Object */
+    /* Fields of Gst-1.0.Gst.Object */
     lock: GLib.Mutex
     flags: number
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gst.Element */
+    /* Methods of Gst-1.0.Gst.Element */
     abort_state(): void
     add_pad(pad: Gst.Pad): boolean
     add_property_deep_notify_watch(property_name: string | null, include_value: boolean): number
@@ -602,7 +606,7 @@ export class TagMux {
     get_clock(): Gst.Clock | null
     get_compatible_pad(pad: Gst.Pad, caps?: Gst.Caps | null): Gst.Pad | null
     get_compatible_pad_template(compattempl: Gst.PadTemplate): Gst.PadTemplate | null
-    get_context(context_type: string): Gst.Context
+    get_context(context_type: string): Gst.Context | null
     get_context_unlocked(context_type: string): Gst.Context | null
     get_contexts(): Gst.Context[]
     get_current_clock_time(): Gst.ClockTime
@@ -638,6 +642,7 @@ export class TagMux {
     remove_pad(pad: Gst.Pad): boolean
     remove_property_notify_watch(watch_id: number): void
     request_pad(templ: Gst.PadTemplate, name?: string | null, caps?: Gst.Caps | null): Gst.Pad | null
+    request_pad_simple(name: string): Gst.Pad | null
     seek(rate: number, format: Gst.Format, flags: Gst.SeekFlags, start_type: Gst.SeekType, start: number, stop_type: Gst.SeekType, stop: number): boolean
     seek_simple(format: Gst.Format, seek_flags: Gst.SeekFlags, seek_pos: number): boolean
     send_event(event: Gst.Event): boolean
@@ -651,7 +656,7 @@ export class TagMux {
     sync_state_with_parent(): boolean
     unlink(dest: Gst.Element): void
     unlink_pads(srcpadname: string, dest: Gst.Element, destpadname: string): void
-    /* Methods of Gst.Object */
+    /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: Gst.ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
     get_control_binding(property_name: string): Gst.ControlBinding | null
@@ -676,15 +681,15 @@ export class TagMux {
     sync_values(timestamp: Gst.ClockTime): boolean
     unparent(): void
     unref(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -692,22 +697,22 @@ export class TagMux {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gst.TagSetter */
+    watch_closure(closure: Function): void
+    /* Methods of Gst-1.0.Gst.TagSetter */
     add_tag_value(mode: Gst.TagMergeMode, tag: string, value: any): void
     get_tag_list(): Gst.TagList | null
     get_tag_merge_mode(): Gst.TagMergeMode
     merge_tags(list: Gst.TagList, mode: Gst.TagMergeMode): void
     reset_tags(): void
     set_tag_merge_mode(mode: Gst.TagMergeMode): void
-    /* Virtual methods of GstTag.TagMux */
+    /* Virtual methods of GstTag-1.0.GstTag.TagMux */
     vfunc_render_end_tag(tag_list: Gst.TagList): Gst.Buffer
     vfunc_render_start_tag(tag_list: Gst.TagList): Gst.Buffer
-    /* Virtual methods of Gst.Element */
+    /* Virtual methods of Gst-1.0.Gst.Element */
     vfunc_change_state(transition: Gst.StateChange): Gst.StateChangeReturn
     vfunc_get_state(timeout: Gst.ClockTime): [ /* returnType */ Gst.StateChangeReturn, /* state */ Gst.State | null, /* pending */ Gst.State | null ]
     vfunc_no_more_pads(): void
@@ -724,17 +729,17 @@ export class TagMux {
     vfunc_set_context(context: Gst.Context): void
     vfunc_set_state(state: Gst.State): Gst.StateChangeReturn
     vfunc_state_changed(oldstate: Gst.State, newstate: Gst.State, pending: Gst.State): void
-    /* Virtual methods of Gst.Object */
+    /* Virtual methods of Gst-1.0.Gst.Object */
     vfunc_deep_notify(orig: Gst.Object, pspec: GObject.ParamSpec): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gst.Element */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gst-1.0.Gst.Element */
     connect(sigName: "no-more-pads", callback: (($obj: TagMux) => void)): number
     connect_after(sigName: "no-more-pads", callback: (($obj: TagMux) => void)): number
     emit(sigName: "no-more-pads"): void
@@ -744,11 +749,11 @@ export class TagMux {
     connect(sigName: "pad-removed", callback: (($obj: TagMux, old_pad: Gst.Pad) => void)): number
     connect_after(sigName: "pad-removed", callback: (($obj: TagMux, old_pad: Gst.Pad) => void)): number
     emit(sigName: "pad-removed", old_pad: Gst.Pad): void
-    /* Signals of Gst.Object */
+    /* Signals of Gst-1.0.Gst.Object */
     connect(sigName: "deep-notify", callback: (($obj: TagMux, prop_object: Gst.Object, prop: GObject.ParamSpec) => void)): number
     connect_after(sigName: "deep-notify", callback: (($obj: TagMux, prop_object: Gst.Object, prop: GObject.ParamSpec) => void)): number
     emit(sigName: "deep-notify", prop_object: Gst.Object, prop: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TagMux, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TagMux, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -765,8 +770,8 @@ export class TagMux {
     _init (config?: TagMux_ConstructProps): void
     static $gtype: GObject.Type
 }
-export abstract class TagDemuxClass {
-    /* Fields of GstTag.TagDemuxClass */
+abstract class TagDemuxClass {
+    /* Fields of GstTag-1.0.GstTag.TagDemuxClass */
     parent_class: Gst.ElementClass
     min_start_size: number
     min_end_size: number
@@ -775,21 +780,23 @@ export abstract class TagDemuxClass {
     merge_tags: (demux: TagDemux, start_tags: Gst.TagList, end_tags: Gst.TagList) => Gst.TagList
     static name: string
 }
-export class TagDemuxPrivate {
+class TagDemuxPrivate {
     static name: string
 }
-export abstract class TagMuxClass {
-    /* Fields of GstTag.TagMuxClass */
+abstract class TagMuxClass {
+    /* Fields of GstTag-1.0.GstTag.TagMuxClass */
     parent_class: Gst.ElementClass
     render_start_tag: (mux: TagMux, tag_list: Gst.TagList) => Gst.Buffer
     render_end_tag: (mux: TagMux, tag_list: Gst.TagList) => Gst.Buffer
     static name: string
 }
-export class TagMuxPrivate {
+class TagMuxPrivate {
     static name: string
 }
-export abstract class TagXmpWriterInterface {
-    /* Fields of GstTag.TagXmpWriterInterface */
+abstract class TagXmpWriterInterface {
+    /* Fields of GstTag-1.0.GstTag.TagXmpWriterInterface */
     parent: GObject.TypeInterface
     static name: string
 }
+}
+export default GstTag;

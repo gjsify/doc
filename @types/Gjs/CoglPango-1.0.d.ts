@@ -3,35 +3,37 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as PangoCairo from './PangoCairo-1.0';
-import type * as cairo from './cairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Cogl from './Cogl-1.0';
-import type * as GL from './GL-1.0';
+import type PangoCairo from './PangoCairo-1.0';
+import type cairo from './cairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Cogl from './Cogl-1.0';
+import type GL from './GL-1.0';
 
-export function ensure_glyph_cache_for_layout(layout: Pango.Layout): void
-export function font_map_clear_glyph_cache(font_map: FontMap): void
-export function font_map_create_context(font_map: FontMap): Pango.Context
-export function font_map_get_renderer(font_map: FontMap): Pango.Renderer
-export function font_map_get_use_mipmapping(font_map: FontMap): Cogl.Bool
-export function font_map_new(): Pango.FontMap
-export function font_map_set_resolution(font_map: FontMap, dpi: number): void
-export function font_map_set_use_mipmapping(font_map: FontMap, value: Cogl.Bool): void
-export function render_layout(layout: Pango.Layout, x: number, y: number, color: Cogl.Color, flags: number): void
-export function render_layout_line(line: Pango.LayoutLine, x: number, y: number, color: Cogl.Color): void
-export function render_layout_subpixel(layout: Pango.Layout, x: number, y: number, color: Cogl.Color, flags: number): void
+export namespace CoglPango {
+
+function ensure_glyph_cache_for_layout(layout: Pango.Layout): void
+function font_map_clear_glyph_cache(font_map: FontMap): void
+function font_map_create_context(font_map: FontMap): Pango.Context
+function font_map_get_renderer(font_map: FontMap): Pango.Renderer
+function font_map_get_use_mipmapping(font_map: FontMap): Cogl.Bool
+function font_map_new(): Pango.FontMap
+function font_map_set_resolution(font_map: FontMap, dpi: number): void
+function font_map_set_use_mipmapping(font_map: FontMap, value: Cogl.Bool): void
+function render_layout(layout: Pango.Layout, x: number, y: number, color: Cogl.Color, flags: number): void
+function render_layout_line(line: Pango.LayoutLine, x: number, y: number, color: Cogl.Color): void
+function render_layout_subpixel(layout: Pango.Layout, x: number, y: number, color: Cogl.Color, flags: number): void
 export interface Renderer_ConstructProps extends Pango.Renderer_ConstructProps {
     context?: object
 }
-export class Renderer {
-    /* Fields of Pango.Renderer */
+class Renderer {
+    /* Fields of Pango-1.0.Pango.Renderer */
     matrix: Pango.Matrix
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Pango.Renderer */
+    /* Methods of Pango-1.0.Pango.Renderer */
     activate(): void
     deactivate(): void
     draw_error_underline(x: number, y: number, width: number, height: number): void
@@ -51,15 +53,15 @@ export class Renderer {
     set_alpha(part: Pango.RenderPart, alpha: number): void
     set_color(part: Pango.RenderPart, color?: Pango.Color | null): void
     set_matrix(matrix?: Pango.Matrix | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -67,13 +69,13 @@ export class Renderer {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Pango.Renderer */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Pango-1.0.Pango.Renderer */
     vfunc_begin(): void
     vfunc_draw_error_underline(x: number, y: number, width: number, height: number): void
     vfunc_draw_glyph(font: Pango.Font, glyph: Pango.Glyph, x: number, y: number): void
@@ -85,15 +87,15 @@ export class Renderer {
     vfunc_end(): void
     vfunc_part_changed(part: Pango.RenderPart): void
     vfunc_prepare_run(run: Pango.LayoutRun): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Renderer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Renderer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -106,7 +108,9 @@ export class Renderer {
     _init (config?: Renderer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export abstract class RendererClass {
+abstract class RendererClass {
     static name: string
 }
-export type FontMap = PangoCairo.FontMap
+type FontMap = PangoCairo.FontMap
+}
+export default CoglPango;

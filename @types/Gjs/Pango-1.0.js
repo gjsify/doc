@@ -1,2 +1,2 @@
-imports.gi.versions.Pango = '1.0'
-export default imports.gi.Pango
+import Pango from 'gi://Pango?version=1.0';
+export default Pango;

@@ -1,2 +1,2 @@
-imports.gi.versions.NMGtk = '1.0'
-export default imports.gi.NMGtk
+import NMGtk from 'gi://NMGtk?version=1.0';
+export default NMGtk;

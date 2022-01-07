@@ -1,2 +1,2 @@
-imports.gi.versions.Rsvg = '2.0'
-export default imports.gi.Rsvg
+import Rsvg from 'gi://Rsvg?version=2.0';
+export default Rsvg;

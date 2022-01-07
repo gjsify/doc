@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+		// General settings for code interpretation
+		"target": "esnext",
+		"module": "esnext",
+		"isolatedModules": true,
+		"allowSyntheticDefaultImports": false,
+		"experimentalDecorators": true,
+		"noEmit": true,
+		"noEmitOnError": false,
+
+		"baseUrl": "./@types",
+		"rootDir": "@types/gjs",
+
+		"paths": {
+			/* ... */
+		},
+
+		// General settings for code generation
+		"removeComments": false,
+		"inlineSourceMap": false,
+		"inlineSources": false,
+		"newLine": "LF"
+  },
+  "include": [
+	"./@types/Gjs/*.d.ts"
+]
+}

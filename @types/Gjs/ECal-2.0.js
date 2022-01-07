@@ -1,2 +1,2 @@
-imports.gi.versions.ECal = '2.0'
-export default imports.gi.ECal
+import ECal from 'gi://ECal?version=2.0';
+export default ECal;

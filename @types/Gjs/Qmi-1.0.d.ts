@@ -3,11 +3,13 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum CoreError {
+export namespace Qmi {
+
+enum CoreError {
     FAILED,
     WRONGSTATE,
     TIMEOUT,
@@ -20,27 +22,31 @@ export enum CoreError {
     UNEXPECTEDMESSAGE,
     INVALIDDATA,
 }
-export enum CtlDataFormat {
+enum CtlDataFormat {
     ABSENT,
     PRESENT,
 }
-export enum CtlDataLinkProtocol {
+enum CtlDataLinkProtocol {
     UNKNOWN,
     /* 802_3 (invalid, starts with a number) */
     RAW_IP,
 }
-export enum DataEndpointType {
+enum DataEndpointType {
+    UNKNOWN,
+    HSIC,
     HSUSB,
     PCIE,
     EMBEDDED,
+    BAM_DMUX,
     UNDEFINED,
 }
-export enum DeviceExpectedDataFormat {
+enum DeviceExpectedDataFormat {
     UNKNOWN,
     /* 802_3 (invalid, starts with a number) */
     RAW_IP,
+    QMAP_PASS_THROUGH,
 }
-export enum DmsActivationState {
+enum DmsActivationState {
     NOT_ACTIVATED,
     ACTIVATED,
     CONNECTING,
@@ -53,49 +59,39 @@ export enum DmsActivationState {
     OTASP_SPC,
     OTASP_COMMITED,
 }
-export enum DmsBootImageDownloadMode {
+enum DmsBootImageDownloadMode {
     NORMAL,
     BOOT_AND_RECOVERY,
 }
-export enum DmsDataServiceCapability {
+enum DmsDataServiceCapability {
     NONE,
     CS,
     PS,
     SIMULTANEOUS_CS_PS,
     NON_SIMULTANEOUS_CS_PS,
 }
-export enum DmsDellDeviceMode {
-    UNKNOWN,
-    FASTBOOT_ONLINE,
-    FASTBOOT_OTA,
-}
-export enum DmsDellFirmwareVersionType {
-    FIRMWARE_MCFG,
-    FIRMWARE_MCFG_APPS,
-    APPS,
-}
-export enum DmsFirmwareImageType {
+enum DmsFirmwareImageType {
     MODEM,
     PRI,
 }
-export enum DmsFoxconnDeviceMode {
+enum DmsFoxconnDeviceMode {
     UNKNOWN,
     FASTBOOT_ONLINE,
     FASTBOOT_OTA,
 }
-export enum DmsFoxconnFirmwareVersionType {
+enum DmsFoxconnFirmwareVersionType {
     FIRMWARE_MCFG,
     FIRMWARE_MCFG_APPS,
     APPS,
 }
-export enum DmsHpDeviceMode {
+enum DmsHpDeviceMode {
     FASTBOOT,
 }
-export enum DmsMacType {
+enum DmsMacType {
     WLAN,
     BT,
 }
-export enum DmsOperatingMode {
+enum DmsOperatingMode {
     ONLINE,
     LOW_POWER,
     FACTORY_TEST,
@@ -106,19 +102,20 @@ export enum DmsOperatingMode {
     MODE_ONLY_LOW_POWER,
     UNKNOWN,
 }
-export enum DmsRadioInterface {
+enum DmsRadioInterface {
     CDMA20001X,
     EVDO,
     GSM,
     UMTS,
     LTE,
+    TDS,
     /* 5GNR (invalid, starts with a number) */
 }
-export enum DmsSimCapability {
+enum DmsSimCapability {
     NOT_SUPPORTED,
     SUPPORTED,
 }
-export enum DmsSwiUsbComposition {
+enum DmsSwiUsbComposition {
     UNKNOWN,
     /* 0 (invalid, starts with a number) */
     /* 1 (invalid, starts with a number) */
@@ -144,31 +141,31 @@ export enum DmsSwiUsbComposition {
     /* 21 (invalid, starts with a number) */
     /* 22 (invalid, starts with a number) */
 }
-export enum DmsTimeReferenceType {
+enum DmsTimeReferenceType {
     USER,
 }
-export enum DmsTimeSource {
+enum DmsTimeSource {
     DEVICE,
     CDMA_NETWORK,
     HDR_NETWORK,
 }
-export enum DmsUimFacility {
+enum DmsUimFacility {
     PN,
     PU,
     PP,
     PC,
     PF,
 }
-export enum DmsUimFacilityState {
+enum DmsUimFacilityState {
     DEACTIVATED,
     ACTIVATED,
     BLOCKED,
 }
-export enum DmsUimPinId {
+enum DmsUimPinId {
     PIN,
     PIN2,
 }
-export enum DmsUimPinStatus {
+enum DmsUimPinStatus {
     NOT_INITIALIZED,
     ENABLED_NOT_VERIFIED,
     ENABLED_VERIFIED,
@@ -178,14 +175,14 @@ export enum DmsUimPinStatus {
     UNBLOCKED,
     CHANGED,
 }
-export enum DmsUimState {
+enum DmsUimState {
     INITIALIZATION_COMPLETED,
     LOCKED_OR_FAILED,
     NOT_PRESENT,
     RESERVED,
     UNKNOWN,
 }
-export enum DsdApnType {
+enum DsdApnType {
     DEFAULT,
     IMS,
     MMS,
@@ -197,28 +194,32 @@ export enum DsdApnType {
     IA,
     EMERGENCY,
 }
-export enum Endian {
+enum Endian {
     LITTLE,
     BIG,
 }
-export enum GasFirmwareListingMode {
+enum GasFirmwareListingMode {
     ACTIVE_FIRMWARE,
     ALL_FIRMWARE,
     SPECIFIC_FIRMWARE,
 }
-export enum LocEngineState {
+enum GasUsbCompositionEndpointType {
+    HSUSB,
+    HSIC,
+}
+enum LocEngineState {
     ON,
     OFF,
 }
-export enum LocFixRecurrenceType {
+enum LocFixRecurrenceType {
     PERIODIC_FIXES,
     SINGLE_FIX,
 }
-export enum LocHealthStatus {
+enum LocHealthStatus {
     UNHEALTHY,
     HEALTHY,
 }
-export enum LocIndicationStatus {
+enum LocIndicationStatus {
     SUCCESS,
     GENERAL_FAILURE,
     UNSUPPORTED,
@@ -227,16 +228,22 @@ export enum LocIndicationStatus {
     PHONE_OFFLINE,
     TIMEOUT,
 }
-export enum LocIntermediateReportState {
+enum LocIntermediateReportState {
     UNKNOWN,
     ENABLE,
     DISABLE,
 }
-export enum LocNavigationData {
+enum LocLockType {
+    NONE,
+    MI,
+    MT,
+    ALL,
+}
+enum LocNavigationData {
     EPHEMERIS,
     ALMANAC,
 }
-export enum LocOperationMode {
+enum LocOperationMode {
     DEFAULT,
     MSB,
     MSA,
@@ -244,29 +251,29 @@ export enum LocOperationMode {
     CELLID,
     WWAN,
 }
-export enum LocPredictedOrbitsDataFormat {
+enum LocPredictedOrbitsDataFormat {
     XTRA,
 }
-export enum LocReliability {
+enum LocReliability {
     NOT_SET,
     VERY_LOW,
     LOW,
     MEDIUM,
     HIGH,
 }
-export enum LocSatelliteStatus {
+enum LocSatelliteStatus {
     IDLE,
     SEARCHING,
     TRACKING,
 }
-export enum LocServerType {
+enum LocServerType {
     UNKNOWN,
     CDMA_PDE,
     CDMA_MPC,
     UMTS_SLP,
     CUSTOM_PDE,
 }
-export enum LocSessionStatus {
+enum LocSessionStatus {
     SUCCESS,
     IN_PROGRESS,
     GENERAL_FAILURE,
@@ -276,14 +283,14 @@ export enum LocSessionStatus {
     PHONE_OFFLINE,
     ENGINE_LOCKED,
 }
-export enum LocSystem {
+enum LocSystem {
     GPS,
     GALILEO,
     SBAS,
     COMPASS,
     GLONASS,
 }
-export enum LocTimeSource {
+enum LocTimeSource {
     INVALID,
     NETWORK_TIME_TRANSFER,
     NETWORK_TIME_TAGGING,
@@ -302,7 +309,7 @@ export enum LocTimeSource {
     QZSS_TOW_DECODE,
     BDS_TOW_DECODE,
 }
-export enum NasActiveBand {
+enum NasActiveBand {
     BC_0,
     BC_1,
     BC_2,
@@ -399,37 +406,42 @@ export enum NasActiveBand {
     TDSCDMA_E,
     TDSCDMA_F,
 }
-export enum NasAttachState {
+enum NasAttachState {
     UNKNOWN,
     ATTACHED,
     DETACHED,
 }
-export enum NasCallBarringStatus {
+enum NasBoolean {
+    FALSE,
+    TRUE,
+    UNKNOWN,
+}
+enum NasCallBarringStatus {
     NORMAL_ONLY,
     EMERGENCY_ONLY,
     NO_CALLS,
     ALL_CALLS,
     UNKNOWN,
 }
-export enum NasCdmaPilotType {
+enum NasCdmaPilotType {
     ACTIVE,
     NEIGHBOR,
 }
-export enum NasCdmaPrlPreference {
+enum NasCdmaPrlPreference {
     A_SIDE_ONLY,
     B_SIDE_ONLY,
     ANY,
 }
-export enum NasCellBroadcastCapability {
+enum NasCellBroadcastCapability {
     UNKNOWN,
     OFF,
     ON,
 }
-export enum NasChangeDuration {
+enum NasChangeDuration {
     POWER_CYCLE,
     PERMANENT,
 }
-export enum NasDLBandwidth {
+enum NasDLBandwidth {
     /* 1_4 (invalid, starts with a number) */
     /* 3 (invalid, starts with a number) */
     /* 5 (invalid, starts with a number) */
@@ -439,7 +451,7 @@ export enum NasDLBandwidth {
     INVALID,
     UNKNOWN,
 }
-export enum NasDataCapability {
+enum NasDataCapability {
     NONE,
     GPRS,
     EDGE,
@@ -455,7 +467,7 @@ export enum NasDataCapability {
     HSDPA_PLUS,
     DC_HSDPA_PLUS,
 }
-export enum NasDayOfWeek {
+enum NasDayOfWeek {
     MONDAY,
     TUESDAY,
     WEDNESDAY,
@@ -464,12 +476,19 @@ export enum NasDayOfWeek {
     SATURDAY,
     SUNDAY,
 }
-export enum NasDaylightSavingsAdjustment {
+enum NasDaylightSavingsAdjustment {
     NONE,
     ONE_HOUR,
     TWO_HOURS,
 }
-export enum NasEvdoSinrLevel {
+enum NasDrx {
+    UNKNOWN,
+    CN6_T32,
+    CN7_T64,
+    CN8_T128,
+    CN9_T256,
+}
+enum NasEvdoSinrLevel {
     /* 0 (invalid, starts with a number) */
     /* 1 (invalid, starts with a number) */
     /* 2 (invalid, starts with a number) */
@@ -480,48 +499,54 @@ export enum NasEvdoSinrLevel {
     /* 7 (invalid, starts with a number) */
     /* 8 (invalid, starts with a number) */
 }
-export enum NasGsmWcdmaAcquisitionOrderPreference {
+enum NasGsmWcdmaAcquisitionOrderPreference {
     AUTOMATIC,
     GSM,
     WCDMA,
 }
-export enum NasHdrPersonality {
+enum NasHdrPersonality {
     UNKNOWN,
     HRPD,
     EHRPD,
 }
-export enum NasHdrProtocolRevision {
+enum NasHdrProtocolRevision {
     NONE,
     REL_0,
     REL_A,
     REL_B,
 }
-export enum NasLteCellAccessStatus {
+enum NasLteCellAccessStatus {
     NORMAL_ONLY,
     EMERGENCY_ONLY,
     NO_CALLS,
     ALL_CALLS,
     UNKNOWN,
 }
-export enum NasLteRegistrationDomain {
+enum NasLteRegistrationDomain {
     NOT_APPLICABLE,
     CS_ONLY,
     PS_ONLY,
     CS_PS,
     LIMITED_SERVICE,
 }
-export enum NasNetworkDescriptionDisplay {
+enum NasLteVoiceDomain {
+    NONE,
+    IMS,
+    /* 1X (invalid, starts with a number) */
+    /* 3GPP (invalid, starts with a number) */
+}
+enum NasNetworkDescriptionDisplay {
     NO,
     YES,
     UNKNOWN,
 }
-export enum NasNetworkDescriptionEncoding {
+enum NasNetworkDescriptionEncoding {
     UNSPECIFIED,
     ASCII7,
     UNICODE,
     GSM,
 }
-export enum NasNetworkNameSource {
+enum NasNetworkNameSource {
     UNKNOWN,
     OPERATOR_PLMN_LIST_AND_PLMN_NETWORK_NAME,
     COMMON_PCN_HANDSET_SPECIFICATION_AND_OPERATOR_NAME_STRING,
@@ -530,46 +555,51 @@ export enum NasNetworkNameSource {
     MCC_MNC,
     SERVICE_PROVIDER_NAME,
 }
-export enum NasNetworkRegisterType {
+enum NasNetworkRegisterType {
     AUTOMATIC,
     MANUAL,
 }
-export enum NasNetworkScanResult {
+enum NasNetworkScanResult {
     SUCCESS,
     ABORT,
     RADIO_LINK_FAILURE,
 }
-export enum NasNetworkSelectionPreference {
+enum NasNetworkSelectionPreference {
     AUTOMATIC,
     MANUAL,
 }
-export enum NasNetworkSelectionRegistrationRestriction {
+enum NasNetworkSelectionRegistrationRestriction {
     UNRESTRICTED,
     CAMPED_ONLY,
     LIMITED,
 }
-export enum NasNetworkServiceDomain {
+enum NasNetworkServiceDomain {
     NONE,
     CS,
     PS,
     CS_PS,
     UNKNOWN,
 }
-export enum NasNetworkType {
+enum NasNetworkType {
     UNKNOWN,
     /* 3GPP2 (invalid, starts with a number) */
     /* 3GPP (invalid, starts with a number) */
 }
-export enum NasPlmnEncodingScheme {
+enum NasPlmnEncodingScheme {
     GSM,
     UCS2LE,
 }
-export enum NasPlmnNameCountryInitials {
+enum NasPlmnLanguageId {
+    UNKNOWN,
+    ZH_TRAD,
+    ZH_SIMP,
+}
+enum NasPlmnNameCountryInitials {
     INITIALS_DO_NOT_ADD,
     INIITALS_ADD,
     INIITALS_UNSPECIFIED,
 }
-export enum NasPlmnNameSpareBits {
+enum NasPlmnNameSpareBits {
     UNKNOWN,
     BIT_8,
     BITS_78,
@@ -579,7 +609,7 @@ export enum NasPlmnNameSpareBits {
     BITS_38,
     BITS_28,
 }
-export enum NasPreferenceDuration {
+enum NasPreferenceDuration {
     PERMANENT,
     POWER_CYCLE,
     ONE_CALL,
@@ -588,11 +618,11 @@ export enum NasPreferenceDuration {
     INTERNAL_ONE_CALL_2,
     INTERNAL_ONE_CALL_3,
 }
-export enum NasPsAttachAction {
+enum NasPsAttachAction {
     ATTACH,
     DETACH,
 }
-export enum NasRadioInterface {
+enum NasRadioInterface {
     UNKNOWN,
     NONE,
     CDMA_1X,
@@ -604,24 +634,86 @@ export enum NasRadioInterface {
     TD_SCDMA,
     /* 5GNR (invalid, starts with a number) */
 }
-export enum NasRegistrationState {
+enum NasRegistrationState {
     NOT_REGISTERED,
     REGISTERED,
     NOT_REGISTERED_SEARCHING,
     REGISTRATION_DENIED,
     UNKNOWN,
 }
-export enum NasRoamingIndicatorStatus {
+enum NasRejectCause {
+    NONE,
+    IMSI_UNKNOWN_IN_HLR,
+    ILLEGAL_UE,
+    IMSI_UNKNOWN_IN_VLR,
+    IMEI_NOT_ACCEPTED,
+    ILLEGAL_ME,
+    PS_SERVICES_NOT_ALLOWED,
+    PS_AND_NON_PS_SERVICES_NOT_ALLOWED,
+    UE_IDENTITY_NOT_DERIVED_BY_NETWORK,
+    IMPLICITLY_DETACHED,
+    PLMN_NOT_ALLOWED,
+    LOCATION_AREA_NOT_ALLOWED,
+    ROAMING_IN_LOCATION_AREA_NOT_ALLOWED,
+    PS_SERVICES_IN_LOCATION_AREA_NOT_ALLOWED,
+    NO_SUITABLE_CELLS_IN_LOCATION_AREA,
+    MSC_TEMPORARILY_NOT_REACHABLE,
+    NETWORK_FAILURE,
+    CS_DOMAIN_NOT_AVAILABLE,
+    ESM_FAILURE,
+    MAC_FAILURE,
+    SYNCH_FAILURE,
+    CONGESTION,
+    UE_SECURITY_CAPABILITIES_MISMATCH,
+    SECURITY_MODE_REJECTED_UNSPECIFIED,
+    CSG_NOT_AUTHORIZED,
+    NON_EPS_AUTHENTICATION_UNACCEPTABLE,
+    SMS_PROVIDED_BY_GPRS_IN_ROUTING_AREA,
+    REDIRECTION_TO_5GCN_REQUIRED,
+    SERVICE_OPTION_NOT_SUPPORTED,
+    REQUESTED_SERVICE_OPTION_NOT_SUBSCRIBED,
+    SERVICE_OPTION_TEMPORARILY_OUT_OF_ORDER,
+    REQUESTED_SERVICE_OPTION_NOT_AUTHORIZED,
+    CALL_CANNOT_BE_IDENTIFIED,
+    CS_SERVICE_TEMPORARILY_NOT_AVAILABLE,
+    NO_EPS_BEARER_CONTEXT_ACTIVATED,
+    SEVERE_NETWORK_FAILURE,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_0,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_1,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_2,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_3,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_4,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_5,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_6,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_7,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_8,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_9,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_10,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_11,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_12,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_13,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_14,
+    RETRY_UPON_ENTRY_INTO_NEW_CELL_15,
+    SEMANTICALLY_INCORRECT_MESSAGE,
+    INVALID_MANDATORY_INFORMATION,
+    MESSAGE_TYPE_NON_EXISTENT,
+    MESSAGE_TYPE_NOT_COMPATIBLE,
+    INFORMATION_ELEMENT_NON_EXISTENT,
+    CONDITIONAL_INFORMATION_ELEMENT_ERROR,
+    MESSAGE_NOT_COMPATIBLE,
+    UNSPECIFIED_PROTOCOL_ERROR,
+}
+enum NasRoamingIndicatorStatus {
     ON,
     OFF,
 }
-export enum NasRoamingPreference {
+enum NasRoamingPreference {
     OFF,
     NOT_OFF,
     NOT_FLASHING,
     ANY,
 }
-export enum NasRoamingStatus {
+enum NasRoamingStatus {
     OFF,
     ON,
     BLINK,
@@ -636,40 +728,40 @@ export enum NasRoamingStatus {
     BANNER_ON,
     BANNER_OFF,
 }
-export enum NasScellState {
+enum NasScellState {
     DECONFIGURED,
     DEACTIVATED,
     ACTIVATED,
 }
-export enum NasServiceDomainPreference {
+enum NasServiceDomainPreference {
     CS_ONLY,
     PS_ONLY,
     CS_PS,
     PS_ATTACH,
     PS_DETACH,
 }
-export enum NasServiceStatus {
+enum NasServiceStatus {
     NONE,
     LIMITED,
     AVAILABLE,
     LIMITED_REGIONAL,
     POWER_SAVE,
 }
-export enum NasSimRejectState {
+enum NasSimRejectState {
     UNAVAILABLE,
     AVAILABLE,
     CS_INVALID,
     PS_INVALID,
     CS_PS_INVALID,
 }
-export enum NasSwiEmmConnectionState {
+enum NasSwiEmmConnectionState {
     RRC_IDLE,
     WAITING_RRC_CFM,
     RRC_CONNECTING,
     RRC_RELEASING,
     UNKNOWN,
 }
-export enum NasSwiEmmState {
+enum NasSwiEmmState {
     DEREGISTERED,
     REG_INITIATED,
     REGISTERED,
@@ -679,7 +771,7 @@ export enum NasSwiEmmState {
     INVALID,
     UNKNOWN,
 }
-export enum NasSwiImsRegState {
+enum NasSwiImsRegState {
     NO_SRV,
     IN_PROG,
     FAILED,
@@ -687,7 +779,7 @@ export enum NasSwiImsRegState {
     FULL_SRV,
     _UNKNOWN,
 }
-export enum NasSwiModemMode {
+enum NasSwiModemMode {
     POWERING_OFF,
     FACTORY_TEST,
     OFFLINE,
@@ -702,12 +794,12 @@ export enum NasSwiModemMode {
     RESETTING_MODEM,
     UNKNOWN,
 }
-export enum NasSwiPsState {
+enum NasSwiPsState {
     ATTACHED,
     DETACHED,
     UNKNOWN,
 }
-export enum NasSwiSystemMode {
+enum NasSwiSystemMode {
     NO_SERVICE,
     AMPS,
     CDMA,
@@ -719,18 +811,18 @@ export enum NasSwiSystemMode {
     LTE,
     UNKNOWN,
 }
-export enum NasUsagePreference {
+enum NasUsagePreference {
     UNKNOWN,
     VOICE_CENTRIC,
     DATA_CENTRIC,
 }
-export enum NasVoiceDomainPreference {
+enum NasVoiceDomainPreference {
     CS_ONLY,
     PS_ONLY,
     CS_PREFERRED,
     PS_PREFERRED,
 }
-export enum NasWcdmaHsService {
+enum NasWcdmaHsService {
     HSDPA_HSUPA_UNSUPPORTED,
     HSDPA_SUPPORTED,
     HSUPA_SUPPORTED,
@@ -740,19 +832,19 @@ export enum NasWcdmaHsService {
     DC_HSDPA_PLUS_SUPPORTED,
     DC_HSDPA_PLUS_HSUPA_SUPPORTED,
 }
-export enum NasWcdmaRrcState {
+enum NasWcdmaRrcState {
     DISCONNECTED,
     CELL_PCH,
     URA_PCH,
     CELL_FACH,
     CELL_DCH,
 }
-export enum OmaHfaFeatureDoneState {
+enum OmaHfaFeatureDoneState {
     NONE,
     SUCCEEDED,
     FAILED,
 }
-export enum OmaSessionFailedReason {
+enum OmaSessionFailedReason {
     UNKNOWN,
     NETWORK_UNAVAILABLE,
     SERVER_UNAVAILABLE,
@@ -760,7 +852,7 @@ export enum OmaSessionFailedReason {
     MAX_RETRY_EXCEEDED,
     SESSION_CANCELLED,
 }
-export enum OmaSessionState {
+enum OmaSessionState {
     COMPLETE_INFORMATION_UPDATED,
     COMPLETE_UPDATED_INFORMATION_UNAVAILABLE,
     FAILED,
@@ -773,7 +865,7 @@ export enum OmaSessionState {
     PRL_DOWNLOADED,
     MIP_PROFILE_DOWNLOADED,
 }
-export enum OmaSessionType {
+enum OmaSessionType {
     CLIENT_INITIATED_DEVICE_CONFIGURE,
     CLIENT_INITIATED_PRL_UPDATE,
     CLIENT_INITIATED_HANDS_FREE_ACTIVATION,
@@ -782,7 +874,7 @@ export enum OmaSessionType {
     NETWORK_INITIATED_DEVICE_CONFIGURE,
     DEVICE_INITIATED_PRL_UPDATE,
 }
-export enum PbmSessionType {
+enum PbmSessionType {
     GW_PRIMARY,
     /* 1X_PRIMARY (invalid, starts with a number) */
     GW_SECONDARY,
@@ -792,26 +884,31 @@ export enum PbmSessionType {
     GLOBAL_PHONEBOOK_SLOT_1,
     GLOBAL_PHONEBOOK_SLOT_2,
 }
-export enum PdcConfigurationType {
+enum PdcConfigurationType {
     PLATFORM,
     SOFTWARE,
 }
-export enum PdsNetworkMode {
+enum PdcRefreshEventType {
+    START,
+    COMPLETE,
+    CLIENT_REFRESH,
+}
+enum PdsNetworkMode {
     UMTS,
     CDMA,
 }
-export enum PdsOperatingMode {
+enum PdsOperatingMode {
     STANDALONE,
     MS_BASED,
     MS_ASSISTED,
 }
-export enum PdsOperationMode {
+enum PdsOperationMode {
     UNKNOWN,
     STANDALONE,
     MS_BASED,
     MS_ASSISTED,
 }
-export enum PdsPositionSessionStatus {
+enum PdsPositionSessionStatus {
     SUCCESS,
     IN_PROGRESS,
     GENERAL_FAILURE,
@@ -822,12 +919,12 @@ export enum PdsPositionSessionStatus {
     ENGINE_LOCKED,
     E911_SESSION_IN_PROGRESS,
 }
-export enum PdsTrackingSessionState {
+enum PdsTrackingSessionState {
     UNKNOWN,
     INACTIVE,
     ACTIVE,
 }
-export enum ProtocolError {
+enum ProtocolError {
     NONE,
     MALFORMEDMESSAGE,
     NOMEMORY,
@@ -954,7 +1051,7 @@ export enum ProtocolError {
     CATENVELOPECOMMANDBUSY,
     CATENVELOPECOMMANDFAILED,
 }
-export enum QosEvent {
+enum QosEvent {
     UNKNOWN,
     ACTIVATED,
     SUSPENDED,
@@ -963,13 +1060,13 @@ export enum QosEvent {
     MODIFY_REJECTED,
     INFO_CODE_UPDATED,
 }
-export enum QosStatus {
+enum QosStatus {
     UNKNOWN,
     ACTIVATED,
     SUSPENDED,
     GONE,
 }
-export enum SarRfState {
+enum SarRfState {
     /* 0 (invalid, starts with a number) */
     /* 1 (invalid, starts with a number) */
     /* 2 (invalid, starts with a number) */
@@ -992,7 +1089,7 @@ export enum SarRfState {
     /* 19 (invalid, starts with a number) */
     /* 20 (invalid, starts with a number) */
 }
-export enum Service {
+enum Service {
     UNKNOWN,
     CTL,
     WDS,
@@ -1036,6 +1133,7 @@ export enum Service {
     RFRPE,
     DSD,
     SSCTL,
+    DPM,
     CAT,
     RMS,
     OMA,
@@ -1043,7 +1141,18 @@ export enum Service {
     GMS,
     GAS,
 }
-export enum UimCardApplicationPersonalizationFeature {
+enum SioPort {
+    NONE,
+    A2_MUX_RMNET0,
+    A2_MUX_RMNET1,
+    A2_MUX_RMNET2,
+    A2_MUX_RMNET3,
+    A2_MUX_RMNET4,
+    A2_MUX_RMNET5,
+    A2_MUX_RMNET6,
+    A2_MUX_RMNET7,
+}
+enum UimCardApplicationPersonalizationFeature {
     GW_NETWORK,
     GW_NETWORK_SUBSET,
     GW_SERVICE_PROVIDER,
@@ -1057,7 +1166,7 @@ export enum UimCardApplicationPersonalizationFeature {
     /* 1X_RUIM (invalid, starts with a number) */
     UNKNOWN,
 }
-export enum UimCardApplicationPersonalizationState {
+enum UimCardApplicationPersonalizationState {
     UNKNOWN,
     IN_PROGRESS,
     READY,
@@ -1065,7 +1174,7 @@ export enum UimCardApplicationPersonalizationState {
     PUK_CODE_REQUIRED,
     PERMANENTLY_BLOCKED,
 }
-export enum UimCardApplicationState {
+enum UimCardApplicationState {
     UNKNOWN,
     DETECTED,
     PIN1_OR_UPIN_PIN_REQUIRED,
@@ -1075,7 +1184,7 @@ export enum UimCardApplicationState {
     ILLEGAL,
     READY,
 }
-export enum UimCardApplicationType {
+enum UimCardApplicationType {
     UNKNOWN,
     SIM,
     USIM,
@@ -1083,7 +1192,7 @@ export enum UimCardApplicationType {
     CSIM,
     ISIM,
 }
-export enum UimCardError {
+enum UimCardError {
     UNKNOWN,
     POWER_DOWN,
     POLL,
@@ -1093,36 +1202,40 @@ export enum UimCardError {
     POSSIBLY_REMOVED,
     TECHNICAL,
 }
-export enum UimCardProtocol {
+enum UimCardProtocol {
     UNKNOWN,
     ICC,
     UICC,
 }
-export enum UimCardState {
+enum UimCardState {
     ABSENT,
     PRESENT,
     ERROR,
 }
-export enum UimFileType {
+enum UimDepersonalizationOperation {
+    DEACTIVATE,
+    UNBLOCK,
+}
+enum UimFileType {
     TRANSPARENT,
     CYCLIC,
     LINEAR_FIXED,
     DEDICATED_FILE,
     MASTER_FILE,
 }
-export enum UimPhysicalCardState {
+enum UimPhysicalCardState {
     UNKNOWN,
     ABSENT,
     PRESENT,
 }
-export enum UimPinId {
+enum UimPinId {
     UNKNOWN,
     PIN1,
     PIN2,
     UPIN,
     HIDDEN_KEY,
 }
-export enum UimPinState {
+enum UimPinState {
     NOT_INITIALIZED,
     ENABLED_NOT_VERIFIED,
     ENABLED_VERIFIED,
@@ -1130,7 +1243,7 @@ export enum UimPinState {
     BLOCKED,
     PERMANENTLY_BLOCKED,
 }
-export enum UimRefreshMode {
+enum UimRefreshMode {
     RESET,
     INIT,
     INIT_FCN,
@@ -1139,20 +1252,20 @@ export enum UimRefreshMode {
     APP_RESET,
     /* 3G_RESET (invalid, starts with a number) */
 }
-export enum UimRefreshStage {
+enum UimRefreshStage {
     WAIT_FOR_OK,
     START,
     END_WITH_SUCCESS,
     END_WITH_FAILURE,
 }
-export enum UimSecurityAttributeLogic {
+enum UimSecurityAttributeLogic {
     ALWAYS,
     NEVER,
     AND,
     OR,
     SINGLE,
 }
-export enum UimSessionType {
+enum UimSessionType {
     PRIMARY_GW_PROVISIONING,
     PRIMARY_1X_PROVISIONING,
     SECONDARY_GW_PROVISIONING,
@@ -1179,24 +1292,24 @@ export enum UimSessionType {
     LOGICAL_CHANNEL_SLOT_4,
     LOGICAL_CHANNEL_SLOT_5,
 }
-export enum UimSlotState {
+enum UimSlotState {
     INACTIVE,
     ACTIVE,
 }
-export enum VoiceAlphaDataCodingScheme {
+enum VoiceAlphaDataCodingScheme {
     GSM,
     UCS2,
 }
-export enum VoiceAls {
+enum VoiceAls {
     /* 1 (invalid, starts with a number) */
     /* 2 (invalid, starts with a number) */
 }
-export enum VoiceCallControlResultType {
+enum VoiceCallControlResultType {
     VOICE,
     SUPS,
     USSD,
 }
-export enum VoiceCallControlSupplementaryServiceType {
+enum VoiceCallControlSupplementaryServiceType {
     ACTIVATE,
     DEACTIVATE,
     REGISTER,
@@ -1205,12 +1318,12 @@ export enum VoiceCallControlSupplementaryServiceType {
     REGISTER_PASSWORD,
     USSD,
 }
-export enum VoiceCallDirection {
+enum VoiceCallDirection {
     UNKNOWN,
     MO,
     MT,
 }
-export enum VoiceCallEndReason {
+enum VoiceCallEndReason {
     OFFLINE,
     CDMA_LOCK,
     NO_SERVICE,
@@ -1409,14 +1522,14 @@ export enum VoiceCallEndReason {
     /* 1XCSFB_SOFT_FAILURE (invalid, starts with a number) */
     /* 1XCSFB_HARD_FAILURE (invalid, starts with a number) */
 }
-export enum VoiceCallMode {
+enum VoiceCallMode {
     UNKNOWN,
     CDMA,
     GSM,
     UMTS,
     LTE,
 }
-export enum VoiceCallState {
+enum VoiceCallState {
     UNKNOWN,
     ORIGINATION,
     INCOMING,
@@ -1429,7 +1542,7 @@ export enum VoiceCallState {
     END,
     SETUP,
 }
-export enum VoiceCallType {
+enum VoiceCallType {
     VOICE,
     VOICE_IP,
     OTAPA,
@@ -1437,23 +1550,23 @@ export enum VoiceCallType {
     EMERGENCY,
     SUPS,
 }
-export enum VoiceDomain {
+enum VoiceDomain {
     CS_ONLY,
     PS_ONLY,
     CS_PREFERRED,
     PS_PREFERRED,
 }
-export enum VoicePresentation {
+enum VoicePresentation {
     ALLOWED,
     RESTRICTED,
     UNAVAILABLE,
     PAYPHONE,
 }
-export enum VoicePrivacy {
+enum VoicePrivacy {
     STANDARD,
     ENHANCED,
 }
-export enum VoiceServiceOption {
+enum VoiceServiceOption {
     WILD,
     IS_96A,
     EVRC,
@@ -1465,47 +1578,109 @@ export enum VoiceServiceOption {
     IS_96,
     WVRC,
 }
-export enum VoiceTtyMode {
+enum VoiceSupplementaryServiceAction {
+    ACTIVATE,
+    DEACTIVATE,
+    REGISTER,
+    ERASE,
+}
+enum VoiceSupplementaryServiceNotificationType {
+    OUTGOING_CALL_IS_FORWARDED,
+    OUTGOING_CALL_IS_WAITING,
+    OUTGOING_CUG_CALL,
+    OUTGOING_CALLS_BARRED,
+    OUTGOING_CALL_IS_DEFLECTED,
+    INCOMING_CUG_CALL,
+    INCOMING_CALLS_BARRED,
+    INCOMING_FORWARDED_CALL,
+    INCOMING_DEFLECTED_CALL,
+    INCOMING_CALL_IS_FORWARDED,
+    UNCONDITIONAL_CALL_FORWARD_ACTIVE,
+    CONDITIONAL_CALL_FORWARD_ACTIVE,
+    CLIR_SUPPRESSION_REJECTED,
+    CALL_IS_ON_HOLD,
+    CALL_IS_RETRIEVED,
+    CALL_IS_IN_MULTIPARTY,
+    INCOMING_CALL_IS_ECT,
+}
+enum VoiceSupplementaryServiceReason {
+    FORWARD_UNCONDITIONAL,
+    FORWARD_MOBILE_BUSY,
+    FORWARD_NO_REPLY,
+    FORWARD_UNREACHABLE,
+    FORWARD_ALL,
+    FORWARD_ALL_CONDITIONAL,
+    ALL_OUTGOING,
+    OUTGOING_INTERNAL,
+    OUTGOING_INTERNAL_EXTERNAL_TO_HOME,
+    ALL_INCOMING,
+    INCOMING_ROAMING,
+    BAR_ALL,
+    BAR_ALL_OUTGOING,
+    BAR_ALL_INCOMING,
+    CALL_WAITING,
+}
+enum VoiceSupplementaryServiceType {
+    RELEASE_HELD_OR_WAITING,
+    RELEASE_ACTIVE_ACCEPT_HELD_OR_WAITING,
+    HOLD_ACTIVE_ACCEPT_WAITING_OR_HELD,
+    HOLD_ALL_EXCEPT_SPECIFIED_CALL,
+    MAKE_CONFERENCE_CALL,
+    EXPLICIT_CALL_TRANSFER,
+    CCBS_ACTIVATION,
+    END_ALL_CALLS,
+    RELEASE_SPECIFIED_CALL,
+    LOCAL_HOLD,
+    LOCAL_UNHOLD,
+}
+enum VoiceTtyMode {
     FULL,
     VCO,
     HCO,
     OFF,
 }
-export enum VoiceUserAction {
+enum VoiceUserAction {
     UNKNOWN,
     NOT_REQUIRED,
     REQUIRED,
 }
-export enum VoiceUssDataCodingScheme {
+enum VoiceUssDataCodingScheme {
     UNKNOWN,
     ASCII,
     /* 8BIT (invalid, starts with a number) */
     UCS2,
 }
-export enum WdaDataAggregationProtocol {
+enum WdaDataAggregationProtocol {
     DISABLED,
     TLP,
     QC_NCM,
     MBIM,
     RNDIS,
     QMAP,
+    QMAPV2,
+    QMAPV3,
+    QMAPV4,
     QMAPV5,
 }
-export enum WdaLinkLayerProtocol {
+enum WdaLinkLayerProtocol {
     UNKNOWN,
     /* 802_3 (invalid, starts with a number) */
     RAW_IP,
 }
-export enum WdsAutoconnectSetting {
+enum WdsAttachPdnListAction {
+    NONE,
+    DETACH_OR_PDN_DISCONNECT,
+}
+enum WdsAutoconnectSetting {
     DISABLED,
     ENABLED,
     PAUSED,
 }
-export enum WdsAutoconnectSettingRoaming {
+enum WdsAutoconnectSettingRoaming {
     ALLOWED,
     HOME_ONLY,
 }
-export enum WdsCallEndReason {
+enum WdsCallEndReason {
     GENERIC_UNSPECIFIED,
     GENERIC_CLIENT_END,
     GENERIC_NO_SERVICE,
@@ -1579,22 +1754,22 @@ export enum WdsCallEndReason {
     EVDO_HDR_CONNECTION_SETUP_TIMEOUT,
     EVDO_HDR_RELEASED_BY_CM,
 }
-export enum WdsCallType {
+enum WdsCallType {
     LAPTOP,
     EMBEDDED,
 }
-export enum WdsClientType {
+enum WdsClientType {
     TETHERED,
     UNDEFINED,
 }
-export enum WdsConnectionStatus {
+enum WdsConnectionStatus {
     UNKNOWN,
     DISCONNECTED,
     CONNECTED,
     SUSPENDED,
     AUTHENTICATING,
 }
-export enum WdsDataBearerTechnology {
+enum WdsDataBearerTechnology {
     UNKNOWN,
     CDMA20001X,
     /* 1XEVDO (invalid, starts with a number) */
@@ -1617,18 +1792,18 @@ export enum WdsDataBearerTechnology {
     TDSCDMA_HSDPA,
     TDSCDMA_HSUPA,
 }
-export enum WdsDataCallStatus {
+enum WdsDataCallStatus {
     UNKNOWN,
     ACTIVATED,
     TERMINATED,
 }
-export enum WdsDataCallType {
+enum WdsDataCallType {
     UNKNOWN,
     EMBEDDED,
     TETHERED,
     MODEM_EMBEDDED,
 }
-export enum WdsDataSystem {
+enum WdsDataSystem {
     UNKNOWN,
     CDMA1X,
     CDMA1X_EVDO,
@@ -1637,21 +1812,21 @@ export enum WdsDataSystem {
     LTE,
     TDSCDMA,
 }
-export enum WdsDataSystemNetworkType {
+enum WdsDataSystemNetworkType {
     /* 3GPP (invalid, starts with a number) */
     /* 3GPP2 (invalid, starts with a number) */
 }
-export enum WdsDeliveryOrder {
+enum WdsDeliveryOrder {
     SUBSCRIBE,
     ON,
     OFF,
 }
-export enum WdsDormancyStatus {
+enum WdsDormancyStatus {
     UNKNOWN,
     TRAFFIC_CHANNEL_DORMANT,
     TRAFFIC_CHANNEL_ACTIVE,
 }
-export enum WdsDsProfileError {
+enum WdsDsProfileError {
     UNKNOWN,
     FAIL,
     INVALID_HANDLE,
@@ -1673,52 +1848,57 @@ export enum WdsDsProfileError {
     /* 3GPP_OUT_OF_PROFILES (invalid, starts with a number) */
     /* 3GPP2_INVALID_PROFILE_ID (invalid, starts with a number) */
 }
-export enum WdsExtendedTechnologyPreference {
+enum WdsExtendedTechnologyPreference {
     CDMA,
     UMTS,
     EPC,
     EMBMS,
     MODEM_LINK_LOCAL,
 }
-export enum WdsIpFamily {
+enum WdsIpFamily {
     UNKNOWN,
     IPV4,
     IPV6,
     UNSPECIFIED,
 }
-export enum WdsNetworkType {
+enum WdsIpSupportType {
+    IPV4,
+    IPV6,
+    IPV4V6,
+}
+enum WdsNetworkType {
     UNKNOWN,
     /* 3GPP2 (invalid, starts with a number) */
     /* 3GPP (invalid, starts with a number) */
 }
-export enum WdsPdpDataCompressionType {
+enum WdsPdpDataCompressionType {
     OFF,
     MANUFACTURER_PREFERRED,
     V42BIS,
     V44,
 }
-export enum WdsPdpHeaderCompressionType {
+enum WdsPdpHeaderCompressionType {
     OFF,
     MANUFACTURER_PREFERRED,
     RFC1144,
     RFC2507,
     RFC3095,
 }
-export enum WdsPdpType {
+enum WdsPdpType {
     IPV4,
     PPP,
     IPV6,
     IPV4_OR_IPV6,
 }
-export enum WdsProfileFamily {
+enum WdsProfileFamily {
     EMBEDDED,
     TETHERED,
 }
-export enum WdsProfileType {
+enum WdsProfileType {
     /* 3GPP (invalid, starts with a number) */
     /* 3GPP2 (invalid, starts with a number) */
 }
-export enum WdsQosClassIdentifier {
+enum WdsQosClassIdentifier {
     NETWORK_ASSIGN,
     GUARANTEED_BITRATE1,
     GUARANTEED_BITRATE2,
@@ -1729,7 +1909,7 @@ export enum WdsQosClassIdentifier {
     NON_GUARANTEED_BITRATE7,
     NON_GUARANTEED_BITRATE8,
 }
-export enum WdsRadioAccessTechnology {
+enum WdsRadioAccessTechnology {
     NULL_BEARER,
     /* 3GPP_WCDMA (invalid, starts with a number) */
     /* 3GPP_GERAN (invalid, starts with a number) */
@@ -1743,13 +1923,13 @@ export enum WdsRadioAccessTechnology {
     /* 3GPP2_WLAN (invalid, starts with a number) */
     /* 3GPP2_MAXIMUM (invalid, starts with a number) */
 }
-export enum WdsSduErroneousDelivery {
+enum WdsSduErroneousDelivery {
     SUBSCRIBE,
     NO_DETECTION,
     ENABLED,
     DISABLED,
 }
-export enum WdsSduErrorRatio {
+enum WdsSduErrorRatio {
     SUBSCRIBE,
     /* 1E2 (invalid, starts with a number) */
     /* 7E3 (invalid, starts with a number) */
@@ -1759,7 +1939,7 @@ export enum WdsSduErrorRatio {
     /* 1E6 (invalid, starts with a number) */
     /* 1E1 (invalid, starts with a number) */
 }
-export enum WdsSduResidualBitErrorRatio {
+enum WdsSduResidualBitErrorRatio {
     SUBSCRIBE,
     /* 5E2 (invalid, starts with a number) */
     /* 1E2 (invalid, starts with a number) */
@@ -1771,19 +1951,19 @@ export enum WdsSduResidualBitErrorRatio {
     /* 1E6 (invalid, starts with a number) */
     /* 6E8 (invalid, starts with a number) */
 }
-export enum WdsTetheredCallType {
+enum WdsTetheredCallType {
     NON_TETHERED,
     RMNET,
     DUN,
 }
-export enum WdsTrafficClass {
+enum WdsTrafficClass {
     SUBSCRIBED,
     CONVERSATIONAL,
     STREAMING,
     INTERACTIVE,
     BACKGROUND,
 }
-export enum WdsVerboseCallEndReason3gpp {
+enum WdsVerboseCallEndReason3gpp {
     OPERATOR_DETERMINED_BARRING,
     LLC_SNDCP_FAILURE,
     INSUFFICIENT_RESOURCES,
@@ -1825,7 +2005,7 @@ export enum WdsVerboseCallEndReason3gpp {
     APN_TYPE_CONFLICT,
     INVALID_PROXY_CALL_SESSION_CONTROL_FUNCTION_ADDRESS,
 }
-export enum WdsVerboseCallEndReasonCm {
+enum WdsVerboseCallEndReasonCm {
     CDMA_LOCK,
     INTERCEPT,
     REORDER,
@@ -1953,7 +2133,7 @@ export enum WdsVerboseCallEndReasonCm {
     NO_COLLOCATED_HDR,
     CALL_CONTROL_REJECTED,
 }
-export enum WdsVerboseCallEndReasonEhrpd {
+enum WdsVerboseCallEndReasonEhrpd {
     SUBSCRIPTION_LIMITED_TO_IPV4,
     SUBSCRIPTION_LIMITED_TO_IPV6,
     VSNCP_TIMEOUT,
@@ -1971,7 +2151,7 @@ export enum WdsVerboseCallEndReasonEhrpd {
     VSNCP_3GPP2_SUBSCRIPTION_LIMITATION,
     VSNCP_3GPP2_PDN_EXISTS_FOR_THIS_APN,
 }
-export enum WdsVerboseCallEndReasonInternal {
+enum WdsVerboseCallEndReasonInternal {
     ERROR,
     CALL_ENDED,
     UNKNOWN_INTERNAL_CAUSE,
@@ -2022,12 +2202,12 @@ export enum WdsVerboseCallEndReasonInternal {
     DDS_CALL_ABORT,
     VALIDATION_FAILURE,
 }
-export enum WdsVerboseCallEndReasonIpv6 {
+enum WdsVerboseCallEndReasonIpv6 {
     PREFIX_UNAVAILABLE,
     HRPD_IPV6_DISABLED,
     DISABLED,
 }
-export enum WdsVerboseCallEndReasonMip {
+enum WdsVerboseCallEndReasonMip {
     ERROR_REASON_UNKNOWN,
     FA_ERROR_REASON_UNSPECIFIED,
     FA_ERROR_ADMINISTRATIVELY_PROHIBITED,
@@ -2060,7 +2240,7 @@ export enum WdsVerboseCallEndReasonMip {
     HA_ERROR_REVERSE_TUNNEL_MANDATORY_AND_T_BIT_NOT_SET,
     HA_ERROR_ENCAPSULATION_UNAVAILABLE,
 }
-export enum WdsVerboseCallEndReasonPpp {
+enum WdsVerboseCallEndReasonPpp {
     UNKNOWN,
     TIMEOUT,
     AUTHENTICATION_FAILURE,
@@ -2069,7 +2249,7 @@ export enum WdsVerboseCallEndReasonPpp {
     CHAP_FAILURE,
     CLOSE_IN_PROGRESS,
 }
-export enum WdsVerboseCallEndReasonType {
+enum WdsVerboseCallEndReasonType {
     MIP,
     INTERNAL,
     CM,
@@ -2078,11 +2258,16 @@ export enum WdsVerboseCallEndReasonType {
     EHRPD,
     IPV6,
 }
-export enum WmsAckIndicator {
+enum WmsAckFailureCause {
+    NO_NETWORK_RESPONSE,
+    NETWORK_RELEASED_LINK,
+    NOT_SENT,
+}
+enum WmsAckIndicator {
     SEND,
     DO_NOT_SEND,
 }
-export enum WmsCdmaCauseCode {
+enum WmsCdmaCauseCode {
     NETWORK_ADDRESS_VACANT,
     NETWORK_ADDRESS_TRANSLATION_FAILURE,
     NETWORK_RESOURCE_SHORTAGE,
@@ -2112,16 +2297,18 @@ export enum WmsCdmaCauseCode {
     GENERAL_USER_DATA_SIZE_ERROR,
     GENERAL_OTHER,
 }
-export enum WmsCdmaErrorClass {
+enum WmsCdmaErrorClass {
     TEMPORARY,
     PERMANENT,
+    TEMPORARY_DEVICE,
+    PERMANENT_DEVICE,
 }
-export enum WmsCdmaServiceOption {
+enum WmsCdmaServiceOption {
     AUTO,
     /* 6 (invalid, starts with a number) */
     /* 14 (invalid, starts with a number) */
 }
-export enum WmsGsmUmtsRpCause {
+enum WmsGsmUmtsRpCause {
     UNASSIGNED_NUMBER,
     OPERATOR_DETERMINED_BARRING,
     CALL_BARRED,
@@ -2147,7 +2334,7 @@ export enum WmsGsmUmtsRpCause {
     PROTOCOL_ERROR,
     INTERWORKING,
 }
-export enum WmsGsmUmtsTpCause {
+enum WmsGsmUmtsTpCause {
     TELE_INTERWORKING_NOT_SUPPORTED,
     SHORT_MESSAGE_TYPE_0_NOT_SUPPORTED,
     SHORT_MESSAGE_CANNOT_BE_REPLACED,
@@ -2175,7 +2362,7 @@ export enum WmsGsmUmtsTpCause {
     SIM_DATA_DOWNLOAD_ERROR,
     UNSPECIFIED_ERROR,
 }
-export enum WmsMessageClass {
+enum WmsMessageClass {
     /* 0 (invalid, starts with a number) */
     /* 1 (invalid, starts with a number) */
     /* 2 (invalid, starts with a number) */
@@ -2183,59 +2370,66 @@ export enum WmsMessageClass {
     NONE,
     CDMA,
 }
-export enum WmsMessageDeliveryFailureType {
+enum WmsMessageDeliveryFailureType {
     TEMPORARY,
     PERMANENT,
 }
-export enum WmsMessageFormat {
+enum WmsMessageFormat {
     CDMA,
     GSM_WCDMA_POINT_TO_POINT,
     GSM_WCDMA_BROADCAST,
     MWI,
 }
-export enum WmsMessageMode {
+enum WmsMessageMode {
     CDMA,
     GSM_WCDMA,
 }
-export enum WmsMessageProtocol {
+enum WmsMessageProtocol {
     CDMA,
     WCDMA,
 }
-export enum WmsMessageTagType {
+enum WmsMessageTagType {
     MT_READ,
     MT_NOT_READ,
     MO_SENT,
     MO_NOT_SENT,
 }
-export enum WmsMessageType {
+enum WmsMessageType {
     POINT,
 }
-export enum WmsNotificationType {
+enum WmsNotificationType {
     PRIMARY,
     SECONDARY_GSM,
     SECONDARY_UMTS,
 }
-export enum WmsReceiptAction {
+enum WmsReceiptAction {
     DISCARD,
     STORE_AND_NOTIFY,
     TRANSFER_ONLY,
     TRANSFER_AND_ACK,
     UNKNOWN,
 }
-export enum WmsStorageType {
+enum WmsStorageType {
     UIM,
     NV,
     NONE,
 }
-export enum WmsTransferIndication {
+enum WmsTransferIndication {
     CLIENT,
 }
-export enum CtlFlag {
+enum CtlFlag {
     NONE,
     RESPONSE,
     INDICATION,
 }
-export enum DeviceOpenFlags {
+enum DeviceAddLinkFlags {
+    NONE,
+    INGRESS_MAP_CKSUMV4,
+    EGRESS_MAP_CKSUMV4,
+    INGRESS_MAP_CKSUMV5,
+    EGRESS_MAP_CKSUMV5,
+}
+enum DeviceOpenFlags {
     NONE,
     VERSION_INFO,
     SYNC,
@@ -2248,11 +2442,11 @@ export enum DeviceOpenFlags {
     AUTO,
     EXPECT_INDICATIONS,
 }
-export enum DeviceReleaseClientFlags {
+enum DeviceReleaseClientFlags {
     NONE,
     RELEASE_CID,
 }
-export enum DmsBandCapability {
+enum DmsBandCapability {
     BC_0_A_SYSTEM,
     BC_0_B_SYSTEM,
     BC_1_ALL_BLOCKS,
@@ -2294,7 +2488,7 @@ export enum DmsBandCapability {
     WCDMA_850_JAPAN,
     WCDMA_1500,
 }
-export enum DmsLteBandCapability {
+enum DmsLteBandCapability {
     /* 1 (invalid, starts with a number) */
     /* 2 (invalid, starts with a number) */
     /* 3 (invalid, starts with a number) */
@@ -2335,19 +2529,19 @@ export enum DmsLteBandCapability {
     /* 42 (invalid, starts with a number) */
     /* 43 (invalid, starts with a number) */
 }
-export enum DmsOfflineReason {
+enum DmsOfflineReason {
     HOST_IMAGE_MISCONFIGURATION,
     PRI_IMAGE_MISCONFIGURATION,
     PRI_VERSION_INCOMPATIBLE,
     DEVICE_MEMORY_FULL,
 }
-export enum DmsPowerState {
+enum DmsPowerState {
     EXTERNAL_SOURCE,
     BATTERY_CONNECTED,
     BATTERY_CHARGING,
     FAULT,
 }
-export enum DsdApnTypePreference {
+enum DsdApnTypePreference {
     DEFAULT,
     IMS,
     MMS,
@@ -2359,7 +2553,7 @@ export enum DsdApnTypePreference {
     IA,
     EMERGENCY,
 }
-export enum LocDeleteCellDatabase {
+enum LocDeleteCellDatabase {
     POS,
     LATEST_GPS_POS,
     OTA_POS,
@@ -2371,7 +2565,7 @@ export enum LocDeleteCellDatabase {
     CUR_SRV_CELL,
     NEIGHBOR_INFO,
 }
-export enum LocDeleteClockInfo {
+enum LocDeleteClockInfo {
     TIME_EST,
     FREQ_EST,
     WEEK_NUMBER,
@@ -2384,7 +2578,7 @@ export enum LocDeleteClockInfo {
     GLO_RF_GRP_DELAY,
     DISABLE_TT,
 }
-export enum LocDeleteGnssData {
+enum LocDeleteGnssData {
     GPS_SVDIR,
     GPS_SVSTEER,
     GPS_TIME,
@@ -2405,11 +2599,11 @@ export enum LocDeleteGnssData {
     SV_NO_EXIST,
     FREQ_BIAS_EST,
 }
-export enum LocDeleteSvInfo {
+enum LocDeleteSvInfo {
     EPHEMERIS,
     ALMANAC,
 }
-export enum LocEventRegistrationFlag {
+enum LocEventRegistrationFlag {
     POSITION_REPORT,
     GNSS_SATELLITE_INFO,
     NMEA,
@@ -2430,7 +2624,7 @@ export enum LocEventRegistrationFlag {
     PEDOMETER_CONTROL,
     MOTION_DATA_CONTROL,
 }
-export enum LocNmeaType {
+enum LocNmeaType {
     GGA,
     RMC,
     GSV,
@@ -2440,7 +2634,7 @@ export enum LocNmeaType {
     PSTIS,
     ALL,
 }
-export enum LocSatelliteValidInformation {
+enum LocSatelliteValidInformation {
     SYSTEM,
     GNSS_SATELLITE_ID,
     HEALTH_STATUS,
@@ -2450,7 +2644,7 @@ export enum LocSatelliteValidInformation {
     AZIMUTH,
     SIGNAL_TO_NOISE_RATIO,
 }
-export enum LocSensorDataUsage {
+enum LocSensorDataUsage {
     ACCELEROMETER_USED,
     GYRO_USED,
     AIDED_HEADING,
@@ -2458,13 +2652,13 @@ export enum LocSensorDataUsage {
     AIDED_POSITION,
     AIDED_VELOCITY,
 }
-export enum LocServerAddressType {
+enum LocServerAddressType {
     NONE,
     IPV4,
     IPV6,
     URL,
 }
-export enum LocTechnologyUsed {
+enum LocTechnologyUsed {
     SATELLITE,
     CELLULAR,
     WIFI,
@@ -2474,7 +2668,7 @@ export enum LocTechnologyUsed {
     AFLT,
     HYBRID,
 }
-export enum NasBandPreference {
+enum NasBandPreference {
     BC_0_A_SYSTEM,
     BC_0_B_SYSTEM,
     BC_1_ALL_BLOCKS,
@@ -2516,7 +2710,7 @@ export enum NasBandPreference {
     WCDMA_850_JAPAN,
     WCDMA_1500,
 }
-export enum NasLteBandPreference {
+enum NasLteBandPreference {
     /* 1 (invalid, starts with a number) */
     /* 2 (invalid, starts with a number) */
     /* 3 (invalid, starts with a number) */
@@ -2557,17 +2751,17 @@ export enum NasLteBandPreference {
     /* 42 (invalid, starts with a number) */
     /* 43 (invalid, starts with a number) */
 }
-export enum NasNetworkNameDisplayCondition {
+enum NasNetworkNameDisplayCondition {
     REGISTERED_PLMN_IF_KNOWN_NETWORK,
     SPN_NOT_REQUIRED_IF_UNKNOWN_NETWORK,
 }
-export enum NasNetworkScanType {
+enum NasNetworkScanType {
     GSM,
     UMTS,
     LTE,
     TD_SCDMA,
 }
-export enum NasNetworkStatus {
+enum NasNetworkStatus {
     CURRENT_SERVING,
     AVAILABLE,
     HOME,
@@ -2577,7 +2771,16 @@ export enum NasNetworkStatus {
     PREFERRED,
     NOT_PREFERRED,
 }
-export enum NasRadioTechnologyPreference {
+enum NasPlmnAccessTechnologyIdentifier {
+    UNSPECIFIED,
+    GSM_COMPACT,
+    GSM,
+    NGRAN,
+    EUTRAN,
+    UTRAN,
+    ALL,
+}
+enum NasRadioTechnologyPreference {
     AUTO,
     /* 3GPP2 (invalid, starts with a number) */
     /* 3GPP (invalid, starts with a number) */
@@ -2586,7 +2789,7 @@ export enum NasRadioTechnologyPreference {
     HDR,
     LTE,
 }
-export enum NasRatModePreference {
+enum NasRatModePreference {
     CDMA_1X,
     CDMA_1XEVDO,
     GSM,
@@ -2595,7 +2798,7 @@ export enum NasRatModePreference {
     TD_SCDMA,
     /* 5GNR (invalid, starts with a number) */
 }
-export enum NasSignalStrengthRequest {
+enum NasSignalStrengthRequest {
     NONE,
     RSSI,
     ECIO,
@@ -2606,7 +2809,7 @@ export enum NasSignalStrengthRequest {
     LTE_SNR,
     LTE_RSRP,
 }
-export enum NasTdScdmaBandPreference {
+enum NasTdScdmaBandPreference {
     A,
     B,
     C,
@@ -2614,7 +2817,7 @@ export enum NasTdScdmaBandPreference {
     E,
     F,
 }
-export enum PbmEventRegistrationFlag {
+enum PbmEventRegistrationFlag {
     RECORD_UPDATE,
     PHONEBOOK_READY,
     EMERGENCY_NUMBER_LIST,
@@ -2622,7 +2825,7 @@ export enum PbmEventRegistrationFlag {
     AAS_UPDATE,
     GAS_UPDATE,
 }
-export enum PbmPhonebookType {
+enum PbmPhonebookType {
     ADN,
     FDN,
     MSISDN,
@@ -2632,7 +2835,7 @@ export enum PbmPhonebookType {
     LND,
     MBN,
 }
-export enum PdsDataValid {
+enum PdsDataValid {
     TIMESTAMP_CALENDAR,
     TIMESTAMP_UTC,
     LEAP_SECONDS,
@@ -2657,37 +2860,50 @@ export enum PdsDataValid {
     VERTICAL_DOP,
     OPERATING_MODE,
 }
-export enum ServiceFlag {
+enum ServiceFlag {
     NONE,
     COMPOUND,
     RESPONSE,
     INDICATION,
 }
-export enum UimEventRegistrationFlag {
+enum UimConfiguration {
+    AUTOMATIC_SELECTION,
+    PERSONALIZATION_STATUS,
+    HALT_SUBSCRIPTION,
+}
+enum UimEventRegistrationFlag {
     CARD_STATUS,
     SAP_CONNECTION,
     EXTENDED_CARD_STATUS,
     PHYSICAL_SLOT_STATUS,
 }
-export enum UimSecurityAttribute {
+enum UimSecurityAttribute {
     PIN1,
     PIN2,
     UPIN,
     ADM,
 }
-export enum VoiceWcdmaAmrStatus {
+enum VoiceWcdmaAmrStatus {
     NOT_SUPPORTED,
     WCDMA_AMR_WB,
     GSM_HR_AMR,
     GSM_AMR_WB,
     GSM_AMR_NB,
 }
-export enum WdsAuthentication {
+enum WdsApnTypeMask {
+    DEFAULT,
+    IMS,
+    MMS,
+    FOTA,
+    IA,
+    EMERGENCY,
+}
+enum WdsAuthentication {
     NONE,
     PAP,
     CHAP,
 }
-export enum WdsExtendedDataBearerTechnology3gpp {
+enum WdsExtendedDataBearerTechnology3gpp {
     UNKNOWN,
     WCDMA,
     HSDPA,
@@ -2704,7 +2920,7 @@ export enum WdsExtendedDataBearerTechnology3gpp {
     LTE_FDD,
     LTE_TDD,
 }
-export enum WdsExtendedDataBearerTechnology3gpp2 {
+enum WdsExtendedDataBearerTechnology3gpp2 {
     UNKNOWN,
     RESERVED,
     CDMA1X_IS95,
@@ -2720,7 +2936,7 @@ export enum WdsExtendedDataBearerTechnology3gpp2 {
     HDR_REV_B_MMPA,
     HDR_EVDO_FMC,
 }
-export enum WdsGetCurrentSettingsRequestedSettings {
+enum WdsGetCurrentSettingsRequestedSettings {
     NONE,
     PROFILE_ID,
     PROFILE_NAME,
@@ -2741,7 +2957,7 @@ export enum WdsGetCurrentSettingsRequestedSettings {
     IMCN_FLAG,
     EXTENDED_TECHNOLOGY,
 }
-export enum WdsPacketStatisticsMaskFlag {
+enum WdsPacketStatisticsMaskFlag {
     TX_PACKETS_OK,
     RX_PACKETS_OK,
     TX_PACKETS_ERROR,
@@ -2753,7 +2969,7 @@ export enum WdsPacketStatisticsMaskFlag {
     TX_PACKETS_DROPPED,
     RX_PACKETS_DROPPED,
 }
-export enum WdsRat3gpp {
+enum WdsRat3gpp {
     NONE,
     WCDMA,
     GPRS,
@@ -2767,7 +2983,7 @@ export enum WdsRat3gpp {
     TDSCDMA,
     NULL_BEARER,
 }
-export enum WdsRat3gpp2 {
+enum WdsRat3gpp2 {
     NONE,
     CDMA1X,
     EVDO_REV0,
@@ -2777,7 +2993,7 @@ export enum WdsRat3gpp2 {
     FMC,
     NULL_BEARER,
 }
-export enum WdsSetEventReportTransferStatistics {
+enum WdsSetEventReportTransferStatistics {
     TX_PACKETS_OK,
     RX_PACKETS_OK,
     TX_PACKETS_ERROR,
@@ -2789,24 +3005,24 @@ export enum WdsSetEventReportTransferStatistics {
     TX_PACKETS_DROPPED,
     RX_PACKETS_DROPPED,
 }
-export enum WdsSoCdma1x {
+enum WdsSoCdma1x {
     NONE,
     IS95,
     IS2000,
     IS2000_REL_A,
 }
-export enum WdsSoEvdoRev0 {
+enum WdsSoEvdoRev0 {
     NONE,
     DPA,
 }
-export enum WdsSoEvdoRevA {
+enum WdsSoEvdoRevA {
     NONE,
     DPA,
     MFPA,
     EMPA,
     EMPA_EHRPD,
 }
-export enum WdsSoEvdoRevB {
+enum WdsSoEvdoRevB {
     NONE,
     DPA,
     MFPA,
@@ -2815,7 +3031,7 @@ export enum WdsSoEvdoRevB {
     MMPA,
     MMPA_EHRPD,
 }
-export enum WdsTechnologyPreference {
+enum WdsTechnologyPreference {
     /* 3GPP (invalid, starts with a number) */
     /* 3GPP2 (invalid, starts with a number) */
 }
@@ -2829,6 +3045,9 @@ export const CLIENT_VERSION_MAJOR: string
 export const CLIENT_VERSION_MINOR: string
 export const DBUS_ERROR_PREFIX: string
 export const DEVICE_FILE: string
+export const DEVICE_MUX_ID_MAX: number
+export const DEVICE_MUX_ID_MIN: number
+export const DEVICE_MUX_ID_UNBOUND: number
 export const DEVICE_NODE: string
 export const DEVICE_NO_FILE_CHECK: string
 export const DEVICE_PROXY_PATH: string
@@ -2840,360 +3059,331 @@ export const MESSAGE_VENDOR_GENERIC: number
 export const PROXY_N_CLIENTS: string
 export const PROXY_SOCKET_PATH: string
 export const WDS_RATE_UNAVAILABLE: number
-export function core_error_get_string(val: CoreError): string
-export function core_error_quark(): GLib.Quark
-export function ctl_data_format_get_string(val: CtlDataFormat): string
-export function ctl_data_link_protocol_get_string(val: CtlDataLinkProtocol): string
-export function ctl_flag_build_string_from_mask(mask: CtlFlag): string
-export function data_endpoint_type_get_string(val: DataEndpointType): string
-export function device_expected_data_format_get_string(val: DeviceExpectedDataFormat): string
-export function device_open_flags_build_string_from_mask(mask: DeviceOpenFlags): string
-export function device_release_client_flags_build_string_from_mask(mask: DeviceReleaseClientFlags): string
-export function dms_activation_state_get_string(val: DmsActivationState): string
-export function dms_band_capability_build_string_from_mask(mask: DmsBandCapability): string
-export function dms_boot_image_download_mode_get_string(val: DmsBootImageDownloadMode): string
-export function dms_data_service_capability_get_string(val: DmsDataServiceCapability): string
-export function dms_dell_device_mode_get_string(val: DmsDellDeviceMode): string
-export function dms_dell_firmware_version_type_get_string(val: DmsDellFirmwareVersionType): string
-export function dms_firmware_image_type_get_string(val: DmsFirmwareImageType): string
-export function dms_foxconn_device_mode_get_string(val: DmsFoxconnDeviceMode): string
-export function dms_foxconn_device_mode_get_type(): GObject.Type
-export function dms_foxconn_firmware_version_type_get_string(val: DmsFoxconnFirmwareVersionType): string
-export function dms_foxconn_firmware_version_type_get_type(): GObject.Type
-export function dms_hp_device_mode_get_string(val: DmsHpDeviceMode): string
-export function dms_lte_band_capability_build_string_from_mask(mask: DmsLteBandCapability): string
-export function dms_mac_type_get_string(val: DmsMacType): string
-export function dms_offline_reason_build_string_from_mask(mask: DmsOfflineReason): string
-export function dms_operating_mode_get_string(val: DmsOperatingMode): string
-export function dms_power_state_build_string_from_mask(mask: DmsPowerState): string
-export function dms_radio_interface_get_string(val: DmsRadioInterface): string
-export function dms_sim_capability_get_string(val: DmsSimCapability): string
-export function dms_swi_usb_composition_get_description(value: DmsSwiUsbComposition): string
-export function dms_swi_usb_composition_get_string(val: DmsSwiUsbComposition): string
-export function dms_time_reference_type_get_string(val: DmsTimeReferenceType): string
-export function dms_time_source_get_string(val: DmsTimeSource): string
-export function dms_uim_facility_get_string(val: DmsUimFacility): string
-export function dms_uim_facility_state_get_string(val: DmsUimFacilityState): string
-export function dms_uim_pin_id_get_string(val: DmsUimPinId): string
-export function dms_uim_pin_status_get_string(val: DmsUimPinStatus): string
-export function dms_uim_state_get_string(val: DmsUimState): string
-export function dsd_apn_type_get_string(val: DsdApnType): string
-export function dsd_apn_type_preference_build_string_from_mask(mask: DsdApnTypePreference): string
-export function gas_firmware_listing_mode_get_string(val: GasFirmwareListingMode): string
-export function loc_delete_cell_database_build_string_from_mask(mask: LocDeleteCellDatabase): string
-export function loc_delete_clock_info_build_string_from_mask(mask: LocDeleteClockInfo): string
-export function loc_delete_gnss_data_build_string_from_mask(mask: LocDeleteGnssData): string
-export function loc_delete_sv_info_build_string_from_mask(mask: LocDeleteSvInfo): string
-export function loc_engine_state_get_string(val: LocEngineState): string
-export function loc_event_registration_flag_build_string_from_mask(mask: LocEventRegistrationFlag): string
-export function loc_fix_recurrence_type_get_string(val: LocFixRecurrenceType): string
-export function loc_health_status_get_string(val: LocHealthStatus): string
-export function loc_indication_status_get_string(val: LocIndicationStatus): string
-export function loc_intermediate_report_state_get_string(val: LocIntermediateReportState): string
-export function loc_navigation_data_get_string(val: LocNavigationData): string
-export function loc_nmea_type_build_string_from_mask(mask: LocNmeaType): string
-export function loc_operation_mode_get_string(val: LocOperationMode): string
-export function loc_predicted_orbits_data_format_get_string(val: LocPredictedOrbitsDataFormat): string
-export function loc_reliability_get_string(val: LocReliability): string
-export function loc_satellite_status_get_string(val: LocSatelliteStatus): string
-export function loc_satellite_valid_information_build_string_from_mask(mask: LocSatelliteValidInformation): string
-export function loc_sensor_data_usage_build_string_from_mask(mask: LocSensorDataUsage): string
-export function loc_server_address_type_build_string_from_mask(mask: LocServerAddressType): string
-export function loc_server_type_get_string(val: LocServerType): string
-export function loc_session_status_get_string(val: LocSessionStatus): string
-export function loc_system_get_string(val: LocSystem): string
-export function loc_technology_used_build_string_from_mask(mask: LocTechnologyUsed): string
-export function loc_time_source_get_string(val: LocTimeSource): string
-export function message_add_raw_tlv(self: Message, type: number, raw: number, length: number): boolean
-export function message_dms_dell_change_device_mode_input_get_mode(self: MessageDmsFoxconnChangeDeviceModeInput, value_mode: DmsDellDeviceMode): boolean
-export function message_dms_dell_change_device_mode_input_get_type(): GObject.Type
-export function message_dms_dell_change_device_mode_input_new(): MessageDmsFoxconnChangeDeviceModeInput
-export function message_dms_dell_change_device_mode_input_ref(self: MessageDmsFoxconnChangeDeviceModeInput): MessageDmsFoxconnChangeDeviceModeInput
-export function message_dms_dell_change_device_mode_input_set_mode(self: MessageDmsFoxconnChangeDeviceModeInput, value_mode: DmsDellDeviceMode): boolean
-export function message_dms_dell_change_device_mode_input_unref(self: MessageDmsFoxconnChangeDeviceModeInput): void
-export function message_dms_dell_change_device_mode_output_get_result(self: MessageDmsFoxconnChangeDeviceModeOutput): boolean
-export function message_dms_dell_change_device_mode_output_get_type(): GObject.Type
-export function message_dms_dell_change_device_mode_output_ref(self: MessageDmsFoxconnChangeDeviceModeOutput): MessageDmsFoxconnChangeDeviceModeOutput
-export function message_dms_dell_change_device_mode_output_unref(self: MessageDmsFoxconnChangeDeviceModeOutput): void
-export function message_dms_dell_get_firmware_version_input_get_type(): GObject.Type
-export function message_dms_dell_get_firmware_version_input_get_version_type(self: MessageDmsFoxconnGetFirmwareVersionInput, value_version_type: DmsDellFirmwareVersionType): boolean
-export function message_dms_dell_get_firmware_version_input_new(): MessageDmsFoxconnGetFirmwareVersionInput
-export function message_dms_dell_get_firmware_version_input_ref(self: MessageDmsFoxconnGetFirmwareVersionInput): MessageDmsFoxconnGetFirmwareVersionInput
-export function message_dms_dell_get_firmware_version_input_set_version_type(self: MessageDmsFoxconnGetFirmwareVersionInput, value_version_type: DmsDellFirmwareVersionType): boolean
-export function message_dms_dell_get_firmware_version_input_unref(self: MessageDmsFoxconnGetFirmwareVersionInput): void
-export function message_dms_dell_get_firmware_version_output_get_result(self: MessageDmsFoxconnGetFirmwareVersionOutput): boolean
-export function message_dms_dell_get_firmware_version_output_get_type(): GObject.Type
-export function message_dms_dell_get_firmware_version_output_get_version(self: MessageDmsFoxconnGetFirmwareVersionOutput, value_version: string): boolean
-export function message_dms_dell_get_firmware_version_output_ref(self: MessageDmsFoxconnGetFirmwareVersionOutput): MessageDmsFoxconnGetFirmwareVersionOutput
-export function message_dms_dell_get_firmware_version_output_unref(self: MessageDmsFoxconnGetFirmwareVersionOutput): void
-export function message_foreach_raw_tlv(self: Message): void
-export function message_get_client_id(self: Message): number
-export function message_get_data(self: Message): [ /* returnType */ number, /* length */ number ]
-export function message_get_length(self: Message): number
-export function message_get_message_id(self: Message): number
-export function message_get_printable(self: Message, line_prefix: string): string
-export function message_get_printable_full(self: Message, context: MessageContext, line_prefix: string): string
-export function message_get_raw(self: Message): [ /* returnType */ number, /* length */ number ]
-export function message_get_raw_tlv(self: Message, type: number): [ /* returnType */ number, /* length */ number ]
-export function message_get_service(self: Message): Service
-export function message_get_tlv_printable(self: Message, line_prefix: string, type: number, raw: number, raw_length: number): string
-export function message_get_transaction_id(self: Message): number
-export function message_get_version_introduced(self: Message): [ /* returnType */ boolean, /* major */ number, /* minor */ number ]
-export function message_get_version_introduced_full(self: Message, context: MessageContext): [ /* returnType */ boolean, /* major */ number, /* minor */ number ]
-export function message_is_indication(self: Message): boolean
-export function message_is_request(self: Message): boolean
-export function message_is_response(self: Message): boolean
-export function message_new(service: Service, client_id: number, transaction_id: number, message_id: number): Message
-export function message_new_from_data(service: Service, client_id: number, qmi_data: Uint8Array[]): [ /* returnType */ Message, /* qmi_data */ Uint8Array[] ]
-export function message_new_from_raw(raw: Uint8Array[]): [ /* returnType */ Message, /* raw */ Uint8Array[] ]
-export function message_ref(self: Message): Message
-export function message_response_new(request: Message, error: ProtocolError): Message
-export function message_set_transaction_id(self: Message, transaction_id: number): void
-export function message_tlv_read_fixed_size_string(self: Message, tlv_offset: number, offset: number, string_length: number): [ /* returnType */ boolean, /* offset */ number, /* out */ string ]
-export function message_tlv_read_gdouble(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
-export function message_tlv_read_gfloat(self: Message, tlv_offset: number, offset: number, out: number): boolean
-export function message_tlv_read_gfloat_endian(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
-export function message_tlv_read_gint16(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
-export function message_tlv_read_gint32(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
-export function message_tlv_read_gint64(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
-export function message_tlv_read_gint8(self: Message, tlv_offset: number, offset: number): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
-export function message_tlv_read_guint16(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
-export function message_tlv_read_guint32(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
-export function message_tlv_read_guint64(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
-export function message_tlv_read_guint8(self: Message, tlv_offset: number, offset: number): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
-export function message_tlv_read_init(self: Message, type: number): [ /* returnType */ number, /* out_tlv_length */ number ]
-export function message_tlv_read_sized_guint(self: Message, tlv_offset: number, offset: number, n_bytes: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
-export function message_tlv_read_string(self: Message, tlv_offset: number, offset: number, n_size_prefix_bytes: number, max_size: number): [ /* returnType */ boolean, /* offset */ number, /* out */ string ]
-export function message_tlv_write_complete(self: Message, tlv_offset: number): boolean
-export function message_tlv_write_gint16(self: Message, endian: Endian, in_: number): boolean
-export function message_tlv_write_gint32(self: Message, endian: Endian, in_: number): boolean
-export function message_tlv_write_gint64(self: Message, endian: Endian, in_: number): boolean
-export function message_tlv_write_gint8(self: Message, in_: number): boolean
-export function message_tlv_write_guint16(self: Message, endian: Endian, in_: number): boolean
-export function message_tlv_write_guint32(self: Message, endian: Endian, in_: number): boolean
-export function message_tlv_write_guint64(self: Message, endian: Endian, in_: number): boolean
-export function message_tlv_write_guint8(self: Message, in_: number): boolean
-export function message_tlv_write_init(self: Message, type: number): number
-export function message_tlv_write_reset(self: Message, tlv_offset: number): void
-export function message_tlv_write_sized_guint(self: Message, n_bytes: number, endian: Endian, in_: number): boolean
-export function message_tlv_write_string(self: Message, n_size_prefix_bytes: number, in_: string, in_length: number): boolean
-export function message_unref(self: Message): void
-export function nas_active_band_get_string(val: NasActiveBand): string
-export function nas_attach_state_get_string(val: NasAttachState): string
-export function nas_band_preference_build_string_from_mask(mask: NasBandPreference): string
-export function nas_call_barring_status_get_string(val: NasCallBarringStatus): string
-export function nas_cdma_pilot_type_get_string(val: NasCdmaPilotType): string
-export function nas_cdma_prl_preference_get_string(val: NasCdmaPrlPreference): string
-export function nas_cell_broadcast_capability_get_string(val: NasCellBroadcastCapability): string
-export function nas_change_duration_get_string(val: NasChangeDuration): string
-export function nas_data_capability_get_string(val: NasDataCapability): string
-export function nas_day_of_week_get_string(val: NasDayOfWeek): string
-export function nas_daylight_savings_adjustment_get_string(val: NasDaylightSavingsAdjustment): string
-export function nas_dl_bandwidth_get_string(val: NasDLBandwidth): string
-export function nas_evdo_sinr_level_get_string(val: NasEvdoSinrLevel): string
-export function nas_gsm_wcdma_acquisition_order_preference_get_string(val: NasGsmWcdmaAcquisitionOrderPreference): string
-export function nas_hdr_personality_get_string(val: NasHdrPersonality): string
-export function nas_hdr_protocol_revision_get_string(val: NasHdrProtocolRevision): string
-export function nas_lte_band_preference_build_string_from_mask(mask: NasLteBandPreference): string
-export function nas_lte_cell_access_status_get_string(val: NasLteCellAccessStatus): string
-export function nas_lte_registration_domain_get_string(val: NasLteRegistrationDomain): string
-export function nas_network_description_display_get_string(val: NasNetworkDescriptionDisplay): string
-export function nas_network_description_encoding_get_string(val: NasNetworkDescriptionEncoding): string
-export function nas_network_name_display_condition_build_string_from_mask(mask: NasNetworkNameDisplayCondition): string
-export function nas_network_name_source_get_string(val: NasNetworkNameSource): string
-export function nas_network_register_type_get_string(val: NasNetworkRegisterType): string
-export function nas_network_scan_result_get_string(val: NasNetworkScanResult): string
-export function nas_network_scan_type_build_string_from_mask(mask: NasNetworkScanType): string
-export function nas_network_selection_preference_get_string(val: NasNetworkSelectionPreference): string
-export function nas_network_selection_registration_restriction_get_string(val: NasNetworkSelectionRegistrationRestriction): string
-export function nas_network_service_domain_get_string(val: NasNetworkServiceDomain): string
-export function nas_network_status_build_string_from_mask(mask: NasNetworkStatus): string
-export function nas_network_type_get_string(val: NasNetworkType): string
-export function nas_plmn_encoding_scheme_get_string(val: NasPlmnEncodingScheme): string
-export function nas_plmn_name_country_initials_get_string(val: NasPlmnNameCountryInitials): string
-export function nas_plmn_name_spare_bits_get_string(val: NasPlmnNameSpareBits): string
-export function nas_preference_duration_get_string(val: NasPreferenceDuration): string
-export function nas_ps_attach_action_get_string(val: NasPsAttachAction): string
-export function nas_radio_interface_get_string(val: NasRadioInterface): string
-export function nas_radio_technology_preference_build_string_from_mask(mask: NasRadioTechnologyPreference): string
-export function nas_rat_mode_preference_build_string_from_mask(mask: NasRatModePreference): string
-export function nas_read_string_from_network_description_encoded_array(encoding: NasNetworkDescriptionEncoding, array: Uint8Array[]): string
-export function nas_read_string_from_plmn_encoded_array(encoding: NasPlmnEncodingScheme, array: Uint8Array[]): string
-export function nas_registration_state_get_string(val: NasRegistrationState): string
-export function nas_roaming_indicator_status_get_string(val: NasRoamingIndicatorStatus): string
-export function nas_roaming_preference_get_string(val: NasRoamingPreference): string
-export function nas_roaming_status_get_string(val: NasRoamingStatus): string
-export function nas_scell_state_get_string(val: NasScellState): string
-export function nas_service_domain_preference_get_string(val: NasServiceDomainPreference): string
-export function nas_service_status_get_string(val: NasServiceStatus): string
-export function nas_signal_strength_request_build_string_from_mask(mask: NasSignalStrengthRequest): string
-export function nas_sim_reject_state_get_string(val: NasSimRejectState): string
-export function nas_swi_emm_connection_state_get_string(val: NasSwiEmmConnectionState): string
-export function nas_swi_emm_state_get_string(val: NasSwiEmmState): string
-export function nas_swi_ims_reg_state_get_string(val: NasSwiImsRegState): string
-export function nas_swi_modem_mode_get_string(val: NasSwiModemMode): string
-export function nas_swi_ps_state_get_string(val: NasSwiPsState): string
-export function nas_swi_system_mode_get_string(val: NasSwiSystemMode): string
-export function nas_td_scdma_band_preference_build_string_from_mask(mask: NasTdScdmaBandPreference): string
-export function nas_usage_preference_get_string(val: NasUsagePreference): string
-export function nas_voice_domain_preference_get_string(val: NasVoiceDomainPreference): string
-export function nas_wcdma_hs_service_get_string(val: NasWcdmaHsService): string
-export function nas_wcdma_rrc_state_get_string(val: NasWcdmaRrcState): string
-export function oma_hfa_feature_done_state_get_string(val: OmaHfaFeatureDoneState): string
-export function oma_session_failed_reason_get_string(val: OmaSessionFailedReason): string
-export function oma_session_state_get_string(val: OmaSessionState): string
-export function oma_session_type_get_string(val: OmaSessionType): string
-export function pbm_event_registration_flag_build_string_from_mask(mask: PbmEventRegistrationFlag): string
-export function pbm_phonebook_type_build_string_from_mask(mask: PbmPhonebookType): string
-export function pbm_session_type_get_string(val: PbmSessionType): string
-export function pdc_configuration_type_get_string(val: PdcConfigurationType): string
-export function pds_data_valid_build_string_from_mask(mask: PdsDataValid): string
-export function pds_network_mode_get_string(val: PdsNetworkMode): string
-export function pds_operating_mode_get_string(val: PdsOperatingMode): string
-export function pds_operation_mode_get_string(val: PdsOperationMode): string
-export function pds_position_session_status_get_string(val: PdsPositionSessionStatus): string
-export function pds_tracking_session_state_get_string(val: PdsTrackingSessionState): string
-export function protocol_error_get_string(val: ProtocolError): string
-export function protocol_error_quark(): GLib.Quark
-export function qos_event_get_string(val: QosEvent): string
-export function qos_status_get_string(val: QosStatus): string
-export function sar_rf_state_get_string(val: SarRfState): string
-export function service_flag_build_string_from_mask(mask: ServiceFlag): string
-export function service_get_string(val: Service): string
-export function uim_card_application_personalization_feature_get_string(val: UimCardApplicationPersonalizationFeature): string
-export function uim_card_application_personalization_state_get_string(val: UimCardApplicationPersonalizationState): string
-export function uim_card_application_state_get_string(val: UimCardApplicationState): string
-export function uim_card_application_type_get_string(val: UimCardApplicationType): string
-export function uim_card_error_get_string(val: UimCardError): string
-export function uim_card_protocol_get_string(val: UimCardProtocol): string
-export function uim_card_state_get_string(val: UimCardState): string
-export function uim_event_registration_flag_build_string_from_mask(mask: UimEventRegistrationFlag): string
-export function uim_file_type_get_string(val: UimFileType): string
-export function uim_physical_card_state_get_string(val: UimPhysicalCardState): string
-export function uim_pin_id_get_string(val: UimPinId): string
-export function uim_pin_state_get_string(val: UimPinState): string
-export function uim_refresh_mode_get_string(val: UimRefreshMode): string
-export function uim_refresh_stage_get_string(val: UimRefreshStage): string
-export function uim_security_attribute_build_string_from_mask(mask: UimSecurityAttribute): string
-export function uim_security_attribute_logic_get_string(val: UimSecurityAttributeLogic): string
-export function uim_session_type_get_string(val: UimSessionType): string
-export function uim_slot_state_get_string(val: UimSlotState): string
-export function utils_get_traces_enabled(): boolean
-export function utils_read_fixed_size_string_from_buffer(buffer: number, buffer_size: number, fixed_size: number, out: string): void
-export function utils_read_gfloat_from_buffer(buffer: number, buffer_size: number, out: number): void
-export function utils_read_gint16_from_buffer(buffer: number, buffer_size: number, endian: Endian, out: number): void
-export function utils_read_gint32_from_buffer(buffer: number, buffer_size: number, endian: Endian, out: number): void
-export function utils_read_gint64_from_buffer(buffer: number, buffer_size: number, endian: Endian, out: number): void
-export function utils_read_gint8_from_buffer(buffer: number, buffer_size: number, out: number): void
-export function utils_read_guint16_from_buffer(buffer: number, buffer_size: number, endian: Endian, out: number): void
-export function utils_read_guint32_from_buffer(buffer: number, buffer_size: number, endian: Endian, out: number): void
-export function utils_read_guint64_from_buffer(buffer: number, buffer_size: number, endian: Endian, out: number): void
-export function utils_read_guint8_from_buffer(buffer: number, buffer_size: number, out: number): void
-export function utils_read_sized_guint_from_buffer(buffer: number, buffer_size: number, n_bytes: number, endian: Endian, out: number): void
-export function utils_read_string_from_buffer(buffer: number, buffer_size: number, length_prefix_size: number, max_size: number, out: string): void
-export function utils_set_traces_enabled(enabled: boolean): void
-export function utils_write_fixed_size_string_to_buffer(buffer: number, buffer_size: number, fixed_size: number, in_: string): void
-export function utils_write_gint16_to_buffer(buffer: number, buffer_size: number, endian: Endian, in_: number): void
-export function utils_write_gint32_to_buffer(buffer: number, buffer_size: number, endian: Endian, in_: number): void
-export function utils_write_gint64_to_buffer(buffer: number, buffer_size: number, endian: Endian, in_: number): void
-export function utils_write_gint8_to_buffer(buffer: number, buffer_size: number, in_: number): void
-export function utils_write_guint16_to_buffer(buffer: number, buffer_size: number, endian: Endian, in_: number): void
-export function utils_write_guint32_to_buffer(buffer: number, buffer_size: number, endian: Endian, in_: number): void
-export function utils_write_guint64_to_buffer(buffer: number, buffer_size: number, endian: Endian, in_: number): void
-export function utils_write_guint8_to_buffer(buffer: number, buffer_size: number, in_: number): void
-export function utils_write_sized_guint_to_buffer(buffer: number, buffer_size: number, n_bytes: number, endian: Endian, in_: number): void
-export function utils_write_string_to_buffer(buffer: number, buffer_size: number, length_prefix_size: number, in_: string): void
-export function voice_alpha_data_coding_scheme_get_string(val: VoiceAlphaDataCodingScheme): string
-export function voice_als_get_string(val: VoiceAls): string
-export function voice_call_control_result_type_get_string(val: VoiceCallControlResultType): string
-export function voice_call_control_supplementary_service_type_get_string(val: VoiceCallControlSupplementaryServiceType): string
-export function voice_call_direction_get_string(val: VoiceCallDirection): string
-export function voice_call_end_reason_get_string(val: VoiceCallEndReason): string
-export function voice_call_mode_get_string(val: VoiceCallMode): string
-export function voice_call_state_get_string(val: VoiceCallState): string
-export function voice_call_type_get_string(val: VoiceCallType): string
-export function voice_domain_get_string(val: VoiceDomain): string
-export function voice_presentation_get_string(val: VoicePresentation): string
-export function voice_privacy_get_string(val: VoicePrivacy): string
-export function voice_service_option_get_string(val: VoiceServiceOption): string
-export function voice_tty_mode_get_string(val: VoiceTtyMode): string
-export function voice_user_action_get_string(val: VoiceUserAction): string
-export function voice_uss_data_coding_scheme_get_string(val: VoiceUssDataCodingScheme): string
-export function voice_wcdma_amr_status_build_string_from_mask(mask: VoiceWcdmaAmrStatus): string
-export function wda_data_aggregation_protocol_get_string(val: WdaDataAggregationProtocol): string
-export function wda_link_layer_protocol_get_string(val: WdaLinkLayerProtocol): string
-export function wds_authentication_build_string_from_mask(mask: WdsAuthentication): string
-export function wds_autoconnect_setting_get_string(val: WdsAutoconnectSetting): string
-export function wds_autoconnect_setting_roaming_get_string(val: WdsAutoconnectSettingRoaming): string
-export function wds_call_end_reason_get_string(val: WdsCallEndReason): string
-export function wds_call_type_get_string(val: WdsCallType): string
-export function wds_client_type_get_string(val: WdsClientType): string
-export function wds_connection_status_get_string(val: WdsConnectionStatus): string
-export function wds_data_bearer_technology_get_string(val: WdsDataBearerTechnology): string
-export function wds_data_call_status_get_string(val: WdsDataCallStatus): string
-export function wds_data_call_type_get_string(val: WdsDataCallType): string
-export function wds_data_system_get_string(val: WdsDataSystem): string
-export function wds_data_system_network_type_get_string(val: WdsDataSystemNetworkType): string
-export function wds_delivery_order_get_string(val: WdsDeliveryOrder): string
-export function wds_dormancy_status_get_string(val: WdsDormancyStatus): string
-export function wds_ds_profile_error_get_string(val: WdsDsProfileError): string
-export function wds_extended_data_bearer_technology_3gpp2_build_string_from_mask(mask: WdsExtendedDataBearerTechnology3gpp2): string
-export function wds_extended_data_bearer_technology_3gpp_build_string_from_mask(mask: WdsExtendedDataBearerTechnology3gpp): string
-export function wds_extended_technology_preference_get_string(val: WdsExtendedTechnologyPreference): string
-export function wds_get_current_settings_requested_settings_build_string_from_mask(mask: WdsGetCurrentSettingsRequestedSettings): string
-export function wds_ip_family_get_string(val: WdsIpFamily): string
-export function wds_network_type_get_string(val: WdsNetworkType): string
-export function wds_packet_statistics_mask_flag_build_string_from_mask(mask: WdsPacketStatisticsMaskFlag): string
-export function wds_pdp_data_compression_type_get_string(val: WdsPdpDataCompressionType): string
-export function wds_pdp_header_compression_type_get_string(val: WdsPdpHeaderCompressionType): string
-export function wds_pdp_type_get_string(val: WdsPdpType): string
-export function wds_profile_family_get_string(val: WdsProfileFamily): string
-export function wds_profile_type_get_string(val: WdsProfileType): string
-export function wds_qos_class_identifier_get_string(val: WdsQosClassIdentifier): string
-export function wds_radio_access_technology_get_string(val: WdsRadioAccessTechnology): string
-export function wds_rat_3gpp2_build_string_from_mask(mask: WdsRat3gpp2): string
-export function wds_rat_3gpp_build_string_from_mask(mask: WdsRat3gpp): string
-export function wds_sdu_erroneous_delivery_get_string(val: WdsSduErroneousDelivery): string
-export function wds_sdu_error_ratio_get_string(val: WdsSduErrorRatio): string
-export function wds_sdu_residual_bit_error_ratio_get_string(val: WdsSduResidualBitErrorRatio): string
-export function wds_set_event_report_transfer_statistics_build_string_from_mask(mask: WdsSetEventReportTransferStatistics): string
-export function wds_so_cdma1x_build_string_from_mask(mask: WdsSoCdma1x): string
-export function wds_so_evdo_rev0_build_string_from_mask(mask: WdsSoEvdoRev0): string
-export function wds_so_evdo_reva_build_string_from_mask(mask: WdsSoEvdoRevA): string
-export function wds_so_evdo_revb_build_string_from_mask(mask: WdsSoEvdoRevB): string
-export function wds_technology_preference_build_string_from_mask(mask: WdsTechnologyPreference): string
-export function wds_tethered_call_type_get_string(val: WdsTetheredCallType): string
-export function wds_traffic_class_get_string(val: WdsTrafficClass): string
-export function wds_verbose_call_end_reason_3gpp_get_string(val: WdsVerboseCallEndReason3gpp): string
-export function wds_verbose_call_end_reason_cm_get_string(val: WdsVerboseCallEndReasonCm): string
-export function wds_verbose_call_end_reason_ehrpd_get_string(val: WdsVerboseCallEndReasonEhrpd): string
-export function wds_verbose_call_end_reason_get_string(type: WdsVerboseCallEndReasonType, reason: number): string
-export function wds_verbose_call_end_reason_internal_get_string(val: WdsVerboseCallEndReasonInternal): string
-export function wds_verbose_call_end_reason_ipv6_get_string(val: WdsVerboseCallEndReasonIpv6): string
-export function wds_verbose_call_end_reason_mip_get_string(val: WdsVerboseCallEndReasonMip): string
-export function wds_verbose_call_end_reason_ppp_get_string(val: WdsVerboseCallEndReasonPpp): string
-export function wds_verbose_call_end_reason_type_get_string(val: WdsVerboseCallEndReasonType): string
-export function wms_ack_indicator_get_string(val: WmsAckIndicator): string
-export function wms_cdma_cause_code_get_string(val: WmsCdmaCauseCode): string
-export function wms_cdma_error_class_get_string(val: WmsCdmaErrorClass): string
-export function wms_cdma_service_option_get_string(val: WmsCdmaServiceOption): string
-export function wms_gsm_umts_rp_cause_get_string(val: WmsGsmUmtsRpCause): string
-export function wms_gsm_umts_tp_cause_get_string(val: WmsGsmUmtsTpCause): string
-export function wms_message_class_get_string(val: WmsMessageClass): string
-export function wms_message_delivery_failure_type_get_string(val: WmsMessageDeliveryFailureType): string
-export function wms_message_format_get_string(val: WmsMessageFormat): string
-export function wms_message_mode_get_string(val: WmsMessageMode): string
-export function wms_message_protocol_get_string(val: WmsMessageProtocol): string
-export function wms_message_tag_type_get_string(val: WmsMessageTagType): string
-export function wms_message_type_get_string(val: WmsMessageType): string
-export function wms_notification_type_get_string(val: WmsNotificationType): string
-export function wms_receipt_action_get_string(val: WmsReceiptAction): string
-export function wms_storage_type_get_string(val: WmsStorageType): string
-export function wms_transfer_indication_get_string(val: WmsTransferIndication): string
-export interface DeviceCommandAbortableParseResponseFn {
+function core_error_get_string(val: CoreError): string
+function core_error_quark(): GLib.Quark
+function ctl_data_format_get_string(val: CtlDataFormat): string
+function ctl_data_link_protocol_get_string(val: CtlDataLinkProtocol): string
+function ctl_flag_build_string_from_mask(mask: CtlFlag): string
+function data_endpoint_type_get_string(val: DataEndpointType): string
+function device_add_link_flags_build_string_from_mask(mask: DeviceAddLinkFlags): string
+function device_expected_data_format_get_string(val: DeviceExpectedDataFormat): string
+function device_open_flags_build_string_from_mask(mask: DeviceOpenFlags): string
+function device_release_client_flags_build_string_from_mask(mask: DeviceReleaseClientFlags): string
+function dms_activation_state_get_string(val: DmsActivationState): string
+function dms_band_capability_build_string_from_mask(mask: DmsBandCapability): string
+function dms_boot_image_download_mode_get_string(val: DmsBootImageDownloadMode): string
+function dms_data_service_capability_get_string(val: DmsDataServiceCapability): string
+function dms_firmware_image_type_get_string(val: DmsFirmwareImageType): string
+function dms_foxconn_device_mode_get_string(val: DmsFoxconnDeviceMode): string
+function dms_foxconn_firmware_version_type_get_string(val: DmsFoxconnFirmwareVersionType): string
+function dms_hp_device_mode_get_string(val: DmsHpDeviceMode): string
+function dms_lte_band_capability_build_string_from_mask(mask: DmsLteBandCapability): string
+function dms_mac_type_get_string(val: DmsMacType): string
+function dms_offline_reason_build_string_from_mask(mask: DmsOfflineReason): string
+function dms_operating_mode_get_string(val: DmsOperatingMode): string
+function dms_power_state_build_string_from_mask(mask: DmsPowerState): string
+function dms_radio_interface_get_string(val: DmsRadioInterface): string
+function dms_sim_capability_get_string(val: DmsSimCapability): string
+function dms_swi_usb_composition_get_description(value: DmsSwiUsbComposition): string
+function dms_swi_usb_composition_get_string(val: DmsSwiUsbComposition): string
+function dms_time_reference_type_get_string(val: DmsTimeReferenceType): string
+function dms_time_source_get_string(val: DmsTimeSource): string
+function dms_uim_facility_get_string(val: DmsUimFacility): string
+function dms_uim_facility_state_get_string(val: DmsUimFacilityState): string
+function dms_uim_pin_id_get_string(val: DmsUimPinId): string
+function dms_uim_pin_status_get_string(val: DmsUimPinStatus): string
+function dms_uim_state_get_string(val: DmsUimState): string
+function dsd_apn_type_get_string(val: DsdApnType): string
+function dsd_apn_type_preference_build_string_from_mask(mask: DsdApnTypePreference): string
+function endian_get_string(val: Endian): string
+function gas_firmware_listing_mode_get_string(val: GasFirmwareListingMode): string
+function gas_usb_composition_endpoint_type_get_string(val: GasUsbCompositionEndpointType): string
+function loc_delete_cell_database_build_string_from_mask(mask: LocDeleteCellDatabase): string
+function loc_delete_clock_info_build_string_from_mask(mask: LocDeleteClockInfo): string
+function loc_delete_gnss_data_build_string_from_mask(mask: LocDeleteGnssData): string
+function loc_delete_sv_info_build_string_from_mask(mask: LocDeleteSvInfo): string
+function loc_engine_state_get_string(val: LocEngineState): string
+function loc_event_registration_flag_build_string_from_mask(mask: LocEventRegistrationFlag): string
+function loc_fix_recurrence_type_get_string(val: LocFixRecurrenceType): string
+function loc_health_status_get_string(val: LocHealthStatus): string
+function loc_indication_status_get_string(val: LocIndicationStatus): string
+function loc_intermediate_report_state_get_string(val: LocIntermediateReportState): string
+function loc_lock_type_get_string(val: LocLockType): string
+function loc_navigation_data_get_string(val: LocNavigationData): string
+function loc_nmea_type_build_string_from_mask(mask: LocNmeaType): string
+function loc_operation_mode_get_string(val: LocOperationMode): string
+function loc_predicted_orbits_data_format_get_string(val: LocPredictedOrbitsDataFormat): string
+function loc_reliability_get_string(val: LocReliability): string
+function loc_satellite_status_get_string(val: LocSatelliteStatus): string
+function loc_satellite_valid_information_build_string_from_mask(mask: LocSatelliteValidInformation): string
+function loc_sensor_data_usage_build_string_from_mask(mask: LocSensorDataUsage): string
+function loc_server_address_type_build_string_from_mask(mask: LocServerAddressType): string
+function loc_server_type_get_string(val: LocServerType): string
+function loc_session_status_get_string(val: LocSessionStatus): string
+function loc_system_get_string(val: LocSystem): string
+function loc_technology_used_build_string_from_mask(mask: LocTechnologyUsed): string
+function loc_time_source_get_string(val: LocTimeSource): string
+function message_add_raw_tlv(self: Message, type: number, raw: number, length: number): boolean
+function message_foreach_raw_tlv(self: Message): void
+function message_get_client_id(self: Message): number
+function message_get_data(self: Message): [ /* returnType */ number, /* length */ number ]
+function message_get_length(self: Message): number
+function message_get_message_id(self: Message): number
+function message_get_printable_full(self: Message, context: MessageContext, line_prefix: string): string
+function message_get_raw(self: Message): [ /* returnType */ number, /* length */ number ]
+function message_get_raw_tlv(self: Message, type: number): [ /* returnType */ number, /* length */ number ]
+function message_get_service(self: Message): Service
+function message_get_tlv_printable(self: Message, line_prefix: string, type: number, raw: number, raw_length: number): string
+function message_get_transaction_id(self: Message): number
+function message_is_indication(self: Message): boolean
+function message_is_request(self: Message): boolean
+function message_is_response(self: Message): boolean
+function message_new(service: Service, client_id: number, transaction_id: number, message_id: number): Message
+function message_new_from_data(service: Service, client_id: number, qmi_data: Uint8Array[]): [ /* returnType */ Message, /* qmi_data */ Uint8Array[] ]
+function message_new_from_raw(raw: Uint8Array[]): [ /* returnType */ Message, /* raw */ Uint8Array[] ]
+function message_ref(self: Message): Message
+function message_response_new(request: Message, error: ProtocolError): Message
+function message_set_transaction_id(self: Message, transaction_id: number): void
+function message_tlv_read_fixed_size_string(self: Message, tlv_offset: number, offset: number, string_length: number): [ /* returnType */ boolean, /* offset */ number, /* out */ string ]
+function message_tlv_read_gdouble(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
+function message_tlv_read_gfloat_endian(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
+function message_tlv_read_gint16(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
+function message_tlv_read_gint32(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
+function message_tlv_read_gint64(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
+function message_tlv_read_gint8(self: Message, tlv_offset: number, offset: number): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
+function message_tlv_read_guint16(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
+function message_tlv_read_guint32(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
+function message_tlv_read_guint64(self: Message, tlv_offset: number, offset: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
+function message_tlv_read_guint8(self: Message, tlv_offset: number, offset: number): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
+function message_tlv_read_init(self: Message, type: number): [ /* returnType */ number, /* out_tlv_length */ number ]
+function message_tlv_read_remaining_size(self: Message, tlv_offset: number, offset: number): number
+function message_tlv_read_sized_guint(self: Message, tlv_offset: number, offset: number, n_bytes: number, endian: Endian): [ /* returnType */ boolean, /* offset */ number, /* out */ number ]
+function message_tlv_read_string(self: Message, tlv_offset: number, offset: number, n_size_prefix_bytes: number, max_size: number): [ /* returnType */ boolean, /* offset */ number, /* out */ string ]
+function message_tlv_write_complete(self: Message, tlv_offset: number): boolean
+function message_tlv_write_gint16(self: Message, endian: Endian, in_: number): boolean
+function message_tlv_write_gint32(self: Message, endian: Endian, in_: number): boolean
+function message_tlv_write_gint64(self: Message, endian: Endian, in_: number): boolean
+function message_tlv_write_gint8(self: Message, in_: number): boolean
+function message_tlv_write_guint16(self: Message, endian: Endian, in_: number): boolean
+function message_tlv_write_guint32(self: Message, endian: Endian, in_: number): boolean
+function message_tlv_write_guint64(self: Message, endian: Endian, in_: number): boolean
+function message_tlv_write_guint8(self: Message, in_: number): boolean
+function message_tlv_write_init(self: Message, type: number): number
+function message_tlv_write_reset(self: Message, tlv_offset: number): void
+function message_tlv_write_sized_guint(self: Message, n_bytes: number, endian: Endian, in_: number): boolean
+function message_tlv_write_string(self: Message, n_size_prefix_bytes: number, in_: string, in_length: number): boolean
+function message_unref(self: Message): void
+function nas_active_band_get_string(val: NasActiveBand): string
+function nas_attach_state_get_string(val: NasAttachState): string
+function nas_band_preference_build_string_from_mask(mask: NasBandPreference): string
+function nas_boolean_get_string(val: NasBoolean): string
+function nas_call_barring_status_get_string(val: NasCallBarringStatus): string
+function nas_cdma_pilot_type_get_string(val: NasCdmaPilotType): string
+function nas_cdma_prl_preference_get_string(val: NasCdmaPrlPreference): string
+function nas_cell_broadcast_capability_get_string(val: NasCellBroadcastCapability): string
+function nas_change_duration_get_string(val: NasChangeDuration): string
+function nas_data_capability_get_string(val: NasDataCapability): string
+function nas_day_of_week_get_string(val: NasDayOfWeek): string
+function nas_daylight_savings_adjustment_get_string(val: NasDaylightSavingsAdjustment): string
+function nas_dl_bandwidth_get_string(val: NasDLBandwidth): string
+function nas_drx_get_string(val: NasDrx): string
+function nas_evdo_sinr_level_get_string(val: NasEvdoSinrLevel): string
+function nas_gsm_wcdma_acquisition_order_preference_get_string(val: NasGsmWcdmaAcquisitionOrderPreference): string
+function nas_hdr_personality_get_string(val: NasHdrPersonality): string
+function nas_hdr_protocol_revision_get_string(val: NasHdrProtocolRevision): string
+function nas_lte_band_preference_build_string_from_mask(mask: NasLteBandPreference): string
+function nas_lte_cell_access_status_get_string(val: NasLteCellAccessStatus): string
+function nas_lte_registration_domain_get_string(val: NasLteRegistrationDomain): string
+function nas_lte_voice_domain_get_string(val: NasLteVoiceDomain): string
+function nas_network_description_display_get_string(val: NasNetworkDescriptionDisplay): string
+function nas_network_description_encoding_get_string(val: NasNetworkDescriptionEncoding): string
+function nas_network_name_display_condition_build_string_from_mask(mask: NasNetworkNameDisplayCondition): string
+function nas_network_name_source_get_string(val: NasNetworkNameSource): string
+function nas_network_register_type_get_string(val: NasNetworkRegisterType): string
+function nas_network_scan_result_get_string(val: NasNetworkScanResult): string
+function nas_network_scan_type_build_string_from_mask(mask: NasNetworkScanType): string
+function nas_network_selection_preference_get_string(val: NasNetworkSelectionPreference): string
+function nas_network_selection_registration_restriction_get_string(val: NasNetworkSelectionRegistrationRestriction): string
+function nas_network_service_domain_get_string(val: NasNetworkServiceDomain): string
+function nas_network_status_build_string_from_mask(mask: NasNetworkStatus): string
+function nas_network_type_get_string(val: NasNetworkType): string
+function nas_plmn_access_technology_identifier_build_string_from_mask(mask: NasPlmnAccessTechnologyIdentifier): string
+function nas_plmn_encoding_scheme_get_string(val: NasPlmnEncodingScheme): string
+function nas_plmn_language_id_get_string(val: NasPlmnLanguageId): string
+function nas_plmn_name_country_initials_get_string(val: NasPlmnNameCountryInitials): string
+function nas_plmn_name_spare_bits_get_string(val: NasPlmnNameSpareBits): string
+function nas_preference_duration_get_string(val: NasPreferenceDuration): string
+function nas_ps_attach_action_get_string(val: NasPsAttachAction): string
+function nas_radio_interface_get_string(val: NasRadioInterface): string
+function nas_radio_technology_preference_build_string_from_mask(mask: NasRadioTechnologyPreference): string
+function nas_rat_mode_preference_build_string_from_mask(mask: NasRatModePreference): string
+function nas_read_string_from_network_description_encoded_array(encoding: NasNetworkDescriptionEncoding, array: Uint8Array[]): string
+function nas_read_string_from_plmn_encoded_array(encoding: NasPlmnEncodingScheme, array: Uint8Array[]): string
+function nas_registration_state_get_string(val: NasRegistrationState): string
+function nas_reject_cause_get_string(val: NasRejectCause): string
+function nas_roaming_indicator_status_get_string(val: NasRoamingIndicatorStatus): string
+function nas_roaming_preference_get_string(val: NasRoamingPreference): string
+function nas_roaming_status_get_string(val: NasRoamingStatus): string
+function nas_scell_state_get_string(val: NasScellState): string
+function nas_service_domain_preference_get_string(val: NasServiceDomainPreference): string
+function nas_service_status_get_string(val: NasServiceStatus): string
+function nas_signal_strength_request_build_string_from_mask(mask: NasSignalStrengthRequest): string
+function nas_sim_reject_state_get_string(val: NasSimRejectState): string
+function nas_swi_emm_connection_state_get_string(val: NasSwiEmmConnectionState): string
+function nas_swi_emm_state_get_string(val: NasSwiEmmState): string
+function nas_swi_ims_reg_state_get_string(val: NasSwiImsRegState): string
+function nas_swi_modem_mode_get_string(val: NasSwiModemMode): string
+function nas_swi_ps_state_get_string(val: NasSwiPsState): string
+function nas_swi_system_mode_get_string(val: NasSwiSystemMode): string
+function nas_td_scdma_band_preference_build_string_from_mask(mask: NasTdScdmaBandPreference): string
+function nas_usage_preference_get_string(val: NasUsagePreference): string
+function nas_voice_domain_preference_get_string(val: NasVoiceDomainPreference): string
+function nas_wcdma_hs_service_get_string(val: NasWcdmaHsService): string
+function nas_wcdma_rrc_state_get_string(val: NasWcdmaRrcState): string
+function oma_hfa_feature_done_state_get_string(val: OmaHfaFeatureDoneState): string
+function oma_session_failed_reason_get_string(val: OmaSessionFailedReason): string
+function oma_session_state_get_string(val: OmaSessionState): string
+function oma_session_type_get_string(val: OmaSessionType): string
+function pbm_event_registration_flag_build_string_from_mask(mask: PbmEventRegistrationFlag): string
+function pbm_phonebook_type_build_string_from_mask(mask: PbmPhonebookType): string
+function pbm_session_type_get_string(val: PbmSessionType): string
+function pdc_configuration_type_get_string(val: PdcConfigurationType): string
+function pdc_refresh_event_type_get_string(val: PdcRefreshEventType): string
+function pds_data_valid_build_string_from_mask(mask: PdsDataValid): string
+function pds_network_mode_get_string(val: PdsNetworkMode): string
+function pds_operating_mode_get_string(val: PdsOperatingMode): string
+function pds_operation_mode_get_string(val: PdsOperationMode): string
+function pds_position_session_status_get_string(val: PdsPositionSessionStatus): string
+function pds_tracking_session_state_get_string(val: PdsTrackingSessionState): string
+function protocol_error_get_string(val: ProtocolError): string
+function protocol_error_quark(): GLib.Quark
+function qos_event_get_string(val: QosEvent): string
+function qos_status_get_string(val: QosStatus): string
+function sar_rf_state_get_string(val: SarRfState): string
+function service_flag_build_string_from_mask(mask: ServiceFlag): string
+function service_get_string(val: Service): string
+function sio_port_get_string(val: SioPort): string
+function uim_card_application_personalization_feature_get_string(val: UimCardApplicationPersonalizationFeature): string
+function uim_card_application_personalization_state_get_string(val: UimCardApplicationPersonalizationState): string
+function uim_card_application_state_get_string(val: UimCardApplicationState): string
+function uim_card_application_type_get_string(val: UimCardApplicationType): string
+function uim_card_error_get_string(val: UimCardError): string
+function uim_card_protocol_get_string(val: UimCardProtocol): string
+function uim_card_state_get_string(val: UimCardState): string
+function uim_configuration_build_string_from_mask(mask: UimConfiguration): string
+function uim_depersonalization_operation_get_string(val: UimDepersonalizationOperation): string
+function uim_event_registration_flag_build_string_from_mask(mask: UimEventRegistrationFlag): string
+function uim_file_type_get_string(val: UimFileType): string
+function uim_physical_card_state_get_string(val: UimPhysicalCardState): string
+function uim_pin_id_get_string(val: UimPinId): string
+function uim_pin_state_get_string(val: UimPinState): string
+function uim_refresh_mode_get_string(val: UimRefreshMode): string
+function uim_refresh_stage_get_string(val: UimRefreshStage): string
+function uim_security_attribute_build_string_from_mask(mask: UimSecurityAttribute): string
+function uim_security_attribute_logic_get_string(val: UimSecurityAttributeLogic): string
+function uim_session_type_get_string(val: UimSessionType): string
+function uim_slot_state_get_string(val: UimSlotState): string
+function utils_get_traces_enabled(): boolean
+function utils_set_traces_enabled(enabled: boolean): void
+function voice_alpha_data_coding_scheme_get_string(val: VoiceAlphaDataCodingScheme): string
+function voice_als_get_string(val: VoiceAls): string
+function voice_call_control_result_type_get_string(val: VoiceCallControlResultType): string
+function voice_call_control_supplementary_service_type_get_string(val: VoiceCallControlSupplementaryServiceType): string
+function voice_call_direction_get_string(val: VoiceCallDirection): string
+function voice_call_end_reason_get_string(val: VoiceCallEndReason): string
+function voice_call_mode_get_string(val: VoiceCallMode): string
+function voice_call_state_get_string(val: VoiceCallState): string
+function voice_call_type_get_string(val: VoiceCallType): string
+function voice_domain_get_string(val: VoiceDomain): string
+function voice_presentation_get_string(val: VoicePresentation): string
+function voice_privacy_get_string(val: VoicePrivacy): string
+function voice_service_option_get_string(val: VoiceServiceOption): string
+function voice_supplementary_service_action_get_string(val: VoiceSupplementaryServiceAction): string
+function voice_supplementary_service_notification_type_get_string(val: VoiceSupplementaryServiceNotificationType): string
+function voice_supplementary_service_reason_get_string(val: VoiceSupplementaryServiceReason): string
+function voice_supplementary_service_type_get_string(val: VoiceSupplementaryServiceType): string
+function voice_tty_mode_get_string(val: VoiceTtyMode): string
+function voice_user_action_get_string(val: VoiceUserAction): string
+function voice_uss_data_coding_scheme_get_string(val: VoiceUssDataCodingScheme): string
+function voice_wcdma_amr_status_build_string_from_mask(mask: VoiceWcdmaAmrStatus): string
+function wda_data_aggregation_protocol_get_string(val: WdaDataAggregationProtocol): string
+function wda_link_layer_protocol_get_string(val: WdaLinkLayerProtocol): string
+function wds_apn_type_mask_build_string_from_mask(mask: WdsApnTypeMask): string
+function wds_attach_pdn_list_action_get_string(val: WdsAttachPdnListAction): string
+function wds_authentication_build_string_from_mask(mask: WdsAuthentication): string
+function wds_autoconnect_setting_get_string(val: WdsAutoconnectSetting): string
+function wds_autoconnect_setting_roaming_get_string(val: WdsAutoconnectSettingRoaming): string
+function wds_call_end_reason_get_string(val: WdsCallEndReason): string
+function wds_call_type_get_string(val: WdsCallType): string
+function wds_client_type_get_string(val: WdsClientType): string
+function wds_connection_status_get_string(val: WdsConnectionStatus): string
+function wds_data_bearer_technology_get_string(val: WdsDataBearerTechnology): string
+function wds_data_call_status_get_string(val: WdsDataCallStatus): string
+function wds_data_call_type_get_string(val: WdsDataCallType): string
+function wds_data_system_get_string(val: WdsDataSystem): string
+function wds_data_system_network_type_get_string(val: WdsDataSystemNetworkType): string
+function wds_delivery_order_get_string(val: WdsDeliveryOrder): string
+function wds_dormancy_status_get_string(val: WdsDormancyStatus): string
+function wds_ds_profile_error_get_string(val: WdsDsProfileError): string
+function wds_extended_data_bearer_technology_3gpp2_build_string_from_mask(mask: WdsExtendedDataBearerTechnology3gpp2): string
+function wds_extended_data_bearer_technology_3gpp_build_string_from_mask(mask: WdsExtendedDataBearerTechnology3gpp): string
+function wds_extended_technology_preference_get_string(val: WdsExtendedTechnologyPreference): string
+function wds_get_current_settings_requested_settings_build_string_from_mask(mask: WdsGetCurrentSettingsRequestedSettings): string
+function wds_ip_family_get_string(val: WdsIpFamily): string
+function wds_ip_support_type_get_string(val: WdsIpSupportType): string
+function wds_network_type_get_string(val: WdsNetworkType): string
+function wds_packet_statistics_mask_flag_build_string_from_mask(mask: WdsPacketStatisticsMaskFlag): string
+function wds_pdp_data_compression_type_get_string(val: WdsPdpDataCompressionType): string
+function wds_pdp_header_compression_type_get_string(val: WdsPdpHeaderCompressionType): string
+function wds_pdp_type_get_string(val: WdsPdpType): string
+function wds_profile_family_get_string(val: WdsProfileFamily): string
+function wds_profile_type_get_string(val: WdsProfileType): string
+function wds_qos_class_identifier_get_string(val: WdsQosClassIdentifier): string
+function wds_radio_access_technology_get_string(val: WdsRadioAccessTechnology): string
+function wds_rat_3gpp2_build_string_from_mask(mask: WdsRat3gpp2): string
+function wds_rat_3gpp_build_string_from_mask(mask: WdsRat3gpp): string
+function wds_sdu_erroneous_delivery_get_string(val: WdsSduErroneousDelivery): string
+function wds_sdu_error_ratio_get_string(val: WdsSduErrorRatio): string
+function wds_sdu_residual_bit_error_ratio_get_string(val: WdsSduResidualBitErrorRatio): string
+function wds_set_event_report_transfer_statistics_build_string_from_mask(mask: WdsSetEventReportTransferStatistics): string
+function wds_so_cdma1x_build_string_from_mask(mask: WdsSoCdma1x): string
+function wds_so_evdo_rev0_build_string_from_mask(mask: WdsSoEvdoRev0): string
+function wds_so_evdo_reva_build_string_from_mask(mask: WdsSoEvdoRevA): string
+function wds_so_evdo_revb_build_string_from_mask(mask: WdsSoEvdoRevB): string
+function wds_technology_preference_build_string_from_mask(mask: WdsTechnologyPreference): string
+function wds_tethered_call_type_get_string(val: WdsTetheredCallType): string
+function wds_traffic_class_get_string(val: WdsTrafficClass): string
+function wds_verbose_call_end_reason_3gpp_get_string(val: WdsVerboseCallEndReason3gpp): string
+function wds_verbose_call_end_reason_cm_get_string(val: WdsVerboseCallEndReasonCm): string
+function wds_verbose_call_end_reason_ehrpd_get_string(val: WdsVerboseCallEndReasonEhrpd): string
+function wds_verbose_call_end_reason_get_string(type: WdsVerboseCallEndReasonType, reason: number): string
+function wds_verbose_call_end_reason_internal_get_string(val: WdsVerboseCallEndReasonInternal): string
+function wds_verbose_call_end_reason_ipv6_get_string(val: WdsVerboseCallEndReasonIpv6): string
+function wds_verbose_call_end_reason_mip_get_string(val: WdsVerboseCallEndReasonMip): string
+function wds_verbose_call_end_reason_ppp_get_string(val: WdsVerboseCallEndReasonPpp): string
+function wds_verbose_call_end_reason_type_get_string(val: WdsVerboseCallEndReasonType): string
+function wms_ack_failure_cause_get_string(val: WmsAckFailureCause): string
+function wms_ack_indicator_get_string(val: WmsAckIndicator): string
+function wms_cdma_cause_code_get_string(val: WmsCdmaCauseCode): string
+function wms_cdma_error_class_get_string(val: WmsCdmaErrorClass): string
+function wms_cdma_service_option_get_string(val: WmsCdmaServiceOption): string
+function wms_gsm_umts_rp_cause_get_string(val: WmsGsmUmtsRpCause): string
+function wms_gsm_umts_tp_cause_get_string(val: WmsGsmUmtsTpCause): string
+function wms_message_class_get_string(val: WmsMessageClass): string
+function wms_message_delivery_failure_type_get_string(val: WmsMessageDeliveryFailureType): string
+function wms_message_format_get_string(val: WmsMessageFormat): string
+function wms_message_mode_get_string(val: WmsMessageMode): string
+function wms_message_protocol_get_string(val: WmsMessageProtocol): string
+function wms_message_tag_type_get_string(val: WmsMessageTagType): string
+function wms_message_type_get_string(val: WmsMessageType): string
+function wms_notification_type_get_string(val: WmsNotificationType): string
+function wms_receipt_action_get_string(val: WmsReceiptAction): string
+function wms_storage_type_get_string(val: WmsStorageType): string
+function wms_transfer_indication_get_string(val: WmsTransferIndication): string
+interface DeviceCommandAbortableParseResponseFn {
     (self: Device, abort_response: Message): boolean
 }
-export interface MessageForeachRawTlvFn {
+interface MessageForeachRawTlvFn {
     (type: number, value: number, length: number): void
 }
 export interface Client_ConstructProps extends GObject.Object_ConstructProps {
@@ -3203,17 +3393,17 @@ export interface Client_ConstructProps extends GObject.Object_ConstructProps {
     client_version_major?: number
     client_version_minor?: number
 }
-export class Client {
-    /* Properties of Qmi.Client */
+class Client {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -3222,15 +3412,15 @@ export class Client {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3238,23 +3428,23 @@ export class Client {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3281,17 +3471,17 @@ export class Client {
 }
 export interface ClientCtl_ConstructProps extends Client_ConstructProps {
 }
-export class ClientCtl {
-    /* Properties of Qmi.Client */
+class ClientCtl {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientCtl */
+    /* Methods of Qmi-1.0.Qmi.ClientCtl */
     allocate_cid(input: MessageCtlAllocateCidInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     allocate_cid_finish(res: Gio.AsyncResult): MessageCtlAllocateCidOutput
     get_version_info(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -3306,7 +3496,7 @@ export class ClientCtl {
     set_instance_id_finish(res: Gio.AsyncResult): MessageCtlSetInstanceIdOutput
     sync(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     sync_finish(res: Gio.AsyncResult): MessageCtlSyncOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -3315,15 +3505,15 @@ export class ClientCtl {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3331,27 +3521,27 @@ export class ClientCtl {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Qmi.ClientCtl */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Qmi-1.0.Qmi.ClientCtl */
     connect(sigName: "sync", callback: (($obj: ClientCtl) => void)): number
     connect_after(sigName: "sync", callback: (($obj: ClientCtl) => void)): number
     emit(sigName: "sync"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientCtl, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientCtl, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3378,31 +3568,29 @@ export class ClientCtl {
 }
 export interface ClientDms_ConstructProps extends Client_ConstructProps {
 }
-export class ClientDms {
-    /* Properties of Qmi.Client */
+class ClientDms {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientDms */
+    /* Methods of Qmi-1.0.Qmi.ClientDms */
     activate_automatic(input: MessageDmsActivateAutomaticInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     activate_automatic_finish(res: Gio.AsyncResult): MessageDmsActivateAutomaticOutput
     activate_manual(input: MessageDmsActivateManualInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     activate_manual_finish(res: Gio.AsyncResult): MessageDmsActivateManualOutput
     delete_stored_image(input: MessageDmsDeleteStoredImageInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     delete_stored_image_finish(res: Gio.AsyncResult): MessageDmsDeleteStoredImageOutput
-    dell_change_device_mode(input: MessageDmsFoxconnChangeDeviceModeInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    dell_change_device_mode_finish(res: Gio.AsyncResult): MessageDmsFoxconnChangeDeviceModeOutput
-    dell_get_firmware_version(input: MessageDmsFoxconnGetFirmwareVersionInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    dell_get_firmware_version_finish(res: Gio.AsyncResult): MessageDmsFoxconnGetFirmwareVersionOutput
     foxconn_change_device_mode(input: MessageDmsFoxconnChangeDeviceModeInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     foxconn_change_device_mode_finish(res: Gio.AsyncResult): MessageDmsFoxconnChangeDeviceModeOutput
     foxconn_get_firmware_version(input: MessageDmsFoxconnGetFirmwareVersionInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     foxconn_get_firmware_version_finish(res: Gio.AsyncResult): MessageDmsFoxconnGetFirmwareVersionOutput
+    foxconn_set_fcc_authentication(input: MessageDmsFoxconnSetFccAuthenticationInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    foxconn_set_fcc_authentication_finish(res: Gio.AsyncResult): MessageDmsFoxconnSetFccAuthenticationOutput
     get_activation_state(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_activation_state_finish(res: Gio.AsyncResult): MessageDmsGetActivationStateOutput
     get_alt_net_config(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -3513,7 +3701,7 @@ export class ClientDms {
     validate_service_programming_code_finish(res: Gio.AsyncResult): MessageDmsValidateServiceProgrammingCodeOutput
     write_user_data(input: MessageDmsWriteUserDataInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_user_data_finish(res: Gio.AsyncResult): MessageDmsWriteUserDataOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -3522,15 +3710,15 @@ export class ClientDms {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3538,27 +3726,27 @@ export class ClientDms {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Qmi.ClientDms */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Qmi-1.0.Qmi.ClientDms */
     connect(sigName: "event-report", callback: (($obj: ClientDms, output: IndicationDmsEventReportOutput) => void)): number
     connect_after(sigName: "event-report", callback: (($obj: ClientDms, output: IndicationDmsEventReportOutput) => void)): number
     emit(sigName: "event-report", output: IndicationDmsEventReportOutput): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientDms, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientDms, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3583,24 +3771,24 @@ export class ClientDms {
     _init (config?: ClientDms_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ClientDsd_ConstructProps extends Client_ConstructProps {
+export interface ClientDpm_ConstructProps extends Client_ConstructProps {
 }
-export class ClientDsd {
-    /* Properties of Qmi.Client */
+class ClientDpm {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientDsd */
-    get_apn_info(input: MessageDsdGetApnInfoInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    get_apn_info_finish(res: Gio.AsyncResult): MessageDsdGetApnInfoOutput
-    set_apn_type(input: MessageDsdSetApnTypeInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    set_apn_type_finish(res: Gio.AsyncResult): MessageDsdSetApnTypeOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.ClientDpm */
+    close_port(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    close_port_finish(res: Gio.AsyncResult): MessageDpmClosePortOutput
+    open_port(input: MessageDpmOpenPortInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    open_port_finish(res: Gio.AsyncResult): MessageDpmOpenPortOutput
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -3609,15 +3797,15 @@ export class ClientDsd {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3625,23 +3813,106 @@ export class ClientDsd {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: ClientDpm, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: ClientDpm, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::client-cid", callback: (($obj: ClientDpm, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::client-cid", callback: (($obj: ClientDpm, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::client-device", callback: (($obj: ClientDpm, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::client-device", callback: (($obj: ClientDpm, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::client-service", callback: (($obj: ClientDpm, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::client-service", callback: (($obj: ClientDpm, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::client-valid", callback: (($obj: ClientDpm, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::client-valid", callback: (($obj: ClientDpm, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::client-version-major", callback: (($obj: ClientDpm, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::client-version-major", callback: (($obj: ClientDpm, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::client-version-minor", callback: (($obj: ClientDpm, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::client-version-minor", callback: (($obj: ClientDpm, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: ClientDpm_ConstructProps)
+    _init (config?: ClientDpm_ConstructProps): void
+    static $gtype: GObject.Type
+}
+export interface ClientDsd_ConstructProps extends Client_ConstructProps {
+}
+class ClientDsd {
+    /* Properties of Qmi-1.0.Qmi.Client */
+    client_cid: number
+    client_device: Device
+    client_service: Service
+    readonly client_valid: boolean
+    client_version_major: number
+    client_version_minor: number
+    /* Fields of GObject-2.0.GObject.Object */
+    g_type_instance: GObject.TypeInstance
+    /* Methods of Qmi-1.0.Qmi.ClientDsd */
+    get_apn_info(input: MessageDsdGetApnInfoInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_apn_info_finish(res: Gio.AsyncResult): MessageDsdGetApnInfoOutput
+    set_apn_type(input: MessageDsdSetApnTypeInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    set_apn_type_finish(res: Gio.AsyncResult): MessageDsdSetApnTypeOutput
+    /* Methods of Qmi-1.0.Qmi.Client */
+    check_version(major: number, minor: number): boolean
+    get_cid(): number
+    get_device(): GObject.Object
+    get_next_transaction_id(): number
+    get_service(): Service
+    get_version(major: number, minor: number): boolean
+    is_valid(): boolean
+    peek_device(): GObject.Object
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
+    vfunc_process_indication(message: Message): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientDsd, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientDsd, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3668,22 +3939,26 @@ export class ClientDsd {
 }
 export interface ClientGas_ConstructProps extends Client_ConstructProps {
 }
-export class ClientGas {
-    /* Properties of Qmi.Client */
+class ClientGas {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientGas */
+    /* Methods of Qmi-1.0.Qmi.ClientGas */
     dms_get_firmware_list(input: MessageGasDmsGetFirmwareListInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     dms_get_firmware_list_finish(res: Gio.AsyncResult): MessageGasDmsGetFirmwareListOutput
+    dms_get_usb_composition(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    dms_get_usb_composition_finish(res: Gio.AsyncResult): MessageGasDmsGetUsbCompositionOutput
     dms_set_active_firmware(input: MessageGasDmsSetActiveFirmwareInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     dms_set_active_firmware_finish(res: Gio.AsyncResult): MessageGasDmsSetActiveFirmwareOutput
-    /* Methods of Qmi.Client */
+    dms_set_usb_composition(input: MessageGasDmsSetUsbCompositionInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    dms_set_usb_composition_finish(res: Gio.AsyncResult): MessageGasDmsSetUsbCompositionOutput
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -3692,15 +3967,15 @@ export class ClientGas {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3708,23 +3983,23 @@ export class ClientGas {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientGas, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientGas, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3751,22 +4026,22 @@ export class ClientGas {
 }
 export interface ClientGms_ConstructProps extends Client_ConstructProps {
 }
-export class ClientGms {
-    /* Properties of Qmi.Client */
+class ClientGms {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientGms */
+    /* Methods of Qmi-1.0.Qmi.ClientGms */
     test_get_value(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     test_get_value_finish(res: Gio.AsyncResult): MessageGmsTestGetValueOutput
     test_set_value(input: MessageGmsTestSetValueInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     test_set_value_finish(res: Gio.AsyncResult): MessageGmsTestSetValueOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -3775,15 +4050,15 @@ export class ClientGms {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3791,23 +4066,23 @@ export class ClientGms {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientGms, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientGms, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3834,19 +4109,21 @@ export class ClientGms {
 }
 export interface ClientLoc_ConstructProps extends Client_ConstructProps {
 }
-export class ClientLoc {
-    /* Properties of Qmi.Client */
+class ClientLoc {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientLoc */
+    /* Methods of Qmi-1.0.Qmi.ClientLoc */
     delete_assistance_data(input: MessageLocDeleteAssistanceDataInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     delete_assistance_data_finish(res: Gio.AsyncResult): MessageLocDeleteAssistanceDataOutput
+    get_engine_lock(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_engine_lock_finish(res: Gio.AsyncResult): MessageLocGetEngineLockOutput
     get_nmea_types(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_nmea_types_finish(res: Gio.AsyncResult): MessageLocGetNmeaTypesOutput
     get_operation_mode(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -3861,6 +4138,8 @@ export class ClientLoc {
     inject_xtra_data_finish(res: Gio.AsyncResult): MessageLocInjectXtraDataOutput
     register_events(input: MessageLocRegisterEventsInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     register_events_finish(res: Gio.AsyncResult): MessageLocRegisterEventsOutput
+    set_engine_lock(input: MessageLocSetEngineLockInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    set_engine_lock_finish(res: Gio.AsyncResult): MessageLocSetEngineLockOutput
     set_nmea_types(input: MessageLocSetNmeaTypesInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_nmea_types_finish(res: Gio.AsyncResult): MessageLocSetNmeaTypesOutput
     set_operation_mode(input: MessageLocSetOperationModeInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -3871,7 +4150,7 @@ export class ClientLoc {
     start_finish(res: Gio.AsyncResult): MessageLocStartOutput
     stop(input: MessageLocStopInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     stop_finish(res: Gio.AsyncResult): MessageLocStopOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -3880,15 +4159,15 @@ export class ClientLoc {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3896,23 +4175,23 @@ export class ClientLoc {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Qmi.ClientLoc */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Qmi-1.0.Qmi.ClientLoc */
     connect(sigName: "delete-assistance-data", callback: (($obj: ClientLoc, output: IndicationLocDeleteAssistanceDataOutput) => void)): number
     connect_after(sigName: "delete-assistance-data", callback: (($obj: ClientLoc, output: IndicationLocDeleteAssistanceDataOutput) => void)): number
     emit(sigName: "delete-assistance-data", output: IndicationLocDeleteAssistanceDataOutput): void
@@ -3922,6 +4201,9 @@ export class ClientLoc {
     connect(sigName: "fix-recurrence-type", callback: (($obj: ClientLoc, output: IndicationLocFixRecurrenceTypeOutput) => void)): number
     connect_after(sigName: "fix-recurrence-type", callback: (($obj: ClientLoc, output: IndicationLocFixRecurrenceTypeOutput) => void)): number
     emit(sigName: "fix-recurrence-type", output: IndicationLocFixRecurrenceTypeOutput): void
+    connect(sigName: "get-engine-lock", callback: (($obj: ClientLoc, output: IndicationLocGetEngineLockOutput) => void)): number
+    connect_after(sigName: "get-engine-lock", callback: (($obj: ClientLoc, output: IndicationLocGetEngineLockOutput) => void)): number
+    emit(sigName: "get-engine-lock", output: IndicationLocGetEngineLockOutput): void
     connect(sigName: "get-nmea-types", callback: (($obj: ClientLoc, output: IndicationLocGetNmeaTypesOutput) => void)): number
     connect_after(sigName: "get-nmea-types", callback: (($obj: ClientLoc, output: IndicationLocGetNmeaTypesOutput) => void)): number
     emit(sigName: "get-nmea-types", output: IndicationLocGetNmeaTypesOutput): void
@@ -3949,6 +4231,9 @@ export class ClientLoc {
     connect(sigName: "position-report", callback: (($obj: ClientLoc, output: IndicationLocPositionReportOutput) => void)): number
     connect_after(sigName: "position-report", callback: (($obj: ClientLoc, output: IndicationLocPositionReportOutput) => void)): number
     emit(sigName: "position-report", output: IndicationLocPositionReportOutput): void
+    connect(sigName: "set-engine-lock", callback: (($obj: ClientLoc, output: IndicationLocSetEngineLockOutput) => void)): number
+    connect_after(sigName: "set-engine-lock", callback: (($obj: ClientLoc, output: IndicationLocSetEngineLockOutput) => void)): number
+    emit(sigName: "set-engine-lock", output: IndicationLocSetEngineLockOutput): void
     connect(sigName: "set-nmea-types", callback: (($obj: ClientLoc, output: IndicationLocSetNmeaTypesOutput) => void)): number
     connect_after(sigName: "set-nmea-types", callback: (($obj: ClientLoc, output: IndicationLocSetNmeaTypesOutput) => void)): number
     emit(sigName: "set-nmea-types", output: IndicationLocSetNmeaTypesOutput): void
@@ -3958,7 +4243,7 @@ export class ClientLoc {
     connect(sigName: "set-server", callback: (($obj: ClientLoc, output: IndicationLocSetServerOutput) => void)): number
     connect_after(sigName: "set-server", callback: (($obj: ClientLoc, output: IndicationLocSetServerOutput) => void)): number
     emit(sigName: "set-server", output: IndicationLocSetServerOutput): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientLoc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientLoc, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3985,17 +4270,17 @@ export class ClientLoc {
 }
 export interface ClientNas_ConstructProps extends Client_ConstructProps {
 }
-export class ClientNas {
-    /* Properties of Qmi.Client */
+class ClientNas {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientNas */
+    /* Methods of Qmi-1.0.Qmi.ClientNas */
     attach_detach(input: MessageNasAttachDetachInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     attach_detach_finish(res: Gio.AsyncResult): MessageNasAttachDetachOutput
     config_signal_info(input: MessageNasConfigSignalInfoInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -4006,12 +4291,18 @@ export class ClientNas {
     get_cdma_position_info_finish(res: Gio.AsyncResult): MessageNasGetCdmaPositionInfoOutput
     get_cell_location_info(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_cell_location_info_finish(res: Gio.AsyncResult): MessageNasGetCellLocationInfoOutput
+    get_drx(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_drx_finish(res: Gio.AsyncResult): MessageNasGetDrxOutput
     get_home_network(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_home_network_finish(res: Gio.AsyncResult): MessageNasGetHomeNetworkOutput
     get_lte_cphy_ca_info(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_lte_cphy_ca_info_finish(res: Gio.AsyncResult): MessageNasGetLteCphyCaInfoOutput
     get_operator_name(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_operator_name_finish(res: Gio.AsyncResult): MessageNasGetOperatorNameOutput
+    get_plmn_name(input: MessageNasGetPlmnNameInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_plmn_name_finish(res: Gio.AsyncResult): MessageNasGetPlmnNameOutput
+    get_preferred_networks(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_preferred_networks_finish(res: Gio.AsyncResult): MessageNasGetPreferredNetworksOutput
     get_rf_band_information(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_rf_band_information_finish(res: Gio.AsyncResult): MessageNasGetRfBandInformationOutput
     get_serving_system(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -4040,13 +4331,15 @@ export class ClientNas {
     reset_finish(res: Gio.AsyncResult): MessageNasResetOutput
     set_event_report(input: MessageNasSetEventReportInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_event_report_finish(res: Gio.AsyncResult): MessageNasSetEventReportOutput
+    set_preferred_networks(input: MessageNasSetPreferredNetworksInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    set_preferred_networks_finish(res: Gio.AsyncResult): MessageNasSetPreferredNetworksOutput
     set_system_selection_preference(input: MessageNasSetSystemSelectionPreferenceInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_system_selection_preference_finish(res: Gio.AsyncResult): MessageNasSetSystemSelectionPreferenceOutput
     set_technology_preference(input: MessageNasSetTechnologyPreferenceInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_technology_preference_finish(res: Gio.AsyncResult): MessageNasSetTechnologyPreferenceOutput
     swi_get_status(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     swi_get_status_finish(res: Gio.AsyncResult): MessageNasSwiGetStatusOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -4055,15 +4348,15 @@ export class ClientNas {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4071,26 +4364,29 @@ export class ClientNas {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Qmi.ClientNas */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Qmi-1.0.Qmi.ClientNas */
     connect(sigName: "event-report", callback: (($obj: ClientNas, output: IndicationNasEventReportOutput) => void)): number
     connect_after(sigName: "event-report", callback: (($obj: ClientNas, output: IndicationNasEventReportOutput) => void)): number
     emit(sigName: "event-report", output: IndicationNasEventReportOutput): void
+    connect(sigName: "network-reject", callback: (($obj: ClientNas, output: IndicationNasNetworkRejectOutput) => void)): number
+    connect_after(sigName: "network-reject", callback: (($obj: ClientNas, output: IndicationNasNetworkRejectOutput) => void)): number
+    emit(sigName: "network-reject", output: IndicationNasNetworkRejectOutput): void
     connect(sigName: "network-time", callback: (($obj: ClientNas, output: IndicationNasNetworkTimeOutput) => void)): number
     connect_after(sigName: "network-time", callback: (($obj: ClientNas, output: IndicationNasNetworkTimeOutput) => void)): number
     emit(sigName: "network-time", output: IndicationNasNetworkTimeOutput): void
@@ -4106,7 +4402,7 @@ export class ClientNas {
     connect(sigName: "system-info", callback: (($obj: ClientNas, output: IndicationNasSystemInfoOutput) => void)): number
     connect_after(sigName: "system-info", callback: (($obj: ClientNas, output: IndicationNasSystemInfoOutput) => void)): number
     emit(sigName: "system-info", output: IndicationNasSystemInfoOutput): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientNas, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientNas, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4133,17 +4429,17 @@ export class ClientNas {
 }
 export interface ClientOma_ConstructProps extends Client_ConstructProps {
 }
-export class ClientOma {
-    /* Properties of Qmi.Client */
+class ClientOma {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientOma */
+    /* Methods of Qmi-1.0.Qmi.ClientOma */
     cancel_session(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     cancel_session_finish(res: Gio.AsyncResult): MessageOmaCancelSessionOutput
     get_feature_setting(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -4160,7 +4456,7 @@ export class ClientOma {
     set_feature_setting_finish(res: Gio.AsyncResult): MessageOmaSetFeatureSettingOutput
     start_session(input: MessageOmaStartSessionInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     start_session_finish(res: Gio.AsyncResult): MessageOmaStartSessionOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -4169,15 +4465,15 @@ export class ClientOma {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4185,27 +4481,27 @@ export class ClientOma {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Qmi.ClientOma */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Qmi-1.0.Qmi.ClientOma */
     connect(sigName: "event-report", callback: (($obj: ClientOma, output: IndicationOmaEventReportOutput) => void)): number
     connect_after(sigName: "event-report", callback: (($obj: ClientOma, output: IndicationOmaEventReportOutput) => void)): number
     emit(sigName: "event-report", output: IndicationOmaEventReportOutput): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientOma, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientOma, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4232,24 +4528,24 @@ export class ClientOma {
 }
 export interface ClientPbm_ConstructProps extends Client_ConstructProps {
 }
-export class ClientPbm {
-    /* Properties of Qmi.Client */
+class ClientPbm {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientPbm */
+    /* Methods of Qmi-1.0.Qmi.ClientPbm */
     get_all_capabilities(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_all_capabilities_finish(res: Gio.AsyncResult): MessagePbmGetAllCapabilitiesOutput
     get_capabilities(input: MessagePbmGetCapabilitiesInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_capabilities_finish(res: Gio.AsyncResult): MessagePbmGetCapabilitiesOutput
     indication_register(input: MessagePbmIndicationRegisterInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     indication_register_finish(res: Gio.AsyncResult): MessagePbmIndicationRegisterOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -4258,15 +4554,15 @@ export class ClientPbm {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4274,23 +4570,23 @@ export class ClientPbm {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientPbm, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientPbm, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4317,17 +4613,17 @@ export class ClientPbm {
 }
 export interface ClientPdc_ConstructProps extends Client_ConstructProps {
 }
-export class ClientPdc {
-    /* Properties of Qmi.Client */
+class ClientPdc {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientPdc */
+    /* Methods of Qmi-1.0.Qmi.ClientPdc */
     activate_config(input: MessagePdcActivateConfigInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     activate_config_finish(res: Gio.AsyncResult): MessagePdcActivateConfigOutput
     config_change(input: MessagePdcConfigChangeInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -4354,7 +4650,7 @@ export class ClientPdc {
     reset_finish(res: Gio.AsyncResult): MessagePdcResetOutput
     set_selected_config(input: MessagePdcSetSelectedConfigInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_selected_config_finish(res: Gio.AsyncResult): MessagePdcSetSelectedConfigOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -4363,15 +4659,15 @@ export class ClientPdc {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4379,23 +4675,23 @@ export class ClientPdc {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Qmi.ClientPdc */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Qmi-1.0.Qmi.ClientPdc */
     connect(sigName: "activate-config", callback: (($obj: ClientPdc, output: IndicationPdcActivateConfigOutput) => void)): number
     connect_after(sigName: "activate-config", callback: (($obj: ClientPdc, output: IndicationPdcActivateConfigOutput) => void)): number
     emit(sigName: "activate-config", output: IndicationPdcActivateConfigOutput): void
@@ -4414,10 +4710,13 @@ export class ClientPdc {
     connect(sigName: "load-config", callback: (($obj: ClientPdc, output: IndicationPdcLoadConfigOutput) => void)): number
     connect_after(sigName: "load-config", callback: (($obj: ClientPdc, output: IndicationPdcLoadConfigOutput) => void)): number
     emit(sigName: "load-config", output: IndicationPdcLoadConfigOutput): void
+    connect(sigName: "refresh", callback: (($obj: ClientPdc, output: IndicationPdcRefreshOutput) => void)): number
+    connect_after(sigName: "refresh", callback: (($obj: ClientPdc, output: IndicationPdcRefreshOutput) => void)): number
+    emit(sigName: "refresh", output: IndicationPdcRefreshOutput): void
     connect(sigName: "set-selected-config", callback: (($obj: ClientPdc, output: IndicationPdcSetSelectedConfigOutput) => void)): number
     connect_after(sigName: "set-selected-config", callback: (($obj: ClientPdc, output: IndicationPdcSetSelectedConfigOutput) => void)): number
     emit(sigName: "set-selected-config", output: IndicationPdcSetSelectedConfigOutput): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientPdc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientPdc, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4444,17 +4743,17 @@ export class ClientPdc {
 }
 export interface ClientPds_ConstructProps extends Client_ConstructProps {
 }
-export class ClientPds {
-    /* Properties of Qmi.Client */
+class ClientPds {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientPds */
+    /* Methods of Qmi-1.0.Qmi.ClientPds */
     get_agps_config(input: MessagePdsGetAgpsConfigInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_agps_config_finish(res: Gio.AsyncResult): MessagePdsGetAgpsConfigOutput
     get_auto_tracking_state(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -4475,7 +4774,7 @@ export class ClientPds {
     set_event_report_finish(res: Gio.AsyncResult): MessagePdsSetEventReportOutput
     set_gps_service_state(input: MessagePdsSetGpsServiceStateInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_gps_service_state_finish(res: Gio.AsyncResult): MessagePdsSetGpsServiceStateOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -4484,15 +4783,15 @@ export class ClientPds {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4500,30 +4799,30 @@ export class ClientPds {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Qmi.ClientPds */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Qmi-1.0.Qmi.ClientPds */
     connect(sigName: "event-report", callback: (($obj: ClientPds, output: IndicationPdsEventReportOutput) => void)): number
     connect_after(sigName: "event-report", callback: (($obj: ClientPds, output: IndicationPdsEventReportOutput) => void)): number
     emit(sigName: "event-report", output: IndicationPdsEventReportOutput): void
     connect(sigName: "gps-ready", callback: (($obj: ClientPds) => void)): number
     connect_after(sigName: "gps-ready", callback: (($obj: ClientPds) => void)): number
     emit(sigName: "gps-ready"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientPds, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientPds, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4550,17 +4849,17 @@ export class ClientPds {
 }
 export interface ClientQos_ConstructProps extends Client_ConstructProps {
 }
-export class ClientQos {
-    /* Properties of Qmi.Client */
+class ClientQos {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientQos */
+    /* Methods of Qmi-1.0.Qmi.ClientQos */
     get_flow_status(input: MessageQosGetFlowStatusInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_flow_status_finish(res: Gio.AsyncResult): MessageQosGetFlowStatusOutput
     get_network_status(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -4569,7 +4868,7 @@ export class ClientQos {
     reset_finish(res: Gio.AsyncResult): MessageQosResetOutput
     swi_read_data_stats(input: MessageQosSwiReadDataStatsInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     swi_read_data_stats_finish(res: Gio.AsyncResult): MessageQosSwiReadDataStatsOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -4578,15 +4877,15 @@ export class ClientQos {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4594,30 +4893,30 @@ export class ClientQos {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Qmi.ClientQos */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Qmi-1.0.Qmi.ClientQos */
     connect(sigName: "flow-status", callback: (($obj: ClientQos, output: IndicationQosFlowStatusOutput) => void)): number
     connect_after(sigName: "flow-status", callback: (($obj: ClientQos, output: IndicationQosFlowStatusOutput) => void)): number
     emit(sigName: "flow-status", output: IndicationQosFlowStatusOutput): void
     connect(sigName: "network-status", callback: (($obj: ClientQos, output: IndicationQosNetworkStatusOutput) => void)): number
     connect_after(sigName: "network-status", callback: (($obj: ClientQos, output: IndicationQosNetworkStatusOutput) => void)): number
     emit(sigName: "network-status", output: IndicationQosNetworkStatusOutput): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientQos, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientQos, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4644,22 +4943,22 @@ export class ClientQos {
 }
 export interface ClientSar_ConstructProps extends Client_ConstructProps {
 }
-export class ClientSar {
-    /* Properties of Qmi.Client */
+class ClientSar {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientSar */
+    /* Methods of Qmi-1.0.Qmi.ClientSar */
     rf_get_state(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     rf_get_state_finish(res: Gio.AsyncResult): MessageSarRfGetStateOutput
     rf_set_state(input: MessageSarRfSetStateInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     rf_set_state_finish(res: Gio.AsyncResult): MessageSarRfSetStateOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -4668,15 +4967,15 @@ export class ClientSar {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4684,23 +4983,23 @@ export class ClientSar {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientSar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientSar, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4727,23 +5026,27 @@ export class ClientSar {
 }
 export interface ClientUim_ConstructProps extends Client_ConstructProps {
 }
-export class ClientUim {
-    /* Properties of Qmi.Client */
+class ClientUim {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientUim */
+    /* Methods of Qmi-1.0.Qmi.ClientUim */
     change_pin(input: MessageUimChangePinInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     change_pin_finish(res: Gio.AsyncResult): MessageUimChangePinOutput
     change_provisioning_session(input: MessageUimChangeProvisioningSessionInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     change_provisioning_session_finish(res: Gio.AsyncResult): MessageUimChangeProvisioningSessionOutput
+    depersonalization(input: MessageUimDepersonalizationInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    depersonalization_finish(res: Gio.AsyncResult): MessageUimDepersonalizationOutput
     get_card_status(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_card_status_finish(res: Gio.AsyncResult): MessageUimGetCardStatusOutput
+    get_configuration(input: MessageUimGetConfigurationInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_configuration_finish(res: Gio.AsyncResult): MessageUimGetConfigurationOutput
     get_file_attributes(input: MessageUimGetFileAttributesInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_file_attributes_finish(res: Gio.AsyncResult): MessageUimGetFileAttributesOutput
     get_slot_status(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -4776,7 +5079,7 @@ export class ClientUim {
     unblock_pin_finish(res: Gio.AsyncResult): MessageUimUnblockPinOutput
     verify_pin(input: MessageUimVerifyPinInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     verify_pin_finish(res: Gio.AsyncResult): MessageUimVerifyPinOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -4785,15 +5088,15 @@ export class ClientUim {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4801,23 +5104,23 @@ export class ClientUim {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Qmi.ClientUim */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Qmi-1.0.Qmi.ClientUim */
     connect(sigName: "card-status", callback: (($obj: ClientUim, output: IndicationUimCardStatusOutput) => void)): number
     connect_after(sigName: "card-status", callback: (($obj: ClientUim, output: IndicationUimCardStatusOutput) => void)): number
     emit(sigName: "card-status", output: IndicationUimCardStatusOutput): void
@@ -4827,7 +5130,7 @@ export class ClientUim {
     connect(sigName: "slot-status", callback: (($obj: ClientUim, output: IndicationUimSlotStatusOutput) => void)): number
     connect_after(sigName: "slot-status", callback: (($obj: ClientUim, output: IndicationUimSlotStatusOutput) => void)): number
     emit(sigName: "slot-status", output: IndicationUimSlotStatusOutput): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientUim, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientUim, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4854,17 +5157,17 @@ export class ClientUim {
 }
 export interface ClientVoice_ConstructProps extends Client_ConstructProps {
 }
-export class ClientVoice {
-    /* Properties of Qmi.Client */
+class ClientVoice {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientVoice */
+    /* Methods of Qmi-1.0.Qmi.ClientVoice */
     answer_call(input: MessageVoiceAnswerCallInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     answer_call_finish(res: Gio.AsyncResult): MessageVoiceAnswerCallOutput
     answer_ussd(input: MessageVoiceAnswerUssdInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -4875,17 +5178,25 @@ export class ClientVoice {
     dial_call_finish(res: Gio.AsyncResult): MessageVoiceDialCallOutput
     end_call(input: MessageVoiceEndCallInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     end_call_finish(res: Gio.AsyncResult): MessageVoiceEndCallOutput
+    get_all_call_info(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_all_call_info_finish(res: Gio.AsyncResult): MessageVoiceGetAllCallInfoOutput
+    get_call_waiting(input: MessageVoiceGetCallWaitingInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_call_waiting_finish(res: Gio.AsyncResult): MessageVoiceGetCallWaitingOutput
     get_config(input: MessageVoiceGetConfigInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_config_finish(res: Gio.AsyncResult): MessageVoiceGetConfigOutput
     get_supported_messages(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_supported_messages_finish(res: Gio.AsyncResult): MessageVoiceGetSupportedMessagesOutput
     indication_register(input: MessageVoiceIndicationRegisterInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     indication_register_finish(res: Gio.AsyncResult): MessageVoiceIndicationRegisterOutput
+    manage_calls(input: MessageVoiceManageCallsInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    manage_calls_finish(res: Gio.AsyncResult): MessageVoiceManageCallsOutput
     originate_ussd(input: MessageVoiceOriginateUssdInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     originate_ussd_finish(res: Gio.AsyncResult): MessageVoiceOriginateUssdOutput
     originate_ussd_no_wait(input: MessageVoiceOriginateUssdNoWaitInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     originate_ussd_no_wait_finish(res: Gio.AsyncResult): MessageVoiceOriginateUssdNoWaitOutput
-    /* Methods of Qmi.Client */
+    set_supplementary_service(input: MessageVoiceSetSupplementaryServiceInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    set_supplementary_service_finish(res: Gio.AsyncResult): MessageVoiceSetSupplementaryServiceOutput
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -4894,15 +5205,15 @@ export class ClientVoice {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4910,23 +5221,23 @@ export class ClientVoice {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Qmi.ClientVoice */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Qmi-1.0.Qmi.ClientVoice */
     connect(sigName: "all-call-status", callback: (($obj: ClientVoice, output: IndicationVoiceAllCallStatusOutput) => void)): number
     connect_after(sigName: "all-call-status", callback: (($obj: ClientVoice, output: IndicationVoiceAllCallStatusOutput) => void)): number
     emit(sigName: "all-call-status", output: IndicationVoiceAllCallStatusOutput): void
@@ -4936,10 +5247,13 @@ export class ClientVoice {
     connect(sigName: "release-ussd", callback: (($obj: ClientVoice) => void)): number
     connect_after(sigName: "release-ussd", callback: (($obj: ClientVoice) => void)): number
     emit(sigName: "release-ussd"): void
+    connect(sigName: "supplementary-service", callback: (($obj: ClientVoice, output: IndicationVoiceSupplementaryServiceOutput) => void)): number
+    connect_after(sigName: "supplementary-service", callback: (($obj: ClientVoice, output: IndicationVoiceSupplementaryServiceOutput) => void)): number
+    emit(sigName: "supplementary-service", output: IndicationVoiceSupplementaryServiceOutput): void
     connect(sigName: "ussd", callback: (($obj: ClientVoice, output: IndicationVoiceUssdOutput) => void)): number
     connect_after(sigName: "ussd", callback: (($obj: ClientVoice, output: IndicationVoiceUssdOutput) => void)): number
     emit(sigName: "ussd", output: IndicationVoiceUssdOutput): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientVoice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientVoice, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4966,24 +5280,24 @@ export class ClientVoice {
 }
 export interface ClientWda_ConstructProps extends Client_ConstructProps {
 }
-export class ClientWda {
-    /* Properties of Qmi.Client */
+class ClientWda {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientWda */
+    /* Methods of Qmi-1.0.Qmi.ClientWda */
     get_data_format(input: MessageWdaGetDataFormatInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_data_format_finish(res: Gio.AsyncResult): MessageWdaGetDataFormatOutput
     get_supported_messages(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_supported_messages_finish(res: Gio.AsyncResult): MessageWdaGetSupportedMessagesOutput
     set_data_format(input: MessageWdaSetDataFormatInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_data_format_finish(res: Gio.AsyncResult): MessageWdaSetDataFormatOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -4992,15 +5306,15 @@ export class ClientWda {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5008,23 +5322,23 @@ export class ClientWda {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientWda, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientWda, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5051,17 +5365,19 @@ export class ClientWda {
 }
 export interface ClientWds_ConstructProps extends Client_ConstructProps {
 }
-export class ClientWds {
-    /* Properties of Qmi.Client */
+class ClientWds {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientWds */
+    /* Methods of Qmi-1.0.Qmi.ClientWds */
+    bind_data_port(input: MessageWdsBindDataPortInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    bind_data_port_finish(res: Gio.AsyncResult): MessageWdsBindDataPortOutput
     bind_mux_data_port(input: MessageWdsBindMuxDataPortInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     bind_mux_data_port_finish(res: Gio.AsyncResult): MessageWdsBindMuxDataPortOutput
     create_profile(input: MessageWdsCreateProfileInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -5078,12 +5394,18 @@ export class ClientWds {
     get_current_settings_finish(res: Gio.AsyncResult): MessageWdsGetCurrentSettingsOutput
     get_data_bearer_technology(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_data_bearer_technology_finish(res: Gio.AsyncResult): MessageWdsGetDataBearerTechnologyOutput
-    get_default_profile_num(input: MessageWdsGetDefaultProfileNumInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    get_default_profile_num_finish(res: Gio.AsyncResult): MessageWdsGetDefaultProfileNumOutput
+    get_default_profile_number(input: MessageWdsGetDefaultProfileNumberInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_default_profile_number_finish(res: Gio.AsyncResult): MessageWdsGetDefaultProfileNumberOutput
     get_default_settings(input: MessageWdsGetDefaultSettingsInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_default_settings_finish(res: Gio.AsyncResult): MessageWdsGetDefaultSettingsOutput
     get_dormancy_status(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_dormancy_status_finish(res: Gio.AsyncResult): MessageWdsGetDormancyStatusOutput
+    get_lte_attach_parameters(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_lte_attach_parameters_finish(res: Gio.AsyncResult): MessageWdsGetLteAttachParametersOutput
+    get_lte_attach_pdn_list(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_lte_attach_pdn_list_finish(res: Gio.AsyncResult): MessageWdsGetLteAttachPdnListOutput
+    get_max_lte_attach_pdn_number(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_max_lte_attach_pdn_number_finish(res: Gio.AsyncResult): MessageWdsGetMaxLteAttachPdnNumberOutput
     get_packet_service_status(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_packet_service_status_finish(res: Gio.AsyncResult): MessageWdsGetPacketServiceStatusOutput
     get_packet_statistics(input: MessageWdsGetPacketStatisticsInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -5106,19 +5428,21 @@ export class ClientWds {
     reset_finish(res: Gio.AsyncResult): MessageWdsResetOutput
     set_autoconnect_settings(input: MessageWdsSetAutoconnectSettingsInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_autoconnect_settings_finish(res: Gio.AsyncResult): MessageWdsSetAutoconnectSettingsOutput
-    set_default_profile_num(input: MessageWdsSetDefaultProfileNumInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    set_default_profile_num_finish(res: Gio.AsyncResult): MessageWdsSetDefaultProfileNumOutput
+    set_default_profile_number(input: MessageWdsSetDefaultProfileNumberInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    set_default_profile_number_finish(res: Gio.AsyncResult): MessageWdsSetDefaultProfileNumberOutput
     set_event_report(input: MessageWdsSetEventReportInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_event_report_finish(res: Gio.AsyncResult): MessageWdsSetEventReportOutput
     set_ip_family(input: MessageWdsSetIpFamilyInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_ip_family_finish(res: Gio.AsyncResult): MessageWdsSetIpFamilyOutput
+    set_lte_attach_pdn_list(input: MessageWdsSetLteAttachPdnListInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    set_lte_attach_pdn_list_finish(res: Gio.AsyncResult): MessageWdsSetLteAttachPdnListOutput
     start_network(input: MessageWdsStartNetworkInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     start_network_finish(res: Gio.AsyncResult): MessageWdsStartNetworkOutput
     stop_network(input: MessageWdsStopNetworkInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     stop_network_finish(res: Gio.AsyncResult): MessageWdsStopNetworkOutput
     swi_create_profile_indexed(input: MessageWdsSwiCreateProfileIndexedInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     swi_create_profile_indexed_finish(res: Gio.AsyncResult): MessageWdsSwiCreateProfileIndexedOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -5127,15 +5451,15 @@ export class ClientWds {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5143,30 +5467,33 @@ export class ClientWds {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Qmi.ClientWds */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Qmi-1.0.Qmi.ClientWds */
     connect(sigName: "event-report", callback: (($obj: ClientWds, output: IndicationWdsEventReportOutput) => void)): number
     connect_after(sigName: "event-report", callback: (($obj: ClientWds, output: IndicationWdsEventReportOutput) => void)): number
     emit(sigName: "event-report", output: IndicationWdsEventReportOutput): void
     connect(sigName: "packet-service-status", callback: (($obj: ClientWds, output: IndicationWdsPacketServiceStatusOutput) => void)): number
     connect_after(sigName: "packet-service-status", callback: (($obj: ClientWds, output: IndicationWdsPacketServiceStatusOutput) => void)): number
     emit(sigName: "packet-service-status", output: IndicationWdsPacketServiceStatusOutput): void
-    /* Signals of GObject.Object */
+    connect(sigName: "set-lte-attach-pdn-list", callback: (($obj: ClientWds, output: IndicationWdsSetLteAttachPdnListOutput) => void)): number
+    connect_after(sigName: "set-lte-attach-pdn-list", callback: (($obj: ClientWds, output: IndicationWdsSetLteAttachPdnListOutput) => void)): number
+    emit(sigName: "set-lte-attach-pdn-list", output: IndicationWdsSetLteAttachPdnListOutput): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientWds, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientWds, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5193,17 +5520,17 @@ export class ClientWds {
 }
 export interface ClientWms_ConstructProps extends Client_ConstructProps {
 }
-export class ClientWms {
-    /* Properties of Qmi.Client */
+class ClientWms {
+    /* Properties of Qmi-1.0.Qmi.Client */
     client_cid: number
     client_device: Device
     client_service: Service
     readonly client_valid: boolean
     client_version_major: number
     client_version_minor: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.ClientWms */
+    /* Methods of Qmi-1.0.Qmi.ClientWms */
     delete(input: MessageWmsDeleteInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     delete_finish(res: Gio.AsyncResult): MessageWmsDeleteOutput
     get_message_protocol(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -5224,13 +5551,15 @@ export class ClientWms {
     raw_write_finish(res: Gio.AsyncResult): MessageWmsRawWriteOutput
     reset(unused: object | null, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     reset_finish(res: Gio.AsyncResult): MessageWmsResetOutput
+    send_ack(input: MessageWmsSendAckInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    send_ack_finish(res: Gio.AsyncResult): MessageWmsSendAckOutput
     send_from_memory_storage(input: MessageWmsSendFromMemoryStorageInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     send_from_memory_storage_finish(res: Gio.AsyncResult): MessageWmsSendFromMemoryStorageOutput
     set_event_report(input: MessageWmsSetEventReportInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_event_report_finish(res: Gio.AsyncResult): MessageWmsSetEventReportOutput
     set_routes(input: MessageWmsSetRoutesInput, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_routes_finish(res: Gio.AsyncResult): MessageWmsSetRoutesOutput
-    /* Methods of Qmi.Client */
+    /* Methods of Qmi-1.0.Qmi.Client */
     check_version(major: number, minor: number): boolean
     get_cid(): number
     get_device(): GObject.Object
@@ -5239,15 +5568,15 @@ export class ClientWms {
     get_version(major: number, minor: number): boolean
     is_valid(): boolean
     peek_device(): GObject.Object
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5255,30 +5584,30 @@ export class ClientWms {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Qmi.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Qmi-1.0.Qmi.Client */
     vfunc_process_indication(message: Message): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Qmi.ClientWms */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Qmi-1.0.Qmi.ClientWms */
     connect(sigName: "event-report", callback: (($obj: ClientWms, output: IndicationWmsEventReportOutput) => void)): number
     connect_after(sigName: "event-report", callback: (($obj: ClientWms, output: IndicationWmsEventReportOutput) => void)): number
     emit(sigName: "event-report", output: IndicationWmsEventReportOutput): void
     connect(sigName: "smsc-address", callback: (($obj: ClientWms, output: IndicationWmsSmscAddressOutput) => void)): number
     connect_after(sigName: "smsc-address", callback: (($obj: ClientWms, output: IndicationWmsSmscAddressOutput) => void)): number
     emit(sigName: "smsc-address", output: IndicationWmsSmscAddressOutput): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ClientWms, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ClientWms, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5308,22 +5637,29 @@ export interface Device_ConstructProps extends GObject.Object_ConstructProps {
     device_no_file_check?: boolean
     device_proxy_path?: string
 }
-export class Device {
-    /* Properties of Qmi.Device */
+class Device {
+    /* Properties of Qmi-1.0.Qmi.Device */
     readonly device_wwan_iface: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.Device */
+    /* Methods of Qmi-1.0.Qmi.Device */
+    add_link(mux_id: number, base_ifname: string, ifname_prefix: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    add_link_finish(res: Gio.AsyncResult, mux_id: number): string
+    add_link_with_flags(mux_id: number, base_ifname: string, ifname_prefix: string, flags: DeviceAddLinkFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    add_link_with_flags_finish(res: Gio.AsyncResult, mux_id: number): string
     allocate_client(service: Service, cid: number, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     allocate_client_finish(res: Gio.AsyncResult): Client
-    close(): boolean
+    check_expected_data_format_supported(format: DeviceExpectedDataFormat): boolean
+    check_link_supported(): boolean
     close_async(timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     close_finish(res: Gio.AsyncResult): boolean
-    command(message: Message, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     command_abortable_finish(res: Gio.AsyncResult): Message
-    command_finish(res: Gio.AsyncResult): Message
     command_full(message: Message, message_context: MessageContext, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     command_full_finish(res: Gio.AsyncResult): Message
+    delete_all_links(base_ifname: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    delete_all_links_finish(res: Gio.AsyncResult): boolean
+    delete_link(ifname: string, mux_id: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    delete_link_finish(res: Gio.AsyncResult): boolean
     get_expected_data_format(): DeviceExpectedDataFormat
     get_file(): Gio.File
     get_path(): string
@@ -5332,6 +5668,7 @@ export class Device {
     get_service_version_info_finish(res: Gio.AsyncResult): DeviceServiceVersionInfo[]
     get_wwan_iface(): string
     is_open(): boolean
+    list_links(base_ifname: string): [ /* returnType */ boolean, /* out_links */ string[] ]
     open(flags: DeviceOpenFlags, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     open_finish(res: Gio.AsyncResult): boolean
     peek_file(): Gio.File
@@ -5340,15 +5677,15 @@ export class Device {
     set_expected_data_format(format: DeviceExpectedDataFormat): boolean
     set_instance_id(instance_id: number, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_instance_id_finish(res: Gio.AsyncResult, link_id: number): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5356,35 +5693,35 @@ export class Device {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.AsyncInitable */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Virtual methods of Qmi.Device */
+    /* Virtual methods of Qmi-1.0.Qmi.Device */
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Qmi.Device */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Qmi-1.0.Qmi.Device */
     connect(sigName: "device-removed", callback: (($obj: Device) => void)): number
     connect_after(sigName: "device-removed", callback: (($obj: Device) => void)): number
     emit(sigName: "device-removed"): void
     connect(sigName: "indication", callback: (($obj: Device, output: Uint8Array[]) => void)): number
     connect_after(sigName: "indication", callback: (($obj: Device, output: Uint8Array[]) => void)): number
     emit(sigName: "indication", output: Uint8Array[]): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5404,25 +5741,25 @@ export class Device {
 }
 export interface Proxy_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Proxy {
-    /* Properties of Qmi.Proxy */
+class Proxy {
+    /* Properties of Qmi-1.0.Qmi.Proxy */
     readonly qmi_proxy_n_clients: number
-    /* Fields of Qmi.Proxy */
+    /* Fields of Qmi-1.0.Qmi.Proxy */
     parent: GObject.Object
     priv: ProxyPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Qmi.Proxy */
+    /* Methods of Qmi-1.0.Qmi.Proxy */
     get_n_clients(): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5430,21 +5767,21 @@ export class Proxy {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Proxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Proxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5461,168 +5798,179 @@ export class Proxy {
     static new(): Proxy
     static $gtype: GObject.Type
 }
-export abstract class ClientClass {
-    /* Fields of Qmi.ClientClass */
+abstract class ClientClass {
+    /* Fields of Qmi-1.0.Qmi.ClientClass */
     process_indication: (self: Client, message: Message) => void
     static name: string
 }
-export abstract class ClientCtlClass {
+abstract class ClientCtlClass {
     static name: string
 }
-export abstract class ClientDmsClass {
+abstract class ClientDmsClass {
     static name: string
 }
-export abstract class ClientDsdClass {
+abstract class ClientDpmClass {
     static name: string
 }
-export abstract class ClientGasClass {
+abstract class ClientDsdClass {
     static name: string
 }
-export abstract class ClientGmsClass {
+abstract class ClientGasClass {
     static name: string
 }
-export abstract class ClientLocClass {
+abstract class ClientGmsClass {
     static name: string
 }
-export abstract class ClientNasClass {
+abstract class ClientLocClass {
     static name: string
 }
-export abstract class ClientOmaClass {
+abstract class ClientNasClass {
     static name: string
 }
-export abstract class ClientPbmClass {
+abstract class ClientOmaClass {
     static name: string
 }
-export abstract class ClientPdcClass {
+abstract class ClientPbmClass {
     static name: string
 }
-export abstract class ClientPdsClass {
+abstract class ClientPdcClass {
     static name: string
 }
-export class ClientPrivate {
+abstract class ClientPdsClass {
     static name: string
 }
-export abstract class ClientQosClass {
+class ClientPrivate {
     static name: string
 }
-export abstract class ClientSarClass {
+abstract class ClientQosClass {
     static name: string
 }
-export abstract class ClientUimClass {
+abstract class ClientSarClass {
     static name: string
 }
-export abstract class ClientVoiceClass {
+abstract class ClientUimClass {
     static name: string
 }
-export abstract class ClientWdaClass {
+abstract class ClientVoiceClass {
     static name: string
 }
-export abstract class ClientWdsClass {
+abstract class ClientWdaClass {
     static name: string
 }
-export abstract class ClientWmsClass {
+abstract class ClientWdsClass {
     static name: string
 }
-export class ConfigTypeAndId {
-    /* Fields of Qmi.ConfigTypeAndId */
+abstract class ClientWmsClass {
+    static name: string
+}
+class ConfigTypeAndId {
+    /* Fields of Qmi-1.0.Qmi.ConfigTypeAndId */
     config_type: PdcConfigurationType
     id: object[]
     static name: string
 }
-export abstract class DeviceClass {
+abstract class DeviceClass {
     static name: string
 }
-export class DevicePrivate {
+class DevicePrivate {
     static name: string
 }
-export class DeviceServiceVersionInfo {
-    /* Fields of Qmi.DeviceServiceVersionInfo */
+class DeviceServiceVersionInfo {
+    /* Fields of Qmi-1.0.Qmi.DeviceServiceVersionInfo */
     service: Service
     major_version: number
     minor_version: number
     static name: string
 }
-export class IndicationDmsEventReportOutput {
-    /* Methods of Qmi.IndicationDmsEventReportOutput */
-    get_activation_state(): [ /* returnType */ boolean, /* value_activation_state */ DmsActivationState ]
-    get_operating_mode(): [ /* returnType */ boolean, /* value_operating_mode */ DmsOperatingMode ]
-    get_pin1_status(): [ /* returnType */ boolean, /* value_pin1_status_current_status */ DmsUimPinStatus, /* value_pin1_status_verify_retries_left */ number, /* value_pin1_status_unblock_retries_left */ number ]
-    get_pin2_status(): [ /* returnType */ boolean, /* value_pin2_status_current_status */ DmsUimPinStatus, /* value_pin2_status_verify_retries_left */ number, /* value_pin2_status_unblock_retries_left */ number ]
-    get_power_state(): [ /* returnType */ boolean, /* value_power_state_power_state_flags */ number, /* value_power_state_battery_level */ number ]
-    get_prl_init_notification(): [ /* returnType */ boolean, /* value_prl_init_notification */ boolean ]
-    get_uim_state(): [ /* returnType */ boolean, /* value_uim_state */ DmsUimState ]
-    get_wireless_disable_state(): [ /* returnType */ boolean, /* value_wireless_disable_state */ boolean ]
+class IndicationDmsEventReportOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationDmsEventReportOutput */
+    get_activation_state(): [ /* returnType */ boolean, /* value_activation_state */ DmsActivationState | null ]
+    get_operating_mode(): [ /* returnType */ boolean, /* value_operating_mode */ DmsOperatingMode | null ]
+    get_pin1_status(): [ /* returnType */ boolean, /* value_pin1_status_current_status */ DmsUimPinStatus | null, /* value_pin1_status_verify_retries_left */ number | null, /* value_pin1_status_unblock_retries_left */ number | null ]
+    get_pin2_status(): [ /* returnType */ boolean, /* value_pin2_status_current_status */ DmsUimPinStatus | null, /* value_pin2_status_verify_retries_left */ number | null, /* value_pin2_status_unblock_retries_left */ number | null ]
+    get_power_state(): [ /* returnType */ boolean, /* value_power_state_power_state_flags */ number | null, /* value_power_state_battery_level */ number | null ]
+    get_prl_init_notification(): [ /* returnType */ boolean, /* value_prl_init_notification */ boolean | null ]
+    get_uim_state(): [ /* returnType */ boolean, /* value_uim_state */ DmsUimState | null ]
+    get_wireless_disable_state(): [ /* returnType */ boolean, /* value_wireless_disable_state */ boolean | null ]
     ref(): IndicationDmsEventReportOutput
     unref(): void
     static name: string
 }
-export class IndicationLocDeleteAssistanceDataOutput {
-    /* Methods of Qmi.IndicationLocDeleteAssistanceDataOutput */
-    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus ]
+class IndicationLocDeleteAssistanceDataOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocDeleteAssistanceDataOutput */
+    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus | null ]
     ref(): IndicationLocDeleteAssistanceDataOutput
     unref(): void
     static name: string
 }
-export class IndicationLocEngineStateOutput {
-    /* Methods of Qmi.IndicationLocEngineStateOutput */
-    get_engine_state(): [ /* returnType */ boolean, /* value_engine_state */ LocEngineState ]
+class IndicationLocEngineStateOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocEngineStateOutput */
+    get_engine_state(): [ /* returnType */ boolean, /* value_engine_state */ LocEngineState | null ]
     ref(): IndicationLocEngineStateOutput
     unref(): void
     static name: string
 }
-export class IndicationLocFixRecurrenceTypeOutput {
-    /* Methods of Qmi.IndicationLocFixRecurrenceTypeOutput */
-    get_fix_recurrence_type(): [ /* returnType */ boolean, /* value_fix_recurrence_type */ LocFixRecurrenceType ]
+class IndicationLocFixRecurrenceTypeOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocFixRecurrenceTypeOutput */
+    get_fix_recurrence_type(): [ /* returnType */ boolean, /* value_fix_recurrence_type */ LocFixRecurrenceType | null ]
     ref(): IndicationLocFixRecurrenceTypeOutput
     unref(): void
     static name: string
 }
-export class IndicationLocGetNmeaTypesOutput {
-    /* Methods of Qmi.IndicationLocGetNmeaTypesOutput */
-    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus ]
-    get_nmea_types(): [ /* returnType */ boolean, /* value_nmea_types */ LocNmeaType ]
+class IndicationLocGetEngineLockOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocGetEngineLockOutput */
+    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus | null ]
+    get_lock_type(): [ /* returnType */ boolean, /* value_lock_type */ LocLockType | null ]
+    ref(): IndicationLocGetEngineLockOutput
+    unref(): void
+    static name: string
+}
+class IndicationLocGetNmeaTypesOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocGetNmeaTypesOutput */
+    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus | null ]
+    get_nmea_types(): [ /* returnType */ boolean, /* value_nmea_types */ LocNmeaType | null ]
     ref(): IndicationLocGetNmeaTypesOutput
     unref(): void
     static name: string
 }
-export class IndicationLocGetOperationModeOutput {
-    /* Methods of Qmi.IndicationLocGetOperationModeOutput */
-    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus ]
-    get_operation_mode(): [ /* returnType */ boolean, /* value_operation_mode */ LocOperationMode ]
+class IndicationLocGetOperationModeOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocGetOperationModeOutput */
+    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus | null ]
+    get_operation_mode(): [ /* returnType */ boolean, /* value_operation_mode */ LocOperationMode | null ]
     ref(): IndicationLocGetOperationModeOutput
     unref(): void
     static name: string
 }
-export class IndicationLocGetPredictedOrbitsDataSourceOutput {
-    /* Methods of Qmi.IndicationLocGetPredictedOrbitsDataSourceOutput */
-    get_allowed_sizes(): [ /* returnType */ boolean, /* value_allowed_sizes_max_file_size */ number, /* value_allowed_sizes_max_part_size */ number ]
-    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus ]
-    get_server_list(): [ /* returnType */ boolean, /* value_server_list */ string[] ]
+class IndicationLocGetPredictedOrbitsDataSourceOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocGetPredictedOrbitsDataSourceOutput */
+    get_allowed_sizes(): [ /* returnType */ boolean, /* value_allowed_sizes_max_file_size */ number | null, /* value_allowed_sizes_max_part_size */ number | null ]
+    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus | null ]
+    get_server_list(): [ /* returnType */ boolean, /* value_server_list */ string[] | null ]
     ref(): IndicationLocGetPredictedOrbitsDataSourceOutput
     unref(): void
     static name: string
 }
-export class IndicationLocGetServerOutput {
-    /* Methods of Qmi.IndicationLocGetServerOutput */
-    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus ]
-    get_ipv4(): [ /* returnType */ boolean, /* value_ipv4_ipv4_address */ number, /* value_ipv4_ipv4_port */ number ]
-    get_ipv6(): [ /* returnType */ boolean, /* value_ipv6_ipv6_address */ number[], /* value_ipv6_ipv6_port */ number ]
-    get_server_type(): [ /* returnType */ boolean, /* value_server_type */ LocServerType ]
-    get_url(): [ /* returnType */ boolean, /* value_url */ string ]
+class IndicationLocGetServerOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocGetServerOutput */
+    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus | null ]
+    get_ipv4(): [ /* returnType */ boolean, /* value_ipv4_ipv4_address */ number | null, /* value_ipv4_ipv4_port */ number | null ]
+    get_ipv6(): [ /* returnType */ boolean, /* value_ipv6_ipv6_address */ number[] | null, /* value_ipv6_ipv6_port */ number | null ]
+    get_server_type(): [ /* returnType */ boolean, /* value_server_type */ LocServerType | null ]
+    get_url(): [ /* returnType */ boolean, /* value_url */ string | null ]
     ref(): IndicationLocGetServerOutput
     unref(): void
     static name: string
 }
-export class IndicationLocGnssSvInfoOutput {
-    /* Methods of Qmi.IndicationLocGnssSvInfoOutput */
-    get_altitude_assumed(): [ /* returnType */ boolean, /* value_altitude_assumed */ boolean ]
-    get_list(): [ /* returnType */ boolean, /* value_list */ IndicationLocGnssSvInfoOutputListElement[] ]
+class IndicationLocGnssSvInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocGnssSvInfoOutput */
+    get_altitude_assumed(): [ /* returnType */ boolean, /* value_altitude_assumed */ boolean | null ]
+    get_list(): [ /* returnType */ boolean, /* value_list */ IndicationLocGnssSvInfoOutputListElement[] | null ]
     ref(): IndicationLocGnssSvInfoOutput
     unref(): void
     static name: string
 }
-export class IndicationLocGnssSvInfoOutputListElement {
-    /* Fields of Qmi.IndicationLocGnssSvInfoOutputListElement */
+class IndicationLocGnssSvInfoOutputListElement {
+    /* Fields of Qmi-1.0.Qmi.IndicationLocGnssSvInfoOutputListElement */
     valid_information: LocSatelliteValidInformation
     system: LocSystem
     gnss_satellite_id: number
@@ -5634,149 +5982,166 @@ export class IndicationLocGnssSvInfoOutputListElement {
     signal_to_noise_ratio_bhz: number
     static name: string
 }
-export class IndicationLocInjectPredictedOrbitsDataOutput {
-    /* Methods of Qmi.IndicationLocInjectPredictedOrbitsDataOutput */
-    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus ]
-    get_part_number(): [ /* returnType */ boolean, /* value_part_number */ number ]
+class IndicationLocInjectPredictedOrbitsDataOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocInjectPredictedOrbitsDataOutput */
+    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus | null ]
+    get_part_number(): [ /* returnType */ boolean, /* value_part_number */ number | null ]
     ref(): IndicationLocInjectPredictedOrbitsDataOutput
     unref(): void
     static name: string
 }
-export class IndicationLocInjectXtraDataOutput {
-    /* Methods of Qmi.IndicationLocInjectXtraDataOutput */
-    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus ]
-    get_part_number(): [ /* returnType */ boolean, /* value_part_number */ number ]
+class IndicationLocInjectXtraDataOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocInjectXtraDataOutput */
+    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus | null ]
+    get_part_number(): [ /* returnType */ boolean, /* value_part_number */ number | null ]
     ref(): IndicationLocInjectXtraDataOutput
     unref(): void
     static name: string
 }
-export class IndicationLocNmeaOutput {
-    /* Methods of Qmi.IndicationLocNmeaOutput */
-    get_nmea_string(): [ /* returnType */ boolean, /* value_nmea_string */ string ]
+class IndicationLocNmeaOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocNmeaOutput */
+    get_nmea_string(): [ /* returnType */ boolean, /* value_nmea_string */ string | null ]
     ref(): IndicationLocNmeaOutput
     unref(): void
     static name: string
 }
-export class IndicationLocPositionReportOutput {
-    /* Methods of Qmi.IndicationLocPositionReportOutput */
-    get_altitude_assumed(): [ /* returnType */ boolean, /* value_altitude_assumed */ boolean ]
-    get_altitude_from_ellipsoid(): [ /* returnType */ boolean, /* value_altitude_from_ellipsoid */ number ]
-    get_altitude_from_sealevel(): [ /* returnType */ boolean, /* value_altitude_from_sealevel */ number ]
-    get_dilution_of_precision(): [ /* returnType */ boolean, /* value_dilution_of_precision */ IndicationLocPositionReportOutputDilutionOfPrecision ]
-    get_gps_time(): [ /* returnType */ boolean, /* value_gps_time */ IndicationLocPositionReportOutputGpsTime ]
-    get_heading(): [ /* returnType */ boolean, /* value_heading */ number ]
-    get_heading_uncertainty(): [ /* returnType */ boolean, /* value_heading_uncertainty */ number ]
-    get_horizontal_confidence(): [ /* returnType */ boolean, /* value_horizontal_confidence */ number ]
-    get_horizontal_reliability(): [ /* returnType */ boolean, /* value_horizontal_reliability */ LocReliability ]
-    get_horizontal_speed(): [ /* returnType */ boolean, /* value_horizontal_speed */ number ]
-    get_horizontal_uncertainty_circular(): [ /* returnType */ boolean, /* value_horizontal_uncertainty_circular */ number ]
-    get_horizontal_uncertainty_elliptical_azimuth(): [ /* returnType */ boolean, /* value_horizontal_uncertainty_elliptical_azimuth */ number ]
-    get_horizontal_uncertainty_elliptical_major(): [ /* returnType */ boolean, /* value_horizontal_uncertainty_elliptical_major */ number ]
-    get_horizontal_uncertainty_elliptical_minor(): [ /* returnType */ boolean, /* value_horizontal_uncertainty_elliptical_minor */ number ]
-    get_latitude(): [ /* returnType */ boolean, /* value_latitude */ number ]
-    get_leap_seconds(): [ /* returnType */ boolean, /* value_leap_seconds */ number ]
-    get_longitude(): [ /* returnType */ boolean, /* value_longitude */ number ]
-    get_magnetic_deviation(): [ /* returnType */ boolean, /* value_magnetic_deviation */ number ]
-    get_satellites_used(): [ /* returnType */ boolean, /* value_satellites_used */ number[] ]
-    get_sensor_data_usage(): [ /* returnType */ boolean, /* value_sensor_data_usage */ LocSensorDataUsage ]
-    get_session_fix_count(): [ /* returnType */ boolean, /* value_session_fix_count */ number ]
-    get_session_id(): [ /* returnType */ boolean, /* value_session_id */ number ]
-    get_session_status(): [ /* returnType */ boolean, /* value_session_status */ LocSessionStatus ]
-    get_speed_uncertainty(): [ /* returnType */ boolean, /* value_speed_uncertainty */ number ]
-    get_technology_used(): [ /* returnType */ boolean, /* value_technology_used */ LocTechnologyUsed ]
-    get_time_source(): [ /* returnType */ boolean, /* value_time_source */ LocTimeSource ]
-    get_time_uncertainty(): [ /* returnType */ boolean, /* value_time_uncertainty */ number ]
-    get_utc_timestamp(): [ /* returnType */ boolean, /* value_utc_timestamp */ number ]
-    get_vertical_confidence(): [ /* returnType */ boolean, /* value_vertical_confidence */ number ]
-    get_vertical_reliability(): [ /* returnType */ boolean, /* value_vertical_reliability */ number ]
-    get_vertical_speed(): [ /* returnType */ boolean, /* value_vertical_speed */ number ]
-    get_vertical_uncertainty(): [ /* returnType */ boolean, /* value_vertical_uncertainty */ number ]
+class IndicationLocPositionReportOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocPositionReportOutput */
+    get_altitude_assumed(): [ /* returnType */ boolean, /* value_altitude_assumed */ boolean | null ]
+    get_altitude_from_ellipsoid(): [ /* returnType */ boolean, /* value_altitude_from_ellipsoid */ number | null ]
+    get_altitude_from_sealevel(): [ /* returnType */ boolean, /* value_altitude_from_sealevel */ number | null ]
+    get_dilution_of_precision(): [ /* returnType */ boolean, /* value_dilution_of_precision */ IndicationLocPositionReportOutputDilutionOfPrecision | null ]
+    get_gps_time(): [ /* returnType */ boolean, /* value_gps_time */ IndicationLocPositionReportOutputGpsTime | null ]
+    get_heading(): [ /* returnType */ boolean, /* value_heading */ number | null ]
+    get_heading_uncertainty(): [ /* returnType */ boolean, /* value_heading_uncertainty */ number | null ]
+    get_horizontal_confidence(): [ /* returnType */ boolean, /* value_horizontal_confidence */ number | null ]
+    get_horizontal_reliability(): [ /* returnType */ boolean, /* value_horizontal_reliability */ LocReliability | null ]
+    get_horizontal_speed(): [ /* returnType */ boolean, /* value_horizontal_speed */ number | null ]
+    get_horizontal_uncertainty_circular(): [ /* returnType */ boolean, /* value_horizontal_uncertainty_circular */ number | null ]
+    get_horizontal_uncertainty_elliptical_azimuth(): [ /* returnType */ boolean, /* value_horizontal_uncertainty_elliptical_azimuth */ number | null ]
+    get_horizontal_uncertainty_elliptical_major(): [ /* returnType */ boolean, /* value_horizontal_uncertainty_elliptical_major */ number | null ]
+    get_horizontal_uncertainty_elliptical_minor(): [ /* returnType */ boolean, /* value_horizontal_uncertainty_elliptical_minor */ number | null ]
+    get_latitude(): [ /* returnType */ boolean, /* value_latitude */ number | null ]
+    get_leap_seconds(): [ /* returnType */ boolean, /* value_leap_seconds */ number | null ]
+    get_longitude(): [ /* returnType */ boolean, /* value_longitude */ number | null ]
+    get_magnetic_deviation(): [ /* returnType */ boolean, /* value_magnetic_deviation */ number | null ]
+    get_satellites_used(): [ /* returnType */ boolean, /* value_satellites_used */ number[] | null ]
+    get_sensor_data_usage(): [ /* returnType */ boolean, /* value_sensor_data_usage */ LocSensorDataUsage | null ]
+    get_session_fix_count(): [ /* returnType */ boolean, /* value_session_fix_count */ number | null ]
+    get_session_id(): [ /* returnType */ boolean, /* value_session_id */ number | null ]
+    get_session_status(): [ /* returnType */ boolean, /* value_session_status */ LocSessionStatus | null ]
+    get_speed_uncertainty(): [ /* returnType */ boolean, /* value_speed_uncertainty */ number | null ]
+    get_technology_used(): [ /* returnType */ boolean, /* value_technology_used */ LocTechnologyUsed | null ]
+    get_time_source(): [ /* returnType */ boolean, /* value_time_source */ LocTimeSource | null ]
+    get_time_uncertainty(): [ /* returnType */ boolean, /* value_time_uncertainty */ number | null ]
+    get_utc_timestamp(): [ /* returnType */ boolean, /* value_utc_timestamp */ number | null ]
+    get_vertical_confidence(): [ /* returnType */ boolean, /* value_vertical_confidence */ number | null ]
+    get_vertical_reliability(): [ /* returnType */ boolean, /* value_vertical_reliability */ number | null ]
+    get_vertical_speed(): [ /* returnType */ boolean, /* value_vertical_speed */ number | null ]
+    get_vertical_uncertainty(): [ /* returnType */ boolean, /* value_vertical_uncertainty */ number | null ]
     ref(): IndicationLocPositionReportOutput
     unref(): void
     static name: string
 }
-export class IndicationLocPositionReportOutputDilutionOfPrecision {
-    /* Fields of Qmi.IndicationLocPositionReportOutputDilutionOfPrecision */
+class IndicationLocPositionReportOutputDilutionOfPrecision {
+    /* Fields of Qmi-1.0.Qmi.IndicationLocPositionReportOutputDilutionOfPrecision */
     position_dilution_of_precision: number
     horizontal_dilution_of_precision: number
     vertical_dilution_of_precision: number
     static name: string
 }
-export class IndicationLocPositionReportOutputGpsTime {
-    /* Fields of Qmi.IndicationLocPositionReportOutputGpsTime */
+class IndicationLocPositionReportOutputGpsTime {
+    /* Fields of Qmi-1.0.Qmi.IndicationLocPositionReportOutputGpsTime */
     gps_weeks: number
     gps_time_of_week_milliseconds: number
     static name: string
 }
-export class IndicationLocSetNmeaTypesOutput {
-    /* Methods of Qmi.IndicationLocSetNmeaTypesOutput */
-    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus ]
+class IndicationLocSetEngineLockOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocSetEngineLockOutput */
+    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus | null ]
+    ref(): IndicationLocSetEngineLockOutput
+    unref(): void
+    static name: string
+}
+class IndicationLocSetNmeaTypesOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocSetNmeaTypesOutput */
+    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus | null ]
     ref(): IndicationLocSetNmeaTypesOutput
     unref(): void
     static name: string
 }
-export class IndicationLocSetOperationModeOutput {
-    /* Methods of Qmi.IndicationLocSetOperationModeOutput */
-    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus ]
+class IndicationLocSetOperationModeOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocSetOperationModeOutput */
+    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus | null ]
     ref(): IndicationLocSetOperationModeOutput
     unref(): void
     static name: string
 }
-export class IndicationLocSetServerOutput {
-    /* Methods of Qmi.IndicationLocSetServerOutput */
-    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus ]
+class IndicationLocSetServerOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationLocSetServerOutput */
+    get_indication_status(): [ /* returnType */ boolean, /* value_indication_status */ LocIndicationStatus | null ]
     ref(): IndicationLocSetServerOutput
     unref(): void
     static name: string
 }
-export class IndicationNasEventReportOutput {
-    /* Methods of Qmi.IndicationNasEventReportOutput */
-    get_ecio(): [ /* returnType */ boolean, /* value_ecio_ecio */ number, /* value_ecio_radio_interface */ NasRadioInterface ]
-    get_error_rate(): [ /* returnType */ boolean, /* value_error_rate_rate */ number, /* value_error_rate_radio_interface */ NasRadioInterface ]
-    get_io(): [ /* returnType */ boolean, /* value_io */ number ]
-    get_lte_rsrp(): [ /* returnType */ boolean, /* value_lte_rsrp */ number ]
-    get_lte_snr(): [ /* returnType */ boolean, /* value_lte_snr */ number ]
-    get_registration_reject_reason(): [ /* returnType */ boolean, /* value_registration_reject_reason_service_domain */ NasNetworkServiceDomain, /* value_registration_reject_reason_reject_cause */ number ]
-    get_rf_band_information(): [ /* returnType */ boolean, /* value_rf_band_information */ IndicationNasEventReportOutputRfBandInformationElement[] ]
-    get_rsrq(): [ /* returnType */ boolean, /* value_rsrq_rsrq */ number, /* value_rsrq_radio_interface */ NasRadioInterface ]
-    get_rssi(): [ /* returnType */ boolean, /* value_rssi_rssi */ number, /* value_rssi_radio_interface */ NasRadioInterface ]
-    get_signal_strength(): [ /* returnType */ boolean, /* value_signal_strength_strength */ number, /* value_signal_strength_radio_interface */ NasRadioInterface ]
-    get_sinr(): [ /* returnType */ boolean, /* value_sinr */ NasEvdoSinrLevel ]
+class IndicationNasEventReportOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationNasEventReportOutput */
+    get_ecio(): [ /* returnType */ boolean, /* value_ecio_ecio */ number | null, /* value_ecio_radio_interface */ NasRadioInterface | null ]
+    get_error_rate(): [ /* returnType */ boolean, /* value_error_rate_rate */ number | null, /* value_error_rate_radio_interface */ NasRadioInterface | null ]
+    get_io(): [ /* returnType */ boolean, /* value_io */ number | null ]
+    get_lte_rsrp(): [ /* returnType */ boolean, /* value_lte_rsrp */ number | null ]
+    get_lte_snr(): [ /* returnType */ boolean, /* value_lte_snr */ number | null ]
+    get_registration_reject_reason(): [ /* returnType */ boolean, /* value_registration_reject_reason_service_domain */ NasNetworkServiceDomain | null, /* value_registration_reject_reason_reject_cause */ number | null ]
+    get_rf_band_information(): [ /* returnType */ boolean, /* value_rf_band_information */ IndicationNasEventReportOutputRfBandInformationElement[] | null ]
+    get_rsrq(): [ /* returnType */ boolean, /* value_rsrq_rsrq */ number | null, /* value_rsrq_radio_interface */ NasRadioInterface | null ]
+    get_rssi(): [ /* returnType */ boolean, /* value_rssi_rssi */ number | null, /* value_rssi_radio_interface */ NasRadioInterface | null ]
+    get_signal_strength(): [ /* returnType */ boolean, /* value_signal_strength_strength */ number | null, /* value_signal_strength_radio_interface */ NasRadioInterface | null ]
+    get_sinr(): [ /* returnType */ boolean, /* value_sinr */ NasEvdoSinrLevel | null ]
     ref(): IndicationNasEventReportOutput
     unref(): void
     static name: string
 }
-export class IndicationNasEventReportOutputRfBandInformationElement {
-    /* Fields of Qmi.IndicationNasEventReportOutputRfBandInformationElement */
+class IndicationNasEventReportOutputRfBandInformationElement {
+    /* Fields of Qmi-1.0.Qmi.IndicationNasEventReportOutputRfBandInformationElement */
     radio_interface: NasRadioInterface
     active_band_class: NasActiveBand
     active_channel: number
     static name: string
 }
-export class IndicationNasNetworkTimeOutput {
-    /* Methods of Qmi.IndicationNasNetworkTimeOutput */
-    get_daylight_savings_adjustment(): [ /* returnType */ boolean, /* value_daylight_savings_adjustment */ NasDaylightSavingsAdjustment ]
-    get_radio_interface(): [ /* returnType */ boolean, /* value_radio_interface */ NasRadioInterface ]
-    get_timezone_offset(): [ /* returnType */ boolean, /* value_timezone_offset */ number ]
-    get_universal_time(): [ /* returnType */ boolean, /* value_universal_time_year */ number, /* value_universal_time_month */ number, /* value_universal_time_day */ number, /* value_universal_time_hour */ number, /* value_universal_time_minute */ number, /* value_universal_time_second */ number, /* value_universal_time_day_of_week */ NasDayOfWeek ]
+class IndicationNasNetworkRejectOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationNasNetworkRejectOutput */
+    get_closed_subscriber_group(): [ /* returnType */ boolean, /* value_closed_subscriber_group */ number | null ]
+    get_plmn(): [ /* returnType */ boolean, /* value_plmn_mcc */ number | null, /* value_plmn_mnc */ number | null, /* value_plmn_includes_pcs_digit */ boolean | null ]
+    get_radio_interface(): [ /* returnType */ boolean, /* value_radio_interface */ NasRadioInterface | null ]
+    get_reject_cause(): [ /* returnType */ boolean, /* value_reject_cause */ NasRejectCause | null ]
+    get_service_domain(): [ /* returnType */ boolean, /* value_service_domain */ NasNetworkServiceDomain | null ]
+    ref(): IndicationNasNetworkRejectOutput
+    unref(): void
+    static name: string
+}
+class IndicationNasNetworkTimeOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationNasNetworkTimeOutput */
+    get_daylight_savings_adjustment(): [ /* returnType */ boolean, /* value_daylight_savings_adjustment */ NasDaylightSavingsAdjustment | null ]
+    get_radio_interface(): [ /* returnType */ boolean, /* value_radio_interface */ NasRadioInterface | null ]
+    get_timezone_offset(): [ /* returnType */ boolean, /* value_timezone_offset */ number | null ]
+    get_universal_time(): [ /* returnType */ boolean, /* value_universal_time_year */ number | null, /* value_universal_time_month */ number | null, /* value_universal_time_day */ number | null, /* value_universal_time_hour */ number | null, /* value_universal_time_minute */ number | null, /* value_universal_time_second */ number | null, /* value_universal_time_day_of_week */ NasDayOfWeek | null ]
     ref(): IndicationNasNetworkTimeOutput
     unref(): void
     static name: string
 }
-export class IndicationNasOperatorNameOutput {
-    /* Methods of Qmi.IndicationNasOperatorNameOutput */
-    get_nitz_information(): [ /* returnType */ boolean, /* value_nitz_information_name_encoding */ NasPlmnEncodingScheme, /* value_nitz_information_short_country_initials */ NasPlmnNameCountryInitials, /* value_nitz_information_long_name_spare_bits */ NasPlmnNameSpareBits, /* value_nitz_information_short_name_spare_bits */ NasPlmnNameSpareBits, /* value_nitz_information_long_name */ Uint8Array[], /* value_nitz_information_short_name */ Uint8Array[] ]
-    get_operator_nitz_information(value_operator_nitz_information_name_encoding: NasPlmnEncodingScheme, value_operator_nitz_information_short_country_initials: NasPlmnNameCountryInitials, value_operator_nitz_information_long_name_spare_bits: NasPlmnNameSpareBits, value_operator_nitz_information_short_name_spare_bits: NasPlmnNameSpareBits, value_operator_nitz_information_long_name: string, value_operator_nitz_information_short_name: string): boolean
-    get_operator_plmn_list(): [ /* returnType */ boolean, /* value_operator_plmn_list */ IndicationNasOperatorNameOutputOperatorPlmnListElement[] ]
-    get_operator_plmn_name(): [ /* returnType */ boolean, /* value_operator_plmn_name */ IndicationNasOperatorNameOutputOperatorPlmnNameElement[] ]
-    get_operator_string_name(): [ /* returnType */ boolean, /* value_operator_string_name */ string ]
-    get_service_provider_name(): [ /* returnType */ boolean, /* value_service_provider_name_name_display_condition */ NasNetworkNameDisplayCondition, /* value_service_provider_name_name */ string ]
+class IndicationNasOperatorNameOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationNasOperatorNameOutput */
+    get_nitz_information(): [ /* returnType */ boolean, /* value_nitz_information_name_encoding */ NasPlmnEncodingScheme | null, /* value_nitz_information_short_country_initials */ NasPlmnNameCountryInitials | null, /* value_nitz_information_long_name_spare_bits */ NasPlmnNameSpareBits | null, /* value_nitz_information_short_name_spare_bits */ NasPlmnNameSpareBits | null, /* value_nitz_information_long_name */ Uint8Array[] | null, /* value_nitz_information_short_name */ Uint8Array[] | null ]
+    get_operator_plmn_list(): [ /* returnType */ boolean, /* value_operator_plmn_list */ IndicationNasOperatorNameOutputOperatorPlmnListElement[] | null ]
+    get_operator_plmn_name(): [ /* returnType */ boolean, /* value_operator_plmn_name */ IndicationNasOperatorNameOutputOperatorPlmnNameElement[] | null ]
+    get_operator_string_name(): [ /* returnType */ boolean, /* value_operator_string_name */ string | null ]
+    get_service_provider_name(): [ /* returnType */ boolean, /* value_service_provider_name_name_display_condition */ NasNetworkNameDisplayCondition | null, /* value_service_provider_name_name */ string | null ]
     ref(): IndicationNasOperatorNameOutput
     unref(): void
     static name: string
 }
-export class IndicationNasOperatorNameOutputOperatorPlmnListElement {
-    /* Fields of Qmi.IndicationNasOperatorNameOutputOperatorPlmnListElement */
+class IndicationNasOperatorNameOutputOperatorPlmnListElement {
+    /* Fields of Qmi-1.0.Qmi.IndicationNasOperatorNameOutputOperatorPlmnListElement */
     mcc: string
     mnc: string
     lac1: number
@@ -5784,8 +6149,8 @@ export class IndicationNasOperatorNameOutputOperatorPlmnListElement {
     plmn_name_record_identifier: number
     static name: string
 }
-export class IndicationNasOperatorNameOutputOperatorPlmnNameElement {
-    /* Fields of Qmi.IndicationNasOperatorNameOutputOperatorPlmnNameElement */
+class IndicationNasOperatorNameOutputOperatorPlmnNameElement {
+    /* Fields of Qmi-1.0.Qmi.IndicationNasOperatorNameOutputOperatorPlmnNameElement */
     name_encoding: NasPlmnEncodingScheme
     short_country_initials: NasPlmnNameCountryInitials
     long_name_spare_bits: NasPlmnNameSpareBits
@@ -5794,201 +6159,217 @@ export class IndicationNasOperatorNameOutputOperatorPlmnNameElement {
     short_name: object[]
     static name: string
 }
-export class IndicationNasServingSystemOutput {
-    /* Methods of Qmi.IndicationNasServingSystemOutput */
-    get_call_barring_status(): [ /* returnType */ boolean, /* value_call_barring_status_cs_status */ NasCallBarringStatus, /* value_call_barring_status_ps_status */ NasCallBarringStatus ]
-    get_cdma_base_station_info(): [ /* returnType */ boolean, /* value_cdma_base_station_info_base_station_id */ number, /* value_cdma_base_station_info_base_station_latitude */ number, /* value_cdma_base_station_info_base_station_longitude */ number ]
-    get_cdma_p_rev(): [ /* returnType */ boolean, /* value_cdma_p_rev */ number ]
-    get_cdma_system_id(): [ /* returnType */ boolean, /* value_cdma_system_id_sid */ number, /* value_cdma_system_id_nid */ number ]
-    get_cdma_system_info(): [ /* returnType */ boolean, /* value_cdma_system_info_mcc */ number, /* value_cdma_system_info_imsi_11_12 */ number ]
-    get_cid_3gpp(): [ /* returnType */ boolean, /* value_cid_3gpp */ number ]
-    get_concurrent_service_info_3gpp2(): [ /* returnType */ boolean, /* value_concurrent_service_info_3gpp2 */ boolean ]
-    get_current_plmn(): [ /* returnType */ boolean, /* value_current_plmn_mcc */ number, /* value_current_plmn_mnc */ number, /* value_current_plmn_description */ string ]
-    get_data_service_capability(): [ /* returnType */ boolean, /* value_data_service_capability */ NasDataCapability[] ]
-    get_daylight_saving_time_adjustment_3gpp(): [ /* returnType */ boolean, /* value_daylight_saving_time_adjustment_3gpp */ number ]
-    get_default_roaming_indicator(): [ /* returnType */ boolean, /* value_default_roaming_indicator */ NasRoamingIndicatorStatus ]
-    get_detailed_service_status(): [ /* returnType */ boolean, /* value_detailed_service_status_status */ NasServiceStatus, /* value_detailed_service_status_capability */ NasNetworkServiceDomain, /* value_detailed_service_status_hdr_status */ NasServiceStatus, /* value_detailed_service_status_hdr_hybrid */ boolean, /* value_detailed_service_status_forbidden */ boolean ]
-    get_dtm_support(): [ /* returnType */ boolean, /* value_dtm_support */ boolean ]
-    get_hdr_personality(): [ /* returnType */ boolean, /* value_hdr_personality */ NasHdrPersonality ]
-    get_lac_3gpp(): [ /* returnType */ boolean, /* value_lac_3gpp */ number ]
-    get_lte_tac(): [ /* returnType */ boolean, /* value_lte_tac */ number ]
-    get_mnc_pcs_digit_include_status(): [ /* returnType */ boolean, /* value_mnc_pcs_digit_include_status_mcc */ number, /* value_mnc_pcs_digit_include_status_mnc */ number, /* value_mnc_pcs_digit_include_status_includes_pcs_digit */ boolean ]
-    get_network_name_source(): [ /* returnType */ boolean, /* value_network_name_source */ NasNetworkNameSource ]
-    get_plmn_name_flag_3gpp(): [ /* returnType */ boolean, /* value_plmn_name_flag_3gpp */ boolean ]
-    get_plmn_not_changed_indication(): [ /* returnType */ boolean, /* value_plmn_not_changed_indication */ boolean ]
-    get_prl_indicator_3gpp2(): [ /* returnType */ boolean, /* value_prl_indicator_3gpp2 */ boolean ]
-    get_roaming_indicator(): [ /* returnType */ boolean, /* value_roaming_indicator */ NasRoamingIndicatorStatus ]
-    get_roaming_indicator_list(): [ /* returnType */ boolean, /* value_roaming_indicator_list */ IndicationNasServingSystemOutputRoamingIndicatorListElement[] ]
-    get_serving_system(): [ /* returnType */ boolean, /* value_serving_system_registration_state */ NasRegistrationState, /* value_serving_system_cs_attach_state */ NasAttachState, /* value_serving_system_ps_attach_state */ NasAttachState, /* value_serving_system_selected_network */ NasNetworkType, /* value_serving_system_radio_interfaces */ NasRadioInterface[] ]
-    get_time_zone_3gpp(): [ /* returnType */ boolean, /* value_time_zone_3gpp */ number ]
-    get_time_zone_3gpp2(): [ /* returnType */ boolean, /* value_time_zone_3gpp2_leap_seconds */ number, /* value_time_zone_3gpp2_local_time_offset */ number, /* value_time_zone_3gpp2_daylight_saving_time */ boolean ]
-    get_umts_primary_scrambling_code(): [ /* returnType */ boolean, /* value_umts_primary_scrambling_code */ number ]
-    get_universal_time_and_local_time_zone_3gpp(): [ /* returnType */ boolean, /* value_universal_time_and_local_time_zone_3gpp_year */ number, /* value_universal_time_and_local_time_zone_3gpp_month */ number, /* value_universal_time_and_local_time_zone_3gpp_day */ number, /* value_universal_time_and_local_time_zone_3gpp_hour */ number, /* value_universal_time_and_local_time_zone_3gpp_minute */ number, /* value_universal_time_and_local_time_zone_3gpp_second */ number, /* value_universal_time_and_local_time_zone_3gpp_time_zone */ number ]
+class IndicationNasServingSystemOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationNasServingSystemOutput */
+    get_call_barring_status(): [ /* returnType */ boolean, /* value_call_barring_status_cs_status */ NasCallBarringStatus | null, /* value_call_barring_status_ps_status */ NasCallBarringStatus | null ]
+    get_cdma_base_station_info(): [ /* returnType */ boolean, /* value_cdma_base_station_info_base_station_id */ number | null, /* value_cdma_base_station_info_base_station_latitude */ number | null, /* value_cdma_base_station_info_base_station_longitude */ number | null ]
+    get_cdma_p_rev(): [ /* returnType */ boolean, /* value_cdma_p_rev */ number | null ]
+    get_cdma_system_id(): [ /* returnType */ boolean, /* value_cdma_system_id_sid */ number | null, /* value_cdma_system_id_nid */ number | null ]
+    get_cdma_system_info(): [ /* returnType */ boolean, /* value_cdma_system_info_mcc */ number | null, /* value_cdma_system_info_imsi_11_12 */ number | null ]
+    get_cid_3gpp(): [ /* returnType */ boolean, /* value_cid_3gpp */ number | null ]
+    get_concurrent_service_info_3gpp2(): [ /* returnType */ boolean, /* value_concurrent_service_info_3gpp2 */ boolean | null ]
+    get_current_plmn(): [ /* returnType */ boolean, /* value_current_plmn_mcc */ number | null, /* value_current_plmn_mnc */ number | null, /* value_current_plmn_description */ string | null ]
+    get_data_service_capability(): [ /* returnType */ boolean, /* value_data_service_capability */ NasDataCapability[] | null ]
+    get_daylight_saving_time_adjustment_3gpp(): [ /* returnType */ boolean, /* value_daylight_saving_time_adjustment_3gpp */ number | null ]
+    get_default_roaming_indicator(): [ /* returnType */ boolean, /* value_default_roaming_indicator */ NasRoamingIndicatorStatus | null ]
+    get_detailed_service_status(): [ /* returnType */ boolean, /* value_detailed_service_status_status */ NasServiceStatus | null, /* value_detailed_service_status_capability */ NasNetworkServiceDomain | null, /* value_detailed_service_status_hdr_status */ NasServiceStatus | null, /* value_detailed_service_status_hdr_hybrid */ boolean | null, /* value_detailed_service_status_forbidden */ boolean | null ]
+    get_dtm_support(): [ /* returnType */ boolean, /* value_dtm_support */ boolean | null ]
+    get_hdr_personality(): [ /* returnType */ boolean, /* value_hdr_personality */ NasHdrPersonality | null ]
+    get_lac_3gpp(): [ /* returnType */ boolean, /* value_lac_3gpp */ number | null ]
+    get_lte_tac(): [ /* returnType */ boolean, /* value_lte_tac */ number | null ]
+    get_mnc_pcs_digit_include_status(): [ /* returnType */ boolean, /* value_mnc_pcs_digit_include_status_mcc */ number | null, /* value_mnc_pcs_digit_include_status_mnc */ number | null, /* value_mnc_pcs_digit_include_status_includes_pcs_digit */ boolean | null ]
+    get_network_name_source(): [ /* returnType */ boolean, /* value_network_name_source */ NasNetworkNameSource | null ]
+    get_plmn_name_flag_3gpp(): [ /* returnType */ boolean, /* value_plmn_name_flag_3gpp */ boolean | null ]
+    get_plmn_not_changed_indication(): [ /* returnType */ boolean, /* value_plmn_not_changed_indication */ boolean | null ]
+    get_prl_indicator_3gpp2(): [ /* returnType */ boolean, /* value_prl_indicator_3gpp2 */ boolean | null ]
+    get_roaming_indicator(): [ /* returnType */ boolean, /* value_roaming_indicator */ NasRoamingIndicatorStatus | null ]
+    get_roaming_indicator_list(): [ /* returnType */ boolean, /* value_roaming_indicator_list */ IndicationNasServingSystemOutputRoamingIndicatorListElement[] | null ]
+    get_serving_system(): [ /* returnType */ boolean, /* value_serving_system_registration_state */ NasRegistrationState | null, /* value_serving_system_cs_attach_state */ NasAttachState | null, /* value_serving_system_ps_attach_state */ NasAttachState | null, /* value_serving_system_selected_network */ NasNetworkType | null, /* value_serving_system_radio_interfaces */ NasRadioInterface[] | null ]
+    get_time_zone_3gpp(): [ /* returnType */ boolean, /* value_time_zone_3gpp */ number | null ]
+    get_time_zone_3gpp2(): [ /* returnType */ boolean, /* value_time_zone_3gpp2_leap_seconds */ number | null, /* value_time_zone_3gpp2_local_time_offset */ number | null, /* value_time_zone_3gpp2_daylight_saving_time */ boolean | null ]
+    get_umts_primary_scrambling_code(): [ /* returnType */ boolean, /* value_umts_primary_scrambling_code */ number | null ]
+    get_universal_time_and_local_time_zone_3gpp(): [ /* returnType */ boolean, /* value_universal_time_and_local_time_zone_3gpp_year */ number | null, /* value_universal_time_and_local_time_zone_3gpp_month */ number | null, /* value_universal_time_and_local_time_zone_3gpp_day */ number | null, /* value_universal_time_and_local_time_zone_3gpp_hour */ number | null, /* value_universal_time_and_local_time_zone_3gpp_minute */ number | null, /* value_universal_time_and_local_time_zone_3gpp_second */ number | null, /* value_universal_time_and_local_time_zone_3gpp_time_zone */ number | null ]
     ref(): IndicationNasServingSystemOutput
     unref(): void
     static name: string
 }
-export class IndicationNasServingSystemOutputRoamingIndicatorListElement {
-    /* Fields of Qmi.IndicationNasServingSystemOutputRoamingIndicatorListElement */
+class IndicationNasServingSystemOutputRoamingIndicatorListElement {
+    /* Fields of Qmi-1.0.Qmi.IndicationNasServingSystemOutputRoamingIndicatorListElement */
     radio_interface: NasRadioInterface
     roaming_indicator: NasRoamingIndicatorStatus
     static name: string
 }
-export class IndicationNasSignalInfoOutput {
-    /* Methods of Qmi.IndicationNasSignalInfoOutput */
-    get_cdma_signal_strength(): [ /* returnType */ boolean, /* value_cdma_signal_strength_rssi */ number, /* value_cdma_signal_strength_ecio */ number ]
-    get_gsm_signal_strength(): [ /* returnType */ boolean, /* value_gsm_signal_strength */ number ]
-    get_hdr_signal_strength(): [ /* returnType */ boolean, /* value_hdr_signal_strength_rssi */ number, /* value_hdr_signal_strength_ecio */ number, /* value_hdr_signal_strength_sinr */ NasEvdoSinrLevel, /* value_hdr_signal_strength_io */ number ]
-    get_lte_signal_strength(): [ /* returnType */ boolean, /* value_lte_signal_strength_rssi */ number, /* value_lte_signal_strength_rsrq */ number, /* value_lte_signal_strength_rsrp */ number, /* value_lte_signal_strength_snr */ number ]
-    get_tdma_signal_strength(): [ /* returnType */ boolean, /* value_tdma_signal_strength */ number ]
-    get_wcdma_signal_strength(): [ /* returnType */ boolean, /* value_wcdma_signal_strength_rssi */ number, /* value_wcdma_signal_strength_ecio */ number ]
+class IndicationNasSignalInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationNasSignalInfoOutput */
+    get_5g_signal_strength(): [ /* returnType */ boolean, /* value_5g_signal_strength_rsrp */ number | null, /* value_5g_signal_strength_snr */ number | null ]
+    get_5g_signal_strength_extended(): [ /* returnType */ boolean, /* value_5g_signal_strength_extended */ number | null ]
+    get_cdma_signal_strength(): [ /* returnType */ boolean, /* value_cdma_signal_strength_rssi */ number | null, /* value_cdma_signal_strength_ecio */ number | null ]
+    get_gsm_signal_strength(): [ /* returnType */ boolean, /* value_gsm_signal_strength */ number | null ]
+    get_hdr_signal_strength(): [ /* returnType */ boolean, /* value_hdr_signal_strength_rssi */ number | null, /* value_hdr_signal_strength_ecio */ number | null, /* value_hdr_signal_strength_sinr */ NasEvdoSinrLevel | null, /* value_hdr_signal_strength_io */ number | null ]
+    get_lte_signal_strength(): [ /* returnType */ boolean, /* value_lte_signal_strength_rssi */ number | null, /* value_lte_signal_strength_rsrq */ number | null, /* value_lte_signal_strength_rsrp */ number | null, /* value_lte_signal_strength_snr */ number | null ]
+    get_tdma_signal_strength(): [ /* returnType */ boolean, /* value_tdma_signal_strength */ number | null ]
+    get_wcdma_signal_strength(): [ /* returnType */ boolean, /* value_wcdma_signal_strength_rssi */ number | null, /* value_wcdma_signal_strength_ecio */ number | null ]
     ref(): IndicationNasSignalInfoOutput
     unref(): void
     static name: string
 }
-export class IndicationNasSystemInfoOutput {
-    /* Methods of Qmi.IndicationNasSystemInfoOutput */
-    get_additional_cdma_system_info(): [ /* returnType */ boolean, /* value_additional_cdma_system_info_geo_system_index */ number, /* value_additional_cdma_system_info_registration_period */ number ]
-    get_additional_gsm_system_info(): [ /* returnType */ boolean, /* value_additional_gsm_system_info_geo_system_index */ number, /* value_additional_gsm_system_info_cell_broadcast_support */ NasCellBroadcastCapability ]
-    get_additional_hdr_system_info(): [ /* returnType */ boolean, /* value_additional_hdr_system_info_geo_system_index */ number ]
-    get_additional_lte_system_info(): [ /* returnType */ boolean, /* value_additional_lte_system_info_geo_system_index */ number ]
-    get_additional_wcdma_system_info(): [ /* returnType */ boolean, /* value_additional_wcdma_system_info_geo_system_index */ number, /* value_additional_wcdma_system_info_cell_broadcast_support */ NasCellBroadcastCapability ]
-    get_cdma_service_status(): [ /* returnType */ boolean, /* value_cdma_service_status_service_status */ NasServiceStatus, /* value_cdma_service_status_preferred_data_path */ boolean ]
-    get_cdma_system_info(): [ /* returnType */ boolean, /* value_cdma_system_info_domain_valid */ boolean, /* value_cdma_system_info_domain */ NasNetworkServiceDomain, /* value_cdma_system_info_service_capability_valid */ boolean, /* value_cdma_system_info_service_capability */ NasNetworkServiceDomain, /* value_cdma_system_info_roaming_status_valid */ boolean, /* value_cdma_system_info_roaming_status */ NasRoamingStatus, /* value_cdma_system_info_forbidden_valid */ boolean, /* value_cdma_system_info_forbidden */ boolean, /* value_cdma_system_info_prl_match_valid */ boolean, /* value_cdma_system_info_prl_match */ boolean, /* value_cdma_system_info_p_rev_valid */ boolean, /* value_cdma_system_info_p_rev */ number, /* value_cdma_system_info_base_station_p_rev_valid */ boolean, /* value_cdma_system_info_base_station_p_rev */ number, /* value_cdma_system_info_concurrent_service_support_valid */ boolean, /* value_cdma_system_info_concurrent_service_support */ boolean, /* value_cdma_system_info_cdma_system_id_valid */ boolean, /* value_cdma_system_info_sid */ number, /* value_cdma_system_info_nid */ number, /* value_cdma_system_info_base_station_info_valid */ boolean, /* value_cdma_system_info_base_station_id */ number, /* value_cdma_system_info_base_station_latitude */ number, /* value_cdma_system_info_base_station_longitude */ number, /* value_cdma_system_info_packet_zone_valid */ boolean, /* value_cdma_system_info_packet_zone */ number, /* value_cdma_system_info_network_id_valid */ boolean, /* value_cdma_system_info_mcc */ string, /* value_cdma_system_info_mnc */ string ]
-    get_gsm_call_barring_status(): [ /* returnType */ boolean, /* value_gsm_call_barring_status_cs_status */ NasCallBarringStatus, /* value_gsm_call_barring_status_ps_status */ NasCallBarringStatus ]
-    get_gsm_cipher_domain(): [ /* returnType */ boolean, /* value_gsm_cipher_domain */ NasNetworkServiceDomain ]
-    get_gsm_service_status(): [ /* returnType */ boolean, /* value_gsm_service_status_service_status */ NasServiceStatus, /* value_gsm_service_status_true_service_status */ NasServiceStatus, /* value_gsm_service_status_preferred_data_path */ boolean ]
-    get_gsm_system_info(): [ /* returnType */ boolean, /* value_gsm_system_info_domain_valid */ boolean, /* value_gsm_system_info_domain */ NasNetworkServiceDomain, /* value_gsm_system_info_service_capability_valid */ boolean, /* value_gsm_system_info_service_capability */ NasNetworkServiceDomain, /* value_gsm_system_info_roaming_status_valid */ boolean, /* value_gsm_system_info_roaming_status */ NasRoamingStatus, /* value_gsm_system_info_forbidden_valid */ boolean, /* value_gsm_system_info_forbidden */ boolean, /* value_gsm_system_info_lac_valid */ boolean, /* value_gsm_system_info_lac */ number, /* value_gsm_system_info_cid_valid */ boolean, /* value_gsm_system_info_cid */ number, /* value_gsm_system_info_registration_reject_info_valid */ boolean, /* value_gsm_system_info_registration_reject_domain */ NasNetworkServiceDomain, /* value_gsm_system_info_registration_reject_cause */ number, /* value_gsm_system_info_network_id_valid */ boolean, /* value_gsm_system_info_mcc */ string, /* value_gsm_system_info_mnc */ string, /* value_gsm_system_info_egprs_support_valid */ boolean, /* value_gsm_system_info_egprs_support */ boolean, /* value_gsm_system_info_dtm_support_valid */ boolean, /* value_gsm_system_info_dtm_support */ boolean ]
-    get_hdr_service_status(): [ /* returnType */ boolean, /* value_hdr_service_status_service_status */ NasServiceStatus, /* value_hdr_service_status_preferred_data_path */ boolean ]
-    get_hdr_system_info(): [ /* returnType */ boolean, /* value_hdr_system_info_domain_valid */ boolean, /* value_hdr_system_info_domain */ NasNetworkServiceDomain, /* value_hdr_system_info_service_capability_valid */ boolean, /* value_hdr_system_info_service_capability */ NasNetworkServiceDomain, /* value_hdr_system_info_roaming_status_valid */ boolean, /* value_hdr_system_info_roaming_status */ NasRoamingStatus, /* value_hdr_system_info_forbidden_valid */ boolean, /* value_hdr_system_info_forbidden */ boolean, /* value_hdr_system_info_prl_match_valid */ boolean, /* value_hdr_system_info_prl_match */ boolean, /* value_hdr_system_info_personality_valid */ boolean, /* value_hdr_system_info_personality */ NasHdrPersonality, /* value_hdr_system_info_protocol_revision_valid */ boolean, /* value_hdr_system_info_protocol_revision */ NasHdrProtocolRevision, /* value_hdr_system_info_is_856_system_id_valid */ boolean, /* value_hdr_system_info_is_856_system_id */ string ]
-    get_lte_embms_coverage_info_support(): [ /* returnType */ boolean, /* value_lte_embms_coverage_info_support */ boolean ]
-    get_lte_service_status(): [ /* returnType */ boolean, /* value_lte_service_status_service_status */ NasServiceStatus, /* value_lte_service_status_true_service_status */ NasServiceStatus, /* value_lte_service_status_preferred_data_path */ boolean ]
-    get_lte_system_info(): [ /* returnType */ boolean, /* value_lte_system_info_domain_valid */ boolean, /* value_lte_system_info_domain */ NasNetworkServiceDomain, /* value_lte_system_info_service_capability_valid */ boolean, /* value_lte_system_info_service_capability */ NasNetworkServiceDomain, /* value_lte_system_info_roaming_status_valid */ boolean, /* value_lte_system_info_roaming_status */ NasRoamingStatus, /* value_lte_system_info_forbidden_valid */ boolean, /* value_lte_system_info_forbidden */ boolean, /* value_lte_system_info_lac_valid */ boolean, /* value_lte_system_info_lac */ number, /* value_lte_system_info_cid_valid */ boolean, /* value_lte_system_info_cid */ number, /* value_lte_system_info_registration_reject_info_valid */ boolean, /* value_lte_system_info_registration_reject_domain */ NasNetworkServiceDomain, /* value_lte_system_info_registration_reject_cause */ number, /* value_lte_system_info_network_id_valid */ boolean, /* value_lte_system_info_mcc */ string, /* value_lte_system_info_mnc */ string, /* value_lte_system_info_tac_valid */ boolean, /* value_lte_system_info_tac */ number ]
-    get_lte_voice_support(): [ /* returnType */ boolean, /* value_lte_voice_support */ boolean ]
-    get_plmn_not_changed_indication(): [ /* returnType */ boolean, /* value_plmn_not_changed_indication */ boolean ]
-    get_sim_reject_info(): [ /* returnType */ boolean, /* value_sim_reject_info */ NasSimRejectState ]
-    get_td_scdma_service_status(): [ /* returnType */ boolean, /* value_td_scdma_service_status_service_status */ NasServiceStatus, /* value_td_scdma_service_status_true_service_status */ NasServiceStatus, /* value_td_scdma_service_status_preferred_data_path */ boolean ]
-    get_td_scma_system_info(): [ /* returnType */ boolean, /* value_td_scma_system_info_domain_valid */ boolean, /* value_td_scma_system_info_domain */ NasNetworkServiceDomain, /* value_td_scma_system_info_service_capability_valid */ boolean, /* value_td_scma_system_info_service_capability */ NasNetworkServiceDomain, /* value_td_scma_system_info_roaming_status_valid */ boolean, /* value_td_scma_system_info_roaming_status */ NasRoamingStatus, /* value_td_scma_system_info_forbidden_valid */ boolean, /* value_td_scma_system_info_forbidden */ boolean, /* value_td_scma_system_info_lac_valid */ boolean, /* value_td_scma_system_info_lac */ number, /* value_td_scma_system_info_cid_valid */ boolean, /* value_td_scma_system_info_cid */ number, /* value_td_scma_system_info_registration_reject_info_valid */ boolean, /* value_td_scma_system_info_registration_reject_domain */ NasNetworkServiceDomain, /* value_td_scma_system_info_registration_reject_cause */ number, /* value_td_scma_system_info_network_id_valid */ boolean, /* value_td_scma_system_info_mcc */ string, /* value_td_scma_system_info_mnc */ string, /* value_td_scma_system_info_hs_call_status_valid */ boolean, /* value_td_scma_system_info_hs_call_status */ NasWcdmaHsService, /* value_td_scma_system_info_hs_service_valid */ boolean, /* value_td_scma_system_info_hs_service */ NasWcdmaHsService, /* value_td_scma_system_info_cell_parameter_id_valid */ boolean, /* value_td_scma_system_info_cell_parameter_id */ number, /* value_td_scma_system_info_cell_broadcast_support_valid */ boolean, /* value_td_scma_system_info_cell_broadcast_support */ NasCellBroadcastCapability, /* value_td_scma_system_info_cs_call_barring_status_valid */ boolean, /* value_td_scma_system_info_cs_call_barring_status */ NasCallBarringStatus, /* value_td_scma_system_info_ps_call_barring_status_valid */ boolean, /* value_td_scma_system_info_ps_call_barring_status */ NasCallBarringStatus, /* value_td_scma_system_info_cipher_domain_valid */ boolean, /* value_td_scma_system_info_cipher_domain */ NasNetworkServiceDomain ]
-    get_wcdma_call_barring_status(): [ /* returnType */ boolean, /* value_wcdma_call_barring_status_cs_status */ NasCallBarringStatus, /* value_wcdma_call_barring_status_ps_status */ NasCallBarringStatus ]
-    get_wcdma_cipher_domain(): [ /* returnType */ boolean, /* value_wcdma_cipher_domain */ NasNetworkServiceDomain ]
-    get_wcdma_service_status(): [ /* returnType */ boolean, /* value_wcdma_service_status_service_status */ NasServiceStatus, /* value_wcdma_service_status_true_service_status */ NasServiceStatus, /* value_wcdma_service_status_preferred_data_path */ boolean ]
-    get_wcdma_system_info(): [ /* returnType */ boolean, /* value_wcdma_system_info_domain_valid */ boolean, /* value_wcdma_system_info_domain */ NasNetworkServiceDomain, /* value_wcdma_system_info_service_capability_valid */ boolean, /* value_wcdma_system_info_service_capability */ NasNetworkServiceDomain, /* value_wcdma_system_info_roaming_status_valid */ boolean, /* value_wcdma_system_info_roaming_status */ NasRoamingStatus, /* value_wcdma_system_info_forbidden_valid */ boolean, /* value_wcdma_system_info_forbidden */ boolean, /* value_wcdma_system_info_lac_valid */ boolean, /* value_wcdma_system_info_lac */ number, /* value_wcdma_system_info_cid_valid */ boolean, /* value_wcdma_system_info_cid */ number, /* value_wcdma_system_info_registration_reject_info_valid */ boolean, /* value_wcdma_system_info_registration_reject_domain */ NasNetworkServiceDomain, /* value_wcdma_system_info_registration_reject_cause */ number, /* value_wcdma_system_info_network_id_valid */ boolean, /* value_wcdma_system_info_mcc */ string, /* value_wcdma_system_info_mnc */ string, /* value_wcdma_system_info_hs_call_status_valid */ boolean, /* value_wcdma_system_info_hs_call_status */ NasWcdmaHsService, /* value_wcdma_system_info_hs_service_valid */ boolean, /* value_wcdma_system_info_hs_service */ NasWcdmaHsService, /* value_wcdma_system_info_primary_scrambling_code_valid */ boolean, /* value_wcdma_system_info_primary_scrambling_code */ number ]
+class IndicationNasSystemInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationNasSystemInfoOutput */
+    get_additional_cdma_system_info(): [ /* returnType */ boolean, /* value_additional_cdma_system_info_geo_system_index */ number | null, /* value_additional_cdma_system_info_registration_period */ number | null ]
+    get_additional_gsm_system_info(): [ /* returnType */ boolean, /* value_additional_gsm_system_info_geo_system_index */ number | null, /* value_additional_gsm_system_info_cell_broadcast_support */ NasCellBroadcastCapability | null ]
+    get_additional_hdr_system_info(): [ /* returnType */ boolean, /* value_additional_hdr_system_info_geo_system_index */ number | null ]
+    get_additional_lte_system_info(): [ /* returnType */ boolean, /* value_additional_lte_system_info_geo_system_index */ number | null ]
+    get_additional_wcdma_system_info(): [ /* returnType */ boolean, /* value_additional_wcdma_system_info_geo_system_index */ number | null, /* value_additional_wcdma_system_info_cell_broadcast_support */ NasCellBroadcastCapability | null ]
+    get_cdma_service_status(): [ /* returnType */ boolean, /* value_cdma_service_status_service_status */ NasServiceStatus | null, /* value_cdma_service_status_preferred_data_path */ boolean | null ]
+    get_cdma_system_info(): [ /* returnType */ boolean, /* value_cdma_system_info_domain_valid */ boolean | null, /* value_cdma_system_info_domain */ NasNetworkServiceDomain | null, /* value_cdma_system_info_service_capability_valid */ boolean | null, /* value_cdma_system_info_service_capability */ NasNetworkServiceDomain | null, /* value_cdma_system_info_roaming_status_valid */ boolean | null, /* value_cdma_system_info_roaming_status */ NasRoamingStatus | null, /* value_cdma_system_info_forbidden_valid */ boolean | null, /* value_cdma_system_info_forbidden */ boolean | null, /* value_cdma_system_info_prl_match_valid */ boolean | null, /* value_cdma_system_info_prl_match */ boolean | null, /* value_cdma_system_info_p_rev_valid */ boolean | null, /* value_cdma_system_info_p_rev */ number | null, /* value_cdma_system_info_base_station_p_rev_valid */ boolean | null, /* value_cdma_system_info_base_station_p_rev */ number | null, /* value_cdma_system_info_concurrent_service_support_valid */ boolean | null, /* value_cdma_system_info_concurrent_service_support */ boolean | null, /* value_cdma_system_info_cdma_system_id_valid */ boolean | null, /* value_cdma_system_info_sid */ number | null, /* value_cdma_system_info_nid */ number | null, /* value_cdma_system_info_base_station_info_valid */ boolean | null, /* value_cdma_system_info_base_station_id */ number | null, /* value_cdma_system_info_base_station_latitude */ number | null, /* value_cdma_system_info_base_station_longitude */ number | null, /* value_cdma_system_info_packet_zone_valid */ boolean | null, /* value_cdma_system_info_packet_zone */ number | null, /* value_cdma_system_info_network_id_valid */ boolean | null, /* value_cdma_system_info_mcc */ string | null, /* value_cdma_system_info_mnc */ string | null ]
+    get_dcnr_restriction_info(): [ /* returnType */ boolean, /* value_dcnr_restriction_info */ boolean | null ]
+    get_eutra_with_nr5g_availability(): [ /* returnType */ boolean, /* value_eutra_with_nr5g_availability */ boolean | null ]
+    get_gsm_call_barring_status(): [ /* returnType */ boolean, /* value_gsm_call_barring_status_cs_status */ NasCallBarringStatus | null, /* value_gsm_call_barring_status_ps_status */ NasCallBarringStatus | null ]
+    get_gsm_cipher_domain(): [ /* returnType */ boolean, /* value_gsm_cipher_domain */ NasNetworkServiceDomain | null ]
+    get_gsm_service_status(): [ /* returnType */ boolean, /* value_gsm_service_status_service_status */ NasServiceStatus | null, /* value_gsm_service_status_true_service_status */ NasServiceStatus | null, /* value_gsm_service_status_preferred_data_path */ boolean | null ]
+    get_gsm_system_info_v2(): [ /* returnType */ boolean, /* value_gsm_system_info_v2_domain_valid */ boolean | null, /* value_gsm_system_info_v2_domain */ NasNetworkServiceDomain | null, /* value_gsm_system_info_v2_service_capability_valid */ boolean | null, /* value_gsm_system_info_v2_service_capability */ NasNetworkServiceDomain | null, /* value_gsm_system_info_v2_roaming_status_valid */ boolean | null, /* value_gsm_system_info_v2_roaming_status */ NasRoamingStatus | null, /* value_gsm_system_info_v2_forbidden_valid */ boolean | null, /* value_gsm_system_info_v2_forbidden */ boolean | null, /* value_gsm_system_info_v2_lac_valid */ boolean | null, /* value_gsm_system_info_v2_lac */ number | null, /* value_gsm_system_info_v2_cid_valid */ boolean | null, /* value_gsm_system_info_v2_cid */ number | null, /* value_gsm_system_info_v2_registration_reject_info_valid */ boolean | null, /* value_gsm_system_info_v2_registration_reject_domain */ NasNetworkServiceDomain | null, /* value_gsm_system_info_v2_registration_reject_cause */ NasRejectCause | null, /* value_gsm_system_info_v2_network_id_valid */ boolean | null, /* value_gsm_system_info_v2_mcc */ string | null, /* value_gsm_system_info_v2_mnc */ string | null, /* value_gsm_system_info_v2_egprs_support_valid */ boolean | null, /* value_gsm_system_info_v2_egprs_support */ boolean | null, /* value_gsm_system_info_v2_dtm_support_valid */ boolean | null, /* value_gsm_system_info_v2_dtm_support */ boolean | null ]
+    get_hdr_service_status(): [ /* returnType */ boolean, /* value_hdr_service_status_service_status */ NasServiceStatus | null, /* value_hdr_service_status_preferred_data_path */ boolean | null ]
+    get_hdr_system_info(): [ /* returnType */ boolean, /* value_hdr_system_info_domain_valid */ boolean | null, /* value_hdr_system_info_domain */ NasNetworkServiceDomain | null, /* value_hdr_system_info_service_capability_valid */ boolean | null, /* value_hdr_system_info_service_capability */ NasNetworkServiceDomain | null, /* value_hdr_system_info_roaming_status_valid */ boolean | null, /* value_hdr_system_info_roaming_status */ NasRoamingStatus | null, /* value_hdr_system_info_forbidden_valid */ boolean | null, /* value_hdr_system_info_forbidden */ boolean | null, /* value_hdr_system_info_prl_match_valid */ boolean | null, /* value_hdr_system_info_prl_match */ boolean | null, /* value_hdr_system_info_personality_valid */ boolean | null, /* value_hdr_system_info_personality */ NasHdrPersonality | null, /* value_hdr_system_info_protocol_revision_valid */ boolean | null, /* value_hdr_system_info_protocol_revision */ NasHdrProtocolRevision | null, /* value_hdr_system_info_is_856_system_id_valid */ boolean | null, /* value_hdr_system_info_is_856_system_id */ string | null ]
+    get_lte_embms_coverage_info_support(): [ /* returnType */ boolean, /* value_lte_embms_coverage_info_support */ boolean | null ]
+    get_lte_service_status(): [ /* returnType */ boolean, /* value_lte_service_status_service_status */ NasServiceStatus | null, /* value_lte_service_status_true_service_status */ NasServiceStatus | null, /* value_lte_service_status_preferred_data_path */ boolean | null ]
+    get_lte_system_info_v2(): [ /* returnType */ boolean, /* value_lte_system_info_v2_domain_valid */ boolean | null, /* value_lte_system_info_v2_domain */ NasNetworkServiceDomain | null, /* value_lte_system_info_v2_service_capability_valid */ boolean | null, /* value_lte_system_info_v2_service_capability */ NasNetworkServiceDomain | null, /* value_lte_system_info_v2_roaming_status_valid */ boolean | null, /* value_lte_system_info_v2_roaming_status */ NasRoamingStatus | null, /* value_lte_system_info_v2_forbidden_valid */ boolean | null, /* value_lte_system_info_v2_forbidden */ boolean | null, /* value_lte_system_info_v2_lac_valid */ boolean | null, /* value_lte_system_info_v2_lac */ number | null, /* value_lte_system_info_v2_cid_valid */ boolean | null, /* value_lte_system_info_v2_cid */ number | null, /* value_lte_system_info_v2_registration_reject_info_valid */ boolean | null, /* value_lte_system_info_v2_registration_reject_domain */ NasNetworkServiceDomain | null, /* value_lte_system_info_v2_registration_reject_cause */ NasRejectCause | null, /* value_lte_system_info_v2_network_id_valid */ boolean | null, /* value_lte_system_info_v2_mcc */ string | null, /* value_lte_system_info_v2_mnc */ string | null, /* value_lte_system_info_v2_tac_valid */ boolean | null, /* value_lte_system_info_v2_tac */ number | null ]
+    get_lte_voice_support(): [ /* returnType */ boolean, /* value_lte_voice_support */ boolean | null ]
+    get_nr5g_service_status_info(): [ /* returnType */ boolean, /* value_nr5g_service_status_info_service_status */ NasServiceStatus | null, /* value_nr5g_service_status_info_true_service_status */ NasServiceStatus | null, /* value_nr5g_service_status_info_preferred_data_path */ boolean | null ]
+    get_nr5g_system_info(): [ /* returnType */ boolean, /* value_nr5g_system_info_domain_valid */ boolean | null, /* value_nr5g_system_info_domain */ NasNetworkServiceDomain | null, /* value_nr5g_system_info_service_capability_valid */ boolean | null, /* value_nr5g_system_info_service_capability */ NasNetworkServiceDomain | null, /* value_nr5g_system_info_roaming_status_valid */ boolean | null, /* value_nr5g_system_info_roaming_status */ NasRoamingStatus | null, /* value_nr5g_system_info_forbidden_valid */ boolean | null, /* value_nr5g_system_info_forbidden */ boolean | null, /* value_nr5g_system_info_lac_valid */ boolean | null, /* value_nr5g_system_info_lac */ number | null, /* value_nr5g_system_info_cid_valid */ boolean | null, /* value_nr5g_system_info_cid */ number | null, /* value_nr5g_system_info_registration_reject_info_valid */ boolean | null, /* value_nr5g_system_info_registration_reject_domain */ NasNetworkServiceDomain | null, /* value_nr5g_system_info_registration_reject_cause */ number | null, /* value_nr5g_system_info_network_id_valid */ boolean | null, /* value_nr5g_system_info_mcc */ string | null, /* value_nr5g_system_info_mnc */ string | null, /* value_nr5g_system_info_tac_valid */ boolean | null, /* value_nr5g_system_info_tac */ number | null ]
+    get_nr5g_tracking_area_code(): [ /* returnType */ boolean, /* value_nr5g_tracking_area_code */ Uint8Array[] | null ]
+    get_plmn_not_changed_indication(): [ /* returnType */ boolean, /* value_plmn_not_changed_indication */ boolean | null ]
+    get_sim_reject_info(): [ /* returnType */ boolean, /* value_sim_reject_info */ NasSimRejectState | null ]
+    get_td_scdma_service_status(): [ /* returnType */ boolean, /* value_td_scdma_service_status_service_status */ NasServiceStatus | null, /* value_td_scdma_service_status_true_service_status */ NasServiceStatus | null, /* value_td_scdma_service_status_preferred_data_path */ boolean | null ]
+    get_td_scma_system_info_v2(): [ /* returnType */ boolean, /* value_td_scma_system_info_v2_domain_valid */ boolean | null, /* value_td_scma_system_info_v2_domain */ NasNetworkServiceDomain | null, /* value_td_scma_system_info_v2_service_capability_valid */ boolean | null, /* value_td_scma_system_info_v2_service_capability */ NasNetworkServiceDomain | null, /* value_td_scma_system_info_v2_roaming_status_valid */ boolean | null, /* value_td_scma_system_info_v2_roaming_status */ NasRoamingStatus | null, /* value_td_scma_system_info_v2_forbidden_valid */ boolean | null, /* value_td_scma_system_info_v2_forbidden */ boolean | null, /* value_td_scma_system_info_v2_lac_valid */ boolean | null, /* value_td_scma_system_info_v2_lac */ number | null, /* value_td_scma_system_info_v2_cid_valid */ boolean | null, /* value_td_scma_system_info_v2_cid */ number | null, /* value_td_scma_system_info_v2_registration_reject_info_valid */ boolean | null, /* value_td_scma_system_info_v2_registration_reject_domain */ NasNetworkServiceDomain | null, /* value_td_scma_system_info_v2_registration_reject_cause */ NasRejectCause | null, /* value_td_scma_system_info_v2_network_id_valid */ boolean | null, /* value_td_scma_system_info_v2_mcc */ string | null, /* value_td_scma_system_info_v2_mnc */ string | null, /* value_td_scma_system_info_v2_hs_call_status_valid */ boolean | null, /* value_td_scma_system_info_v2_hs_call_status */ NasWcdmaHsService | null, /* value_td_scma_system_info_v2_hs_service_valid */ boolean | null, /* value_td_scma_system_info_v2_hs_service */ NasWcdmaHsService | null, /* value_td_scma_system_info_v2_cell_parameter_id_valid */ boolean | null, /* value_td_scma_system_info_v2_cell_parameter_id */ number | null, /* value_td_scma_system_info_v2_cell_broadcast_support_valid */ boolean | null, /* value_td_scma_system_info_v2_cell_broadcast_support */ NasCellBroadcastCapability | null, /* value_td_scma_system_info_v2_cs_call_barring_status_valid */ boolean | null, /* value_td_scma_system_info_v2_cs_call_barring_status */ NasCallBarringStatus | null, /* value_td_scma_system_info_v2_ps_call_barring_status_valid */ boolean | null, /* value_td_scma_system_info_v2_ps_call_barring_status */ NasCallBarringStatus | null, /* value_td_scma_system_info_v2_cipher_domain_valid */ boolean | null, /* value_td_scma_system_info_v2_cipher_domain */ NasNetworkServiceDomain | null ]
+    get_wcdma_call_barring_status(): [ /* returnType */ boolean, /* value_wcdma_call_barring_status_cs_status */ NasCallBarringStatus | null, /* value_wcdma_call_barring_status_ps_status */ NasCallBarringStatus | null ]
+    get_wcdma_cipher_domain(): [ /* returnType */ boolean, /* value_wcdma_cipher_domain */ NasNetworkServiceDomain | null ]
+    get_wcdma_service_status(): [ /* returnType */ boolean, /* value_wcdma_service_status_service_status */ NasServiceStatus | null, /* value_wcdma_service_status_true_service_status */ NasServiceStatus | null, /* value_wcdma_service_status_preferred_data_path */ boolean | null ]
+    get_wcdma_system_info_v2(): [ /* returnType */ boolean, /* value_wcdma_system_info_v2_domain_valid */ boolean | null, /* value_wcdma_system_info_v2_domain */ NasNetworkServiceDomain | null, /* value_wcdma_system_info_v2_service_capability_valid */ boolean | null, /* value_wcdma_system_info_v2_service_capability */ NasNetworkServiceDomain | null, /* value_wcdma_system_info_v2_roaming_status_valid */ boolean | null, /* value_wcdma_system_info_v2_roaming_status */ NasRoamingStatus | null, /* value_wcdma_system_info_v2_forbidden_valid */ boolean | null, /* value_wcdma_system_info_v2_forbidden */ boolean | null, /* value_wcdma_system_info_v2_lac_valid */ boolean | null, /* value_wcdma_system_info_v2_lac */ number | null, /* value_wcdma_system_info_v2_cid_valid */ boolean | null, /* value_wcdma_system_info_v2_cid */ number | null, /* value_wcdma_system_info_v2_registration_reject_info_valid */ boolean | null, /* value_wcdma_system_info_v2_registration_reject_domain */ NasNetworkServiceDomain | null, /* value_wcdma_system_info_v2_registration_reject_cause */ NasRejectCause | null, /* value_wcdma_system_info_v2_network_id_valid */ boolean | null, /* value_wcdma_system_info_v2_mcc */ string | null, /* value_wcdma_system_info_v2_mnc */ string | null, /* value_wcdma_system_info_v2_hs_call_status_valid */ boolean | null, /* value_wcdma_system_info_v2_hs_call_status */ NasWcdmaHsService | null, /* value_wcdma_system_info_v2_hs_service_valid */ boolean | null, /* value_wcdma_system_info_v2_hs_service */ NasWcdmaHsService | null, /* value_wcdma_system_info_v2_primary_scrambling_code_valid */ boolean | null, /* value_wcdma_system_info_v2_primary_scrambling_code */ number | null ]
     ref(): IndicationNasSystemInfoOutput
     unref(): void
     static name: string
 }
-export class IndicationOmaEventReportOutput {
-    /* Methods of Qmi.IndicationOmaEventReportOutput */
-    get_network_initiated_alert(): [ /* returnType */ boolean, /* value_network_initiated_alert_session_type */ OmaSessionType, /* value_network_initiated_alert_session_id */ number ]
-    get_session_fail_reason(): [ /* returnType */ boolean, /* value_session_fail_reason */ OmaSessionFailedReason ]
-    get_session_state(): [ /* returnType */ boolean, /* value_session_state */ OmaSessionState ]
+class IndicationOmaEventReportOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationOmaEventReportOutput */
+    get_network_initiated_alert(): [ /* returnType */ boolean, /* value_network_initiated_alert_session_type */ OmaSessionType | null, /* value_network_initiated_alert_session_id */ number | null ]
+    get_session_fail_reason(): [ /* returnType */ boolean, /* value_session_fail_reason */ OmaSessionFailedReason | null ]
+    get_session_state(): [ /* returnType */ boolean, /* value_session_state */ OmaSessionState | null ]
     ref(): IndicationOmaEventReportOutput
     unref(): void
     static name: string
 }
-export class IndicationPdcActivateConfigOutput {
-    /* Methods of Qmi.IndicationPdcActivateConfigOutput */
-    get_indication_result(): [ /* returnType */ boolean, /* value_indication_result */ number ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+class IndicationPdcActivateConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationPdcActivateConfigOutput */
+    get_indication_result(): [ /* returnType */ boolean, /* value_indication_result */ number | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): IndicationPdcActivateConfigOutput
     unref(): void
     static name: string
 }
-export class IndicationPdcDeactivateConfigOutput {
-    /* Methods of Qmi.IndicationPdcDeactivateConfigOutput */
-    get_indication_result(): [ /* returnType */ boolean, /* value_indication_result */ number ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+class IndicationPdcDeactivateConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationPdcDeactivateConfigOutput */
+    get_indication_result(): [ /* returnType */ boolean, /* value_indication_result */ number | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): IndicationPdcDeactivateConfigOutput
     unref(): void
     static name: string
 }
-export class IndicationPdcGetConfigInfoOutput {
-    /* Methods of Qmi.IndicationPdcGetConfigInfoOutput */
-    get_description(): [ /* returnType */ boolean, /* value_description */ string ]
-    get_indication_result(): [ /* returnType */ boolean, /* value_indication_result */ number ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
-    get_total_size(): [ /* returnType */ boolean, /* value_total_size */ number ]
-    get_version(): [ /* returnType */ boolean, /* value_version */ number ]
+class IndicationPdcGetConfigInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationPdcGetConfigInfoOutput */
+    get_description(): [ /* returnType */ boolean, /* value_description */ string | null ]
+    get_indication_result(): [ /* returnType */ boolean, /* value_indication_result */ number | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
+    get_total_size(): [ /* returnType */ boolean, /* value_total_size */ number | null ]
+    get_version(): [ /* returnType */ boolean, /* value_version */ number | null ]
     ref(): IndicationPdcGetConfigInfoOutput
     unref(): void
     static name: string
 }
-export class IndicationPdcGetSelectedConfigOutput {
-    /* Methods of Qmi.IndicationPdcGetSelectedConfigOutput */
-    get_active_id(): [ /* returnType */ boolean, /* value_active_id */ Uint8Array[] ]
-    get_indication_result(): [ /* returnType */ boolean, /* value_indication_result */ number ]
-    get_pending_id(): [ /* returnType */ boolean, /* value_pending_id */ Uint8Array[] ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+class IndicationPdcGetSelectedConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationPdcGetSelectedConfigOutput */
+    get_active_id(): [ /* returnType */ boolean, /* value_active_id */ Uint8Array[] | null ]
+    get_indication_result(): [ /* returnType */ boolean, /* value_indication_result */ number | null ]
+    get_pending_id(): [ /* returnType */ boolean, /* value_pending_id */ Uint8Array[] | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): IndicationPdcGetSelectedConfigOutput
     unref(): void
     static name: string
 }
-export class IndicationPdcListConfigsOutput {
-    /* Methods of Qmi.IndicationPdcListConfigsOutput */
-    get_configs(): [ /* returnType */ boolean, /* value_configs */ IndicationPdcListConfigsOutputConfigsElement[] ]
-    get_indication_result(): [ /* returnType */ boolean, /* value_indication_result */ number ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+class IndicationPdcListConfigsOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationPdcListConfigsOutput */
+    get_configs(): [ /* returnType */ boolean, /* value_configs */ IndicationPdcListConfigsOutputConfigsElement[] | null ]
+    get_indication_result(): [ /* returnType */ boolean, /* value_indication_result */ number | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): IndicationPdcListConfigsOutput
     unref(): void
     static name: string
 }
-export class IndicationPdcListConfigsOutputConfigsElement {
-    /* Fields of Qmi.IndicationPdcListConfigsOutputConfigsElement */
+class IndicationPdcListConfigsOutputConfigsElement {
+    /* Fields of Qmi-1.0.Qmi.IndicationPdcListConfigsOutputConfigsElement */
     config_type: PdcConfigurationType
     id: object[]
     static name: string
 }
-export class IndicationPdcLoadConfigOutput {
-    /* Methods of Qmi.IndicationPdcLoadConfigOutput */
-    get_frame_reset(): [ /* returnType */ boolean, /* value_frame_reset */ boolean ]
-    get_indication_result(): [ /* returnType */ boolean, /* value_indication_result */ number ]
-    get_received(): [ /* returnType */ boolean, /* value_received */ number ]
-    get_remaining_size(): [ /* returnType */ boolean, /* value_remaining_size */ number ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+class IndicationPdcLoadConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationPdcLoadConfigOutput */
+    get_frame_reset(): [ /* returnType */ boolean, /* value_frame_reset */ boolean | null ]
+    get_indication_result(): [ /* returnType */ boolean, /* value_indication_result */ number | null ]
+    get_received(): [ /* returnType */ boolean, /* value_received */ number | null ]
+    get_remaining_size(): [ /* returnType */ boolean, /* value_remaining_size */ number | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): IndicationPdcLoadConfigOutput
     unref(): void
     static name: string
 }
-export class IndicationPdcSetSelectedConfigOutput {
-    /* Methods of Qmi.IndicationPdcSetSelectedConfigOutput */
-    get_indication_result(): [ /* returnType */ boolean, /* value_indication_result */ number ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+class IndicationPdcRefreshOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationPdcRefreshOutput */
+    get_refresh_event(): [ /* returnType */ boolean, /* value_refresh_event */ PdcRefreshEventType | null ]
+    get_slot_id(): [ /* returnType */ boolean, /* value_slot_id */ number | null ]
+    get_subscription_id(): [ /* returnType */ boolean, /* value_subscription_id */ number | null ]
+    ref(): IndicationPdcRefreshOutput
+    unref(): void
+    static name: string
+}
+class IndicationPdcSetSelectedConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationPdcSetSelectedConfigOutput */
+    get_indication_result(): [ /* returnType */ boolean, /* value_indication_result */ number | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): IndicationPdcSetSelectedConfigOutput
     unref(): void
     static name: string
 }
-export class IndicationPdsEventReportOutput {
-    /* Methods of Qmi.IndicationPdsEventReportOutput */
-    get_extended_nmea_position(): [ /* returnType */ boolean, /* value_extended_nmea_position_operation_mode */ PdsOperationMode, /* value_extended_nmea_position_nmea */ string ]
-    get_nmea_position(): [ /* returnType */ boolean, /* value_nmea_position */ string ]
-    get_position_session_status(): [ /* returnType */ boolean, /* value_position_session_status */ PdsPositionSessionStatus ]
+class IndicationPdsEventReportOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationPdsEventReportOutput */
+    get_extended_nmea_position(): [ /* returnType */ boolean, /* value_extended_nmea_position_operation_mode */ PdsOperationMode | null, /* value_extended_nmea_position_nmea */ string | null ]
+    get_nmea_position(): [ /* returnType */ boolean, /* value_nmea_position */ string | null ]
+    get_position_session_status(): [ /* returnType */ boolean, /* value_position_session_status */ PdsPositionSessionStatus | null ]
     ref(): IndicationPdsEventReportOutput
     unref(): void
     static name: string
 }
-export class IndicationQosFlowStatusOutput {
-    /* Methods of Qmi.IndicationQosFlowStatusOutput */
-    get_value(): [ /* returnType */ boolean, /* value_value_qos_id */ number, /* value_value_status */ QosStatus, /* value_value_event */ QosEvent ]
+class IndicationQosFlowStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationQosFlowStatusOutput */
+    get_value(): [ /* returnType */ boolean, /* value_value_qos_id */ number | null, /* value_value_status */ QosStatus | null, /* value_value_event */ QosEvent | null ]
     ref(): IndicationQosFlowStatusOutput
     unref(): void
     static name: string
 }
-export class IndicationQosNetworkStatusOutput {
-    /* Methods of Qmi.IndicationQosNetworkStatusOutput */
-    get_qos_supported(): [ /* returnType */ boolean, /* value_qos_supported */ boolean ]
+class IndicationQosNetworkStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationQosNetworkStatusOutput */
+    get_qos_supported(): [ /* returnType */ boolean, /* value_qos_supported */ boolean | null ]
     ref(): IndicationQosNetworkStatusOutput
     unref(): void
     static name: string
 }
-export class IndicationUimCardStatusOutput {
-    /* Methods of Qmi.IndicationUimCardStatusOutput */
-    get_card_status(): [ /* returnType */ boolean, /* value_card_status_index_gw_primary */ number, /* value_card_status_index_1x_primary */ number, /* value_card_status_index_gw_secondary */ number, /* value_card_status_index_1x_secondary */ number, /* value_card_status_cards */ IndicationUimCardStatusOutputCardStatusCardsElement[] ]
+class IndicationUimCardStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationUimCardStatusOutput */
+    get_card_status(): [ /* returnType */ boolean, /* value_card_status_index_gw_primary */ number | null, /* value_card_status_index_1x_primary */ number | null, /* value_card_status_index_gw_secondary */ number | null, /* value_card_status_index_1x_secondary */ number | null, /* value_card_status_cards */ IndicationUimCardStatusOutputCardStatusCardsElement[] | null ]
     ref(): IndicationUimCardStatusOutput
     unref(): void
     static name: string
 }
-export class IndicationUimCardStatusOutputCardStatusCardsElement {
-    /* Fields of Qmi.IndicationUimCardStatusOutputCardStatusCardsElement */
+class IndicationUimCardStatusOutputCardStatusCardsElement {
+    /* Fields of Qmi-1.0.Qmi.IndicationUimCardStatusOutputCardStatusCardsElement */
     card_state: UimCardState
     upin_state: UimPinState
     upin_retries: number
@@ -5997,8 +6378,8 @@ export class IndicationUimCardStatusOutputCardStatusCardsElement {
     applications: object[]
     static name: string
 }
-export class IndicationUimCardStatusOutputCardStatusCardsElementApplicationsElement {
-    /* Fields of Qmi.IndicationUimCardStatusOutputCardStatusCardsElementApplicationsElement */
+class IndicationUimCardStatusOutputCardStatusCardsElementApplicationsElement {
+    /* Fields of Qmi-1.0.Qmi.IndicationUimCardStatusOutputCardStatusCardsElementApplicationsElement */
     type: UimCardApplicationType
     state: UimCardApplicationState
     personalization_state: UimCardApplicationPersonalizationState
@@ -6015,38 +6396,38 @@ export class IndicationUimCardStatusOutputCardStatusCardsElementApplicationsElem
     puk2_retries: number
     static name: string
 }
-export class IndicationUimRefreshOutput {
-    /* Methods of Qmi.IndicationUimRefreshOutput */
-    get_event(): [ /* returnType */ boolean, /* value_event_stage */ UimRefreshStage, /* value_event_mode */ UimRefreshMode, /* value_event_session_type */ UimSessionType, /* value_event_application_identifier */ Uint8Array[], /* value_event_files */ IndicationUimRefreshOutputEventFilesElement[] ]
+class IndicationUimRefreshOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationUimRefreshOutput */
+    get_event(): [ /* returnType */ boolean, /* value_event_stage */ UimRefreshStage | null, /* value_event_mode */ UimRefreshMode | null, /* value_event_session_type */ UimSessionType | null, /* value_event_application_identifier */ Uint8Array[] | null, /* value_event_files */ IndicationUimRefreshOutputEventFilesElement[] | null ]
     ref(): IndicationUimRefreshOutput
     unref(): void
     static name: string
 }
-export class IndicationUimRefreshOutputEventFilesElement {
-    /* Fields of Qmi.IndicationUimRefreshOutputEventFilesElement */
+class IndicationUimRefreshOutputEventFilesElement {
+    /* Fields of Qmi-1.0.Qmi.IndicationUimRefreshOutputEventFilesElement */
     file_id: number
     path: object[]
     static name: string
 }
-export class IndicationUimSlotStatusOutput {
-    /* Methods of Qmi.IndicationUimSlotStatusOutput */
-    get_physical_slot_information(): [ /* returnType */ boolean, /* value_physical_slot_information */ PhysicalSlotInformationSlot[] ]
-    get_physical_slot_status(): [ /* returnType */ boolean, /* value_physical_slot_status */ PhysicalSlotStatusSlot[] ]
-    get_slot_eid_information(): [ /* returnType */ boolean, /* value_slot_eid_information */ any[] ]
+class IndicationUimSlotStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationUimSlotStatusOutput */
+    get_physical_slot_information(): [ /* returnType */ boolean, /* value_physical_slot_information */ PhysicalSlotInformationSlot[] | null ]
+    get_physical_slot_status(): [ /* returnType */ boolean, /* value_physical_slot_status */ PhysicalSlotStatusSlot[] | null ]
+    get_slot_eid_information(): [ /* returnType */ boolean, /* value_slot_eid_information */ any[] | null ]
     ref(): IndicationUimSlotStatusOutput
     unref(): void
     static name: string
 }
-export class IndicationVoiceAllCallStatusOutput {
-    /* Methods of Qmi.IndicationVoiceAllCallStatusOutput */
-    get_call_information(): [ /* returnType */ boolean, /* value_call_information */ IndicationVoiceAllCallStatusOutputCallInformationCall[] ]
-    get_remote_party_number(): [ /* returnType */ boolean, /* value_remote_party_number */ IndicationVoiceAllCallStatusOutputRemotePartyNumberCall[] ]
+class IndicationVoiceAllCallStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationVoiceAllCallStatusOutput */
+    get_call_information(): [ /* returnType */ boolean, /* value_call_information */ IndicationVoiceAllCallStatusOutputCallInformationCall[] | null ]
+    get_remote_party_number(): [ /* returnType */ boolean, /* value_remote_party_number */ IndicationVoiceAllCallStatusOutputRemotePartyNumberCall[] | null ]
     ref(): IndicationVoiceAllCallStatusOutput
     unref(): void
     static name: string
 }
-export class IndicationVoiceAllCallStatusOutputCallInformationCall {
-    /* Fields of Qmi.IndicationVoiceAllCallStatusOutputCallInformationCall */
+class IndicationVoiceAllCallStatusOutputCallInformationCall {
+    /* Fields of Qmi-1.0.Qmi.IndicationVoiceAllCallStatusOutputCallInformationCall */
     id: number
     state: VoiceCallState
     type: VoiceCallType
@@ -6056,103 +6437,118 @@ export class IndicationVoiceAllCallStatusOutputCallInformationCall {
     als: VoiceAls
     static name: string
 }
-export class IndicationVoiceAllCallStatusOutputRemotePartyNumberCall {
-    /* Fields of Qmi.IndicationVoiceAllCallStatusOutputRemotePartyNumberCall */
+class IndicationVoiceAllCallStatusOutputRemotePartyNumberCall {
+    /* Fields of Qmi-1.0.Qmi.IndicationVoiceAllCallStatusOutputRemotePartyNumberCall */
     id: number
     presentation_indicator: VoicePresentation
     type: string
     static name: string
 }
-export class IndicationVoiceOriginateUssdNoWaitOutput {
-    /* Methods of Qmi.IndicationVoiceOriginateUssdNoWaitOutput */
-    get_alpha_identifier(): [ /* returnType */ boolean, /* value_alpha_identifier_data_coding_scheme */ VoiceAlphaDataCodingScheme, /* value_alpha_identifier_alpha */ Uint8Array[] ]
-    get_error_code(): [ /* returnType */ boolean, /* value_error_code */ number ]
-    get_failure_cause(): [ /* returnType */ boolean, /* value_failure_cause */ VoiceCallEndReason ]
-    get_uss_data(): [ /* returnType */ boolean, /* value_uss_data_data_coding_scheme */ VoiceUssDataCodingScheme, /* value_uss_data_data */ Uint8Array[] ]
-    get_uss_data_utf16(): [ /* returnType */ boolean, /* value_uss_data_utf16 */ number[] ]
+class IndicationVoiceOriginateUssdNoWaitOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationVoiceOriginateUssdNoWaitOutput */
+    get_alpha_identifier(): [ /* returnType */ boolean, /* value_alpha_identifier_data_coding_scheme */ VoiceAlphaDataCodingScheme | null, /* value_alpha_identifier_alpha */ Uint8Array[] | null ]
+    get_error_code(): [ /* returnType */ boolean, /* value_error_code */ number | null ]
+    get_failure_cause(): [ /* returnType */ boolean, /* value_failure_cause */ VoiceCallEndReason | null ]
+    get_uss_data(): [ /* returnType */ boolean, /* value_uss_data_data_coding_scheme */ VoiceUssDataCodingScheme | null, /* value_uss_data_data */ Uint8Array[] | null ]
+    get_uss_data_utf16(): [ /* returnType */ boolean, /* value_uss_data_utf16 */ number[] | null ]
     ref(): IndicationVoiceOriginateUssdNoWaitOutput
     unref(): void
     static name: string
 }
-export class IndicationVoiceUssdOutput {
-    /* Methods of Qmi.IndicationVoiceUssdOutput */
-    get_user_action(): [ /* returnType */ boolean, /* value_user_action */ VoiceUserAction ]
-    get_uss_data(): [ /* returnType */ boolean, /* value_uss_data_data_coding_scheme */ VoiceUssDataCodingScheme, /* value_uss_data_data */ Uint8Array[] ]
-    get_uss_data_utf16(): [ /* returnType */ boolean, /* value_uss_data_utf16 */ number[] ]
+class IndicationVoiceSupplementaryServiceOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationVoiceSupplementaryServiceOutput */
+    get_info(): [ /* returnType */ boolean, /* value_info_call_id */ number | null, /* value_info_notification_type */ VoiceSupplementaryServiceNotificationType | null ]
+    ref(): IndicationVoiceSupplementaryServiceOutput
+    unref(): void
+    static name: string
+}
+class IndicationVoiceUssdOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationVoiceUssdOutput */
+    get_user_action(): [ /* returnType */ boolean, /* value_user_action */ VoiceUserAction | null ]
+    get_uss_data(): [ /* returnType */ boolean, /* value_uss_data_data_coding_scheme */ VoiceUssDataCodingScheme | null, /* value_uss_data_data */ Uint8Array[] | null ]
+    get_uss_data_utf16(): [ /* returnType */ boolean, /* value_uss_data_utf16 */ number[] | null ]
     ref(): IndicationVoiceUssdOutput
     unref(): void
     static name: string
 }
-export class IndicationWdsEventReportOutput {
-    /* Methods of Qmi.IndicationWdsEventReportOutput */
-    get_channel_rates(): [ /* returnType */ boolean, /* value_channel_rates_tx_rate_bps */ number, /* value_channel_rates_rx_rate_bps */ number ]
-    get_current_data_bearer_technology(): [ /* returnType */ boolean, /* value_current_data_bearer_technology_network_type */ WdsNetworkType, /* value_current_data_bearer_technology_rat_mask */ number, /* value_current_data_bearer_technology_so_mask */ number ]
-    get_data_bearer_technology(): [ /* returnType */ boolean, /* value_data_bearer_technology */ WdsDataBearerTechnology ]
-    get_data_call_address_family(): [ /* returnType */ boolean, /* value_data_call_address_family */ WdsIpFamily ]
-    get_data_call_status(): [ /* returnType */ boolean, /* value_data_call_status */ WdsDataCallStatus ]
-    get_data_call_type(): [ /* returnType */ boolean, /* value_data_call_type_data_call_type */ WdsDataCallType, /* value_data_call_type_tethered_call_type */ WdsTetheredCallType ]
-    get_data_systems(): [ /* returnType */ boolean, /* value_data_systems_preferred_network_type */ WdsDataSystemNetworkType, /* value_data_systems_networks */ IndicationWdsEventReportOutputDataSystemsNetworksNetwork[] ]
-    get_dormancy_status(): [ /* returnType */ boolean, /* value_dormancy_status */ WdsDormancyStatus ]
-    get_evdo_page_monitor_period_change(): [ /* returnType */ boolean, /* value_evdo_page_monitor_period_change_period_change */ number, /* value_evdo_page_monitor_period_change_force_long_sleep */ boolean ]
-    get_extended_data_bearer_technology(): [ /* returnType */ boolean, /* value_extended_data_bearer_technology_data_bearer_technology */ WdsDataSystemNetworkType, /* value_extended_data_bearer_technology_radio_access_technology */ WdsRadioAccessTechnology, /* value_extended_data_bearer_technology_extended_data_bearer_technology_3gpp */ WdsExtendedDataBearerTechnology3gpp, /* value_extended_data_bearer_technology_extended_data_bearer_technology_3gpp2 */ WdsExtendedDataBearerTechnology3gpp2 ]
-    get_mip_status(): [ /* returnType */ boolean, /* value_mip_status */ boolean ]
-    get_pdn_filters_removed(): [ /* returnType */ boolean, /* value_pdn_filters_removed_pdn_filter_handler */ number[] ]
-    get_preferred_data_system(): [ /* returnType */ boolean, /* value_preferred_data_system */ WdsDataSystem ]
-    get_rx_bytes_ok(): [ /* returnType */ boolean, /* value_rx_bytes_ok */ number ]
-    get_rx_overflows(): [ /* returnType */ boolean, /* value_rx_overflows */ number ]
-    get_rx_packets_dropped(): [ /* returnType */ boolean, /* value_rx_packets_dropped */ number ]
-    get_rx_packets_error(): [ /* returnType */ boolean, /* value_rx_packets_error */ number ]
-    get_rx_packets_ok(): [ /* returnType */ boolean, /* value_rx_packets_ok */ number ]
-    get_tx_bytes_ok(): [ /* returnType */ boolean, /* value_tx_bytes_ok */ number ]
-    get_tx_overflows(): [ /* returnType */ boolean, /* value_tx_overflows */ number ]
-    get_tx_packets_dropped(): [ /* returnType */ boolean, /* value_tx_packets_dropped */ number ]
-    get_tx_packets_error(): [ /* returnType */ boolean, /* value_tx_packets_error */ number ]
-    get_tx_packets_ok(): [ /* returnType */ boolean, /* value_tx_packets_ok */ number ]
-    get_uplink_flow_control_enabled(): [ /* returnType */ boolean, /* value_uplink_flow_control_enabled */ boolean ]
+class IndicationWdsEventReportOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationWdsEventReportOutput */
+    get_channel_rates(): [ /* returnType */ boolean, /* value_channel_rates_tx_rate_bps */ number | null, /* value_channel_rates_rx_rate_bps */ number | null ]
+    get_current_data_bearer_technology(): [ /* returnType */ boolean, /* value_current_data_bearer_technology_network_type */ WdsNetworkType | null, /* value_current_data_bearer_technology_rat_mask */ number | null, /* value_current_data_bearer_technology_so_mask */ number | null ]
+    get_data_bearer_technology(): [ /* returnType */ boolean, /* value_data_bearer_technology */ WdsDataBearerTechnology | null ]
+    get_data_call_address_family(): [ /* returnType */ boolean, /* value_data_call_address_family */ WdsIpFamily | null ]
+    get_data_call_status(): [ /* returnType */ boolean, /* value_data_call_status */ WdsDataCallStatus | null ]
+    get_data_call_type(): [ /* returnType */ boolean, /* value_data_call_type_data_call_type */ WdsDataCallType | null, /* value_data_call_type_tethered_call_type */ WdsTetheredCallType | null ]
+    get_data_systems(): [ /* returnType */ boolean, /* value_data_systems_preferred_network_type */ WdsDataSystemNetworkType | null, /* value_data_systems_networks */ IndicationWdsEventReportOutputDataSystemsNetworksNetwork[] | null ]
+    get_dormancy_status(): [ /* returnType */ boolean, /* value_dormancy_status */ WdsDormancyStatus | null ]
+    get_evdo_page_monitor_period_change(): [ /* returnType */ boolean, /* value_evdo_page_monitor_period_change_period_change */ number | null, /* value_evdo_page_monitor_period_change_force_long_sleep */ boolean | null ]
+    get_extended_data_bearer_technology(): [ /* returnType */ boolean, /* value_extended_data_bearer_technology_data_bearer_technology */ WdsDataSystemNetworkType | null, /* value_extended_data_bearer_technology_radio_access_technology */ WdsRadioAccessTechnology | null, /* value_extended_data_bearer_technology_extended_data_bearer_technology_3gpp */ WdsExtendedDataBearerTechnology3gpp | null, /* value_extended_data_bearer_technology_extended_data_bearer_technology_3gpp2 */ WdsExtendedDataBearerTechnology3gpp2 | null ]
+    get_mip_status(): [ /* returnType */ boolean, /* value_mip_status */ boolean | null ]
+    get_pdn_filters_removed(): [ /* returnType */ boolean, /* value_pdn_filters_removed_pdn_filter_handler */ number[] | null ]
+    get_preferred_data_system(): [ /* returnType */ boolean, /* value_preferred_data_system */ WdsDataSystem | null ]
+    get_rx_bytes_ok(): [ /* returnType */ boolean, /* value_rx_bytes_ok */ number | null ]
+    get_rx_overflows(): [ /* returnType */ boolean, /* value_rx_overflows */ number | null ]
+    get_rx_packets_dropped(): [ /* returnType */ boolean, /* value_rx_packets_dropped */ number | null ]
+    get_rx_packets_error(): [ /* returnType */ boolean, /* value_rx_packets_error */ number | null ]
+    get_rx_packets_ok(): [ /* returnType */ boolean, /* value_rx_packets_ok */ number | null ]
+    get_tx_bytes_ok(): [ /* returnType */ boolean, /* value_tx_bytes_ok */ number | null ]
+    get_tx_overflows(): [ /* returnType */ boolean, /* value_tx_overflows */ number | null ]
+    get_tx_packets_dropped(): [ /* returnType */ boolean, /* value_tx_packets_dropped */ number | null ]
+    get_tx_packets_error(): [ /* returnType */ boolean, /* value_tx_packets_error */ number | null ]
+    get_tx_packets_ok(): [ /* returnType */ boolean, /* value_tx_packets_ok */ number | null ]
+    get_uplink_flow_control_enabled(): [ /* returnType */ boolean, /* value_uplink_flow_control_enabled */ boolean | null ]
     ref(): IndicationWdsEventReportOutput
     unref(): void
     static name: string
 }
-export class IndicationWdsEventReportOutputDataSystemsNetworksNetwork {
-    /* Fields of Qmi.IndicationWdsEventReportOutputDataSystemsNetworksNetwork */
+class IndicationWdsEventReportOutputDataSystemsNetworksNetwork {
+    /* Fields of Qmi-1.0.Qmi.IndicationWdsEventReportOutputDataSystemsNetworksNetwork */
     network_type: WdsDataSystemNetworkType
     rat_mask: number
     so_mask: number
     static name: string
 }
-export class IndicationWdsPacketServiceStatusOutput {
-    /* Methods of Qmi.IndicationWdsPacketServiceStatusOutput */
-    get_call_end_reason(): [ /* returnType */ boolean, /* value_call_end_reason */ WdsCallEndReason ]
-    get_connection_status(): [ /* returnType */ boolean, /* value_connection_status_status */ WdsConnectionStatus, /* value_connection_status_reconfiguration_required */ boolean ]
-    get_extended_technology_preference(): [ /* returnType */ boolean, /* value_extended_technology_preference */ WdsExtendedTechnologyPreference ]
-    get_ip_family(): [ /* returnType */ boolean, /* value_ip_family */ WdsIpFamily ]
-    get_verbose_call_end_reason(): [ /* returnType */ boolean, /* value_verbose_call_end_reason_type */ WdsVerboseCallEndReasonType, /* value_verbose_call_end_reason_reason */ number ]
+class IndicationWdsPacketServiceStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationWdsPacketServiceStatusOutput */
+    get_call_end_reason(): [ /* returnType */ boolean, /* value_call_end_reason */ WdsCallEndReason | null ]
+    get_connection_status(): [ /* returnType */ boolean, /* value_connection_status_status */ WdsConnectionStatus | null, /* value_connection_status_reconfiguration_required */ boolean | null ]
+    get_extended_technology_preference(): [ /* returnType */ boolean, /* value_extended_technology_preference */ WdsExtendedTechnologyPreference | null ]
+    get_ip_family(): [ /* returnType */ boolean, /* value_ip_family */ WdsIpFamily | null ]
+    get_verbose_call_end_reason(): [ /* returnType */ boolean, /* value_verbose_call_end_reason_type */ WdsVerboseCallEndReasonType | null, /* value_verbose_call_end_reason_reason */ number | null ]
     ref(): IndicationWdsPacketServiceStatusOutput
     unref(): void
     static name: string
 }
-export class IndicationWmsEventReportOutput {
-    /* Methods of Qmi.IndicationWmsEventReportOutput */
-    get_etws_message(): [ /* returnType */ boolean, /* value_etws_message_notification_type */ WmsNotificationType, /* value_etws_message_raw_data */ Uint8Array[] ]
-    get_etws_plmn_information(): [ /* returnType */ boolean, /* value_etws_plmn_information_mcc */ number, /* value_etws_plmn_information_mnc */ number ]
-    get_message_mode(): [ /* returnType */ boolean, /* value_message_mode */ WmsMessageMode ]
-    get_mt_message(): [ /* returnType */ boolean, /* value_mt_message_storage_type */ WmsStorageType, /* value_mt_message_memory_index */ number ]
-    get_sms_on_ims(): [ /* returnType */ boolean, /* value_sms_on_ims */ boolean ]
-    get_smsc_address(): [ /* returnType */ boolean, /* value_smsc_address */ string ]
-    get_transfer_route_mt_message(): [ /* returnType */ boolean, /* value_transfer_route_mt_message_ack_indicator */ WmsAckIndicator, /* value_transfer_route_mt_message_transaction_id */ number, /* value_transfer_route_mt_message_format */ WmsMessageFormat, /* value_transfer_route_mt_message_raw_data */ Uint8Array[] ]
+class IndicationWdsSetLteAttachPdnListOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationWdsSetLteAttachPdnListOutput */
+    get_action_result(): [ /* returnType */ boolean, /* value_action_result */ boolean | null ]
+    get_result(): boolean
+    ref(): IndicationWdsSetLteAttachPdnListOutput
+    unref(): void
+    static name: string
+}
+class IndicationWmsEventReportOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationWmsEventReportOutput */
+    get_etws_message(): [ /* returnType */ boolean, /* value_etws_message_notification_type */ WmsNotificationType | null, /* value_etws_message_raw_data */ Uint8Array[] | null ]
+    get_etws_plmn_information(): [ /* returnType */ boolean, /* value_etws_plmn_information_mcc */ number | null, /* value_etws_plmn_information_mnc */ number | null ]
+    get_message_mode(): [ /* returnType */ boolean, /* value_message_mode */ WmsMessageMode | null ]
+    get_mt_message(): [ /* returnType */ boolean, /* value_mt_message_storage_type */ WmsStorageType | null, /* value_mt_message_memory_index */ number | null ]
+    get_sms_on_ims(): [ /* returnType */ boolean, /* value_sms_on_ims */ boolean | null ]
+    get_smsc_address(): [ /* returnType */ boolean, /* value_smsc_address */ string | null ]
+    get_transfer_route_mt_message(): [ /* returnType */ boolean, /* value_transfer_route_mt_message_ack_indicator */ WmsAckIndicator | null, /* value_transfer_route_mt_message_transaction_id */ number | null, /* value_transfer_route_mt_message_format */ WmsMessageFormat | null, /* value_transfer_route_mt_message_raw_data */ Uint8Array[] | null ]
     ref(): IndicationWmsEventReportOutput
     unref(): void
     static name: string
 }
-export class IndicationWmsSmscAddressOutput {
-    /* Methods of Qmi.IndicationWmsSmscAddressOutput */
-    get_address(): [ /* returnType */ boolean, /* value_address_type */ string, /* value_address_digits */ string ]
+class IndicationWmsSmscAddressOutput {
+    /* Methods of Qmi-1.0.Qmi.IndicationWmsSmscAddressOutput */
+    get_address(): [ /* returnType */ boolean, /* value_address_type */ string | null, /* value_address_digits */ string | null ]
     ref(): IndicationWmsSmscAddressOutput
     unref(): void
     static name: string
 }
-export class MessageContext {
-    /* Methods of Qmi.MessageContext */
+class MessageContext {
+    /* Methods of Qmi-1.0.Qmi.MessageContext */
     get_vendor_id(): number
     ref(): MessageContext
     set_vendor_id(vendor_id: number): void
@@ -6163,9 +6559,9 @@ export class MessageContext {
     /* Static methods and pseudo-constructors */
     static new(): MessageContext
 }
-export class MessageCtlAllocateCidInput {
-    /* Methods of Qmi.MessageCtlAllocateCidInput */
-    get_service(): [ /* returnType */ boolean, /* value_service */ Service ]
+class MessageCtlAllocateCidInput {
+    /* Methods of Qmi-1.0.Qmi.MessageCtlAllocateCidInput */
+    get_service(): [ /* returnType */ boolean, /* value_service */ Service | null ]
     ref(): MessageCtlAllocateCidInput
     set_service(value_service: Service): boolean
     unref(): void
@@ -6175,32 +6571,32 @@ export class MessageCtlAllocateCidInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageCtlAllocateCidInput
 }
-export class MessageCtlAllocateCidOutput {
-    /* Methods of Qmi.MessageCtlAllocateCidOutput */
-    get_allocation_info(): [ /* returnType */ boolean, /* value_allocation_info_service */ Service, /* value_allocation_info_cid */ number ]
+class MessageCtlAllocateCidOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageCtlAllocateCidOutput */
+    get_allocation_info(): [ /* returnType */ boolean, /* value_allocation_info_service */ Service | null, /* value_allocation_info_cid */ number | null ]
     get_result(): boolean
     ref(): MessageCtlAllocateCidOutput
     unref(): void
     static name: string
 }
-export class MessageCtlGetVersionInfoOutput {
-    /* Methods of Qmi.MessageCtlGetVersionInfoOutput */
+class MessageCtlGetVersionInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageCtlGetVersionInfoOutput */
     get_result(): boolean
-    get_service_list(): [ /* returnType */ boolean, /* value_service_list */ MessageCtlGetVersionInfoOutputServiceListService[] ]
+    get_service_list(): [ /* returnType */ boolean, /* value_service_list */ MessageCtlGetVersionInfoOutputServiceListService[] | null ]
     ref(): MessageCtlGetVersionInfoOutput
     unref(): void
     static name: string
 }
-export class MessageCtlGetVersionInfoOutputServiceListService {
-    /* Fields of Qmi.MessageCtlGetVersionInfoOutputServiceListService */
+class MessageCtlGetVersionInfoOutputServiceListService {
+    /* Fields of Qmi-1.0.Qmi.MessageCtlGetVersionInfoOutputServiceListService */
     service: Service
     major_version: number
     minor_version: number
     static name: string
 }
-export class MessageCtlInternalProxyOpenInput {
-    /* Methods of Qmi.MessageCtlInternalProxyOpenInput */
-    get_device_path(): [ /* returnType */ boolean, /* value_device_path */ string ]
+class MessageCtlInternalProxyOpenInput {
+    /* Methods of Qmi-1.0.Qmi.MessageCtlInternalProxyOpenInput */
+    get_device_path(): [ /* returnType */ boolean, /* value_device_path */ string | null ]
     ref(): MessageCtlInternalProxyOpenInput
     set_device_path(value_device_path: string): boolean
     unref(): void
@@ -6210,16 +6606,16 @@ export class MessageCtlInternalProxyOpenInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageCtlInternalProxyOpenInput
 }
-export class MessageCtlInternalProxyOpenOutput {
-    /* Methods of Qmi.MessageCtlInternalProxyOpenOutput */
+class MessageCtlInternalProxyOpenOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageCtlInternalProxyOpenOutput */
     get_result(): boolean
     ref(): MessageCtlInternalProxyOpenOutput
     unref(): void
     static name: string
 }
-export class MessageCtlReleaseCidInput {
-    /* Methods of Qmi.MessageCtlReleaseCidInput */
-    get_release_info(): [ /* returnType */ boolean, /* value_release_info_service */ Service, /* value_release_info_cid */ number ]
+class MessageCtlReleaseCidInput {
+    /* Methods of Qmi-1.0.Qmi.MessageCtlReleaseCidInput */
+    get_release_info(): [ /* returnType */ boolean, /* value_release_info_service */ Service | null, /* value_release_info_cid */ number | null ]
     ref(): MessageCtlReleaseCidInput
     set_release_info(value_release_info_service: Service, value_release_info_cid: number): boolean
     unref(): void
@@ -6229,18 +6625,18 @@ export class MessageCtlReleaseCidInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageCtlReleaseCidInput
 }
-export class MessageCtlReleaseCidOutput {
-    /* Methods of Qmi.MessageCtlReleaseCidOutput */
-    get_release_info(): [ /* returnType */ boolean, /* value_release_info_service */ Service, /* value_release_info_cid */ number ]
+class MessageCtlReleaseCidOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageCtlReleaseCidOutput */
+    get_release_info(): [ /* returnType */ boolean, /* value_release_info_service */ Service | null, /* value_release_info_cid */ number | null ]
     get_result(): boolean
     ref(): MessageCtlReleaseCidOutput
     unref(): void
     static name: string
 }
-export class MessageCtlSetDataFormatInput {
-    /* Methods of Qmi.MessageCtlSetDataFormatInput */
-    get_format(): [ /* returnType */ boolean, /* value_format */ CtlDataFormat ]
-    get_protocol(): [ /* returnType */ boolean, /* value_protocol */ CtlDataLinkProtocol ]
+class MessageCtlSetDataFormatInput {
+    /* Methods of Qmi-1.0.Qmi.MessageCtlSetDataFormatInput */
+    get_format(): [ /* returnType */ boolean, /* value_format */ CtlDataFormat | null ]
+    get_protocol(): [ /* returnType */ boolean, /* value_protocol */ CtlDataLinkProtocol | null ]
     ref(): MessageCtlSetDataFormatInput
     set_format(value_format: CtlDataFormat): boolean
     set_protocol(value_protocol: CtlDataLinkProtocol): boolean
@@ -6251,17 +6647,17 @@ export class MessageCtlSetDataFormatInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageCtlSetDataFormatInput
 }
-export class MessageCtlSetDataFormatOutput {
-    /* Methods of Qmi.MessageCtlSetDataFormatOutput */
-    get_protocol(): [ /* returnType */ boolean, /* value_protocol */ CtlDataLinkProtocol ]
+class MessageCtlSetDataFormatOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageCtlSetDataFormatOutput */
+    get_protocol(): [ /* returnType */ boolean, /* value_protocol */ CtlDataLinkProtocol | null ]
     get_result(): boolean
     ref(): MessageCtlSetDataFormatOutput
     unref(): void
     static name: string
 }
-export class MessageCtlSetInstanceIdInput {
-    /* Methods of Qmi.MessageCtlSetInstanceIdInput */
-    get_id(): [ /* returnType */ boolean, /* value_id */ number ]
+class MessageCtlSetInstanceIdInput {
+    /* Methods of Qmi-1.0.Qmi.MessageCtlSetInstanceIdInput */
+    get_id(): [ /* returnType */ boolean, /* value_id */ number | null ]
     ref(): MessageCtlSetInstanceIdInput
     set_id(value_id: number): boolean
     unref(): void
@@ -6271,24 +6667,24 @@ export class MessageCtlSetInstanceIdInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageCtlSetInstanceIdInput
 }
-export class MessageCtlSetInstanceIdOutput {
-    /* Methods of Qmi.MessageCtlSetInstanceIdOutput */
-    get_link_id(): [ /* returnType */ boolean, /* value_link_id */ number ]
+class MessageCtlSetInstanceIdOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageCtlSetInstanceIdOutput */
+    get_link_id(): [ /* returnType */ boolean, /* value_link_id */ number | null ]
     get_result(): boolean
     ref(): MessageCtlSetInstanceIdOutput
     unref(): void
     static name: string
 }
-export class MessageCtlSyncOutput {
-    /* Methods of Qmi.MessageCtlSyncOutput */
+class MessageCtlSyncOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageCtlSyncOutput */
     get_result(): boolean
     ref(): MessageCtlSyncOutput
     unref(): void
     static name: string
 }
-export class MessageDmsActivateAutomaticInput {
-    /* Methods of Qmi.MessageDmsActivateAutomaticInput */
-    get_activation_code(): [ /* returnType */ boolean, /* value_activation_code */ string ]
+class MessageDmsActivateAutomaticInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsActivateAutomaticInput */
+    get_activation_code(): [ /* returnType */ boolean, /* value_activation_code */ string | null ]
     ref(): MessageDmsActivateAutomaticInput
     set_activation_code(value_activation_code: string): boolean
     unref(): void
@@ -6298,19 +6694,19 @@ export class MessageDmsActivateAutomaticInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsActivateAutomaticInput
 }
-export class MessageDmsActivateAutomaticOutput {
-    /* Methods of Qmi.MessageDmsActivateAutomaticOutput */
+class MessageDmsActivateAutomaticOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsActivateAutomaticOutput */
     get_result(): boolean
     ref(): MessageDmsActivateAutomaticOutput
     unref(): void
     static name: string
 }
-export class MessageDmsActivateManualInput {
-    /* Methods of Qmi.MessageDmsActivateManualInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_service_programming_code */ string, /* value_info_system_identification_number */ number, /* value_info_mobile_directory_number */ string, /* value_info_mobile_identification_number */ string ]
-    get_mn_aaa_key(): [ /* returnType */ boolean, /* value_mn_aaa_key */ string ]
-    get_mn_ha_key(): [ /* returnType */ boolean, /* value_mn_ha_key */ string ]
-    get_prl(): [ /* returnType */ boolean, /* value_prl_prl_total_length */ number, /* value_prl_prl_segment_sequence */ number, /* value_prl_prl_segment */ Uint8Array[] ]
+class MessageDmsActivateManualInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsActivateManualInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_service_programming_code */ string | null, /* value_info_system_identification_number */ number | null, /* value_info_mobile_directory_number */ string | null, /* value_info_mobile_identification_number */ string | null ]
+    get_mn_aaa_key(): [ /* returnType */ boolean, /* value_mn_aaa_key */ string | null ]
+    get_mn_ha_key(): [ /* returnType */ boolean, /* value_mn_ha_key */ string | null ]
+    get_prl(): [ /* returnType */ boolean, /* value_prl_prl_total_length */ number | null, /* value_prl_prl_segment_sequence */ number | null, /* value_prl_prl_segment */ Uint8Array[] | null ]
     ref(): MessageDmsActivateManualInput
     set_info(value_info_service_programming_code: string, value_info_system_identification_number: number, value_info_mobile_directory_number: string, value_info_mobile_identification_number: string): boolean
     set_mn_aaa_key(value_mn_aaa_key: string): boolean
@@ -6323,16 +6719,16 @@ export class MessageDmsActivateManualInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsActivateManualInput
 }
-export class MessageDmsActivateManualOutput {
-    /* Methods of Qmi.MessageDmsActivateManualOutput */
+class MessageDmsActivateManualOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsActivateManualOutput */
     get_result(): boolean
     ref(): MessageDmsActivateManualOutput
     unref(): void
     static name: string
 }
-export class MessageDmsDeleteStoredImageInput {
-    /* Methods of Qmi.MessageDmsDeleteStoredImageInput */
-    get_image(): [ /* returnType */ boolean, /* value_image */ MessageDmsDeleteStoredImageInputImage ]
+class MessageDmsDeleteStoredImageInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsDeleteStoredImageInput */
+    get_image(): [ /* returnType */ boolean, /* value_image */ MessageDmsDeleteStoredImageInputImage | null ]
     ref(): MessageDmsDeleteStoredImageInput
     set_image(value_image: MessageDmsDeleteStoredImageInputImage): boolean
     unref(): void
@@ -6342,23 +6738,23 @@ export class MessageDmsDeleteStoredImageInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsDeleteStoredImageInput
 }
-export class MessageDmsDeleteStoredImageInputImage {
-    /* Fields of Qmi.MessageDmsDeleteStoredImageInputImage */
+class MessageDmsDeleteStoredImageInputImage {
+    /* Fields of Qmi-1.0.Qmi.MessageDmsDeleteStoredImageInputImage */
     type: DmsFirmwareImageType
     unique_id: object[]
     build_id: string
     static name: string
 }
-export class MessageDmsDeleteStoredImageOutput {
-    /* Methods of Qmi.MessageDmsDeleteStoredImageOutput */
+class MessageDmsDeleteStoredImageOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsDeleteStoredImageOutput */
     get_result(): boolean
     ref(): MessageDmsDeleteStoredImageOutput
     unref(): void
     static name: string
 }
-export class MessageDmsFoxconnChangeDeviceModeInput {
-    /* Methods of Qmi.MessageDmsFoxconnChangeDeviceModeInput */
-    get_mode(): [ /* returnType */ boolean, /* value_mode */ DmsFoxconnDeviceMode ]
+class MessageDmsFoxconnChangeDeviceModeInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsFoxconnChangeDeviceModeInput */
+    get_mode(): [ /* returnType */ boolean, /* value_mode */ DmsFoxconnDeviceMode | null ]
     ref(): MessageDmsFoxconnChangeDeviceModeInput
     set_mode(value_mode: DmsFoxconnDeviceMode): boolean
     unref(): void
@@ -6368,16 +6764,16 @@ export class MessageDmsFoxconnChangeDeviceModeInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsFoxconnChangeDeviceModeInput
 }
-export class MessageDmsFoxconnChangeDeviceModeOutput {
-    /* Methods of Qmi.MessageDmsFoxconnChangeDeviceModeOutput */
+class MessageDmsFoxconnChangeDeviceModeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsFoxconnChangeDeviceModeOutput */
     get_result(): boolean
     ref(): MessageDmsFoxconnChangeDeviceModeOutput
     unref(): void
     static name: string
 }
-export class MessageDmsFoxconnGetFirmwareVersionInput {
-    /* Methods of Qmi.MessageDmsFoxconnGetFirmwareVersionInput */
-    get_version_type(): [ /* returnType */ boolean, /* value_version_type */ DmsFoxconnFirmwareVersionType ]
+class MessageDmsFoxconnGetFirmwareVersionInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsFoxconnGetFirmwareVersionInput */
+    get_version_type(): [ /* returnType */ boolean, /* value_version_type */ DmsFoxconnFirmwareVersionType | null ]
     ref(): MessageDmsFoxconnGetFirmwareVersionInput
     set_version_type(value_version_type: DmsFoxconnFirmwareVersionType): boolean
     unref(): void
@@ -6387,101 +6783,121 @@ export class MessageDmsFoxconnGetFirmwareVersionInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsFoxconnGetFirmwareVersionInput
 }
-export class MessageDmsFoxconnGetFirmwareVersionOutput {
-    /* Methods of Qmi.MessageDmsFoxconnGetFirmwareVersionOutput */
+class MessageDmsFoxconnGetFirmwareVersionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsFoxconnGetFirmwareVersionOutput */
     get_result(): boolean
-    get_version(): [ /* returnType */ boolean, /* value_version */ string ]
+    get_version(): [ /* returnType */ boolean, /* value_version */ string | null ]
     ref(): MessageDmsFoxconnGetFirmwareVersionOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetActivationStateOutput {
-    /* Methods of Qmi.MessageDmsGetActivationStateOutput */
-    get_info(): [ /* returnType */ boolean, /* value_info */ DmsActivationState ]
+class MessageDmsFoxconnSetFccAuthenticationInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsFoxconnSetFccAuthenticationInput */
+    get_value(): [ /* returnType */ boolean, /* value_value */ number | null ]
+    ref(): MessageDmsFoxconnSetFccAuthenticationInput
+    set_value(value_value: number): boolean
+    unref(): void
+    static name: string
+    static new(): MessageDmsFoxconnSetFccAuthenticationInput
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MessageDmsFoxconnSetFccAuthenticationInput
+}
+class MessageDmsFoxconnSetFccAuthenticationOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsFoxconnSetFccAuthenticationOutput */
+    get_result(): boolean
+    ref(): MessageDmsFoxconnSetFccAuthenticationOutput
+    unref(): void
+    static name: string
+}
+class MessageDmsGetActivationStateOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetActivationStateOutput */
+    get_info(): [ /* returnType */ boolean, /* value_info */ DmsActivationState | null ]
     get_result(): boolean
     ref(): MessageDmsGetActivationStateOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetAltNetConfigOutput {
-    /* Methods of Qmi.MessageDmsGetAltNetConfigOutput */
-    get_config(): [ /* returnType */ boolean, /* value_config */ boolean ]
+class MessageDmsGetAltNetConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetAltNetConfigOutput */
+    get_config(): [ /* returnType */ boolean, /* value_config */ boolean | null ]
     get_result(): boolean
     ref(): MessageDmsGetAltNetConfigOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetBandCapabilitiesOutput {
-    /* Methods of Qmi.MessageDmsGetBandCapabilitiesOutput */
-    get_band_capability(): [ /* returnType */ boolean, /* value_band_capability */ DmsBandCapability ]
-    get_extended_lte_band_capability(): [ /* returnType */ boolean, /* value_extended_lte_band_capability */ number[] ]
-    get_lte_band_capability(): [ /* returnType */ boolean, /* value_lte_band_capability */ DmsLteBandCapability ]
+class MessageDmsGetBandCapabilitiesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetBandCapabilitiesOutput */
+    get_band_capability(): [ /* returnType */ boolean, /* value_band_capability */ DmsBandCapability | null ]
+    get_extended_lte_band_capability(): [ /* returnType */ boolean, /* value_extended_lte_band_capability */ number[] | null ]
+    get_lte_band_capability(): [ /* returnType */ boolean, /* value_lte_band_capability */ DmsLteBandCapability | null ]
+    get_nr5g_band_capability(): [ /* returnType */ boolean, /* value_nr5g_band_capability */ number[] | null ]
     get_result(): boolean
     ref(): MessageDmsGetBandCapabilitiesOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetBootImageDownloadModeOutput {
-    /* Methods of Qmi.MessageDmsGetBootImageDownloadModeOutput */
-    get_mode(): [ /* returnType */ boolean, /* value_mode */ DmsBootImageDownloadMode ]
+class MessageDmsGetBootImageDownloadModeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetBootImageDownloadModeOutput */
+    get_mode(): [ /* returnType */ boolean, /* value_mode */ DmsBootImageDownloadMode | null ]
     get_result(): boolean
     ref(): MessageDmsGetBootImageDownloadModeOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetCapabilitiesOutput {
-    /* Methods of Qmi.MessageDmsGetCapabilitiesOutput */
-    get_info(): [ /* returnType */ boolean, /* value_info_max_tx_channel_rate */ number, /* value_info_max_rx_channel_rate */ number, /* value_info_data_service_capability */ DmsDataServiceCapability, /* value_info_sim_capability */ DmsSimCapability, /* value_info_radio_interface_list */ DmsRadioInterface[] ]
+class MessageDmsGetCapabilitiesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetCapabilitiesOutput */
+    get_info(): [ /* returnType */ boolean, /* value_info_max_tx_channel_rate */ number | null, /* value_info_max_rx_channel_rate */ number | null, /* value_info_data_service_capability */ DmsDataServiceCapability | null, /* value_info_sim_capability */ DmsSimCapability | null, /* value_info_radio_interface_list */ DmsRadioInterface[] | null ]
     get_result(): boolean
     ref(): MessageDmsGetCapabilitiesOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetFactorySkuOutput {
-    /* Methods of Qmi.MessageDmsGetFactorySkuOutput */
+class MessageDmsGetFactorySkuOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetFactorySkuOutput */
     get_result(): boolean
-    get_sku(): [ /* returnType */ boolean, /* value_sku */ string ]
+    get_sku(): [ /* returnType */ boolean, /* value_sku */ string | null ]
     ref(): MessageDmsGetFactorySkuOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetFirmwarePreferenceOutput {
-    /* Methods of Qmi.MessageDmsGetFirmwarePreferenceOutput */
-    get_list(): [ /* returnType */ boolean, /* value_list */ MessageDmsGetFirmwarePreferenceOutputListImage[] ]
+class MessageDmsGetFirmwarePreferenceOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetFirmwarePreferenceOutput */
+    get_list(): [ /* returnType */ boolean, /* value_list */ MessageDmsGetFirmwarePreferenceOutputListImage[] | null ]
     get_result(): boolean
     ref(): MessageDmsGetFirmwarePreferenceOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetFirmwarePreferenceOutputListImage {
-    /* Fields of Qmi.MessageDmsGetFirmwarePreferenceOutputListImage */
+class MessageDmsGetFirmwarePreferenceOutputListImage {
+    /* Fields of Qmi-1.0.Qmi.MessageDmsGetFirmwarePreferenceOutputListImage */
     type: DmsFirmwareImageType
     unique_id: object[]
     build_id: string
     static name: string
 }
-export class MessageDmsGetHardwareRevisionOutput {
-    /* Methods of Qmi.MessageDmsGetHardwareRevisionOutput */
+class MessageDmsGetHardwareRevisionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetHardwareRevisionOutput */
     get_result(): boolean
-    get_revision(): [ /* returnType */ boolean, /* value_revision */ string ]
+    get_revision(): [ /* returnType */ boolean, /* value_revision */ string | null ]
     ref(): MessageDmsGetHardwareRevisionOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetIdsOutput {
-    /* Methods of Qmi.MessageDmsGetIdsOutput */
-    get_esn(): [ /* returnType */ boolean, /* value_esn */ string ]
-    get_imei(): [ /* returnType */ boolean, /* value_imei */ string ]
-    get_imei_software_version(): [ /* returnType */ boolean, /* value_imei_software_version */ string ]
-    get_meid(): [ /* returnType */ boolean, /* value_meid */ string ]
+class MessageDmsGetIdsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetIdsOutput */
+    get_esn(): [ /* returnType */ boolean, /* value_esn */ string | null ]
+    get_imei(): [ /* returnType */ boolean, /* value_imei */ string | null ]
+    get_imei_software_version(): [ /* returnType */ boolean, /* value_imei_software_version */ string | null ]
+    get_meid(): [ /* returnType */ boolean, /* value_meid */ string | null ]
     get_result(): boolean
     ref(): MessageDmsGetIdsOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetMacAddressInput {
-    /* Methods of Qmi.MessageDmsGetMacAddressInput */
-    get_device(): [ /* returnType */ boolean, /* value_device */ DmsMacType ]
+class MessageDmsGetMacAddressInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetMacAddressInput */
+    get_device(): [ /* returnType */ boolean, /* value_device */ DmsMacType | null ]
     ref(): MessageDmsGetMacAddressInput
     set_device(value_device: DmsMacType): boolean
     unref(): void
@@ -6491,84 +6907,84 @@ export class MessageDmsGetMacAddressInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsGetMacAddressInput
 }
-export class MessageDmsGetMacAddressOutput {
-    /* Methods of Qmi.MessageDmsGetMacAddressOutput */
-    get_mac_address(): [ /* returnType */ boolean, /* value_mac_address */ Uint8Array[] ]
+class MessageDmsGetMacAddressOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetMacAddressOutput */
+    get_mac_address(): [ /* returnType */ boolean, /* value_mac_address */ Uint8Array[] | null ]
     get_result(): boolean
     ref(): MessageDmsGetMacAddressOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetManufacturerOutput {
-    /* Methods of Qmi.MessageDmsGetManufacturerOutput */
-    get_manufacturer(): [ /* returnType */ boolean, /* value_manufacturer */ string ]
+class MessageDmsGetManufacturerOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetManufacturerOutput */
+    get_manufacturer(): [ /* returnType */ boolean, /* value_manufacturer */ string | null ]
     get_result(): boolean
     ref(): MessageDmsGetManufacturerOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetModelOutput {
-    /* Methods of Qmi.MessageDmsGetModelOutput */
-    get_model(): [ /* returnType */ boolean, /* value_model */ string ]
+class MessageDmsGetModelOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetModelOutput */
+    get_model(): [ /* returnType */ boolean, /* value_model */ string | null ]
     get_result(): boolean
     ref(): MessageDmsGetModelOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetMsisdnOutput {
-    /* Methods of Qmi.MessageDmsGetMsisdnOutput */
-    get_msisdn(): [ /* returnType */ boolean, /* value_msisdn */ string ]
+class MessageDmsGetMsisdnOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetMsisdnOutput */
+    get_msisdn(): [ /* returnType */ boolean, /* value_msisdn */ string | null ]
     get_result(): boolean
     ref(): MessageDmsGetMsisdnOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetOperatingModeOutput {
-    /* Methods of Qmi.MessageDmsGetOperatingModeOutput */
-    get_hardware_restricted_mode(): [ /* returnType */ boolean, /* value_hardware_restricted_mode */ boolean ]
-    get_mode(): [ /* returnType */ boolean, /* value_mode */ DmsOperatingMode ]
-    get_offline_reason(): [ /* returnType */ boolean, /* value_offline_reason */ DmsOfflineReason ]
+class MessageDmsGetOperatingModeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetOperatingModeOutput */
+    get_hardware_restricted_mode(): [ /* returnType */ boolean, /* value_hardware_restricted_mode */ boolean | null ]
+    get_mode(): [ /* returnType */ boolean, /* value_mode */ DmsOperatingMode | null ]
+    get_offline_reason(): [ /* returnType */ boolean, /* value_offline_reason */ DmsOfflineReason | null ]
     get_result(): boolean
     ref(): MessageDmsGetOperatingModeOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetPowerStateOutput {
-    /* Methods of Qmi.MessageDmsGetPowerStateOutput */
-    get_info(): [ /* returnType */ boolean, /* value_info_power_state_flags */ number, /* value_info_battery_level */ number ]
+class MessageDmsGetPowerStateOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetPowerStateOutput */
+    get_info(): [ /* returnType */ boolean, /* value_info_power_state_flags */ number | null, /* value_info_battery_level */ number | null ]
     get_result(): boolean
     ref(): MessageDmsGetPowerStateOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetPrlVersionOutput {
-    /* Methods of Qmi.MessageDmsGetPrlVersionOutput */
-    get_prl_only_preference(): [ /* returnType */ boolean, /* value_prl_only_preference */ boolean ]
+class MessageDmsGetPrlVersionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetPrlVersionOutput */
+    get_prl_only_preference(): [ /* returnType */ boolean, /* value_prl_only_preference */ boolean | null ]
     get_result(): boolean
-    get_version(): [ /* returnType */ boolean, /* value_version */ number ]
+    get_version(): [ /* returnType */ boolean, /* value_version */ number | null ]
     ref(): MessageDmsGetPrlVersionOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetRevisionOutput {
-    /* Methods of Qmi.MessageDmsGetRevisionOutput */
+class MessageDmsGetRevisionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetRevisionOutput */
     get_result(): boolean
-    get_revision(): [ /* returnType */ boolean, /* value_revision */ string ]
+    get_revision(): [ /* returnType */ boolean, /* value_revision */ string | null ]
     ref(): MessageDmsGetRevisionOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetSoftwareVersionOutput {
-    /* Methods of Qmi.MessageDmsGetSoftwareVersionOutput */
+class MessageDmsGetSoftwareVersionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetSoftwareVersionOutput */
     get_result(): boolean
-    get_version(): [ /* returnType */ boolean, /* value_version */ string ]
+    get_version(): [ /* returnType */ boolean, /* value_version */ string | null ]
     ref(): MessageDmsGetSoftwareVersionOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetStoredImageInfoInput {
-    /* Methods of Qmi.MessageDmsGetStoredImageInfoInput */
-    get_image(): [ /* returnType */ boolean, /* value_image */ MessageDmsGetStoredImageInfoInputImage ]
+class MessageDmsGetStoredImageInfoInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetStoredImageInfoInput */
+    get_image(): [ /* returnType */ boolean, /* value_image */ MessageDmsGetStoredImageInfoInputImage | null ]
     ref(): MessageDmsGetStoredImageInfoInput
     set_image(value_image: MessageDmsGetStoredImageInfoInputImage): boolean
     unref(): void
@@ -6578,52 +6994,52 @@ export class MessageDmsGetStoredImageInfoInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsGetStoredImageInfoInput
 }
-export class MessageDmsGetStoredImageInfoInputImage {
-    /* Fields of Qmi.MessageDmsGetStoredImageInfoInputImage */
+class MessageDmsGetStoredImageInfoInputImage {
+    /* Fields of Qmi-1.0.Qmi.MessageDmsGetStoredImageInfoInputImage */
     type: DmsFirmwareImageType
     unique_id: object[]
     build_id: string
     static name: string
 }
-export class MessageDmsGetStoredImageInfoOutput {
-    /* Methods of Qmi.MessageDmsGetStoredImageInfoOutput */
-    get_boot_version(): [ /* returnType */ boolean, /* value_boot_version_major_version */ number, /* value_boot_version_minor_version */ number ]
-    get_oem_lock_id(): [ /* returnType */ boolean, /* value_oem_lock_id */ number ]
-    get_pri_version(): [ /* returnType */ boolean, /* value_pri_version_pri_version */ number, /* value_pri_version_pri_info */ string ]
+class MessageDmsGetStoredImageInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetStoredImageInfoOutput */
+    get_boot_version(): [ /* returnType */ boolean, /* value_boot_version_major_version */ number | null, /* value_boot_version_minor_version */ number | null ]
+    get_oem_lock_id(): [ /* returnType */ boolean, /* value_oem_lock_id */ number | null ]
+    get_pri_version(): [ /* returnType */ boolean, /* value_pri_version_pri_version */ number | null, /* value_pri_version_pri_info */ string | null ]
     get_result(): boolean
     ref(): MessageDmsGetStoredImageInfoOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetSupportedMessagesOutput {
-    /* Methods of Qmi.MessageDmsGetSupportedMessagesOutput */
-    get_list(): [ /* returnType */ boolean, /* value_list */ Uint8Array[] ]
+class MessageDmsGetSupportedMessagesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetSupportedMessagesOutput */
+    get_list(): [ /* returnType */ boolean, /* value_list */ Uint8Array[] | null ]
     get_result(): boolean
     ref(): MessageDmsGetSupportedMessagesOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetTimeOutput {
-    /* Methods of Qmi.MessageDmsGetTimeOutput */
-    get_device_time(): [ /* returnType */ boolean, /* value_device_time_time_count */ number, /* value_device_time_time_source */ DmsTimeSource ]
+class MessageDmsGetTimeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetTimeOutput */
+    get_device_time(): [ /* returnType */ boolean, /* value_device_time_time_count */ number | null, /* value_device_time_time_source */ DmsTimeSource | null ]
     get_result(): boolean
-    get_system_time(): [ /* returnType */ boolean, /* value_system_time */ number ]
-    get_user_time(): [ /* returnType */ boolean, /* value_user_time */ number ]
+    get_system_time(): [ /* returnType */ boolean, /* value_system_time */ number | null ]
+    get_user_time(): [ /* returnType */ boolean, /* value_user_time */ number | null ]
     ref(): MessageDmsGetTimeOutput
     unref(): void
     static name: string
 }
-export class MessageDmsGetUserLockStateOutput {
-    /* Methods of Qmi.MessageDmsGetUserLockStateOutput */
-    get_enabled(): [ /* returnType */ boolean, /* value_enabled */ boolean ]
+class MessageDmsGetUserLockStateOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsGetUserLockStateOutput */
+    get_enabled(): [ /* returnType */ boolean, /* value_enabled */ boolean | null ]
     get_result(): boolean
     ref(): MessageDmsGetUserLockStateOutput
     unref(): void
     static name: string
 }
-export class MessageDmsHpChangeDeviceModeInput {
-    /* Methods of Qmi.MessageDmsHpChangeDeviceModeInput */
-    get_mode(): [ /* returnType */ boolean, /* value_mode */ DmsHpDeviceMode ]
+class MessageDmsHpChangeDeviceModeInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsHpChangeDeviceModeInput */
+    get_mode(): [ /* returnType */ boolean, /* value_mode */ DmsHpDeviceMode | null ]
     ref(): MessageDmsHpChangeDeviceModeInput
     set_mode(value_mode: DmsHpDeviceMode): boolean
     unref(): void
@@ -6633,63 +7049,63 @@ export class MessageDmsHpChangeDeviceModeInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsHpChangeDeviceModeInput
 }
-export class MessageDmsHpChangeDeviceModeOutput {
-    /* Methods of Qmi.MessageDmsHpChangeDeviceModeOutput */
+class MessageDmsHpChangeDeviceModeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsHpChangeDeviceModeOutput */
     get_result(): boolean
     ref(): MessageDmsHpChangeDeviceModeOutput
     unref(): void
     static name: string
 }
-export class MessageDmsListStoredImagesOutput {
-    /* Methods of Qmi.MessageDmsListStoredImagesOutput */
-    get_list(): [ /* returnType */ boolean, /* value_list */ MessageDmsListStoredImagesOutputListImage[] ]
+class MessageDmsListStoredImagesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsListStoredImagesOutput */
+    get_list(): [ /* returnType */ boolean, /* value_list */ MessageDmsListStoredImagesOutputListImage[] | null ]
     get_result(): boolean
     ref(): MessageDmsListStoredImagesOutput
     unref(): void
     static name: string
 }
-export class MessageDmsListStoredImagesOutputListImage {
-    /* Fields of Qmi.MessageDmsListStoredImagesOutputListImage */
+class MessageDmsListStoredImagesOutputListImage {
+    /* Fields of Qmi-1.0.Qmi.MessageDmsListStoredImagesOutputListImage */
     type: DmsFirmwareImageType
     maximum_images: number
     index_of_running_image: number
     sublist: object[]
     static name: string
 }
-export class MessageDmsListStoredImagesOutputListImageSublistSublistElement {
-    /* Fields of Qmi.MessageDmsListStoredImagesOutputListImageSublistSublistElement */
+class MessageDmsListStoredImagesOutputListImageSublistSublistElement {
+    /* Fields of Qmi-1.0.Qmi.MessageDmsListStoredImagesOutputListImageSublistSublistElement */
     storage_index: number
     failure_count: number
     unique_id: object[]
     build_id: string
     static name: string
 }
-export class MessageDmsReadEriFileOutput {
-    /* Methods of Qmi.MessageDmsReadEriFileOutput */
-    get_eri_file(): [ /* returnType */ boolean, /* value_eri_file */ Uint8Array[] ]
+class MessageDmsReadEriFileOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsReadEriFileOutput */
+    get_eri_file(): [ /* returnType */ boolean, /* value_eri_file */ Uint8Array[] | null ]
     get_result(): boolean
     ref(): MessageDmsReadEriFileOutput
     unref(): void
     static name: string
 }
-export class MessageDmsReadUserDataOutput {
-    /* Methods of Qmi.MessageDmsReadUserDataOutput */
+class MessageDmsReadUserDataOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsReadUserDataOutput */
     get_result(): boolean
-    get_user_data(): [ /* returnType */ boolean, /* value_user_data */ Uint8Array[] ]
+    get_user_data(): [ /* returnType */ boolean, /* value_user_data */ Uint8Array[] | null ]
     ref(): MessageDmsReadUserDataOutput
     unref(): void
     static name: string
 }
-export class MessageDmsResetOutput {
-    /* Methods of Qmi.MessageDmsResetOutput */
+class MessageDmsResetOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsResetOutput */
     get_result(): boolean
     ref(): MessageDmsResetOutput
     unref(): void
     static name: string
 }
-export class MessageDmsRestoreFactoryDefaultsInput {
-    /* Methods of Qmi.MessageDmsRestoreFactoryDefaultsInput */
-    get_service_programming_code(): [ /* returnType */ boolean, /* value_service_programming_code */ string ]
+class MessageDmsRestoreFactoryDefaultsInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsRestoreFactoryDefaultsInput */
+    get_service_programming_code(): [ /* returnType */ boolean, /* value_service_programming_code */ string | null ]
     ref(): MessageDmsRestoreFactoryDefaultsInput
     set_service_programming_code(value_service_programming_code: string): boolean
     unref(): void
@@ -6699,16 +7115,16 @@ export class MessageDmsRestoreFactoryDefaultsInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsRestoreFactoryDefaultsInput
 }
-export class MessageDmsRestoreFactoryDefaultsOutput {
-    /* Methods of Qmi.MessageDmsRestoreFactoryDefaultsOutput */
+class MessageDmsRestoreFactoryDefaultsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsRestoreFactoryDefaultsOutput */
     get_result(): boolean
     ref(): MessageDmsRestoreFactoryDefaultsOutput
     unref(): void
     static name: string
 }
-export class MessageDmsSetAltNetConfigInput {
-    /* Methods of Qmi.MessageDmsSetAltNetConfigInput */
-    get_config(): [ /* returnType */ boolean, /* value_config */ boolean ]
+class MessageDmsSetAltNetConfigInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetAltNetConfigInput */
+    get_config(): [ /* returnType */ boolean, /* value_config */ boolean | null ]
     ref(): MessageDmsSetAltNetConfigInput
     set_config(value_config: boolean): boolean
     unref(): void
@@ -6718,16 +7134,16 @@ export class MessageDmsSetAltNetConfigInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsSetAltNetConfigInput
 }
-export class MessageDmsSetAltNetConfigOutput {
-    /* Methods of Qmi.MessageDmsSetAltNetConfigOutput */
+class MessageDmsSetAltNetConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetAltNetConfigOutput */
     get_result(): boolean
     ref(): MessageDmsSetAltNetConfigOutput
     unref(): void
     static name: string
 }
-export class MessageDmsSetBootImageDownloadModeInput {
-    /* Methods of Qmi.MessageDmsSetBootImageDownloadModeInput */
-    get_mode(): [ /* returnType */ boolean, /* value_mode */ DmsBootImageDownloadMode ]
+class MessageDmsSetBootImageDownloadModeInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetBootImageDownloadModeInput */
+    get_mode(): [ /* returnType */ boolean, /* value_mode */ DmsBootImageDownloadMode | null ]
     ref(): MessageDmsSetBootImageDownloadModeInput
     set_mode(value_mode: DmsBootImageDownloadMode): boolean
     unref(): void
@@ -6737,23 +7153,23 @@ export class MessageDmsSetBootImageDownloadModeInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsSetBootImageDownloadModeInput
 }
-export class MessageDmsSetBootImageDownloadModeOutput {
-    /* Methods of Qmi.MessageDmsSetBootImageDownloadModeOutput */
+class MessageDmsSetBootImageDownloadModeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetBootImageDownloadModeOutput */
     get_result(): boolean
     ref(): MessageDmsSetBootImageDownloadModeOutput
     unref(): void
     static name: string
 }
-export class MessageDmsSetEventReportInput {
-    /* Methods of Qmi.MessageDmsSetEventReportInput */
-    get_activation_state_reporting(): [ /* returnType */ boolean, /* value_activation_state_reporting */ boolean ]
-    get_battery_level_report_limits(): [ /* returnType */ boolean, /* value_battery_level_report_limits_lower_limit */ number, /* value_battery_level_report_limits_upper_limit */ number ]
-    get_operating_mode_reporting(): [ /* returnType */ boolean, /* value_operating_mode_reporting */ boolean ]
-    get_pin_state_reporting(): [ /* returnType */ boolean, /* value_pin_state_reporting */ boolean ]
-    get_power_state_reporting(): [ /* returnType */ boolean, /* value_power_state_reporting */ boolean ]
-    get_prl_init_reporting(): [ /* returnType */ boolean, /* value_prl_init_reporting */ boolean ]
-    get_uim_state_reporting(): [ /* returnType */ boolean, /* value_uim_state_reporting */ boolean ]
-    get_wireless_disable_state_reporting(): [ /* returnType */ boolean, /* value_wireless_disable_state_reporting */ boolean ]
+class MessageDmsSetEventReportInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetEventReportInput */
+    get_activation_state_reporting(): [ /* returnType */ boolean, /* value_activation_state_reporting */ boolean | null ]
+    get_battery_level_report_limits(): [ /* returnType */ boolean, /* value_battery_level_report_limits_lower_limit */ number | null, /* value_battery_level_report_limits_upper_limit */ number | null ]
+    get_operating_mode_reporting(): [ /* returnType */ boolean, /* value_operating_mode_reporting */ boolean | null ]
+    get_pin_state_reporting(): [ /* returnType */ boolean, /* value_pin_state_reporting */ boolean | null ]
+    get_power_state_reporting(): [ /* returnType */ boolean, /* value_power_state_reporting */ boolean | null ]
+    get_prl_init_reporting(): [ /* returnType */ boolean, /* value_prl_init_reporting */ boolean | null ]
+    get_uim_state_reporting(): [ /* returnType */ boolean, /* value_uim_state_reporting */ boolean | null ]
+    get_wireless_disable_state_reporting(): [ /* returnType */ boolean, /* value_wireless_disable_state_reporting */ boolean | null ]
     ref(): MessageDmsSetEventReportInput
     set_activation_state_reporting(value_activation_state_reporting: boolean): boolean
     set_battery_level_report_limits(value_battery_level_report_limits_lower_limit: number, value_battery_level_report_limits_upper_limit: number): boolean
@@ -6770,32 +7186,32 @@ export class MessageDmsSetEventReportInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsSetEventReportInput
 }
-export class MessageDmsSetEventReportOutput {
-    /* Methods of Qmi.MessageDmsSetEventReportOutput */
+class MessageDmsSetEventReportOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetEventReportOutput */
     get_result(): boolean
     ref(): MessageDmsSetEventReportOutput
     unref(): void
     static name: string
 }
-export class MessageDmsSetFccAuthenticationOutput {
-    /* Methods of Qmi.MessageDmsSetFccAuthenticationOutput */
+class MessageDmsSetFccAuthenticationOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetFccAuthenticationOutput */
     get_result(): boolean
     ref(): MessageDmsSetFccAuthenticationOutput
     unref(): void
     static name: string
 }
-export class MessageDmsSetFirmwareIdOutput {
-    /* Methods of Qmi.MessageDmsSetFirmwareIdOutput */
+class MessageDmsSetFirmwareIdOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetFirmwareIdOutput */
     get_result(): boolean
     ref(): MessageDmsSetFirmwareIdOutput
     unref(): void
     static name: string
 }
-export class MessageDmsSetFirmwarePreferenceInput {
-    /* Methods of Qmi.MessageDmsSetFirmwarePreferenceInput */
-    get_download_override(): [ /* returnType */ boolean, /* value_download_override */ boolean ]
-    get_list(): [ /* returnType */ boolean, /* value_list */ MessageDmsSetFirmwarePreferenceInputListImage[] ]
-    get_modem_storage_index(): [ /* returnType */ boolean, /* value_modem_storage_index */ number ]
+class MessageDmsSetFirmwarePreferenceInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetFirmwarePreferenceInput */
+    get_download_override(): [ /* returnType */ boolean, /* value_download_override */ boolean | null ]
+    get_list(): [ /* returnType */ boolean, /* value_list */ MessageDmsSetFirmwarePreferenceInputListImage[] | null ]
+    get_modem_storage_index(): [ /* returnType */ boolean, /* value_modem_storage_index */ number | null ]
     ref(): MessageDmsSetFirmwarePreferenceInput
     set_download_override(value_download_override: boolean): boolean
     set_list(value_list: MessageDmsSetFirmwarePreferenceInputListImage[]): boolean
@@ -6807,24 +7223,24 @@ export class MessageDmsSetFirmwarePreferenceInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsSetFirmwarePreferenceInput
 }
-export class MessageDmsSetFirmwarePreferenceInputListImage {
-    /* Fields of Qmi.MessageDmsSetFirmwarePreferenceInputListImage */
+class MessageDmsSetFirmwarePreferenceInputListImage {
+    /* Fields of Qmi-1.0.Qmi.MessageDmsSetFirmwarePreferenceInputListImage */
     type: DmsFirmwareImageType
     unique_id: object[]
     build_id: string
     static name: string
 }
-export class MessageDmsSetFirmwarePreferenceOutput {
-    /* Methods of Qmi.MessageDmsSetFirmwarePreferenceOutput */
-    get_image_download_list(): [ /* returnType */ boolean, /* value_image_download_list */ DmsFirmwareImageType[] ]
+class MessageDmsSetFirmwarePreferenceOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetFirmwarePreferenceOutput */
+    get_image_download_list(): [ /* returnType */ boolean, /* value_image_download_list */ DmsFirmwareImageType[] | null ]
     get_result(): boolean
     ref(): MessageDmsSetFirmwarePreferenceOutput
     unref(): void
     static name: string
 }
-export class MessageDmsSetOperatingModeInput {
-    /* Methods of Qmi.MessageDmsSetOperatingModeInput */
-    get_mode(): [ /* returnType */ boolean, /* value_mode */ DmsOperatingMode ]
+class MessageDmsSetOperatingModeInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetOperatingModeInput */
+    get_mode(): [ /* returnType */ boolean, /* value_mode */ DmsOperatingMode | null ]
     ref(): MessageDmsSetOperatingModeInput
     set_mode(value_mode: DmsOperatingMode): boolean
     unref(): void
@@ -6834,23 +7250,19 @@ export class MessageDmsSetOperatingModeInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsSetOperatingModeInput
 }
-export class MessageDmsSetOperatingModeOutput {
-    /* Methods of Qmi.MessageDmsSetOperatingModeOutput */
+class MessageDmsSetOperatingModeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetOperatingModeOutput */
     get_result(): boolean
     ref(): MessageDmsSetOperatingModeOutput
     unref(): void
     static name: string
 }
-export class MessageDmsSetServiceProgrammingCodeInput {
-    /* Methods of Qmi.MessageDmsSetServiceProgrammingCodeInput */
-    get_current(arg_current: string): boolean
-    get_current_code(): [ /* returnType */ boolean, /* value_current_code */ string ]
-    get_new(arg_new: string): boolean
-    get_new_code(): [ /* returnType */ boolean, /* value_new_code */ string ]
+class MessageDmsSetServiceProgrammingCodeInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetServiceProgrammingCodeInput */
+    get_current_code(): [ /* returnType */ boolean, /* value_current_code */ string | null ]
+    get_new_code(): [ /* returnType */ boolean, /* value_new_code */ string | null ]
     ref(): MessageDmsSetServiceProgrammingCodeInput
-    set_current(arg_current: string): boolean
     set_current_code(value_current_code: string): boolean
-    set_new(arg_new: string): boolean
     set_new_code(value_new_code: string): boolean
     unref(): void
     static name: string
@@ -6859,17 +7271,17 @@ export class MessageDmsSetServiceProgrammingCodeInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsSetServiceProgrammingCodeInput
 }
-export class MessageDmsSetServiceProgrammingCodeOutput {
-    /* Methods of Qmi.MessageDmsSetServiceProgrammingCodeOutput */
+class MessageDmsSetServiceProgrammingCodeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetServiceProgrammingCodeOutput */
     get_result(): boolean
     ref(): MessageDmsSetServiceProgrammingCodeOutput
     unref(): void
     static name: string
 }
-export class MessageDmsSetTimeInput {
-    /* Methods of Qmi.MessageDmsSetTimeInput */
-    get_time_reference_type(): [ /* returnType */ boolean, /* value_time_reference_type */ DmsTimeReferenceType ]
-    get_time_value(): [ /* returnType */ boolean, /* value_time_value */ number ]
+class MessageDmsSetTimeInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetTimeInput */
+    get_time_reference_type(): [ /* returnType */ boolean, /* value_time_reference_type */ DmsTimeReferenceType | null ]
+    get_time_value(): [ /* returnType */ boolean, /* value_time_value */ number | null ]
     ref(): MessageDmsSetTimeInput
     set_time_reference_type(value_time_reference_type: DmsTimeReferenceType): boolean
     set_time_value(value_time_value: number): boolean
@@ -6880,16 +7292,16 @@ export class MessageDmsSetTimeInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsSetTimeInput
 }
-export class MessageDmsSetTimeOutput {
-    /* Methods of Qmi.MessageDmsSetTimeOutput */
+class MessageDmsSetTimeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetTimeOutput */
     get_result(): boolean
     ref(): MessageDmsSetTimeOutput
     unref(): void
     static name: string
 }
-export class MessageDmsSetUserLockCodeInput {
-    /* Methods of Qmi.MessageDmsSetUserLockCodeInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_old_code */ string, /* value_info_new_code */ string ]
+class MessageDmsSetUserLockCodeInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetUserLockCodeInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_old_code */ string | null, /* value_info_new_code */ string | null ]
     ref(): MessageDmsSetUserLockCodeInput
     set_info(value_info_old_code: string, value_info_new_code: string): boolean
     unref(): void
@@ -6899,16 +7311,16 @@ export class MessageDmsSetUserLockCodeInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsSetUserLockCodeInput
 }
-export class MessageDmsSetUserLockCodeOutput {
-    /* Methods of Qmi.MessageDmsSetUserLockCodeOutput */
+class MessageDmsSetUserLockCodeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetUserLockCodeOutput */
     get_result(): boolean
     ref(): MessageDmsSetUserLockCodeOutput
     unref(): void
     static name: string
 }
-export class MessageDmsSetUserLockStateInput {
-    /* Methods of Qmi.MessageDmsSetUserLockStateInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_enabled */ boolean, /* value_info_lock_code */ string ]
+class MessageDmsSetUserLockStateInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetUserLockStateInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_enabled */ boolean | null, /* value_info_lock_code */ string | null ]
     ref(): MessageDmsSetUserLockStateInput
     set_info(value_info_enabled: boolean, value_info_lock_code: string): boolean
     unref(): void
@@ -6918,41 +7330,41 @@ export class MessageDmsSetUserLockStateInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsSetUserLockStateInput
 }
-export class MessageDmsSetUserLockStateOutput {
-    /* Methods of Qmi.MessageDmsSetUserLockStateOutput */
+class MessageDmsSetUserLockStateOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSetUserLockStateOutput */
     get_result(): boolean
     ref(): MessageDmsSetUserLockStateOutput
     unref(): void
     static name: string
 }
-export class MessageDmsSwiGetCurrentFirmwareOutput {
-    /* Methods of Qmi.MessageDmsSwiGetCurrentFirmwareOutput */
-    get_amss_version(): [ /* returnType */ boolean, /* value_amss_version */ string ]
-    get_boot_version(): [ /* returnType */ boolean, /* value_boot_version */ string ]
-    get_carrier(): [ /* returnType */ boolean, /* value_carrier */ string ]
-    get_carrier_id(): [ /* returnType */ boolean, /* value_carrier_id */ string ]
-    get_config_version(): [ /* returnType */ boolean, /* value_config_version */ string ]
-    get_model(): [ /* returnType */ boolean, /* value_model */ string ]
-    get_package_id(): [ /* returnType */ boolean, /* value_package_id */ string ]
-    get_pri_version(): [ /* returnType */ boolean, /* value_pri_version */ string ]
+class MessageDmsSwiGetCurrentFirmwareOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSwiGetCurrentFirmwareOutput */
+    get_amss_version(): [ /* returnType */ boolean, /* value_amss_version */ string | null ]
+    get_boot_version(): [ /* returnType */ boolean, /* value_boot_version */ string | null ]
+    get_carrier(): [ /* returnType */ boolean, /* value_carrier */ string | null ]
+    get_carrier_id(): [ /* returnType */ boolean, /* value_carrier_id */ string | null ]
+    get_config_version(): [ /* returnType */ boolean, /* value_config_version */ string | null ]
+    get_model(): [ /* returnType */ boolean, /* value_model */ string | null ]
+    get_package_id(): [ /* returnType */ boolean, /* value_package_id */ string | null ]
+    get_pri_version(): [ /* returnType */ boolean, /* value_pri_version */ string | null ]
     get_result(): boolean
-    get_sku_id(): [ /* returnType */ boolean, /* value_sku_id */ string ]
+    get_sku_id(): [ /* returnType */ boolean, /* value_sku_id */ string | null ]
     ref(): MessageDmsSwiGetCurrentFirmwareOutput
     unref(): void
     static name: string
 }
-export class MessageDmsSwiGetUsbCompositionOutput {
-    /* Methods of Qmi.MessageDmsSwiGetUsbCompositionOutput */
-    get_current(): [ /* returnType */ boolean, /* value_current */ DmsSwiUsbComposition ]
+class MessageDmsSwiGetUsbCompositionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSwiGetUsbCompositionOutput */
+    get_current(): [ /* returnType */ boolean, /* value_current */ DmsSwiUsbComposition | null ]
     get_result(): boolean
-    get_supported(): [ /* returnType */ boolean, /* value_supported */ DmsSwiUsbComposition[] ]
+    get_supported(): [ /* returnType */ boolean, /* value_supported */ DmsSwiUsbComposition[] | null ]
     ref(): MessageDmsSwiGetUsbCompositionOutput
     unref(): void
     static name: string
 }
-export class MessageDmsSwiSetUsbCompositionInput {
-    /* Methods of Qmi.MessageDmsSwiSetUsbCompositionInput */
-    get_current(): [ /* returnType */ boolean, /* value_current */ DmsSwiUsbComposition ]
+class MessageDmsSwiSetUsbCompositionInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSwiSetUsbCompositionInput */
+    get_current(): [ /* returnType */ boolean, /* value_current */ DmsSwiUsbComposition | null ]
     ref(): MessageDmsSwiSetUsbCompositionInput
     set_current(value_current: DmsSwiUsbComposition): boolean
     unref(): void
@@ -6962,16 +7374,16 @@ export class MessageDmsSwiSetUsbCompositionInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsSwiSetUsbCompositionInput
 }
-export class MessageDmsSwiSetUsbCompositionOutput {
-    /* Methods of Qmi.MessageDmsSwiSetUsbCompositionOutput */
+class MessageDmsSwiSetUsbCompositionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsSwiSetUsbCompositionOutput */
     get_result(): boolean
     ref(): MessageDmsSwiSetUsbCompositionOutput
     unref(): void
     static name: string
 }
-export class MessageDmsUimChangePinInput {
-    /* Methods of Qmi.MessageDmsUimChangePinInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ DmsUimPinId, /* value_info_old_pin */ string, /* value_info_new_pin */ string ]
+class MessageDmsUimChangePinInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimChangePinInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ DmsUimPinId | null, /* value_info_old_pin */ string | null, /* value_info_new_pin */ string | null ]
     ref(): MessageDmsUimChangePinInput
     set_info(value_info_pin_id: DmsUimPinId, value_info_old_pin: string, value_info_new_pin: string): boolean
     unref(): void
@@ -6981,17 +7393,17 @@ export class MessageDmsUimChangePinInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsUimChangePinInput
 }
-export class MessageDmsUimChangePinOutput {
-    /* Methods of Qmi.MessageDmsUimChangePinOutput */
-    get_pin_retries_status(): [ /* returnType */ boolean, /* value_pin_retries_status_verify_retries_left */ number, /* value_pin_retries_status_unblock_retries_left */ number ]
+class MessageDmsUimChangePinOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimChangePinOutput */
+    get_pin_retries_status(): [ /* returnType */ boolean, /* value_pin_retries_status_verify_retries_left */ number | null, /* value_pin_retries_status_unblock_retries_left */ number | null ]
     get_result(): boolean
     ref(): MessageDmsUimChangePinOutput
     unref(): void
     static name: string
 }
-export class MessageDmsUimGetCkStatusInput {
-    /* Methods of Qmi.MessageDmsUimGetCkStatusInput */
-    get_facility(): [ /* returnType */ boolean, /* value_facility */ DmsUimFacility ]
+class MessageDmsUimGetCkStatusInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimGetCkStatusInput */
+    get_facility(): [ /* returnType */ boolean, /* value_facility */ DmsUimFacility | null ]
     ref(): MessageDmsUimGetCkStatusInput
     set_facility(value_facility: DmsUimFacility): boolean
     unref(): void
@@ -7001,51 +7413,51 @@ export class MessageDmsUimGetCkStatusInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsUimGetCkStatusInput
 }
-export class MessageDmsUimGetCkStatusOutput {
-    /* Methods of Qmi.MessageDmsUimGetCkStatusOutput */
-    get_ck_status(): [ /* returnType */ boolean, /* value_ck_status_facility_state */ DmsUimFacilityState, /* value_ck_status_verify_retries_left */ number, /* value_ck_status_unblock_retries_left */ number ]
-    get_operation_blocking_facility(): [ /* returnType */ boolean, /* value_operation_blocking_facility */ boolean ]
+class MessageDmsUimGetCkStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimGetCkStatusOutput */
+    get_ck_status(): [ /* returnType */ boolean, /* value_ck_status_facility_state */ DmsUimFacilityState | null, /* value_ck_status_verify_retries_left */ number | null, /* value_ck_status_unblock_retries_left */ number | null ]
+    get_operation_blocking_facility(): [ /* returnType */ boolean, /* value_operation_blocking_facility */ boolean | null ]
     get_result(): boolean
     ref(): MessageDmsUimGetCkStatusOutput
     unref(): void
     static name: string
 }
-export class MessageDmsUimGetIccidOutput {
-    /* Methods of Qmi.MessageDmsUimGetIccidOutput */
-    get_iccid(): [ /* returnType */ boolean, /* value_iccid */ string ]
+class MessageDmsUimGetIccidOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimGetIccidOutput */
+    get_iccid(): [ /* returnType */ boolean, /* value_iccid */ string | null ]
     get_result(): boolean
     ref(): MessageDmsUimGetIccidOutput
     unref(): void
     static name: string
 }
-export class MessageDmsUimGetImsiOutput {
-    /* Methods of Qmi.MessageDmsUimGetImsiOutput */
-    get_imsi(): [ /* returnType */ boolean, /* value_imsi */ string ]
+class MessageDmsUimGetImsiOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimGetImsiOutput */
+    get_imsi(): [ /* returnType */ boolean, /* value_imsi */ string | null ]
     get_result(): boolean
     ref(): MessageDmsUimGetImsiOutput
     unref(): void
     static name: string
 }
-export class MessageDmsUimGetPinStatusOutput {
-    /* Methods of Qmi.MessageDmsUimGetPinStatusOutput */
-    get_pin1_status(): [ /* returnType */ boolean, /* value_pin1_status_current_status */ DmsUimPinStatus, /* value_pin1_status_verify_retries_left */ number, /* value_pin1_status_unblock_retries_left */ number ]
-    get_pin2_status(): [ /* returnType */ boolean, /* value_pin2_status_current_status */ DmsUimPinStatus, /* value_pin2_status_verify_retries_left */ number, /* value_pin2_status_unblock_retries_left */ number ]
+class MessageDmsUimGetPinStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimGetPinStatusOutput */
+    get_pin1_status(): [ /* returnType */ boolean, /* value_pin1_status_current_status */ DmsUimPinStatus | null, /* value_pin1_status_verify_retries_left */ number | null, /* value_pin1_status_unblock_retries_left */ number | null ]
+    get_pin2_status(): [ /* returnType */ boolean, /* value_pin2_status_current_status */ DmsUimPinStatus | null, /* value_pin2_status_verify_retries_left */ number | null, /* value_pin2_status_unblock_retries_left */ number | null ]
     get_result(): boolean
     ref(): MessageDmsUimGetPinStatusOutput
     unref(): void
     static name: string
 }
-export class MessageDmsUimGetStateOutput {
-    /* Methods of Qmi.MessageDmsUimGetStateOutput */
+class MessageDmsUimGetStateOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimGetStateOutput */
     get_result(): boolean
-    get_state(): [ /* returnType */ boolean, /* value_state */ DmsUimState ]
+    get_state(): [ /* returnType */ boolean, /* value_state */ DmsUimState | null ]
     ref(): MessageDmsUimGetStateOutput
     unref(): void
     static name: string
 }
-export class MessageDmsUimSetCkProtectionInput {
-    /* Methods of Qmi.MessageDmsUimSetCkProtectionInput */
-    get_facility(): [ /* returnType */ boolean, /* value_facility_facility */ DmsUimFacility, /* value_facility_facility_state */ DmsUimFacilityState, /* value_facility_facility_depersonalization_control_key */ string ]
+class MessageDmsUimSetCkProtectionInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimSetCkProtectionInput */
+    get_facility(): [ /* returnType */ boolean, /* value_facility_facility */ DmsUimFacility | null, /* value_facility_facility_state */ DmsUimFacilityState | null, /* value_facility_facility_depersonalization_control_key */ string | null ]
     ref(): MessageDmsUimSetCkProtectionInput
     set_facility(value_facility_facility: DmsUimFacility, value_facility_facility_state: DmsUimFacilityState, value_facility_facility_depersonalization_control_key: string): boolean
     unref(): void
@@ -7055,17 +7467,17 @@ export class MessageDmsUimSetCkProtectionInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsUimSetCkProtectionInput
 }
-export class MessageDmsUimSetCkProtectionOutput {
-    /* Methods of Qmi.MessageDmsUimSetCkProtectionOutput */
+class MessageDmsUimSetCkProtectionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimSetCkProtectionOutput */
     get_result(): boolean
-    get_verify_retries_left(): [ /* returnType */ boolean, /* value_verify_retries_left */ number ]
+    get_verify_retries_left(): [ /* returnType */ boolean, /* value_verify_retries_left */ number | null ]
     ref(): MessageDmsUimSetCkProtectionOutput
     unref(): void
     static name: string
 }
-export class MessageDmsUimSetPinProtectionInput {
-    /* Methods of Qmi.MessageDmsUimSetPinProtectionInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ DmsUimPinId, /* value_info_protection_enabled */ boolean, /* value_info_pin */ string ]
+class MessageDmsUimSetPinProtectionInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimSetPinProtectionInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ DmsUimPinId | null, /* value_info_protection_enabled */ boolean | null, /* value_info_pin */ string | null ]
     ref(): MessageDmsUimSetPinProtectionInput
     set_info(value_info_pin_id: DmsUimPinId, value_info_protection_enabled: boolean, value_info_pin: string): boolean
     unref(): void
@@ -7075,17 +7487,17 @@ export class MessageDmsUimSetPinProtectionInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsUimSetPinProtectionInput
 }
-export class MessageDmsUimSetPinProtectionOutput {
-    /* Methods of Qmi.MessageDmsUimSetPinProtectionOutput */
-    get_pin_retries_status(): [ /* returnType */ boolean, /* value_pin_retries_status_verify_retries_left */ number, /* value_pin_retries_status_unblock_retries_left */ number ]
+class MessageDmsUimSetPinProtectionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimSetPinProtectionOutput */
+    get_pin_retries_status(): [ /* returnType */ boolean, /* value_pin_retries_status_verify_retries_left */ number | null, /* value_pin_retries_status_unblock_retries_left */ number | null ]
     get_result(): boolean
     ref(): MessageDmsUimSetPinProtectionOutput
     unref(): void
     static name: string
 }
-export class MessageDmsUimUnblockCkInput {
-    /* Methods of Qmi.MessageDmsUimUnblockCkInput */
-    get_facility(): [ /* returnType */ boolean, /* value_facility_facility */ DmsUimFacility, /* value_facility_facility_control_key */ string ]
+class MessageDmsUimUnblockCkInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimUnblockCkInput */
+    get_facility(): [ /* returnType */ boolean, /* value_facility_facility */ DmsUimFacility | null, /* value_facility_facility_control_key */ string | null ]
     ref(): MessageDmsUimUnblockCkInput
     set_facility(value_facility_facility: DmsUimFacility, value_facility_facility_control_key: string): boolean
     unref(): void
@@ -7095,17 +7507,17 @@ export class MessageDmsUimUnblockCkInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsUimUnblockCkInput
 }
-export class MessageDmsUimUnblockCkOutput {
-    /* Methods of Qmi.MessageDmsUimUnblockCkOutput */
+class MessageDmsUimUnblockCkOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimUnblockCkOutput */
     get_result(): boolean
-    get_unblock_retries_left(): [ /* returnType */ boolean, /* value_unblock_retries_left */ number ]
+    get_unblock_retries_left(): [ /* returnType */ boolean, /* value_unblock_retries_left */ number | null ]
     ref(): MessageDmsUimUnblockCkOutput
     unref(): void
     static name: string
 }
-export class MessageDmsUimUnblockPinInput {
-    /* Methods of Qmi.MessageDmsUimUnblockPinInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ DmsUimPinId, /* value_info_puk */ string, /* value_info_new_pin */ string ]
+class MessageDmsUimUnblockPinInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimUnblockPinInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ DmsUimPinId | null, /* value_info_puk */ string | null, /* value_info_new_pin */ string | null ]
     ref(): MessageDmsUimUnblockPinInput
     set_info(value_info_pin_id: DmsUimPinId, value_info_puk: string, value_info_new_pin: string): boolean
     unref(): void
@@ -7115,17 +7527,17 @@ export class MessageDmsUimUnblockPinInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsUimUnblockPinInput
 }
-export class MessageDmsUimUnblockPinOutput {
-    /* Methods of Qmi.MessageDmsUimUnblockPinOutput */
-    get_pin_retries_status(): [ /* returnType */ boolean, /* value_pin_retries_status_verify_retries_left */ number, /* value_pin_retries_status_unblock_retries_left */ number ]
+class MessageDmsUimUnblockPinOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimUnblockPinOutput */
+    get_pin_retries_status(): [ /* returnType */ boolean, /* value_pin_retries_status_verify_retries_left */ number | null, /* value_pin_retries_status_unblock_retries_left */ number | null ]
     get_result(): boolean
     ref(): MessageDmsUimUnblockPinOutput
     unref(): void
     static name: string
 }
-export class MessageDmsUimVerifyPinInput {
-    /* Methods of Qmi.MessageDmsUimVerifyPinInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ DmsUimPinId, /* value_info_pin */ string ]
+class MessageDmsUimVerifyPinInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimVerifyPinInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ DmsUimPinId | null, /* value_info_pin */ string | null ]
     ref(): MessageDmsUimVerifyPinInput
     set_info(value_info_pin_id: DmsUimPinId, value_info_pin: string): boolean
     unref(): void
@@ -7135,17 +7547,17 @@ export class MessageDmsUimVerifyPinInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsUimVerifyPinInput
 }
-export class MessageDmsUimVerifyPinOutput {
-    /* Methods of Qmi.MessageDmsUimVerifyPinOutput */
-    get_pin_retries_status(): [ /* returnType */ boolean, /* value_pin_retries_status_verify_retries_left */ number, /* value_pin_retries_status_unblock_retries_left */ number ]
+class MessageDmsUimVerifyPinOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsUimVerifyPinOutput */
+    get_pin_retries_status(): [ /* returnType */ boolean, /* value_pin_retries_status_verify_retries_left */ number | null, /* value_pin_retries_status_unblock_retries_left */ number | null ]
     get_result(): boolean
     ref(): MessageDmsUimVerifyPinOutput
     unref(): void
     static name: string
 }
-export class MessageDmsValidateServiceProgrammingCodeInput {
-    /* Methods of Qmi.MessageDmsValidateServiceProgrammingCodeInput */
-    get_service_programming_code(): [ /* returnType */ boolean, /* value_service_programming_code */ string ]
+class MessageDmsValidateServiceProgrammingCodeInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsValidateServiceProgrammingCodeInput */
+    get_service_programming_code(): [ /* returnType */ boolean, /* value_service_programming_code */ string | null ]
     ref(): MessageDmsValidateServiceProgrammingCodeInput
     set_service_programming_code(value_service_programming_code: string): boolean
     unref(): void
@@ -7155,16 +7567,16 @@ export class MessageDmsValidateServiceProgrammingCodeInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsValidateServiceProgrammingCodeInput
 }
-export class MessageDmsValidateServiceProgrammingCodeOutput {
-    /* Methods of Qmi.MessageDmsValidateServiceProgrammingCodeOutput */
+class MessageDmsValidateServiceProgrammingCodeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsValidateServiceProgrammingCodeOutput */
     get_result(): boolean
     ref(): MessageDmsValidateServiceProgrammingCodeOutput
     unref(): void
     static name: string
 }
-export class MessageDmsWriteUserDataInput {
-    /* Methods of Qmi.MessageDmsWriteUserDataInput */
-    get_user_data(): [ /* returnType */ boolean, /* value_user_data */ Uint8Array[] ]
+class MessageDmsWriteUserDataInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsWriteUserDataInput */
+    get_user_data(): [ /* returnType */ boolean, /* value_user_data */ Uint8Array[] | null ]
     ref(): MessageDmsWriteUserDataInput
     set_user_data(value_user_data: Uint8Array[]): boolean
     unref(): void
@@ -7174,16 +7586,68 @@ export class MessageDmsWriteUserDataInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDmsWriteUserDataInput
 }
-export class MessageDmsWriteUserDataOutput {
-    /* Methods of Qmi.MessageDmsWriteUserDataOutput */
+class MessageDmsWriteUserDataOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDmsWriteUserDataOutput */
     get_result(): boolean
     ref(): MessageDmsWriteUserDataOutput
     unref(): void
     static name: string
 }
-export class MessageDsdGetApnInfoInput {
-    /* Methods of Qmi.MessageDsdGetApnInfoInput */
-    get_apn_type(): [ /* returnType */ boolean, /* value_apn_type */ DsdApnType ]
+class MessageDpmClosePortOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDpmClosePortOutput */
+    get_result(): boolean
+    ref(): MessageDpmClosePortOutput
+    unref(): void
+    static name: string
+}
+class MessageDpmOpenPortInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDpmOpenPortInput */
+    get_control_ports(): [ /* returnType */ boolean, /* value_control_ports */ MessageDpmOpenPortInputControlPortsElement[] | null ]
+    get_hardware_data_ports(): [ /* returnType */ boolean, /* value_hardware_data_ports */ MessageDpmOpenPortInputHardwareDataPortsElement[] | null ]
+    get_software_data_ports(): [ /* returnType */ boolean, /* value_software_data_ports */ MessageDpmOpenPortInputSoftwareDataPortsElement[] | null ]
+    ref(): MessageDpmOpenPortInput
+    set_control_ports(value_control_ports: MessageDpmOpenPortInputControlPortsElement[]): boolean
+    set_hardware_data_ports(value_hardware_data_ports: MessageDpmOpenPortInputHardwareDataPortsElement[]): boolean
+    set_software_data_ports(value_software_data_ports: MessageDpmOpenPortInputSoftwareDataPortsElement[]): boolean
+    unref(): void
+    static name: string
+    static new(): MessageDpmOpenPortInput
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MessageDpmOpenPortInput
+}
+class MessageDpmOpenPortInputControlPortsElement {
+    /* Fields of Qmi-1.0.Qmi.MessageDpmOpenPortInputControlPortsElement */
+    port_name: string
+    endpoint_type: DataEndpointType
+    interface_number: number
+    static name: string
+}
+class MessageDpmOpenPortInputHardwareDataPortsElement {
+    /* Fields of Qmi-1.0.Qmi.MessageDpmOpenPortInputHardwareDataPortsElement */
+    endpoint_type: DataEndpointType
+    interface_number: number
+    rx_endpoint_number: number
+    tx_endpoint_number: number
+    static name: string
+}
+class MessageDpmOpenPortInputSoftwareDataPortsElement {
+    /* Fields of Qmi-1.0.Qmi.MessageDpmOpenPortInputSoftwareDataPortsElement */
+    endpoint_type: DataEndpointType
+    interface_number: number
+    port_name: string
+    static name: string
+}
+class MessageDpmOpenPortOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDpmOpenPortOutput */
+    get_result(): boolean
+    ref(): MessageDpmOpenPortOutput
+    unref(): void
+    static name: string
+}
+class MessageDsdGetApnInfoInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDsdGetApnInfoInput */
+    get_apn_type(): [ /* returnType */ boolean, /* value_apn_type */ DsdApnType | null ]
     ref(): MessageDsdGetApnInfoInput
     set_apn_type(value_apn_type: DsdApnType): boolean
     unref(): void
@@ -7193,18 +7657,18 @@ export class MessageDsdGetApnInfoInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDsdGetApnInfoInput
 }
-export class MessageDsdGetApnInfoOutput {
-    /* Methods of Qmi.MessageDsdGetApnInfoOutput */
-    get_apn_name(): [ /* returnType */ boolean, /* value_apn_name */ string ]
+class MessageDsdGetApnInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDsdGetApnInfoOutput */
+    get_apn_name(): [ /* returnType */ boolean, /* value_apn_name */ string | null ]
     get_result(): boolean
     ref(): MessageDsdGetApnInfoOutput
     unref(): void
     static name: string
 }
-export class MessageDsdSetApnTypeInput {
-    /* Methods of Qmi.MessageDsdSetApnTypeInput */
-    get_apn_type(): [ /* returnType */ boolean, /* value_apn_type_name */ string, /* value_apn_type_type */ DsdApnTypePreference ]
-    get_apn_type_preference_mask(): [ /* returnType */ boolean, /* value_apn_type_preference_mask */ DsdApnTypePreference ]
+class MessageDsdSetApnTypeInput {
+    /* Methods of Qmi-1.0.Qmi.MessageDsdSetApnTypeInput */
+    get_apn_type(): [ /* returnType */ boolean, /* value_apn_type_name */ string | null, /* value_apn_type_type */ DsdApnTypePreference | null ]
+    get_apn_type_preference_mask(): [ /* returnType */ boolean, /* value_apn_type_preference_mask */ DsdApnTypePreference | null ]
     ref(): MessageDsdSetApnTypeInput
     set_apn_type(value_apn_type_name: string, value_apn_type_type: DsdApnTypePreference): boolean
     set_apn_type_preference_mask(value_apn_type_preference_mask: DsdApnTypePreference): boolean
@@ -7215,19 +7679,19 @@ export class MessageDsdSetApnTypeInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageDsdSetApnTypeInput
 }
-export class MessageDsdSetApnTypeOutput {
-    /* Methods of Qmi.MessageDsdSetApnTypeOutput */
+class MessageDsdSetApnTypeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageDsdSetApnTypeOutput */
     get_result(): boolean
     ref(): MessageDsdSetApnTypeOutput
     unref(): void
     static name: string
 }
-export class MessageGasDmsGetFirmwareListInput {
-    /* Methods of Qmi.MessageGasDmsGetFirmwareListInput */
-    get_mode(): [ /* returnType */ boolean, /* value_mode */ GasFirmwareListingMode ]
-    get_name(): [ /* returnType */ boolean, /* value_name */ string ]
-    get_slot_index(): [ /* returnType */ boolean, /* value_slot_index */ number ]
-    get_version(): [ /* returnType */ boolean, /* value_version */ string ]
+class MessageGasDmsGetFirmwareListInput {
+    /* Methods of Qmi-1.0.Qmi.MessageGasDmsGetFirmwareListInput */
+    get_mode(): [ /* returnType */ boolean, /* value_mode */ GasFirmwareListingMode | null ]
+    get_name(): [ /* returnType */ boolean, /* value_name */ string | null ]
+    get_slot_index(): [ /* returnType */ boolean, /* value_slot_index */ number | null ]
+    get_version(): [ /* returnType */ boolean, /* value_version */ string | null ]
     ref(): MessageGasDmsGetFirmwareListInput
     set_mode(value_mode: GasFirmwareListingMode): boolean
     set_name(value_name: string): boolean
@@ -7240,23 +7704,35 @@ export class MessageGasDmsGetFirmwareListInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageGasDmsGetFirmwareListInput
 }
-export class MessageGasDmsGetFirmwareListOutput {
-    /* Methods of Qmi.MessageGasDmsGetFirmwareListOutput */
-    get_mode(): [ /* returnType */ boolean, /* value_mode */ GasFirmwareListingMode ]
+class MessageGasDmsGetFirmwareListOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageGasDmsGetFirmwareListOutput */
+    get_mode(): [ /* returnType */ boolean, /* value_mode */ GasFirmwareListingMode | null ]
     get_result(): boolean
-    get_stored_firmware_1(): [ /* returnType */ boolean, /* value_stored_firmware_1_index */ number, /* value_stored_firmware_1_name */ string, /* value_stored_firmware_1_version */ string, /* value_stored_firmware_1_pri_revision */ string ]
-    get_stored_firmware_2(): [ /* returnType */ boolean, /* value_stored_firmware_2_index */ number, /* value_stored_firmware_2_name */ string, /* value_stored_firmware_2_version */ string, /* value_stored_firmware_2_pri_revision */ string ]
-    get_stored_firmware_3(): [ /* returnType */ boolean, /* value_stored_firmware_3_index */ number, /* value_stored_firmware_3_name */ string, /* value_stored_firmware_3_version */ string, /* value_stored_firmware_3_pri_revision */ string ]
-    get_stored_firmware_4(): [ /* returnType */ boolean, /* value_stored_firmware_4_index */ number, /* value_stored_firmware_4_name */ string, /* value_stored_firmware_4_version */ string, /* value_stored_firmware_4_pri_revision */ string ]
+    get_stored_firmware_1(): [ /* returnType */ boolean, /* value_stored_firmware_1_index */ number | null, /* value_stored_firmware_1_name */ string | null, /* value_stored_firmware_1_version */ string | null, /* value_stored_firmware_1_pri_revision */ string | null ]
+    get_stored_firmware_2(): [ /* returnType */ boolean, /* value_stored_firmware_2_index */ number | null, /* value_stored_firmware_2_name */ string | null, /* value_stored_firmware_2_version */ string | null, /* value_stored_firmware_2_pri_revision */ string | null ]
+    get_stored_firmware_3(): [ /* returnType */ boolean, /* value_stored_firmware_3_index */ number | null, /* value_stored_firmware_3_name */ string | null, /* value_stored_firmware_3_version */ string | null, /* value_stored_firmware_3_pri_revision */ string | null ]
+    get_stored_firmware_4(): [ /* returnType */ boolean, /* value_stored_firmware_4_index */ number | null, /* value_stored_firmware_4_name */ string | null, /* value_stored_firmware_4_version */ string | null, /* value_stored_firmware_4_pri_revision */ string | null ]
     ref(): MessageGasDmsGetFirmwareListOutput
     unref(): void
     static name: string
 }
-export class MessageGasDmsSetActiveFirmwareInput {
-    /* Methods of Qmi.MessageGasDmsSetActiveFirmwareInput */
-    get_carrier_name(): [ /* returnType */ boolean, /* value_carrier_name */ string ]
-    get_slot_index(): [ /* returnType */ boolean, /* value_slot_index */ number ]
-    get_version(): [ /* returnType */ boolean, /* value_version */ string ]
+class MessageGasDmsGetUsbCompositionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageGasDmsGetUsbCompositionOutput */
+    get_composition_persistence(): [ /* returnType */ boolean, /* value_composition_persistence */ boolean | null ]
+    get_endpoint_type(): [ /* returnType */ boolean, /* value_endpoint_type */ GasUsbCompositionEndpointType | null ]
+    get_immediate_setting(): [ /* returnType */ boolean, /* value_immediate_setting */ boolean | null ]
+    get_reboot_after_setting(): [ /* returnType */ boolean, /* value_reboot_after_setting */ boolean | null ]
+    get_result(): boolean
+    get_usb_composition(): [ /* returnType */ boolean, /* value_usb_composition */ number | null ]
+    ref(): MessageGasDmsGetUsbCompositionOutput
+    unref(): void
+    static name: string
+}
+class MessageGasDmsSetActiveFirmwareInput {
+    /* Methods of Qmi-1.0.Qmi.MessageGasDmsSetActiveFirmwareInput */
+    get_carrier_name(): [ /* returnType */ boolean, /* value_carrier_name */ string | null ]
+    get_slot_index(): [ /* returnType */ boolean, /* value_slot_index */ number | null ]
+    get_version(): [ /* returnType */ boolean, /* value_version */ string | null ]
     ref(): MessageGasDmsSetActiveFirmwareInput
     set_carrier_name(value_carrier_name: string): boolean
     set_slot_index(value_slot_index: number): boolean
@@ -7268,26 +7744,53 @@ export class MessageGasDmsSetActiveFirmwareInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageGasDmsSetActiveFirmwareInput
 }
-export class MessageGasDmsSetActiveFirmwareOutput {
-    /* Methods of Qmi.MessageGasDmsSetActiveFirmwareOutput */
+class MessageGasDmsSetActiveFirmwareOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageGasDmsSetActiveFirmwareOutput */
     get_result(): boolean
     ref(): MessageGasDmsSetActiveFirmwareOutput
     unref(): void
     static name: string
 }
-export class MessageGmsTestGetValueOutput {
-    /* Methods of Qmi.MessageGmsTestGetValueOutput */
+class MessageGasDmsSetUsbCompositionInput {
+    /* Methods of Qmi-1.0.Qmi.MessageGasDmsSetUsbCompositionInput */
+    get_composition_persistence(): [ /* returnType */ boolean, /* value_composition_persistence */ boolean | null ]
+    get_endpoint_type(): [ /* returnType */ boolean, /* value_endpoint_type */ GasUsbCompositionEndpointType | null ]
+    get_immediate_setting(): [ /* returnType */ boolean, /* value_immediate_setting */ boolean | null ]
+    get_reboot_after_setting(): [ /* returnType */ boolean, /* value_reboot_after_setting */ boolean | null ]
+    get_usb_composition(): [ /* returnType */ boolean, /* value_usb_composition */ number | null ]
+    ref(): MessageGasDmsSetUsbCompositionInput
+    set_composition_persistence(value_composition_persistence: boolean): boolean
+    set_endpoint_type(value_endpoint_type: GasUsbCompositionEndpointType): boolean
+    set_immediate_setting(value_immediate_setting: boolean): boolean
+    set_reboot_after_setting(value_reboot_after_setting: boolean): boolean
+    set_usb_composition(value_usb_composition: number): boolean
+    unref(): void
+    static name: string
+    static new(): MessageGasDmsSetUsbCompositionInput
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MessageGasDmsSetUsbCompositionInput
+}
+class MessageGasDmsSetUsbCompositionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageGasDmsSetUsbCompositionOutput */
     get_result(): boolean
-    get_test_mandatory_value(): [ /* returnType */ boolean, /* value_test_mandatory_value */ number ]
-    get_test_optional_value(): [ /* returnType */ boolean, /* value_test_optional_value */ number ]
+    ref(): MessageGasDmsSetUsbCompositionOutput
+    unref(): void
+    static name: string
+}
+class MessageGmsTestGetValueOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageGmsTestGetValueOutput */
+    get_result(): boolean
+    get_test_mandatory_value(): [ /* returnType */ boolean, /* value_test_mandatory_value */ number | null ]
+    get_test_optional_value(): [ /* returnType */ boolean, /* value_test_optional_value */ number | null ]
     ref(): MessageGmsTestGetValueOutput
     unref(): void
     static name: string
 }
-export class MessageGmsTestSetValueInput {
-    /* Methods of Qmi.MessageGmsTestSetValueInput */
-    get_test_mandatory_value(): [ /* returnType */ boolean, /* value_test_mandatory_value */ number ]
-    get_test_optional_value(): [ /* returnType */ boolean, /* value_test_optional_value */ number ]
+class MessageGmsTestSetValueInput {
+    /* Methods of Qmi-1.0.Qmi.MessageGmsTestSetValueInput */
+    get_test_mandatory_value(): [ /* returnType */ boolean, /* value_test_mandatory_value */ number | null ]
+    get_test_optional_value(): [ /* returnType */ boolean, /* value_test_optional_value */ number | null ]
     ref(): MessageGmsTestSetValueInput
     set_test_mandatory_value(value_test_mandatory_value: number): boolean
     set_test_optional_value(value_test_optional_value: number): boolean
@@ -7298,20 +7801,20 @@ export class MessageGmsTestSetValueInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageGmsTestSetValueInput
 }
-export class MessageGmsTestSetValueOutput {
-    /* Methods of Qmi.MessageGmsTestSetValueOutput */
+class MessageGmsTestSetValueOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageGmsTestSetValueOutput */
     get_result(): boolean
     ref(): MessageGmsTestSetValueOutput
     unref(): void
     static name: string
 }
-export class MessageLocDeleteAssistanceDataInput {
-    /* Methods of Qmi.MessageLocDeleteAssistanceDataInput */
-    get_delete_all(): [ /* returnType */ boolean, /* value_delete_all */ boolean ]
-    get_delete_cell_database_mask(): [ /* returnType */ boolean, /* value_delete_cell_database_mask */ LocDeleteCellDatabase ]
-    get_delete_clock_info_mask(): [ /* returnType */ boolean, /* value_delete_clock_info_mask */ LocDeleteClockInfo ]
-    get_delete_gnss_data_mask(): [ /* returnType */ boolean, /* value_delete_gnss_data_mask */ LocDeleteGnssData ]
-    get_delete_sv_info(): [ /* returnType */ boolean, /* value_delete_sv_info */ MessageLocDeleteAssistanceDataInputDeleteSvInfoElement[] ]
+class MessageLocDeleteAssistanceDataInput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocDeleteAssistanceDataInput */
+    get_delete_all(): [ /* returnType */ boolean, /* value_delete_all */ boolean | null ]
+    get_delete_cell_database_mask(): [ /* returnType */ boolean, /* value_delete_cell_database_mask */ LocDeleteCellDatabase | null ]
+    get_delete_clock_info_mask(): [ /* returnType */ boolean, /* value_delete_clock_info_mask */ LocDeleteClockInfo | null ]
+    get_delete_gnss_data_mask(): [ /* returnType */ boolean, /* value_delete_gnss_data_mask */ LocDeleteGnssData | null ]
+    get_delete_sv_info(): [ /* returnType */ boolean, /* value_delete_sv_info */ MessageLocDeleteAssistanceDataInputDeleteSvInfoElement[] | null ]
     ref(): MessageLocDeleteAssistanceDataInput
     set_delete_all(value_delete_all: boolean): boolean
     set_delete_cell_database_mask(value_delete_cell_database_mask: LocDeleteCellDatabase): boolean
@@ -7325,45 +7828,52 @@ export class MessageLocDeleteAssistanceDataInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageLocDeleteAssistanceDataInput
 }
-export class MessageLocDeleteAssistanceDataInputDeleteSvInfoElement {
-    /* Fields of Qmi.MessageLocDeleteAssistanceDataInputDeleteSvInfoElement */
+class MessageLocDeleteAssistanceDataInputDeleteSvInfoElement {
+    /* Fields of Qmi-1.0.Qmi.MessageLocDeleteAssistanceDataInputDeleteSvInfoElement */
     gnss_sv_id: number
     system: LocSystem
     delete_sv_info_mask: LocDeleteSvInfo
     static name: string
 }
-export class MessageLocDeleteAssistanceDataOutput {
-    /* Methods of Qmi.MessageLocDeleteAssistanceDataOutput */
+class MessageLocDeleteAssistanceDataOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocDeleteAssistanceDataOutput */
     get_result(): boolean
     ref(): MessageLocDeleteAssistanceDataOutput
     unref(): void
     static name: string
 }
-export class MessageLocGetNmeaTypesOutput {
-    /* Methods of Qmi.MessageLocGetNmeaTypesOutput */
+class MessageLocGetEngineLockOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocGetEngineLockOutput */
+    get_result(): boolean
+    ref(): MessageLocGetEngineLockOutput
+    unref(): void
+    static name: string
+}
+class MessageLocGetNmeaTypesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocGetNmeaTypesOutput */
     get_result(): boolean
     ref(): MessageLocGetNmeaTypesOutput
     unref(): void
     static name: string
 }
-export class MessageLocGetOperationModeOutput {
-    /* Methods of Qmi.MessageLocGetOperationModeOutput */
+class MessageLocGetOperationModeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocGetOperationModeOutput */
     get_result(): boolean
     ref(): MessageLocGetOperationModeOutput
     unref(): void
     static name: string
 }
-export class MessageLocGetPredictedOrbitsDataSourceOutput {
-    /* Methods of Qmi.MessageLocGetPredictedOrbitsDataSourceOutput */
+class MessageLocGetPredictedOrbitsDataSourceOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocGetPredictedOrbitsDataSourceOutput */
     get_result(): boolean
     ref(): MessageLocGetPredictedOrbitsDataSourceOutput
     unref(): void
     static name: string
 }
-export class MessageLocGetServerInput {
-    /* Methods of Qmi.MessageLocGetServerInput */
-    get_server_address_type(): [ /* returnType */ boolean, /* value_server_address_type */ LocServerAddressType ]
-    get_server_type(): [ /* returnType */ boolean, /* value_server_type */ LocServerType ]
+class MessageLocGetServerInput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocGetServerInput */
+    get_server_address_type(): [ /* returnType */ boolean, /* value_server_address_type */ LocServerAddressType | null ]
+    get_server_type(): [ /* returnType */ boolean, /* value_server_type */ LocServerType | null ]
     ref(): MessageLocGetServerInput
     set_server_address_type(value_server_address_type: LocServerAddressType): boolean
     set_server_type(value_server_type: LocServerType): boolean
@@ -7374,20 +7884,20 @@ export class MessageLocGetServerInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageLocGetServerInput
 }
-export class MessageLocGetServerOutput {
-    /* Methods of Qmi.MessageLocGetServerOutput */
+class MessageLocGetServerOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocGetServerOutput */
     get_result(): boolean
     ref(): MessageLocGetServerOutput
     unref(): void
     static name: string
 }
-export class MessageLocInjectPredictedOrbitsDataInput {
-    /* Methods of Qmi.MessageLocInjectPredictedOrbitsDataInput */
-    get_format_type(): [ /* returnType */ boolean, /* value_format_type */ LocPredictedOrbitsDataFormat ]
-    get_part_data(): [ /* returnType */ boolean, /* value_part_data */ Uint8Array[] ]
-    get_part_number(): [ /* returnType */ boolean, /* value_part_number */ number ]
-    get_total_parts(): [ /* returnType */ boolean, /* value_total_parts */ number ]
-    get_total_size(): [ /* returnType */ boolean, /* value_total_size */ number ]
+class MessageLocInjectPredictedOrbitsDataInput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocInjectPredictedOrbitsDataInput */
+    get_format_type(): [ /* returnType */ boolean, /* value_format_type */ LocPredictedOrbitsDataFormat | null ]
+    get_part_data(): [ /* returnType */ boolean, /* value_part_data */ Uint8Array[] | null ]
+    get_part_number(): [ /* returnType */ boolean, /* value_part_number */ number | null ]
+    get_total_parts(): [ /* returnType */ boolean, /* value_total_parts */ number | null ]
+    get_total_size(): [ /* returnType */ boolean, /* value_total_size */ number | null ]
     ref(): MessageLocInjectPredictedOrbitsDataInput
     set_format_type(value_format_type: LocPredictedOrbitsDataFormat): boolean
     set_part_data(value_part_data: Uint8Array[]): boolean
@@ -7401,19 +7911,19 @@ export class MessageLocInjectPredictedOrbitsDataInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageLocInjectPredictedOrbitsDataInput
 }
-export class MessageLocInjectPredictedOrbitsDataOutput {
-    /* Methods of Qmi.MessageLocInjectPredictedOrbitsDataOutput */
+class MessageLocInjectPredictedOrbitsDataOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocInjectPredictedOrbitsDataOutput */
     get_result(): boolean
     ref(): MessageLocInjectPredictedOrbitsDataOutput
     unref(): void
     static name: string
 }
-export class MessageLocInjectXtraDataInput {
-    /* Methods of Qmi.MessageLocInjectXtraDataInput */
-    get_part_data(): [ /* returnType */ boolean, /* value_part_data */ Uint8Array[] ]
-    get_part_number(): [ /* returnType */ boolean, /* value_part_number */ number ]
-    get_total_parts(): [ /* returnType */ boolean, /* value_total_parts */ number ]
-    get_total_size(): [ /* returnType */ boolean, /* value_total_size */ number ]
+class MessageLocInjectXtraDataInput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocInjectXtraDataInput */
+    get_part_data(): [ /* returnType */ boolean, /* value_part_data */ Uint8Array[] | null ]
+    get_part_number(): [ /* returnType */ boolean, /* value_part_number */ number | null ]
+    get_total_parts(): [ /* returnType */ boolean, /* value_total_parts */ number | null ]
+    get_total_size(): [ /* returnType */ boolean, /* value_total_size */ number | null ]
     ref(): MessageLocInjectXtraDataInput
     set_part_data(value_part_data: Uint8Array[]): boolean
     set_part_number(value_part_number: number): boolean
@@ -7426,16 +7936,16 @@ export class MessageLocInjectXtraDataInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageLocInjectXtraDataInput
 }
-export class MessageLocInjectXtraDataOutput {
-    /* Methods of Qmi.MessageLocInjectXtraDataOutput */
+class MessageLocInjectXtraDataOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocInjectXtraDataOutput */
     get_result(): boolean
     ref(): MessageLocInjectXtraDataOutput
     unref(): void
     static name: string
 }
-export class MessageLocRegisterEventsInput {
-    /* Methods of Qmi.MessageLocRegisterEventsInput */
-    get_event_registration_mask(): [ /* returnType */ boolean, /* value_event_registration_mask */ LocEventRegistrationFlag ]
+class MessageLocRegisterEventsInput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocRegisterEventsInput */
+    get_event_registration_mask(): [ /* returnType */ boolean, /* value_event_registration_mask */ LocEventRegistrationFlag | null ]
     ref(): MessageLocRegisterEventsInput
     set_event_registration_mask(value_event_registration_mask: LocEventRegistrationFlag): boolean
     unref(): void
@@ -7445,16 +7955,35 @@ export class MessageLocRegisterEventsInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageLocRegisterEventsInput
 }
-export class MessageLocRegisterEventsOutput {
-    /* Methods of Qmi.MessageLocRegisterEventsOutput */
+class MessageLocRegisterEventsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocRegisterEventsOutput */
     get_result(): boolean
     ref(): MessageLocRegisterEventsOutput
     unref(): void
     static name: string
 }
-export class MessageLocSetNmeaTypesInput {
-    /* Methods of Qmi.MessageLocSetNmeaTypesInput */
-    get_nmea_types(): [ /* returnType */ boolean, /* value_nmea_types */ LocNmeaType ]
+class MessageLocSetEngineLockInput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocSetEngineLockInput */
+    get_lock_type(): [ /* returnType */ boolean, /* value_lock_type */ LocLockType | null ]
+    ref(): MessageLocSetEngineLockInput
+    set_lock_type(value_lock_type: LocLockType): boolean
+    unref(): void
+    static name: string
+    static new(): MessageLocSetEngineLockInput
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MessageLocSetEngineLockInput
+}
+class MessageLocSetEngineLockOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocSetEngineLockOutput */
+    get_result(): boolean
+    ref(): MessageLocSetEngineLockOutput
+    unref(): void
+    static name: string
+}
+class MessageLocSetNmeaTypesInput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocSetNmeaTypesInput */
+    get_nmea_types(): [ /* returnType */ boolean, /* value_nmea_types */ LocNmeaType | null ]
     ref(): MessageLocSetNmeaTypesInput
     set_nmea_types(value_nmea_types: LocNmeaType): boolean
     unref(): void
@@ -7464,16 +7993,16 @@ export class MessageLocSetNmeaTypesInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageLocSetNmeaTypesInput
 }
-export class MessageLocSetNmeaTypesOutput {
-    /* Methods of Qmi.MessageLocSetNmeaTypesOutput */
+class MessageLocSetNmeaTypesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocSetNmeaTypesOutput */
     get_result(): boolean
     ref(): MessageLocSetNmeaTypesOutput
     unref(): void
     static name: string
 }
-export class MessageLocSetOperationModeInput {
-    /* Methods of Qmi.MessageLocSetOperationModeInput */
-    get_operation_mode(): [ /* returnType */ boolean, /* value_operation_mode */ LocOperationMode ]
+class MessageLocSetOperationModeInput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocSetOperationModeInput */
+    get_operation_mode(): [ /* returnType */ boolean, /* value_operation_mode */ LocOperationMode | null ]
     ref(): MessageLocSetOperationModeInput
     set_operation_mode(value_operation_mode: LocOperationMode): boolean
     unref(): void
@@ -7483,19 +8012,19 @@ export class MessageLocSetOperationModeInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageLocSetOperationModeInput
 }
-export class MessageLocSetOperationModeOutput {
-    /* Methods of Qmi.MessageLocSetOperationModeOutput */
+class MessageLocSetOperationModeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocSetOperationModeOutput */
     get_result(): boolean
     ref(): MessageLocSetOperationModeOutput
     unref(): void
     static name: string
 }
-export class MessageLocSetServerInput {
-    /* Methods of Qmi.MessageLocSetServerInput */
-    get_ipv4(): [ /* returnType */ boolean, /* value_ipv4_ipv4_address */ number, /* value_ipv4_ipv4_port */ number ]
-    get_ipv6(): [ /* returnType */ boolean, /* value_ipv6_ipv6_address */ number[], /* value_ipv6_ipv6_port */ number ]
-    get_server_type(): [ /* returnType */ boolean, /* value_server_type */ LocServerType ]
-    get_url(): [ /* returnType */ boolean, /* value_url */ string ]
+class MessageLocSetServerInput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocSetServerInput */
+    get_ipv4(): [ /* returnType */ boolean, /* value_ipv4_ipv4_address */ number | null, /* value_ipv4_ipv4_port */ number | null ]
+    get_ipv6(): [ /* returnType */ boolean, /* value_ipv6_ipv6_address */ number[] | null, /* value_ipv6_ipv6_port */ number | null ]
+    get_server_type(): [ /* returnType */ boolean, /* value_server_type */ LocServerType | null ]
+    get_url(): [ /* returnType */ boolean, /* value_url */ string | null ]
     ref(): MessageLocSetServerInput
     set_ipv4(value_ipv4_ipv4_address: number, value_ipv4_ipv4_port: number): boolean
     set_ipv6(value_ipv6_ipv6_address: number[], value_ipv6_ipv6_port: number): boolean
@@ -7508,19 +8037,19 @@ export class MessageLocSetServerInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageLocSetServerInput
 }
-export class MessageLocSetServerOutput {
-    /* Methods of Qmi.MessageLocSetServerOutput */
+class MessageLocSetServerOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocSetServerOutput */
     get_result(): boolean
     ref(): MessageLocSetServerOutput
     unref(): void
     static name: string
 }
-export class MessageLocStartInput {
-    /* Methods of Qmi.MessageLocStartInput */
-    get_fix_recurrence_type(): [ /* returnType */ boolean, /* value_fix_recurrence_type */ LocFixRecurrenceType ]
-    get_intermediate_report_state(): [ /* returnType */ boolean, /* value_intermediate_report_state */ LocIntermediateReportState ]
-    get_minimum_interval_between_position_reports(): [ /* returnType */ boolean, /* value_minimum_interval_between_position_reports */ number ]
-    get_session_id(): [ /* returnType */ boolean, /* value_session_id */ number ]
+class MessageLocStartInput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocStartInput */
+    get_fix_recurrence_type(): [ /* returnType */ boolean, /* value_fix_recurrence_type */ LocFixRecurrenceType | null ]
+    get_intermediate_report_state(): [ /* returnType */ boolean, /* value_intermediate_report_state */ LocIntermediateReportState | null ]
+    get_minimum_interval_between_position_reports(): [ /* returnType */ boolean, /* value_minimum_interval_between_position_reports */ number | null ]
+    get_session_id(): [ /* returnType */ boolean, /* value_session_id */ number | null ]
     ref(): MessageLocStartInput
     set_fix_recurrence_type(value_fix_recurrence_type: LocFixRecurrenceType): boolean
     set_intermediate_report_state(value_intermediate_report_state: LocIntermediateReportState): boolean
@@ -7533,16 +8062,16 @@ export class MessageLocStartInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageLocStartInput
 }
-export class MessageLocStartOutput {
-    /* Methods of Qmi.MessageLocStartOutput */
+class MessageLocStartOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocStartOutput */
     get_result(): boolean
     ref(): MessageLocStartOutput
     unref(): void
     static name: string
 }
-export class MessageLocStopInput {
-    /* Methods of Qmi.MessageLocStopInput */
-    get_session_id(): [ /* returnType */ boolean, /* value_session_id */ number ]
+class MessageLocStopInput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocStopInput */
+    get_session_id(): [ /* returnType */ boolean, /* value_session_id */ number | null ]
     ref(): MessageLocStopInput
     set_session_id(value_session_id: number): boolean
     unref(): void
@@ -7552,16 +8081,16 @@ export class MessageLocStopInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageLocStopInput
 }
-export class MessageLocStopOutput {
-    /* Methods of Qmi.MessageLocStopOutput */
+class MessageLocStopOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageLocStopOutput */
     get_result(): boolean
     ref(): MessageLocStopOutput
     unref(): void
     static name: string
 }
-export class MessageNasAttachDetachInput {
-    /* Methods of Qmi.MessageNasAttachDetachInput */
-    get_action(): [ /* returnType */ boolean, /* value_action */ NasPsAttachAction ]
+class MessageNasAttachDetachInput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasAttachDetachInput */
+    get_action(): [ /* returnType */ boolean, /* value_action */ NasPsAttachAction | null ]
     ref(): MessageNasAttachDetachInput
     set_action(value_action: NasPsAttachAction): boolean
     unref(): void
@@ -7571,24 +8100,24 @@ export class MessageNasAttachDetachInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageNasAttachDetachInput
 }
-export class MessageNasAttachDetachOutput {
-    /* Methods of Qmi.MessageNasAttachDetachOutput */
+class MessageNasAttachDetachOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasAttachDetachOutput */
     get_result(): boolean
     ref(): MessageNasAttachDetachOutput
     unref(): void
     static name: string
 }
-export class MessageNasConfigSignalInfoInput {
-    /* Methods of Qmi.MessageNasConfigSignalInfoInput */
-    get_ecio_threshold(): [ /* returnType */ boolean, /* value_ecio_threshold */ number[] ]
-    get_io_threshold(): [ /* returnType */ boolean, /* value_io_threshold */ number[] ]
-    get_lte_report(): [ /* returnType */ boolean, /* value_lte_report_rate */ number, /* value_lte_report_average_period */ number ]
-    get_lte_snr_threshold(): [ /* returnType */ boolean, /* value_lte_snr_threshold */ number[] ]
-    get_rscp_threshold(): [ /* returnType */ boolean, /* value_rscp_threshold */ Uint8Array[] ]
-    get_rsrp_threshold(): [ /* returnType */ boolean, /* value_rsrp_threshold */ number[] ]
-    get_rsrq_threshold(): [ /* returnType */ boolean, /* value_rsrq_threshold */ Uint8Array[] ]
-    get_rssi_threshold(): [ /* returnType */ boolean, /* value_rssi_threshold */ Uint8Array[] ]
-    get_sinr_threshold(): [ /* returnType */ boolean, /* value_sinr_threshold */ Uint8Array[] ]
+class MessageNasConfigSignalInfoInput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasConfigSignalInfoInput */
+    get_ecio_threshold(): [ /* returnType */ boolean, /* value_ecio_threshold */ number[] | null ]
+    get_io_threshold(): [ /* returnType */ boolean, /* value_io_threshold */ number[] | null ]
+    get_lte_report(): [ /* returnType */ boolean, /* value_lte_report_rate */ number | null, /* value_lte_report_average_period */ number | null ]
+    get_lte_snr_threshold(): [ /* returnType */ boolean, /* value_lte_snr_threshold */ number[] | null ]
+    get_rscp_threshold(): [ /* returnType */ boolean, /* value_rscp_threshold */ Uint8Array[] | null ]
+    get_rsrp_threshold(): [ /* returnType */ boolean, /* value_rsrp_threshold */ number[] | null ]
+    get_rsrq_threshold(): [ /* returnType */ boolean, /* value_rsrq_threshold */ Uint8Array[] | null ]
+    get_rssi_threshold(): [ /* returnType */ boolean, /* value_rssi_threshold */ Uint8Array[] | null ]
+    get_sinr_threshold(): [ /* returnType */ boolean, /* value_sinr_threshold */ Uint8Array[] | null ]
     ref(): MessageNasConfigSignalInfoInput
     set_ecio_threshold(value_ecio_threshold: number[]): boolean
     set_io_threshold(value_io_threshold: number[]): boolean
@@ -7606,30 +8135,30 @@ export class MessageNasConfigSignalInfoInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageNasConfigSignalInfoInput
 }
-export class MessageNasConfigSignalInfoOutput {
-    /* Methods of Qmi.MessageNasConfigSignalInfoOutput */
+class MessageNasConfigSignalInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasConfigSignalInfoOutput */
     get_result(): boolean
     ref(): MessageNasConfigSignalInfoOutput
     unref(): void
     static name: string
 }
-export class MessageNasForceNetworkSearchOutput {
-    /* Methods of Qmi.MessageNasForceNetworkSearchOutput */
+class MessageNasForceNetworkSearchOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasForceNetworkSearchOutput */
     get_result(): boolean
     ref(): MessageNasForceNetworkSearchOutput
     unref(): void
     static name: string
 }
-export class MessageNasGetCdmaPositionInfoOutput {
-    /* Methods of Qmi.MessageNasGetCdmaPositionInfoOutput */
-    get_cdma_position_info(): [ /* returnType */ boolean, /* value_cdma_position_info_ui_in_idle_mode */ number, /* value_cdma_position_info_basestations */ MessageNasGetCdmaPositionInfoOutputCdmaPositionInfoBasestationsBasestation[] ]
+class MessageNasGetCdmaPositionInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetCdmaPositionInfoOutput */
+    get_cdma_position_info(): [ /* returnType */ boolean, /* value_cdma_position_info_ui_in_idle_mode */ number | null, /* value_cdma_position_info_basestations */ MessageNasGetCdmaPositionInfoOutputCdmaPositionInfoBasestationsBasestation[] | null ]
     get_result(): boolean
     ref(): MessageNasGetCdmaPositionInfoOutput
     unref(): void
     static name: string
 }
-export class MessageNasGetCdmaPositionInfoOutputCdmaPositionInfoBasestationsBasestation {
-    /* Fields of Qmi.MessageNasGetCdmaPositionInfoOutputCdmaPositionInfoBasestationsBasestation */
+class MessageNasGetCdmaPositionInfoOutputCdmaPositionInfoBasestationsBasestation {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetCdmaPositionInfoOutputCdmaPositionInfoBasestationsBasestation */
     pilot_type: NasCdmaPilotType
     system_id: number
     network_id: number
@@ -7641,37 +8170,27 @@ export class MessageNasGetCdmaPositionInfoOutputCdmaPositionInfoBasestationsBase
     gps_time_in_milliseconds: number
     static name: string
 }
-export class MessageNasGetCellLocationInfoOutput {
-    /* Methods of Qmi.MessageNasGetCellLocationInfoOutput */
-    get_cdma_info(): [ /* returnType */ boolean, /* value_cdma_info_system_id */ number, /* value_cdma_info_network_id */ number, /* value_cdma_info_base_station_id */ number, /* value_cdma_info_reference_pn */ number, /* value_cdma_info_latitude */ number, /* value_cdma_info_longitude */ number ]
-    get_geran_info(): [ /* returnType */ boolean, /* value_geran_info_cell_id */ number, /* value_geran_info_plmn */ string, /* value_geran_info_lac */ number, /* value_geran_info_geran_absolute_rf_channel_number */ number, /* value_geran_info_base_station_identity_code */ number, /* value_geran_info_timing_advance */ number, /* value_geran_info_rx_level */ number, /* value_geran_info_cell */ MessageNasGetCellLocationInfoOutputGeranInfoCellElement[] ]
-    get_geran_info_v2(): [ /* returnType */ boolean, /* value_geran_info_v2_cell_id */ number, /* value_geran_info_v2_plmn */ Uint8Array[], /* value_geran_info_v2_lac */ number, /* value_geran_info_v2_geran_absolute_rf_channel_number */ number, /* value_geran_info_v2_base_station_identity_code */ number, /* value_geran_info_v2_timing_advance */ number, /* value_geran_info_v2_rx_level */ number, /* value_geran_info_v2_cell */ MessageNasGetCellLocationInfoOutputGeranInfoV2CellElement[] ]
-    get_interfrequency_lte_info(): [ /* returnType */ boolean, /* value_interfrequency_lte_info_ue_in_idle */ boolean, /* value_interfrequency_lte_info_frequency */ MessageNasGetCellLocationInfoOutputInterfrequencyLteInfoFrequencyElement[] ]
-    get_intrafrequency_lte_info(): [ /* returnType */ boolean, /* value_intrafrequency_lte_info_ue_in_idle */ boolean, /* value_intrafrequency_lte_info_plmn */ string, /* value_intrafrequency_lte_info_tracking_area_code */ number, /* value_intrafrequency_lte_info_global_cell_id */ number, /* value_intrafrequency_lte_info_eutra_absolute_rf_channel_number */ number, /* value_intrafrequency_lte_info_serving_cell_id */ number, /* value_intrafrequency_lte_info_cell_reselection_priority */ number, /* value_intrafrequency_lte_info_s_non_intra_search_threshold */ number, /* value_intrafrequency_lte_info_serving_cell_low_threshold */ number, /* value_intrafrequency_lte_info_s_intra_search_threshold */ number, /* value_intrafrequency_lte_info_cell */ MessageNasGetCellLocationInfoOutputIntrafrequencyLteInfoCellElement[] ]
-    get_intrafrequency_lte_info_v2(): [ /* returnType */ boolean, /* value_intrafrequency_lte_info_v2_ue_in_idle */ boolean, /* value_intrafrequency_lte_info_v2_plmn */ Uint8Array[], /* value_intrafrequency_lte_info_v2_tracking_area_code */ number, /* value_intrafrequency_lte_info_v2_global_cell_id */ number, /* value_intrafrequency_lte_info_v2_eutra_absolute_rf_channel_number */ number, /* value_intrafrequency_lte_info_v2_serving_cell_id */ number, /* value_intrafrequency_lte_info_v2_cell_reselection_priority */ number, /* value_intrafrequency_lte_info_v2_s_non_intra_search_threshold */ number, /* value_intrafrequency_lte_info_v2_serving_cell_low_threshold */ number, /* value_intrafrequency_lte_info_v2_s_intra_search_threshold */ number, /* value_intrafrequency_lte_info_v2_cell */ MessageNasGetCellLocationInfoOutputIntrafrequencyLteInfoV2CellElement[] ]
-    get_lte_info_neighboring_gsm(): [ /* returnType */ boolean, /* value_lte_info_neighboring_gsm_ue_in_idle */ boolean, /* value_lte_info_neighboring_gsm_frequency */ MessageNasGetCellLocationInfoOutputLteInfoNeighboringGsmFrequencyElement[] ]
-    get_lte_info_neighboring_wcdma(): [ /* returnType */ boolean, /* value_lte_info_neighboring_wcdma_ue_in_idle */ boolean, /* value_lte_info_neighboring_wcdma_frequency */ MessageNasGetCellLocationInfoOutputLteInfoNeighboringWcdmaFrequencyElement[] ]
+class MessageNasGetCellLocationInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetCellLocationInfoOutput */
+    get_cdma_info(): [ /* returnType */ boolean, /* value_cdma_info_system_id */ number | null, /* value_cdma_info_network_id */ number | null, /* value_cdma_info_base_station_id */ number | null, /* value_cdma_info_reference_pn */ number | null, /* value_cdma_info_latitude */ number | null, /* value_cdma_info_longitude */ number | null ]
+    get_geran_info_v2(): [ /* returnType */ boolean, /* value_geran_info_v2_cell_id */ number | null, /* value_geran_info_v2_plmn */ Uint8Array[] | null, /* value_geran_info_v2_lac */ number | null, /* value_geran_info_v2_geran_absolute_rf_channel_number */ number | null, /* value_geran_info_v2_base_station_identity_code */ number | null, /* value_geran_info_v2_timing_advance */ number | null, /* value_geran_info_v2_rx_level */ number | null, /* value_geran_info_v2_cell */ MessageNasGetCellLocationInfoOutputGeranInfoV2CellElement[] | null ]
+    get_interfrequency_lte_info(): [ /* returnType */ boolean, /* value_interfrequency_lte_info_ue_in_idle */ boolean | null, /* value_interfrequency_lte_info_frequency */ MessageNasGetCellLocationInfoOutputInterfrequencyLteInfoFrequencyElement[] | null ]
+    get_intrafrequency_lte_info_v2(): [ /* returnType */ boolean, /* value_intrafrequency_lte_info_v2_ue_in_idle */ boolean | null, /* value_intrafrequency_lte_info_v2_plmn */ Uint8Array[] | null, /* value_intrafrequency_lte_info_v2_tracking_area_code */ number | null, /* value_intrafrequency_lte_info_v2_global_cell_id */ number | null, /* value_intrafrequency_lte_info_v2_eutra_absolute_rf_channel_number */ number | null, /* value_intrafrequency_lte_info_v2_serving_cell_id */ number | null, /* value_intrafrequency_lte_info_v2_cell_reselection_priority */ number | null, /* value_intrafrequency_lte_info_v2_s_non_intra_search_threshold */ number | null, /* value_intrafrequency_lte_info_v2_serving_cell_low_threshold */ number | null, /* value_intrafrequency_lte_info_v2_s_intra_search_threshold */ number | null, /* value_intrafrequency_lte_info_v2_cell */ MessageNasGetCellLocationInfoOutputIntrafrequencyLteInfoV2CellElement[] | null ]
+    get_lte_info_neighboring_gsm(): [ /* returnType */ boolean, /* value_lte_info_neighboring_gsm_ue_in_idle */ boolean | null, /* value_lte_info_neighboring_gsm_frequency */ MessageNasGetCellLocationInfoOutputLteInfoNeighboringGsmFrequencyElement[] | null ]
+    get_lte_info_neighboring_wcdma(): [ /* returnType */ boolean, /* value_lte_info_neighboring_wcdma_ue_in_idle */ boolean | null, /* value_lte_info_neighboring_wcdma_frequency */ MessageNasGetCellLocationInfoOutputLteInfoNeighboringWcdmaFrequencyElement[] | null ]
+    get_lte_info_timing_advance(): [ /* returnType */ boolean, /* value_lte_info_timing_advance */ number | null ]
+    get_nr5g_arfcn(): [ /* returnType */ boolean, /* value_nr5g_arfcn */ number | null ]
+    get_nr5g_cell_information(): [ /* returnType */ boolean, /* value_nr5g_cell_information_plmn */ Uint8Array[] | null, /* value_nr5g_cell_information_tracking_area_code */ Uint8Array[] | null, /* value_nr5g_cell_information_global_cell_id */ number | null, /* value_nr5g_cell_information_physical_cell_id */ number | null, /* value_nr5g_cell_information_rsrq */ number | null, /* value_nr5g_cell_information_rsrp */ number | null, /* value_nr5g_cell_information_snr */ number | null ]
     get_result(): boolean
-    get_umts_cell_id(): [ /* returnType */ boolean, /* value_umts_cell_id */ number ]
-    get_umts_info(): [ /* returnType */ boolean, /* value_umts_info_cell_id */ number, /* value_umts_info_plmn */ string, /* value_umts_info_lac */ number, /* value_umts_info_utra_absolute_rf_channel_number */ number, /* value_umts_info_primary_scrambling_code */ number, /* value_umts_info_rscp */ number, /* value_umts_info_ecio */ number, /* value_umts_info_cell */ MessageNasGetCellLocationInfoOutputUmtsInfoCellElement[], /* value_umts_info_neighboring_geran */ MessageNasGetCellLocationInfoOutputUmtsInfoNeighboringGeranElement[] ]
-    get_umts_info_neighboring_lte(): [ /* returnType */ boolean, /* value_umts_info_neighboring_lte_rrc_state */ NasWcdmaRrcState, /* value_umts_info_neighboring_lte_frequency */ MessageNasGetCellLocationInfoOutputUmtsInfoNeighboringLteFrequencyElement[] ]
-    get_umts_info_v2(): [ /* returnType */ boolean, /* value_umts_info_v2_cell_id */ number, /* value_umts_info_v2_plmn */ Uint8Array[], /* value_umts_info_v2_lac */ number, /* value_umts_info_v2_utra_absolute_rf_channel_number */ number, /* value_umts_info_v2_primary_scrambling_code */ number, /* value_umts_info_v2_rscp */ number, /* value_umts_info_v2_ecio */ number, /* value_umts_info_v2_cell */ MessageNasGetCellLocationInfoOutputUmtsInfoV2CellElement[], /* value_umts_info_v2_neighboring_geran */ MessageNasGetCellLocationInfoOutputUmtsInfoV2NeighboringGeranElement[] ]
+    get_umts_cell_id(): [ /* returnType */ boolean, /* value_umts_cell_id */ number | null ]
+    get_umts_info_neighboring_lte(): [ /* returnType */ boolean, /* value_umts_info_neighboring_lte_rrc_state */ NasWcdmaRrcState | null, /* value_umts_info_neighboring_lte_frequency */ MessageNasGetCellLocationInfoOutputUmtsInfoNeighboringLteFrequencyElement[] | null ]
+    get_umts_info_v2(): [ /* returnType */ boolean, /* value_umts_info_v2_cell_id */ number | null, /* value_umts_info_v2_plmn */ Uint8Array[] | null, /* value_umts_info_v2_lac */ number | null, /* value_umts_info_v2_utra_absolute_rf_channel_number */ number | null, /* value_umts_info_v2_primary_scrambling_code */ number | null, /* value_umts_info_v2_rscp */ number | null, /* value_umts_info_v2_ecio */ number | null, /* value_umts_info_v2_cell */ MessageNasGetCellLocationInfoOutputUmtsInfoV2CellElement[] | null, /* value_umts_info_v2_neighboring_geran */ MessageNasGetCellLocationInfoOutputUmtsInfoV2NeighboringGeranElement[] | null ]
     ref(): MessageNasGetCellLocationInfoOutput
     unref(): void
     static name: string
 }
-export class MessageNasGetCellLocationInfoOutputGeranInfoCellElement {
-    /* Fields of Qmi.MessageNasGetCellLocationInfoOutputGeranInfoCellElement */
-    cell_id: number
-    plmn: string
-    lac: number
-    geran_absolute_rf_channel_number: number
-    base_station_identity_code: number
-    rx_level: number
-    static name: string
-}
-export class MessageNasGetCellLocationInfoOutputGeranInfoV2CellElement {
-    /* Fields of Qmi.MessageNasGetCellLocationInfoOutputGeranInfoV2CellElement */
+class MessageNasGetCellLocationInfoOutputGeranInfoV2CellElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetCellLocationInfoOutputGeranInfoV2CellElement */
     cell_id: number
     plmn: object[]
     lac: number
@@ -7680,8 +8199,8 @@ export class MessageNasGetCellLocationInfoOutputGeranInfoV2CellElement {
     rx_level: number
     static name: string
 }
-export class MessageNasGetCellLocationInfoOutputInterfrequencyLteInfoFrequencyElement {
-    /* Fields of Qmi.MessageNasGetCellLocationInfoOutputInterfrequencyLteInfoFrequencyElement */
+class MessageNasGetCellLocationInfoOutputInterfrequencyLteInfoFrequencyElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetCellLocationInfoOutputInterfrequencyLteInfoFrequencyElement */
     eutra_absolute_rf_channel_number: number
     cell_selection_rx_level_low_threshold: number
     cell_selection_rx_level_high_threshold: number
@@ -7689,8 +8208,8 @@ export class MessageNasGetCellLocationInfoOutputInterfrequencyLteInfoFrequencyEl
     cell: object[]
     static name: string
 }
-export class MessageNasGetCellLocationInfoOutputInterfrequencyLteInfoFrequencyElementCellElement {
-    /* Fields of Qmi.MessageNasGetCellLocationInfoOutputInterfrequencyLteInfoFrequencyElementCellElement */
+class MessageNasGetCellLocationInfoOutputInterfrequencyLteInfoFrequencyElementCellElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetCellLocationInfoOutputInterfrequencyLteInfoFrequencyElementCellElement */
     physical_cell_id: number
     rsrq: number
     rsrp: number
@@ -7698,8 +8217,8 @@ export class MessageNasGetCellLocationInfoOutputInterfrequencyLteInfoFrequencyEl
     cell_selection_rx_level: number
     static name: string
 }
-export class MessageNasGetCellLocationInfoOutputIntrafrequencyLteInfoV2CellElement {
-    /* Fields of Qmi.MessageNasGetCellLocationInfoOutputIntrafrequencyLteInfoV2CellElement */
+class MessageNasGetCellLocationInfoOutputIntrafrequencyLteInfoV2CellElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetCellLocationInfoOutputIntrafrequencyLteInfoV2CellElement */
     physical_cell_id: number
     rsrq: number
     rsrp: number
@@ -7707,8 +8226,8 @@ export class MessageNasGetCellLocationInfoOutputIntrafrequencyLteInfoV2CellEleme
     cell_selection_rx_level: number
     static name: string
 }
-export class MessageNasGetCellLocationInfoOutputLteInfoNeighboringGsmFrequencyElement {
-    /* Fields of Qmi.MessageNasGetCellLocationInfoOutputLteInfoNeighboringGsmFrequencyElement */
+class MessageNasGetCellLocationInfoOutputLteInfoNeighboringGsmFrequencyElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetCellLocationInfoOutputLteInfoNeighboringGsmFrequencyElement */
     cell_reselection_priority: number
     cell_reselection_high_threshold: number
     cell_reselection_low_threshold: number
@@ -7716,8 +8235,8 @@ export class MessageNasGetCellLocationInfoOutputLteInfoNeighboringGsmFrequencyEl
     cell: object[]
     static name: string
 }
-export class MessageNasGetCellLocationInfoOutputLteInfoNeighboringGsmFrequencyElementCellElement {
-    /* Fields of Qmi.MessageNasGetCellLocationInfoOutputLteInfoNeighboringGsmFrequencyElementCellElement */
+class MessageNasGetCellLocationInfoOutputLteInfoNeighboringGsmFrequencyElementCellElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetCellLocationInfoOutputLteInfoNeighboringGsmFrequencyElementCellElement */
     geran_absolute_rf_channel_number: number
     band_is_1900: boolean
     cell_id_valid: boolean
@@ -7726,8 +8245,8 @@ export class MessageNasGetCellLocationInfoOutputLteInfoNeighboringGsmFrequencyEl
     cell_selection_rx_level: number
     static name: string
 }
-export class MessageNasGetCellLocationInfoOutputLteInfoNeighboringWcdmaFrequencyElement {
-    /* Fields of Qmi.MessageNasGetCellLocationInfoOutputLteInfoNeighboringWcdmaFrequencyElement */
+class MessageNasGetCellLocationInfoOutputLteInfoNeighboringWcdmaFrequencyElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetCellLocationInfoOutputLteInfoNeighboringWcdmaFrequencyElement */
     utra_absolute_rf_channel_number: number
     cell_reselection_priority: number
     cell_reselection_high_threshold: number
@@ -7735,16 +8254,16 @@ export class MessageNasGetCellLocationInfoOutputLteInfoNeighboringWcdmaFrequency
     cell: object[]
     static name: string
 }
-export class MessageNasGetCellLocationInfoOutputLteInfoNeighboringWcdmaFrequencyElementCellElement {
-    /* Fields of Qmi.MessageNasGetCellLocationInfoOutputLteInfoNeighboringWcdmaFrequencyElementCellElement */
+class MessageNasGetCellLocationInfoOutputLteInfoNeighboringWcdmaFrequencyElementCellElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetCellLocationInfoOutputLteInfoNeighboringWcdmaFrequencyElementCellElement */
     primary_scrambling_code: number
     cpich_rscp: number
     cpich_ecno: number
     cell_selection_rx_level: number
     static name: string
 }
-export class MessageNasGetCellLocationInfoOutputUmtsInfoNeighboringLteFrequencyElement {
-    /* Fields of Qmi.MessageNasGetCellLocationInfoOutputUmtsInfoNeighboringLteFrequencyElement */
+class MessageNasGetCellLocationInfoOutputUmtsInfoNeighboringLteFrequencyElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetCellLocationInfoOutputUmtsInfoNeighboringLteFrequencyElement */
     eutra_absolute_rf_channel_number: number
     physical_cell_id: number
     rsrp: number
@@ -7753,49 +8272,56 @@ export class MessageNasGetCellLocationInfoOutputUmtsInfoNeighboringLteFrequencyE
     is_tdd: boolean
     static name: string
 }
-export class MessageNasGetCellLocationInfoOutputUmtsInfoV2CellElement {
-    /* Fields of Qmi.MessageNasGetCellLocationInfoOutputUmtsInfoV2CellElement */
+class MessageNasGetCellLocationInfoOutputUmtsInfoV2CellElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetCellLocationInfoOutputUmtsInfoV2CellElement */
     utra_absolute_rf_channel_number: number
     primary_scrambling_code: number
     rscp: number
     ecio: number
     static name: string
 }
-export class MessageNasGetCellLocationInfoOutputUmtsInfoV2NeighboringGeranElement {
-    /* Fields of Qmi.MessageNasGetCellLocationInfoOutputUmtsInfoV2NeighboringGeranElement */
+class MessageNasGetCellLocationInfoOutputUmtsInfoV2NeighboringGeranElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetCellLocationInfoOutputUmtsInfoV2NeighboringGeranElement */
     geran_absolute_rf_channel_number: number
     network_color_code: number
     base_station_color_code: number
     rssi: number
     static name: string
 }
-export class MessageNasGetHomeNetworkOutput {
-    /* Methods of Qmi.MessageNasGetHomeNetworkOutput */
-    get_home_network(): [ /* returnType */ boolean, /* value_home_network_mcc */ number, /* value_home_network_mnc */ number, /* value_home_network_description */ string ]
-    get_home_network_3gpp2(value_home_network_3gpp2_mcc: number, value_home_network_3gpp2_mnc: number, value_home_network_3gpp2_display_description: NasNetworkDescriptionDisplay, value_home_network_3gpp2_description_encoding: NasNetworkDescriptionEncoding, value_home_network_3gpp2_description: string): boolean
-    get_home_network_3gpp2_ext(): [ /* returnType */ boolean, /* value_home_network_3gpp2_ext_mcc */ number, /* value_home_network_3gpp2_ext_mnc */ number, /* value_home_network_3gpp2_ext_display_description */ NasNetworkDescriptionDisplay, /* value_home_network_3gpp2_ext_description_encoding */ NasNetworkDescriptionEncoding, /* value_home_network_3gpp2_ext_description */ Uint8Array[] ]
-    get_home_network_3gpp_mnc(): [ /* returnType */ boolean, /* value_home_network_3gpp_mnc_is_3gpp */ boolean, /* value_home_network_3gpp_mnc_includes_pcs_digit */ boolean ]
-    get_home_system_id(): [ /* returnType */ boolean, /* value_home_system_id_sid */ number, /* value_home_system_id_nid */ number ]
-    get_network_name_source(): [ /* returnType */ boolean, /* value_network_name_source */ NasNetworkNameSource ]
+class MessageNasGetDrxOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetDrxOutput */
+    get_info(): [ /* returnType */ boolean, /* value_info */ NasDrx | null ]
+    get_result(): boolean
+    ref(): MessageNasGetDrxOutput
+    unref(): void
+    static name: string
+}
+class MessageNasGetHomeNetworkOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetHomeNetworkOutput */
+    get_home_network(): [ /* returnType */ boolean, /* value_home_network_mcc */ number | null, /* value_home_network_mnc */ number | null, /* value_home_network_description */ string | null ]
+    get_home_network_3gpp2_ext(): [ /* returnType */ boolean, /* value_home_network_3gpp2_ext_mcc */ number | null, /* value_home_network_3gpp2_ext_mnc */ number | null, /* value_home_network_3gpp2_ext_display_description */ NasNetworkDescriptionDisplay | null, /* value_home_network_3gpp2_ext_description_encoding */ NasNetworkDescriptionEncoding | null, /* value_home_network_3gpp2_ext_description */ Uint8Array[] | null ]
+    get_home_network_3gpp_mnc(): [ /* returnType */ boolean, /* value_home_network_3gpp_mnc_is_3gpp */ boolean | null, /* value_home_network_3gpp_mnc_includes_pcs_digit */ boolean | null ]
+    get_home_system_id(): [ /* returnType */ boolean, /* value_home_system_id_sid */ number | null, /* value_home_system_id_nid */ number | null ]
+    get_network_name_source(): [ /* returnType */ boolean, /* value_network_name_source */ NasNetworkNameSource | null ]
     get_result(): boolean
     ref(): MessageNasGetHomeNetworkOutput
     unref(): void
     static name: string
 }
-export class MessageNasGetLteCphyCaInfoOutput {
-    /* Methods of Qmi.MessageNasGetLteCphyCaInfoOutput */
-    get_dl_bandwidth(): [ /* returnType */ boolean, /* value_dl_bandwidth */ NasDLBandwidth ]
-    get_phy_ca_agg_pcell_info(): [ /* returnType */ boolean, /* value_phy_ca_agg_pcell_info_physical_cell_id */ number, /* value_phy_ca_agg_pcell_info_rx_channel */ number, /* value_phy_ca_agg_pcell_info_dl_bandwidth */ NasDLBandwidth, /* value_phy_ca_agg_pcell_info_lte_band */ NasActiveBand ]
-    get_phy_ca_agg_scell_info(): [ /* returnType */ boolean, /* value_phy_ca_agg_scell_info_physical_cell_id */ number, /* value_phy_ca_agg_scell_info_rx_channel */ number, /* value_phy_ca_agg_scell_info_dl_bandwidth */ NasDLBandwidth, /* value_phy_ca_agg_scell_info_lte_band */ NasActiveBand, /* value_phy_ca_agg_scell_info_state */ NasScellState ]
-    get_phy_ca_agg_secondary_cells(): [ /* returnType */ boolean, /* value_phy_ca_agg_secondary_cells */ MessageNasGetLteCphyCaInfoOutputPhyCaAggSecondaryCellsSsc[] ]
+class MessageNasGetLteCphyCaInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetLteCphyCaInfoOutput */
+    get_dl_bandwidth(): [ /* returnType */ boolean, /* value_dl_bandwidth */ NasDLBandwidth | null ]
+    get_phy_ca_agg_pcell_info(): [ /* returnType */ boolean, /* value_phy_ca_agg_pcell_info_physical_cell_id */ number | null, /* value_phy_ca_agg_pcell_info_rx_channel */ number | null, /* value_phy_ca_agg_pcell_info_dl_bandwidth */ NasDLBandwidth | null, /* value_phy_ca_agg_pcell_info_lte_band */ NasActiveBand | null ]
+    get_phy_ca_agg_scell_info(): [ /* returnType */ boolean, /* value_phy_ca_agg_scell_info_physical_cell_id */ number | null, /* value_phy_ca_agg_scell_info_rx_channel */ number | null, /* value_phy_ca_agg_scell_info_dl_bandwidth */ NasDLBandwidth | null, /* value_phy_ca_agg_scell_info_lte_band */ NasActiveBand | null, /* value_phy_ca_agg_scell_info_state */ NasScellState | null ]
+    get_phy_ca_agg_secondary_cells(): [ /* returnType */ boolean, /* value_phy_ca_agg_secondary_cells */ MessageNasGetLteCphyCaInfoOutputPhyCaAggSecondaryCellsSsc[] | null ]
     get_result(): boolean
-    get_scell_index(): [ /* returnType */ boolean, /* value_scell_index */ number ]
+    get_scell_index(): [ /* returnType */ boolean, /* value_scell_index */ number | null ]
     ref(): MessageNasGetLteCphyCaInfoOutput
     unref(): void
     static name: string
 }
-export class MessageNasGetLteCphyCaInfoOutputPhyCaAggSecondaryCellsSsc {
-    /* Fields of Qmi.MessageNasGetLteCphyCaInfoOutputPhyCaAggSecondaryCellsSsc */
+class MessageNasGetLteCphyCaInfoOutputPhyCaAggSecondaryCellsSsc {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetLteCphyCaInfoOutputPhyCaAggSecondaryCellsSsc */
     physical_cell_id: number
     rx_channel: number
     dl_bandwidth: NasDLBandwidth
@@ -7804,21 +8330,20 @@ export class MessageNasGetLteCphyCaInfoOutputPhyCaAggSecondaryCellsSsc {
     cell_index: number
     static name: string
 }
-export class MessageNasGetOperatorNameOutput {
-    /* Methods of Qmi.MessageNasGetOperatorNameOutput */
-    get_nitz_information(): [ /* returnType */ boolean, /* value_nitz_information_name_encoding */ NasPlmnEncodingScheme, /* value_nitz_information_short_country_initials */ NasPlmnNameCountryInitials, /* value_nitz_information_long_name_spare_bits */ NasPlmnNameSpareBits, /* value_nitz_information_short_name_spare_bits */ NasPlmnNameSpareBits, /* value_nitz_information_long_name */ Uint8Array[], /* value_nitz_information_short_name */ Uint8Array[] ]
-    get_operator_nitz_information(value_operator_nitz_information_name_encoding: NasPlmnEncodingScheme, value_operator_nitz_information_short_country_initials: NasPlmnNameCountryInitials, value_operator_nitz_information_long_name_spare_bits: NasPlmnNameSpareBits, value_operator_nitz_information_short_name_spare_bits: NasPlmnNameSpareBits, value_operator_nitz_information_long_name: string, value_operator_nitz_information_short_name: string): boolean
-    get_operator_plmn_list(): [ /* returnType */ boolean, /* value_operator_plmn_list */ MessageNasGetOperatorNameOutputOperatorPlmnListElement[] ]
-    get_operator_plmn_name(): [ /* returnType */ boolean, /* value_operator_plmn_name */ MessageNasGetOperatorNameOutputOperatorPlmnNameElement[] ]
-    get_operator_string_name(): [ /* returnType */ boolean, /* value_operator_string_name */ string ]
+class MessageNasGetOperatorNameOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetOperatorNameOutput */
+    get_nitz_information(): [ /* returnType */ boolean, /* value_nitz_information_name_encoding */ NasPlmnEncodingScheme | null, /* value_nitz_information_short_country_initials */ NasPlmnNameCountryInitials | null, /* value_nitz_information_long_name_spare_bits */ NasPlmnNameSpareBits | null, /* value_nitz_information_short_name_spare_bits */ NasPlmnNameSpareBits | null, /* value_nitz_information_long_name */ Uint8Array[] | null, /* value_nitz_information_short_name */ Uint8Array[] | null ]
+    get_operator_plmn_list(): [ /* returnType */ boolean, /* value_operator_plmn_list */ MessageNasGetOperatorNameOutputOperatorPlmnListElement[] | null ]
+    get_operator_plmn_name(): [ /* returnType */ boolean, /* value_operator_plmn_name */ MessageNasGetOperatorNameOutputOperatorPlmnNameElement[] | null ]
+    get_operator_string_name(): [ /* returnType */ boolean, /* value_operator_string_name */ string | null ]
     get_result(): boolean
-    get_service_provider_name(): [ /* returnType */ boolean, /* value_service_provider_name_name_display_condition */ NasNetworkNameDisplayCondition, /* value_service_provider_name_name */ string ]
+    get_service_provider_name(): [ /* returnType */ boolean, /* value_service_provider_name_name_display_condition */ NasNetworkNameDisplayCondition | null, /* value_service_provider_name_name */ string | null ]
     ref(): MessageNasGetOperatorNameOutput
     unref(): void
     static name: string
 }
-export class MessageNasGetOperatorNameOutputOperatorPlmnListElement {
-    /* Fields of Qmi.MessageNasGetOperatorNameOutputOperatorPlmnListElement */
+class MessageNasGetOperatorNameOutputOperatorPlmnListElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetOperatorNameOutputOperatorPlmnListElement */
     mcc: string
     mnc: string
     lac1: number
@@ -7826,8 +8351,8 @@ export class MessageNasGetOperatorNameOutputOperatorPlmnListElement {
     plmn_name_record_identifier: number
     static name: string
 }
-export class MessageNasGetOperatorNameOutputOperatorPlmnNameElement {
-    /* Fields of Qmi.MessageNasGetOperatorNameOutputOperatorPlmnNameElement */
+class MessageNasGetOperatorNameOutputOperatorPlmnNameElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetOperatorNameOutputOperatorPlmnNameElement */
     name_encoding: NasPlmnEncodingScheme
     short_country_initials: NasPlmnNameCountryInitials
     long_name_spare_bits: NasPlmnNameSpareBits
@@ -7836,93 +8361,162 @@ export class MessageNasGetOperatorNameOutputOperatorPlmnNameElement {
     short_name: object[]
     static name: string
 }
-export class MessageNasGetRfBandInformationOutput {
-    /* Methods of Qmi.MessageNasGetRfBandInformationOutput */
-    get_bandwidth_list(): [ /* returnType */ boolean, /* value_bandwidth_list */ MessageNasGetRfBandInformationOutputBandwidthListElement[] ]
-    get_extended_list(): [ /* returnType */ boolean, /* value_extended_list */ MessageNasGetRfBandInformationOutputExtendedListElement[] ]
-    get_list(): [ /* returnType */ boolean, /* value_list */ MessageNasGetRfBandInformationOutputListElement[] ]
+class MessageNasGetPlmnNameInput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetPlmnNameInput */
+    get_always_send_plmn_name(): [ /* returnType */ boolean, /* value_always_send_plmn_name */ boolean | null ]
+    get_csg_id(): [ /* returnType */ boolean, /* value_csg_id */ number | null ]
+    get_mnc_pcs_digit_include_status(): [ /* returnType */ boolean, /* value_mnc_pcs_digit_include_status */ boolean | null ]
+    get_plmn(): [ /* returnType */ boolean, /* value_plmn_mcc */ number | null, /* value_plmn_mnc */ number | null ]
+    get_radio_access_technology(): [ /* returnType */ boolean, /* value_radio_access_technology */ NasRadioInterface | null ]
+    get_send_all_information(): [ /* returnType */ boolean, /* value_send_all_information */ boolean | null ]
+    get_suppress_sim_error(): [ /* returnType */ boolean, /* value_suppress_sim_error */ boolean | null ]
+    get_use_static_table_only(): [ /* returnType */ boolean, /* value_use_static_table_only */ boolean | null ]
+    ref(): MessageNasGetPlmnNameInput
+    set_always_send_plmn_name(value_always_send_plmn_name: boolean): boolean
+    set_csg_id(value_csg_id: number): boolean
+    set_mnc_pcs_digit_include_status(value_mnc_pcs_digit_include_status: boolean): boolean
+    set_plmn(value_plmn_mcc: number, value_plmn_mnc: number): boolean
+    set_radio_access_technology(value_radio_access_technology: NasRadioInterface): boolean
+    set_send_all_information(value_send_all_information: boolean): boolean
+    set_suppress_sim_error(value_suppress_sim_error: boolean): boolean
+    set_use_static_table_only(value_use_static_table_only: boolean): boolean
+    unref(): void
+    static name: string
+    static new(): MessageNasGetPlmnNameInput
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MessageNasGetPlmnNameInput
+}
+class MessageNasGetPlmnNameOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetPlmnNameOutput */
+    get_3gpp_eons_plmn_name(): [ /* returnType */ boolean, /* value_3gpp_eons_plmn_name_service_provider_name_encoding */ NasNetworkDescriptionEncoding | null, /* value_3gpp_eons_plmn_name_service_provider_name */ Uint8Array[] | null, /* value_3gpp_eons_plmn_name_short_name_encoding */ NasNetworkDescriptionEncoding | null, /* value_3gpp_eons_plmn_name_short_name_country_initials */ NasPlmnNameCountryInitials | null, /* value_3gpp_eons_plmn_name_short_name_spare_bits */ NasPlmnNameSpareBits | null, /* value_3gpp_eons_plmn_name_short_name */ Uint8Array[] | null, /* value_3gpp_eons_plmn_name_long_name_encoding */ NasNetworkDescriptionEncoding | null, /* value_3gpp_eons_plmn_name_long_name_country_initials */ NasPlmnNameCountryInitials | null, /* value_3gpp_eons_plmn_name_long_name_spare_bits */ NasPlmnNameSpareBits | null, /* value_3gpp_eons_plmn_name_long_name */ Uint8Array[] | null ]
+    get_additional_information(): [ /* returnType */ boolean, /* value_additional_information */ number[] | null ]
+    get_display_bit_information(): [ /* returnType */ boolean, /* value_display_bit_information_service_provider_name_set */ NasBoolean | null, /* value_display_bit_information_plmn_name_set */ NasBoolean | null ]
+    get_network_information(): [ /* returnType */ boolean, /* value_network_information */ NasBoolean | null ]
+    get_network_name_source(): [ /* returnType */ boolean, /* value_network_name_source */ NasNetworkNameSource | null ]
+    get_plmn_name_with_language_id(): [ /* returnType */ boolean, /* value_plmn_name_with_language_id */ MessageNasGetPlmnNameOutputPlmnNameWithLanguageIdElement[] | null ]
+    get_result(): boolean
+    ref(): MessageNasGetPlmnNameOutput
+    unref(): void
+    static name: string
+}
+class MessageNasGetPlmnNameOutputPlmnNameWithLanguageIdElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetPlmnNameOutputPlmnNameWithLanguageIdElement */
+    long_name: object[]
+    short_name: object[]
+    language_id: NasPlmnLanguageId
+    static name: string
+}
+class MessageNasGetPreferredNetworksOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetPreferredNetworksOutput */
+    get_mnc_pcs_digit_include_status(): [ /* returnType */ boolean, /* value_mnc_pcs_digit_include_status */ MessageNasGetPreferredNetworksOutputMncPcsDigitIncludeStatusElement[] | null ]
+    get_preferred_networks(): [ /* returnType */ boolean, /* value_preferred_networks */ MessageNasGetPreferredNetworksOutputPreferredNetworksElement[] | null ]
+    get_result(): boolean
+    ref(): MessageNasGetPreferredNetworksOutput
+    unref(): void
+    static name: string
+}
+class MessageNasGetPreferredNetworksOutputMncPcsDigitIncludeStatusElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetPreferredNetworksOutputMncPcsDigitIncludeStatusElement */
+    mcc: number
+    mnc: number
+    includes_pcs_digit: boolean
+    static name: string
+}
+class MessageNasGetPreferredNetworksOutputPreferredNetworksElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetPreferredNetworksOutputPreferredNetworksElement */
+    mcc: number
+    mnc: number
+    radio_access_technology: NasPlmnAccessTechnologyIdentifier
+    static name: string
+}
+class MessageNasGetRfBandInformationOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetRfBandInformationOutput */
+    get_bandwidth_list(): [ /* returnType */ boolean, /* value_bandwidth_list */ MessageNasGetRfBandInformationOutputBandwidthListElement[] | null ]
+    get_extended_list(): [ /* returnType */ boolean, /* value_extended_list */ MessageNasGetRfBandInformationOutputExtendedListElement[] | null ]
+    get_list(): [ /* returnType */ boolean, /* value_list */ MessageNasGetRfBandInformationOutputListElement[] | null ]
     get_result(): boolean
     ref(): MessageNasGetRfBandInformationOutput
     unref(): void
     static name: string
 }
-export class MessageNasGetRfBandInformationOutputBandwidthListElement {
-    /* Fields of Qmi.MessageNasGetRfBandInformationOutputBandwidthListElement */
+class MessageNasGetRfBandInformationOutputBandwidthListElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetRfBandInformationOutputBandwidthListElement */
     radio_interface: NasRadioInterface
     bandwidth: NasDLBandwidth
     static name: string
 }
-export class MessageNasGetRfBandInformationOutputExtendedListElement {
-    /* Fields of Qmi.MessageNasGetRfBandInformationOutputExtendedListElement */
+class MessageNasGetRfBandInformationOutputExtendedListElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetRfBandInformationOutputExtendedListElement */
     radio_interface: NasRadioInterface
     active_band_class: NasActiveBand
     active_channel: number
     static name: string
 }
-export class MessageNasGetRfBandInformationOutputListElement {
-    /* Fields of Qmi.MessageNasGetRfBandInformationOutputListElement */
+class MessageNasGetRfBandInformationOutputListElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetRfBandInformationOutputListElement */
     radio_interface: NasRadioInterface
     active_band_class: NasActiveBand
     active_channel: number
     static name: string
 }
-export class MessageNasGetServingSystemOutput {
-    /* Methods of Qmi.MessageNasGetServingSystemOutput */
-    get_call_barring_status(): [ /* returnType */ boolean, /* value_call_barring_status_cs_status */ NasCallBarringStatus, /* value_call_barring_status_ps_status */ NasCallBarringStatus ]
-    get_cdma_base_station_info(): [ /* returnType */ boolean, /* value_cdma_base_station_info_base_station_id */ number, /* value_cdma_base_station_info_base_station_latitude */ number, /* value_cdma_base_station_info_base_station_longitude */ number ]
-    get_cdma_p_rev(): [ /* returnType */ boolean, /* value_cdma_p_rev */ number ]
-    get_cdma_system_id(): [ /* returnType */ boolean, /* value_cdma_system_id_sid */ number, /* value_cdma_system_id_nid */ number ]
-    get_cdma_system_info(): [ /* returnType */ boolean, /* value_cdma_system_info_mcc */ number, /* value_cdma_system_info_imsi_11_12 */ number ]
-    get_cid_3gpp(): [ /* returnType */ boolean, /* value_cid_3gpp */ number ]
-    get_concurrent_service_info_3gpp2(): [ /* returnType */ boolean, /* value_concurrent_service_info_3gpp2 */ boolean ]
-    get_current_plmn(): [ /* returnType */ boolean, /* value_current_plmn_mcc */ number, /* value_current_plmn_mnc */ number, /* value_current_plmn_description */ string ]
-    get_data_service_capability(): [ /* returnType */ boolean, /* value_data_service_capability */ NasDataCapability[] ]
-    get_daylight_saving_time_adjustment_3gpp(): [ /* returnType */ boolean, /* value_daylight_saving_time_adjustment_3gpp */ number ]
-    get_default_roaming_indicator(): [ /* returnType */ boolean, /* value_default_roaming_indicator */ NasRoamingIndicatorStatus ]
-    get_detailed_service_status(): [ /* returnType */ boolean, /* value_detailed_service_status_status */ NasServiceStatus, /* value_detailed_service_status_capability */ NasNetworkServiceDomain, /* value_detailed_service_status_hdr_status */ NasServiceStatus, /* value_detailed_service_status_hdr_hybrid */ boolean, /* value_detailed_service_status_forbidden */ boolean ]
-    get_dtm_support(): [ /* returnType */ boolean, /* value_dtm_support */ boolean ]
-    get_hdr_personality(): [ /* returnType */ boolean, /* value_hdr_personality */ NasHdrPersonality ]
-    get_lac_3gpp(): [ /* returnType */ boolean, /* value_lac_3gpp */ number ]
-    get_lte_tac(): [ /* returnType */ boolean, /* value_lte_tac */ number ]
-    get_mnc_pcs_digit_include_status(): [ /* returnType */ boolean, /* value_mnc_pcs_digit_include_status_mcc */ number, /* value_mnc_pcs_digit_include_status_mnc */ number, /* value_mnc_pcs_digit_include_status_includes_pcs_digit */ boolean ]
-    get_network_name_source(): [ /* returnType */ boolean, /* value_network_name_source */ NasNetworkNameSource ]
-    get_prl_indicator_3gpp2(): [ /* returnType */ boolean, /* value_prl_indicator_3gpp2 */ boolean ]
+class MessageNasGetServingSystemOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetServingSystemOutput */
+    get_call_barring_status(): [ /* returnType */ boolean, /* value_call_barring_status_cs_status */ NasCallBarringStatus | null, /* value_call_barring_status_ps_status */ NasCallBarringStatus | null ]
+    get_cdma_base_station_info(): [ /* returnType */ boolean, /* value_cdma_base_station_info_base_station_id */ number | null, /* value_cdma_base_station_info_base_station_latitude */ number | null, /* value_cdma_base_station_info_base_station_longitude */ number | null ]
+    get_cdma_p_rev(): [ /* returnType */ boolean, /* value_cdma_p_rev */ number | null ]
+    get_cdma_system_id(): [ /* returnType */ boolean, /* value_cdma_system_id_sid */ number | null, /* value_cdma_system_id_nid */ number | null ]
+    get_cdma_system_info(): [ /* returnType */ boolean, /* value_cdma_system_info_mcc */ number | null, /* value_cdma_system_info_imsi_11_12 */ number | null ]
+    get_cid_3gpp(): [ /* returnType */ boolean, /* value_cid_3gpp */ number | null ]
+    get_concurrent_service_info_3gpp2(): [ /* returnType */ boolean, /* value_concurrent_service_info_3gpp2 */ boolean | null ]
+    get_current_plmn(): [ /* returnType */ boolean, /* value_current_plmn_mcc */ number | null, /* value_current_plmn_mnc */ number | null, /* value_current_plmn_description */ string | null ]
+    get_data_service_capability(): [ /* returnType */ boolean, /* value_data_service_capability */ NasDataCapability[] | null ]
+    get_daylight_saving_time_adjustment_3gpp(): [ /* returnType */ boolean, /* value_daylight_saving_time_adjustment_3gpp */ number | null ]
+    get_default_roaming_indicator(): [ /* returnType */ boolean, /* value_default_roaming_indicator */ NasRoamingIndicatorStatus | null ]
+    get_detailed_service_status(): [ /* returnType */ boolean, /* value_detailed_service_status_status */ NasServiceStatus | null, /* value_detailed_service_status_capability */ NasNetworkServiceDomain | null, /* value_detailed_service_status_hdr_status */ NasServiceStatus | null, /* value_detailed_service_status_hdr_hybrid */ boolean | null, /* value_detailed_service_status_forbidden */ boolean | null ]
+    get_dtm_support(): [ /* returnType */ boolean, /* value_dtm_support */ boolean | null ]
+    get_hdr_personality(): [ /* returnType */ boolean, /* value_hdr_personality */ NasHdrPersonality | null ]
+    get_lac_3gpp(): [ /* returnType */ boolean, /* value_lac_3gpp */ number | null ]
+    get_lte_tac(): [ /* returnType */ boolean, /* value_lte_tac */ number | null ]
+    get_mnc_pcs_digit_include_status(): [ /* returnType */ boolean, /* value_mnc_pcs_digit_include_status_mcc */ number | null, /* value_mnc_pcs_digit_include_status_mnc */ number | null, /* value_mnc_pcs_digit_include_status_includes_pcs_digit */ boolean | null ]
+    get_network_name_source(): [ /* returnType */ boolean, /* value_network_name_source */ NasNetworkNameSource | null ]
+    get_prl_indicator_3gpp2(): [ /* returnType */ boolean, /* value_prl_indicator_3gpp2 */ boolean | null ]
     get_result(): boolean
-    get_roaming_indicator(): [ /* returnType */ boolean, /* value_roaming_indicator */ NasRoamingIndicatorStatus ]
-    get_roaming_indicator_list(): [ /* returnType */ boolean, /* value_roaming_indicator_list */ MessageNasGetServingSystemOutputRoamingIndicatorListElement[] ]
-    get_serving_system(): [ /* returnType */ boolean, /* value_serving_system_registration_state */ NasRegistrationState, /* value_serving_system_cs_attach_state */ NasAttachState, /* value_serving_system_ps_attach_state */ NasAttachState, /* value_serving_system_selected_network */ NasNetworkType, /* value_serving_system_radio_interfaces */ NasRadioInterface[] ]
-    get_time_zone_3gpp(): [ /* returnType */ boolean, /* value_time_zone_3gpp */ number ]
-    get_time_zone_3gpp2(): [ /* returnType */ boolean, /* value_time_zone_3gpp2_leap_seconds */ number, /* value_time_zone_3gpp2_local_time_offset */ number, /* value_time_zone_3gpp2_daylight_saving_time */ boolean ]
-    get_umts_primary_scrambling_code(): [ /* returnType */ boolean, /* value_umts_primary_scrambling_code */ number ]
+    get_roaming_indicator(): [ /* returnType */ boolean, /* value_roaming_indicator */ NasRoamingIndicatorStatus | null ]
+    get_roaming_indicator_list(): [ /* returnType */ boolean, /* value_roaming_indicator_list */ MessageNasGetServingSystemOutputRoamingIndicatorListElement[] | null ]
+    get_serving_system(): [ /* returnType */ boolean, /* value_serving_system_registration_state */ NasRegistrationState | null, /* value_serving_system_cs_attach_state */ NasAttachState | null, /* value_serving_system_ps_attach_state */ NasAttachState | null, /* value_serving_system_selected_network */ NasNetworkType | null, /* value_serving_system_radio_interfaces */ NasRadioInterface[] | null ]
+    get_time_zone_3gpp(): [ /* returnType */ boolean, /* value_time_zone_3gpp */ number | null ]
+    get_time_zone_3gpp2(): [ /* returnType */ boolean, /* value_time_zone_3gpp2_leap_seconds */ number | null, /* value_time_zone_3gpp2_local_time_offset */ number | null, /* value_time_zone_3gpp2_daylight_saving_time */ boolean | null ]
+    get_umts_primary_scrambling_code(): [ /* returnType */ boolean, /* value_umts_primary_scrambling_code */ number | null ]
     ref(): MessageNasGetServingSystemOutput
     unref(): void
     static name: string
 }
-export class MessageNasGetServingSystemOutputRoamingIndicatorListElement {
-    /* Fields of Qmi.MessageNasGetServingSystemOutputRoamingIndicatorListElement */
+class MessageNasGetServingSystemOutputRoamingIndicatorListElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetServingSystemOutputRoamingIndicatorListElement */
     radio_interface: NasRadioInterface
     roaming_indicator: NasRoamingIndicatorStatus
     static name: string
 }
-export class MessageNasGetSignalInfoOutput {
-    /* Methods of Qmi.MessageNasGetSignalInfoOutput */
-    get_5g_signal_strength(): [ /* returnType */ boolean, /* value_5g_signal_strength_rsrp */ number, /* value_5g_signal_strength_snr */ number ]
-    get_5g_signal_strength_extended(): [ /* returnType */ boolean, /* value_5g_signal_strength_extended */ number ]
-    get_cdma_signal_strength(): [ /* returnType */ boolean, /* value_cdma_signal_strength_rssi */ number, /* value_cdma_signal_strength_ecio */ number ]
-    get_gsm_signal_strength(): [ /* returnType */ boolean, /* value_gsm_signal_strength */ number ]
-    get_hdr_signal_strength(): [ /* returnType */ boolean, /* value_hdr_signal_strength_rssi */ number, /* value_hdr_signal_strength_ecio */ number, /* value_hdr_signal_strength_sinr */ NasEvdoSinrLevel, /* value_hdr_signal_strength_io */ number ]
-    get_lte_signal_strength(): [ /* returnType */ boolean, /* value_lte_signal_strength_rssi */ number, /* value_lte_signal_strength_rsrq */ number, /* value_lte_signal_strength_rsrp */ number, /* value_lte_signal_strength_snr */ number ]
+class MessageNasGetSignalInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetSignalInfoOutput */
+    get_5g_signal_strength(): [ /* returnType */ boolean, /* value_5g_signal_strength_rsrp */ number | null, /* value_5g_signal_strength_snr */ number | null ]
+    get_5g_signal_strength_extended(): [ /* returnType */ boolean, /* value_5g_signal_strength_extended */ number | null ]
+    get_cdma_signal_strength(): [ /* returnType */ boolean, /* value_cdma_signal_strength_rssi */ number | null, /* value_cdma_signal_strength_ecio */ number | null ]
+    get_gsm_signal_strength(): [ /* returnType */ boolean, /* value_gsm_signal_strength */ number | null ]
+    get_hdr_signal_strength(): [ /* returnType */ boolean, /* value_hdr_signal_strength_rssi */ number | null, /* value_hdr_signal_strength_ecio */ number | null, /* value_hdr_signal_strength_sinr */ NasEvdoSinrLevel | null, /* value_hdr_signal_strength_io */ number | null ]
+    get_lte_signal_strength(): [ /* returnType */ boolean, /* value_lte_signal_strength_rssi */ number | null, /* value_lte_signal_strength_rsrq */ number | null, /* value_lte_signal_strength_rsrp */ number | null, /* value_lte_signal_strength_snr */ number | null ]
     get_result(): boolean
-    get_tdma_signal_strength(): [ /* returnType */ boolean, /* value_tdma_signal_strength */ number ]
-    get_tdma_signal_strength_extended(): [ /* returnType */ boolean, /* value_tdma_signal_strength_extended_rssi */ number, /* value_tdma_signal_strength_extended_rscp */ number, /* value_tdma_signal_strength_extended_ecio */ number, /* value_tdma_signal_strength_extended_sinr */ number ]
-    get_wcdma_signal_strength(): [ /* returnType */ boolean, /* value_wcdma_signal_strength_rssi */ number, /* value_wcdma_signal_strength_ecio */ number ]
+    get_tdma_signal_strength(): [ /* returnType */ boolean, /* value_tdma_signal_strength */ number | null ]
+    get_tdma_signal_strength_extended(): [ /* returnType */ boolean, /* value_tdma_signal_strength_extended_rssi */ number | null, /* value_tdma_signal_strength_extended_rscp */ number | null, /* value_tdma_signal_strength_extended_ecio */ number | null, /* value_tdma_signal_strength_extended_sinr */ number | null ]
+    get_wcdma_signal_strength(): [ /* returnType */ boolean, /* value_wcdma_signal_strength_rssi */ number | null, /* value_wcdma_signal_strength_ecio */ number | null ]
     ref(): MessageNasGetSignalInfoOutput
     unref(): void
     static name: string
 }
-export class MessageNasGetSignalStrengthInput {
-    /* Methods of Qmi.MessageNasGetSignalStrengthInput */
-    get_request_mask(): [ /* returnType */ boolean, /* value_request_mask */ NasSignalStrengthRequest ]
+class MessageNasGetSignalStrengthInput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetSignalStrengthInput */
+    get_request_mask(): [ /* returnType */ boolean, /* value_request_mask */ NasSignalStrengthRequest | null ]
     ref(): MessageNasGetSignalStrengthInput
     set_request_mask(value_request_mask: NasSignalStrengthRequest): boolean
     unref(): void
@@ -7932,127 +8526,139 @@ export class MessageNasGetSignalStrengthInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageNasGetSignalStrengthInput
 }
-export class MessageNasGetSignalStrengthOutput {
-    /* Methods of Qmi.MessageNasGetSignalStrengthOutput */
-    get_ecio_list(): [ /* returnType */ boolean, /* value_ecio_list */ MessageNasGetSignalStrengthOutputEcioListElement[] ]
-    get_error_rate_list(): [ /* returnType */ boolean, /* value_error_rate_list */ MessageNasGetSignalStrengthOutputErrorRateListElement[] ]
-    get_io(): [ /* returnType */ boolean, /* value_io */ number ]
-    get_lte_rsrp(): [ /* returnType */ boolean, /* value_lte_rsrp */ number ]
-    get_lte_snr(): [ /* returnType */ boolean, /* value_lte_snr */ number ]
+class MessageNasGetSignalStrengthOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetSignalStrengthOutput */
+    get_ecio_list(): [ /* returnType */ boolean, /* value_ecio_list */ MessageNasGetSignalStrengthOutputEcioListElement[] | null ]
+    get_error_rate_list(): [ /* returnType */ boolean, /* value_error_rate_list */ MessageNasGetSignalStrengthOutputErrorRateListElement[] | null ]
+    get_io(): [ /* returnType */ boolean, /* value_io */ number | null ]
+    get_lte_rsrp(): [ /* returnType */ boolean, /* value_lte_rsrp */ number | null ]
+    get_lte_snr(): [ /* returnType */ boolean, /* value_lte_snr */ number | null ]
     get_result(): boolean
-    get_rsrq(): [ /* returnType */ boolean, /* value_rsrq_rsrq */ number, /* value_rsrq_radio_interface */ NasRadioInterface ]
-    get_rssi_list(): [ /* returnType */ boolean, /* value_rssi_list */ MessageNasGetSignalStrengthOutputRssiListElement[] ]
-    get_signal_strength(): [ /* returnType */ boolean, /* value_signal_strength_strength */ number, /* value_signal_strength_radio_interface */ NasRadioInterface ]
-    get_sinr(): [ /* returnType */ boolean, /* value_sinr */ NasEvdoSinrLevel ]
-    get_strength_list(): [ /* returnType */ boolean, /* value_strength_list */ MessageNasGetSignalStrengthOutputStrengthListElement[] ]
+    get_rsrq(): [ /* returnType */ boolean, /* value_rsrq_rsrq */ number | null, /* value_rsrq_radio_interface */ NasRadioInterface | null ]
+    get_rssi_list(): [ /* returnType */ boolean, /* value_rssi_list */ MessageNasGetSignalStrengthOutputRssiListElement[] | null ]
+    get_signal_strength(): [ /* returnType */ boolean, /* value_signal_strength_strength */ number | null, /* value_signal_strength_radio_interface */ NasRadioInterface | null ]
+    get_sinr(): [ /* returnType */ boolean, /* value_sinr */ NasEvdoSinrLevel | null ]
+    get_strength_list(): [ /* returnType */ boolean, /* value_strength_list */ MessageNasGetSignalStrengthOutputStrengthListElement[] | null ]
     ref(): MessageNasGetSignalStrengthOutput
     unref(): void
     static name: string
 }
-export class MessageNasGetSignalStrengthOutputEcioListElement {
-    /* Fields of Qmi.MessageNasGetSignalStrengthOutputEcioListElement */
+class MessageNasGetSignalStrengthOutputEcioListElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetSignalStrengthOutputEcioListElement */
     ecio: number
     radio_interface: NasRadioInterface
     static name: string
 }
-export class MessageNasGetSignalStrengthOutputErrorRateListElement {
-    /* Fields of Qmi.MessageNasGetSignalStrengthOutputErrorRateListElement */
+class MessageNasGetSignalStrengthOutputErrorRateListElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetSignalStrengthOutputErrorRateListElement */
     rate: number
     radio_interface: NasRadioInterface
     static name: string
 }
-export class MessageNasGetSignalStrengthOutputRssiListElement {
-    /* Fields of Qmi.MessageNasGetSignalStrengthOutputRssiListElement */
+class MessageNasGetSignalStrengthOutputRssiListElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetSignalStrengthOutputRssiListElement */
     rssi: number
     radio_interface: NasRadioInterface
     static name: string
 }
-export class MessageNasGetSignalStrengthOutputStrengthListElement {
-    /* Fields of Qmi.MessageNasGetSignalStrengthOutputStrengthListElement */
+class MessageNasGetSignalStrengthOutputStrengthListElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasGetSignalStrengthOutputStrengthListElement */
     strength: number
     radio_interface: NasRadioInterface
     static name: string
 }
-export class MessageNasGetSupportedMessagesOutput {
-    /* Methods of Qmi.MessageNasGetSupportedMessagesOutput */
-    get_list(): [ /* returnType */ boolean, /* value_list */ Uint8Array[] ]
+class MessageNasGetSupportedMessagesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetSupportedMessagesOutput */
+    get_list(): [ /* returnType */ boolean, /* value_list */ Uint8Array[] | null ]
     get_result(): boolean
     ref(): MessageNasGetSupportedMessagesOutput
     unref(): void
     static name: string
 }
-export class MessageNasGetSystemInfoOutput {
-    /* Methods of Qmi.MessageNasGetSystemInfoOutput */
-    get_additional_cdma_system_info(): [ /* returnType */ boolean, /* value_additional_cdma_system_info_geo_system_index */ number, /* value_additional_cdma_system_info_registration_period */ number ]
-    get_additional_gsm_system_info(): [ /* returnType */ boolean, /* value_additional_gsm_system_info_geo_system_index */ number, /* value_additional_gsm_system_info_cell_broadcast_support */ NasCellBroadcastCapability ]
-    get_additional_hdr_system_info(): [ /* returnType */ boolean, /* value_additional_hdr_system_info_geo_system_index */ number ]
-    get_additional_lte_system_info(): [ /* returnType */ boolean, /* value_additional_lte_system_info_geo_system_index */ number ]
-    get_additional_wcdma_system_info(): [ /* returnType */ boolean, /* value_additional_wcdma_system_info_geo_system_index */ number, /* value_additional_wcdma_system_info_cell_broadcast_support */ NasCellBroadcastCapability ]
-    get_cdma_service_status(): [ /* returnType */ boolean, /* value_cdma_service_status_service_status */ NasServiceStatus, /* value_cdma_service_status_preferred_data_path */ boolean ]
-    get_cdma_system_info(): [ /* returnType */ boolean, /* value_cdma_system_info_domain_valid */ boolean, /* value_cdma_system_info_domain */ NasNetworkServiceDomain, /* value_cdma_system_info_service_capability_valid */ boolean, /* value_cdma_system_info_service_capability */ NasNetworkServiceDomain, /* value_cdma_system_info_roaming_status_valid */ boolean, /* value_cdma_system_info_roaming_status */ NasRoamingStatus, /* value_cdma_system_info_forbidden_valid */ boolean, /* value_cdma_system_info_forbidden */ boolean, /* value_cdma_system_info_prl_match_valid */ boolean, /* value_cdma_system_info_prl_match */ boolean, /* value_cdma_system_info_p_rev_valid */ boolean, /* value_cdma_system_info_p_rev */ number, /* value_cdma_system_info_base_station_p_rev_valid */ boolean, /* value_cdma_system_info_base_station_p_rev */ number, /* value_cdma_system_info_concurrent_service_support_valid */ boolean, /* value_cdma_system_info_concurrent_service_support */ boolean, /* value_cdma_system_info_cdma_system_id_valid */ boolean, /* value_cdma_system_info_sid */ number, /* value_cdma_system_info_nid */ number, /* value_cdma_system_info_base_station_info_valid */ boolean, /* value_cdma_system_info_base_station_id */ number, /* value_cdma_system_info_base_station_latitude */ number, /* value_cdma_system_info_base_station_longitude */ number, /* value_cdma_system_info_packet_zone_valid */ boolean, /* value_cdma_system_info_packet_zone */ number, /* value_cdma_system_info_network_id_valid */ boolean, /* value_cdma_system_info_mcc */ string, /* value_cdma_system_info_mnc */ string ]
-    get_gsm_call_barring_status(): [ /* returnType */ boolean, /* value_gsm_call_barring_status_cs_status */ NasCallBarringStatus, /* value_gsm_call_barring_status_ps_status */ NasCallBarringStatus ]
-    get_gsm_cipher_domain(): [ /* returnType */ boolean, /* value_gsm_cipher_domain */ NasNetworkServiceDomain ]
-    get_gsm_service_status(): [ /* returnType */ boolean, /* value_gsm_service_status_service_status */ NasServiceStatus, /* value_gsm_service_status_true_service_status */ NasServiceStatus, /* value_gsm_service_status_preferred_data_path */ boolean ]
-    get_gsm_system_info(): [ /* returnType */ boolean, /* value_gsm_system_info_domain_valid */ boolean, /* value_gsm_system_info_domain */ NasNetworkServiceDomain, /* value_gsm_system_info_service_capability_valid */ boolean, /* value_gsm_system_info_service_capability */ NasNetworkServiceDomain, /* value_gsm_system_info_roaming_status_valid */ boolean, /* value_gsm_system_info_roaming_status */ NasRoamingStatus, /* value_gsm_system_info_forbidden_valid */ boolean, /* value_gsm_system_info_forbidden */ boolean, /* value_gsm_system_info_lac_valid */ boolean, /* value_gsm_system_info_lac */ number, /* value_gsm_system_info_cid_valid */ boolean, /* value_gsm_system_info_cid */ number, /* value_gsm_system_info_registration_reject_info_valid */ boolean, /* value_gsm_system_info_registration_reject_domain */ NasNetworkServiceDomain, /* value_gsm_system_info_registration_reject_cause */ number, /* value_gsm_system_info_network_id_valid */ boolean, /* value_gsm_system_info_mcc */ string, /* value_gsm_system_info_mnc */ string, /* value_gsm_system_info_egprs_support_valid */ boolean, /* value_gsm_system_info_egprs_support */ boolean, /* value_gsm_system_info_dtm_support_valid */ boolean, /* value_gsm_system_info_dtm_support */ boolean ]
-    get_hdr_service_status(): [ /* returnType */ boolean, /* value_hdr_service_status_service_status */ NasServiceStatus, /* value_hdr_service_status_preferred_data_path */ boolean ]
-    get_hdr_system_info(): [ /* returnType */ boolean, /* value_hdr_system_info_domain_valid */ boolean, /* value_hdr_system_info_domain */ NasNetworkServiceDomain, /* value_hdr_system_info_service_capability_valid */ boolean, /* value_hdr_system_info_service_capability */ NasNetworkServiceDomain, /* value_hdr_system_info_roaming_status_valid */ boolean, /* value_hdr_system_info_roaming_status */ NasRoamingStatus, /* value_hdr_system_info_forbidden_valid */ boolean, /* value_hdr_system_info_forbidden */ boolean, /* value_hdr_system_info_prl_match_valid */ boolean, /* value_hdr_system_info_prl_match */ boolean, /* value_hdr_system_info_personality_valid */ boolean, /* value_hdr_system_info_personality */ NasHdrPersonality, /* value_hdr_system_info_protocol_revision_valid */ boolean, /* value_hdr_system_info_protocol_revision */ NasHdrProtocolRevision, /* value_hdr_system_info_is_856_system_id_valid */ boolean, /* value_hdr_system_info_is_856_system_id */ string ]
-    get_ims_voice_support(): [ /* returnType */ boolean, /* value_ims_voice_support */ boolean ]
-    get_lte_cell_access_status(): [ /* returnType */ boolean, /* value_lte_cell_access_status */ NasLteCellAccessStatus ]
-    get_lte_embms_coverage_info_support(): [ /* returnType */ boolean, /* value_lte_embms_coverage_info_support */ boolean ]
-    get_lte_embms_coverage_info_trace_id(): [ /* returnType */ boolean, /* value_lte_embms_coverage_info_trace_id */ number ]
-    get_lte_registration_domain(): [ /* returnType */ boolean, /* value_lte_registration_domain */ NasLteRegistrationDomain ]
-    get_lte_service_status(): [ /* returnType */ boolean, /* value_lte_service_status_service_status */ NasServiceStatus, /* value_lte_service_status_true_service_status */ NasServiceStatus, /* value_lte_service_status_preferred_data_path */ boolean ]
-    get_lte_system_info(): [ /* returnType */ boolean, /* value_lte_system_info_domain_valid */ boolean, /* value_lte_system_info_domain */ NasNetworkServiceDomain, /* value_lte_system_info_service_capability_valid */ boolean, /* value_lte_system_info_service_capability */ NasNetworkServiceDomain, /* value_lte_system_info_roaming_status_valid */ boolean, /* value_lte_system_info_roaming_status */ NasRoamingStatus, /* value_lte_system_info_forbidden_valid */ boolean, /* value_lte_system_info_forbidden */ boolean, /* value_lte_system_info_lac_valid */ boolean, /* value_lte_system_info_lac */ number, /* value_lte_system_info_cid_valid */ boolean, /* value_lte_system_info_cid */ number, /* value_lte_system_info_registration_reject_info_valid */ boolean, /* value_lte_system_info_registration_reject_domain */ NasNetworkServiceDomain, /* value_lte_system_info_registration_reject_cause */ number, /* value_lte_system_info_network_id_valid */ boolean, /* value_lte_system_info_mcc */ string, /* value_lte_system_info_mnc */ string, /* value_lte_system_info_tac_valid */ boolean, /* value_lte_system_info_tac */ number ]
-    get_lte_voice_support(): [ /* returnType */ boolean, /* value_lte_voice_support */ boolean ]
-    get_network_selection_registration_restriction(): [ /* returnType */ boolean, /* value_network_selection_registration_restriction */ NasNetworkSelectionRegistrationRestriction ]
+class MessageNasGetSystemInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetSystemInfoOutput */
+    get_additional_cdma_system_info(): [ /* returnType */ boolean, /* value_additional_cdma_system_info_geo_system_index */ number | null, /* value_additional_cdma_system_info_registration_period */ number | null ]
+    get_additional_gsm_system_info(): [ /* returnType */ boolean, /* value_additional_gsm_system_info_geo_system_index */ number | null, /* value_additional_gsm_system_info_cell_broadcast_support */ NasCellBroadcastCapability | null ]
+    get_additional_hdr_system_info(): [ /* returnType */ boolean, /* value_additional_hdr_system_info_geo_system_index */ number | null ]
+    get_additional_lte_system_info(): [ /* returnType */ boolean, /* value_additional_lte_system_info_geo_system_index */ number | null ]
+    get_additional_wcdma_system_info(): [ /* returnType */ boolean, /* value_additional_wcdma_system_info_geo_system_index */ number | null, /* value_additional_wcdma_system_info_cell_broadcast_support */ NasCellBroadcastCapability | null ]
+    get_cdma_registration_zone_id(): [ /* returnType */ boolean, /* value_cdma_registration_zone_id */ number | null ]
+    get_cdma_resolved_mcc(): [ /* returnType */ boolean, /* value_cdma_resolved_mcc */ number | null ]
+    get_cdma_service_status(): [ /* returnType */ boolean, /* value_cdma_service_status_service_status */ NasServiceStatus | null, /* value_cdma_service_status_preferred_data_path */ boolean | null ]
+    get_cdma_system_info(): [ /* returnType */ boolean, /* value_cdma_system_info_domain_valid */ boolean | null, /* value_cdma_system_info_domain */ NasNetworkServiceDomain | null, /* value_cdma_system_info_service_capability_valid */ boolean | null, /* value_cdma_system_info_service_capability */ NasNetworkServiceDomain | null, /* value_cdma_system_info_roaming_status_valid */ boolean | null, /* value_cdma_system_info_roaming_status */ NasRoamingStatus | null, /* value_cdma_system_info_forbidden_valid */ boolean | null, /* value_cdma_system_info_forbidden */ boolean | null, /* value_cdma_system_info_prl_match_valid */ boolean | null, /* value_cdma_system_info_prl_match */ boolean | null, /* value_cdma_system_info_p_rev_valid */ boolean | null, /* value_cdma_system_info_p_rev */ number | null, /* value_cdma_system_info_base_station_p_rev_valid */ boolean | null, /* value_cdma_system_info_base_station_p_rev */ number | null, /* value_cdma_system_info_concurrent_service_support_valid */ boolean | null, /* value_cdma_system_info_concurrent_service_support */ boolean | null, /* value_cdma_system_info_cdma_system_id_valid */ boolean | null, /* value_cdma_system_info_sid */ number | null, /* value_cdma_system_info_nid */ number | null, /* value_cdma_system_info_base_station_info_valid */ boolean | null, /* value_cdma_system_info_base_station_id */ number | null, /* value_cdma_system_info_base_station_latitude */ number | null, /* value_cdma_system_info_base_station_longitude */ number | null, /* value_cdma_system_info_packet_zone_valid */ boolean | null, /* value_cdma_system_info_packet_zone */ number | null, /* value_cdma_system_info_network_id_valid */ boolean | null, /* value_cdma_system_info_mcc */ string | null, /* value_cdma_system_info_mnc */ string | null ]
+    get_dcnr_restriction_info(): [ /* returnType */ boolean, /* value_dcnr_restriction_info */ boolean | null ]
+    get_eutra_with_nr5g_availability(): [ /* returnType */ boolean, /* value_eutra_with_nr5g_availability */ boolean | null ]
+    get_gsm_call_barring_status(): [ /* returnType */ boolean, /* value_gsm_call_barring_status_cs_status */ NasCallBarringStatus | null, /* value_gsm_call_barring_status_ps_status */ NasCallBarringStatus | null ]
+    get_gsm_cipher_domain(): [ /* returnType */ boolean, /* value_gsm_cipher_domain */ NasNetworkServiceDomain | null ]
+    get_gsm_routing_area_code(): [ /* returnType */ boolean, /* value_gsm_routing_area_code */ number | null ]
+    get_gsm_service_status(): [ /* returnType */ boolean, /* value_gsm_service_status_service_status */ NasServiceStatus | null, /* value_gsm_service_status_true_service_status */ NasServiceStatus | null, /* value_gsm_service_status_preferred_data_path */ boolean | null ]
+    get_gsm_system_info_v2(): [ /* returnType */ boolean, /* value_gsm_system_info_v2_domain_valid */ boolean | null, /* value_gsm_system_info_v2_domain */ NasNetworkServiceDomain | null, /* value_gsm_system_info_v2_service_capability_valid */ boolean | null, /* value_gsm_system_info_v2_service_capability */ NasNetworkServiceDomain | null, /* value_gsm_system_info_v2_roaming_status_valid */ boolean | null, /* value_gsm_system_info_v2_roaming_status */ NasRoamingStatus | null, /* value_gsm_system_info_v2_forbidden_valid */ boolean | null, /* value_gsm_system_info_v2_forbidden */ boolean | null, /* value_gsm_system_info_v2_lac_valid */ boolean | null, /* value_gsm_system_info_v2_lac */ number | null, /* value_gsm_system_info_v2_cid_valid */ boolean | null, /* value_gsm_system_info_v2_cid */ number | null, /* value_gsm_system_info_v2_registration_reject_info_valid */ boolean | null, /* value_gsm_system_info_v2_registration_reject_domain */ NasNetworkServiceDomain | null, /* value_gsm_system_info_v2_registration_reject_cause */ NasRejectCause | null, /* value_gsm_system_info_v2_network_id_valid */ boolean | null, /* value_gsm_system_info_v2_mcc */ string | null, /* value_gsm_system_info_v2_mnc */ string | null, /* value_gsm_system_info_v2_egprs_support_valid */ boolean | null, /* value_gsm_system_info_v2_egprs_support */ boolean | null, /* value_gsm_system_info_v2_dtm_support_valid */ boolean | null, /* value_gsm_system_info_v2_dtm_support */ boolean | null ]
+    get_hdr_service_status(): [ /* returnType */ boolean, /* value_hdr_service_status_service_status */ NasServiceStatus | null, /* value_hdr_service_status_preferred_data_path */ boolean | null ]
+    get_hdr_system_info(): [ /* returnType */ boolean, /* value_hdr_system_info_domain_valid */ boolean | null, /* value_hdr_system_info_domain */ NasNetworkServiceDomain | null, /* value_hdr_system_info_service_capability_valid */ boolean | null, /* value_hdr_system_info_service_capability */ NasNetworkServiceDomain | null, /* value_hdr_system_info_roaming_status_valid */ boolean | null, /* value_hdr_system_info_roaming_status */ NasRoamingStatus | null, /* value_hdr_system_info_forbidden_valid */ boolean | null, /* value_hdr_system_info_forbidden */ boolean | null, /* value_hdr_system_info_prl_match_valid */ boolean | null, /* value_hdr_system_info_prl_match */ boolean | null, /* value_hdr_system_info_personality_valid */ boolean | null, /* value_hdr_system_info_personality */ NasHdrPersonality | null, /* value_hdr_system_info_protocol_revision_valid */ boolean | null, /* value_hdr_system_info_protocol_revision */ NasHdrProtocolRevision | null, /* value_hdr_system_info_is_856_system_id_valid */ boolean | null, /* value_hdr_system_info_is_856_system_id */ string | null ]
+    get_ims_voice_support(): [ /* returnType */ boolean, /* value_ims_voice_support */ boolean | null ]
+    get_lte_cell_access_status(): [ /* returnType */ boolean, /* value_lte_cell_access_status */ NasLteCellAccessStatus | null ]
+    get_lte_embms_coverage_info_support(): [ /* returnType */ boolean, /* value_lte_embms_coverage_info_support */ boolean | null ]
+    get_lte_embms_coverage_info_trace_id(): [ /* returnType */ boolean, /* value_lte_embms_coverage_info_trace_id */ number | null ]
+    get_lte_registration_domain(): [ /* returnType */ boolean, /* value_lte_registration_domain */ NasLteRegistrationDomain | null ]
+    get_lte_service_status(): [ /* returnType */ boolean, /* value_lte_service_status_service_status */ NasServiceStatus | null, /* value_lte_service_status_true_service_status */ NasServiceStatus | null, /* value_lte_service_status_preferred_data_path */ boolean | null ]
+    get_lte_system_info_v2(): [ /* returnType */ boolean, /* value_lte_system_info_v2_domain_valid */ boolean | null, /* value_lte_system_info_v2_domain */ NasNetworkServiceDomain | null, /* value_lte_system_info_v2_service_capability_valid */ boolean | null, /* value_lte_system_info_v2_service_capability */ NasNetworkServiceDomain | null, /* value_lte_system_info_v2_roaming_status_valid */ boolean | null, /* value_lte_system_info_v2_roaming_status */ NasRoamingStatus | null, /* value_lte_system_info_v2_forbidden_valid */ boolean | null, /* value_lte_system_info_v2_forbidden */ boolean | null, /* value_lte_system_info_v2_lac_valid */ boolean | null, /* value_lte_system_info_v2_lac */ number | null, /* value_lte_system_info_v2_cid_valid */ boolean | null, /* value_lte_system_info_v2_cid */ number | null, /* value_lte_system_info_v2_registration_reject_info_valid */ boolean | null, /* value_lte_system_info_v2_registration_reject_domain */ NasNetworkServiceDomain | null, /* value_lte_system_info_v2_registration_reject_cause */ NasRejectCause | null, /* value_lte_system_info_v2_network_id_valid */ boolean | null, /* value_lte_system_info_v2_mcc */ string | null, /* value_lte_system_info_v2_mnc */ string | null, /* value_lte_system_info_v2_tac_valid */ boolean | null, /* value_lte_system_info_v2_tac */ number | null ]
+    get_lte_voice_domain(): [ /* returnType */ boolean, /* value_lte_voice_domain */ NasLteVoiceDomain | null ]
+    get_lte_voice_support(): [ /* returnType */ boolean, /* value_lte_voice_support */ boolean | null ]
+    get_network_selection_registration_restriction(): [ /* returnType */ boolean, /* value_network_selection_registration_restriction */ NasNetworkSelectionRegistrationRestriction | null ]
+    get_nr5g_service_status_info(): [ /* returnType */ boolean, /* value_nr5g_service_status_info_service_status */ NasServiceStatus | null, /* value_nr5g_service_status_info_true_service_status */ NasServiceStatus | null, /* value_nr5g_service_status_info_preferred_data_path */ boolean | null ]
+    get_nr5g_system_info(): [ /* returnType */ boolean, /* value_nr5g_system_info_domain_valid */ boolean | null, /* value_nr5g_system_info_domain */ NasNetworkServiceDomain | null, /* value_nr5g_system_info_service_capability_valid */ boolean | null, /* value_nr5g_system_info_service_capability */ NasNetworkServiceDomain | null, /* value_nr5g_system_info_roaming_status_valid */ boolean | null, /* value_nr5g_system_info_roaming_status */ NasRoamingStatus | null, /* value_nr5g_system_info_forbidden_valid */ boolean | null, /* value_nr5g_system_info_forbidden */ boolean | null, /* value_nr5g_system_info_lac_valid */ boolean | null, /* value_nr5g_system_info_lac */ number | null, /* value_nr5g_system_info_cid_valid */ boolean | null, /* value_nr5g_system_info_cid */ number | null, /* value_nr5g_system_info_registration_reject_info_valid */ boolean | null, /* value_nr5g_system_info_registration_reject_domain */ NasNetworkServiceDomain | null, /* value_nr5g_system_info_registration_reject_cause */ number | null, /* value_nr5g_system_info_network_id_valid */ boolean | null, /* value_nr5g_system_info_mcc */ string | null, /* value_nr5g_system_info_mnc */ string | null, /* value_nr5g_system_info_tac_valid */ boolean | null, /* value_nr5g_system_info_tac */ number | null ]
+    get_nr5g_tracking_area_code(): [ /* returnType */ boolean, /* value_nr5g_tracking_area_code */ Uint8Array[] | null ]
     get_result(): boolean
-    get_sim_reject_info(): [ /* returnType */ boolean, /* value_sim_reject_info */ NasSimRejectState ]
-    get_td_scdma_service_status(): [ /* returnType */ boolean, /* value_td_scdma_service_status_service_status */ NasServiceStatus, /* value_td_scdma_service_status_true_service_status */ NasServiceStatus, /* value_td_scdma_service_status_preferred_data_path */ boolean ]
-    get_td_scdma_system_info(): [ /* returnType */ boolean, /* value_td_scdma_system_info_domain_valid */ boolean, /* value_td_scdma_system_info_domain */ NasNetworkServiceDomain, /* value_td_scdma_system_info_service_capability_valid */ boolean, /* value_td_scdma_system_info_service_capability */ NasNetworkServiceDomain, /* value_td_scdma_system_info_roaming_status_valid */ boolean, /* value_td_scdma_system_info_roaming_status */ NasRoamingStatus, /* value_td_scdma_system_info_forbidden_valid */ boolean, /* value_td_scdma_system_info_forbidden */ boolean, /* value_td_scdma_system_info_lac_valid */ boolean, /* value_td_scdma_system_info_lac */ number, /* value_td_scdma_system_info_cid_valid */ boolean, /* value_td_scdma_system_info_cid */ number, /* value_td_scdma_system_info_registration_reject_info_valid */ boolean, /* value_td_scdma_system_info_registration_reject_domain */ NasNetworkServiceDomain, /* value_td_scdma_system_info_registration_reject_cause */ number, /* value_td_scdma_system_info_network_id_valid */ boolean, /* value_td_scdma_system_info_mcc */ string, /* value_td_scdma_system_info_mnc */ string, /* value_td_scdma_system_info_hs_call_status_valid */ boolean, /* value_td_scdma_system_info_hs_call_status */ NasWcdmaHsService, /* value_td_scdma_system_info_hs_service_valid */ boolean, /* value_td_scdma_system_info_hs_service */ NasWcdmaHsService, /* value_td_scdma_system_info_cell_parameter_id_valid */ boolean, /* value_td_scdma_system_info_cell_parameter_id */ number, /* value_td_scdma_system_info_cell_broadcast_support_valid */ boolean, /* value_td_scdma_system_info_cell_broadcast_support */ NasCellBroadcastCapability, /* value_td_scdma_system_info_cs_call_barring_status_valid */ boolean, /* value_td_scdma_system_info_cs_call_barring_status */ NasCallBarringStatus, /* value_td_scdma_system_info_ps_call_barring_status_valid */ boolean, /* value_td_scdma_system_info_ps_call_barring_status */ NasCallBarringStatus, /* value_td_scdma_system_info_cipher_domain_valid */ boolean, /* value_td_scdma_system_info_cipher_domain */ NasNetworkServiceDomain ]
-    get_wcdma_call_barring_status(): [ /* returnType */ boolean, /* value_wcdma_call_barring_status_cs_status */ NasCallBarringStatus, /* value_wcdma_call_barring_status_ps_status */ NasCallBarringStatus ]
-    get_wcdma_cipher_domain(): [ /* returnType */ boolean, /* value_wcdma_cipher_domain */ NasNetworkServiceDomain ]
-    get_wcdma_service_status(): [ /* returnType */ boolean, /* value_wcdma_service_status_service_status */ NasServiceStatus, /* value_wcdma_service_status_true_service_status */ NasServiceStatus, /* value_wcdma_service_status_preferred_data_path */ boolean ]
-    get_wcdma_system_info(): [ /* returnType */ boolean, /* value_wcdma_system_info_domain_valid */ boolean, /* value_wcdma_system_info_domain */ NasNetworkServiceDomain, /* value_wcdma_system_info_service_capability_valid */ boolean, /* value_wcdma_system_info_service_capability */ NasNetworkServiceDomain, /* value_wcdma_system_info_roaming_status_valid */ boolean, /* value_wcdma_system_info_roaming_status */ NasRoamingStatus, /* value_wcdma_system_info_forbidden_valid */ boolean, /* value_wcdma_system_info_forbidden */ boolean, /* value_wcdma_system_info_lac_valid */ boolean, /* value_wcdma_system_info_lac */ number, /* value_wcdma_system_info_cid_valid */ boolean, /* value_wcdma_system_info_cid */ number, /* value_wcdma_system_info_registration_reject_info_valid */ boolean, /* value_wcdma_system_info_registration_reject_domain */ NasNetworkServiceDomain, /* value_wcdma_system_info_registration_reject_cause */ number, /* value_wcdma_system_info_network_id_valid */ boolean, /* value_wcdma_system_info_mcc */ string, /* value_wcdma_system_info_mnc */ string, /* value_wcdma_system_info_hs_call_status_valid */ boolean, /* value_wcdma_system_info_hs_call_status */ NasWcdmaHsService, /* value_wcdma_system_info_hs_service_valid */ boolean, /* value_wcdma_system_info_hs_service */ NasWcdmaHsService, /* value_wcdma_system_info_primary_scrambling_code_valid */ boolean, /* value_wcdma_system_info_primary_scrambling_code */ number ]
+    get_sim_reject_info(): [ /* returnType */ boolean, /* value_sim_reject_info */ NasSimRejectState | null ]
+    get_td_scdma_service_status(): [ /* returnType */ boolean, /* value_td_scdma_service_status_service_status */ NasServiceStatus | null, /* value_td_scdma_service_status_true_service_status */ NasServiceStatus | null, /* value_td_scdma_service_status_preferred_data_path */ boolean | null ]
+    get_td_scdma_system_info_v2(): [ /* returnType */ boolean, /* value_td_scdma_system_info_v2_domain_valid */ boolean | null, /* value_td_scdma_system_info_v2_domain */ NasNetworkServiceDomain | null, /* value_td_scdma_system_info_v2_service_capability_valid */ boolean | null, /* value_td_scdma_system_info_v2_service_capability */ NasNetworkServiceDomain | null, /* value_td_scdma_system_info_v2_roaming_status_valid */ boolean | null, /* value_td_scdma_system_info_v2_roaming_status */ NasRoamingStatus | null, /* value_td_scdma_system_info_v2_forbidden_valid */ boolean | null, /* value_td_scdma_system_info_v2_forbidden */ boolean | null, /* value_td_scdma_system_info_v2_lac_valid */ boolean | null, /* value_td_scdma_system_info_v2_lac */ number | null, /* value_td_scdma_system_info_v2_cid_valid */ boolean | null, /* value_td_scdma_system_info_v2_cid */ number | null, /* value_td_scdma_system_info_v2_registration_reject_info_valid */ boolean | null, /* value_td_scdma_system_info_v2_registration_reject_domain */ NasNetworkServiceDomain | null, /* value_td_scdma_system_info_v2_registration_reject_cause */ NasRejectCause | null, /* value_td_scdma_system_info_v2_network_id_valid */ boolean | null, /* value_td_scdma_system_info_v2_mcc */ string | null, /* value_td_scdma_system_info_v2_mnc */ string | null, /* value_td_scdma_system_info_v2_hs_call_status_valid */ boolean | null, /* value_td_scdma_system_info_v2_hs_call_status */ NasWcdmaHsService | null, /* value_td_scdma_system_info_v2_hs_service_valid */ boolean | null, /* value_td_scdma_system_info_v2_hs_service */ NasWcdmaHsService | null, /* value_td_scdma_system_info_v2_cell_parameter_id_valid */ boolean | null, /* value_td_scdma_system_info_v2_cell_parameter_id */ number | null, /* value_td_scdma_system_info_v2_cell_broadcast_support_valid */ boolean | null, /* value_td_scdma_system_info_v2_cell_broadcast_support */ NasCellBroadcastCapability | null, /* value_td_scdma_system_info_v2_cs_call_barring_status_valid */ boolean | null, /* value_td_scdma_system_info_v2_cs_call_barring_status */ NasCallBarringStatus | null, /* value_td_scdma_system_info_v2_ps_call_barring_status_valid */ boolean | null, /* value_td_scdma_system_info_v2_ps_call_barring_status */ NasCallBarringStatus | null, /* value_td_scdma_system_info_v2_cipher_domain_valid */ boolean | null, /* value_td_scdma_system_info_v2_cipher_domain */ NasNetworkServiceDomain | null ]
+    get_wcdma_call_barring_status(): [ /* returnType */ boolean, /* value_wcdma_call_barring_status_cs_status */ NasCallBarringStatus | null, /* value_wcdma_call_barring_status_ps_status */ NasCallBarringStatus | null ]
+    get_wcdma_cipher_domain(): [ /* returnType */ boolean, /* value_wcdma_cipher_domain */ NasNetworkServiceDomain | null ]
+    get_wcdma_routing_area_code(): [ /* returnType */ boolean, /* value_wcdma_routing_area_code */ number | null ]
+    get_wcdma_service_status(): [ /* returnType */ boolean, /* value_wcdma_service_status_service_status */ NasServiceStatus | null, /* value_wcdma_service_status_true_service_status */ NasServiceStatus | null, /* value_wcdma_service_status_preferred_data_path */ boolean | null ]
+    get_wcdma_system_info_v2(): [ /* returnType */ boolean, /* value_wcdma_system_info_v2_domain_valid */ boolean | null, /* value_wcdma_system_info_v2_domain */ NasNetworkServiceDomain | null, /* value_wcdma_system_info_v2_service_capability_valid */ boolean | null, /* value_wcdma_system_info_v2_service_capability */ NasNetworkServiceDomain | null, /* value_wcdma_system_info_v2_roaming_status_valid */ boolean | null, /* value_wcdma_system_info_v2_roaming_status */ NasRoamingStatus | null, /* value_wcdma_system_info_v2_forbidden_valid */ boolean | null, /* value_wcdma_system_info_v2_forbidden */ boolean | null, /* value_wcdma_system_info_v2_lac_valid */ boolean | null, /* value_wcdma_system_info_v2_lac */ number | null, /* value_wcdma_system_info_v2_cid_valid */ boolean | null, /* value_wcdma_system_info_v2_cid */ number | null, /* value_wcdma_system_info_v2_registration_reject_info_valid */ boolean | null, /* value_wcdma_system_info_v2_registration_reject_domain */ NasNetworkServiceDomain | null, /* value_wcdma_system_info_v2_registration_reject_cause */ NasRejectCause | null, /* value_wcdma_system_info_v2_network_id_valid */ boolean | null, /* value_wcdma_system_info_v2_mcc */ string | null, /* value_wcdma_system_info_v2_mnc */ string | null, /* value_wcdma_system_info_v2_hs_call_status_valid */ boolean | null, /* value_wcdma_system_info_v2_hs_call_status */ NasWcdmaHsService | null, /* value_wcdma_system_info_v2_hs_service_valid */ boolean | null, /* value_wcdma_system_info_v2_hs_service */ NasWcdmaHsService | null, /* value_wcdma_system_info_v2_primary_scrambling_code_valid */ boolean | null, /* value_wcdma_system_info_v2_primary_scrambling_code */ number | null ]
     ref(): MessageNasGetSystemInfoOutput
     unref(): void
     static name: string
 }
-export class MessageNasGetSystemSelectionPreferenceOutput {
-    /* Methods of Qmi.MessageNasGetSystemSelectionPreferenceOutput */
-    get_acquisition_order_preference(): [ /* returnType */ boolean, /* value_acquisition_order_preference */ NasRadioInterface[] ]
-    get_band_preference(): [ /* returnType */ boolean, /* value_band_preference */ NasBandPreference ]
-    get_cdma_prl_preference(): [ /* returnType */ boolean, /* value_cdma_prl_preference */ NasCdmaPrlPreference ]
-    get_disabled_modes(): [ /* returnType */ boolean, /* value_disabled_modes */ NasRatModePreference ]
-    get_emergency_mode(): [ /* returnType */ boolean, /* value_emergency_mode */ boolean ]
-    get_extended_lte_band_preference(): [ /* returnType */ boolean, /* value_extended_lte_band_preference_mask_low */ number, /* value_extended_lte_band_preference_mask_mid_low */ number, /* value_extended_lte_band_preference_mask_mid_high */ number, /* value_extended_lte_band_preference_mask_high */ number ]
-    get_gsm_wcdma_acquisition_order_preference(): [ /* returnType */ boolean, /* value_gsm_wcdma_acquisition_order_preference */ NasGsmWcdmaAcquisitionOrderPreference ]
-    get_lte_band_preference(): [ /* returnType */ boolean, /* value_lte_band_preference */ NasLteBandPreference ]
-    get_manual_network_selection(): [ /* returnType */ boolean, /* value_manual_network_selection_mcc */ number, /* value_manual_network_selection_mnc */ number, /* value_manual_network_selection_includes_pcs_digit */ boolean ]
-    get_mode_preference(): [ /* returnType */ boolean, /* value_mode_preference */ NasRatModePreference ]
-    get_network_selection_preference(): [ /* returnType */ boolean, /* value_network_selection_preference */ NasNetworkSelectionPreference ]
-    get_network_selection_registration_restriction(): [ /* returnType */ boolean, /* value_network_selection_registration_restriction */ NasNetworkSelectionRegistrationRestriction ]
+class MessageNasGetSystemSelectionPreferenceOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetSystemSelectionPreferenceOutput */
+    get_acquisition_order_preference(): [ /* returnType */ boolean, /* value_acquisition_order_preference */ NasRadioInterface[] | null ]
+    get_band_preference(): [ /* returnType */ boolean, /* value_band_preference */ NasBandPreference | null ]
+    get_cdma_prl_preference(): [ /* returnType */ boolean, /* value_cdma_prl_preference */ NasCdmaPrlPreference | null ]
+    get_disabled_modes(): [ /* returnType */ boolean, /* value_disabled_modes */ NasRatModePreference | null ]
+    get_emergency_mode(): [ /* returnType */ boolean, /* value_emergency_mode */ boolean | null ]
+    get_extended_lte_band_preference(): [ /* returnType */ boolean, /* value_extended_lte_band_preference_mask_low */ number | null, /* value_extended_lte_band_preference_mask_mid_low */ number | null, /* value_extended_lte_band_preference_mask_mid_high */ number | null, /* value_extended_lte_band_preference_mask_high */ number | null ]
+    get_gsm_wcdma_acquisition_order_preference(): [ /* returnType */ boolean, /* value_gsm_wcdma_acquisition_order_preference */ NasGsmWcdmaAcquisitionOrderPreference | null ]
+    get_lte_band_preference(): [ /* returnType */ boolean, /* value_lte_band_preference */ NasLteBandPreference | null ]
+    get_manual_network_selection(): [ /* returnType */ boolean, /* value_manual_network_selection_mcc */ number | null, /* value_manual_network_selection_mnc */ number | null, /* value_manual_network_selection_includes_pcs_digit */ boolean | null ]
+    get_mode_preference(): [ /* returnType */ boolean, /* value_mode_preference */ NasRatModePreference | null ]
+    get_network_selection_preference(): [ /* returnType */ boolean, /* value_network_selection_preference */ NasNetworkSelectionPreference | null ]
+    get_network_selection_registration_restriction(): [ /* returnType */ boolean, /* value_network_selection_registration_restriction */ NasNetworkSelectionRegistrationRestriction | null ]
+    get_nr5g_nsa_band_preference(): [ /* returnType */ boolean, /* value_nr5g_nsa_band_preference_mask_0 */ number | null, /* value_nr5g_nsa_band_preference_mask_1 */ number | null, /* value_nr5g_nsa_band_preference_mask_2 */ number | null, /* value_nr5g_nsa_band_preference_mask_3 */ number | null, /* value_nr5g_nsa_band_preference_mask_4 */ number | null, /* value_nr5g_nsa_band_preference_mask_5 */ number | null, /* value_nr5g_nsa_band_preference_mask_6 */ number | null, /* value_nr5g_nsa_band_preference_mask_7 */ number | null ]
+    get_nr5g_sa_band_preference(): [ /* returnType */ boolean, /* value_nr5g_sa_band_preference_mask_0 */ number | null, /* value_nr5g_sa_band_preference_mask_1 */ number | null, /* value_nr5g_sa_band_preference_mask_2 */ number | null, /* value_nr5g_sa_band_preference_mask_3 */ number | null, /* value_nr5g_sa_band_preference_mask_4 */ number | null, /* value_nr5g_sa_band_preference_mask_5 */ number | null, /* value_nr5g_sa_band_preference_mask_6 */ number | null, /* value_nr5g_sa_band_preference_mask_7 */ number | null ]
     get_result(): boolean
-    get_roaming_preference(): [ /* returnType */ boolean, /* value_roaming_preference */ NasRoamingPreference ]
-    get_service_domain_preference(): [ /* returnType */ boolean, /* value_service_domain_preference */ NasServiceDomainPreference ]
-    get_td_scdma_band_preference(): [ /* returnType */ boolean, /* value_td_scdma_band_preference */ NasTdScdmaBandPreference ]
-    get_usage_preference(): [ /* returnType */ boolean, /* value_usage_preference */ NasUsagePreference ]
-    get_voice_domain_preference(): [ /* returnType */ boolean, /* value_voice_domain_preference */ NasVoiceDomainPreference ]
+    get_roaming_preference(): [ /* returnType */ boolean, /* value_roaming_preference */ NasRoamingPreference | null ]
+    get_service_domain_preference(): [ /* returnType */ boolean, /* value_service_domain_preference */ NasServiceDomainPreference | null ]
+    get_td_scdma_band_preference(): [ /* returnType */ boolean, /* value_td_scdma_band_preference */ NasTdScdmaBandPreference | null ]
+    get_usage_preference(): [ /* returnType */ boolean, /* value_usage_preference */ NasUsagePreference | null ]
+    get_voice_domain_preference(): [ /* returnType */ boolean, /* value_voice_domain_preference */ NasVoiceDomainPreference | null ]
     ref(): MessageNasGetSystemSelectionPreferenceOutput
     unref(): void
     static name: string
 }
-export class MessageNasGetTechnologyPreferenceOutput {
-    /* Methods of Qmi.MessageNasGetTechnologyPreferenceOutput */
-    get_active(): [ /* returnType */ boolean, /* value_active_technology_preference */ NasRadioTechnologyPreference, /* value_active_technology_preference_duration */ NasPreferenceDuration ]
-    get_persistent(): [ /* returnType */ boolean, /* value_persistent */ NasRadioTechnologyPreference ]
+class MessageNasGetTechnologyPreferenceOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetTechnologyPreferenceOutput */
+    get_active(): [ /* returnType */ boolean, /* value_active_technology_preference */ NasRadioTechnologyPreference | null, /* value_active_technology_preference_duration */ NasPreferenceDuration | null ]
+    get_persistent(): [ /* returnType */ boolean, /* value_persistent */ NasRadioTechnologyPreference | null ]
     get_result(): boolean
     ref(): MessageNasGetTechnologyPreferenceOutput
     unref(): void
     static name: string
 }
-export class MessageNasGetTxRxInfoInput {
-    /* Methods of Qmi.MessageNasGetTxRxInfoInput */
-    get_radio_interface(): [ /* returnType */ boolean, /* value_radio_interface */ NasRadioInterface ]
+class MessageNasGetTxRxInfoInput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetTxRxInfoInput */
+    get_radio_interface(): [ /* returnType */ boolean, /* value_radio_interface */ NasRadioInterface | null ]
     ref(): MessageNasGetTxRxInfoInput
     set_radio_interface(value_radio_interface: NasRadioInterface): boolean
     unref(): void
@@ -8062,22 +8668,24 @@ export class MessageNasGetTxRxInfoInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageNasGetTxRxInfoInput
 }
-export class MessageNasGetTxRxInfoOutput {
-    /* Methods of Qmi.MessageNasGetTxRxInfoOutput */
+class MessageNasGetTxRxInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasGetTxRxInfoOutput */
     get_result(): boolean
-    get_rx_chain_0_info(): [ /* returnType */ boolean, /* value_rx_chain_0_info_is_radio_tuned */ boolean, /* value_rx_chain_0_info_rx_power */ number, /* value_rx_chain_0_info_ecio */ number, /* value_rx_chain_0_info_rscp */ number, /* value_rx_chain_0_info_rsrp */ number, /* value_rx_chain_0_info_phase */ number ]
-    get_rx_chain_1_info(): [ /* returnType */ boolean, /* value_rx_chain_1_info_is_radio_tuned */ boolean, /* value_rx_chain_1_info_rx_power */ number, /* value_rx_chain_1_info_ecio */ number, /* value_rx_chain_1_info_rscp */ number, /* value_rx_chain_1_info_rsrp */ number, /* value_rx_chain_1_info_phase */ number ]
-    get_tx_info(): [ /* returnType */ boolean, /* value_tx_info_is_in_traffic */ boolean, /* value_tx_info_tx_power */ number ]
+    get_rx_chain_0_info(): [ /* returnType */ boolean, /* value_rx_chain_0_info_is_radio_tuned */ boolean | null, /* value_rx_chain_0_info_rx_power */ number | null, /* value_rx_chain_0_info_ecio */ number | null, /* value_rx_chain_0_info_rscp */ number | null, /* value_rx_chain_0_info_rsrp */ number | null, /* value_rx_chain_0_info_phase */ number | null ]
+    get_rx_chain_1_info(): [ /* returnType */ boolean, /* value_rx_chain_1_info_is_radio_tuned */ boolean | null, /* value_rx_chain_1_info_rx_power */ number | null, /* value_rx_chain_1_info_ecio */ number | null, /* value_rx_chain_1_info_rscp */ number | null, /* value_rx_chain_1_info_rsrp */ number | null, /* value_rx_chain_1_info_phase */ number | null ]
+    get_rx_chain_2_info(): [ /* returnType */ boolean, /* value_rx_chain_2_info_is_radio_tuned */ boolean | null, /* value_rx_chain_2_info_rx_power */ number | null, /* value_rx_chain_2_info_ecio */ number | null, /* value_rx_chain_2_info_rscp */ number | null, /* value_rx_chain_2_info_rsrp */ number | null, /* value_rx_chain_2_info_phase */ number | null ]
+    get_rx_chain_3_info(): [ /* returnType */ boolean, /* value_rx_chain_3_info_is_radio_tuned */ boolean | null, /* value_rx_chain_3_info_rx_power */ number | null, /* value_rx_chain_3_info_ecio */ number | null, /* value_rx_chain_3_info_rscp */ number | null, /* value_rx_chain_3_info_rsrp */ number | null, /* value_rx_chain_3_info_phase */ number | null ]
+    get_tx_info(): [ /* returnType */ boolean, /* value_tx_info_is_in_traffic */ boolean | null, /* value_tx_info_tx_power */ number | null ]
     ref(): MessageNasGetTxRxInfoOutput
     unref(): void
     static name: string
 }
-export class MessageNasInitiateNetworkRegisterInput {
-    /* Methods of Qmi.MessageNasInitiateNetworkRegisterInput */
-    get_action(): [ /* returnType */ boolean, /* value_action */ NasNetworkRegisterType ]
-    get_change_duration(): [ /* returnType */ boolean, /* value_change_duration */ NasChangeDuration ]
-    get_manual_registration_info_3gpp(): [ /* returnType */ boolean, /* value_manual_registration_info_3gpp_mcc */ number, /* value_manual_registration_info_3gpp_mnc */ number, /* value_manual_registration_info_3gpp_radio_interface */ NasRadioInterface ]
-    get_mnc_pcs_digit_include_status(): [ /* returnType */ boolean, /* value_mnc_pcs_digit_include_status */ boolean ]
+class MessageNasInitiateNetworkRegisterInput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasInitiateNetworkRegisterInput */
+    get_action(): [ /* returnType */ boolean, /* value_action */ NasNetworkRegisterType | null ]
+    get_change_duration(): [ /* returnType */ boolean, /* value_change_duration */ NasChangeDuration | null ]
+    get_manual_registration_info_3gpp(): [ /* returnType */ boolean, /* value_manual_registration_info_3gpp_mcc */ number | null, /* value_manual_registration_info_3gpp_mnc */ number | null, /* value_manual_registration_info_3gpp_radio_interface */ NasRadioInterface | null ]
+    get_mnc_pcs_digit_include_status(): [ /* returnType */ boolean, /* value_mnc_pcs_digit_include_status */ boolean | null ]
     ref(): MessageNasInitiateNetworkRegisterInput
     set_action(value_action: NasNetworkRegisterType): boolean
     set_change_duration(value_change_duration: NasChangeDuration): boolean
@@ -8090,16 +8698,16 @@ export class MessageNasInitiateNetworkRegisterInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageNasInitiateNetworkRegisterInput
 }
-export class MessageNasInitiateNetworkRegisterOutput {
-    /* Methods of Qmi.MessageNasInitiateNetworkRegisterOutput */
+class MessageNasInitiateNetworkRegisterOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasInitiateNetworkRegisterOutput */
     get_result(): boolean
     ref(): MessageNasInitiateNetworkRegisterOutput
     unref(): void
     static name: string
 }
-export class MessageNasNetworkScanInput {
-    /* Methods of Qmi.MessageNasNetworkScanInput */
-    get_network_type(): [ /* returnType */ boolean, /* value_network_type */ NasNetworkScanType ]
+class MessageNasNetworkScanInput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasNetworkScanInput */
+    get_network_type(): [ /* returnType */ boolean, /* value_network_type */ NasNetworkScanType | null ]
     ref(): MessageNasNetworkScanInput
     set_network_type(value_network_type: NasNetworkScanType): boolean
     unref(): void
@@ -8109,56 +8717,57 @@ export class MessageNasNetworkScanInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageNasNetworkScanInput
 }
-export class MessageNasNetworkScanOutput {
-    /* Methods of Qmi.MessageNasNetworkScanOutput */
-    get_mnc_pcs_digit_include_status(): [ /* returnType */ boolean, /* value_mnc_pcs_digit_include_status */ MessageNasNetworkScanOutputMncPcsDigitIncludeStatusElement[] ]
-    get_network_information(): [ /* returnType */ boolean, /* value_network_information */ MessageNasNetworkScanOutputNetworkInformationElement[] ]
-    get_network_scan_result(): [ /* returnType */ boolean, /* value_network_scan_result */ NasNetworkScanResult ]
-    get_radio_access_technology(): [ /* returnType */ boolean, /* value_radio_access_technology */ MessageNasNetworkScanOutputRadioAccessTechnologyElement[] ]
+class MessageNasNetworkScanOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasNetworkScanOutput */
+    get_mnc_pcs_digit_include_status(): [ /* returnType */ boolean, /* value_mnc_pcs_digit_include_status */ MessageNasNetworkScanOutputMncPcsDigitIncludeStatusElement[] | null ]
+    get_network_information(): [ /* returnType */ boolean, /* value_network_information */ MessageNasNetworkScanOutputNetworkInformationElement[] | null ]
+    get_network_scan_result(): [ /* returnType */ boolean, /* value_network_scan_result */ NasNetworkScanResult | null ]
+    get_radio_access_technology(): [ /* returnType */ boolean, /* value_radio_access_technology */ MessageNasNetworkScanOutputRadioAccessTechnologyElement[] | null ]
     get_result(): boolean
     ref(): MessageNasNetworkScanOutput
     unref(): void
     static name: string
 }
-export class MessageNasNetworkScanOutputMncPcsDigitIncludeStatusElement {
-    /* Fields of Qmi.MessageNasNetworkScanOutputMncPcsDigitIncludeStatusElement */
+class MessageNasNetworkScanOutputMncPcsDigitIncludeStatusElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasNetworkScanOutputMncPcsDigitIncludeStatusElement */
     mcc: number
     mnc: number
     includes_pcs_digit: boolean
     static name: string
 }
-export class MessageNasNetworkScanOutputNetworkInformationElement {
-    /* Fields of Qmi.MessageNasNetworkScanOutputNetworkInformationElement */
+class MessageNasNetworkScanOutputNetworkInformationElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasNetworkScanOutputNetworkInformationElement */
     mcc: number
     mnc: number
     network_status: NasNetworkStatus
     description: string
     static name: string
 }
-export class MessageNasNetworkScanOutputRadioAccessTechnologyElement {
-    /* Fields of Qmi.MessageNasNetworkScanOutputRadioAccessTechnologyElement */
+class MessageNasNetworkScanOutputRadioAccessTechnologyElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasNetworkScanOutputRadioAccessTechnologyElement */
     mcc: number
     mnc: number
     radio_interface: NasRadioInterface
     static name: string
 }
-export class MessageNasRegisterIndicationsInput {
-    /* Methods of Qmi.MessageNasRegisterIndicationsInput */
-    get_current_plmn_name(): [ /* returnType */ boolean, /* value_current_plmn_name */ boolean ]
-    get_ddtm_events(): [ /* returnType */ boolean, /* value_ddtm_events */ boolean ]
-    get_dual_standby_preference(): [ /* returnType */ boolean, /* value_dual_standby_preference */ boolean ]
-    get_embms_status(): [ /* returnType */ boolean, /* value_embms_status */ boolean ]
-    get_error_rate(): [ /* returnType */ boolean, /* value_error_rate */ boolean ]
-    get_hdr_new_uati_assigned(): [ /* returnType */ boolean, /* value_hdr_new_uati_assigned */ boolean ]
-    get_hdr_session_closed(): [ /* returnType */ boolean, /* value_hdr_session_closed */ boolean ]
-    get_managed_roaming(): [ /* returnType */ boolean, /* value_managed_roaming */ boolean ]
-    get_network_time(): [ /* returnType */ boolean, /* value_network_time */ boolean ]
-    get_rf_band_information(): [ /* returnType */ boolean, /* value_rf_band_information */ boolean ]
-    get_serving_system_events(): [ /* returnType */ boolean, /* value_serving_system_events */ boolean ]
-    get_signal_info(): [ /* returnType */ boolean, /* value_signal_info */ boolean ]
-    get_subscription_info(): [ /* returnType */ boolean, /* value_subscription_info */ boolean ]
-    get_system_info(): [ /* returnType */ boolean, /* value_system_info */ boolean ]
-    get_system_selection_preference(): [ /* returnType */ boolean, /* value_system_selection_preference */ boolean ]
+class MessageNasRegisterIndicationsInput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasRegisterIndicationsInput */
+    get_current_plmn_name(): [ /* returnType */ boolean, /* value_current_plmn_name */ boolean | null ]
+    get_ddtm_events(): [ /* returnType */ boolean, /* value_ddtm_events */ boolean | null ]
+    get_dual_standby_preference(): [ /* returnType */ boolean, /* value_dual_standby_preference */ boolean | null ]
+    get_embms_status(): [ /* returnType */ boolean, /* value_embms_status */ boolean | null ]
+    get_error_rate(): [ /* returnType */ boolean, /* value_error_rate */ boolean | null ]
+    get_hdr_new_uati_assigned(): [ /* returnType */ boolean, /* value_hdr_new_uati_assigned */ boolean | null ]
+    get_hdr_session_closed(): [ /* returnType */ boolean, /* value_hdr_session_closed */ boolean | null ]
+    get_managed_roaming(): [ /* returnType */ boolean, /* value_managed_roaming */ boolean | null ]
+    get_network_reject_information(): [ /* returnType */ boolean, /* value_network_reject_information_enable_network_reject_indications */ boolean | null, /* value_network_reject_information_supress_system_info_indications */ boolean | null ]
+    get_network_time(): [ /* returnType */ boolean, /* value_network_time */ boolean | null ]
+    get_rf_band_information(): [ /* returnType */ boolean, /* value_rf_band_information */ boolean | null ]
+    get_serving_system_events(): [ /* returnType */ boolean, /* value_serving_system_events */ boolean | null ]
+    get_signal_info(): [ /* returnType */ boolean, /* value_signal_info */ boolean | null ]
+    get_subscription_info(): [ /* returnType */ boolean, /* value_subscription_info */ boolean | null ]
+    get_system_info(): [ /* returnType */ boolean, /* value_system_info */ boolean | null ]
+    get_system_selection_preference(): [ /* returnType */ boolean, /* value_system_selection_preference */ boolean | null ]
     ref(): MessageNasRegisterIndicationsInput
     set_current_plmn_name(value_current_plmn_name: boolean): boolean
     set_ddtm_events(value_ddtm_events: boolean): boolean
@@ -8168,6 +8777,7 @@ export class MessageNasRegisterIndicationsInput {
     set_hdr_new_uati_assigned(value_hdr_new_uati_assigned: boolean): boolean
     set_hdr_session_closed(value_hdr_session_closed: boolean): boolean
     set_managed_roaming(value_managed_roaming: boolean): boolean
+    set_network_reject_information(value_network_reject_information_enable_network_reject_indications: boolean, value_network_reject_information_supress_system_info_indications: boolean): boolean
     set_network_time(value_network_time: boolean): boolean
     set_rf_band_information(value_rf_band_information: boolean): boolean
     set_serving_system_events(value_serving_system_events: boolean): boolean
@@ -8182,34 +8792,34 @@ export class MessageNasRegisterIndicationsInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageNasRegisterIndicationsInput
 }
-export class MessageNasRegisterIndicationsOutput {
-    /* Methods of Qmi.MessageNasRegisterIndicationsOutput */
+class MessageNasRegisterIndicationsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasRegisterIndicationsOutput */
     get_result(): boolean
     ref(): MessageNasRegisterIndicationsOutput
     unref(): void
     static name: string
 }
-export class MessageNasResetOutput {
-    /* Methods of Qmi.MessageNasResetOutput */
+class MessageNasResetOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasResetOutput */
     get_result(): boolean
     ref(): MessageNasResetOutput
     unref(): void
     static name: string
 }
-export class MessageNasSetEventReportInput {
-    /* Methods of Qmi.MessageNasSetEventReportInput */
-    get_ecio_indicator(): [ /* returnType */ boolean, /* value_ecio_indicator_report */ boolean, /* value_ecio_indicator_ecio_delta */ number ]
-    get_ecio_threshold(): [ /* returnType */ boolean, /* value_ecio_threshold_report */ boolean, /* value_ecio_threshold_thresholds */ number[] ]
-    get_error_rate_indicator(): [ /* returnType */ boolean, /* value_error_rate_indicator */ boolean ]
-    get_io_indicator(): [ /* returnType */ boolean, /* value_io_indicator_report */ boolean, /* value_io_indicator_io_delta */ number ]
-    get_lte_rsrp_delta(): [ /* returnType */ boolean, /* value_lte_rsrp_delta_report */ boolean, /* value_lte_rsrp_delta_rsrp_delta */ number ]
-    get_lte_snr_delta(): [ /* returnType */ boolean, /* value_lte_snr_delta_report */ boolean, /* value_lte_snr_delta_snr_delta */ number ]
-    get_registration_reject_reason(): [ /* returnType */ boolean, /* value_registration_reject_reason */ boolean ]
-    get_rf_band_information(): [ /* returnType */ boolean, /* value_rf_band_information */ boolean ]
-    get_rssi_indicator(): [ /* returnType */ boolean, /* value_rssi_indicator_report */ boolean, /* value_rssi_indicator_rssi_delta */ number ]
-    get_signal_strength_indicator(): [ /* returnType */ boolean, /* value_signal_strength_indicator_report */ boolean, /* value_signal_strength_indicator_thresholds */ Uint8Array[] ]
-    get_sinr_indicator(): [ /* returnType */ boolean, /* value_sinr_indicator_report */ boolean, /* value_sinr_indicator_sinr_delta */ number ]
-    get_sinr_threshold(): [ /* returnType */ boolean, /* value_sinr_threshold_report */ boolean, /* value_sinr_threshold_thresholds */ Uint8Array[] ]
+class MessageNasSetEventReportInput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasSetEventReportInput */
+    get_ecio_indicator(): [ /* returnType */ boolean, /* value_ecio_indicator_report */ boolean | null, /* value_ecio_indicator_ecio_delta */ number | null ]
+    get_ecio_threshold(): [ /* returnType */ boolean, /* value_ecio_threshold_report */ boolean | null, /* value_ecio_threshold_thresholds */ number[] | null ]
+    get_error_rate_indicator(): [ /* returnType */ boolean, /* value_error_rate_indicator */ boolean | null ]
+    get_io_indicator(): [ /* returnType */ boolean, /* value_io_indicator_report */ boolean | null, /* value_io_indicator_io_delta */ number | null ]
+    get_lte_rsrp_delta(): [ /* returnType */ boolean, /* value_lte_rsrp_delta_report */ boolean | null, /* value_lte_rsrp_delta_rsrp_delta */ number | null ]
+    get_lte_snr_delta(): [ /* returnType */ boolean, /* value_lte_snr_delta_report */ boolean | null, /* value_lte_snr_delta_snr_delta */ number | null ]
+    get_registration_reject_reason(): [ /* returnType */ boolean, /* value_registration_reject_reason */ boolean | null ]
+    get_rf_band_information(): [ /* returnType */ boolean, /* value_rf_band_information */ boolean | null ]
+    get_rssi_indicator(): [ /* returnType */ boolean, /* value_rssi_indicator_report */ boolean | null, /* value_rssi_indicator_rssi_delta */ number | null ]
+    get_signal_strength_indicator(): [ /* returnType */ boolean, /* value_signal_strength_indicator_report */ boolean | null, /* value_signal_strength_indicator_thresholds */ Uint8Array[] | null ]
+    get_sinr_indicator(): [ /* returnType */ boolean, /* value_sinr_indicator_report */ boolean | null, /* value_sinr_indicator_sinr_delta */ number | null ]
+    get_sinr_threshold(): [ /* returnType */ boolean, /* value_sinr_threshold_report */ boolean | null, /* value_sinr_threshold_thresholds */ Uint8Array[] | null ]
     ref(): MessageNasSetEventReportInput
     set_ecio_indicator(value_ecio_indicator_report: boolean, value_ecio_indicator_ecio_delta: number): boolean
     set_ecio_threshold(value_ecio_threshold_report: boolean, value_ecio_threshold_thresholds: number[]): boolean
@@ -8230,32 +8840,71 @@ export class MessageNasSetEventReportInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageNasSetEventReportInput
 }
-export class MessageNasSetEventReportOutput {
-    /* Methods of Qmi.MessageNasSetEventReportOutput */
+class MessageNasSetEventReportOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasSetEventReportOutput */
     get_result(): boolean
     ref(): MessageNasSetEventReportOutput
     unref(): void
     static name: string
 }
-export class MessageNasSetSystemSelectionPreferenceInput {
-    /* Methods of Qmi.MessageNasSetSystemSelectionPreferenceInput */
-    get_acquisition_order_preference(): [ /* returnType */ boolean, /* value_acquisition_order_preference */ NasRadioInterface[] ]
-    get_band_preference(): [ /* returnType */ boolean, /* value_band_preference */ NasBandPreference ]
-    get_cdma_prl_preference(): [ /* returnType */ boolean, /* value_cdma_prl_preference */ NasCdmaPrlPreference ]
-    get_change_duration(): [ /* returnType */ boolean, /* value_change_duration */ NasChangeDuration ]
-    get_emergency_mode(): [ /* returnType */ boolean, /* value_emergency_mode */ boolean ]
-    get_extended_lte_band_preference(): [ /* returnType */ boolean, /* value_extended_lte_band_preference_mask_low */ number, /* value_extended_lte_band_preference_mask_mid_low */ number, /* value_extended_lte_band_preference_mask_mid_high */ number, /* value_extended_lte_band_preference_mask_high */ number ]
-    get_gsm_wcdma_acquisition_order_preference(): [ /* returnType */ boolean, /* value_gsm_wcdma_acquisition_order_preference */ NasGsmWcdmaAcquisitionOrderPreference ]
-    get_lte_band_preference(): [ /* returnType */ boolean, /* value_lte_band_preference */ NasLteBandPreference ]
-    get_mnc_pds_digit_include_status(): [ /* returnType */ boolean, /* value_mnc_pds_digit_include_status */ boolean ]
-    get_mode_preference(): [ /* returnType */ boolean, /* value_mode_preference */ NasRatModePreference ]
-    get_network_selection_preference(): [ /* returnType */ boolean, /* value_network_selection_preference_mode */ NasNetworkSelectionPreference, /* value_network_selection_preference_mcc */ number, /* value_network_selection_preference_mnc */ number ]
-    get_network_selection_registration_restriction(): [ /* returnType */ boolean, /* value_network_selection_registration_restriction */ NasNetworkSelectionRegistrationRestriction ]
-    get_roaming_preference(): [ /* returnType */ boolean, /* value_roaming_preference */ NasRoamingPreference ]
-    get_service_domain_preference(): [ /* returnType */ boolean, /* value_service_domain_preference */ NasServiceDomainPreference ]
-    get_td_scdma_band_preference(): [ /* returnType */ boolean, /* value_td_scdma_band_preference */ NasTdScdmaBandPreference ]
-    get_usage_preference(): [ /* returnType */ boolean, /* value_usage_preference */ NasUsagePreference ]
-    get_voice_domain_preference(): [ /* returnType */ boolean, /* value_voice_domain_preference */ NasVoiceDomainPreference ]
+class MessageNasSetPreferredNetworksInput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasSetPreferredNetworksInput */
+    get_clear_previous_preferred_networks(): [ /* returnType */ boolean, /* value_clear_previous_preferred_networks */ boolean | null ]
+    get_mnc_pcs_digit_include_status(): [ /* returnType */ boolean, /* value_mnc_pcs_digit_include_status */ MessageNasSetPreferredNetworksInputMncPcsDigitIncludeStatusElement[] | null ]
+    get_preferred_networks(): [ /* returnType */ boolean, /* value_preferred_networks */ MessageNasSetPreferredNetworksInputPreferredNetworksElement[] | null ]
+    ref(): MessageNasSetPreferredNetworksInput
+    set_clear_previous_preferred_networks(value_clear_previous_preferred_networks: boolean): boolean
+    set_mnc_pcs_digit_include_status(value_mnc_pcs_digit_include_status: MessageNasSetPreferredNetworksInputMncPcsDigitIncludeStatusElement[]): boolean
+    set_preferred_networks(value_preferred_networks: MessageNasSetPreferredNetworksInputPreferredNetworksElement[]): boolean
+    unref(): void
+    static name: string
+    static new(): MessageNasSetPreferredNetworksInput
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MessageNasSetPreferredNetworksInput
+}
+class MessageNasSetPreferredNetworksInputMncPcsDigitIncludeStatusElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasSetPreferredNetworksInputMncPcsDigitIncludeStatusElement */
+    mcc: number
+    mnc: number
+    includes_pcs_digit: boolean
+    static name: string
+}
+class MessageNasSetPreferredNetworksInputPreferredNetworksElement {
+    /* Fields of Qmi-1.0.Qmi.MessageNasSetPreferredNetworksInputPreferredNetworksElement */
+    mcc: number
+    mnc: number
+    radio_access_technology: NasPlmnAccessTechnologyIdentifier
+    static name: string
+}
+class MessageNasSetPreferredNetworksOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasSetPreferredNetworksOutput */
+    get_result(): boolean
+    ref(): MessageNasSetPreferredNetworksOutput
+    unref(): void
+    static name: string
+}
+class MessageNasSetSystemSelectionPreferenceInput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasSetSystemSelectionPreferenceInput */
+    get_acquisition_order_preference(): [ /* returnType */ boolean, /* value_acquisition_order_preference */ NasRadioInterface[] | null ]
+    get_band_preference(): [ /* returnType */ boolean, /* value_band_preference */ NasBandPreference | null ]
+    get_cdma_prl_preference(): [ /* returnType */ boolean, /* value_cdma_prl_preference */ NasCdmaPrlPreference | null ]
+    get_change_duration(): [ /* returnType */ boolean, /* value_change_duration */ NasChangeDuration | null ]
+    get_emergency_mode(): [ /* returnType */ boolean, /* value_emergency_mode */ boolean | null ]
+    get_extended_lte_band_preference(): [ /* returnType */ boolean, /* value_extended_lte_band_preference_mask_low */ number | null, /* value_extended_lte_band_preference_mask_mid_low */ number | null, /* value_extended_lte_band_preference_mask_mid_high */ number | null, /* value_extended_lte_band_preference_mask_high */ number | null ]
+    get_gsm_wcdma_acquisition_order_preference(): [ /* returnType */ boolean, /* value_gsm_wcdma_acquisition_order_preference */ NasGsmWcdmaAcquisitionOrderPreference | null ]
+    get_lte_band_preference(): [ /* returnType */ boolean, /* value_lte_band_preference */ NasLteBandPreference | null ]
+    get_mnc_pcs_digit_include_status(): [ /* returnType */ boolean, /* value_mnc_pcs_digit_include_status */ boolean | null ]
+    get_mode_preference(): [ /* returnType */ boolean, /* value_mode_preference */ NasRatModePreference | null ]
+    get_network_selection_preference(): [ /* returnType */ boolean, /* value_network_selection_preference_mode */ NasNetworkSelectionPreference | null, /* value_network_selection_preference_mcc */ number | null, /* value_network_selection_preference_mnc */ number | null ]
+    get_network_selection_registration_restriction(): [ /* returnType */ boolean, /* value_network_selection_registration_restriction */ NasNetworkSelectionRegistrationRestriction | null ]
+    get_nr5g_nsa_band_preference(): [ /* returnType */ boolean, /* value_nr5g_nsa_band_preference_mask_0 */ number | null, /* value_nr5g_nsa_band_preference_mask_1 */ number | null, /* value_nr5g_nsa_band_preference_mask_2 */ number | null, /* value_nr5g_nsa_band_preference_mask_3 */ number | null, /* value_nr5g_nsa_band_preference_mask_4 */ number | null, /* value_nr5g_nsa_band_preference_mask_5 */ number | null, /* value_nr5g_nsa_band_preference_mask_6 */ number | null, /* value_nr5g_nsa_band_preference_mask_7 */ number | null ]
+    get_nr5g_sa_band_preference(): [ /* returnType */ boolean, /* value_nr5g_sa_band_preference_mask_0 */ number | null, /* value_nr5g_sa_band_preference_mask_1 */ number | null, /* value_nr5g_sa_band_preference_mask_2 */ number | null, /* value_nr5g_sa_band_preference_mask_3 */ number | null, /* value_nr5g_sa_band_preference_mask_4 */ number | null, /* value_nr5g_sa_band_preference_mask_5 */ number | null, /* value_nr5g_sa_band_preference_mask_6 */ number | null, /* value_nr5g_sa_band_preference_mask_7 */ number | null ]
+    get_roaming_preference(): [ /* returnType */ boolean, /* value_roaming_preference */ NasRoamingPreference | null ]
+    get_service_domain_preference(): [ /* returnType */ boolean, /* value_service_domain_preference */ NasServiceDomainPreference | null ]
+    get_td_scdma_band_preference(): [ /* returnType */ boolean, /* value_td_scdma_band_preference */ NasTdScdmaBandPreference | null ]
+    get_usage_preference(): [ /* returnType */ boolean, /* value_usage_preference */ NasUsagePreference | null ]
+    get_voice_domain_preference(): [ /* returnType */ boolean, /* value_voice_domain_preference */ NasVoiceDomainPreference | null ]
     ref(): MessageNasSetSystemSelectionPreferenceInput
     set_acquisition_order_preference(value_acquisition_order_preference: NasRadioInterface[]): boolean
     set_band_preference(value_band_preference: NasBandPreference): boolean
@@ -8265,10 +8914,12 @@ export class MessageNasSetSystemSelectionPreferenceInput {
     set_extended_lte_band_preference(value_extended_lte_band_preference_mask_low: number, value_extended_lte_band_preference_mask_mid_low: number, value_extended_lte_band_preference_mask_mid_high: number, value_extended_lte_band_preference_mask_high: number): boolean
     set_gsm_wcdma_acquisition_order_preference(value_gsm_wcdma_acquisition_order_preference: NasGsmWcdmaAcquisitionOrderPreference): boolean
     set_lte_band_preference(value_lte_band_preference: NasLteBandPreference): boolean
-    set_mnc_pds_digit_include_status(value_mnc_pds_digit_include_status: boolean): boolean
+    set_mnc_pcs_digit_include_status(value_mnc_pcs_digit_include_status: boolean): boolean
     set_mode_preference(value_mode_preference: NasRatModePreference): boolean
     set_network_selection_preference(value_network_selection_preference_mode: NasNetworkSelectionPreference, value_network_selection_preference_mcc: number, value_network_selection_preference_mnc: number): boolean
     set_network_selection_registration_restriction(value_network_selection_registration_restriction: NasNetworkSelectionRegistrationRestriction): boolean
+    set_nr5g_nsa_band_preference(value_nr5g_nsa_band_preference_mask_0: number, value_nr5g_nsa_band_preference_mask_1: number, value_nr5g_nsa_band_preference_mask_2: number, value_nr5g_nsa_band_preference_mask_3: number, value_nr5g_nsa_band_preference_mask_4: number, value_nr5g_nsa_band_preference_mask_5: number, value_nr5g_nsa_band_preference_mask_6: number, value_nr5g_nsa_band_preference_mask_7: number): boolean
+    set_nr5g_sa_band_preference(value_nr5g_sa_band_preference_mask_0: number, value_nr5g_sa_band_preference_mask_1: number, value_nr5g_sa_band_preference_mask_2: number, value_nr5g_sa_band_preference_mask_3: number, value_nr5g_sa_band_preference_mask_4: number, value_nr5g_sa_band_preference_mask_5: number, value_nr5g_sa_band_preference_mask_6: number, value_nr5g_sa_band_preference_mask_7: number): boolean
     set_roaming_preference(value_roaming_preference: NasRoamingPreference): boolean
     set_service_domain_preference(value_service_domain_preference: NasServiceDomainPreference): boolean
     set_td_scdma_band_preference(value_td_scdma_band_preference: NasTdScdmaBandPreference): boolean
@@ -8281,16 +8932,16 @@ export class MessageNasSetSystemSelectionPreferenceInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageNasSetSystemSelectionPreferenceInput
 }
-export class MessageNasSetSystemSelectionPreferenceOutput {
-    /* Methods of Qmi.MessageNasSetSystemSelectionPreferenceOutput */
+class MessageNasSetSystemSelectionPreferenceOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasSetSystemSelectionPreferenceOutput */
     get_result(): boolean
     ref(): MessageNasSetSystemSelectionPreferenceOutput
     unref(): void
     static name: string
 }
-export class MessageNasSetTechnologyPreferenceInput {
-    /* Methods of Qmi.MessageNasSetTechnologyPreferenceInput */
-    get_current(): [ /* returnType */ boolean, /* value_current_technology_preference */ NasRadioTechnologyPreference, /* value_current_technology_preference_duration */ NasPreferenceDuration ]
+class MessageNasSetTechnologyPreferenceInput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasSetTechnologyPreferenceInput */
+    get_current(): [ /* returnType */ boolean, /* value_current_technology_preference */ NasRadioTechnologyPreference | null, /* value_current_technology_preference_duration */ NasPreferenceDuration | null ]
     ref(): MessageNasSetTechnologyPreferenceInput
     set_current(value_current_technology_preference: NasRadioTechnologyPreference, value_current_technology_preference_duration: NasPreferenceDuration): boolean
     unref(): void
@@ -8300,61 +8951,61 @@ export class MessageNasSetTechnologyPreferenceInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageNasSetTechnologyPreferenceInput
 }
-export class MessageNasSetTechnologyPreferenceOutput {
-    /* Methods of Qmi.MessageNasSetTechnologyPreferenceOutput */
+class MessageNasSetTechnologyPreferenceOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasSetTechnologyPreferenceOutput */
     get_result(): boolean
     ref(): MessageNasSetTechnologyPreferenceOutput
     unref(): void
     static name: string
 }
-export class MessageNasSwiGetStatusOutput {
-    /* Methods of Qmi.MessageNasSwiGetStatusOutput */
-    get_common_info(): [ /* returnType */ boolean, /* value_common_info_temperature */ number, /* value_common_info_modem_mode */ NasSwiModemMode, /* value_common_info_system_mode */ NasSwiSystemMode, /* value_common_info_ims_registration_state */ NasSwiImsRegState, /* value_common_info_packet_service_state */ NasSwiPsState ]
-    get_lte_info(): [ /* returnType */ boolean, /* value_lte_info_band */ NasActiveBand, /* value_lte_info_bandwidth */ NasDLBandwidth, /* value_lte_info_rx_channel */ number, /* value_lte_info_tx_channel */ number, /* value_lte_info_emm_state */ NasSwiEmmState, /* value_lte_info_emm_sub_state */ number, /* value_lte_info_emm_connection_state */ NasSwiEmmConnectionState ]
+class MessageNasSwiGetStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageNasSwiGetStatusOutput */
+    get_common_info_v2(): [ /* returnType */ boolean, /* value_common_info_v2_temperature */ number | null, /* value_common_info_v2_modem_mode */ NasSwiModemMode | null, /* value_common_info_v2_system_mode */ NasSwiSystemMode | null, /* value_common_info_v2_ims_registration_state */ NasSwiImsRegState | null, /* value_common_info_v2_packet_service_state */ NasSwiPsState | null ]
+    get_lte_info(): [ /* returnType */ boolean, /* value_lte_info_band */ NasActiveBand | null, /* value_lte_info_bandwidth */ NasDLBandwidth | null, /* value_lte_info_rx_channel */ number | null, /* value_lte_info_tx_channel */ number | null, /* value_lte_info_emm_state */ NasSwiEmmState | null, /* value_lte_info_emm_sub_state */ number | null, /* value_lte_info_emm_connection_state */ NasSwiEmmConnectionState | null ]
     get_result(): boolean
     ref(): MessageNasSwiGetStatusOutput
     unref(): void
     static name: string
 }
-export class MessageOmaCancelSessionOutput {
-    /* Methods of Qmi.MessageOmaCancelSessionOutput */
+class MessageOmaCancelSessionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageOmaCancelSessionOutput */
     get_result(): boolean
     ref(): MessageOmaCancelSessionOutput
     unref(): void
     static name: string
 }
-export class MessageOmaGetFeatureSettingOutput {
-    /* Methods of Qmi.MessageOmaGetFeatureSettingOutput */
-    get_device_provisioning_service_update_config(): [ /* returnType */ boolean, /* value_device_provisioning_service_update_config */ boolean ]
-    get_hfa_feature_config(): [ /* returnType */ boolean, /* value_hfa_feature_config */ boolean ]
-    get_hfa_feature_done_state(): [ /* returnType */ boolean, /* value_hfa_feature_done_state */ OmaHfaFeatureDoneState ]
-    get_prl_update_service_config(): [ /* returnType */ boolean, /* value_prl_update_service_config */ boolean ]
+class MessageOmaGetFeatureSettingOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageOmaGetFeatureSettingOutput */
+    get_device_provisioning_service_update_config(): [ /* returnType */ boolean, /* value_device_provisioning_service_update_config */ boolean | null ]
+    get_hfa_feature_config(): [ /* returnType */ boolean, /* value_hfa_feature_config */ boolean | null ]
+    get_hfa_feature_done_state(): [ /* returnType */ boolean, /* value_hfa_feature_done_state */ OmaHfaFeatureDoneState | null ]
+    get_prl_update_service_config(): [ /* returnType */ boolean, /* value_prl_update_service_config */ boolean | null ]
     get_result(): boolean
     ref(): MessageOmaGetFeatureSettingOutput
     unref(): void
     static name: string
 }
-export class MessageOmaGetSessionInfoOutput {
-    /* Methods of Qmi.MessageOmaGetSessionInfoOutput */
-    get_network_initiated_alert(): [ /* returnType */ boolean, /* value_network_initiated_alert_session_type */ OmaSessionType, /* value_network_initiated_alert_session_id */ number ]
+class MessageOmaGetSessionInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageOmaGetSessionInfoOutput */
+    get_network_initiated_alert(): [ /* returnType */ boolean, /* value_network_initiated_alert_session_type */ OmaSessionType | null, /* value_network_initiated_alert_session_id */ number | null ]
     get_result(): boolean
-    get_retry_info(): [ /* returnType */ boolean, /* value_retry_info_retry_count */ number, /* value_retry_info_retry_pause_timer */ number, /* value_retry_info_retry_pause_timer_remaining */ number ]
-    get_session_failed_reason(): [ /* returnType */ boolean, /* value_session_failed_reason */ OmaSessionFailedReason ]
-    get_session_info(): [ /* returnType */ boolean, /* value_session_info_session_state */ OmaSessionState, /* value_session_info_session_type */ OmaSessionType ]
+    get_retry_info(): [ /* returnType */ boolean, /* value_retry_info_retry_count */ number | null, /* value_retry_info_retry_pause_timer */ number | null, /* value_retry_info_retry_pause_timer_remaining */ number | null ]
+    get_session_failed_reason(): [ /* returnType */ boolean, /* value_session_failed_reason */ OmaSessionFailedReason | null ]
+    get_session_info(): [ /* returnType */ boolean, /* value_session_info_session_state */ OmaSessionState | null, /* value_session_info_session_type */ OmaSessionType | null ]
     ref(): MessageOmaGetSessionInfoOutput
     unref(): void
     static name: string
 }
-export class MessageOmaResetOutput {
-    /* Methods of Qmi.MessageOmaResetOutput */
+class MessageOmaResetOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageOmaResetOutput */
     get_result(): boolean
     ref(): MessageOmaResetOutput
     unref(): void
     static name: string
 }
-export class MessageOmaSendSelectionInput {
-    /* Methods of Qmi.MessageOmaSendSelectionInput */
-    get_network_initiated_alert_selection(): [ /* returnType */ boolean, /* value_network_initiated_alert_selection_control_point_selection_accept */ boolean, /* value_network_initiated_alert_selection_session_id */ number ]
+class MessageOmaSendSelectionInput {
+    /* Methods of Qmi-1.0.Qmi.MessageOmaSendSelectionInput */
+    get_network_initiated_alert_selection(): [ /* returnType */ boolean, /* value_network_initiated_alert_selection_control_point_selection_accept */ boolean | null, /* value_network_initiated_alert_selection_session_id */ number | null ]
     ref(): MessageOmaSendSelectionInput
     set_network_initiated_alert_selection(value_network_initiated_alert_selection_control_point_selection_accept: boolean, value_network_initiated_alert_selection_session_id: number): boolean
     unref(): void
@@ -8364,17 +9015,17 @@ export class MessageOmaSendSelectionInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageOmaSendSelectionInput
 }
-export class MessageOmaSendSelectionOutput {
-    /* Methods of Qmi.MessageOmaSendSelectionOutput */
+class MessageOmaSendSelectionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageOmaSendSelectionOutput */
     get_result(): boolean
     ref(): MessageOmaSendSelectionOutput
     unref(): void
     static name: string
 }
-export class MessageOmaSetEventReportInput {
-    /* Methods of Qmi.MessageOmaSetEventReportInput */
-    get_network_initiated_alert_reporting(): [ /* returnType */ boolean, /* value_network_initiated_alert_reporting */ boolean ]
-    get_session_state_reporting(): [ /* returnType */ boolean, /* value_session_state_reporting */ boolean ]
+class MessageOmaSetEventReportInput {
+    /* Methods of Qmi-1.0.Qmi.MessageOmaSetEventReportInput */
+    get_network_initiated_alert_reporting(): [ /* returnType */ boolean, /* value_network_initiated_alert_reporting */ boolean | null ]
+    get_session_state_reporting(): [ /* returnType */ boolean, /* value_session_state_reporting */ boolean | null ]
     ref(): MessageOmaSetEventReportInput
     set_network_initiated_alert_reporting(value_network_initiated_alert_reporting: boolean): boolean
     set_session_state_reporting(value_session_state_reporting: boolean): boolean
@@ -8385,18 +9036,18 @@ export class MessageOmaSetEventReportInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageOmaSetEventReportInput
 }
-export class MessageOmaSetEventReportOutput {
-    /* Methods of Qmi.MessageOmaSetEventReportOutput */
+class MessageOmaSetEventReportOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageOmaSetEventReportOutput */
     get_result(): boolean
     ref(): MessageOmaSetEventReportOutput
     unref(): void
     static name: string
 }
-export class MessageOmaSetFeatureSettingInput {
-    /* Methods of Qmi.MessageOmaSetFeatureSettingInput */
-    get_device_provisioning_service_update_config(): [ /* returnType */ boolean, /* value_device_provisioning_service_update_config */ boolean ]
-    get_hfa_feature_config(): [ /* returnType */ boolean, /* value_hfa_feature_config */ boolean ]
-    get_prl_update_service_config(): [ /* returnType */ boolean, /* value_prl_update_service_config */ boolean ]
+class MessageOmaSetFeatureSettingInput {
+    /* Methods of Qmi-1.0.Qmi.MessageOmaSetFeatureSettingInput */
+    get_device_provisioning_service_update_config(): [ /* returnType */ boolean, /* value_device_provisioning_service_update_config */ boolean | null ]
+    get_hfa_feature_config(): [ /* returnType */ boolean, /* value_hfa_feature_config */ boolean | null ]
+    get_prl_update_service_config(): [ /* returnType */ boolean, /* value_prl_update_service_config */ boolean | null ]
     ref(): MessageOmaSetFeatureSettingInput
     set_device_provisioning_service_update_config(value_device_provisioning_service_update_config: boolean): boolean
     set_hfa_feature_config(value_hfa_feature_config: boolean): boolean
@@ -8408,16 +9059,16 @@ export class MessageOmaSetFeatureSettingInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageOmaSetFeatureSettingInput
 }
-export class MessageOmaSetFeatureSettingOutput {
-    /* Methods of Qmi.MessageOmaSetFeatureSettingOutput */
+class MessageOmaSetFeatureSettingOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageOmaSetFeatureSettingOutput */
     get_result(): boolean
     ref(): MessageOmaSetFeatureSettingOutput
     unref(): void
     static name: string
 }
-export class MessageOmaStartSessionInput {
-    /* Methods of Qmi.MessageOmaStartSessionInput */
-    get_session_type(): [ /* returnType */ boolean, /* value_session_type */ OmaSessionType ]
+class MessageOmaStartSessionInput {
+    /* Methods of Qmi-1.0.Qmi.MessageOmaStartSessionInput */
+    get_session_type(): [ /* returnType */ boolean, /* value_session_type */ OmaSessionType | null ]
     ref(): MessageOmaStartSessionInput
     set_session_type(value_session_type: OmaSessionType): boolean
     unref(): void
@@ -8427,52 +9078,52 @@ export class MessageOmaStartSessionInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageOmaStartSessionInput
 }
-export class MessageOmaStartSessionOutput {
-    /* Methods of Qmi.MessageOmaStartSessionOutput */
+class MessageOmaStartSessionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageOmaStartSessionOutput */
     get_result(): boolean
     ref(): MessageOmaStartSessionOutput
     unref(): void
     static name: string
 }
-export class MessagePbmGetAllCapabilitiesOutput {
-    /* Methods of Qmi.MessagePbmGetAllCapabilitiesOutput */
-    get_additional_number_alpha_string_capability(): [ /* returnType */ boolean, /* value_additional_number_alpha_string_capability */ MessagePbmGetAllCapabilitiesOutputAdditionalNumberAlphaStringCapabilityElement[] ]
-    get_additional_number_capability(): [ /* returnType */ boolean, /* value_additional_number_capability */ MessagePbmGetAllCapabilitiesOutputAdditionalNumberCapabilityElement[] ]
-    get_capability_basic_information(): [ /* returnType */ boolean, /* value_capability_basic_information */ MessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElement[] ]
-    get_email_capability(): [ /* returnType */ boolean, /* value_email_capability */ MessagePbmGetAllCapabilitiesOutputEmailCapabilityElement[] ]
-    get_group_capability(): [ /* returnType */ boolean, /* value_group_capability */ MessagePbmGetAllCapabilitiesOutputGroupCapabilityElement[] ]
-    get_grouping_information_alpha_string_capability(): [ /* returnType */ boolean, /* value_grouping_information_alpha_string_capability */ MessagePbmGetAllCapabilitiesOutputGroupingInformationAlphaStringCapabilityElement[] ]
-    get_hidden_records_capability(): [ /* returnType */ boolean, /* value_hidden_records_capability */ MessagePbmGetAllCapabilitiesOutputHiddenRecordsCapabilityElement[] ]
+class MessagePbmGetAllCapabilitiesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePbmGetAllCapabilitiesOutput */
+    get_additional_number_alpha_string_capability(): [ /* returnType */ boolean, /* value_additional_number_alpha_string_capability */ MessagePbmGetAllCapabilitiesOutputAdditionalNumberAlphaStringCapabilityElement[] | null ]
+    get_additional_number_capability(): [ /* returnType */ boolean, /* value_additional_number_capability */ MessagePbmGetAllCapabilitiesOutputAdditionalNumberCapabilityElement[] | null ]
+    get_capability_basic_information(): [ /* returnType */ boolean, /* value_capability_basic_information */ MessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElement[] | null ]
+    get_email_capability(): [ /* returnType */ boolean, /* value_email_capability */ MessagePbmGetAllCapabilitiesOutputEmailCapabilityElement[] | null ]
+    get_group_capability(): [ /* returnType */ boolean, /* value_group_capability */ MessagePbmGetAllCapabilitiesOutputGroupCapabilityElement[] | null ]
+    get_grouping_information_alpha_string_capability(): [ /* returnType */ boolean, /* value_grouping_information_alpha_string_capability */ MessagePbmGetAllCapabilitiesOutputGroupingInformationAlphaStringCapabilityElement[] | null ]
+    get_hidden_records_capability(): [ /* returnType */ boolean, /* value_hidden_records_capability */ MessagePbmGetAllCapabilitiesOutputHiddenRecordsCapabilityElement[] | null ]
     get_result(): boolean
-    get_second_name_capability(): [ /* returnType */ boolean, /* value_second_name_capability */ MessagePbmGetAllCapabilitiesOutputSecondNameCapabilityElement[] ]
+    get_second_name_capability(): [ /* returnType */ boolean, /* value_second_name_capability */ MessagePbmGetAllCapabilitiesOutputSecondNameCapabilityElement[] | null ]
     ref(): MessagePbmGetAllCapabilitiesOutput
     unref(): void
     static name: string
 }
-export class MessagePbmGetAllCapabilitiesOutputAdditionalNumberAlphaStringCapabilityElement {
-    /* Fields of Qmi.MessagePbmGetAllCapabilitiesOutputAdditionalNumberAlphaStringCapabilityElement */
+class MessagePbmGetAllCapabilitiesOutputAdditionalNumberAlphaStringCapabilityElement {
+    /* Fields of Qmi-1.0.Qmi.MessagePbmGetAllCapabilitiesOutputAdditionalNumberAlphaStringCapabilityElement */
     session_type: PbmSessionType
     maximum_records: number
     used_records: number
     maximum_string_length: number
     static name: string
 }
-export class MessagePbmGetAllCapabilitiesOutputAdditionalNumberCapabilityElement {
-    /* Fields of Qmi.MessagePbmGetAllCapabilitiesOutputAdditionalNumberCapabilityElement */
+class MessagePbmGetAllCapabilitiesOutputAdditionalNumberCapabilityElement {
+    /* Fields of Qmi-1.0.Qmi.MessagePbmGetAllCapabilitiesOutputAdditionalNumberCapabilityElement */
     session_type: PbmSessionType
     maximum_additional_numbers: number
     maximum_additional_number_length: number
     maximum_additional_number_tag_length: number
     static name: string
 }
-export class MessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElement {
-    /* Fields of Qmi.MessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElement */
+class MessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElement {
+    /* Fields of Qmi-1.0.Qmi.MessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElement */
     session_type: PbmSessionType
     phonebooks: object[]
     static name: string
 }
-export class MessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElementPhonebooksElement {
-    /* Fields of Qmi.MessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElementPhonebooksElement */
+class MessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElementPhonebooksElement {
+    /* Fields of Qmi-1.0.Qmi.MessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElementPhonebooksElement */
     phonebook_type: PbmPhonebookType
     used_records: number
     maximum_records: number
@@ -8480,43 +9131,43 @@ export class MessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElement
     maximum_name_length: number
     static name: string
 }
-export class MessagePbmGetAllCapabilitiesOutputEmailCapabilityElement {
-    /* Fields of Qmi.MessagePbmGetAllCapabilitiesOutputEmailCapabilityElement */
+class MessagePbmGetAllCapabilitiesOutputEmailCapabilityElement {
+    /* Fields of Qmi-1.0.Qmi.MessagePbmGetAllCapabilitiesOutputEmailCapabilityElement */
     session_type: PbmSessionType
     maximum_emails: number
     maximum_email_address_length: number
     static name: string
 }
-export class MessagePbmGetAllCapabilitiesOutputGroupCapabilityElement {
-    /* Fields of Qmi.MessagePbmGetAllCapabilitiesOutputGroupCapabilityElement */
+class MessagePbmGetAllCapabilitiesOutputGroupCapabilityElement {
+    /* Fields of Qmi-1.0.Qmi.MessagePbmGetAllCapabilitiesOutputGroupCapabilityElement */
     session_type: PbmSessionType
     maximum_groups: number
     maximum_group_tag_length: number
     static name: string
 }
-export class MessagePbmGetAllCapabilitiesOutputGroupingInformationAlphaStringCapabilityElement {
-    /* Fields of Qmi.MessagePbmGetAllCapabilitiesOutputGroupingInformationAlphaStringCapabilityElement */
+class MessagePbmGetAllCapabilitiesOutputGroupingInformationAlphaStringCapabilityElement {
+    /* Fields of Qmi-1.0.Qmi.MessagePbmGetAllCapabilitiesOutputGroupingInformationAlphaStringCapabilityElement */
     session_type: PbmSessionType
     maximum_records: number
     used_records: number
     maximum_string_length: number
     static name: string
 }
-export class MessagePbmGetAllCapabilitiesOutputHiddenRecordsCapabilityElement {
-    /* Fields of Qmi.MessagePbmGetAllCapabilitiesOutputHiddenRecordsCapabilityElement */
+class MessagePbmGetAllCapabilitiesOutputHiddenRecordsCapabilityElement {
+    /* Fields of Qmi-1.0.Qmi.MessagePbmGetAllCapabilitiesOutputHiddenRecordsCapabilityElement */
     session_type: PbmSessionType
     supported: boolean
     static name: string
 }
-export class MessagePbmGetAllCapabilitiesOutputSecondNameCapabilityElement {
-    /* Fields of Qmi.MessagePbmGetAllCapabilitiesOutputSecondNameCapabilityElement */
+class MessagePbmGetAllCapabilitiesOutputSecondNameCapabilityElement {
+    /* Fields of Qmi-1.0.Qmi.MessagePbmGetAllCapabilitiesOutputSecondNameCapabilityElement */
     session_type: PbmSessionType
     maximum_second_name_length: number
     static name: string
 }
-export class MessagePbmGetCapabilitiesInput {
-    /* Methods of Qmi.MessagePbmGetCapabilitiesInput */
-    get_phonebook_information(): [ /* returnType */ boolean, /* value_phonebook_information_session_type */ PbmSessionType, /* value_phonebook_information_phonebook_type */ PbmPhonebookType ]
+class MessagePbmGetCapabilitiesInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePbmGetCapabilitiesInput */
+    get_phonebook_information(): [ /* returnType */ boolean, /* value_phonebook_information_session_type */ PbmSessionType | null, /* value_phonebook_information_phonebook_type */ PbmPhonebookType | null ]
     ref(): MessagePbmGetCapabilitiesInput
     set_phonebook_information(value_phonebook_information_session_type: PbmSessionType, value_phonebook_information_phonebook_type: PbmPhonebookType): boolean
     unref(): void
@@ -8526,24 +9177,24 @@ export class MessagePbmGetCapabilitiesInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePbmGetCapabilitiesInput
 }
-export class MessagePbmGetCapabilitiesOutput {
-    /* Methods of Qmi.MessagePbmGetCapabilitiesOutput */
-    get_additional_number_alpha_string_capability(): [ /* returnType */ boolean, /* value_additional_number_alpha_string_capability_maximum_records */ number, /* value_additional_number_alpha_string_capability_used_records */ number, /* value_additional_number_alpha_string_capability_maximum_string_length */ number ]
-    get_additional_number_capability(): [ /* returnType */ boolean, /* value_additional_number_capability_maximum_additional_numbers */ number, /* value_additional_number_capability_maximum_additional_number_length */ number, /* value_additional_number_capability_maximum_additional_number_tag_length */ number ]
-    get_capability_basic_information(): [ /* returnType */ boolean, /* value_capability_basic_information_session_type */ PbmSessionType, /* value_capability_basic_information_phonebook_type */ PbmPhonebookType, /* value_capability_basic_information_used_records */ number, /* value_capability_basic_information_maximum_records */ number, /* value_capability_basic_information_maximum_number_length */ number, /* value_capability_basic_information_maximum_name_length */ number ]
-    get_email_capability(): [ /* returnType */ boolean, /* value_email_capability_maximum_emails */ number, /* value_email_capability_maximum_email_address_length */ number ]
-    get_group_capability(): [ /* returnType */ boolean, /* value_group_capability_maximum_groups */ number, /* value_group_capability_maximum_group_tag_length */ number ]
-    get_grouping_information_alpha_string_capability(): [ /* returnType */ boolean, /* value_grouping_information_alpha_string_capability_maximum_records */ number, /* value_grouping_information_alpha_string_capability_used_records */ number, /* value_grouping_information_alpha_string_capability_maximum_string_length */ number ]
-    get_hidden_records_capability(): [ /* returnType */ boolean, /* value_hidden_records_capability_supported */ boolean ]
+class MessagePbmGetCapabilitiesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePbmGetCapabilitiesOutput */
+    get_additional_number_alpha_string_capability(): [ /* returnType */ boolean, /* value_additional_number_alpha_string_capability_maximum_records */ number | null, /* value_additional_number_alpha_string_capability_used_records */ number | null, /* value_additional_number_alpha_string_capability_maximum_string_length */ number | null ]
+    get_additional_number_capability(): [ /* returnType */ boolean, /* value_additional_number_capability_maximum_additional_numbers */ number | null, /* value_additional_number_capability_maximum_additional_number_length */ number | null, /* value_additional_number_capability_maximum_additional_number_tag_length */ number | null ]
+    get_capability_basic_information(): [ /* returnType */ boolean, /* value_capability_basic_information_session_type */ PbmSessionType | null, /* value_capability_basic_information_phonebook_type */ PbmPhonebookType | null, /* value_capability_basic_information_used_records */ number | null, /* value_capability_basic_information_maximum_records */ number | null, /* value_capability_basic_information_maximum_number_length */ number | null, /* value_capability_basic_information_maximum_name_length */ number | null ]
+    get_email_capability(): [ /* returnType */ boolean, /* value_email_capability_maximum_emails */ number | null, /* value_email_capability_maximum_email_address_length */ number | null ]
+    get_group_capability(): [ /* returnType */ boolean, /* value_group_capability_maximum_groups */ number | null, /* value_group_capability_maximum_group_tag_length */ number | null ]
+    get_grouping_information_alpha_string_capability(): [ /* returnType */ boolean, /* value_grouping_information_alpha_string_capability_maximum_records */ number | null, /* value_grouping_information_alpha_string_capability_used_records */ number | null, /* value_grouping_information_alpha_string_capability_maximum_string_length */ number | null ]
+    get_hidden_records_capability(): [ /* returnType */ boolean, /* value_hidden_records_capability_supported */ boolean | null ]
     get_result(): boolean
-    get_second_name_capability(): [ /* returnType */ boolean, /* value_second_name_capability_maximum_second_name_length */ number ]
+    get_second_name_capability(): [ /* returnType */ boolean, /* value_second_name_capability_maximum_second_name_length */ number | null ]
     ref(): MessagePbmGetCapabilitiesOutput
     unref(): void
     static name: string
 }
-export class MessagePbmIndicationRegisterInput {
-    /* Methods of Qmi.MessagePbmIndicationRegisterInput */
-    get_event_registration_mask(): [ /* returnType */ boolean, /* value_event_registration_mask */ PbmEventRegistrationFlag ]
+class MessagePbmIndicationRegisterInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePbmIndicationRegisterInput */
+    get_event_registration_mask(): [ /* returnType */ boolean, /* value_event_registration_mask */ PbmEventRegistrationFlag | null ]
     ref(): MessagePbmIndicationRegisterInput
     set_event_registration_mask(value_event_registration_mask: PbmEventRegistrationFlag): boolean
     unref(): void
@@ -8553,18 +9204,18 @@ export class MessagePbmIndicationRegisterInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePbmIndicationRegisterInput
 }
-export class MessagePbmIndicationRegisterOutput {
-    /* Methods of Qmi.MessagePbmIndicationRegisterOutput */
-    get_event_registration_mask(): [ /* returnType */ boolean, /* value_event_registration_mask */ PbmEventRegistrationFlag ]
+class MessagePbmIndicationRegisterOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePbmIndicationRegisterOutput */
+    get_event_registration_mask(): [ /* returnType */ boolean, /* value_event_registration_mask */ PbmEventRegistrationFlag | null ]
     get_result(): boolean
     ref(): MessagePbmIndicationRegisterOutput
     unref(): void
     static name: string
 }
-export class MessagePdcActivateConfigInput {
-    /* Methods of Qmi.MessagePdcActivateConfigInput */
-    get_config_type(): [ /* returnType */ boolean, /* value_config_type */ PdcConfigurationType ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+class MessagePdcActivateConfigInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcActivateConfigInput */
+    get_config_type(): [ /* returnType */ boolean, /* value_config_type */ PdcConfigurationType | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcActivateConfigInput
     set_config_type(value_config_type: PdcConfigurationType): boolean
     set_token(value_token: number): boolean
@@ -8575,17 +9226,17 @@ export class MessagePdcActivateConfigInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdcActivateConfigInput
 }
-export class MessagePdcActivateConfigOutput {
-    /* Methods of Qmi.MessagePdcActivateConfigOutput */
+class MessagePdcActivateConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcActivateConfigOutput */
     get_result(): boolean
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcActivateConfigOutput
     unref(): void
     static name: string
 }
-export class MessagePdcConfigChangeInput {
-    /* Methods of Qmi.MessagePdcConfigChangeInput */
-    get_type_with_id(): [ /* returnType */ boolean, /* value_type_with_id */ ConfigTypeAndId ]
+class MessagePdcConfigChangeInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcConfigChangeInput */
+    get_type_with_id(): [ /* returnType */ boolean, /* value_type_with_id */ ConfigTypeAndId | null ]
     ref(): MessagePdcConfigChangeInput
     set_type_with_id(value_type_with_id: ConfigTypeAndId): boolean
     unref(): void
@@ -8595,18 +9246,18 @@ export class MessagePdcConfigChangeInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdcConfigChangeInput
 }
-export class MessagePdcConfigChangeOutput {
-    /* Methods of Qmi.MessagePdcConfigChangeOutput */
+class MessagePdcConfigChangeOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcConfigChangeOutput */
     get_result(): boolean
-    get_type_with_id(): [ /* returnType */ boolean, /* value_type_with_id */ ConfigTypeAndId ]
+    get_type_with_id(): [ /* returnType */ boolean, /* value_type_with_id */ ConfigTypeAndId | null ]
     ref(): MessagePdcConfigChangeOutput
     unref(): void
     static name: string
 }
-export class MessagePdcDeactivateConfigInput {
-    /* Methods of Qmi.MessagePdcDeactivateConfigInput */
-    get_config_type(): [ /* returnType */ boolean, /* value_config_type */ PdcConfigurationType ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+class MessagePdcDeactivateConfigInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcDeactivateConfigInput */
+    get_config_type(): [ /* returnType */ boolean, /* value_config_type */ PdcConfigurationType | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcDeactivateConfigInput
     set_config_type(value_config_type: PdcConfigurationType): boolean
     set_token(value_token: number): boolean
@@ -8617,19 +9268,19 @@ export class MessagePdcDeactivateConfigInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdcDeactivateConfigInput
 }
-export class MessagePdcDeactivateConfigOutput {
-    /* Methods of Qmi.MessagePdcDeactivateConfigOutput */
+class MessagePdcDeactivateConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcDeactivateConfigOutput */
     get_result(): boolean
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcDeactivateConfigOutput
     unref(): void
     static name: string
 }
-export class MessagePdcDeleteConfigInput {
-    /* Methods of Qmi.MessagePdcDeleteConfigInput */
-    get_config_type(): [ /* returnType */ boolean, /* value_config_type */ PdcConfigurationType ]
-    get_id(): [ /* returnType */ boolean, /* value_id */ Uint8Array[] ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+class MessagePdcDeleteConfigInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcDeleteConfigInput */
+    get_config_type(): [ /* returnType */ boolean, /* value_config_type */ PdcConfigurationType | null ]
+    get_id(): [ /* returnType */ boolean, /* value_id */ Uint8Array[] | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcDeleteConfigInput
     set_config_type(value_config_type: PdcConfigurationType): boolean
     set_id(value_id: Uint8Array[]): boolean
@@ -8641,18 +9292,18 @@ export class MessagePdcDeleteConfigInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdcDeleteConfigInput
 }
-export class MessagePdcDeleteConfigOutput {
-    /* Methods of Qmi.MessagePdcDeleteConfigOutput */
+class MessagePdcDeleteConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcDeleteConfigOutput */
     get_result(): boolean
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcDeleteConfigOutput
     unref(): void
     static name: string
 }
-export class MessagePdcGetConfigInfoInput {
-    /* Methods of Qmi.MessagePdcGetConfigInfoInput */
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
-    get_type_with_id(): [ /* returnType */ boolean, /* value_type_with_id */ ConfigTypeAndId ]
+class MessagePdcGetConfigInfoInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcGetConfigInfoInput */
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
+    get_type_with_id(): [ /* returnType */ boolean, /* value_type_with_id */ ConfigTypeAndId | null ]
     ref(): MessagePdcGetConfigInfoInput
     set_token(value_token: number): boolean
     set_type_with_id(value_type_with_id: ConfigTypeAndId): boolean
@@ -8663,17 +9314,17 @@ export class MessagePdcGetConfigInfoInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdcGetConfigInfoInput
 }
-export class MessagePdcGetConfigInfoOutput {
-    /* Methods of Qmi.MessagePdcGetConfigInfoOutput */
+class MessagePdcGetConfigInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcGetConfigInfoOutput */
     get_result(): boolean
     ref(): MessagePdcGetConfigInfoOutput
     unref(): void
     static name: string
 }
-export class MessagePdcGetConfigLimitsInput {
-    /* Methods of Qmi.MessagePdcGetConfigLimitsInput */
-    get_config_type(): [ /* returnType */ boolean, /* value_config_type */ PdcConfigurationType ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+class MessagePdcGetConfigLimitsInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcGetConfigLimitsInput */
+    get_config_type(): [ /* returnType */ boolean, /* value_config_type */ PdcConfigurationType | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcGetConfigLimitsInput
     set_config_type(value_config_type: PdcConfigurationType): boolean
     set_token(value_token: number): boolean
@@ -8684,20 +9335,20 @@ export class MessagePdcGetConfigLimitsInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdcGetConfigLimitsInput
 }
-export class MessagePdcGetConfigLimitsOutput {
-    /* Methods of Qmi.MessagePdcGetConfigLimitsOutput */
-    get_current_size(): [ /* returnType */ boolean, /* value_current_size */ number ]
-    get_maximum_size(): [ /* returnType */ boolean, /* value_maximum_size */ number ]
+class MessagePdcGetConfigLimitsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcGetConfigLimitsOutput */
+    get_current_size(): [ /* returnType */ boolean, /* value_current_size */ number | null ]
+    get_maximum_size(): [ /* returnType */ boolean, /* value_maximum_size */ number | null ]
     get_result(): boolean
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcGetConfigLimitsOutput
     unref(): void
     static name: string
 }
-export class MessagePdcGetDefaultConfigInfoInput {
-    /* Methods of Qmi.MessagePdcGetDefaultConfigInfoInput */
-    get_config_type(): [ /* returnType */ boolean, /* value_config_type */ PdcConfigurationType ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+class MessagePdcGetDefaultConfigInfoInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcGetDefaultConfigInfoInput */
+    get_config_type(): [ /* returnType */ boolean, /* value_config_type */ PdcConfigurationType | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcGetDefaultConfigInfoInput
     set_config_type(value_config_type: PdcConfigurationType): boolean
     set_token(value_token: number): boolean
@@ -8708,21 +9359,21 @@ export class MessagePdcGetDefaultConfigInfoInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdcGetDefaultConfigInfoInput
 }
-export class MessagePdcGetDefaultConfigInfoOutput {
-    /* Methods of Qmi.MessagePdcGetDefaultConfigInfoOutput */
-    get_description(): [ /* returnType */ boolean, /* value_description */ string ]
+class MessagePdcGetDefaultConfigInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcGetDefaultConfigInfoOutput */
+    get_description(): [ /* returnType */ boolean, /* value_description */ string | null ]
     get_result(): boolean
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
-    get_total_size(): [ /* returnType */ boolean, /* value_total_size */ number ]
-    get_version(): [ /* returnType */ boolean, /* value_version */ number ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
+    get_total_size(): [ /* returnType */ boolean, /* value_total_size */ number | null ]
+    get_version(): [ /* returnType */ boolean, /* value_version */ number | null ]
     ref(): MessagePdcGetDefaultConfigInfoOutput
     unref(): void
     static name: string
 }
-export class MessagePdcGetSelectedConfigInput {
-    /* Methods of Qmi.MessagePdcGetSelectedConfigInput */
-    get_config_type(): [ /* returnType */ boolean, /* value_config_type */ PdcConfigurationType ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+class MessagePdcGetSelectedConfigInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcGetSelectedConfigInput */
+    get_config_type(): [ /* returnType */ boolean, /* value_config_type */ PdcConfigurationType | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcGetSelectedConfigInput
     set_config_type(value_config_type: PdcConfigurationType): boolean
     set_token(value_token: number): boolean
@@ -8733,18 +9384,18 @@ export class MessagePdcGetSelectedConfigInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdcGetSelectedConfigInput
 }
-export class MessagePdcGetSelectedConfigOutput {
-    /* Methods of Qmi.MessagePdcGetSelectedConfigOutput */
+class MessagePdcGetSelectedConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcGetSelectedConfigOutput */
     get_result(): boolean
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcGetSelectedConfigOutput
     unref(): void
     static name: string
 }
-export class MessagePdcListConfigsInput {
-    /* Methods of Qmi.MessagePdcListConfigsInput */
-    get_config_type(): [ /* returnType */ boolean, /* value_config_type */ PdcConfigurationType ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+class MessagePdcListConfigsInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcListConfigsInput */
+    get_config_type(): [ /* returnType */ boolean, /* value_config_type */ PdcConfigurationType | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcListConfigsInput
     set_config_type(value_config_type: PdcConfigurationType): boolean
     set_token(value_token: number): boolean
@@ -8755,17 +9406,17 @@ export class MessagePdcListConfigsInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdcListConfigsInput
 }
-export class MessagePdcListConfigsOutput {
-    /* Methods of Qmi.MessagePdcListConfigsOutput */
+class MessagePdcListConfigsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcListConfigsOutput */
     get_result(): boolean
     ref(): MessagePdcListConfigsOutput
     unref(): void
     static name: string
 }
-export class MessagePdcLoadConfigInput {
-    /* Methods of Qmi.MessagePdcLoadConfigInput */
-    get_config_chunk(): [ /* returnType */ boolean, /* value_config_chunk_type */ PdcConfigurationType, /* value_config_chunk_id */ Uint8Array[], /* value_config_chunk_total_size */ number, /* value_config_chunk_chunk */ Uint8Array[] ]
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+class MessagePdcLoadConfigInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcLoadConfigInput */
+    get_config_chunk(): [ /* returnType */ boolean, /* value_config_chunk_type */ PdcConfigurationType | null, /* value_config_chunk_id */ Uint8Array[] | null, /* value_config_chunk_total_size */ number | null, /* value_config_chunk_chunk */ Uint8Array[] | null ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcLoadConfigInput
     set_config_chunk(value_config_chunk_type: PdcConfigurationType, value_config_chunk_id: Uint8Array[], value_config_chunk_total_size: number, value_config_chunk_chunk: Uint8Array[]): boolean
     set_token(value_token: number): boolean
@@ -8776,18 +9427,20 @@ export class MessagePdcLoadConfigInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdcLoadConfigInput
 }
-export class MessagePdcLoadConfigOutput {
-    /* Methods of Qmi.MessagePdcLoadConfigOutput */
+class MessagePdcLoadConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcLoadConfigOutput */
     get_result(): boolean
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcLoadConfigOutput
     unref(): void
     static name: string
 }
-export class MessagePdcRegisterInput {
-    /* Methods of Qmi.MessagePdcRegisterInput */
-    get_enable_reporting(): [ /* returnType */ boolean, /* value_enable_reporting */ boolean ]
+class MessagePdcRegisterInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcRegisterInput */
+    get_enable_refresh(): [ /* returnType */ boolean, /* value_enable_refresh */ boolean | null ]
+    get_enable_reporting(): [ /* returnType */ boolean, /* value_enable_reporting */ boolean | null ]
     ref(): MessagePdcRegisterInput
+    set_enable_refresh(value_enable_refresh: boolean): boolean
     set_enable_reporting(value_enable_reporting: boolean): boolean
     unref(): void
     static name: string
@@ -8796,24 +9449,24 @@ export class MessagePdcRegisterInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdcRegisterInput
 }
-export class MessagePdcRegisterOutput {
-    /* Methods of Qmi.MessagePdcRegisterOutput */
+class MessagePdcRegisterOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcRegisterOutput */
     get_result(): boolean
     ref(): MessagePdcRegisterOutput
     unref(): void
     static name: string
 }
-export class MessagePdcResetOutput {
-    /* Methods of Qmi.MessagePdcResetOutput */
+class MessagePdcResetOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcResetOutput */
     get_result(): boolean
     ref(): MessagePdcResetOutput
     unref(): void
     static name: string
 }
-export class MessagePdcSetSelectedConfigInput {
-    /* Methods of Qmi.MessagePdcSetSelectedConfigInput */
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
-    get_type_with_id(): [ /* returnType */ boolean, /* value_type_with_id */ ConfigTypeAndId ]
+class MessagePdcSetSelectedConfigInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcSetSelectedConfigInput */
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
+    get_type_with_id(): [ /* returnType */ boolean, /* value_type_with_id */ ConfigTypeAndId | null ]
     ref(): MessagePdcSetSelectedConfigInput
     set_token(value_token: number): boolean
     set_type_with_id(value_type_with_id: ConfigTypeAndId): boolean
@@ -8824,17 +9477,17 @@ export class MessagePdcSetSelectedConfigInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdcSetSelectedConfigInput
 }
-export class MessagePdcSetSelectedConfigOutput {
-    /* Methods of Qmi.MessagePdcSetSelectedConfigOutput */
+class MessagePdcSetSelectedConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdcSetSelectedConfigOutput */
     get_result(): boolean
-    get_token(): [ /* returnType */ boolean, /* value_token */ number ]
+    get_token(): [ /* returnType */ boolean, /* value_token */ number | null ]
     ref(): MessagePdcSetSelectedConfigOutput
     unref(): void
     static name: string
 }
-export class MessagePdsGetAgpsConfigInput {
-    /* Methods of Qmi.MessagePdsGetAgpsConfigInput */
-    get_network_mode(): [ /* returnType */ boolean, /* value_network_mode */ PdsNetworkMode ]
+class MessagePdsGetAgpsConfigInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsGetAgpsConfigInput */
+    get_network_mode(): [ /* returnType */ boolean, /* value_network_mode */ PdsNetworkMode | null ]
     ref(): MessagePdsGetAgpsConfigInput
     set_network_mode(value_network_mode: PdsNetworkMode): boolean
     unref(): void
@@ -8844,51 +9497,51 @@ export class MessagePdsGetAgpsConfigInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdsGetAgpsConfigInput
 }
-export class MessagePdsGetAgpsConfigOutput {
-    /* Methods of Qmi.MessagePdsGetAgpsConfigOutput */
-    get_location_server_address(): [ /* returnType */ boolean, /* value_location_server_address_ip */ number, /* value_location_server_address_port */ number ]
-    get_location_server_url(): [ /* returnType */ boolean, /* value_location_server_url */ Uint8Array[] ]
+class MessagePdsGetAgpsConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsGetAgpsConfigOutput */
+    get_location_server_address(): [ /* returnType */ boolean, /* value_location_server_address_ip */ number | null, /* value_location_server_address_port */ number | null ]
+    get_location_server_url(): [ /* returnType */ boolean, /* value_location_server_url */ Uint8Array[] | null ]
     get_result(): boolean
     ref(): MessagePdsGetAgpsConfigOutput
     unref(): void
     static name: string
 }
-export class MessagePdsGetAutoTrackingStateOutput {
-    /* Methods of Qmi.MessagePdsGetAutoTrackingStateOutput */
+class MessagePdsGetAutoTrackingStateOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsGetAutoTrackingStateOutput */
     get_result(): boolean
-    get_state(): [ /* returnType */ boolean, /* value_state_auto_tracking_state */ boolean ]
+    get_state(): [ /* returnType */ boolean, /* value_state_auto_tracking_state */ boolean | null ]
     ref(): MessagePdsGetAutoTrackingStateOutput
     unref(): void
     static name: string
 }
-export class MessagePdsGetDefaultTrackingSessionOutput {
-    /* Methods of Qmi.MessagePdsGetDefaultTrackingSessionOutput */
-    get_info(): [ /* returnType */ boolean, /* value_info_session_operation */ PdsOperatingMode, /* value_info_position_data_timeout */ number, /* value_info_interval */ number, /* value_info_accuracy_threshold */ number ]
+class MessagePdsGetDefaultTrackingSessionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsGetDefaultTrackingSessionOutput */
+    get_info(): [ /* returnType */ boolean, /* value_info_session_operation */ PdsOperatingMode | null, /* value_info_position_data_timeout */ number | null, /* value_info_interval */ number | null, /* value_info_accuracy_threshold */ number | null ]
     get_result(): boolean
     ref(): MessagePdsGetDefaultTrackingSessionOutput
     unref(): void
     static name: string
 }
-export class MessagePdsGetGpsServiceStateOutput {
-    /* Methods of Qmi.MessagePdsGetGpsServiceStateOutput */
+class MessagePdsGetGpsServiceStateOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsGetGpsServiceStateOutput */
     get_result(): boolean
-    get_state(): [ /* returnType */ boolean, /* value_state_gps_service_state */ boolean, /* value_state_tracking_session_state */ PdsTrackingSessionState ]
+    get_state(): [ /* returnType */ boolean, /* value_state_gps_service_state */ boolean | null, /* value_state_tracking_session_state */ PdsTrackingSessionState | null ]
     ref(): MessagePdsGetGpsServiceStateOutput
     unref(): void
     static name: string
 }
-export class MessagePdsResetOutput {
-    /* Methods of Qmi.MessagePdsResetOutput */
+class MessagePdsResetOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsResetOutput */
     get_result(): boolean
     ref(): MessagePdsResetOutput
     unref(): void
     static name: string
 }
-export class MessagePdsSetAgpsConfigInput {
-    /* Methods of Qmi.MessagePdsSetAgpsConfigInput */
-    get_location_server_address(): [ /* returnType */ boolean, /* value_location_server_address_ip */ number, /* value_location_server_address_port */ number ]
-    get_location_server_url(): [ /* returnType */ boolean, /* value_location_server_url */ Uint8Array[] ]
-    get_network_mode(): [ /* returnType */ boolean, /* value_network_mode */ PdsNetworkMode ]
+class MessagePdsSetAgpsConfigInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsSetAgpsConfigInput */
+    get_location_server_address(): [ /* returnType */ boolean, /* value_location_server_address_ip */ number | null, /* value_location_server_address_port */ number | null ]
+    get_location_server_url(): [ /* returnType */ boolean, /* value_location_server_url */ Uint8Array[] | null ]
+    get_network_mode(): [ /* returnType */ boolean, /* value_network_mode */ PdsNetworkMode | null ]
     ref(): MessagePdsSetAgpsConfigInput
     set_location_server_address(value_location_server_address_ip: number, value_location_server_address_port: number): boolean
     set_location_server_url(value_location_server_url: Uint8Array[]): boolean
@@ -8900,16 +9553,16 @@ export class MessagePdsSetAgpsConfigInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdsSetAgpsConfigInput
 }
-export class MessagePdsSetAgpsConfigOutput {
-    /* Methods of Qmi.MessagePdsSetAgpsConfigOutput */
+class MessagePdsSetAgpsConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsSetAgpsConfigOutput */
     get_result(): boolean
     ref(): MessagePdsSetAgpsConfigOutput
     unref(): void
     static name: string
 }
-export class MessagePdsSetAutoTrackingStateInput {
-    /* Methods of Qmi.MessagePdsSetAutoTrackingStateInput */
-    get_state(): [ /* returnType */ boolean, /* value_state_auto_tracking_state */ boolean ]
+class MessagePdsSetAutoTrackingStateInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsSetAutoTrackingStateInput */
+    get_state(): [ /* returnType */ boolean, /* value_state_auto_tracking_state */ boolean | null ]
     ref(): MessagePdsSetAutoTrackingStateInput
     set_state(value_state_auto_tracking_state: boolean): boolean
     unref(): void
@@ -8919,16 +9572,16 @@ export class MessagePdsSetAutoTrackingStateInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdsSetAutoTrackingStateInput
 }
-export class MessagePdsSetAutoTrackingStateOutput {
-    /* Methods of Qmi.MessagePdsSetAutoTrackingStateOutput */
+class MessagePdsSetAutoTrackingStateOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsSetAutoTrackingStateOutput */
     get_result(): boolean
     ref(): MessagePdsSetAutoTrackingStateOutput
     unref(): void
     static name: string
 }
-export class MessagePdsSetDefaultTrackingSessionInput {
-    /* Methods of Qmi.MessagePdsSetDefaultTrackingSessionInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_session_operation */ PdsOperatingMode, /* value_info_position_data_timeout */ number, /* value_info_interval */ number, /* value_info_accuracy_threshold */ number ]
+class MessagePdsSetDefaultTrackingSessionInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsSetDefaultTrackingSessionInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_session_operation */ PdsOperatingMode | null, /* value_info_position_data_timeout */ number | null, /* value_info_interval */ number | null, /* value_info_accuracy_threshold */ number | null ]
     ref(): MessagePdsSetDefaultTrackingSessionInput
     set_info(value_info_session_operation: PdsOperatingMode, value_info_position_data_timeout: number, value_info_interval: number, value_info_accuracy_threshold: number): boolean
     unref(): void
@@ -8938,35 +9591,35 @@ export class MessagePdsSetDefaultTrackingSessionInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdsSetDefaultTrackingSessionInput
 }
-export class MessagePdsSetDefaultTrackingSessionOutput {
-    /* Methods of Qmi.MessagePdsSetDefaultTrackingSessionOutput */
+class MessagePdsSetDefaultTrackingSessionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsSetDefaultTrackingSessionOutput */
     get_result(): boolean
     ref(): MessagePdsSetDefaultTrackingSessionOutput
     unref(): void
     static name: string
 }
-export class MessagePdsSetEventReportInput {
-    /* Methods of Qmi.MessagePdsSetEventReportInput */
-    get_accelerometer_data_streaming_ready_reporting(): [ /* returnType */ boolean, /* value_accelerometer_data_streaming_ready_reporting */ boolean ]
-    get_extended_external_xtra_data_request_reporting(): [ /* returnType */ boolean, /* value_extended_external_xtra_data_request_reporting */ boolean ]
-    get_extended_nmea_position_reporting(): [ /* returnType */ boolean, /* value_extended_nmea_position_reporting */ boolean ]
-    get_external_time_injection_request_reporting(): [ /* returnType */ boolean, /* value_external_time_injection_request_reporting */ boolean ]
-    get_external_wifi_position_request_reporting(): [ /* returnType */ boolean, /* value_external_wifi_position_request_reporting */ boolean ]
-    get_external_xtra_data_request_reporting(): [ /* returnType */ boolean, /* value_external_xtra_data_request_reporting */ boolean ]
-    get_gyro_data_streaming_ready_reporting(): [ /* returnType */ boolean, /* value_gyro_data_streaming_ready_reporting */ boolean ]
-    get_heading_uncertainty_reporting(): [ /* returnType */ boolean, /* value_heading_uncertainty_reporting */ boolean ]
-    get_nmea_debug_strings_reporting(): [ /* returnType */ boolean, /* value_nmea_debug_strings_reporting */ boolean ]
-    get_nmea_position_reporting(): [ /* returnType */ boolean, /* value_nmea_position_reporting */ boolean ]
-    get_parsed_position_reporting(): [ /* returnType */ boolean, /* value_parsed_position_reporting */ boolean ]
-    get_pds_comm_event_reporting(): [ /* returnType */ boolean, /* value_pds_comm_event_reporting */ boolean ]
-    get_position_reliability_indicator_reporting(): [ /* returnType */ boolean, /* value_position_reliability_indicator_reporting */ boolean ]
-    get_satellite_information_reporting(): [ /* returnType */ boolean, /* value_satellite_information_reporting */ boolean ]
-    get_sensor_data_usage_indicator_reporting(): [ /* returnType */ boolean, /* value_sensor_data_usage_indicator_reporting */ boolean ]
-    get_supl_network_initiated_prompt_reporting(): [ /* returnType */ boolean, /* value_supl_network_initiated_prompt_reporting */ boolean ]
-    get_time_source_information_reporting(): [ /* returnType */ boolean, /* value_time_source_information_reporting */ boolean ]
-    get_time_sync_request_reporting(): [ /* returnType */ boolean, /* value_time_sync_request_reporting */ boolean ]
-    get_umts_cp_network_initiated_prompt_reporting(): [ /* returnType */ boolean, /* value_umts_cp_network_initiated_prompt_reporting */ boolean ]
-    get_vx_network_initiated_request_reporting(): [ /* returnType */ boolean, /* value_vx_network_initiated_request_reporting */ boolean ]
+class MessagePdsSetEventReportInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsSetEventReportInput */
+    get_accelerometer_data_streaming_ready_reporting(): [ /* returnType */ boolean, /* value_accelerometer_data_streaming_ready_reporting */ boolean | null ]
+    get_extended_external_xtra_data_request_reporting(): [ /* returnType */ boolean, /* value_extended_external_xtra_data_request_reporting */ boolean | null ]
+    get_extended_nmea_position_reporting(): [ /* returnType */ boolean, /* value_extended_nmea_position_reporting */ boolean | null ]
+    get_external_time_injection_request_reporting(): [ /* returnType */ boolean, /* value_external_time_injection_request_reporting */ boolean | null ]
+    get_external_wifi_position_request_reporting(): [ /* returnType */ boolean, /* value_external_wifi_position_request_reporting */ boolean | null ]
+    get_external_xtra_data_request_reporting(): [ /* returnType */ boolean, /* value_external_xtra_data_request_reporting */ boolean | null ]
+    get_gyro_data_streaming_ready_reporting(): [ /* returnType */ boolean, /* value_gyro_data_streaming_ready_reporting */ boolean | null ]
+    get_heading_uncertainty_reporting(): [ /* returnType */ boolean, /* value_heading_uncertainty_reporting */ boolean | null ]
+    get_nmea_debug_strings_reporting(): [ /* returnType */ boolean, /* value_nmea_debug_strings_reporting */ boolean | null ]
+    get_nmea_position_reporting(): [ /* returnType */ boolean, /* value_nmea_position_reporting */ boolean | null ]
+    get_parsed_position_reporting(): [ /* returnType */ boolean, /* value_parsed_position_reporting */ boolean | null ]
+    get_pds_comm_event_reporting(): [ /* returnType */ boolean, /* value_pds_comm_event_reporting */ boolean | null ]
+    get_position_reliability_indicator_reporting(): [ /* returnType */ boolean, /* value_position_reliability_indicator_reporting */ boolean | null ]
+    get_satellite_information_reporting(): [ /* returnType */ boolean, /* value_satellite_information_reporting */ boolean | null ]
+    get_sensor_data_usage_indicator_reporting(): [ /* returnType */ boolean, /* value_sensor_data_usage_indicator_reporting */ boolean | null ]
+    get_supl_network_initiated_prompt_reporting(): [ /* returnType */ boolean, /* value_supl_network_initiated_prompt_reporting */ boolean | null ]
+    get_time_source_information_reporting(): [ /* returnType */ boolean, /* value_time_source_information_reporting */ boolean | null ]
+    get_time_sync_request_reporting(): [ /* returnType */ boolean, /* value_time_sync_request_reporting */ boolean | null ]
+    get_umts_cp_network_initiated_prompt_reporting(): [ /* returnType */ boolean, /* value_umts_cp_network_initiated_prompt_reporting */ boolean | null ]
+    get_vx_network_initiated_request_reporting(): [ /* returnType */ boolean, /* value_vx_network_initiated_request_reporting */ boolean | null ]
     ref(): MessagePdsSetEventReportInput
     set_accelerometer_data_streaming_ready_reporting(value_accelerometer_data_streaming_ready_reporting: boolean): boolean
     set_extended_external_xtra_data_request_reporting(value_extended_external_xtra_data_request_reporting: boolean): boolean
@@ -8995,16 +9648,16 @@ export class MessagePdsSetEventReportInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdsSetEventReportInput
 }
-export class MessagePdsSetEventReportOutput {
-    /* Methods of Qmi.MessagePdsSetEventReportOutput */
+class MessagePdsSetEventReportOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsSetEventReportOutput */
     get_result(): boolean
     ref(): MessagePdsSetEventReportOutput
     unref(): void
     static name: string
 }
-export class MessagePdsSetGpsServiceStateInput {
-    /* Methods of Qmi.MessagePdsSetGpsServiceStateInput */
-    get_state(): [ /* returnType */ boolean, /* value_state_gps_service_state */ boolean ]
+class MessagePdsSetGpsServiceStateInput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsSetGpsServiceStateInput */
+    get_state(): [ /* returnType */ boolean, /* value_state_gps_service_state */ boolean | null ]
     ref(): MessagePdsSetGpsServiceStateInput
     set_state(value_state_gps_service_state: boolean): boolean
     unref(): void
@@ -9014,16 +9667,16 @@ export class MessagePdsSetGpsServiceStateInput {
     /* Static methods and pseudo-constructors */
     static new(): MessagePdsSetGpsServiceStateInput
 }
-export class MessagePdsSetGpsServiceStateOutput {
-    /* Methods of Qmi.MessagePdsSetGpsServiceStateOutput */
+class MessagePdsSetGpsServiceStateOutput {
+    /* Methods of Qmi-1.0.Qmi.MessagePdsSetGpsServiceStateOutput */
     get_result(): boolean
     ref(): MessagePdsSetGpsServiceStateOutput
     unref(): void
     static name: string
 }
-export class MessageQosGetFlowStatusInput {
-    /* Methods of Qmi.MessageQosGetFlowStatusInput */
-    get_qos_id(): [ /* returnType */ boolean, /* value_qos_id */ number ]
+class MessageQosGetFlowStatusInput {
+    /* Methods of Qmi-1.0.Qmi.MessageQosGetFlowStatusInput */
+    get_qos_id(): [ /* returnType */ boolean, /* value_qos_id */ number | null ]
     ref(): MessageQosGetFlowStatusInput
     set_qos_id(value_qos_id: number): boolean
     unref(): void
@@ -9033,32 +9686,32 @@ export class MessageQosGetFlowStatusInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageQosGetFlowStatusInput
 }
-export class MessageQosGetFlowStatusOutput {
-    /* Methods of Qmi.MessageQosGetFlowStatusOutput */
+class MessageQosGetFlowStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageQosGetFlowStatusOutput */
     get_result(): boolean
-    get_value(): [ /* returnType */ boolean, /* value_value */ QosStatus ]
+    get_value(): [ /* returnType */ boolean, /* value_value */ QosStatus | null ]
     ref(): MessageQosGetFlowStatusOutput
     unref(): void
     static name: string
 }
-export class MessageQosGetNetworkStatusOutput {
-    /* Methods of Qmi.MessageQosGetNetworkStatusOutput */
-    get_qos_supported(): [ /* returnType */ boolean, /* value_qos_supported */ boolean ]
+class MessageQosGetNetworkStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageQosGetNetworkStatusOutput */
+    get_qos_supported(): [ /* returnType */ boolean, /* value_qos_supported */ boolean | null ]
     get_result(): boolean
     ref(): MessageQosGetNetworkStatusOutput
     unref(): void
     static name: string
 }
-export class MessageQosResetOutput {
-    /* Methods of Qmi.MessageQosResetOutput */
+class MessageQosResetOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageQosResetOutput */
     get_result(): boolean
     ref(): MessageQosResetOutput
     unref(): void
     static name: string
 }
-export class MessageQosSwiReadDataStatsInput {
-    /* Methods of Qmi.MessageQosSwiReadDataStatsInput */
-    get_apn_id(): [ /* returnType */ boolean, /* value_apn_id */ number ]
+class MessageQosSwiReadDataStatsInput {
+    /* Methods of Qmi-1.0.Qmi.MessageQosSwiReadDataStatsInput */
+    get_apn_id(): [ /* returnType */ boolean, /* value_apn_id */ number | null ]
     ref(): MessageQosSwiReadDataStatsInput
     set_apn_id(value_apn_id: number): boolean
     unref(): void
@@ -9068,17 +9721,17 @@ export class MessageQosSwiReadDataStatsInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageQosSwiReadDataStatsInput
 }
-export class MessageQosSwiReadDataStatsOutput {
-    /* Methods of Qmi.MessageQosSwiReadDataStatsOutput */
-    get_apn(): [ /* returnType */ boolean, /* value_apn_apn_id */ number, /* value_apn_tx_packets */ number, /* value_apn_tx_packets_dropped */ number, /* value_apn_rx_packets */ number, /* value_apn_tx_bytes */ number, /* value_apn_tx_bytes_dropped */ number, /* value_apn_rx_bytes */ number ]
-    get_flow(): [ /* returnType */ boolean, /* value_flow */ MessageQosSwiReadDataStatsOutputFlowElement[] ]
+class MessageQosSwiReadDataStatsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageQosSwiReadDataStatsOutput */
+    get_apn(): [ /* returnType */ boolean, /* value_apn_apn_id */ number | null, /* value_apn_tx_packets */ number | null, /* value_apn_tx_packets_dropped */ number | null, /* value_apn_rx_packets */ number | null, /* value_apn_tx_bytes */ number | null, /* value_apn_tx_bytes_dropped */ number | null, /* value_apn_rx_bytes */ number | null ]
+    get_flow(): [ /* returnType */ boolean, /* value_flow */ MessageQosSwiReadDataStatsOutputFlowElement[] | null ]
     get_result(): boolean
     ref(): MessageQosSwiReadDataStatsOutput
     unref(): void
     static name: string
 }
-export class MessageQosSwiReadDataStatsOutputFlowElement {
-    /* Fields of Qmi.MessageQosSwiReadDataStatsOutputFlowElement */
+class MessageQosSwiReadDataStatsOutputFlowElement {
+    /* Fields of Qmi-1.0.Qmi.MessageQosSwiReadDataStatsOutputFlowElement */
     bearer_id: number
     tx_packets: number
     tx_packets_dropped: number
@@ -9086,17 +9739,17 @@ export class MessageQosSwiReadDataStatsOutputFlowElement {
     tx_bytes_dropped: number
     static name: string
 }
-export class MessageSarRfGetStateOutput {
-    /* Methods of Qmi.MessageSarRfGetStateOutput */
+class MessageSarRfGetStateOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageSarRfGetStateOutput */
     get_result(): boolean
-    get_state(): [ /* returnType */ boolean, /* value_state */ SarRfState ]
+    get_state(): [ /* returnType */ boolean, /* value_state */ SarRfState | null ]
     ref(): MessageSarRfGetStateOutput
     unref(): void
     static name: string
 }
-export class MessageSarRfSetStateInput {
-    /* Methods of Qmi.MessageSarRfSetStateInput */
-    get_state(): [ /* returnType */ boolean, /* value_state */ SarRfState ]
+class MessageSarRfSetStateInput {
+    /* Methods of Qmi-1.0.Qmi.MessageSarRfSetStateInput */
+    get_state(): [ /* returnType */ boolean, /* value_state */ SarRfState | null ]
     ref(): MessageSarRfSetStateInput
     set_state(value_state: SarRfState): boolean
     unref(): void
@@ -9106,24 +9759,22 @@ export class MessageSarRfSetStateInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageSarRfSetStateInput
 }
-export class MessageSarRfSetStateOutput {
-    /* Methods of Qmi.MessageSarRfSetStateOutput */
+class MessageSarRfSetStateOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageSarRfSetStateOutput */
     get_result(): boolean
     ref(): MessageSarRfSetStateOutput
     unref(): void
     static name: string
 }
-export class MessageUimChangePinInput {
-    /* Methods of Qmi.MessageUimChangePinInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ UimPinId, /* value_info_old_pin */ string, /* value_info_new_pin */ string ]
-    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number ]
-    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType, /* value_session_application_identifier */ Uint8Array[] ]
-    get_session_information(value_session_information_session_type: UimSessionType, value_session_information_application_identifier: string): boolean
+class MessageUimChangePinInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimChangePinInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ UimPinId | null, /* value_info_old_pin */ string | null, /* value_info_new_pin */ string | null ]
+    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number | null ]
+    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType | null, /* value_session_application_identifier */ Uint8Array[] | null ]
     ref(): MessageUimChangePinInput
     set_info(value_info_pin_id: UimPinId, value_info_old_pin: string, value_info_new_pin: string): boolean
     set_response_in_indication_token(value_response_in_indication_token: number): boolean
     set_session(value_session_session_type: UimSessionType, value_session_application_identifier: Uint8Array[]): boolean
-    set_session_information(value_session_information_session_type: UimSessionType, value_session_information_application_identifier: string): boolean
     unref(): void
     static name: string
     static new(): MessageUimChangePinInput
@@ -9131,20 +9782,20 @@ export class MessageUimChangePinInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimChangePinInput
 }
-export class MessageUimChangePinOutput {
-    /* Methods of Qmi.MessageUimChangePinOutput */
-    get_card_result(): [ /* returnType */ boolean, /* value_card_result_sw1 */ number, /* value_card_result_sw2 */ number ]
-    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number ]
+class MessageUimChangePinOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimChangePinOutput */
+    get_card_result(): [ /* returnType */ boolean, /* value_card_result_sw1 */ number | null, /* value_card_result_sw2 */ number | null ]
+    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number | null ]
     get_result(): boolean
-    get_retries_remaining(): [ /* returnType */ boolean, /* value_retries_remaining_verify_retries_left */ number, /* value_retries_remaining_unblock_retries_left */ number ]
+    get_retries_remaining(): [ /* returnType */ boolean, /* value_retries_remaining_verify_retries_left */ number | null, /* value_retries_remaining_unblock_retries_left */ number | null ]
     ref(): MessageUimChangePinOutput
     unref(): void
     static name: string
 }
-export class MessageUimChangeProvisioningSessionInput {
-    /* Methods of Qmi.MessageUimChangeProvisioningSessionInput */
-    get_application_information(): [ /* returnType */ boolean, /* value_application_information_slot */ number, /* value_application_information_application_identifier */ Uint8Array[] ]
-    get_session_change(): [ /* returnType */ boolean, /* value_session_change_session_type */ UimSessionType, /* value_session_change_activate */ boolean ]
+class MessageUimChangeProvisioningSessionInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimChangeProvisioningSessionInput */
+    get_application_information(): [ /* returnType */ boolean, /* value_application_information_slot */ number | null, /* value_application_information_application_identifier */ Uint8Array[] | null ]
+    get_session_change(): [ /* returnType */ boolean, /* value_session_change_session_type */ UimSessionType | null, /* value_session_change_activate */ boolean | null ]
     ref(): MessageUimChangeProvisioningSessionInput
     set_application_information(value_application_information_slot: number, value_application_information_application_identifier: Uint8Array[]): boolean
     set_session_change(value_session_change_session_type: UimSessionType, value_session_change_activate: boolean): boolean
@@ -9155,23 +9806,45 @@ export class MessageUimChangeProvisioningSessionInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimChangeProvisioningSessionInput
 }
-export class MessageUimChangeProvisioningSessionOutput {
-    /* Methods of Qmi.MessageUimChangeProvisioningSessionOutput */
+class MessageUimChangeProvisioningSessionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimChangeProvisioningSessionOutput */
     get_result(): boolean
     ref(): MessageUimChangeProvisioningSessionOutput
     unref(): void
     static name: string
 }
-export class MessageUimGetCardStatusOutput {
-    /* Methods of Qmi.MessageUimGetCardStatusOutput */
-    get_card_status(): [ /* returnType */ boolean, /* value_card_status_index_gw_primary */ number, /* value_card_status_index_1x_primary */ number, /* value_card_status_index_gw_secondary */ number, /* value_card_status_index_1x_secondary */ number, /* value_card_status_cards */ MessageUimGetCardStatusOutputCardStatusCardsElement[] ]
+class MessageUimDepersonalizationInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimDepersonalizationInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_feature */ UimCardApplicationPersonalizationFeature | null, /* value_info_operation */ UimDepersonalizationOperation | null, /* value_info_control_key */ string | null ]
+    get_slot(): [ /* returnType */ boolean, /* value_slot */ number | null ]
+    ref(): MessageUimDepersonalizationInput
+    set_info(value_info_feature: UimCardApplicationPersonalizationFeature, value_info_operation: UimDepersonalizationOperation, value_info_control_key: string): boolean
+    set_slot(value_slot: number): boolean
+    unref(): void
+    static name: string
+    static new(): MessageUimDepersonalizationInput
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MessageUimDepersonalizationInput
+}
+class MessageUimDepersonalizationOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimDepersonalizationOutput */
+    get_result(): boolean
+    get_retries_remaining(): [ /* returnType */ boolean, /* value_retries_remaining_verify_left */ number | null, /* value_retries_remaining_unblock_left */ number | null ]
+    ref(): MessageUimDepersonalizationOutput
+    unref(): void
+    static name: string
+}
+class MessageUimGetCardStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimGetCardStatusOutput */
+    get_card_status(): [ /* returnType */ boolean, /* value_card_status_index_gw_primary */ number | null, /* value_card_status_index_1x_primary */ number | null, /* value_card_status_index_gw_secondary */ number | null, /* value_card_status_index_1x_secondary */ number | null, /* value_card_status_cards */ MessageUimGetCardStatusOutputCardStatusCardsElement[] | null ]
     get_result(): boolean
     ref(): MessageUimGetCardStatusOutput
     unref(): void
     static name: string
 }
-export class MessageUimGetCardStatusOutputCardStatusCardsElement {
-    /* Fields of Qmi.MessageUimGetCardStatusOutputCardStatusCardsElement */
+class MessageUimGetCardStatusOutputCardStatusCardsElement {
+    /* Fields of Qmi-1.0.Qmi.MessageUimGetCardStatusOutputCardStatusCardsElement */
     card_state: UimCardState
     upin_state: UimPinState
     upin_retries: number
@@ -9180,8 +9853,8 @@ export class MessageUimGetCardStatusOutputCardStatusCardsElement {
     applications: object[]
     static name: string
 }
-export class MessageUimGetCardStatusOutputCardStatusCardsElementApplicationsElement {
-    /* Fields of Qmi.MessageUimGetCardStatusOutputCardStatusCardsElementApplicationsElement */
+class MessageUimGetCardStatusOutputCardStatusCardsElementApplicationsElement {
+    /* Fields of Qmi-1.0.Qmi.MessageUimGetCardStatusOutputCardStatusCardsElementApplicationsElement */
     type: UimCardApplicationType
     state: UimCardApplicationState
     personalization_state: UimCardApplicationPersonalizationState
@@ -9198,17 +9871,52 @@ export class MessageUimGetCardStatusOutputCardStatusCardsElementApplicationsElem
     puk2_retries: number
     static name: string
 }
-export class MessageUimGetFileAttributesInput {
-    /* Methods of Qmi.MessageUimGetFileAttributesInput */
-    get_file(): [ /* returnType */ boolean, /* value_file_file_id */ number, /* value_file_file_path */ Uint8Array[] ]
-    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number ]
-    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType, /* value_session_application_identifier */ Uint8Array[] ]
-    get_session_information(value_session_information_session_type: UimSessionType, value_session_information_application_identifier: string): boolean
+class MessageUimGetConfigurationInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimGetConfigurationInput */
+    get_configuration_mask(): [ /* returnType */ boolean, /* value_configuration_mask */ UimConfiguration | null ]
+    ref(): MessageUimGetConfigurationInput
+    set_configuration_mask(value_configuration_mask: UimConfiguration): boolean
+    unref(): void
+    static name: string
+    static new(): MessageUimGetConfigurationInput
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MessageUimGetConfigurationInput
+}
+class MessageUimGetConfigurationOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimGetConfigurationOutput */
+    get_automatic_selection(): [ /* returnType */ boolean, /* value_automatic_selection */ boolean | null ]
+    get_halt_subscription(): [ /* returnType */ boolean, /* value_halt_subscription */ boolean | null ]
+    get_personalization_status(): [ /* returnType */ boolean, /* value_personalization_status */ MessageUimGetConfigurationOutputPersonalizationStatusElement[] | null ]
+    get_personalization_status_other_slots(): [ /* returnType */ boolean, /* value_personalization_status_other_slots */ any[] | null ]
+    get_result(): boolean
+    ref(): MessageUimGetConfigurationOutput
+    unref(): void
+    static name: string
+}
+class MessageUimGetConfigurationOutputPersonalizationStatusElement {
+    /* Fields of Qmi-1.0.Qmi.MessageUimGetConfigurationOutputPersonalizationStatusElement */
+    feature: UimCardApplicationPersonalizationFeature
+    verify_left: number
+    unblock_left: number
+    static name: string
+}
+class MessageUimGetConfigurationOutputPersonalizationStatusOtherSlotsSlotsElement {
+    /* Fields of Qmi-1.0.Qmi.MessageUimGetConfigurationOutputPersonalizationStatusOtherSlotsSlotsElement */
+    feature: UimCardApplicationPersonalizationFeature
+    verify_left: number
+    unblock_left: number
+    static name: string
+}
+class MessageUimGetFileAttributesInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimGetFileAttributesInput */
+    get_file(): [ /* returnType */ boolean, /* value_file_file_id */ number | null, /* value_file_file_path */ Uint8Array[] | null ]
+    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number | null ]
+    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType | null, /* value_session_application_identifier */ Uint8Array[] | null ]
     ref(): MessageUimGetFileAttributesInput
     set_file(value_file_file_id: number, value_file_file_path: Uint8Array[]): boolean
     set_response_in_indication_token(value_response_in_indication_token: number): boolean
     set_session(value_session_session_type: UimSessionType, value_session_application_identifier: Uint8Array[]): boolean
-    set_session_information(value_session_information_session_type: UimSessionType, value_session_information_application_identifier: string): boolean
     unref(): void
     static name: string
     static new(): MessageUimGetFileAttributesInput
@@ -9216,37 +9924,37 @@ export class MessageUimGetFileAttributesInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimGetFileAttributesInput
 }
-export class MessageUimGetFileAttributesOutput {
-    /* Methods of Qmi.MessageUimGetFileAttributesOutput */
-    get_card_result(): [ /* returnType */ boolean, /* value_card_result_sw1 */ number, /* value_card_result_sw2 */ number ]
-    get_file_attributes(): [ /* returnType */ boolean, /* value_file_attributes_file_size */ number, /* value_file_attributes_file_id */ number, /* value_file_attributes_file_type */ UimFileType, /* value_file_attributes_record_size */ number, /* value_file_attributes_record_count */ number, /* value_file_attributes_read_security_attributes_logic */ UimSecurityAttributeLogic, /* value_file_attributes_read_security_attributes */ UimSecurityAttribute, /* value_file_attributes_write_security_attributes_logic */ UimSecurityAttributeLogic, /* value_file_attributes_write_security_attributes */ UimSecurityAttribute, /* value_file_attributes_increase_security_attributes_logic */ UimSecurityAttributeLogic, /* value_file_attributes_increase_security_attributes */ UimSecurityAttribute, /* value_file_attributes_deactivate_security_attributes_logic */ UimSecurityAttributeLogic, /* value_file_attributes_deactivate_security_attributes */ UimSecurityAttribute, /* value_file_attributes_activate_security_attributes_logic */ UimSecurityAttributeLogic, /* value_file_attributes_activate_security_attributes */ UimSecurityAttribute, /* value_file_attributes_raw_data */ Uint8Array[] ]
-    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number ]
+class MessageUimGetFileAttributesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimGetFileAttributesOutput */
+    get_card_result(): [ /* returnType */ boolean, /* value_card_result_sw1 */ number | null, /* value_card_result_sw2 */ number | null ]
+    get_file_attributes(): [ /* returnType */ boolean, /* value_file_attributes_file_size */ number | null, /* value_file_attributes_file_id */ number | null, /* value_file_attributes_file_type */ UimFileType | null, /* value_file_attributes_record_size */ number | null, /* value_file_attributes_record_count */ number | null, /* value_file_attributes_read_security_attributes_logic */ UimSecurityAttributeLogic | null, /* value_file_attributes_read_security_attributes */ UimSecurityAttribute | null, /* value_file_attributes_write_security_attributes_logic */ UimSecurityAttributeLogic | null, /* value_file_attributes_write_security_attributes */ UimSecurityAttribute | null, /* value_file_attributes_increase_security_attributes_logic */ UimSecurityAttributeLogic | null, /* value_file_attributes_increase_security_attributes */ UimSecurityAttribute | null, /* value_file_attributes_deactivate_security_attributes_logic */ UimSecurityAttributeLogic | null, /* value_file_attributes_deactivate_security_attributes */ UimSecurityAttribute | null, /* value_file_attributes_activate_security_attributes_logic */ UimSecurityAttributeLogic | null, /* value_file_attributes_activate_security_attributes */ UimSecurityAttribute | null, /* value_file_attributes_raw_data */ Uint8Array[] | null ]
+    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number | null ]
     get_result(): boolean
     ref(): MessageUimGetFileAttributesOutput
     unref(): void
     static name: string
 }
-export class MessageUimGetSlotStatusOutput {
-    /* Methods of Qmi.MessageUimGetSlotStatusOutput */
-    get_physical_slot_information(): [ /* returnType */ boolean, /* value_physical_slot_information */ PhysicalSlotInformationSlot[] ]
-    get_physical_slot_status(): [ /* returnType */ boolean, /* value_physical_slot_status */ PhysicalSlotStatusSlot[] ]
+class MessageUimGetSlotStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimGetSlotStatusOutput */
+    get_physical_slot_information(): [ /* returnType */ boolean, /* value_physical_slot_information */ PhysicalSlotInformationSlot[] | null ]
+    get_physical_slot_status(): [ /* returnType */ boolean, /* value_physical_slot_status */ PhysicalSlotStatusSlot[] | null ]
     get_result(): boolean
-    get_slot_eid_information(): [ /* returnType */ boolean, /* value_slot_eid_information */ any[] ]
+    get_slot_eid_information(): [ /* returnType */ boolean, /* value_slot_eid_information */ any[] | null ]
     ref(): MessageUimGetSlotStatusOutput
     unref(): void
     static name: string
 }
-export class MessageUimGetSupportedMessagesOutput {
-    /* Methods of Qmi.MessageUimGetSupportedMessagesOutput */
-    get_list(): [ /* returnType */ boolean, /* value_list */ Uint8Array[] ]
+class MessageUimGetSupportedMessagesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimGetSupportedMessagesOutput */
+    get_list(): [ /* returnType */ boolean, /* value_list */ Uint8Array[] | null ]
     get_result(): boolean
     ref(): MessageUimGetSupportedMessagesOutput
     unref(): void
     static name: string
 }
-export class MessageUimPowerOffSimInput {
-    /* Methods of Qmi.MessageUimPowerOffSimInput */
-    get_slot(): [ /* returnType */ boolean, /* value_slot */ number ]
+class MessageUimPowerOffSimInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimPowerOffSimInput */
+    get_slot(): [ /* returnType */ boolean, /* value_slot */ number | null ]
     ref(): MessageUimPowerOffSimInput
     set_slot(value_slot: number): boolean
     unref(): void
@@ -9256,16 +9964,16 @@ export class MessageUimPowerOffSimInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimPowerOffSimInput
 }
-export class MessageUimPowerOffSimOutput {
-    /* Methods of Qmi.MessageUimPowerOffSimOutput */
+class MessageUimPowerOffSimOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimPowerOffSimOutput */
     get_result(): boolean
     ref(): MessageUimPowerOffSimOutput
     unref(): void
     static name: string
 }
-export class MessageUimPowerOnSimInput {
-    /* Methods of Qmi.MessageUimPowerOnSimInput */
-    get_slot(): [ /* returnType */ boolean, /* value_slot */ number ]
+class MessageUimPowerOnSimInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimPowerOnSimInput */
+    get_slot(): [ /* returnType */ boolean, /* value_slot */ number | null ]
     ref(): MessageUimPowerOnSimInput
     set_slot(value_slot: number): boolean
     unref(): void
@@ -9275,28 +9983,26 @@ export class MessageUimPowerOnSimInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimPowerOnSimInput
 }
-export class MessageUimPowerOnSimOutput {
-    /* Methods of Qmi.MessageUimPowerOnSimOutput */
+class MessageUimPowerOnSimOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimPowerOnSimOutput */
     get_result(): boolean
     ref(): MessageUimPowerOnSimOutput
     unref(): void
     static name: string
 }
-export class MessageUimReadRecordInput {
-    /* Methods of Qmi.MessageUimReadRecordInput */
-    get_file(): [ /* returnType */ boolean, /* value_file_file_id */ number, /* value_file_file_path */ Uint8Array[] ]
-    get_last_record(): [ /* returnType */ boolean, /* value_last_record */ number ]
-    get_record(): [ /* returnType */ boolean, /* value_record_record_number */ number, /* value_record_record_length */ number ]
-    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number ]
-    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType, /* value_session_application_identifier */ Uint8Array[] ]
-    get_session_information(value_session_information_session_type: UimSessionType, value_session_information_application_identifier: string): boolean
+class MessageUimReadRecordInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimReadRecordInput */
+    get_file(): [ /* returnType */ boolean, /* value_file_file_id */ number | null, /* value_file_file_path */ Uint8Array[] | null ]
+    get_last_record(): [ /* returnType */ boolean, /* value_last_record */ number | null ]
+    get_record(): [ /* returnType */ boolean, /* value_record_record_number */ number | null, /* value_record_record_length */ number | null ]
+    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number | null ]
+    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType | null, /* value_session_application_identifier */ Uint8Array[] | null ]
     ref(): MessageUimReadRecordInput
     set_file(value_file_file_id: number, value_file_file_path: Uint8Array[]): boolean
     set_last_record(value_last_record: number): boolean
     set_record(value_record_record_number: number, value_record_record_length: number): boolean
     set_response_in_indication_token(value_response_in_indication_token: number): boolean
     set_session(value_session_session_type: UimSessionType, value_session_application_identifier: Uint8Array[]): boolean
-    set_session_information(value_session_information_session_type: UimSessionType, value_session_information_application_identifier: string): boolean
     unref(): void
     static name: string
     static new(): MessageUimReadRecordInput
@@ -9304,32 +10010,30 @@ export class MessageUimReadRecordInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimReadRecordInput
 }
-export class MessageUimReadRecordOutput {
-    /* Methods of Qmi.MessageUimReadRecordOutput */
-    get_additional_read_result(): [ /* returnType */ boolean, /* value_additional_read_result */ Uint8Array[] ]
-    get_card_result(): [ /* returnType */ boolean, /* value_card_result_sw1 */ number, /* value_card_result_sw2 */ number ]
-    get_read_result(): [ /* returnType */ boolean, /* value_read_result */ Uint8Array[] ]
-    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number ]
+class MessageUimReadRecordOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimReadRecordOutput */
+    get_additional_read_result(): [ /* returnType */ boolean, /* value_additional_read_result */ Uint8Array[] | null ]
+    get_card_result(): [ /* returnType */ boolean, /* value_card_result_sw1 */ number | null, /* value_card_result_sw2 */ number | null ]
+    get_read_result(): [ /* returnType */ boolean, /* value_read_result */ Uint8Array[] | null ]
+    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number | null ]
     get_result(): boolean
     ref(): MessageUimReadRecordOutput
     unref(): void
     static name: string
 }
-export class MessageUimReadTransparentInput {
-    /* Methods of Qmi.MessageUimReadTransparentInput */
-    get_encrypt_data(): [ /* returnType */ boolean, /* value_encrypt_data */ boolean ]
-    get_file(): [ /* returnType */ boolean, /* value_file_file_id */ number, /* value_file_file_path */ Uint8Array[] ]
-    get_read_information(): [ /* returnType */ boolean, /* value_read_information_offset */ number, /* value_read_information_length */ number ]
-    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number ]
-    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType, /* value_session_application_identifier */ Uint8Array[] ]
-    get_session_information(value_session_information_session_type: UimSessionType, value_session_information_application_identifier: string): boolean
+class MessageUimReadTransparentInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimReadTransparentInput */
+    get_encrypt_data(): [ /* returnType */ boolean, /* value_encrypt_data */ boolean | null ]
+    get_file(): [ /* returnType */ boolean, /* value_file_file_id */ number | null, /* value_file_file_path */ Uint8Array[] | null ]
+    get_read_information(): [ /* returnType */ boolean, /* value_read_information_offset */ number | null, /* value_read_information_length */ number | null ]
+    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number | null ]
+    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType | null, /* value_session_application_identifier */ Uint8Array[] | null ]
     ref(): MessageUimReadTransparentInput
     set_encrypt_data(value_encrypt_data: boolean): boolean
     set_file(value_file_file_id: number, value_file_file_path: Uint8Array[]): boolean
     set_read_information(value_read_information_offset: number, value_read_information_length: number): boolean
     set_response_in_indication_token(value_response_in_indication_token: number): boolean
     set_session(value_session_session_type: UimSessionType, value_session_application_identifier: Uint8Array[]): boolean
-    set_session_information(value_session_information_session_type: UimSessionType, value_session_information_application_identifier: string): boolean
     unref(): void
     static name: string
     static new(): MessageUimReadTransparentInput
@@ -9337,21 +10041,21 @@ export class MessageUimReadTransparentInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimReadTransparentInput
 }
-export class MessageUimReadTransparentOutput {
-    /* Methods of Qmi.MessageUimReadTransparentOutput */
-    get_card_result(): [ /* returnType */ boolean, /* value_card_result_sw1 */ number, /* value_card_result_sw2 */ number ]
-    get_encrypted_data(): [ /* returnType */ boolean, /* value_encrypted_data */ boolean ]
-    get_read_result(): [ /* returnType */ boolean, /* value_read_result */ Uint8Array[] ]
-    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number ]
+class MessageUimReadTransparentOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimReadTransparentOutput */
+    get_card_result(): [ /* returnType */ boolean, /* value_card_result_sw1 */ number | null, /* value_card_result_sw2 */ number | null ]
+    get_encrypted_data(): [ /* returnType */ boolean, /* value_encrypted_data */ boolean | null ]
+    get_read_result(): [ /* returnType */ boolean, /* value_read_result */ Uint8Array[] | null ]
+    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number | null ]
     get_result(): boolean
     ref(): MessageUimReadTransparentOutput
     unref(): void
     static name: string
 }
-export class MessageUimRefreshCompleteInput {
-    /* Methods of Qmi.MessageUimRefreshCompleteInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_refresh_success */ boolean ]
-    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType, /* value_session_application_identifier */ Uint8Array[] ]
+class MessageUimRefreshCompleteInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimRefreshCompleteInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_refresh_success */ boolean | null ]
+    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType | null, /* value_session_application_identifier */ Uint8Array[] | null ]
     ref(): MessageUimRefreshCompleteInput
     set_info(value_info_refresh_success: boolean): boolean
     set_session(value_session_session_type: UimSessionType, value_session_application_identifier: Uint8Array[]): boolean
@@ -9362,17 +10066,17 @@ export class MessageUimRefreshCompleteInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimRefreshCompleteInput
 }
-export class MessageUimRefreshCompleteOutput {
-    /* Methods of Qmi.MessageUimRefreshCompleteOutput */
+class MessageUimRefreshCompleteOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimRefreshCompleteOutput */
     get_result(): boolean
     ref(): MessageUimRefreshCompleteOutput
     unref(): void
     static name: string
 }
-export class MessageUimRefreshRegisterAllInput {
-    /* Methods of Qmi.MessageUimRefreshRegisterAllInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_register_flag */ boolean ]
-    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType, /* value_session_application_identifier */ Uint8Array[] ]
+class MessageUimRefreshRegisterAllInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimRefreshRegisterAllInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_register_flag */ boolean | null ]
+    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType | null, /* value_session_application_identifier */ Uint8Array[] | null ]
     ref(): MessageUimRefreshRegisterAllInput
     set_info(value_info_register_flag: boolean): boolean
     set_session(value_session_session_type: UimSessionType, value_session_application_identifier: Uint8Array[]): boolean
@@ -9383,17 +10087,17 @@ export class MessageUimRefreshRegisterAllInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimRefreshRegisterAllInput
 }
-export class MessageUimRefreshRegisterAllOutput {
-    /* Methods of Qmi.MessageUimRefreshRegisterAllOutput */
+class MessageUimRefreshRegisterAllOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimRefreshRegisterAllOutput */
     get_result(): boolean
     ref(): MessageUimRefreshRegisterAllOutput
     unref(): void
     static name: string
 }
-export class MessageUimRefreshRegisterInput {
-    /* Methods of Qmi.MessageUimRefreshRegisterInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_register_flag */ boolean, /* value_info_vote_for_init */ boolean, /* value_info_files */ MessageUimRefreshRegisterInputInfoFilesElement[] ]
-    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType, /* value_session_application_identifier */ Uint8Array[] ]
+class MessageUimRefreshRegisterInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimRefreshRegisterInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_register_flag */ boolean | null, /* value_info_vote_for_init */ boolean | null, /* value_info_files */ MessageUimRefreshRegisterInputInfoFilesElement[] | null ]
+    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType | null, /* value_session_application_identifier */ Uint8Array[] | null ]
     ref(): MessageUimRefreshRegisterInput
     set_info(value_info_register_flag: boolean, value_info_vote_for_init: boolean, value_info_files: MessageUimRefreshRegisterInputInfoFilesElement[]): boolean
     set_session(value_session_session_type: UimSessionType, value_session_application_identifier: Uint8Array[]): boolean
@@ -9404,22 +10108,22 @@ export class MessageUimRefreshRegisterInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimRefreshRegisterInput
 }
-export class MessageUimRefreshRegisterInputInfoFilesElement {
-    /* Fields of Qmi.MessageUimRefreshRegisterInputInfoFilesElement */
+class MessageUimRefreshRegisterInputInfoFilesElement {
+    /* Fields of Qmi-1.0.Qmi.MessageUimRefreshRegisterInputInfoFilesElement */
     file_id: number
     path: object[]
     static name: string
 }
-export class MessageUimRefreshRegisterOutput {
-    /* Methods of Qmi.MessageUimRefreshRegisterOutput */
+class MessageUimRefreshRegisterOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimRefreshRegisterOutput */
     get_result(): boolean
     ref(): MessageUimRefreshRegisterOutput
     unref(): void
     static name: string
 }
-export class MessageUimRegisterEventsInput {
-    /* Methods of Qmi.MessageUimRegisterEventsInput */
-    get_event_registration_mask(): [ /* returnType */ boolean, /* value_event_registration_mask */ UimEventRegistrationFlag ]
+class MessageUimRegisterEventsInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimRegisterEventsInput */
+    get_event_registration_mask(): [ /* returnType */ boolean, /* value_event_registration_mask */ UimEventRegistrationFlag | null ]
     ref(): MessageUimRegisterEventsInput
     set_event_registration_mask(value_event_registration_mask: UimEventRegistrationFlag): boolean
     unref(): void
@@ -9429,32 +10133,30 @@ export class MessageUimRegisterEventsInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimRegisterEventsInput
 }
-export class MessageUimRegisterEventsOutput {
-    /* Methods of Qmi.MessageUimRegisterEventsOutput */
-    get_event_registration_mask(): [ /* returnType */ boolean, /* value_event_registration_mask */ UimEventRegistrationFlag ]
+class MessageUimRegisterEventsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimRegisterEventsOutput */
+    get_event_registration_mask(): [ /* returnType */ boolean, /* value_event_registration_mask */ UimEventRegistrationFlag | null ]
     get_result(): boolean
     ref(): MessageUimRegisterEventsOutput
     unref(): void
     static name: string
 }
-export class MessageUimResetOutput {
-    /* Methods of Qmi.MessageUimResetOutput */
+class MessageUimResetOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimResetOutput */
     get_result(): boolean
     ref(): MessageUimResetOutput
     unref(): void
     static name: string
 }
-export class MessageUimSetPinProtectionInput {
-    /* Methods of Qmi.MessageUimSetPinProtectionInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ UimPinId, /* value_info_pin_enabled */ boolean, /* value_info_pin_value */ string ]
-    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number ]
-    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType, /* value_session_application_identifier */ Uint8Array[] ]
-    get_session_information(value_session_information_session_type: UimSessionType, value_session_information_application_identifier: string): boolean
+class MessageUimSetPinProtectionInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimSetPinProtectionInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ UimPinId | null, /* value_info_pin_enabled */ boolean | null, /* value_info_pin_value */ string | null ]
+    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number | null ]
+    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType | null, /* value_session_application_identifier */ Uint8Array[] | null ]
     ref(): MessageUimSetPinProtectionInput
     set_info(value_info_pin_id: UimPinId, value_info_pin_enabled: boolean, value_info_pin_value: string): boolean
     set_response_in_indication_token(value_response_in_indication_token: number): boolean
     set_session(value_session_session_type: UimSessionType, value_session_application_identifier: Uint8Array[]): boolean
-    set_session_information(value_session_information_session_type: UimSessionType, value_session_information_application_identifier: string): boolean
     unref(): void
     static name: string
     static new(): MessageUimSetPinProtectionInput
@@ -9462,19 +10164,19 @@ export class MessageUimSetPinProtectionInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimSetPinProtectionInput
 }
-export class MessageUimSetPinProtectionOutput {
-    /* Methods of Qmi.MessageUimSetPinProtectionOutput */
-    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number ]
+class MessageUimSetPinProtectionOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimSetPinProtectionOutput */
+    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number | null ]
     get_result(): boolean
-    get_retries_remaining(): [ /* returnType */ boolean, /* value_retries_remaining_verify_retries_left */ number, /* value_retries_remaining_unblock_retries_left */ number ]
+    get_retries_remaining(): [ /* returnType */ boolean, /* value_retries_remaining_verify_retries_left */ number | null, /* value_retries_remaining_unblock_retries_left */ number | null ]
     ref(): MessageUimSetPinProtectionOutput
     unref(): void
     static name: string
 }
-export class MessageUimSwitchSlotInput {
-    /* Methods of Qmi.MessageUimSwitchSlotInput */
-    get_logical_slot(): [ /* returnType */ boolean, /* value_logical_slot */ number ]
-    get_physical_slot(): [ /* returnType */ boolean, /* value_physical_slot */ number ]
+class MessageUimSwitchSlotInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimSwitchSlotInput */
+    get_logical_slot(): [ /* returnType */ boolean, /* value_logical_slot */ number | null ]
+    get_physical_slot(): [ /* returnType */ boolean, /* value_physical_slot */ number | null ]
     ref(): MessageUimSwitchSlotInput
     set_logical_slot(value_logical_slot: number): boolean
     set_physical_slot(value_physical_slot: number): boolean
@@ -9485,24 +10187,22 @@ export class MessageUimSwitchSlotInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimSwitchSlotInput
 }
-export class MessageUimSwitchSlotOutput {
-    /* Methods of Qmi.MessageUimSwitchSlotOutput */
+class MessageUimSwitchSlotOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimSwitchSlotOutput */
     get_result(): boolean
     ref(): MessageUimSwitchSlotOutput
     unref(): void
     static name: string
 }
-export class MessageUimUnblockPinInput {
-    /* Methods of Qmi.MessageUimUnblockPinInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ UimPinId, /* value_info_puk */ string, /* value_info_new_pin */ string ]
-    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number ]
-    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType, /* value_session_application_identifier */ Uint8Array[] ]
-    get_session_information(value_session_information_session_type: UimSessionType, value_session_information_application_identifier: string): boolean
+class MessageUimUnblockPinInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimUnblockPinInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ UimPinId | null, /* value_info_puk */ string | null, /* value_info_new_pin */ string | null ]
+    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number | null ]
+    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType | null, /* value_session_application_identifier */ Uint8Array[] | null ]
     ref(): MessageUimUnblockPinInput
     set_info(value_info_pin_id: UimPinId, value_info_puk: string, value_info_new_pin: string): boolean
     set_response_in_indication_token(value_response_in_indication_token: number): boolean
     set_session(value_session_session_type: UimSessionType, value_session_application_identifier: Uint8Array[]): boolean
-    set_session_information(value_session_information_session_type: UimSessionType, value_session_information_application_identifier: string): boolean
     unref(): void
     static name: string
     static new(): MessageUimUnblockPinInput
@@ -9510,27 +10210,25 @@ export class MessageUimUnblockPinInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimUnblockPinInput
 }
-export class MessageUimUnblockPinOutput {
-    /* Methods of Qmi.MessageUimUnblockPinOutput */
-    get_card_result(): [ /* returnType */ boolean, /* value_card_result_sw1 */ number, /* value_card_result_sw2 */ number ]
-    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number ]
+class MessageUimUnblockPinOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimUnblockPinOutput */
+    get_card_result(): [ /* returnType */ boolean, /* value_card_result_sw1 */ number | null, /* value_card_result_sw2 */ number | null ]
+    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number | null ]
     get_result(): boolean
-    get_retries_remaining(): [ /* returnType */ boolean, /* value_retries_remaining_verify_retries_left */ number, /* value_retries_remaining_unblock_retries_left */ number ]
+    get_retries_remaining(): [ /* returnType */ boolean, /* value_retries_remaining_verify_retries_left */ number | null, /* value_retries_remaining_unblock_retries_left */ number | null ]
     ref(): MessageUimUnblockPinOutput
     unref(): void
     static name: string
 }
-export class MessageUimVerifyPinInput {
-    /* Methods of Qmi.MessageUimVerifyPinInput */
-    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ UimPinId, /* value_info_pin_value */ string ]
-    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number ]
-    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType, /* value_session_application_identifier */ Uint8Array[] ]
-    get_session_information(value_session_information_session_type: UimSessionType, value_session_information_application_identifier: string): boolean
+class MessageUimVerifyPinInput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimVerifyPinInput */
+    get_info(): [ /* returnType */ boolean, /* value_info_pin_id */ UimPinId | null, /* value_info_pin_value */ string | null ]
+    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number | null ]
+    get_session(): [ /* returnType */ boolean, /* value_session_session_type */ UimSessionType | null, /* value_session_application_identifier */ Uint8Array[] | null ]
     ref(): MessageUimVerifyPinInput
     set_info(value_info_pin_id: UimPinId, value_info_pin_value: string): boolean
     set_response_in_indication_token(value_response_in_indication_token: number): boolean
     set_session(value_session_session_type: UimSessionType, value_session_application_identifier: Uint8Array[]): boolean
-    set_session_information(value_session_information_session_type: UimSessionType, value_session_information_application_identifier: string): boolean
     unref(): void
     static name: string
     static new(): MessageUimVerifyPinInput
@@ -9538,19 +10236,19 @@ export class MessageUimVerifyPinInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageUimVerifyPinInput
 }
-export class MessageUimVerifyPinOutput {
-    /* Methods of Qmi.MessageUimVerifyPinOutput */
-    get_card_result(): [ /* returnType */ boolean, /* value_card_result_sw1 */ number, /* value_card_result_sw2 */ number ]
-    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number ]
+class MessageUimVerifyPinOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageUimVerifyPinOutput */
+    get_card_result(): [ /* returnType */ boolean, /* value_card_result_sw1 */ number | null, /* value_card_result_sw2 */ number | null ]
+    get_response_in_indication_token(): [ /* returnType */ boolean, /* value_response_in_indication_token */ number | null ]
     get_result(): boolean
-    get_retries_remaining(): [ /* returnType */ boolean, /* value_retries_remaining_verify_retries_left */ number, /* value_retries_remaining_unblock_retries_left */ number ]
+    get_retries_remaining(): [ /* returnType */ boolean, /* value_retries_remaining_verify_retries_left */ number | null, /* value_retries_remaining_unblock_retries_left */ number | null ]
     ref(): MessageUimVerifyPinOutput
     unref(): void
     static name: string
 }
-export class MessageVoiceAnswerCallInput {
-    /* Methods of Qmi.MessageVoiceAnswerCallInput */
-    get_call_id(): [ /* returnType */ boolean, /* value_call_id */ number ]
+class MessageVoiceAnswerCallInput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceAnswerCallInput */
+    get_call_id(): [ /* returnType */ boolean, /* value_call_id */ number | null ]
     ref(): MessageVoiceAnswerCallInput
     set_call_id(value_call_id: number): boolean
     unref(): void
@@ -9560,17 +10258,17 @@ export class MessageVoiceAnswerCallInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageVoiceAnswerCallInput
 }
-export class MessageVoiceAnswerCallOutput {
-    /* Methods of Qmi.MessageVoiceAnswerCallOutput */
-    get_call_id(): [ /* returnType */ boolean, /* value_call_id */ number ]
+class MessageVoiceAnswerCallOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceAnswerCallOutput */
+    get_call_id(): [ /* returnType */ boolean, /* value_call_id */ number | null ]
     get_result(): boolean
     ref(): MessageVoiceAnswerCallOutput
     unref(): void
     static name: string
 }
-export class MessageVoiceAnswerUssdInput {
-    /* Methods of Qmi.MessageVoiceAnswerUssdInput */
-    get_uss_data(): [ /* returnType */ boolean, /* value_uss_data_data_coding_scheme */ VoiceUssDataCodingScheme, /* value_uss_data_data */ Uint8Array[] ]
+class MessageVoiceAnswerUssdInput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceAnswerUssdInput */
+    get_uss_data(): [ /* returnType */ boolean, /* value_uss_data_data_coding_scheme */ VoiceUssDataCodingScheme | null, /* value_uss_data_data */ Uint8Array[] | null ]
     ref(): MessageVoiceAnswerUssdInput
     set_uss_data(value_uss_data_data_coding_scheme: VoiceUssDataCodingScheme, value_uss_data_data: Uint8Array[]): boolean
     unref(): void
@@ -9580,23 +10278,23 @@ export class MessageVoiceAnswerUssdInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageVoiceAnswerUssdInput
 }
-export class MessageVoiceAnswerUssdOutput {
-    /* Methods of Qmi.MessageVoiceAnswerUssdOutput */
+class MessageVoiceAnswerUssdOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceAnswerUssdOutput */
     get_result(): boolean
     ref(): MessageVoiceAnswerUssdOutput
     unref(): void
     static name: string
 }
-export class MessageVoiceCancelUssdOutput {
-    /* Methods of Qmi.MessageVoiceCancelUssdOutput */
+class MessageVoiceCancelUssdOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceCancelUssdOutput */
     get_result(): boolean
     ref(): MessageVoiceCancelUssdOutput
     unref(): void
     static name: string
 }
-export class MessageVoiceDialCallInput {
-    /* Methods of Qmi.MessageVoiceDialCallInput */
-    get_calling_number(): [ /* returnType */ boolean, /* value_calling_number */ string ]
+class MessageVoiceDialCallInput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceDialCallInput */
+    get_calling_number(): [ /* returnType */ boolean, /* value_calling_number */ string | null ]
     ref(): MessageVoiceDialCallInput
     set_calling_number(value_calling_number: string): boolean
     unref(): void
@@ -9606,17 +10304,17 @@ export class MessageVoiceDialCallInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageVoiceDialCallInput
 }
-export class MessageVoiceDialCallOutput {
-    /* Methods of Qmi.MessageVoiceDialCallOutput */
-    get_call_id(): [ /* returnType */ boolean, /* value_call_id */ number ]
+class MessageVoiceDialCallOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceDialCallOutput */
+    get_call_id(): [ /* returnType */ boolean, /* value_call_id */ number | null ]
     get_result(): boolean
     ref(): MessageVoiceDialCallOutput
     unref(): void
     static name: string
 }
-export class MessageVoiceEndCallInput {
-    /* Methods of Qmi.MessageVoiceEndCallInput */
-    get_call_id(): [ /* returnType */ boolean, /* value_call_id */ number ]
+class MessageVoiceEndCallInput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceEndCallInput */
+    get_call_id(): [ /* returnType */ boolean, /* value_call_id */ number | null ]
     ref(): MessageVoiceEndCallInput
     set_call_id(value_call_id: number): boolean
     unref(): void
@@ -9626,25 +10324,72 @@ export class MessageVoiceEndCallInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageVoiceEndCallInput
 }
-export class MessageVoiceEndCallOutput {
-    /* Methods of Qmi.MessageVoiceEndCallOutput */
-    get_call_id(): [ /* returnType */ boolean, /* value_call_id */ number ]
+class MessageVoiceEndCallOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceEndCallOutput */
+    get_call_id(): [ /* returnType */ boolean, /* value_call_id */ number | null ]
     get_result(): boolean
     ref(): MessageVoiceEndCallOutput
     unref(): void
     static name: string
 }
-export class MessageVoiceGetConfigInput {
-    /* Methods of Qmi.MessageVoiceGetConfigInput */
-    get_air_timer(): [ /* returnType */ boolean, /* value_air_timer */ boolean ]
-    get_amr_status(): [ /* returnType */ boolean, /* value_amr_status */ boolean ]
-    get_auto_answer(): [ /* returnType */ boolean, /* value_auto_answer */ boolean ]
-    get_nam_index(): [ /* returnType */ boolean, /* value_nam_index */ boolean ]
-    get_preferred_voice_privacy(): [ /* returnType */ boolean, /* value_preferred_voice_privacy */ boolean ]
-    get_preferred_voice_service_option(): [ /* returnType */ boolean, /* value_preferred_voice_service_option */ boolean ]
-    get_roam_timer(): [ /* returnType */ boolean, /* value_roam_timer */ boolean ]
-    get_tty_mode(): [ /* returnType */ boolean, /* value_tty_mode */ boolean ]
-    get_voice_domain_preference(): [ /* returnType */ boolean, /* value_voice_domain_preference */ boolean ]
+class MessageVoiceGetAllCallInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceGetAllCallInfoOutput */
+    get_call_information(): [ /* returnType */ boolean, /* value_call_information */ MessageVoiceGetAllCallInfoOutputCallInformationCall[] | null ]
+    get_remote_party_number(): [ /* returnType */ boolean, /* value_remote_party_number */ MessageVoiceGetAllCallInfoOutputRemotePartyNumberCall[] | null ]
+    get_result(): boolean
+    ref(): MessageVoiceGetAllCallInfoOutput
+    unref(): void
+    static name: string
+}
+class MessageVoiceGetAllCallInfoOutputCallInformationCall {
+    /* Fields of Qmi-1.0.Qmi.MessageVoiceGetAllCallInfoOutputCallInformationCall */
+    id: number
+    state: VoiceCallState
+    type: VoiceCallType
+    direction: VoiceCallDirection
+    mode: VoiceCallMode
+    multipart_indicator: boolean
+    als: VoiceAls
+    static name: string
+}
+class MessageVoiceGetAllCallInfoOutputRemotePartyNumberCall {
+    /* Fields of Qmi-1.0.Qmi.MessageVoiceGetAllCallInfoOutputRemotePartyNumberCall */
+    id: number
+    presentation_indicator: VoicePresentation
+    type: string
+    static name: string
+}
+class MessageVoiceGetCallWaitingInput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceGetCallWaitingInput */
+    get_service_class(): [ /* returnType */ boolean, /* value_service_class */ number | null ]
+    ref(): MessageVoiceGetCallWaitingInput
+    set_service_class(value_service_class: number): boolean
+    unref(): void
+    static name: string
+    static new(): MessageVoiceGetCallWaitingInput
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MessageVoiceGetCallWaitingInput
+}
+class MessageVoiceGetCallWaitingOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceGetCallWaitingOutput */
+    get_result(): boolean
+    get_service_class(): [ /* returnType */ boolean, /* value_service_class */ number | null ]
+    ref(): MessageVoiceGetCallWaitingOutput
+    unref(): void
+    static name: string
+}
+class MessageVoiceGetConfigInput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceGetConfigInput */
+    get_air_timer(): [ /* returnType */ boolean, /* value_air_timer */ boolean | null ]
+    get_amr_status(): [ /* returnType */ boolean, /* value_amr_status */ boolean | null ]
+    get_auto_answer(): [ /* returnType */ boolean, /* value_auto_answer */ boolean | null ]
+    get_nam_index(): [ /* returnType */ boolean, /* value_nam_index */ boolean | null ]
+    get_preferred_voice_privacy(): [ /* returnType */ boolean, /* value_preferred_voice_privacy */ boolean | null ]
+    get_preferred_voice_service_option(): [ /* returnType */ boolean, /* value_preferred_voice_service_option */ boolean | null ]
+    get_roam_timer(): [ /* returnType */ boolean, /* value_roam_timer */ boolean | null ]
+    get_tty_mode(): [ /* returnType */ boolean, /* value_tty_mode */ boolean | null ]
+    get_voice_domain_preference(): [ /* returnType */ boolean, /* value_voice_domain_preference */ boolean | null ]
     ref(): MessageVoiceGetConfigInput
     set_air_timer(value_air_timer: boolean): boolean
     set_amr_status(value_amr_status: boolean): boolean
@@ -9662,44 +10407,44 @@ export class MessageVoiceGetConfigInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageVoiceGetConfigInput
 }
-export class MessageVoiceGetConfigOutput {
-    /* Methods of Qmi.MessageVoiceGetConfigOutput */
-    get_air_timer_count(): [ /* returnType */ boolean, /* value_air_timer_count_nam_id */ number, /* value_air_timer_count_air_timer */ number ]
-    get_auto_answer_status(): [ /* returnType */ boolean, /* value_auto_answer_status */ boolean ]
-    get_current_amr_status(): [ /* returnType */ boolean, /* value_current_amr_status_gsm */ boolean, /* value_current_amr_status_wcdma */ VoiceWcdmaAmrStatus ]
-    get_current_preferred_voice_so(): [ /* returnType */ boolean, /* value_current_preferred_voice_so_nam_id */ number, /* value_current_preferred_voice_so_evrc_capability */ boolean, /* value_current_preferred_voice_so_home_page_voice_service_option */ VoiceServiceOption, /* value_current_preferred_voice_so_home_origination_voice_service_option */ VoiceServiceOption, /* value_current_preferred_voice_so_roaming_origination_voice_service_option */ VoiceServiceOption ]
-    get_current_tty_mode(): [ /* returnType */ boolean, /* value_current_tty_mode */ VoiceTtyMode ]
-    get_current_voice_domain_preference(): [ /* returnType */ boolean, /* value_current_voice_domain_preference */ VoiceDomain ]
-    get_current_voice_privacy_preference(): [ /* returnType */ boolean, /* value_current_voice_privacy_preference */ VoicePrivacy ]
+class MessageVoiceGetConfigOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceGetConfigOutput */
+    get_air_timer_count(): [ /* returnType */ boolean, /* value_air_timer_count_nam_id */ number | null, /* value_air_timer_count_air_timer */ number | null ]
+    get_auto_answer_status(): [ /* returnType */ boolean, /* value_auto_answer_status */ boolean | null ]
+    get_current_amr_status(): [ /* returnType */ boolean, /* value_current_amr_status_gsm */ boolean | null, /* value_current_amr_status_wcdma */ VoiceWcdmaAmrStatus | null ]
+    get_current_preferred_voice_so(): [ /* returnType */ boolean, /* value_current_preferred_voice_so_nam_id */ number | null, /* value_current_preferred_voice_so_evrc_capability */ boolean | null, /* value_current_preferred_voice_so_home_page_voice_service_option */ VoiceServiceOption | null, /* value_current_preferred_voice_so_home_origination_voice_service_option */ VoiceServiceOption | null, /* value_current_preferred_voice_so_roaming_origination_voice_service_option */ VoiceServiceOption | null ]
+    get_current_tty_mode(): [ /* returnType */ boolean, /* value_current_tty_mode */ VoiceTtyMode | null ]
+    get_current_voice_domain_preference(): [ /* returnType */ boolean, /* value_current_voice_domain_preference */ VoiceDomain | null ]
+    get_current_voice_privacy_preference(): [ /* returnType */ boolean, /* value_current_voice_privacy_preference */ VoicePrivacy | null ]
     get_result(): boolean
-    get_roam_timer_count(): [ /* returnType */ boolean, /* value_roam_timer_count_nam_id */ number, /* value_roam_timer_count_roam_timer */ number ]
+    get_roam_timer_count(): [ /* returnType */ boolean, /* value_roam_timer_count_nam_id */ number | null, /* value_roam_timer_count_roam_timer */ number | null ]
     ref(): MessageVoiceGetConfigOutput
     unref(): void
     static name: string
 }
-export class MessageVoiceGetSupportedMessagesOutput {
-    /* Methods of Qmi.MessageVoiceGetSupportedMessagesOutput */
-    get_list(): [ /* returnType */ boolean, /* value_list */ Uint8Array[] ]
+class MessageVoiceGetSupportedMessagesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceGetSupportedMessagesOutput */
+    get_list(): [ /* returnType */ boolean, /* value_list */ Uint8Array[] | null ]
     get_result(): boolean
     ref(): MessageVoiceGetSupportedMessagesOutput
     unref(): void
     static name: string
 }
-export class MessageVoiceIndicationRegisterInput {
-    /* Methods of Qmi.MessageVoiceIndicationRegisterInput */
-    get_aoc_events(): [ /* returnType */ boolean, /* value_aoc_events */ boolean ]
-    get_call_notification_events(): [ /* returnType */ boolean, /* value_call_notification_events */ boolean ]
-    get_conference_events(): [ /* returnType */ boolean, /* value_conference_events */ boolean ]
-    get_dtmf_events(): [ /* returnType */ boolean, /* value_dtmf_events */ boolean ]
-    get_extended_burst_type_international_information_events(): [ /* returnType */ boolean, /* value_extended_burst_type_international_information_events */ boolean ]
-    get_handover_events(): [ /* returnType */ boolean, /* value_handover_events */ boolean ]
-    get_modification_events(): [ /* returnType */ boolean, /* value_modification_events */ boolean ]
-    get_mt_page_miss_information_events(): [ /* returnType */ boolean, /* value_mt_page_miss_information_events */ boolean ]
-    get_speech_codec_events(): [ /* returnType */ boolean, /* value_speech_codec_events */ boolean ]
-    get_supplementary_service_notification_events(): [ /* returnType */ boolean, /* value_supplementary_service_notification_events */ boolean ]
-    get_ussd_notification_events(): [ /* returnType */ boolean, /* value_ussd_notification_events */ boolean ]
-    get_uus_events(): [ /* returnType */ boolean, /* value_uus_events */ boolean ]
-    get_voice_privacy_events(): [ /* returnType */ boolean, /* value_voice_privacy_events */ boolean ]
+class MessageVoiceIndicationRegisterInput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceIndicationRegisterInput */
+    get_aoc_events(): [ /* returnType */ boolean, /* value_aoc_events */ boolean | null ]
+    get_call_notification_events(): [ /* returnType */ boolean, /* value_call_notification_events */ boolean | null ]
+    get_conference_events(): [ /* returnType */ boolean, /* value_conference_events */ boolean | null ]
+    get_dtmf_events(): [ /* returnType */ boolean, /* value_dtmf_events */ boolean | null ]
+    get_extended_burst_type_international_information_events(): [ /* returnType */ boolean, /* value_extended_burst_type_international_information_events */ boolean | null ]
+    get_handover_events(): [ /* returnType */ boolean, /* value_handover_events */ boolean | null ]
+    get_modification_events(): [ /* returnType */ boolean, /* value_modification_events */ boolean | null ]
+    get_mt_page_miss_information_events(): [ /* returnType */ boolean, /* value_mt_page_miss_information_events */ boolean | null ]
+    get_speech_codec_events(): [ /* returnType */ boolean, /* value_speech_codec_events */ boolean | null ]
+    get_supplementary_service_notification_events(): [ /* returnType */ boolean, /* value_supplementary_service_notification_events */ boolean | null ]
+    get_ussd_notification_events(): [ /* returnType */ boolean, /* value_ussd_notification_events */ boolean | null ]
+    get_uus_events(): [ /* returnType */ boolean, /* value_uus_events */ boolean | null ]
+    get_voice_privacy_events(): [ /* returnType */ boolean, /* value_voice_privacy_events */ boolean | null ]
     ref(): MessageVoiceIndicationRegisterInput
     set_aoc_events(value_aoc_events: boolean): boolean
     set_call_notification_events(value_call_notification_events: boolean): boolean
@@ -9721,16 +10466,37 @@ export class MessageVoiceIndicationRegisterInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageVoiceIndicationRegisterInput
 }
-export class MessageVoiceIndicationRegisterOutput {
-    /* Methods of Qmi.MessageVoiceIndicationRegisterOutput */
+class MessageVoiceIndicationRegisterOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceIndicationRegisterOutput */
     get_result(): boolean
     ref(): MessageVoiceIndicationRegisterOutput
     unref(): void
     static name: string
 }
-export class MessageVoiceOriginateUssdInput {
-    /* Methods of Qmi.MessageVoiceOriginateUssdInput */
-    get_uss_data(): [ /* returnType */ boolean, /* value_uss_data_data_coding_scheme */ VoiceUssDataCodingScheme, /* value_uss_data_data */ Uint8Array[] ]
+class MessageVoiceManageCallsInput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceManageCallsInput */
+    get_call_id(): [ /* returnType */ boolean, /* value_call_id */ number | null ]
+    get_service_type(): [ /* returnType */ boolean, /* value_service_type */ VoiceSupplementaryServiceType | null ]
+    ref(): MessageVoiceManageCallsInput
+    set_call_id(value_call_id: number): boolean
+    set_service_type(value_service_type: VoiceSupplementaryServiceType): boolean
+    unref(): void
+    static name: string
+    static new(): MessageVoiceManageCallsInput
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MessageVoiceManageCallsInput
+}
+class MessageVoiceManageCallsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceManageCallsOutput */
+    get_result(): boolean
+    ref(): MessageVoiceManageCallsOutput
+    unref(): void
+    static name: string
+}
+class MessageVoiceOriginateUssdInput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceOriginateUssdInput */
+    get_uss_data(): [ /* returnType */ boolean, /* value_uss_data_data_coding_scheme */ VoiceUssDataCodingScheme | null, /* value_uss_data_data */ Uint8Array[] | null ]
     ref(): MessageVoiceOriginateUssdInput
     set_uss_data(value_uss_data_data_coding_scheme: VoiceUssDataCodingScheme, value_uss_data_data: Uint8Array[]): boolean
     unref(): void
@@ -9740,9 +10506,9 @@ export class MessageVoiceOriginateUssdInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageVoiceOriginateUssdInput
 }
-export class MessageVoiceOriginateUssdNoWaitInput {
-    /* Methods of Qmi.MessageVoiceOriginateUssdNoWaitInput */
-    get_uss_data(): [ /* returnType */ boolean, /* value_uss_data_data_coding_scheme */ VoiceUssDataCodingScheme, /* value_uss_data_data */ Uint8Array[] ]
+class MessageVoiceOriginateUssdNoWaitInput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceOriginateUssdNoWaitInput */
+    get_uss_data(): [ /* returnType */ boolean, /* value_uss_data_data_coding_scheme */ VoiceUssDataCodingScheme | null, /* value_uss_data_data */ Uint8Array[] | null ]
     ref(): MessageVoiceOriginateUssdNoWaitInput
     set_uss_data(value_uss_data_data_coding_scheme: VoiceUssDataCodingScheme, value_uss_data_data: Uint8Array[]): boolean
     unref(): void
@@ -9752,30 +10518,50 @@ export class MessageVoiceOriginateUssdNoWaitInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageVoiceOriginateUssdNoWaitInput
 }
-export class MessageVoiceOriginateUssdNoWaitOutput {
-    /* Methods of Qmi.MessageVoiceOriginateUssdNoWaitOutput */
+class MessageVoiceOriginateUssdNoWaitOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceOriginateUssdNoWaitOutput */
     get_result(): boolean
     ref(): MessageVoiceOriginateUssdNoWaitOutput
     unref(): void
     static name: string
 }
-export class MessageVoiceOriginateUssdOutput {
-    /* Methods of Qmi.MessageVoiceOriginateUssdOutput */
-    get_alpha_identifier(): [ /* returnType */ boolean, /* value_alpha_identifier_data_coding_scheme */ VoiceAlphaDataCodingScheme, /* value_alpha_identifier_alpha */ Uint8Array[] ]
-    get_call_control_result_type(): [ /* returnType */ boolean, /* value_call_control_result_type */ VoiceCallControlResultType ]
-    get_call_control_supplementary_service_type(): [ /* returnType */ boolean, /* value_call_control_supplementary_service_type */ VoiceCallControlSupplementaryServiceType ]
-    get_call_id(): [ /* returnType */ boolean, /* value_call_id */ number ]
-    get_failure_cause(): [ /* returnType */ boolean, /* value_failure_cause */ VoiceCallEndReason ]
+class MessageVoiceOriginateUssdOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceOriginateUssdOutput */
+    get_alpha_identifier(): [ /* returnType */ boolean, /* value_alpha_identifier_data_coding_scheme */ VoiceAlphaDataCodingScheme | null, /* value_alpha_identifier_alpha */ Uint8Array[] | null ]
+    get_call_control_result_type(): [ /* returnType */ boolean, /* value_call_control_result_type */ VoiceCallControlResultType | null ]
+    get_call_control_supplementary_service_type(): [ /* returnType */ boolean, /* value_call_control_supplementary_service_type */ VoiceCallControlSupplementaryServiceType | null ]
+    get_call_id(): [ /* returnType */ boolean, /* value_call_id */ number | null ]
+    get_failure_cause(): [ /* returnType */ boolean, /* value_failure_cause */ VoiceCallEndReason | null ]
     get_result(): boolean
-    get_uss_data(): [ /* returnType */ boolean, /* value_uss_data_data_coding_scheme */ VoiceUssDataCodingScheme, /* value_uss_data_data */ Uint8Array[] ]
-    get_uss_data_utf16(): [ /* returnType */ boolean, /* value_uss_data_utf16 */ number[] ]
+    get_uss_data(): [ /* returnType */ boolean, /* value_uss_data_data_coding_scheme */ VoiceUssDataCodingScheme | null, /* value_uss_data_data */ Uint8Array[] | null ]
+    get_uss_data_utf16(): [ /* returnType */ boolean, /* value_uss_data_utf16 */ number[] | null ]
     ref(): MessageVoiceOriginateUssdOutput
     unref(): void
     static name: string
 }
-export class MessageWdaGetDataFormatInput {
-    /* Methods of Qmi.MessageWdaGetDataFormatInput */
-    get_endpoint_info(): [ /* returnType */ boolean, /* value_endpoint_info_endpoint_type */ DataEndpointType, /* value_endpoint_info_interface_number */ number ]
+class MessageVoiceSetSupplementaryServiceInput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceSetSupplementaryServiceInput */
+    get_supplementary_service_information(): [ /* returnType */ boolean, /* value_supplementary_service_information_supplementary_service_action */ VoiceSupplementaryServiceAction | null, /* value_supplementary_service_information_supplementary_service_reason */ VoiceSupplementaryServiceReason | null ]
+    ref(): MessageVoiceSetSupplementaryServiceInput
+    set_supplementary_service_information(value_supplementary_service_information_supplementary_service_action: VoiceSupplementaryServiceAction, value_supplementary_service_information_supplementary_service_reason: VoiceSupplementaryServiceReason): boolean
+    unref(): void
+    static name: string
+    static new(): MessageVoiceSetSupplementaryServiceInput
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MessageVoiceSetSupplementaryServiceInput
+}
+class MessageVoiceSetSupplementaryServiceOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageVoiceSetSupplementaryServiceOutput */
+    get_result(): boolean
+    get_service_status(): [ /* returnType */ boolean, /* value_service_status_active */ boolean | null, /* value_service_status_provisioned */ boolean | null ]
+    ref(): MessageVoiceSetSupplementaryServiceOutput
+    unref(): void
+    static name: string
+}
+class MessageWdaGetDataFormatInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdaGetDataFormatInput */
+    get_endpoint_info(): [ /* returnType */ boolean, /* value_endpoint_info_endpoint_type */ DataEndpointType | null, /* value_endpoint_info_interface_number */ number | null ]
     ref(): MessageWdaGetDataFormatInput
     set_endpoint_info(value_endpoint_info_endpoint_type: DataEndpointType, value_endpoint_info_interface_number: number): boolean
     unref(): void
@@ -9785,39 +10571,42 @@ export class MessageWdaGetDataFormatInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdaGetDataFormatInput
 }
-export class MessageWdaGetDataFormatOutput {
-    /* Methods of Qmi.MessageWdaGetDataFormatOutput */
-    get_downlink_data_aggregation_max_datagrams(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_max_datagrams */ number ]
-    get_downlink_data_aggregation_max_size(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_max_size */ number ]
-    get_downlink_data_aggregation_protocol(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_protocol */ WdaDataAggregationProtocol ]
-    get_link_layer_protocol(): [ /* returnType */ boolean, /* value_link_layer_protocol */ WdaLinkLayerProtocol ]
-    get_ndp_signature(): [ /* returnType */ boolean, /* value_ndp_signature */ number ]
-    get_qos_format(): [ /* returnType */ boolean, /* value_qos_format */ boolean ]
+class MessageWdaGetDataFormatOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdaGetDataFormatOutput */
+    get_downlink_data_aggregation_max_datagrams(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_max_datagrams */ number | null ]
+    get_downlink_data_aggregation_max_size(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_max_size */ number | null ]
+    get_downlink_data_aggregation_protocol(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_protocol */ WdaDataAggregationProtocol | null ]
+    get_download_minimum_padding(): [ /* returnType */ boolean, /* value_download_minimum_padding */ number | null ]
+    get_flow_control(): [ /* returnType */ boolean, /* value_flow_control */ number | null ]
+    get_link_layer_protocol(): [ /* returnType */ boolean, /* value_link_layer_protocol */ WdaLinkLayerProtocol | null ]
+    get_ndp_signature(): [ /* returnType */ boolean, /* value_ndp_signature */ number | null ]
+    get_qos_format(): [ /* returnType */ boolean, /* value_qos_format */ boolean | null ]
     get_result(): boolean
-    get_uplink_data_aggregation_max_size(value_uplink_data_aggregation_max_size: number): boolean
-    get_uplink_data_aggregation_protocol(): [ /* returnType */ boolean, /* value_uplink_data_aggregation_protocol */ WdaDataAggregationProtocol ]
+    get_uplink_data_aggregation_max_datagrams(): [ /* returnType */ boolean, /* value_uplink_data_aggregation_max_datagrams */ number | null ]
+    get_uplink_data_aggregation_max_size(): [ /* returnType */ boolean, /* value_uplink_data_aggregation_max_size */ number | null ]
+    get_uplink_data_aggregation_protocol(): [ /* returnType */ boolean, /* value_uplink_data_aggregation_protocol */ WdaDataAggregationProtocol | null ]
     ref(): MessageWdaGetDataFormatOutput
     unref(): void
     static name: string
 }
-export class MessageWdaGetSupportedMessagesOutput {
-    /* Methods of Qmi.MessageWdaGetSupportedMessagesOutput */
-    get_list(): [ /* returnType */ boolean, /* value_list */ Uint8Array[] ]
+class MessageWdaGetSupportedMessagesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdaGetSupportedMessagesOutput */
+    get_list(): [ /* returnType */ boolean, /* value_list */ Uint8Array[] | null ]
     get_result(): boolean
     ref(): MessageWdaGetSupportedMessagesOutput
     unref(): void
     static name: string
 }
-export class MessageWdaSetDataFormatInput {
-    /* Methods of Qmi.MessageWdaSetDataFormatInput */
-    get_downlink_data_aggregation_max_datagrams(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_max_datagrams */ number ]
-    get_downlink_data_aggregation_max_size(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_max_size */ number ]
-    get_downlink_data_aggregation_protocol(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_protocol */ WdaDataAggregationProtocol ]
-    get_endpoint_info(): [ /* returnType */ boolean, /* value_endpoint_info_endpoint_type */ DataEndpointType, /* value_endpoint_info_interface_number */ number ]
-    get_link_layer_protocol(): [ /* returnType */ boolean, /* value_link_layer_protocol */ WdaLinkLayerProtocol ]
-    get_ndp_signature(): [ /* returnType */ boolean, /* value_ndp_signature */ number ]
-    get_qos_format(): [ /* returnType */ boolean, /* value_qos_format */ boolean ]
-    get_uplink_data_aggregation_protocol(): [ /* returnType */ boolean, /* value_uplink_data_aggregation_protocol */ WdaDataAggregationProtocol ]
+class MessageWdaSetDataFormatInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdaSetDataFormatInput */
+    get_downlink_data_aggregation_max_datagrams(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_max_datagrams */ number | null ]
+    get_downlink_data_aggregation_max_size(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_max_size */ number | null ]
+    get_downlink_data_aggregation_protocol(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_protocol */ WdaDataAggregationProtocol | null ]
+    get_endpoint_info(): [ /* returnType */ boolean, /* value_endpoint_info_endpoint_type */ DataEndpointType | null, /* value_endpoint_info_interface_number */ number | null ]
+    get_link_layer_protocol(): [ /* returnType */ boolean, /* value_link_layer_protocol */ WdaLinkLayerProtocol | null ]
+    get_ndp_signature(): [ /* returnType */ boolean, /* value_ndp_signature */ number | null ]
+    get_qos_format(): [ /* returnType */ boolean, /* value_qos_format */ boolean | null ]
+    get_uplink_data_aggregation_protocol(): [ /* returnType */ boolean, /* value_uplink_data_aggregation_protocol */ WdaDataAggregationProtocol | null ]
     ref(): MessageWdaSetDataFormatInput
     set_downlink_data_aggregation_max_datagrams(value_downlink_data_aggregation_max_datagrams: number): boolean
     set_downlink_data_aggregation_max_size(value_downlink_data_aggregation_max_size: number): boolean
@@ -9834,25 +10623,48 @@ export class MessageWdaSetDataFormatInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdaSetDataFormatInput
 }
-export class MessageWdaSetDataFormatOutput {
-    /* Methods of Qmi.MessageWdaSetDataFormatOutput */
-    get_downlink_data_aggregation_max_datagrams(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_max_datagrams */ number ]
-    get_downlink_data_aggregation_max_size(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_max_size */ number ]
-    get_downlink_data_aggregation_protocol(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_protocol */ WdaDataAggregationProtocol ]
-    get_link_layer_protocol(): [ /* returnType */ boolean, /* value_link_layer_protocol */ WdaLinkLayerProtocol ]
-    get_ndp_signature(): [ /* returnType */ boolean, /* value_ndp_signature */ number ]
-    get_qos_format(): [ /* returnType */ boolean, /* value_qos_format */ boolean ]
+class MessageWdaSetDataFormatOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdaSetDataFormatOutput */
+    get_downlink_data_aggregation_max_datagrams(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_max_datagrams */ number | null ]
+    get_downlink_data_aggregation_max_size(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_max_size */ number | null ]
+    get_downlink_data_aggregation_protocol(): [ /* returnType */ boolean, /* value_downlink_data_aggregation_protocol */ WdaDataAggregationProtocol | null ]
+    get_download_minimum_padding(): [ /* returnType */ boolean, /* value_download_minimum_padding */ number | null ]
+    get_flow_control(): [ /* returnType */ boolean, /* value_flow_control */ number | null ]
+    get_link_layer_protocol(): [ /* returnType */ boolean, /* value_link_layer_protocol */ WdaLinkLayerProtocol | null ]
+    get_ndp_signature(): [ /* returnType */ boolean, /* value_ndp_signature */ number | null ]
+    get_qos_format(): [ /* returnType */ boolean, /* value_qos_format */ boolean | null ]
     get_result(): boolean
-    get_uplink_data_aggregation_protocol(): [ /* returnType */ boolean, /* value_uplink_data_aggregation_protocol */ WdaDataAggregationProtocol ]
+    get_uplink_data_aggregation_max_datagrams(): [ /* returnType */ boolean, /* value_uplink_data_aggregation_max_datagrams */ number | null ]
+    get_uplink_data_aggregation_max_size(): [ /* returnType */ boolean, /* value_uplink_data_aggregation_max_size */ number | null ]
+    get_uplink_data_aggregation_protocol(): [ /* returnType */ boolean, /* value_uplink_data_aggregation_protocol */ WdaDataAggregationProtocol | null ]
     ref(): MessageWdaSetDataFormatOutput
     unref(): void
     static name: string
 }
-export class MessageWdsBindMuxDataPortInput {
-    /* Methods of Qmi.MessageWdsBindMuxDataPortInput */
-    get_client_type(): [ /* returnType */ boolean, /* value_client_type */ WdsClientType ]
-    get_endpoint_info(): [ /* returnType */ boolean, /* value_endpoint_info_endpoint_type */ DataEndpointType, /* value_endpoint_info_interface_number */ number ]
-    get_mux_id(): [ /* returnType */ boolean, /* value_mux_id */ number ]
+class MessageWdsBindDataPortInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsBindDataPortInput */
+    get_data_port(): [ /* returnType */ boolean, /* value_data_port */ SioPort | null ]
+    ref(): MessageWdsBindDataPortInput
+    set_data_port(value_data_port: SioPort): boolean
+    unref(): void
+    static name: string
+    static new(): MessageWdsBindDataPortInput
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MessageWdsBindDataPortInput
+}
+class MessageWdsBindDataPortOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsBindDataPortOutput */
+    get_result(): boolean
+    ref(): MessageWdsBindDataPortOutput
+    unref(): void
+    static name: string
+}
+class MessageWdsBindMuxDataPortInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsBindMuxDataPortInput */
+    get_client_type(): [ /* returnType */ boolean, /* value_client_type */ WdsClientType | null ]
+    get_endpoint_info(): [ /* returnType */ boolean, /* value_endpoint_info_endpoint_type */ DataEndpointType | null, /* value_endpoint_info_interface_number */ number | null ]
+    get_mux_id(): [ /* returnType */ boolean, /* value_mux_id */ number | null ]
     ref(): MessageWdsBindMuxDataPortInput
     set_client_type(value_client_type: WdsClientType): boolean
     set_endpoint_info(value_endpoint_info_endpoint_type: DataEndpointType, value_endpoint_info_interface_number: number): boolean
@@ -9864,48 +10676,50 @@ export class MessageWdsBindMuxDataPortInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsBindMuxDataPortInput
 }
-export class MessageWdsBindMuxDataPortOutput {
-    /* Methods of Qmi.MessageWdsBindMuxDataPortOutput */
+class MessageWdsBindMuxDataPortOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsBindMuxDataPortOutput */
     get_result(): boolean
     ref(): MessageWdsBindMuxDataPortOutput
     unref(): void
     static name: string
 }
-export class MessageWdsCreateProfileInput {
-    /* Methods of Qmi.MessageWdsCreateProfileInput */
-    get_apn_disabled_flag(): [ /* returnType */ boolean, /* value_apn_disabled_flag */ boolean ]
-    get_apn_name(): [ /* returnType */ boolean, /* value_apn_name */ string ]
-    get_authentication(): [ /* returnType */ boolean, /* value_authentication */ WdsAuthentication ]
-    get_gprs_minimum_qos(): [ /* returnType */ boolean, /* value_gprs_minimum_qos_precedence_class */ number, /* value_gprs_minimum_qos_delay_class */ number, /* value_gprs_minimum_qos_reliability_class */ number, /* value_gprs_minimum_qos_peak_throughput_class */ number, /* value_gprs_minimum_qos_mean_throughput_class */ number ]
-    get_gprs_requested_qos(): [ /* returnType */ boolean, /* value_gprs_requested_qos_precedence_class */ number, /* value_gprs_requested_qos_delay_class */ number, /* value_gprs_requested_qos_reliability_class */ number, /* value_gprs_requested_qos_peak_throughput_class */ number, /* value_gprs_requested_qos_mean_throughput_class */ number ]
-    get_imcn_flag(): [ /* returnType */ boolean, /* value_imcn_flag */ boolean ]
-    get_ipv4_address_preference(): [ /* returnType */ boolean, /* value_ipv4_address_preference */ number ]
-    get_ipv6_address_preference(): [ /* returnType */ boolean, /* value_ipv6_address_preference_address */ number[] ]
-    get_ipv6_primary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_primary_dns_address_preference */ number[] ]
-    get_ipv6_secondary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_secondary_dns_address_preference */ number[] ]
-    get_lte_qos_parameters(): [ /* returnType */ boolean, /* value_lte_qos_parameters_qos_class_identifier */ WdsQosClassIdentifier, /* value_lte_qos_parameters_guaranteed_downlink_bitrate */ number, /* value_lte_qos_parameters_max_downlink_bitrate */ number, /* value_lte_qos_parameters_guaranteed_uplink_bitrate */ number, /* value_lte_qos_parameters_max_uplink_bitrate */ number ]
-    get_password(): [ /* returnType */ boolean, /* value_password */ string ]
-    get_pcscf_address_using_dhcp(): [ /* returnType */ boolean, /* value_pcscf_address_using_dhcp */ boolean ]
-    get_pcscf_address_using_pco(): [ /* returnType */ boolean, /* value_pcscf_address_using_pco */ boolean ]
-    get_pdp_context_number(): [ /* returnType */ boolean, /* value_pdp_context_number */ number ]
-    get_pdp_context_primary_id(): [ /* returnType */ boolean, /* value_pdp_context_primary_id */ number ]
-    get_pdp_context_secondary_flag(): [ /* returnType */ boolean, /* value_pdp_context_secondary_flag */ boolean ]
-    get_pdp_data_compression_type(): [ /* returnType */ boolean, /* value_pdp_data_compression_type */ WdsPdpDataCompressionType ]
-    get_pdp_header_compression_type(): [ /* returnType */ boolean, /* value_pdp_header_compression_type */ WdsPdpHeaderCompressionType ]
-    get_pdp_type(): [ /* returnType */ boolean, /* value_pdp_type */ WdsPdpType ]
-    get_primary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_primary_ipv4_dns_address */ number ]
-    get_profile_name(): [ /* returnType */ boolean, /* value_profile_name */ string ]
-    get_profile_type(): [ /* returnType */ boolean, /* value_profile_type */ WdsProfileType ]
-    get_roaming_disallowed_flag(): [ /* returnType */ boolean, /* value_roaming_disallowed_flag */ boolean ]
-    get_secondary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_secondary_ipv4_dns_address */ number ]
-    get_umts_minimum_qos(): [ /* returnType */ boolean, /* value_umts_minimum_qos_traffic_class */ WdsTrafficClass, /* value_umts_minimum_qos_max_uplink_bitrate */ number, /* value_umts_minimum_qos_max_downlink_bitrate */ number, /* value_umts_minimum_qos_guaranteed_uplink_bitrate */ number, /* value_umts_minimum_qos_guaranteed_downlink_bitrate */ number, /* value_umts_minimum_qos_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_minimum_qos_maximum_sdu_size */ number, /* value_umts_minimum_qos_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_minimum_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_minimum_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_minimum_qos_transfer_delay */ number, /* value_umts_minimum_qos_traffic_handling_priority */ number ]
-    get_umts_minimum_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass, /* value_umts_minimum_qos_with_signaling_indication_flag_max_uplink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_max_downlink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_minimum_qos_with_signaling_indication_flag_maximum_sdu_size */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_minimum_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_minimum_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_minimum_qos_with_signaling_indication_flag_transfer_delay */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_handling_priority */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_signaling_indication */ number ]
-    get_umts_requested_qos(): [ /* returnType */ boolean, /* value_umts_requested_qos_traffic_class */ WdsTrafficClass, /* value_umts_requested_qos_max_uplink_bitrate */ number, /* value_umts_requested_qos_max_downlink_bitrate */ number, /* value_umts_requested_qos_guaranteed_uplink_bitrate */ number, /* value_umts_requested_qos_guaranteed_downlink_bitrate */ number, /* value_umts_requested_qos_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_requested_qos_maximum_sdu_size */ number, /* value_umts_requested_qos_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_requested_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_requested_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_requested_qos_transfer_delay */ number, /* value_umts_requested_qos_traffic_handling_priority */ number ]
-    get_umts_requested_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass, /* value_umts_requested_qos_with_signaling_indication_flag_max_uplink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_max_downlink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_requested_qos_with_signaling_indication_flag_maximum_sdu_size */ number, /* value_umts_requested_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_requested_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_requested_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_requested_qos_with_signaling_indication_flag_transfer_delay */ number, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_handling_priority */ number, /* value_umts_requested_qos_with_signaling_indication_flag_signaling_indication */ number ]
-    get_username(): [ /* returnType */ boolean, /* value_username */ string ]
+class MessageWdsCreateProfileInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsCreateProfileInput */
+    get_apn_disabled_flag(): [ /* returnType */ boolean, /* value_apn_disabled_flag */ boolean | null ]
+    get_apn_name(): [ /* returnType */ boolean, /* value_apn_name */ string | null ]
+    get_apn_type_mask(): [ /* returnType */ boolean, /* value_apn_type_mask */ WdsApnTypeMask | null ]
+    get_authentication(): [ /* returnType */ boolean, /* value_authentication */ WdsAuthentication | null ]
+    get_gprs_minimum_qos(): [ /* returnType */ boolean, /* value_gprs_minimum_qos_precedence_class */ number | null, /* value_gprs_minimum_qos_delay_class */ number | null, /* value_gprs_minimum_qos_reliability_class */ number | null, /* value_gprs_minimum_qos_peak_throughput_class */ number | null, /* value_gprs_minimum_qos_mean_throughput_class */ number | null ]
+    get_gprs_requested_qos(): [ /* returnType */ boolean, /* value_gprs_requested_qos_precedence_class */ number | null, /* value_gprs_requested_qos_delay_class */ number | null, /* value_gprs_requested_qos_reliability_class */ number | null, /* value_gprs_requested_qos_peak_throughput_class */ number | null, /* value_gprs_requested_qos_mean_throughput_class */ number | null ]
+    get_imcn_flag(): [ /* returnType */ boolean, /* value_imcn_flag */ boolean | null ]
+    get_ipv4_address_preference(): [ /* returnType */ boolean, /* value_ipv4_address_preference */ number | null ]
+    get_ipv6_address_preference(): [ /* returnType */ boolean, /* value_ipv6_address_preference_address */ number[] | null ]
+    get_ipv6_primary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_primary_dns_address_preference */ number[] | null ]
+    get_ipv6_secondary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_secondary_dns_address_preference */ number[] | null ]
+    get_lte_qos_parameters(): [ /* returnType */ boolean, /* value_lte_qos_parameters_qos_class_identifier */ WdsQosClassIdentifier | null, /* value_lte_qos_parameters_guaranteed_downlink_bitrate */ number | null, /* value_lte_qos_parameters_max_downlink_bitrate */ number | null, /* value_lte_qos_parameters_guaranteed_uplink_bitrate */ number | null, /* value_lte_qos_parameters_max_uplink_bitrate */ number | null ]
+    get_password(): [ /* returnType */ boolean, /* value_password */ string | null ]
+    get_pcscf_address_using_dhcp(): [ /* returnType */ boolean, /* value_pcscf_address_using_dhcp */ boolean | null ]
+    get_pcscf_address_using_pco(): [ /* returnType */ boolean, /* value_pcscf_address_using_pco */ boolean | null ]
+    get_pdp_context_number(): [ /* returnType */ boolean, /* value_pdp_context_number */ number | null ]
+    get_pdp_context_primary_id(): [ /* returnType */ boolean, /* value_pdp_context_primary_id */ number | null ]
+    get_pdp_context_secondary_flag(): [ /* returnType */ boolean, /* value_pdp_context_secondary_flag */ boolean | null ]
+    get_pdp_data_compression_type(): [ /* returnType */ boolean, /* value_pdp_data_compression_type */ WdsPdpDataCompressionType | null ]
+    get_pdp_header_compression_type(): [ /* returnType */ boolean, /* value_pdp_header_compression_type */ WdsPdpHeaderCompressionType | null ]
+    get_pdp_type(): [ /* returnType */ boolean, /* value_pdp_type */ WdsPdpType | null ]
+    get_primary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_primary_ipv4_dns_address */ number | null ]
+    get_profile_name(): [ /* returnType */ boolean, /* value_profile_name */ string | null ]
+    get_profile_type(): [ /* returnType */ boolean, /* value_profile_type */ WdsProfileType | null ]
+    get_roaming_disallowed_flag(): [ /* returnType */ boolean, /* value_roaming_disallowed_flag */ boolean | null ]
+    get_secondary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_secondary_ipv4_dns_address */ number | null ]
+    get_umts_minimum_qos(): [ /* returnType */ boolean, /* value_umts_minimum_qos_traffic_class */ WdsTrafficClass | null, /* value_umts_minimum_qos_max_uplink_bitrate */ number | null, /* value_umts_minimum_qos_max_downlink_bitrate */ number | null, /* value_umts_minimum_qos_guaranteed_uplink_bitrate */ number | null, /* value_umts_minimum_qos_guaranteed_downlink_bitrate */ number | null, /* value_umts_minimum_qos_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_minimum_qos_maximum_sdu_size */ number | null, /* value_umts_minimum_qos_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_minimum_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_minimum_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_minimum_qos_transfer_delay */ number | null, /* value_umts_minimum_qos_traffic_handling_priority */ number | null ]
+    get_umts_minimum_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass | null, /* value_umts_minimum_qos_with_signaling_indication_flag_max_uplink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_max_downlink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_minimum_qos_with_signaling_indication_flag_maximum_sdu_size */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_minimum_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_minimum_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_minimum_qos_with_signaling_indication_flag_transfer_delay */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_handling_priority */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_signaling_indication */ number | null ]
+    get_umts_requested_qos(): [ /* returnType */ boolean, /* value_umts_requested_qos_traffic_class */ WdsTrafficClass | null, /* value_umts_requested_qos_max_uplink_bitrate */ number | null, /* value_umts_requested_qos_max_downlink_bitrate */ number | null, /* value_umts_requested_qos_guaranteed_uplink_bitrate */ number | null, /* value_umts_requested_qos_guaranteed_downlink_bitrate */ number | null, /* value_umts_requested_qos_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_requested_qos_maximum_sdu_size */ number | null, /* value_umts_requested_qos_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_requested_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_requested_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_requested_qos_transfer_delay */ number | null, /* value_umts_requested_qos_traffic_handling_priority */ number | null ]
+    get_umts_requested_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass | null, /* value_umts_requested_qos_with_signaling_indication_flag_max_uplink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_max_downlink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_requested_qos_with_signaling_indication_flag_maximum_sdu_size */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_requested_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_requested_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_requested_qos_with_signaling_indication_flag_transfer_delay */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_handling_priority */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_signaling_indication */ number | null ]
+    get_username(): [ /* returnType */ boolean, /* value_username */ string | null ]
     ref(): MessageWdsCreateProfileInput
     set_apn_disabled_flag(value_apn_disabled_flag: boolean): boolean
     set_apn_name(value_apn_name: string): boolean
+    set_apn_type_mask(value_apn_type_mask: WdsApnTypeMask): boolean
     set_authentication(value_authentication: WdsAuthentication): boolean
     set_gprs_minimum_qos(value_gprs_minimum_qos_precedence_class: number, value_gprs_minimum_qos_delay_class: number, value_gprs_minimum_qos_reliability_class: number, value_gprs_minimum_qos_peak_throughput_class: number, value_gprs_minimum_qos_mean_throughput_class: number): boolean
     set_gprs_requested_qos(value_gprs_requested_qos_precedence_class: number, value_gprs_requested_qos_delay_class: number, value_gprs_requested_qos_reliability_class: number, value_gprs_requested_qos_peak_throughput_class: number, value_gprs_requested_qos_mean_throughput_class: number): boolean
@@ -9941,18 +10755,18 @@ export class MessageWdsCreateProfileInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsCreateProfileInput
 }
-export class MessageWdsCreateProfileOutput {
-    /* Methods of Qmi.MessageWdsCreateProfileOutput */
-    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError ]
-    get_profile_identifier(): [ /* returnType */ boolean, /* value_profile_identifier_profile_type */ WdsProfileType, /* value_profile_identifier_profile_index */ number ]
+class MessageWdsCreateProfileOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsCreateProfileOutput */
+    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError | null ]
+    get_profile_identifier(): [ /* returnType */ boolean, /* value_profile_identifier_profile_type */ WdsProfileType | null, /* value_profile_identifier_profile_index */ number | null ]
     get_result(): boolean
     ref(): MessageWdsCreateProfileOutput
     unref(): void
     static name: string
 }
-export class MessageWdsDeleteProfileInput {
-    /* Methods of Qmi.MessageWdsDeleteProfileInput */
-    get_profile_identifier(): [ /* returnType */ boolean, /* value_profile_identifier_profile_type */ WdsProfileType, /* value_profile_identifier_profile_index */ number ]
+class MessageWdsDeleteProfileInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsDeleteProfileInput */
+    get_profile_identifier(): [ /* returnType */ boolean, /* value_profile_identifier_profile_type */ WdsProfileType | null, /* value_profile_identifier_profile_index */ number | null ]
     ref(): MessageWdsDeleteProfileInput
     set_profile_identifier(value_profile_identifier_profile_type: WdsProfileType, value_profile_identifier_profile_index: number): boolean
     unref(): void
@@ -9962,43 +10776,43 @@ export class MessageWdsDeleteProfileInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsDeleteProfileInput
 }
-export class MessageWdsDeleteProfileOutput {
-    /* Methods of Qmi.MessageWdsDeleteProfileOutput */
-    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError ]
+class MessageWdsDeleteProfileOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsDeleteProfileOutput */
+    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError | null ]
     get_result(): boolean
     ref(): MessageWdsDeleteProfileOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGetAutoconnectSettingsOutput {
-    /* Methods of Qmi.MessageWdsGetAutoconnectSettingsOutput */
+class MessageWdsGetAutoconnectSettingsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetAutoconnectSettingsOutput */
     get_result(): boolean
-    get_roaming(): [ /* returnType */ boolean, /* value_roaming */ WdsAutoconnectSettingRoaming ]
-    get_status(): [ /* returnType */ boolean, /* value_status */ WdsAutoconnectSetting ]
+    get_roaming(): [ /* returnType */ boolean, /* value_roaming */ WdsAutoconnectSettingRoaming | null ]
+    get_status(): [ /* returnType */ boolean, /* value_status */ WdsAutoconnectSetting | null ]
     ref(): MessageWdsGetAutoconnectSettingsOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGetChannelRatesOutput {
-    /* Methods of Qmi.MessageWdsGetChannelRatesOutput */
-    get_channel_rates(): [ /* returnType */ boolean, /* value_channel_rates_channel_tx_rate_bps */ number, /* value_channel_rates_channel_rx_rate_bps */ number, /* value_channel_rates_max_channel_tx_rate_bps */ number, /* value_channel_rates_max_channel_rx_rate_bps */ number ]
+class MessageWdsGetChannelRatesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetChannelRatesOutput */
+    get_channel_rates(): [ /* returnType */ boolean, /* value_channel_rates_channel_tx_rate_bps */ number | null, /* value_channel_rates_channel_rx_rate_bps */ number | null, /* value_channel_rates_max_channel_tx_rate_bps */ number | null, /* value_channel_rates_max_channel_rx_rate_bps */ number | null ]
     get_result(): boolean
     ref(): MessageWdsGetChannelRatesOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGetCurrentDataBearerTechnologyOutput {
-    /* Methods of Qmi.MessageWdsGetCurrentDataBearerTechnologyOutput */
-    get_current(): [ /* returnType */ boolean, /* value_current_network_type */ WdsNetworkType, /* value_current_rat_mask */ number, /* value_current_so_mask */ number ]
-    get_last(): [ /* returnType */ boolean, /* value_last_network_type */ WdsNetworkType, /* value_last_rat_mask */ number, /* value_last_so_mask */ number ]
+class MessageWdsGetCurrentDataBearerTechnologyOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetCurrentDataBearerTechnologyOutput */
+    get_current(): [ /* returnType */ boolean, /* value_current_network_type */ WdsNetworkType | null, /* value_current_rat_mask */ number | null, /* value_current_so_mask */ number | null ]
+    get_last(): [ /* returnType */ boolean, /* value_last_network_type */ WdsNetworkType | null, /* value_last_rat_mask */ number | null, /* value_last_so_mask */ number | null ]
     get_result(): boolean
     ref(): MessageWdsGetCurrentDataBearerTechnologyOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGetCurrentSettingsInput {
-    /* Methods of Qmi.MessageWdsGetCurrentSettingsInput */
-    get_requested_settings(): [ /* returnType */ boolean, /* value_requested_settings */ WdsGetCurrentSettingsRequestedSettings ]
+class MessageWdsGetCurrentSettingsInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetCurrentSettingsInput */
+    get_requested_settings(): [ /* returnType */ boolean, /* value_requested_settings */ WdsGetCurrentSettingsRequestedSettings | null ]
     ref(): MessageWdsGetCurrentSettingsInput
     set_requested_settings(value_requested_settings: WdsGetCurrentSettingsRequestedSettings): boolean
     unref(): void
@@ -10008,71 +10822,71 @@ export class MessageWdsGetCurrentSettingsInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsGetCurrentSettingsInput
 }
-export class MessageWdsGetCurrentSettingsOutput {
-    /* Methods of Qmi.MessageWdsGetCurrentSettingsOutput */
-    get_apn_name(): [ /* returnType */ boolean, /* value_apn_name */ string ]
-    get_authentication(): [ /* returnType */ boolean, /* value_authentication */ WdsAuthentication ]
-    get_domain_name_list(): [ /* returnType */ boolean, /* value_domain_name_list */ string[] ]
-    get_extended_technology_preference(): [ /* returnType */ boolean, /* value_extended_technology_preference */ WdsExtendedTechnologyPreference ]
-    get_gprs_granted_qos(): [ /* returnType */ boolean, /* value_gprs_granted_qos_precedence_class */ number, /* value_gprs_granted_qos_delay_class */ number, /* value_gprs_granted_qos_reliability_class */ number, /* value_gprs_granted_qos_peak_throughput_class */ number, /* value_gprs_granted_qos_mean_throughput_class */ number ]
-    get_imcn_flag(): [ /* returnType */ boolean, /* value_imcn_flag */ number ]
-    get_ip_family(): [ /* returnType */ boolean, /* value_ip_family */ WdsIpFamily ]
-    get_ipv4_address(): [ /* returnType */ boolean, /* value_ipv4_address */ number ]
-    get_ipv4_gateway_address(): [ /* returnType */ boolean, /* value_ipv4_gateway_address */ number ]
-    get_ipv4_gateway_subnet_mask(): [ /* returnType */ boolean, /* value_ipv4_gateway_subnet_mask */ number ]
-    get_ipv6_address(): [ /* returnType */ boolean, /* value_ipv6_address_address */ number[], /* value_ipv6_address_prefix_length */ number ]
-    get_ipv6_gateway_address(): [ /* returnType */ boolean, /* value_ipv6_gateway_address_address */ number[], /* value_ipv6_gateway_address_prefix_length */ number ]
-    get_ipv6_primary_dns_address(): [ /* returnType */ boolean, /* value_ipv6_primary_dns_address */ number[] ]
-    get_ipv6_secondary_dns_address(): [ /* returnType */ boolean, /* value_ipv6_secondary_dns_address */ number[] ]
-    get_mtu(): [ /* returnType */ boolean, /* value_mtu */ number ]
-    get_pcscf_address_using_pco(): [ /* returnType */ boolean, /* value_pcscf_address_using_pco */ number ]
-    get_pcscf_domain_name_list(): [ /* returnType */ boolean, /* value_pcscf_domain_name_list */ string[] ]
-    get_pcscf_server_address_list(): [ /* returnType */ boolean, /* value_pcscf_server_address_list */ number[] ]
-    get_pdp_type(): [ /* returnType */ boolean, /* value_pdp_type */ WdsPdpType ]
-    get_primary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_primary_ipv4_dns_address */ number ]
-    get_profile_id(): [ /* returnType */ boolean, /* value_profile_id_profile_type */ WdsProfileType, /* value_profile_id_profile_index */ number ]
-    get_profile_name(): [ /* returnType */ boolean, /* value_profile_name */ string ]
+class MessageWdsGetCurrentSettingsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetCurrentSettingsOutput */
+    get_apn_name(): [ /* returnType */ boolean, /* value_apn_name */ string | null ]
+    get_authentication(): [ /* returnType */ boolean, /* value_authentication */ WdsAuthentication | null ]
+    get_domain_name_list(): [ /* returnType */ boolean, /* value_domain_name_list */ string[] | null ]
+    get_extended_technology_preference(): [ /* returnType */ boolean, /* value_extended_technology_preference */ WdsExtendedTechnologyPreference | null ]
+    get_gprs_granted_qos(): [ /* returnType */ boolean, /* value_gprs_granted_qos_precedence_class */ number | null, /* value_gprs_granted_qos_delay_class */ number | null, /* value_gprs_granted_qos_reliability_class */ number | null, /* value_gprs_granted_qos_peak_throughput_class */ number | null, /* value_gprs_granted_qos_mean_throughput_class */ number | null ]
+    get_imcn_flag(): [ /* returnType */ boolean, /* value_imcn_flag */ number | null ]
+    get_ip_family(): [ /* returnType */ boolean, /* value_ip_family */ WdsIpFamily | null ]
+    get_ipv4_address(): [ /* returnType */ boolean, /* value_ipv4_address */ number | null ]
+    get_ipv4_gateway_address(): [ /* returnType */ boolean, /* value_ipv4_gateway_address */ number | null ]
+    get_ipv4_gateway_subnet_mask(): [ /* returnType */ boolean, /* value_ipv4_gateway_subnet_mask */ number | null ]
+    get_ipv6_address(): [ /* returnType */ boolean, /* value_ipv6_address_address */ number[] | null, /* value_ipv6_address_prefix_length */ number | null ]
+    get_ipv6_gateway_address(): [ /* returnType */ boolean, /* value_ipv6_gateway_address_address */ number[] | null, /* value_ipv6_gateway_address_prefix_length */ number | null ]
+    get_ipv6_primary_dns_address(): [ /* returnType */ boolean, /* value_ipv6_primary_dns_address */ number[] | null ]
+    get_ipv6_secondary_dns_address(): [ /* returnType */ boolean, /* value_ipv6_secondary_dns_address */ number[] | null ]
+    get_mtu(): [ /* returnType */ boolean, /* value_mtu */ number | null ]
+    get_pcscf_address_using_pco(): [ /* returnType */ boolean, /* value_pcscf_address_using_pco */ number | null ]
+    get_pcscf_domain_name_list(): [ /* returnType */ boolean, /* value_pcscf_domain_name_list */ string[] | null ]
+    get_pcscf_server_address_list(): [ /* returnType */ boolean, /* value_pcscf_server_address_list */ number[] | null ]
+    get_pdp_type(): [ /* returnType */ boolean, /* value_pdp_type */ WdsPdpType | null ]
+    get_primary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_primary_ipv4_dns_address */ number | null ]
+    get_profile_id(): [ /* returnType */ boolean, /* value_profile_id_profile_type */ WdsProfileType | null, /* value_profile_id_profile_index */ number | null ]
+    get_profile_name(): [ /* returnType */ boolean, /* value_profile_name */ string | null ]
     get_result(): boolean
-    get_secondary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_secondary_ipv4_dns_address */ number ]
-    get_umts_granted_qos(): [ /* returnType */ boolean, /* value_umts_granted_qos_traffic_class */ WdsTrafficClass, /* value_umts_granted_qos_max_uplink_bitrate */ number, /* value_umts_granted_qos_max_downlink_bitrate */ number, /* value_umts_granted_qos_guaranteed_uplink_bitrate */ number, /* value_umts_granted_qos_guaranteed_downlink_bitrate */ number, /* value_umts_granted_qos_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_granted_qos_maximum_sdu_size */ number, /* value_umts_granted_qos_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_granted_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_granted_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_granted_qos_transfer_delay */ number, /* value_umts_granted_qos_traffic_handling_priority */ number ]
-    get_username(): [ /* returnType */ boolean, /* value_username */ string ]
+    get_secondary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_secondary_ipv4_dns_address */ number | null ]
+    get_umts_granted_qos(): [ /* returnType */ boolean, /* value_umts_granted_qos_traffic_class */ WdsTrafficClass | null, /* value_umts_granted_qos_max_uplink_bitrate */ number | null, /* value_umts_granted_qos_max_downlink_bitrate */ number | null, /* value_umts_granted_qos_guaranteed_uplink_bitrate */ number | null, /* value_umts_granted_qos_guaranteed_downlink_bitrate */ number | null, /* value_umts_granted_qos_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_granted_qos_maximum_sdu_size */ number | null, /* value_umts_granted_qos_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_granted_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_granted_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_granted_qos_transfer_delay */ number | null, /* value_umts_granted_qos_traffic_handling_priority */ number | null ]
+    get_username(): [ /* returnType */ boolean, /* value_username */ string | null ]
     ref(): MessageWdsGetCurrentSettingsOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGetDataBearerTechnologyOutput {
-    /* Methods of Qmi.MessageWdsGetDataBearerTechnologyOutput */
-    get_current(): [ /* returnType */ boolean, /* value_current */ WdsDataBearerTechnology ]
-    get_last(): [ /* returnType */ boolean, /* value_last */ WdsDataBearerTechnology ]
+class MessageWdsGetDataBearerTechnologyOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetDataBearerTechnologyOutput */
+    get_current(): [ /* returnType */ boolean, /* value_current */ WdsDataBearerTechnology | null ]
+    get_last(): [ /* returnType */ boolean, /* value_last */ WdsDataBearerTechnology | null ]
     get_result(): boolean
     ref(): MessageWdsGetDataBearerTechnologyOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGetDefaultProfileNumInput {
-    /* Methods of Qmi.MessageWdsGetDefaultProfileNumInput */
-    get_profile_type(): [ /* returnType */ boolean, /* value_profile_type_profile_type */ WdsProfileType, /* value_profile_type_profile_family */ WdsProfileFamily ]
-    ref(): MessageWdsGetDefaultProfileNumInput
-    set_profile_type(value_profile_type_profile_type: WdsProfileType, value_profile_type_profile_family: WdsProfileFamily): boolean
+class MessageWdsGetDefaultProfileNumberInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetDefaultProfileNumberInput */
+    get_profile_type(): [ /* returnType */ boolean, /* value_profile_type_type */ WdsProfileType | null, /* value_profile_type_family */ WdsProfileFamily | null ]
+    ref(): MessageWdsGetDefaultProfileNumberInput
+    set_profile_type(value_profile_type_type: WdsProfileType, value_profile_type_family: WdsProfileFamily): boolean
     unref(): void
     static name: string
-    static new(): MessageWdsGetDefaultProfileNumInput
+    static new(): MessageWdsGetDefaultProfileNumberInput
     constructor()
     /* Static methods and pseudo-constructors */
-    static new(): MessageWdsGetDefaultProfileNumInput
+    static new(): MessageWdsGetDefaultProfileNumberInput
 }
-export class MessageWdsGetDefaultProfileNumOutput {
-    /* Methods of Qmi.MessageWdsGetDefaultProfileNumOutput */
-    get_default_profile_number(): [ /* returnType */ boolean, /* value_default_profile_number */ number ]
-    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError ]
+class MessageWdsGetDefaultProfileNumberOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetDefaultProfileNumberOutput */
+    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError | null ]
+    get_index(): [ /* returnType */ boolean, /* value_index */ number | null ]
     get_result(): boolean
-    ref(): MessageWdsGetDefaultProfileNumOutput
+    ref(): MessageWdsGetDefaultProfileNumberOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGetDefaultSettingsInput {
-    /* Methods of Qmi.MessageWdsGetDefaultSettingsInput */
-    get_profile_type(): [ /* returnType */ boolean, /* value_profile_type */ WdsProfileType ]
+class MessageWdsGetDefaultSettingsInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetDefaultSettingsInput */
+    get_profile_type(): [ /* returnType */ boolean, /* value_profile_type */ WdsProfileType | null ]
     ref(): MessageWdsGetDefaultSettingsInput
     set_profile_type(value_profile_type: WdsProfileType): boolean
     unref(): void
@@ -10082,60 +10896,87 @@ export class MessageWdsGetDefaultSettingsInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsGetDefaultSettingsInput
 }
-export class MessageWdsGetDefaultSettingsOutput {
-    /* Methods of Qmi.MessageWdsGetDefaultSettingsOutput */
-    get_apn_name(): [ /* returnType */ boolean, /* value_apn_name */ string ]
-    get_authentication(): [ /* returnType */ boolean, /* value_authentication */ WdsAuthentication ]
-    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError ]
-    get_gprs_minimum_qos(): [ /* returnType */ boolean, /* value_gprs_minimum_qos_precedence_class */ number, /* value_gprs_minimum_qos_delay_class */ number, /* value_gprs_minimum_qos_reliability_class */ number, /* value_gprs_minimum_qos_peak_throughput_class */ number, /* value_gprs_minimum_qos_mean_throughput_class */ number ]
-    get_gprs_requested_qos(): [ /* returnType */ boolean, /* value_gprs_requested_qos_precedence_class */ number, /* value_gprs_requested_qos_delay_class */ number, /* value_gprs_requested_qos_reliability_class */ number, /* value_gprs_requested_qos_peak_throughput_class */ number, /* value_gprs_requested_qos_mean_throughput_class */ number ]
-    get_imcn_flag(): [ /* returnType */ boolean, /* value_imcn_flag */ boolean ]
-    get_ipv4_address_preference(): [ /* returnType */ boolean, /* value_ipv4_address_preference */ number ]
-    get_ipv6_address_preference(): [ /* returnType */ boolean, /* value_ipv6_address_preference_address */ number[] ]
-    get_ipv6_primary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_primary_dns_address_preference */ number[] ]
-    get_ipv6_secondary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_secondary_dns_address_preference */ number[] ]
-    get_lte_qos_parameters(): [ /* returnType */ boolean, /* value_lte_qos_parameters_qos_class_identifier */ WdsQosClassIdentifier, /* value_lte_qos_parameters_guaranteed_downlink_bitrate */ number, /* value_lte_qos_parameters_max_downlink_bitrate */ number, /* value_lte_qos_parameters_guaranteed_uplink_bitrate */ number, /* value_lte_qos_parameters_max_uplink_bitrate */ number ]
-    get_password(): [ /* returnType */ boolean, /* value_password */ string ]
-    get_pcscf_address_using_dhcp(): [ /* returnType */ boolean, /* value_pcscf_address_using_dhcp */ boolean ]
-    get_pcscf_address_using_pco(): [ /* returnType */ boolean, /* value_pcscf_address_using_pco */ boolean ]
-    get_pdp_context_number(): [ /* returnType */ boolean, /* value_pdp_context_number */ number ]
-    get_pdp_context_primary_id(): [ /* returnType */ boolean, /* value_pdp_context_primary_id */ number ]
-    get_pdp_context_secondary_flag(): [ /* returnType */ boolean, /* value_pdp_context_secondary_flag */ boolean ]
-    get_pdp_data_compression_type(): [ /* returnType */ boolean, /* value_pdp_data_compression_type */ WdsPdpDataCompressionType ]
-    get_pdp_header_compression_type(): [ /* returnType */ boolean, /* value_pdp_header_compression_type */ WdsPdpHeaderCompressionType ]
-    get_pdp_type(): [ /* returnType */ boolean, /* value_pdp_type */ WdsPdpType ]
-    get_primary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_primary_ipv4_dns_address */ number ]
-    get_profile_name(): [ /* returnType */ boolean, /* value_profile_name */ string ]
+class MessageWdsGetDefaultSettingsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetDefaultSettingsOutput */
+    get_apn_name(): [ /* returnType */ boolean, /* value_apn_name */ string | null ]
+    get_authentication(): [ /* returnType */ boolean, /* value_authentication */ WdsAuthentication | null ]
+    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError | null ]
+    get_gprs_minimum_qos(): [ /* returnType */ boolean, /* value_gprs_minimum_qos_precedence_class */ number | null, /* value_gprs_minimum_qos_delay_class */ number | null, /* value_gprs_minimum_qos_reliability_class */ number | null, /* value_gprs_minimum_qos_peak_throughput_class */ number | null, /* value_gprs_minimum_qos_mean_throughput_class */ number | null ]
+    get_gprs_requested_qos(): [ /* returnType */ boolean, /* value_gprs_requested_qos_precedence_class */ number | null, /* value_gprs_requested_qos_delay_class */ number | null, /* value_gprs_requested_qos_reliability_class */ number | null, /* value_gprs_requested_qos_peak_throughput_class */ number | null, /* value_gprs_requested_qos_mean_throughput_class */ number | null ]
+    get_imcn_flag(): [ /* returnType */ boolean, /* value_imcn_flag */ boolean | null ]
+    get_ipv4_address_preference(): [ /* returnType */ boolean, /* value_ipv4_address_preference */ number | null ]
+    get_ipv6_address_preference(): [ /* returnType */ boolean, /* value_ipv6_address_preference_address */ number[] | null ]
+    get_ipv6_primary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_primary_dns_address_preference */ number[] | null ]
+    get_ipv6_secondary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_secondary_dns_address_preference */ number[] | null ]
+    get_lte_qos_parameters(): [ /* returnType */ boolean, /* value_lte_qos_parameters_qos_class_identifier */ WdsQosClassIdentifier | null, /* value_lte_qos_parameters_guaranteed_downlink_bitrate */ number | null, /* value_lte_qos_parameters_max_downlink_bitrate */ number | null, /* value_lte_qos_parameters_guaranteed_uplink_bitrate */ number | null, /* value_lte_qos_parameters_max_uplink_bitrate */ number | null ]
+    get_password(): [ /* returnType */ boolean, /* value_password */ string | null ]
+    get_pcscf_address_using_dhcp(): [ /* returnType */ boolean, /* value_pcscf_address_using_dhcp */ boolean | null ]
+    get_pcscf_address_using_pco(): [ /* returnType */ boolean, /* value_pcscf_address_using_pco */ boolean | null ]
+    get_pdp_context_number(): [ /* returnType */ boolean, /* value_pdp_context_number */ number | null ]
+    get_pdp_context_primary_id(): [ /* returnType */ boolean, /* value_pdp_context_primary_id */ number | null ]
+    get_pdp_context_secondary_flag(): [ /* returnType */ boolean, /* value_pdp_context_secondary_flag */ boolean | null ]
+    get_pdp_data_compression_type(): [ /* returnType */ boolean, /* value_pdp_data_compression_type */ WdsPdpDataCompressionType | null ]
+    get_pdp_header_compression_type(): [ /* returnType */ boolean, /* value_pdp_header_compression_type */ WdsPdpHeaderCompressionType | null ]
+    get_pdp_type(): [ /* returnType */ boolean, /* value_pdp_type */ WdsPdpType | null ]
+    get_primary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_primary_ipv4_dns_address */ number | null ]
+    get_profile_name(): [ /* returnType */ boolean, /* value_profile_name */ string | null ]
     get_result(): boolean
-    get_secondary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_secondary_ipv4_dns_address */ number ]
-    get_umts_minimum_qos(): [ /* returnType */ boolean, /* value_umts_minimum_qos_traffic_class */ WdsTrafficClass, /* value_umts_minimum_qos_max_uplink_bitrate */ number, /* value_umts_minimum_qos_max_downlink_bitrate */ number, /* value_umts_minimum_qos_guaranteed_uplink_bitrate */ number, /* value_umts_minimum_qos_guaranteed_downlink_bitrate */ number, /* value_umts_minimum_qos_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_minimum_qos_maximum_sdu_size */ number, /* value_umts_minimum_qos_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_minimum_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_minimum_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_minimum_qos_transfer_delay */ number, /* value_umts_minimum_qos_traffic_handling_priority */ number ]
-    get_umts_minimum_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass, /* value_umts_minimum_qos_with_signaling_indication_flag_max_uplink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_max_downlink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_minimum_qos_with_signaling_indication_flag_maximum_sdu_size */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_minimum_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_minimum_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_minimum_qos_with_signaling_indication_flag_transfer_delay */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_handling_priority */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_signaling_indication */ number ]
-    get_umts_requested_qos(): [ /* returnType */ boolean, /* value_umts_requested_qos_traffic_class */ WdsTrafficClass, /* value_umts_requested_qos_max_uplink_bitrate */ number, /* value_umts_requested_qos_max_downlink_bitrate */ number, /* value_umts_requested_qos_guaranteed_uplink_bitrate */ number, /* value_umts_requested_qos_guaranteed_downlink_bitrate */ number, /* value_umts_requested_qos_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_requested_qos_maximum_sdu_size */ number, /* value_umts_requested_qos_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_requested_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_requested_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_requested_qos_transfer_delay */ number, /* value_umts_requested_qos_traffic_handling_priority */ number ]
-    get_umts_requested_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass, /* value_umts_requested_qos_with_signaling_indication_flag_max_uplink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_max_downlink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_requested_qos_with_signaling_indication_flag_maximum_sdu_size */ number, /* value_umts_requested_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_requested_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_requested_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_requested_qos_with_signaling_indication_flag_transfer_delay */ number, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_handling_priority */ number, /* value_umts_requested_qos_with_signaling_indication_flag_signaling_indication */ number ]
-    get_username(): [ /* returnType */ boolean, /* value_username */ string ]
+    get_secondary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_secondary_ipv4_dns_address */ number | null ]
+    get_umts_minimum_qos(): [ /* returnType */ boolean, /* value_umts_minimum_qos_traffic_class */ WdsTrafficClass | null, /* value_umts_minimum_qos_max_uplink_bitrate */ number | null, /* value_umts_minimum_qos_max_downlink_bitrate */ number | null, /* value_umts_minimum_qos_guaranteed_uplink_bitrate */ number | null, /* value_umts_minimum_qos_guaranteed_downlink_bitrate */ number | null, /* value_umts_minimum_qos_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_minimum_qos_maximum_sdu_size */ number | null, /* value_umts_minimum_qos_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_minimum_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_minimum_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_minimum_qos_transfer_delay */ number | null, /* value_umts_minimum_qos_traffic_handling_priority */ number | null ]
+    get_umts_minimum_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass | null, /* value_umts_minimum_qos_with_signaling_indication_flag_max_uplink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_max_downlink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_minimum_qos_with_signaling_indication_flag_maximum_sdu_size */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_minimum_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_minimum_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_minimum_qos_with_signaling_indication_flag_transfer_delay */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_handling_priority */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_signaling_indication */ number | null ]
+    get_umts_requested_qos(): [ /* returnType */ boolean, /* value_umts_requested_qos_traffic_class */ WdsTrafficClass | null, /* value_umts_requested_qos_max_uplink_bitrate */ number | null, /* value_umts_requested_qos_max_downlink_bitrate */ number | null, /* value_umts_requested_qos_guaranteed_uplink_bitrate */ number | null, /* value_umts_requested_qos_guaranteed_downlink_bitrate */ number | null, /* value_umts_requested_qos_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_requested_qos_maximum_sdu_size */ number | null, /* value_umts_requested_qos_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_requested_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_requested_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_requested_qos_transfer_delay */ number | null, /* value_umts_requested_qos_traffic_handling_priority */ number | null ]
+    get_umts_requested_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass | null, /* value_umts_requested_qos_with_signaling_indication_flag_max_uplink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_max_downlink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_requested_qos_with_signaling_indication_flag_maximum_sdu_size */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_requested_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_requested_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_requested_qos_with_signaling_indication_flag_transfer_delay */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_handling_priority */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_signaling_indication */ number | null ]
+    get_username(): [ /* returnType */ boolean, /* value_username */ string | null ]
     ref(): MessageWdsGetDefaultSettingsOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGetDormancyStatusOutput {
-    /* Methods of Qmi.MessageWdsGetDormancyStatusOutput */
-    get_dormancy_status(): [ /* returnType */ boolean, /* value_dormancy_status */ WdsDormancyStatus ]
+class MessageWdsGetDormancyStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetDormancyStatusOutput */
+    get_dormancy_status(): [ /* returnType */ boolean, /* value_dormancy_status */ WdsDormancyStatus | null ]
     get_result(): boolean
     ref(): MessageWdsGetDormancyStatusOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGetPacketServiceStatusOutput {
-    /* Methods of Qmi.MessageWdsGetPacketServiceStatusOutput */
-    get_connection_status(): [ /* returnType */ boolean, /* value_connection_status */ WdsConnectionStatus ]
+class MessageWdsGetLteAttachParametersOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetLteAttachParametersOutput */
+    get_apn(): [ /* returnType */ boolean, /* value_apn */ string | null ]
+    get_ip_support_type(): [ /* returnType */ boolean, /* value_ip_support_type */ WdsIpSupportType | null ]
+    get_ota_attach_performed(): [ /* returnType */ boolean, /* value_ota_attach_performed */ boolean | null ]
+    get_result(): boolean
+    ref(): MessageWdsGetLteAttachParametersOutput
+    unref(): void
+    static name: string
+}
+class MessageWdsGetLteAttachPdnListOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetLteAttachPdnListOutput */
+    get_current_list(): [ /* returnType */ boolean, /* value_current_list */ number[] | null ]
+    get_pending_list(): [ /* returnType */ boolean, /* value_pending_list */ number[] | null ]
+    get_result(): boolean
+    ref(): MessageWdsGetLteAttachPdnListOutput
+    unref(): void
+    static name: string
+}
+class MessageWdsGetMaxLteAttachPdnNumberOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetMaxLteAttachPdnNumberOutput */
+    get_info(): [ /* returnType */ boolean, /* value_info */ number | null ]
+    get_result(): boolean
+    ref(): MessageWdsGetMaxLteAttachPdnNumberOutput
+    unref(): void
+    static name: string
+}
+class MessageWdsGetPacketServiceStatusOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetPacketServiceStatusOutput */
+    get_connection_status(): [ /* returnType */ boolean, /* value_connection_status */ WdsConnectionStatus | null ]
     get_result(): boolean
     ref(): MessageWdsGetPacketServiceStatusOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGetPacketStatisticsInput {
-    /* Methods of Qmi.MessageWdsGetPacketStatisticsInput */
-    get_mask(): [ /* returnType */ boolean, /* value_mask */ WdsPacketStatisticsMaskFlag ]
+class MessageWdsGetPacketStatisticsInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetPacketStatisticsInput */
+    get_mask(): [ /* returnType */ boolean, /* value_mask */ WdsPacketStatisticsMaskFlag | null ]
     ref(): MessageWdsGetPacketStatisticsInput
     set_mask(value_mask: WdsPacketStatisticsMaskFlag): boolean
     unref(): void
@@ -10145,28 +10986,28 @@ export class MessageWdsGetPacketStatisticsInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsGetPacketStatisticsInput
 }
-export class MessageWdsGetPacketStatisticsOutput {
-    /* Methods of Qmi.MessageWdsGetPacketStatisticsOutput */
-    get_last_call_rx_bytes_ok(): [ /* returnType */ boolean, /* value_last_call_rx_bytes_ok */ number ]
-    get_last_call_tx_bytes_ok(): [ /* returnType */ boolean, /* value_last_call_tx_bytes_ok */ number ]
+class MessageWdsGetPacketStatisticsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetPacketStatisticsOutput */
+    get_last_call_rx_bytes_ok(): [ /* returnType */ boolean, /* value_last_call_rx_bytes_ok */ number | null ]
+    get_last_call_tx_bytes_ok(): [ /* returnType */ boolean, /* value_last_call_tx_bytes_ok */ number | null ]
     get_result(): boolean
-    get_rx_bytes_ok(): [ /* returnType */ boolean, /* value_rx_bytes_ok */ number ]
-    get_rx_overflows(): [ /* returnType */ boolean, /* value_rx_overflows */ number ]
-    get_rx_packets_dropped(): [ /* returnType */ boolean, /* value_rx_packets_dropped */ number ]
-    get_rx_packets_error(): [ /* returnType */ boolean, /* value_rx_packets_error */ number ]
-    get_rx_packets_ok(): [ /* returnType */ boolean, /* value_rx_packets_ok */ number ]
-    get_tx_bytes_ok(): [ /* returnType */ boolean, /* value_tx_bytes_ok */ number ]
-    get_tx_overflows(): [ /* returnType */ boolean, /* value_tx_overflows */ number ]
-    get_tx_packets_dropped(): [ /* returnType */ boolean, /* value_tx_packets_dropped */ number ]
-    get_tx_packets_error(): [ /* returnType */ boolean, /* value_tx_packets_error */ number ]
-    get_tx_packets_ok(): [ /* returnType */ boolean, /* value_tx_packets_ok */ number ]
+    get_rx_bytes_ok(): [ /* returnType */ boolean, /* value_rx_bytes_ok */ number | null ]
+    get_rx_overflows(): [ /* returnType */ boolean, /* value_rx_overflows */ number | null ]
+    get_rx_packets_dropped(): [ /* returnType */ boolean, /* value_rx_packets_dropped */ number | null ]
+    get_rx_packets_error(): [ /* returnType */ boolean, /* value_rx_packets_error */ number | null ]
+    get_rx_packets_ok(): [ /* returnType */ boolean, /* value_rx_packets_ok */ number | null ]
+    get_tx_bytes_ok(): [ /* returnType */ boolean, /* value_tx_bytes_ok */ number | null ]
+    get_tx_overflows(): [ /* returnType */ boolean, /* value_tx_overflows */ number | null ]
+    get_tx_packets_dropped(): [ /* returnType */ boolean, /* value_tx_packets_dropped */ number | null ]
+    get_tx_packets_error(): [ /* returnType */ boolean, /* value_tx_packets_error */ number | null ]
+    get_tx_packets_ok(): [ /* returnType */ boolean, /* value_tx_packets_ok */ number | null ]
     ref(): MessageWdsGetPacketStatisticsOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGetPdnThrottleInfoInput {
-    /* Methods of Qmi.MessageWdsGetPdnThrottleInfoInput */
-    get_network_type(): [ /* returnType */ boolean, /* value_network_type */ WdsDataSystemNetworkType ]
+class MessageWdsGetPdnThrottleInfoInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetPdnThrottleInfoInput */
+    get_network_type(): [ /* returnType */ boolean, /* value_network_type */ WdsDataSystemNetworkType | null ]
     ref(): MessageWdsGetPdnThrottleInfoInput
     set_network_type(value_network_type: WdsDataSystemNetworkType): boolean
     unref(): void
@@ -10176,16 +11017,16 @@ export class MessageWdsGetPdnThrottleInfoInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsGetPdnThrottleInfoInput
 }
-export class MessageWdsGetPdnThrottleInfoOutput {
-    /* Methods of Qmi.MessageWdsGetPdnThrottleInfoOutput */
-    get_info(): [ /* returnType */ boolean, /* value_info */ MessageWdsGetPdnThrottleInfoOutputInfoElement[] ]
+class MessageWdsGetPdnThrottleInfoOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetPdnThrottleInfoOutput */
+    get_info(): [ /* returnType */ boolean, /* value_info */ MessageWdsGetPdnThrottleInfoOutputInfoElement[] | null ]
     get_result(): boolean
     ref(): MessageWdsGetPdnThrottleInfoOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGetPdnThrottleInfoOutputInfoElement {
-    /* Fields of Qmi.MessageWdsGetPdnThrottleInfoOutputInfoElement */
+class MessageWdsGetPdnThrottleInfoOutputInfoElement {
+    /* Fields of Qmi-1.0.Qmi.MessageWdsGetPdnThrottleInfoOutputInfoElement */
     ipv4_throttled: boolean
     ipv6_throttled: boolean
     ipv4_throttle_time_left_ms: number
@@ -10193,9 +11034,9 @@ export class MessageWdsGetPdnThrottleInfoOutputInfoElement {
     apn: string
     static name: string
 }
-export class MessageWdsGetProfileListInput {
-    /* Methods of Qmi.MessageWdsGetProfileListInput */
-    get_profile_type(): [ /* returnType */ boolean, /* value_profile_type */ WdsProfileType ]
+class MessageWdsGetProfileListInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetProfileListInput */
+    get_profile_type(): [ /* returnType */ boolean, /* value_profile_type */ WdsProfileType | null ]
     ref(): MessageWdsGetProfileListInput
     set_profile_type(value_profile_type: WdsProfileType): boolean
     unref(): void
@@ -10205,25 +11046,25 @@ export class MessageWdsGetProfileListInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsGetProfileListInput
 }
-export class MessageWdsGetProfileListOutput {
-    /* Methods of Qmi.MessageWdsGetProfileListOutput */
-    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError ]
-    get_profile_list(): [ /* returnType */ boolean, /* value_profile_list */ MessageWdsGetProfileListOutputProfileListProfile[] ]
+class MessageWdsGetProfileListOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetProfileListOutput */
+    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError | null ]
+    get_profile_list(): [ /* returnType */ boolean, /* value_profile_list */ MessageWdsGetProfileListOutputProfileListProfile[] | null ]
     get_result(): boolean
     ref(): MessageWdsGetProfileListOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGetProfileListOutputProfileListProfile {
-    /* Fields of Qmi.MessageWdsGetProfileListOutputProfileListProfile */
+class MessageWdsGetProfileListOutputProfileListProfile {
+    /* Fields of Qmi-1.0.Qmi.MessageWdsGetProfileListOutputProfileListProfile */
     profile_type: WdsProfileType
     profile_index: number
     profile_name: string
     static name: string
 }
-export class MessageWdsGetProfileSettingsInput {
-    /* Methods of Qmi.MessageWdsGetProfileSettingsInput */
-    get_profile_id(): [ /* returnType */ boolean, /* value_profile_id_profile_type */ WdsProfileType, /* value_profile_id_profile_index */ number ]
+class MessageWdsGetProfileSettingsInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetProfileSettingsInput */
+    get_profile_id(): [ /* returnType */ boolean, /* value_profile_id_profile_type */ WdsProfileType | null, /* value_profile_id_profile_index */ number | null ]
     ref(): MessageWdsGetProfileSettingsInput
     set_profile_id(value_profile_id_profile_type: WdsProfileType, value_profile_id_profile_index: number): boolean
     unref(): void
@@ -10233,100 +11074,103 @@ export class MessageWdsGetProfileSettingsInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsGetProfileSettingsInput
 }
-export class MessageWdsGetProfileSettingsOutput {
-    /* Methods of Qmi.MessageWdsGetProfileSettingsOutput */
-    get_apn_disabled_flag(): [ /* returnType */ boolean, /* value_apn_disabled_flag */ boolean ]
-    get_apn_name(): [ /* returnType */ boolean, /* value_apn_name */ string ]
-    get_authentication(): [ /* returnType */ boolean, /* value_authentication */ WdsAuthentication ]
-    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError ]
-    get_gprs_minimum_qos(): [ /* returnType */ boolean, /* value_gprs_minimum_qos_precedence_class */ number, /* value_gprs_minimum_qos_delay_class */ number, /* value_gprs_minimum_qos_reliability_class */ number, /* value_gprs_minimum_qos_peak_throughput_class */ number, /* value_gprs_minimum_qos_mean_throughput_class */ number ]
-    get_gprs_requested_qos(): [ /* returnType */ boolean, /* value_gprs_requested_qos_precedence_class */ number, /* value_gprs_requested_qos_delay_class */ number, /* value_gprs_requested_qos_reliability_class */ number, /* value_gprs_requested_qos_peak_throughput_class */ number, /* value_gprs_requested_qos_mean_throughput_class */ number ]
-    get_imcn_flag(): [ /* returnType */ boolean, /* value_imcn_flag */ boolean ]
-    get_ipv4_address_preference(): [ /* returnType */ boolean, /* value_ipv4_address_preference */ number ]
-    get_ipv6_address_preference(): [ /* returnType */ boolean, /* value_ipv6_address_preference_address */ number[] ]
-    get_ipv6_primary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_primary_dns_address_preference */ number[] ]
-    get_ipv6_secondary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_secondary_dns_address_preference */ number[] ]
-    get_lte_qos_parameters(): [ /* returnType */ boolean, /* value_lte_qos_parameters_qos_class_identifier */ WdsQosClassIdentifier, /* value_lte_qos_parameters_guaranteed_downlink_bitrate */ number, /* value_lte_qos_parameters_max_downlink_bitrate */ number, /* value_lte_qos_parameters_guaranteed_uplink_bitrate */ number, /* value_lte_qos_parameters_max_uplink_bitrate */ number ]
-    get_password(): [ /* returnType */ boolean, /* value_password */ string ]
-    get_pcscf_address_using_dhcp(): [ /* returnType */ boolean, /* value_pcscf_address_using_dhcp */ boolean ]
-    get_pcscf_address_using_pco(): [ /* returnType */ boolean, /* value_pcscf_address_using_pco */ boolean ]
-    get_pdp_context_number(): [ /* returnType */ boolean, /* value_pdp_context_number */ number ]
-    get_pdp_context_primary_id(): [ /* returnType */ boolean, /* value_pdp_context_primary_id */ number ]
-    get_pdp_context_secondary_flag(): [ /* returnType */ boolean, /* value_pdp_context_secondary_flag */ boolean ]
-    get_pdp_data_compression_type(): [ /* returnType */ boolean, /* value_pdp_data_compression_type */ WdsPdpDataCompressionType ]
-    get_pdp_header_compression_type(): [ /* returnType */ boolean, /* value_pdp_header_compression_type */ WdsPdpHeaderCompressionType ]
-    get_pdp_type(): [ /* returnType */ boolean, /* value_pdp_type */ WdsPdpType ]
-    get_primary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_primary_ipv4_dns_address */ number ]
-    get_profile_name(): [ /* returnType */ boolean, /* value_profile_name */ string ]
+class MessageWdsGetProfileSettingsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetProfileSettingsOutput */
+    get_apn_disabled_flag(): [ /* returnType */ boolean, /* value_apn_disabled_flag */ boolean | null ]
+    get_apn_name(): [ /* returnType */ boolean, /* value_apn_name */ string | null ]
+    get_apn_type_mask(): [ /* returnType */ boolean, /* value_apn_type_mask */ WdsApnTypeMask | null ]
+    get_authentication(): [ /* returnType */ boolean, /* value_authentication */ WdsAuthentication | null ]
+    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError | null ]
+    get_gprs_minimum_qos(): [ /* returnType */ boolean, /* value_gprs_minimum_qos_precedence_class */ number | null, /* value_gprs_minimum_qos_delay_class */ number | null, /* value_gprs_minimum_qos_reliability_class */ number | null, /* value_gprs_minimum_qos_peak_throughput_class */ number | null, /* value_gprs_minimum_qos_mean_throughput_class */ number | null ]
+    get_gprs_requested_qos(): [ /* returnType */ boolean, /* value_gprs_requested_qos_precedence_class */ number | null, /* value_gprs_requested_qos_delay_class */ number | null, /* value_gprs_requested_qos_reliability_class */ number | null, /* value_gprs_requested_qos_peak_throughput_class */ number | null, /* value_gprs_requested_qos_mean_throughput_class */ number | null ]
+    get_imcn_flag(): [ /* returnType */ boolean, /* value_imcn_flag */ boolean | null ]
+    get_ipv4_address_preference(): [ /* returnType */ boolean, /* value_ipv4_address_preference */ number | null ]
+    get_ipv6_address_preference(): [ /* returnType */ boolean, /* value_ipv6_address_preference_address */ number[] | null ]
+    get_ipv6_primary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_primary_dns_address_preference */ number[] | null ]
+    get_ipv6_secondary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_secondary_dns_address_preference */ number[] | null ]
+    get_lte_qos_parameters(): [ /* returnType */ boolean, /* value_lte_qos_parameters_qos_class_identifier */ WdsQosClassIdentifier | null, /* value_lte_qos_parameters_guaranteed_downlink_bitrate */ number | null, /* value_lte_qos_parameters_max_downlink_bitrate */ number | null, /* value_lte_qos_parameters_guaranteed_uplink_bitrate */ number | null, /* value_lte_qos_parameters_max_uplink_bitrate */ number | null ]
+    get_password(): [ /* returnType */ boolean, /* value_password */ string | null ]
+    get_pcscf_address_using_dhcp(): [ /* returnType */ boolean, /* value_pcscf_address_using_dhcp */ boolean | null ]
+    get_pcscf_address_using_pco(): [ /* returnType */ boolean, /* value_pcscf_address_using_pco */ boolean | null ]
+    get_pdp_context_number(): [ /* returnType */ boolean, /* value_pdp_context_number */ number | null ]
+    get_pdp_context_primary_id(): [ /* returnType */ boolean, /* value_pdp_context_primary_id */ number | null ]
+    get_pdp_context_secondary_flag(): [ /* returnType */ boolean, /* value_pdp_context_secondary_flag */ boolean | null ]
+    get_pdp_data_compression_type(): [ /* returnType */ boolean, /* value_pdp_data_compression_type */ WdsPdpDataCompressionType | null ]
+    get_pdp_header_compression_type(): [ /* returnType */ boolean, /* value_pdp_header_compression_type */ WdsPdpHeaderCompressionType | null ]
+    get_pdp_type(): [ /* returnType */ boolean, /* value_pdp_type */ WdsPdpType | null ]
+    get_primary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_primary_ipv4_dns_address */ number | null ]
+    get_profile_name(): [ /* returnType */ boolean, /* value_profile_name */ string | null ]
     get_result(): boolean
-    get_roaming_disallowed_flag(): [ /* returnType */ boolean, /* value_roaming_disallowed_flag */ boolean ]
-    get_secondary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_secondary_ipv4_dns_address */ number ]
-    get_umts_minimum_qos(): [ /* returnType */ boolean, /* value_umts_minimum_qos_traffic_class */ WdsTrafficClass, /* value_umts_minimum_qos_max_uplink_bitrate */ number, /* value_umts_minimum_qos_max_downlink_bitrate */ number, /* value_umts_minimum_qos_guaranteed_uplink_bitrate */ number, /* value_umts_minimum_qos_guaranteed_downlink_bitrate */ number, /* value_umts_minimum_qos_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_minimum_qos_maximum_sdu_size */ number, /* value_umts_minimum_qos_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_minimum_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_minimum_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_minimum_qos_transfer_delay */ number, /* value_umts_minimum_qos_traffic_handling_priority */ number ]
-    get_umts_minimum_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass, /* value_umts_minimum_qos_with_signaling_indication_flag_max_uplink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_max_downlink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_minimum_qos_with_signaling_indication_flag_maximum_sdu_size */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_minimum_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_minimum_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_minimum_qos_with_signaling_indication_flag_transfer_delay */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_handling_priority */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_signaling_indication */ number ]
-    get_umts_requested_qos(): [ /* returnType */ boolean, /* value_umts_requested_qos_traffic_class */ WdsTrafficClass, /* value_umts_requested_qos_max_uplink_bitrate */ number, /* value_umts_requested_qos_max_downlink_bitrate */ number, /* value_umts_requested_qos_guaranteed_uplink_bitrate */ number, /* value_umts_requested_qos_guaranteed_downlink_bitrate */ number, /* value_umts_requested_qos_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_requested_qos_maximum_sdu_size */ number, /* value_umts_requested_qos_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_requested_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_requested_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_requested_qos_transfer_delay */ number, /* value_umts_requested_qos_traffic_handling_priority */ number ]
-    get_umts_requested_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass, /* value_umts_requested_qos_with_signaling_indication_flag_max_uplink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_max_downlink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_requested_qos_with_signaling_indication_flag_maximum_sdu_size */ number, /* value_umts_requested_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_requested_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_requested_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_requested_qos_with_signaling_indication_flag_transfer_delay */ number, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_handling_priority */ number, /* value_umts_requested_qos_with_signaling_indication_flag_signaling_indication */ number ]
-    get_username(): [ /* returnType */ boolean, /* value_username */ string ]
+    get_roaming_disallowed_flag(): [ /* returnType */ boolean, /* value_roaming_disallowed_flag */ boolean | null ]
+    get_secondary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_secondary_ipv4_dns_address */ number | null ]
+    get_umts_minimum_qos(): [ /* returnType */ boolean, /* value_umts_minimum_qos_traffic_class */ WdsTrafficClass | null, /* value_umts_minimum_qos_max_uplink_bitrate */ number | null, /* value_umts_minimum_qos_max_downlink_bitrate */ number | null, /* value_umts_minimum_qos_guaranteed_uplink_bitrate */ number | null, /* value_umts_minimum_qos_guaranteed_downlink_bitrate */ number | null, /* value_umts_minimum_qos_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_minimum_qos_maximum_sdu_size */ number | null, /* value_umts_minimum_qos_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_minimum_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_minimum_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_minimum_qos_transfer_delay */ number | null, /* value_umts_minimum_qos_traffic_handling_priority */ number | null ]
+    get_umts_minimum_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass | null, /* value_umts_minimum_qos_with_signaling_indication_flag_max_uplink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_max_downlink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_minimum_qos_with_signaling_indication_flag_maximum_sdu_size */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_minimum_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_minimum_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_minimum_qos_with_signaling_indication_flag_transfer_delay */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_handling_priority */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_signaling_indication */ number | null ]
+    get_umts_requested_qos(): [ /* returnType */ boolean, /* value_umts_requested_qos_traffic_class */ WdsTrafficClass | null, /* value_umts_requested_qos_max_uplink_bitrate */ number | null, /* value_umts_requested_qos_max_downlink_bitrate */ number | null, /* value_umts_requested_qos_guaranteed_uplink_bitrate */ number | null, /* value_umts_requested_qos_guaranteed_downlink_bitrate */ number | null, /* value_umts_requested_qos_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_requested_qos_maximum_sdu_size */ number | null, /* value_umts_requested_qos_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_requested_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_requested_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_requested_qos_transfer_delay */ number | null, /* value_umts_requested_qos_traffic_handling_priority */ number | null ]
+    get_umts_requested_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass | null, /* value_umts_requested_qos_with_signaling_indication_flag_max_uplink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_max_downlink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_requested_qos_with_signaling_indication_flag_maximum_sdu_size */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_requested_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_requested_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_requested_qos_with_signaling_indication_flag_transfer_delay */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_handling_priority */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_signaling_indication */ number | null ]
+    get_username(): [ /* returnType */ boolean, /* value_username */ string | null ]
     ref(): MessageWdsGetProfileSettingsOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGetSupportedMessagesOutput {
-    /* Methods of Qmi.MessageWdsGetSupportedMessagesOutput */
-    get_list(): [ /* returnType */ boolean, /* value_list */ Uint8Array[] ]
+class MessageWdsGetSupportedMessagesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGetSupportedMessagesOutput */
+    get_list(): [ /* returnType */ boolean, /* value_list */ Uint8Array[] | null ]
     get_result(): boolean
     ref(): MessageWdsGetSupportedMessagesOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGoActiveOutput {
-    /* Methods of Qmi.MessageWdsGoActiveOutput */
+class MessageWdsGoActiveOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGoActiveOutput */
     get_result(): boolean
     ref(): MessageWdsGoActiveOutput
     unref(): void
     static name: string
 }
-export class MessageWdsGoDormantOutput {
-    /* Methods of Qmi.MessageWdsGoDormantOutput */
+class MessageWdsGoDormantOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsGoDormantOutput */
     get_result(): boolean
     ref(): MessageWdsGoDormantOutput
     unref(): void
     static name: string
 }
-export class MessageWdsModifyProfileInput {
-    /* Methods of Qmi.MessageWdsModifyProfileInput */
-    get_apn_disabled_flag(): [ /* returnType */ boolean, /* value_apn_disabled_flag */ boolean ]
-    get_apn_name(): [ /* returnType */ boolean, /* value_apn_name */ string ]
-    get_authentication(): [ /* returnType */ boolean, /* value_authentication */ WdsAuthentication ]
-    get_gprs_minimum_qos(): [ /* returnType */ boolean, /* value_gprs_minimum_qos_precedence_class */ number, /* value_gprs_minimum_qos_delay_class */ number, /* value_gprs_minimum_qos_reliability_class */ number, /* value_gprs_minimum_qos_peak_throughput_class */ number, /* value_gprs_minimum_qos_mean_throughput_class */ number ]
-    get_gprs_requested_qos(): [ /* returnType */ boolean, /* value_gprs_requested_qos_precedence_class */ number, /* value_gprs_requested_qos_delay_class */ number, /* value_gprs_requested_qos_reliability_class */ number, /* value_gprs_requested_qos_peak_throughput_class */ number, /* value_gprs_requested_qos_mean_throughput_class */ number ]
-    get_imcn_flag(): [ /* returnType */ boolean, /* value_imcn_flag */ boolean ]
-    get_ipv4_address_preference(): [ /* returnType */ boolean, /* value_ipv4_address_preference */ number ]
-    get_ipv6_address_preference(): [ /* returnType */ boolean, /* value_ipv6_address_preference_address */ number[] ]
-    get_ipv6_primary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_primary_dns_address_preference */ number[] ]
-    get_ipv6_secondary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_secondary_dns_address_preference */ number[] ]
-    get_lte_qos_parameters(): [ /* returnType */ boolean, /* value_lte_qos_parameters_qos_class_identifier */ WdsQosClassIdentifier, /* value_lte_qos_parameters_guaranteed_downlink_bitrate */ number, /* value_lte_qos_parameters_max_downlink_bitrate */ number, /* value_lte_qos_parameters_guaranteed_uplink_bitrate */ number, /* value_lte_qos_parameters_max_uplink_bitrate */ number ]
-    get_password(): [ /* returnType */ boolean, /* value_password */ string ]
-    get_pcscf_address_using_dhcp(): [ /* returnType */ boolean, /* value_pcscf_address_using_dhcp */ boolean ]
-    get_pcscf_address_using_pco(): [ /* returnType */ boolean, /* value_pcscf_address_using_pco */ boolean ]
-    get_pdp_context_number(): [ /* returnType */ boolean, /* value_pdp_context_number */ number ]
-    get_pdp_context_primary_id(): [ /* returnType */ boolean, /* value_pdp_context_primary_id */ number ]
-    get_pdp_context_secondary_flag(): [ /* returnType */ boolean, /* value_pdp_context_secondary_flag */ boolean ]
-    get_pdp_data_compression_type(): [ /* returnType */ boolean, /* value_pdp_data_compression_type */ WdsPdpDataCompressionType ]
-    get_pdp_header_compression_type(): [ /* returnType */ boolean, /* value_pdp_header_compression_type */ WdsPdpHeaderCompressionType ]
-    get_pdp_type(): [ /* returnType */ boolean, /* value_pdp_type */ WdsPdpType ]
-    get_primary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_primary_ipv4_dns_address */ number ]
-    get_profile_identifier(): [ /* returnType */ boolean, /* value_profile_identifier_profile_type */ WdsProfileType, /* value_profile_identifier_profile_index */ number ]
-    get_profile_name(): [ /* returnType */ boolean, /* value_profile_name */ string ]
-    get_roaming_disallowed_flag(): [ /* returnType */ boolean, /* value_roaming_disallowed_flag */ boolean ]
-    get_secondary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_secondary_ipv4_dns_address */ number ]
-    get_umts_minimum_qos(): [ /* returnType */ boolean, /* value_umts_minimum_qos_traffic_class */ WdsTrafficClass, /* value_umts_minimum_qos_max_uplink_bitrate */ number, /* value_umts_minimum_qos_max_downlink_bitrate */ number, /* value_umts_minimum_qos_guaranteed_uplink_bitrate */ number, /* value_umts_minimum_qos_guaranteed_downlink_bitrate */ number, /* value_umts_minimum_qos_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_minimum_qos_maximum_sdu_size */ number, /* value_umts_minimum_qos_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_minimum_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_minimum_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_minimum_qos_transfer_delay */ number, /* value_umts_minimum_qos_traffic_handling_priority */ number ]
-    get_umts_minimum_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass, /* value_umts_minimum_qos_with_signaling_indication_flag_max_uplink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_max_downlink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_minimum_qos_with_signaling_indication_flag_maximum_sdu_size */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_minimum_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_minimum_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_minimum_qos_with_signaling_indication_flag_transfer_delay */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_handling_priority */ number, /* value_umts_minimum_qos_with_signaling_indication_flag_signaling_indication */ number ]
-    get_umts_requested_qos(): [ /* returnType */ boolean, /* value_umts_requested_qos_traffic_class */ WdsTrafficClass, /* value_umts_requested_qos_max_uplink_bitrate */ number, /* value_umts_requested_qos_max_downlink_bitrate */ number, /* value_umts_requested_qos_guaranteed_uplink_bitrate */ number, /* value_umts_requested_qos_guaranteed_downlink_bitrate */ number, /* value_umts_requested_qos_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_requested_qos_maximum_sdu_size */ number, /* value_umts_requested_qos_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_requested_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_requested_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_requested_qos_transfer_delay */ number, /* value_umts_requested_qos_traffic_handling_priority */ number ]
-    get_umts_requested_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass, /* value_umts_requested_qos_with_signaling_indication_flag_max_uplink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_max_downlink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number, /* value_umts_requested_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder, /* value_umts_requested_qos_with_signaling_indication_flag_maximum_sdu_size */ number, /* value_umts_requested_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio, /* value_umts_requested_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio, /* value_umts_requested_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery, /* value_umts_requested_qos_with_signaling_indication_flag_transfer_delay */ number, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_handling_priority */ number, /* value_umts_requested_qos_with_signaling_indication_flag_signaling_indication */ number ]
-    get_username(): [ /* returnType */ boolean, /* value_username */ string ]
+class MessageWdsModifyProfileInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsModifyProfileInput */
+    get_apn_disabled_flag(): [ /* returnType */ boolean, /* value_apn_disabled_flag */ boolean | null ]
+    get_apn_name(): [ /* returnType */ boolean, /* value_apn_name */ string | null ]
+    get_apn_type_mask(): [ /* returnType */ boolean, /* value_apn_type_mask */ WdsApnTypeMask | null ]
+    get_authentication(): [ /* returnType */ boolean, /* value_authentication */ WdsAuthentication | null ]
+    get_gprs_minimum_qos(): [ /* returnType */ boolean, /* value_gprs_minimum_qos_precedence_class */ number | null, /* value_gprs_minimum_qos_delay_class */ number | null, /* value_gprs_minimum_qos_reliability_class */ number | null, /* value_gprs_minimum_qos_peak_throughput_class */ number | null, /* value_gprs_minimum_qos_mean_throughput_class */ number | null ]
+    get_gprs_requested_qos(): [ /* returnType */ boolean, /* value_gprs_requested_qos_precedence_class */ number | null, /* value_gprs_requested_qos_delay_class */ number | null, /* value_gprs_requested_qos_reliability_class */ number | null, /* value_gprs_requested_qos_peak_throughput_class */ number | null, /* value_gprs_requested_qos_mean_throughput_class */ number | null ]
+    get_imcn_flag(): [ /* returnType */ boolean, /* value_imcn_flag */ boolean | null ]
+    get_ipv4_address_preference(): [ /* returnType */ boolean, /* value_ipv4_address_preference */ number | null ]
+    get_ipv6_address_preference(): [ /* returnType */ boolean, /* value_ipv6_address_preference_address */ number[] | null ]
+    get_ipv6_primary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_primary_dns_address_preference */ number[] | null ]
+    get_ipv6_secondary_dns_address_preference(): [ /* returnType */ boolean, /* value_ipv6_secondary_dns_address_preference */ number[] | null ]
+    get_lte_qos_parameters(): [ /* returnType */ boolean, /* value_lte_qos_parameters_qos_class_identifier */ WdsQosClassIdentifier | null, /* value_lte_qos_parameters_guaranteed_downlink_bitrate */ number | null, /* value_lte_qos_parameters_max_downlink_bitrate */ number | null, /* value_lte_qos_parameters_guaranteed_uplink_bitrate */ number | null, /* value_lte_qos_parameters_max_uplink_bitrate */ number | null ]
+    get_password(): [ /* returnType */ boolean, /* value_password */ string | null ]
+    get_pcscf_address_using_dhcp(): [ /* returnType */ boolean, /* value_pcscf_address_using_dhcp */ boolean | null ]
+    get_pcscf_address_using_pco(): [ /* returnType */ boolean, /* value_pcscf_address_using_pco */ boolean | null ]
+    get_pdp_context_number(): [ /* returnType */ boolean, /* value_pdp_context_number */ number | null ]
+    get_pdp_context_primary_id(): [ /* returnType */ boolean, /* value_pdp_context_primary_id */ number | null ]
+    get_pdp_context_secondary_flag(): [ /* returnType */ boolean, /* value_pdp_context_secondary_flag */ boolean | null ]
+    get_pdp_data_compression_type(): [ /* returnType */ boolean, /* value_pdp_data_compression_type */ WdsPdpDataCompressionType | null ]
+    get_pdp_header_compression_type(): [ /* returnType */ boolean, /* value_pdp_header_compression_type */ WdsPdpHeaderCompressionType | null ]
+    get_pdp_type(): [ /* returnType */ boolean, /* value_pdp_type */ WdsPdpType | null ]
+    get_primary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_primary_ipv4_dns_address */ number | null ]
+    get_profile_identifier(): [ /* returnType */ boolean, /* value_profile_identifier_profile_type */ WdsProfileType | null, /* value_profile_identifier_profile_index */ number | null ]
+    get_profile_name(): [ /* returnType */ boolean, /* value_profile_name */ string | null ]
+    get_roaming_disallowed_flag(): [ /* returnType */ boolean, /* value_roaming_disallowed_flag */ boolean | null ]
+    get_secondary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_secondary_ipv4_dns_address */ number | null ]
+    get_umts_minimum_qos(): [ /* returnType */ boolean, /* value_umts_minimum_qos_traffic_class */ WdsTrafficClass | null, /* value_umts_minimum_qos_max_uplink_bitrate */ number | null, /* value_umts_minimum_qos_max_downlink_bitrate */ number | null, /* value_umts_minimum_qos_guaranteed_uplink_bitrate */ number | null, /* value_umts_minimum_qos_guaranteed_downlink_bitrate */ number | null, /* value_umts_minimum_qos_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_minimum_qos_maximum_sdu_size */ number | null, /* value_umts_minimum_qos_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_minimum_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_minimum_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_minimum_qos_transfer_delay */ number | null, /* value_umts_minimum_qos_traffic_handling_priority */ number | null ]
+    get_umts_minimum_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass | null, /* value_umts_minimum_qos_with_signaling_indication_flag_max_uplink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_max_downlink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_minimum_qos_with_signaling_indication_flag_maximum_sdu_size */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_minimum_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_minimum_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_minimum_qos_with_signaling_indication_flag_transfer_delay */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_traffic_handling_priority */ number | null, /* value_umts_minimum_qos_with_signaling_indication_flag_signaling_indication */ number | null ]
+    get_umts_requested_qos(): [ /* returnType */ boolean, /* value_umts_requested_qos_traffic_class */ WdsTrafficClass | null, /* value_umts_requested_qos_max_uplink_bitrate */ number | null, /* value_umts_requested_qos_max_downlink_bitrate */ number | null, /* value_umts_requested_qos_guaranteed_uplink_bitrate */ number | null, /* value_umts_requested_qos_guaranteed_downlink_bitrate */ number | null, /* value_umts_requested_qos_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_requested_qos_maximum_sdu_size */ number | null, /* value_umts_requested_qos_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_requested_qos_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_requested_qos_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_requested_qos_transfer_delay */ number | null, /* value_umts_requested_qos_traffic_handling_priority */ number | null ]
+    get_umts_requested_qos_with_signaling_indication_flag(): [ /* returnType */ boolean, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_class */ WdsTrafficClass | null, /* value_umts_requested_qos_with_signaling_indication_flag_max_uplink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_max_downlink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_uplink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_guaranteed_downlink_bitrate */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_qos_delivery_order */ WdsDeliveryOrder | null, /* value_umts_requested_qos_with_signaling_indication_flag_maximum_sdu_size */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_sdu_error_ratio */ WdsSduErrorRatio | null, /* value_umts_requested_qos_with_signaling_indication_flag_residual_bit_error_ratio */ WdsSduResidualBitErrorRatio | null, /* value_umts_requested_qos_with_signaling_indication_flag_delivery_erroneous_sdu */ WdsSduErroneousDelivery | null, /* value_umts_requested_qos_with_signaling_indication_flag_transfer_delay */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_traffic_handling_priority */ number | null, /* value_umts_requested_qos_with_signaling_indication_flag_signaling_indication */ number | null ]
+    get_username(): [ /* returnType */ boolean, /* value_username */ string | null ]
     ref(): MessageWdsModifyProfileInput
     set_apn_disabled_flag(value_apn_disabled_flag: boolean): boolean
     set_apn_name(value_apn_name: string): boolean
+    set_apn_type_mask(value_apn_type_mask: WdsApnTypeMask): boolean
     set_authentication(value_authentication: WdsAuthentication): boolean
     set_gprs_minimum_qos(value_gprs_minimum_qos_precedence_class: number, value_gprs_minimum_qos_delay_class: number, value_gprs_minimum_qos_reliability_class: number, value_gprs_minimum_qos_peak_throughput_class: number, value_gprs_minimum_qos_mean_throughput_class: number): boolean
     set_gprs_requested_qos(value_gprs_requested_qos_precedence_class: number, value_gprs_requested_qos_delay_class: number, value_gprs_requested_qos_reliability_class: number, value_gprs_requested_qos_peak_throughput_class: number, value_gprs_requested_qos_mean_throughput_class: number): boolean
@@ -10362,25 +11206,25 @@ export class MessageWdsModifyProfileInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsModifyProfileInput
 }
-export class MessageWdsModifyProfileOutput {
-    /* Methods of Qmi.MessageWdsModifyProfileOutput */
-    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError ]
+class MessageWdsModifyProfileOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsModifyProfileOutput */
+    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError | null ]
     get_result(): boolean
     ref(): MessageWdsModifyProfileOutput
     unref(): void
     static name: string
 }
-export class MessageWdsResetOutput {
-    /* Methods of Qmi.MessageWdsResetOutput */
+class MessageWdsResetOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsResetOutput */
     get_result(): boolean
     ref(): MessageWdsResetOutput
     unref(): void
     static name: string
 }
-export class MessageWdsSetAutoconnectSettingsInput {
-    /* Methods of Qmi.MessageWdsSetAutoconnectSettingsInput */
-    get_roaming(): [ /* returnType */ boolean, /* value_roaming */ WdsAutoconnectSettingRoaming ]
-    get_status(): [ /* returnType */ boolean, /* value_status */ WdsAutoconnectSetting ]
+class MessageWdsSetAutoconnectSettingsInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsSetAutoconnectSettingsInput */
+    get_roaming(): [ /* returnType */ boolean, /* value_roaming */ WdsAutoconnectSettingRoaming | null ]
+    get_status(): [ /* returnType */ boolean, /* value_status */ WdsAutoconnectSetting | null ]
     ref(): MessageWdsSetAutoconnectSettingsInput
     set_roaming(value_roaming: WdsAutoconnectSettingRoaming): boolean
     set_status(value_status: WdsAutoconnectSetting): boolean
@@ -10391,49 +11235,49 @@ export class MessageWdsSetAutoconnectSettingsInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsSetAutoconnectSettingsInput
 }
-export class MessageWdsSetAutoconnectSettingsOutput {
-    /* Methods of Qmi.MessageWdsSetAutoconnectSettingsOutput */
+class MessageWdsSetAutoconnectSettingsOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsSetAutoconnectSettingsOutput */
     get_result(): boolean
     ref(): MessageWdsSetAutoconnectSettingsOutput
     unref(): void
     static name: string
 }
-export class MessageWdsSetDefaultProfileNumInput {
-    /* Methods of Qmi.MessageWdsSetDefaultProfileNumInput */
-    get_profile_identifier(): [ /* returnType */ boolean, /* value_profile_identifier_profile_type */ WdsProfileType, /* value_profile_identifier_profile_family */ WdsProfileFamily, /* value_profile_identifier_profile_index */ number ]
-    ref(): MessageWdsSetDefaultProfileNumInput
-    set_profile_identifier(value_profile_identifier_profile_type: WdsProfileType, value_profile_identifier_profile_family: WdsProfileFamily, value_profile_identifier_profile_index: number): boolean
+class MessageWdsSetDefaultProfileNumberInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsSetDefaultProfileNumberInput */
+    get_profile_identifier(): [ /* returnType */ boolean, /* value_profile_identifier_type */ WdsProfileType | null, /* value_profile_identifier_family */ WdsProfileFamily | null, /* value_profile_identifier_index */ number | null ]
+    ref(): MessageWdsSetDefaultProfileNumberInput
+    set_profile_identifier(value_profile_identifier_type: WdsProfileType, value_profile_identifier_family: WdsProfileFamily, value_profile_identifier_index: number): boolean
     unref(): void
     static name: string
-    static new(): MessageWdsSetDefaultProfileNumInput
+    static new(): MessageWdsSetDefaultProfileNumberInput
     constructor()
     /* Static methods and pseudo-constructors */
-    static new(): MessageWdsSetDefaultProfileNumInput
+    static new(): MessageWdsSetDefaultProfileNumberInput
 }
-export class MessageWdsSetDefaultProfileNumOutput {
-    /* Methods of Qmi.MessageWdsSetDefaultProfileNumOutput */
-    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError ]
+class MessageWdsSetDefaultProfileNumberOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsSetDefaultProfileNumberOutput */
+    get_extended_error_code(): [ /* returnType */ boolean, /* value_extended_error_code */ WdsDsProfileError | null ]
     get_result(): boolean
-    ref(): MessageWdsSetDefaultProfileNumOutput
+    ref(): MessageWdsSetDefaultProfileNumberOutput
     unref(): void
     static name: string
 }
-export class MessageWdsSetEventReportInput {
-    /* Methods of Qmi.MessageWdsSetEventReportInput */
-    get_channel_rate(): [ /* returnType */ boolean, /* value_channel_rate */ boolean ]
-    get_current_data_bearer_technology(): [ /* returnType */ boolean, /* value_current_data_bearer_technology */ boolean ]
-    get_data_bearer_technology(): [ /* returnType */ boolean, /* value_data_bearer_technology */ boolean ]
-    get_data_call_status(): [ /* returnType */ boolean, /* value_data_call_status */ boolean ]
-    get_data_systems(): [ /* returnType */ boolean, /* value_data_systems */ boolean ]
-    get_dormancy_status(): [ /* returnType */ boolean, /* value_dormancy_status */ boolean ]
-    get_evdo_pm_change(): [ /* returnType */ boolean, /* value_evdo_pm_change */ boolean ]
-    get_extended_data_bearer_technology(): [ /* returnType */ boolean, /* value_extended_data_bearer_technology */ boolean ]
-    get_limited_data_system_status(): [ /* returnType */ boolean, /* value_limited_data_system_status */ boolean ]
-    get_mip_status(): [ /* returnType */ boolean, /* value_mip_status */ number ]
-    get_pdn_filter_removals(): [ /* returnType */ boolean, /* value_pdn_filter_removals */ boolean ]
-    get_preferred_data_system(): [ /* returnType */ boolean, /* value_preferred_data_system */ boolean ]
-    get_transfer_statistics(): [ /* returnType */ boolean, /* value_transfer_statistics_interval_seconds */ number, /* value_transfer_statistics_indicators */ WdsSetEventReportTransferStatistics ]
-    get_uplink_flow_control(): [ /* returnType */ boolean, /* value_uplink_flow_control */ boolean ]
+class MessageWdsSetEventReportInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsSetEventReportInput */
+    get_channel_rate(): [ /* returnType */ boolean, /* value_channel_rate */ boolean | null ]
+    get_current_data_bearer_technology(): [ /* returnType */ boolean, /* value_current_data_bearer_technology */ boolean | null ]
+    get_data_bearer_technology(): [ /* returnType */ boolean, /* value_data_bearer_technology */ boolean | null ]
+    get_data_call_status(): [ /* returnType */ boolean, /* value_data_call_status */ boolean | null ]
+    get_data_systems(): [ /* returnType */ boolean, /* value_data_systems */ boolean | null ]
+    get_dormancy_status(): [ /* returnType */ boolean, /* value_dormancy_status */ boolean | null ]
+    get_evdo_pm_change(): [ /* returnType */ boolean, /* value_evdo_pm_change */ boolean | null ]
+    get_extended_data_bearer_technology(): [ /* returnType */ boolean, /* value_extended_data_bearer_technology */ boolean | null ]
+    get_limited_data_system_status(): [ /* returnType */ boolean, /* value_limited_data_system_status */ boolean | null ]
+    get_mip_status(): [ /* returnType */ boolean, /* value_mip_status */ number | null ]
+    get_pdn_filter_removals(): [ /* returnType */ boolean, /* value_pdn_filter_removals */ boolean | null ]
+    get_preferred_data_system(): [ /* returnType */ boolean, /* value_preferred_data_system */ boolean | null ]
+    get_transfer_statistics(): [ /* returnType */ boolean, /* value_transfer_statistics_interval_seconds */ number | null, /* value_transfer_statistics_indicators */ WdsSetEventReportTransferStatistics | null ]
+    get_uplink_flow_control(): [ /* returnType */ boolean, /* value_uplink_flow_control */ boolean | null ]
     ref(): MessageWdsSetEventReportInput
     set_channel_rate(value_channel_rate: boolean): boolean
     set_current_data_bearer_technology(value_current_data_bearer_technology: boolean): boolean
@@ -10456,16 +11300,16 @@ export class MessageWdsSetEventReportInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsSetEventReportInput
 }
-export class MessageWdsSetEventReportOutput {
-    /* Methods of Qmi.MessageWdsSetEventReportOutput */
+class MessageWdsSetEventReportOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsSetEventReportOutput */
     get_result(): boolean
     ref(): MessageWdsSetEventReportOutput
     unref(): void
     static name: string
 }
-export class MessageWdsSetIpFamilyInput {
-    /* Methods of Qmi.MessageWdsSetIpFamilyInput */
-    get_preference(): [ /* returnType */ boolean, /* value_preference */ WdsIpFamily ]
+class MessageWdsSetIpFamilyInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsSetIpFamilyInput */
+    get_preference(): [ /* returnType */ boolean, /* value_preference */ WdsIpFamily | null ]
     ref(): MessageWdsSetIpFamilyInput
     set_preference(value_preference: WdsIpFamily): boolean
     unref(): void
@@ -10475,31 +11319,52 @@ export class MessageWdsSetIpFamilyInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsSetIpFamilyInput
 }
-export class MessageWdsSetIpFamilyOutput {
-    /* Methods of Qmi.MessageWdsSetIpFamilyOutput */
+class MessageWdsSetIpFamilyOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsSetIpFamilyOutput */
     get_result(): boolean
     ref(): MessageWdsSetIpFamilyOutput
     unref(): void
     static name: string
 }
-export class MessageWdsStartNetworkInput {
-    /* Methods of Qmi.MessageWdsStartNetworkInput */
-    get_apn(): [ /* returnType */ boolean, /* value_apn */ string ]
-    get_authentication_preference(): [ /* returnType */ boolean, /* value_authentication_preference */ WdsAuthentication ]
-    get_call_type(): [ /* returnType */ boolean, /* value_call_type */ WdsCallType ]
-    get_enable_autoconnect(): [ /* returnType */ boolean, /* value_enable_autoconnect */ boolean ]
-    get_extended_technology_preference(): [ /* returnType */ boolean, /* value_extended_technology_preference */ WdsExtendedTechnologyPreference ]
-    get_ip_family_preference(): [ /* returnType */ boolean, /* value_ip_family_preference */ WdsIpFamily ]
-    get_ipv4_address_preference(): [ /* returnType */ boolean, /* value_ipv4_address_preference */ number ]
-    get_password(): [ /* returnType */ boolean, /* value_password */ string ]
-    get_primary_dns_address_preference(): [ /* returnType */ boolean, /* value_primary_dns_address_preference */ number ]
-    get_primary_nbns_address_preference(): [ /* returnType */ boolean, /* value_primary_nbns_address_preference */ number ]
-    get_profile_index_3gpp(): [ /* returnType */ boolean, /* value_profile_index_3gpp */ number ]
-    get_profile_index_3gpp2(): [ /* returnType */ boolean, /* value_profile_index_3gpp2 */ number ]
-    get_secondary_dns_address_preference(): [ /* returnType */ boolean, /* value_secondary_dns_address_preference */ number ]
-    get_secondary_nbns_address_preference(): [ /* returnType */ boolean, /* value_secondary_nbns_address_preference */ number ]
-    get_technology_preference(): [ /* returnType */ boolean, /* value_technology_preference */ WdsTechnologyPreference ]
-    get_username(): [ /* returnType */ boolean, /* value_username */ string ]
+class MessageWdsSetLteAttachPdnListInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsSetLteAttachPdnListInput */
+    get_action(): [ /* returnType */ boolean, /* value_action */ WdsAttachPdnListAction | null ]
+    get_list(): [ /* returnType */ boolean, /* value_list */ number[] | null ]
+    ref(): MessageWdsSetLteAttachPdnListInput
+    set_action(value_action: WdsAttachPdnListAction): boolean
+    set_list(value_list: number[]): boolean
+    unref(): void
+    static name: string
+    static new(): MessageWdsSetLteAttachPdnListInput
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MessageWdsSetLteAttachPdnListInput
+}
+class MessageWdsSetLteAttachPdnListOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsSetLteAttachPdnListOutput */
+    get_result(): boolean
+    ref(): MessageWdsSetLteAttachPdnListOutput
+    unref(): void
+    static name: string
+}
+class MessageWdsStartNetworkInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsStartNetworkInput */
+    get_apn(): [ /* returnType */ boolean, /* value_apn */ string | null ]
+    get_authentication_preference(): [ /* returnType */ boolean, /* value_authentication_preference */ WdsAuthentication | null ]
+    get_call_type(): [ /* returnType */ boolean, /* value_call_type */ WdsCallType | null ]
+    get_enable_autoconnect(): [ /* returnType */ boolean, /* value_enable_autoconnect */ boolean | null ]
+    get_extended_technology_preference(): [ /* returnType */ boolean, /* value_extended_technology_preference */ WdsExtendedTechnologyPreference | null ]
+    get_ip_family_preference(): [ /* returnType */ boolean, /* value_ip_family_preference */ WdsIpFamily | null ]
+    get_ipv4_address_preference(): [ /* returnType */ boolean, /* value_ipv4_address_preference */ number | null ]
+    get_password(): [ /* returnType */ boolean, /* value_password */ string | null ]
+    get_primary_dns_address_preference(): [ /* returnType */ boolean, /* value_primary_dns_address_preference */ number | null ]
+    get_primary_nbns_address_preference(): [ /* returnType */ boolean, /* value_primary_nbns_address_preference */ number | null ]
+    get_profile_index_3gpp(): [ /* returnType */ boolean, /* value_profile_index_3gpp */ number | null ]
+    get_profile_index_3gpp2(): [ /* returnType */ boolean, /* value_profile_index_3gpp2 */ number | null ]
+    get_secondary_dns_address_preference(): [ /* returnType */ boolean, /* value_secondary_dns_address_preference */ number | null ]
+    get_secondary_nbns_address_preference(): [ /* returnType */ boolean, /* value_secondary_nbns_address_preference */ number | null ]
+    get_technology_preference(): [ /* returnType */ boolean, /* value_technology_preference */ WdsTechnologyPreference | null ]
+    get_username(): [ /* returnType */ boolean, /* value_username */ string | null ]
     ref(): MessageWdsStartNetworkInput
     set_apn(value_apn: string): boolean
     set_authentication_preference(value_authentication_preference: WdsAuthentication): boolean
@@ -10524,20 +11389,20 @@ export class MessageWdsStartNetworkInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsStartNetworkInput
 }
-export class MessageWdsStartNetworkOutput {
-    /* Methods of Qmi.MessageWdsStartNetworkOutput */
-    get_call_end_reason(): [ /* returnType */ boolean, /* value_call_end_reason */ WdsCallEndReason ]
-    get_packet_data_handle(): [ /* returnType */ boolean, /* value_packet_data_handle */ number ]
+class MessageWdsStartNetworkOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsStartNetworkOutput */
+    get_call_end_reason(): [ /* returnType */ boolean, /* value_call_end_reason */ WdsCallEndReason | null ]
+    get_packet_data_handle(): [ /* returnType */ boolean, /* value_packet_data_handle */ number | null ]
     get_result(): boolean
-    get_verbose_call_end_reason(): [ /* returnType */ boolean, /* value_verbose_call_end_reason_type */ WdsVerboseCallEndReasonType, /* value_verbose_call_end_reason_reason */ number ]
+    get_verbose_call_end_reason(): [ /* returnType */ boolean, /* value_verbose_call_end_reason_type */ WdsVerboseCallEndReasonType | null, /* value_verbose_call_end_reason_reason */ number | null ]
     ref(): MessageWdsStartNetworkOutput
     unref(): void
     static name: string
 }
-export class MessageWdsStopNetworkInput {
-    /* Methods of Qmi.MessageWdsStopNetworkInput */
-    get_disable_autoconnect(): [ /* returnType */ boolean, /* value_disable_autoconnect */ boolean ]
-    get_packet_data_handle(): [ /* returnType */ boolean, /* value_packet_data_handle */ number ]
+class MessageWdsStopNetworkInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsStopNetworkInput */
+    get_disable_autoconnect(): [ /* returnType */ boolean, /* value_disable_autoconnect */ boolean | null ]
+    get_packet_data_handle(): [ /* returnType */ boolean, /* value_packet_data_handle */ number | null ]
     ref(): MessageWdsStopNetworkInput
     set_disable_autoconnect(value_disable_autoconnect: boolean): boolean
     set_packet_data_handle(value_packet_data_handle: number): boolean
@@ -10548,28 +11413,28 @@ export class MessageWdsStopNetworkInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsStopNetworkInput
 }
-export class MessageWdsStopNetworkOutput {
-    /* Methods of Qmi.MessageWdsStopNetworkOutput */
+class MessageWdsStopNetworkOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsStopNetworkOutput */
     get_result(): boolean
     ref(): MessageWdsStopNetworkOutput
     unref(): void
     static name: string
 }
-export class MessageWdsSwiCreateProfileIndexedInput {
-    /* Methods of Qmi.MessageWdsSwiCreateProfileIndexedInput */
-    get_apn_disabled_flag(): [ /* returnType */ boolean, /* value_apn_disabled_flag */ boolean ]
-    get_apn_name(): [ /* returnType */ boolean, /* value_apn_name */ string ]
-    get_authentication(): [ /* returnType */ boolean, /* value_authentication */ WdsAuthentication ]
-    get_ipv4_address_preference(): [ /* returnType */ boolean, /* value_ipv4_address_preference */ number ]
-    get_password(): [ /* returnType */ boolean, /* value_password */ string ]
-    get_pdp_context_number(): [ /* returnType */ boolean, /* value_pdp_context_number */ number ]
-    get_pdp_type(): [ /* returnType */ boolean, /* value_pdp_type */ WdsPdpType ]
-    get_primary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_primary_ipv4_dns_address */ number ]
-    get_profile_identifier(): [ /* returnType */ boolean, /* value_profile_identifier_profile_type */ WdsProfileType, /* value_profile_identifier_profile_index */ number ]
-    get_profile_name(): [ /* returnType */ boolean, /* value_profile_name */ string ]
-    get_roaming_disallowed_flag(): [ /* returnType */ boolean, /* value_roaming_disallowed_flag */ boolean ]
-    get_secondary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_secondary_ipv4_dns_address */ number ]
-    get_username(): [ /* returnType */ boolean, /* value_username */ string ]
+class MessageWdsSwiCreateProfileIndexedInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsSwiCreateProfileIndexedInput */
+    get_apn_disabled_flag(): [ /* returnType */ boolean, /* value_apn_disabled_flag */ boolean | null ]
+    get_apn_name(): [ /* returnType */ boolean, /* value_apn_name */ string | null ]
+    get_authentication(): [ /* returnType */ boolean, /* value_authentication */ WdsAuthentication | null ]
+    get_ipv4_address_preference(): [ /* returnType */ boolean, /* value_ipv4_address_preference */ number | null ]
+    get_password(): [ /* returnType */ boolean, /* value_password */ string | null ]
+    get_pdp_context_number(): [ /* returnType */ boolean, /* value_pdp_context_number */ number | null ]
+    get_pdp_type(): [ /* returnType */ boolean, /* value_pdp_type */ WdsPdpType | null ]
+    get_primary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_primary_ipv4_dns_address */ number | null ]
+    get_profile_identifier(): [ /* returnType */ boolean, /* value_profile_identifier_profile_type */ WdsProfileType | null, /* value_profile_identifier_profile_index */ number | null ]
+    get_profile_name(): [ /* returnType */ boolean, /* value_profile_name */ string | null ]
+    get_roaming_disallowed_flag(): [ /* returnType */ boolean, /* value_roaming_disallowed_flag */ boolean | null ]
+    get_secondary_ipv4_dns_address(): [ /* returnType */ boolean, /* value_secondary_ipv4_dns_address */ number | null ]
+    get_username(): [ /* returnType */ boolean, /* value_username */ string | null ]
     ref(): MessageWdsSwiCreateProfileIndexedInput
     set_apn_disabled_flag(value_apn_disabled_flag: boolean): boolean
     set_apn_name(value_apn_name: string): boolean
@@ -10591,20 +11456,20 @@ export class MessageWdsSwiCreateProfileIndexedInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWdsSwiCreateProfileIndexedInput
 }
-export class MessageWdsSwiCreateProfileIndexedOutput {
-    /* Methods of Qmi.MessageWdsSwiCreateProfileIndexedOutput */
-    get_profile_identifier(): [ /* returnType */ boolean, /* value_profile_identifier_profile_type */ WdsProfileType, /* value_profile_identifier_profile_index */ number ]
+class MessageWdsSwiCreateProfileIndexedOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWdsSwiCreateProfileIndexedOutput */
+    get_profile_identifier(): [ /* returnType */ boolean, /* value_profile_identifier_profile_type */ WdsProfileType | null, /* value_profile_identifier_profile_index */ number | null ]
     get_result(): boolean
     ref(): MessageWdsSwiCreateProfileIndexedOutput
     unref(): void
     static name: string
 }
-export class MessageWmsDeleteInput {
-    /* Methods of Qmi.MessageWmsDeleteInput */
-    get_memory_index(): [ /* returnType */ boolean, /* value_memory_index */ number ]
-    get_memory_storage(): [ /* returnType */ boolean, /* value_memory_storage */ WmsStorageType ]
-    get_message_mode(): [ /* returnType */ boolean, /* value_message_mode */ WmsMessageMode ]
-    get_message_tag(): [ /* returnType */ boolean, /* value_message_tag */ WmsMessageTagType ]
+class MessageWmsDeleteInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsDeleteInput */
+    get_memory_index(): [ /* returnType */ boolean, /* value_memory_index */ number | null ]
+    get_memory_storage(): [ /* returnType */ boolean, /* value_memory_storage */ WmsStorageType | null ]
+    get_message_mode(): [ /* returnType */ boolean, /* value_message_mode */ WmsMessageMode | null ]
+    get_message_tag(): [ /* returnType */ boolean, /* value_message_tag */ WmsMessageTagType | null ]
     ref(): MessageWmsDeleteInput
     set_memory_index(value_memory_index: number): boolean
     set_memory_storage(value_memory_storage: WmsStorageType): boolean
@@ -10617,51 +11482,51 @@ export class MessageWmsDeleteInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWmsDeleteInput
 }
-export class MessageWmsDeleteOutput {
-    /* Methods of Qmi.MessageWmsDeleteOutput */
+class MessageWmsDeleteOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsDeleteOutput */
     get_result(): boolean
     ref(): MessageWmsDeleteOutput
     unref(): void
     static name: string
 }
-export class MessageWmsGetMessageProtocolOutput {
-    /* Methods of Qmi.MessageWmsGetMessageProtocolOutput */
-    get_message_protocol(): [ /* returnType */ boolean, /* value_message_protocol */ WmsMessageProtocol ]
+class MessageWmsGetMessageProtocolOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsGetMessageProtocolOutput */
+    get_message_protocol(): [ /* returnType */ boolean, /* value_message_protocol */ WmsMessageProtocol | null ]
     get_result(): boolean
     ref(): MessageWmsGetMessageProtocolOutput
     unref(): void
     static name: string
 }
-export class MessageWmsGetRoutesOutput {
-    /* Methods of Qmi.MessageWmsGetRoutesOutput */
+class MessageWmsGetRoutesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsGetRoutesOutput */
     get_result(): boolean
-    get_route_list(): [ /* returnType */ boolean, /* value_route_list */ MessageWmsGetRoutesOutputRouteListElement[] ]
-    get_transfer_status_report(): [ /* returnType */ boolean, /* value_transfer_status_report */ WmsTransferIndication ]
+    get_route_list(): [ /* returnType */ boolean, /* value_route_list */ MessageWmsGetRoutesOutputRouteListElement[] | null ]
+    get_transfer_status_report(): [ /* returnType */ boolean, /* value_transfer_status_report */ WmsTransferIndication | null ]
     ref(): MessageWmsGetRoutesOutput
     unref(): void
     static name: string
 }
-export class MessageWmsGetRoutesOutputRouteListElement {
-    /* Fields of Qmi.MessageWmsGetRoutesOutputRouteListElement */
+class MessageWmsGetRoutesOutputRouteListElement {
+    /* Fields of Qmi-1.0.Qmi.MessageWmsGetRoutesOutputRouteListElement */
     message_type: WmsMessageType
     message_class: WmsMessageClass
     storage: WmsStorageType
     receipt_action: WmsReceiptAction
     static name: string
 }
-export class MessageWmsGetSupportedMessagesOutput {
-    /* Methods of Qmi.MessageWmsGetSupportedMessagesOutput */
-    get_list(): [ /* returnType */ boolean, /* value_list */ Uint8Array[] ]
+class MessageWmsGetSupportedMessagesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsGetSupportedMessagesOutput */
+    get_list(): [ /* returnType */ boolean, /* value_list */ Uint8Array[] | null ]
     get_result(): boolean
     ref(): MessageWmsGetSupportedMessagesOutput
     unref(): void
     static name: string
 }
-export class MessageWmsListMessagesInput {
-    /* Methods of Qmi.MessageWmsListMessagesInput */
-    get_message_mode(): [ /* returnType */ boolean, /* value_message_mode */ WmsMessageMode ]
-    get_message_tag(): [ /* returnType */ boolean, /* value_message_tag */ WmsMessageTagType ]
-    get_storage_type(): [ /* returnType */ boolean, /* value_storage_type */ WmsStorageType ]
+class MessageWmsListMessagesInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsListMessagesInput */
+    get_message_mode(): [ /* returnType */ boolean, /* value_message_mode */ WmsMessageMode | null ]
+    get_message_tag(): [ /* returnType */ boolean, /* value_message_tag */ WmsMessageTagType | null ]
+    get_storage_type(): [ /* returnType */ boolean, /* value_storage_type */ WmsStorageType | null ]
     ref(): MessageWmsListMessagesInput
     set_message_mode(value_message_mode: WmsMessageMode): boolean
     set_message_tag(value_message_tag: WmsMessageTagType): boolean
@@ -10673,24 +11538,24 @@ export class MessageWmsListMessagesInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWmsListMessagesInput
 }
-export class MessageWmsListMessagesOutput {
-    /* Methods of Qmi.MessageWmsListMessagesOutput */
-    get_message_list(): [ /* returnType */ boolean, /* value_message_list */ MessageWmsListMessagesOutputMessageListElement[] ]
+class MessageWmsListMessagesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsListMessagesOutput */
+    get_message_list(): [ /* returnType */ boolean, /* value_message_list */ MessageWmsListMessagesOutputMessageListElement[] | null ]
     get_result(): boolean
     ref(): MessageWmsListMessagesOutput
     unref(): void
     static name: string
 }
-export class MessageWmsListMessagesOutputMessageListElement {
-    /* Fields of Qmi.MessageWmsListMessagesOutputMessageListElement */
+class MessageWmsListMessagesOutputMessageListElement {
+    /* Fields of Qmi-1.0.Qmi.MessageWmsListMessagesOutputMessageListElement */
     memory_index: number
     message_tag: WmsMessageTagType
     static name: string
 }
-export class MessageWmsModifyTagInput {
-    /* Methods of Qmi.MessageWmsModifyTagInput */
-    get_message_mode(): [ /* returnType */ boolean, /* value_message_mode */ WmsMessageMode ]
-    get_message_tag(): [ /* returnType */ boolean, /* value_message_tag_storage_type */ WmsStorageType, /* value_message_tag_memory_index */ number, /* value_message_tag_message_tag */ WmsMessageTagType ]
+class MessageWmsModifyTagInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsModifyTagInput */
+    get_message_mode(): [ /* returnType */ boolean, /* value_message_mode */ WmsMessageMode | null ]
+    get_message_tag(): [ /* returnType */ boolean, /* value_message_tag_storage_type */ WmsStorageType | null, /* value_message_tag_memory_index */ number | null, /* value_message_tag_message_tag */ WmsMessageTagType | null ]
     ref(): MessageWmsModifyTagInput
     set_message_mode(value_message_mode: WmsMessageMode): boolean
     set_message_tag(value_message_tag_storage_type: WmsStorageType, value_message_tag_memory_index: number, value_message_tag_message_tag: WmsMessageTagType): boolean
@@ -10701,18 +11566,18 @@ export class MessageWmsModifyTagInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWmsModifyTagInput
 }
-export class MessageWmsModifyTagOutput {
-    /* Methods of Qmi.MessageWmsModifyTagOutput */
+class MessageWmsModifyTagOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsModifyTagOutput */
     get_result(): boolean
     ref(): MessageWmsModifyTagOutput
     unref(): void
     static name: string
 }
-export class MessageWmsRawReadInput {
-    /* Methods of Qmi.MessageWmsRawReadInput */
-    get_message_memory_storage_id(): [ /* returnType */ boolean, /* value_message_memory_storage_id_storage_type */ WmsStorageType, /* value_message_memory_storage_id_memory_index */ number ]
-    get_message_mode(): [ /* returnType */ boolean, /* value_message_mode */ WmsMessageMode ]
-    get_sms_on_ims(): [ /* returnType */ boolean, /* value_sms_on_ims */ boolean ]
+class MessageWmsRawReadInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsRawReadInput */
+    get_message_memory_storage_id(): [ /* returnType */ boolean, /* value_message_memory_storage_id_storage_type */ WmsStorageType | null, /* value_message_memory_storage_id_memory_index */ number | null ]
+    get_message_mode(): [ /* returnType */ boolean, /* value_message_mode */ WmsMessageMode | null ]
+    get_sms_on_ims(): [ /* returnType */ boolean, /* value_sms_on_ims */ boolean | null ]
     ref(): MessageWmsRawReadInput
     set_message_memory_storage_id(value_message_memory_storage_id_storage_type: WmsStorageType, value_message_memory_storage_id_memory_index: number): boolean
     set_message_mode(value_message_mode: WmsMessageMode): boolean
@@ -10724,21 +11589,21 @@ export class MessageWmsRawReadInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWmsRawReadInput
 }
-export class MessageWmsRawReadOutput {
-    /* Methods of Qmi.MessageWmsRawReadOutput */
-    get_raw_message_data(): [ /* returnType */ boolean, /* value_raw_message_data_message_tag */ WmsMessageTagType, /* value_raw_message_data_format */ WmsMessageFormat, /* value_raw_message_data_raw_data */ Uint8Array[] ]
+class MessageWmsRawReadOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsRawReadOutput */
+    get_raw_message_data(): [ /* returnType */ boolean, /* value_raw_message_data_message_tag */ WmsMessageTagType | null, /* value_raw_message_data_format */ WmsMessageFormat | null, /* value_raw_message_data_raw_data */ Uint8Array[] | null ]
     get_result(): boolean
     ref(): MessageWmsRawReadOutput
     unref(): void
     static name: string
 }
-export class MessageWmsRawSendInput {
-    /* Methods of Qmi.MessageWmsRawSendInput */
-    get_cdma_follow_on_dc(): [ /* returnType */ boolean, /* value_cdma_follow_on_dc_follow */ boolean ]
-    get_cdma_force_on_dc(): [ /* returnType */ boolean, /* value_cdma_force_on_dc_force */ boolean, /* value_cdma_force_on_dc_service_option */ WmsCdmaServiceOption ]
-    get_gsm_wcdma_link_timer(): [ /* returnType */ boolean, /* value_gsm_wcdma_link_timer */ number ]
-    get_raw_message_data(): [ /* returnType */ boolean, /* value_raw_message_data_format */ WmsMessageFormat, /* value_raw_message_data_raw_data */ Uint8Array[] ]
-    get_sms_on_ims(): [ /* returnType */ boolean, /* value_sms_on_ims */ boolean ]
+class MessageWmsRawSendInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsRawSendInput */
+    get_cdma_follow_on_dc(): [ /* returnType */ boolean, /* value_cdma_follow_on_dc_follow */ boolean | null ]
+    get_cdma_force_on_dc(): [ /* returnType */ boolean, /* value_cdma_force_on_dc_force */ boolean | null, /* value_cdma_force_on_dc_service_option */ WmsCdmaServiceOption | null ]
+    get_gsm_wcdma_link_timer(): [ /* returnType */ boolean, /* value_gsm_wcdma_link_timer */ number | null ]
+    get_raw_message_data(): [ /* returnType */ boolean, /* value_raw_message_data_format */ WmsMessageFormat | null, /* value_raw_message_data_raw_data */ Uint8Array[] | null ]
+    get_sms_on_ims(): [ /* returnType */ boolean, /* value_sms_on_ims */ boolean | null ]
     ref(): MessageWmsRawSendInput
     set_cdma_follow_on_dc(value_cdma_follow_on_dc_follow: boolean): boolean
     set_cdma_force_on_dc(value_cdma_force_on_dc_force: boolean, value_cdma_force_on_dc_service_option: WmsCdmaServiceOption): boolean
@@ -10752,21 +11617,21 @@ export class MessageWmsRawSendInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWmsRawSendInput
 }
-export class MessageWmsRawSendOutput {
-    /* Methods of Qmi.MessageWmsRawSendOutput */
-    get_cdma_cause_code(): [ /* returnType */ boolean, /* value_cdma_cause_code */ WmsCdmaCauseCode ]
-    get_cdma_error_class(): [ /* returnType */ boolean, /* value_cdma_error_class */ WmsCdmaErrorClass ]
-    get_gsm_wcdma_cause_info(): [ /* returnType */ boolean, /* value_gsm_wcdma_cause_info_rp_cause */ WmsGsmUmtsRpCause, /* value_gsm_wcdma_cause_info_tp_cause */ WmsGsmUmtsTpCause ]
-    get_message_delivery_failure_type(): [ /* returnType */ boolean, /* value_message_delivery_failure_type */ WmsMessageDeliveryFailureType ]
-    get_message_id(): [ /* returnType */ boolean, /* value_message_id */ number ]
+class MessageWmsRawSendOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsRawSendOutput */
+    get_cdma_cause_code(): [ /* returnType */ boolean, /* value_cdma_cause_code */ WmsCdmaCauseCode | null ]
+    get_cdma_error_class(): [ /* returnType */ boolean, /* value_cdma_error_class */ WmsCdmaErrorClass | null ]
+    get_gsm_wcdma_cause_info(): [ /* returnType */ boolean, /* value_gsm_wcdma_cause_info_rp_cause */ WmsGsmUmtsRpCause | null, /* value_gsm_wcdma_cause_info_tp_cause */ WmsGsmUmtsTpCause | null ]
+    get_message_delivery_failure_type(): [ /* returnType */ boolean, /* value_message_delivery_failure_type */ WmsMessageDeliveryFailureType | null ]
+    get_message_id(): [ /* returnType */ boolean, /* value_message_id */ number | null ]
     get_result(): boolean
     ref(): MessageWmsRawSendOutput
     unref(): void
     static name: string
 }
-export class MessageWmsRawWriteInput {
-    /* Methods of Qmi.MessageWmsRawWriteInput */
-    get_raw_message_data(): [ /* returnType */ boolean, /* value_raw_message_data_storage_type */ WmsStorageType, /* value_raw_message_data_format */ WmsMessageFormat, /* value_raw_message_data_raw_data */ Uint8Array[] ]
+class MessageWmsRawWriteInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsRawWriteInput */
+    get_raw_message_data(): [ /* returnType */ boolean, /* value_raw_message_data_storage_type */ WmsStorageType | null, /* value_raw_message_data_format */ WmsMessageFormat | null, /* value_raw_message_data_raw_data */ Uint8Array[] | null ]
     ref(): MessageWmsRawWriteInput
     set_raw_message_data(value_raw_message_data_storage_type: WmsStorageType, value_raw_message_data_format: WmsMessageFormat, value_raw_message_data_raw_data: Uint8Array[]): boolean
     unref(): void
@@ -10776,25 +11641,51 @@ export class MessageWmsRawWriteInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWmsRawWriteInput
 }
-export class MessageWmsRawWriteOutput {
-    /* Methods of Qmi.MessageWmsRawWriteOutput */
-    get_memory_index(): [ /* returnType */ boolean, /* value_memory_index */ number ]
+class MessageWmsRawWriteOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsRawWriteOutput */
+    get_memory_index(): [ /* returnType */ boolean, /* value_memory_index */ number | null ]
     get_result(): boolean
     ref(): MessageWmsRawWriteOutput
     unref(): void
     static name: string
 }
-export class MessageWmsResetOutput {
-    /* Methods of Qmi.MessageWmsResetOutput */
+class MessageWmsResetOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsResetOutput */
     get_result(): boolean
     ref(): MessageWmsResetOutput
     unref(): void
     static name: string
 }
-export class MessageWmsSendFromMemoryStorageInput {
-    /* Methods of Qmi.MessageWmsSendFromMemoryStorageInput */
-    get_information(): [ /* returnType */ boolean, /* value_information_storage_type */ WmsStorageType, /* value_information_memory_index */ number, /* value_information_message_mode */ WmsMessageMode ]
-    get_sms_on_ims(): [ /* returnType */ boolean, /* value_sms_on_ims */ boolean ]
+class MessageWmsSendAckInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsSendAckInput */
+    get_3gpp2_failure_information(): [ /* returnType */ boolean, /* value_3gpp2_failure_information_error_class */ WmsCdmaErrorClass | null, /* value_3gpp2_failure_information_cause_code */ WmsCdmaCauseCode | null ]
+    get_3gpp_failure_information(): [ /* returnType */ boolean, /* value_3gpp_failure_information_rp_cause */ WmsGsmUmtsRpCause | null, /* value_3gpp_failure_information_tp_cause */ WmsGsmUmtsTpCause | null ]
+    get_information(): [ /* returnType */ boolean, /* value_information_transaction_id */ number | null, /* value_information_message_protocol */ WmsMessageProtocol | null, /* value_information_success */ boolean | null ]
+    get_sms_on_ims(): [ /* returnType */ boolean, /* value_sms_on_ims */ boolean | null ]
+    ref(): MessageWmsSendAckInput
+    set_3gpp2_failure_information(value_3gpp2_failure_information_error_class: WmsCdmaErrorClass, value_3gpp2_failure_information_cause_code: WmsCdmaCauseCode): boolean
+    set_3gpp_failure_information(value_3gpp_failure_information_rp_cause: WmsGsmUmtsRpCause, value_3gpp_failure_information_tp_cause: WmsGsmUmtsTpCause): boolean
+    set_information(value_information_transaction_id: number, value_information_message_protocol: WmsMessageProtocol, value_information_success: boolean): boolean
+    set_sms_on_ims(value_sms_on_ims: boolean): boolean
+    unref(): void
+    static name: string
+    static new(): MessageWmsSendAckInput
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): MessageWmsSendAckInput
+}
+class MessageWmsSendAckOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsSendAckOutput */
+    get_failure_cause(): [ /* returnType */ boolean, /* value_failure_cause */ WmsAckFailureCause | null ]
+    get_result(): boolean
+    ref(): MessageWmsSendAckOutput
+    unref(): void
+    static name: string
+}
+class MessageWmsSendFromMemoryStorageInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsSendFromMemoryStorageInput */
+    get_information(): [ /* returnType */ boolean, /* value_information_storage_type */ WmsStorageType | null, /* value_information_memory_index */ number | null, /* value_information_message_mode */ WmsMessageMode | null ]
+    get_sms_on_ims(): [ /* returnType */ boolean, /* value_sms_on_ims */ boolean | null ]
     ref(): MessageWmsSendFromMemoryStorageInput
     set_information(value_information_storage_type: WmsStorageType, value_information_memory_index: number, value_information_message_mode: WmsMessageMode): boolean
     set_sms_on_ims(value_sms_on_ims: boolean): boolean
@@ -10805,21 +11696,21 @@ export class MessageWmsSendFromMemoryStorageInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWmsSendFromMemoryStorageInput
 }
-export class MessageWmsSendFromMemoryStorageOutput {
-    /* Methods of Qmi.MessageWmsSendFromMemoryStorageOutput */
-    get_cdma_cause_code(): [ /* returnType */ boolean, /* value_cdma_cause_code */ WmsCdmaCauseCode ]
-    get_cdma_error_class(): [ /* returnType */ boolean, /* value_cdma_error_class */ WmsCdmaErrorClass ]
-    get_gsm_wcdma_cause_info(): [ /* returnType */ boolean, /* value_gsm_wcdma_cause_info_rp_cause */ WmsGsmUmtsRpCause, /* value_gsm_wcdma_cause_info_tp_cause */ WmsGsmUmtsTpCause ]
-    get_message_delivery_failure_type(): [ /* returnType */ boolean, /* value_message_delivery_failure_type */ WmsMessageDeliveryFailureType ]
-    get_message_id(): [ /* returnType */ boolean, /* value_message_id */ number ]
+class MessageWmsSendFromMemoryStorageOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsSendFromMemoryStorageOutput */
+    get_cdma_cause_code(): [ /* returnType */ boolean, /* value_cdma_cause_code */ WmsCdmaCauseCode | null ]
+    get_cdma_error_class(): [ /* returnType */ boolean, /* value_cdma_error_class */ WmsCdmaErrorClass | null ]
+    get_gsm_wcdma_cause_info(): [ /* returnType */ boolean, /* value_gsm_wcdma_cause_info_rp_cause */ WmsGsmUmtsRpCause | null, /* value_gsm_wcdma_cause_info_tp_cause */ WmsGsmUmtsTpCause | null ]
+    get_message_delivery_failure_type(): [ /* returnType */ boolean, /* value_message_delivery_failure_type */ WmsMessageDeliveryFailureType | null ]
+    get_message_id(): [ /* returnType */ boolean, /* value_message_id */ number | null ]
     get_result(): boolean
     ref(): MessageWmsSendFromMemoryStorageOutput
     unref(): void
     static name: string
 }
-export class MessageWmsSetEventReportInput {
-    /* Methods of Qmi.MessageWmsSetEventReportInput */
-    get_new_mt_message_indicator(): [ /* returnType */ boolean, /* value_new_mt_message_indicator_report */ boolean ]
+class MessageWmsSetEventReportInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsSetEventReportInput */
+    get_new_mt_message_indicator(): [ /* returnType */ boolean, /* value_new_mt_message_indicator_report */ boolean | null ]
     ref(): MessageWmsSetEventReportInput
     set_new_mt_message_indicator(value_new_mt_message_indicator_report: boolean): boolean
     unref(): void
@@ -10829,17 +11720,17 @@ export class MessageWmsSetEventReportInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWmsSetEventReportInput
 }
-export class MessageWmsSetEventReportOutput {
-    /* Methods of Qmi.MessageWmsSetEventReportOutput */
+class MessageWmsSetEventReportOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsSetEventReportOutput */
     get_result(): boolean
     ref(): MessageWmsSetEventReportOutput
     unref(): void
     static name: string
 }
-export class MessageWmsSetRoutesInput {
-    /* Methods of Qmi.MessageWmsSetRoutesInput */
-    get_route_list(): [ /* returnType */ boolean, /* value_route_list */ MessageWmsSetRoutesInputRouteListElement[] ]
-    get_transfer_status_report(): [ /* returnType */ boolean, /* value_transfer_status_report */ WmsTransferIndication ]
+class MessageWmsSetRoutesInput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsSetRoutesInput */
+    get_route_list(): [ /* returnType */ boolean, /* value_route_list */ MessageWmsSetRoutesInputRouteListElement[] | null ]
+    get_transfer_status_report(): [ /* returnType */ boolean, /* value_transfer_status_report */ WmsTransferIndication | null ]
     ref(): MessageWmsSetRoutesInput
     set_route_list(value_route_list: MessageWmsSetRoutesInputRouteListElement[]): boolean
     set_transfer_status_report(value_transfer_status_report: WmsTransferIndication): boolean
@@ -10850,50 +11741,45 @@ export class MessageWmsSetRoutesInput {
     /* Static methods and pseudo-constructors */
     static new(): MessageWmsSetRoutesInput
 }
-export class MessageWmsSetRoutesInputRouteListElement {
-    /* Fields of Qmi.MessageWmsSetRoutesInputRouteListElement */
+class MessageWmsSetRoutesInputRouteListElement {
+    /* Fields of Qmi-1.0.Qmi.MessageWmsSetRoutesInputRouteListElement */
     message_type: WmsMessageType
     message_class: WmsMessageClass
     storage: WmsStorageType
     receipt_action: WmsReceiptAction
     static name: string
 }
-export class MessageWmsSetRoutesOutput {
-    /* Methods of Qmi.MessageWmsSetRoutesOutput */
+class MessageWmsSetRoutesOutput {
+    /* Methods of Qmi-1.0.Qmi.MessageWmsSetRoutesOutput */
     get_result(): boolean
     ref(): MessageWmsSetRoutesOutput
     unref(): void
     static name: string
 }
-export class PhysicalSlotInformationSlot {
-    /* Fields of Qmi.PhysicalSlotInformationSlot */
+class PhysicalSlotInformationSlot {
+    /* Fields of Qmi-1.0.Qmi.PhysicalSlotInformationSlot */
     card_protocol: UimCardProtocol
     valid_applications: number
     atr_value: object[]
     is_euicc: boolean
     static name: string
 }
-export class PhysicalSlotStatusSlot {
-    /* Fields of Qmi.PhysicalSlotStatusSlot */
+class PhysicalSlotStatusSlot {
+    /* Fields of Qmi-1.0.Qmi.PhysicalSlotStatusSlot */
     physical_card_status: UimPhysicalCardState
     physical_slot_status: UimSlotState
     logical_slot: number
     iccid: object[]
     static name: string
 }
-export abstract class ProxyClass {
-    /* Fields of Qmi.ProxyClass */
+abstract class ProxyClass {
+    /* Fields of Qmi-1.0.Qmi.ProxyClass */
     parent: GObject.ObjectClass
     static name: string
 }
-export class ProxyPrivate {
+class ProxyPrivate {
     static name: string
 }
-export type DeprecatedNasSimRejectState = number
-export type DeprecatedProtocolError = number
-export type DeprecatedWdsCdmaCauseCode = number
-export type DeprecatedWdsVerboseCallEndReasonCm = number
-export type Message = Uint8Array
-export type MessageNasGetCellLocationInfoOutputIntrafrequencyLteInfoCellElement = MessageNasGetCellLocationInfoOutputIntrafrequencyLteInfoV2CellElement
-export type MessageNasGetCellLocationInfoOutputUmtsInfoCellElement = MessageNasGetCellLocationInfoOutputUmtsInfoV2CellElement
-export type MessageNasGetCellLocationInfoOutputUmtsInfoNeighboringGeranElement = MessageNasGetCellLocationInfoOutputUmtsInfoV2NeighboringGeranElement
+type Message = Uint8Array
+}
+export default Qmi;

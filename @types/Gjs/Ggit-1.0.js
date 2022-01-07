@@ -1,2 +1,2 @@
-imports.gi.versions.Ggit = '1.0'
-export default imports.gi.Ggit
+import Ggit from 'gi://Ggit?version=1.0';
+export default Ggit;

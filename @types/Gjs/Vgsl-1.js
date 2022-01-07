@@ -1,2 +1,2 @@
-imports.gi.versions.Vgsl = '1'
-export default imports.gi.Vgsl
+import Vgsl from 'gi://Vgsl?version=1';
+export default Vgsl;

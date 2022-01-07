@@ -1,2 +1,2 @@
-imports.gi.versions.Gda = '6.0'
-export default imports.gi.Gda
+import Gda from 'gi://Gda?version=6.0';
+export default Gda;

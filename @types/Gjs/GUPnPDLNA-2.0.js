@@ -1,2 +1,2 @@
-imports.gi.versions.GUPnPDLNA = '2.0'
-export default imports.gi.GUPnPDLNA
+import GUPnPDLNA from 'gi://GUPnPDLNA?version=2.0';
+export default GUPnPDLNA;

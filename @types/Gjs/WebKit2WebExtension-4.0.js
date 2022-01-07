@@ -1,2 +1,2 @@
-imports.gi.versions.WebKit2WebExtension = '4.0'
-export default imports.gi.WebKit2WebExtension
+import WebKit2WebExtension from 'gi://WebKit2WebExtension?version=4.0';
+export default WebKit2WebExtension;

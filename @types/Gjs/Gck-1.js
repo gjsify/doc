@@ -1,2 +1,2 @@
-imports.gi.versions.Gck = '1'
-export default imports.gi.Gck
+import Gck from 'gi://Gck?version=1';
+export default Gck;

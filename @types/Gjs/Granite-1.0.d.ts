@@ -3,21 +3,23 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Pango from './Pango-1.0';
-import type * as cairo from './cairo-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Gee from './Gee-0.8';
-import type * as Gio from './Gio-2.0';
-import type * as Gtk from './Gtk-3.0';
-import type * as xlib from './xlib-2.0';
-import type * as Gdk from './Gdk-3.0';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as Atk from './Atk-1.0';
+import type Pango from './Pango-1.0';
+import type cairo from './cairo-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Gtk from './Gtk-3.0';
+import type xlib from './xlib-2.0';
+import type Gdk from './Gdk-3.0';
+import type Gio from './Gio-2.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type GModule from './GModule-2.0';
+import type Atk from './Atk-1.0';
+import type Gee from './Gee-0.8';
 
-export enum ServicesLogLevel {
+export namespace Granite {
+
+enum ServicesLogLevel {
     DEBUG,
     INFO,
     NOTIFY,
@@ -25,15 +27,15 @@ export enum ServicesLogLevel {
     ERROR,
     FATAL,
 }
-export enum ContractorError {
+enum ServicesContractorError {
     SERVICE_NOT_AVAILABLE,
 }
-export enum WidgetsDynamicNotebookTabBarBehavior {
+enum WidgetsDynamicNotebookTabBarBehavior {
     ALWAYS,
     SINGLE,
     NEVER,
 }
-export enum WidgetsStorageBarItemDescription {
+enum WidgetsStorageBarItemDescription {
     OTHER,
     AUDIO,
     VIDEO,
@@ -41,7 +43,7 @@ export enum WidgetsStorageBarItemDescription {
     APP,
     FILES,
 }
-export enum CollapseMode {
+enum CollapseMode {
     NONE,
     LEFT,
     TOP,
@@ -50,44 +52,44 @@ export enum CollapseMode {
     BOTTOM,
     LAST,
 }
-export enum TextStyle {
+enum TextStyle {
     TITLE,
     H1,
     H2,
     H3,
 }
-export enum CloseButtonPosition {
+enum CloseButtonPosition {
     LEFT,
     RIGHT,
 }
-export enum SettingsPageStatusType {
+enum SettingsPageStatusType {
     ERROR,
     OFFLINE,
     SUCCESS,
     WARNING,
     NONE,
 }
-export enum SettingsColorScheme {
+enum SettingsColorScheme {
     NO_PREFERENCE,
     DARK,
     LIGHT,
 }
-export const BADGE: string
-export const CATEGORY_EXPANDER: string
-export const CONTENT_VIEW: string
-export const CONTENT_VIEW_WINDOW: string
-export const COMPOSITED: string
-export const DECORATED_WINDOW: string
-export const H1_TEXT: string
-export const H2_TEXT: string
-export const H3_TEXT: string
-export const HELP_BUTTON: string
-export const OVERLAY_BAR: string
-export const POPOVER: string
-export const POPOVER_BG: string
-export const SOURCE_LIST: string
-export const THIN_PANE_SEPARATOR: string
-export const TITLE_TEXT: string
+export const StyleClassBADGE: string
+export const StyleClassCATEGORY_EXPANDER: string
+export const StyleClassCONTENT_VIEW: string
+export const StyleClassCONTENT_VIEW_WINDOW: string
+export const StyleClassCOMPOSITED: string
+export const StyleClassDECORATED_WINDOW: string
+export const StyleClassH1_TEXT: string
+export const StyleClassH2_TEXT: string
+export const StyleClassH3_TEXT: string
+export const StyleClassHELP_BUTTON: string
+export const StyleClassOVERLAY_BAR: string
+export const StyleClassPOPOVER: string
+export const StyleClassPOPOVER_BG: string
+export const StyleClassSOURCE_LIST: string
+export const StyleClassTHIN_PANE_SEPARATOR: string
+export const StyleClassTITLE_TEXT: string
 export const STYLE_CLASS_ACCENT: string
 export const STYLE_CLASS_AVATAR: string
 export const STYLE_CLASS_BACK_BUTTON: string
@@ -96,6 +98,7 @@ export const STYLE_CLASS_CARD: string
 export const STYLE_CLASS_CATEGORY_EXPANDER: string
 export const STYLE_CLASS_CHECKERBOARD: string
 export const STYLE_CLASS_COLOR_BUTTON: string
+export const STYLE_CLASS_DEFAULT_DECORATION: string
 export const STYLE_CLASS_H1_LABEL: string
 export const STYLE_CLASS_H2_LABEL: string
 export const STYLE_CLASS_H3_LABEL: string
@@ -106,61 +109,66 @@ export const STYLE_CLASS_OVERLAY_BAR: string
 export const STYLE_CLASS_PRIMARY_LABEL: string
 export const STYLE_CLASS_ROUNDED: string
 export const STYLE_CLASS_SEEKBAR: string
+export const STYLE_CLASS_SMALL_LABEL: string
 export const STYLE_CLASS_SOURCE_LIST: string
 export const STYLE_CLASS_STORAGEBAR: string
 export const STYLE_CLASS_TERMINAL: string
 export const STYLE_CLASS_WELCOME: string
 export const STYLE_CLASS_WARMTH: string
 export const STYLE_CLASS_TEMPERATURE: string
-export function date_time_get_default_time_format(is_12h: boolean, with_second: boolean): string
-export function date_time_get_relative_datetime(date_time: GLib.DateTime): string
-export function date_time_is_same_day(day1: GLib.DateTime, day2: GLib.DateTime): boolean
-export function date_time_get_default_date_format(with_weekday: boolean, with_day: boolean, with_year: boolean): string
-export function date_time_seconds_to_time(seconds: number): string
-export function services_application_set_badge(count: number, _callback_?: Gio.AsyncReadyCallback | null): void
-export function services_application_set_badge_finish(_res_: Gio.AsyncResult): boolean
-export function services_application_set_badge_visible(visible: boolean, _callback_?: Gio.AsyncReadyCallback | null): void
-export function services_application_set_badge_visible_finish(_res_: Gio.AsyncResult): boolean
-export function services_application_set_progress(progress: number, _callback_?: Gio.AsyncReadyCallback | null): void
-export function services_application_set_progress_finish(_res_: Gio.AsyncResult): boolean
-export function services_application_set_progress_visible(visible: boolean, _callback_?: Gio.AsyncReadyCallback | null): void
-export function services_application_set_progress_visible_finish(_res_: Gio.AsyncResult): boolean
-export function widgets_utils_set_color_primary(window: Gtk.Widget, color: Gdk.RGBA, priority: number): Gtk.CssProvider | null
-export function widgets_utils_set_theming(widget: Gtk.Widget, stylesheet: string, class_name: string | null, priority: number): Gtk.CssProvider | null
-export function widgets_utils_set_theming_for_screen(screen: Gdk.Screen, stylesheet: string, priority: number): Gtk.CssProvider | null
-export function widgets_utils_get_css_provider(stylesheet: string): Gtk.CssProvider | null
-export function widgets_utils_apply_text_style_to_label(text_style: TextStyle, label: Gtk.Label): void
-export function widgets_utils_get_default_close_button_position(): [ /* returnType */ boolean, /* position */ CloseButtonPosition ]
-export function widgets_utils_get_button_layout_schema(): string | null
-export function widgets_storage_bar_item_description_get_class(description: WidgetsStorageBarItemDescription): string | null
-export function widgets_storage_bar_item_description_get_name(description: WidgetsStorageBarItemDescription): string
-export function text_style_get_stylesheet(): [ /* returnType */ string, /* style_class */ string ]
-export function accel_to_string(accel?: string | null): string
-export function markup_accel_tooltip(accels: string[] | null, description?: string | null): string
-export function contrasting_foreground_color(bg_color: Gdk.RGBA): /* result */ Gdk.RGBA
-export interface WidgetsDroppedDelegate {
+export const TRANSITION_DURATION_CLOSE: number
+export const TRANSITION_DURATION_IN_PLACE: number
+export const TRANSITION_DURATION_OPEN: number
+export const TOOLTIP_SECONDARY_TEXT_MARKUP: string
+function date_time_get_default_time_format(is_12h: boolean, with_second: boolean): string
+function date_time_get_relative_datetime(date_time: GLib.DateTime): string
+function date_time_is_same_day(day1: GLib.DateTime, day2: GLib.DateTime): boolean
+function date_time_get_default_date_format(with_weekday: boolean, with_day: boolean, with_year: boolean): string
+function date_time_seconds_to_time(seconds: number): string
+function services_application_set_badge(count: number, _callback_?: Gio.AsyncReadyCallback | null): void
+function services_application_set_badge_finish(_res_: Gio.AsyncResult): boolean
+function services_application_set_badge_visible(visible: boolean, _callback_?: Gio.AsyncReadyCallback | null): void
+function services_application_set_badge_visible_finish(_res_: Gio.AsyncResult): boolean
+function services_application_set_progress(progress: number, _callback_?: Gio.AsyncReadyCallback | null): void
+function services_application_set_progress_finish(_res_: Gio.AsyncResult): boolean
+function services_application_set_progress_visible(visible: boolean, _callback_?: Gio.AsyncReadyCallback | null): void
+function services_application_set_progress_visible_finish(_res_: Gio.AsyncResult): boolean
+function widgets_utils_set_color_primary(window: Gtk.Widget, color: Gdk.RGBA, priority: number): Gtk.CssProvider | null
+function widgets_utils_set_theming(widget: Gtk.Widget, stylesheet: string, class_name: string | null, priority: number): Gtk.CssProvider | null
+function widgets_utils_set_theming_for_screen(screen: Gdk.Screen, stylesheet: string, priority: number): Gtk.CssProvider | null
+function widgets_utils_get_css_provider(stylesheet: string): Gtk.CssProvider | null
+function widgets_utils_apply_text_style_to_label(text_style: TextStyle, label: Gtk.Label): void
+function widgets_utils_get_default_close_button_position(): [ /* returnType */ boolean, /* position */ CloseButtonPosition ]
+function widgets_utils_get_button_layout_schema(): string | null
+function widgets_storage_bar_item_description_get_class(description: WidgetsStorageBarItemDescription): string | null
+function widgets_storage_bar_item_description_get_name(description: WidgetsStorageBarItemDescription): string
+function text_style_get_stylesheet(): [ /* returnType */ string, /* style_class */ string ]
+function accel_to_string(accel?: string | null): string
+function markup_accel_tooltip(accels: string[] | null, description?: string | null): string
+function contrasting_foreground_color(bg_color: Gdk.RGBA): /* result */ Gdk.RGBA
+interface WidgetsDroppedDelegate {
     (): void
 }
 export interface ServicesContract_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ServicesContract {
-    /* Fields of GObject.Object */
+class ServicesContract {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.ServicesContract */
+    /* Methods of Granite-1.0.Granite.ServicesContract */
     get_display_name(): string
     get_description(): string
     get_icon(): Gio.Icon
     execute_with_file(file: Gio.File): void
     execute_with_files(files: Gio.File[]): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -168,27 +176,27 @@ export class ServicesContract {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Granite.ServicesContract */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Granite-1.0.Granite.ServicesContract */
     vfunc_get_display_name(): string
     vfunc_get_description(): string
     vfunc_get_icon(): Gio.Icon
     vfunc_execute_with_file(file: Gio.File): void
     vfunc_execute_with_files(files: Gio.File[]): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ServicesContract, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ServicesContract, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -203,21 +211,21 @@ export class ServicesContract {
 }
 export interface ServicesSettingsSerializable_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ServicesSettingsSerializable {
-    /* Fields of GObject.Object */
+class ServicesSettingsSerializable {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.ServicesSettingsSerializable */
+    /* Methods of Granite-1.0.Granite.ServicesSettingsSerializable */
     settings_serialize(): string
     settings_deserialize(s: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -225,24 +233,24 @@ export class ServicesSettingsSerializable {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Granite.ServicesSettingsSerializable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Granite-1.0.Granite.ServicesSettingsSerializable */
     vfunc_settings_serialize(): string
     vfunc_settings_deserialize(s: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ServicesSettingsSerializable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ServicesSettingsSerializable, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -257,13 +265,13 @@ export class ServicesSettingsSerializable {
 }
 export interface WidgetsSourceListSortable_ConstructProps extends WidgetsSourceListExpandableItem_ConstructProps {
 }
-export class WidgetsSourceListSortable {
-    /* Properties of Granite.WidgetsSourceListExpandableItem */
+class WidgetsSourceListSortable {
+    /* Properties of Granite-1.0.Granite.WidgetsSourceListExpandableItem */
     collapsible: boolean
     expanded: boolean
     readonly n_children: number
     readonly children: Gee.Collection
-    /* Properties of Granite.WidgetsSourceListItem */
+    /* Properties of Granite-1.0.Granite.WidgetsSourceListItem */
     parent: WidgetsSourceListExpandableItem
     name: string
     tooltip: string
@@ -275,12 +283,12 @@ export class WidgetsSourceListSortable {
     icon: Gio.Icon
     activatable: Gio.Icon
     activatable_tooltip: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsSourceListSortable */
+    /* Methods of Granite-1.0.Granite.WidgetsSourceListSortable */
     allow_dnd_sorting(): boolean
     compare(a: WidgetsSourceListItem, b: WidgetsSourceListItem): number
-    /* Methods of Granite.WidgetsSourceListExpandableItem */
+    /* Methods of Granite-1.0.Granite.WidgetsSourceListExpandableItem */
     get_collapsible(): boolean
     set_collapsible(value: boolean): void
     get_expanded(): boolean
@@ -295,7 +303,7 @@ export class WidgetsSourceListSortable {
     collapse_all(inclusive: boolean, recursive: boolean): void
     expand_with_parents(): void
     collapse_with_parents(): void
-    /* Methods of Granite.WidgetsSourceListItem */
+    /* Methods of Granite-1.0.Granite.WidgetsSourceListItem */
     get_parent(): WidgetsSourceListExpandableItem
     get_name(): string
     set_name(value: string): void
@@ -318,15 +326,15 @@ export class WidgetsSourceListSortable {
     get_activatable_tooltip(): string
     set_activatable_tooltip(value: string): void
     get_context_menu(): Gtk.Menu | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -334,30 +342,35 @@ export class WidgetsSourceListSortable {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Granite.WidgetsSourceListSortable */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Granite-1.0.Granite.WidgetsSourceListSortable */
     vfunc_allow_dnd_sorting(): boolean
     vfunc_compare(a: WidgetsSourceListItem, b: WidgetsSourceListItem): number
-    /* Virtual methods of Granite.WidgetsSourceListItem */
+    /* Virtual methods of Granite-1.0.Granite.WidgetsSourceListExpandableItem */
+    vfunc_toggled(): void
+    /* Virtual methods of Granite-1.0.Granite.WidgetsSourceListItem */
+    vfunc_edited(new_name: string): void
+    vfunc_action_activated(): void
+    vfunc_activated(): void
     vfunc_get_context_menu(): Gtk.Menu | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.WidgetsSourceListSortable */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.WidgetsSourceListSortable */
     connect(sigName: "user-moved-item", callback: (($obj: WidgetsSourceListSortable, moved: WidgetsSourceListItem) => void)): number
     connect_after(sigName: "user-moved-item", callback: (($obj: WidgetsSourceListSortable, moved: WidgetsSourceListItem) => void)): number
     emit(sigName: "user-moved-item", moved: WidgetsSourceListItem): void
-    /* Signals of Granite.WidgetsSourceListExpandableItem */
+    /* Signals of Granite-1.0.Granite.WidgetsSourceListExpandableItem */
     connect(sigName: "child-added", callback: (($obj: WidgetsSourceListSortable, item: WidgetsSourceListItem) => void)): number
     connect_after(sigName: "child-added", callback: (($obj: WidgetsSourceListSortable, item: WidgetsSourceListItem) => void)): number
     emit(sigName: "child-added", item: WidgetsSourceListItem): void
@@ -367,7 +380,7 @@ export class WidgetsSourceListSortable {
     connect(sigName: "toggled", callback: (($obj: WidgetsSourceListSortable) => void)): number
     connect_after(sigName: "toggled", callback: (($obj: WidgetsSourceListSortable) => void)): number
     emit(sigName: "toggled"): void
-    /* Signals of Granite.WidgetsSourceListItem */
+    /* Signals of Granite-1.0.Granite.WidgetsSourceListItem */
     connect(sigName: "edited", callback: (($obj: WidgetsSourceListSortable, new_name: string) => void)): number
     connect_after(sigName: "edited", callback: (($obj: WidgetsSourceListSortable, new_name: string) => void)): number
     emit(sigName: "edited", new_name: string): void
@@ -377,7 +390,7 @@ export class WidgetsSourceListSortable {
     connect(sigName: "activated", callback: (($obj: WidgetsSourceListSortable) => void)): number
     connect_after(sigName: "activated", callback: (($obj: WidgetsSourceListSortable) => void)): number
     emit(sigName: "activated"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsSourceListSortable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsSourceListSortable, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -422,8 +435,8 @@ export class WidgetsSourceListSortable {
 }
 export interface WidgetsSourceListDragSource_ConstructProps extends WidgetsSourceListItem_ConstructProps {
 }
-export class WidgetsSourceListDragSource {
-    /* Properties of Granite.WidgetsSourceListItem */
+class WidgetsSourceListDragSource {
+    /* Properties of Granite-1.0.Granite.WidgetsSourceListItem */
     parent: WidgetsSourceListExpandableItem
     name: string
     tooltip: string
@@ -435,12 +448,12 @@ export class WidgetsSourceListDragSource {
     icon: Gio.Icon
     activatable: Gio.Icon
     activatable_tooltip: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsSourceListDragSource */
+    /* Methods of Granite-1.0.Granite.WidgetsSourceListDragSource */
     draggable(): boolean
     prepare_selection_data(selection_data: Gtk.SelectionData): void
-    /* Methods of Granite.WidgetsSourceListItem */
+    /* Methods of Granite-1.0.Granite.WidgetsSourceListItem */
     get_parent(): WidgetsSourceListExpandableItem
     get_name(): string
     set_name(value: string): void
@@ -463,15 +476,15 @@ export class WidgetsSourceListDragSource {
     get_activatable_tooltip(): string
     set_activatable_tooltip(value: string): void
     get_context_menu(): Gtk.Menu | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -479,26 +492,29 @@ export class WidgetsSourceListDragSource {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Granite.WidgetsSourceListDragSource */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Granite-1.0.Granite.WidgetsSourceListDragSource */
     vfunc_draggable(): boolean
     vfunc_prepare_selection_data(selection_data: Gtk.SelectionData): void
-    /* Virtual methods of Granite.WidgetsSourceListItem */
+    /* Virtual methods of Granite-1.0.Granite.WidgetsSourceListItem */
+    vfunc_edited(new_name: string): void
+    vfunc_action_activated(): void
+    vfunc_activated(): void
     vfunc_get_context_menu(): Gtk.Menu | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.WidgetsSourceListItem */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.WidgetsSourceListItem */
     connect(sigName: "edited", callback: (($obj: WidgetsSourceListDragSource, new_name: string) => void)): number
     connect_after(sigName: "edited", callback: (($obj: WidgetsSourceListDragSource, new_name: string) => void)): number
     emit(sigName: "edited", new_name: string): void
@@ -508,7 +524,7 @@ export class WidgetsSourceListDragSource {
     connect(sigName: "activated", callback: (($obj: WidgetsSourceListDragSource) => void)): number
     connect_after(sigName: "activated", callback: (($obj: WidgetsSourceListDragSource) => void)): number
     emit(sigName: "activated"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsSourceListDragSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsSourceListDragSource, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -545,8 +561,8 @@ export class WidgetsSourceListDragSource {
 }
 export interface WidgetsSourceListDragDest_ConstructProps extends WidgetsSourceListItem_ConstructProps {
 }
-export class WidgetsSourceListDragDest {
-    /* Properties of Granite.WidgetsSourceListItem */
+class WidgetsSourceListDragDest {
+    /* Properties of Granite-1.0.Granite.WidgetsSourceListItem */
     parent: WidgetsSourceListExpandableItem
     name: string
     tooltip: string
@@ -558,12 +574,12 @@ export class WidgetsSourceListDragDest {
     icon: Gio.Icon
     activatable: Gio.Icon
     activatable_tooltip: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsSourceListDragDest */
+    /* Methods of Granite-1.0.Granite.WidgetsSourceListDragDest */
     data_drop_possible(context: Gdk.DragContext, data: Gtk.SelectionData): boolean
     data_received(context: Gdk.DragContext, data: Gtk.SelectionData): Gdk.DragAction
-    /* Methods of Granite.WidgetsSourceListItem */
+    /* Methods of Granite-1.0.Granite.WidgetsSourceListItem */
     get_parent(): WidgetsSourceListExpandableItem
     get_name(): string
     set_name(value: string): void
@@ -586,15 +602,15 @@ export class WidgetsSourceListDragDest {
     get_activatable_tooltip(): string
     set_activatable_tooltip(value: string): void
     get_context_menu(): Gtk.Menu | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -602,26 +618,29 @@ export class WidgetsSourceListDragDest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Granite.WidgetsSourceListDragDest */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Granite-1.0.Granite.WidgetsSourceListDragDest */
     vfunc_data_drop_possible(context: Gdk.DragContext, data: Gtk.SelectionData): boolean
     vfunc_data_received(context: Gdk.DragContext, data: Gtk.SelectionData): Gdk.DragAction
-    /* Virtual methods of Granite.WidgetsSourceListItem */
+    /* Virtual methods of Granite-1.0.Granite.WidgetsSourceListItem */
+    vfunc_edited(new_name: string): void
+    vfunc_action_activated(): void
+    vfunc_activated(): void
     vfunc_get_context_menu(): Gtk.Menu | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.WidgetsSourceListItem */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.WidgetsSourceListItem */
     connect(sigName: "edited", callback: (($obj: WidgetsSourceListDragDest, new_name: string) => void)): number
     connect_after(sigName: "edited", callback: (($obj: WidgetsSourceListDragDest, new_name: string) => void)): number
     emit(sigName: "edited", new_name: string): void
@@ -631,7 +650,7 @@ export class WidgetsSourceListDragDest {
     connect(sigName: "activated", callback: (($obj: WidgetsSourceListDragDest) => void)): number
     connect_after(sigName: "activated", callback: (($obj: WidgetsSourceListDragDest) => void)): number
     emit(sigName: "activated"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsSourceListDragDest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsSourceListDragDest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -671,15 +690,15 @@ export interface DrawingBufferSurface_ConstructProps extends GObject.Object_Cons
     width?: number
     height?: number
 }
-export class DrawingBufferSurface {
-    /* Properties of Granite.DrawingBufferSurface */
+class DrawingBufferSurface {
+    /* Properties of Granite-1.0.Granite.DrawingBufferSurface */
     surface: cairo.Surface
     width: number
     height: number
     readonly context: cairo.Context
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.DrawingBufferSurface */
+    /* Methods of Granite-1.0.Granite.DrawingBufferSurface */
     get_surface(): cairo.Surface
     get_width(): number
     get_height(): number
@@ -690,15 +709,15 @@ export class DrawingBufferSurface {
     fast_blur(radius: number, process_count: number): void
     exponential_blur(radius: number): void
     gaussian_blur(radius: number): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -706,21 +725,21 @@ export class DrawingBufferSurface {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DrawingBufferSurface, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DrawingBufferSurface, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -747,15 +766,15 @@ export class DrawingBufferSurface {
 }
 export interface DrawingColor_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class DrawingColor {
-    /* Fields of Granite.DrawingColor */
+class DrawingColor {
+    /* Fields of Granite-1.0.Granite.DrawingColor */
     R: number
     G: number
     B: number
     A: number
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.DrawingColor */
+    /* Methods of Granite-1.0.Granite.DrawingColor */
     set_hue(hue: number): DrawingColor
     set_sat(sat: number): DrawingColor
     set_val(val: number): DrawingColor
@@ -774,15 +793,15 @@ export class DrawingColor {
     darken_by_sat(amount: number): DrawingColor
     to_string(): string
     to_int(): number
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -790,21 +809,21 @@ export class DrawingColor {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DrawingColor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DrawingColor, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -829,18 +848,18 @@ export class DrawingColor {
 }
 export interface DrawingUtilities_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class DrawingUtilities {
-    /* Fields of GObject.Object */
+class DrawingUtilities {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -848,21 +867,21 @@ export class DrawingUtilities {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DrawingUtilities, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DrawingUtilities, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -879,1148 +898,20 @@ export class DrawingUtilities {
     static average_color(source: GdkPixbuf.Pixbuf): DrawingColor
     static $gtype: GObject.Type
 }
-export interface GtkPatchAboutDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
-    artists?: string[]
-    authors?: string[]
-    comments?: string
-    copyright?: string
-    documenters?: string[]
-    license?: string
-    license_type?: Gtk.License
-    logo?: GdkPixbuf.Pixbuf
-    logo_icon_name?: string
-    program_name?: string
-    translator_credits?: string
-    version?: string
-    website?: string
-    website_label?: string
-}
-export class GtkPatchAboutDialog {
-    /* Properties of Granite.GtkPatchAboutDialog */
-    artists: string[]
-    authors: string[]
-    comments: string
-    copyright: string
-    documenters: string[]
-    license: string
-    license_type: Gtk.License
-    logo: GdkPixbuf.Pixbuf
-    logo_icon_name: string
-    program_name: string
-    translator_credits: string
-    version: string
-    website: string
-    website_label: string
-    /* Properties of Gtk.Window */
-    accept_focus: boolean
-    application: Gtk.Application
-    attached_to: Gtk.Widget
-    decorated: boolean
-    default_height: number
-    default_width: number
-    deletable: boolean
-    destroy_with_parent: boolean
-    focus_on_map: boolean
-    focus_visible: boolean
-    gravity: Gdk.Gravity
-    has_resize_grip: boolean
-    readonly has_toplevel_focus: boolean
-    hide_titlebar_when_maximized: boolean
-    icon: GdkPixbuf.Pixbuf
-    icon_name: string
-    readonly is_active: boolean
-    readonly is_maximized: boolean
-    mnemonics_visible: boolean
-    modal: boolean
-    resizable: boolean
-    readonly resize_grip_visible: boolean
-    role: string
-    screen: Gdk.Screen
-    skip_pager_hint: boolean
-    skip_taskbar_hint: boolean
-    startup_id: string
-    title: string
-    transient_for: Gtk.Window
-    type_hint: Gdk.WindowTypeHint
-    urgency_hint: boolean
-    window_position: Gtk.WindowPosition
-    /* Properties of Gtk.Container */
-    border_width: number
-    child: Gtk.Widget
-    resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
-    app_paintable: boolean
-    can_default: boolean
-    can_focus: boolean
-    readonly composite_child: boolean
-    double_buffered: boolean
-    events: Gdk.EventMask
-    expand: boolean
-    focus_on_click: boolean
-    halign: Gtk.Align
-    has_default: boolean
-    has_focus: boolean
-    has_tooltip: boolean
-    height_request: number
-    hexpand: boolean
-    hexpand_set: boolean
-    is_focus: boolean
-    margin: number
-    margin_bottom: number
-    margin_end: number
-    margin_left: number
-    margin_right: number
-    margin_start: number
-    margin_top: number
-    name: string
-    no_show_all: boolean
-    opacity: number
-    parent: Gtk.Container
-    receives_default: boolean
-    readonly scale_factor: number
-    sensitive: boolean
-    style: Gtk.Style
-    tooltip_markup: string
-    tooltip_text: string
-    valign: Gtk.Align
-    vexpand: boolean
-    vexpand_set: boolean
-    visible: boolean
-    width_request: number
-    readonly window: Gdk.Window
-    /* Fields of Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
-    /* Fields of Gtk.Bin */
-    container: Gtk.Container
-    /* Fields of Gtk.Container */
-    widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.GtkPatchAboutDialog */
-    get_artists(): string[]
-    set_artists(value: string[]): void
-    get_authors(): string[]
-    set_authors(value: string[]): void
-    get_comments(): string
-    set_comments(value: string): void
-    get_copyright(): string
-    set_copyright(value: string): void
-    get_documenters(): string[]
-    set_documenters(value: string[]): void
-    get_license(): string
-    set_license(value: string): void
-    get_license_type(): Gtk.License
-    set_license_type(value: Gtk.License): void
-    get_logo(): GdkPixbuf.Pixbuf
-    set_logo(value: GdkPixbuf.Pixbuf): void
-    get_logo_icon_name(): string
-    set_logo_icon_name(value: string): void
-    get_program_name(): string
-    set_program_name(value: string): void
-    get_translator_credits(): string
-    set_translator_credits(value: string): void
-    get_version(): string
-    set_version(value: string): void
-    get_website(): string
-    set_website(value: string): void
-    get_website_label(): string
-    set_website_label(value: string): void
-    /* Methods of Gtk.Dialog */
-    add_action_widget(child: Gtk.Widget, response_id: number): void
-    add_button(button_text: string, response_id: number): Gtk.Widget
-    get_action_area(): Gtk.Box
-    get_content_area(): Gtk.Box
-    get_header_bar(): Gtk.HeaderBar
-    get_response_for_widget(widget: Gtk.Widget): number
-    get_widget_for_response(response_id: number): Gtk.Widget | null
-    response(response_id: number): void
-    run(): number
-    set_alternative_button_order_from_array(new_order: number[]): void
-    set_default_response(response_id: number): void
-    set_response_sensitive(response_id: number, setting: boolean): void
-    /* Methods of Gtk.Window */
-    activate_default(): boolean
-    activate_focus(): boolean
-    activate_key(event: Gdk.EventKey): boolean
-    add_accel_group(accel_group: Gtk.AccelGroup): void
-    add_mnemonic(keyval: number, target: Gtk.Widget): void
-    begin_move_drag(button: number, root_x: number, root_y: number, timestamp: number): void
-    begin_resize_drag(edge: Gdk.WindowEdge, button: number, root_x: number, root_y: number, timestamp: number): void
-    close(): void
-    deiconify(): void
-    fullscreen(): void
-    fullscreen_on_monitor(screen: Gdk.Screen, monitor: number): void
-    get_accept_focus(): boolean
-    get_application(): Gtk.Application | null
-    get_attached_to(): Gtk.Widget | null
-    get_decorated(): boolean
-    get_default_size(): [ /* width */ number | null, /* height */ number | null ]
-    get_default_widget(): Gtk.Widget | null
-    get_deletable(): boolean
-    get_destroy_with_parent(): boolean
-    get_focus(): Gtk.Widget | null
-    get_focus_on_map(): boolean
-    get_focus_visible(): boolean
-    get_gravity(): Gdk.Gravity
-    get_group(): Gtk.WindowGroup
-    get_has_resize_grip(): boolean
-    get_hide_titlebar_when_maximized(): boolean
-    get_icon(): GdkPixbuf.Pixbuf | null
-    get_icon_list(): GdkPixbuf.Pixbuf[]
-    get_icon_name(): string | null
-    get_mnemonic_modifier(): Gdk.ModifierType
-    get_mnemonics_visible(): boolean
-    get_modal(): boolean
-    get_opacity(): number
-    get_position(): [ /* root_x */ number | null, /* root_y */ number | null ]
-    get_resizable(): boolean
-    get_resize_grip_area(): [ /* returnType */ boolean, /* rect */ Gdk.Rectangle ]
-    get_role(): string | null
-    get_screen(): Gdk.Screen
-    get_size(): [ /* width */ number | null, /* height */ number | null ]
-    get_skip_pager_hint(): boolean
-    get_skip_taskbar_hint(): boolean
-    get_title(): string | null
-    get_titlebar(): Gtk.Widget | null
-    get_transient_for(): Gtk.Window | null
-    get_type_hint(): Gdk.WindowTypeHint
-    get_urgency_hint(): boolean
-    get_window_type(): Gtk.WindowType
-    has_group(): boolean
-    iconify(): void
-    maximize(): void
-    mnemonic_activate(keyval: number, modifier: Gdk.ModifierType): boolean
-    move(x: number, y: number): void
-    parse_geometry(geometry: string): boolean
-    present(): void
-    present_with_time(timestamp: number): void
-    propagate_key_event(event: Gdk.EventKey): boolean
-    remove_accel_group(accel_group: Gtk.AccelGroup): void
-    remove_mnemonic(keyval: number, target: Gtk.Widget): void
-    reshow_with_initial_size(): void
-    resize(width: number, height: number): void
-    resize_grip_is_visible(): boolean
-    resize_to_geometry(width: number, height: number): void
-    set_accept_focus(setting: boolean): void
-    set_application(application?: Gtk.Application | null): void
-    set_attached_to(attach_widget?: Gtk.Widget | null): void
-    set_decorated(setting: boolean): void
-    set_default(default_widget?: Gtk.Widget | null): void
-    set_default_geometry(width: number, height: number): void
-    set_default_size(width: number, height: number): void
-    set_deletable(setting: boolean): void
-    set_destroy_with_parent(setting: boolean): void
-    set_focus(focus?: Gtk.Widget | null): void
-    set_focus_on_map(setting: boolean): void
-    set_focus_visible(setting: boolean): void
-    set_geometry_hints(geometry_widget: Gtk.Widget | null, geometry: Gdk.Geometry | null, geom_mask: Gdk.WindowHints): void
-    set_gravity(gravity: Gdk.Gravity): void
-    set_has_resize_grip(value: boolean): void
-    set_has_user_ref_count(setting: boolean): void
-    set_hide_titlebar_when_maximized(setting: boolean): void
-    set_icon(icon?: GdkPixbuf.Pixbuf | null): void
-    set_icon_from_file(filename: string): boolean
-    set_icon_list(list: GdkPixbuf.Pixbuf[]): void
-    set_icon_name(name?: string | null): void
-    set_keep_above(setting: boolean): void
-    set_keep_below(setting: boolean): void
-    set_mnemonic_modifier(modifier: Gdk.ModifierType): void
-    set_mnemonics_visible(setting: boolean): void
-    set_modal(modal: boolean): void
-    set_opacity(opacity: number): void
-    set_position(position: Gtk.WindowPosition): void
-    set_resizable(resizable: boolean): void
-    set_role(role: string): void
-    set_screen(screen: Gdk.Screen): void
-    set_skip_pager_hint(setting: boolean): void
-    set_skip_taskbar_hint(setting: boolean): void
-    set_startup_id(startup_id: string): void
-    set_title(title: string): void
-    set_titlebar(titlebar?: Gtk.Widget | null): void
-    set_transient_for(parent?: Gtk.Window | null): void
-    set_type_hint(hint: Gdk.WindowTypeHint): void
-    set_urgency_hint(setting: boolean): void
-    set_wmclass(wmclass_name: string, wmclass_class: string): void
-    stick(): void
-    unfullscreen(): void
-    unmaximize(): void
-    unstick(): void
-    /* Methods of Gtk.Bin */
-    get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
-    add(widget: Gtk.Widget): void
-    check_resize(): void
-    child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
-    child_set_property(child: Gtk.Widget, property_name: string, value: any): void
-    child_type(): GObject.Type
-    forall(callback: Gtk.Callback): void
-    foreach(callback: Gtk.Callback): void
-    get_border_width(): number
-    get_children(): Gtk.Widget[]
-    get_focus_chain(): [ /* returnType */ boolean, /* focusable_widgets */ Gtk.Widget[] ]
-    get_focus_child(): Gtk.Widget | null
-    get_focus_hadjustment(): Gtk.Adjustment | null
-    get_focus_vadjustment(): Gtk.Adjustment | null
-    get_path_for_child(child: Gtk.Widget): Gtk.WidgetPath
-    get_resize_mode(): Gtk.ResizeMode
-    propagate_draw(child: Gtk.Widget, cr: cairo.Context): void
-    remove(widget: Gtk.Widget): void
-    resize_children(): void
-    set_border_width(border_width: number): void
-    set_focus_chain(focusable_widgets: Gtk.Widget[]): void
-    set_focus_child(child?: Gtk.Widget | null): void
-    set_focus_hadjustment(adjustment: Gtk.Adjustment): void
-    set_focus_vadjustment(adjustment: Gtk.Adjustment): void
-    set_reallocate_redraws(needs_redraws: boolean): void
-    set_resize_mode(resize_mode: Gtk.ResizeMode): void
-    unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
-    activate(): boolean
-    add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
-    add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
-    add_events(events: number): void
-    add_mnemonic_label(label: Gtk.Widget): void
-    add_tick_callback(callback: Gtk.TickCallback): number
-    can_activate_accel(signal_id: number): boolean
-    child_focus(direction: Gtk.DirectionType): boolean
-    child_notify(child_property: string): void
-    class_path(): [ /* path_length */ number | null, /* path */ string | null, /* path_reversed */ string | null ]
-    compute_expand(orientation: Gtk.Orientation): boolean
-    create_pango_context(): Pango.Context
-    create_pango_layout(text?: string | null): Pango.Layout
-    destroy(): void
-    destroyed(widget_pointer: Gtk.Widget): /* widget_pointer */ Gtk.Widget
-    device_is_shadowed(device: Gdk.Device): boolean
-    drag_begin(targets: Gtk.TargetList, actions: Gdk.DragAction, button: number, event?: Gdk.Event | null): Gdk.DragContext
-    drag_begin_with_coordinates(targets: Gtk.TargetList, actions: Gdk.DragAction, button: number, event: Gdk.Event | null, x: number, y: number): Gdk.DragContext
-    drag_check_threshold(start_x: number, start_y: number, current_x: number, current_y: number): boolean
-    drag_dest_add_image_targets(): void
-    drag_dest_add_text_targets(): void
-    drag_dest_add_uri_targets(): void
-    drag_dest_find_target(context: Gdk.DragContext, target_list?: Gtk.TargetList | null): Gdk.Atom
-    drag_dest_get_target_list(): Gtk.TargetList | null
-    drag_dest_get_track_motion(): boolean
-    drag_dest_set(flags: Gtk.DestDefaults, targets: Gtk.TargetEntry[] | null, actions: Gdk.DragAction): void
-    drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void
-    drag_dest_set_target_list(target_list?: Gtk.TargetList | null): void
-    drag_dest_set_track_motion(track_motion: boolean): void
-    drag_dest_unset(): void
-    drag_get_data(context: Gdk.DragContext, target: Gdk.Atom, time_: number): void
-    drag_highlight(): void
-    drag_source_add_image_targets(): void
-    drag_source_add_text_targets(): void
-    drag_source_add_uri_targets(): void
-    drag_source_get_target_list(): Gtk.TargetList | null
-    drag_source_set(start_button_mask: Gdk.ModifierType, targets: Gtk.TargetEntry[] | null, actions: Gdk.DragAction): void
-    drag_source_set_icon_gicon(icon: Gio.Icon): void
-    drag_source_set_icon_name(icon_name: string): void
-    drag_source_set_icon_pixbuf(pixbuf: GdkPixbuf.Pixbuf): void
-    drag_source_set_icon_stock(stock_id: string): void
-    drag_source_set_target_list(target_list?: Gtk.TargetList | null): void
-    drag_source_unset(): void
-    drag_unhighlight(): void
-    draw(cr: cairo.Context): void
-    ensure_style(): void
-    error_bell(): void
-    event(event: Gdk.Event): boolean
-    freeze_child_notify(): void
-    get_accessible(): Atk.Object
-    get_action_group(prefix: string): Gio.ActionGroup | null
-    get_allocated_baseline(): number
-    get_allocated_height(): number
-    get_allocated_size(): [ /* allocation */ Gtk.Allocation, /* baseline */ number | null ]
-    get_allocated_width(): number
-    get_allocation(): /* allocation */ Gtk.Allocation
-    get_ancestor(widget_type: GObject.Type): Gtk.Widget | null
-    get_app_paintable(): boolean
-    get_can_default(): boolean
-    get_can_focus(): boolean
-    get_child_requisition(): /* requisition */ Gtk.Requisition
-    get_child_visible(): boolean
-    get_clip(): /* clip */ Gtk.Allocation
-    get_clipboard(selection: Gdk.Atom): Gtk.Clipboard
-    get_composite_name(): string
-    get_device_enabled(device: Gdk.Device): boolean
-    get_device_events(device: Gdk.Device): Gdk.EventMask
-    get_direction(): Gtk.TextDirection
-    get_display(): Gdk.Display
-    get_double_buffered(): boolean
-    get_events(): number
-    get_focus_on_click(): boolean
-    get_font_map(): Pango.FontMap | null
-    get_font_options(): cairo.FontOptions | null
-    get_frame_clock(): Gdk.FrameClock | null
-    get_halign(): Gtk.Align
-    get_has_tooltip(): boolean
-    get_has_window(): boolean
-    get_hexpand(): boolean
-    get_hexpand_set(): boolean
-    get_mapped(): boolean
-    get_margin_bottom(): number
-    get_margin_end(): number
-    get_margin_left(): number
-    get_margin_right(): number
-    get_margin_start(): number
-    get_margin_top(): number
-    get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType
-    get_modifier_style(): Gtk.RcStyle
-    get_name(): string
-    get_no_show_all(): boolean
-    get_pango_context(): Pango.Context
-    get_parent(): Gtk.Widget | null
-    get_parent_window(): Gdk.Window | null
-    get_path(): Gtk.WidgetPath
-    get_pointer(): [ /* x */ number | null, /* y */ number | null ]
-    get_preferred_height(): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
-    get_preferred_height_and_baseline_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null, /* minimum_baseline */ number | null, /* natural_baseline */ number | null ]
-    get_preferred_height_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
-    get_preferred_size(): [ /* minimum_size */ Gtk.Requisition | null, /* natural_size */ Gtk.Requisition | null ]
-    get_preferred_width(): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
-    get_preferred_width_for_height(height: number): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
-    get_realized(): boolean
-    get_receives_default(): boolean
-    get_request_mode(): Gtk.SizeRequestMode
-    get_requisition(): /* requisition */ Gtk.Requisition
-    get_root_window(): Gdk.Window
-    get_scale_factor(): number
-    get_sensitive(): boolean
-    get_settings(): Gtk.Settings
-    get_size_request(): [ /* width */ number | null, /* height */ number | null ]
-    get_state(): Gtk.StateType
-    get_state_flags(): Gtk.StateFlags
-    get_style(): Gtk.Style
-    get_style_context(): Gtk.StyleContext
-    get_support_multidevice(): boolean
-    get_template_child(widget_type: GObject.Type, name: string): GObject.Object
-    get_tooltip_markup(): string | null
-    get_tooltip_text(): string | null
-    get_tooltip_window(): Gtk.Window
-    get_toplevel(): Gtk.Widget
-    get_valign(): Gtk.Align
-    get_valign_with_baseline(): Gtk.Align
-    get_vexpand(): boolean
-    get_vexpand_set(): boolean
-    get_visible(): boolean
-    get_visual(): Gdk.Visual
-    get_window(): Gdk.Window | null
-    grab_add(): void
-    grab_default(): void
-    grab_focus(): void
-    grab_remove(): void
-    has_grab(): boolean
-    has_rc_style(): boolean
-    has_screen(): boolean
-    has_visible_focus(): boolean
-    hide(): void
-    hide_on_delete(): boolean
-    in_destruction(): boolean
-    init_template(): void
-    input_shape_combine_region(region?: cairo.Region | null): void
-    insert_action_group(name: string, group?: Gio.ActionGroup | null): void
-    intersect(area: Gdk.Rectangle): [ /* returnType */ boolean, /* intersection */ Gdk.Rectangle | null ]
-    is_ancestor(ancestor: Gtk.Widget): boolean
-    is_composited(): boolean
-    is_drawable(): boolean
-    is_sensitive(): boolean
-    is_toplevel(): boolean
-    is_visible(): boolean
-    keynav_failed(direction: Gtk.DirectionType): boolean
-    list_accel_closures(): Function[]
-    list_action_prefixes(): string[]
-    list_mnemonic_labels(): Gtk.Widget[]
-    map(): void
-    mnemonic_activate(group_cycling: boolean): boolean
-    modify_base(state: Gtk.StateType, color?: Gdk.Color | null): void
-    modify_bg(state: Gtk.StateType, color?: Gdk.Color | null): void
-    modify_cursor(primary?: Gdk.Color | null, secondary?: Gdk.Color | null): void
-    modify_fg(state: Gtk.StateType, color?: Gdk.Color | null): void
-    modify_font(font_desc?: Pango.FontDescription | null): void
-    modify_style(style: Gtk.RcStyle): void
-    modify_text(state: Gtk.StateType, color?: Gdk.Color | null): void
-    override_background_color(state: Gtk.StateFlags, color?: Gdk.RGBA | null): void
-    override_color(state: Gtk.StateFlags, color?: Gdk.RGBA | null): void
-    override_cursor(cursor?: Gdk.RGBA | null, secondary_cursor?: Gdk.RGBA | null): void
-    override_font(font_desc?: Pango.FontDescription | null): void
-    override_symbolic_color(name: string, color?: Gdk.RGBA | null): void
-    path(): [ /* path_length */ number | null, /* path */ string | null, /* path_reversed */ string | null ]
-    queue_allocate(): void
-    queue_compute_expand(): void
-    queue_draw(): void
-    queue_draw_area(x: number, y: number, width: number, height: number): void
-    queue_draw_region(region: cairo.Region): void
-    queue_resize(): void
-    queue_resize_no_redraw(): void
-    realize(): void
-    region_intersect(region: cairo.Region): cairo.Region
-    register_window(window: Gdk.Window): void
-    remove_accelerator(accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean
-    remove_mnemonic_label(label: Gtk.Widget): void
-    remove_tick_callback(id: number): void
-    render_icon(stock_id: string, size: number, detail?: string | null): GdkPixbuf.Pixbuf | null
-    render_icon_pixbuf(stock_id: string, size: number): GdkPixbuf.Pixbuf | null
-    reparent(new_parent: Gtk.Widget): void
-    reset_rc_styles(): void
-    reset_style(): void
-    send_expose(event: Gdk.Event): number
-    send_focus_change(event: Gdk.Event): boolean
-    set_accel_path(accel_path?: string | null, accel_group?: Gtk.AccelGroup | null): void
-    set_allocation(allocation: Gtk.Allocation): void
-    set_app_paintable(app_paintable: boolean): void
-    set_can_default(can_default: boolean): void
-    set_can_focus(can_focus: boolean): void
-    set_child_visible(is_visible: boolean): void
-    set_clip(clip: Gtk.Allocation): void
-    set_composite_name(name: string): void
-    set_device_enabled(device: Gdk.Device, enabled: boolean): void
-    set_device_events(device: Gdk.Device, events: Gdk.EventMask): void
-    set_direction(dir: Gtk.TextDirection): void
-    set_double_buffered(double_buffered: boolean): void
-    set_events(events: number): void
-    set_focus_on_click(focus_on_click: boolean): void
-    set_font_map(font_map?: Pango.FontMap | null): void
-    set_font_options(options?: cairo.FontOptions | null): void
-    set_halign(align: Gtk.Align): void
-    set_has_tooltip(has_tooltip: boolean): void
-    set_has_window(has_window: boolean): void
-    set_hexpand(expand: boolean): void
-    set_hexpand_set(set: boolean): void
-    set_mapped(mapped: boolean): void
-    set_margin_bottom(margin: number): void
-    set_margin_end(margin: number): void
-    set_margin_left(margin: number): void
-    set_margin_right(margin: number): void
-    set_margin_start(margin: number): void
-    set_margin_top(margin: number): void
-    set_name(name: string): void
-    set_no_show_all(no_show_all: boolean): void
-    set_parent(parent: Gtk.Widget): void
-    set_parent_window(parent_window: Gdk.Window): void
-    set_realized(realized: boolean): void
-    set_receives_default(receives_default: boolean): void
-    set_redraw_on_allocate(redraw_on_allocate: boolean): void
-    set_sensitive(sensitive: boolean): void
-    set_size_request(width: number, height: number): void
-    set_state(state: Gtk.StateType): void
-    set_state_flags(flags: Gtk.StateFlags, clear: boolean): void
-    set_style(style?: Gtk.Style | null): void
-    set_support_multidevice(support_multidevice: boolean): void
-    set_tooltip_markup(markup?: string | null): void
-    set_tooltip_text(text?: string | null): void
-    set_tooltip_window(custom_window?: Gtk.Window | null): void
-    set_valign(align: Gtk.Align): void
-    set_vexpand(expand: boolean): void
-    set_vexpand_set(set: boolean): void
-    set_visible(visible: boolean): void
-    set_visual(visual?: Gdk.Visual | null): void
-    set_window(window: Gdk.Window): void
-    shape_combine_region(region?: cairo.Region | null): void
-    show(): void
-    show_all(): void
-    show_now(): void
-    size_allocate(allocation: Gtk.Allocation): void
-    size_allocate_with_baseline(allocation: Gtk.Allocation, baseline: number): void
-    size_request(): /* requisition */ Gtk.Requisition
-    style_attach(): void
-    style_get_property(property_name: string, value: any): void
-    thaw_child_notify(): void
-    translate_coordinates(dest_widget: Gtk.Widget, src_x: number, src_y: number): [ /* returnType */ boolean, /* dest_x */ number | null, /* dest_y */ number | null ]
-    trigger_tooltip_query(): void
-    unmap(): void
-    unparent(): void
-    unrealize(): void
-    unregister_window(window: Gdk.Window): void
-    unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
-    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
-    force_floating(): void
-    freeze_notify(): void
-    get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
-    get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
-    is_floating(): boolean
-    notify(property_name: string): void
-    notify_by_pspec(pspec: GObject.ParamSpec): void
-    ref(): GObject.Object
-    ref_sink(): GObject.Object
-    run_dispose(): void
-    set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
-    steal_data(key: string): object | null
-    steal_qdata(quark: GLib.Quark): object | null
-    thaw_notify(): void
-    unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Dialog */
-    vfunc_close(): void
-    vfunc_response(response_id: number): void
-    /* Virtual methods of Gtk.Window */
-    vfunc_activate_default(): void
-    vfunc_activate_focus(): void
-    vfunc_enable_debugging(toggle: boolean): boolean
-    vfunc_keys_changed(): void
-    vfunc_set_focus(focus?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Container */
-    vfunc_add(widget: Gtk.Widget): void
-    vfunc_check_resize(): void
-    vfunc_child_type(): GObject.Type
-    vfunc_composite_name(child: Gtk.Widget): string
-    vfunc_forall(include_internals: boolean, callback: Gtk.Callback): void
-    vfunc_get_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
-    vfunc_get_path_for_child(child: Gtk.Widget): Gtk.WidgetPath
-    vfunc_remove(widget: Gtk.Widget): void
-    vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
-    vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
-    vfunc_adjust_baseline_allocation(baseline: number): void
-    vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
-    vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
-    vfunc_adjust_size_request(orientation: Gtk.Orientation, minimum_size: number, natural_size: number): void
-    vfunc_button_press_event(event: Gdk.EventButton): boolean
-    vfunc_button_release_event(event: Gdk.EventButton): boolean
-    vfunc_can_activate_accel(signal_id: number): boolean
-    vfunc_child_notify(child_property: GObject.ParamSpec): void
-    vfunc_composited_changed(): void
-    vfunc_compute_expand(hexpand_p: boolean, vexpand_p: boolean): void
-    vfunc_configure_event(event: Gdk.EventConfigure): boolean
-    vfunc_damage_event(event: Gdk.EventExpose): boolean
-    vfunc_delete_event(event: Gdk.EventAny): boolean
-    vfunc_destroy(): void
-    vfunc_destroy_event(event: Gdk.EventAny): boolean
-    vfunc_direction_changed(previous_direction: Gtk.TextDirection): void
-    vfunc_dispatch_child_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
-    vfunc_drag_begin(context: Gdk.DragContext): void
-    vfunc_drag_data_delete(context: Gdk.DragContext): void
-    vfunc_drag_data_get(context: Gdk.DragContext, selection_data: Gtk.SelectionData, info: number, time_: number): void
-    vfunc_drag_data_received(context: Gdk.DragContext, x: number, y: number, selection_data: Gtk.SelectionData, info: number, time_: number): void
-    vfunc_drag_drop(context: Gdk.DragContext, x: number, y: number, time_: number): boolean
-    vfunc_drag_end(context: Gdk.DragContext): void
-    vfunc_drag_failed(context: Gdk.DragContext, result: Gtk.DragResult): boolean
-    vfunc_drag_leave(context: Gdk.DragContext, time_: number): void
-    vfunc_drag_motion(context: Gdk.DragContext, x: number, y: number, time_: number): boolean
-    vfunc_draw(cr: cairo.Context): boolean
-    vfunc_enter_notify_event(event: Gdk.EventCrossing): boolean
-    vfunc_event(event: Gdk.Event): boolean
-    vfunc_focus(direction: Gtk.DirectionType): boolean
-    vfunc_focus_in_event(event: Gdk.EventFocus): boolean
-    vfunc_focus_out_event(event: Gdk.EventFocus): boolean
-    vfunc_get_accessible(): Atk.Object
-    vfunc_get_preferred_height(): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
-    vfunc_get_preferred_height_and_baseline_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null, /* minimum_baseline */ number | null, /* natural_baseline */ number | null ]
-    vfunc_get_preferred_height_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
-    vfunc_get_preferred_width(): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
-    vfunc_get_preferred_width_for_height(height: number): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
-    vfunc_get_request_mode(): Gtk.SizeRequestMode
-    vfunc_grab_broken_event(event: Gdk.EventGrabBroken): boolean
-    vfunc_grab_focus(): void
-    vfunc_grab_notify(was_grabbed: boolean): void
-    vfunc_hide(): void
-    vfunc_hierarchy_changed(previous_toplevel: Gtk.Widget): void
-    vfunc_key_press_event(event: Gdk.EventKey): boolean
-    vfunc_key_release_event(event: Gdk.EventKey): boolean
-    vfunc_keynav_failed(direction: Gtk.DirectionType): boolean
-    vfunc_leave_notify_event(event: Gdk.EventCrossing): boolean
-    vfunc_map(): void
-    vfunc_map_event(event: Gdk.EventAny): boolean
-    vfunc_mnemonic_activate(group_cycling: boolean): boolean
-    vfunc_motion_notify_event(event: Gdk.EventMotion): boolean
-    vfunc_move_focus(direction: Gtk.DirectionType): void
-    vfunc_parent_set(previous_parent: Gtk.Widget): void
-    vfunc_popup_menu(): boolean
-    vfunc_property_notify_event(event: Gdk.EventProperty): boolean
-    vfunc_proximity_in_event(event: Gdk.EventProximity): boolean
-    vfunc_proximity_out_event(event: Gdk.EventProximity): boolean
-    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
-    vfunc_queue_draw_region(region: cairo.Region): void
-    vfunc_realize(): void
-    vfunc_screen_changed(previous_screen: Gdk.Screen): void
-    vfunc_scroll_event(event: Gdk.EventScroll): boolean
-    vfunc_selection_clear_event(event: Gdk.EventSelection): boolean
-    vfunc_selection_get(selection_data: Gtk.SelectionData, info: number, time_: number): void
-    vfunc_selection_notify_event(event: Gdk.EventSelection): boolean
-    vfunc_selection_received(selection_data: Gtk.SelectionData, time_: number): void
-    vfunc_selection_request_event(event: Gdk.EventSelection): boolean
-    vfunc_show(): void
-    vfunc_show_all(): void
-    vfunc_show_help(help_type: Gtk.WidgetHelpType): boolean
-    vfunc_size_allocate(allocation: Gtk.Allocation): void
-    vfunc_state_changed(previous_state: Gtk.StateType): void
-    vfunc_state_flags_changed(previous_state_flags: Gtk.StateFlags): void
-    vfunc_style_set(previous_style: Gtk.Style): void
-    vfunc_style_updated(): void
-    vfunc_touch_event(event: Gdk.EventTouch): boolean
-    vfunc_unmap(): void
-    vfunc_unmap_event(event: Gdk.EventAny): boolean
-    vfunc_unrealize(): void
-    vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
-    vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
-    vfunc_constructed(): void
-    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
-    vfunc_dispose(): void
-    vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.GtkPatchAboutDialog */
-    connect(sigName: "activate-link", callback: (($obj: GtkPatchAboutDialog, uri: string) => boolean)): number
-    connect_after(sigName: "activate-link", callback: (($obj: GtkPatchAboutDialog, uri: string) => boolean)): number
-    emit(sigName: "activate-link", uri: string): void
-    /* Signals of Gtk.Dialog */
-    connect(sigName: "close", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "close", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "close"): void
-    connect(sigName: "response", callback: (($obj: GtkPatchAboutDialog, response_id: number) => void)): number
-    connect_after(sigName: "response", callback: (($obj: GtkPatchAboutDialog, response_id: number) => void)): number
-    emit(sigName: "response", response_id: number): void
-    /* Signals of Gtk.Window */
-    connect(sigName: "activate-default", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "activate-default", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "activate-default"): void
-    connect(sigName: "activate-focus", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "activate-focus", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "activate-focus"): void
-    connect(sigName: "enable-debugging", callback: (($obj: GtkPatchAboutDialog, toggle: boolean) => boolean)): number
-    connect_after(sigName: "enable-debugging", callback: (($obj: GtkPatchAboutDialog, toggle: boolean) => boolean)): number
-    emit(sigName: "enable-debugging", toggle: boolean): void
-    connect(sigName: "keys-changed", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "keys-changed", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "keys-changed"): void
-    connect(sigName: "set-focus", callback: (($obj: GtkPatchAboutDialog, widget?: Gtk.Widget | null) => void)): number
-    connect_after(sigName: "set-focus", callback: (($obj: GtkPatchAboutDialog, widget?: Gtk.Widget | null) => void)): number
-    emit(sigName: "set-focus", widget?: Gtk.Widget | null): void
-    /* Signals of Gtk.Container */
-    connect(sigName: "add", callback: (($obj: GtkPatchAboutDialog, object: Gtk.Widget) => void)): number
-    connect_after(sigName: "add", callback: (($obj: GtkPatchAboutDialog, object: Gtk.Widget) => void)): number
-    emit(sigName: "add", object: Gtk.Widget): void
-    connect(sigName: "check-resize", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "check-resize", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "check-resize"): void
-    connect(sigName: "remove", callback: (($obj: GtkPatchAboutDialog, object: Gtk.Widget) => void)): number
-    connect_after(sigName: "remove", callback: (($obj: GtkPatchAboutDialog, object: Gtk.Widget) => void)): number
-    emit(sigName: "remove", object: Gtk.Widget): void
-    connect(sigName: "set-focus-child", callback: (($obj: GtkPatchAboutDialog, object: Gtk.Widget) => void)): number
-    connect_after(sigName: "set-focus-child", callback: (($obj: GtkPatchAboutDialog, object: Gtk.Widget) => void)): number
-    emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
-    connect(sigName: "accel-closures-changed", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "accel-closures-changed", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "accel-closures-changed"): void
-    connect(sigName: "button-press-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventButton) => boolean)): number
-    connect_after(sigName: "button-press-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventButton) => boolean)): number
-    emit(sigName: "button-press-event", event: Gdk.EventButton): void
-    connect(sigName: "button-release-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventButton) => boolean)): number
-    connect_after(sigName: "button-release-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventButton) => boolean)): number
-    emit(sigName: "button-release-event", event: Gdk.EventButton): void
-    connect(sigName: "can-activate-accel", callback: (($obj: GtkPatchAboutDialog, signal_id: number) => boolean)): number
-    connect_after(sigName: "can-activate-accel", callback: (($obj: GtkPatchAboutDialog, signal_id: number) => boolean)): number
-    emit(sigName: "can-activate-accel", signal_id: number): void
-    connect(sigName: "child-notify", callback: (($obj: GtkPatchAboutDialog, child_property: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "child-notify", callback: (($obj: GtkPatchAboutDialog, child_property: GObject.ParamSpec) => void)): number
-    emit(sigName: "child-notify", child_property: GObject.ParamSpec): void
-    connect(sigName: "composited-changed", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "composited-changed", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "composited-changed"): void
-    connect(sigName: "configure-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventConfigure) => boolean)): number
-    connect_after(sigName: "configure-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventConfigure) => boolean)): number
-    emit(sigName: "configure-event", event: Gdk.EventConfigure): void
-    connect(sigName: "damage-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventExpose) => boolean)): number
-    connect_after(sigName: "damage-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventExpose) => boolean)): number
-    emit(sigName: "damage-event", event: Gdk.EventExpose): void
-    connect(sigName: "delete-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.Event) => boolean)): number
-    connect_after(sigName: "delete-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.Event) => boolean)): number
-    emit(sigName: "delete-event", event: Gdk.Event): void
-    connect(sigName: "destroy", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "destroy", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "destroy"): void
-    connect(sigName: "destroy-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.Event) => boolean)): number
-    connect_after(sigName: "destroy-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.Event) => boolean)): number
-    emit(sigName: "destroy-event", event: Gdk.Event): void
-    connect(sigName: "direction-changed", callback: (($obj: GtkPatchAboutDialog, previous_direction: Gtk.TextDirection) => void)): number
-    connect_after(sigName: "direction-changed", callback: (($obj: GtkPatchAboutDialog, previous_direction: Gtk.TextDirection) => void)): number
-    emit(sigName: "direction-changed", previous_direction: Gtk.TextDirection): void
-    connect(sigName: "drag-begin", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext) => void)): number
-    connect_after(sigName: "drag-begin", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext) => void)): number
-    emit(sigName: "drag-begin", context: Gdk.DragContext): void
-    connect(sigName: "drag-data-delete", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext) => void)): number
-    connect_after(sigName: "drag-data-delete", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext) => void)): number
-    emit(sigName: "drag-data-delete", context: Gdk.DragContext): void
-    connect(sigName: "drag-data-get", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    connect_after(sigName: "drag-data-get", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    emit(sigName: "drag-data-get", context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number): void
-    connect(sigName: "drag-data-received", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    connect_after(sigName: "drag-data-received", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    emit(sigName: "drag-data-received", context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number): void
-    connect(sigName: "drag-drop", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
-    connect_after(sigName: "drag-drop", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
-    emit(sigName: "drag-drop", context: Gdk.DragContext, x: number, y: number, time: number): void
-    connect(sigName: "drag-end", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext) => void)): number
-    connect_after(sigName: "drag-end", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext) => void)): number
-    emit(sigName: "drag-end", context: Gdk.DragContext): void
-    connect(sigName: "drag-failed", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext, result: Gtk.DragResult) => boolean)): number
-    connect_after(sigName: "drag-failed", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext, result: Gtk.DragResult) => boolean)): number
-    emit(sigName: "drag-failed", context: Gdk.DragContext, result: Gtk.DragResult): void
-    connect(sigName: "drag-leave", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext, time: number) => void)): number
-    connect_after(sigName: "drag-leave", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext, time: number) => void)): number
-    emit(sigName: "drag-leave", context: Gdk.DragContext, time: number): void
-    connect(sigName: "drag-motion", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
-    connect_after(sigName: "drag-motion", callback: (($obj: GtkPatchAboutDialog, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
-    emit(sigName: "drag-motion", context: Gdk.DragContext, x: number, y: number, time: number): void
-    connect(sigName: "draw", callback: (($obj: GtkPatchAboutDialog, cr: cairo.Context) => boolean)): number
-    connect_after(sigName: "draw", callback: (($obj: GtkPatchAboutDialog, cr: cairo.Context) => boolean)): number
-    emit(sigName: "draw", cr: cairo.Context): void
-    connect(sigName: "enter-notify-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventCrossing) => boolean)): number
-    connect_after(sigName: "enter-notify-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventCrossing) => boolean)): number
-    emit(sigName: "enter-notify-event", event: Gdk.EventCrossing): void
-    connect(sigName: "event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.Event) => boolean)): number
-    connect_after(sigName: "event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.Event) => boolean)): number
-    emit(sigName: "event", event: Gdk.Event): void
-    connect(sigName: "event-after", callback: (($obj: GtkPatchAboutDialog, event: Gdk.Event) => void)): number
-    connect_after(sigName: "event-after", callback: (($obj: GtkPatchAboutDialog, event: Gdk.Event) => void)): number
-    emit(sigName: "event-after", event: Gdk.Event): void
-    connect(sigName: "focus", callback: (($obj: GtkPatchAboutDialog, direction: Gtk.DirectionType) => boolean)): number
-    connect_after(sigName: "focus", callback: (($obj: GtkPatchAboutDialog, direction: Gtk.DirectionType) => boolean)): number
-    emit(sigName: "focus", direction: Gtk.DirectionType): void
-    connect(sigName: "focus-in-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventFocus) => boolean)): number
-    connect_after(sigName: "focus-in-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventFocus) => boolean)): number
-    emit(sigName: "focus-in-event", event: Gdk.EventFocus): void
-    connect(sigName: "focus-out-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventFocus) => boolean)): number
-    connect_after(sigName: "focus-out-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventFocus) => boolean)): number
-    emit(sigName: "focus-out-event", event: Gdk.EventFocus): void
-    connect(sigName: "grab-broken-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventGrabBroken) => boolean)): number
-    connect_after(sigName: "grab-broken-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventGrabBroken) => boolean)): number
-    emit(sigName: "grab-broken-event", event: Gdk.EventGrabBroken): void
-    connect(sigName: "grab-focus", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "grab-focus", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "grab-focus"): void
-    connect(sigName: "grab-notify", callback: (($obj: GtkPatchAboutDialog, was_grabbed: boolean) => void)): number
-    connect_after(sigName: "grab-notify", callback: (($obj: GtkPatchAboutDialog, was_grabbed: boolean) => void)): number
-    emit(sigName: "grab-notify", was_grabbed: boolean): void
-    connect(sigName: "hide", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "hide", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "hide"): void
-    connect(sigName: "hierarchy-changed", callback: (($obj: GtkPatchAboutDialog, previous_toplevel?: Gtk.Widget | null) => void)): number
-    connect_after(sigName: "hierarchy-changed", callback: (($obj: GtkPatchAboutDialog, previous_toplevel?: Gtk.Widget | null) => void)): number
-    emit(sigName: "hierarchy-changed", previous_toplevel?: Gtk.Widget | null): void
-    connect(sigName: "key-press-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventKey) => boolean)): number
-    connect_after(sigName: "key-press-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventKey) => boolean)): number
-    emit(sigName: "key-press-event", event: Gdk.EventKey): void
-    connect(sigName: "key-release-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventKey) => boolean)): number
-    connect_after(sigName: "key-release-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventKey) => boolean)): number
-    emit(sigName: "key-release-event", event: Gdk.EventKey): void
-    connect(sigName: "keynav-failed", callback: (($obj: GtkPatchAboutDialog, direction: Gtk.DirectionType) => boolean)): number
-    connect_after(sigName: "keynav-failed", callback: (($obj: GtkPatchAboutDialog, direction: Gtk.DirectionType) => boolean)): number
-    emit(sigName: "keynav-failed", direction: Gtk.DirectionType): void
-    connect(sigName: "leave-notify-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventCrossing) => boolean)): number
-    connect_after(sigName: "leave-notify-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventCrossing) => boolean)): number
-    emit(sigName: "leave-notify-event", event: Gdk.EventCrossing): void
-    connect(sigName: "map", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "map", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "map"): void
-    connect(sigName: "map-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventAny) => boolean)): number
-    connect_after(sigName: "map-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventAny) => boolean)): number
-    emit(sigName: "map-event", event: Gdk.EventAny): void
-    connect(sigName: "mnemonic-activate", callback: (($obj: GtkPatchAboutDialog, group_cycling: boolean) => boolean)): number
-    connect_after(sigName: "mnemonic-activate", callback: (($obj: GtkPatchAboutDialog, group_cycling: boolean) => boolean)): number
-    emit(sigName: "mnemonic-activate", group_cycling: boolean): void
-    connect(sigName: "motion-notify-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventMotion) => boolean)): number
-    connect_after(sigName: "motion-notify-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventMotion) => boolean)): number
-    emit(sigName: "motion-notify-event", event: Gdk.EventMotion): void
-    connect(sigName: "move-focus", callback: (($obj: GtkPatchAboutDialog, direction: Gtk.DirectionType) => void)): number
-    connect_after(sigName: "move-focus", callback: (($obj: GtkPatchAboutDialog, direction: Gtk.DirectionType) => void)): number
-    emit(sigName: "move-focus", direction: Gtk.DirectionType): void
-    connect(sigName: "parent-set", callback: (($obj: GtkPatchAboutDialog, old_parent?: Gtk.Widget | null) => void)): number
-    connect_after(sigName: "parent-set", callback: (($obj: GtkPatchAboutDialog, old_parent?: Gtk.Widget | null) => void)): number
-    emit(sigName: "parent-set", old_parent?: Gtk.Widget | null): void
-    connect(sigName: "popup-menu", callback: (($obj: GtkPatchAboutDialog) => boolean)): number
-    connect_after(sigName: "popup-menu", callback: (($obj: GtkPatchAboutDialog) => boolean)): number
-    emit(sigName: "popup-menu"): void
-    connect(sigName: "property-notify-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventProperty) => boolean)): number
-    connect_after(sigName: "property-notify-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventProperty) => boolean)): number
-    emit(sigName: "property-notify-event", event: Gdk.EventProperty): void
-    connect(sigName: "proximity-in-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventProximity) => boolean)): number
-    connect_after(sigName: "proximity-in-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventProximity) => boolean)): number
-    emit(sigName: "proximity-in-event", event: Gdk.EventProximity): void
-    connect(sigName: "proximity-out-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventProximity) => boolean)): number
-    connect_after(sigName: "proximity-out-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventProximity) => boolean)): number
-    emit(sigName: "proximity-out-event", event: Gdk.EventProximity): void
-    connect(sigName: "query-tooltip", callback: (($obj: GtkPatchAboutDialog, x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip) => boolean)): number
-    connect_after(sigName: "query-tooltip", callback: (($obj: GtkPatchAboutDialog, x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip) => boolean)): number
-    emit(sigName: "query-tooltip", x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip): void
-    connect(sigName: "realize", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "realize", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "realize"): void
-    connect(sigName: "screen-changed", callback: (($obj: GtkPatchAboutDialog, previous_screen?: Gdk.Screen | null) => void)): number
-    connect_after(sigName: "screen-changed", callback: (($obj: GtkPatchAboutDialog, previous_screen?: Gdk.Screen | null) => void)): number
-    emit(sigName: "screen-changed", previous_screen?: Gdk.Screen | null): void
-    connect(sigName: "scroll-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventScroll) => boolean)): number
-    connect_after(sigName: "scroll-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventScroll) => boolean)): number
-    emit(sigName: "scroll-event", event: Gdk.EventScroll): void
-    connect(sigName: "selection-clear-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventSelection) => boolean)): number
-    connect_after(sigName: "selection-clear-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventSelection) => boolean)): number
-    emit(sigName: "selection-clear-event", event: Gdk.EventSelection): void
-    connect(sigName: "selection-get", callback: (($obj: GtkPatchAboutDialog, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    connect_after(sigName: "selection-get", callback: (($obj: GtkPatchAboutDialog, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    emit(sigName: "selection-get", data: Gtk.SelectionData, info: number, time: number): void
-    connect(sigName: "selection-notify-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventSelection) => boolean)): number
-    connect_after(sigName: "selection-notify-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventSelection) => boolean)): number
-    emit(sigName: "selection-notify-event", event: Gdk.EventSelection): void
-    connect(sigName: "selection-received", callback: (($obj: GtkPatchAboutDialog, data: Gtk.SelectionData, time: number) => void)): number
-    connect_after(sigName: "selection-received", callback: (($obj: GtkPatchAboutDialog, data: Gtk.SelectionData, time: number) => void)): number
-    emit(sigName: "selection-received", data: Gtk.SelectionData, time: number): void
-    connect(sigName: "selection-request-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventSelection) => boolean)): number
-    connect_after(sigName: "selection-request-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventSelection) => boolean)): number
-    emit(sigName: "selection-request-event", event: Gdk.EventSelection): void
-    connect(sigName: "show", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "show", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "show"): void
-    connect(sigName: "show-help", callback: (($obj: GtkPatchAboutDialog, help_type: Gtk.WidgetHelpType) => boolean)): number
-    connect_after(sigName: "show-help", callback: (($obj: GtkPatchAboutDialog, help_type: Gtk.WidgetHelpType) => boolean)): number
-    emit(sigName: "show-help", help_type: Gtk.WidgetHelpType): void
-    connect(sigName: "size-allocate", callback: (($obj: GtkPatchAboutDialog, allocation: Gtk.Allocation) => void)): number
-    connect_after(sigName: "size-allocate", callback: (($obj: GtkPatchAboutDialog, allocation: Gtk.Allocation) => void)): number
-    emit(sigName: "size-allocate", allocation: Gtk.Allocation): void
-    connect(sigName: "state-changed", callback: (($obj: GtkPatchAboutDialog, state: Gtk.StateType) => void)): number
-    connect_after(sigName: "state-changed", callback: (($obj: GtkPatchAboutDialog, state: Gtk.StateType) => void)): number
-    emit(sigName: "state-changed", state: Gtk.StateType): void
-    connect(sigName: "state-flags-changed", callback: (($obj: GtkPatchAboutDialog, flags: Gtk.StateFlags) => void)): number
-    connect_after(sigName: "state-flags-changed", callback: (($obj: GtkPatchAboutDialog, flags: Gtk.StateFlags) => void)): number
-    emit(sigName: "state-flags-changed", flags: Gtk.StateFlags): void
-    connect(sigName: "style-set", callback: (($obj: GtkPatchAboutDialog, previous_style?: Gtk.Style | null) => void)): number
-    connect_after(sigName: "style-set", callback: (($obj: GtkPatchAboutDialog, previous_style?: Gtk.Style | null) => void)): number
-    emit(sigName: "style-set", previous_style?: Gtk.Style | null): void
-    connect(sigName: "style-updated", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "style-updated", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "style-updated"): void
-    connect(sigName: "touch-event", callback: (($obj: GtkPatchAboutDialog, object: Gdk.Event) => boolean)): number
-    connect_after(sigName: "touch-event", callback: (($obj: GtkPatchAboutDialog, object: Gdk.Event) => boolean)): number
-    emit(sigName: "touch-event", object: Gdk.Event): void
-    connect(sigName: "unmap", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "unmap", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "unmap"): void
-    connect(sigName: "unmap-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventAny) => boolean)): number
-    connect_after(sigName: "unmap-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventAny) => boolean)): number
-    emit(sigName: "unmap-event", event: Gdk.EventAny): void
-    connect(sigName: "unrealize", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    connect_after(sigName: "unrealize", callback: (($obj: GtkPatchAboutDialog) => void)): number
-    emit(sigName: "unrealize"): void
-    connect(sigName: "visibility-notify-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventVisibility) => boolean)): number
-    connect_after(sigName: "visibility-notify-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventVisibility) => boolean)): number
-    emit(sigName: "visibility-notify-event", event: Gdk.EventVisibility): void
-    connect(sigName: "window-state-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventWindowState) => boolean)): number
-    connect_after(sigName: "window-state-event", callback: (($obj: GtkPatchAboutDialog, event: Gdk.EventWindowState) => boolean)): number
-    emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
-    connect(sigName: "notify", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::artists", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::artists", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::authors", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::authors", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::comments", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::comments", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::copyright", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::copyright", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::documenters", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::documenters", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::license", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::license", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::license-type", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::license-type", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::logo", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::logo", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::logo-icon-name", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::logo-icon-name", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::program-name", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::program-name", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::translator-credits", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::translator-credits", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::version", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::version", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::website", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::website", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::website-label", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::website-label", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accept-focus", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accept-focus", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::application", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::application", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::attached-to", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::attached-to", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::decorated", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::decorated", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::default-height", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::default-height", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::default-width", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::default-width", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::deletable", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::deletable", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::destroy-with-parent", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::destroy-with-parent", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::focus-on-map", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::focus-on-map", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::focus-visible", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::focus-visible", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::gravity", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::gravity", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::has-resize-grip", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::has-resize-grip", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::has-toplevel-focus", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::has-toplevel-focus", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::hide-titlebar-when-maximized", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::hide-titlebar-when-maximized", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::icon", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::icon", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::icon-name", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::icon-name", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-active", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-active", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-maximized", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-maximized", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::mnemonics-visible", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::mnemonics-visible", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::modal", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::modal", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::resizable", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::resizable", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::resize-grip-visible", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::resize-grip-visible", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::role", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::role", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::screen", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::screen", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::skip-pager-hint", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::skip-pager-hint", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::skip-taskbar-hint", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::skip-taskbar-hint", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::startup-id", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::startup-id", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::title", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::title", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::transient-for", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::transient-for", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::type-hint", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::type-hint", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::urgency-hint", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::urgency-hint", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window-position", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window-position", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::border-width", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::border-width", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::child", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::child", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::resize-mode", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::resize-mode", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::app-paintable", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::app-paintable", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::can-default", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::can-default", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::can-focus", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::can-focus", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::composite-child", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::composite-child", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::double-buffered", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::double-buffered", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::events", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::events", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::expand", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::expand", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::focus-on-click", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::focus-on-click", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::halign", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::halign", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::has-default", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::has-default", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::has-focus", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::has-focus", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::has-tooltip", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::has-tooltip", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::height-request", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::height-request", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::hexpand", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::hexpand", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::hexpand-set", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::hexpand-set", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-focus", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-focus", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-bottom", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-bottom", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-end", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-end", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-left", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-left", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-right", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-right", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-start", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-start", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-top", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-top", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::no-show-all", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::no-show-all", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::opacity", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::opacity", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::receives-default", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::receives-default", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::scale-factor", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::scale-factor", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::sensitive", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::sensitive", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::style", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::style", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::tooltip-markup", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::tooltip-markup", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::tooltip-text", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::tooltip-text", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::valign", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::valign", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::vexpand", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::vexpand", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::vexpand-set", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::vexpand-set", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::visible", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::visible", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::width-request", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::width-request", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: GtkPatchAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: string, callback: any): number
-    connect_after(sigName: string, callback: any): number
-    emit(sigName: string, ...args: any[]): void
-    disconnect(id: number): void
-    static name: string
-    constructor (config?: GtkPatchAboutDialog_ConstructProps)
-    _init (config?: GtkPatchAboutDialog_ConstructProps): void
-    /* Static methods and pseudo-constructors */
-    static new(): GtkPatchAboutDialog
-    static new(type: Gtk.WindowType): GtkPatchAboutDialog
-    static $gtype: GObject.Type
-}
 export interface ServicesContractorProxy_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ServicesContractorProxy {
-    /* Fields of GObject.Object */
+class ServicesContractorProxy {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2028,25 +919,25 @@ export class ServicesContractorProxy {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.ServicesContractorProxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.ServicesContractorProxy */
     connect(sigName: "contracts-changed", callback: (($obj: ServicesContractorProxy) => void)): number
     connect_after(sigName: "contracts-changed", callback: (($obj: ServicesContractorProxy) => void)): number
     emit(sigName: "contracts-changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ServicesContractorProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ServicesContractorProxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2068,21 +959,21 @@ export class ServicesContractorProxy {
 }
 export interface ServicesIconFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ServicesIconFactory {
-    /* Fields of GObject.Object */
+class ServicesIconFactory {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.ServicesIconFactory */
+    /* Methods of Granite-1.0.Granite.ServicesIconFactory */
     load_symbolic_icon_from_gicon(style: Gtk.StyleContext, gicon: Gio.Icon, size: number): GdkPixbuf.Pixbuf | null
     load_symbolic_icon(style: Gtk.StyleContext, iconname: string, size: number): GdkPixbuf.Pixbuf | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2090,21 +981,21 @@ export class ServicesIconFactory {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ServicesIconFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ServicesIconFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2122,18 +1013,18 @@ export class ServicesIconFactory {
 }
 export interface ServicesLogger_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ServicesLogger {
-    /* Fields of GObject.Object */
+class ServicesLogger {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2141,21 +1032,21 @@ export class ServicesLogger {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ServicesLogger, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ServicesLogger, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2176,18 +1067,18 @@ export class ServicesLogger {
 }
 export interface ServicesPaths_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ServicesPaths {
-    /* Fields of GObject.Object */
+class ServicesPaths {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2195,21 +1086,21 @@ export class ServicesPaths {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ServicesPaths, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ServicesPaths, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2247,21 +1138,21 @@ export class ServicesPaths {
 export interface ServicesSettings_ConstructProps extends GObject.Object_ConstructProps {
     schema?: Gio.Settings
 }
-export class ServicesSettings {
-    /* Fields of GObject.Object */
+class ServicesSettings {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.ServicesSettings */
+    /* Methods of Granite-1.0.Granite.ServicesSettings */
     get_schema(): Gio.Settings
     verify(key: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2269,27 +1160,27 @@ export class ServicesSettings {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Granite.ServicesSettings */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Granite-1.0.Granite.ServicesSettings */
     vfunc_verify(key: string): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.ServicesSettings */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.ServicesSettings */
     connect(sigName: "changed", callback: (($obj: ServicesSettings) => void)): number
     connect_after(sigName: "changed", callback: (($obj: ServicesSettings) => void)): number
     emit(sigName: "changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ServicesSettings, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ServicesSettings, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2304,24 +1195,24 @@ export class ServicesSettings {
 }
 export interface ServicesSimpleCommand_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ServicesSimpleCommand {
-    /* Fields of Granite.ServicesSimpleCommand */
+class ServicesSimpleCommand {
+    /* Fields of Granite-1.0.Granite.ServicesSimpleCommand */
     standard_output_str: string
     error_output_str: string
     output_str: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.ServicesSimpleCommand */
+    /* Methods of Granite-1.0.Granite.ServicesSimpleCommand */
     run(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2329,21 +1220,21 @@ export class ServicesSimpleCommand {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.ServicesSimpleCommand */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.ServicesSimpleCommand */
     connect(sigName: "done", callback: (($obj: ServicesSimpleCommand, exit: number) => void)): number
     connect_after(sigName: "done", callback: (($obj: ServicesSimpleCommand, exit: number) => void)): number
     emit(sigName: "done", exit: number): void
@@ -2356,7 +1247,7 @@ export class ServicesSimpleCommand {
     connect(sigName: "error-changed", callback: (($obj: ServicesSimpleCommand, text: string) => void)): number
     connect_after(sigName: "error-changed", callback: (($obj: ServicesSimpleCommand, text: string) => void)): number
     emit(sigName: "error-changed", text: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ServicesSimpleCommand, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ServicesSimpleCommand, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2373,18 +1264,18 @@ export class ServicesSimpleCommand {
 }
 export interface ServicesSystem_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class ServicesSystem {
-    /* Fields of GObject.Object */
+class ServicesSystem {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2392,21 +1283,21 @@ export class ServicesSystem {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ServicesSystem, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ServicesSystem, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2428,1161 +1319,27 @@ export class ServicesSystem {
     static history_is_enabled(): boolean
     static $gtype: GObject.Type
 }
-export interface WidgetsAboutDialog_ConstructProps extends GtkPatchAboutDialog_ConstructProps {
-    help?: string
-    translate?: string
-    bug?: string
-}
-export class WidgetsAboutDialog {
-    /* Properties of Granite.WidgetsAboutDialog */
-    help: string
-    translate: string
-    bug: string
-    /* Properties of Granite.GtkPatchAboutDialog */
-    artists: string[]
-    authors: string[]
-    comments: string
-    copyright: string
-    documenters: string[]
-    license: string
-    license_type: Gtk.License
-    logo: GdkPixbuf.Pixbuf
-    logo_icon_name: string
-    program_name: string
-    translator_credits: string
-    version: string
-    website: string
-    website_label: string
-    /* Properties of Gtk.Window */
-    accept_focus: boolean
-    application: Gtk.Application
-    attached_to: Gtk.Widget
-    decorated: boolean
-    default_height: number
-    default_width: number
-    deletable: boolean
-    destroy_with_parent: boolean
-    focus_on_map: boolean
-    focus_visible: boolean
-    gravity: Gdk.Gravity
-    has_resize_grip: boolean
-    readonly has_toplevel_focus: boolean
-    hide_titlebar_when_maximized: boolean
-    icon: GdkPixbuf.Pixbuf
-    icon_name: string
-    readonly is_active: boolean
-    readonly is_maximized: boolean
-    mnemonics_visible: boolean
-    modal: boolean
-    resizable: boolean
-    readonly resize_grip_visible: boolean
-    role: string
-    screen: Gdk.Screen
-    skip_pager_hint: boolean
-    skip_taskbar_hint: boolean
-    startup_id: string
-    title: string
-    transient_for: Gtk.Window
-    type_hint: Gdk.WindowTypeHint
-    urgency_hint: boolean
-    window_position: Gtk.WindowPosition
-    /* Properties of Gtk.Container */
-    border_width: number
-    child: Gtk.Widget
-    resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
-    app_paintable: boolean
-    can_default: boolean
-    can_focus: boolean
-    readonly composite_child: boolean
-    double_buffered: boolean
-    events: Gdk.EventMask
-    expand: boolean
-    focus_on_click: boolean
-    halign: Gtk.Align
-    has_default: boolean
-    has_focus: boolean
-    has_tooltip: boolean
-    height_request: number
-    hexpand: boolean
-    hexpand_set: boolean
-    is_focus: boolean
-    margin: number
-    margin_bottom: number
-    margin_end: number
-    margin_left: number
-    margin_right: number
-    margin_start: number
-    margin_top: number
-    name: string
-    no_show_all: boolean
-    opacity: number
-    parent: Gtk.Container
-    receives_default: boolean
-    readonly scale_factor: number
-    sensitive: boolean
-    style: Gtk.Style
-    tooltip_markup: string
-    tooltip_text: string
-    valign: Gtk.Align
-    vexpand: boolean
-    vexpand_set: boolean
-    visible: boolean
-    width_request: number
-    readonly window: Gdk.Window
-    /* Fields of Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
-    /* Fields of Gtk.Bin */
-    container: Gtk.Container
-    /* Fields of Gtk.Container */
-    widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsAboutDialog */
-    get_help(): string
-    set_help(value: string): void
-    get_translate(): string
-    set_translate(value: string): void
-    get_bug(): string
-    set_bug(value: string): void
-    /* Methods of Granite.GtkPatchAboutDialog */
-    get_artists(): string[]
-    set_artists(value: string[]): void
-    get_authors(): string[]
-    set_authors(value: string[]): void
-    get_comments(): string
-    set_comments(value: string): void
-    get_copyright(): string
-    set_copyright(value: string): void
-    get_documenters(): string[]
-    set_documenters(value: string[]): void
-    get_license(): string
-    set_license(value: string): void
-    get_license_type(): Gtk.License
-    set_license_type(value: Gtk.License): void
-    get_logo(): GdkPixbuf.Pixbuf
-    set_logo(value: GdkPixbuf.Pixbuf): void
-    get_logo_icon_name(): string
-    set_logo_icon_name(value: string): void
-    get_program_name(): string
-    set_program_name(value: string): void
-    get_translator_credits(): string
-    set_translator_credits(value: string): void
-    get_version(): string
-    set_version(value: string): void
-    get_website(): string
-    set_website(value: string): void
-    get_website_label(): string
-    set_website_label(value: string): void
-    /* Methods of Gtk.Dialog */
-    add_action_widget(child: Gtk.Widget, response_id: number): void
-    add_button(button_text: string, response_id: number): Gtk.Widget
-    get_action_area(): Gtk.Box
-    get_content_area(): Gtk.Box
-    get_header_bar(): Gtk.HeaderBar
-    get_response_for_widget(widget: Gtk.Widget): number
-    get_widget_for_response(response_id: number): Gtk.Widget | null
-    response(response_id: number): void
-    run(): number
-    set_alternative_button_order_from_array(new_order: number[]): void
-    set_default_response(response_id: number): void
-    set_response_sensitive(response_id: number, setting: boolean): void
-    /* Methods of Gtk.Window */
-    activate_default(): boolean
-    activate_focus(): boolean
-    activate_key(event: Gdk.EventKey): boolean
-    add_accel_group(accel_group: Gtk.AccelGroup): void
-    add_mnemonic(keyval: number, target: Gtk.Widget): void
-    begin_move_drag(button: number, root_x: number, root_y: number, timestamp: number): void
-    begin_resize_drag(edge: Gdk.WindowEdge, button: number, root_x: number, root_y: number, timestamp: number): void
-    close(): void
-    deiconify(): void
-    fullscreen(): void
-    fullscreen_on_monitor(screen: Gdk.Screen, monitor: number): void
-    get_accept_focus(): boolean
-    get_application(): Gtk.Application | null
-    get_attached_to(): Gtk.Widget | null
-    get_decorated(): boolean
-    get_default_size(): [ /* width */ number | null, /* height */ number | null ]
-    get_default_widget(): Gtk.Widget | null
-    get_deletable(): boolean
-    get_destroy_with_parent(): boolean
-    get_focus(): Gtk.Widget | null
-    get_focus_on_map(): boolean
-    get_focus_visible(): boolean
-    get_gravity(): Gdk.Gravity
-    get_group(): Gtk.WindowGroup
-    get_has_resize_grip(): boolean
-    get_hide_titlebar_when_maximized(): boolean
-    get_icon(): GdkPixbuf.Pixbuf | null
-    get_icon_list(): GdkPixbuf.Pixbuf[]
-    get_icon_name(): string | null
-    get_mnemonic_modifier(): Gdk.ModifierType
-    get_mnemonics_visible(): boolean
-    get_modal(): boolean
-    get_opacity(): number
-    get_position(): [ /* root_x */ number | null, /* root_y */ number | null ]
-    get_resizable(): boolean
-    get_resize_grip_area(): [ /* returnType */ boolean, /* rect */ Gdk.Rectangle ]
-    get_role(): string | null
-    get_screen(): Gdk.Screen
-    get_size(): [ /* width */ number | null, /* height */ number | null ]
-    get_skip_pager_hint(): boolean
-    get_skip_taskbar_hint(): boolean
-    get_title(): string | null
-    get_titlebar(): Gtk.Widget | null
-    get_transient_for(): Gtk.Window | null
-    get_type_hint(): Gdk.WindowTypeHint
-    get_urgency_hint(): boolean
-    get_window_type(): Gtk.WindowType
-    has_group(): boolean
-    iconify(): void
-    maximize(): void
-    mnemonic_activate(keyval: number, modifier: Gdk.ModifierType): boolean
-    move(x: number, y: number): void
-    parse_geometry(geometry: string): boolean
-    present(): void
-    present_with_time(timestamp: number): void
-    propagate_key_event(event: Gdk.EventKey): boolean
-    remove_accel_group(accel_group: Gtk.AccelGroup): void
-    remove_mnemonic(keyval: number, target: Gtk.Widget): void
-    reshow_with_initial_size(): void
-    resize(width: number, height: number): void
-    resize_grip_is_visible(): boolean
-    resize_to_geometry(width: number, height: number): void
-    set_accept_focus(setting: boolean): void
-    set_application(application?: Gtk.Application | null): void
-    set_attached_to(attach_widget?: Gtk.Widget | null): void
-    set_decorated(setting: boolean): void
-    set_default(default_widget?: Gtk.Widget | null): void
-    set_default_geometry(width: number, height: number): void
-    set_default_size(width: number, height: number): void
-    set_deletable(setting: boolean): void
-    set_destroy_with_parent(setting: boolean): void
-    set_focus(focus?: Gtk.Widget | null): void
-    set_focus_on_map(setting: boolean): void
-    set_focus_visible(setting: boolean): void
-    set_geometry_hints(geometry_widget: Gtk.Widget | null, geometry: Gdk.Geometry | null, geom_mask: Gdk.WindowHints): void
-    set_gravity(gravity: Gdk.Gravity): void
-    set_has_resize_grip(value: boolean): void
-    set_has_user_ref_count(setting: boolean): void
-    set_hide_titlebar_when_maximized(setting: boolean): void
-    set_icon(icon?: GdkPixbuf.Pixbuf | null): void
-    set_icon_from_file(filename: string): boolean
-    set_icon_list(list: GdkPixbuf.Pixbuf[]): void
-    set_icon_name(name?: string | null): void
-    set_keep_above(setting: boolean): void
-    set_keep_below(setting: boolean): void
-    set_mnemonic_modifier(modifier: Gdk.ModifierType): void
-    set_mnemonics_visible(setting: boolean): void
-    set_modal(modal: boolean): void
-    set_opacity(opacity: number): void
-    set_position(position: Gtk.WindowPosition): void
-    set_resizable(resizable: boolean): void
-    set_role(role: string): void
-    set_screen(screen: Gdk.Screen): void
-    set_skip_pager_hint(setting: boolean): void
-    set_skip_taskbar_hint(setting: boolean): void
-    set_startup_id(startup_id: string): void
-    set_title(title: string): void
-    set_titlebar(titlebar?: Gtk.Widget | null): void
-    set_transient_for(parent?: Gtk.Window | null): void
-    set_type_hint(hint: Gdk.WindowTypeHint): void
-    set_urgency_hint(setting: boolean): void
-    set_wmclass(wmclass_name: string, wmclass_class: string): void
-    stick(): void
-    unfullscreen(): void
-    unmaximize(): void
-    unstick(): void
-    /* Methods of Gtk.Bin */
-    get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
-    add(widget: Gtk.Widget): void
-    check_resize(): void
-    child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
-    child_set_property(child: Gtk.Widget, property_name: string, value: any): void
-    child_type(): GObject.Type
-    forall(callback: Gtk.Callback): void
-    foreach(callback: Gtk.Callback): void
-    get_border_width(): number
-    get_children(): Gtk.Widget[]
-    get_focus_chain(): [ /* returnType */ boolean, /* focusable_widgets */ Gtk.Widget[] ]
-    get_focus_child(): Gtk.Widget | null
-    get_focus_hadjustment(): Gtk.Adjustment | null
-    get_focus_vadjustment(): Gtk.Adjustment | null
-    get_path_for_child(child: Gtk.Widget): Gtk.WidgetPath
-    get_resize_mode(): Gtk.ResizeMode
-    propagate_draw(child: Gtk.Widget, cr: cairo.Context): void
-    remove(widget: Gtk.Widget): void
-    resize_children(): void
-    set_border_width(border_width: number): void
-    set_focus_chain(focusable_widgets: Gtk.Widget[]): void
-    set_focus_child(child?: Gtk.Widget | null): void
-    set_focus_hadjustment(adjustment: Gtk.Adjustment): void
-    set_focus_vadjustment(adjustment: Gtk.Adjustment): void
-    set_reallocate_redraws(needs_redraws: boolean): void
-    set_resize_mode(resize_mode: Gtk.ResizeMode): void
-    unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
-    activate(): boolean
-    add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
-    add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
-    add_events(events: number): void
-    add_mnemonic_label(label: Gtk.Widget): void
-    add_tick_callback(callback: Gtk.TickCallback): number
-    can_activate_accel(signal_id: number): boolean
-    child_focus(direction: Gtk.DirectionType): boolean
-    child_notify(child_property: string): void
-    class_path(): [ /* path_length */ number | null, /* path */ string | null, /* path_reversed */ string | null ]
-    compute_expand(orientation: Gtk.Orientation): boolean
-    create_pango_context(): Pango.Context
-    create_pango_layout(text?: string | null): Pango.Layout
-    destroy(): void
-    destroyed(widget_pointer: Gtk.Widget): /* widget_pointer */ Gtk.Widget
-    device_is_shadowed(device: Gdk.Device): boolean
-    drag_begin(targets: Gtk.TargetList, actions: Gdk.DragAction, button: number, event?: Gdk.Event | null): Gdk.DragContext
-    drag_begin_with_coordinates(targets: Gtk.TargetList, actions: Gdk.DragAction, button: number, event: Gdk.Event | null, x: number, y: number): Gdk.DragContext
-    drag_check_threshold(start_x: number, start_y: number, current_x: number, current_y: number): boolean
-    drag_dest_add_image_targets(): void
-    drag_dest_add_text_targets(): void
-    drag_dest_add_uri_targets(): void
-    drag_dest_find_target(context: Gdk.DragContext, target_list?: Gtk.TargetList | null): Gdk.Atom
-    drag_dest_get_target_list(): Gtk.TargetList | null
-    drag_dest_get_track_motion(): boolean
-    drag_dest_set(flags: Gtk.DestDefaults, targets: Gtk.TargetEntry[] | null, actions: Gdk.DragAction): void
-    drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void
-    drag_dest_set_target_list(target_list?: Gtk.TargetList | null): void
-    drag_dest_set_track_motion(track_motion: boolean): void
-    drag_dest_unset(): void
-    drag_get_data(context: Gdk.DragContext, target: Gdk.Atom, time_: number): void
-    drag_highlight(): void
-    drag_source_add_image_targets(): void
-    drag_source_add_text_targets(): void
-    drag_source_add_uri_targets(): void
-    drag_source_get_target_list(): Gtk.TargetList | null
-    drag_source_set(start_button_mask: Gdk.ModifierType, targets: Gtk.TargetEntry[] | null, actions: Gdk.DragAction): void
-    drag_source_set_icon_gicon(icon: Gio.Icon): void
-    drag_source_set_icon_name(icon_name: string): void
-    drag_source_set_icon_pixbuf(pixbuf: GdkPixbuf.Pixbuf): void
-    drag_source_set_icon_stock(stock_id: string): void
-    drag_source_set_target_list(target_list?: Gtk.TargetList | null): void
-    drag_source_unset(): void
-    drag_unhighlight(): void
-    draw(cr: cairo.Context): void
-    ensure_style(): void
-    error_bell(): void
-    event(event: Gdk.Event): boolean
-    freeze_child_notify(): void
-    get_accessible(): Atk.Object
-    get_action_group(prefix: string): Gio.ActionGroup | null
-    get_allocated_baseline(): number
-    get_allocated_height(): number
-    get_allocated_size(): [ /* allocation */ Gtk.Allocation, /* baseline */ number | null ]
-    get_allocated_width(): number
-    get_allocation(): /* allocation */ Gtk.Allocation
-    get_ancestor(widget_type: GObject.Type): Gtk.Widget | null
-    get_app_paintable(): boolean
-    get_can_default(): boolean
-    get_can_focus(): boolean
-    get_child_requisition(): /* requisition */ Gtk.Requisition
-    get_child_visible(): boolean
-    get_clip(): /* clip */ Gtk.Allocation
-    get_clipboard(selection: Gdk.Atom): Gtk.Clipboard
-    get_composite_name(): string
-    get_device_enabled(device: Gdk.Device): boolean
-    get_device_events(device: Gdk.Device): Gdk.EventMask
-    get_direction(): Gtk.TextDirection
-    get_display(): Gdk.Display
-    get_double_buffered(): boolean
-    get_events(): number
-    get_focus_on_click(): boolean
-    get_font_map(): Pango.FontMap | null
-    get_font_options(): cairo.FontOptions | null
-    get_frame_clock(): Gdk.FrameClock | null
-    get_halign(): Gtk.Align
-    get_has_tooltip(): boolean
-    get_has_window(): boolean
-    get_hexpand(): boolean
-    get_hexpand_set(): boolean
-    get_mapped(): boolean
-    get_margin_bottom(): number
-    get_margin_end(): number
-    get_margin_left(): number
-    get_margin_right(): number
-    get_margin_start(): number
-    get_margin_top(): number
-    get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType
-    get_modifier_style(): Gtk.RcStyle
-    get_name(): string
-    get_no_show_all(): boolean
-    get_pango_context(): Pango.Context
-    get_parent(): Gtk.Widget | null
-    get_parent_window(): Gdk.Window | null
-    get_path(): Gtk.WidgetPath
-    get_pointer(): [ /* x */ number | null, /* y */ number | null ]
-    get_preferred_height(): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
-    get_preferred_height_and_baseline_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null, /* minimum_baseline */ number | null, /* natural_baseline */ number | null ]
-    get_preferred_height_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
-    get_preferred_size(): [ /* minimum_size */ Gtk.Requisition | null, /* natural_size */ Gtk.Requisition | null ]
-    get_preferred_width(): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
-    get_preferred_width_for_height(height: number): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
-    get_realized(): boolean
-    get_receives_default(): boolean
-    get_request_mode(): Gtk.SizeRequestMode
-    get_requisition(): /* requisition */ Gtk.Requisition
-    get_root_window(): Gdk.Window
-    get_scale_factor(): number
-    get_sensitive(): boolean
-    get_settings(): Gtk.Settings
-    get_size_request(): [ /* width */ number | null, /* height */ number | null ]
-    get_state(): Gtk.StateType
-    get_state_flags(): Gtk.StateFlags
-    get_style(): Gtk.Style
-    get_style_context(): Gtk.StyleContext
-    get_support_multidevice(): boolean
-    get_template_child(widget_type: GObject.Type, name: string): GObject.Object
-    get_tooltip_markup(): string | null
-    get_tooltip_text(): string | null
-    get_tooltip_window(): Gtk.Window
-    get_toplevel(): Gtk.Widget
-    get_valign(): Gtk.Align
-    get_valign_with_baseline(): Gtk.Align
-    get_vexpand(): boolean
-    get_vexpand_set(): boolean
-    get_visible(): boolean
-    get_visual(): Gdk.Visual
-    get_window(): Gdk.Window | null
-    grab_add(): void
-    grab_default(): void
-    grab_focus(): void
-    grab_remove(): void
-    has_grab(): boolean
-    has_rc_style(): boolean
-    has_screen(): boolean
-    has_visible_focus(): boolean
-    hide(): void
-    hide_on_delete(): boolean
-    in_destruction(): boolean
-    init_template(): void
-    input_shape_combine_region(region?: cairo.Region | null): void
-    insert_action_group(name: string, group?: Gio.ActionGroup | null): void
-    intersect(area: Gdk.Rectangle): [ /* returnType */ boolean, /* intersection */ Gdk.Rectangle | null ]
-    is_ancestor(ancestor: Gtk.Widget): boolean
-    is_composited(): boolean
-    is_drawable(): boolean
-    is_sensitive(): boolean
-    is_toplevel(): boolean
-    is_visible(): boolean
-    keynav_failed(direction: Gtk.DirectionType): boolean
-    list_accel_closures(): Function[]
-    list_action_prefixes(): string[]
-    list_mnemonic_labels(): Gtk.Widget[]
-    map(): void
-    mnemonic_activate(group_cycling: boolean): boolean
-    modify_base(state: Gtk.StateType, color?: Gdk.Color | null): void
-    modify_bg(state: Gtk.StateType, color?: Gdk.Color | null): void
-    modify_cursor(primary?: Gdk.Color | null, secondary?: Gdk.Color | null): void
-    modify_fg(state: Gtk.StateType, color?: Gdk.Color | null): void
-    modify_font(font_desc?: Pango.FontDescription | null): void
-    modify_style(style: Gtk.RcStyle): void
-    modify_text(state: Gtk.StateType, color?: Gdk.Color | null): void
-    override_background_color(state: Gtk.StateFlags, color?: Gdk.RGBA | null): void
-    override_color(state: Gtk.StateFlags, color?: Gdk.RGBA | null): void
-    override_cursor(cursor?: Gdk.RGBA | null, secondary_cursor?: Gdk.RGBA | null): void
-    override_font(font_desc?: Pango.FontDescription | null): void
-    override_symbolic_color(name: string, color?: Gdk.RGBA | null): void
-    path(): [ /* path_length */ number | null, /* path */ string | null, /* path_reversed */ string | null ]
-    queue_allocate(): void
-    queue_compute_expand(): void
-    queue_draw(): void
-    queue_draw_area(x: number, y: number, width: number, height: number): void
-    queue_draw_region(region: cairo.Region): void
-    queue_resize(): void
-    queue_resize_no_redraw(): void
-    realize(): void
-    region_intersect(region: cairo.Region): cairo.Region
-    register_window(window: Gdk.Window): void
-    remove_accelerator(accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean
-    remove_mnemonic_label(label: Gtk.Widget): void
-    remove_tick_callback(id: number): void
-    render_icon(stock_id: string, size: number, detail?: string | null): GdkPixbuf.Pixbuf | null
-    render_icon_pixbuf(stock_id: string, size: number): GdkPixbuf.Pixbuf | null
-    reparent(new_parent: Gtk.Widget): void
-    reset_rc_styles(): void
-    reset_style(): void
-    send_expose(event: Gdk.Event): number
-    send_focus_change(event: Gdk.Event): boolean
-    set_accel_path(accel_path?: string | null, accel_group?: Gtk.AccelGroup | null): void
-    set_allocation(allocation: Gtk.Allocation): void
-    set_app_paintable(app_paintable: boolean): void
-    set_can_default(can_default: boolean): void
-    set_can_focus(can_focus: boolean): void
-    set_child_visible(is_visible: boolean): void
-    set_clip(clip: Gtk.Allocation): void
-    set_composite_name(name: string): void
-    set_device_enabled(device: Gdk.Device, enabled: boolean): void
-    set_device_events(device: Gdk.Device, events: Gdk.EventMask): void
-    set_direction(dir: Gtk.TextDirection): void
-    set_double_buffered(double_buffered: boolean): void
-    set_events(events: number): void
-    set_focus_on_click(focus_on_click: boolean): void
-    set_font_map(font_map?: Pango.FontMap | null): void
-    set_font_options(options?: cairo.FontOptions | null): void
-    set_halign(align: Gtk.Align): void
-    set_has_tooltip(has_tooltip: boolean): void
-    set_has_window(has_window: boolean): void
-    set_hexpand(expand: boolean): void
-    set_hexpand_set(set: boolean): void
-    set_mapped(mapped: boolean): void
-    set_margin_bottom(margin: number): void
-    set_margin_end(margin: number): void
-    set_margin_left(margin: number): void
-    set_margin_right(margin: number): void
-    set_margin_start(margin: number): void
-    set_margin_top(margin: number): void
-    set_name(name: string): void
-    set_no_show_all(no_show_all: boolean): void
-    set_parent(parent: Gtk.Widget): void
-    set_parent_window(parent_window: Gdk.Window): void
-    set_realized(realized: boolean): void
-    set_receives_default(receives_default: boolean): void
-    set_redraw_on_allocate(redraw_on_allocate: boolean): void
-    set_sensitive(sensitive: boolean): void
-    set_size_request(width: number, height: number): void
-    set_state(state: Gtk.StateType): void
-    set_state_flags(flags: Gtk.StateFlags, clear: boolean): void
-    set_style(style?: Gtk.Style | null): void
-    set_support_multidevice(support_multidevice: boolean): void
-    set_tooltip_markup(markup?: string | null): void
-    set_tooltip_text(text?: string | null): void
-    set_tooltip_window(custom_window?: Gtk.Window | null): void
-    set_valign(align: Gtk.Align): void
-    set_vexpand(expand: boolean): void
-    set_vexpand_set(set: boolean): void
-    set_visible(visible: boolean): void
-    set_visual(visual?: Gdk.Visual | null): void
-    set_window(window: Gdk.Window): void
-    shape_combine_region(region?: cairo.Region | null): void
-    show(): void
-    show_all(): void
-    show_now(): void
-    size_allocate(allocation: Gtk.Allocation): void
-    size_allocate_with_baseline(allocation: Gtk.Allocation, baseline: number): void
-    size_request(): /* requisition */ Gtk.Requisition
-    style_attach(): void
-    style_get_property(property_name: string, value: any): void
-    thaw_child_notify(): void
-    translate_coordinates(dest_widget: Gtk.Widget, src_x: number, src_y: number): [ /* returnType */ boolean, /* dest_x */ number | null, /* dest_y */ number | null ]
-    trigger_tooltip_query(): void
-    unmap(): void
-    unparent(): void
-    unrealize(): void
-    unregister_window(window: Gdk.Window): void
-    unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
-    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
-    force_floating(): void
-    freeze_notify(): void
-    get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
-    get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
-    is_floating(): boolean
-    notify(property_name: string): void
-    notify_by_pspec(pspec: GObject.ParamSpec): void
-    ref(): GObject.Object
-    ref_sink(): GObject.Object
-    run_dispose(): void
-    set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
-    steal_data(key: string): object | null
-    steal_qdata(quark: GLib.Quark): object | null
-    thaw_notify(): void
-    unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Dialog */
-    vfunc_close(): void
-    vfunc_response(response_id: number): void
-    /* Virtual methods of Gtk.Window */
-    vfunc_activate_default(): void
-    vfunc_activate_focus(): void
-    vfunc_enable_debugging(toggle: boolean): boolean
-    vfunc_keys_changed(): void
-    vfunc_set_focus(focus?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Container */
-    vfunc_add(widget: Gtk.Widget): void
-    vfunc_check_resize(): void
-    vfunc_child_type(): GObject.Type
-    vfunc_composite_name(child: Gtk.Widget): string
-    vfunc_forall(include_internals: boolean, callback: Gtk.Callback): void
-    vfunc_get_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
-    vfunc_get_path_for_child(child: Gtk.Widget): Gtk.WidgetPath
-    vfunc_remove(widget: Gtk.Widget): void
-    vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
-    vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
-    vfunc_adjust_baseline_allocation(baseline: number): void
-    vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
-    vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
-    vfunc_adjust_size_request(orientation: Gtk.Orientation, minimum_size: number, natural_size: number): void
-    vfunc_button_press_event(event: Gdk.EventButton): boolean
-    vfunc_button_release_event(event: Gdk.EventButton): boolean
-    vfunc_can_activate_accel(signal_id: number): boolean
-    vfunc_child_notify(child_property: GObject.ParamSpec): void
-    vfunc_composited_changed(): void
-    vfunc_compute_expand(hexpand_p: boolean, vexpand_p: boolean): void
-    vfunc_configure_event(event: Gdk.EventConfigure): boolean
-    vfunc_damage_event(event: Gdk.EventExpose): boolean
-    vfunc_delete_event(event: Gdk.EventAny): boolean
-    vfunc_destroy(): void
-    vfunc_destroy_event(event: Gdk.EventAny): boolean
-    vfunc_direction_changed(previous_direction: Gtk.TextDirection): void
-    vfunc_dispatch_child_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
-    vfunc_drag_begin(context: Gdk.DragContext): void
-    vfunc_drag_data_delete(context: Gdk.DragContext): void
-    vfunc_drag_data_get(context: Gdk.DragContext, selection_data: Gtk.SelectionData, info: number, time_: number): void
-    vfunc_drag_data_received(context: Gdk.DragContext, x: number, y: number, selection_data: Gtk.SelectionData, info: number, time_: number): void
-    vfunc_drag_drop(context: Gdk.DragContext, x: number, y: number, time_: number): boolean
-    vfunc_drag_end(context: Gdk.DragContext): void
-    vfunc_drag_failed(context: Gdk.DragContext, result: Gtk.DragResult): boolean
-    vfunc_drag_leave(context: Gdk.DragContext, time_: number): void
-    vfunc_drag_motion(context: Gdk.DragContext, x: number, y: number, time_: number): boolean
-    vfunc_draw(cr: cairo.Context): boolean
-    vfunc_enter_notify_event(event: Gdk.EventCrossing): boolean
-    vfunc_event(event: Gdk.Event): boolean
-    vfunc_focus(direction: Gtk.DirectionType): boolean
-    vfunc_focus_in_event(event: Gdk.EventFocus): boolean
-    vfunc_focus_out_event(event: Gdk.EventFocus): boolean
-    vfunc_get_accessible(): Atk.Object
-    vfunc_get_preferred_height(): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
-    vfunc_get_preferred_height_and_baseline_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null, /* minimum_baseline */ number | null, /* natural_baseline */ number | null ]
-    vfunc_get_preferred_height_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
-    vfunc_get_preferred_width(): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
-    vfunc_get_preferred_width_for_height(height: number): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
-    vfunc_get_request_mode(): Gtk.SizeRequestMode
-    vfunc_grab_broken_event(event: Gdk.EventGrabBroken): boolean
-    vfunc_grab_focus(): void
-    vfunc_grab_notify(was_grabbed: boolean): void
-    vfunc_hide(): void
-    vfunc_hierarchy_changed(previous_toplevel: Gtk.Widget): void
-    vfunc_key_press_event(event: Gdk.EventKey): boolean
-    vfunc_key_release_event(event: Gdk.EventKey): boolean
-    vfunc_keynav_failed(direction: Gtk.DirectionType): boolean
-    vfunc_leave_notify_event(event: Gdk.EventCrossing): boolean
-    vfunc_map(): void
-    vfunc_map_event(event: Gdk.EventAny): boolean
-    vfunc_mnemonic_activate(group_cycling: boolean): boolean
-    vfunc_motion_notify_event(event: Gdk.EventMotion): boolean
-    vfunc_move_focus(direction: Gtk.DirectionType): void
-    vfunc_parent_set(previous_parent: Gtk.Widget): void
-    vfunc_popup_menu(): boolean
-    vfunc_property_notify_event(event: Gdk.EventProperty): boolean
-    vfunc_proximity_in_event(event: Gdk.EventProximity): boolean
-    vfunc_proximity_out_event(event: Gdk.EventProximity): boolean
-    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
-    vfunc_queue_draw_region(region: cairo.Region): void
-    vfunc_realize(): void
-    vfunc_screen_changed(previous_screen: Gdk.Screen): void
-    vfunc_scroll_event(event: Gdk.EventScroll): boolean
-    vfunc_selection_clear_event(event: Gdk.EventSelection): boolean
-    vfunc_selection_get(selection_data: Gtk.SelectionData, info: number, time_: number): void
-    vfunc_selection_notify_event(event: Gdk.EventSelection): boolean
-    vfunc_selection_received(selection_data: Gtk.SelectionData, time_: number): void
-    vfunc_selection_request_event(event: Gdk.EventSelection): boolean
-    vfunc_show(): void
-    vfunc_show_all(): void
-    vfunc_show_help(help_type: Gtk.WidgetHelpType): boolean
-    vfunc_size_allocate(allocation: Gtk.Allocation): void
-    vfunc_state_changed(previous_state: Gtk.StateType): void
-    vfunc_state_flags_changed(previous_state_flags: Gtk.StateFlags): void
-    vfunc_style_set(previous_style: Gtk.Style): void
-    vfunc_style_updated(): void
-    vfunc_touch_event(event: Gdk.EventTouch): boolean
-    vfunc_unmap(): void
-    vfunc_unmap_event(event: Gdk.EventAny): boolean
-    vfunc_unrealize(): void
-    vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
-    vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
-    vfunc_constructed(): void
-    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
-    vfunc_dispose(): void
-    vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.GtkPatchAboutDialog */
-    connect(sigName: "activate-link", callback: (($obj: WidgetsAboutDialog, uri: string) => boolean)): number
-    connect_after(sigName: "activate-link", callback: (($obj: WidgetsAboutDialog, uri: string) => boolean)): number
-    emit(sigName: "activate-link", uri: string): void
-    /* Signals of Gtk.Dialog */
-    connect(sigName: "close", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "close", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "close"): void
-    connect(sigName: "response", callback: (($obj: WidgetsAboutDialog, response_id: number) => void)): number
-    connect_after(sigName: "response", callback: (($obj: WidgetsAboutDialog, response_id: number) => void)): number
-    emit(sigName: "response", response_id: number): void
-    /* Signals of Gtk.Window */
-    connect(sigName: "activate-default", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "activate-default", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "activate-default"): void
-    connect(sigName: "activate-focus", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "activate-focus", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "activate-focus"): void
-    connect(sigName: "enable-debugging", callback: (($obj: WidgetsAboutDialog, toggle: boolean) => boolean)): number
-    connect_after(sigName: "enable-debugging", callback: (($obj: WidgetsAboutDialog, toggle: boolean) => boolean)): number
-    emit(sigName: "enable-debugging", toggle: boolean): void
-    connect(sigName: "keys-changed", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "keys-changed", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "keys-changed"): void
-    connect(sigName: "set-focus", callback: (($obj: WidgetsAboutDialog, widget?: Gtk.Widget | null) => void)): number
-    connect_after(sigName: "set-focus", callback: (($obj: WidgetsAboutDialog, widget?: Gtk.Widget | null) => void)): number
-    emit(sigName: "set-focus", widget?: Gtk.Widget | null): void
-    /* Signals of Gtk.Container */
-    connect(sigName: "add", callback: (($obj: WidgetsAboutDialog, object: Gtk.Widget) => void)): number
-    connect_after(sigName: "add", callback: (($obj: WidgetsAboutDialog, object: Gtk.Widget) => void)): number
-    emit(sigName: "add", object: Gtk.Widget): void
-    connect(sigName: "check-resize", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "check-resize", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "check-resize"): void
-    connect(sigName: "remove", callback: (($obj: WidgetsAboutDialog, object: Gtk.Widget) => void)): number
-    connect_after(sigName: "remove", callback: (($obj: WidgetsAboutDialog, object: Gtk.Widget) => void)): number
-    emit(sigName: "remove", object: Gtk.Widget): void
-    connect(sigName: "set-focus-child", callback: (($obj: WidgetsAboutDialog, object: Gtk.Widget) => void)): number
-    connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsAboutDialog, object: Gtk.Widget) => void)): number
-    emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
-    connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "accel-closures-changed"): void
-    connect(sigName: "button-press-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventButton) => boolean)): number
-    connect_after(sigName: "button-press-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventButton) => boolean)): number
-    emit(sigName: "button-press-event", event: Gdk.EventButton): void
-    connect(sigName: "button-release-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventButton) => boolean)): number
-    connect_after(sigName: "button-release-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventButton) => boolean)): number
-    emit(sigName: "button-release-event", event: Gdk.EventButton): void
-    connect(sigName: "can-activate-accel", callback: (($obj: WidgetsAboutDialog, signal_id: number) => boolean)): number
-    connect_after(sigName: "can-activate-accel", callback: (($obj: WidgetsAboutDialog, signal_id: number) => boolean)): number
-    emit(sigName: "can-activate-accel", signal_id: number): void
-    connect(sigName: "child-notify", callback: (($obj: WidgetsAboutDialog, child_property: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "child-notify", callback: (($obj: WidgetsAboutDialog, child_property: GObject.ParamSpec) => void)): number
-    emit(sigName: "child-notify", child_property: GObject.ParamSpec): void
-    connect(sigName: "composited-changed", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "composited-changed", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "composited-changed"): void
-    connect(sigName: "configure-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventConfigure) => boolean)): number
-    connect_after(sigName: "configure-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventConfigure) => boolean)): number
-    emit(sigName: "configure-event", event: Gdk.EventConfigure): void
-    connect(sigName: "damage-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventExpose) => boolean)): number
-    connect_after(sigName: "damage-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventExpose) => boolean)): number
-    emit(sigName: "damage-event", event: Gdk.EventExpose): void
-    connect(sigName: "delete-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.Event) => boolean)): number
-    connect_after(sigName: "delete-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.Event) => boolean)): number
-    emit(sigName: "delete-event", event: Gdk.Event): void
-    connect(sigName: "destroy", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "destroy", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "destroy"): void
-    connect(sigName: "destroy-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.Event) => boolean)): number
-    connect_after(sigName: "destroy-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.Event) => boolean)): number
-    emit(sigName: "destroy-event", event: Gdk.Event): void
-    connect(sigName: "direction-changed", callback: (($obj: WidgetsAboutDialog, previous_direction: Gtk.TextDirection) => void)): number
-    connect_after(sigName: "direction-changed", callback: (($obj: WidgetsAboutDialog, previous_direction: Gtk.TextDirection) => void)): number
-    emit(sigName: "direction-changed", previous_direction: Gtk.TextDirection): void
-    connect(sigName: "drag-begin", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext) => void)): number
-    connect_after(sigName: "drag-begin", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext) => void)): number
-    emit(sigName: "drag-begin", context: Gdk.DragContext): void
-    connect(sigName: "drag-data-delete", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext) => void)): number
-    connect_after(sigName: "drag-data-delete", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext) => void)): number
-    emit(sigName: "drag-data-delete", context: Gdk.DragContext): void
-    connect(sigName: "drag-data-get", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    connect_after(sigName: "drag-data-get", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    emit(sigName: "drag-data-get", context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number): void
-    connect(sigName: "drag-data-received", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    connect_after(sigName: "drag-data-received", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    emit(sigName: "drag-data-received", context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number): void
-    connect(sigName: "drag-drop", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
-    connect_after(sigName: "drag-drop", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
-    emit(sigName: "drag-drop", context: Gdk.DragContext, x: number, y: number, time: number): void
-    connect(sigName: "drag-end", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext) => void)): number
-    connect_after(sigName: "drag-end", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext) => void)): number
-    emit(sigName: "drag-end", context: Gdk.DragContext): void
-    connect(sigName: "drag-failed", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext, result: Gtk.DragResult) => boolean)): number
-    connect_after(sigName: "drag-failed", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext, result: Gtk.DragResult) => boolean)): number
-    emit(sigName: "drag-failed", context: Gdk.DragContext, result: Gtk.DragResult): void
-    connect(sigName: "drag-leave", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext, time: number) => void)): number
-    connect_after(sigName: "drag-leave", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext, time: number) => void)): number
-    emit(sigName: "drag-leave", context: Gdk.DragContext, time: number): void
-    connect(sigName: "drag-motion", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
-    connect_after(sigName: "drag-motion", callback: (($obj: WidgetsAboutDialog, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
-    emit(sigName: "drag-motion", context: Gdk.DragContext, x: number, y: number, time: number): void
-    connect(sigName: "draw", callback: (($obj: WidgetsAboutDialog, cr: cairo.Context) => boolean)): number
-    connect_after(sigName: "draw", callback: (($obj: WidgetsAboutDialog, cr: cairo.Context) => boolean)): number
-    emit(sigName: "draw", cr: cairo.Context): void
-    connect(sigName: "enter-notify-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventCrossing) => boolean)): number
-    connect_after(sigName: "enter-notify-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventCrossing) => boolean)): number
-    emit(sigName: "enter-notify-event", event: Gdk.EventCrossing): void
-    connect(sigName: "event", callback: (($obj: WidgetsAboutDialog, event: Gdk.Event) => boolean)): number
-    connect_after(sigName: "event", callback: (($obj: WidgetsAboutDialog, event: Gdk.Event) => boolean)): number
-    emit(sigName: "event", event: Gdk.Event): void
-    connect(sigName: "event-after", callback: (($obj: WidgetsAboutDialog, event: Gdk.Event) => void)): number
-    connect_after(sigName: "event-after", callback: (($obj: WidgetsAboutDialog, event: Gdk.Event) => void)): number
-    emit(sigName: "event-after", event: Gdk.Event): void
-    connect(sigName: "focus", callback: (($obj: WidgetsAboutDialog, direction: Gtk.DirectionType) => boolean)): number
-    connect_after(sigName: "focus", callback: (($obj: WidgetsAboutDialog, direction: Gtk.DirectionType) => boolean)): number
-    emit(sigName: "focus", direction: Gtk.DirectionType): void
-    connect(sigName: "focus-in-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventFocus) => boolean)): number
-    connect_after(sigName: "focus-in-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventFocus) => boolean)): number
-    emit(sigName: "focus-in-event", event: Gdk.EventFocus): void
-    connect(sigName: "focus-out-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventFocus) => boolean)): number
-    connect_after(sigName: "focus-out-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventFocus) => boolean)): number
-    emit(sigName: "focus-out-event", event: Gdk.EventFocus): void
-    connect(sigName: "grab-broken-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventGrabBroken) => boolean)): number
-    connect_after(sigName: "grab-broken-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventGrabBroken) => boolean)): number
-    emit(sigName: "grab-broken-event", event: Gdk.EventGrabBroken): void
-    connect(sigName: "grab-focus", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "grab-focus", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "grab-focus"): void
-    connect(sigName: "grab-notify", callback: (($obj: WidgetsAboutDialog, was_grabbed: boolean) => void)): number
-    connect_after(sigName: "grab-notify", callback: (($obj: WidgetsAboutDialog, was_grabbed: boolean) => void)): number
-    emit(sigName: "grab-notify", was_grabbed: boolean): void
-    connect(sigName: "hide", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "hide", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "hide"): void
-    connect(sigName: "hierarchy-changed", callback: (($obj: WidgetsAboutDialog, previous_toplevel?: Gtk.Widget | null) => void)): number
-    connect_after(sigName: "hierarchy-changed", callback: (($obj: WidgetsAboutDialog, previous_toplevel?: Gtk.Widget | null) => void)): number
-    emit(sigName: "hierarchy-changed", previous_toplevel?: Gtk.Widget | null): void
-    connect(sigName: "key-press-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventKey) => boolean)): number
-    connect_after(sigName: "key-press-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventKey) => boolean)): number
-    emit(sigName: "key-press-event", event: Gdk.EventKey): void
-    connect(sigName: "key-release-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventKey) => boolean)): number
-    connect_after(sigName: "key-release-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventKey) => boolean)): number
-    emit(sigName: "key-release-event", event: Gdk.EventKey): void
-    connect(sigName: "keynav-failed", callback: (($obj: WidgetsAboutDialog, direction: Gtk.DirectionType) => boolean)): number
-    connect_after(sigName: "keynav-failed", callback: (($obj: WidgetsAboutDialog, direction: Gtk.DirectionType) => boolean)): number
-    emit(sigName: "keynav-failed", direction: Gtk.DirectionType): void
-    connect(sigName: "leave-notify-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventCrossing) => boolean)): number
-    connect_after(sigName: "leave-notify-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventCrossing) => boolean)): number
-    emit(sigName: "leave-notify-event", event: Gdk.EventCrossing): void
-    connect(sigName: "map", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "map", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "map"): void
-    connect(sigName: "map-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventAny) => boolean)): number
-    connect_after(sigName: "map-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventAny) => boolean)): number
-    emit(sigName: "map-event", event: Gdk.EventAny): void
-    connect(sigName: "mnemonic-activate", callback: (($obj: WidgetsAboutDialog, group_cycling: boolean) => boolean)): number
-    connect_after(sigName: "mnemonic-activate", callback: (($obj: WidgetsAboutDialog, group_cycling: boolean) => boolean)): number
-    emit(sigName: "mnemonic-activate", group_cycling: boolean): void
-    connect(sigName: "motion-notify-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventMotion) => boolean)): number
-    connect_after(sigName: "motion-notify-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventMotion) => boolean)): number
-    emit(sigName: "motion-notify-event", event: Gdk.EventMotion): void
-    connect(sigName: "move-focus", callback: (($obj: WidgetsAboutDialog, direction: Gtk.DirectionType) => void)): number
-    connect_after(sigName: "move-focus", callback: (($obj: WidgetsAboutDialog, direction: Gtk.DirectionType) => void)): number
-    emit(sigName: "move-focus", direction: Gtk.DirectionType): void
-    connect(sigName: "parent-set", callback: (($obj: WidgetsAboutDialog, old_parent?: Gtk.Widget | null) => void)): number
-    connect_after(sigName: "parent-set", callback: (($obj: WidgetsAboutDialog, old_parent?: Gtk.Widget | null) => void)): number
-    emit(sigName: "parent-set", old_parent?: Gtk.Widget | null): void
-    connect(sigName: "popup-menu", callback: (($obj: WidgetsAboutDialog) => boolean)): number
-    connect_after(sigName: "popup-menu", callback: (($obj: WidgetsAboutDialog) => boolean)): number
-    emit(sigName: "popup-menu"): void
-    connect(sigName: "property-notify-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventProperty) => boolean)): number
-    connect_after(sigName: "property-notify-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventProperty) => boolean)): number
-    emit(sigName: "property-notify-event", event: Gdk.EventProperty): void
-    connect(sigName: "proximity-in-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventProximity) => boolean)): number
-    connect_after(sigName: "proximity-in-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventProximity) => boolean)): number
-    emit(sigName: "proximity-in-event", event: Gdk.EventProximity): void
-    connect(sigName: "proximity-out-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventProximity) => boolean)): number
-    connect_after(sigName: "proximity-out-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventProximity) => boolean)): number
-    emit(sigName: "proximity-out-event", event: Gdk.EventProximity): void
-    connect(sigName: "query-tooltip", callback: (($obj: WidgetsAboutDialog, x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip) => boolean)): number
-    connect_after(sigName: "query-tooltip", callback: (($obj: WidgetsAboutDialog, x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip) => boolean)): number
-    emit(sigName: "query-tooltip", x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip): void
-    connect(sigName: "realize", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "realize", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "realize"): void
-    connect(sigName: "screen-changed", callback: (($obj: WidgetsAboutDialog, previous_screen?: Gdk.Screen | null) => void)): number
-    connect_after(sigName: "screen-changed", callback: (($obj: WidgetsAboutDialog, previous_screen?: Gdk.Screen | null) => void)): number
-    emit(sigName: "screen-changed", previous_screen?: Gdk.Screen | null): void
-    connect(sigName: "scroll-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventScroll) => boolean)): number
-    connect_after(sigName: "scroll-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventScroll) => boolean)): number
-    emit(sigName: "scroll-event", event: Gdk.EventScroll): void
-    connect(sigName: "selection-clear-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventSelection) => boolean)): number
-    connect_after(sigName: "selection-clear-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventSelection) => boolean)): number
-    emit(sigName: "selection-clear-event", event: Gdk.EventSelection): void
-    connect(sigName: "selection-get", callback: (($obj: WidgetsAboutDialog, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    connect_after(sigName: "selection-get", callback: (($obj: WidgetsAboutDialog, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    emit(sigName: "selection-get", data: Gtk.SelectionData, info: number, time: number): void
-    connect(sigName: "selection-notify-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventSelection) => boolean)): number
-    connect_after(sigName: "selection-notify-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventSelection) => boolean)): number
-    emit(sigName: "selection-notify-event", event: Gdk.EventSelection): void
-    connect(sigName: "selection-received", callback: (($obj: WidgetsAboutDialog, data: Gtk.SelectionData, time: number) => void)): number
-    connect_after(sigName: "selection-received", callback: (($obj: WidgetsAboutDialog, data: Gtk.SelectionData, time: number) => void)): number
-    emit(sigName: "selection-received", data: Gtk.SelectionData, time: number): void
-    connect(sigName: "selection-request-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventSelection) => boolean)): number
-    connect_after(sigName: "selection-request-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventSelection) => boolean)): number
-    emit(sigName: "selection-request-event", event: Gdk.EventSelection): void
-    connect(sigName: "show", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "show", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "show"): void
-    connect(sigName: "show-help", callback: (($obj: WidgetsAboutDialog, help_type: Gtk.WidgetHelpType) => boolean)): number
-    connect_after(sigName: "show-help", callback: (($obj: WidgetsAboutDialog, help_type: Gtk.WidgetHelpType) => boolean)): number
-    emit(sigName: "show-help", help_type: Gtk.WidgetHelpType): void
-    connect(sigName: "size-allocate", callback: (($obj: WidgetsAboutDialog, allocation: Gtk.Allocation) => void)): number
-    connect_after(sigName: "size-allocate", callback: (($obj: WidgetsAboutDialog, allocation: Gtk.Allocation) => void)): number
-    emit(sigName: "size-allocate", allocation: Gtk.Allocation): void
-    connect(sigName: "state-changed", callback: (($obj: WidgetsAboutDialog, state: Gtk.StateType) => void)): number
-    connect_after(sigName: "state-changed", callback: (($obj: WidgetsAboutDialog, state: Gtk.StateType) => void)): number
-    emit(sigName: "state-changed", state: Gtk.StateType): void
-    connect(sigName: "state-flags-changed", callback: (($obj: WidgetsAboutDialog, flags: Gtk.StateFlags) => void)): number
-    connect_after(sigName: "state-flags-changed", callback: (($obj: WidgetsAboutDialog, flags: Gtk.StateFlags) => void)): number
-    emit(sigName: "state-flags-changed", flags: Gtk.StateFlags): void
-    connect(sigName: "style-set", callback: (($obj: WidgetsAboutDialog, previous_style?: Gtk.Style | null) => void)): number
-    connect_after(sigName: "style-set", callback: (($obj: WidgetsAboutDialog, previous_style?: Gtk.Style | null) => void)): number
-    emit(sigName: "style-set", previous_style?: Gtk.Style | null): void
-    connect(sigName: "style-updated", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "style-updated", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "style-updated"): void
-    connect(sigName: "touch-event", callback: (($obj: WidgetsAboutDialog, object: Gdk.Event) => boolean)): number
-    connect_after(sigName: "touch-event", callback: (($obj: WidgetsAboutDialog, object: Gdk.Event) => boolean)): number
-    emit(sigName: "touch-event", object: Gdk.Event): void
-    connect(sigName: "unmap", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "unmap", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "unmap"): void
-    connect(sigName: "unmap-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventAny) => boolean)): number
-    connect_after(sigName: "unmap-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventAny) => boolean)): number
-    emit(sigName: "unmap-event", event: Gdk.EventAny): void
-    connect(sigName: "unrealize", callback: (($obj: WidgetsAboutDialog) => void)): number
-    connect_after(sigName: "unrealize", callback: (($obj: WidgetsAboutDialog) => void)): number
-    emit(sigName: "unrealize"): void
-    connect(sigName: "visibility-notify-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventVisibility) => boolean)): number
-    connect_after(sigName: "visibility-notify-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventVisibility) => boolean)): number
-    emit(sigName: "visibility-notify-event", event: Gdk.EventVisibility): void
-    connect(sigName: "window-state-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventWindowState) => boolean)): number
-    connect_after(sigName: "window-state-event", callback: (($obj: WidgetsAboutDialog, event: Gdk.EventWindowState) => boolean)): number
-    emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
-    connect(sigName: "notify", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::help", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::help", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::translate", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::translate", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::bug", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::bug", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::artists", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::artists", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::authors", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::authors", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::comments", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::comments", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::copyright", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::copyright", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::documenters", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::documenters", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::license", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::license", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::license-type", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::license-type", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::logo", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::logo", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::logo-icon-name", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::logo-icon-name", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::program-name", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::program-name", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::translator-credits", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::translator-credits", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::version", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::version", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::website", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::website", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::website-label", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::website-label", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accept-focus", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accept-focus", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::application", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::application", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::attached-to", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::attached-to", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::decorated", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::decorated", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::default-height", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::default-height", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::default-width", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::default-width", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::deletable", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::deletable", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::destroy-with-parent", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::destroy-with-parent", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::focus-on-map", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::focus-on-map", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::focus-visible", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::focus-visible", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::gravity", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::gravity", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::has-resize-grip", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::has-resize-grip", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::has-toplevel-focus", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::has-toplevel-focus", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::hide-titlebar-when-maximized", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::hide-titlebar-when-maximized", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::icon", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::icon", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::icon-name", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::icon-name", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-active", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-active", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-maximized", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-maximized", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::mnemonics-visible", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::mnemonics-visible", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::modal", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::modal", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::resizable", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::resizable", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::resize-grip-visible", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::resize-grip-visible", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::role", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::role", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::screen", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::screen", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::skip-pager-hint", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::skip-pager-hint", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::skip-taskbar-hint", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::skip-taskbar-hint", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::startup-id", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::startup-id", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::title", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::title", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::transient-for", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::transient-for", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::type-hint", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::type-hint", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::urgency-hint", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::urgency-hint", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window-position", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window-position", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::border-width", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::border-width", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::child", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::child", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::resize-mode", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::resize-mode", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::app-paintable", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::app-paintable", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::can-default", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::can-default", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::can-focus", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::can-focus", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::composite-child", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::composite-child", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::double-buffered", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::double-buffered", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::events", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::events", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::expand", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::expand", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::focus-on-click", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::focus-on-click", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::halign", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::halign", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::has-default", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::has-default", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::has-focus", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::has-focus", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::has-tooltip", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::has-tooltip", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::height-request", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::height-request", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::hexpand", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::hexpand", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::hexpand-set", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::hexpand-set", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-focus", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-focus", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-bottom", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-bottom", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-end", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-end", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-left", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-left", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-right", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-right", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-start", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-start", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-top", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-top", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::no-show-all", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::no-show-all", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::opacity", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::opacity", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::receives-default", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::receives-default", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::scale-factor", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::scale-factor", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::sensitive", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::sensitive", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::style", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::style", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::tooltip-markup", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::tooltip-markup", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::tooltip-text", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::tooltip-text", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::valign", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::valign", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::vexpand", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::vexpand", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::vexpand-set", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::vexpand-set", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::visible", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::visible", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::width-request", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::width-request", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: WidgetsAboutDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: string, callback: any): number
-    connect_after(sigName: string, callback: any): number
-    emit(sigName: string, ...args: any[]): void
-    disconnect(id: number): void
-    static name: string
-    constructor (config?: WidgetsAboutDialog_ConstructProps)
-    _init (config?: WidgetsAboutDialog_ConstructProps): void
-    /* Static methods and pseudo-constructors */
-    static new(): WidgetsAboutDialog
-    static new(type: Gtk.WindowType): WidgetsAboutDialog
-    static $gtype: GObject.Type
-}
 export interface WidgetsAlertView_ConstructProps extends Gtk.Grid_ConstructProps {
     title?: string
     description?: string
     icon_name?: string
 }
-export class WidgetsAlertView {
-    /* Properties of Granite.WidgetsAlertView */
+class WidgetsAlertView {
+    /* Properties of Granite-1.0.Granite.WidgetsAlertView */
     title: string
     description: string
     icon_name: string
-    /* Properties of Gtk.Grid */
+    /* Properties of Gtk-3.0.Gtk.Grid */
     baseline_row: number
     column_homogeneous: boolean
     column_spacing: number
     row_homogeneous: boolean
     row_spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -3622,13 +1379,13 @@ export class WidgetsAlertView {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsAlertView */
+    /* Methods of Granite-1.0.Granite.WidgetsAlertView */
     get_title(): string
     set_title(value: string): void
     get_description(): string
@@ -3637,7 +1394,7 @@ export class WidgetsAlertView {
     set_icon_name(value: string): void
     show_action(label?: string | null): void
     hide_action(): void
-    /* Methods of Gtk.Grid */
+    /* Methods of Gtk-3.0.Gtk.Grid */
     attach(child: Gtk.Widget, left: number, top: number, width: number, height: number): void
     attach_next_to(child: Gtk.Widget, sibling: Gtk.Widget | null, side: Gtk.PositionType, width: number, height: number): void
     get_baseline_row(): number
@@ -3658,10 +1415,11 @@ export class WidgetsAlertView {
     set_row_baseline_position(row: number, pos: Gtk.BaselinePosition): void
     set_row_homogeneous(homogeneous: boolean): void
     set_row_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3686,7 +1444,7 @@ export class WidgetsAlertView {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -3945,15 +1703,15 @@ export class WidgetsAlertView {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3961,13 +1719,13 @@ export class WidgetsAlertView {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -3978,7 +1736,7 @@ export class WidgetsAlertView {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -4061,19 +1819,19 @@ export class WidgetsAlertView {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.WidgetsAlertView */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.WidgetsAlertView */
     connect(sigName: "action-activated", callback: (($obj: WidgetsAlertView) => void)): number
     connect_after(sigName: "action-activated", callback: (($obj: WidgetsAlertView) => void)): number
     emit(sigName: "action-activated"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WidgetsAlertView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WidgetsAlertView, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -4086,7 +1844,7 @@ export class WidgetsAlertView {
     connect(sigName: "set-focus-child", callback: (($obj: WidgetsAlertView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsAlertView, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsAlertView) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsAlertView) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -4294,7 +2052,7 @@ export class WidgetsAlertView {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsAlertView, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsAlertView, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsAlertView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsAlertView, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4410,951 +2168,20 @@ export class WidgetsAlertView {
     static new(): WidgetsAlertView
     static $gtype: GObject.Type
 }
-export interface WidgetsAppMenu_ConstructProps extends Gtk.MenuButton_ConstructProps {
-}
-export class WidgetsAppMenu {
-    /* Properties of Gtk.MenuButton */
-    align_widget: Gtk.Container
-    direction: Gtk.ArrowType
-    menu_model: Gio.MenuModel
-    popover: Gtk.Popover
-    popup: Gtk.Menu
-    use_popover: boolean
-    /* Properties of Gtk.ToggleButton */
-    active: boolean
-    draw_indicator: boolean
-    inconsistent: boolean
-    /* Properties of Gtk.Button */
-    always_show_image: boolean
-    image: Gtk.Widget
-    image_position: Gtk.PositionType
-    label: string
-    relief: Gtk.ReliefStyle
-    use_stock: boolean
-    use_underline: boolean
-    xalign: number
-    yalign: number
-    /* Properties of Gtk.Container */
-    border_width: number
-    child: Gtk.Widget
-    resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
-    app_paintable: boolean
-    can_default: boolean
-    can_focus: boolean
-    readonly composite_child: boolean
-    double_buffered: boolean
-    events: Gdk.EventMask
-    expand: boolean
-    focus_on_click: boolean
-    halign: Gtk.Align
-    has_default: boolean
-    has_focus: boolean
-    has_tooltip: boolean
-    height_request: number
-    hexpand: boolean
-    hexpand_set: boolean
-    is_focus: boolean
-    margin: number
-    margin_bottom: number
-    margin_end: number
-    margin_left: number
-    margin_right: number
-    margin_start: number
-    margin_top: number
-    name: string
-    no_show_all: boolean
-    opacity: number
-    parent: Gtk.Container
-    receives_default: boolean
-    readonly scale_factor: number
-    sensitive: boolean
-    style: Gtk.Style
-    tooltip_markup: string
-    tooltip_text: string
-    valign: Gtk.Align
-    vexpand: boolean
-    vexpand_set: boolean
-    visible: boolean
-    width_request: number
-    readonly window: Gdk.Window
-    /* Fields of Granite.WidgetsAppMenu */
-    about_item: Gtk.MenuItem
-    /* Fields of Gtk.Bin */
-    container: Gtk.Container
-    /* Fields of Gtk.Container */
-    widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsAppMenu */
-    add_items(menu: Gtk.Menu): void
-    /* Methods of Gtk.MenuButton */
-    get_align_widget(): Gtk.Widget | null
-    get_direction(): Gtk.ArrowType
-    get_menu_model(): Gio.MenuModel | null
-    get_popover(): Gtk.Popover | null
-    get_popup(): Gtk.Menu | null
-    get_use_popover(): boolean
-    set_align_widget(align_widget?: Gtk.Widget | null): void
-    set_direction(direction: Gtk.ArrowType): void
-    set_menu_model(menu_model?: Gio.MenuModel | null): void
-    set_popover(popover?: Gtk.Widget | null): void
-    set_popup(menu?: Gtk.Widget | null): void
-    set_use_popover(use_popover: boolean): void
-    /* Methods of Gtk.ToggleButton */
-    get_active(): boolean
-    get_inconsistent(): boolean
-    get_mode(): boolean
-    set_active(is_active: boolean): void
-    set_inconsistent(setting: boolean): void
-    set_mode(draw_indicator: boolean): void
-    toggled(): void
-    /* Methods of Gtk.Button */
-    clicked(): void
-    enter(): void
-    get_alignment(): [ /* xalign */ number, /* yalign */ number ]
-    get_always_show_image(): boolean
-    get_event_window(): Gdk.Window
-    get_focus_on_click(): boolean
-    get_image(): Gtk.Widget | null
-    get_image_position(): Gtk.PositionType
-    get_label(): string
-    get_relief(): Gtk.ReliefStyle
-    get_use_stock(): boolean
-    get_use_underline(): boolean
-    leave(): void
-    pressed(): void
-    released(): void
-    set_alignment(xalign: number, yalign: number): void
-    set_always_show_image(always_show: boolean): void
-    set_focus_on_click(focus_on_click: boolean): void
-    set_image(image?: Gtk.Widget | null): void
-    set_image_position(position: Gtk.PositionType): void
-    set_label(label: string): void
-    set_relief(relief: Gtk.ReliefStyle): void
-    set_use_stock(use_stock: boolean): void
-    set_use_underline(use_underline: boolean): void
-    /* Methods of Gtk.Bin */
-    get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
-    add(widget: Gtk.Widget): void
-    check_resize(): void
-    child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
-    child_set_property(child: Gtk.Widget, property_name: string, value: any): void
-    child_type(): GObject.Type
-    forall(callback: Gtk.Callback): void
-    foreach(callback: Gtk.Callback): void
-    get_border_width(): number
-    get_children(): Gtk.Widget[]
-    get_focus_chain(): [ /* returnType */ boolean, /* focusable_widgets */ Gtk.Widget[] ]
-    get_focus_child(): Gtk.Widget | null
-    get_focus_hadjustment(): Gtk.Adjustment | null
-    get_focus_vadjustment(): Gtk.Adjustment | null
-    get_path_for_child(child: Gtk.Widget): Gtk.WidgetPath
-    get_resize_mode(): Gtk.ResizeMode
-    propagate_draw(child: Gtk.Widget, cr: cairo.Context): void
-    remove(widget: Gtk.Widget): void
-    resize_children(): void
-    set_border_width(border_width: number): void
-    set_focus_chain(focusable_widgets: Gtk.Widget[]): void
-    set_focus_child(child?: Gtk.Widget | null): void
-    set_focus_hadjustment(adjustment: Gtk.Adjustment): void
-    set_focus_vadjustment(adjustment: Gtk.Adjustment): void
-    set_reallocate_redraws(needs_redraws: boolean): void
-    set_resize_mode(resize_mode: Gtk.ResizeMode): void
-    unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
-    activate(): boolean
-    add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
-    add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
-    add_events(events: number): void
-    add_mnemonic_label(label: Gtk.Widget): void
-    add_tick_callback(callback: Gtk.TickCallback): number
-    can_activate_accel(signal_id: number): boolean
-    child_focus(direction: Gtk.DirectionType): boolean
-    child_notify(child_property: string): void
-    class_path(): [ /* path_length */ number | null, /* path */ string | null, /* path_reversed */ string | null ]
-    compute_expand(orientation: Gtk.Orientation): boolean
-    create_pango_context(): Pango.Context
-    create_pango_layout(text?: string | null): Pango.Layout
-    destroy(): void
-    destroyed(widget_pointer: Gtk.Widget): /* widget_pointer */ Gtk.Widget
-    device_is_shadowed(device: Gdk.Device): boolean
-    drag_begin(targets: Gtk.TargetList, actions: Gdk.DragAction, button: number, event?: Gdk.Event | null): Gdk.DragContext
-    drag_begin_with_coordinates(targets: Gtk.TargetList, actions: Gdk.DragAction, button: number, event: Gdk.Event | null, x: number, y: number): Gdk.DragContext
-    drag_check_threshold(start_x: number, start_y: number, current_x: number, current_y: number): boolean
-    drag_dest_add_image_targets(): void
-    drag_dest_add_text_targets(): void
-    drag_dest_add_uri_targets(): void
-    drag_dest_find_target(context: Gdk.DragContext, target_list?: Gtk.TargetList | null): Gdk.Atom
-    drag_dest_get_target_list(): Gtk.TargetList | null
-    drag_dest_get_track_motion(): boolean
-    drag_dest_set(flags: Gtk.DestDefaults, targets: Gtk.TargetEntry[] | null, actions: Gdk.DragAction): void
-    drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void
-    drag_dest_set_target_list(target_list?: Gtk.TargetList | null): void
-    drag_dest_set_track_motion(track_motion: boolean): void
-    drag_dest_unset(): void
-    drag_get_data(context: Gdk.DragContext, target: Gdk.Atom, time_: number): void
-    drag_highlight(): void
-    drag_source_add_image_targets(): void
-    drag_source_add_text_targets(): void
-    drag_source_add_uri_targets(): void
-    drag_source_get_target_list(): Gtk.TargetList | null
-    drag_source_set(start_button_mask: Gdk.ModifierType, targets: Gtk.TargetEntry[] | null, actions: Gdk.DragAction): void
-    drag_source_set_icon_gicon(icon: Gio.Icon): void
-    drag_source_set_icon_name(icon_name: string): void
-    drag_source_set_icon_pixbuf(pixbuf: GdkPixbuf.Pixbuf): void
-    drag_source_set_icon_stock(stock_id: string): void
-    drag_source_set_target_list(target_list?: Gtk.TargetList | null): void
-    drag_source_unset(): void
-    drag_unhighlight(): void
-    draw(cr: cairo.Context): void
-    ensure_style(): void
-    error_bell(): void
-    event(event: Gdk.Event): boolean
-    freeze_child_notify(): void
-    get_accessible(): Atk.Object
-    get_action_group(prefix: string): Gio.ActionGroup | null
-    get_allocated_baseline(): number
-    get_allocated_height(): number
-    get_allocated_size(): [ /* allocation */ Gtk.Allocation, /* baseline */ number | null ]
-    get_allocated_width(): number
-    get_allocation(): /* allocation */ Gtk.Allocation
-    get_ancestor(widget_type: GObject.Type): Gtk.Widget | null
-    get_app_paintable(): boolean
-    get_can_default(): boolean
-    get_can_focus(): boolean
-    get_child_requisition(): /* requisition */ Gtk.Requisition
-    get_child_visible(): boolean
-    get_clip(): /* clip */ Gtk.Allocation
-    get_clipboard(selection: Gdk.Atom): Gtk.Clipboard
-    get_composite_name(): string
-    get_device_enabled(device: Gdk.Device): boolean
-    get_device_events(device: Gdk.Device): Gdk.EventMask
-    get_direction(): Gtk.TextDirection
-    get_display(): Gdk.Display
-    get_double_buffered(): boolean
-    get_events(): number
-    get_font_map(): Pango.FontMap | null
-    get_font_options(): cairo.FontOptions | null
-    get_frame_clock(): Gdk.FrameClock | null
-    get_halign(): Gtk.Align
-    get_has_tooltip(): boolean
-    get_has_window(): boolean
-    get_hexpand(): boolean
-    get_hexpand_set(): boolean
-    get_mapped(): boolean
-    get_margin_bottom(): number
-    get_margin_end(): number
-    get_margin_left(): number
-    get_margin_right(): number
-    get_margin_start(): number
-    get_margin_top(): number
-    get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType
-    get_modifier_style(): Gtk.RcStyle
-    get_name(): string
-    get_no_show_all(): boolean
-    get_opacity(): number
-    get_pango_context(): Pango.Context
-    get_parent(): Gtk.Widget | null
-    get_parent_window(): Gdk.Window | null
-    get_path(): Gtk.WidgetPath
-    get_pointer(): [ /* x */ number | null, /* y */ number | null ]
-    get_preferred_height(): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
-    get_preferred_height_and_baseline_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null, /* minimum_baseline */ number | null, /* natural_baseline */ number | null ]
-    get_preferred_height_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
-    get_preferred_size(): [ /* minimum_size */ Gtk.Requisition | null, /* natural_size */ Gtk.Requisition | null ]
-    get_preferred_width(): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
-    get_preferred_width_for_height(height: number): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
-    get_realized(): boolean
-    get_receives_default(): boolean
-    get_request_mode(): Gtk.SizeRequestMode
-    get_requisition(): /* requisition */ Gtk.Requisition
-    get_root_window(): Gdk.Window
-    get_scale_factor(): number
-    get_screen(): Gdk.Screen
-    get_sensitive(): boolean
-    get_settings(): Gtk.Settings
-    get_size_request(): [ /* width */ number | null, /* height */ number | null ]
-    get_state(): Gtk.StateType
-    get_state_flags(): Gtk.StateFlags
-    get_style(): Gtk.Style
-    get_style_context(): Gtk.StyleContext
-    get_support_multidevice(): boolean
-    get_template_child(widget_type: GObject.Type, name: string): GObject.Object
-    get_tooltip_markup(): string | null
-    get_tooltip_text(): string | null
-    get_tooltip_window(): Gtk.Window
-    get_toplevel(): Gtk.Widget
-    get_valign(): Gtk.Align
-    get_valign_with_baseline(): Gtk.Align
-    get_vexpand(): boolean
-    get_vexpand_set(): boolean
-    get_visible(): boolean
-    get_visual(): Gdk.Visual
-    get_window(): Gdk.Window | null
-    grab_add(): void
-    grab_default(): void
-    grab_focus(): void
-    grab_remove(): void
-    has_grab(): boolean
-    has_rc_style(): boolean
-    has_screen(): boolean
-    has_visible_focus(): boolean
-    hide(): void
-    hide_on_delete(): boolean
-    in_destruction(): boolean
-    init_template(): void
-    input_shape_combine_region(region?: cairo.Region | null): void
-    insert_action_group(name: string, group?: Gio.ActionGroup | null): void
-    intersect(area: Gdk.Rectangle): [ /* returnType */ boolean, /* intersection */ Gdk.Rectangle | null ]
-    is_ancestor(ancestor: Gtk.Widget): boolean
-    is_composited(): boolean
-    is_drawable(): boolean
-    is_sensitive(): boolean
-    is_toplevel(): boolean
-    is_visible(): boolean
-    keynav_failed(direction: Gtk.DirectionType): boolean
-    list_accel_closures(): Function[]
-    list_action_prefixes(): string[]
-    list_mnemonic_labels(): Gtk.Widget[]
-    map(): void
-    mnemonic_activate(group_cycling: boolean): boolean
-    modify_base(state: Gtk.StateType, color?: Gdk.Color | null): void
-    modify_bg(state: Gtk.StateType, color?: Gdk.Color | null): void
-    modify_cursor(primary?: Gdk.Color | null, secondary?: Gdk.Color | null): void
-    modify_fg(state: Gtk.StateType, color?: Gdk.Color | null): void
-    modify_font(font_desc?: Pango.FontDescription | null): void
-    modify_style(style: Gtk.RcStyle): void
-    modify_text(state: Gtk.StateType, color?: Gdk.Color | null): void
-    override_background_color(state: Gtk.StateFlags, color?: Gdk.RGBA | null): void
-    override_color(state: Gtk.StateFlags, color?: Gdk.RGBA | null): void
-    override_cursor(cursor?: Gdk.RGBA | null, secondary_cursor?: Gdk.RGBA | null): void
-    override_font(font_desc?: Pango.FontDescription | null): void
-    override_symbolic_color(name: string, color?: Gdk.RGBA | null): void
-    path(): [ /* path_length */ number | null, /* path */ string | null, /* path_reversed */ string | null ]
-    queue_allocate(): void
-    queue_compute_expand(): void
-    queue_draw(): void
-    queue_draw_area(x: number, y: number, width: number, height: number): void
-    queue_draw_region(region: cairo.Region): void
-    queue_resize(): void
-    queue_resize_no_redraw(): void
-    realize(): void
-    region_intersect(region: cairo.Region): cairo.Region
-    register_window(window: Gdk.Window): void
-    remove_accelerator(accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean
-    remove_mnemonic_label(label: Gtk.Widget): void
-    remove_tick_callback(id: number): void
-    render_icon(stock_id: string, size: number, detail?: string | null): GdkPixbuf.Pixbuf | null
-    render_icon_pixbuf(stock_id: string, size: number): GdkPixbuf.Pixbuf | null
-    reparent(new_parent: Gtk.Widget): void
-    reset_rc_styles(): void
-    reset_style(): void
-    send_expose(event: Gdk.Event): number
-    send_focus_change(event: Gdk.Event): boolean
-    set_accel_path(accel_path?: string | null, accel_group?: Gtk.AccelGroup | null): void
-    set_allocation(allocation: Gtk.Allocation): void
-    set_app_paintable(app_paintable: boolean): void
-    set_can_default(can_default: boolean): void
-    set_can_focus(can_focus: boolean): void
-    set_child_visible(is_visible: boolean): void
-    set_clip(clip: Gtk.Allocation): void
-    set_composite_name(name: string): void
-    set_device_enabled(device: Gdk.Device, enabled: boolean): void
-    set_device_events(device: Gdk.Device, events: Gdk.EventMask): void
-    set_direction(dir: Gtk.TextDirection): void
-    set_double_buffered(double_buffered: boolean): void
-    set_events(events: number): void
-    set_font_map(font_map?: Pango.FontMap | null): void
-    set_font_options(options?: cairo.FontOptions | null): void
-    set_halign(align: Gtk.Align): void
-    set_has_tooltip(has_tooltip: boolean): void
-    set_has_window(has_window: boolean): void
-    set_hexpand(expand: boolean): void
-    set_hexpand_set(set: boolean): void
-    set_mapped(mapped: boolean): void
-    set_margin_bottom(margin: number): void
-    set_margin_end(margin: number): void
-    set_margin_left(margin: number): void
-    set_margin_right(margin: number): void
-    set_margin_start(margin: number): void
-    set_margin_top(margin: number): void
-    set_name(name: string): void
-    set_no_show_all(no_show_all: boolean): void
-    set_opacity(opacity: number): void
-    set_parent(parent: Gtk.Widget): void
-    set_parent_window(parent_window: Gdk.Window): void
-    set_realized(realized: boolean): void
-    set_receives_default(receives_default: boolean): void
-    set_redraw_on_allocate(redraw_on_allocate: boolean): void
-    set_sensitive(sensitive: boolean): void
-    set_size_request(width: number, height: number): void
-    set_state(state: Gtk.StateType): void
-    set_state_flags(flags: Gtk.StateFlags, clear: boolean): void
-    set_style(style?: Gtk.Style | null): void
-    set_support_multidevice(support_multidevice: boolean): void
-    set_tooltip_markup(markup?: string | null): void
-    set_tooltip_text(text?: string | null): void
-    set_tooltip_window(custom_window?: Gtk.Window | null): void
-    set_valign(align: Gtk.Align): void
-    set_vexpand(expand: boolean): void
-    set_vexpand_set(set: boolean): void
-    set_visible(visible: boolean): void
-    set_visual(visual?: Gdk.Visual | null): void
-    set_window(window: Gdk.Window): void
-    shape_combine_region(region?: cairo.Region | null): void
-    show(): void
-    show_all(): void
-    show_now(): void
-    size_allocate(allocation: Gtk.Allocation): void
-    size_allocate_with_baseline(allocation: Gtk.Allocation, baseline: number): void
-    size_request(): /* requisition */ Gtk.Requisition
-    style_attach(): void
-    style_get_property(property_name: string, value: any): void
-    thaw_child_notify(): void
-    translate_coordinates(dest_widget: Gtk.Widget, src_x: number, src_y: number): [ /* returnType */ boolean, /* dest_x */ number | null, /* dest_y */ number | null ]
-    trigger_tooltip_query(): void
-    unmap(): void
-    unparent(): void
-    unrealize(): void
-    unregister_window(window: Gdk.Window): void
-    unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
-    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
-    force_floating(): void
-    freeze_notify(): void
-    get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
-    get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
-    is_floating(): boolean
-    notify(property_name: string): void
-    notify_by_pspec(pspec: GObject.ParamSpec): void
-    ref(): GObject.Object
-    ref_sink(): GObject.Object
-    run_dispose(): void
-    set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
-    steal_data(key: string): object | null
-    steal_qdata(quark: GLib.Quark): object | null
-    thaw_notify(): void
-    unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.ToggleButton */
-    vfunc_toggled(): void
-    /* Virtual methods of Gtk.Button */
-    vfunc_activate(): void
-    vfunc_clicked(): void
-    vfunc_enter(): void
-    vfunc_leave(): void
-    vfunc_pressed(): void
-    vfunc_released(): void
-    /* Virtual methods of Gtk.Container */
-    vfunc_add(widget: Gtk.Widget): void
-    vfunc_check_resize(): void
-    vfunc_child_type(): GObject.Type
-    vfunc_composite_name(child: Gtk.Widget): string
-    vfunc_forall(include_internals: boolean, callback: Gtk.Callback): void
-    vfunc_get_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
-    vfunc_get_path_for_child(child: Gtk.Widget): Gtk.WidgetPath
-    vfunc_remove(widget: Gtk.Widget): void
-    vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
-    vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
-    vfunc_adjust_baseline_allocation(baseline: number): void
-    vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
-    vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
-    vfunc_adjust_size_request(orientation: Gtk.Orientation, minimum_size: number, natural_size: number): void
-    vfunc_button_press_event(event: Gdk.EventButton): boolean
-    vfunc_button_release_event(event: Gdk.EventButton): boolean
-    vfunc_can_activate_accel(signal_id: number): boolean
-    vfunc_child_notify(child_property: GObject.ParamSpec): void
-    vfunc_composited_changed(): void
-    vfunc_compute_expand(hexpand_p: boolean, vexpand_p: boolean): void
-    vfunc_configure_event(event: Gdk.EventConfigure): boolean
-    vfunc_damage_event(event: Gdk.EventExpose): boolean
-    vfunc_delete_event(event: Gdk.EventAny): boolean
-    vfunc_destroy(): void
-    vfunc_destroy_event(event: Gdk.EventAny): boolean
-    vfunc_direction_changed(previous_direction: Gtk.TextDirection): void
-    vfunc_dispatch_child_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
-    vfunc_drag_begin(context: Gdk.DragContext): void
-    vfunc_drag_data_delete(context: Gdk.DragContext): void
-    vfunc_drag_data_get(context: Gdk.DragContext, selection_data: Gtk.SelectionData, info: number, time_: number): void
-    vfunc_drag_data_received(context: Gdk.DragContext, x: number, y: number, selection_data: Gtk.SelectionData, info: number, time_: number): void
-    vfunc_drag_drop(context: Gdk.DragContext, x: number, y: number, time_: number): boolean
-    vfunc_drag_end(context: Gdk.DragContext): void
-    vfunc_drag_failed(context: Gdk.DragContext, result: Gtk.DragResult): boolean
-    vfunc_drag_leave(context: Gdk.DragContext, time_: number): void
-    vfunc_drag_motion(context: Gdk.DragContext, x: number, y: number, time_: number): boolean
-    vfunc_draw(cr: cairo.Context): boolean
-    vfunc_enter_notify_event(event: Gdk.EventCrossing): boolean
-    vfunc_event(event: Gdk.Event): boolean
-    vfunc_focus(direction: Gtk.DirectionType): boolean
-    vfunc_focus_in_event(event: Gdk.EventFocus): boolean
-    vfunc_focus_out_event(event: Gdk.EventFocus): boolean
-    vfunc_get_accessible(): Atk.Object
-    vfunc_get_preferred_height(): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
-    vfunc_get_preferred_height_and_baseline_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null, /* minimum_baseline */ number | null, /* natural_baseline */ number | null ]
-    vfunc_get_preferred_height_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
-    vfunc_get_preferred_width(): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
-    vfunc_get_preferred_width_for_height(height: number): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
-    vfunc_get_request_mode(): Gtk.SizeRequestMode
-    vfunc_grab_broken_event(event: Gdk.EventGrabBroken): boolean
-    vfunc_grab_focus(): void
-    vfunc_grab_notify(was_grabbed: boolean): void
-    vfunc_hide(): void
-    vfunc_hierarchy_changed(previous_toplevel: Gtk.Widget): void
-    vfunc_key_press_event(event: Gdk.EventKey): boolean
-    vfunc_key_release_event(event: Gdk.EventKey): boolean
-    vfunc_keynav_failed(direction: Gtk.DirectionType): boolean
-    vfunc_leave_notify_event(event: Gdk.EventCrossing): boolean
-    vfunc_map(): void
-    vfunc_map_event(event: Gdk.EventAny): boolean
-    vfunc_mnemonic_activate(group_cycling: boolean): boolean
-    vfunc_motion_notify_event(event: Gdk.EventMotion): boolean
-    vfunc_move_focus(direction: Gtk.DirectionType): void
-    vfunc_parent_set(previous_parent: Gtk.Widget): void
-    vfunc_popup_menu(): boolean
-    vfunc_property_notify_event(event: Gdk.EventProperty): boolean
-    vfunc_proximity_in_event(event: Gdk.EventProximity): boolean
-    vfunc_proximity_out_event(event: Gdk.EventProximity): boolean
-    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
-    vfunc_queue_draw_region(region: cairo.Region): void
-    vfunc_realize(): void
-    vfunc_screen_changed(previous_screen: Gdk.Screen): void
-    vfunc_scroll_event(event: Gdk.EventScroll): boolean
-    vfunc_selection_clear_event(event: Gdk.EventSelection): boolean
-    vfunc_selection_get(selection_data: Gtk.SelectionData, info: number, time_: number): void
-    vfunc_selection_notify_event(event: Gdk.EventSelection): boolean
-    vfunc_selection_received(selection_data: Gtk.SelectionData, time_: number): void
-    vfunc_selection_request_event(event: Gdk.EventSelection): boolean
-    vfunc_show(): void
-    vfunc_show_all(): void
-    vfunc_show_help(help_type: Gtk.WidgetHelpType): boolean
-    vfunc_size_allocate(allocation: Gtk.Allocation): void
-    vfunc_state_changed(previous_state: Gtk.StateType): void
-    vfunc_state_flags_changed(previous_state_flags: Gtk.StateFlags): void
-    vfunc_style_set(previous_style: Gtk.Style): void
-    vfunc_style_updated(): void
-    vfunc_touch_event(event: Gdk.EventTouch): boolean
-    vfunc_unmap(): void
-    vfunc_unmap_event(event: Gdk.EventAny): boolean
-    vfunc_unrealize(): void
-    vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
-    vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
-    vfunc_constructed(): void
-    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
-    vfunc_dispose(): void
-    vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.WidgetsAppMenu */
-    connect(sigName: "show-about", callback: (($obj: WidgetsAppMenu, w: Gtk.Widget) => void)): number
-    connect_after(sigName: "show-about", callback: (($obj: WidgetsAppMenu, w: Gtk.Widget) => void)): number
-    emit(sigName: "show-about", w: Gtk.Widget): void
-    /* Signals of Gtk.ToggleButton */
-    connect(sigName: "toggled", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "toggled", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "toggled"): void
-    /* Signals of Gtk.Button */
-    connect(sigName: "activate", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "activate", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "activate"): void
-    connect(sigName: "clicked", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "clicked", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "clicked"): void
-    connect(sigName: "enter", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "enter", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "enter"): void
-    connect(sigName: "leave", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "leave", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "leave"): void
-    connect(sigName: "pressed", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "pressed", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "pressed"): void
-    connect(sigName: "released", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "released", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "released"): void
-    /* Signals of Gtk.Container */
-    connect(sigName: "add", callback: (($obj: WidgetsAppMenu, object: Gtk.Widget) => void)): number
-    connect_after(sigName: "add", callback: (($obj: WidgetsAppMenu, object: Gtk.Widget) => void)): number
-    emit(sigName: "add", object: Gtk.Widget): void
-    connect(sigName: "check-resize", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "check-resize", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "check-resize"): void
-    connect(sigName: "remove", callback: (($obj: WidgetsAppMenu, object: Gtk.Widget) => void)): number
-    connect_after(sigName: "remove", callback: (($obj: WidgetsAppMenu, object: Gtk.Widget) => void)): number
-    emit(sigName: "remove", object: Gtk.Widget): void
-    connect(sigName: "set-focus-child", callback: (($obj: WidgetsAppMenu, object: Gtk.Widget) => void)): number
-    connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsAppMenu, object: Gtk.Widget) => void)): number
-    emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
-    connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "accel-closures-changed"): void
-    connect(sigName: "button-press-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventButton) => boolean)): number
-    connect_after(sigName: "button-press-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventButton) => boolean)): number
-    emit(sigName: "button-press-event", event: Gdk.EventButton): void
-    connect(sigName: "button-release-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventButton) => boolean)): number
-    connect_after(sigName: "button-release-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventButton) => boolean)): number
-    emit(sigName: "button-release-event", event: Gdk.EventButton): void
-    connect(sigName: "can-activate-accel", callback: (($obj: WidgetsAppMenu, signal_id: number) => boolean)): number
-    connect_after(sigName: "can-activate-accel", callback: (($obj: WidgetsAppMenu, signal_id: number) => boolean)): number
-    emit(sigName: "can-activate-accel", signal_id: number): void
-    connect(sigName: "child-notify", callback: (($obj: WidgetsAppMenu, child_property: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "child-notify", callback: (($obj: WidgetsAppMenu, child_property: GObject.ParamSpec) => void)): number
-    emit(sigName: "child-notify", child_property: GObject.ParamSpec): void
-    connect(sigName: "composited-changed", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "composited-changed", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "composited-changed"): void
-    connect(sigName: "configure-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventConfigure) => boolean)): number
-    connect_after(sigName: "configure-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventConfigure) => boolean)): number
-    emit(sigName: "configure-event", event: Gdk.EventConfigure): void
-    connect(sigName: "damage-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventExpose) => boolean)): number
-    connect_after(sigName: "damage-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventExpose) => boolean)): number
-    emit(sigName: "damage-event", event: Gdk.EventExpose): void
-    connect(sigName: "delete-event", callback: (($obj: WidgetsAppMenu, event: Gdk.Event) => boolean)): number
-    connect_after(sigName: "delete-event", callback: (($obj: WidgetsAppMenu, event: Gdk.Event) => boolean)): number
-    emit(sigName: "delete-event", event: Gdk.Event): void
-    connect(sigName: "destroy", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "destroy", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "destroy"): void
-    connect(sigName: "destroy-event", callback: (($obj: WidgetsAppMenu, event: Gdk.Event) => boolean)): number
-    connect_after(sigName: "destroy-event", callback: (($obj: WidgetsAppMenu, event: Gdk.Event) => boolean)): number
-    emit(sigName: "destroy-event", event: Gdk.Event): void
-    connect(sigName: "direction-changed", callback: (($obj: WidgetsAppMenu, previous_direction: Gtk.TextDirection) => void)): number
-    connect_after(sigName: "direction-changed", callback: (($obj: WidgetsAppMenu, previous_direction: Gtk.TextDirection) => void)): number
-    emit(sigName: "direction-changed", previous_direction: Gtk.TextDirection): void
-    connect(sigName: "drag-begin", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext) => void)): number
-    connect_after(sigName: "drag-begin", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext) => void)): number
-    emit(sigName: "drag-begin", context: Gdk.DragContext): void
-    connect(sigName: "drag-data-delete", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext) => void)): number
-    connect_after(sigName: "drag-data-delete", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext) => void)): number
-    emit(sigName: "drag-data-delete", context: Gdk.DragContext): void
-    connect(sigName: "drag-data-get", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    connect_after(sigName: "drag-data-get", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    emit(sigName: "drag-data-get", context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number): void
-    connect(sigName: "drag-data-received", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    connect_after(sigName: "drag-data-received", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    emit(sigName: "drag-data-received", context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number): void
-    connect(sigName: "drag-drop", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
-    connect_after(sigName: "drag-drop", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
-    emit(sigName: "drag-drop", context: Gdk.DragContext, x: number, y: number, time: number): void
-    connect(sigName: "drag-end", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext) => void)): number
-    connect_after(sigName: "drag-end", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext) => void)): number
-    emit(sigName: "drag-end", context: Gdk.DragContext): void
-    connect(sigName: "drag-failed", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext, result: Gtk.DragResult) => boolean)): number
-    connect_after(sigName: "drag-failed", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext, result: Gtk.DragResult) => boolean)): number
-    emit(sigName: "drag-failed", context: Gdk.DragContext, result: Gtk.DragResult): void
-    connect(sigName: "drag-leave", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext, time: number) => void)): number
-    connect_after(sigName: "drag-leave", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext, time: number) => void)): number
-    emit(sigName: "drag-leave", context: Gdk.DragContext, time: number): void
-    connect(sigName: "drag-motion", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
-    connect_after(sigName: "drag-motion", callback: (($obj: WidgetsAppMenu, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
-    emit(sigName: "drag-motion", context: Gdk.DragContext, x: number, y: number, time: number): void
-    connect(sigName: "draw", callback: (($obj: WidgetsAppMenu, cr: cairo.Context) => boolean)): number
-    connect_after(sigName: "draw", callback: (($obj: WidgetsAppMenu, cr: cairo.Context) => boolean)): number
-    emit(sigName: "draw", cr: cairo.Context): void
-    connect(sigName: "enter-notify-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventCrossing) => boolean)): number
-    connect_after(sigName: "enter-notify-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventCrossing) => boolean)): number
-    emit(sigName: "enter-notify-event", event: Gdk.EventCrossing): void
-    connect(sigName: "event", callback: (($obj: WidgetsAppMenu, event: Gdk.Event) => boolean)): number
-    connect_after(sigName: "event", callback: (($obj: WidgetsAppMenu, event: Gdk.Event) => boolean)): number
-    emit(sigName: "event", event: Gdk.Event): void
-    connect(sigName: "event-after", callback: (($obj: WidgetsAppMenu, event: Gdk.Event) => void)): number
-    connect_after(sigName: "event-after", callback: (($obj: WidgetsAppMenu, event: Gdk.Event) => void)): number
-    emit(sigName: "event-after", event: Gdk.Event): void
-    connect(sigName: "focus", callback: (($obj: WidgetsAppMenu, direction: Gtk.DirectionType) => boolean)): number
-    connect_after(sigName: "focus", callback: (($obj: WidgetsAppMenu, direction: Gtk.DirectionType) => boolean)): number
-    emit(sigName: "focus", direction: Gtk.DirectionType): void
-    connect(sigName: "focus-in-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventFocus) => boolean)): number
-    connect_after(sigName: "focus-in-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventFocus) => boolean)): number
-    emit(sigName: "focus-in-event", event: Gdk.EventFocus): void
-    connect(sigName: "focus-out-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventFocus) => boolean)): number
-    connect_after(sigName: "focus-out-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventFocus) => boolean)): number
-    emit(sigName: "focus-out-event", event: Gdk.EventFocus): void
-    connect(sigName: "grab-broken-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventGrabBroken) => boolean)): number
-    connect_after(sigName: "grab-broken-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventGrabBroken) => boolean)): number
-    emit(sigName: "grab-broken-event", event: Gdk.EventGrabBroken): void
-    connect(sigName: "grab-focus", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "grab-focus", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "grab-focus"): void
-    connect(sigName: "grab-notify", callback: (($obj: WidgetsAppMenu, was_grabbed: boolean) => void)): number
-    connect_after(sigName: "grab-notify", callback: (($obj: WidgetsAppMenu, was_grabbed: boolean) => void)): number
-    emit(sigName: "grab-notify", was_grabbed: boolean): void
-    connect(sigName: "hide", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "hide", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "hide"): void
-    connect(sigName: "hierarchy-changed", callback: (($obj: WidgetsAppMenu, previous_toplevel?: Gtk.Widget | null) => void)): number
-    connect_after(sigName: "hierarchy-changed", callback: (($obj: WidgetsAppMenu, previous_toplevel?: Gtk.Widget | null) => void)): number
-    emit(sigName: "hierarchy-changed", previous_toplevel?: Gtk.Widget | null): void
-    connect(sigName: "key-press-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventKey) => boolean)): number
-    connect_after(sigName: "key-press-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventKey) => boolean)): number
-    emit(sigName: "key-press-event", event: Gdk.EventKey): void
-    connect(sigName: "key-release-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventKey) => boolean)): number
-    connect_after(sigName: "key-release-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventKey) => boolean)): number
-    emit(sigName: "key-release-event", event: Gdk.EventKey): void
-    connect(sigName: "keynav-failed", callback: (($obj: WidgetsAppMenu, direction: Gtk.DirectionType) => boolean)): number
-    connect_after(sigName: "keynav-failed", callback: (($obj: WidgetsAppMenu, direction: Gtk.DirectionType) => boolean)): number
-    emit(sigName: "keynav-failed", direction: Gtk.DirectionType): void
-    connect(sigName: "leave-notify-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventCrossing) => boolean)): number
-    connect_after(sigName: "leave-notify-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventCrossing) => boolean)): number
-    emit(sigName: "leave-notify-event", event: Gdk.EventCrossing): void
-    connect(sigName: "map", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "map", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "map"): void
-    connect(sigName: "map-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventAny) => boolean)): number
-    connect_after(sigName: "map-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventAny) => boolean)): number
-    emit(sigName: "map-event", event: Gdk.EventAny): void
-    connect(sigName: "mnemonic-activate", callback: (($obj: WidgetsAppMenu, group_cycling: boolean) => boolean)): number
-    connect_after(sigName: "mnemonic-activate", callback: (($obj: WidgetsAppMenu, group_cycling: boolean) => boolean)): number
-    emit(sigName: "mnemonic-activate", group_cycling: boolean): void
-    connect(sigName: "motion-notify-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventMotion) => boolean)): number
-    connect_after(sigName: "motion-notify-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventMotion) => boolean)): number
-    emit(sigName: "motion-notify-event", event: Gdk.EventMotion): void
-    connect(sigName: "move-focus", callback: (($obj: WidgetsAppMenu, direction: Gtk.DirectionType) => void)): number
-    connect_after(sigName: "move-focus", callback: (($obj: WidgetsAppMenu, direction: Gtk.DirectionType) => void)): number
-    emit(sigName: "move-focus", direction: Gtk.DirectionType): void
-    connect(sigName: "parent-set", callback: (($obj: WidgetsAppMenu, old_parent?: Gtk.Widget | null) => void)): number
-    connect_after(sigName: "parent-set", callback: (($obj: WidgetsAppMenu, old_parent?: Gtk.Widget | null) => void)): number
-    emit(sigName: "parent-set", old_parent?: Gtk.Widget | null): void
-    connect(sigName: "popup-menu", callback: (($obj: WidgetsAppMenu) => boolean)): number
-    connect_after(sigName: "popup-menu", callback: (($obj: WidgetsAppMenu) => boolean)): number
-    emit(sigName: "popup-menu"): void
-    connect(sigName: "property-notify-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventProperty) => boolean)): number
-    connect_after(sigName: "property-notify-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventProperty) => boolean)): number
-    emit(sigName: "property-notify-event", event: Gdk.EventProperty): void
-    connect(sigName: "proximity-in-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventProximity) => boolean)): number
-    connect_after(sigName: "proximity-in-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventProximity) => boolean)): number
-    emit(sigName: "proximity-in-event", event: Gdk.EventProximity): void
-    connect(sigName: "proximity-out-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventProximity) => boolean)): number
-    connect_after(sigName: "proximity-out-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventProximity) => boolean)): number
-    emit(sigName: "proximity-out-event", event: Gdk.EventProximity): void
-    connect(sigName: "query-tooltip", callback: (($obj: WidgetsAppMenu, x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip) => boolean)): number
-    connect_after(sigName: "query-tooltip", callback: (($obj: WidgetsAppMenu, x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip) => boolean)): number
-    emit(sigName: "query-tooltip", x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip): void
-    connect(sigName: "realize", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "realize", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "realize"): void
-    connect(sigName: "screen-changed", callback: (($obj: WidgetsAppMenu, previous_screen?: Gdk.Screen | null) => void)): number
-    connect_after(sigName: "screen-changed", callback: (($obj: WidgetsAppMenu, previous_screen?: Gdk.Screen | null) => void)): number
-    emit(sigName: "screen-changed", previous_screen?: Gdk.Screen | null): void
-    connect(sigName: "scroll-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventScroll) => boolean)): number
-    connect_after(sigName: "scroll-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventScroll) => boolean)): number
-    emit(sigName: "scroll-event", event: Gdk.EventScroll): void
-    connect(sigName: "selection-clear-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventSelection) => boolean)): number
-    connect_after(sigName: "selection-clear-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventSelection) => boolean)): number
-    emit(sigName: "selection-clear-event", event: Gdk.EventSelection): void
-    connect(sigName: "selection-get", callback: (($obj: WidgetsAppMenu, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    connect_after(sigName: "selection-get", callback: (($obj: WidgetsAppMenu, data: Gtk.SelectionData, info: number, time: number) => void)): number
-    emit(sigName: "selection-get", data: Gtk.SelectionData, info: number, time: number): void
-    connect(sigName: "selection-notify-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventSelection) => boolean)): number
-    connect_after(sigName: "selection-notify-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventSelection) => boolean)): number
-    emit(sigName: "selection-notify-event", event: Gdk.EventSelection): void
-    connect(sigName: "selection-received", callback: (($obj: WidgetsAppMenu, data: Gtk.SelectionData, time: number) => void)): number
-    connect_after(sigName: "selection-received", callback: (($obj: WidgetsAppMenu, data: Gtk.SelectionData, time: number) => void)): number
-    emit(sigName: "selection-received", data: Gtk.SelectionData, time: number): void
-    connect(sigName: "selection-request-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventSelection) => boolean)): number
-    connect_after(sigName: "selection-request-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventSelection) => boolean)): number
-    emit(sigName: "selection-request-event", event: Gdk.EventSelection): void
-    connect(sigName: "show", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "show", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "show"): void
-    connect(sigName: "show-help", callback: (($obj: WidgetsAppMenu, help_type: Gtk.WidgetHelpType) => boolean)): number
-    connect_after(sigName: "show-help", callback: (($obj: WidgetsAppMenu, help_type: Gtk.WidgetHelpType) => boolean)): number
-    emit(sigName: "show-help", help_type: Gtk.WidgetHelpType): void
-    connect(sigName: "size-allocate", callback: (($obj: WidgetsAppMenu, allocation: Gtk.Allocation) => void)): number
-    connect_after(sigName: "size-allocate", callback: (($obj: WidgetsAppMenu, allocation: Gtk.Allocation) => void)): number
-    emit(sigName: "size-allocate", allocation: Gtk.Allocation): void
-    connect(sigName: "state-changed", callback: (($obj: WidgetsAppMenu, state: Gtk.StateType) => void)): number
-    connect_after(sigName: "state-changed", callback: (($obj: WidgetsAppMenu, state: Gtk.StateType) => void)): number
-    emit(sigName: "state-changed", state: Gtk.StateType): void
-    connect(sigName: "state-flags-changed", callback: (($obj: WidgetsAppMenu, flags: Gtk.StateFlags) => void)): number
-    connect_after(sigName: "state-flags-changed", callback: (($obj: WidgetsAppMenu, flags: Gtk.StateFlags) => void)): number
-    emit(sigName: "state-flags-changed", flags: Gtk.StateFlags): void
-    connect(sigName: "style-set", callback: (($obj: WidgetsAppMenu, previous_style?: Gtk.Style | null) => void)): number
-    connect_after(sigName: "style-set", callback: (($obj: WidgetsAppMenu, previous_style?: Gtk.Style | null) => void)): number
-    emit(sigName: "style-set", previous_style?: Gtk.Style | null): void
-    connect(sigName: "style-updated", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "style-updated", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "style-updated"): void
-    connect(sigName: "touch-event", callback: (($obj: WidgetsAppMenu, object: Gdk.Event) => boolean)): number
-    connect_after(sigName: "touch-event", callback: (($obj: WidgetsAppMenu, object: Gdk.Event) => boolean)): number
-    emit(sigName: "touch-event", object: Gdk.Event): void
-    connect(sigName: "unmap", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "unmap", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "unmap"): void
-    connect(sigName: "unmap-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventAny) => boolean)): number
-    connect_after(sigName: "unmap-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventAny) => boolean)): number
-    emit(sigName: "unmap-event", event: Gdk.EventAny): void
-    connect(sigName: "unrealize", callback: (($obj: WidgetsAppMenu) => void)): number
-    connect_after(sigName: "unrealize", callback: (($obj: WidgetsAppMenu) => void)): number
-    emit(sigName: "unrealize"): void
-    connect(sigName: "visibility-notify-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventVisibility) => boolean)): number
-    connect_after(sigName: "visibility-notify-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventVisibility) => boolean)): number
-    emit(sigName: "visibility-notify-event", event: Gdk.EventVisibility): void
-    connect(sigName: "window-state-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventWindowState) => boolean)): number
-    connect_after(sigName: "window-state-event", callback: (($obj: WidgetsAppMenu, event: Gdk.EventWindowState) => boolean)): number
-    emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
-    connect(sigName: "notify", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::align-widget", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::align-widget", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::direction", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::direction", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::menu-model", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::menu-model", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::popover", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::popover", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::popup", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::popup", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::use-popover", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::use-popover", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::active", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::active", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::draw-indicator", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::draw-indicator", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::inconsistent", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::inconsistent", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::always-show-image", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::always-show-image", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::image", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::image", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::image-position", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::image-position", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::label", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::label", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::relief", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::relief", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::use-stock", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::use-stock", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::use-underline", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::use-underline", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::xalign", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::xalign", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::yalign", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::yalign", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::border-width", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::border-width", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::child", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::child", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::resize-mode", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::resize-mode", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::app-paintable", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::app-paintable", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::can-default", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::can-default", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::can-focus", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::can-focus", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::composite-child", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::composite-child", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::double-buffered", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::double-buffered", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::events", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::events", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::expand", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::expand", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::focus-on-click", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::focus-on-click", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::halign", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::halign", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::has-default", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::has-default", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::has-focus", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::has-focus", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::has-tooltip", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::has-tooltip", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::height-request", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::height-request", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::hexpand", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::hexpand", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::hexpand-set", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::hexpand-set", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-focus", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-focus", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-bottom", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-bottom", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-end", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-end", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-left", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-left", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-right", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-right", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-start", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-start", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::margin-top", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::margin-top", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::no-show-all", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::no-show-all", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::opacity", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::opacity", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::receives-default", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::receives-default", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::scale-factor", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::scale-factor", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::sensitive", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::sensitive", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::style", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::style", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::tooltip-markup", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::tooltip-markup", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::tooltip-text", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::tooltip-text", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::valign", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::valign", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::vexpand", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::vexpand", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::vexpand-set", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::vexpand-set", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::visible", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::visible", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::width-request", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::width-request", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: WidgetsAppMenu, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: string, callback: any): number
-    connect_after(sigName: string, callback: any): number
-    emit(sigName: string, ...args: any[]): void
-    disconnect(id: number): void
-    static name: string
-    constructor (config?: WidgetsAppMenu_ConstructProps)
-    _init (config?: WidgetsAppMenu_ConstructProps): void
-    /* Static methods and pseudo-constructors */
-    static new(menu: Gtk.Menu): WidgetsAppMenu
-    static new(): WidgetsAppMenu
-    static with_app(application: Application | null, menu: Gtk.Menu): WidgetsAppMenu
-    static $gtype: GObject.Type
-}
 export interface WidgetsAvatar_ConstructProps extends Gtk.EventBox_ConstructProps {
     pixbuf?: GdkPixbuf.Pixbuf
 }
-export class WidgetsAvatar {
-    /* Properties of Granite.WidgetsAvatar */
+class WidgetsAvatar {
+    /* Properties of Granite-1.0.Granite.WidgetsAvatar */
     pixbuf: GdkPixbuf.Pixbuf
-    /* Properties of Gtk.EventBox */
+    /* Properties of Gtk-3.0.Gtk.EventBox */
     above_child: boolean
     visible_window: boolean
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -5394,31 +2221,32 @@ export class WidgetsAvatar {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.EventBox */
+    /* Fields of Gtk-3.0.Gtk.EventBox */
     bin: Gtk.Bin
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsAvatar */
+    /* Methods of Granite-1.0.Granite.WidgetsAvatar */
     get_pixbuf(): GdkPixbuf.Pixbuf | null
     set_pixbuf(value?: GdkPixbuf.Pixbuf | null): void
     show_default(pixel_size: number): void
-    /* Methods of Gtk.EventBox */
+    /* Methods of Gtk-3.0.Gtk.EventBox */
     get_above_child(): boolean
     get_visible_window(): boolean
     set_above_child(above_child: boolean): void
     set_visible_window(visible_window: boolean): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -5443,7 +2271,7 @@ export class WidgetsAvatar {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -5702,15 +2530,15 @@ export class WidgetsAvatar {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5718,13 +2546,13 @@ export class WidgetsAvatar {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -5735,7 +2563,7 @@ export class WidgetsAvatar {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -5818,15 +2646,15 @@ export class WidgetsAvatar {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WidgetsAvatar, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WidgetsAvatar, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -5839,7 +2667,7 @@ export class WidgetsAvatar {
     connect(sigName: "set-focus-child", callback: (($obj: WidgetsAvatar, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsAvatar, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsAvatar) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsAvatar) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -6047,7 +2875,7 @@ export class WidgetsAvatar {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsAvatar, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsAvatar, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsAvatar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsAvatar, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6158,10 +2986,10 @@ export class WidgetsAvatar {
 export interface WidgetsCellRendererBadge_ConstructProps extends Gtk.CellRenderer_ConstructProps {
     text?: string
 }
-export class WidgetsCellRendererBadge {
-    /* Properties of Granite.WidgetsCellRendererBadge */
+class WidgetsCellRendererBadge {
+    /* Properties of Granite-1.0.Granite.WidgetsCellRendererBadge */
     text: string
-    /* Properties of Gtk.CellRenderer */
+    /* Properties of Gtk-3.0.Gtk.CellRenderer */
     cell_background: string
     cell_background_gdk: Gdk.Color
     cell_background_rgba: Gdk.RGBA
@@ -6178,14 +3006,14 @@ export class WidgetsCellRendererBadge {
     xpad: number
     yalign: number
     ypad: number
-    /* Fields of Gtk.CellRenderer */
+    /* Fields of Gtk-3.0.Gtk.CellRenderer */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsCellRendererBadge */
+    /* Methods of Granite-1.0.Granite.WidgetsCellRendererBadge */
     get_text(): string
     set_text(value: string): void
-    /* Methods of Gtk.CellRenderer */
+    /* Methods of Gtk-3.0.Gtk.CellRenderer */
     activate(event: Gdk.Event, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): boolean
     get_aligned_area(widget: Gtk.Widget, flags: Gtk.CellRendererState, cell_area: Gdk.Rectangle): /* aligned_area */ Gdk.Rectangle
     get_alignment(): [ /* xalign */ number | null, /* yalign */ number | null ]
@@ -6210,15 +3038,15 @@ export class WidgetsCellRendererBadge {
     set_visible(visible: boolean): void
     start_editing(event: Gdk.Event | null, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): Gtk.CellEditable | null
     stop_editing(canceled: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6226,13 +3054,13 @@ export class WidgetsCellRendererBadge {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.CellRenderer */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.CellRenderer */
     vfunc_activate(event: Gdk.Event, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): boolean
     vfunc_editing_canceled(): void
     vfunc_editing_started(editable: Gtk.CellEditable, path: string): void
@@ -6245,22 +3073,22 @@ export class WidgetsCellRendererBadge {
     vfunc_get_size(widget: Gtk.Widget, cell_area?: Gdk.Rectangle | null): [ /* x_offset */ number | null, /* y_offset */ number | null, /* width */ number | null, /* height */ number | null ]
     vfunc_render(cr: cairo.Context, widget: Gtk.Widget, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): void
     vfunc_start_editing(event: Gdk.Event | null, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): Gtk.CellEditable | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.CellRenderer */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.CellRenderer */
     connect(sigName: "editing-canceled", callback: (($obj: WidgetsCellRendererBadge) => void)): number
     connect_after(sigName: "editing-canceled", callback: (($obj: WidgetsCellRendererBadge) => void)): number
     emit(sigName: "editing-canceled"): void
     connect(sigName: "editing-started", callback: (($obj: WidgetsCellRendererBadge, editable: Gtk.CellEditable, path: string) => void)): number
     connect_after(sigName: "editing-started", callback: (($obj: WidgetsCellRendererBadge, editable: Gtk.CellEditable, path: string) => void)): number
     emit(sigName: "editing-started", editable: Gtk.CellEditable, path: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsCellRendererBadge, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsCellRendererBadge, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6312,10 +3140,10 @@ export class WidgetsCellRendererBadge {
 export interface WidgetsCellRendererExpander_ConstructProps extends Gtk.CellRenderer_ConstructProps {
     is_category_expander?: boolean
 }
-export class WidgetsCellRendererExpander {
-    /* Properties of Granite.WidgetsCellRendererExpander */
+class WidgetsCellRendererExpander {
+    /* Properties of Granite-1.0.Granite.WidgetsCellRendererExpander */
     is_category_expander: boolean
-    /* Properties of Gtk.CellRenderer */
+    /* Properties of Gtk-3.0.Gtk.CellRenderer */
     cell_background: string
     cell_background_gdk: Gdk.Color
     cell_background_rgba: Gdk.RGBA
@@ -6332,15 +3160,15 @@ export class WidgetsCellRendererExpander {
     xpad: number
     yalign: number
     ypad: number
-    /* Fields of Gtk.CellRenderer */
+    /* Fields of Gtk-3.0.Gtk.CellRenderer */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsCellRendererExpander */
+    /* Methods of Granite-1.0.Granite.WidgetsCellRendererExpander */
     get_is_category_expander(): boolean
     set_is_category_expander(value: boolean): void
     get_arrow_size(widget: Gtk.Widget): number
-    /* Methods of Gtk.CellRenderer */
+    /* Methods of Gtk-3.0.Gtk.CellRenderer */
     activate(event: Gdk.Event, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): boolean
     get_aligned_area(widget: Gtk.Widget, flags: Gtk.CellRendererState, cell_area: Gdk.Rectangle): /* aligned_area */ Gdk.Rectangle
     get_alignment(): [ /* xalign */ number | null, /* yalign */ number | null ]
@@ -6365,15 +3193,15 @@ export class WidgetsCellRendererExpander {
     set_visible(visible: boolean): void
     start_editing(event: Gdk.Event | null, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): Gtk.CellEditable | null
     stop_editing(canceled: boolean): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6381,15 +3209,15 @@ export class WidgetsCellRendererExpander {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Granite.WidgetsCellRendererExpander */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Granite-1.0.Granite.WidgetsCellRendererExpander */
     vfunc_get_arrow_size(widget: Gtk.Widget): number
-    /* Virtual methods of Gtk.CellRenderer */
+    /* Virtual methods of Gtk-3.0.Gtk.CellRenderer */
     vfunc_activate(event: Gdk.Event, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): boolean
     vfunc_editing_canceled(): void
     vfunc_editing_started(editable: Gtk.CellEditable, path: string): void
@@ -6402,22 +3230,22 @@ export class WidgetsCellRendererExpander {
     vfunc_get_size(widget: Gtk.Widget, cell_area?: Gdk.Rectangle | null): [ /* x_offset */ number | null, /* y_offset */ number | null, /* width */ number | null, /* height */ number | null ]
     vfunc_render(cr: cairo.Context, widget: Gtk.Widget, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): void
     vfunc_start_editing(event: Gdk.Event | null, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): Gtk.CellEditable | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.CellRenderer */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.CellRenderer */
     connect(sigName: "editing-canceled", callback: (($obj: WidgetsCellRendererExpander) => void)): number
     connect_after(sigName: "editing-canceled", callback: (($obj: WidgetsCellRendererExpander) => void)): number
     emit(sigName: "editing-canceled"): void
     connect(sigName: "editing-started", callback: (($obj: WidgetsCellRendererExpander, editable: Gtk.CellEditable, path: string) => void)): number
     connect_after(sigName: "editing-started", callback: (($obj: WidgetsCellRendererExpander, editable: Gtk.CellEditable, path: string) => void)): number
     emit(sigName: "editing-started", editable: Gtk.CellEditable, path: string): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsCellRendererExpander, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsCellRendererExpander, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -6469,20 +3297,20 @@ export class WidgetsCellRendererExpander {
 export interface WidgetsCollapsiblePaned_ConstructProps extends Gtk.Paned_ConstructProps {
     collapse_mode?: CollapseMode
 }
-export class WidgetsCollapsiblePaned {
-    /* Properties of Granite.WidgetsCollapsiblePaned */
+class WidgetsCollapsiblePaned {
+    /* Properties of Granite-1.0.Granite.WidgetsCollapsiblePaned */
     collapse_mode: CollapseMode
-    /* Properties of Gtk.Paned */
+    /* Properties of Gtk-3.0.Gtk.Paned */
     readonly max_position: number
     readonly min_position: number
     position: number
     position_set: boolean
     wide_handle: boolean
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -6522,18 +3350,18 @@ export class WidgetsCollapsiblePaned {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Paned */
+    /* Fields of Gtk-3.0.Gtk.Paned */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsCollapsiblePaned */
+    /* Methods of Granite-1.0.Granite.WidgetsCollapsiblePaned */
     get_collapse_mode(): CollapseMode
     set_collapse_mode(value: CollapseMode): void
-    /* Methods of Gtk.Paned */
+    /* Methods of Gtk-3.0.Gtk.Paned */
     add1(child: Gtk.Widget): void
     add2(child: Gtk.Widget): void
     get_child1(): Gtk.Widget | null
@@ -6545,10 +3373,11 @@ export class WidgetsCollapsiblePaned {
     pack2(child: Gtk.Widget, resize: boolean, shrink: boolean): void
     set_position(position: number): void
     set_wide_handle(wide: boolean): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -6573,7 +3402,7 @@ export class WidgetsCollapsiblePaned {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -6832,15 +3661,15 @@ export class WidgetsCollapsiblePaned {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -6848,20 +3677,20 @@ export class WidgetsCollapsiblePaned {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Paned */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Paned */
     vfunc_accept_position(): boolean
     vfunc_cancel_position(): boolean
     vfunc_cycle_child_focus(reverse: boolean): boolean
     vfunc_cycle_handle_focus(reverse: boolean): boolean
     vfunc_move_handle(scroll: Gtk.ScrollType): boolean
     vfunc_toggle_handle_focus(): boolean
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -6872,7 +3701,7 @@ export class WidgetsCollapsiblePaned {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -6955,15 +3784,15 @@ export class WidgetsCollapsiblePaned {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Paned */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Paned */
     connect(sigName: "accept-position", callback: (($obj: WidgetsCollapsiblePaned) => boolean)): number
     connect_after(sigName: "accept-position", callback: (($obj: WidgetsCollapsiblePaned) => boolean)): number
     emit(sigName: "accept-position"): void
@@ -6982,7 +3811,7 @@ export class WidgetsCollapsiblePaned {
     connect(sigName: "toggle-handle-focus", callback: (($obj: WidgetsCollapsiblePaned) => boolean)): number
     connect_after(sigName: "toggle-handle-focus", callback: (($obj: WidgetsCollapsiblePaned) => boolean)): number
     emit(sigName: "toggle-handle-focus"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WidgetsCollapsiblePaned, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WidgetsCollapsiblePaned, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -6995,7 +3824,7 @@ export class WidgetsCollapsiblePaned {
     connect(sigName: "set-focus-child", callback: (($obj: WidgetsCollapsiblePaned, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsCollapsiblePaned, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsCollapsiblePaned) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsCollapsiblePaned) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -7203,7 +4032,7 @@ export class WidgetsCollapsiblePaned {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsCollapsiblePaned, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsCollapsiblePaned, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsCollapsiblePaned, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsCollapsiblePaned, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -7316,8 +4145,8 @@ export class WidgetsCollapsiblePaned {
 }
 export interface WidgetsCompositedWindow_ConstructProps extends Gtk.Window_ConstructProps {
 }
-export class WidgetsCompositedWindow {
-    /* Properties of Gtk.Window */
+class WidgetsCompositedWindow {
+    /* Properties of Gtk-3.0.Gtk.Window */
     accept_focus: boolean
     application: Gtk.Application
     attached_to: Gtk.Widget
@@ -7350,11 +4179,11 @@ export class WidgetsCompositedWindow {
     type_hint: Gdk.WindowTypeHint
     urgency_hint: boolean
     window_position: Gtk.WindowPosition
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -7394,18 +4223,18 @@ export class WidgetsCompositedWindow {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Window */
+    /* Fields of Gtk-3.0.Gtk.Window */
     bin: Gtk.Bin
     priv: Gtk.WindowPrivate
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gtk.Window */
+    /* Methods of Gtk-3.0.Gtk.Window */
     activate_default(): boolean
     activate_focus(): boolean
     activate_key(event: Gdk.EventKey): boolean
@@ -7512,12 +4341,13 @@ export class WidgetsCompositedWindow {
     unfullscreen(): void
     unmaximize(): void
     unstick(): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7542,7 +4372,7 @@ export class WidgetsCompositedWindow {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -7798,15 +4628,15 @@ export class WidgetsCompositedWindow {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -7814,13 +4644,13 @@ export class WidgetsCompositedWindow {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -7829,7 +4659,7 @@ export class WidgetsCompositedWindow {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Granite.WidgetsCompositedWindow */
+    /* Virtual methods of Granite-1.0.Granite.WidgetsCompositedWindow */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -7840,13 +4670,13 @@ export class WidgetsCompositedWindow {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Window */
+    /* Virtual methods of Gtk-3.0.Gtk.Window */
     vfunc_activate_default(): void
     vfunc_activate_focus(): void
     vfunc_enable_debugging(toggle: boolean): boolean
     vfunc_keys_changed(): void
     vfunc_set_focus(focus?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -7857,7 +4687,7 @@ export class WidgetsCompositedWindow {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -7940,15 +4770,15 @@ export class WidgetsCompositedWindow {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Window */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Window */
     connect(sigName: "activate-default", callback: (($obj: WidgetsCompositedWindow) => void)): number
     connect_after(sigName: "activate-default", callback: (($obj: WidgetsCompositedWindow) => void)): number
     emit(sigName: "activate-default"): void
@@ -7964,7 +4794,7 @@ export class WidgetsCompositedWindow {
     connect(sigName: "set-focus", callback: (($obj: WidgetsCompositedWindow, widget?: Gtk.Widget | null) => void)): number
     connect_after(sigName: "set-focus", callback: (($obj: WidgetsCompositedWindow, widget?: Gtk.Widget | null) => void)): number
     emit(sigName: "set-focus", widget?: Gtk.Widget | null): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WidgetsCompositedWindow, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WidgetsCompositedWindow, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -7977,7 +4807,7 @@ export class WidgetsCompositedWindow {
     connect(sigName: "set-focus-child", callback: (($obj: WidgetsCompositedWindow, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsCompositedWindow, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsCompositedWindow) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsCompositedWindow) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -8185,7 +5015,7 @@ export class WidgetsCompositedWindow {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsCompositedWindow, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsCompositedWindow, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsCompositedWindow, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsCompositedWindow, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -8353,10 +5183,10 @@ export interface WidgetsDatePicker_ConstructProps extends Gtk.Entry_ConstructPro
     format?: string
     date?: GLib.DateTime
 }
-export class WidgetsDatePicker {
-    /* Properties of Granite.WidgetsDatePicker */
+class WidgetsDatePicker {
+    /* Properties of Granite-1.0.Granite.WidgetsDatePicker */
     date: GLib.DateTime
-    /* Properties of Gtk.Entry */
+    /* Properties of Gtk-3.0.Gtk.Entry */
     activates_default: boolean
     attributes: Pango.AttrList
     buffer: Gtk.EntryBuffer
@@ -8408,7 +5238,7 @@ export class WidgetsDatePicker {
     visibility: boolean
     width_chars: number
     xalign: number
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -8448,19 +5278,19 @@ export class WidgetsDatePicker {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Granite.WidgetsDatePicker */
+    /* Fields of Granite-1.0.Granite.WidgetsDatePicker */
     dropdown: Gtk.EventBox
     calendar: Gtk.Calendar
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsDatePicker */
+    /* Methods of Granite-1.0.Granite.WidgetsDatePicker */
     get_format(): string
     get_date(): GLib.DateTime
     set_date(value: GLib.DateTime): void
     position_dropdown(): /* rect */ Gdk.Rectangle
-    /* Methods of Gtk.Entry */
+    /* Methods of Gtk-3.0.Gtk.Entry */
     get_activates_default(): boolean
     get_alignment(): number
     get_attributes(): Pango.AttrList | null
@@ -8535,7 +5365,7 @@ export class WidgetsDatePicker {
     set_width_chars(n_chars: number): void
     text_index_to_layout_index(text_index: number): number
     unset_invisible_char(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -8794,15 +5624,15 @@ export class WidgetsDatePicker {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -8810,13 +5640,13 @@ export class WidgetsDatePicker {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gtk.Buildable */
+    watch_closure(closure: Function): void
+    /* Methods of Gtk-3.0.Gtk.Buildable */
     add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     construct_child(builder: Gtk.Builder, name: string): GObject.Object
     custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -8825,7 +5655,7 @@ export class WidgetsDatePicker {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Virtual methods of Granite.WidgetsDatePicker */
+    /* Virtual methods of Granite-1.0.Granite.WidgetsDatePicker */
     vfunc_position_dropdown(): /* rect */ Gdk.Rectangle
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -8837,7 +5667,7 @@ export class WidgetsDatePicker {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
-    /* Virtual methods of Gtk.Entry */
+    /* Virtual methods of Gtk-3.0.Gtk.Entry */
     vfunc_activate(): void
     vfunc_backspace(): void
     vfunc_copy_clipboard(): void
@@ -8851,7 +5681,7 @@ export class WidgetsDatePicker {
     vfunc_paste_clipboard(): void
     vfunc_populate_popup(popup: Gtk.Widget): void
     vfunc_toggle_overwrite(): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -8934,19 +5764,19 @@ export class WidgetsDatePicker {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.WidgetsDatePicker */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.WidgetsDatePicker */
     connect(sigName: "date-changed", callback: (($obj: WidgetsDatePicker) => void)): number
     connect_after(sigName: "date-changed", callback: (($obj: WidgetsDatePicker) => void)): number
     emit(sigName: "date-changed"): void
-    /* Signals of Gtk.Entry */
+    /* Signals of Gtk-3.0.Gtk.Entry */
     connect(sigName: "activate", callback: (($obj: WidgetsDatePicker) => void)): number
     connect_after(sigName: "activate", callback: (($obj: WidgetsDatePicker) => void)): number
     emit(sigName: "activate"): void
@@ -8962,12 +5792,12 @@ export class WidgetsDatePicker {
     connect(sigName: "delete-from-cursor", callback: (($obj: WidgetsDatePicker, type: Gtk.DeleteType, count: number) => void)): number
     connect_after(sigName: "delete-from-cursor", callback: (($obj: WidgetsDatePicker, type: Gtk.DeleteType, count: number) => void)): number
     emit(sigName: "delete-from-cursor", type: Gtk.DeleteType, count: number): void
-    connect(sigName: "icon-press", callback: (($obj: WidgetsDatePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    connect_after(sigName: "icon-press", callback: (($obj: WidgetsDatePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    emit(sigName: "icon-press", icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton): void
-    connect(sigName: "icon-release", callback: (($obj: WidgetsDatePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    connect_after(sigName: "icon-release", callback: (($obj: WidgetsDatePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    emit(sigName: "icon-release", icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton): void
+    connect(sigName: "icon-press", callback: (($obj: WidgetsDatePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    connect_after(sigName: "icon-press", callback: (($obj: WidgetsDatePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    emit(sigName: "icon-press", icon_pos: Gtk.EntryIconPosition, event: Gdk.Event): void
+    connect(sigName: "icon-release", callback: (($obj: WidgetsDatePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    connect_after(sigName: "icon-release", callback: (($obj: WidgetsDatePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    emit(sigName: "icon-release", icon_pos: Gtk.EntryIconPosition, event: Gdk.Event): void
     connect(sigName: "insert-at-cursor", callback: (($obj: WidgetsDatePicker, string: string) => void)): number
     connect_after(sigName: "insert-at-cursor", callback: (($obj: WidgetsDatePicker, string: string) => void)): number
     emit(sigName: "insert-at-cursor", string: string): void
@@ -8989,7 +5819,7 @@ export class WidgetsDatePicker {
     connect(sigName: "toggle-overwrite", callback: (($obj: WidgetsDatePicker) => void)): number
     connect_after(sigName: "toggle-overwrite", callback: (($obj: WidgetsDatePicker) => void)): number
     emit(sigName: "toggle-overwrite"): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsDatePicker) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsDatePicker) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -9197,7 +6027,7 @@ export class WidgetsDatePicker {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsDatePicker, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsDatePicker, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsDatePicker, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsDatePicker, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -9397,19 +6227,23 @@ export class WidgetsDatePicker {
 }
 export interface WidgetsTab_ConstructProps extends Gtk.EventBox_ConstructProps {
     label?: string
+    tooltip?: string
     pinned?: boolean
     pinnable?: boolean
     restore_data?: string
+    close_tab_label?: AccelLabel
+    duplicate_tab_label?: AccelLabel
+    new_window_label?: AccelLabel
     page?: Gtk.Widget
     icon?: Gio.Icon
     working?: boolean
     ellipsize_mode?: Pango.EllipsizeMode
-    fixed?: boolean
     menu?: Gtk.Menu
 }
-export class WidgetsTab {
-    /* Properties of Granite.WidgetsTab */
+class WidgetsTab {
+    /* Properties of Granite-1.0.Granite.WidgetsTab */
     label: string
+    tooltip: string
     pinned: boolean
     pinnable: boolean
     restore_data: string
@@ -9417,16 +6251,15 @@ export class WidgetsTab {
     icon: Gio.Icon
     working: boolean
     ellipsize_mode: Pango.EllipsizeMode
-    fixed: boolean
     menu: Gtk.Menu
-    /* Properties of Gtk.EventBox */
+    /* Properties of Gtk-3.0.Gtk.EventBox */
     above_child: boolean
     visible_window: boolean
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -9466,29 +6299,38 @@ export class WidgetsTab {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Granite.WidgetsTab */
+    /* Fields of Granite-1.0.Granite.WidgetsTab */
     dropped_callback: WidgetsDroppedDelegate
     dropped_callback_target: object
     dropped_callback_target_destroy_notify: GLib.DestroyNotify
-    /* Fields of Gtk.EventBox */
+    page_container: any
+    _icon: Gtk.Image
+    new_window_m: Gtk.MenuItem
+    duplicate_m: Gtk.MenuItem
+    pin_m: Gtk.MenuItem
+    /* Fields of Gtk-3.0.Gtk.EventBox */
     bin: Gtk.Bin
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsTab */
+    /* Methods of Granite-1.0.Granite.WidgetsTab */
     get_label(): string
     set_label(value: string): void
+    set_tooltip(value: string): void
     get_pinned(): boolean
     set_pinned(value: boolean): void
     get_pinnable(): boolean
     set_pinnable(value: boolean): void
     get_restore_data(): string
     set_restore_data(value: string): void
+    get_close_tab_label(): AccelLabel | null
+    get_duplicate_tab_label(): AccelLabel | null
+    get_new_window_label(): AccelLabel | null
     get_page(): Gtk.Widget
     set_page(value: Gtk.Widget): void
     get_icon(): Gio.Icon | null
@@ -9497,22 +6339,21 @@ export class WidgetsTab {
     set_working(value: boolean): void
     get_ellipsize_mode(): Pango.EllipsizeMode
     set_ellipsize_mode(value: Pango.EllipsizeMode): void
-    get_fixed(): boolean
-    set_fixed(value: boolean): void
     get_menu(): Gtk.Menu
     set_menu(value: Gtk.Menu): void
     close(): void
-    /* Methods of Gtk.EventBox */
+    /* Methods of Gtk-3.0.Gtk.EventBox */
     get_above_child(): boolean
     get_visible_window(): boolean
     set_above_child(above_child: boolean): void
     set_visible_window(visible_window: boolean): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -9537,7 +6378,7 @@ export class WidgetsTab {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -9796,15 +6637,15 @@ export class WidgetsTab {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -9812,13 +6653,13 @@ export class WidgetsTab {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -9829,7 +6670,7 @@ export class WidgetsTab {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -9912,15 +6753,15 @@ export class WidgetsTab {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WidgetsTab, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WidgetsTab, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -9933,7 +6774,7 @@ export class WidgetsTab {
     connect(sigName: "set-focus-child", callback: (($obj: WidgetsTab, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsTab, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsTab) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsTab) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -10141,12 +6982,14 @@ export class WidgetsTab {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsTab, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsTab, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::label", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::label", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::tooltip", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::tooltip", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pinned", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pinned", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pinnable", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
@@ -10161,8 +7004,6 @@ export class WidgetsTab {
     connect_after(sigName: "notify::working", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::ellipsize-mode", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::ellipsize-mode", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::fixed", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::fixed", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::menu", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::menu", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::above-child", callback: (($obj: WidgetsTab, pspec: GObject.ParamSpec) => void)): number
@@ -10263,11 +7104,11 @@ export class WidgetsTab {
     /* Static methods and pseudo-constructors */
     static new(label?: string | null, icon?: Gio.Icon | null, page?: Gtk.Widget | null): WidgetsTab
     static new(): WidgetsTab
+    static with_accellabels(label?: string | null, icon?: Gio.Icon | null, page?: Gtk.Widget | null, _close_tab_label?: AccelLabel | null, _duplicate_tab_label?: AccelLabel | null, _new_window_label?: AccelLabel | null): WidgetsTab
     static $gtype: GObject.Type
 }
 export interface WidgetsDynamicNotebook_ConstructProps extends Gtk.EventBox_ConstructProps {
     show_tabs?: boolean
-    show_icons?: boolean
     tabs_closable?: boolean
     allow_drag?: boolean
     allow_new_window?: boolean
@@ -10278,16 +7119,17 @@ export interface WidgetsDynamicNotebook_ConstructProps extends Gtk.EventBox_Cons
     allow_pinning?: boolean
     force_left?: boolean
     add_button_tooltip?: string
+    new_tab_label?: AccelLabel
+    restore_tab_label?: AccelLabel
     current?: WidgetsTab
     group_name?: string
     tab_bar_behavior?: WidgetsDynamicNotebookTabBarBehavior
     menu?: Gtk.Menu
 }
-export class WidgetsDynamicNotebook {
-    /* Properties of Granite.WidgetsDynamicNotebook */
+class WidgetsDynamicNotebook {
+    /* Properties of Granite-1.0.Granite.WidgetsDynamicNotebook */
     readonly n_tabs: number
     show_tabs: boolean
-    show_icons: boolean
     tabs_closable: boolean
     allow_drag: boolean
     allow_new_window: boolean
@@ -10303,14 +7145,14 @@ export class WidgetsDynamicNotebook {
     group_name: string
     tab_bar_behavior: WidgetsDynamicNotebookTabBarBehavior
     menu: Gtk.Menu
-    /* Properties of Gtk.EventBox */
+    /* Properties of Gtk-3.0.Gtk.EventBox */
     above_child: boolean
     visible_window: boolean
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -10350,22 +7192,20 @@ export class WidgetsDynamicNotebook {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.EventBox */
+    /* Fields of Gtk-3.0.Gtk.EventBox */
     bin: Gtk.Bin
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsDynamicNotebook */
+    /* Methods of Granite-1.0.Granite.WidgetsDynamicNotebook */
     get_n_tabs(): number
     get_show_tabs(): boolean
     set_show_tabs(value: boolean): void
-    get_show_icons(): boolean
-    set_show_icons(value: boolean): void
     get_tabs_closable(): boolean
     set_tabs_closable(value: boolean): void
     get_allow_drag(): boolean
@@ -10386,6 +7226,8 @@ export class WidgetsDynamicNotebook {
     set_force_left(value: boolean): void
     get_add_button_tooltip(): string
     set_add_button_tooltip(value: string): void
+    get_new_tab_label(): AccelLabel
+    get_restore_tab_label(): AccelLabel
     get_current(): WidgetsTab
     set_current(value: WidgetsTab): void
     get_tabs(): WidgetsTab[]
@@ -10404,17 +7246,18 @@ export class WidgetsDynamicNotebook {
     get_tab_by_widget(widget: Gtk.Widget): WidgetsTab | null
     get_nth_page(index: number): Gtk.Widget
     insert_tab(tab: WidgetsTab, index: number): number
-    /* Methods of Gtk.EventBox */
+    /* Methods of Gtk-3.0.Gtk.EventBox */
     get_above_child(): boolean
     get_visible_window(): boolean
     set_above_child(above_child: boolean): void
     set_visible_window(visible_window: boolean): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -10438,7 +7281,7 @@ export class WidgetsDynamicNotebook {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -10697,15 +7540,15 @@ export class WidgetsDynamicNotebook {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -10713,13 +7556,13 @@ export class WidgetsDynamicNotebook {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -10730,7 +7573,7 @@ export class WidgetsDynamicNotebook {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -10813,15 +7656,15 @@ export class WidgetsDynamicNotebook {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.WidgetsDynamicNotebook */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.WidgetsDynamicNotebook */
     connect(sigName: "tab-added", callback: (($obj: WidgetsDynamicNotebook, tab: WidgetsTab) => void)): number
     connect_after(sigName: "tab-added", callback: (($obj: WidgetsDynamicNotebook, tab: WidgetsTab) => void)): number
     emit(sigName: "tab-added", tab: WidgetsTab): void
@@ -10849,7 +7692,7 @@ export class WidgetsDynamicNotebook {
     connect(sigName: "close-tab-requested", callback: (($obj: WidgetsDynamicNotebook, tab: WidgetsTab) => boolean)): number
     connect_after(sigName: "close-tab-requested", callback: (($obj: WidgetsDynamicNotebook, tab: WidgetsTab) => boolean)): number
     emit(sigName: "close-tab-requested", tab: WidgetsTab): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WidgetsDynamicNotebook, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WidgetsDynamicNotebook, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -10862,7 +7705,7 @@ export class WidgetsDynamicNotebook {
     connect(sigName: "set-focus-child", callback: (($obj: WidgetsDynamicNotebook, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsDynamicNotebook, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsDynamicNotebook) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsDynamicNotebook) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -11070,7 +7913,7 @@ export class WidgetsDynamicNotebook {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsDynamicNotebook, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsDynamicNotebook, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsDynamicNotebook, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsDynamicNotebook, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -11078,8 +7921,6 @@ export class WidgetsDynamicNotebook {
     connect_after(sigName: "notify::n-tabs", callback: (($obj: WidgetsDynamicNotebook, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::show-tabs", callback: (($obj: WidgetsDynamicNotebook, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::show-tabs", callback: (($obj: WidgetsDynamicNotebook, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::show-icons", callback: (($obj: WidgetsDynamicNotebook, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::show-icons", callback: (($obj: WidgetsDynamicNotebook, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::tabs-closable", callback: (($obj: WidgetsDynamicNotebook, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::tabs-closable", callback: (($obj: WidgetsDynamicNotebook, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::allow-drag", callback: (($obj: WidgetsDynamicNotebook, pspec: GObject.ParamSpec) => void)): number
@@ -11207,24 +8048,25 @@ export class WidgetsDynamicNotebook {
     _init (config?: WidgetsDynamicNotebook_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): WidgetsDynamicNotebook
+    static with_accellabels(new_tab_label: AccelLabel, restore_tab_label: AccelLabel): WidgetsDynamicNotebook
     static $gtype: GObject.Type
 }
 export interface WidgetsModeButton_ConstructProps extends Gtk.Box_ConstructProps {
     selected?: number
 }
-export class WidgetsModeButton {
-    /* Properties of Granite.WidgetsModeButton */
+class WidgetsModeButton {
+    /* Properties of Granite-1.0.Granite.WidgetsModeButton */
     selected: number
     readonly n_items: number
-    /* Properties of Gtk.Box */
+    /* Properties of Gtk-3.0.Gtk.Box */
     baseline_position: Gtk.BaselinePosition
     homogeneous: boolean
     spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -11264,15 +8106,15 @@ export class WidgetsModeButton {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Box */
+    /* Fields of Gtk-3.0.Gtk.Box */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsModeButton */
+    /* Methods of Granite-1.0.Granite.WidgetsModeButton */
     get_selected(): number
     set_selected(value: number): void
     get_n_items(): number
@@ -11284,7 +8126,7 @@ export class WidgetsModeButton {
     set_item_visible(index: number, val: boolean): void
     remove(index: number): void
     clear_children(): void
-    /* Methods of Gtk.Box */
+    /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
     get_homogeneous(): boolean
@@ -11298,10 +8140,11 @@ export class WidgetsModeButton {
     set_child_packing(child: Gtk.Widget, expand: boolean, fill: boolean, padding: number, pack_type: Gtk.PackType): void
     set_homogeneous(homogeneous: boolean): void
     set_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -11326,7 +8169,7 @@ export class WidgetsModeButton {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -11585,15 +8428,15 @@ export class WidgetsModeButton {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -11601,13 +8444,13 @@ export class WidgetsModeButton {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -11618,7 +8461,7 @@ export class WidgetsModeButton {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -11701,15 +8544,15 @@ export class WidgetsModeButton {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.WidgetsModeButton */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.WidgetsModeButton */
     connect(sigName: "mode-added", callback: (($obj: WidgetsModeButton, index: number, widget: Gtk.Widget) => void)): number
     connect_after(sigName: "mode-added", callback: (($obj: WidgetsModeButton, index: number, widget: Gtk.Widget) => void)): number
     emit(sigName: "mode-added", index: number, widget: Gtk.Widget): void
@@ -11719,7 +8562,7 @@ export class WidgetsModeButton {
     connect(sigName: "mode-changed", callback: (($obj: WidgetsModeButton, widget: Gtk.Widget) => void)): number
     connect_after(sigName: "mode-changed", callback: (($obj: WidgetsModeButton, widget: Gtk.Widget) => void)): number
     emit(sigName: "mode-changed", widget: Gtk.Widget): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WidgetsModeButton, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WidgetsModeButton, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -11732,7 +8575,7 @@ export class WidgetsModeButton {
     connect(sigName: "set-focus-child", callback: (($obj: WidgetsModeButton, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsModeButton, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsModeButton) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsModeButton) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -11940,7 +8783,7 @@ export class WidgetsModeButton {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsModeButton, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsModeButton, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsModeButton, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsModeButton, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -12056,19 +8899,19 @@ export interface WidgetsOverlayBar_ConstructProps extends Gtk.EventBox_Construct
     label?: string
     active?: boolean
 }
-export class WidgetsOverlayBar {
-    /* Properties of Granite.WidgetsOverlayBar */
+class WidgetsOverlayBar {
+    /* Properties of Granite-1.0.Granite.WidgetsOverlayBar */
     status: string
     label: string
     active: boolean
-    /* Properties of Gtk.EventBox */
+    /* Properties of Gtk-3.0.Gtk.EventBox */
     above_child: boolean
     visible_window: boolean
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -12108,17 +8951,17 @@ export class WidgetsOverlayBar {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.EventBox */
+    /* Fields of Gtk-3.0.Gtk.EventBox */
     bin: Gtk.Bin
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsOverlayBar */
+    /* Methods of Granite-1.0.Granite.WidgetsOverlayBar */
     get_overlay(): Gtk.Overlay | null
     get_status(): string
     set_status(value: string): void
@@ -12126,17 +8969,18 @@ export class WidgetsOverlayBar {
     set_label(value: string): void
     get_active(): boolean
     set_active(value: boolean): void
-    /* Methods of Gtk.EventBox */
+    /* Methods of Gtk-3.0.Gtk.EventBox */
     get_above_child(): boolean
     get_visible_window(): boolean
     set_above_child(above_child: boolean): void
     set_visible_window(visible_window: boolean): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -12161,7 +9005,7 @@ export class WidgetsOverlayBar {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -12420,15 +9264,15 @@ export class WidgetsOverlayBar {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -12436,13 +9280,13 @@ export class WidgetsOverlayBar {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -12453,7 +9297,7 @@ export class WidgetsOverlayBar {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -12536,15 +9380,15 @@ export class WidgetsOverlayBar {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WidgetsOverlayBar, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WidgetsOverlayBar, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -12557,7 +9401,7 @@ export class WidgetsOverlayBar {
     connect(sigName: "set-focus-child", callback: (($obj: WidgetsOverlayBar, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsOverlayBar, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsOverlayBar) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsOverlayBar) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -12765,7 +9609,7 @@ export class WidgetsOverlayBar {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsOverlayBar, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsOverlayBar, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsOverlayBar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsOverlayBar, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -12880,13 +9724,13 @@ export interface WidgetsSourceList_ConstructProps extends Gtk.ScrolledWindow_Con
     selected?: WidgetsSourceListItem
     ellipsize_mode?: Pango.EllipsizeMode
 }
-export class WidgetsSourceList {
-    /* Properties of Granite.WidgetsSourceList */
+class WidgetsSourceList {
+    /* Properties of Granite-1.0.Granite.WidgetsSourceList */
     root: WidgetsSourceListExpandableItem
     selected: WidgetsSourceListItem
     ellipsize_mode: Pango.EllipsizeMode
     readonly editing: boolean
-    /* Properties of Gtk.ScrolledWindow */
+    /* Properties of Gtk-3.0.Gtk.ScrolledWindow */
     hadjustment: Gtk.Adjustment
     hscrollbar_policy: Gtk.PolicyType
     kinetic_scrolling: boolean
@@ -12902,11 +9746,11 @@ export class WidgetsSourceList {
     vscrollbar_policy: Gtk.PolicyType
     window_placement: Gtk.CornerType
     window_placement_set: boolean
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -12946,16 +9790,16 @@ export class WidgetsSourceList {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.ScrolledWindow */
+    /* Fields of Gtk-3.0.Gtk.ScrolledWindow */
     container: Gtk.Bin
     priv: Gtk.ScrolledWindowPrivate
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsSourceList */
+    /* Methods of Granite-1.0.Granite.WidgetsSourceList */
     get_root(): WidgetsSourceListExpandableItem
     set_root(value: WidgetsSourceListExpandableItem): void
     get_selected(): WidgetsSourceListItem | null
@@ -12979,7 +9823,7 @@ export class WidgetsSourceList {
     get_first_child(parent: WidgetsSourceListExpandableItem): WidgetsSourceListItem | null
     get_last_child(parent: WidgetsSourceListExpandableItem): WidgetsSourceListItem | null
     get_n_visible_children(parent: WidgetsSourceListExpandableItem): number
-    /* Methods of Gtk.ScrolledWindow */
+    /* Methods of Gtk-3.0.Gtk.ScrolledWindow */
     add_with_viewport(child: Gtk.Widget): void
     get_capture_button_press(): boolean
     get_hadjustment(): Gtk.Adjustment
@@ -13012,12 +9856,13 @@ export class WidgetsSourceList {
     set_shadow_type(type: Gtk.ShadowType): void
     set_vadjustment(vadjustment?: Gtk.Adjustment | null): void
     unset_placement(): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -13042,7 +9887,7 @@ export class WidgetsSourceList {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -13301,15 +10146,15 @@ export class WidgetsSourceList {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -13317,16 +10162,18 @@ export class WidgetsSourceList {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.ScrolledWindow */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Granite-1.0.Granite.WidgetsSourceList */
+    vfunc_item_selected(item?: WidgetsSourceListItem | null): void
+    /* Virtual methods of Gtk-3.0.Gtk.ScrolledWindow */
     vfunc_move_focus_out(direction: Gtk.DirectionType): void
     vfunc_scroll_child(scroll: Gtk.ScrollType, horizontal: boolean): boolean
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -13337,7 +10184,7 @@ export class WidgetsSourceList {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -13420,19 +10267,19 @@ export class WidgetsSourceList {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.WidgetsSourceList */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.WidgetsSourceList */
     connect(sigName: "item-selected", callback: (($obj: WidgetsSourceList, item?: WidgetsSourceListItem | null) => void)): number
     connect_after(sigName: "item-selected", callback: (($obj: WidgetsSourceList, item?: WidgetsSourceListItem | null) => void)): number
     emit(sigName: "item-selected", item?: WidgetsSourceListItem | null): void
-    /* Signals of Gtk.ScrolledWindow */
+    /* Signals of Gtk-3.0.Gtk.ScrolledWindow */
     connect(sigName: "edge-overshot", callback: (($obj: WidgetsSourceList, pos: Gtk.PositionType) => void)): number
     connect_after(sigName: "edge-overshot", callback: (($obj: WidgetsSourceList, pos: Gtk.PositionType) => void)): number
     emit(sigName: "edge-overshot", pos: Gtk.PositionType): void
@@ -13445,7 +10292,7 @@ export class WidgetsSourceList {
     connect(sigName: "scroll-child", callback: (($obj: WidgetsSourceList, scroll: Gtk.ScrollType, horizontal: boolean) => boolean)): number
     connect_after(sigName: "scroll-child", callback: (($obj: WidgetsSourceList, scroll: Gtk.ScrollType, horizontal: boolean) => boolean)): number
     emit(sigName: "scroll-child", scroll: Gtk.ScrollType, horizontal: boolean): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WidgetsSourceList, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WidgetsSourceList, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -13458,7 +10305,7 @@ export class WidgetsSourceList {
     connect(sigName: "set-focus-child", callback: (($obj: WidgetsSourceList, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsSourceList, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsSourceList) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsSourceList) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -13666,7 +10513,7 @@ export class WidgetsSourceList {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsSourceList, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsSourceList, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsSourceList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsSourceList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -13817,8 +10664,8 @@ export interface WidgetsSourceListItem_ConstructProps extends GObject.Object_Con
     activatable?: Gio.Icon
     activatable_tooltip?: string
 }
-export class WidgetsSourceListItem {
-    /* Properties of Granite.WidgetsSourceListItem */
+class WidgetsSourceListItem {
+    /* Properties of Granite-1.0.Granite.WidgetsSourceListItem */
     parent: WidgetsSourceListExpandableItem
     name: string
     tooltip: string
@@ -13830,9 +10677,9 @@ export class WidgetsSourceListItem {
     icon: Gio.Icon
     activatable: Gio.Icon
     activatable_tooltip: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsSourceListItem */
+    /* Methods of Granite-1.0.Granite.WidgetsSourceListItem */
     get_parent(): WidgetsSourceListExpandableItem
     get_name(): string
     set_name(value: string): void
@@ -13855,15 +10702,15 @@ export class WidgetsSourceListItem {
     get_activatable_tooltip(): string
     set_activatable_tooltip(value: string): void
     get_context_menu(): Gtk.Menu | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -13871,23 +10718,26 @@ export class WidgetsSourceListItem {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Granite.WidgetsSourceListItem */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Granite-1.0.Granite.WidgetsSourceListItem */
+    vfunc_edited(new_name: string): void
+    vfunc_action_activated(): void
+    vfunc_activated(): void
     vfunc_get_context_menu(): Gtk.Menu | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.WidgetsSourceListItem */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.WidgetsSourceListItem */
     connect(sigName: "edited", callback: (($obj: WidgetsSourceListItem, new_name: string) => void)): number
     connect_after(sigName: "edited", callback: (($obj: WidgetsSourceListItem, new_name: string) => void)): number
     emit(sigName: "edited", new_name: string): void
@@ -13897,7 +10747,7 @@ export class WidgetsSourceListItem {
     connect(sigName: "activated", callback: (($obj: WidgetsSourceListItem) => void)): number
     connect_after(sigName: "activated", callback: (($obj: WidgetsSourceListItem) => void)): number
     emit(sigName: "activated"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsSourceListItem, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsSourceListItem, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -13938,13 +10788,13 @@ export interface WidgetsSourceListExpandableItem_ConstructProps extends WidgetsS
     collapsible?: boolean
     expanded?: boolean
 }
-export class WidgetsSourceListExpandableItem {
-    /* Properties of Granite.WidgetsSourceListExpandableItem */
+class WidgetsSourceListExpandableItem {
+    /* Properties of Granite-1.0.Granite.WidgetsSourceListExpandableItem */
     collapsible: boolean
     expanded: boolean
     readonly n_children: number
     readonly children: Gee.Collection
-    /* Properties of Granite.WidgetsSourceListItem */
+    /* Properties of Granite-1.0.Granite.WidgetsSourceListItem */
     parent: WidgetsSourceListExpandableItem
     name: string
     tooltip: string
@@ -13956,9 +10806,9 @@ export class WidgetsSourceListExpandableItem {
     icon: Gio.Icon
     activatable: Gio.Icon
     activatable_tooltip: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsSourceListExpandableItem */
+    /* Methods of Granite-1.0.Granite.WidgetsSourceListExpandableItem */
     get_collapsible(): boolean
     set_collapsible(value: boolean): void
     get_expanded(): boolean
@@ -13973,7 +10823,7 @@ export class WidgetsSourceListExpandableItem {
     collapse_all(inclusive: boolean, recursive: boolean): void
     expand_with_parents(): void
     collapse_with_parents(): void
-    /* Methods of Granite.WidgetsSourceListItem */
+    /* Methods of Granite-1.0.Granite.WidgetsSourceListItem */
     get_parent(): WidgetsSourceListExpandableItem
     get_name(): string
     set_name(value: string): void
@@ -13996,15 +10846,15 @@ export class WidgetsSourceListExpandableItem {
     get_activatable_tooltip(): string
     set_activatable_tooltip(value: string): void
     get_context_menu(): Gtk.Menu | null
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -14012,23 +10862,28 @@ export class WidgetsSourceListExpandableItem {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Granite.WidgetsSourceListItem */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Granite-1.0.Granite.WidgetsSourceListExpandableItem */
+    vfunc_toggled(): void
+    /* Virtual methods of Granite-1.0.Granite.WidgetsSourceListItem */
+    vfunc_edited(new_name: string): void
+    vfunc_action_activated(): void
+    vfunc_activated(): void
     vfunc_get_context_menu(): Gtk.Menu | null
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.WidgetsSourceListExpandableItem */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.WidgetsSourceListExpandableItem */
     connect(sigName: "child-added", callback: (($obj: WidgetsSourceListExpandableItem, item: WidgetsSourceListItem) => void)): number
     connect_after(sigName: "child-added", callback: (($obj: WidgetsSourceListExpandableItem, item: WidgetsSourceListItem) => void)): number
     emit(sigName: "child-added", item: WidgetsSourceListItem): void
@@ -14038,7 +10893,7 @@ export class WidgetsSourceListExpandableItem {
     connect(sigName: "toggled", callback: (($obj: WidgetsSourceListExpandableItem) => void)): number
     connect_after(sigName: "toggled", callback: (($obj: WidgetsSourceListExpandableItem) => void)): number
     emit(sigName: "toggled"): void
-    /* Signals of Granite.WidgetsSourceListItem */
+    /* Signals of Granite-1.0.Granite.WidgetsSourceListItem */
     connect(sigName: "edited", callback: (($obj: WidgetsSourceListExpandableItem, new_name: string) => void)): number
     connect_after(sigName: "edited", callback: (($obj: WidgetsSourceListExpandableItem, new_name: string) => void)): number
     emit(sigName: "edited", new_name: string): void
@@ -14048,7 +10903,7 @@ export class WidgetsSourceListExpandableItem {
     connect(sigName: "activated", callback: (($obj: WidgetsSourceListExpandableItem) => void)): number
     connect_after(sigName: "activated", callback: (($obj: WidgetsSourceListExpandableItem) => void)): number
     emit(sigName: "activated"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsSourceListExpandableItem, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsSourceListExpandableItem, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -14098,20 +10953,20 @@ export interface WidgetsStorageBar_ConstructProps extends Gtk.Box_ConstructProps
     total_usage?: number
     inner_margin_sides?: number
 }
-export class WidgetsStorageBar {
-    /* Properties of Granite.WidgetsStorageBar */
+class WidgetsStorageBar {
+    /* Properties of Granite-1.0.Granite.WidgetsStorageBar */
     storage: number
     total_usage: number
     inner_margin_sides: number
-    /* Properties of Gtk.Box */
+    /* Properties of Gtk-3.0.Gtk.Box */
     baseline_position: Gtk.BaselinePosition
     homogeneous: boolean
     spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -14151,15 +11006,15 @@ export class WidgetsStorageBar {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Box */
+    /* Fields of Gtk-3.0.Gtk.Box */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsStorageBar */
+    /* Methods of Granite-1.0.Granite.WidgetsStorageBar */
     get_storage(): number
     set_storage(value: number): void
     get_total_usage(): number
@@ -14167,7 +11022,7 @@ export class WidgetsStorageBar {
     get_inner_margin_sides(): number
     set_inner_margin_sides(value: number): void
     update_block_size(description: WidgetsStorageBarItemDescription, size: number): void
-    /* Methods of Gtk.Box */
+    /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
     get_homogeneous(): boolean
@@ -14181,10 +11036,11 @@ export class WidgetsStorageBar {
     set_child_packing(child: Gtk.Widget, expand: boolean, fill: boolean, padding: number, pack_type: Gtk.PackType): void
     set_homogeneous(homogeneous: boolean): void
     set_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -14209,7 +11065,7 @@ export class WidgetsStorageBar {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -14468,15 +11324,15 @@ export class WidgetsStorageBar {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -14484,13 +11340,13 @@ export class WidgetsStorageBar {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -14501,7 +11357,7 @@ export class WidgetsStorageBar {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -14584,15 +11440,15 @@ export class WidgetsStorageBar {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WidgetsStorageBar, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WidgetsStorageBar, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -14605,7 +11461,7 @@ export class WidgetsStorageBar {
     connect(sigName: "set-focus-child", callback: (($obj: WidgetsStorageBar, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsStorageBar, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsStorageBar) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsStorageBar) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -14813,7 +11669,7 @@ export class WidgetsStorageBar {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsStorageBar, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsStorageBar, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsStorageBar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsStorageBar, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -14931,10 +11787,10 @@ export interface WidgetsTimePicker_ConstructProps extends Gtk.Entry_ConstructPro
     format_24?: string
     time?: GLib.DateTime
 }
-export class WidgetsTimePicker {
-    /* Properties of Granite.WidgetsTimePicker */
+class WidgetsTimePicker {
+    /* Properties of Granite-1.0.Granite.WidgetsTimePicker */
     time: GLib.DateTime
-    /* Properties of Gtk.Entry */
+    /* Properties of Gtk-3.0.Gtk.Entry */
     activates_default: boolean
     attributes: Pango.AttrList
     buffer: Gtk.EntryBuffer
@@ -14986,7 +11842,7 @@ export class WidgetsTimePicker {
     visibility: boolean
     width_chars: number
     xalign: number
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -15026,17 +11882,17 @@ export class WidgetsTimePicker {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsTimePicker */
+    /* Methods of Granite-1.0.Granite.WidgetsTimePicker */
     get_format_12(): string
     get_format_24(): string
     get_time(): GLib.DateTime
     set_time(value: GLib.DateTime): void
     position_dropdown(): [ /* x */ number, /* y */ number ]
-    /* Methods of Gtk.Entry */
+    /* Methods of Gtk-3.0.Gtk.Entry */
     get_activates_default(): boolean
     get_alignment(): number
     get_attributes(): Pango.AttrList | null
@@ -15111,7 +11967,7 @@ export class WidgetsTimePicker {
     set_width_chars(n_chars: number): void
     text_index_to_layout_index(text_index: number): number
     unset_invisible_char(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -15370,15 +12226,15 @@ export class WidgetsTimePicker {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -15386,15 +12242,15 @@ export class WidgetsTimePicker {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Granite.WidgetsTimePicker */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Granite-1.0.Granite.WidgetsTimePicker */
     vfunc_position_dropdown(): [ /* x */ number, /* y */ number ]
-    /* Virtual methods of Gtk.Entry */
+    /* Virtual methods of Gtk-3.0.Gtk.Entry */
     vfunc_activate(): void
     vfunc_backspace(): void
     vfunc_copy_clipboard(): void
@@ -15408,7 +12264,7 @@ export class WidgetsTimePicker {
     vfunc_paste_clipboard(): void
     vfunc_populate_popup(popup: Gtk.Widget): void
     vfunc_toggle_overwrite(): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -15491,19 +12347,19 @@ export class WidgetsTimePicker {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.WidgetsTimePicker */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.WidgetsTimePicker */
     connect(sigName: "time-changed", callback: (($obj: WidgetsTimePicker) => void)): number
     connect_after(sigName: "time-changed", callback: (($obj: WidgetsTimePicker) => void)): number
     emit(sigName: "time-changed"): void
-    /* Signals of Gtk.Entry */
+    /* Signals of Gtk-3.0.Gtk.Entry */
     connect(sigName: "activate", callback: (($obj: WidgetsTimePicker) => void)): number
     connect_after(sigName: "activate", callback: (($obj: WidgetsTimePicker) => void)): number
     emit(sigName: "activate"): void
@@ -15519,12 +12375,12 @@ export class WidgetsTimePicker {
     connect(sigName: "delete-from-cursor", callback: (($obj: WidgetsTimePicker, type: Gtk.DeleteType, count: number) => void)): number
     connect_after(sigName: "delete-from-cursor", callback: (($obj: WidgetsTimePicker, type: Gtk.DeleteType, count: number) => void)): number
     emit(sigName: "delete-from-cursor", type: Gtk.DeleteType, count: number): void
-    connect(sigName: "icon-press", callback: (($obj: WidgetsTimePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    connect_after(sigName: "icon-press", callback: (($obj: WidgetsTimePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    emit(sigName: "icon-press", icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton): void
-    connect(sigName: "icon-release", callback: (($obj: WidgetsTimePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    connect_after(sigName: "icon-release", callback: (($obj: WidgetsTimePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton) => void)): number
-    emit(sigName: "icon-release", icon_pos: Gtk.EntryIconPosition, event: Gdk.EventButton): void
+    connect(sigName: "icon-press", callback: (($obj: WidgetsTimePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    connect_after(sigName: "icon-press", callback: (($obj: WidgetsTimePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    emit(sigName: "icon-press", icon_pos: Gtk.EntryIconPosition, event: Gdk.Event): void
+    connect(sigName: "icon-release", callback: (($obj: WidgetsTimePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    connect_after(sigName: "icon-release", callback: (($obj: WidgetsTimePicker, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    emit(sigName: "icon-release", icon_pos: Gtk.EntryIconPosition, event: Gdk.Event): void
     connect(sigName: "insert-at-cursor", callback: (($obj: WidgetsTimePicker, string: string) => void)): number
     connect_after(sigName: "insert-at-cursor", callback: (($obj: WidgetsTimePicker, string: string) => void)): number
     emit(sigName: "insert-at-cursor", string: string): void
@@ -15546,7 +12402,7 @@ export class WidgetsTimePicker {
     connect(sigName: "toggle-overwrite", callback: (($obj: WidgetsTimePicker) => void)): number
     connect_after(sigName: "toggle-overwrite", callback: (($obj: WidgetsTimePicker) => void)): number
     emit(sigName: "toggle-overwrite"): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsTimePicker) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsTimePicker) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -15754,7 +12610,7 @@ export class WidgetsTimePicker {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsTimePicker, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsTimePicker, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsTimePicker, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsTimePicker, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -15955,19 +12811,19 @@ export class WidgetsTimePicker {
 export interface WidgetsToast_ConstructProps extends Gtk.Revealer_ConstructProps {
     title?: string
 }
-export class WidgetsToast {
-    /* Properties of Granite.WidgetsToast */
+class WidgetsToast {
+    /* Properties of Granite-1.0.Granite.WidgetsToast */
     title: string
-    /* Properties of Gtk.Revealer */
+    /* Properties of Gtk-3.0.Gtk.Revealer */
     readonly child_revealed: boolean
     reveal_child: boolean
     transition_duration: number
     transition_type: Gtk.RevealerTransitionType
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -16007,20 +12863,20 @@ export class WidgetsToast {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Revealer */
+    /* Fields of Gtk-3.0.Gtk.Revealer */
     parent_instance: Gtk.Bin
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsToast */
+    /* Methods of Granite-1.0.Granite.WidgetsToast */
     get_title(): string
     set_title(value: string): void
     set_default_action(label?: string | null): void
     send_notification(): void
-    /* Methods of Gtk.Revealer */
+    /* Methods of Gtk-3.0.Gtk.Revealer */
     get_child_revealed(): boolean
     get_reveal_child(): boolean
     get_transition_duration(): number
@@ -16028,12 +12884,13 @@ export class WidgetsToast {
     set_reveal_child(reveal_child: boolean): void
     set_transition_duration(duration: number): void
     set_transition_type(transition: Gtk.RevealerTransitionType): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -16058,7 +12915,7 @@ export class WidgetsToast {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -16317,15 +13174,15 @@ export class WidgetsToast {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -16333,13 +13190,13 @@ export class WidgetsToast {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -16350,7 +13207,7 @@ export class WidgetsToast {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -16433,22 +13290,22 @@ export class WidgetsToast {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.WidgetsToast */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.WidgetsToast */
     connect(sigName: "closed", callback: (($obj: WidgetsToast) => void)): number
     connect_after(sigName: "closed", callback: (($obj: WidgetsToast) => void)): number
     emit(sigName: "closed"): void
     connect(sigName: "default-action", callback: (($obj: WidgetsToast) => void)): number
     connect_after(sigName: "default-action", callback: (($obj: WidgetsToast) => void)): number
     emit(sigName: "default-action"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WidgetsToast, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WidgetsToast, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -16461,7 +13318,7 @@ export class WidgetsToast {
     connect(sigName: "set-focus-child", callback: (($obj: WidgetsToast, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsToast, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsToast) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsToast) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -16669,7 +13526,7 @@ export class WidgetsToast {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsToast, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsToast, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsToast, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsToast, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -16784,12 +13641,12 @@ export interface WidgetsWelcomeButton_ConstructProps extends Gtk.Button_Construc
     description?: string
     icon?: Gtk.Image
 }
-export class WidgetsWelcomeButton {
-    /* Properties of Granite.WidgetsWelcomeButton */
+class WidgetsWelcomeButton {
+    /* Properties of Granite-1.0.Granite.WidgetsWelcomeButton */
     title: string
     description: string
     icon: Gtk.Image
-    /* Properties of Gtk.Button */
+    /* Properties of Gtk-3.0.Gtk.Button */
     always_show_image: boolean
     image: Gtk.Widget
     image_position: Gtk.PositionType
@@ -16799,11 +13656,11 @@ export class WidgetsWelcomeButton {
     use_underline: boolean
     xalign: number
     yalign: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -16843,22 +13700,22 @@ export class WidgetsWelcomeButton {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsWelcomeButton */
+    /* Methods of Granite-1.0.Granite.WidgetsWelcomeButton */
     get_title(): string
     set_title(value: string): void
     get_description(): string
     set_description(value: string): void
     get_icon(): Gtk.Image | null
     set_icon(value?: Gtk.Image | null): void
-    /* Methods of Gtk.Button */
+    /* Methods of Gtk-3.0.Gtk.Button */
     clicked(): void
     enter(): void
     get_alignment(): [ /* xalign */ number, /* yalign */ number ]
@@ -16883,12 +13740,13 @@ export class WidgetsWelcomeButton {
     set_relief(relief: Gtk.ReliefStyle): void
     set_use_stock(use_stock: boolean): void
     set_use_underline(use_underline: boolean): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -16913,7 +13771,7 @@ export class WidgetsWelcomeButton {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -17170,15 +14028,15 @@ export class WidgetsWelcomeButton {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -17186,20 +14044,20 @@ export class WidgetsWelcomeButton {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Button */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Button */
     vfunc_activate(): void
     vfunc_clicked(): void
     vfunc_enter(): void
     vfunc_leave(): void
     vfunc_pressed(): void
     vfunc_released(): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -17210,7 +14068,7 @@ export class WidgetsWelcomeButton {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -17293,15 +14151,15 @@ export class WidgetsWelcomeButton {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Button */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Button */
     connect(sigName: "activate", callback: (($obj: WidgetsWelcomeButton) => void)): number
     connect_after(sigName: "activate", callback: (($obj: WidgetsWelcomeButton) => void)): number
     emit(sigName: "activate"): void
@@ -17320,7 +14178,7 @@ export class WidgetsWelcomeButton {
     connect(sigName: "released", callback: (($obj: WidgetsWelcomeButton) => void)): number
     connect_after(sigName: "released", callback: (($obj: WidgetsWelcomeButton) => void)): number
     emit(sigName: "released"): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WidgetsWelcomeButton, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WidgetsWelcomeButton, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -17333,7 +14191,7 @@ export class WidgetsWelcomeButton {
     connect(sigName: "set-focus-child", callback: (($obj: WidgetsWelcomeButton, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsWelcomeButton, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsWelcomeButton) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsWelcomeButton) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -17541,7 +14399,7 @@ export class WidgetsWelcomeButton {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsWelcomeButton, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsWelcomeButton, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsWelcomeButton, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsWelcomeButton, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -17669,18 +14527,18 @@ export interface WidgetsWelcome_ConstructProps extends Gtk.EventBox_ConstructPro
     title?: string
     subtitle?: string
 }
-export class WidgetsWelcome {
-    /* Properties of Granite.WidgetsWelcome */
+class WidgetsWelcome {
+    /* Properties of Granite-1.0.Granite.WidgetsWelcome */
     title: string
     subtitle: string
-    /* Properties of Gtk.EventBox */
+    /* Properties of Gtk-3.0.Gtk.EventBox */
     above_child: boolean
     visible_window: boolean
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -17720,20 +14578,20 @@ export class WidgetsWelcome {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Granite.WidgetsWelcome */
+    /* Fields of Granite-1.0.Granite.WidgetsWelcome */
     children: Gtk.Button[]
     options: Gtk.Grid
-    /* Fields of Gtk.EventBox */
+    /* Fields of Gtk-3.0.Gtk.EventBox */
     bin: Gtk.Bin
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.WidgetsWelcome */
+    /* Methods of Granite-1.0.Granite.WidgetsWelcome */
     get_title(): string
     set_title(value: string): void
     get_subtitle(): string
@@ -17745,17 +14603,18 @@ export class WidgetsWelcome {
     append_with_pixbuf(pixbuf: GdkPixbuf.Pixbuf | null, option_text: string, description_text: string): number
     append_with_image(image: Gtk.Image | null, option_text: string, description_text: string): number
     get_button_from_index(index: number): WidgetsWelcomeButton | null
-    /* Methods of Gtk.EventBox */
+    /* Methods of Gtk-3.0.Gtk.EventBox */
     get_above_child(): boolean
     get_visible_window(): boolean
     set_above_child(above_child: boolean): void
     set_visible_window(visible_window: boolean): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -17780,7 +14639,7 @@ export class WidgetsWelcome {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -18039,15 +14898,15 @@ export class WidgetsWelcome {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -18055,13 +14914,13 @@ export class WidgetsWelcome {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -18072,7 +14931,7 @@ export class WidgetsWelcome {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -18155,19 +15014,19 @@ export class WidgetsWelcome {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Granite.WidgetsWelcome */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Granite-1.0.Granite.WidgetsWelcome */
     connect(sigName: "activated", callback: (($obj: WidgetsWelcome, index: number) => void)): number
     connect_after(sigName: "activated", callback: (($obj: WidgetsWelcome, index: number) => void)): number
     emit(sigName: "activated", index: number): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: WidgetsWelcome, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: WidgetsWelcome, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -18180,7 +15039,7 @@ export class WidgetsWelcome {
     connect(sigName: "set-focus-child", callback: (($obj: WidgetsWelcome, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: WidgetsWelcome, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: WidgetsWelcome) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: WidgetsWelcome) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -18388,7 +15247,7 @@ export class WidgetsWelcome {
     connect(sigName: "window-state-event", callback: (($obj: WidgetsWelcome, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: WidgetsWelcome, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WidgetsWelcome, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WidgetsWelcome, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -18498,14 +15357,14 @@ export class WidgetsWelcome {
 }
 export interface Application_ConstructProps extends Gtk.Application_ConstructProps {
 }
-export class Application {
-    /* Properties of Gtk.Application */
+class Application {
+    /* Properties of Gtk-3.0.Gtk.Application */
     readonly active_window: Gtk.Window
     app_menu: Gio.MenuModel
     menubar: Gio.MenuModel
     register_session: boolean
     readonly screensaver_active: boolean
-    /* Properties of Gio.Application */
+    /* Properties of Gio-2.0.Gio.Application */
     action_group: Gio.ActionGroup
     application_id: string
     flags: Gio.ApplicationFlags
@@ -18514,7 +15373,7 @@ export class Application {
     readonly is_registered: boolean
     readonly is_remote: boolean
     resource_base_path: string
-    /* Fields of Granite.Application */
+    /* Fields of Granite-1.0.Granite.Application */
     build_data_dir: string
     build_pkg_data_dir: string
     build_release_name: string
@@ -18541,17 +15400,14 @@ export class Application {
     about_license: string
     about_license_type: Gtk.License
     granite_application_DEBUG: boolean
-    about_dlg: WidgetsAboutDialog
-    /* Fields of Gtk.Application */
+    /* Fields of Gtk-3.0.Gtk.Application */
     parent: Gio.Application
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.Application */
+    /* Methods of Granite-1.0.Granite.Application */
     run(args: string[]): number
     set_options(): void
-    create_appmenu(menu: Gtk.Menu): WidgetsAppMenu
-    show_about(parent: Gtk.Widget): void
-    /* Methods of Gtk.Application */
+    /* Methods of Gtk-3.0.Gtk.Application */
     add_accelerator(accelerator: string, action_name: string, parameter?: GLib.Variant | null): void
     add_window(window: Gtk.Window): void
     get_accels_for_action(detailed_action_name: string): string[]
@@ -18572,15 +15428,15 @@ export class Application {
     set_app_menu(app_menu?: Gio.MenuModel | null): void
     set_menubar(menubar?: Gio.MenuModel | null): void
     uninhibit(cookie: number): void
-    /* Methods of Gio.Application */
+    /* Methods of Gio-2.0.Gio.Application */
     activate(): void
     add_main_option(long_name: string, short_name: number, flags: GLib.OptionFlags, arg: GLib.OptionArg, description: string, arg_description?: string | null): void
     add_main_option_entries(entries: GLib.OptionEntry[]): void
     add_option_group(group: GLib.OptionGroup): void
     bind_busy_property(object: GObject.Object, property: string): void
-    get_application_id(): string
-    get_dbus_connection(): Gio.DBusConnection
-    get_dbus_object_path(): string
+    get_application_id(): string | null
+    get_dbus_connection(): Gio.DBusConnection | null
+    get_dbus_object_path(): string | null
     get_flags(): Gio.ApplicationFlags
     get_inactivity_timeout(): number
     get_is_busy(): boolean
@@ -18607,15 +15463,15 @@ export class Application {
     unbind_busy_property(object: GObject.Object, property: string): void
     unmark_busy(): void
     withdraw_notification(id: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -18623,16 +15479,15 @@ export class Application {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Granite.Application */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Granite-1.0.Granite.Application */
     vfunc_set_options(): void
-    vfunc_show_about(parent: Gtk.Widget): void
-    /* Virtual methods of Gtk.Application */
+    /* Virtual methods of Gtk-3.0.Gtk.Application */
     vfunc_window_added(window: Gtk.Window): void
     vfunc_window_removed(window: Gtk.Window): void
     vfunc_action_added(action_name: string): void
@@ -18650,9 +15505,9 @@ export class Application {
     vfunc_list_actions(): string[]
     vfunc_query_action(action_name: string): [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
     vfunc_add_action(action: Gio.Action): void
-    vfunc_lookup_action(action_name: string): Gio.Action
+    vfunc_lookup_action(action_name: string): Gio.Action | null
     vfunc_remove_action(action_name: string): void
-    /* Virtual methods of Gio.Application */
+    /* Virtual methods of Gio-2.0.Gio.Application */
     vfunc_activate(): void
     vfunc_add_platform_data(builder: GLib.VariantBuilder): void
     vfunc_after_emit(platform_data: GLib.Variant): void
@@ -18668,15 +15523,15 @@ export class Application {
     vfunc_run_mainloop(): void
     vfunc_shutdown(): void
     vfunc_startup(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Application */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Application */
     connect(sigName: "query-end", callback: (($obj: Application) => void)): number
     connect_after(sigName: "query-end", callback: (($obj: Application) => void)): number
     emit(sigName: "query-end"): void
@@ -18686,7 +15541,7 @@ export class Application {
     connect(sigName: "window-removed", callback: (($obj: Application, window: Gtk.Window) => void)): number
     connect_after(sigName: "window-removed", callback: (($obj: Application, window: Gtk.Window) => void)): number
     emit(sigName: "window-removed", window: Gtk.Window): void
-    /* Signals of Gio.Application */
+    /* Signals of Gio-2.0.Gio.Application */
     connect(sigName: "activate", callback: (($obj: Application) => void)): number
     connect_after(sigName: "activate", callback: (($obj: Application) => void)): number
     emit(sigName: "activate"): void
@@ -18708,7 +15563,7 @@ export class Application {
     connect(sigName: "startup", callback: (($obj: Application) => void)): number
     connect_after(sigName: "startup", callback: (($obj: Application) => void)): number
     emit(sigName: "startup"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Application, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Application, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -18755,13 +15610,13 @@ export interface SettingsPage_ConstructProps extends Gtk.ScrolledWindow_Construc
     icon_name?: string
     title?: string
 }
-export class SettingsPage {
-    /* Properties of Granite.SettingsPage */
+class SettingsPage {
+    /* Properties of Granite-1.0.Granite.SettingsPage */
     status_type: SettingsPageStatusType
     status: string
     icon_name: string
     title: string
-    /* Properties of Gtk.ScrolledWindow */
+    /* Properties of Gtk-3.0.Gtk.ScrolledWindow */
     hadjustment: Gtk.Adjustment
     hscrollbar_policy: Gtk.PolicyType
     kinetic_scrolling: boolean
@@ -18777,11 +15632,11 @@ export class SettingsPage {
     vscrollbar_policy: Gtk.PolicyType
     window_placement: Gtk.CornerType
     window_placement_set: boolean
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -18821,19 +15676,19 @@ export class SettingsPage {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Granite.SettingsPage */
+    /* Fields of Granite-1.0.Granite.SettingsPage */
     _icon_name: string
     _title: string
-    /* Fields of Gtk.ScrolledWindow */
+    /* Fields of Gtk-3.0.Gtk.ScrolledWindow */
     container: Gtk.Bin
     priv: Gtk.ScrolledWindowPrivate
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.SettingsPage */
+    /* Methods of Granite-1.0.Granite.SettingsPage */
     get_status_type(): SettingsPageStatusType
     set_status_type(value: SettingsPageStatusType): void
     get_display_widget(): Gtk.Widget | null
@@ -18844,7 +15699,7 @@ export class SettingsPage {
     set_icon_name(value?: string | null): void
     get_title(): string
     set_title(value: string): void
-    /* Methods of Gtk.ScrolledWindow */
+    /* Methods of Gtk-3.0.Gtk.ScrolledWindow */
     add_with_viewport(child: Gtk.Widget): void
     get_capture_button_press(): boolean
     get_hadjustment(): Gtk.Adjustment
@@ -18877,12 +15732,13 @@ export class SettingsPage {
     set_shadow_type(type: Gtk.ShadowType): void
     set_vadjustment(vadjustment?: Gtk.Adjustment | null): void
     unset_placement(): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -18907,7 +15763,7 @@ export class SettingsPage {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -19166,15 +16022,15 @@ export class SettingsPage {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -19182,16 +16038,16 @@ export class SettingsPage {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.ScrolledWindow */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.ScrolledWindow */
     vfunc_move_focus_out(direction: Gtk.DirectionType): void
     vfunc_scroll_child(scroll: Gtk.ScrollType, horizontal: boolean): boolean
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -19202,7 +16058,7 @@ export class SettingsPage {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -19285,15 +16141,15 @@ export class SettingsPage {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.ScrolledWindow */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.ScrolledWindow */
     connect(sigName: "edge-overshot", callback: (($obj: SettingsPage, pos: Gtk.PositionType) => void)): number
     connect_after(sigName: "edge-overshot", callback: (($obj: SettingsPage, pos: Gtk.PositionType) => void)): number
     emit(sigName: "edge-overshot", pos: Gtk.PositionType): void
@@ -19306,7 +16162,7 @@ export class SettingsPage {
     connect(sigName: "scroll-child", callback: (($obj: SettingsPage, scroll: Gtk.ScrollType, horizontal: boolean) => boolean)): number
     connect_after(sigName: "scroll-child", callback: (($obj: SettingsPage, scroll: Gtk.ScrollType, horizontal: boolean) => boolean)): number
     emit(sigName: "scroll-child", scroll: Gtk.ScrollType, horizontal: boolean): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: SettingsPage, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: SettingsPage, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -19319,7 +16175,7 @@ export class SettingsPage {
     connect(sigName: "set-focus-child", callback: (($obj: SettingsPage, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: SettingsPage, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: SettingsPage) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: SettingsPage) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -19527,7 +16383,7 @@ export class SettingsPage {
     connect(sigName: "window-state-event", callback: (($obj: SettingsPage, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: SettingsPage, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SettingsPage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SettingsPage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -19671,15 +16527,15 @@ export interface SimpleSettingsPage_ConstructProps extends SettingsPage_Construc
     icon_name?: string
     title?: string
 }
-export class SimpleSettingsPage {
-    /* Properties of Granite.SimpleSettingsPage */
+class SimpleSettingsPage {
+    /* Properties of Granite-1.0.Granite.SimpleSettingsPage */
     description: string
     icon_name: string
     title: string
-    /* Properties of Granite.SettingsPage */
+    /* Properties of Granite-1.0.Granite.SettingsPage */
     status_type: SettingsPageStatusType
     status: string
-    /* Properties of Gtk.ScrolledWindow */
+    /* Properties of Gtk-3.0.Gtk.ScrolledWindow */
     hadjustment: Gtk.Adjustment
     hscrollbar_policy: Gtk.PolicyType
     kinetic_scrolling: boolean
@@ -19695,11 +16551,11 @@ export class SimpleSettingsPage {
     vscrollbar_policy: Gtk.PolicyType
     window_placement: Gtk.CornerType
     window_placement_set: boolean
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -19739,19 +16595,19 @@ export class SimpleSettingsPage {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Granite.SettingsPage */
+    /* Fields of Granite-1.0.Granite.SettingsPage */
     _icon_name: string
     _title: string
-    /* Fields of Gtk.ScrolledWindow */
+    /* Fields of Gtk-3.0.Gtk.ScrolledWindow */
     container: Gtk.Bin
     priv: Gtk.ScrolledWindowPrivate
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.SimpleSettingsPage */
+    /* Methods of Granite-1.0.Granite.SimpleSettingsPage */
     get_action_area(): Gtk.ButtonBox
     get_content_area(): Gtk.Grid
     get_status_switch(): Gtk.Switch | null
@@ -19762,7 +16618,7 @@ export class SimpleSettingsPage {
     set_icon_name(value: string): void
     get_title(): string
     set_title(value: string): void
-    /* Methods of Granite.SettingsPage */
+    /* Methods of Granite-1.0.Granite.SettingsPage */
     get_status_type(): SettingsPageStatusType
     set_status_type(value: SettingsPageStatusType): void
     get_display_widget(): Gtk.Widget | null
@@ -19771,7 +16627,7 @@ export class SimpleSettingsPage {
     set_status(value: string): void
     get_icon_name(): string | null
     set_icon_name(value?: string | null): void
-    /* Methods of Gtk.ScrolledWindow */
+    /* Methods of Gtk-3.0.Gtk.ScrolledWindow */
     add_with_viewport(child: Gtk.Widget): void
     get_capture_button_press(): boolean
     get_hadjustment(): Gtk.Adjustment
@@ -19804,12 +16660,13 @@ export class SimpleSettingsPage {
     set_shadow_type(type: Gtk.ShadowType): void
     set_vadjustment(vadjustment?: Gtk.Adjustment | null): void
     unset_placement(): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -19834,7 +16691,7 @@ export class SimpleSettingsPage {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -20093,15 +16950,15 @@ export class SimpleSettingsPage {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -20109,16 +16966,16 @@ export class SimpleSettingsPage {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.ScrolledWindow */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.ScrolledWindow */
     vfunc_move_focus_out(direction: Gtk.DirectionType): void
     vfunc_scroll_child(scroll: Gtk.ScrollType, horizontal: boolean): boolean
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -20129,7 +16986,7 @@ export class SimpleSettingsPage {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -20212,15 +17069,15 @@ export class SimpleSettingsPage {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.ScrolledWindow */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.ScrolledWindow */
     connect(sigName: "edge-overshot", callback: (($obj: SimpleSettingsPage, pos: Gtk.PositionType) => void)): number
     connect_after(sigName: "edge-overshot", callback: (($obj: SimpleSettingsPage, pos: Gtk.PositionType) => void)): number
     emit(sigName: "edge-overshot", pos: Gtk.PositionType): void
@@ -20233,7 +17090,7 @@ export class SimpleSettingsPage {
     connect(sigName: "scroll-child", callback: (($obj: SimpleSettingsPage, scroll: Gtk.ScrollType, horizontal: boolean) => boolean)): number
     connect_after(sigName: "scroll-child", callback: (($obj: SimpleSettingsPage, scroll: Gtk.ScrollType, horizontal: boolean) => boolean)): number
     emit(sigName: "scroll-child", scroll: Gtk.ScrollType, horizontal: boolean): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: SimpleSettingsPage, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: SimpleSettingsPage, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -20246,7 +17103,7 @@ export class SimpleSettingsPage {
     connect(sigName: "set-focus-child", callback: (($obj: SimpleSettingsPage, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: SimpleSettingsPage, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: SimpleSettingsPage) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: SimpleSettingsPage) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -20454,7 +17311,7 @@ export class SimpleSettingsPage {
     connect(sigName: "window-state-event", callback: (($obj: SimpleSettingsPage, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: SimpleSettingsPage, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SimpleSettingsPage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SimpleSettingsPage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -20596,22 +17453,22 @@ export interface AccelLabel_ConstructProps extends Gtk.Grid_ConstructProps {
     accel_string?: string
     label?: string
 }
-export class AccelLabel {
-    /* Properties of Granite.AccelLabel */
+class AccelLabel {
+    /* Properties of Granite-1.0.Granite.AccelLabel */
     action_name: string
     accel_string: string
     label: string
-    /* Properties of Gtk.Grid */
+    /* Properties of Gtk-3.0.Gtk.Grid */
     baseline_row: number
     column_homogeneous: boolean
     column_spacing: number
     row_homogeneous: boolean
     row_spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -20651,20 +17508,20 @@ export class AccelLabel {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.AccelLabel */
+    /* Methods of Granite-1.0.Granite.AccelLabel */
     get_action_name(): string
     set_action_name(value: string): void
     get_accel_string(): string | null
     set_accel_string(value?: string | null): void
     get_label(): string
     set_label(value: string): void
-    /* Methods of Gtk.Grid */
+    /* Methods of Gtk-3.0.Gtk.Grid */
     attach(child: Gtk.Widget, left: number, top: number, width: number, height: number): void
     attach_next_to(child: Gtk.Widget, sibling: Gtk.Widget | null, side: Gtk.PositionType, width: number, height: number): void
     get_baseline_row(): number
@@ -20685,10 +17542,11 @@ export class AccelLabel {
     set_row_baseline_position(row: number, pos: Gtk.BaselinePosition): void
     set_row_homogeneous(homogeneous: boolean): void
     set_row_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -20713,7 +17571,7 @@ export class AccelLabel {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -20972,15 +17830,15 @@ export class AccelLabel {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -20988,13 +17846,13 @@ export class AccelLabel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -21005,7 +17863,7 @@ export class AccelLabel {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -21088,15 +17946,15 @@ export class AccelLabel {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: AccelLabel, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: AccelLabel, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -21109,7 +17967,7 @@ export class AccelLabel {
     connect(sigName: "set-focus-child", callback: (($obj: AccelLabel, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: AccelLabel, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: AccelLabel) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: AccelLabel) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -21317,7 +18175,7 @@ export class AccelLabel {
     connect(sigName: "window-state-event", callback: (($obj: AccelLabel, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: AccelLabel, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AccelLabel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AccelLabel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -21440,11 +18298,11 @@ export interface AsyncImage_ConstructProps extends Gtk.Image_ConstructProps {
     gicon_async?: Gio.Icon
     size_async?: number
 }
-export class AsyncImage {
-    /* Properties of Granite.AsyncImage */
+class AsyncImage {
+    /* Properties of Granite-1.0.Granite.AsyncImage */
     gicon_async: Gio.Icon
     size_async: number
-    /* Properties of Gtk.Image */
+    /* Properties of Gtk-3.0.Gtk.Image */
     file: string
     gicon: Gio.Icon
     icon_name: string
@@ -21458,12 +18316,12 @@ export class AsyncImage {
     readonly storage_type: Gtk.ImageType
     surface: cairo.Surface
     use_fallback: boolean
-    /* Properties of Gtk.Misc */
+    /* Properties of Gtk-3.0.Gtk.Misc */
     xalign: number
     xpad: number
     yalign: number
     ypad: number
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -21503,15 +18361,15 @@ export class AsyncImage {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Image */
+    /* Fields of Gtk-3.0.Gtk.Image */
     misc: Gtk.Misc
-    /* Fields of Gtk.Misc */
+    /* Fields of Gtk-3.0.Gtk.Misc */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.AsyncImage */
+    /* Methods of Granite-1.0.Granite.AsyncImage */
     get_gicon_async(): Gio.Icon | null
     get_size_async(): number
     set_from_gicon_async(icon: Gio.Icon, size: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -21520,7 +18378,7 @@ export class AsyncImage {
     set_from_icon_name_finish(_res_: Gio.AsyncResult): void
     set_from_file_async(file: Gio.File, width: number, height: number, preserve_aspect_ratio: boolean, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
     set_from_file_finish(_res_: Gio.AsyncResult): void
-    /* Methods of Gtk.Image */
+    /* Methods of Gtk-3.0.Gtk.Image */
     clear(): void
     get_animation(): GdkPixbuf.PixbufAnimation | null
     get_gicon(): [ /* gicon */ Gio.Icon | null, /* size */ number | null ]
@@ -21540,12 +18398,12 @@ export class AsyncImage {
     set_from_stock(stock_id: string, size: number): void
     set_from_surface(surface?: cairo.Surface | null): void
     set_pixel_size(pixel_size: number): void
-    /* Methods of Gtk.Misc */
+    /* Methods of Gtk-3.0.Gtk.Misc */
     get_alignment(): [ /* xalign */ number | null, /* yalign */ number | null ]
     get_padding(): [ /* xpad */ number | null, /* ypad */ number | null ]
     set_alignment(xalign: number, yalign: number): void
     set_padding(xpad: number, ypad: number): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -21804,15 +18662,15 @@ export class AsyncImage {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -21820,13 +18678,13 @@ export class AsyncImage {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Widget */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -21909,15 +18767,15 @@ export class AsyncImage {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Widget */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: AsyncImage) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: AsyncImage) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -22125,7 +18983,7 @@ export class AsyncImage {
     connect(sigName: "window-state-event", callback: (($obj: AsyncImage, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: AsyncImage, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AsyncImage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AsyncImage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -22259,36 +19117,47 @@ export class AsyncImage {
     static from_icon_name_async(icon_name: string, icon_size: Gtk.IconSize, load_on_realize: boolean, auto_size_request: boolean): AsyncImage
     static $gtype: GObject.Type
 }
-export interface HeaderLabel_ConstructProps extends Gtk.Label_ConstructProps {
+export interface Dialog_ConstructProps extends Gtk.Dialog_ConstructProps {
 }
-export class HeaderLabel {
-    /* Properties of Gtk.Label */
-    angle: number
-    attributes: Pango.AttrList
-    readonly cursor_position: number
-    ellipsize: Pango.EllipsizeMode
-    justify: Gtk.Justification
-    label: string
-    lines: number
-    max_width_chars: number
-    readonly mnemonic_keyval: number
-    mnemonic_widget: Gtk.Widget
-    pattern: string
-    selectable: boolean
-    readonly selection_bound: number
-    single_line_mode: boolean
-    track_visited_links: boolean
-    use_markup: boolean
-    use_underline: boolean
-    width_chars: number
-    wrap: boolean
-    wrap_mode: Pango.WrapMode
-    xalign: number
-    yalign: number
-    /* Properties of Gtk.Misc */
-    xpad: number
-    ypad: number
-    /* Properties of Gtk.Widget */
+class Dialog {
+    /* Properties of Gtk-3.0.Gtk.Window */
+    accept_focus: boolean
+    application: Gtk.Application
+    attached_to: Gtk.Widget
+    decorated: boolean
+    default_height: number
+    default_width: number
+    deletable: boolean
+    destroy_with_parent: boolean
+    focus_on_map: boolean
+    focus_visible: boolean
+    gravity: Gdk.Gravity
+    has_resize_grip: boolean
+    readonly has_toplevel_focus: boolean
+    hide_titlebar_when_maximized: boolean
+    icon: GdkPixbuf.Pixbuf
+    icon_name: string
+    readonly is_active: boolean
+    readonly is_maximized: boolean
+    mnemonics_visible: boolean
+    modal: boolean
+    resizable: boolean
+    readonly resize_grip_visible: boolean
+    role: string
+    screen: Gdk.Screen
+    skip_pager_hint: boolean
+    skip_taskbar_hint: boolean
+    startup_id: string
+    title: string
+    transient_for: Gtk.Window
+    type_hint: Gdk.WindowTypeHint
+    urgency_hint: boolean
+    window_position: Gtk.WindowPosition
+    /* Properties of Gtk-3.0.Gtk.Container */
+    border_width: number
+    child: Gtk.Widget
+    resize_mode: Gtk.ResizeMode
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -22328,15 +19197,1043 @@ export class HeaderLabel {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Label */
-    misc: Gtk.Misc
-    /* Fields of Gtk.Misc */
+    /* Fields of Gtk-3.0.Gtk.Window */
+    bin: Gtk.Bin
+    priv: Gtk.WindowPrivate
+    /* Fields of Gtk-3.0.Gtk.Bin */
+    container: Gtk.Container
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gtk.Label */
+    /* Methods of Gtk-3.0.Gtk.Dialog */
+    add_action_widget(child: Gtk.Widget, response_id: number): void
+    add_button(button_text: string, response_id: number): Gtk.Widget
+    get_action_area(): Gtk.Box
+    get_content_area(): Gtk.Box
+    get_header_bar(): Gtk.HeaderBar
+    get_response_for_widget(widget: Gtk.Widget): number
+    get_widget_for_response(response_id: number): Gtk.Widget | null
+    response(response_id: number): void
+    run(): number
+    set_alternative_button_order_from_array(new_order: number[]): void
+    set_default_response(response_id: number): void
+    set_response_sensitive(response_id: number, setting: boolean): void
+    /* Methods of Gtk-3.0.Gtk.Window */
+    activate_default(): boolean
+    activate_focus(): boolean
+    activate_key(event: Gdk.EventKey): boolean
+    add_accel_group(accel_group: Gtk.AccelGroup): void
+    add_mnemonic(keyval: number, target: Gtk.Widget): void
+    begin_move_drag(button: number, root_x: number, root_y: number, timestamp: number): void
+    begin_resize_drag(edge: Gdk.WindowEdge, button: number, root_x: number, root_y: number, timestamp: number): void
+    close(): void
+    deiconify(): void
+    fullscreen(): void
+    fullscreen_on_monitor(screen: Gdk.Screen, monitor: number): void
+    get_accept_focus(): boolean
+    get_application(): Gtk.Application | null
+    get_attached_to(): Gtk.Widget | null
+    get_decorated(): boolean
+    get_default_size(): [ /* width */ number | null, /* height */ number | null ]
+    get_default_widget(): Gtk.Widget | null
+    get_deletable(): boolean
+    get_destroy_with_parent(): boolean
+    get_focus(): Gtk.Widget | null
+    get_focus_on_map(): boolean
+    get_focus_visible(): boolean
+    get_gravity(): Gdk.Gravity
+    get_group(): Gtk.WindowGroup
+    get_has_resize_grip(): boolean
+    get_hide_titlebar_when_maximized(): boolean
+    get_icon(): GdkPixbuf.Pixbuf | null
+    get_icon_list(): GdkPixbuf.Pixbuf[]
+    get_icon_name(): string | null
+    get_mnemonic_modifier(): Gdk.ModifierType
+    get_mnemonics_visible(): boolean
+    get_modal(): boolean
+    get_opacity(): number
+    get_position(): [ /* root_x */ number | null, /* root_y */ number | null ]
+    get_resizable(): boolean
+    get_resize_grip_area(): [ /* returnType */ boolean, /* rect */ Gdk.Rectangle ]
+    get_role(): string | null
+    get_screen(): Gdk.Screen
+    get_size(): [ /* width */ number | null, /* height */ number | null ]
+    get_skip_pager_hint(): boolean
+    get_skip_taskbar_hint(): boolean
+    get_title(): string | null
+    get_titlebar(): Gtk.Widget | null
+    get_transient_for(): Gtk.Window | null
+    get_type_hint(): Gdk.WindowTypeHint
+    get_urgency_hint(): boolean
+    get_window_type(): Gtk.WindowType
+    has_group(): boolean
+    iconify(): void
+    maximize(): void
+    mnemonic_activate(keyval: number, modifier: Gdk.ModifierType): boolean
+    move(x: number, y: number): void
+    parse_geometry(geometry: string): boolean
+    present(): void
+    present_with_time(timestamp: number): void
+    propagate_key_event(event: Gdk.EventKey): boolean
+    remove_accel_group(accel_group: Gtk.AccelGroup): void
+    remove_mnemonic(keyval: number, target: Gtk.Widget): void
+    reshow_with_initial_size(): void
+    resize(width: number, height: number): void
+    resize_grip_is_visible(): boolean
+    resize_to_geometry(width: number, height: number): void
+    set_accept_focus(setting: boolean): void
+    set_application(application?: Gtk.Application | null): void
+    set_attached_to(attach_widget?: Gtk.Widget | null): void
+    set_decorated(setting: boolean): void
+    set_default(default_widget?: Gtk.Widget | null): void
+    set_default_geometry(width: number, height: number): void
+    set_default_size(width: number, height: number): void
+    set_deletable(setting: boolean): void
+    set_destroy_with_parent(setting: boolean): void
+    set_focus(focus?: Gtk.Widget | null): void
+    set_focus_on_map(setting: boolean): void
+    set_focus_visible(setting: boolean): void
+    set_geometry_hints(geometry_widget: Gtk.Widget | null, geometry: Gdk.Geometry | null, geom_mask: Gdk.WindowHints): void
+    set_gravity(gravity: Gdk.Gravity): void
+    set_has_resize_grip(value: boolean): void
+    set_has_user_ref_count(setting: boolean): void
+    set_hide_titlebar_when_maximized(setting: boolean): void
+    set_icon(icon?: GdkPixbuf.Pixbuf | null): void
+    set_icon_from_file(filename: string): boolean
+    set_icon_list(list: GdkPixbuf.Pixbuf[]): void
+    set_icon_name(name?: string | null): void
+    set_keep_above(setting: boolean): void
+    set_keep_below(setting: boolean): void
+    set_mnemonic_modifier(modifier: Gdk.ModifierType): void
+    set_mnemonics_visible(setting: boolean): void
+    set_modal(modal: boolean): void
+    set_opacity(opacity: number): void
+    set_position(position: Gtk.WindowPosition): void
+    set_resizable(resizable: boolean): void
+    set_role(role: string): void
+    set_screen(screen: Gdk.Screen): void
+    set_skip_pager_hint(setting: boolean): void
+    set_skip_taskbar_hint(setting: boolean): void
+    set_startup_id(startup_id: string): void
+    set_title(title: string): void
+    set_titlebar(titlebar?: Gtk.Widget | null): void
+    set_transient_for(parent?: Gtk.Window | null): void
+    set_type_hint(hint: Gdk.WindowTypeHint): void
+    set_urgency_hint(setting: boolean): void
+    set_wmclass(wmclass_name: string, wmclass_class: string): void
+    stick(): void
+    unfullscreen(): void
+    unmaximize(): void
+    unstick(): void
+    /* Methods of Gtk-3.0.Gtk.Bin */
+    get_child(): Gtk.Widget | null
+    /* Methods of Gtk-3.0.Gtk.Container */
+    add(widget: Gtk.Widget): void
+    check_resize(): void
+    child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
+    child_set_property(child: Gtk.Widget, property_name: string, value: any): void
+    child_type(): GObject.Type
+    forall(callback: Gtk.Callback): void
+    foreach(callback: Gtk.Callback): void
+    get_border_width(): number
+    get_children(): Gtk.Widget[]
+    get_focus_chain(): [ /* returnType */ boolean, /* focusable_widgets */ Gtk.Widget[] ]
+    get_focus_child(): Gtk.Widget | null
+    get_focus_hadjustment(): Gtk.Adjustment | null
+    get_focus_vadjustment(): Gtk.Adjustment | null
+    get_path_for_child(child: Gtk.Widget): Gtk.WidgetPath
+    get_resize_mode(): Gtk.ResizeMode
+    propagate_draw(child: Gtk.Widget, cr: cairo.Context): void
+    remove(widget: Gtk.Widget): void
+    resize_children(): void
+    set_border_width(border_width: number): void
+    set_focus_chain(focusable_widgets: Gtk.Widget[]): void
+    set_focus_child(child?: Gtk.Widget | null): void
+    set_focus_hadjustment(adjustment: Gtk.Adjustment): void
+    set_focus_vadjustment(adjustment: Gtk.Adjustment): void
+    set_reallocate_redraws(needs_redraws: boolean): void
+    set_resize_mode(resize_mode: Gtk.ResizeMode): void
+    unset_focus_chain(): void
+    /* Methods of Gtk-3.0.Gtk.Widget */
+    activate(): boolean
+    add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
+    add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
+    add_events(events: number): void
+    add_mnemonic_label(label: Gtk.Widget): void
+    add_tick_callback(callback: Gtk.TickCallback): number
+    can_activate_accel(signal_id: number): boolean
+    child_focus(direction: Gtk.DirectionType): boolean
+    child_notify(child_property: string): void
+    class_path(): [ /* path_length */ number | null, /* path */ string | null, /* path_reversed */ string | null ]
+    compute_expand(orientation: Gtk.Orientation): boolean
+    create_pango_context(): Pango.Context
+    create_pango_layout(text?: string | null): Pango.Layout
+    destroy(): void
+    destroyed(widget_pointer: Gtk.Widget): /* widget_pointer */ Gtk.Widget
+    device_is_shadowed(device: Gdk.Device): boolean
+    drag_begin(targets: Gtk.TargetList, actions: Gdk.DragAction, button: number, event?: Gdk.Event | null): Gdk.DragContext
+    drag_begin_with_coordinates(targets: Gtk.TargetList, actions: Gdk.DragAction, button: number, event: Gdk.Event | null, x: number, y: number): Gdk.DragContext
+    drag_check_threshold(start_x: number, start_y: number, current_x: number, current_y: number): boolean
+    drag_dest_add_image_targets(): void
+    drag_dest_add_text_targets(): void
+    drag_dest_add_uri_targets(): void
+    drag_dest_find_target(context: Gdk.DragContext, target_list?: Gtk.TargetList | null): Gdk.Atom
+    drag_dest_get_target_list(): Gtk.TargetList | null
+    drag_dest_get_track_motion(): boolean
+    drag_dest_set(flags: Gtk.DestDefaults, targets: Gtk.TargetEntry[] | null, actions: Gdk.DragAction): void
+    drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void
+    drag_dest_set_target_list(target_list?: Gtk.TargetList | null): void
+    drag_dest_set_track_motion(track_motion: boolean): void
+    drag_dest_unset(): void
+    drag_get_data(context: Gdk.DragContext, target: Gdk.Atom, time_: number): void
+    drag_highlight(): void
+    drag_source_add_image_targets(): void
+    drag_source_add_text_targets(): void
+    drag_source_add_uri_targets(): void
+    drag_source_get_target_list(): Gtk.TargetList | null
+    drag_source_set(start_button_mask: Gdk.ModifierType, targets: Gtk.TargetEntry[] | null, actions: Gdk.DragAction): void
+    drag_source_set_icon_gicon(icon: Gio.Icon): void
+    drag_source_set_icon_name(icon_name: string): void
+    drag_source_set_icon_pixbuf(pixbuf: GdkPixbuf.Pixbuf): void
+    drag_source_set_icon_stock(stock_id: string): void
+    drag_source_set_target_list(target_list?: Gtk.TargetList | null): void
+    drag_source_unset(): void
+    drag_unhighlight(): void
+    draw(cr: cairo.Context): void
+    ensure_style(): void
+    error_bell(): void
+    event(event: Gdk.Event): boolean
+    freeze_child_notify(): void
+    get_accessible(): Atk.Object
+    get_action_group(prefix: string): Gio.ActionGroup | null
+    get_allocated_baseline(): number
+    get_allocated_height(): number
+    get_allocated_size(): [ /* allocation */ Gtk.Allocation, /* baseline */ number | null ]
+    get_allocated_width(): number
+    get_allocation(): /* allocation */ Gtk.Allocation
+    get_ancestor(widget_type: GObject.Type): Gtk.Widget | null
+    get_app_paintable(): boolean
+    get_can_default(): boolean
+    get_can_focus(): boolean
+    get_child_requisition(): /* requisition */ Gtk.Requisition
+    get_child_visible(): boolean
+    get_clip(): /* clip */ Gtk.Allocation
+    get_clipboard(selection: Gdk.Atom): Gtk.Clipboard
+    get_composite_name(): string
+    get_device_enabled(device: Gdk.Device): boolean
+    get_device_events(device: Gdk.Device): Gdk.EventMask
+    get_direction(): Gtk.TextDirection
+    get_display(): Gdk.Display
+    get_double_buffered(): boolean
+    get_events(): number
+    get_focus_on_click(): boolean
+    get_font_map(): Pango.FontMap | null
+    get_font_options(): cairo.FontOptions | null
+    get_frame_clock(): Gdk.FrameClock | null
+    get_halign(): Gtk.Align
+    get_has_tooltip(): boolean
+    get_has_window(): boolean
+    get_hexpand(): boolean
+    get_hexpand_set(): boolean
+    get_mapped(): boolean
+    get_margin_bottom(): number
+    get_margin_end(): number
+    get_margin_left(): number
+    get_margin_right(): number
+    get_margin_start(): number
+    get_margin_top(): number
+    get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType
+    get_modifier_style(): Gtk.RcStyle
+    get_name(): string
+    get_no_show_all(): boolean
+    get_pango_context(): Pango.Context
+    get_parent(): Gtk.Widget | null
+    get_parent_window(): Gdk.Window | null
+    get_path(): Gtk.WidgetPath
+    get_pointer(): [ /* x */ number | null, /* y */ number | null ]
+    get_preferred_height(): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    get_preferred_height_and_baseline_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null, /* minimum_baseline */ number | null, /* natural_baseline */ number | null ]
+    get_preferred_height_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    get_preferred_size(): [ /* minimum_size */ Gtk.Requisition | null, /* natural_size */ Gtk.Requisition | null ]
+    get_preferred_width(): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    get_preferred_width_for_height(height: number): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    get_realized(): boolean
+    get_receives_default(): boolean
+    get_request_mode(): Gtk.SizeRequestMode
+    get_requisition(): /* requisition */ Gtk.Requisition
+    get_root_window(): Gdk.Window
+    get_scale_factor(): number
+    get_sensitive(): boolean
+    get_settings(): Gtk.Settings
+    get_size_request(): [ /* width */ number | null, /* height */ number | null ]
+    get_state(): Gtk.StateType
+    get_state_flags(): Gtk.StateFlags
+    get_style(): Gtk.Style
+    get_style_context(): Gtk.StyleContext
+    get_support_multidevice(): boolean
+    get_template_child(widget_type: GObject.Type, name: string): GObject.Object
+    get_tooltip_markup(): string | null
+    get_tooltip_text(): string | null
+    get_tooltip_window(): Gtk.Window
+    get_toplevel(): Gtk.Widget
+    get_valign(): Gtk.Align
+    get_valign_with_baseline(): Gtk.Align
+    get_vexpand(): boolean
+    get_vexpand_set(): boolean
+    get_visible(): boolean
+    get_visual(): Gdk.Visual
+    get_window(): Gdk.Window | null
+    grab_add(): void
+    grab_default(): void
+    grab_focus(): void
+    grab_remove(): void
+    has_grab(): boolean
+    has_rc_style(): boolean
+    has_screen(): boolean
+    has_visible_focus(): boolean
+    hide(): void
+    hide_on_delete(): boolean
+    in_destruction(): boolean
+    init_template(): void
+    input_shape_combine_region(region?: cairo.Region | null): void
+    insert_action_group(name: string, group?: Gio.ActionGroup | null): void
+    intersect(area: Gdk.Rectangle): [ /* returnType */ boolean, /* intersection */ Gdk.Rectangle | null ]
+    is_ancestor(ancestor: Gtk.Widget): boolean
+    is_composited(): boolean
+    is_drawable(): boolean
+    is_sensitive(): boolean
+    is_toplevel(): boolean
+    is_visible(): boolean
+    keynav_failed(direction: Gtk.DirectionType): boolean
+    list_accel_closures(): Function[]
+    list_action_prefixes(): string[]
+    list_mnemonic_labels(): Gtk.Widget[]
+    map(): void
+    mnemonic_activate(group_cycling: boolean): boolean
+    modify_base(state: Gtk.StateType, color?: Gdk.Color | null): void
+    modify_bg(state: Gtk.StateType, color?: Gdk.Color | null): void
+    modify_cursor(primary?: Gdk.Color | null, secondary?: Gdk.Color | null): void
+    modify_fg(state: Gtk.StateType, color?: Gdk.Color | null): void
+    modify_font(font_desc?: Pango.FontDescription | null): void
+    modify_style(style: Gtk.RcStyle): void
+    modify_text(state: Gtk.StateType, color?: Gdk.Color | null): void
+    override_background_color(state: Gtk.StateFlags, color?: Gdk.RGBA | null): void
+    override_color(state: Gtk.StateFlags, color?: Gdk.RGBA | null): void
+    override_cursor(cursor?: Gdk.RGBA | null, secondary_cursor?: Gdk.RGBA | null): void
+    override_font(font_desc?: Pango.FontDescription | null): void
+    override_symbolic_color(name: string, color?: Gdk.RGBA | null): void
+    path(): [ /* path_length */ number | null, /* path */ string | null, /* path_reversed */ string | null ]
+    queue_allocate(): void
+    queue_compute_expand(): void
+    queue_draw(): void
+    queue_draw_area(x: number, y: number, width: number, height: number): void
+    queue_draw_region(region: cairo.Region): void
+    queue_resize(): void
+    queue_resize_no_redraw(): void
+    realize(): void
+    region_intersect(region: cairo.Region): cairo.Region
+    register_window(window: Gdk.Window): void
+    remove_accelerator(accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean
+    remove_mnemonic_label(label: Gtk.Widget): void
+    remove_tick_callback(id: number): void
+    render_icon(stock_id: string, size: number, detail?: string | null): GdkPixbuf.Pixbuf | null
+    render_icon_pixbuf(stock_id: string, size: number): GdkPixbuf.Pixbuf | null
+    reparent(new_parent: Gtk.Widget): void
+    reset_rc_styles(): void
+    reset_style(): void
+    send_expose(event: Gdk.Event): number
+    send_focus_change(event: Gdk.Event): boolean
+    set_accel_path(accel_path?: string | null, accel_group?: Gtk.AccelGroup | null): void
+    set_allocation(allocation: Gtk.Allocation): void
+    set_app_paintable(app_paintable: boolean): void
+    set_can_default(can_default: boolean): void
+    set_can_focus(can_focus: boolean): void
+    set_child_visible(is_visible: boolean): void
+    set_clip(clip: Gtk.Allocation): void
+    set_composite_name(name: string): void
+    set_device_enabled(device: Gdk.Device, enabled: boolean): void
+    set_device_events(device: Gdk.Device, events: Gdk.EventMask): void
+    set_direction(dir: Gtk.TextDirection): void
+    set_double_buffered(double_buffered: boolean): void
+    set_events(events: number): void
+    set_focus_on_click(focus_on_click: boolean): void
+    set_font_map(font_map?: Pango.FontMap | null): void
+    set_font_options(options?: cairo.FontOptions | null): void
+    set_halign(align: Gtk.Align): void
+    set_has_tooltip(has_tooltip: boolean): void
+    set_has_window(has_window: boolean): void
+    set_hexpand(expand: boolean): void
+    set_hexpand_set(set: boolean): void
+    set_mapped(mapped: boolean): void
+    set_margin_bottom(margin: number): void
+    set_margin_end(margin: number): void
+    set_margin_left(margin: number): void
+    set_margin_right(margin: number): void
+    set_margin_start(margin: number): void
+    set_margin_top(margin: number): void
+    set_name(name: string): void
+    set_no_show_all(no_show_all: boolean): void
+    set_parent(parent: Gtk.Widget): void
+    set_parent_window(parent_window: Gdk.Window): void
+    set_realized(realized: boolean): void
+    set_receives_default(receives_default: boolean): void
+    set_redraw_on_allocate(redraw_on_allocate: boolean): void
+    set_sensitive(sensitive: boolean): void
+    set_size_request(width: number, height: number): void
+    set_state(state: Gtk.StateType): void
+    set_state_flags(flags: Gtk.StateFlags, clear: boolean): void
+    set_style(style?: Gtk.Style | null): void
+    set_support_multidevice(support_multidevice: boolean): void
+    set_tooltip_markup(markup?: string | null): void
+    set_tooltip_text(text?: string | null): void
+    set_tooltip_window(custom_window?: Gtk.Window | null): void
+    set_valign(align: Gtk.Align): void
+    set_vexpand(expand: boolean): void
+    set_vexpand_set(set: boolean): void
+    set_visible(visible: boolean): void
+    set_visual(visual?: Gdk.Visual | null): void
+    set_window(window: Gdk.Window): void
+    shape_combine_region(region?: cairo.Region | null): void
+    show(): void
+    show_all(): void
+    show_now(): void
+    size_allocate(allocation: Gtk.Allocation): void
+    size_allocate_with_baseline(allocation: Gtk.Allocation, baseline: number): void
+    size_request(): /* requisition */ Gtk.Requisition
+    style_attach(): void
+    style_get_property(property_name: string, value: any): void
+    thaw_child_notify(): void
+    translate_coordinates(dest_widget: Gtk.Widget, src_x: number, src_y: number): [ /* returnType */ boolean, /* dest_x */ number | null, /* dest_y */ number | null ]
+    trigger_tooltip_query(): void
+    unmap(): void
+    unparent(): void
+    unrealize(): void
+    unregister_window(window: Gdk.Window): void
+    unset_state_flags(flags: Gtk.StateFlags): void
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Dialog */
+    vfunc_close(): void
+    vfunc_response(response_id: number): void
+    /* Virtual methods of Gtk-3.0.Gtk.Window */
+    vfunc_activate_default(): void
+    vfunc_activate_focus(): void
+    vfunc_enable_debugging(toggle: boolean): boolean
+    vfunc_keys_changed(): void
+    vfunc_set_focus(focus?: Gtk.Widget | null): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
+    vfunc_add(widget: Gtk.Widget): void
+    vfunc_check_resize(): void
+    vfunc_child_type(): GObject.Type
+    vfunc_composite_name(child: Gtk.Widget): string
+    vfunc_forall(include_internals: boolean, callback: Gtk.Callback): void
+    vfunc_get_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_path_for_child(child: Gtk.Widget): Gtk.WidgetPath
+    vfunc_remove(widget: Gtk.Widget): void
+    vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_focus_child(child?: Gtk.Widget | null): void
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
+    vfunc_adjust_baseline_allocation(baseline: number): void
+    vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
+    vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
+    vfunc_adjust_size_request(orientation: Gtk.Orientation, minimum_size: number, natural_size: number): void
+    vfunc_button_press_event(event: Gdk.EventButton): boolean
+    vfunc_button_release_event(event: Gdk.EventButton): boolean
+    vfunc_can_activate_accel(signal_id: number): boolean
+    vfunc_child_notify(child_property: GObject.ParamSpec): void
+    vfunc_composited_changed(): void
+    vfunc_compute_expand(hexpand_p: boolean, vexpand_p: boolean): void
+    vfunc_configure_event(event: Gdk.EventConfigure): boolean
+    vfunc_damage_event(event: Gdk.EventExpose): boolean
+    vfunc_delete_event(event: Gdk.EventAny): boolean
+    vfunc_destroy(): void
+    vfunc_destroy_event(event: Gdk.EventAny): boolean
+    vfunc_direction_changed(previous_direction: Gtk.TextDirection): void
+    vfunc_dispatch_child_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_drag_begin(context: Gdk.DragContext): void
+    vfunc_drag_data_delete(context: Gdk.DragContext): void
+    vfunc_drag_data_get(context: Gdk.DragContext, selection_data: Gtk.SelectionData, info: number, time_: number): void
+    vfunc_drag_data_received(context: Gdk.DragContext, x: number, y: number, selection_data: Gtk.SelectionData, info: number, time_: number): void
+    vfunc_drag_drop(context: Gdk.DragContext, x: number, y: number, time_: number): boolean
+    vfunc_drag_end(context: Gdk.DragContext): void
+    vfunc_drag_failed(context: Gdk.DragContext, result: Gtk.DragResult): boolean
+    vfunc_drag_leave(context: Gdk.DragContext, time_: number): void
+    vfunc_drag_motion(context: Gdk.DragContext, x: number, y: number, time_: number): boolean
+    vfunc_draw(cr: cairo.Context): boolean
+    vfunc_enter_notify_event(event: Gdk.EventCrossing): boolean
+    vfunc_event(event: Gdk.Event): boolean
+    vfunc_focus(direction: Gtk.DirectionType): boolean
+    vfunc_focus_in_event(event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(event: Gdk.EventFocus): boolean
+    vfunc_get_accessible(): Atk.Object
+    vfunc_get_preferred_height(): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    vfunc_get_preferred_height_and_baseline_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null, /* minimum_baseline */ number | null, /* natural_baseline */ number | null ]
+    vfunc_get_preferred_height_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    vfunc_get_preferred_width(): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    vfunc_get_preferred_width_for_height(height: number): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    vfunc_get_request_mode(): Gtk.SizeRequestMode
+    vfunc_grab_broken_event(event: Gdk.EventGrabBroken): boolean
+    vfunc_grab_focus(): void
+    vfunc_grab_notify(was_grabbed: boolean): void
+    vfunc_hide(): void
+    vfunc_hierarchy_changed(previous_toplevel: Gtk.Widget): void
+    vfunc_key_press_event(event: Gdk.EventKey): boolean
+    vfunc_key_release_event(event: Gdk.EventKey): boolean
+    vfunc_keynav_failed(direction: Gtk.DirectionType): boolean
+    vfunc_leave_notify_event(event: Gdk.EventCrossing): boolean
+    vfunc_map(): void
+    vfunc_map_event(event: Gdk.EventAny): boolean
+    vfunc_mnemonic_activate(group_cycling: boolean): boolean
+    vfunc_motion_notify_event(event: Gdk.EventMotion): boolean
+    vfunc_move_focus(direction: Gtk.DirectionType): void
+    vfunc_parent_set(previous_parent: Gtk.Widget): void
+    vfunc_popup_menu(): boolean
+    vfunc_property_notify_event(event: Gdk.EventProperty): boolean
+    vfunc_proximity_in_event(event: Gdk.EventProximity): boolean
+    vfunc_proximity_out_event(event: Gdk.EventProximity): boolean
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_queue_draw_region(region: cairo.Region): void
+    vfunc_realize(): void
+    vfunc_screen_changed(previous_screen: Gdk.Screen): void
+    vfunc_scroll_event(event: Gdk.EventScroll): boolean
+    vfunc_selection_clear_event(event: Gdk.EventSelection): boolean
+    vfunc_selection_get(selection_data: Gtk.SelectionData, info: number, time_: number): void
+    vfunc_selection_notify_event(event: Gdk.EventSelection): boolean
+    vfunc_selection_received(selection_data: Gtk.SelectionData, time_: number): void
+    vfunc_selection_request_event(event: Gdk.EventSelection): boolean
+    vfunc_show(): void
+    vfunc_show_all(): void
+    vfunc_show_help(help_type: Gtk.WidgetHelpType): boolean
+    vfunc_size_allocate(allocation: Gtk.Allocation): void
+    vfunc_state_changed(previous_state: Gtk.StateType): void
+    vfunc_state_flags_changed(previous_state_flags: Gtk.StateFlags): void
+    vfunc_style_set(previous_style: Gtk.Style): void
+    vfunc_style_updated(): void
+    vfunc_touch_event(event: Gdk.EventTouch): boolean
+    vfunc_unmap(): void
+    vfunc_unmap_event(event: Gdk.EventAny): boolean
+    vfunc_unrealize(): void
+    vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
+    vfunc_window_state_event(event: Gdk.EventWindowState): boolean
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Dialog */
+    connect(sigName: "close", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "close", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "close"): void
+    connect(sigName: "response", callback: (($obj: Dialog, response_id: number) => void)): number
+    connect_after(sigName: "response", callback: (($obj: Dialog, response_id: number) => void)): number
+    emit(sigName: "response", response_id: number): void
+    /* Signals of Gtk-3.0.Gtk.Window */
+    connect(sigName: "activate-default", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "activate-default", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "activate-default"): void
+    connect(sigName: "activate-focus", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "activate-focus", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "activate-focus"): void
+    connect(sigName: "enable-debugging", callback: (($obj: Dialog, toggle: boolean) => boolean)): number
+    connect_after(sigName: "enable-debugging", callback: (($obj: Dialog, toggle: boolean) => boolean)): number
+    emit(sigName: "enable-debugging", toggle: boolean): void
+    connect(sigName: "keys-changed", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "keys-changed", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "keys-changed"): void
+    connect(sigName: "set-focus", callback: (($obj: Dialog, widget?: Gtk.Widget | null) => void)): number
+    connect_after(sigName: "set-focus", callback: (($obj: Dialog, widget?: Gtk.Widget | null) => void)): number
+    emit(sigName: "set-focus", widget?: Gtk.Widget | null): void
+    /* Signals of Gtk-3.0.Gtk.Container */
+    connect(sigName: "add", callback: (($obj: Dialog, object: Gtk.Widget) => void)): number
+    connect_after(sigName: "add", callback: (($obj: Dialog, object: Gtk.Widget) => void)): number
+    emit(sigName: "add", object: Gtk.Widget): void
+    connect(sigName: "check-resize", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "check-resize", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "check-resize"): void
+    connect(sigName: "remove", callback: (($obj: Dialog, object: Gtk.Widget) => void)): number
+    connect_after(sigName: "remove", callback: (($obj: Dialog, object: Gtk.Widget) => void)): number
+    emit(sigName: "remove", object: Gtk.Widget): void
+    connect(sigName: "set-focus-child", callback: (($obj: Dialog, object: Gtk.Widget) => void)): number
+    connect_after(sigName: "set-focus-child", callback: (($obj: Dialog, object: Gtk.Widget) => void)): number
+    emit(sigName: "set-focus-child", object: Gtk.Widget): void
+    /* Signals of Gtk-3.0.Gtk.Widget */
+    connect(sigName: "accel-closures-changed", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "accel-closures-changed", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "accel-closures-changed"): void
+    connect(sigName: "button-press-event", callback: (($obj: Dialog, event: Gdk.EventButton) => boolean)): number
+    connect_after(sigName: "button-press-event", callback: (($obj: Dialog, event: Gdk.EventButton) => boolean)): number
+    emit(sigName: "button-press-event", event: Gdk.EventButton): void
+    connect(sigName: "button-release-event", callback: (($obj: Dialog, event: Gdk.EventButton) => boolean)): number
+    connect_after(sigName: "button-release-event", callback: (($obj: Dialog, event: Gdk.EventButton) => boolean)): number
+    emit(sigName: "button-release-event", event: Gdk.EventButton): void
+    connect(sigName: "can-activate-accel", callback: (($obj: Dialog, signal_id: number) => boolean)): number
+    connect_after(sigName: "can-activate-accel", callback: (($obj: Dialog, signal_id: number) => boolean)): number
+    emit(sigName: "can-activate-accel", signal_id: number): void
+    connect(sigName: "child-notify", callback: (($obj: Dialog, child_property: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "child-notify", callback: (($obj: Dialog, child_property: GObject.ParamSpec) => void)): number
+    emit(sigName: "child-notify", child_property: GObject.ParamSpec): void
+    connect(sigName: "composited-changed", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "composited-changed", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "composited-changed"): void
+    connect(sigName: "configure-event", callback: (($obj: Dialog, event: Gdk.EventConfigure) => boolean)): number
+    connect_after(sigName: "configure-event", callback: (($obj: Dialog, event: Gdk.EventConfigure) => boolean)): number
+    emit(sigName: "configure-event", event: Gdk.EventConfigure): void
+    connect(sigName: "damage-event", callback: (($obj: Dialog, event: Gdk.EventExpose) => boolean)): number
+    connect_after(sigName: "damage-event", callback: (($obj: Dialog, event: Gdk.EventExpose) => boolean)): number
+    emit(sigName: "damage-event", event: Gdk.EventExpose): void
+    connect(sigName: "delete-event", callback: (($obj: Dialog, event: Gdk.Event) => boolean)): number
+    connect_after(sigName: "delete-event", callback: (($obj: Dialog, event: Gdk.Event) => boolean)): number
+    emit(sigName: "delete-event", event: Gdk.Event): void
+    connect(sigName: "destroy", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "destroy", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "destroy"): void
+    connect(sigName: "destroy-event", callback: (($obj: Dialog, event: Gdk.Event) => boolean)): number
+    connect_after(sigName: "destroy-event", callback: (($obj: Dialog, event: Gdk.Event) => boolean)): number
+    emit(sigName: "destroy-event", event: Gdk.Event): void
+    connect(sigName: "direction-changed", callback: (($obj: Dialog, previous_direction: Gtk.TextDirection) => void)): number
+    connect_after(sigName: "direction-changed", callback: (($obj: Dialog, previous_direction: Gtk.TextDirection) => void)): number
+    emit(sigName: "direction-changed", previous_direction: Gtk.TextDirection): void
+    connect(sigName: "drag-begin", callback: (($obj: Dialog, context: Gdk.DragContext) => void)): number
+    connect_after(sigName: "drag-begin", callback: (($obj: Dialog, context: Gdk.DragContext) => void)): number
+    emit(sigName: "drag-begin", context: Gdk.DragContext): void
+    connect(sigName: "drag-data-delete", callback: (($obj: Dialog, context: Gdk.DragContext) => void)): number
+    connect_after(sigName: "drag-data-delete", callback: (($obj: Dialog, context: Gdk.DragContext) => void)): number
+    emit(sigName: "drag-data-delete", context: Gdk.DragContext): void
+    connect(sigName: "drag-data-get", callback: (($obj: Dialog, context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    connect_after(sigName: "drag-data-get", callback: (($obj: Dialog, context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    emit(sigName: "drag-data-get", context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number): void
+    connect(sigName: "drag-data-received", callback: (($obj: Dialog, context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    connect_after(sigName: "drag-data-received", callback: (($obj: Dialog, context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    emit(sigName: "drag-data-received", context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number): void
+    connect(sigName: "drag-drop", callback: (($obj: Dialog, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    connect_after(sigName: "drag-drop", callback: (($obj: Dialog, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    emit(sigName: "drag-drop", context: Gdk.DragContext, x: number, y: number, time: number): void
+    connect(sigName: "drag-end", callback: (($obj: Dialog, context: Gdk.DragContext) => void)): number
+    connect_after(sigName: "drag-end", callback: (($obj: Dialog, context: Gdk.DragContext) => void)): number
+    emit(sigName: "drag-end", context: Gdk.DragContext): void
+    connect(sigName: "drag-failed", callback: (($obj: Dialog, context: Gdk.DragContext, result: Gtk.DragResult) => boolean)): number
+    connect_after(sigName: "drag-failed", callback: (($obj: Dialog, context: Gdk.DragContext, result: Gtk.DragResult) => boolean)): number
+    emit(sigName: "drag-failed", context: Gdk.DragContext, result: Gtk.DragResult): void
+    connect(sigName: "drag-leave", callback: (($obj: Dialog, context: Gdk.DragContext, time: number) => void)): number
+    connect_after(sigName: "drag-leave", callback: (($obj: Dialog, context: Gdk.DragContext, time: number) => void)): number
+    emit(sigName: "drag-leave", context: Gdk.DragContext, time: number): void
+    connect(sigName: "drag-motion", callback: (($obj: Dialog, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    connect_after(sigName: "drag-motion", callback: (($obj: Dialog, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    emit(sigName: "drag-motion", context: Gdk.DragContext, x: number, y: number, time: number): void
+    connect(sigName: "draw", callback: (($obj: Dialog, cr: cairo.Context) => boolean)): number
+    connect_after(sigName: "draw", callback: (($obj: Dialog, cr: cairo.Context) => boolean)): number
+    emit(sigName: "draw", cr: cairo.Context): void
+    connect(sigName: "enter-notify-event", callback: (($obj: Dialog, event: Gdk.EventCrossing) => boolean)): number
+    connect_after(sigName: "enter-notify-event", callback: (($obj: Dialog, event: Gdk.EventCrossing) => boolean)): number
+    emit(sigName: "enter-notify-event", event: Gdk.EventCrossing): void
+    connect(sigName: "event", callback: (($obj: Dialog, event: Gdk.Event) => boolean)): number
+    connect_after(sigName: "event", callback: (($obj: Dialog, event: Gdk.Event) => boolean)): number
+    emit(sigName: "event", event: Gdk.Event): void
+    connect(sigName: "event-after", callback: (($obj: Dialog, event: Gdk.Event) => void)): number
+    connect_after(sigName: "event-after", callback: (($obj: Dialog, event: Gdk.Event) => void)): number
+    emit(sigName: "event-after", event: Gdk.Event): void
+    connect(sigName: "focus", callback: (($obj: Dialog, direction: Gtk.DirectionType) => boolean)): number
+    connect_after(sigName: "focus", callback: (($obj: Dialog, direction: Gtk.DirectionType) => boolean)): number
+    emit(sigName: "focus", direction: Gtk.DirectionType): void
+    connect(sigName: "focus-in-event", callback: (($obj: Dialog, event: Gdk.EventFocus) => boolean)): number
+    connect_after(sigName: "focus-in-event", callback: (($obj: Dialog, event: Gdk.EventFocus) => boolean)): number
+    emit(sigName: "focus-in-event", event: Gdk.EventFocus): void
+    connect(sigName: "focus-out-event", callback: (($obj: Dialog, event: Gdk.EventFocus) => boolean)): number
+    connect_after(sigName: "focus-out-event", callback: (($obj: Dialog, event: Gdk.EventFocus) => boolean)): number
+    emit(sigName: "focus-out-event", event: Gdk.EventFocus): void
+    connect(sigName: "grab-broken-event", callback: (($obj: Dialog, event: Gdk.EventGrabBroken) => boolean)): number
+    connect_after(sigName: "grab-broken-event", callback: (($obj: Dialog, event: Gdk.EventGrabBroken) => boolean)): number
+    emit(sigName: "grab-broken-event", event: Gdk.EventGrabBroken): void
+    connect(sigName: "grab-focus", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "grab-focus", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "grab-focus"): void
+    connect(sigName: "grab-notify", callback: (($obj: Dialog, was_grabbed: boolean) => void)): number
+    connect_after(sigName: "grab-notify", callback: (($obj: Dialog, was_grabbed: boolean) => void)): number
+    emit(sigName: "grab-notify", was_grabbed: boolean): void
+    connect(sigName: "hide", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "hide", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "hide"): void
+    connect(sigName: "hierarchy-changed", callback: (($obj: Dialog, previous_toplevel?: Gtk.Widget | null) => void)): number
+    connect_after(sigName: "hierarchy-changed", callback: (($obj: Dialog, previous_toplevel?: Gtk.Widget | null) => void)): number
+    emit(sigName: "hierarchy-changed", previous_toplevel?: Gtk.Widget | null): void
+    connect(sigName: "key-press-event", callback: (($obj: Dialog, event: Gdk.EventKey) => boolean)): number
+    connect_after(sigName: "key-press-event", callback: (($obj: Dialog, event: Gdk.EventKey) => boolean)): number
+    emit(sigName: "key-press-event", event: Gdk.EventKey): void
+    connect(sigName: "key-release-event", callback: (($obj: Dialog, event: Gdk.EventKey) => boolean)): number
+    connect_after(sigName: "key-release-event", callback: (($obj: Dialog, event: Gdk.EventKey) => boolean)): number
+    emit(sigName: "key-release-event", event: Gdk.EventKey): void
+    connect(sigName: "keynav-failed", callback: (($obj: Dialog, direction: Gtk.DirectionType) => boolean)): number
+    connect_after(sigName: "keynav-failed", callback: (($obj: Dialog, direction: Gtk.DirectionType) => boolean)): number
+    emit(sigName: "keynav-failed", direction: Gtk.DirectionType): void
+    connect(sigName: "leave-notify-event", callback: (($obj: Dialog, event: Gdk.EventCrossing) => boolean)): number
+    connect_after(sigName: "leave-notify-event", callback: (($obj: Dialog, event: Gdk.EventCrossing) => boolean)): number
+    emit(sigName: "leave-notify-event", event: Gdk.EventCrossing): void
+    connect(sigName: "map", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "map", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "map"): void
+    connect(sigName: "map-event", callback: (($obj: Dialog, event: Gdk.EventAny) => boolean)): number
+    connect_after(sigName: "map-event", callback: (($obj: Dialog, event: Gdk.EventAny) => boolean)): number
+    emit(sigName: "map-event", event: Gdk.EventAny): void
+    connect(sigName: "mnemonic-activate", callback: (($obj: Dialog, group_cycling: boolean) => boolean)): number
+    connect_after(sigName: "mnemonic-activate", callback: (($obj: Dialog, group_cycling: boolean) => boolean)): number
+    emit(sigName: "mnemonic-activate", group_cycling: boolean): void
+    connect(sigName: "motion-notify-event", callback: (($obj: Dialog, event: Gdk.EventMotion) => boolean)): number
+    connect_after(sigName: "motion-notify-event", callback: (($obj: Dialog, event: Gdk.EventMotion) => boolean)): number
+    emit(sigName: "motion-notify-event", event: Gdk.EventMotion): void
+    connect(sigName: "move-focus", callback: (($obj: Dialog, direction: Gtk.DirectionType) => void)): number
+    connect_after(sigName: "move-focus", callback: (($obj: Dialog, direction: Gtk.DirectionType) => void)): number
+    emit(sigName: "move-focus", direction: Gtk.DirectionType): void
+    connect(sigName: "parent-set", callback: (($obj: Dialog, old_parent?: Gtk.Widget | null) => void)): number
+    connect_after(sigName: "parent-set", callback: (($obj: Dialog, old_parent?: Gtk.Widget | null) => void)): number
+    emit(sigName: "parent-set", old_parent?: Gtk.Widget | null): void
+    connect(sigName: "popup-menu", callback: (($obj: Dialog) => boolean)): number
+    connect_after(sigName: "popup-menu", callback: (($obj: Dialog) => boolean)): number
+    emit(sigName: "popup-menu"): void
+    connect(sigName: "property-notify-event", callback: (($obj: Dialog, event: Gdk.EventProperty) => boolean)): number
+    connect_after(sigName: "property-notify-event", callback: (($obj: Dialog, event: Gdk.EventProperty) => boolean)): number
+    emit(sigName: "property-notify-event", event: Gdk.EventProperty): void
+    connect(sigName: "proximity-in-event", callback: (($obj: Dialog, event: Gdk.EventProximity) => boolean)): number
+    connect_after(sigName: "proximity-in-event", callback: (($obj: Dialog, event: Gdk.EventProximity) => boolean)): number
+    emit(sigName: "proximity-in-event", event: Gdk.EventProximity): void
+    connect(sigName: "proximity-out-event", callback: (($obj: Dialog, event: Gdk.EventProximity) => boolean)): number
+    connect_after(sigName: "proximity-out-event", callback: (($obj: Dialog, event: Gdk.EventProximity) => boolean)): number
+    emit(sigName: "proximity-out-event", event: Gdk.EventProximity): void
+    connect(sigName: "query-tooltip", callback: (($obj: Dialog, x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip) => boolean)): number
+    connect_after(sigName: "query-tooltip", callback: (($obj: Dialog, x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip) => boolean)): number
+    emit(sigName: "query-tooltip", x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip): void
+    connect(sigName: "realize", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "realize", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "realize"): void
+    connect(sigName: "screen-changed", callback: (($obj: Dialog, previous_screen?: Gdk.Screen | null) => void)): number
+    connect_after(sigName: "screen-changed", callback: (($obj: Dialog, previous_screen?: Gdk.Screen | null) => void)): number
+    emit(sigName: "screen-changed", previous_screen?: Gdk.Screen | null): void
+    connect(sigName: "scroll-event", callback: (($obj: Dialog, event: Gdk.EventScroll) => boolean)): number
+    connect_after(sigName: "scroll-event", callback: (($obj: Dialog, event: Gdk.EventScroll) => boolean)): number
+    emit(sigName: "scroll-event", event: Gdk.EventScroll): void
+    connect(sigName: "selection-clear-event", callback: (($obj: Dialog, event: Gdk.EventSelection) => boolean)): number
+    connect_after(sigName: "selection-clear-event", callback: (($obj: Dialog, event: Gdk.EventSelection) => boolean)): number
+    emit(sigName: "selection-clear-event", event: Gdk.EventSelection): void
+    connect(sigName: "selection-get", callback: (($obj: Dialog, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    connect_after(sigName: "selection-get", callback: (($obj: Dialog, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    emit(sigName: "selection-get", data: Gtk.SelectionData, info: number, time: number): void
+    connect(sigName: "selection-notify-event", callback: (($obj: Dialog, event: Gdk.EventSelection) => boolean)): number
+    connect_after(sigName: "selection-notify-event", callback: (($obj: Dialog, event: Gdk.EventSelection) => boolean)): number
+    emit(sigName: "selection-notify-event", event: Gdk.EventSelection): void
+    connect(sigName: "selection-received", callback: (($obj: Dialog, data: Gtk.SelectionData, time: number) => void)): number
+    connect_after(sigName: "selection-received", callback: (($obj: Dialog, data: Gtk.SelectionData, time: number) => void)): number
+    emit(sigName: "selection-received", data: Gtk.SelectionData, time: number): void
+    connect(sigName: "selection-request-event", callback: (($obj: Dialog, event: Gdk.EventSelection) => boolean)): number
+    connect_after(sigName: "selection-request-event", callback: (($obj: Dialog, event: Gdk.EventSelection) => boolean)): number
+    emit(sigName: "selection-request-event", event: Gdk.EventSelection): void
+    connect(sigName: "show", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "show", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "show"): void
+    connect(sigName: "show-help", callback: (($obj: Dialog, help_type: Gtk.WidgetHelpType) => boolean)): number
+    connect_after(sigName: "show-help", callback: (($obj: Dialog, help_type: Gtk.WidgetHelpType) => boolean)): number
+    emit(sigName: "show-help", help_type: Gtk.WidgetHelpType): void
+    connect(sigName: "size-allocate", callback: (($obj: Dialog, allocation: Gtk.Allocation) => void)): number
+    connect_after(sigName: "size-allocate", callback: (($obj: Dialog, allocation: Gtk.Allocation) => void)): number
+    emit(sigName: "size-allocate", allocation: Gtk.Allocation): void
+    connect(sigName: "state-changed", callback: (($obj: Dialog, state: Gtk.StateType) => void)): number
+    connect_after(sigName: "state-changed", callback: (($obj: Dialog, state: Gtk.StateType) => void)): number
+    emit(sigName: "state-changed", state: Gtk.StateType): void
+    connect(sigName: "state-flags-changed", callback: (($obj: Dialog, flags: Gtk.StateFlags) => void)): number
+    connect_after(sigName: "state-flags-changed", callback: (($obj: Dialog, flags: Gtk.StateFlags) => void)): number
+    emit(sigName: "state-flags-changed", flags: Gtk.StateFlags): void
+    connect(sigName: "style-set", callback: (($obj: Dialog, previous_style?: Gtk.Style | null) => void)): number
+    connect_after(sigName: "style-set", callback: (($obj: Dialog, previous_style?: Gtk.Style | null) => void)): number
+    emit(sigName: "style-set", previous_style?: Gtk.Style | null): void
+    connect(sigName: "style-updated", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "style-updated", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "style-updated"): void
+    connect(sigName: "touch-event", callback: (($obj: Dialog, object: Gdk.Event) => boolean)): number
+    connect_after(sigName: "touch-event", callback: (($obj: Dialog, object: Gdk.Event) => boolean)): number
+    emit(sigName: "touch-event", object: Gdk.Event): void
+    connect(sigName: "unmap", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "unmap", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "unmap"): void
+    connect(sigName: "unmap-event", callback: (($obj: Dialog, event: Gdk.EventAny) => boolean)): number
+    connect_after(sigName: "unmap-event", callback: (($obj: Dialog, event: Gdk.EventAny) => boolean)): number
+    emit(sigName: "unmap-event", event: Gdk.EventAny): void
+    connect(sigName: "unrealize", callback: (($obj: Dialog) => void)): number
+    connect_after(sigName: "unrealize", callback: (($obj: Dialog) => void)): number
+    emit(sigName: "unrealize"): void
+    connect(sigName: "visibility-notify-event", callback: (($obj: Dialog, event: Gdk.EventVisibility) => boolean)): number
+    connect_after(sigName: "visibility-notify-event", callback: (($obj: Dialog, event: Gdk.EventVisibility) => boolean)): number
+    emit(sigName: "visibility-notify-event", event: Gdk.EventVisibility): void
+    connect(sigName: "window-state-event", callback: (($obj: Dialog, event: Gdk.EventWindowState) => boolean)): number
+    connect_after(sigName: "window-state-event", callback: (($obj: Dialog, event: Gdk.EventWindowState) => boolean)): number
+    emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::accept-focus", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::accept-focus", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::application", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::application", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::attached-to", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::attached-to", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::decorated", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::decorated", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::default-height", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::default-height", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::default-width", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::default-width", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::deletable", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::deletable", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::destroy-with-parent", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::destroy-with-parent", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::focus-on-map", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::focus-on-map", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::focus-visible", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::focus-visible", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::gravity", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::gravity", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-resize-grip", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-resize-grip", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-toplevel-focus", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-toplevel-focus", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::hide-titlebar-when-maximized", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::hide-titlebar-when-maximized", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::icon", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::icon", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::icon-name", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::icon-name", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::is-active", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::is-active", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::is-maximized", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::is-maximized", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::mnemonics-visible", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::mnemonics-visible", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::modal", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::modal", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::resizable", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::resizable", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::resize-grip-visible", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::resize-grip-visible", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::role", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::role", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::screen", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::screen", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::skip-pager-hint", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::skip-pager-hint", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::skip-taskbar-hint", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::skip-taskbar-hint", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::startup-id", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::startup-id", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::title", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::title", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::transient-for", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::transient-for", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::type-hint", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::type-hint", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::urgency-hint", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::urgency-hint", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::window-position", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::window-position", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::border-width", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::border-width", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::child", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::child", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::resize-mode", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::resize-mode", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::app-paintable", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::app-paintable", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::can-default", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::can-default", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::can-focus", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::can-focus", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::composite-child", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::composite-child", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::double-buffered", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::double-buffered", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::events", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::events", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expand", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expand", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::focus-on-click", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::focus-on-click", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::halign", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::halign", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-default", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-default", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-focus", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-focus", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-tooltip", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-tooltip", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::height-request", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::height-request", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::hexpand", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::hexpand", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::hexpand-set", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::hexpand-set", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::is-focus", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::is-focus", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-bottom", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-bottom", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-end", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-end", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-left", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-left", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-right", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-right", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-start", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-start", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-top", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-top", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::name", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::name", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::no-show-all", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::no-show-all", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::opacity", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::opacity", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::parent", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::receives-default", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::receives-default", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::scale-factor", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::scale-factor", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::sensitive", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::sensitive", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::style", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::style", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::tooltip-markup", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::tooltip-markup", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::tooltip-text", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::tooltip-text", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::valign", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::valign", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::vexpand", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::vexpand", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::vexpand-set", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::vexpand-set", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::visible", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::visible", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::width-request", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::width-request", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::window", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::window", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: Dialog_ConstructProps)
+    _init (config?: Dialog_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static new(): Dialog
+    static new(type: Gtk.WindowType): Dialog
+    static $gtype: GObject.Type
+}
+export interface HeaderLabel_ConstructProps extends Gtk.Label_ConstructProps {
+}
+class HeaderLabel {
+    /* Properties of Gtk-3.0.Gtk.Label */
+    angle: number
+    attributes: Pango.AttrList
+    readonly cursor_position: number
+    ellipsize: Pango.EllipsizeMode
+    justify: Gtk.Justification
+    label: string
+    lines: number
+    max_width_chars: number
+    readonly mnemonic_keyval: number
+    mnemonic_widget: Gtk.Widget
+    pattern: string
+    selectable: boolean
+    readonly selection_bound: number
+    single_line_mode: boolean
+    track_visited_links: boolean
+    use_markup: boolean
+    use_underline: boolean
+    width_chars: number
+    wrap: boolean
+    wrap_mode: Pango.WrapMode
+    xalign: number
+    yalign: number
+    /* Properties of Gtk-3.0.Gtk.Misc */
+    xpad: number
+    ypad: number
+    /* Properties of Gtk-3.0.Gtk.Widget */
+    app_paintable: boolean
+    can_default: boolean
+    can_focus: boolean
+    readonly composite_child: boolean
+    double_buffered: boolean
+    events: Gdk.EventMask
+    expand: boolean
+    focus_on_click: boolean
+    halign: Gtk.Align
+    has_default: boolean
+    has_focus: boolean
+    has_tooltip: boolean
+    height_request: number
+    hexpand: boolean
+    hexpand_set: boolean
+    is_focus: boolean
+    margin: number
+    margin_bottom: number
+    margin_end: number
+    margin_left: number
+    margin_right: number
+    margin_start: number
+    margin_top: number
+    name: string
+    no_show_all: boolean
+    opacity: number
+    parent: Gtk.Container
+    receives_default: boolean
+    readonly scale_factor: number
+    sensitive: boolean
+    style: Gtk.Style
+    tooltip_markup: string
+    tooltip_text: string
+    valign: Gtk.Align
+    vexpand: boolean
+    vexpand_set: boolean
+    visible: boolean
+    width_request: number
+    readonly window: Gdk.Window
+    /* Fields of Gtk-3.0.Gtk.Label */
+    misc: Gtk.Misc
+    /* Fields of Gtk-3.0.Gtk.Misc */
+    widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    parent_instance: GObject.InitiallyUnowned
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
+    g_type_instance: GObject.TypeInstance
+    /* Methods of Gtk-3.0.Gtk.Label */
     get_angle(): number
     get_attributes(): Pango.AttrList | null
     get_current_uri(): string
@@ -22385,12 +20282,12 @@ export class HeaderLabel {
     set_width_chars(n_chars: number): void
     set_xalign(xalign: number): void
     set_yalign(yalign: number): void
-    /* Methods of Gtk.Misc */
+    /* Methods of Gtk-3.0.Gtk.Misc */
     get_alignment(): [ /* xalign */ number | null, /* yalign */ number | null ]
     get_padding(): [ /* xpad */ number | null, /* ypad */ number | null ]
     set_alignment(xalign: number, yalign: number): void
     set_padding(xpad: number, ypad: number): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -22649,15 +20546,15 @@ export class HeaderLabel {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -22665,18 +20562,18 @@ export class HeaderLabel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Label */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Label */
     vfunc_activate_link(uri: string): boolean
     vfunc_copy_clipboard(): void
     vfunc_move_cursor(step: Gtk.MovementStep, count: number, extend_selection: boolean): void
     vfunc_populate_popup(menu: Gtk.Menu): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -22759,15 +20656,15 @@ export class HeaderLabel {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Label */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Label */
     connect(sigName: "activate-current-link", callback: (($obj: HeaderLabel) => void)): number
     connect_after(sigName: "activate-current-link", callback: (($obj: HeaderLabel) => void)): number
     emit(sigName: "activate-current-link"): void
@@ -22783,7 +20680,7 @@ export class HeaderLabel {
     connect(sigName: "populate-popup", callback: (($obj: HeaderLabel, menu: Gtk.Menu) => void)): number
     connect_after(sigName: "populate-popup", callback: (($obj: HeaderLabel, menu: Gtk.Menu) => void)): number
     emit(sigName: "populate-popup", menu: Gtk.Menu): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: HeaderLabel) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: HeaderLabel) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -22991,7 +20888,7 @@ export class HeaderLabel {
     connect(sigName: "window-state-event", callback: (($obj: HeaderLabel, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: HeaderLabel, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: HeaderLabel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: HeaderLabel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -23133,60 +21030,36 @@ export class HeaderLabel {
     static new(str?: string | null): HeaderLabel
     static $gtype: GObject.Type
 }
-export interface MessageDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
-    primary_text?: string
-    secondary_text?: string
-    image_icon?: Gio.Icon
-    badge_icon?: Gio.Icon
-    primary_label?: Gtk.Label
-    secondary_label?: Gtk.Label
-    buttons?: Gtk.ButtonsType
-    custom_bin?: Gtk.Bin
+export interface HyperTextView_ConstructProps extends Gtk.TextView_ConstructProps {
 }
-export class MessageDialog {
-    /* Properties of Granite.MessageDialog */
-    primary_text: string
-    secondary_text: string
-    image_icon: Gio.Icon
-    badge_icon: Gio.Icon
-    /* Properties of Gtk.Window */
-    accept_focus: boolean
-    application: Gtk.Application
-    attached_to: Gtk.Widget
-    decorated: boolean
-    default_height: number
-    default_width: number
-    deletable: boolean
-    destroy_with_parent: boolean
-    focus_on_map: boolean
-    focus_visible: boolean
-    gravity: Gdk.Gravity
-    has_resize_grip: boolean
-    readonly has_toplevel_focus: boolean
-    hide_titlebar_when_maximized: boolean
-    icon: GdkPixbuf.Pixbuf
-    icon_name: string
-    readonly is_active: boolean
-    readonly is_maximized: boolean
-    mnemonics_visible: boolean
-    modal: boolean
-    resizable: boolean
-    readonly resize_grip_visible: boolean
-    role: string
-    screen: Gdk.Screen
-    skip_pager_hint: boolean
-    skip_taskbar_hint: boolean
-    startup_id: string
-    title: string
-    transient_for: Gtk.Window
-    type_hint: Gdk.WindowTypeHint
-    urgency_hint: boolean
-    window_position: Gtk.WindowPosition
-    /* Properties of Gtk.Container */
+class HyperTextView {
+    /* Properties of Gtk-3.0.Gtk.TextView */
+    accepts_tab: boolean
+    bottom_margin: number
+    buffer: Gtk.TextBuffer
+    cursor_visible: boolean
+    editable: boolean
+    im_module: string
+    indent: number
+    input_hints: Gtk.InputHints
+    input_purpose: Gtk.InputPurpose
+    justification: Gtk.Justification
+    left_margin: number
+    monospace: boolean
+    overwrite: boolean
+    pixels_above_lines: number
+    pixels_below_lines: number
+    pixels_inside_wrap: number
+    populate_all: boolean
+    right_margin: number
+    tabs: Pango.TabArray
+    top_margin: number
+    wrap_mode: Gtk.WrapMode
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -23226,18 +21099,1026 @@ export class MessageDialog {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Window */
+    /* Fields of Gtk-3.0.Gtk.TextView */
+    parent_instance: Gtk.Container
+    /* Fields of Gtk-3.0.Gtk.Container */
+    widget: Gtk.Widget
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
+    g_type_instance: GObject.TypeInstance
+    /* Methods of Gtk-3.0.Gtk.TextView */
+    add_child_at_anchor(child: Gtk.Widget, anchor: Gtk.TextChildAnchor): void
+    add_child_in_window(child: Gtk.Widget, which_window: Gtk.TextWindowType, xpos: number, ypos: number): void
+    backward_display_line(iter: Gtk.TextIter): boolean
+    backward_display_line_start(iter: Gtk.TextIter): boolean
+    buffer_to_window_coords(win: Gtk.TextWindowType, buffer_x: number, buffer_y: number): [ /* window_x */ number | null, /* window_y */ number | null ]
+    forward_display_line(iter: Gtk.TextIter): boolean
+    forward_display_line_end(iter: Gtk.TextIter): boolean
+    get_accepts_tab(): boolean
+    get_border_window_size(type: Gtk.TextWindowType): number
+    get_bottom_margin(): number
+    get_buffer(): Gtk.TextBuffer
+    get_cursor_locations(iter?: Gtk.TextIter | null): [ /* strong */ Gdk.Rectangle | null, /* weak */ Gdk.Rectangle | null ]
+    get_cursor_visible(): boolean
+    get_default_attributes(): Gtk.TextAttributes
+    get_editable(): boolean
+    get_hadjustment(): Gtk.Adjustment
+    get_indent(): number
+    get_input_hints(): Gtk.InputHints
+    get_input_purpose(): Gtk.InputPurpose
+    get_iter_at_location(x: number, y: number): [ /* returnType */ boolean, /* iter */ Gtk.TextIter ]
+    get_iter_at_position(x: number, y: number): [ /* returnType */ boolean, /* iter */ Gtk.TextIter, /* trailing */ number | null ]
+    get_iter_location(iter: Gtk.TextIter): /* location */ Gdk.Rectangle
+    get_justification(): Gtk.Justification
+    get_left_margin(): number
+    get_line_at_y(y: number): [ /* target_iter */ Gtk.TextIter, /* line_top */ number ]
+    get_line_yrange(iter: Gtk.TextIter): [ /* y */ number, /* height */ number ]
+    get_monospace(): boolean
+    get_overwrite(): boolean
+    get_pixels_above_lines(): number
+    get_pixels_below_lines(): number
+    get_pixels_inside_wrap(): number
+    get_right_margin(): number
+    get_tabs(): Pango.TabArray | null
+    get_top_margin(): number
+    get_vadjustment(): Gtk.Adjustment
+    get_visible_rect(): /* visible_rect */ Gdk.Rectangle
+    /* get_window clashes with Gtk.Widget.get_window */
+    get_window_type(window: Gdk.Window): Gtk.TextWindowType
+    get_wrap_mode(): Gtk.WrapMode
+    im_context_filter_keypress(event: Gdk.EventKey): boolean
+    move_child(child: Gtk.Widget, xpos: number, ypos: number): void
+    move_mark_onscreen(mark: Gtk.TextMark): boolean
+    move_visually(iter: Gtk.TextIter, count: number): boolean
+    place_cursor_onscreen(): boolean
+    reset_cursor_blink(): void
+    reset_im_context(): void
+    scroll_mark_onscreen(mark: Gtk.TextMark): void
+    scroll_to_iter(iter: Gtk.TextIter, within_margin: number, use_align: boolean, xalign: number, yalign: number): boolean
+    scroll_to_mark(mark: Gtk.TextMark, within_margin: number, use_align: boolean, xalign: number, yalign: number): void
+    set_accepts_tab(accepts_tab: boolean): void
+    set_border_window_size(type: Gtk.TextWindowType, size: number): void
+    set_bottom_margin(bottom_margin: number): void
+    set_buffer(buffer?: Gtk.TextBuffer | null): void
+    set_cursor_visible(setting: boolean): void
+    set_editable(setting: boolean): void
+    set_indent(indent: number): void
+    set_input_hints(hints: Gtk.InputHints): void
+    set_input_purpose(purpose: Gtk.InputPurpose): void
+    set_justification(justification: Gtk.Justification): void
+    set_left_margin(left_margin: number): void
+    set_monospace(monospace: boolean): void
+    set_overwrite(overwrite: boolean): void
+    set_pixels_above_lines(pixels_above_lines: number): void
+    set_pixels_below_lines(pixels_below_lines: number): void
+    set_pixels_inside_wrap(pixels_inside_wrap: number): void
+    set_right_margin(right_margin: number): void
+    set_tabs(tabs: Pango.TabArray): void
+    set_top_margin(top_margin: number): void
+    set_wrap_mode(wrap_mode: Gtk.WrapMode): void
+    starts_display_line(iter: Gtk.TextIter): boolean
+    window_to_buffer_coords(win: Gtk.TextWindowType, window_x: number, window_y: number): [ /* buffer_x */ number | null, /* buffer_y */ number | null ]
+    /* Methods of Gtk-3.0.Gtk.Container */
+    add(widget: Gtk.Widget): void
+    check_resize(): void
+    child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
+    child_set_property(child: Gtk.Widget, property_name: string, value: any): void
+    child_type(): GObject.Type
+    forall(callback: Gtk.Callback): void
+    foreach(callback: Gtk.Callback): void
+    get_border_width(): number
+    get_children(): Gtk.Widget[]
+    get_focus_chain(): [ /* returnType */ boolean, /* focusable_widgets */ Gtk.Widget[] ]
+    get_focus_child(): Gtk.Widget | null
+    get_focus_hadjustment(): Gtk.Adjustment | null
+    get_focus_vadjustment(): Gtk.Adjustment | null
+    get_path_for_child(child: Gtk.Widget): Gtk.WidgetPath
+    get_resize_mode(): Gtk.ResizeMode
+    propagate_draw(child: Gtk.Widget, cr: cairo.Context): void
+    remove(widget: Gtk.Widget): void
+    resize_children(): void
+    set_border_width(border_width: number): void
+    set_focus_chain(focusable_widgets: Gtk.Widget[]): void
+    set_focus_child(child?: Gtk.Widget | null): void
+    set_focus_hadjustment(adjustment: Gtk.Adjustment): void
+    set_focus_vadjustment(adjustment: Gtk.Adjustment): void
+    set_reallocate_redraws(needs_redraws: boolean): void
+    set_resize_mode(resize_mode: Gtk.ResizeMode): void
+    unset_focus_chain(): void
+    /* Methods of Gtk-3.0.Gtk.Widget */
+    activate(): boolean
+    add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
+    add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
+    add_events(events: number): void
+    add_mnemonic_label(label: Gtk.Widget): void
+    add_tick_callback(callback: Gtk.TickCallback): number
+    can_activate_accel(signal_id: number): boolean
+    child_focus(direction: Gtk.DirectionType): boolean
+    child_notify(child_property: string): void
+    class_path(): [ /* path_length */ number | null, /* path */ string | null, /* path_reversed */ string | null ]
+    compute_expand(orientation: Gtk.Orientation): boolean
+    create_pango_context(): Pango.Context
+    create_pango_layout(text?: string | null): Pango.Layout
+    destroy(): void
+    destroyed(widget_pointer: Gtk.Widget): /* widget_pointer */ Gtk.Widget
+    device_is_shadowed(device: Gdk.Device): boolean
+    drag_begin(targets: Gtk.TargetList, actions: Gdk.DragAction, button: number, event?: Gdk.Event | null): Gdk.DragContext
+    drag_begin_with_coordinates(targets: Gtk.TargetList, actions: Gdk.DragAction, button: number, event: Gdk.Event | null, x: number, y: number): Gdk.DragContext
+    drag_check_threshold(start_x: number, start_y: number, current_x: number, current_y: number): boolean
+    drag_dest_add_image_targets(): void
+    drag_dest_add_text_targets(): void
+    drag_dest_add_uri_targets(): void
+    drag_dest_find_target(context: Gdk.DragContext, target_list?: Gtk.TargetList | null): Gdk.Atom
+    drag_dest_get_target_list(): Gtk.TargetList | null
+    drag_dest_get_track_motion(): boolean
+    drag_dest_set(flags: Gtk.DestDefaults, targets: Gtk.TargetEntry[] | null, actions: Gdk.DragAction): void
+    drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void
+    drag_dest_set_target_list(target_list?: Gtk.TargetList | null): void
+    drag_dest_set_track_motion(track_motion: boolean): void
+    drag_dest_unset(): void
+    drag_get_data(context: Gdk.DragContext, target: Gdk.Atom, time_: number): void
+    drag_highlight(): void
+    drag_source_add_image_targets(): void
+    drag_source_add_text_targets(): void
+    drag_source_add_uri_targets(): void
+    drag_source_get_target_list(): Gtk.TargetList | null
+    drag_source_set(start_button_mask: Gdk.ModifierType, targets: Gtk.TargetEntry[] | null, actions: Gdk.DragAction): void
+    drag_source_set_icon_gicon(icon: Gio.Icon): void
+    drag_source_set_icon_name(icon_name: string): void
+    drag_source_set_icon_pixbuf(pixbuf: GdkPixbuf.Pixbuf): void
+    drag_source_set_icon_stock(stock_id: string): void
+    drag_source_set_target_list(target_list?: Gtk.TargetList | null): void
+    drag_source_unset(): void
+    drag_unhighlight(): void
+    draw(cr: cairo.Context): void
+    ensure_style(): void
+    error_bell(): void
+    event(event: Gdk.Event): boolean
+    freeze_child_notify(): void
+    get_accessible(): Atk.Object
+    get_action_group(prefix: string): Gio.ActionGroup | null
+    get_allocated_baseline(): number
+    get_allocated_height(): number
+    get_allocated_size(): [ /* allocation */ Gtk.Allocation, /* baseline */ number | null ]
+    get_allocated_width(): number
+    get_allocation(): /* allocation */ Gtk.Allocation
+    get_ancestor(widget_type: GObject.Type): Gtk.Widget | null
+    get_app_paintable(): boolean
+    get_can_default(): boolean
+    get_can_focus(): boolean
+    get_child_requisition(): /* requisition */ Gtk.Requisition
+    get_child_visible(): boolean
+    get_clip(): /* clip */ Gtk.Allocation
+    get_clipboard(selection: Gdk.Atom): Gtk.Clipboard
+    get_composite_name(): string
+    get_device_enabled(device: Gdk.Device): boolean
+    get_device_events(device: Gdk.Device): Gdk.EventMask
+    get_direction(): Gtk.TextDirection
+    get_display(): Gdk.Display
+    get_double_buffered(): boolean
+    get_events(): number
+    get_focus_on_click(): boolean
+    get_font_map(): Pango.FontMap | null
+    get_font_options(): cairo.FontOptions | null
+    get_frame_clock(): Gdk.FrameClock | null
+    get_halign(): Gtk.Align
+    get_has_tooltip(): boolean
+    get_has_window(): boolean
+    get_hexpand(): boolean
+    get_hexpand_set(): boolean
+    get_mapped(): boolean
+    get_margin_bottom(): number
+    get_margin_end(): number
+    get_margin_left(): number
+    get_margin_right(): number
+    get_margin_start(): number
+    get_margin_top(): number
+    get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType
+    get_modifier_style(): Gtk.RcStyle
+    get_name(): string
+    get_no_show_all(): boolean
+    get_opacity(): number
+    get_pango_context(): Pango.Context
+    get_parent(): Gtk.Widget | null
+    get_parent_window(): Gdk.Window | null
+    get_path(): Gtk.WidgetPath
+    get_pointer(): [ /* x */ number | null, /* y */ number | null ]
+    get_preferred_height(): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    get_preferred_height_and_baseline_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null, /* minimum_baseline */ number | null, /* natural_baseline */ number | null ]
+    get_preferred_height_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    get_preferred_size(): [ /* minimum_size */ Gtk.Requisition | null, /* natural_size */ Gtk.Requisition | null ]
+    get_preferred_width(): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    get_preferred_width_for_height(height: number): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    get_realized(): boolean
+    get_receives_default(): boolean
+    get_request_mode(): Gtk.SizeRequestMode
+    get_requisition(): /* requisition */ Gtk.Requisition
+    get_root_window(): Gdk.Window
+    get_scale_factor(): number
+    get_screen(): Gdk.Screen
+    get_sensitive(): boolean
+    get_settings(): Gtk.Settings
+    get_size_request(): [ /* width */ number | null, /* height */ number | null ]
+    get_state(): Gtk.StateType
+    get_state_flags(): Gtk.StateFlags
+    get_style(): Gtk.Style
+    get_style_context(): Gtk.StyleContext
+    get_support_multidevice(): boolean
+    get_template_child(widget_type: GObject.Type, name: string): GObject.Object
+    get_tooltip_markup(): string | null
+    get_tooltip_text(): string | null
+    get_tooltip_window(): Gtk.Window
+    get_toplevel(): Gtk.Widget
+    get_valign(): Gtk.Align
+    get_valign_with_baseline(): Gtk.Align
+    get_vexpand(): boolean
+    get_vexpand_set(): boolean
+    get_visible(): boolean
+    get_visual(): Gdk.Visual
+    get_window(): Gdk.Window | null
+    grab_add(): void
+    grab_default(): void
+    grab_focus(): void
+    grab_remove(): void
+    has_grab(): boolean
+    has_rc_style(): boolean
+    has_screen(): boolean
+    has_visible_focus(): boolean
+    hide(): void
+    hide_on_delete(): boolean
+    in_destruction(): boolean
+    init_template(): void
+    input_shape_combine_region(region?: cairo.Region | null): void
+    insert_action_group(name: string, group?: Gio.ActionGroup | null): void
+    intersect(area: Gdk.Rectangle): [ /* returnType */ boolean, /* intersection */ Gdk.Rectangle | null ]
+    is_ancestor(ancestor: Gtk.Widget): boolean
+    is_composited(): boolean
+    is_drawable(): boolean
+    is_sensitive(): boolean
+    is_toplevel(): boolean
+    is_visible(): boolean
+    keynav_failed(direction: Gtk.DirectionType): boolean
+    list_accel_closures(): Function[]
+    list_action_prefixes(): string[]
+    list_mnemonic_labels(): Gtk.Widget[]
+    map(): void
+    mnemonic_activate(group_cycling: boolean): boolean
+    modify_base(state: Gtk.StateType, color?: Gdk.Color | null): void
+    modify_bg(state: Gtk.StateType, color?: Gdk.Color | null): void
+    modify_cursor(primary?: Gdk.Color | null, secondary?: Gdk.Color | null): void
+    modify_fg(state: Gtk.StateType, color?: Gdk.Color | null): void
+    modify_font(font_desc?: Pango.FontDescription | null): void
+    modify_style(style: Gtk.RcStyle): void
+    modify_text(state: Gtk.StateType, color?: Gdk.Color | null): void
+    override_background_color(state: Gtk.StateFlags, color?: Gdk.RGBA | null): void
+    override_color(state: Gtk.StateFlags, color?: Gdk.RGBA | null): void
+    override_cursor(cursor?: Gdk.RGBA | null, secondary_cursor?: Gdk.RGBA | null): void
+    override_font(font_desc?: Pango.FontDescription | null): void
+    override_symbolic_color(name: string, color?: Gdk.RGBA | null): void
+    path(): [ /* path_length */ number | null, /* path */ string | null, /* path_reversed */ string | null ]
+    queue_allocate(): void
+    queue_compute_expand(): void
+    queue_draw(): void
+    queue_draw_area(x: number, y: number, width: number, height: number): void
+    queue_draw_region(region: cairo.Region): void
+    queue_resize(): void
+    queue_resize_no_redraw(): void
+    realize(): void
+    region_intersect(region: cairo.Region): cairo.Region
+    register_window(window: Gdk.Window): void
+    remove_accelerator(accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean
+    remove_mnemonic_label(label: Gtk.Widget): void
+    remove_tick_callback(id: number): void
+    render_icon(stock_id: string, size: number, detail?: string | null): GdkPixbuf.Pixbuf | null
+    render_icon_pixbuf(stock_id: string, size: number): GdkPixbuf.Pixbuf | null
+    reparent(new_parent: Gtk.Widget): void
+    reset_rc_styles(): void
+    reset_style(): void
+    send_expose(event: Gdk.Event): number
+    send_focus_change(event: Gdk.Event): boolean
+    set_accel_path(accel_path?: string | null, accel_group?: Gtk.AccelGroup | null): void
+    set_allocation(allocation: Gtk.Allocation): void
+    set_app_paintable(app_paintable: boolean): void
+    set_can_default(can_default: boolean): void
+    set_can_focus(can_focus: boolean): void
+    set_child_visible(is_visible: boolean): void
+    set_clip(clip: Gtk.Allocation): void
+    set_composite_name(name: string): void
+    set_device_enabled(device: Gdk.Device, enabled: boolean): void
+    set_device_events(device: Gdk.Device, events: Gdk.EventMask): void
+    set_direction(dir: Gtk.TextDirection): void
+    set_double_buffered(double_buffered: boolean): void
+    set_events(events: number): void
+    set_focus_on_click(focus_on_click: boolean): void
+    set_font_map(font_map?: Pango.FontMap | null): void
+    set_font_options(options?: cairo.FontOptions | null): void
+    set_halign(align: Gtk.Align): void
+    set_has_tooltip(has_tooltip: boolean): void
+    set_has_window(has_window: boolean): void
+    set_hexpand(expand: boolean): void
+    set_hexpand_set(set: boolean): void
+    set_mapped(mapped: boolean): void
+    set_margin_bottom(margin: number): void
+    set_margin_end(margin: number): void
+    set_margin_left(margin: number): void
+    set_margin_right(margin: number): void
+    set_margin_start(margin: number): void
+    set_margin_top(margin: number): void
+    set_name(name: string): void
+    set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
+    set_parent(parent: Gtk.Widget): void
+    set_parent_window(parent_window: Gdk.Window): void
+    set_realized(realized: boolean): void
+    set_receives_default(receives_default: boolean): void
+    set_redraw_on_allocate(redraw_on_allocate: boolean): void
+    set_sensitive(sensitive: boolean): void
+    set_size_request(width: number, height: number): void
+    set_state(state: Gtk.StateType): void
+    set_state_flags(flags: Gtk.StateFlags, clear: boolean): void
+    set_style(style?: Gtk.Style | null): void
+    set_support_multidevice(support_multidevice: boolean): void
+    set_tooltip_markup(markup?: string | null): void
+    set_tooltip_text(text?: string | null): void
+    set_tooltip_window(custom_window?: Gtk.Window | null): void
+    set_valign(align: Gtk.Align): void
+    set_vexpand(expand: boolean): void
+    set_vexpand_set(set: boolean): void
+    set_visible(visible: boolean): void
+    set_visual(visual?: Gdk.Visual | null): void
+    set_window(window: Gdk.Window): void
+    shape_combine_region(region?: cairo.Region | null): void
+    show(): void
+    show_all(): void
+    show_now(): void
+    size_allocate(allocation: Gtk.Allocation): void
+    size_allocate_with_baseline(allocation: Gtk.Allocation, baseline: number): void
+    size_request(): /* requisition */ Gtk.Requisition
+    style_attach(): void
+    style_get_property(property_name: string, value: any): void
+    thaw_child_notify(): void
+    translate_coordinates(dest_widget: Gtk.Widget, src_x: number, src_y: number): [ /* returnType */ boolean, /* dest_x */ number | null, /* dest_y */ number | null ]
+    trigger_tooltip_query(): void
+    unmap(): void
+    unparent(): void
+    unrealize(): void
+    unregister_window(window: Gdk.Window): void
+    unset_state_flags(flags: Gtk.StateFlags): void
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.TextView */
+    vfunc_backspace(): void
+    vfunc_copy_clipboard(): void
+    vfunc_cut_clipboard(): void
+    vfunc_delete_from_cursor(type: Gtk.DeleteType, count: number): void
+    vfunc_draw_layer(layer: Gtk.TextViewLayer, cr: cairo.Context): void
+    vfunc_extend_selection(granularity: Gtk.TextExtendSelection, location: Gtk.TextIter, start: Gtk.TextIter, end: Gtk.TextIter): boolean
+    vfunc_insert_at_cursor(str: string): void
+    vfunc_insert_emoji(): void
+    vfunc_move_cursor(step: Gtk.MovementStep, count: number, extend_selection: boolean): void
+    vfunc_paste_clipboard(): void
+    vfunc_populate_popup(popup: Gtk.Widget): void
+    vfunc_set_anchor(): void
+    vfunc_toggle_overwrite(): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
+    vfunc_add(widget: Gtk.Widget): void
+    vfunc_check_resize(): void
+    vfunc_child_type(): GObject.Type
+    vfunc_composite_name(child: Gtk.Widget): string
+    vfunc_forall(include_internals: boolean, callback: Gtk.Callback): void
+    vfunc_get_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_path_for_child(child: Gtk.Widget): Gtk.WidgetPath
+    vfunc_remove(widget: Gtk.Widget): void
+    vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_focus_child(child?: Gtk.Widget | null): void
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
+    vfunc_adjust_baseline_allocation(baseline: number): void
+    vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
+    vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
+    vfunc_adjust_size_request(orientation: Gtk.Orientation, minimum_size: number, natural_size: number): void
+    vfunc_button_press_event(event: Gdk.EventButton): boolean
+    vfunc_button_release_event(event: Gdk.EventButton): boolean
+    vfunc_can_activate_accel(signal_id: number): boolean
+    vfunc_child_notify(child_property: GObject.ParamSpec): void
+    vfunc_composited_changed(): void
+    vfunc_compute_expand(hexpand_p: boolean, vexpand_p: boolean): void
+    vfunc_configure_event(event: Gdk.EventConfigure): boolean
+    vfunc_damage_event(event: Gdk.EventExpose): boolean
+    vfunc_delete_event(event: Gdk.EventAny): boolean
+    vfunc_destroy(): void
+    vfunc_destroy_event(event: Gdk.EventAny): boolean
+    vfunc_direction_changed(previous_direction: Gtk.TextDirection): void
+    vfunc_dispatch_child_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_drag_begin(context: Gdk.DragContext): void
+    vfunc_drag_data_delete(context: Gdk.DragContext): void
+    vfunc_drag_data_get(context: Gdk.DragContext, selection_data: Gtk.SelectionData, info: number, time_: number): void
+    vfunc_drag_data_received(context: Gdk.DragContext, x: number, y: number, selection_data: Gtk.SelectionData, info: number, time_: number): void
+    vfunc_drag_drop(context: Gdk.DragContext, x: number, y: number, time_: number): boolean
+    vfunc_drag_end(context: Gdk.DragContext): void
+    vfunc_drag_failed(context: Gdk.DragContext, result: Gtk.DragResult): boolean
+    vfunc_drag_leave(context: Gdk.DragContext, time_: number): void
+    vfunc_drag_motion(context: Gdk.DragContext, x: number, y: number, time_: number): boolean
+    vfunc_draw(cr: cairo.Context): boolean
+    vfunc_enter_notify_event(event: Gdk.EventCrossing): boolean
+    vfunc_event(event: Gdk.Event): boolean
+    vfunc_focus(direction: Gtk.DirectionType): boolean
+    vfunc_focus_in_event(event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(event: Gdk.EventFocus): boolean
+    vfunc_get_accessible(): Atk.Object
+    vfunc_get_preferred_height(): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    vfunc_get_preferred_height_and_baseline_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null, /* minimum_baseline */ number | null, /* natural_baseline */ number | null ]
+    vfunc_get_preferred_height_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    vfunc_get_preferred_width(): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    vfunc_get_preferred_width_for_height(height: number): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    vfunc_get_request_mode(): Gtk.SizeRequestMode
+    vfunc_grab_broken_event(event: Gdk.EventGrabBroken): boolean
+    vfunc_grab_focus(): void
+    vfunc_grab_notify(was_grabbed: boolean): void
+    vfunc_hide(): void
+    vfunc_hierarchy_changed(previous_toplevel: Gtk.Widget): void
+    vfunc_key_press_event(event: Gdk.EventKey): boolean
+    vfunc_key_release_event(event: Gdk.EventKey): boolean
+    vfunc_keynav_failed(direction: Gtk.DirectionType): boolean
+    vfunc_leave_notify_event(event: Gdk.EventCrossing): boolean
+    vfunc_map(): void
+    vfunc_map_event(event: Gdk.EventAny): boolean
+    vfunc_mnemonic_activate(group_cycling: boolean): boolean
+    vfunc_motion_notify_event(event: Gdk.EventMotion): boolean
+    vfunc_move_focus(direction: Gtk.DirectionType): void
+    vfunc_parent_set(previous_parent: Gtk.Widget): void
+    vfunc_popup_menu(): boolean
+    vfunc_property_notify_event(event: Gdk.EventProperty): boolean
+    vfunc_proximity_in_event(event: Gdk.EventProximity): boolean
+    vfunc_proximity_out_event(event: Gdk.EventProximity): boolean
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_queue_draw_region(region: cairo.Region): void
+    vfunc_realize(): void
+    vfunc_screen_changed(previous_screen: Gdk.Screen): void
+    vfunc_scroll_event(event: Gdk.EventScroll): boolean
+    vfunc_selection_clear_event(event: Gdk.EventSelection): boolean
+    vfunc_selection_get(selection_data: Gtk.SelectionData, info: number, time_: number): void
+    vfunc_selection_notify_event(event: Gdk.EventSelection): boolean
+    vfunc_selection_received(selection_data: Gtk.SelectionData, time_: number): void
+    vfunc_selection_request_event(event: Gdk.EventSelection): boolean
+    vfunc_show(): void
+    vfunc_show_all(): void
+    vfunc_show_help(help_type: Gtk.WidgetHelpType): boolean
+    vfunc_size_allocate(allocation: Gtk.Allocation): void
+    vfunc_state_changed(previous_state: Gtk.StateType): void
+    vfunc_state_flags_changed(previous_state_flags: Gtk.StateFlags): void
+    vfunc_style_set(previous_style: Gtk.Style): void
+    vfunc_style_updated(): void
+    vfunc_touch_event(event: Gdk.EventTouch): boolean
+    vfunc_unmap(): void
+    vfunc_unmap_event(event: Gdk.EventAny): boolean
+    vfunc_unrealize(): void
+    vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
+    vfunc_window_state_event(event: Gdk.EventWindowState): boolean
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.TextView */
+    connect(sigName: "backspace", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "backspace", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "backspace"): void
+    connect(sigName: "copy-clipboard", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "copy-clipboard", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "copy-clipboard"): void
+    connect(sigName: "cut-clipboard", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "cut-clipboard", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "cut-clipboard"): void
+    connect(sigName: "delete-from-cursor", callback: (($obj: HyperTextView, type: Gtk.DeleteType, count: number) => void)): number
+    connect_after(sigName: "delete-from-cursor", callback: (($obj: HyperTextView, type: Gtk.DeleteType, count: number) => void)): number
+    emit(sigName: "delete-from-cursor", type: Gtk.DeleteType, count: number): void
+    connect(sigName: "extend-selection", callback: (($obj: HyperTextView, granularity: Gtk.TextExtendSelection, location: Gtk.TextIter, start: Gtk.TextIter, end: Gtk.TextIter) => boolean)): number
+    connect_after(sigName: "extend-selection", callback: (($obj: HyperTextView, granularity: Gtk.TextExtendSelection, location: Gtk.TextIter, start: Gtk.TextIter, end: Gtk.TextIter) => boolean)): number
+    emit(sigName: "extend-selection", granularity: Gtk.TextExtendSelection, location: Gtk.TextIter, start: Gtk.TextIter, end: Gtk.TextIter): void
+    connect(sigName: "insert-at-cursor", callback: (($obj: HyperTextView, string: string) => void)): number
+    connect_after(sigName: "insert-at-cursor", callback: (($obj: HyperTextView, string: string) => void)): number
+    emit(sigName: "insert-at-cursor", string: string): void
+    connect(sigName: "insert-emoji", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "insert-emoji", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "insert-emoji"): void
+    connect(sigName: "move-cursor", callback: (($obj: HyperTextView, step: Gtk.MovementStep, count: number, extend_selection: boolean) => void)): number
+    connect_after(sigName: "move-cursor", callback: (($obj: HyperTextView, step: Gtk.MovementStep, count: number, extend_selection: boolean) => void)): number
+    emit(sigName: "move-cursor", step: Gtk.MovementStep, count: number, extend_selection: boolean): void
+    connect(sigName: "move-viewport", callback: (($obj: HyperTextView, step: Gtk.ScrollStep, count: number) => void)): number
+    connect_after(sigName: "move-viewport", callback: (($obj: HyperTextView, step: Gtk.ScrollStep, count: number) => void)): number
+    emit(sigName: "move-viewport", step: Gtk.ScrollStep, count: number): void
+    connect(sigName: "paste-clipboard", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "paste-clipboard", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "paste-clipboard"): void
+    connect(sigName: "populate-popup", callback: (($obj: HyperTextView, popup: Gtk.Widget) => void)): number
+    connect_after(sigName: "populate-popup", callback: (($obj: HyperTextView, popup: Gtk.Widget) => void)): number
+    emit(sigName: "populate-popup", popup: Gtk.Widget): void
+    connect(sigName: "preedit-changed", callback: (($obj: HyperTextView, preedit: string) => void)): number
+    connect_after(sigName: "preedit-changed", callback: (($obj: HyperTextView, preedit: string) => void)): number
+    emit(sigName: "preedit-changed", preedit: string): void
+    connect(sigName: "select-all", callback: (($obj: HyperTextView, select: boolean) => void)): number
+    connect_after(sigName: "select-all", callback: (($obj: HyperTextView, select: boolean) => void)): number
+    emit(sigName: "select-all", select: boolean): void
+    connect(sigName: "set-anchor", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "set-anchor", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "set-anchor"): void
+    connect(sigName: "toggle-cursor-visible", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "toggle-cursor-visible", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "toggle-cursor-visible"): void
+    connect(sigName: "toggle-overwrite", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "toggle-overwrite", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "toggle-overwrite"): void
+    /* Signals of Gtk-3.0.Gtk.Container */
+    connect(sigName: "add", callback: (($obj: HyperTextView, object: Gtk.Widget) => void)): number
+    connect_after(sigName: "add", callback: (($obj: HyperTextView, object: Gtk.Widget) => void)): number
+    emit(sigName: "add", object: Gtk.Widget): void
+    connect(sigName: "check-resize", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "check-resize", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "check-resize"): void
+    connect(sigName: "remove", callback: (($obj: HyperTextView, object: Gtk.Widget) => void)): number
+    connect_after(sigName: "remove", callback: (($obj: HyperTextView, object: Gtk.Widget) => void)): number
+    emit(sigName: "remove", object: Gtk.Widget): void
+    connect(sigName: "set-focus-child", callback: (($obj: HyperTextView, object: Gtk.Widget) => void)): number
+    connect_after(sigName: "set-focus-child", callback: (($obj: HyperTextView, object: Gtk.Widget) => void)): number
+    emit(sigName: "set-focus-child", object: Gtk.Widget): void
+    /* Signals of Gtk-3.0.Gtk.Widget */
+    connect(sigName: "accel-closures-changed", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "accel-closures-changed", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "accel-closures-changed"): void
+    connect(sigName: "button-press-event", callback: (($obj: HyperTextView, event: Gdk.EventButton) => boolean)): number
+    connect_after(sigName: "button-press-event", callback: (($obj: HyperTextView, event: Gdk.EventButton) => boolean)): number
+    emit(sigName: "button-press-event", event: Gdk.EventButton): void
+    connect(sigName: "button-release-event", callback: (($obj: HyperTextView, event: Gdk.EventButton) => boolean)): number
+    connect_after(sigName: "button-release-event", callback: (($obj: HyperTextView, event: Gdk.EventButton) => boolean)): number
+    emit(sigName: "button-release-event", event: Gdk.EventButton): void
+    connect(sigName: "can-activate-accel", callback: (($obj: HyperTextView, signal_id: number) => boolean)): number
+    connect_after(sigName: "can-activate-accel", callback: (($obj: HyperTextView, signal_id: number) => boolean)): number
+    emit(sigName: "can-activate-accel", signal_id: number): void
+    connect(sigName: "child-notify", callback: (($obj: HyperTextView, child_property: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "child-notify", callback: (($obj: HyperTextView, child_property: GObject.ParamSpec) => void)): number
+    emit(sigName: "child-notify", child_property: GObject.ParamSpec): void
+    connect(sigName: "composited-changed", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "composited-changed", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "composited-changed"): void
+    connect(sigName: "configure-event", callback: (($obj: HyperTextView, event: Gdk.EventConfigure) => boolean)): number
+    connect_after(sigName: "configure-event", callback: (($obj: HyperTextView, event: Gdk.EventConfigure) => boolean)): number
+    emit(sigName: "configure-event", event: Gdk.EventConfigure): void
+    connect(sigName: "damage-event", callback: (($obj: HyperTextView, event: Gdk.EventExpose) => boolean)): number
+    connect_after(sigName: "damage-event", callback: (($obj: HyperTextView, event: Gdk.EventExpose) => boolean)): number
+    emit(sigName: "damage-event", event: Gdk.EventExpose): void
+    connect(sigName: "delete-event", callback: (($obj: HyperTextView, event: Gdk.Event) => boolean)): number
+    connect_after(sigName: "delete-event", callback: (($obj: HyperTextView, event: Gdk.Event) => boolean)): number
+    emit(sigName: "delete-event", event: Gdk.Event): void
+    connect(sigName: "destroy", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "destroy", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "destroy"): void
+    connect(sigName: "destroy-event", callback: (($obj: HyperTextView, event: Gdk.Event) => boolean)): number
+    connect_after(sigName: "destroy-event", callback: (($obj: HyperTextView, event: Gdk.Event) => boolean)): number
+    emit(sigName: "destroy-event", event: Gdk.Event): void
+    connect(sigName: "direction-changed", callback: (($obj: HyperTextView, previous_direction: Gtk.TextDirection) => void)): number
+    connect_after(sigName: "direction-changed", callback: (($obj: HyperTextView, previous_direction: Gtk.TextDirection) => void)): number
+    emit(sigName: "direction-changed", previous_direction: Gtk.TextDirection): void
+    connect(sigName: "drag-begin", callback: (($obj: HyperTextView, context: Gdk.DragContext) => void)): number
+    connect_after(sigName: "drag-begin", callback: (($obj: HyperTextView, context: Gdk.DragContext) => void)): number
+    emit(sigName: "drag-begin", context: Gdk.DragContext): void
+    connect(sigName: "drag-data-delete", callback: (($obj: HyperTextView, context: Gdk.DragContext) => void)): number
+    connect_after(sigName: "drag-data-delete", callback: (($obj: HyperTextView, context: Gdk.DragContext) => void)): number
+    emit(sigName: "drag-data-delete", context: Gdk.DragContext): void
+    connect(sigName: "drag-data-get", callback: (($obj: HyperTextView, context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    connect_after(sigName: "drag-data-get", callback: (($obj: HyperTextView, context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    emit(sigName: "drag-data-get", context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number): void
+    connect(sigName: "drag-data-received", callback: (($obj: HyperTextView, context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    connect_after(sigName: "drag-data-received", callback: (($obj: HyperTextView, context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    emit(sigName: "drag-data-received", context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number): void
+    connect(sigName: "drag-drop", callback: (($obj: HyperTextView, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    connect_after(sigName: "drag-drop", callback: (($obj: HyperTextView, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    emit(sigName: "drag-drop", context: Gdk.DragContext, x: number, y: number, time: number): void
+    connect(sigName: "drag-end", callback: (($obj: HyperTextView, context: Gdk.DragContext) => void)): number
+    connect_after(sigName: "drag-end", callback: (($obj: HyperTextView, context: Gdk.DragContext) => void)): number
+    emit(sigName: "drag-end", context: Gdk.DragContext): void
+    connect(sigName: "drag-failed", callback: (($obj: HyperTextView, context: Gdk.DragContext, result: Gtk.DragResult) => boolean)): number
+    connect_after(sigName: "drag-failed", callback: (($obj: HyperTextView, context: Gdk.DragContext, result: Gtk.DragResult) => boolean)): number
+    emit(sigName: "drag-failed", context: Gdk.DragContext, result: Gtk.DragResult): void
+    connect(sigName: "drag-leave", callback: (($obj: HyperTextView, context: Gdk.DragContext, time: number) => void)): number
+    connect_after(sigName: "drag-leave", callback: (($obj: HyperTextView, context: Gdk.DragContext, time: number) => void)): number
+    emit(sigName: "drag-leave", context: Gdk.DragContext, time: number): void
+    connect(sigName: "drag-motion", callback: (($obj: HyperTextView, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    connect_after(sigName: "drag-motion", callback: (($obj: HyperTextView, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    emit(sigName: "drag-motion", context: Gdk.DragContext, x: number, y: number, time: number): void
+    connect(sigName: "draw", callback: (($obj: HyperTextView, cr: cairo.Context) => boolean)): number
+    connect_after(sigName: "draw", callback: (($obj: HyperTextView, cr: cairo.Context) => boolean)): number
+    emit(sigName: "draw", cr: cairo.Context): void
+    connect(sigName: "enter-notify-event", callback: (($obj: HyperTextView, event: Gdk.EventCrossing) => boolean)): number
+    connect_after(sigName: "enter-notify-event", callback: (($obj: HyperTextView, event: Gdk.EventCrossing) => boolean)): number
+    emit(sigName: "enter-notify-event", event: Gdk.EventCrossing): void
+    connect(sigName: "event", callback: (($obj: HyperTextView, event: Gdk.Event) => boolean)): number
+    connect_after(sigName: "event", callback: (($obj: HyperTextView, event: Gdk.Event) => boolean)): number
+    emit(sigName: "event", event: Gdk.Event): void
+    connect(sigName: "event-after", callback: (($obj: HyperTextView, event: Gdk.Event) => void)): number
+    connect_after(sigName: "event-after", callback: (($obj: HyperTextView, event: Gdk.Event) => void)): number
+    emit(sigName: "event-after", event: Gdk.Event): void
+    connect(sigName: "focus", callback: (($obj: HyperTextView, direction: Gtk.DirectionType) => boolean)): number
+    connect_after(sigName: "focus", callback: (($obj: HyperTextView, direction: Gtk.DirectionType) => boolean)): number
+    emit(sigName: "focus", direction: Gtk.DirectionType): void
+    connect(sigName: "focus-in-event", callback: (($obj: HyperTextView, event: Gdk.EventFocus) => boolean)): number
+    connect_after(sigName: "focus-in-event", callback: (($obj: HyperTextView, event: Gdk.EventFocus) => boolean)): number
+    emit(sigName: "focus-in-event", event: Gdk.EventFocus): void
+    connect(sigName: "focus-out-event", callback: (($obj: HyperTextView, event: Gdk.EventFocus) => boolean)): number
+    connect_after(sigName: "focus-out-event", callback: (($obj: HyperTextView, event: Gdk.EventFocus) => boolean)): number
+    emit(sigName: "focus-out-event", event: Gdk.EventFocus): void
+    connect(sigName: "grab-broken-event", callback: (($obj: HyperTextView, event: Gdk.EventGrabBroken) => boolean)): number
+    connect_after(sigName: "grab-broken-event", callback: (($obj: HyperTextView, event: Gdk.EventGrabBroken) => boolean)): number
+    emit(sigName: "grab-broken-event", event: Gdk.EventGrabBroken): void
+    connect(sigName: "grab-focus", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "grab-focus", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "grab-focus"): void
+    connect(sigName: "grab-notify", callback: (($obj: HyperTextView, was_grabbed: boolean) => void)): number
+    connect_after(sigName: "grab-notify", callback: (($obj: HyperTextView, was_grabbed: boolean) => void)): number
+    emit(sigName: "grab-notify", was_grabbed: boolean): void
+    connect(sigName: "hide", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "hide", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "hide"): void
+    connect(sigName: "hierarchy-changed", callback: (($obj: HyperTextView, previous_toplevel?: Gtk.Widget | null) => void)): number
+    connect_after(sigName: "hierarchy-changed", callback: (($obj: HyperTextView, previous_toplevel?: Gtk.Widget | null) => void)): number
+    emit(sigName: "hierarchy-changed", previous_toplevel?: Gtk.Widget | null): void
+    connect(sigName: "key-press-event", callback: (($obj: HyperTextView, event: Gdk.EventKey) => boolean)): number
+    connect_after(sigName: "key-press-event", callback: (($obj: HyperTextView, event: Gdk.EventKey) => boolean)): number
+    emit(sigName: "key-press-event", event: Gdk.EventKey): void
+    connect(sigName: "key-release-event", callback: (($obj: HyperTextView, event: Gdk.EventKey) => boolean)): number
+    connect_after(sigName: "key-release-event", callback: (($obj: HyperTextView, event: Gdk.EventKey) => boolean)): number
+    emit(sigName: "key-release-event", event: Gdk.EventKey): void
+    connect(sigName: "keynav-failed", callback: (($obj: HyperTextView, direction: Gtk.DirectionType) => boolean)): number
+    connect_after(sigName: "keynav-failed", callback: (($obj: HyperTextView, direction: Gtk.DirectionType) => boolean)): number
+    emit(sigName: "keynav-failed", direction: Gtk.DirectionType): void
+    connect(sigName: "leave-notify-event", callback: (($obj: HyperTextView, event: Gdk.EventCrossing) => boolean)): number
+    connect_after(sigName: "leave-notify-event", callback: (($obj: HyperTextView, event: Gdk.EventCrossing) => boolean)): number
+    emit(sigName: "leave-notify-event", event: Gdk.EventCrossing): void
+    connect(sigName: "map", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "map", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "map"): void
+    connect(sigName: "map-event", callback: (($obj: HyperTextView, event: Gdk.EventAny) => boolean)): number
+    connect_after(sigName: "map-event", callback: (($obj: HyperTextView, event: Gdk.EventAny) => boolean)): number
+    emit(sigName: "map-event", event: Gdk.EventAny): void
+    connect(sigName: "mnemonic-activate", callback: (($obj: HyperTextView, group_cycling: boolean) => boolean)): number
+    connect_after(sigName: "mnemonic-activate", callback: (($obj: HyperTextView, group_cycling: boolean) => boolean)): number
+    emit(sigName: "mnemonic-activate", group_cycling: boolean): void
+    connect(sigName: "motion-notify-event", callback: (($obj: HyperTextView, event: Gdk.EventMotion) => boolean)): number
+    connect_after(sigName: "motion-notify-event", callback: (($obj: HyperTextView, event: Gdk.EventMotion) => boolean)): number
+    emit(sigName: "motion-notify-event", event: Gdk.EventMotion): void
+    connect(sigName: "move-focus", callback: (($obj: HyperTextView, direction: Gtk.DirectionType) => void)): number
+    connect_after(sigName: "move-focus", callback: (($obj: HyperTextView, direction: Gtk.DirectionType) => void)): number
+    emit(sigName: "move-focus", direction: Gtk.DirectionType): void
+    connect(sigName: "parent-set", callback: (($obj: HyperTextView, old_parent?: Gtk.Widget | null) => void)): number
+    connect_after(sigName: "parent-set", callback: (($obj: HyperTextView, old_parent?: Gtk.Widget | null) => void)): number
+    emit(sigName: "parent-set", old_parent?: Gtk.Widget | null): void
+    connect(sigName: "popup-menu", callback: (($obj: HyperTextView) => boolean)): number
+    connect_after(sigName: "popup-menu", callback: (($obj: HyperTextView) => boolean)): number
+    emit(sigName: "popup-menu"): void
+    connect(sigName: "property-notify-event", callback: (($obj: HyperTextView, event: Gdk.EventProperty) => boolean)): number
+    connect_after(sigName: "property-notify-event", callback: (($obj: HyperTextView, event: Gdk.EventProperty) => boolean)): number
+    emit(sigName: "property-notify-event", event: Gdk.EventProperty): void
+    connect(sigName: "proximity-in-event", callback: (($obj: HyperTextView, event: Gdk.EventProximity) => boolean)): number
+    connect_after(sigName: "proximity-in-event", callback: (($obj: HyperTextView, event: Gdk.EventProximity) => boolean)): number
+    emit(sigName: "proximity-in-event", event: Gdk.EventProximity): void
+    connect(sigName: "proximity-out-event", callback: (($obj: HyperTextView, event: Gdk.EventProximity) => boolean)): number
+    connect_after(sigName: "proximity-out-event", callback: (($obj: HyperTextView, event: Gdk.EventProximity) => boolean)): number
+    emit(sigName: "proximity-out-event", event: Gdk.EventProximity): void
+    connect(sigName: "query-tooltip", callback: (($obj: HyperTextView, x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip) => boolean)): number
+    connect_after(sigName: "query-tooltip", callback: (($obj: HyperTextView, x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip) => boolean)): number
+    emit(sigName: "query-tooltip", x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip): void
+    connect(sigName: "realize", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "realize", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "realize"): void
+    connect(sigName: "screen-changed", callback: (($obj: HyperTextView, previous_screen?: Gdk.Screen | null) => void)): number
+    connect_after(sigName: "screen-changed", callback: (($obj: HyperTextView, previous_screen?: Gdk.Screen | null) => void)): number
+    emit(sigName: "screen-changed", previous_screen?: Gdk.Screen | null): void
+    connect(sigName: "scroll-event", callback: (($obj: HyperTextView, event: Gdk.EventScroll) => boolean)): number
+    connect_after(sigName: "scroll-event", callback: (($obj: HyperTextView, event: Gdk.EventScroll) => boolean)): number
+    emit(sigName: "scroll-event", event: Gdk.EventScroll): void
+    connect(sigName: "selection-clear-event", callback: (($obj: HyperTextView, event: Gdk.EventSelection) => boolean)): number
+    connect_after(sigName: "selection-clear-event", callback: (($obj: HyperTextView, event: Gdk.EventSelection) => boolean)): number
+    emit(sigName: "selection-clear-event", event: Gdk.EventSelection): void
+    connect(sigName: "selection-get", callback: (($obj: HyperTextView, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    connect_after(sigName: "selection-get", callback: (($obj: HyperTextView, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    emit(sigName: "selection-get", data: Gtk.SelectionData, info: number, time: number): void
+    connect(sigName: "selection-notify-event", callback: (($obj: HyperTextView, event: Gdk.EventSelection) => boolean)): number
+    connect_after(sigName: "selection-notify-event", callback: (($obj: HyperTextView, event: Gdk.EventSelection) => boolean)): number
+    emit(sigName: "selection-notify-event", event: Gdk.EventSelection): void
+    connect(sigName: "selection-received", callback: (($obj: HyperTextView, data: Gtk.SelectionData, time: number) => void)): number
+    connect_after(sigName: "selection-received", callback: (($obj: HyperTextView, data: Gtk.SelectionData, time: number) => void)): number
+    emit(sigName: "selection-received", data: Gtk.SelectionData, time: number): void
+    connect(sigName: "selection-request-event", callback: (($obj: HyperTextView, event: Gdk.EventSelection) => boolean)): number
+    connect_after(sigName: "selection-request-event", callback: (($obj: HyperTextView, event: Gdk.EventSelection) => boolean)): number
+    emit(sigName: "selection-request-event", event: Gdk.EventSelection): void
+    connect(sigName: "show", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "show", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "show"): void
+    connect(sigName: "show-help", callback: (($obj: HyperTextView, help_type: Gtk.WidgetHelpType) => boolean)): number
+    connect_after(sigName: "show-help", callback: (($obj: HyperTextView, help_type: Gtk.WidgetHelpType) => boolean)): number
+    emit(sigName: "show-help", help_type: Gtk.WidgetHelpType): void
+    connect(sigName: "size-allocate", callback: (($obj: HyperTextView, allocation: Gtk.Allocation) => void)): number
+    connect_after(sigName: "size-allocate", callback: (($obj: HyperTextView, allocation: Gtk.Allocation) => void)): number
+    emit(sigName: "size-allocate", allocation: Gtk.Allocation): void
+    connect(sigName: "state-changed", callback: (($obj: HyperTextView, state: Gtk.StateType) => void)): number
+    connect_after(sigName: "state-changed", callback: (($obj: HyperTextView, state: Gtk.StateType) => void)): number
+    emit(sigName: "state-changed", state: Gtk.StateType): void
+    connect(sigName: "state-flags-changed", callback: (($obj: HyperTextView, flags: Gtk.StateFlags) => void)): number
+    connect_after(sigName: "state-flags-changed", callback: (($obj: HyperTextView, flags: Gtk.StateFlags) => void)): number
+    emit(sigName: "state-flags-changed", flags: Gtk.StateFlags): void
+    connect(sigName: "style-set", callback: (($obj: HyperTextView, previous_style?: Gtk.Style | null) => void)): number
+    connect_after(sigName: "style-set", callback: (($obj: HyperTextView, previous_style?: Gtk.Style | null) => void)): number
+    emit(sigName: "style-set", previous_style?: Gtk.Style | null): void
+    connect(sigName: "style-updated", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "style-updated", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "style-updated"): void
+    connect(sigName: "touch-event", callback: (($obj: HyperTextView, object: Gdk.Event) => boolean)): number
+    connect_after(sigName: "touch-event", callback: (($obj: HyperTextView, object: Gdk.Event) => boolean)): number
+    emit(sigName: "touch-event", object: Gdk.Event): void
+    connect(sigName: "unmap", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "unmap", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "unmap"): void
+    connect(sigName: "unmap-event", callback: (($obj: HyperTextView, event: Gdk.EventAny) => boolean)): number
+    connect_after(sigName: "unmap-event", callback: (($obj: HyperTextView, event: Gdk.EventAny) => boolean)): number
+    emit(sigName: "unmap-event", event: Gdk.EventAny): void
+    connect(sigName: "unrealize", callback: (($obj: HyperTextView) => void)): number
+    connect_after(sigName: "unrealize", callback: (($obj: HyperTextView) => void)): number
+    emit(sigName: "unrealize"): void
+    connect(sigName: "visibility-notify-event", callback: (($obj: HyperTextView, event: Gdk.EventVisibility) => boolean)): number
+    connect_after(sigName: "visibility-notify-event", callback: (($obj: HyperTextView, event: Gdk.EventVisibility) => boolean)): number
+    emit(sigName: "visibility-notify-event", event: Gdk.EventVisibility): void
+    connect(sigName: "window-state-event", callback: (($obj: HyperTextView, event: Gdk.EventWindowState) => boolean)): number
+    connect_after(sigName: "window-state-event", callback: (($obj: HyperTextView, event: Gdk.EventWindowState) => boolean)): number
+    emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::accepts-tab", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::accepts-tab", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::bottom-margin", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::bottom-margin", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::buffer", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::buffer", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::cursor-visible", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::cursor-visible", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::editable", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::editable", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::im-module", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::im-module", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::indent", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::indent", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::input-hints", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::input-hints", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::input-purpose", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::input-purpose", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::justification", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::justification", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::left-margin", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::left-margin", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::monospace", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::monospace", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::overwrite", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::overwrite", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::pixels-above-lines", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::pixels-above-lines", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::pixels-below-lines", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::pixels-below-lines", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::pixels-inside-wrap", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::pixels-inside-wrap", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::populate-all", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::populate-all", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::right-margin", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::right-margin", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::tabs", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::tabs", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::top-margin", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::top-margin", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::wrap-mode", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::wrap-mode", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::border-width", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::border-width", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::child", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::child", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::resize-mode", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::resize-mode", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::app-paintable", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::app-paintable", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::can-default", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::can-default", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::can-focus", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::can-focus", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::composite-child", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::composite-child", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::double-buffered", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::double-buffered", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::events", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::events", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expand", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expand", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::focus-on-click", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::focus-on-click", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::halign", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::halign", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-default", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-default", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-focus", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-focus", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-tooltip", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-tooltip", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::height-request", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::height-request", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::hexpand", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::hexpand", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::hexpand-set", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::hexpand-set", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::is-focus", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::is-focus", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-bottom", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-bottom", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-end", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-end", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-left", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-left", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-right", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-right", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-start", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-start", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-top", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-top", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::name", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::name", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::no-show-all", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::no-show-all", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::opacity", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::opacity", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::parent", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::receives-default", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::receives-default", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::scale-factor", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::scale-factor", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::sensitive", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::sensitive", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::style", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::style", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::tooltip-markup", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::tooltip-markup", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::tooltip-text", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::tooltip-text", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::valign", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::valign", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::vexpand", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::vexpand", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::vexpand-set", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::vexpand-set", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::visible", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::visible", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::width-request", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::width-request", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::window", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::window", callback: (($obj: HyperTextView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: HyperTextView_ConstructProps)
+    _init (config?: HyperTextView_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static new(): HyperTextView
+    static $gtype: GObject.Type
+}
+export interface MessageDialog_ConstructProps extends Dialog_ConstructProps {
+    primary_text?: string
+    secondary_text?: string
+    image_icon?: Gio.Icon
+    badge_icon?: Gio.Icon
+    primary_label?: Gtk.Label
+    secondary_label?: Gtk.Label
+    buttons?: Gtk.ButtonsType
+    custom_bin?: Gtk.Bin
+}
+class MessageDialog {
+    /* Properties of Granite-1.0.Granite.MessageDialog */
+    primary_text: string
+    secondary_text: string
+    image_icon: Gio.Icon
+    badge_icon: Gio.Icon
+    /* Properties of Gtk-3.0.Gtk.Window */
+    accept_focus: boolean
+    application: Gtk.Application
+    attached_to: Gtk.Widget
+    decorated: boolean
+    default_height: number
+    default_width: number
+    deletable: boolean
+    destroy_with_parent: boolean
+    focus_on_map: boolean
+    focus_visible: boolean
+    gravity: Gdk.Gravity
+    has_resize_grip: boolean
+    readonly has_toplevel_focus: boolean
+    hide_titlebar_when_maximized: boolean
+    icon: GdkPixbuf.Pixbuf
+    icon_name: string
+    readonly is_active: boolean
+    readonly is_maximized: boolean
+    mnemonics_visible: boolean
+    modal: boolean
+    resizable: boolean
+    readonly resize_grip_visible: boolean
+    role: string
+    screen: Gdk.Screen
+    skip_pager_hint: boolean
+    skip_taskbar_hint: boolean
+    startup_id: string
+    title: string
+    transient_for: Gtk.Window
+    type_hint: Gdk.WindowTypeHint
+    urgency_hint: boolean
+    window_position: Gtk.WindowPosition
+    /* Properties of Gtk-3.0.Gtk.Container */
+    border_width: number
+    child: Gtk.Widget
+    resize_mode: Gtk.ResizeMode
+    /* Properties of Gtk-3.0.Gtk.Widget */
+    app_paintable: boolean
+    can_default: boolean
+    can_focus: boolean
+    readonly composite_child: boolean
+    double_buffered: boolean
+    events: Gdk.EventMask
+    expand: boolean
+    focus_on_click: boolean
+    halign: Gtk.Align
+    has_default: boolean
+    has_focus: boolean
+    has_tooltip: boolean
+    height_request: number
+    hexpand: boolean
+    hexpand_set: boolean
+    is_focus: boolean
+    margin: number
+    margin_bottom: number
+    margin_end: number
+    margin_left: number
+    margin_right: number
+    margin_start: number
+    margin_top: number
+    name: string
+    no_show_all: boolean
+    opacity: number
+    parent: Gtk.Container
+    receives_default: boolean
+    readonly scale_factor: number
+    sensitive: boolean
+    style: Gtk.Style
+    tooltip_markup: string
+    tooltip_text: string
+    valign: Gtk.Align
+    vexpand: boolean
+    vexpand_set: boolean
+    visible: boolean
+    width_request: number
+    readonly window: Gdk.Window
+    /* Fields of Gtk-3.0.Gtk.Window */
     bin: Gtk.Bin
     priv: Gtk.WindowPrivate
-    /* Fields of Gtk.Bin */
+    /* Fields of Gtk-3.0.Gtk.Bin */
     container: Gtk.Container
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.MessageDialog */
+    /* Methods of Granite-1.0.Granite.MessageDialog */
     get_primary_text(): string
     set_primary_text(value: string): void
     get_secondary_text(): string
@@ -23250,7 +22131,7 @@ export class MessageDialog {
     get_secondary_label(): Gtk.Label
     get_custom_bin(): Gtk.Bin
     show_error_details(error_message: string): void
-    /* Methods of Gtk.Dialog */
+    /* Methods of Gtk-3.0.Gtk.Dialog */
     add_action_widget(child: Gtk.Widget, response_id: number): void
     add_button(button_text: string, response_id: number): Gtk.Widget
     get_action_area(): Gtk.Box
@@ -23263,7 +22144,7 @@ export class MessageDialog {
     set_alternative_button_order_from_array(new_order: number[]): void
     set_default_response(response_id: number): void
     set_response_sensitive(response_id: number, setting: boolean): void
-    /* Methods of Gtk.Window */
+    /* Methods of Gtk-3.0.Gtk.Window */
     activate_default(): boolean
     activate_focus(): boolean
     activate_key(event: Gdk.EventKey): boolean
@@ -23370,12 +22251,13 @@ export class MessageDialog {
     unfullscreen(): void
     unmaximize(): void
     unstick(): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -23400,7 +22282,7 @@ export class MessageDialog {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -23656,15 +22538,15 @@ export class MessageDialog {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -23672,22 +22554,22 @@ export class MessageDialog {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Dialog */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Dialog */
     vfunc_close(): void
     vfunc_response(response_id: number): void
-    /* Virtual methods of Gtk.Window */
+    /* Virtual methods of Gtk-3.0.Gtk.Window */
     vfunc_activate_default(): void
     vfunc_activate_focus(): void
     vfunc_enable_debugging(toggle: boolean): boolean
     vfunc_keys_changed(): void
     vfunc_set_focus(focus?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -23698,7 +22580,7 @@ export class MessageDialog {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -23781,22 +22663,22 @@ export class MessageDialog {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Dialog */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Dialog */
     connect(sigName: "close", callback: (($obj: MessageDialog) => void)): number
     connect_after(sigName: "close", callback: (($obj: MessageDialog) => void)): number
     emit(sigName: "close"): void
     connect(sigName: "response", callback: (($obj: MessageDialog, response_id: number) => void)): number
     connect_after(sigName: "response", callback: (($obj: MessageDialog, response_id: number) => void)): number
     emit(sigName: "response", response_id: number): void
-    /* Signals of Gtk.Window */
+    /* Signals of Gtk-3.0.Gtk.Window */
     connect(sigName: "activate-default", callback: (($obj: MessageDialog) => void)): number
     connect_after(sigName: "activate-default", callback: (($obj: MessageDialog) => void)): number
     emit(sigName: "activate-default"): void
@@ -23812,7 +22694,7 @@ export class MessageDialog {
     connect(sigName: "set-focus", callback: (($obj: MessageDialog, widget?: Gtk.Widget | null) => void)): number
     connect_after(sigName: "set-focus", callback: (($obj: MessageDialog, widget?: Gtk.Widget | null) => void)): number
     emit(sigName: "set-focus", widget?: Gtk.Widget | null): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: MessageDialog, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: MessageDialog, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -23825,7 +22707,7 @@ export class MessageDialog {
     connect(sigName: "set-focus-child", callback: (($obj: MessageDialog, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: MessageDialog, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: MessageDialog) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: MessageDialog) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -24033,7 +22915,7 @@ export class MessageDialog {
     connect(sigName: "window-state-event", callback: (($obj: MessageDialog, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: MessageDialog, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MessageDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MessageDialog, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -24216,8 +23098,8 @@ export interface ModeSwitch_ConstructProps extends Gtk.Grid_ConstructProps {
     secondary_icon_name?: string
     secondary_icon_tooltip_text?: string
 }
-export class ModeSwitch {
-    /* Properties of Granite.ModeSwitch */
+class ModeSwitch {
+    /* Properties of Granite-1.0.Granite.ModeSwitch */
     active: boolean
     primary_icon_gicon: Gio.Icon
     primary_icon_name: string
@@ -24225,17 +23107,17 @@ export class ModeSwitch {
     secondary_icon_gicon: Gio.Icon
     secondary_icon_name: string
     secondary_icon_tooltip_text: string
-    /* Properties of Gtk.Grid */
+    /* Properties of Gtk-3.0.Gtk.Grid */
     baseline_row: number
     column_homogeneous: boolean
     column_spacing: number
     row_homogeneous: boolean
     row_spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -24275,13 +23157,13 @@ export class ModeSwitch {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.ModeSwitch */
+    /* Methods of Granite-1.0.Granite.ModeSwitch */
     get_active(): boolean
     set_active(value: boolean): void
     get_primary_icon_gicon(): Gio.Icon
@@ -24296,7 +23178,7 @@ export class ModeSwitch {
     set_secondary_icon_name(value: string): void
     get_secondary_icon_tooltip_text(): string
     set_secondary_icon_tooltip_text(value: string): void
-    /* Methods of Gtk.Grid */
+    /* Methods of Gtk-3.0.Gtk.Grid */
     attach(child: Gtk.Widget, left: number, top: number, width: number, height: number): void
     attach_next_to(child: Gtk.Widget, sibling: Gtk.Widget | null, side: Gtk.PositionType, width: number, height: number): void
     get_baseline_row(): number
@@ -24317,10 +23199,11 @@ export class ModeSwitch {
     set_row_baseline_position(row: number, pos: Gtk.BaselinePosition): void
     set_row_homogeneous(homogeneous: boolean): void
     set_row_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -24345,7 +23228,7 @@ export class ModeSwitch {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -24604,15 +23487,15 @@ export class ModeSwitch {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -24620,13 +23503,13 @@ export class ModeSwitch {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -24637,7 +23520,7 @@ export class ModeSwitch {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -24720,15 +23603,15 @@ export class ModeSwitch {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: ModeSwitch, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: ModeSwitch, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -24741,7 +23624,7 @@ export class ModeSwitch {
     connect(sigName: "set-focus-child", callback: (($obj: ModeSwitch, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: ModeSwitch, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: ModeSwitch) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: ModeSwitch) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -24949,7 +23832,7 @@ export class ModeSwitch {
     connect(sigName: "window-state-event", callback: (($obj: ModeSwitch, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: ModeSwitch, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ModeSwitch, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ModeSwitch, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -25083,8 +23966,8 @@ export interface SeekBar_ConstructProps extends Gtk.Grid_ConstructProps {
     duration_label?: Gtk.Label
     scale?: Gtk.Scale
 }
-export class SeekBar {
-    /* Properties of Granite.SeekBar */
+class SeekBar {
+    /* Properties of Granite-1.0.Granite.SeekBar */
     playback_duration: number
     playback_progress: number
     is_grabbing: boolean
@@ -25092,17 +23975,17 @@ export class SeekBar {
     progression_label: Gtk.Label
     duration_label: Gtk.Label
     scale: Gtk.Scale
-    /* Properties of Gtk.Grid */
+    /* Properties of Gtk-3.0.Gtk.Grid */
     baseline_row: number
     column_homogeneous: boolean
     column_spacing: number
     row_homogeneous: boolean
     row_spacing: number
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -25142,13 +24025,13 @@ export class SeekBar {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.SeekBar */
+    /* Methods of Granite-1.0.Granite.SeekBar */
     get_playback_duration(): number
     set_playback_duration(value: number): void
     get_playback_progress(): number
@@ -25161,7 +24044,7 @@ export class SeekBar {
     set_duration_label(value: Gtk.Label): void
     get_scale(): Gtk.Scale
     set_scale(value: Gtk.Scale): void
-    /* Methods of Gtk.Grid */
+    /* Methods of Gtk-3.0.Gtk.Grid */
     attach(child: Gtk.Widget, left: number, top: number, width: number, height: number): void
     attach_next_to(child: Gtk.Widget, sibling: Gtk.Widget | null, side: Gtk.PositionType, width: number, height: number): void
     get_baseline_row(): number
@@ -25182,10 +24065,11 @@ export class SeekBar {
     set_row_baseline_position(row: number, pos: Gtk.BaselinePosition): void
     set_row_homogeneous(homogeneous: boolean): void
     set_row_spacing(spacing: number): void
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -25210,7 +24094,7 @@ export class SeekBar {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -25469,15 +24353,15 @@ export class SeekBar {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -25485,13 +24369,13 @@ export class SeekBar {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.Container */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -25502,7 +24386,7 @@ export class SeekBar {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -25585,15 +24469,15 @@ export class SeekBar {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.Container */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: SeekBar, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: SeekBar, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -25606,7 +24490,7 @@ export class SeekBar {
     connect(sigName: "set-focus-child", callback: (($obj: SeekBar, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: SeekBar, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: SeekBar) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: SeekBar) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -25814,7 +24698,7 @@ export class SeekBar {
     connect(sigName: "window-state-event", callback: (($obj: SeekBar, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: SeekBar, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SeekBar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SeekBar, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -25938,71 +24822,14 @@ export class SeekBar {
     static new(): SeekBar
     static $gtype: GObject.Type
 }
-export interface Settings_ConstructProps extends GObject.Object_ConstructProps {
-    prefers_color_scheme?: SettingsColorScheme
-}
-export class Settings {
-    /* Properties of Granite.Settings */
-    prefers_color_scheme: SettingsColorScheme
-    /* Fields of GObject.Object */
-    g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.Settings */
-    get_prefers_color_scheme(): SettingsColorScheme
-    /* Methods of GObject.Object */
-    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
-    force_floating(): void
-    freeze_notify(): void
-    get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
-    get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
-    is_floating(): boolean
-    notify(property_name: string): void
-    notify_by_pspec(pspec: GObject.ParamSpec): void
-    ref(): GObject.Object
-    ref_sink(): GObject.Object
-    run_dispose(): void
-    set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
-    steal_data(key: string): object | null
-    steal_qdata(quark: GLib.Quark): object | null
-    thaw_notify(): void
-    unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
-    vfunc_constructed(): void
-    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
-    vfunc_dispose(): void
-    vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
-    connect(sigName: "notify", callback: (($obj: Settings, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify", callback: (($obj: Settings, pspec: GObject.ParamSpec) => void)): number
-    emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::prefers-color-scheme", callback: (($obj: Settings, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::prefers-color-scheme", callback: (($obj: Settings, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: string, callback: any): number
-    connect_after(sigName: string, callback: any): number
-    emit(sigName: string, ...args: any[]): void
-    disconnect(id: number): void
-    static name: string
-    constructor (config?: Settings_ConstructProps)
-    _init (config?: Settings_ConstructProps): void
-    /* Static methods and pseudo-constructors */
-    static get_default(): Settings
-    static $gtype: GObject.Type
-}
 export interface SettingsSidebar_ConstructProps extends Gtk.ScrolledWindow_ConstructProps {
     stack?: Gtk.Stack
     visible_child_name?: string
 }
-export class SettingsSidebar {
-    /* Properties of Granite.SettingsSidebar */
+class SettingsSidebar {
+    /* Properties of Granite-1.0.Granite.SettingsSidebar */
     visible_child_name: string
-    /* Properties of Gtk.ScrolledWindow */
+    /* Properties of Gtk-3.0.Gtk.ScrolledWindow */
     hadjustment: Gtk.Adjustment
     hscrollbar_policy: Gtk.PolicyType
     kinetic_scrolling: boolean
@@ -26018,11 +24845,11 @@ export class SettingsSidebar {
     vscrollbar_policy: Gtk.PolicyType
     window_placement: Gtk.CornerType
     window_placement_set: boolean
-    /* Properties of Gtk.Container */
+    /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
     resize_mode: Gtk.ResizeMode
-    /* Properties of Gtk.Widget */
+    /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
     can_focus: boolean
@@ -26062,20 +24889,20 @@ export class SettingsSidebar {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gtk.ScrolledWindow */
+    /* Fields of Gtk-3.0.Gtk.ScrolledWindow */
     container: Gtk.Bin
     priv: Gtk.ScrolledWindowPrivate
-    /* Fields of Gtk.Container */
+    /* Fields of Gtk-3.0.Gtk.Container */
     widget: Gtk.Widget
-    /* Fields of Gtk.Widget */
+    /* Fields of Gtk-3.0.Gtk.Widget */
     parent_instance: GObject.InitiallyUnowned
-    /* Fields of GObject.InitiallyUnowned */
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Granite.SettingsSidebar */
+    /* Methods of Granite-1.0.Granite.SettingsSidebar */
     get_stack(): Gtk.Stack
     get_visible_child_name(): string | null
     set_visible_child_name(value?: string | null): void
-    /* Methods of Gtk.ScrolledWindow */
+    /* Methods of Gtk-3.0.Gtk.ScrolledWindow */
     add_with_viewport(child: Gtk.Widget): void
     get_capture_button_press(): boolean
     get_hadjustment(): Gtk.Adjustment
@@ -26108,12 +24935,13 @@ export class SettingsSidebar {
     set_shadow_type(type: Gtk.ShadowType): void
     set_vadjustment(vadjustment?: Gtk.Adjustment | null): void
     unset_placement(): void
-    /* Methods of Gtk.Bin */
+    /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
-    /* Methods of Gtk.Container */
+    /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -26138,7 +24966,7 @@ export class SettingsSidebar {
     set_reallocate_redraws(needs_redraws: boolean): void
     set_resize_mode(resize_mode: Gtk.ResizeMode): void
     unset_focus_chain(): void
-    /* Methods of Gtk.Widget */
+    /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
     add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
@@ -26397,15 +25225,15 @@ export class SettingsSidebar {
     unrealize(): void
     unregister_window(window: Gdk.Window): void
     unset_state_flags(flags: Gtk.StateFlags): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -26413,16 +25241,16 @@ export class SettingsSidebar {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Gtk.ScrolledWindow */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.ScrolledWindow */
     vfunc_move_focus_out(direction: Gtk.DirectionType): void
     vfunc_scroll_child(scroll: Gtk.ScrollType, horizontal: boolean): boolean
-    /* Virtual methods of Gtk.Container */
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
     vfunc_child_type(): GObject.Type
@@ -26433,7 +25261,7 @@ export class SettingsSidebar {
     vfunc_remove(widget: Gtk.Widget): void
     vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_set_focus_child(child?: Gtk.Widget | null): void
-    /* Virtual methods of Gtk.Widget */
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
     vfunc_adjust_baseline_allocation(baseline: number): void
     vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
     vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
@@ -26516,15 +25344,15 @@ export class SettingsSidebar {
     vfunc_unrealize(): void
     vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
     vfunc_window_state_event(event: Gdk.EventWindowState): boolean
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gtk.ScrolledWindow */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.ScrolledWindow */
     connect(sigName: "edge-overshot", callback: (($obj: SettingsSidebar, pos: Gtk.PositionType) => void)): number
     connect_after(sigName: "edge-overshot", callback: (($obj: SettingsSidebar, pos: Gtk.PositionType) => void)): number
     emit(sigName: "edge-overshot", pos: Gtk.PositionType): void
@@ -26537,7 +25365,7 @@ export class SettingsSidebar {
     connect(sigName: "scroll-child", callback: (($obj: SettingsSidebar, scroll: Gtk.ScrollType, horizontal: boolean) => boolean)): number
     connect_after(sigName: "scroll-child", callback: (($obj: SettingsSidebar, scroll: Gtk.ScrollType, horizontal: boolean) => boolean)): number
     emit(sigName: "scroll-child", scroll: Gtk.ScrollType, horizontal: boolean): void
-    /* Signals of Gtk.Container */
+    /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: SettingsSidebar, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: SettingsSidebar, object: Gtk.Widget) => void)): number
     emit(sigName: "add", object: Gtk.Widget): void
@@ -26550,7 +25378,7 @@ export class SettingsSidebar {
     connect(sigName: "set-focus-child", callback: (($obj: SettingsSidebar, object: Gtk.Widget) => void)): number
     connect_after(sigName: "set-focus-child", callback: (($obj: SettingsSidebar, object: Gtk.Widget) => void)): number
     emit(sigName: "set-focus-child", object: Gtk.Widget): void
-    /* Signals of Gtk.Widget */
+    /* Signals of Gtk-3.0.Gtk.Widget */
     connect(sigName: "accel-closures-changed", callback: (($obj: SettingsSidebar) => void)): number
     connect_after(sigName: "accel-closures-changed", callback: (($obj: SettingsSidebar) => void)): number
     emit(sigName: "accel-closures-changed"): void
@@ -26758,7 +25586,7 @@ export class SettingsSidebar {
     connect(sigName: "window-state-event", callback: (($obj: SettingsSidebar, event: Gdk.EventWindowState) => boolean)): number
     connect_after(sigName: "window-state-event", callback: (($obj: SettingsSidebar, event: Gdk.EventWindowState) => boolean)): number
     emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SettingsSidebar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SettingsSidebar, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -26890,78 +25718,2059 @@ export class SettingsSidebar {
     static new(hadjustment?: Gtk.Adjustment | null, vadjustment?: Gtk.Adjustment | null): SettingsSidebar
     static $gtype: GObject.Type
 }
-export abstract class DrawingBufferSurfaceClass {
+export interface Settings_ConstructProps extends GObject.Object_ConstructProps {
+    prefers_color_scheme?: SettingsColorScheme
+}
+class Settings {
+    /* Properties of Granite-1.0.Granite.Settings */
+    prefers_color_scheme: SettingsColorScheme
+    /* Fields of GObject-2.0.GObject.Object */
+    g_type_instance: GObject.TypeInstance
+    /* Methods of Granite-1.0.Granite.Settings */
+    get_prefers_color_scheme(): SettingsColorScheme
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: Settings, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: Settings, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::prefers-color-scheme", callback: (($obj: Settings, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::prefers-color-scheme", callback: (($obj: Settings, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: Settings_ConstructProps)
+    _init (config?: Settings_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static get_default(): Settings
+    static $gtype: GObject.Type
+}
+export interface SwitchModelButton_ConstructProps extends Gtk.ToggleButton_ConstructProps {
+    text?: string
+    description?: string
+}
+class SwitchModelButton {
+    /* Properties of Granite-1.0.Granite.SwitchModelButton */
+    text: string
+    description: string
+    /* Properties of Gtk-3.0.Gtk.ToggleButton */
+    active: boolean
+    draw_indicator: boolean
+    inconsistent: boolean
+    /* Properties of Gtk-3.0.Gtk.Button */
+    always_show_image: boolean
+    image: Gtk.Widget
+    image_position: Gtk.PositionType
+    label: string
+    relief: Gtk.ReliefStyle
+    use_stock: boolean
+    use_underline: boolean
+    xalign: number
+    yalign: number
+    /* Properties of Gtk-3.0.Gtk.Container */
+    border_width: number
+    child: Gtk.Widget
+    resize_mode: Gtk.ResizeMode
+    /* Properties of Gtk-3.0.Gtk.Widget */
+    app_paintable: boolean
+    can_default: boolean
+    can_focus: boolean
+    readonly composite_child: boolean
+    double_buffered: boolean
+    events: Gdk.EventMask
+    expand: boolean
+    focus_on_click: boolean
+    halign: Gtk.Align
+    has_default: boolean
+    has_focus: boolean
+    has_tooltip: boolean
+    height_request: number
+    hexpand: boolean
+    hexpand_set: boolean
+    is_focus: boolean
+    margin: number
+    margin_bottom: number
+    margin_end: number
+    margin_left: number
+    margin_right: number
+    margin_start: number
+    margin_top: number
+    name: string
+    no_show_all: boolean
+    opacity: number
+    parent: Gtk.Container
+    receives_default: boolean
+    readonly scale_factor: number
+    sensitive: boolean
+    style: Gtk.Style
+    tooltip_markup: string
+    tooltip_text: string
+    valign: Gtk.Align
+    vexpand: boolean
+    vexpand_set: boolean
+    visible: boolean
+    width_request: number
+    readonly window: Gdk.Window
+    /* Fields of Gtk-3.0.Gtk.Bin */
+    container: Gtk.Container
+    /* Fields of Gtk-3.0.Gtk.Container */
+    widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    parent_instance: GObject.InitiallyUnowned
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
+    g_type_instance: GObject.TypeInstance
+    /* Methods of Granite-1.0.Granite.SwitchModelButton */
+    get_text(): string
+    set_text(value: string): void
+    get_description(): string | null
+    set_description(value?: string | null): void
+    /* Methods of Gtk-3.0.Gtk.ToggleButton */
+    get_active(): boolean
+    get_inconsistent(): boolean
+    get_mode(): boolean
+    set_active(is_active: boolean): void
+    set_inconsistent(setting: boolean): void
+    set_mode(draw_indicator: boolean): void
+    toggled(): void
+    /* Methods of Gtk-3.0.Gtk.Button */
+    clicked(): void
+    enter(): void
+    get_alignment(): [ /* xalign */ number, /* yalign */ number ]
+    get_always_show_image(): boolean
+    get_event_window(): Gdk.Window
+    get_focus_on_click(): boolean
+    get_image(): Gtk.Widget | null
+    get_image_position(): Gtk.PositionType
+    get_label(): string
+    get_relief(): Gtk.ReliefStyle
+    get_use_stock(): boolean
+    get_use_underline(): boolean
+    leave(): void
+    pressed(): void
+    released(): void
+    set_alignment(xalign: number, yalign: number): void
+    set_always_show_image(always_show: boolean): void
+    set_focus_on_click(focus_on_click: boolean): void
+    set_image(image?: Gtk.Widget | null): void
+    set_image_position(position: Gtk.PositionType): void
+    set_label(label: string): void
+    set_relief(relief: Gtk.ReliefStyle): void
+    set_use_stock(use_stock: boolean): void
+    set_use_underline(use_underline: boolean): void
+    /* Methods of Gtk-3.0.Gtk.Bin */
+    get_child(): Gtk.Widget | null
+    /* Methods of Gtk-3.0.Gtk.Container */
+    add(widget: Gtk.Widget): void
+    check_resize(): void
+    child_get_property(child: Gtk.Widget, property_name: string, value: any): void
+    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
+    child_set_property(child: Gtk.Widget, property_name: string, value: any): void
+    child_type(): GObject.Type
+    forall(callback: Gtk.Callback): void
+    foreach(callback: Gtk.Callback): void
+    get_border_width(): number
+    get_children(): Gtk.Widget[]
+    get_focus_chain(): [ /* returnType */ boolean, /* focusable_widgets */ Gtk.Widget[] ]
+    get_focus_child(): Gtk.Widget | null
+    get_focus_hadjustment(): Gtk.Adjustment | null
+    get_focus_vadjustment(): Gtk.Adjustment | null
+    get_path_for_child(child: Gtk.Widget): Gtk.WidgetPath
+    get_resize_mode(): Gtk.ResizeMode
+    propagate_draw(child: Gtk.Widget, cr: cairo.Context): void
+    remove(widget: Gtk.Widget): void
+    resize_children(): void
+    set_border_width(border_width: number): void
+    set_focus_chain(focusable_widgets: Gtk.Widget[]): void
+    set_focus_child(child?: Gtk.Widget | null): void
+    set_focus_hadjustment(adjustment: Gtk.Adjustment): void
+    set_focus_vadjustment(adjustment: Gtk.Adjustment): void
+    set_reallocate_redraws(needs_redraws: boolean): void
+    set_resize_mode(resize_mode: Gtk.ResizeMode): void
+    unset_focus_chain(): void
+    /* Methods of Gtk-3.0.Gtk.Widget */
+    activate(): boolean
+    add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
+    add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
+    add_events(events: number): void
+    add_mnemonic_label(label: Gtk.Widget): void
+    add_tick_callback(callback: Gtk.TickCallback): number
+    can_activate_accel(signal_id: number): boolean
+    child_focus(direction: Gtk.DirectionType): boolean
+    child_notify(child_property: string): void
+    class_path(): [ /* path_length */ number | null, /* path */ string | null, /* path_reversed */ string | null ]
+    compute_expand(orientation: Gtk.Orientation): boolean
+    create_pango_context(): Pango.Context
+    create_pango_layout(text?: string | null): Pango.Layout
+    destroy(): void
+    destroyed(widget_pointer: Gtk.Widget): /* widget_pointer */ Gtk.Widget
+    device_is_shadowed(device: Gdk.Device): boolean
+    drag_begin(targets: Gtk.TargetList, actions: Gdk.DragAction, button: number, event?: Gdk.Event | null): Gdk.DragContext
+    drag_begin_with_coordinates(targets: Gtk.TargetList, actions: Gdk.DragAction, button: number, event: Gdk.Event | null, x: number, y: number): Gdk.DragContext
+    drag_check_threshold(start_x: number, start_y: number, current_x: number, current_y: number): boolean
+    drag_dest_add_image_targets(): void
+    drag_dest_add_text_targets(): void
+    drag_dest_add_uri_targets(): void
+    drag_dest_find_target(context: Gdk.DragContext, target_list?: Gtk.TargetList | null): Gdk.Atom
+    drag_dest_get_target_list(): Gtk.TargetList | null
+    drag_dest_get_track_motion(): boolean
+    drag_dest_set(flags: Gtk.DestDefaults, targets: Gtk.TargetEntry[] | null, actions: Gdk.DragAction): void
+    drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void
+    drag_dest_set_target_list(target_list?: Gtk.TargetList | null): void
+    drag_dest_set_track_motion(track_motion: boolean): void
+    drag_dest_unset(): void
+    drag_get_data(context: Gdk.DragContext, target: Gdk.Atom, time_: number): void
+    drag_highlight(): void
+    drag_source_add_image_targets(): void
+    drag_source_add_text_targets(): void
+    drag_source_add_uri_targets(): void
+    drag_source_get_target_list(): Gtk.TargetList | null
+    drag_source_set(start_button_mask: Gdk.ModifierType, targets: Gtk.TargetEntry[] | null, actions: Gdk.DragAction): void
+    drag_source_set_icon_gicon(icon: Gio.Icon): void
+    drag_source_set_icon_name(icon_name: string): void
+    drag_source_set_icon_pixbuf(pixbuf: GdkPixbuf.Pixbuf): void
+    drag_source_set_icon_stock(stock_id: string): void
+    drag_source_set_target_list(target_list?: Gtk.TargetList | null): void
+    drag_source_unset(): void
+    drag_unhighlight(): void
+    draw(cr: cairo.Context): void
+    ensure_style(): void
+    error_bell(): void
+    event(event: Gdk.Event): boolean
+    freeze_child_notify(): void
+    get_accessible(): Atk.Object
+    get_action_group(prefix: string): Gio.ActionGroup | null
+    get_allocated_baseline(): number
+    get_allocated_height(): number
+    get_allocated_size(): [ /* allocation */ Gtk.Allocation, /* baseline */ number | null ]
+    get_allocated_width(): number
+    get_allocation(): /* allocation */ Gtk.Allocation
+    get_ancestor(widget_type: GObject.Type): Gtk.Widget | null
+    get_app_paintable(): boolean
+    get_can_default(): boolean
+    get_can_focus(): boolean
+    get_child_requisition(): /* requisition */ Gtk.Requisition
+    get_child_visible(): boolean
+    get_clip(): /* clip */ Gtk.Allocation
+    get_clipboard(selection: Gdk.Atom): Gtk.Clipboard
+    get_composite_name(): string
+    get_device_enabled(device: Gdk.Device): boolean
+    get_device_events(device: Gdk.Device): Gdk.EventMask
+    get_direction(): Gtk.TextDirection
+    get_display(): Gdk.Display
+    get_double_buffered(): boolean
+    get_events(): number
+    get_font_map(): Pango.FontMap | null
+    get_font_options(): cairo.FontOptions | null
+    get_frame_clock(): Gdk.FrameClock | null
+    get_halign(): Gtk.Align
+    get_has_tooltip(): boolean
+    get_has_window(): boolean
+    get_hexpand(): boolean
+    get_hexpand_set(): boolean
+    get_mapped(): boolean
+    get_margin_bottom(): number
+    get_margin_end(): number
+    get_margin_left(): number
+    get_margin_right(): number
+    get_margin_start(): number
+    get_margin_top(): number
+    get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType
+    get_modifier_style(): Gtk.RcStyle
+    get_name(): string
+    get_no_show_all(): boolean
+    get_opacity(): number
+    get_pango_context(): Pango.Context
+    get_parent(): Gtk.Widget | null
+    get_parent_window(): Gdk.Window | null
+    get_path(): Gtk.WidgetPath
+    get_pointer(): [ /* x */ number | null, /* y */ number | null ]
+    get_preferred_height(): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    get_preferred_height_and_baseline_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null, /* minimum_baseline */ number | null, /* natural_baseline */ number | null ]
+    get_preferred_height_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    get_preferred_size(): [ /* minimum_size */ Gtk.Requisition | null, /* natural_size */ Gtk.Requisition | null ]
+    get_preferred_width(): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    get_preferred_width_for_height(height: number): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    get_realized(): boolean
+    get_receives_default(): boolean
+    get_request_mode(): Gtk.SizeRequestMode
+    get_requisition(): /* requisition */ Gtk.Requisition
+    get_root_window(): Gdk.Window
+    get_scale_factor(): number
+    get_screen(): Gdk.Screen
+    get_sensitive(): boolean
+    get_settings(): Gtk.Settings
+    get_size_request(): [ /* width */ number | null, /* height */ number | null ]
+    get_state(): Gtk.StateType
+    get_state_flags(): Gtk.StateFlags
+    get_style(): Gtk.Style
+    get_style_context(): Gtk.StyleContext
+    get_support_multidevice(): boolean
+    get_template_child(widget_type: GObject.Type, name: string): GObject.Object
+    get_tooltip_markup(): string | null
+    get_tooltip_text(): string | null
+    get_tooltip_window(): Gtk.Window
+    get_toplevel(): Gtk.Widget
+    get_valign(): Gtk.Align
+    get_valign_with_baseline(): Gtk.Align
+    get_vexpand(): boolean
+    get_vexpand_set(): boolean
+    get_visible(): boolean
+    get_visual(): Gdk.Visual
+    get_window(): Gdk.Window | null
+    grab_add(): void
+    grab_default(): void
+    grab_focus(): void
+    grab_remove(): void
+    has_grab(): boolean
+    has_rc_style(): boolean
+    has_screen(): boolean
+    has_visible_focus(): boolean
+    hide(): void
+    hide_on_delete(): boolean
+    in_destruction(): boolean
+    init_template(): void
+    input_shape_combine_region(region?: cairo.Region | null): void
+    insert_action_group(name: string, group?: Gio.ActionGroup | null): void
+    intersect(area: Gdk.Rectangle): [ /* returnType */ boolean, /* intersection */ Gdk.Rectangle | null ]
+    is_ancestor(ancestor: Gtk.Widget): boolean
+    is_composited(): boolean
+    is_drawable(): boolean
+    is_sensitive(): boolean
+    is_toplevel(): boolean
+    is_visible(): boolean
+    keynav_failed(direction: Gtk.DirectionType): boolean
+    list_accel_closures(): Function[]
+    list_action_prefixes(): string[]
+    list_mnemonic_labels(): Gtk.Widget[]
+    map(): void
+    mnemonic_activate(group_cycling: boolean): boolean
+    modify_base(state: Gtk.StateType, color?: Gdk.Color | null): void
+    modify_bg(state: Gtk.StateType, color?: Gdk.Color | null): void
+    modify_cursor(primary?: Gdk.Color | null, secondary?: Gdk.Color | null): void
+    modify_fg(state: Gtk.StateType, color?: Gdk.Color | null): void
+    modify_font(font_desc?: Pango.FontDescription | null): void
+    modify_style(style: Gtk.RcStyle): void
+    modify_text(state: Gtk.StateType, color?: Gdk.Color | null): void
+    override_background_color(state: Gtk.StateFlags, color?: Gdk.RGBA | null): void
+    override_color(state: Gtk.StateFlags, color?: Gdk.RGBA | null): void
+    override_cursor(cursor?: Gdk.RGBA | null, secondary_cursor?: Gdk.RGBA | null): void
+    override_font(font_desc?: Pango.FontDescription | null): void
+    override_symbolic_color(name: string, color?: Gdk.RGBA | null): void
+    path(): [ /* path_length */ number | null, /* path */ string | null, /* path_reversed */ string | null ]
+    queue_allocate(): void
+    queue_compute_expand(): void
+    queue_draw(): void
+    queue_draw_area(x: number, y: number, width: number, height: number): void
+    queue_draw_region(region: cairo.Region): void
+    queue_resize(): void
+    queue_resize_no_redraw(): void
+    realize(): void
+    region_intersect(region: cairo.Region): cairo.Region
+    register_window(window: Gdk.Window): void
+    remove_accelerator(accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean
+    remove_mnemonic_label(label: Gtk.Widget): void
+    remove_tick_callback(id: number): void
+    render_icon(stock_id: string, size: number, detail?: string | null): GdkPixbuf.Pixbuf | null
+    render_icon_pixbuf(stock_id: string, size: number): GdkPixbuf.Pixbuf | null
+    reparent(new_parent: Gtk.Widget): void
+    reset_rc_styles(): void
+    reset_style(): void
+    send_expose(event: Gdk.Event): number
+    send_focus_change(event: Gdk.Event): boolean
+    set_accel_path(accel_path?: string | null, accel_group?: Gtk.AccelGroup | null): void
+    set_allocation(allocation: Gtk.Allocation): void
+    set_app_paintable(app_paintable: boolean): void
+    set_can_default(can_default: boolean): void
+    set_can_focus(can_focus: boolean): void
+    set_child_visible(is_visible: boolean): void
+    set_clip(clip: Gtk.Allocation): void
+    set_composite_name(name: string): void
+    set_device_enabled(device: Gdk.Device, enabled: boolean): void
+    set_device_events(device: Gdk.Device, events: Gdk.EventMask): void
+    set_direction(dir: Gtk.TextDirection): void
+    set_double_buffered(double_buffered: boolean): void
+    set_events(events: number): void
+    set_font_map(font_map?: Pango.FontMap | null): void
+    set_font_options(options?: cairo.FontOptions | null): void
+    set_halign(align: Gtk.Align): void
+    set_has_tooltip(has_tooltip: boolean): void
+    set_has_window(has_window: boolean): void
+    set_hexpand(expand: boolean): void
+    set_hexpand_set(set: boolean): void
+    set_mapped(mapped: boolean): void
+    set_margin_bottom(margin: number): void
+    set_margin_end(margin: number): void
+    set_margin_left(margin: number): void
+    set_margin_right(margin: number): void
+    set_margin_start(margin: number): void
+    set_margin_top(margin: number): void
+    set_name(name: string): void
+    set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
+    set_parent(parent: Gtk.Widget): void
+    set_parent_window(parent_window: Gdk.Window): void
+    set_realized(realized: boolean): void
+    set_receives_default(receives_default: boolean): void
+    set_redraw_on_allocate(redraw_on_allocate: boolean): void
+    set_sensitive(sensitive: boolean): void
+    set_size_request(width: number, height: number): void
+    set_state(state: Gtk.StateType): void
+    set_state_flags(flags: Gtk.StateFlags, clear: boolean): void
+    set_style(style?: Gtk.Style | null): void
+    set_support_multidevice(support_multidevice: boolean): void
+    set_tooltip_markup(markup?: string | null): void
+    set_tooltip_text(text?: string | null): void
+    set_tooltip_window(custom_window?: Gtk.Window | null): void
+    set_valign(align: Gtk.Align): void
+    set_vexpand(expand: boolean): void
+    set_vexpand_set(set: boolean): void
+    set_visible(visible: boolean): void
+    set_visual(visual?: Gdk.Visual | null): void
+    set_window(window: Gdk.Window): void
+    shape_combine_region(region?: cairo.Region | null): void
+    show(): void
+    show_all(): void
+    show_now(): void
+    size_allocate(allocation: Gtk.Allocation): void
+    size_allocate_with_baseline(allocation: Gtk.Allocation, baseline: number): void
+    size_request(): /* requisition */ Gtk.Requisition
+    style_attach(): void
+    style_get_property(property_name: string, value: any): void
+    thaw_child_notify(): void
+    translate_coordinates(dest_widget: Gtk.Widget, src_x: number, src_y: number): [ /* returnType */ boolean, /* dest_x */ number | null, /* dest_y */ number | null ]
+    trigger_tooltip_query(): void
+    unmap(): void
+    unparent(): void
+    unrealize(): void
+    unregister_window(window: Gdk.Window): void
+    unset_state_flags(flags: Gtk.StateFlags): void
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.ToggleButton */
+    vfunc_toggled(): void
+    /* Virtual methods of Gtk-3.0.Gtk.Button */
+    vfunc_activate(): void
+    vfunc_clicked(): void
+    vfunc_enter(): void
+    vfunc_leave(): void
+    vfunc_pressed(): void
+    vfunc_released(): void
+    /* Virtual methods of Gtk-3.0.Gtk.Container */
+    vfunc_add(widget: Gtk.Widget): void
+    vfunc_check_resize(): void
+    vfunc_child_type(): GObject.Type
+    vfunc_composite_name(child: Gtk.Widget): string
+    vfunc_forall(include_internals: boolean, callback: Gtk.Callback): void
+    vfunc_get_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_path_for_child(child: Gtk.Widget): Gtk.WidgetPath
+    vfunc_remove(widget: Gtk.Widget): void
+    vfunc_set_child_property(child: Gtk.Widget, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_focus_child(child?: Gtk.Widget | null): void
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
+    vfunc_adjust_baseline_allocation(baseline: number): void
+    vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
+    vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
+    vfunc_adjust_size_request(orientation: Gtk.Orientation, minimum_size: number, natural_size: number): void
+    vfunc_button_press_event(event: Gdk.EventButton): boolean
+    vfunc_button_release_event(event: Gdk.EventButton): boolean
+    vfunc_can_activate_accel(signal_id: number): boolean
+    vfunc_child_notify(child_property: GObject.ParamSpec): void
+    vfunc_composited_changed(): void
+    vfunc_compute_expand(hexpand_p: boolean, vexpand_p: boolean): void
+    vfunc_configure_event(event: Gdk.EventConfigure): boolean
+    vfunc_damage_event(event: Gdk.EventExpose): boolean
+    vfunc_delete_event(event: Gdk.EventAny): boolean
+    vfunc_destroy(): void
+    vfunc_destroy_event(event: Gdk.EventAny): boolean
+    vfunc_direction_changed(previous_direction: Gtk.TextDirection): void
+    vfunc_dispatch_child_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_drag_begin(context: Gdk.DragContext): void
+    vfunc_drag_data_delete(context: Gdk.DragContext): void
+    vfunc_drag_data_get(context: Gdk.DragContext, selection_data: Gtk.SelectionData, info: number, time_: number): void
+    vfunc_drag_data_received(context: Gdk.DragContext, x: number, y: number, selection_data: Gtk.SelectionData, info: number, time_: number): void
+    vfunc_drag_drop(context: Gdk.DragContext, x: number, y: number, time_: number): boolean
+    vfunc_drag_end(context: Gdk.DragContext): void
+    vfunc_drag_failed(context: Gdk.DragContext, result: Gtk.DragResult): boolean
+    vfunc_drag_leave(context: Gdk.DragContext, time_: number): void
+    vfunc_drag_motion(context: Gdk.DragContext, x: number, y: number, time_: number): boolean
+    vfunc_draw(cr: cairo.Context): boolean
+    vfunc_enter_notify_event(event: Gdk.EventCrossing): boolean
+    vfunc_event(event: Gdk.Event): boolean
+    vfunc_focus(direction: Gtk.DirectionType): boolean
+    vfunc_focus_in_event(event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(event: Gdk.EventFocus): boolean
+    vfunc_get_accessible(): Atk.Object
+    vfunc_get_preferred_height(): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    vfunc_get_preferred_height_and_baseline_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null, /* minimum_baseline */ number | null, /* natural_baseline */ number | null ]
+    vfunc_get_preferred_height_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    vfunc_get_preferred_width(): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    vfunc_get_preferred_width_for_height(height: number): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    vfunc_get_request_mode(): Gtk.SizeRequestMode
+    vfunc_grab_broken_event(event: Gdk.EventGrabBroken): boolean
+    vfunc_grab_focus(): void
+    vfunc_grab_notify(was_grabbed: boolean): void
+    vfunc_hide(): void
+    vfunc_hierarchy_changed(previous_toplevel: Gtk.Widget): void
+    vfunc_key_press_event(event: Gdk.EventKey): boolean
+    vfunc_key_release_event(event: Gdk.EventKey): boolean
+    vfunc_keynav_failed(direction: Gtk.DirectionType): boolean
+    vfunc_leave_notify_event(event: Gdk.EventCrossing): boolean
+    vfunc_map(): void
+    vfunc_map_event(event: Gdk.EventAny): boolean
+    vfunc_mnemonic_activate(group_cycling: boolean): boolean
+    vfunc_motion_notify_event(event: Gdk.EventMotion): boolean
+    vfunc_move_focus(direction: Gtk.DirectionType): void
+    vfunc_parent_set(previous_parent: Gtk.Widget): void
+    vfunc_popup_menu(): boolean
+    vfunc_property_notify_event(event: Gdk.EventProperty): boolean
+    vfunc_proximity_in_event(event: Gdk.EventProximity): boolean
+    vfunc_proximity_out_event(event: Gdk.EventProximity): boolean
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_queue_draw_region(region: cairo.Region): void
+    vfunc_realize(): void
+    vfunc_screen_changed(previous_screen: Gdk.Screen): void
+    vfunc_scroll_event(event: Gdk.EventScroll): boolean
+    vfunc_selection_clear_event(event: Gdk.EventSelection): boolean
+    vfunc_selection_get(selection_data: Gtk.SelectionData, info: number, time_: number): void
+    vfunc_selection_notify_event(event: Gdk.EventSelection): boolean
+    vfunc_selection_received(selection_data: Gtk.SelectionData, time_: number): void
+    vfunc_selection_request_event(event: Gdk.EventSelection): boolean
+    vfunc_show(): void
+    vfunc_show_all(): void
+    vfunc_show_help(help_type: Gtk.WidgetHelpType): boolean
+    vfunc_size_allocate(allocation: Gtk.Allocation): void
+    vfunc_state_changed(previous_state: Gtk.StateType): void
+    vfunc_state_flags_changed(previous_state_flags: Gtk.StateFlags): void
+    vfunc_style_set(previous_style: Gtk.Style): void
+    vfunc_style_updated(): void
+    vfunc_touch_event(event: Gdk.EventTouch): boolean
+    vfunc_unmap(): void
+    vfunc_unmap_event(event: Gdk.EventAny): boolean
+    vfunc_unrealize(): void
+    vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
+    vfunc_window_state_event(event: Gdk.EventWindowState): boolean
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.ToggleButton */
+    connect(sigName: "toggled", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "toggled", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "toggled"): void
+    /* Signals of Gtk-3.0.Gtk.Button */
+    connect(sigName: "activate", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "activate", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "activate"): void
+    connect(sigName: "clicked", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "clicked", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "clicked"): void
+    connect(sigName: "enter", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "enter", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "enter"): void
+    connect(sigName: "leave", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "leave", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "leave"): void
+    connect(sigName: "pressed", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "pressed", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "pressed"): void
+    connect(sigName: "released", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "released", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "released"): void
+    /* Signals of Gtk-3.0.Gtk.Container */
+    connect(sigName: "add", callback: (($obj: SwitchModelButton, object: Gtk.Widget) => void)): number
+    connect_after(sigName: "add", callback: (($obj: SwitchModelButton, object: Gtk.Widget) => void)): number
+    emit(sigName: "add", object: Gtk.Widget): void
+    connect(sigName: "check-resize", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "check-resize", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "check-resize"): void
+    connect(sigName: "remove", callback: (($obj: SwitchModelButton, object: Gtk.Widget) => void)): number
+    connect_after(sigName: "remove", callback: (($obj: SwitchModelButton, object: Gtk.Widget) => void)): number
+    emit(sigName: "remove", object: Gtk.Widget): void
+    connect(sigName: "set-focus-child", callback: (($obj: SwitchModelButton, object: Gtk.Widget) => void)): number
+    connect_after(sigName: "set-focus-child", callback: (($obj: SwitchModelButton, object: Gtk.Widget) => void)): number
+    emit(sigName: "set-focus-child", object: Gtk.Widget): void
+    /* Signals of Gtk-3.0.Gtk.Widget */
+    connect(sigName: "accel-closures-changed", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "accel-closures-changed", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "accel-closures-changed"): void
+    connect(sigName: "button-press-event", callback: (($obj: SwitchModelButton, event: Gdk.EventButton) => boolean)): number
+    connect_after(sigName: "button-press-event", callback: (($obj: SwitchModelButton, event: Gdk.EventButton) => boolean)): number
+    emit(sigName: "button-press-event", event: Gdk.EventButton): void
+    connect(sigName: "button-release-event", callback: (($obj: SwitchModelButton, event: Gdk.EventButton) => boolean)): number
+    connect_after(sigName: "button-release-event", callback: (($obj: SwitchModelButton, event: Gdk.EventButton) => boolean)): number
+    emit(sigName: "button-release-event", event: Gdk.EventButton): void
+    connect(sigName: "can-activate-accel", callback: (($obj: SwitchModelButton, signal_id: number) => boolean)): number
+    connect_after(sigName: "can-activate-accel", callback: (($obj: SwitchModelButton, signal_id: number) => boolean)): number
+    emit(sigName: "can-activate-accel", signal_id: number): void
+    connect(sigName: "child-notify", callback: (($obj: SwitchModelButton, child_property: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "child-notify", callback: (($obj: SwitchModelButton, child_property: GObject.ParamSpec) => void)): number
+    emit(sigName: "child-notify", child_property: GObject.ParamSpec): void
+    connect(sigName: "composited-changed", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "composited-changed", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "composited-changed"): void
+    connect(sigName: "configure-event", callback: (($obj: SwitchModelButton, event: Gdk.EventConfigure) => boolean)): number
+    connect_after(sigName: "configure-event", callback: (($obj: SwitchModelButton, event: Gdk.EventConfigure) => boolean)): number
+    emit(sigName: "configure-event", event: Gdk.EventConfigure): void
+    connect(sigName: "damage-event", callback: (($obj: SwitchModelButton, event: Gdk.EventExpose) => boolean)): number
+    connect_after(sigName: "damage-event", callback: (($obj: SwitchModelButton, event: Gdk.EventExpose) => boolean)): number
+    emit(sigName: "damage-event", event: Gdk.EventExpose): void
+    connect(sigName: "delete-event", callback: (($obj: SwitchModelButton, event: Gdk.Event) => boolean)): number
+    connect_after(sigName: "delete-event", callback: (($obj: SwitchModelButton, event: Gdk.Event) => boolean)): number
+    emit(sigName: "delete-event", event: Gdk.Event): void
+    connect(sigName: "destroy", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "destroy", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "destroy"): void
+    connect(sigName: "destroy-event", callback: (($obj: SwitchModelButton, event: Gdk.Event) => boolean)): number
+    connect_after(sigName: "destroy-event", callback: (($obj: SwitchModelButton, event: Gdk.Event) => boolean)): number
+    emit(sigName: "destroy-event", event: Gdk.Event): void
+    connect(sigName: "direction-changed", callback: (($obj: SwitchModelButton, previous_direction: Gtk.TextDirection) => void)): number
+    connect_after(sigName: "direction-changed", callback: (($obj: SwitchModelButton, previous_direction: Gtk.TextDirection) => void)): number
+    emit(sigName: "direction-changed", previous_direction: Gtk.TextDirection): void
+    connect(sigName: "drag-begin", callback: (($obj: SwitchModelButton, context: Gdk.DragContext) => void)): number
+    connect_after(sigName: "drag-begin", callback: (($obj: SwitchModelButton, context: Gdk.DragContext) => void)): number
+    emit(sigName: "drag-begin", context: Gdk.DragContext): void
+    connect(sigName: "drag-data-delete", callback: (($obj: SwitchModelButton, context: Gdk.DragContext) => void)): number
+    connect_after(sigName: "drag-data-delete", callback: (($obj: SwitchModelButton, context: Gdk.DragContext) => void)): number
+    emit(sigName: "drag-data-delete", context: Gdk.DragContext): void
+    connect(sigName: "drag-data-get", callback: (($obj: SwitchModelButton, context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    connect_after(sigName: "drag-data-get", callback: (($obj: SwitchModelButton, context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    emit(sigName: "drag-data-get", context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number): void
+    connect(sigName: "drag-data-received", callback: (($obj: SwitchModelButton, context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    connect_after(sigName: "drag-data-received", callback: (($obj: SwitchModelButton, context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    emit(sigName: "drag-data-received", context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number): void
+    connect(sigName: "drag-drop", callback: (($obj: SwitchModelButton, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    connect_after(sigName: "drag-drop", callback: (($obj: SwitchModelButton, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    emit(sigName: "drag-drop", context: Gdk.DragContext, x: number, y: number, time: number): void
+    connect(sigName: "drag-end", callback: (($obj: SwitchModelButton, context: Gdk.DragContext) => void)): number
+    connect_after(sigName: "drag-end", callback: (($obj: SwitchModelButton, context: Gdk.DragContext) => void)): number
+    emit(sigName: "drag-end", context: Gdk.DragContext): void
+    connect(sigName: "drag-failed", callback: (($obj: SwitchModelButton, context: Gdk.DragContext, result: Gtk.DragResult) => boolean)): number
+    connect_after(sigName: "drag-failed", callback: (($obj: SwitchModelButton, context: Gdk.DragContext, result: Gtk.DragResult) => boolean)): number
+    emit(sigName: "drag-failed", context: Gdk.DragContext, result: Gtk.DragResult): void
+    connect(sigName: "drag-leave", callback: (($obj: SwitchModelButton, context: Gdk.DragContext, time: number) => void)): number
+    connect_after(sigName: "drag-leave", callback: (($obj: SwitchModelButton, context: Gdk.DragContext, time: number) => void)): number
+    emit(sigName: "drag-leave", context: Gdk.DragContext, time: number): void
+    connect(sigName: "drag-motion", callback: (($obj: SwitchModelButton, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    connect_after(sigName: "drag-motion", callback: (($obj: SwitchModelButton, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    emit(sigName: "drag-motion", context: Gdk.DragContext, x: number, y: number, time: number): void
+    connect(sigName: "draw", callback: (($obj: SwitchModelButton, cr: cairo.Context) => boolean)): number
+    connect_after(sigName: "draw", callback: (($obj: SwitchModelButton, cr: cairo.Context) => boolean)): number
+    emit(sigName: "draw", cr: cairo.Context): void
+    connect(sigName: "enter-notify-event", callback: (($obj: SwitchModelButton, event: Gdk.EventCrossing) => boolean)): number
+    connect_after(sigName: "enter-notify-event", callback: (($obj: SwitchModelButton, event: Gdk.EventCrossing) => boolean)): number
+    emit(sigName: "enter-notify-event", event: Gdk.EventCrossing): void
+    connect(sigName: "event", callback: (($obj: SwitchModelButton, event: Gdk.Event) => boolean)): number
+    connect_after(sigName: "event", callback: (($obj: SwitchModelButton, event: Gdk.Event) => boolean)): number
+    emit(sigName: "event", event: Gdk.Event): void
+    connect(sigName: "event-after", callback: (($obj: SwitchModelButton, event: Gdk.Event) => void)): number
+    connect_after(sigName: "event-after", callback: (($obj: SwitchModelButton, event: Gdk.Event) => void)): number
+    emit(sigName: "event-after", event: Gdk.Event): void
+    connect(sigName: "focus", callback: (($obj: SwitchModelButton, direction: Gtk.DirectionType) => boolean)): number
+    connect_after(sigName: "focus", callback: (($obj: SwitchModelButton, direction: Gtk.DirectionType) => boolean)): number
+    emit(sigName: "focus", direction: Gtk.DirectionType): void
+    connect(sigName: "focus-in-event", callback: (($obj: SwitchModelButton, event: Gdk.EventFocus) => boolean)): number
+    connect_after(sigName: "focus-in-event", callback: (($obj: SwitchModelButton, event: Gdk.EventFocus) => boolean)): number
+    emit(sigName: "focus-in-event", event: Gdk.EventFocus): void
+    connect(sigName: "focus-out-event", callback: (($obj: SwitchModelButton, event: Gdk.EventFocus) => boolean)): number
+    connect_after(sigName: "focus-out-event", callback: (($obj: SwitchModelButton, event: Gdk.EventFocus) => boolean)): number
+    emit(sigName: "focus-out-event", event: Gdk.EventFocus): void
+    connect(sigName: "grab-broken-event", callback: (($obj: SwitchModelButton, event: Gdk.EventGrabBroken) => boolean)): number
+    connect_after(sigName: "grab-broken-event", callback: (($obj: SwitchModelButton, event: Gdk.EventGrabBroken) => boolean)): number
+    emit(sigName: "grab-broken-event", event: Gdk.EventGrabBroken): void
+    connect(sigName: "grab-focus", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "grab-focus", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "grab-focus"): void
+    connect(sigName: "grab-notify", callback: (($obj: SwitchModelButton, was_grabbed: boolean) => void)): number
+    connect_after(sigName: "grab-notify", callback: (($obj: SwitchModelButton, was_grabbed: boolean) => void)): number
+    emit(sigName: "grab-notify", was_grabbed: boolean): void
+    connect(sigName: "hide", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "hide", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "hide"): void
+    connect(sigName: "hierarchy-changed", callback: (($obj: SwitchModelButton, previous_toplevel?: Gtk.Widget | null) => void)): number
+    connect_after(sigName: "hierarchy-changed", callback: (($obj: SwitchModelButton, previous_toplevel?: Gtk.Widget | null) => void)): number
+    emit(sigName: "hierarchy-changed", previous_toplevel?: Gtk.Widget | null): void
+    connect(sigName: "key-press-event", callback: (($obj: SwitchModelButton, event: Gdk.EventKey) => boolean)): number
+    connect_after(sigName: "key-press-event", callback: (($obj: SwitchModelButton, event: Gdk.EventKey) => boolean)): number
+    emit(sigName: "key-press-event", event: Gdk.EventKey): void
+    connect(sigName: "key-release-event", callback: (($obj: SwitchModelButton, event: Gdk.EventKey) => boolean)): number
+    connect_after(sigName: "key-release-event", callback: (($obj: SwitchModelButton, event: Gdk.EventKey) => boolean)): number
+    emit(sigName: "key-release-event", event: Gdk.EventKey): void
+    connect(sigName: "keynav-failed", callback: (($obj: SwitchModelButton, direction: Gtk.DirectionType) => boolean)): number
+    connect_after(sigName: "keynav-failed", callback: (($obj: SwitchModelButton, direction: Gtk.DirectionType) => boolean)): number
+    emit(sigName: "keynav-failed", direction: Gtk.DirectionType): void
+    connect(sigName: "leave-notify-event", callback: (($obj: SwitchModelButton, event: Gdk.EventCrossing) => boolean)): number
+    connect_after(sigName: "leave-notify-event", callback: (($obj: SwitchModelButton, event: Gdk.EventCrossing) => boolean)): number
+    emit(sigName: "leave-notify-event", event: Gdk.EventCrossing): void
+    connect(sigName: "map", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "map", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "map"): void
+    connect(sigName: "map-event", callback: (($obj: SwitchModelButton, event: Gdk.EventAny) => boolean)): number
+    connect_after(sigName: "map-event", callback: (($obj: SwitchModelButton, event: Gdk.EventAny) => boolean)): number
+    emit(sigName: "map-event", event: Gdk.EventAny): void
+    connect(sigName: "mnemonic-activate", callback: (($obj: SwitchModelButton, group_cycling: boolean) => boolean)): number
+    connect_after(sigName: "mnemonic-activate", callback: (($obj: SwitchModelButton, group_cycling: boolean) => boolean)): number
+    emit(sigName: "mnemonic-activate", group_cycling: boolean): void
+    connect(sigName: "motion-notify-event", callback: (($obj: SwitchModelButton, event: Gdk.EventMotion) => boolean)): number
+    connect_after(sigName: "motion-notify-event", callback: (($obj: SwitchModelButton, event: Gdk.EventMotion) => boolean)): number
+    emit(sigName: "motion-notify-event", event: Gdk.EventMotion): void
+    connect(sigName: "move-focus", callback: (($obj: SwitchModelButton, direction: Gtk.DirectionType) => void)): number
+    connect_after(sigName: "move-focus", callback: (($obj: SwitchModelButton, direction: Gtk.DirectionType) => void)): number
+    emit(sigName: "move-focus", direction: Gtk.DirectionType): void
+    connect(sigName: "parent-set", callback: (($obj: SwitchModelButton, old_parent?: Gtk.Widget | null) => void)): number
+    connect_after(sigName: "parent-set", callback: (($obj: SwitchModelButton, old_parent?: Gtk.Widget | null) => void)): number
+    emit(sigName: "parent-set", old_parent?: Gtk.Widget | null): void
+    connect(sigName: "popup-menu", callback: (($obj: SwitchModelButton) => boolean)): number
+    connect_after(sigName: "popup-menu", callback: (($obj: SwitchModelButton) => boolean)): number
+    emit(sigName: "popup-menu"): void
+    connect(sigName: "property-notify-event", callback: (($obj: SwitchModelButton, event: Gdk.EventProperty) => boolean)): number
+    connect_after(sigName: "property-notify-event", callback: (($obj: SwitchModelButton, event: Gdk.EventProperty) => boolean)): number
+    emit(sigName: "property-notify-event", event: Gdk.EventProperty): void
+    connect(sigName: "proximity-in-event", callback: (($obj: SwitchModelButton, event: Gdk.EventProximity) => boolean)): number
+    connect_after(sigName: "proximity-in-event", callback: (($obj: SwitchModelButton, event: Gdk.EventProximity) => boolean)): number
+    emit(sigName: "proximity-in-event", event: Gdk.EventProximity): void
+    connect(sigName: "proximity-out-event", callback: (($obj: SwitchModelButton, event: Gdk.EventProximity) => boolean)): number
+    connect_after(sigName: "proximity-out-event", callback: (($obj: SwitchModelButton, event: Gdk.EventProximity) => boolean)): number
+    emit(sigName: "proximity-out-event", event: Gdk.EventProximity): void
+    connect(sigName: "query-tooltip", callback: (($obj: SwitchModelButton, x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip) => boolean)): number
+    connect_after(sigName: "query-tooltip", callback: (($obj: SwitchModelButton, x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip) => boolean)): number
+    emit(sigName: "query-tooltip", x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip): void
+    connect(sigName: "realize", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "realize", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "realize"): void
+    connect(sigName: "screen-changed", callback: (($obj: SwitchModelButton, previous_screen?: Gdk.Screen | null) => void)): number
+    connect_after(sigName: "screen-changed", callback: (($obj: SwitchModelButton, previous_screen?: Gdk.Screen | null) => void)): number
+    emit(sigName: "screen-changed", previous_screen?: Gdk.Screen | null): void
+    connect(sigName: "scroll-event", callback: (($obj: SwitchModelButton, event: Gdk.EventScroll) => boolean)): number
+    connect_after(sigName: "scroll-event", callback: (($obj: SwitchModelButton, event: Gdk.EventScroll) => boolean)): number
+    emit(sigName: "scroll-event", event: Gdk.EventScroll): void
+    connect(sigName: "selection-clear-event", callback: (($obj: SwitchModelButton, event: Gdk.EventSelection) => boolean)): number
+    connect_after(sigName: "selection-clear-event", callback: (($obj: SwitchModelButton, event: Gdk.EventSelection) => boolean)): number
+    emit(sigName: "selection-clear-event", event: Gdk.EventSelection): void
+    connect(sigName: "selection-get", callback: (($obj: SwitchModelButton, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    connect_after(sigName: "selection-get", callback: (($obj: SwitchModelButton, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    emit(sigName: "selection-get", data: Gtk.SelectionData, info: number, time: number): void
+    connect(sigName: "selection-notify-event", callback: (($obj: SwitchModelButton, event: Gdk.EventSelection) => boolean)): number
+    connect_after(sigName: "selection-notify-event", callback: (($obj: SwitchModelButton, event: Gdk.EventSelection) => boolean)): number
+    emit(sigName: "selection-notify-event", event: Gdk.EventSelection): void
+    connect(sigName: "selection-received", callback: (($obj: SwitchModelButton, data: Gtk.SelectionData, time: number) => void)): number
+    connect_after(sigName: "selection-received", callback: (($obj: SwitchModelButton, data: Gtk.SelectionData, time: number) => void)): number
+    emit(sigName: "selection-received", data: Gtk.SelectionData, time: number): void
+    connect(sigName: "selection-request-event", callback: (($obj: SwitchModelButton, event: Gdk.EventSelection) => boolean)): number
+    connect_after(sigName: "selection-request-event", callback: (($obj: SwitchModelButton, event: Gdk.EventSelection) => boolean)): number
+    emit(sigName: "selection-request-event", event: Gdk.EventSelection): void
+    connect(sigName: "show", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "show", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "show"): void
+    connect(sigName: "show-help", callback: (($obj: SwitchModelButton, help_type: Gtk.WidgetHelpType) => boolean)): number
+    connect_after(sigName: "show-help", callback: (($obj: SwitchModelButton, help_type: Gtk.WidgetHelpType) => boolean)): number
+    emit(sigName: "show-help", help_type: Gtk.WidgetHelpType): void
+    connect(sigName: "size-allocate", callback: (($obj: SwitchModelButton, allocation: Gtk.Allocation) => void)): number
+    connect_after(sigName: "size-allocate", callback: (($obj: SwitchModelButton, allocation: Gtk.Allocation) => void)): number
+    emit(sigName: "size-allocate", allocation: Gtk.Allocation): void
+    connect(sigName: "state-changed", callback: (($obj: SwitchModelButton, state: Gtk.StateType) => void)): number
+    connect_after(sigName: "state-changed", callback: (($obj: SwitchModelButton, state: Gtk.StateType) => void)): number
+    emit(sigName: "state-changed", state: Gtk.StateType): void
+    connect(sigName: "state-flags-changed", callback: (($obj: SwitchModelButton, flags: Gtk.StateFlags) => void)): number
+    connect_after(sigName: "state-flags-changed", callback: (($obj: SwitchModelButton, flags: Gtk.StateFlags) => void)): number
+    emit(sigName: "state-flags-changed", flags: Gtk.StateFlags): void
+    connect(sigName: "style-set", callback: (($obj: SwitchModelButton, previous_style?: Gtk.Style | null) => void)): number
+    connect_after(sigName: "style-set", callback: (($obj: SwitchModelButton, previous_style?: Gtk.Style | null) => void)): number
+    emit(sigName: "style-set", previous_style?: Gtk.Style | null): void
+    connect(sigName: "style-updated", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "style-updated", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "style-updated"): void
+    connect(sigName: "touch-event", callback: (($obj: SwitchModelButton, object: Gdk.Event) => boolean)): number
+    connect_after(sigName: "touch-event", callback: (($obj: SwitchModelButton, object: Gdk.Event) => boolean)): number
+    emit(sigName: "touch-event", object: Gdk.Event): void
+    connect(sigName: "unmap", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "unmap", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "unmap"): void
+    connect(sigName: "unmap-event", callback: (($obj: SwitchModelButton, event: Gdk.EventAny) => boolean)): number
+    connect_after(sigName: "unmap-event", callback: (($obj: SwitchModelButton, event: Gdk.EventAny) => boolean)): number
+    emit(sigName: "unmap-event", event: Gdk.EventAny): void
+    connect(sigName: "unrealize", callback: (($obj: SwitchModelButton) => void)): number
+    connect_after(sigName: "unrealize", callback: (($obj: SwitchModelButton) => void)): number
+    emit(sigName: "unrealize"): void
+    connect(sigName: "visibility-notify-event", callback: (($obj: SwitchModelButton, event: Gdk.EventVisibility) => boolean)): number
+    connect_after(sigName: "visibility-notify-event", callback: (($obj: SwitchModelButton, event: Gdk.EventVisibility) => boolean)): number
+    emit(sigName: "visibility-notify-event", event: Gdk.EventVisibility): void
+    connect(sigName: "window-state-event", callback: (($obj: SwitchModelButton, event: Gdk.EventWindowState) => boolean)): number
+    connect_after(sigName: "window-state-event", callback: (($obj: SwitchModelButton, event: Gdk.EventWindowState) => boolean)): number
+    emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::text", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::text", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::description", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::description", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::active", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::active", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::draw-indicator", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::draw-indicator", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::inconsistent", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::inconsistent", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::always-show-image", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::always-show-image", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::image", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::image", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::image-position", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::image-position", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::label", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::label", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::relief", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::relief", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::use-stock", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::use-stock", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::use-underline", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::use-underline", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::xalign", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::xalign", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::yalign", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::yalign", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::border-width", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::border-width", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::child", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::child", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::resize-mode", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::resize-mode", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::app-paintable", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::app-paintable", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::can-default", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::can-default", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::can-focus", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::can-focus", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::composite-child", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::composite-child", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::double-buffered", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::double-buffered", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::events", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::events", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expand", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expand", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::focus-on-click", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::focus-on-click", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::halign", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::halign", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-default", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-default", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-focus", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-focus", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-tooltip", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-tooltip", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::height-request", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::height-request", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::hexpand", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::hexpand", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::hexpand-set", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::hexpand-set", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::is-focus", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::is-focus", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-bottom", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-bottom", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-end", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-end", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-left", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-left", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-right", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-right", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-start", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-start", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-top", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-top", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::name", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::name", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::no-show-all", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::no-show-all", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::opacity", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::opacity", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::parent", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::receives-default", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::receives-default", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::scale-factor", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::scale-factor", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::sensitive", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::sensitive", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::style", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::style", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::tooltip-markup", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::tooltip-markup", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::tooltip-text", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::tooltip-text", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::valign", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::valign", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::vexpand", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::vexpand", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::vexpand-set", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::vexpand-set", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::visible", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::visible", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::width-request", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::width-request", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::window", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::window", callback: (($obj: SwitchModelButton, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: SwitchModelButton_ConstructProps)
+    _init (config?: SwitchModelButton_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static new(text: string): SwitchModelButton
+    static new(): SwitchModelButton
+    static $gtype: GObject.Type
+}
+export interface ValidatedEntry_ConstructProps extends Gtk.Entry_ConstructProps {
+    is_valid?: boolean
+    min_length?: number
+    regex?: GLib.Regex
+}
+class ValidatedEntry {
+    /* Properties of Granite-1.0.Granite.ValidatedEntry */
+    is_valid: boolean
+    min_length: number
+    regex: GLib.Regex
+    /* Properties of Gtk-3.0.Gtk.Entry */
+    activates_default: boolean
+    attributes: Pango.AttrList
+    buffer: Gtk.EntryBuffer
+    caps_lock_warning: boolean
+    completion: Gtk.EntryCompletion
+    readonly cursor_position: number
+    editable: boolean
+    enable_emoji_completion: boolean
+    has_frame: boolean
+    im_module: string
+    inner_border: Gtk.Border
+    input_hints: Gtk.InputHints
+    input_purpose: Gtk.InputPurpose
+    invisible_char: number
+    invisible_char_set: boolean
+    max_length: number
+    max_width_chars: number
+    overwrite_mode: boolean
+    placeholder_text: string
+    populate_all: boolean
+    primary_icon_activatable: boolean
+    primary_icon_gicon: Gio.Icon
+    primary_icon_name: string
+    primary_icon_pixbuf: GdkPixbuf.Pixbuf
+    primary_icon_sensitive: boolean
+    primary_icon_stock: string
+    readonly primary_icon_storage_type: Gtk.ImageType
+    primary_icon_tooltip_markup: string
+    primary_icon_tooltip_text: string
+    progress_fraction: number
+    progress_pulse_step: number
+    readonly scroll_offset: number
+    secondary_icon_activatable: boolean
+    secondary_icon_gicon: Gio.Icon
+    secondary_icon_name: string
+    secondary_icon_pixbuf: GdkPixbuf.Pixbuf
+    secondary_icon_sensitive: boolean
+    secondary_icon_stock: string
+    readonly secondary_icon_storage_type: Gtk.ImageType
+    secondary_icon_tooltip_markup: string
+    secondary_icon_tooltip_text: string
+    readonly selection_bound: number
+    shadow_type: Gtk.ShadowType
+    show_emoji_icon: boolean
+    tabs: Pango.TabArray
+    text: string
+    readonly text_length: number
+    truncate_multiline: boolean
+    visibility: boolean
+    width_chars: number
+    xalign: number
+    /* Properties of Gtk-3.0.Gtk.Widget */
+    app_paintable: boolean
+    can_default: boolean
+    can_focus: boolean
+    readonly composite_child: boolean
+    double_buffered: boolean
+    events: Gdk.EventMask
+    expand: boolean
+    focus_on_click: boolean
+    halign: Gtk.Align
+    has_default: boolean
+    has_focus: boolean
+    has_tooltip: boolean
+    height_request: number
+    hexpand: boolean
+    hexpand_set: boolean
+    is_focus: boolean
+    margin: number
+    margin_bottom: number
+    margin_end: number
+    margin_left: number
+    margin_right: number
+    margin_start: number
+    margin_top: number
+    name: string
+    no_show_all: boolean
+    opacity: number
+    parent: Gtk.Container
+    receives_default: boolean
+    readonly scale_factor: number
+    sensitive: boolean
+    style: Gtk.Style
+    tooltip_markup: string
+    tooltip_text: string
+    valign: Gtk.Align
+    vexpand: boolean
+    vexpand_set: boolean
+    visible: boolean
+    width_request: number
+    readonly window: Gdk.Window
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    parent_instance: GObject.InitiallyUnowned
+    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
+    g_type_instance: GObject.TypeInstance
+    /* Methods of Granite-1.0.Granite.ValidatedEntry */
+    get_is_valid(): boolean
+    set_is_valid(value: boolean): void
+    get_min_length(): number
+    set_min_length(value: number): void
+    get_regex(): GLib.Regex
+    set_regex(value: GLib.Regex): void
+    /* Methods of Gtk-3.0.Gtk.Entry */
+    get_activates_default(): boolean
+    get_alignment(): number
+    get_attributes(): Pango.AttrList | null
+    get_buffer(): Gtk.EntryBuffer
+    get_completion(): Gtk.EntryCompletion
+    get_current_icon_drag_source(): number
+    get_cursor_hadjustment(): Gtk.Adjustment | null
+    get_has_frame(): boolean
+    get_icon_activatable(icon_pos: Gtk.EntryIconPosition): boolean
+    get_icon_area(icon_pos: Gtk.EntryIconPosition): /* icon_area */ Gdk.Rectangle
+    get_icon_at_pos(x: number, y: number): number
+    get_icon_gicon(icon_pos: Gtk.EntryIconPosition): Gio.Icon | null
+    get_icon_name(icon_pos: Gtk.EntryIconPosition): string | null
+    get_icon_pixbuf(icon_pos: Gtk.EntryIconPosition): GdkPixbuf.Pixbuf | null
+    get_icon_sensitive(icon_pos: Gtk.EntryIconPosition): boolean
+    get_icon_stock(icon_pos: Gtk.EntryIconPosition): string
+    get_icon_storage_type(icon_pos: Gtk.EntryIconPosition): Gtk.ImageType
+    get_icon_tooltip_markup(icon_pos: Gtk.EntryIconPosition): string | null
+    get_icon_tooltip_text(icon_pos: Gtk.EntryIconPosition): string | null
+    get_inner_border(): Gtk.Border | null
+    get_input_hints(): Gtk.InputHints
+    get_input_purpose(): Gtk.InputPurpose
+    get_invisible_char(): number
+    get_layout(): Pango.Layout
+    get_layout_offsets(): [ /* x */ number | null, /* y */ number | null ]
+    get_max_length(): number
+    get_max_width_chars(): number
+    get_overwrite_mode(): boolean
+    get_placeholder_text(): string
+    get_progress_fraction(): number
+    get_progress_pulse_step(): number
+    get_tabs(): Pango.TabArray | null
+    get_text(): string
+    get_text_area(): /* text_area */ Gdk.Rectangle
+    get_text_length(): number
+    get_visibility(): boolean
+    get_width_chars(): number
+    grab_focus_without_selecting(): void
+    im_context_filter_keypress(event: Gdk.EventKey): boolean
+    layout_index_to_text_index(layout_index: number): number
+    progress_pulse(): void
+    reset_im_context(): void
+    set_activates_default(setting: boolean): void
+    set_alignment(xalign: number): void
+    set_attributes(attrs: Pango.AttrList): void
+    set_buffer(buffer: Gtk.EntryBuffer): void
+    set_completion(completion?: Gtk.EntryCompletion | null): void
+    set_cursor_hadjustment(adjustment?: Gtk.Adjustment | null): void
+    set_has_frame(setting: boolean): void
+    set_icon_activatable(icon_pos: Gtk.EntryIconPosition, activatable: boolean): void
+    set_icon_drag_source(icon_pos: Gtk.EntryIconPosition, target_list: Gtk.TargetList, actions: Gdk.DragAction): void
+    set_icon_from_gicon(icon_pos: Gtk.EntryIconPosition, icon?: Gio.Icon | null): void
+    set_icon_from_icon_name(icon_pos: Gtk.EntryIconPosition, icon_name?: string | null): void
+    set_icon_from_pixbuf(icon_pos: Gtk.EntryIconPosition, pixbuf?: GdkPixbuf.Pixbuf | null): void
+    set_icon_from_stock(icon_pos: Gtk.EntryIconPosition, stock_id?: string | null): void
+    set_icon_sensitive(icon_pos: Gtk.EntryIconPosition, sensitive: boolean): void
+    set_icon_tooltip_markup(icon_pos: Gtk.EntryIconPosition, tooltip?: string | null): void
+    set_icon_tooltip_text(icon_pos: Gtk.EntryIconPosition, tooltip?: string | null): void
+    set_inner_border(border?: Gtk.Border | null): void
+    set_input_hints(hints: Gtk.InputHints): void
+    set_input_purpose(purpose: Gtk.InputPurpose): void
+    set_invisible_char(ch: number): void
+    set_max_length(max: number): void
+    set_max_width_chars(n_chars: number): void
+    set_overwrite_mode(overwrite: boolean): void
+    set_placeholder_text(text?: string | null): void
+    set_progress_fraction(fraction: number): void
+    set_progress_pulse_step(fraction: number): void
+    set_tabs(tabs: Pango.TabArray): void
+    set_text(text: string): void
+    set_visibility(visible: boolean): void
+    set_width_chars(n_chars: number): void
+    text_index_to_layout_index(text_index: number): number
+    unset_invisible_char(): void
+    /* Methods of Gtk-3.0.Gtk.Widget */
+    activate(): boolean
+    add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
+    add_device_events(device: Gdk.Device, events: Gdk.EventMask): void
+    add_events(events: number): void
+    add_mnemonic_label(label: Gtk.Widget): void
+    add_tick_callback(callback: Gtk.TickCallback): number
+    can_activate_accel(signal_id: number): boolean
+    child_focus(direction: Gtk.DirectionType): boolean
+    child_notify(child_property: string): void
+    class_path(): [ /* path_length */ number | null, /* path */ string | null, /* path_reversed */ string | null ]
+    compute_expand(orientation: Gtk.Orientation): boolean
+    create_pango_context(): Pango.Context
+    create_pango_layout(text?: string | null): Pango.Layout
+    destroy(): void
+    destroyed(widget_pointer: Gtk.Widget): /* widget_pointer */ Gtk.Widget
+    device_is_shadowed(device: Gdk.Device): boolean
+    drag_begin(targets: Gtk.TargetList, actions: Gdk.DragAction, button: number, event?: Gdk.Event | null): Gdk.DragContext
+    drag_begin_with_coordinates(targets: Gtk.TargetList, actions: Gdk.DragAction, button: number, event: Gdk.Event | null, x: number, y: number): Gdk.DragContext
+    drag_check_threshold(start_x: number, start_y: number, current_x: number, current_y: number): boolean
+    drag_dest_add_image_targets(): void
+    drag_dest_add_text_targets(): void
+    drag_dest_add_uri_targets(): void
+    drag_dest_find_target(context: Gdk.DragContext, target_list?: Gtk.TargetList | null): Gdk.Atom
+    drag_dest_get_target_list(): Gtk.TargetList | null
+    drag_dest_get_track_motion(): boolean
+    drag_dest_set(flags: Gtk.DestDefaults, targets: Gtk.TargetEntry[] | null, actions: Gdk.DragAction): void
+    drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void
+    drag_dest_set_target_list(target_list?: Gtk.TargetList | null): void
+    drag_dest_set_track_motion(track_motion: boolean): void
+    drag_dest_unset(): void
+    drag_get_data(context: Gdk.DragContext, target: Gdk.Atom, time_: number): void
+    drag_highlight(): void
+    drag_source_add_image_targets(): void
+    drag_source_add_text_targets(): void
+    drag_source_add_uri_targets(): void
+    drag_source_get_target_list(): Gtk.TargetList | null
+    drag_source_set(start_button_mask: Gdk.ModifierType, targets: Gtk.TargetEntry[] | null, actions: Gdk.DragAction): void
+    drag_source_set_icon_gicon(icon: Gio.Icon): void
+    drag_source_set_icon_name(icon_name: string): void
+    drag_source_set_icon_pixbuf(pixbuf: GdkPixbuf.Pixbuf): void
+    drag_source_set_icon_stock(stock_id: string): void
+    drag_source_set_target_list(target_list?: Gtk.TargetList | null): void
+    drag_source_unset(): void
+    drag_unhighlight(): void
+    draw(cr: cairo.Context): void
+    ensure_style(): void
+    error_bell(): void
+    event(event: Gdk.Event): boolean
+    freeze_child_notify(): void
+    get_accessible(): Atk.Object
+    get_action_group(prefix: string): Gio.ActionGroup | null
+    get_allocated_baseline(): number
+    get_allocated_height(): number
+    get_allocated_size(): [ /* allocation */ Gtk.Allocation, /* baseline */ number | null ]
+    get_allocated_width(): number
+    get_allocation(): /* allocation */ Gtk.Allocation
+    get_ancestor(widget_type: GObject.Type): Gtk.Widget | null
+    get_app_paintable(): boolean
+    get_can_default(): boolean
+    get_can_focus(): boolean
+    get_child_requisition(): /* requisition */ Gtk.Requisition
+    get_child_visible(): boolean
+    get_clip(): /* clip */ Gtk.Allocation
+    get_clipboard(selection: Gdk.Atom): Gtk.Clipboard
+    get_composite_name(): string
+    get_device_enabled(device: Gdk.Device): boolean
+    get_device_events(device: Gdk.Device): Gdk.EventMask
+    get_direction(): Gtk.TextDirection
+    get_display(): Gdk.Display
+    get_double_buffered(): boolean
+    get_events(): number
+    get_focus_on_click(): boolean
+    get_font_map(): Pango.FontMap | null
+    get_font_options(): cairo.FontOptions | null
+    get_frame_clock(): Gdk.FrameClock | null
+    get_halign(): Gtk.Align
+    get_has_tooltip(): boolean
+    get_has_window(): boolean
+    get_hexpand(): boolean
+    get_hexpand_set(): boolean
+    get_mapped(): boolean
+    get_margin_bottom(): number
+    get_margin_end(): number
+    get_margin_left(): number
+    get_margin_right(): number
+    get_margin_start(): number
+    get_margin_top(): number
+    get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType
+    get_modifier_style(): Gtk.RcStyle
+    get_name(): string
+    get_no_show_all(): boolean
+    get_opacity(): number
+    get_pango_context(): Pango.Context
+    get_parent(): Gtk.Widget | null
+    get_parent_window(): Gdk.Window | null
+    get_path(): Gtk.WidgetPath
+    get_pointer(): [ /* x */ number | null, /* y */ number | null ]
+    get_preferred_height(): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    get_preferred_height_and_baseline_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null, /* minimum_baseline */ number | null, /* natural_baseline */ number | null ]
+    get_preferred_height_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    get_preferred_size(): [ /* minimum_size */ Gtk.Requisition | null, /* natural_size */ Gtk.Requisition | null ]
+    get_preferred_width(): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    get_preferred_width_for_height(height: number): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    get_realized(): boolean
+    get_receives_default(): boolean
+    get_request_mode(): Gtk.SizeRequestMode
+    get_requisition(): /* requisition */ Gtk.Requisition
+    get_root_window(): Gdk.Window
+    get_scale_factor(): number
+    get_screen(): Gdk.Screen
+    get_sensitive(): boolean
+    get_settings(): Gtk.Settings
+    get_size_request(): [ /* width */ number | null, /* height */ number | null ]
+    get_state(): Gtk.StateType
+    get_state_flags(): Gtk.StateFlags
+    get_style(): Gtk.Style
+    get_style_context(): Gtk.StyleContext
+    get_support_multidevice(): boolean
+    get_template_child(widget_type: GObject.Type, name: string): GObject.Object
+    get_tooltip_markup(): string | null
+    get_tooltip_text(): string | null
+    get_tooltip_window(): Gtk.Window
+    get_toplevel(): Gtk.Widget
+    get_valign(): Gtk.Align
+    get_valign_with_baseline(): Gtk.Align
+    get_vexpand(): boolean
+    get_vexpand_set(): boolean
+    get_visible(): boolean
+    get_visual(): Gdk.Visual
+    get_window(): Gdk.Window | null
+    grab_add(): void
+    grab_default(): void
+    grab_focus(): void
+    grab_remove(): void
+    has_grab(): boolean
+    has_rc_style(): boolean
+    has_screen(): boolean
+    has_visible_focus(): boolean
+    hide(): void
+    hide_on_delete(): boolean
+    in_destruction(): boolean
+    init_template(): void
+    input_shape_combine_region(region?: cairo.Region | null): void
+    insert_action_group(name: string, group?: Gio.ActionGroup | null): void
+    intersect(area: Gdk.Rectangle): [ /* returnType */ boolean, /* intersection */ Gdk.Rectangle | null ]
+    is_ancestor(ancestor: Gtk.Widget): boolean
+    is_composited(): boolean
+    is_drawable(): boolean
+    is_sensitive(): boolean
+    is_toplevel(): boolean
+    is_visible(): boolean
+    keynav_failed(direction: Gtk.DirectionType): boolean
+    list_accel_closures(): Function[]
+    list_action_prefixes(): string[]
+    list_mnemonic_labels(): Gtk.Widget[]
+    map(): void
+    mnemonic_activate(group_cycling: boolean): boolean
+    modify_base(state: Gtk.StateType, color?: Gdk.Color | null): void
+    modify_bg(state: Gtk.StateType, color?: Gdk.Color | null): void
+    modify_cursor(primary?: Gdk.Color | null, secondary?: Gdk.Color | null): void
+    modify_fg(state: Gtk.StateType, color?: Gdk.Color | null): void
+    modify_font(font_desc?: Pango.FontDescription | null): void
+    modify_style(style: Gtk.RcStyle): void
+    modify_text(state: Gtk.StateType, color?: Gdk.Color | null): void
+    override_background_color(state: Gtk.StateFlags, color?: Gdk.RGBA | null): void
+    override_color(state: Gtk.StateFlags, color?: Gdk.RGBA | null): void
+    override_cursor(cursor?: Gdk.RGBA | null, secondary_cursor?: Gdk.RGBA | null): void
+    override_font(font_desc?: Pango.FontDescription | null): void
+    override_symbolic_color(name: string, color?: Gdk.RGBA | null): void
+    path(): [ /* path_length */ number | null, /* path */ string | null, /* path_reversed */ string | null ]
+    queue_allocate(): void
+    queue_compute_expand(): void
+    queue_draw(): void
+    queue_draw_area(x: number, y: number, width: number, height: number): void
+    queue_draw_region(region: cairo.Region): void
+    queue_resize(): void
+    queue_resize_no_redraw(): void
+    realize(): void
+    region_intersect(region: cairo.Region): cairo.Region
+    register_window(window: Gdk.Window): void
+    remove_accelerator(accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean
+    remove_mnemonic_label(label: Gtk.Widget): void
+    remove_tick_callback(id: number): void
+    render_icon(stock_id: string, size: number, detail?: string | null): GdkPixbuf.Pixbuf | null
+    render_icon_pixbuf(stock_id: string, size: number): GdkPixbuf.Pixbuf | null
+    reparent(new_parent: Gtk.Widget): void
+    reset_rc_styles(): void
+    reset_style(): void
+    send_expose(event: Gdk.Event): number
+    send_focus_change(event: Gdk.Event): boolean
+    set_accel_path(accel_path?: string | null, accel_group?: Gtk.AccelGroup | null): void
+    set_allocation(allocation: Gtk.Allocation): void
+    set_app_paintable(app_paintable: boolean): void
+    set_can_default(can_default: boolean): void
+    set_can_focus(can_focus: boolean): void
+    set_child_visible(is_visible: boolean): void
+    set_clip(clip: Gtk.Allocation): void
+    set_composite_name(name: string): void
+    set_device_enabled(device: Gdk.Device, enabled: boolean): void
+    set_device_events(device: Gdk.Device, events: Gdk.EventMask): void
+    set_direction(dir: Gtk.TextDirection): void
+    set_double_buffered(double_buffered: boolean): void
+    set_events(events: number): void
+    set_focus_on_click(focus_on_click: boolean): void
+    set_font_map(font_map?: Pango.FontMap | null): void
+    set_font_options(options?: cairo.FontOptions | null): void
+    set_halign(align: Gtk.Align): void
+    set_has_tooltip(has_tooltip: boolean): void
+    set_has_window(has_window: boolean): void
+    set_hexpand(expand: boolean): void
+    set_hexpand_set(set: boolean): void
+    set_mapped(mapped: boolean): void
+    set_margin_bottom(margin: number): void
+    set_margin_end(margin: number): void
+    set_margin_left(margin: number): void
+    set_margin_right(margin: number): void
+    set_margin_start(margin: number): void
+    set_margin_top(margin: number): void
+    set_name(name: string): void
+    set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
+    set_parent(parent: Gtk.Widget): void
+    set_parent_window(parent_window: Gdk.Window): void
+    set_realized(realized: boolean): void
+    set_receives_default(receives_default: boolean): void
+    set_redraw_on_allocate(redraw_on_allocate: boolean): void
+    set_sensitive(sensitive: boolean): void
+    set_size_request(width: number, height: number): void
+    set_state(state: Gtk.StateType): void
+    set_state_flags(flags: Gtk.StateFlags, clear: boolean): void
+    set_style(style?: Gtk.Style | null): void
+    set_support_multidevice(support_multidevice: boolean): void
+    set_tooltip_markup(markup?: string | null): void
+    set_tooltip_text(text?: string | null): void
+    set_tooltip_window(custom_window?: Gtk.Window | null): void
+    set_valign(align: Gtk.Align): void
+    set_vexpand(expand: boolean): void
+    set_vexpand_set(set: boolean): void
+    set_visible(visible: boolean): void
+    set_visual(visual?: Gdk.Visual | null): void
+    set_window(window: Gdk.Window): void
+    shape_combine_region(region?: cairo.Region | null): void
+    show(): void
+    show_all(): void
+    show_now(): void
+    size_allocate(allocation: Gtk.Allocation): void
+    size_allocate_with_baseline(allocation: Gtk.Allocation, baseline: number): void
+    size_request(): /* requisition */ Gtk.Requisition
+    style_attach(): void
+    style_get_property(property_name: string, value: any): void
+    thaw_child_notify(): void
+    translate_coordinates(dest_widget: Gtk.Widget, src_x: number, src_y: number): [ /* returnType */ boolean, /* dest_x */ number | null, /* dest_y */ number | null ]
+    trigger_tooltip_query(): void
+    unmap(): void
+    unparent(): void
+    unrealize(): void
+    unregister_window(window: Gdk.Window): void
+    unset_state_flags(flags: Gtk.StateFlags): void
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of Gtk-3.0.Gtk.Entry */
+    vfunc_activate(): void
+    vfunc_backspace(): void
+    vfunc_copy_clipboard(): void
+    vfunc_cut_clipboard(): void
+    vfunc_delete_from_cursor(type: Gtk.DeleteType, count: number): void
+    vfunc_get_frame_size(x: number, y: number, width: number, height: number): void
+    vfunc_get_text_area_size(x: number, y: number, width: number, height: number): void
+    vfunc_insert_at_cursor(str: string): void
+    vfunc_insert_emoji(): void
+    vfunc_move_cursor(step: Gtk.MovementStep, count: number, extend_selection: boolean): void
+    vfunc_paste_clipboard(): void
+    vfunc_populate_popup(popup: Gtk.Widget): void
+    vfunc_toggle_overwrite(): void
+    /* Virtual methods of Gtk-3.0.Gtk.Widget */
+    vfunc_adjust_baseline_allocation(baseline: number): void
+    vfunc_adjust_baseline_request(minimum_baseline: number, natural_baseline: number): void
+    vfunc_adjust_size_allocation(orientation: Gtk.Orientation, minimum_size: number, natural_size: number, allocated_pos: number, allocated_size: number): void
+    vfunc_adjust_size_request(orientation: Gtk.Orientation, minimum_size: number, natural_size: number): void
+    vfunc_button_press_event(event: Gdk.EventButton): boolean
+    vfunc_button_release_event(event: Gdk.EventButton): boolean
+    vfunc_can_activate_accel(signal_id: number): boolean
+    vfunc_child_notify(child_property: GObject.ParamSpec): void
+    vfunc_composited_changed(): void
+    vfunc_compute_expand(hexpand_p: boolean, vexpand_p: boolean): void
+    vfunc_configure_event(event: Gdk.EventConfigure): boolean
+    vfunc_damage_event(event: Gdk.EventExpose): boolean
+    vfunc_delete_event(event: Gdk.EventAny): boolean
+    vfunc_destroy(): void
+    vfunc_destroy_event(event: Gdk.EventAny): boolean
+    vfunc_direction_changed(previous_direction: Gtk.TextDirection): void
+    vfunc_dispatch_child_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_drag_begin(context: Gdk.DragContext): void
+    vfunc_drag_data_delete(context: Gdk.DragContext): void
+    vfunc_drag_data_get(context: Gdk.DragContext, selection_data: Gtk.SelectionData, info: number, time_: number): void
+    vfunc_drag_data_received(context: Gdk.DragContext, x: number, y: number, selection_data: Gtk.SelectionData, info: number, time_: number): void
+    vfunc_drag_drop(context: Gdk.DragContext, x: number, y: number, time_: number): boolean
+    vfunc_drag_end(context: Gdk.DragContext): void
+    vfunc_drag_failed(context: Gdk.DragContext, result: Gtk.DragResult): boolean
+    vfunc_drag_leave(context: Gdk.DragContext, time_: number): void
+    vfunc_drag_motion(context: Gdk.DragContext, x: number, y: number, time_: number): boolean
+    vfunc_draw(cr: cairo.Context): boolean
+    vfunc_enter_notify_event(event: Gdk.EventCrossing): boolean
+    vfunc_event(event: Gdk.Event): boolean
+    vfunc_focus(direction: Gtk.DirectionType): boolean
+    vfunc_focus_in_event(event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(event: Gdk.EventFocus): boolean
+    vfunc_get_accessible(): Atk.Object
+    vfunc_get_preferred_height(): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    vfunc_get_preferred_height_and_baseline_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null, /* minimum_baseline */ number | null, /* natural_baseline */ number | null ]
+    vfunc_get_preferred_height_for_width(width: number): [ /* minimum_height */ number | null, /* natural_height */ number | null ]
+    vfunc_get_preferred_width(): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    vfunc_get_preferred_width_for_height(height: number): [ /* minimum_width */ number | null, /* natural_width */ number | null ]
+    vfunc_get_request_mode(): Gtk.SizeRequestMode
+    vfunc_grab_broken_event(event: Gdk.EventGrabBroken): boolean
+    vfunc_grab_focus(): void
+    vfunc_grab_notify(was_grabbed: boolean): void
+    vfunc_hide(): void
+    vfunc_hierarchy_changed(previous_toplevel: Gtk.Widget): void
+    vfunc_key_press_event(event: Gdk.EventKey): boolean
+    vfunc_key_release_event(event: Gdk.EventKey): boolean
+    vfunc_keynav_failed(direction: Gtk.DirectionType): boolean
+    vfunc_leave_notify_event(event: Gdk.EventCrossing): boolean
+    vfunc_map(): void
+    vfunc_map_event(event: Gdk.EventAny): boolean
+    vfunc_mnemonic_activate(group_cycling: boolean): boolean
+    vfunc_motion_notify_event(event: Gdk.EventMotion): boolean
+    vfunc_move_focus(direction: Gtk.DirectionType): void
+    vfunc_parent_set(previous_parent: Gtk.Widget): void
+    vfunc_popup_menu(): boolean
+    vfunc_property_notify_event(event: Gdk.EventProperty): boolean
+    vfunc_proximity_in_event(event: Gdk.EventProximity): boolean
+    vfunc_proximity_out_event(event: Gdk.EventProximity): boolean
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_queue_draw_region(region: cairo.Region): void
+    vfunc_realize(): void
+    vfunc_screen_changed(previous_screen: Gdk.Screen): void
+    vfunc_scroll_event(event: Gdk.EventScroll): boolean
+    vfunc_selection_clear_event(event: Gdk.EventSelection): boolean
+    vfunc_selection_get(selection_data: Gtk.SelectionData, info: number, time_: number): void
+    vfunc_selection_notify_event(event: Gdk.EventSelection): boolean
+    vfunc_selection_received(selection_data: Gtk.SelectionData, time_: number): void
+    vfunc_selection_request_event(event: Gdk.EventSelection): boolean
+    vfunc_show(): void
+    vfunc_show_all(): void
+    vfunc_show_help(help_type: Gtk.WidgetHelpType): boolean
+    vfunc_size_allocate(allocation: Gtk.Allocation): void
+    vfunc_state_changed(previous_state: Gtk.StateType): void
+    vfunc_state_flags_changed(previous_state_flags: Gtk.StateFlags): void
+    vfunc_style_set(previous_style: Gtk.Style): void
+    vfunc_style_updated(): void
+    vfunc_touch_event(event: Gdk.EventTouch): boolean
+    vfunc_unmap(): void
+    vfunc_unmap_event(event: Gdk.EventAny): boolean
+    vfunc_unrealize(): void
+    vfunc_visibility_notify_event(event: Gdk.EventVisibility): boolean
+    vfunc_window_state_event(event: Gdk.EventWindowState): boolean
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gtk-3.0.Gtk.Entry */
+    connect(sigName: "activate", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "activate", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "activate"): void
+    connect(sigName: "backspace", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "backspace", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "backspace"): void
+    connect(sigName: "copy-clipboard", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "copy-clipboard", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "copy-clipboard"): void
+    connect(sigName: "cut-clipboard", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "cut-clipboard", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "cut-clipboard"): void
+    connect(sigName: "delete-from-cursor", callback: (($obj: ValidatedEntry, type: Gtk.DeleteType, count: number) => void)): number
+    connect_after(sigName: "delete-from-cursor", callback: (($obj: ValidatedEntry, type: Gtk.DeleteType, count: number) => void)): number
+    emit(sigName: "delete-from-cursor", type: Gtk.DeleteType, count: number): void
+    connect(sigName: "icon-press", callback: (($obj: ValidatedEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    connect_after(sigName: "icon-press", callback: (($obj: ValidatedEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    emit(sigName: "icon-press", icon_pos: Gtk.EntryIconPosition, event: Gdk.Event): void
+    connect(sigName: "icon-release", callback: (($obj: ValidatedEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    connect_after(sigName: "icon-release", callback: (($obj: ValidatedEntry, icon_pos: Gtk.EntryIconPosition, event: Gdk.Event) => void)): number
+    emit(sigName: "icon-release", icon_pos: Gtk.EntryIconPosition, event: Gdk.Event): void
+    connect(sigName: "insert-at-cursor", callback: (($obj: ValidatedEntry, string: string) => void)): number
+    connect_after(sigName: "insert-at-cursor", callback: (($obj: ValidatedEntry, string: string) => void)): number
+    emit(sigName: "insert-at-cursor", string: string): void
+    connect(sigName: "insert-emoji", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "insert-emoji", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "insert-emoji"): void
+    connect(sigName: "move-cursor", callback: (($obj: ValidatedEntry, step: Gtk.MovementStep, count: number, extend_selection: boolean) => void)): number
+    connect_after(sigName: "move-cursor", callback: (($obj: ValidatedEntry, step: Gtk.MovementStep, count: number, extend_selection: boolean) => void)): number
+    emit(sigName: "move-cursor", step: Gtk.MovementStep, count: number, extend_selection: boolean): void
+    connect(sigName: "paste-clipboard", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "paste-clipboard", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "paste-clipboard"): void
+    connect(sigName: "populate-popup", callback: (($obj: ValidatedEntry, widget: Gtk.Widget) => void)): number
+    connect_after(sigName: "populate-popup", callback: (($obj: ValidatedEntry, widget: Gtk.Widget) => void)): number
+    emit(sigName: "populate-popup", widget: Gtk.Widget): void
+    connect(sigName: "preedit-changed", callback: (($obj: ValidatedEntry, preedit: string) => void)): number
+    connect_after(sigName: "preedit-changed", callback: (($obj: ValidatedEntry, preedit: string) => void)): number
+    emit(sigName: "preedit-changed", preedit: string): void
+    connect(sigName: "toggle-overwrite", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "toggle-overwrite", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "toggle-overwrite"): void
+    /* Signals of Gtk-3.0.Gtk.Widget */
+    connect(sigName: "accel-closures-changed", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "accel-closures-changed", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "accel-closures-changed"): void
+    connect(sigName: "button-press-event", callback: (($obj: ValidatedEntry, event: Gdk.EventButton) => boolean)): number
+    connect_after(sigName: "button-press-event", callback: (($obj: ValidatedEntry, event: Gdk.EventButton) => boolean)): number
+    emit(sigName: "button-press-event", event: Gdk.EventButton): void
+    connect(sigName: "button-release-event", callback: (($obj: ValidatedEntry, event: Gdk.EventButton) => boolean)): number
+    connect_after(sigName: "button-release-event", callback: (($obj: ValidatedEntry, event: Gdk.EventButton) => boolean)): number
+    emit(sigName: "button-release-event", event: Gdk.EventButton): void
+    connect(sigName: "can-activate-accel", callback: (($obj: ValidatedEntry, signal_id: number) => boolean)): number
+    connect_after(sigName: "can-activate-accel", callback: (($obj: ValidatedEntry, signal_id: number) => boolean)): number
+    emit(sigName: "can-activate-accel", signal_id: number): void
+    connect(sigName: "child-notify", callback: (($obj: ValidatedEntry, child_property: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "child-notify", callback: (($obj: ValidatedEntry, child_property: GObject.ParamSpec) => void)): number
+    emit(sigName: "child-notify", child_property: GObject.ParamSpec): void
+    connect(sigName: "composited-changed", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "composited-changed", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "composited-changed"): void
+    connect(sigName: "configure-event", callback: (($obj: ValidatedEntry, event: Gdk.EventConfigure) => boolean)): number
+    connect_after(sigName: "configure-event", callback: (($obj: ValidatedEntry, event: Gdk.EventConfigure) => boolean)): number
+    emit(sigName: "configure-event", event: Gdk.EventConfigure): void
+    connect(sigName: "damage-event", callback: (($obj: ValidatedEntry, event: Gdk.EventExpose) => boolean)): number
+    connect_after(sigName: "damage-event", callback: (($obj: ValidatedEntry, event: Gdk.EventExpose) => boolean)): number
+    emit(sigName: "damage-event", event: Gdk.EventExpose): void
+    connect(sigName: "delete-event", callback: (($obj: ValidatedEntry, event: Gdk.Event) => boolean)): number
+    connect_after(sigName: "delete-event", callback: (($obj: ValidatedEntry, event: Gdk.Event) => boolean)): number
+    emit(sigName: "delete-event", event: Gdk.Event): void
+    connect(sigName: "destroy", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "destroy", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "destroy"): void
+    connect(sigName: "destroy-event", callback: (($obj: ValidatedEntry, event: Gdk.Event) => boolean)): number
+    connect_after(sigName: "destroy-event", callback: (($obj: ValidatedEntry, event: Gdk.Event) => boolean)): number
+    emit(sigName: "destroy-event", event: Gdk.Event): void
+    connect(sigName: "direction-changed", callback: (($obj: ValidatedEntry, previous_direction: Gtk.TextDirection) => void)): number
+    connect_after(sigName: "direction-changed", callback: (($obj: ValidatedEntry, previous_direction: Gtk.TextDirection) => void)): number
+    emit(sigName: "direction-changed", previous_direction: Gtk.TextDirection): void
+    connect(sigName: "drag-begin", callback: (($obj: ValidatedEntry, context: Gdk.DragContext) => void)): number
+    connect_after(sigName: "drag-begin", callback: (($obj: ValidatedEntry, context: Gdk.DragContext) => void)): number
+    emit(sigName: "drag-begin", context: Gdk.DragContext): void
+    connect(sigName: "drag-data-delete", callback: (($obj: ValidatedEntry, context: Gdk.DragContext) => void)): number
+    connect_after(sigName: "drag-data-delete", callback: (($obj: ValidatedEntry, context: Gdk.DragContext) => void)): number
+    emit(sigName: "drag-data-delete", context: Gdk.DragContext): void
+    connect(sigName: "drag-data-get", callback: (($obj: ValidatedEntry, context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    connect_after(sigName: "drag-data-get", callback: (($obj: ValidatedEntry, context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    emit(sigName: "drag-data-get", context: Gdk.DragContext, data: Gtk.SelectionData, info: number, time: number): void
+    connect(sigName: "drag-data-received", callback: (($obj: ValidatedEntry, context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    connect_after(sigName: "drag-data-received", callback: (($obj: ValidatedEntry, context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    emit(sigName: "drag-data-received", context: Gdk.DragContext, x: number, y: number, data: Gtk.SelectionData, info: number, time: number): void
+    connect(sigName: "drag-drop", callback: (($obj: ValidatedEntry, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    connect_after(sigName: "drag-drop", callback: (($obj: ValidatedEntry, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    emit(sigName: "drag-drop", context: Gdk.DragContext, x: number, y: number, time: number): void
+    connect(sigName: "drag-end", callback: (($obj: ValidatedEntry, context: Gdk.DragContext) => void)): number
+    connect_after(sigName: "drag-end", callback: (($obj: ValidatedEntry, context: Gdk.DragContext) => void)): number
+    emit(sigName: "drag-end", context: Gdk.DragContext): void
+    connect(sigName: "drag-failed", callback: (($obj: ValidatedEntry, context: Gdk.DragContext, result: Gtk.DragResult) => boolean)): number
+    connect_after(sigName: "drag-failed", callback: (($obj: ValidatedEntry, context: Gdk.DragContext, result: Gtk.DragResult) => boolean)): number
+    emit(sigName: "drag-failed", context: Gdk.DragContext, result: Gtk.DragResult): void
+    connect(sigName: "drag-leave", callback: (($obj: ValidatedEntry, context: Gdk.DragContext, time: number) => void)): number
+    connect_after(sigName: "drag-leave", callback: (($obj: ValidatedEntry, context: Gdk.DragContext, time: number) => void)): number
+    emit(sigName: "drag-leave", context: Gdk.DragContext, time: number): void
+    connect(sigName: "drag-motion", callback: (($obj: ValidatedEntry, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    connect_after(sigName: "drag-motion", callback: (($obj: ValidatedEntry, context: Gdk.DragContext, x: number, y: number, time: number) => boolean)): number
+    emit(sigName: "drag-motion", context: Gdk.DragContext, x: number, y: number, time: number): void
+    connect(sigName: "draw", callback: (($obj: ValidatedEntry, cr: cairo.Context) => boolean)): number
+    connect_after(sigName: "draw", callback: (($obj: ValidatedEntry, cr: cairo.Context) => boolean)): number
+    emit(sigName: "draw", cr: cairo.Context): void
+    connect(sigName: "enter-notify-event", callback: (($obj: ValidatedEntry, event: Gdk.EventCrossing) => boolean)): number
+    connect_after(sigName: "enter-notify-event", callback: (($obj: ValidatedEntry, event: Gdk.EventCrossing) => boolean)): number
+    emit(sigName: "enter-notify-event", event: Gdk.EventCrossing): void
+    connect(sigName: "event", callback: (($obj: ValidatedEntry, event: Gdk.Event) => boolean)): number
+    connect_after(sigName: "event", callback: (($obj: ValidatedEntry, event: Gdk.Event) => boolean)): number
+    emit(sigName: "event", event: Gdk.Event): void
+    connect(sigName: "event-after", callback: (($obj: ValidatedEntry, event: Gdk.Event) => void)): number
+    connect_after(sigName: "event-after", callback: (($obj: ValidatedEntry, event: Gdk.Event) => void)): number
+    emit(sigName: "event-after", event: Gdk.Event): void
+    connect(sigName: "focus", callback: (($obj: ValidatedEntry, direction: Gtk.DirectionType) => boolean)): number
+    connect_after(sigName: "focus", callback: (($obj: ValidatedEntry, direction: Gtk.DirectionType) => boolean)): number
+    emit(sigName: "focus", direction: Gtk.DirectionType): void
+    connect(sigName: "focus-in-event", callback: (($obj: ValidatedEntry, event: Gdk.EventFocus) => boolean)): number
+    connect_after(sigName: "focus-in-event", callback: (($obj: ValidatedEntry, event: Gdk.EventFocus) => boolean)): number
+    emit(sigName: "focus-in-event", event: Gdk.EventFocus): void
+    connect(sigName: "focus-out-event", callback: (($obj: ValidatedEntry, event: Gdk.EventFocus) => boolean)): number
+    connect_after(sigName: "focus-out-event", callback: (($obj: ValidatedEntry, event: Gdk.EventFocus) => boolean)): number
+    emit(sigName: "focus-out-event", event: Gdk.EventFocus): void
+    connect(sigName: "grab-broken-event", callback: (($obj: ValidatedEntry, event: Gdk.EventGrabBroken) => boolean)): number
+    connect_after(sigName: "grab-broken-event", callback: (($obj: ValidatedEntry, event: Gdk.EventGrabBroken) => boolean)): number
+    emit(sigName: "grab-broken-event", event: Gdk.EventGrabBroken): void
+    connect(sigName: "grab-focus", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "grab-focus", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "grab-focus"): void
+    connect(sigName: "grab-notify", callback: (($obj: ValidatedEntry, was_grabbed: boolean) => void)): number
+    connect_after(sigName: "grab-notify", callback: (($obj: ValidatedEntry, was_grabbed: boolean) => void)): number
+    emit(sigName: "grab-notify", was_grabbed: boolean): void
+    connect(sigName: "hide", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "hide", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "hide"): void
+    connect(sigName: "hierarchy-changed", callback: (($obj: ValidatedEntry, previous_toplevel?: Gtk.Widget | null) => void)): number
+    connect_after(sigName: "hierarchy-changed", callback: (($obj: ValidatedEntry, previous_toplevel?: Gtk.Widget | null) => void)): number
+    emit(sigName: "hierarchy-changed", previous_toplevel?: Gtk.Widget | null): void
+    connect(sigName: "key-press-event", callback: (($obj: ValidatedEntry, event: Gdk.EventKey) => boolean)): number
+    connect_after(sigName: "key-press-event", callback: (($obj: ValidatedEntry, event: Gdk.EventKey) => boolean)): number
+    emit(sigName: "key-press-event", event: Gdk.EventKey): void
+    connect(sigName: "key-release-event", callback: (($obj: ValidatedEntry, event: Gdk.EventKey) => boolean)): number
+    connect_after(sigName: "key-release-event", callback: (($obj: ValidatedEntry, event: Gdk.EventKey) => boolean)): number
+    emit(sigName: "key-release-event", event: Gdk.EventKey): void
+    connect(sigName: "keynav-failed", callback: (($obj: ValidatedEntry, direction: Gtk.DirectionType) => boolean)): number
+    connect_after(sigName: "keynav-failed", callback: (($obj: ValidatedEntry, direction: Gtk.DirectionType) => boolean)): number
+    emit(sigName: "keynav-failed", direction: Gtk.DirectionType): void
+    connect(sigName: "leave-notify-event", callback: (($obj: ValidatedEntry, event: Gdk.EventCrossing) => boolean)): number
+    connect_after(sigName: "leave-notify-event", callback: (($obj: ValidatedEntry, event: Gdk.EventCrossing) => boolean)): number
+    emit(sigName: "leave-notify-event", event: Gdk.EventCrossing): void
+    connect(sigName: "map", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "map", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "map"): void
+    connect(sigName: "map-event", callback: (($obj: ValidatedEntry, event: Gdk.EventAny) => boolean)): number
+    connect_after(sigName: "map-event", callback: (($obj: ValidatedEntry, event: Gdk.EventAny) => boolean)): number
+    emit(sigName: "map-event", event: Gdk.EventAny): void
+    connect(sigName: "mnemonic-activate", callback: (($obj: ValidatedEntry, group_cycling: boolean) => boolean)): number
+    connect_after(sigName: "mnemonic-activate", callback: (($obj: ValidatedEntry, group_cycling: boolean) => boolean)): number
+    emit(sigName: "mnemonic-activate", group_cycling: boolean): void
+    connect(sigName: "motion-notify-event", callback: (($obj: ValidatedEntry, event: Gdk.EventMotion) => boolean)): number
+    connect_after(sigName: "motion-notify-event", callback: (($obj: ValidatedEntry, event: Gdk.EventMotion) => boolean)): number
+    emit(sigName: "motion-notify-event", event: Gdk.EventMotion): void
+    connect(sigName: "move-focus", callback: (($obj: ValidatedEntry, direction: Gtk.DirectionType) => void)): number
+    connect_after(sigName: "move-focus", callback: (($obj: ValidatedEntry, direction: Gtk.DirectionType) => void)): number
+    emit(sigName: "move-focus", direction: Gtk.DirectionType): void
+    connect(sigName: "parent-set", callback: (($obj: ValidatedEntry, old_parent?: Gtk.Widget | null) => void)): number
+    connect_after(sigName: "parent-set", callback: (($obj: ValidatedEntry, old_parent?: Gtk.Widget | null) => void)): number
+    emit(sigName: "parent-set", old_parent?: Gtk.Widget | null): void
+    connect(sigName: "popup-menu", callback: (($obj: ValidatedEntry) => boolean)): number
+    connect_after(sigName: "popup-menu", callback: (($obj: ValidatedEntry) => boolean)): number
+    emit(sigName: "popup-menu"): void
+    connect(sigName: "property-notify-event", callback: (($obj: ValidatedEntry, event: Gdk.EventProperty) => boolean)): number
+    connect_after(sigName: "property-notify-event", callback: (($obj: ValidatedEntry, event: Gdk.EventProperty) => boolean)): number
+    emit(sigName: "property-notify-event", event: Gdk.EventProperty): void
+    connect(sigName: "proximity-in-event", callback: (($obj: ValidatedEntry, event: Gdk.EventProximity) => boolean)): number
+    connect_after(sigName: "proximity-in-event", callback: (($obj: ValidatedEntry, event: Gdk.EventProximity) => boolean)): number
+    emit(sigName: "proximity-in-event", event: Gdk.EventProximity): void
+    connect(sigName: "proximity-out-event", callback: (($obj: ValidatedEntry, event: Gdk.EventProximity) => boolean)): number
+    connect_after(sigName: "proximity-out-event", callback: (($obj: ValidatedEntry, event: Gdk.EventProximity) => boolean)): number
+    emit(sigName: "proximity-out-event", event: Gdk.EventProximity): void
+    connect(sigName: "query-tooltip", callback: (($obj: ValidatedEntry, x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip) => boolean)): number
+    connect_after(sigName: "query-tooltip", callback: (($obj: ValidatedEntry, x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip) => boolean)): number
+    emit(sigName: "query-tooltip", x: number, y: number, keyboard_mode: boolean, tooltip: Gtk.Tooltip): void
+    connect(sigName: "realize", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "realize", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "realize"): void
+    connect(sigName: "screen-changed", callback: (($obj: ValidatedEntry, previous_screen?: Gdk.Screen | null) => void)): number
+    connect_after(sigName: "screen-changed", callback: (($obj: ValidatedEntry, previous_screen?: Gdk.Screen | null) => void)): number
+    emit(sigName: "screen-changed", previous_screen?: Gdk.Screen | null): void
+    connect(sigName: "scroll-event", callback: (($obj: ValidatedEntry, event: Gdk.EventScroll) => boolean)): number
+    connect_after(sigName: "scroll-event", callback: (($obj: ValidatedEntry, event: Gdk.EventScroll) => boolean)): number
+    emit(sigName: "scroll-event", event: Gdk.EventScroll): void
+    connect(sigName: "selection-clear-event", callback: (($obj: ValidatedEntry, event: Gdk.EventSelection) => boolean)): number
+    connect_after(sigName: "selection-clear-event", callback: (($obj: ValidatedEntry, event: Gdk.EventSelection) => boolean)): number
+    emit(sigName: "selection-clear-event", event: Gdk.EventSelection): void
+    connect(sigName: "selection-get", callback: (($obj: ValidatedEntry, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    connect_after(sigName: "selection-get", callback: (($obj: ValidatedEntry, data: Gtk.SelectionData, info: number, time: number) => void)): number
+    emit(sigName: "selection-get", data: Gtk.SelectionData, info: number, time: number): void
+    connect(sigName: "selection-notify-event", callback: (($obj: ValidatedEntry, event: Gdk.EventSelection) => boolean)): number
+    connect_after(sigName: "selection-notify-event", callback: (($obj: ValidatedEntry, event: Gdk.EventSelection) => boolean)): number
+    emit(sigName: "selection-notify-event", event: Gdk.EventSelection): void
+    connect(sigName: "selection-received", callback: (($obj: ValidatedEntry, data: Gtk.SelectionData, time: number) => void)): number
+    connect_after(sigName: "selection-received", callback: (($obj: ValidatedEntry, data: Gtk.SelectionData, time: number) => void)): number
+    emit(sigName: "selection-received", data: Gtk.SelectionData, time: number): void
+    connect(sigName: "selection-request-event", callback: (($obj: ValidatedEntry, event: Gdk.EventSelection) => boolean)): number
+    connect_after(sigName: "selection-request-event", callback: (($obj: ValidatedEntry, event: Gdk.EventSelection) => boolean)): number
+    emit(sigName: "selection-request-event", event: Gdk.EventSelection): void
+    connect(sigName: "show", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "show", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "show"): void
+    connect(sigName: "show-help", callback: (($obj: ValidatedEntry, help_type: Gtk.WidgetHelpType) => boolean)): number
+    connect_after(sigName: "show-help", callback: (($obj: ValidatedEntry, help_type: Gtk.WidgetHelpType) => boolean)): number
+    emit(sigName: "show-help", help_type: Gtk.WidgetHelpType): void
+    connect(sigName: "size-allocate", callback: (($obj: ValidatedEntry, allocation: Gtk.Allocation) => void)): number
+    connect_after(sigName: "size-allocate", callback: (($obj: ValidatedEntry, allocation: Gtk.Allocation) => void)): number
+    emit(sigName: "size-allocate", allocation: Gtk.Allocation): void
+    connect(sigName: "state-changed", callback: (($obj: ValidatedEntry, state: Gtk.StateType) => void)): number
+    connect_after(sigName: "state-changed", callback: (($obj: ValidatedEntry, state: Gtk.StateType) => void)): number
+    emit(sigName: "state-changed", state: Gtk.StateType): void
+    connect(sigName: "state-flags-changed", callback: (($obj: ValidatedEntry, flags: Gtk.StateFlags) => void)): number
+    connect_after(sigName: "state-flags-changed", callback: (($obj: ValidatedEntry, flags: Gtk.StateFlags) => void)): number
+    emit(sigName: "state-flags-changed", flags: Gtk.StateFlags): void
+    connect(sigName: "style-set", callback: (($obj: ValidatedEntry, previous_style?: Gtk.Style | null) => void)): number
+    connect_after(sigName: "style-set", callback: (($obj: ValidatedEntry, previous_style?: Gtk.Style | null) => void)): number
+    emit(sigName: "style-set", previous_style?: Gtk.Style | null): void
+    connect(sigName: "style-updated", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "style-updated", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "style-updated"): void
+    connect(sigName: "touch-event", callback: (($obj: ValidatedEntry, object: Gdk.Event) => boolean)): number
+    connect_after(sigName: "touch-event", callback: (($obj: ValidatedEntry, object: Gdk.Event) => boolean)): number
+    emit(sigName: "touch-event", object: Gdk.Event): void
+    connect(sigName: "unmap", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "unmap", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "unmap"): void
+    connect(sigName: "unmap-event", callback: (($obj: ValidatedEntry, event: Gdk.EventAny) => boolean)): number
+    connect_after(sigName: "unmap-event", callback: (($obj: ValidatedEntry, event: Gdk.EventAny) => boolean)): number
+    emit(sigName: "unmap-event", event: Gdk.EventAny): void
+    connect(sigName: "unrealize", callback: (($obj: ValidatedEntry) => void)): number
+    connect_after(sigName: "unrealize", callback: (($obj: ValidatedEntry) => void)): number
+    emit(sigName: "unrealize"): void
+    connect(sigName: "visibility-notify-event", callback: (($obj: ValidatedEntry, event: Gdk.EventVisibility) => boolean)): number
+    connect_after(sigName: "visibility-notify-event", callback: (($obj: ValidatedEntry, event: Gdk.EventVisibility) => boolean)): number
+    emit(sigName: "visibility-notify-event", event: Gdk.EventVisibility): void
+    connect(sigName: "window-state-event", callback: (($obj: ValidatedEntry, event: Gdk.EventWindowState) => boolean)): number
+    connect_after(sigName: "window-state-event", callback: (($obj: ValidatedEntry, event: Gdk.EventWindowState) => boolean)): number
+    emit(sigName: "window-state-event", event: Gdk.EventWindowState): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::is-valid", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::is-valid", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::min-length", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::min-length", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::regex", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::regex", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::activates-default", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::activates-default", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::attributes", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::attributes", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::buffer", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::buffer", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::caps-lock-warning", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::caps-lock-warning", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::completion", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::completion", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::cursor-position", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::cursor-position", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::editable", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::editable", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::enable-emoji-completion", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::enable-emoji-completion", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-frame", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-frame", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::im-module", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::im-module", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::inner-border", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::inner-border", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::input-hints", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::input-hints", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::input-purpose", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::input-purpose", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::invisible-char", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::invisible-char", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::invisible-char-set", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::invisible-char-set", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::max-length", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::max-length", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::max-width-chars", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::max-width-chars", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::overwrite-mode", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::overwrite-mode", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::placeholder-text", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::placeholder-text", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::populate-all", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::populate-all", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::primary-icon-activatable", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::primary-icon-activatable", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::primary-icon-gicon", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::primary-icon-gicon", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::primary-icon-name", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::primary-icon-name", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::primary-icon-pixbuf", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::primary-icon-pixbuf", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::primary-icon-sensitive", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::primary-icon-sensitive", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::primary-icon-stock", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::primary-icon-stock", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::primary-icon-storage-type", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::primary-icon-storage-type", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::primary-icon-tooltip-markup", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::primary-icon-tooltip-markup", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::primary-icon-tooltip-text", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::primary-icon-tooltip-text", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::progress-fraction", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::progress-fraction", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::progress-pulse-step", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::progress-pulse-step", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::scroll-offset", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::scroll-offset", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::secondary-icon-activatable", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::secondary-icon-activatable", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::secondary-icon-gicon", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::secondary-icon-gicon", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::secondary-icon-name", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::secondary-icon-name", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::secondary-icon-pixbuf", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::secondary-icon-pixbuf", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::secondary-icon-sensitive", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::secondary-icon-sensitive", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::secondary-icon-stock", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::secondary-icon-stock", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::secondary-icon-storage-type", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::secondary-icon-storage-type", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::secondary-icon-tooltip-markup", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::secondary-icon-tooltip-markup", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::secondary-icon-tooltip-text", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::secondary-icon-tooltip-text", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::selection-bound", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::selection-bound", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::shadow-type", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::shadow-type", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::show-emoji-icon", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::show-emoji-icon", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::tabs", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::tabs", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::text", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::text", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::text-length", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::text-length", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::truncate-multiline", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::truncate-multiline", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::visibility", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::visibility", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::width-chars", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::width-chars", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::xalign", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::xalign", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::app-paintable", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::app-paintable", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::can-default", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::can-default", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::can-focus", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::can-focus", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::composite-child", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::composite-child", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::double-buffered", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::double-buffered", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::events", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::events", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expand", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expand", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::focus-on-click", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::focus-on-click", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::halign", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::halign", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-default", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-default", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-focus", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-focus", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::has-tooltip", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::has-tooltip", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::height-request", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::height-request", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::hexpand", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::hexpand", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::hexpand-set", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::hexpand-set", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::is-focus", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::is-focus", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-bottom", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-bottom", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-end", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-end", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-left", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-left", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-right", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-right", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-start", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-start", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::margin-top", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::margin-top", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::name", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::name", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::no-show-all", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::no-show-all", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::opacity", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::opacity", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::parent", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::receives-default", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::receives-default", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::scale-factor", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::scale-factor", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::sensitive", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::sensitive", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::style", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::style", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::tooltip-markup", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::tooltip-markup", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::tooltip-text", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::tooltip-text", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::valign", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::valign", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::vexpand", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::vexpand", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::vexpand-set", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::vexpand-set", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::visible", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::visible", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::width-request", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::width-request", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::window", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::window", callback: (($obj: ValidatedEntry, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: ValidatedEntry_ConstructProps)
+    _init (config?: ValidatedEntry_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static from_regex(regex_arg: GLib.Regex): ValidatedEntry
+    static new(): ValidatedEntry
+    static $gtype: GObject.Type
+}
+abstract class DrawingBufferSurfaceClass {
     static name: string
 }
-export class DrawingBufferSurfacePrivate {
+class DrawingBufferSurfacePrivate {
     static name: string
 }
-export abstract class DrawingColorClass {
+abstract class DrawingColorClass {
     static name: string
 }
-export class DrawingColorPrivate {
+class DrawingColorPrivate {
     static name: string
 }
-export abstract class DrawingUtilitiesClass {
+abstract class DrawingUtilitiesClass {
     static name: string
 }
-export class DrawingUtilitiesPrivate {
+class DrawingUtilitiesPrivate {
     static name: string
 }
-export abstract class GtkPatchAboutDialogClass {
-    /* Fields of Granite.GtkPatchAboutDialogClass */
-    activate_link: (uri: string) => boolean
+abstract class ServicesContractorProxyClass {
     static name: string
 }
-export class GtkPatchAboutDialogPrivate {
+class ServicesContractorProxyPrivate {
     static name: string
 }
-export abstract class ServicesContractorProxyClass {
+abstract class ServicesIconFactoryClass {
     static name: string
 }
-export class ServicesContractorProxyPrivate {
+class ServicesIconFactoryPrivate {
     static name: string
 }
-export abstract class ServicesIconFactoryClass {
+abstract class ServicesLoggerClass {
     static name: string
 }
-export class ServicesIconFactoryPrivate {
+class ServicesLoggerPrivate {
     static name: string
 }
-export abstract class ServicesLoggerClass {
+abstract class ServicesPathsClass {
     static name: string
 }
-export class ServicesLoggerPrivate {
+class ServicesPathsPrivate {
     static name: string
 }
-export abstract class ServicesPathsClass {
-    static name: string
-}
-export class ServicesPathsPrivate {
-    static name: string
-}
-export abstract class ServicesSettingsClass {
-    /* Fields of Granite.ServicesSettingsClass */
+abstract class ServicesSettingsClass {
+    /* Fields of Granite-1.0.Granite.ServicesSettingsClass */
     verify: (self: any, key: string) => void
     static name: string
 }
-export class ServicesSettingsPrivate {
+class ServicesSettingsPrivate {
     static name: string
 }
-export abstract class ServicesSimpleCommandClass {
+abstract class ServicesSimpleCommandClass {
     static name: string
 }
-export class ServicesSimpleCommandPrivate {
+class ServicesSimpleCommandPrivate {
     static name: string
 }
-export abstract class ServicesSystemClass {
+abstract class ServicesSystemClass {
     static name: string
 }
-export class ServicesSystemPrivate {
+class ServicesSystemPrivate {
     static name: string
 }
-export abstract class ServicesContractIface {
-    /* Fields of Granite.ServicesContractIface */
+abstract class ServicesContractIface {
+    /* Fields of Granite-1.0.Granite.ServicesContractIface */
     get_display_name: (self: any) => string
     get_description: (self: any) => string
     get_icon: (self: any) => Gio.Icon
@@ -26969,237 +27778,250 @@ export abstract class ServicesContractIface {
     execute_with_files: (self: any, files: Gio.File[]) => void
     static name: string
 }
-export abstract class ServicesSettingsSerializableIface {
-    /* Fields of Granite.ServicesSettingsSerializableIface */
+abstract class ServicesSettingsSerializableIface {
+    /* Fields of Granite-1.0.Granite.ServicesSettingsSerializableIface */
     settings_serialize: (self: any) => string
     settings_deserialize: (self: any, s: string) => void
     static name: string
 }
-export abstract class WidgetsAboutDialogClass {
+abstract class WidgetsAlertViewClass {
     static name: string
 }
-export class WidgetsAboutDialogPrivate {
+class WidgetsAlertViewPrivate {
     static name: string
 }
-export abstract class WidgetsAlertViewClass {
+abstract class WidgetsAvatarClass {
     static name: string
 }
-export class WidgetsAlertViewPrivate {
+class WidgetsAvatarPrivate {
     static name: string
 }
-export abstract class WidgetsAppMenuClass {
+abstract class WidgetsCellRendererBadgeClass {
     static name: string
 }
-export class WidgetsAppMenuPrivate {
+class WidgetsCellRendererBadgePrivate {
     static name: string
 }
-export abstract class WidgetsAvatarClass {
-    static name: string
-}
-export class WidgetsAvatarPrivate {
-    static name: string
-}
-export abstract class WidgetsCellRendererBadgeClass {
-    static name: string
-}
-export class WidgetsCellRendererBadgePrivate {
-    static name: string
-}
-export abstract class WidgetsCellRendererExpanderClass {
-    /* Fields of Granite.WidgetsCellRendererExpanderClass */
+abstract class WidgetsCellRendererExpanderClass {
+    /* Fields of Granite-1.0.Granite.WidgetsCellRendererExpanderClass */
     get_arrow_size: (self: WidgetsCellRendererExpander, widget: Gtk.Widget) => number
     static name: string
 }
-export class WidgetsCellRendererExpanderPrivate {
+class WidgetsCellRendererExpanderPrivate {
     static name: string
 }
-export abstract class WidgetsCollapsiblePanedClass {
+abstract class WidgetsCollapsiblePanedClass {
     static name: string
 }
-export class WidgetsCollapsiblePanedPrivate {
+class WidgetsCollapsiblePanedPrivate {
     static name: string
 }
-export abstract class WidgetsCompositedWindowClass {
+abstract class WidgetsCompositedWindowClass {
     static name: string
 }
-export class WidgetsCompositedWindowPrivate {
+class WidgetsCompositedWindowPrivate {
     static name: string
 }
-export abstract class WidgetsDatePickerClass {
-    /* Fields of Granite.WidgetsDatePickerClass */
+abstract class WidgetsDatePickerClass {
+    /* Fields of Granite-1.0.Granite.WidgetsDatePickerClass */
     position_dropdown: (self: WidgetsDatePicker) => /* rect */ Gdk.Rectangle
     static name: string
 }
-export class WidgetsDatePickerPrivate {
+class WidgetsDatePickerPrivate {
     static name: string
 }
-export abstract class WidgetsTabClass {
+abstract class WidgetsTabClass {
     static name: string
 }
-export class WidgetsTabPrivate {
+class WidgetsTabPrivate {
     static name: string
 }
-export abstract class WidgetsDynamicNotebookClass {
+abstract class WidgetsDynamicNotebookClass {
     static name: string
 }
-export class WidgetsDynamicNotebookPrivate {
+class WidgetsDynamicNotebookPrivate {
     static name: string
 }
-export abstract class WidgetsModeButtonClass {
+abstract class WidgetsModeButtonClass {
     static name: string
 }
-export class WidgetsModeButtonPrivate {
+class WidgetsModeButtonPrivate {
     static name: string
 }
-export abstract class WidgetsOverlayBarClass {
+abstract class WidgetsOverlayBarClass {
     static name: string
 }
-export class WidgetsOverlayBarPrivate {
+class WidgetsOverlayBarPrivate {
     static name: string
 }
-export abstract class WidgetsSourceListClass {
-    /* Fields of Granite.WidgetsSourceListClass */
-    item_selected: (item?: WidgetsSourceListItem | null) => void
+abstract class WidgetsSourceListClass {
+    /* Fields of Granite-1.0.Granite.WidgetsSourceListClass */
+    item_selected: (self: WidgetsSourceList, item?: WidgetsSourceListItem | null) => void
     static name: string
 }
-export class WidgetsSourceListPrivate {
+class WidgetsSourceListPrivate {
     static name: string
 }
-export abstract class WidgetsSourceListItemClass {
-    /* Fields of Granite.WidgetsSourceListItemClass */
+abstract class WidgetsSourceListItemClass {
+    /* Fields of Granite-1.0.Granite.WidgetsSourceListItemClass */
     get_context_menu: (self: WidgetsSourceListItem) => Gtk.Menu | null
-    edited: (new_name: string) => void
-    action_activated: () => void
-    activated: () => void
+    edited: (self: WidgetsSourceListItem, new_name: string) => void
+    action_activated: (self: WidgetsSourceListItem) => void
+    activated: (self: WidgetsSourceListItem) => void
     static name: string
 }
-export class WidgetsSourceListItemPrivate {
+class WidgetsSourceListItemPrivate {
     static name: string
 }
-export abstract class WidgetsSourceListExpandableItemClass {
-    /* Fields of Granite.WidgetsSourceListExpandableItemClass */
-    toggled: () => void
+abstract class WidgetsSourceListExpandableItemClass {
+    /* Fields of Granite-1.0.Granite.WidgetsSourceListExpandableItemClass */
+    toggled: (self: WidgetsSourceListExpandableItem) => void
     static name: string
 }
-export class WidgetsSourceListExpandableItemPrivate {
+class WidgetsSourceListExpandableItemPrivate {
     static name: string
 }
-export abstract class WidgetsStorageBarClass {
+abstract class WidgetsStorageBarClass {
     static name: string
 }
-export class WidgetsStorageBarPrivate {
+class WidgetsStorageBarPrivate {
     static name: string
 }
-export abstract class WidgetsTimePickerClass {
-    /* Fields of Granite.WidgetsTimePickerClass */
+abstract class WidgetsTimePickerClass {
+    /* Fields of Granite-1.0.Granite.WidgetsTimePickerClass */
     position_dropdown: (self: WidgetsTimePicker) => [ /* x */ number, /* y */ number ]
     static name: string
 }
-export class WidgetsTimePickerPrivate {
+class WidgetsTimePickerPrivate {
     static name: string
 }
-export abstract class WidgetsToastClass {
+abstract class WidgetsToastClass {
     static name: string
 }
-export class WidgetsToastPrivate {
+class WidgetsToastPrivate {
     static name: string
 }
-export abstract class WidgetsWelcomeButtonClass {
+abstract class WidgetsWelcomeButtonClass {
     static name: string
 }
-export class WidgetsWelcomeButtonPrivate {
+class WidgetsWelcomeButtonPrivate {
     static name: string
 }
-export abstract class WidgetsWelcomeClass {
+abstract class WidgetsWelcomeClass {
     static name: string
 }
-export class WidgetsWelcomePrivate {
+class WidgetsWelcomePrivate {
     static name: string
 }
-export abstract class WidgetsSourceListSortableIface {
-    /* Fields of Granite.WidgetsSourceListSortableIface */
+abstract class WidgetsSourceListSortableIface {
+    /* Fields of Granite-1.0.Granite.WidgetsSourceListSortableIface */
     allow_dnd_sorting: (self: WidgetsSourceListSortable) => boolean
     compare: (self: WidgetsSourceListSortable, a: WidgetsSourceListItem, b: WidgetsSourceListItem) => number
     static name: string
 }
-export abstract class WidgetsSourceListDragSourceIface {
-    /* Fields of Granite.WidgetsSourceListDragSourceIface */
+abstract class WidgetsSourceListDragSourceIface {
+    /* Fields of Granite-1.0.Granite.WidgetsSourceListDragSourceIface */
     draggable: (self: WidgetsSourceListDragSource) => boolean
     prepare_selection_data: (self: WidgetsSourceListDragSource, selection_data: Gtk.SelectionData) => void
     static name: string
 }
-export abstract class WidgetsSourceListDragDestIface {
-    /* Fields of Granite.WidgetsSourceListDragDestIface */
+abstract class WidgetsSourceListDragDestIface {
+    /* Fields of Granite-1.0.Granite.WidgetsSourceListDragDestIface */
     data_drop_possible: (self: WidgetsSourceListDragDest, context: Gdk.DragContext, data: Gtk.SelectionData) => boolean
     data_received: (self: WidgetsSourceListDragDest, context: Gdk.DragContext, data: Gtk.SelectionData) => Gdk.DragAction
     static name: string
 }
-export abstract class ApplicationClass {
-    /* Fields of Granite.ApplicationClass */
+abstract class ApplicationClass {
+    /* Fields of Granite-1.0.Granite.ApplicationClass */
     set_options: (self: Application) => void
-    show_about: (self: Application, parent: Gtk.Widget) => void
     static name: string
 }
-export class ApplicationPrivate {
+class ApplicationPrivate {
     static name: string
 }
-export abstract class SettingsPageClass {
+abstract class SettingsPageClass {
     static name: string
 }
-export class SettingsPagePrivate {
+class SettingsPagePrivate {
     static name: string
 }
-export abstract class SimpleSettingsPageClass {
+abstract class SimpleSettingsPageClass {
     static name: string
 }
-export class SimpleSettingsPagePrivate {
+class SimpleSettingsPagePrivate {
     static name: string
 }
-export abstract class AccelLabelClass {
+abstract class AccelLabelClass {
     static name: string
 }
-export class AccelLabelPrivate {
+class AccelLabelPrivate {
     static name: string
 }
-export abstract class AsyncImageClass {
+abstract class AsyncImageClass {
     static name: string
 }
-export class AsyncImagePrivate {
+class AsyncImagePrivate {
     static name: string
 }
-export abstract class HeaderLabelClass {
+abstract class DialogClass {
     static name: string
 }
-export class HeaderLabelPrivate {
+class DialogPrivate {
     static name: string
 }
-export abstract class MessageDialogClass {
+abstract class HeaderLabelClass {
     static name: string
 }
-export class MessageDialogPrivate {
+class HeaderLabelPrivate {
     static name: string
 }
-export abstract class ModeSwitchClass {
+abstract class HyperTextViewClass {
     static name: string
 }
-export class ModeSwitchPrivate {
+class HyperTextViewPrivate {
     static name: string
 }
-export abstract class SeekBarClass {
+abstract class MessageDialogClass {
     static name: string
 }
-export class SeekBarPrivate {
+class MessageDialogPrivate {
     static name: string
 }
-export abstract class SettingsClass {
+abstract class ModeSwitchClass {
     static name: string
 }
-export class SettingsPrivate {
+class ModeSwitchPrivate {
     static name: string
 }
-export abstract class SettingsSidebarClass {
+abstract class SeekBarClass {
     static name: string
 }
-export class SettingsSidebarPrivate {
+class SeekBarPrivate {
     static name: string
 }
+abstract class SettingsSidebarClass {
+    static name: string
+}
+class SettingsSidebarPrivate {
+    static name: string
+}
+abstract class SettingsClass {
+    static name: string
+}
+class SettingsPrivate {
+    static name: string
+}
+abstract class SwitchModelButtonClass {
+    static name: string
+}
+class SwitchModelButtonPrivate {
+    static name: string
+}
+abstract class ValidatedEntryClass {
+    static name: string
+}
+class ValidatedEntryPrivate {
+    static name: string
+}
+}
+export default Granite;

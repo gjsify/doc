@@ -1,2 +1,2 @@
-imports.gi.versions.Unique = '3.0'
-export default imports.gi.Unique
+import Unique from 'gi://Unique?version=3.0';
+export default Unique;

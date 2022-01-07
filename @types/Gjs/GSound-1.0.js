@@ -1,2 +1,2 @@
-imports.gi.versions.GSound = '1.0'
-export default imports.gi.GSound
+import GSound from 'gi://GSound?version=1.0';
+export default GSound;

@@ -3,11 +3,13 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum ClientError {
+export namespace Colord {
+
+enum ClientError {
     INTERNAL,
     ALREADY_EXISTS,
     FAILED_TO_AUTHENTICATE,
@@ -16,11 +18,11 @@ export enum ClientError {
     INPUT_INVALID,
     FILE_INVALID,
 }
-export enum ColorBlackbodyFlags {
+enum ColorBlackbodyFlags {
     NONE,
     USE_PLANCKIAN,
 }
-export enum Colorspace {
+enum Colorspace {
     UNKNOWN,
     XYZ,
     LAB,
@@ -33,7 +35,7 @@ export enum Colorspace {
     CMYK,
     CMY,
 }
-export enum DeviceError {
+enum DeviceError {
     INTERNAL,
     PROFILE_DOES_NOT_EXIST,
     PROFILE_ALREADY_ADDED,
@@ -44,7 +46,7 @@ export enum DeviceError {
     FAILED_TO_AUTHENTICATE,
     NOT_ENABLED,
 }
-export enum DeviceKind {
+enum DeviceKind {
     UNKNOWN,
     DISPLAY,
     SCANNER,
@@ -52,17 +54,17 @@ export enum DeviceKind {
     CAMERA,
     WEBCAM,
 }
-export enum DeviceMode {
+enum DeviceMode {
     UNKNOWN,
     PHYSICAL,
     VIRTUAL,
 }
-export enum DeviceRelation {
+enum DeviceRelation {
     UNKNOWN,
     SOFT,
     HARD,
 }
-export enum IccError {
+enum IccError {
     FAILED_TO_OPEN,
     FAILED_TO_PARSE,
     INVALID_LOCALE,
@@ -73,15 +75,15 @@ export enum IccError {
     CORRUPTION_DETECTED,
     INTERNAL,
 }
-export enum IccSaveFlags {
+enum IccSaveFlags {
     NONE,
 }
-export enum It8Error {
+enum It8Error {
     FAILED,
     INVALID_FORMAT,
     UNKNOWN_KIND,
 }
-export enum It8Kind {
+enum It8Kind {
     UNKNOWN,
     TI1,
     TI3,
@@ -91,13 +93,13 @@ export enum It8Kind {
     SPECT,
     CMF,
 }
-export enum ObjectScope {
+enum ObjectScope {
     UNKNOWN,
     NORMAL,
     TEMP,
     DISK,
 }
-export enum ProfileError {
+enum ProfileError {
     INTERNAL,
     ALREADY_INSTALLED,
     FAILED_TO_WRITE,
@@ -107,7 +109,7 @@ export enum ProfileError {
     PROPERTY_INVALID,
     FAILED_TO_GET_UID,
 }
-export enum ProfileKind {
+enum ProfileKind {
     UNKNOWN,
     INPUT_DEVICE,
     DISPLAY_DEVICE,
@@ -117,12 +119,12 @@ export enum ProfileKind {
     ABSTRACT,
     NAMED_COLOR,
 }
-export enum ProfileQuality {
+enum ProfileQuality {
     LOW,
     MEDIUM,
     HIGH,
 }
-export enum ProfileWarning {
+enum ProfileWarning {
     NONE,
     DESCRIPTION_MISSING,
     COPYRIGHT_MISSING,
@@ -136,14 +138,14 @@ export enum ProfileWarning {
     WHITEPOINT_INVALID,
     WHITEPOINT_UNLIKELY,
 }
-export enum RenderingIntent {
+enum RenderingIntent {
     UNKNOWN,
     PERCEPTUAL,
     RELATIVE_COLORIMETRIC,
     SATURATION,
     ABSOLUTE_COLORIMETRIC,
 }
-export enum SensorCap {
+enum SensorCap {
     UNKNOWN,
     LCD,
     CRT,
@@ -163,7 +165,7 @@ export enum SensorCap {
     CALIBRATION_DARK,
     CALIBRATION_IRRADIANCE,
 }
-export enum SensorError {
+enum SensorError {
     NO_SUPPORT,
     NO_DATA,
     INTERNAL,
@@ -176,7 +178,7 @@ export enum SensorError {
     REQUIRED_DARK_CALIBRATION,
     REQUIRED_IRRADIANCE_CALIBRATION,
 }
-export enum SensorKind {
+enum SensorKind {
     UNKNOWN,
     DUMMY,
     HUEY,
@@ -206,20 +208,20 @@ export enum SensorKind {
     SPARK,
     SPYDERX,
 }
-export enum SensorState {
+enum SensorState {
     UNKNOWN,
     STARTING,
     IDLE,
     MEASURING,
     BUSY,
 }
-export enum StandardSpace {
+enum StandardSpace {
     UNKNOWN,
     SRGB,
     ADOBE_RGB,
     PROPHOTO_RGB,
 }
-export enum IccLoadFlags {
+enum IccLoadFlags {
     NONE,
     NAMED_COLORS,
     TRANSLATIONS,
@@ -329,48 +331,48 @@ export const SENSOR_PROPERTY_OPTIONS: string
 export const SENSOR_PROPERTY_SERIAL: string
 export const SENSOR_PROPERTY_STATE: string
 export const SENSOR_PROPERTY_VENDOR: string
-export function color_get_blackbody_rgb(temp: number, result: ColorRGB): boolean
-export function color_get_blackbody_rgb_full(temp: number, result: ColorRGB, flags: ColorBlackbodyFlags): boolean
-export function color_rgb8_to_rgb(src: ColorRGB8, dest: ColorRGB): void
-export function color_rgb_array_interpolate(array: ColorRGB[], new_length: number): ColorRGB[]
-export function color_rgb_array_is_monotonic(array: ColorRGB[]): boolean
-export function color_rgb_array_new(): ColorRGB[]
-export function colorspace_from_string(colorspace: string): Colorspace
-export function colorspace_to_string(colorspace: Colorspace): string
-export function mat33_clear(src: Mat3x3): void
-export function mat33_copy(src: Mat3x3, dest: Mat3x3): void
-export function mat33_determinant(src: Mat3x3): number
-export function mat33_get_data(src: Mat3x3): number
-export function mat33_init(dest: Mat3x3, m00: number, m01: number, m02: number, m10: number, m11: number, m12: number, m20: number, m21: number, m22: number): void
-export function mat33_is_finite(mat: Mat3x3): boolean
-export function mat33_matrix_multiply(mat_src1: Mat3x3, mat_src2: Mat3x3, mat_dest: Mat3x3): void
-export function mat33_normalize(src: Mat3x3, dest: Mat3x3): void
-export function mat33_reciprocal(src: Mat3x3, dest: Mat3x3): boolean
-export function mat33_scalar_multiply(mat_src: Mat3x3, value: number, mat_dest: Mat3x3): void
-export function mat33_set_identity(src: Mat3x3): void
-export function mat33_to_string(src: Mat3x3): string
-export function mat33_vector_multiply(mat_src: Mat3x3, vec_src: Vec3, vec_dest: Vec3): void
-export function object_scope_from_string(object_scope: string): ObjectScope
-export function object_scope_to_string(object_scope: ObjectScope): string
-export function pixel_format_from_string(pixel_format: string): PixelFormat
-export function pixel_format_to_string(pixel_format: PixelFormat): string
-export function rendering_intent_from_string(rendering_intent: string): RenderingIntent
-export function rendering_intent_to_string(rendering_intent: RenderingIntent): string
-export function standard_space_from_string(standard_space: string): StandardSpace
-export function standard_space_to_string(standard_space: StandardSpace): string
+function color_get_blackbody_rgb(temp: number, result: ColorRGB): boolean
+function color_get_blackbody_rgb_full(temp: number, result: ColorRGB, flags: ColorBlackbodyFlags): boolean
+function color_rgb8_to_rgb(src: ColorRGB8, dest: ColorRGB): void
+function color_rgb_array_interpolate(array: ColorRGB[], new_length: number): ColorRGB[]
+function color_rgb_array_is_monotonic(array: ColorRGB[]): boolean
+function color_rgb_array_new(): ColorRGB[]
+function colorspace_from_string(colorspace: string): Colorspace
+function colorspace_to_string(colorspace: Colorspace): string
+function mat33_clear(src: Mat3x3): void
+function mat33_copy(src: Mat3x3, dest: Mat3x3): void
+function mat33_determinant(src: Mat3x3): number
+function mat33_get_data(src: Mat3x3): number
+function mat33_init(dest: Mat3x3, m00: number, m01: number, m02: number, m10: number, m11: number, m12: number, m20: number, m21: number, m22: number): void
+function mat33_is_finite(mat: Mat3x3): boolean
+function mat33_matrix_multiply(mat_src1: Mat3x3, mat_src2: Mat3x3, mat_dest: Mat3x3): void
+function mat33_normalize(src: Mat3x3, dest: Mat3x3): void
+function mat33_reciprocal(src: Mat3x3, dest: Mat3x3): boolean
+function mat33_scalar_multiply(mat_src: Mat3x3, value: number, mat_dest: Mat3x3): void
+function mat33_set_identity(src: Mat3x3): void
+function mat33_to_string(src: Mat3x3): string
+function mat33_vector_multiply(mat_src: Mat3x3, vec_src: Vec3, vec_dest: Vec3): void
+function object_scope_from_string(object_scope: string): ObjectScope
+function object_scope_to_string(object_scope: ObjectScope): string
+function pixel_format_from_string(pixel_format: string): PixelFormat
+function pixel_format_to_string(pixel_format: PixelFormat): string
+function rendering_intent_from_string(rendering_intent: string): RenderingIntent
+function rendering_intent_to_string(rendering_intent: RenderingIntent): string
+function standard_space_from_string(standard_space: string): StandardSpace
+function standard_space_to_string(standard_space: StandardSpace): string
 export interface Client_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Client {
-    /* Properties of Colord.Client */
+class Client {
+    /* Properties of Colord-1.0.Colord.Client */
     readonly connected: string
     readonly daemon_version: string
     readonly system_model: string
     readonly system_vendor: string
-    /* Fields of Colord.Client */
+    /* Fields of Colord-1.0.Colord.Client */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Colord.Client */
+    /* Methods of Colord-1.0.Colord.Client */
     connect(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     connect_finish(res: Gio.AsyncResult): boolean
     connect_sync(cancellable?: Gio.Cancellable | null): boolean
@@ -430,15 +432,15 @@ export class Client {
     import_profile(file: Gio.File, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     import_profile_finish(res: Gio.AsyncResult): Profile
     import_profile_sync(file: Gio.File, cancellable?: Gio.Cancellable | null): Profile
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -446,13 +448,13 @@ export class Client {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Colord.Client */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Colord-1.0.Colord.Client */
     vfunc_changed(): void
     vfunc_device_added(device: Device): void
     vfunc_device_changed(device: Device): void
@@ -463,15 +465,15 @@ export class Client {
     vfunc_sensor_added(sensor: Sensor): void
     vfunc_sensor_changed(sensor: Sensor): void
     vfunc_sensor_removed(sensor: Sensor): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Colord.Client */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Colord-1.0.Colord.Client */
     connect(sigName: "changed", callback: (($obj: Client) => void)): number
     connect_after(sigName: "changed", callback: (($obj: Client) => void)): number
     emit(sigName: "changed"): void
@@ -502,7 +504,7 @@ export class Client {
     connect(sigName: "sensor-removed", callback: (($obj: Client, sensor: Sensor) => void)): number
     connect_after(sigName: "sensor-removed", callback: (($obj: Client, sensor: Sensor) => void)): number
     emit(sigName: "sensor-removed", sensor: Sensor): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -531,8 +533,8 @@ export class Client {
 export interface Device_ConstructProps extends GObject.Object_ConstructProps {
     object_path?: string
 }
-export class Device {
-    /* Properties of Colord.Device */
+class Device {
+    /* Properties of Colord-1.0.Colord.Device */
     readonly colorspace: number
     readonly connected: string
     readonly created: number
@@ -551,11 +553,11 @@ export class Device {
     readonly seat: string
     readonly serial: string
     readonly vendor: string
-    /* Fields of Colord.Device */
+    /* Fields of Colord-1.0.Colord.Device */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Colord.Device */
+    /* Methods of Colord-1.0.Colord.Device */
     add_profile(relation: DeviceRelation, profile: Profile, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     add_profile_finish(res: Gio.AsyncResult): boolean
     add_profile_sync(relation: DeviceRelation, profile: Profile, cancellable?: Gio.Cancellable | null): boolean
@@ -617,15 +619,15 @@ export class Device {
     set_serial_sync(value: string, cancellable?: Gio.Cancellable | null): boolean
     set_vendor_sync(value: string, cancellable?: Gio.Cancellable | null): boolean
     to_string(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -633,27 +635,27 @@ export class Device {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Colord.Device */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Colord-1.0.Colord.Device */
     vfunc_changed(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Colord.Device */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Colord-1.0.Colord.Device */
     connect(sigName: "changed", callback: (($obj: Device) => void)): number
     connect_after(sigName: "changed", callback: (($obj: Device) => void)): number
     emit(sigName: "changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -717,12 +719,12 @@ export class Device {
 }
 export interface Edid_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Edid {
-    /* Fields of Colord.Edid */
+class Edid {
+    /* Fields of Colord-1.0.Colord.Edid */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Colord.Edid */
+    /* Methods of Colord-1.0.Colord.Edid */
     get_blue(): ColorYxy
     get_checksum(): string
     get_eisa_id(): string
@@ -738,15 +740,15 @@ export class Edid {
     get_width(): number
     parse(edid_data: GLib.Bytes): boolean
     reset(): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -754,21 +756,21 @@ export class Edid {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Edid, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Edid, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -789,8 +791,8 @@ export interface Icc_ConstructProps extends GObject.Object_ConstructProps {
     kind?: number
     version?: number
 }
-export class Icc {
-    /* Properties of Colord.Icc */
+class Icc {
+    /* Properties of Colord-1.0.Colord.Icc */
     readonly blue: ColorXYZ
     readonly can_delete: boolean
     readonly checksum: string
@@ -803,11 +805,11 @@ export class Icc {
     readonly temperature: number
     version: number
     readonly white: ColorXYZ
-    /* Fields of Colord.Icc */
+    /* Fields of Colord-1.0.Colord.Icc */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Colord.Icc */
+    /* Methods of Colord-1.0.Colord.Icc */
     add_metadata(key: string, value: string): void
     create_default(): boolean
     create_default_full(flags: IccLoadFlags): boolean
@@ -866,15 +868,15 @@ export class Icc {
     set_vcgt(vcgt: ColorRGB[]): boolean
     set_version(version: number): void
     to_string(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -882,21 +884,21 @@ export class Icc {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Icc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Icc, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -939,8 +941,8 @@ export class Icc {
 export interface It8_ConstructProps extends GObject.Object_ConstructProps {
     kind?: number
 }
-export class It8 {
-    /* Properties of Colord.It8 */
+class It8 {
+    /* Properties of Colord-1.0.Colord.It8 */
     readonly instrument: string
     kind: number
     readonly normalized: boolean
@@ -948,11 +950,11 @@ export class It8 {
     readonly reference: string
     readonly spectral: boolean
     readonly title: string
-    /* Fields of Colord.It8 */
+    /* Fields of Colord-1.0.Colord.It8 */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Colord.It8 */
+    /* Methods of Colord-1.0.Colord.It8 */
     add_data(rgb: ColorRGB, xyz: ColorXYZ): void
     add_option(option: string): void
     add_spectrum(spectrum: Spectrum): void
@@ -985,15 +987,15 @@ export class It8 {
     set_spectral(spectral: boolean): void
     set_spectrum_array(data: Spectrum[]): void
     set_title(title: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1001,21 +1003,21 @@ export class It8 {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: It8, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: It8, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1049,8 +1051,8 @@ export class It8 {
 export interface Profile_ConstructProps extends GObject.Object_ConstructProps {
     object_path?: string
 }
-export class Profile {
-    /* Properties of Colord.Profile */
+class Profile {
+    /* Properties of Colord-1.0.Colord.Profile */
     readonly colorspace: string
     readonly connected: string
     readonly created: number
@@ -1066,11 +1068,11 @@ export class Profile {
     readonly scope: number
     readonly title: string
     readonly warnings: string[]
-    /* Fields of Colord.Profile */
+    /* Fields of Colord-1.0.Colord.Profile */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Colord.Profile */
+    /* Methods of Colord-1.0.Colord.Profile */
     connect(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     connect_finish(res: Gio.AsyncResult): boolean
     connect_sync(cancellable?: Gio.Cancellable | null): boolean
@@ -1103,15 +1105,15 @@ export class Profile {
     set_property_finish(res: Gio.AsyncResult): boolean
     set_property_sync(key: string, value: string, cancellable?: Gio.Cancellable | null): boolean
     to_string(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1119,27 +1121,27 @@ export class Profile {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Colord.Profile */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Colord-1.0.Colord.Profile */
     vfunc_changed(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Colord.Profile */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Colord-1.0.Colord.Profile */
     connect(sigName: "changed", callback: (($obj: Profile) => void)): number
     connect_after(sigName: "changed", callback: (($obj: Profile) => void)): number
     emit(sigName: "changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Profile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Profile, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1197,8 +1199,8 @@ export class Profile {
 export interface Sensor_ConstructProps extends GObject.Object_ConstructProps {
     object_path?: string
 }
-export class Sensor {
-    /* Properties of Colord.Sensor */
+class Sensor {
+    /* Properties of Colord-1.0.Colord.Sensor */
     readonly connected: string
     readonly embedded: string
     readonly id: string
@@ -1211,11 +1213,11 @@ export class Sensor {
     readonly serial: string
     readonly state: string
     readonly vendor: string
-    /* Fields of Colord.Sensor */
+    /* Fields of Colord-1.0.Colord.Sensor */
     parent_instance: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Colord.Sensor */
+    /* Methods of Colord-1.0.Colord.Sensor */
     connect(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     connect_finish(res: Gio.AsyncResult): boolean
     connect_sync(cancellable?: Gio.Cancellable | null): boolean
@@ -1255,15 +1257,15 @@ export class Sensor {
     unlock(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     unlock_finish(res: Gio.AsyncResult): boolean
     unlock_sync(cancellable?: Gio.Cancellable | null): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1271,27 +1273,27 @@ export class Sensor {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of Colord.Sensor */
+    watch_closure(closure: Function): void
+    /* Virtual methods of Colord-1.0.Colord.Sensor */
     vfunc_button_pressed(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Colord.Sensor */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Colord-1.0.Colord.Sensor */
     connect(sigName: "button-pressed", callback: (($obj: Sensor) => void)): number
     connect_after(sigName: "button-pressed", callback: (($obj: Sensor) => void)): number
     emit(sigName: "button-pressed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Sensor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Sensor, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1340,8 +1342,8 @@ export class Sensor {
     static state_to_string(sensor_state: SensorState): string
     static $gtype: GObject.Type
 }
-export abstract class ClientClass {
-    /* Fields of Colord.ClientClass */
+abstract class ClientClass {
+    /* Fields of Colord-1.0.Colord.ClientClass */
     parent_class: GObject.ObjectClass
     device_added: (client: Client, device: Device) => void
     device_removed: (client: Client, device: Device) => void
@@ -1355,12 +1357,12 @@ export abstract class ClientClass {
     changed: (client: Client) => void
     static name: string
 }
-export class ColorLab {
-    /* Fields of Colord.ColorLab */
+class ColorLab {
+    /* Fields of Colord-1.0.Colord.ColorLab */
     L: number
     a: number
     b: number
-    /* Methods of Colord.ColorLab */
+    /* Methods of Colord-1.0.Colord.ColorLab */
     copy(dest: ColorLab): void
     delta_e76(p2: ColorLab): number
     dup(): ColorLab
@@ -1372,12 +1374,12 @@ export class ColorLab {
     /* Static methods and pseudo-constructors */
     static new(): ColorLab
 }
-export class ColorRGB {
-    /* Fields of Colord.ColorRGB */
+class ColorRGB {
+    /* Fields of Colord-1.0.Colord.ColorRGB */
     R: number
     G: number
     B: number
-    /* Methods of Colord.ColorRGB */
+    /* Methods of Colord-1.0.Colord.ColorRGB */
     copy(dest: ColorRGB): void
     dup(): ColorRGB
     free(): void
@@ -1394,15 +1396,15 @@ export class ColorRGB {
     static array_is_monotonic(array: ColorRGB[]): boolean
     static array_new(): ColorRGB[]
 }
-export class ColorRGB8 {
-    /* Fields of Colord.ColorRGB8 */
+class ColorRGB8 {
+    /* Fields of Colord-1.0.Colord.ColorRGB8 */
     R: number
     G: number
     B: number
     static name: string
 }
-export class ColorSwatch {
-    /* Methods of Colord.ColorSwatch */
+class ColorSwatch {
+    /* Methods of Colord-1.0.Colord.ColorSwatch */
     dup(): ColorSwatch
     free(): void
     get_name(): string
@@ -1415,12 +1417,12 @@ export class ColorSwatch {
     /* Static methods and pseudo-constructors */
     static new(): ColorSwatch
 }
-export class ColorUVW {
-    /* Fields of Colord.ColorUVW */
+class ColorUVW {
+    /* Fields of Colord-1.0.Colord.ColorUVW */
     U: number
     V: number
     W: number
-    /* Methods of Colord.ColorUVW */
+    /* Methods of Colord-1.0.Colord.ColorUVW */
     copy(dest: ColorUVW): void
     dup(): ColorUVW
     free(): void
@@ -1433,12 +1435,12 @@ export class ColorUVW {
     /* Static methods and pseudo-constructors */
     static new(): ColorUVW
 }
-export class ColorXYZ {
-    /* Fields of Colord.ColorXYZ */
+class ColorXYZ {
+    /* Fields of Colord-1.0.Colord.ColorXYZ */
     X: number
     Y: number
     Z: number
-    /* Methods of Colord.ColorXYZ */
+    /* Methods of Colord-1.0.Colord.ColorXYZ */
     clear(): void
     copy(dest: ColorXYZ): void
     dup(): ColorXYZ
@@ -1454,12 +1456,12 @@ export class ColorXYZ {
     /* Static methods and pseudo-constructors */
     static new(): ColorXYZ
 }
-export class ColorYxy {
-    /* Fields of Colord.ColorYxy */
+class ColorYxy {
+    /* Fields of Colord-1.0.Colord.ColorYxy */
     Y: number
     x: number
     y: number
-    /* Methods of Colord.ColorYxy */
+    /* Methods of Colord-1.0.Colord.ColorYxy */
     copy(dest: ColorYxy): void
     dup(): ColorYxy
     free(): void
@@ -1472,29 +1474,29 @@ export class ColorYxy {
     /* Static methods and pseudo-constructors */
     static new(): ColorYxy
 }
-export abstract class DeviceClass {
-    /* Fields of Colord.DeviceClass */
+abstract class DeviceClass {
+    /* Fields of Colord-1.0.Colord.DeviceClass */
     parent_class: GObject.ObjectClass
     changed: (device: Device) => void
     static name: string
 }
-export abstract class EdidClass {
-    /* Fields of Colord.EdidClass */
+abstract class EdidClass {
+    /* Fields of Colord-1.0.Colord.EdidClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class IccClass {
-    /* Fields of Colord.IccClass */
+abstract class IccClass {
+    /* Fields of Colord-1.0.Colord.IccClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class It8Class {
-    /* Fields of Colord.It8Class */
+abstract class It8Class {
+    /* Fields of Colord-1.0.Colord.It8Class */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class Mat3x3 {
-    /* Fields of Colord.Mat3x3 */
+class Mat3x3 {
+    /* Fields of Colord-1.0.Colord.Mat3x3 */
     m00: number
     m01: number
     m02: number
@@ -1506,20 +1508,20 @@ export class Mat3x3 {
     m22: number
     static name: string
 }
-export abstract class ProfileClass {
-    /* Fields of Colord.ProfileClass */
+abstract class ProfileClass {
+    /* Fields of Colord-1.0.Colord.ProfileClass */
     parent_class: GObject.ObjectClass
     changed: (profile: Profile) => void
     static name: string
 }
-export abstract class SensorClass {
-    /* Fields of Colord.SensorClass */
+abstract class SensorClass {
+    /* Fields of Colord-1.0.Colord.SensorClass */
     parent_class: GObject.ObjectClass
     button_pressed: (sensor: Sensor) => void
     static name: string
 }
-export class Spectrum {
-    /* Methods of Colord.Spectrum */
+class Spectrum {
+    /* Methods of Colord-1.0.Colord.Spectrum */
     add_value(data: number): void
     dup(): Spectrum
     free(): void
@@ -1563,12 +1565,12 @@ export class Spectrum {
     static planckian_new_full(temperature: number, start: number, end: number, resolution: number): Spectrum
     static sized_new(reserved_size: number): Spectrum
 }
-export class Vec3 {
-    /* Fields of Colord.Vec3 */
+class Vec3 {
+    /* Fields of Colord-1.0.Colord.Vec3 */
     v0: number
     v1: number
     v2: number
-    /* Methods of Colord.Vec3 */
+    /* Methods of Colord-1.0.Colord.Vec3 */
     add(src2: Vec3, dest: Vec3): void
     clear(): void
     copy(dest: Vec3): void
@@ -1580,4 +1582,6 @@ export class Vec3 {
     to_string(): string
     static name: string
 }
-export type PixelFormat = number
+type PixelFormat = number
+}
+export default Colord;

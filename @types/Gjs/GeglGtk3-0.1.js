@@ -1,2 +1,2 @@
-imports.gi.versions.GeglGtk3 = '0.1'
-export default imports.gi.GeglGtk3
+import GeglGtk3 from 'gi://GeglGtk3?version=0.1';
+export default GeglGtk3;

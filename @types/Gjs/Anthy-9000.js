@@ -1,2 +1,2 @@
-imports.gi.versions.Anthy = '9000'
-export default imports.gi.Anthy
+import Anthy from 'gi://Anthy?version=9000';
+export default Anthy;

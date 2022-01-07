@@ -3,49 +3,53 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GObject from './GObject-2.0';
+import type GObject from './GObject-2.0';
 
-export function open_display(): void
-export class Display {
+export namespace xlib {
+
+function open_display(): void
+class Display {
     static name: string
 }
-export class Screen {
+class Screen {
     static name: string
 }
-export class Visual {
+class Visual {
     static name: string
 }
-export class XConfigureEvent {
+class XConfigureEvent {
     static name: string
 }
-export class XImage {
+class XImage {
     static name: string
 }
-export class XFontStruct {
+class XFontStruct {
     static name: string
 }
-export class XTrapezoid {
+class XTrapezoid {
     static name: string
 }
-export class XVisualInfo {
+class XVisualInfo {
     static name: string
 }
-export class XWindowAttributes {
+class XWindowAttributes {
     static name: string
 }
-export class XEvent {
+class XEvent {
     static name: string
 }
-export type Atom = number
-export type Colormap = number
-export type Cursor = number
-export type Drawable = number
-export type GC = object
-export type KeyCode = number
-export type KeySym = number
-export type Picture = number
-export type Time = number
-export type VisualID = number
-export type Window = number
-export type XID = number
-export type Pixmap = number
+type Atom = number
+type Colormap = number
+type Cursor = number
+type Drawable = number
+type GC = object
+type KeyCode = number
+type KeySym = number
+type Picture = number
+type Time = number
+type VisualID = number
+type Window = number
+type XID = number
+type Pixmap = number
+}
+export default xlib;

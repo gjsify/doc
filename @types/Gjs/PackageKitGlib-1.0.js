@@ -1,2 +1,2 @@
-imports.gi.versions.PackageKitGlib = '1.0'
-export default imports.gi.PackageKitGlib
+import PackageKitGlib from 'gi://PackageKitGlib?version=1.0';
+export default PackageKitGlib;

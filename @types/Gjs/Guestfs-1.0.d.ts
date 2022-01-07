@@ -3,11 +3,13 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum SessionEvent {
+export namespace Guestfs {
+
+enum SessionEvent {
     CLOSE,
     SUBPROCESS_QUIT,
     LAUNCH_DONE,
@@ -19,7 +21,7 @@ export enum SessionEvent {
     LIBVIRT_AUTH,
     WARNING,
 }
-export enum Tristate {
+enum Tristate {
     FALSE,
     TRUE,
     NONE,
@@ -35,8 +37,8 @@ export interface AddDomain_ConstructProps extends GObject.Object_ConstructProps 
     readonly?: Tristate
     readonlydisk?: string
 }
-export class AddDomain {
-    /* Properties of Guestfs.AddDomain */
+class AddDomain {
+    /* Properties of Guestfs-1.0.Guestfs.AddDomain */
     allowuuid: Tristate
     cachemode: string
     copyonread: Tristate
@@ -46,20 +48,20 @@ export class AddDomain {
     live: Tristate
     readonly: Tristate
     readonlydisk: string
-    /* Fields of Guestfs.AddDomain */
+    /* Fields of Guestfs-1.0.Guestfs.AddDomain */
     parent: GObject.Object
     priv: AddDomainPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -67,21 +69,21 @@ export class AddDomain {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AddDomain, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AddDomain, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -127,8 +129,8 @@ export interface AddDrive_ConstructProps extends GObject.Object_ConstructProps {
     secret?: string
     username?: string
 }
-export class AddDrive {
-    /* Properties of Guestfs.AddDrive */
+class AddDrive {
+    /* Properties of Guestfs-1.0.Guestfs.AddDrive */
     cachemode: string
     copyonread: Tristate
     discard: string
@@ -140,20 +142,20 @@ export class AddDrive {
     readonly: Tristate
     secret: string
     username: string
-    /* Fields of Guestfs.AddDrive */
+    /* Fields of Guestfs-1.0.Guestfs.AddDrive */
     parent: GObject.Object
     priv: AddDrivePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -161,21 +163,21 @@ export class AddDrive {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AddDrive, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AddDrive, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -216,24 +218,24 @@ export interface AddDriveScratch_ConstructProps extends GObject.Object_Construct
     label?: string
     name?: string
 }
-export class AddDriveScratch {
-    /* Properties of Guestfs.AddDriveScratch */
+class AddDriveScratch {
+    /* Properties of Guestfs-1.0.Guestfs.AddDriveScratch */
     label: string
     name: string
-    /* Fields of Guestfs.AddDriveScratch */
+    /* Fields of Guestfs-1.0.Guestfs.AddDriveScratch */
     parent: GObject.Object
     priv: AddDriveScratchPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -241,21 +243,21 @@ export class AddDriveScratch {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AddDriveScratch, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AddDriveScratch, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -283,8 +285,8 @@ export interface AddLibvirtDom_ConstructProps extends GObject.Object_ConstructPr
     readonly?: Tristate
     readonlydisk?: string
 }
-export class AddLibvirtDom {
-    /* Properties of Guestfs.AddLibvirtDom */
+class AddLibvirtDom {
+    /* Properties of Guestfs-1.0.Guestfs.AddLibvirtDom */
     cachemode: string
     copyonread: Tristate
     discard: string
@@ -292,20 +294,20 @@ export class AddLibvirtDom {
     live: Tristate
     readonly: Tristate
     readonlydisk: string
-    /* Fields of Guestfs.AddLibvirtDom */
+    /* Fields of Guestfs-1.0.Guestfs.AddLibvirtDom */
     parent: GObject.Object
     priv: AddLibvirtDomPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -313,21 +315,21 @@ export class AddLibvirtDom {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AddLibvirtDom, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AddLibvirtDom, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -359,23 +361,23 @@ export class AddLibvirtDom {
 export interface AugTransform_ConstructProps extends GObject.Object_ConstructProps {
     remove?: Tristate
 }
-export class AugTransform {
-    /* Properties of Guestfs.AugTransform */
+class AugTransform {
+    /* Properties of Guestfs-1.0.Guestfs.AugTransform */
     remove: Tristate
-    /* Fields of Guestfs.AugTransform */
+    /* Fields of Guestfs-1.0.Guestfs.AugTransform */
     parent: GObject.Object
     priv: AugTransformPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -383,21 +385,21 @@ export class AugTransform {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: AugTransform, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AugTransform, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -418,24 +420,24 @@ export interface BTRFSFilesystemDefragment_ConstructProps extends GObject.Object
     compress?: string
     flush?: Tristate
 }
-export class BTRFSFilesystemDefragment {
-    /* Properties of Guestfs.BTRFSFilesystemDefragment */
+class BTRFSFilesystemDefragment {
+    /* Properties of Guestfs-1.0.Guestfs.BTRFSFilesystemDefragment */
     compress: string
     flush: Tristate
-    /* Fields of Guestfs.BTRFSFilesystemDefragment */
+    /* Fields of Guestfs-1.0.Guestfs.BTRFSFilesystemDefragment */
     parent: GObject.Object
     priv: BTRFSFilesystemDefragmentPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -443,21 +445,21 @@ export class BTRFSFilesystemDefragment {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BTRFSFilesystemDefragment, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BTRFSFilesystemDefragment, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -479,23 +481,23 @@ export class BTRFSFilesystemDefragment {
 export interface BTRFSFilesystemResize_ConstructProps extends GObject.Object_ConstructProps {
     size?: number
 }
-export class BTRFSFilesystemResize {
-    /* Properties of Guestfs.BTRFSFilesystemResize */
+class BTRFSFilesystemResize {
+    /* Properties of Guestfs-1.0.Guestfs.BTRFSFilesystemResize */
     size: number
-    /* Fields of Guestfs.BTRFSFilesystemResize */
+    /* Fields of Guestfs-1.0.Guestfs.BTRFSFilesystemResize */
     parent: GObject.Object
     priv: BTRFSFilesystemResizePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -503,21 +505,21 @@ export class BTRFSFilesystemResize {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BTRFSFilesystemResize, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BTRFSFilesystemResize, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -537,23 +539,23 @@ export class BTRFSFilesystemResize {
 export interface BTRFSImage_ConstructProps extends GObject.Object_ConstructProps {
     compresslevel?: number
 }
-export class BTRFSImage {
-    /* Properties of Guestfs.BTRFSImage */
+class BTRFSImage {
+    /* Properties of Guestfs-1.0.Guestfs.BTRFSImage */
     compresslevel: number
-    /* Fields of Guestfs.BTRFSImage */
+    /* Fields of Guestfs-1.0.Guestfs.BTRFSImage */
     parent: GObject.Object
     priv: BTRFSImagePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -561,21 +563,21 @@ export class BTRFSImage {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BTRFSImage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BTRFSImage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -595,23 +597,23 @@ export class BTRFSImage {
 export interface BTRFSSubvolumeCreate_ConstructProps extends GObject.Object_ConstructProps {
     qgroupid?: string
 }
-export class BTRFSSubvolumeCreate {
-    /* Properties of Guestfs.BTRFSSubvolumeCreate */
+class BTRFSSubvolumeCreate {
+    /* Properties of Guestfs-1.0.Guestfs.BTRFSSubvolumeCreate */
     qgroupid: string
-    /* Fields of Guestfs.BTRFSSubvolumeCreate */
+    /* Fields of Guestfs-1.0.Guestfs.BTRFSSubvolumeCreate */
     parent: GObject.Object
     priv: BTRFSSubvolumeCreatePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -619,21 +621,21 @@ export class BTRFSSubvolumeCreate {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BTRFSSubvolumeCreate, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BTRFSSubvolumeCreate, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -654,24 +656,24 @@ export interface BTRFSSubvolumeSnapshot_ConstructProps extends GObject.Object_Co
     qgroupid?: string
     ro?: Tristate
 }
-export class BTRFSSubvolumeSnapshot {
-    /* Properties of Guestfs.BTRFSSubvolumeSnapshot */
+class BTRFSSubvolumeSnapshot {
+    /* Properties of Guestfs-1.0.Guestfs.BTRFSSubvolumeSnapshot */
     qgroupid: string
     ro: Tristate
-    /* Fields of Guestfs.BTRFSSubvolumeSnapshot */
+    /* Fields of Guestfs-1.0.Guestfs.BTRFSSubvolumeSnapshot */
     parent: GObject.Object
     priv: BTRFSSubvolumeSnapshotPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -679,21 +681,21 @@ export class BTRFSSubvolumeSnapshot {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BTRFSSubvolumeSnapshot, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BTRFSSubvolumeSnapshot, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -716,24 +718,24 @@ export interface BtrfsFsck_ConstructProps extends GObject.Object_ConstructProps 
     repair?: Tristate
     superblock?: number
 }
-export class BtrfsFsck {
-    /* Properties of Guestfs.BtrfsFsck */
+class BtrfsFsck {
+    /* Properties of Guestfs-1.0.Guestfs.BtrfsFsck */
     repair: Tristate
     superblock: number
-    /* Fields of Guestfs.BtrfsFsck */
+    /* Fields of Guestfs-1.0.Guestfs.BtrfsFsck */
     parent: GObject.Object
     priv: BtrfsFsckPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -741,21 +743,21 @@ export class BtrfsFsck {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: BtrfsFsck, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BtrfsFsck, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -777,23 +779,23 @@ export class BtrfsFsck {
 export interface CompressDeviceOut_ConstructProps extends GObject.Object_ConstructProps {
     level?: number
 }
-export class CompressDeviceOut {
-    /* Properties of Guestfs.CompressDeviceOut */
+class CompressDeviceOut {
+    /* Properties of Guestfs-1.0.Guestfs.CompressDeviceOut */
     level: number
-    /* Fields of Guestfs.CompressDeviceOut */
+    /* Fields of Guestfs-1.0.Guestfs.CompressDeviceOut */
     parent: GObject.Object
     priv: CompressDeviceOutPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -801,21 +803,21 @@ export class CompressDeviceOut {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CompressDeviceOut, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CompressDeviceOut, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -835,23 +837,23 @@ export class CompressDeviceOut {
 export interface CompressOut_ConstructProps extends GObject.Object_ConstructProps {
     level?: number
 }
-export class CompressOut {
-    /* Properties of Guestfs.CompressOut */
+class CompressOut {
+    /* Properties of Guestfs-1.0.Guestfs.CompressOut */
     level: number
-    /* Fields of Guestfs.CompressOut */
+    /* Fields of Guestfs-1.0.Guestfs.CompressOut */
     parent: GObject.Object
     priv: CompressOutPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -859,21 +861,21 @@ export class CompressOut {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CompressOut, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CompressOut, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -896,26 +898,26 @@ export interface CopyAttributes_ConstructProps extends GObject.Object_ConstructP
     ownership?: Tristate
     xattributes?: Tristate
 }
-export class CopyAttributes {
-    /* Properties of Guestfs.CopyAttributes */
+class CopyAttributes {
+    /* Properties of Guestfs-1.0.Guestfs.CopyAttributes */
     all: Tristate
     mode: Tristate
     ownership: Tristate
     xattributes: Tristate
-    /* Fields of Guestfs.CopyAttributes */
+    /* Fields of Guestfs-1.0.Guestfs.CopyAttributes */
     parent: GObject.Object
     priv: CopyAttributesPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -923,21 +925,21 @@ export class CopyAttributes {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CopyAttributes, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CopyAttributes, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -967,27 +969,27 @@ export interface CopyDeviceToDevice_ConstructProps extends GObject.Object_Constr
     sparse?: Tristate
     srcoffset?: number
 }
-export class CopyDeviceToDevice {
-    /* Properties of Guestfs.CopyDeviceToDevice */
+class CopyDeviceToDevice {
+    /* Properties of Guestfs-1.0.Guestfs.CopyDeviceToDevice */
     append: Tristate
     destoffset: number
     size: number
     sparse: Tristate
     srcoffset: number
-    /* Fields of Guestfs.CopyDeviceToDevice */
+    /* Fields of Guestfs-1.0.Guestfs.CopyDeviceToDevice */
     parent: GObject.Object
     priv: CopyDeviceToDevicePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -995,21 +997,21 @@ export class CopyDeviceToDevice {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CopyDeviceToDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CopyDeviceToDevice, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1041,27 +1043,27 @@ export interface CopyDeviceToFile_ConstructProps extends GObject.Object_Construc
     sparse?: Tristate
     srcoffset?: number
 }
-export class CopyDeviceToFile {
-    /* Properties of Guestfs.CopyDeviceToFile */
+class CopyDeviceToFile {
+    /* Properties of Guestfs-1.0.Guestfs.CopyDeviceToFile */
     append: Tristate
     destoffset: number
     size: number
     sparse: Tristate
     srcoffset: number
-    /* Fields of Guestfs.CopyDeviceToFile */
+    /* Fields of Guestfs-1.0.Guestfs.CopyDeviceToFile */
     parent: GObject.Object
     priv: CopyDeviceToFilePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1069,21 +1071,21 @@ export class CopyDeviceToFile {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CopyDeviceToFile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CopyDeviceToFile, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1115,27 +1117,27 @@ export interface CopyFileToDevice_ConstructProps extends GObject.Object_Construc
     sparse?: Tristate
     srcoffset?: number
 }
-export class CopyFileToDevice {
-    /* Properties of Guestfs.CopyFileToDevice */
+class CopyFileToDevice {
+    /* Properties of Guestfs-1.0.Guestfs.CopyFileToDevice */
     append: Tristate
     destoffset: number
     size: number
     sparse: Tristate
     srcoffset: number
-    /* Fields of Guestfs.CopyFileToDevice */
+    /* Fields of Guestfs-1.0.Guestfs.CopyFileToDevice */
     parent: GObject.Object
     priv: CopyFileToDevicePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1143,21 +1145,21 @@ export class CopyFileToDevice {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CopyFileToDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CopyFileToDevice, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1189,27 +1191,27 @@ export interface CopyFileToFile_ConstructProps extends GObject.Object_ConstructP
     sparse?: Tristate
     srcoffset?: number
 }
-export class CopyFileToFile {
-    /* Properties of Guestfs.CopyFileToFile */
+class CopyFileToFile {
+    /* Properties of Guestfs-1.0.Guestfs.CopyFileToFile */
     append: Tristate
     destoffset: number
     size: number
     sparse: Tristate
     srcoffset: number
-    /* Fields of Guestfs.CopyFileToFile */
+    /* Fields of Guestfs-1.0.Guestfs.CopyFileToFile */
     parent: GObject.Object
     priv: CopyFileToFilePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1217,21 +1219,21 @@ export class CopyFileToFile {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CopyFileToFile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CopyFileToFile, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1259,23 +1261,23 @@ export class CopyFileToFile {
 export interface CpioOut_ConstructProps extends GObject.Object_ConstructProps {
     format?: string
 }
-export class CpioOut {
-    /* Properties of Guestfs.CpioOut */
+class CpioOut {
+    /* Properties of Guestfs-1.0.Guestfs.CpioOut */
     format: string
-    /* Fields of Guestfs.CpioOut */
+    /* Fields of Guestfs-1.0.Guestfs.CpioOut */
     parent: GObject.Object
     priv: CpioOutPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1283,21 +1285,21 @@ export class CpioOut {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: CpioOut, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CpioOut, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1321,27 +1323,27 @@ export interface DiskCreate_ConstructProps extends GObject.Object_ConstructProps
     compat?: string
     preallocation?: string
 }
-export class DiskCreate {
-    /* Properties of Guestfs.DiskCreate */
+class DiskCreate {
+    /* Properties of Guestfs-1.0.Guestfs.DiskCreate */
     backingfile: string
     backingformat: string
     clustersize: number
     compat: string
     preallocation: string
-    /* Fields of Guestfs.DiskCreate */
+    /* Fields of Guestfs-1.0.Guestfs.DiskCreate */
     parent: GObject.Object
     priv: DiskCreatePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1349,21 +1351,21 @@ export class DiskCreate {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DiskCreate, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DiskCreate, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1391,23 +1393,23 @@ export class DiskCreate {
 export interface DownloadBlocks_ConstructProps extends GObject.Object_ConstructProps {
     unallocated?: Tristate
 }
-export class DownloadBlocks {
-    /* Properties of Guestfs.DownloadBlocks */
+class DownloadBlocks {
+    /* Properties of Guestfs-1.0.Guestfs.DownloadBlocks */
     unallocated: Tristate
-    /* Fields of Guestfs.DownloadBlocks */
+    /* Fields of Guestfs-1.0.Guestfs.DownloadBlocks */
     parent: GObject.Object
     priv: DownloadBlocksPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1415,21 +1417,21 @@ export class DownloadBlocks {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: DownloadBlocks, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DownloadBlocks, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1450,24 +1452,24 @@ export interface E2fsck_ConstructProps extends GObject.Object_ConstructProps {
     correct?: Tristate
     forceall?: Tristate
 }
-export class E2fsck {
-    /* Properties of Guestfs.E2fsck */
+class E2fsck {
+    /* Properties of Guestfs-1.0.Guestfs.E2fsck */
     correct: Tristate
     forceall: Tristate
-    /* Fields of Guestfs.E2fsck */
+    /* Fields of Guestfs-1.0.Guestfs.E2fsck */
     parent: GObject.Object
     priv: E2fsckPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1475,21 +1477,21 @@ export class E2fsck {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: E2fsck, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: E2fsck, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1513,25 +1515,25 @@ export interface Fstrim_ConstructProps extends GObject.Object_ConstructProps {
     minimumfreeextent?: number
     offset?: number
 }
-export class Fstrim {
-    /* Properties of Guestfs.Fstrim */
+class Fstrim {
+    /* Properties of Guestfs-1.0.Guestfs.Fstrim */
     length: number
     minimumfreeextent: number
     offset: number
-    /* Fields of Guestfs.Fstrim */
+    /* Fields of Guestfs-1.0.Guestfs.Fstrim */
     parent: GObject.Object
     priv: FstrimPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1539,21 +1541,21 @@ export class Fstrim {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Fstrim, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Fstrim, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1577,23 +1579,23 @@ export class Fstrim {
 export interface GlobExpand_ConstructProps extends GObject.Object_ConstructProps {
     directoryslash?: Tristate
 }
-export class GlobExpand {
-    /* Properties of Guestfs.GlobExpand */
+class GlobExpand {
+    /* Properties of Guestfs-1.0.Guestfs.GlobExpand */
     directoryslash: Tristate
-    /* Fields of Guestfs.GlobExpand */
+    /* Fields of Guestfs-1.0.Guestfs.GlobExpand */
     parent: GObject.Object
     priv: GlobExpandPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1601,21 +1603,21 @@ export class GlobExpand {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GlobExpand, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GlobExpand, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1638,26 +1640,26 @@ export interface Grep_ConstructProps extends GObject.Object_ConstructProps {
     fixed?: Tristate
     insensitive?: Tristate
 }
-export class Grep {
-    /* Properties of Guestfs.Grep */
+class Grep {
+    /* Properties of Guestfs-1.0.Guestfs.Grep */
     compressed: Tristate
     extended: Tristate
     fixed: Tristate
     insensitive: Tristate
-    /* Fields of Guestfs.Grep */
+    /* Fields of Guestfs-1.0.Guestfs.Grep */
     parent: GObject.Object
     priv: GrepPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1665,21 +1667,21 @@ export class Grep {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Grep, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Grep, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1708,26 +1710,26 @@ export interface HivexOpen_ConstructProps extends GObject.Object_ConstructProps 
     verbose?: Tristate
     write?: Tristate
 }
-export class HivexOpen {
-    /* Properties of Guestfs.HivexOpen */
+class HivexOpen {
+    /* Properties of Guestfs-1.0.Guestfs.HivexOpen */
     debug: Tristate
     unsafe: Tristate
     verbose: Tristate
     write: Tristate
-    /* Fields of Guestfs.HivexOpen */
+    /* Fields of Guestfs-1.0.Guestfs.HivexOpen */
     parent: GObject.Object
     priv: HivexOpenPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1735,21 +1737,21 @@ export class HivexOpen {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: HivexOpen, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: HivexOpen, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1776,24 +1778,24 @@ export interface InspectGetIcon_ConstructProps extends GObject.Object_ConstructP
     favicon?: Tristate
     highquality?: Tristate
 }
-export class InspectGetIcon {
-    /* Properties of Guestfs.InspectGetIcon */
+class InspectGetIcon {
+    /* Properties of Guestfs-1.0.Guestfs.InspectGetIcon */
     favicon: Tristate
     highquality: Tristate
-    /* Fields of Guestfs.InspectGetIcon */
+    /* Fields of Guestfs-1.0.Guestfs.InspectGetIcon */
     parent: GObject.Object
     priv: InspectGetIconPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1801,21 +1803,21 @@ export class InspectGetIcon {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InspectGetIcon, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InspectGetIcon, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1840,26 +1842,26 @@ export interface InternalTest_ConstructProps extends GObject.Object_ConstructPro
     oint64?: number
     ostring?: string
 }
-export class InternalTest {
-    /* Properties of Guestfs.InternalTest */
+class InternalTest {
+    /* Properties of Guestfs-1.0.Guestfs.InternalTest */
     obool: Tristate
     oint: number
     oint64: number
     ostring: string
-    /* Fields of Guestfs.InternalTest */
+    /* Fields of Guestfs-1.0.Guestfs.InternalTest */
     parent: GObject.Object
     priv: InternalTestPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1867,21 +1869,21 @@ export class InternalTest {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InternalTest, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InternalTest, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -1969,8 +1971,8 @@ export interface InternalTest63Optargs_ConstructProps extends GObject.Object_Con
     opt8?: number
     opt9?: number
 }
-export class InternalTest63Optargs {
-    /* Properties of Guestfs.InternalTest63Optargs */
+class InternalTest63Optargs {
+    /* Properties of Guestfs-1.0.Guestfs.InternalTest63Optargs */
     opt1: number
     opt10: number
     opt11: number
@@ -2034,20 +2036,20 @@ export class InternalTest63Optargs {
     opt7: number
     opt8: number
     opt9: number
-    /* Fields of Guestfs.InternalTest63Optargs */
+    /* Fields of Guestfs-1.0.Guestfs.InternalTest63Optargs */
     parent: GObject.Object
     priv: InternalTest63OptargsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2055,21 +2057,21 @@ export class InternalTest63Optargs {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InternalTest63Optargs, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InternalTest63Optargs, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2213,23 +2215,23 @@ export class InternalTest63Optargs {
 export interface InternalTestOnlyOptargs_ConstructProps extends GObject.Object_ConstructProps {
     test?: number
 }
-export class InternalTestOnlyOptargs {
-    /* Properties of Guestfs.InternalTestOnlyOptargs */
+class InternalTestOnlyOptargs {
+    /* Properties of Guestfs-1.0.Guestfs.InternalTestOnlyOptargs */
     test: number
-    /* Fields of Guestfs.InternalTestOnlyOptargs */
+    /* Fields of Guestfs-1.0.Guestfs.InternalTestOnlyOptargs */
     parent: GObject.Object
     priv: InternalTestOnlyOptargsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2237,21 +2239,21 @@ export class InternalTestOnlyOptargs {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: InternalTestOnlyOptargs, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InternalTestOnlyOptargs, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2271,23 +2273,23 @@ export class InternalTestOnlyOptargs {
 export interface IsBlockdev_ConstructProps extends GObject.Object_ConstructProps {
     followsymlinks?: Tristate
 }
-export class IsBlockdev {
-    /* Properties of Guestfs.IsBlockdev */
+class IsBlockdev {
+    /* Properties of Guestfs-1.0.Guestfs.IsBlockdev */
     followsymlinks: Tristate
-    /* Fields of Guestfs.IsBlockdev */
+    /* Fields of Guestfs-1.0.Guestfs.IsBlockdev */
     parent: GObject.Object
     priv: IsBlockdevPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2295,21 +2297,21 @@ export class IsBlockdev {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: IsBlockdev, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: IsBlockdev, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2329,23 +2331,23 @@ export class IsBlockdev {
 export interface IsChardev_ConstructProps extends GObject.Object_ConstructProps {
     followsymlinks?: Tristate
 }
-export class IsChardev {
-    /* Properties of Guestfs.IsChardev */
+class IsChardev {
+    /* Properties of Guestfs-1.0.Guestfs.IsChardev */
     followsymlinks: Tristate
-    /* Fields of Guestfs.IsChardev */
+    /* Fields of Guestfs-1.0.Guestfs.IsChardev */
     parent: GObject.Object
     priv: IsChardevPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2353,21 +2355,21 @@ export class IsChardev {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: IsChardev, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: IsChardev, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2387,23 +2389,23 @@ export class IsChardev {
 export interface IsDir_ConstructProps extends GObject.Object_ConstructProps {
     followsymlinks?: Tristate
 }
-export class IsDir {
-    /* Properties of Guestfs.IsDir */
+class IsDir {
+    /* Properties of Guestfs-1.0.Guestfs.IsDir */
     followsymlinks: Tristate
-    /* Fields of Guestfs.IsDir */
+    /* Fields of Guestfs-1.0.Guestfs.IsDir */
     parent: GObject.Object
     priv: IsDirPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2411,21 +2413,21 @@ export class IsDir {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: IsDir, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: IsDir, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2445,23 +2447,23 @@ export class IsDir {
 export interface IsFifo_ConstructProps extends GObject.Object_ConstructProps {
     followsymlinks?: Tristate
 }
-export class IsFifo {
-    /* Properties of Guestfs.IsFifo */
+class IsFifo {
+    /* Properties of Guestfs-1.0.Guestfs.IsFifo */
     followsymlinks: Tristate
-    /* Fields of Guestfs.IsFifo */
+    /* Fields of Guestfs-1.0.Guestfs.IsFifo */
     parent: GObject.Object
     priv: IsFifoPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2469,21 +2471,21 @@ export class IsFifo {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: IsFifo, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: IsFifo, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2503,23 +2505,23 @@ export class IsFifo {
 export interface IsFile_ConstructProps extends GObject.Object_ConstructProps {
     followsymlinks?: Tristate
 }
-export class IsFile {
-    /* Properties of Guestfs.IsFile */
+class IsFile {
+    /* Properties of Guestfs-1.0.Guestfs.IsFile */
     followsymlinks: Tristate
-    /* Fields of Guestfs.IsFile */
+    /* Fields of Guestfs-1.0.Guestfs.IsFile */
     parent: GObject.Object
     priv: IsFilePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2527,21 +2529,21 @@ export class IsFile {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: IsFile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: IsFile, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2561,23 +2563,23 @@ export class IsFile {
 export interface IsSocket_ConstructProps extends GObject.Object_ConstructProps {
     followsymlinks?: Tristate
 }
-export class IsSocket {
-    /* Properties of Guestfs.IsSocket */
+class IsSocket {
+    /* Properties of Guestfs-1.0.Guestfs.IsSocket */
     followsymlinks: Tristate
-    /* Fields of Guestfs.IsSocket */
+    /* Fields of Guestfs-1.0.Guestfs.IsSocket */
     parent: GObject.Object
     priv: IsSocketPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2585,21 +2587,21 @@ export class IsSocket {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: IsSocket, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: IsSocket, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2623,27 +2625,27 @@ export interface MDCreate_ConstructProps extends GObject.Object_ConstructProps {
     nrdevices?: number
     spare?: number
 }
-export class MDCreate {
-    /* Properties of Guestfs.MDCreate */
+class MDCreate {
+    /* Properties of Guestfs-1.0.Guestfs.MDCreate */
     chunk: number
     level: string
     missingbitmap: number
     nrdevices: number
     spare: number
-    /* Fields of Guestfs.MDCreate */
+    /* Fields of Guestfs-1.0.Guestfs.MDCreate */
     parent: GObject.Object
     priv: MDCreatePrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2651,21 +2653,21 @@ export class MDCreate {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MDCreate, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MDCreate, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2730,8 +2732,8 @@ export interface Mke2fs_ConstructProps extends GObject.Object_ConstructProps {
     uuid?: string
     writesbandgrouponly?: Tristate
 }
-export class Mke2fs {
-    /* Properties of Guestfs.Mke2fs */
+class Mke2fs {
+    /* Properties of Guestfs-1.0.Guestfs.Mke2fs */
     blockscount: number
     blocksize: number
     blockspergroup: number
@@ -2770,20 +2772,20 @@ export class Mke2fs {
     usagetype: string
     uuid: string
     writesbandgrouponly: Tristate
-    /* Fields of Guestfs.Mke2fs */
+    /* Fields of Guestfs-1.0.Guestfs.Mke2fs */
     parent: GObject.Object
     priv: Mke2fsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2791,21 +2793,21 @@ export class Mke2fs {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Mke2fs, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Mke2fs, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2903,27 +2905,27 @@ export interface Mkfs_ConstructProps extends GObject.Object_ConstructProps {
     label?: string
     sectorsize?: number
 }
-export class Mkfs {
-    /* Properties of Guestfs.Mkfs */
+class Mkfs {
+    /* Properties of Guestfs-1.0.Guestfs.Mkfs */
     blocksize: number
     features: string
     inode: number
     label: string
     sectorsize: number
-    /* Fields of Guestfs.Mkfs */
+    /* Fields of Guestfs-1.0.Guestfs.Mkfs */
     parent: GObject.Object
     priv: MkfsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2931,21 +2933,21 @@ export class Mkfs {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Mkfs, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Mkfs, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2980,8 +2982,8 @@ export interface MkfsBtrfs_ConstructProps extends GObject.Object_ConstructProps 
     nodesize?: number
     sectorsize?: number
 }
-export class MkfsBtrfs {
-    /* Properties of Guestfs.MkfsBtrfs */
+class MkfsBtrfs {
+    /* Properties of Guestfs-1.0.Guestfs.MkfsBtrfs */
     allocstart: number
     bytecount: number
     datatype: string
@@ -2990,20 +2992,20 @@ export class MkfsBtrfs {
     metadata: string
     nodesize: number
     sectorsize: number
-    /* Fields of Guestfs.MkfsBtrfs */
+    /* Fields of Guestfs-1.0.Guestfs.MkfsBtrfs */
     parent: GObject.Object
     priv: MkfsBtrfsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3011,21 +3013,21 @@ export class MkfsBtrfs {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MkfsBtrfs, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MkfsBtrfs, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3059,23 +3061,23 @@ export class MkfsBtrfs {
 export interface Mksquashfs_ConstructProps extends GObject.Object_ConstructProps {
     compress?: string
 }
-export class Mksquashfs {
-    /* Properties of Guestfs.Mksquashfs */
+class Mksquashfs {
+    /* Properties of Guestfs-1.0.Guestfs.Mksquashfs */
     compress: string
-    /* Fields of Guestfs.Mksquashfs */
+    /* Fields of Guestfs-1.0.Guestfs.Mksquashfs */
     parent: GObject.Object
     priv: MksquashfsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3083,21 +3085,21 @@ export class Mksquashfs {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Mksquashfs, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Mksquashfs, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3118,24 +3120,24 @@ export interface Mkswap_ConstructProps extends GObject.Object_ConstructProps {
     label?: string
     uuid?: string
 }
-export class Mkswap {
-    /* Properties of Guestfs.Mkswap */
+class Mkswap {
+    /* Properties of Guestfs-1.0.Guestfs.Mkswap */
     label: string
     uuid: string
-    /* Fields of Guestfs.Mkswap */
+    /* Fields of Guestfs-1.0.Guestfs.Mkswap */
     parent: GObject.Object
     priv: MkswapPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3143,21 +3145,21 @@ export class Mkswap {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Mkswap, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Mkswap, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3179,23 +3181,23 @@ export class Mkswap {
 export interface Mktemp_ConstructProps extends GObject.Object_ConstructProps {
     suffix?: string
 }
-export class Mktemp {
-    /* Properties of Guestfs.Mktemp */
+class Mktemp {
+    /* Properties of Guestfs-1.0.Guestfs.Mktemp */
     suffix: string
-    /* Fields of Guestfs.Mktemp */
+    /* Fields of Guestfs-1.0.Guestfs.Mktemp */
     parent: GObject.Object
     priv: MktempPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3203,21 +3205,21 @@ export class Mktemp {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Mktemp, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Mktemp, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3237,23 +3239,23 @@ export class Mktemp {
 export interface Mount9P_ConstructProps extends GObject.Object_ConstructProps {
     options?: string
 }
-export class Mount9P {
-    /* Properties of Guestfs.Mount9P */
+class Mount9P {
+    /* Properties of Guestfs-1.0.Guestfs.Mount9P */
     options: string
-    /* Fields of Guestfs.Mount9P */
+    /* Fields of Guestfs-1.0.Guestfs.Mount9P */
     parent: GObject.Object
     priv: Mount9PPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3261,21 +3263,21 @@ export class Mount9P {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Mount9P, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Mount9P, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3298,26 +3300,26 @@ export interface MountLocal_ConstructProps extends GObject.Object_ConstructProps
     options?: string
     readonly?: Tristate
 }
-export class MountLocal {
-    /* Properties of Guestfs.MountLocal */
+class MountLocal {
+    /* Properties of Guestfs-1.0.Guestfs.MountLocal */
     cachetimeout: number
     debugcalls: Tristate
     options: string
     readonly: Tristate
-    /* Fields of Guestfs.MountLocal */
+    /* Fields of Guestfs-1.0.Guestfs.MountLocal */
     parent: GObject.Object
     priv: MountLocalPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3325,21 +3327,21 @@ export class MountLocal {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: MountLocal, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MountLocal, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3366,24 +3368,24 @@ export interface NTFSResizeOpts_ConstructProps extends GObject.Object_ConstructP
     force?: Tristate
     size?: number
 }
-export class NTFSResizeOpts {
-    /* Properties of Guestfs.NTFSResizeOpts */
+class NTFSResizeOpts {
+    /* Properties of Guestfs-1.0.Guestfs.NTFSResizeOpts */
     force: Tristate
     size: number
-    /* Fields of Guestfs.NTFSResizeOpts */
+    /* Fields of Guestfs-1.0.Guestfs.NTFSResizeOpts */
     parent: GObject.Object
     priv: NTFSResizeOptsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3391,21 +3393,21 @@ export class NTFSResizeOpts {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: NTFSResizeOpts, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: NTFSResizeOpts, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3431,27 +3433,27 @@ export interface NtfscloneOut_ConstructProps extends GObject.Object_ConstructPro
     preservetimestamps?: Tristate
     rescue?: Tristate
 }
-export class NtfscloneOut {
-    /* Properties of Guestfs.NtfscloneOut */
+class NtfscloneOut {
+    /* Properties of Guestfs-1.0.Guestfs.NtfscloneOut */
     force: Tristate
     ignorefscheck: Tristate
     metadataonly: Tristate
     preservetimestamps: Tristate
     rescue: Tristate
-    /* Fields of Guestfs.NtfscloneOut */
+    /* Fields of Guestfs-1.0.Guestfs.NtfscloneOut */
     parent: GObject.Object
     priv: NtfscloneOutPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3459,21 +3461,21 @@ export class NtfscloneOut {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: NtfscloneOut, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: NtfscloneOut, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3501,23 +3503,23 @@ export class NtfscloneOut {
 export interface Ntfsfix_ConstructProps extends GObject.Object_ConstructProps {
     clearbadsectors?: Tristate
 }
-export class Ntfsfix {
-    /* Properties of Guestfs.Ntfsfix */
+class Ntfsfix {
+    /* Properties of Guestfs-1.0.Guestfs.Ntfsfix */
     clearbadsectors: Tristate
-    /* Fields of Guestfs.Ntfsfix */
+    /* Fields of Guestfs-1.0.Guestfs.Ntfsfix */
     parent: GObject.Object
     priv: NtfsfixPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3525,21 +3527,21 @@ export class Ntfsfix {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Ntfsfix, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Ntfsfix, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3559,23 +3561,23 @@ export class Ntfsfix {
 export interface Remount_ConstructProps extends GObject.Object_ConstructProps {
     rw?: Tristate
 }
-export class Remount {
-    /* Properties of Guestfs.Remount */
+class Remount {
+    /* Properties of Guestfs-1.0.Guestfs.Remount */
     rw: Tristate
-    /* Fields of Guestfs.Remount */
+    /* Fields of Guestfs-1.0.Guestfs.Remount */
     parent: GObject.Object
     priv: RemountPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3583,21 +3585,21 @@ export class Remount {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Remount, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Remount, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3618,24 +3620,24 @@ export interface Rsync_ConstructProps extends GObject.Object_ConstructProps {
     archive?: Tristate
     deletedest?: Tristate
 }
-export class Rsync {
-    /* Properties of Guestfs.Rsync */
+class Rsync {
+    /* Properties of Guestfs-1.0.Guestfs.Rsync */
     archive: Tristate
     deletedest: Tristate
-    /* Fields of Guestfs.Rsync */
+    /* Fields of Guestfs-1.0.Guestfs.Rsync */
     parent: GObject.Object
     priv: RsyncPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3643,21 +3645,21 @@ export class Rsync {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Rsync, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Rsync, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3680,24 +3682,24 @@ export interface RsyncIn_ConstructProps extends GObject.Object_ConstructProps {
     archive?: Tristate
     deletedest?: Tristate
 }
-export class RsyncIn {
-    /* Properties of Guestfs.RsyncIn */
+class RsyncIn {
+    /* Properties of Guestfs-1.0.Guestfs.RsyncIn */
     archive: Tristate
     deletedest: Tristate
-    /* Fields of Guestfs.RsyncIn */
+    /* Fields of Guestfs-1.0.Guestfs.RsyncIn */
     parent: GObject.Object
     priv: RsyncInPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3705,21 +3707,21 @@ export class RsyncIn {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RsyncIn, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RsyncIn, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3742,24 +3744,24 @@ export interface RsyncOut_ConstructProps extends GObject.Object_ConstructProps {
     archive?: Tristate
     deletedest?: Tristate
 }
-export class RsyncOut {
-    /* Properties of Guestfs.RsyncOut */
+class RsyncOut {
+    /* Properties of Guestfs-1.0.Guestfs.RsyncOut */
     archive: Tristate
     deletedest: Tristate
-    /* Fields of Guestfs.RsyncOut */
+    /* Fields of Guestfs-1.0.Guestfs.RsyncOut */
     parent: GObject.Object
     priv: RsyncOutPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3767,21 +3769,21 @@ export class RsyncOut {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RsyncOut, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RsyncOut, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3803,23 +3805,23 @@ export class RsyncOut {
 export interface SelinuxRelabel_ConstructProps extends GObject.Object_ConstructProps {
     force?: Tristate
 }
-export class SelinuxRelabel {
-    /* Properties of Guestfs.SelinuxRelabel */
+class SelinuxRelabel {
+    /* Properties of Guestfs-1.0.Guestfs.SelinuxRelabel */
     force: Tristate
-    /* Fields of Guestfs.SelinuxRelabel */
+    /* Fields of Guestfs-1.0.Guestfs.SelinuxRelabel */
     parent: GObject.Object
     priv: SelinuxRelabelPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -3827,21 +3829,21 @@ export class SelinuxRelabel {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SelinuxRelabel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SelinuxRelabel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3860,13 +3862,13 @@ export class SelinuxRelabel {
 }
 export interface Session_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Session {
-    /* Fields of Guestfs.Session */
+class Session {
+    /* Fields of Guestfs-1.0.Guestfs.Session */
     parent: GObject.Object
     priv: SessionPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Guestfs.Session */
+    /* Methods of Guestfs-1.0.Guestfs.Session */
     acl_delete_def_file(dir: string): boolean
     acl_get_file(path: string, acltype: string): string
     acl_set_file(path: string, acltype: string, acl: string): boolean
@@ -4484,15 +4486,15 @@ export class Session {
     zfile(meth: string, path: string): string
     zgrep(regex: string, path: string): string[]
     zgrepi(regex: string, path: string): string[]
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4500,21 +4502,21 @@ export class Session {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Guestfs.Session */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Guestfs-1.0.Guestfs.Session */
     connect(sigName: "appliance", callback: (($obj: Session, params: SessionEventParams) => void)): number
     connect_after(sigName: "appliance", callback: (($obj: Session, params: SessionEventParams) => void)): number
     emit(sigName: "appliance", params: SessionEventParams): void
@@ -4545,7 +4547,7 @@ export class Session {
     connect(sigName: "warning", callback: (($obj: Session, params: SessionEventParams) => void)): number
     connect_after(sigName: "warning", callback: (($obj: Session, params: SessionEventParams) => void)): number
     emit(sigName: "warning", params: SessionEventParams): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Session, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Session, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4563,23 +4565,23 @@ export class Session {
 export interface SetE2attrs_ConstructProps extends GObject.Object_ConstructProps {
     clear?: Tristate
 }
-export class SetE2attrs {
-    /* Properties of Guestfs.SetE2attrs */
+class SetE2attrs {
+    /* Properties of Guestfs-1.0.Guestfs.SetE2attrs */
     clear: Tristate
-    /* Fields of Guestfs.SetE2attrs */
+    /* Fields of Guestfs-1.0.Guestfs.SetE2attrs */
     parent: GObject.Object
     priv: SetE2attrsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4587,21 +4589,21 @@ export class SetE2attrs {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: SetE2attrs, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SetE2attrs, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4621,23 +4623,23 @@ export class SetE2attrs {
 export interface Syslinux_ConstructProps extends GObject.Object_ConstructProps {
     directory?: string
 }
-export class Syslinux {
-    /* Properties of Guestfs.Syslinux */
+class Syslinux {
+    /* Properties of Guestfs-1.0.Guestfs.Syslinux */
     directory: string
-    /* Fields of Guestfs.Syslinux */
+    /* Fields of Guestfs-1.0.Guestfs.Syslinux */
     parent: GObject.Object
     priv: SyslinuxPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4645,21 +4647,21 @@ export class Syslinux {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Syslinux, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Syslinux, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4682,26 +4684,26 @@ export interface TarIn_ConstructProps extends GObject.Object_ConstructProps {
     selinux?: Tristate
     xattrs?: Tristate
 }
-export class TarIn {
-    /* Properties of Guestfs.TarIn */
+class TarIn {
+    /* Properties of Guestfs-1.0.Guestfs.TarIn */
     acls: Tristate
     compress: string
     selinux: Tristate
     xattrs: Tristate
-    /* Fields of Guestfs.TarIn */
+    /* Fields of Guestfs-1.0.Guestfs.TarIn */
     parent: GObject.Object
     priv: TarInPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4709,21 +4711,21 @@ export class TarIn {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TarIn, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TarIn, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4753,27 +4755,27 @@ export interface TarOut_ConstructProps extends GObject.Object_ConstructProps {
     selinux?: Tristate
     xattrs?: Tristate
 }
-export class TarOut {
-    /* Properties of Guestfs.TarOut */
+class TarOut {
+    /* Properties of Guestfs-1.0.Guestfs.TarOut */
     acls: Tristate
     compress: string
     numericowner: Tristate
     selinux: Tristate
     xattrs: Tristate
-    /* Fields of Guestfs.TarOut */
+    /* Fields of Guestfs-1.0.Guestfs.TarOut */
     parent: GObject.Object
     priv: TarOutPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4781,21 +4783,21 @@ export class TarOut {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: TarOut, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TarOut, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4832,8 +4834,8 @@ export interface Tune2FS_ConstructProps extends GObject.Object_ConstructProps {
     reservedblockspercentage?: number
     user?: number
 }
-export class Tune2FS {
-    /* Properties of Guestfs.Tune2FS */
+class Tune2FS {
+    /* Properties of Guestfs-1.0.Guestfs.Tune2FS */
     errorbehavior: string
     force: Tristate
     group: number
@@ -4844,20 +4846,20 @@ export class Tune2FS {
     reservedblockscount: number
     reservedblockspercentage: number
     user: number
-    /* Fields of Guestfs.Tune2FS */
+    /* Fields of Guestfs-1.0.Guestfs.Tune2FS */
     parent: GObject.Object
     priv: Tune2FSPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4865,21 +4867,21 @@ export class Tune2FS {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Tune2FS, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Tune2FS, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4918,24 +4920,24 @@ export interface Umount_ConstructProps extends GObject.Object_ConstructProps {
     force?: Tristate
     lazyunmount?: Tristate
 }
-export class Umount {
-    /* Properties of Guestfs.Umount */
+class Umount {
+    /* Properties of Guestfs-1.0.Guestfs.Umount */
     force: Tristate
     lazyunmount: Tristate
-    /* Fields of Guestfs.Umount */
+    /* Fields of Guestfs-1.0.Guestfs.Umount */
     parent: GObject.Object
     priv: UmountPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -4943,21 +4945,21 @@ export class Umount {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Umount, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Umount, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4979,23 +4981,23 @@ export class Umount {
 export interface UmountLocal_ConstructProps extends GObject.Object_ConstructProps {
     retry?: Tristate
 }
-export class UmountLocal {
-    /* Properties of Guestfs.UmountLocal */
+class UmountLocal {
+    /* Properties of Guestfs-1.0.Guestfs.UmountLocal */
     retry: Tristate
-    /* Fields of Guestfs.UmountLocal */
+    /* Fields of Guestfs-1.0.Guestfs.UmountLocal */
     parent: GObject.Object
     priv: UmountLocalPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5003,21 +5005,21 @@ export class UmountLocal {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UmountLocal, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UmountLocal, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5043,8 +5045,8 @@ export interface XfsAdmin_ConstructProps extends GObject.Object_ConstructProps {
     uuid?: string
     v2log?: Tristate
 }
-export class XfsAdmin {
-    /* Properties of Guestfs.XfsAdmin */
+class XfsAdmin {
+    /* Properties of Guestfs-1.0.Guestfs.XfsAdmin */
     extunwritten: Tristate
     imgfile: Tristate
     label: string
@@ -5052,20 +5054,20 @@ export class XfsAdmin {
     projid32bit: Tristate
     uuid: string
     v2log: Tristate
-    /* Fields of Guestfs.XfsAdmin */
+    /* Fields of Guestfs-1.0.Guestfs.XfsAdmin */
     parent: GObject.Object
     priv: XfsAdminPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5073,21 +5075,21 @@ export class XfsAdmin {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: XfsAdmin, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: XfsAdmin, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5126,8 +5128,8 @@ export interface XfsGrowfs_ConstructProps extends GObject.Object_ConstructProps 
     rtsec?: Tristate
     rtsize?: number
 }
-export class XfsGrowfs {
-    /* Properties of Guestfs.XfsGrowfs */
+class XfsGrowfs {
+    /* Properties of Guestfs-1.0.Guestfs.XfsGrowfs */
     datasec: Tristate
     datasize: number
     logsec: Tristate
@@ -5136,20 +5138,20 @@ export class XfsGrowfs {
     rtextsize: number
     rtsec: Tristate
     rtsize: number
-    /* Fields of Guestfs.XfsGrowfs */
+    /* Fields of Guestfs-1.0.Guestfs.XfsGrowfs */
     parent: GObject.Object
     priv: XfsGrowfsPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5157,21 +5159,21 @@ export class XfsGrowfs {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: XfsGrowfs, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: XfsGrowfs, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5214,8 +5216,8 @@ export interface XfsRepair_ConstructProps extends GObject.Object_ConstructProps 
     noprefetch?: Tristate
     rtdev?: string
 }
-export class XfsRepair {
-    /* Properties of Guestfs.XfsRepair */
+class XfsRepair {
+    /* Properties of Guestfs-1.0.Guestfs.XfsRepair */
     agstride: number
     bhashsize: number
     forcegeometry: Tristate
@@ -5226,20 +5228,20 @@ export class XfsRepair {
     nomodify: Tristate
     noprefetch: Tristate
     rtdev: string
-    /* Fields of Guestfs.XfsRepair */
+    /* Fields of Guestfs-1.0.Guestfs.XfsRepair */
     parent: GObject.Object
     priv: XfsRepairPrivate
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -5247,21 +5249,21 @@ export class XfsRepair {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: XfsRepair, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: XfsRepair, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -5296,40 +5298,40 @@ export class XfsRepair {
     static new(): XfsRepair
     static $gtype: GObject.Type
 }
-export abstract class AddDomainClass {
-    /* Fields of Guestfs.AddDomainClass */
+abstract class AddDomainClass {
+    /* Fields of Guestfs-1.0.Guestfs.AddDomainClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class AddDomainPrivate {
+class AddDomainPrivate {
     static name: string
 }
-export abstract class AddDriveClass {
-    /* Fields of Guestfs.AddDriveClass */
+abstract class AddDriveClass {
+    /* Fields of Guestfs-1.0.Guestfs.AddDriveClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class AddDrivePrivate {
+class AddDrivePrivate {
     static name: string
 }
-export abstract class AddDriveScratchClass {
-    /* Fields of Guestfs.AddDriveScratchClass */
+abstract class AddDriveScratchClass {
+    /* Fields of Guestfs-1.0.Guestfs.AddDriveScratchClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class AddDriveScratchPrivate {
+class AddDriveScratchPrivate {
     static name: string
 }
-export abstract class AddLibvirtDomClass {
-    /* Fields of Guestfs.AddLibvirtDomClass */
+abstract class AddLibvirtDomClass {
+    /* Fields of Guestfs-1.0.Guestfs.AddLibvirtDomClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class AddLibvirtDomPrivate {
+class AddLibvirtDomPrivate {
     static name: string
 }
-export class Application {
-    /* Fields of Guestfs.Application */
+class Application {
+    /* Fields of Guestfs-1.0.Guestfs.Application */
     app_name: string
     app_display_name: string
     app_epoch: number
@@ -5344,8 +5346,8 @@ export class Application {
     app_description: string
     static name: string
 }
-export class Application2 {
-    /* Fields of Guestfs.Application2 */
+class Application2 {
+    /* Fields of Guestfs-1.0.Guestfs.Application2 */
     app2_name: string
     app2_display_name: string
     app2_epoch: number
@@ -5365,16 +5367,16 @@ export class Application2 {
     app2_spare4: string
     static name: string
 }
-export abstract class AugTransformClass {
-    /* Fields of Guestfs.AugTransformClass */
+abstract class AugTransformClass {
+    /* Fields of Guestfs-1.0.Guestfs.AugTransformClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class AugTransformPrivate {
+class AugTransformPrivate {
     static name: string
 }
-export class BTRFSBalance {
-    /* Fields of Guestfs.BTRFSBalance */
+class BTRFSBalance {
+    /* Fields of Guestfs-1.0.Guestfs.BTRFSBalance */
     btrfsbalance_status: string
     btrfsbalance_total: number
     btrfsbalance_balanced: number
@@ -5382,39 +5384,39 @@ export class BTRFSBalance {
     btrfsbalance_left: number
     static name: string
 }
-export abstract class BTRFSFilesystemDefragmentClass {
-    /* Fields of Guestfs.BTRFSFilesystemDefragmentClass */
+abstract class BTRFSFilesystemDefragmentClass {
+    /* Fields of Guestfs-1.0.Guestfs.BTRFSFilesystemDefragmentClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class BTRFSFilesystemDefragmentPrivate {
+class BTRFSFilesystemDefragmentPrivate {
     static name: string
 }
-export abstract class BTRFSFilesystemResizeClass {
-    /* Fields of Guestfs.BTRFSFilesystemResizeClass */
+abstract class BTRFSFilesystemResizeClass {
+    /* Fields of Guestfs-1.0.Guestfs.BTRFSFilesystemResizeClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class BTRFSFilesystemResizePrivate {
+class BTRFSFilesystemResizePrivate {
     static name: string
 }
-export abstract class BTRFSImageClass {
-    /* Fields of Guestfs.BTRFSImageClass */
+abstract class BTRFSImageClass {
+    /* Fields of Guestfs-1.0.Guestfs.BTRFSImageClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class BTRFSImagePrivate {
+class BTRFSImagePrivate {
     static name: string
 }
-export class BTRFSQgroup {
-    /* Fields of Guestfs.BTRFSQgroup */
+class BTRFSQgroup {
+    /* Fields of Guestfs-1.0.Guestfs.BTRFSQgroup */
     btrfsqgroup_id: string
     btrfsqgroup_rfer: number
     btrfsqgroup_excl: number
     static name: string
 }
-export class BTRFSScrub {
-    /* Fields of Guestfs.BTRFSScrub */
+class BTRFSScrub {
+    /* Fields of Guestfs-1.0.Guestfs.BTRFSScrub */
     btrfsscrub_data_extents_scrubbed: number
     btrfsscrub_tree_extents_scrubbed: number
     btrfsscrub_data_bytes_scrubbed: number
@@ -5432,184 +5434,184 @@ export class BTRFSScrub {
     btrfsscrub_last_physical: number
     static name: string
 }
-export class BTRFSSubvolume {
-    /* Fields of Guestfs.BTRFSSubvolume */
+class BTRFSSubvolume {
+    /* Fields of Guestfs-1.0.Guestfs.BTRFSSubvolume */
     btrfssubvolume_id: number
     btrfssubvolume_top_level_id: number
     btrfssubvolume_path: string
     static name: string
 }
-export abstract class BTRFSSubvolumeCreateClass {
-    /* Fields of Guestfs.BTRFSSubvolumeCreateClass */
+abstract class BTRFSSubvolumeCreateClass {
+    /* Fields of Guestfs-1.0.Guestfs.BTRFSSubvolumeCreateClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class BTRFSSubvolumeCreatePrivate {
+class BTRFSSubvolumeCreatePrivate {
     static name: string
 }
-export abstract class BTRFSSubvolumeSnapshotClass {
-    /* Fields of Guestfs.BTRFSSubvolumeSnapshotClass */
+abstract class BTRFSSubvolumeSnapshotClass {
+    /* Fields of Guestfs-1.0.Guestfs.BTRFSSubvolumeSnapshotClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class BTRFSSubvolumeSnapshotPrivate {
+class BTRFSSubvolumeSnapshotPrivate {
     static name: string
 }
-export abstract class BtrfsFsckClass {
-    /* Fields of Guestfs.BtrfsFsckClass */
+abstract class BtrfsFsckClass {
+    /* Fields of Guestfs-1.0.Guestfs.BtrfsFsckClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class BtrfsFsckPrivate {
+class BtrfsFsckPrivate {
     static name: string
 }
-export abstract class CompressDeviceOutClass {
-    /* Fields of Guestfs.CompressDeviceOutClass */
+abstract class CompressDeviceOutClass {
+    /* Fields of Guestfs-1.0.Guestfs.CompressDeviceOutClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class CompressDeviceOutPrivate {
+class CompressDeviceOutPrivate {
     static name: string
 }
-export abstract class CompressOutClass {
-    /* Fields of Guestfs.CompressOutClass */
+abstract class CompressOutClass {
+    /* Fields of Guestfs-1.0.Guestfs.CompressOutClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class CompressOutPrivate {
+class CompressOutPrivate {
     static name: string
 }
-export abstract class CopyAttributesClass {
-    /* Fields of Guestfs.CopyAttributesClass */
+abstract class CopyAttributesClass {
+    /* Fields of Guestfs-1.0.Guestfs.CopyAttributesClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class CopyAttributesPrivate {
+class CopyAttributesPrivate {
     static name: string
 }
-export abstract class CopyDeviceToDeviceClass {
-    /* Fields of Guestfs.CopyDeviceToDeviceClass */
+abstract class CopyDeviceToDeviceClass {
+    /* Fields of Guestfs-1.0.Guestfs.CopyDeviceToDeviceClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class CopyDeviceToDevicePrivate {
+class CopyDeviceToDevicePrivate {
     static name: string
 }
-export abstract class CopyDeviceToFileClass {
-    /* Fields of Guestfs.CopyDeviceToFileClass */
+abstract class CopyDeviceToFileClass {
+    /* Fields of Guestfs-1.0.Guestfs.CopyDeviceToFileClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class CopyDeviceToFilePrivate {
+class CopyDeviceToFilePrivate {
     static name: string
 }
-export abstract class CopyFileToDeviceClass {
-    /* Fields of Guestfs.CopyFileToDeviceClass */
+abstract class CopyFileToDeviceClass {
+    /* Fields of Guestfs-1.0.Guestfs.CopyFileToDeviceClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class CopyFileToDevicePrivate {
+class CopyFileToDevicePrivate {
     static name: string
 }
-export abstract class CopyFileToFileClass {
-    /* Fields of Guestfs.CopyFileToFileClass */
+abstract class CopyFileToFileClass {
+    /* Fields of Guestfs-1.0.Guestfs.CopyFileToFileClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class CopyFileToFilePrivate {
+class CopyFileToFilePrivate {
     static name: string
 }
-export abstract class CpioOutClass {
-    /* Fields of Guestfs.CpioOutClass */
+abstract class CpioOutClass {
+    /* Fields of Guestfs-1.0.Guestfs.CpioOutClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class CpioOutPrivate {
+class CpioOutPrivate {
     static name: string
 }
-export class Dirent {
-    /* Fields of Guestfs.Dirent */
+class Dirent {
+    /* Fields of Guestfs-1.0.Guestfs.Dirent */
     ino: number
     ftyp: number
     name: string
     static name: string
 }
-export abstract class DiskCreateClass {
-    /* Fields of Guestfs.DiskCreateClass */
+abstract class DiskCreateClass {
+    /* Fields of Guestfs-1.0.Guestfs.DiskCreateClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class DiskCreatePrivate {
+class DiskCreatePrivate {
     static name: string
 }
-export abstract class DownloadBlocksClass {
-    /* Fields of Guestfs.DownloadBlocksClass */
+abstract class DownloadBlocksClass {
+    /* Fields of Guestfs-1.0.Guestfs.DownloadBlocksClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class DownloadBlocksPrivate {
+class DownloadBlocksPrivate {
     static name: string
 }
-export abstract class E2fsckClass {
-    /* Fields of Guestfs.E2fsckClass */
+abstract class E2fsckClass {
+    /* Fields of Guestfs-1.0.Guestfs.E2fsckClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class E2fsckPrivate {
+class E2fsckPrivate {
     static name: string
 }
-export abstract class FstrimClass {
-    /* Fields of Guestfs.FstrimClass */
+abstract class FstrimClass {
+    /* Fields of Guestfs-1.0.Guestfs.FstrimClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class FstrimPrivate {
+class FstrimPrivate {
     static name: string
 }
-export abstract class GlobExpandClass {
-    /* Fields of Guestfs.GlobExpandClass */
+abstract class GlobExpandClass {
+    /* Fields of Guestfs-1.0.Guestfs.GlobExpandClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class GlobExpandPrivate {
+class GlobExpandPrivate {
     static name: string
 }
-export abstract class GrepClass {
-    /* Fields of Guestfs.GrepClass */
+abstract class GrepClass {
+    /* Fields of Guestfs-1.0.Guestfs.GrepClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class GrepPrivate {
+class GrepPrivate {
     static name: string
 }
-export class HivexNode {
-    /* Fields of Guestfs.HivexNode */
+class HivexNode {
+    /* Fields of Guestfs-1.0.Guestfs.HivexNode */
     hivex_node_h: number
     static name: string
 }
-export abstract class HivexOpenClass {
-    /* Fields of Guestfs.HivexOpenClass */
+abstract class HivexOpenClass {
+    /* Fields of Guestfs-1.0.Guestfs.HivexOpenClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class HivexOpenPrivate {
+class HivexOpenPrivate {
     static name: string
 }
-export class HivexValue {
-    /* Fields of Guestfs.HivexValue */
+class HivexValue {
+    /* Fields of Guestfs-1.0.Guestfs.HivexValue */
     hivex_value_h: number
     static name: string
 }
-export class INotifyEvent {
-    /* Fields of Guestfs.INotifyEvent */
+class INotifyEvent {
+    /* Fields of Guestfs-1.0.Guestfs.INotifyEvent */
     in_wd: number
     in_mask: number
     in_cookie: number
     in_name: string
     static name: string
 }
-export class ISOInfo {
-    /* Fields of Guestfs.ISOInfo */
+class ISOInfo {
+    /* Fields of Guestfs-1.0.Guestfs.ISOInfo */
     iso_system_id: string
     iso_volume_id: string
     iso_volume_space_size: number
@@ -5629,94 +5631,94 @@ export class ISOInfo {
     iso_volume_effective_t: number
     static name: string
 }
-export abstract class InspectGetIconClass {
-    /* Fields of Guestfs.InspectGetIconClass */
+abstract class InspectGetIconClass {
+    /* Fields of Guestfs-1.0.Guestfs.InspectGetIconClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class InspectGetIconPrivate {
+class InspectGetIconPrivate {
     static name: string
 }
-export class IntBool {
-    /* Fields of Guestfs.IntBool */
+class IntBool {
+    /* Fields of Guestfs-1.0.Guestfs.IntBool */
     i: number
     b: number
     static name: string
 }
-export abstract class InternalTest63OptargsClass {
-    /* Fields of Guestfs.InternalTest63OptargsClass */
+abstract class InternalTest63OptargsClass {
+    /* Fields of Guestfs-1.0.Guestfs.InternalTest63OptargsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class InternalTest63OptargsPrivate {
+class InternalTest63OptargsPrivate {
     static name: string
 }
-export abstract class InternalTestClass {
-    /* Fields of Guestfs.InternalTestClass */
+abstract class InternalTestClass {
+    /* Fields of Guestfs-1.0.Guestfs.InternalTestClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class InternalTestOnlyOptargsClass {
-    /* Fields of Guestfs.InternalTestOnlyOptargsClass */
+abstract class InternalTestOnlyOptargsClass {
+    /* Fields of Guestfs-1.0.Guestfs.InternalTestOnlyOptargsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class InternalTestOnlyOptargsPrivate {
+class InternalTestOnlyOptargsPrivate {
     static name: string
 }
-export class InternalTestPrivate {
+class InternalTestPrivate {
     static name: string
 }
-export abstract class IsBlockdevClass {
-    /* Fields of Guestfs.IsBlockdevClass */
+abstract class IsBlockdevClass {
+    /* Fields of Guestfs-1.0.Guestfs.IsBlockdevClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class IsBlockdevPrivate {
+class IsBlockdevPrivate {
     static name: string
 }
-export abstract class IsChardevClass {
-    /* Fields of Guestfs.IsChardevClass */
+abstract class IsChardevClass {
+    /* Fields of Guestfs-1.0.Guestfs.IsChardevClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class IsChardevPrivate {
+class IsChardevPrivate {
     static name: string
 }
-export abstract class IsDirClass {
-    /* Fields of Guestfs.IsDirClass */
+abstract class IsDirClass {
+    /* Fields of Guestfs-1.0.Guestfs.IsDirClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class IsDirPrivate {
+class IsDirPrivate {
     static name: string
 }
-export abstract class IsFifoClass {
-    /* Fields of Guestfs.IsFifoClass */
+abstract class IsFifoClass {
+    /* Fields of Guestfs-1.0.Guestfs.IsFifoClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class IsFifoPrivate {
+class IsFifoPrivate {
     static name: string
 }
-export abstract class IsFileClass {
-    /* Fields of Guestfs.IsFileClass */
+abstract class IsFileClass {
+    /* Fields of Guestfs-1.0.Guestfs.IsFileClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class IsFilePrivate {
+class IsFilePrivate {
     static name: string
 }
-export abstract class IsSocketClass {
-    /* Fields of Guestfs.IsSocketClass */
+abstract class IsSocketClass {
+    /* Fields of Guestfs-1.0.Guestfs.IsSocketClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class IsSocketPrivate {
+class IsSocketPrivate {
     static name: string
 }
-export class LV {
-    /* Fields of Guestfs.LV */
+class LV {
+    /* Fields of Guestfs-1.0.Guestfs.LV */
     lv_name: string
     lv_uuid: number[]
     lv_attr: string
@@ -5735,111 +5737,111 @@ export class LV {
     modules: string
     static name: string
 }
-export abstract class MDCreateClass {
-    /* Fields of Guestfs.MDCreateClass */
+abstract class MDCreateClass {
+    /* Fields of Guestfs-1.0.Guestfs.MDCreateClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class MDCreatePrivate {
+class MDCreatePrivate {
     static name: string
 }
-export class MDStat {
-    /* Fields of Guestfs.MDStat */
+class MDStat {
+    /* Fields of Guestfs-1.0.Guestfs.MDStat */
     mdstat_device: string
     mdstat_index: number
     mdstat_flags: string
     static name: string
 }
-export abstract class Mke2fsClass {
-    /* Fields of Guestfs.Mke2fsClass */
+abstract class Mke2fsClass {
+    /* Fields of Guestfs-1.0.Guestfs.Mke2fsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class Mke2fsPrivate {
+class Mke2fsPrivate {
     static name: string
 }
-export abstract class MkfsBtrfsClass {
-    /* Fields of Guestfs.MkfsBtrfsClass */
+abstract class MkfsBtrfsClass {
+    /* Fields of Guestfs-1.0.Guestfs.MkfsBtrfsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class MkfsBtrfsPrivate {
+class MkfsBtrfsPrivate {
     static name: string
 }
-export abstract class MkfsClass {
-    /* Fields of Guestfs.MkfsClass */
+abstract class MkfsClass {
+    /* Fields of Guestfs-1.0.Guestfs.MkfsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class MkfsPrivate {
+class MkfsPrivate {
     static name: string
 }
-export abstract class MksquashfsClass {
-    /* Fields of Guestfs.MksquashfsClass */
+abstract class MksquashfsClass {
+    /* Fields of Guestfs-1.0.Guestfs.MksquashfsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class MksquashfsPrivate {
+class MksquashfsPrivate {
     static name: string
 }
-export abstract class MkswapClass {
-    /* Fields of Guestfs.MkswapClass */
+abstract class MkswapClass {
+    /* Fields of Guestfs-1.0.Guestfs.MkswapClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class MkswapPrivate {
+class MkswapPrivate {
     static name: string
 }
-export abstract class MktempClass {
-    /* Fields of Guestfs.MktempClass */
+abstract class MktempClass {
+    /* Fields of Guestfs-1.0.Guestfs.MktempClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class MktempPrivate {
+class MktempPrivate {
     static name: string
 }
-export abstract class Mount9PClass {
-    /* Fields of Guestfs.Mount9PClass */
+abstract class Mount9PClass {
+    /* Fields of Guestfs-1.0.Guestfs.Mount9PClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class Mount9PPrivate {
+class Mount9PPrivate {
     static name: string
 }
-export abstract class MountLocalClass {
-    /* Fields of Guestfs.MountLocalClass */
+abstract class MountLocalClass {
+    /* Fields of Guestfs-1.0.Guestfs.MountLocalClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class MountLocalPrivate {
+class MountLocalPrivate {
     static name: string
 }
-export abstract class NTFSResizeOptsClass {
-    /* Fields of Guestfs.NTFSResizeOptsClass */
+abstract class NTFSResizeOptsClass {
+    /* Fields of Guestfs-1.0.Guestfs.NTFSResizeOptsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class NTFSResizeOptsPrivate {
+class NTFSResizeOptsPrivate {
     static name: string
 }
-export abstract class NtfscloneOutClass {
-    /* Fields of Guestfs.NtfscloneOutClass */
+abstract class NtfscloneOutClass {
+    /* Fields of Guestfs-1.0.Guestfs.NtfscloneOutClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class NtfscloneOutPrivate {
+class NtfscloneOutPrivate {
     static name: string
 }
-export abstract class NtfsfixClass {
-    /* Fields of Guestfs.NtfsfixClass */
+abstract class NtfsfixClass {
+    /* Fields of Guestfs-1.0.Guestfs.NtfsfixClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class NtfsfixPrivate {
+class NtfsfixPrivate {
     static name: string
 }
-export class PV {
-    /* Fields of Guestfs.PV */
+class PV {
+    /* Fields of Guestfs-1.0.Guestfs.PV */
     pv_name: string
     pv_uuid: number[]
     pv_fmt: string
@@ -5856,61 +5858,61 @@ export class PV {
     pv_mda_free: number
     static name: string
 }
-export class Partition {
-    /* Fields of Guestfs.Partition */
+class Partition {
+    /* Fields of Guestfs-1.0.Guestfs.Partition */
     part_num: number
     part_start: number
     part_end: number
     part_size: number
     static name: string
 }
-export abstract class RemountClass {
-    /* Fields of Guestfs.RemountClass */
+abstract class RemountClass {
+    /* Fields of Guestfs-1.0.Guestfs.RemountClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class RemountPrivate {
+class RemountPrivate {
     static name: string
 }
-export abstract class RsyncClass {
-    /* Fields of Guestfs.RsyncClass */
+abstract class RsyncClass {
+    /* Fields of Guestfs-1.0.Guestfs.RsyncClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class RsyncInClass {
-    /* Fields of Guestfs.RsyncInClass */
+abstract class RsyncInClass {
+    /* Fields of Guestfs-1.0.Guestfs.RsyncInClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class RsyncInPrivate {
+class RsyncInPrivate {
     static name: string
 }
-export abstract class RsyncOutClass {
-    /* Fields of Guestfs.RsyncOutClass */
+abstract class RsyncOutClass {
+    /* Fields of Guestfs-1.0.Guestfs.RsyncOutClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class RsyncOutPrivate {
+class RsyncOutPrivate {
     static name: string
 }
-export class RsyncPrivate {
+class RsyncPrivate {
     static name: string
 }
-export abstract class SelinuxRelabelClass {
-    /* Fields of Guestfs.SelinuxRelabelClass */
+abstract class SelinuxRelabelClass {
+    /* Fields of Guestfs-1.0.Guestfs.SelinuxRelabelClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class SelinuxRelabelPrivate {
+class SelinuxRelabelPrivate {
     static name: string
 }
-export abstract class SessionClass {
-    /* Fields of Guestfs.SessionClass */
+abstract class SessionClass {
+    /* Fields of Guestfs-1.0.Guestfs.SessionClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class SessionEventParams {
-    /* Fields of Guestfs.SessionEventParams */
+class SessionEventParams {
+    /* Fields of Guestfs-1.0.Guestfs.SessionEventParams */
     event: SessionEvent
     flags: number
     buf: Uint8Array[]
@@ -5918,19 +5920,19 @@ export class SessionEventParams {
     array_len: number
     static name: string
 }
-export class SessionPrivate {
+class SessionPrivate {
     static name: string
 }
-export abstract class SetE2attrsClass {
-    /* Fields of Guestfs.SetE2attrsClass */
+abstract class SetE2attrsClass {
+    /* Fields of Guestfs-1.0.Guestfs.SetE2attrsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class SetE2attrsPrivate {
+class SetE2attrsPrivate {
     static name: string
 }
-export class Stat {
-    /* Fields of Guestfs.Stat */
+class Stat {
+    /* Fields of Guestfs-1.0.Guestfs.Stat */
     dev: number
     ino: number
     mode: number
@@ -5946,8 +5948,8 @@ export class Stat {
     ctime: number
     static name: string
 }
-export class StatNS {
-    /* Fields of Guestfs.StatNS */
+class StatNS {
+    /* Fields of Guestfs-1.0.Guestfs.StatNS */
     st_dev: number
     st_ino: number
     st_mode: number
@@ -5972,8 +5974,8 @@ export class StatNS {
     st_spare6: number
     static name: string
 }
-export class StatVFS {
-    /* Fields of Guestfs.StatVFS */
+class StatVFS {
+    /* Fields of Guestfs-1.0.Guestfs.StatVFS */
     bsize: number
     frsize: number
     blocks: number
@@ -5987,16 +5989,16 @@ export class StatVFS {
     namemax: number
     static name: string
 }
-export abstract class SyslinuxClass {
-    /* Fields of Guestfs.SyslinuxClass */
+abstract class SyslinuxClass {
+    /* Fields of Guestfs-1.0.Guestfs.SyslinuxClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class SyslinuxPrivate {
+class SyslinuxPrivate {
     static name: string
 }
-export class TSKDirent {
-    /* Fields of Guestfs.TSKDirent */
+class TSKDirent {
+    /* Fields of Guestfs-1.0.Guestfs.TSKDirent */
     tsk_inode: number
     tsk_type: number
     tsk_size: number
@@ -6015,56 +6017,56 @@ export class TSKDirent {
     tsk_spare1: number
     static name: string
 }
-export abstract class TarInClass {
-    /* Fields of Guestfs.TarInClass */
+abstract class TarInClass {
+    /* Fields of Guestfs-1.0.Guestfs.TarInClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class TarInPrivate {
+class TarInPrivate {
     static name: string
 }
-export abstract class TarOutClass {
-    /* Fields of Guestfs.TarOutClass */
+abstract class TarOutClass {
+    /* Fields of Guestfs-1.0.Guestfs.TarOutClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class TarOutPrivate {
+class TarOutPrivate {
     static name: string
 }
-export abstract class Tune2FSClass {
-    /* Fields of Guestfs.Tune2FSClass */
+abstract class Tune2FSClass {
+    /* Fields of Guestfs-1.0.Guestfs.Tune2FSClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class Tune2FSPrivate {
+class Tune2FSPrivate {
     static name: string
 }
-export class UTSName {
-    /* Fields of Guestfs.UTSName */
+class UTSName {
+    /* Fields of Guestfs-1.0.Guestfs.UTSName */
     uts_sysname: string
     uts_release: string
     uts_version: string
     uts_machine: string
     static name: string
 }
-export abstract class UmountClass {
-    /* Fields of Guestfs.UmountClass */
+abstract class UmountClass {
+    /* Fields of Guestfs-1.0.Guestfs.UmountClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class UmountLocalClass {
-    /* Fields of Guestfs.UmountLocalClass */
+abstract class UmountLocalClass {
+    /* Fields of Guestfs-1.0.Guestfs.UmountLocalClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class UmountLocalPrivate {
+class UmountLocalPrivate {
     static name: string
 }
-export class UmountPrivate {
+class UmountPrivate {
     static name: string
 }
-export class VG {
-    /* Fields of Guestfs.VG */
+class VG {
+    /* Fields of Guestfs-1.0.Guestfs.VG */
     vg_name: string
     vg_uuid: number[]
     vg_fmt: string
@@ -6086,22 +6088,22 @@ export class VG {
     vg_mda_free: number
     static name: string
 }
-export class Version {
-    /* Fields of Guestfs.Version */
+class Version {
+    /* Fields of Guestfs-1.0.Guestfs.Version */
     major: number
     minor: number
     release: number
     extra: string
     static name: string
 }
-export class XAttr {
-    /* Fields of Guestfs.XAttr */
+class XAttr {
+    /* Fields of Guestfs-1.0.Guestfs.XAttr */
     attrname: string
     attrval: Uint8Array[]
     static name: string
 }
-export class XFSInfo {
-    /* Fields of Guestfs.XFSInfo */
+class XFSInfo {
+    /* Fields of Guestfs-1.0.Guestfs.XFSInfo */
     xfs_mntpoint: string
     xfs_inodesize: number
     xfs_agcount: number
@@ -6129,33 +6131,35 @@ export class XFSInfo {
     xfs_rtextents: number
     static name: string
 }
-export abstract class XfsAdminClass {
-    /* Fields of Guestfs.XfsAdminClass */
+abstract class XfsAdminClass {
+    /* Fields of Guestfs-1.0.Guestfs.XfsAdminClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class XfsAdminPrivate {
+class XfsAdminPrivate {
     static name: string
 }
-export abstract class XfsGrowfsClass {
-    /* Fields of Guestfs.XfsGrowfsClass */
+abstract class XfsGrowfsClass {
+    /* Fields of Guestfs-1.0.Guestfs.XfsGrowfsClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class XfsGrowfsPrivate {
+class XfsGrowfsPrivate {
     static name: string
 }
-export abstract class XfsRepairClass {
-    /* Fields of Guestfs.XfsRepairClass */
+abstract class XfsRepairClass {
+    /* Fields of Guestfs-1.0.Guestfs.XfsRepairClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class XfsRepairPrivate {
+class XfsRepairPrivate {
     static name: string
 }
-export class YaraDetection {
-    /* Fields of Guestfs.YaraDetection */
+class YaraDetection {
+    /* Fields of Guestfs-1.0.Guestfs.YaraDetection */
     yara_name: string
     yara_rule: string
     static name: string
 }
+}
+export default Guestfs;

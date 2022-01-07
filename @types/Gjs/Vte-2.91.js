@@ -1,2 +1,2 @@
-imports.gi.versions.Vte = '2.91'
-export default imports.gi.Vte
+import Vte from 'gi://Vte?version=2.91';
+export default Vte;

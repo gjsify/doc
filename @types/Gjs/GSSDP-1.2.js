@@ -1,2 +1,2 @@
-imports.gi.versions.GSSDP = '1.2'
-export default imports.gi.GSSDP
+import GSSDP from 'gi://GSSDP?version=1.2';
+export default GSSDP;

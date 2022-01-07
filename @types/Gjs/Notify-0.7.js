@@ -1,2 +1,2 @@
-imports.gi.versions.Notify = '0.7'
-export default imports.gi.Notify
+import Notify from 'gi://Notify?version=0.7';
+export default Notify;

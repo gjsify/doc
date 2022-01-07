@@ -1,2 +1,2 @@
-imports.gi.versions.JavaScriptCore = '4.0'
-export default imports.gi.JavaScriptCore
+import JavaScriptCore from 'gi://JavaScriptCore?version=4.0';
+export default JavaScriptCore;

@@ -1,2 +1,2 @@
-imports.gi.versions.Snapd = '1'
-export default imports.gi.Snapd
+import Snapd from 'gi://Snapd?version=1';
+export default Snapd;

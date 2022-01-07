@@ -1,2 +1,2 @@
-imports.gi.versions.P11Kit = '1.0'
-export default imports.gi.P11Kit
+import P11Kit from 'gi://P11Kit?version=1.0';
+export default P11Kit;

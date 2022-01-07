@@ -104,4 +104,4 @@ dist
 .tern-port
 
 # FIXME search.js exceeds GitHubs file size limit
-docs/gjs/assets/js/search.js
+docs/gjs/assets/search.js

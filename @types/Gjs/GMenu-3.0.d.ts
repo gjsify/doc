@@ -3,11 +3,13 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum TreeItemType {
+export namespace GMenu {
+
+enum TreeItemType {
     INVALID,
     DIRECTORY,
     ENTRY,
@@ -15,7 +17,7 @@ export enum TreeItemType {
     HEADER,
     ALIAS,
 }
-export enum TreeFlags {
+enum TreeFlags {
     NONE,
     INCLUDE_EXCLUDED,
     SHOW_EMPTY,
@@ -29,24 +31,24 @@ export interface Tree_ConstructProps extends GObject.Object_ConstructProps {
     menu_basename?: string
     menu_path?: string
 }
-export class Tree {
-    /* Fields of GObject.Object */
+class Tree {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GMenu.Tree */
+    /* Methods of GMenu-3.0.GMenu.Tree */
     get_canonical_menu_path(): string
     get_directory_from_path(path: string): TreeDirectory
     get_entry_by_id(id: string): TreeEntry
     get_root_directory(): TreeDirectory
     load_sync(): boolean
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -54,25 +56,25 @@ export class Tree {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GMenu.Tree */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GMenu-3.0.GMenu.Tree */
     connect(sigName: "changed", callback: (($obj: Tree) => void)): number
     connect_after(sigName: "changed", callback: (($obj: Tree) => void)): number
     emit(sigName: "changed"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Tree, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Tree, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -90,8 +92,8 @@ export class Tree {
     static item_unref(item?: object | null): void
     static $gtype: GObject.Type
 }
-export class TreeAlias {
-    /* Methods of GMenu.TreeAlias */
+class TreeAlias {
+    /* Methods of GMenu-3.0.GMenu.TreeAlias */
     get_aliased_directory(): TreeDirectory
     get_aliased_entry(): TreeEntry
     get_aliased_item_type(): TreeItemType
@@ -100,13 +102,13 @@ export class TreeAlias {
     get_tree(): Tree
     static name: string
 }
-export abstract class TreeClass {
-    /* Fields of GMenu.TreeClass */
+abstract class TreeClass {
+    /* Fields of GMenu-3.0.GMenu.TreeClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class TreeDirectory {
-    /* Methods of GMenu.TreeDirectory */
+class TreeDirectory {
+    /* Methods of GMenu-3.0.GMenu.TreeDirectory */
     get_comment(): string
     get_desktop_file_path(): string
     get_generic_name(): string
@@ -120,8 +122,8 @@ export class TreeDirectory {
     make_path(entry: TreeEntry): string
     static name: string
 }
-export class TreeEntry {
-    /* Methods of GMenu.TreeEntry */
+class TreeEntry {
+    /* Methods of GMenu-3.0.GMenu.TreeEntry */
     get_app_info(): Gio.DesktopAppInfo
     get_desktop_file_id(): string
     get_desktop_file_path(): string
@@ -132,15 +134,15 @@ export class TreeEntry {
     get_tree(): Tree
     static name: string
 }
-export class TreeHeader {
-    /* Methods of GMenu.TreeHeader */
+class TreeHeader {
+    /* Methods of GMenu-3.0.GMenu.TreeHeader */
     get_directory(): TreeDirectory
     get_parent(): TreeDirectory
     get_tree(): Tree
     static name: string
 }
-export class TreeIter {
-    /* Methods of GMenu.TreeIter */
+class TreeIter {
+    /* Methods of GMenu-3.0.GMenu.TreeIter */
     get_alias(): TreeAlias
     get_directory(): TreeDirectory
     get_entry(): TreeEntry
@@ -149,9 +151,11 @@ export class TreeIter {
     next(): TreeItemType
     static name: string
 }
-export class TreeSeparator {
-    /* Methods of GMenu.TreeSeparator */
+class TreeSeparator {
+    /* Methods of GMenu-3.0.GMenu.TreeSeparator */
     get_parent(): TreeDirectory
     get_tree(): Tree
     static name: string
 }
+}
+export default GMenu;

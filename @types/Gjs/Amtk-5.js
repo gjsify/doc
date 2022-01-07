@@ -1,2 +1,2 @@
-imports.gi.versions.Amtk = '5'
-export default imports.gi.Amtk
+import Amtk from 'gi://Amtk?version=5';
+export default Amtk;

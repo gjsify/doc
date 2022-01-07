@@ -3,9 +3,11 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GObject from './GObject-2.0';
+import type GObject from './GObject-2.0';
 
-export enum Status {
+export namespace cairo {
+
+enum Status {
     SUCCESS,
     NO_MEMORY,
     INVALID_RESTORE,
@@ -46,12 +48,12 @@ export enum Status {
     DEVICE_FINISHED,
     JBIG2_GLOBAL_MISSING,
 }
-export enum Content {
+enum Content {
     COLOR,
     ALPHA,
     COLOR_ALPHA,
 }
-export enum Operator {
+enum Operator {
     CLEAR,
     SOURCE,
     OVER,
@@ -82,7 +84,7 @@ export enum Operator {
     HSL_COLOR,
     HSL_LUMINOSITY,
 }
-export enum Antialias {
+enum Antialias {
     DEFAULT,
     NONE,
     GRAY,
@@ -91,65 +93,65 @@ export enum Antialias {
     GOOD,
     BEST,
 }
-export enum FillRule {
+enum FillRule {
     WINDING,
     EVEN_ODD,
 }
-export enum LineCap {
+enum LineCap {
     BUTT,
     ROUND,
     SQUARE,
 }
-export enum LineJoin {
+enum LineJoin {
     MITER,
     ROUND,
     BEVEL,
 }
-export enum TextClusterFlags {
+enum TextClusterFlags {
     BACKWARD,
 }
-export enum FontSlant {
+enum FontSlant {
     NORMAL,
     ITALIC,
     OBLIQUE,
 }
-export enum FontWeight {
+enum FontWeight {
     NORMAL,
     BOLD,
 }
-export enum SubpixelOrder {
+enum SubpixelOrder {
     DEFAULT,
     RGB,
     BGR,
     VRGB,
     VBGR,
 }
-export enum HintStyle {
+enum HintStyle {
     DEFAULT,
     NONE,
     SLIGHT,
     MEDIUM,
     FULL,
 }
-export enum HintMetrics {
+enum HintMetrics {
     DEFAULT,
     OFF,
     ON,
 }
-export enum FontType {
+enum FontType {
     TOY,
     FT,
     WIN32,
     QUARTZ,
     USER,
 }
-export enum PathDataType {
+enum PathDataType {
     MOVE_TO,
     LINE_TO,
     CURVE_TO,
     CLOSE_PATH,
 }
-export enum DeviceType {
+enum DeviceType {
     DRM,
     GL,
     SCRIPT,
@@ -160,7 +162,7 @@ export enum DeviceType {
     WIN32,
     INVALID,
 }
-export enum SurfaceType {
+enum SurfaceType {
     IMAGE,
     PDF,
     PS,
@@ -187,7 +189,7 @@ export enum SurfaceType {
     SUBSURFACE,
     COGL,
 }
-export enum Format {
+enum Format {
     INVALID,
     ARGB32,
     RGB24,
@@ -196,7 +198,7 @@ export enum Format {
     RGB16_565,
     RGB30,
 }
-export enum PatternType {
+enum PatternType {
     SOLID,
     SURFACE,
     LINEAR,
@@ -204,13 +206,13 @@ export enum PatternType {
     MESH,
     RASTER_SOURCE,
 }
-export enum Extend {
+enum Extend {
     NONE,
     REPEAT,
     REFLECT,
     PAD,
 }
-export enum Filter {
+enum Filter {
     FAST,
     GOOD,
     BEST,
@@ -218,55 +220,57 @@ export enum Filter {
     BILINEAR,
     GAUSSIAN,
 }
-export enum RegionOverlap {
+enum RegionOverlap {
     IN,
     OUT,
     PART,
 }
-export function image_surface_create(): void
-export class Context {
+function image_surface_create(): void
+class Context {
     static name: string
 }
-export class Device {
+class Device {
     static name: string
 }
-export class Surface {
+class Surface {
     static name: string
 }
-export class Matrix {
+class Matrix {
     static name: string
 }
-export class Pattern {
+class Pattern {
     static name: string
 }
-export class Region {
+class Region {
     static name: string
 }
-export class FontOptions {
+class FontOptions {
     static name: string
 }
-export class FontFace {
+class FontFace {
     static name: string
 }
-export class ScaledFont {
+class ScaledFont {
     static name: string
 }
-export class Path {
+class Path {
     static name: string
 }
-export class Rectangle {
-    /* Fields of cairo.Rectangle */
+class Rectangle {
+    /* Fields of cairo-1.0.cairo.Rectangle */
     x: number
     y: number
     width: number
     height: number
     static name: string
 }
-export class RectangleInt {
-    /* Fields of cairo.RectangleInt */
+class RectangleInt {
+    /* Fields of cairo-1.0.cairo.RectangleInt */
     x: number
     y: number
     width: number
     height: number
     static name: string
 }
+}
+export default cairo;

@@ -1,2 +1,2 @@
-imports.gi.versions.cairo = '1.0'
-export default imports.gi.cairo
+import cairo from 'gi://cairo?version=1.0';
+export default cairo;

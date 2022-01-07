@@ -1,2 +1,2 @@
-imports.gi.versions.NetworkManager = '1.0'
-export default imports.gi.NetworkManager
+import NetworkManager from 'gi://NetworkManager?version=1.0';
+export default NetworkManager;

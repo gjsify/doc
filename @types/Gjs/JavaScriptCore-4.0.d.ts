@@ -3,14 +3,16 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum CheckSyntaxMode {
+export namespace JavaScriptCore {
+
+enum CheckSyntaxMode {
     SCRIPT,
     MODULE,
 }
-export enum CheckSyntaxResult {
+enum CheckSyntaxResult {
     SUCCESS,
     RECOVERABLE_ERROR,
     IRRECOVERABLE_ERROR,
@@ -18,7 +20,7 @@ export enum CheckSyntaxResult {
     OUT_OF_MEMORY_ERROR,
     STACK_OVERFLOW_ERROR,
 }
-export enum OptionType {
+enum OptionType {
     BOOLEAN,
     INT,
     UINT,
@@ -27,7 +29,7 @@ export enum OptionType {
     STRING,
     RANGE_STRING,
 }
-export enum ValuePropertyFlags {
+enum ValuePropertyFlags {
     CONFIGURABLE,
     ENUMERABLE,
     WRITABLE,
@@ -39,44 +41,44 @@ export const OPTIONS_USE_DFG: string
 export const OPTIONS_USE_FTL: string
 export const OPTIONS_USE_JIT: string
 export const OPTIONS_USE_LLINT: string
-export function get_major_version(): number
-export function get_micro_version(): number
-export function get_minor_version(): number
-export function options_foreach(function_: OptionsFunc): void
-export function options_get_boolean(option: string): [ /* returnType */ boolean, /* value */ boolean ]
-export function options_get_double(option: string): [ /* returnType */ boolean, /* value */ number ]
-export function options_get_int(option: string): [ /* returnType */ boolean, /* value */ number ]
-export function options_get_option_group(): GLib.OptionGroup
-export function options_get_range_string(option: string): [ /* returnType */ boolean, /* value */ string ]
-export function options_get_size(option: string): [ /* returnType */ boolean, /* value */ number ]
-export function options_get_string(option: string): [ /* returnType */ boolean, /* value */ string ]
-export function options_get_uint(option: string): [ /* returnType */ boolean, /* value */ number ]
-export function options_set_boolean(option: string, value: boolean): boolean
-export function options_set_double(option: string, value: number): boolean
-export function options_set_int(option: string, value: number): boolean
-export function options_set_range_string(option: string, value: string): boolean
-export function options_set_size(option: string, value: number): boolean
-export function options_set_string(option: string, value: string): boolean
-export function options_set_uint(option: string, value: number): boolean
-export interface ClassDeletePropertyFunction {
+function get_major_version(): number
+function get_micro_version(): number
+function get_minor_version(): number
+function options_foreach(function_: OptionsFunc): void
+function options_get_boolean(option: string): [ /* returnType */ boolean, /* value */ boolean ]
+function options_get_double(option: string): [ /* returnType */ boolean, /* value */ number ]
+function options_get_int(option: string): [ /* returnType */ boolean, /* value */ number ]
+function options_get_option_group(): GLib.OptionGroup
+function options_get_range_string(option: string): [ /* returnType */ boolean, /* value */ string ]
+function options_get_size(option: string): [ /* returnType */ boolean, /* value */ number ]
+function options_get_string(option: string): [ /* returnType */ boolean, /* value */ string ]
+function options_get_uint(option: string): [ /* returnType */ boolean, /* value */ number ]
+function options_set_boolean(option: string, value: boolean): boolean
+function options_set_double(option: string, value: number): boolean
+function options_set_int(option: string, value: number): boolean
+function options_set_range_string(option: string, value: string): boolean
+function options_set_size(option: string, value: number): boolean
+function options_set_string(option: string, value: string): boolean
+function options_set_uint(option: string, value: number): boolean
+interface ClassDeletePropertyFunction {
     (jsc_class: Class, context: Context, instance: object | null, name: string): boolean
 }
-export interface ClassEnumeratePropertiesFunction {
+interface ClassEnumeratePropertiesFunction {
     (jsc_class: Class, context: Context, instance?: object | null): string[] | null
 }
-export interface ClassGetPropertyFunction {
+interface ClassGetPropertyFunction {
     (jsc_class: Class, context: Context, instance: object | null, name: string): Value | null
 }
-export interface ClassHasPropertyFunction {
+interface ClassHasPropertyFunction {
     (jsc_class: Class, context: Context, instance: object | null, name: string): boolean
 }
-export interface ClassSetPropertyFunction {
+interface ClassSetPropertyFunction {
     (jsc_class: Class, context: Context, instance: object | null, name: string, value: Value): boolean
 }
-export interface ExceptionHandler {
+interface ExceptionHandler {
     (context: Context, exception: Exception): void
 }
-export interface OptionsFunc {
+interface OptionsFunc {
     (option: string, type: OptionType, description?: string | null): boolean
 }
 export interface Class_ConstructProps extends GObject.Object_ConstructProps {
@@ -84,10 +86,10 @@ export interface Class_ConstructProps extends GObject.Object_ConstructProps {
     name?: string
     parent?: Class
 }
-export class Class {
-    /* Fields of GObject.Object */
+class Class {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of JavaScriptCore.Class */
+    /* Methods of JavaScriptCore-4.0.JavaScriptCore.Class */
     add_constructor_variadic(name: string | null, callback: GObject.Callback, return_type: GObject.Type): Value
     add_constructor(name: string | null, callback: GObject.Callback, return_type: GObject.Type, parameter_types?: GObject.Type[] | null): Value
     add_method_variadic(name: string, callback: GObject.Callback, return_type: GObject.Type): void
@@ -95,15 +97,15 @@ export class Class {
     add_property(name: string, property_type: GObject.Type, getter?: GObject.Callback | null, setter?: GObject.Callback | null): void
     get_name(): string
     get_parent(): Class
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -111,21 +113,21 @@ export class Class {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Class, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Class, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -141,12 +143,12 @@ export class Class {
 export interface Context_ConstructProps extends GObject.Object_ConstructProps {
     virtual_machine?: VirtualMachine
 }
-export class Context {
-    /* Fields of JavaScriptCore.Context */
+class Context {
+    /* Fields of JavaScriptCore-4.0.JavaScriptCore.Context */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of JavaScriptCore.Context */
+    /* Methods of JavaScriptCore-4.0.JavaScriptCore.Context */
     check_syntax(code: string, length: number, mode: CheckSyntaxMode, uri: string, line_number: number): [ /* returnType */ CheckSyntaxResult, /* exception */ Exception | null ]
     clear_exception(): void
     evaluate(code: string, length: number): Value
@@ -163,15 +165,15 @@ export class Context {
     throw(error_message: string): void
     throw_exception(exception: Exception): void
     throw_with_name(error_name: string, error_message: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -179,21 +181,21 @@ export class Context {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Context, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Context, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -212,12 +214,12 @@ export class Context {
 }
 export interface Exception_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Exception {
-    /* Fields of JavaScriptCore.Exception */
+class Exception {
+    /* Fields of JavaScriptCore-4.0.JavaScriptCore.Exception */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of JavaScriptCore.Exception */
+    /* Methods of JavaScriptCore-4.0.JavaScriptCore.Exception */
     get_backtrace_string(): string | null
     get_column_number(): number
     get_line_number(): number
@@ -226,15 +228,15 @@ export class Exception {
     get_source_uri(): string | null
     report(): string
     to_string(): string
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -242,21 +244,21 @@ export class Exception {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Exception, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Exception, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -275,12 +277,12 @@ export class Exception {
 export interface Value_ConstructProps extends GObject.Object_ConstructProps {
     context?: Context
 }
-export class Value {
-    /* Fields of JavaScriptCore.Value */
+class Value {
+    /* Fields of JavaScriptCore-4.0.JavaScriptCore.Value */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of JavaScriptCore.Value */
+    /* Methods of JavaScriptCore-4.0.JavaScriptCore.Value */
     constructor_call(parameters?: Value[] | null): Value
     function_call(parameters?: Value[] | null): Value
     get_context(): Context
@@ -310,15 +312,15 @@ export class Value {
     to_json(indent: number): string
     to_string(): string
     to_string_as_bytes(): GLib.Bytes
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -326,21 +328,21 @@ export class Value {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Value, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Value, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -368,20 +370,20 @@ export class Value {
 }
 export interface VirtualMachine_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class VirtualMachine {
-    /* Fields of JavaScriptCore.VirtualMachine */
+class VirtualMachine {
+    /* Fields of JavaScriptCore-4.0.JavaScriptCore.VirtualMachine */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -389,21 +391,21 @@ export class VirtualMachine {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: VirtualMachine, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VirtualMachine, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -421,22 +423,22 @@ export class VirtualMachine {
 export interface WeakValue_ConstructProps extends GObject.Object_ConstructProps {
     value?: Value
 }
-export class WeakValue {
-    /* Fields of JavaScriptCore.WeakValue */
+class WeakValue {
+    /* Fields of JavaScriptCore-4.0.JavaScriptCore.WeakValue */
     parent: GObject.Object
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of JavaScriptCore.WeakValue */
+    /* Methods of JavaScriptCore-4.0.JavaScriptCore.WeakValue */
     get_value(): Value
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -444,25 +446,25 @@ export class WeakValue {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of JavaScriptCore.WeakValue */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of JavaScriptCore-4.0.JavaScriptCore.WeakValue */
     connect(sigName: "cleared", callback: (($obj: WeakValue) => void)): number
     connect_after(sigName: "cleared", callback: (($obj: WeakValue) => void)): number
     emit(sigName: "cleared"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WeakValue, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WeakValue, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -477,11 +479,11 @@ export class WeakValue {
     static new(value: Value): WeakValue
     static $gtype: GObject.Type
 }
-export abstract class ClassClass {
+abstract class ClassClass {
     static name: string
 }
-export class ClassVTable {
-    /* Fields of JavaScriptCore.ClassVTable */
+class ClassVTable {
+    /* Fields of JavaScriptCore-4.0.JavaScriptCore.ClassVTable */
     get_property: ClassGetPropertyFunction
     set_property: ClassSetPropertyFunction
     has_property: ClassHasPropertyFunction
@@ -489,43 +491,45 @@ export class ClassVTable {
     enumerate_properties: ClassEnumeratePropertiesFunction
     static name: string
 }
-export abstract class ContextClass {
-    /* Fields of JavaScriptCore.ContextClass */
+abstract class ContextClass {
+    /* Fields of JavaScriptCore-4.0.JavaScriptCore.ContextClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class ContextPrivate {
+class ContextPrivate {
     static name: string
 }
-export abstract class ExceptionClass {
-    /* Fields of JavaScriptCore.ExceptionClass */
+abstract class ExceptionClass {
+    /* Fields of JavaScriptCore-4.0.JavaScriptCore.ExceptionClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class ExceptionPrivate {
+class ExceptionPrivate {
     static name: string
 }
-export abstract class ValueClass {
-    /* Fields of JavaScriptCore.ValueClass */
+abstract class ValueClass {
+    /* Fields of JavaScriptCore-4.0.JavaScriptCore.ValueClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class ValuePrivate {
+class ValuePrivate {
     static name: string
 }
-export abstract class VirtualMachineClass {
-    /* Fields of JavaScriptCore.VirtualMachineClass */
+abstract class VirtualMachineClass {
+    /* Fields of JavaScriptCore-4.0.JavaScriptCore.VirtualMachineClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class VirtualMachinePrivate {
+class VirtualMachinePrivate {
     static name: string
 }
-export abstract class WeakValueClass {
-    /* Fields of JavaScriptCore.WeakValueClass */
+abstract class WeakValueClass {
+    /* Fields of JavaScriptCore-4.0.JavaScriptCore.WeakValueClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export class WeakValuePrivate {
+class WeakValuePrivate {
     static name: string
 }
+}
+export default JavaScriptCore;

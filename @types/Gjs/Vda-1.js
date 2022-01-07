@@ -1,2 +1,2 @@
-imports.gi.versions.Vda = '1'
-export default imports.gi.Vda
+import Vda from 'gi://Vda?version=1';
+export default Vda;

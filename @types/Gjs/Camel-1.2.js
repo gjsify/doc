@@ -1,2 +1,2 @@
-imports.gi.versions.Camel = '1.2'
-export default imports.gi.Camel
+import Camel from 'gi://Camel?version=1.2';
+export default Camel;

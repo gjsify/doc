@@ -1,2 +1,2 @@
-imports.gi.versions.NMA = '1.0'
-export default imports.gi.NMA
+import NMA from 'gi://NMA?version=1.0';
+export default NMA;

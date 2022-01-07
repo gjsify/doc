@@ -3,32 +3,34 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
 
-export enum ClientError {
+export namespace Gdm {
+
+enum ClientError {
     CLIENT_ERROR_GENERIC,
 }
-export function chooser_interface_info(): Gio.DBusInterfaceInfo
-export function chooser_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
-export function get_session_ids(): string[]
-export function get_session_name_and_description(id: string): [ /* returnType */ string, /* description */ string ]
-export function goto_login_session_sync(cancellable?: Gio.Cancellable | null): boolean
-export function greeter_interface_info(): Gio.DBusInterfaceInfo
-export function greeter_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
-export function manager_interface_info(): Gio.DBusInterfaceInfo
-export function manager_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
-export function remote_greeter_interface_info(): Gio.DBusInterfaceInfo
-export function remote_greeter_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
-export function user_verifier_choice_list_interface_info(): Gio.DBusInterfaceInfo
-export function user_verifier_choice_list_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
-export function user_verifier_interface_info(): Gio.DBusInterfaceInfo
-export function user_verifier_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
-export function worker_manager_interface_info(): Gio.DBusInterfaceInfo
-export function worker_manager_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
-export class Chooser {
-    /* Methods of Gdm.Chooser */
+function chooser_interface_info(): Gio.DBusInterfaceInfo
+function chooser_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
+function get_session_ids(): string[]
+function get_session_name_and_description(id: string): [ /* returnType */ string, /* description */ string ]
+function goto_login_session_sync(cancellable?: Gio.Cancellable | null): boolean
+function greeter_interface_info(): Gio.DBusInterfaceInfo
+function greeter_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
+function manager_interface_info(): Gio.DBusInterfaceInfo
+function manager_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
+function remote_greeter_interface_info(): Gio.DBusInterfaceInfo
+function remote_greeter_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
+function user_verifier_choice_list_interface_info(): Gio.DBusInterfaceInfo
+function user_verifier_choice_list_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
+function user_verifier_interface_info(): Gio.DBusInterfaceInfo
+function user_verifier_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
+function worker_manager_interface_info(): Gio.DBusInterfaceInfo
+function worker_manager_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
+class Chooser {
+    /* Methods of Gdm-1.0.Gdm.Chooser */
     call_disconnect(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_disconnect_finish(res: Gio.AsyncResult): boolean
     call_disconnect_sync(cancellable?: Gio.Cancellable | null): boolean
@@ -37,10 +39,10 @@ export class Chooser {
     call_select_hostname_sync(arg_hostname: string, cancellable?: Gio.Cancellable | null): boolean
     complete_disconnect(invocation: Gio.DBusMethodInvocation): void
     complete_select_hostname(invocation: Gio.DBusMethodInvocation): void
-    /* Virtual methods of Gdm.Chooser */
+    /* Virtual methods of Gdm-1.0.Gdm.Chooser */
     vfunc_handle_disconnect(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_select_hostname(invocation: Gio.DBusMethodInvocation, arg_hostname: string): boolean
-    /* Signals of Gdm.Chooser */
+    /* Signals of Gdm-1.0.Gdm.Chooser */
     connect(sigName: "handle-disconnect", callback: (($obj: Chooser, object: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "handle-disconnect", callback: (($obj: Chooser, object: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "handle-disconnect", object: Gio.DBusMethodInvocation): void
@@ -52,8 +54,8 @@ export class Chooser {
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
 }
-export class Greeter {
-    /* Methods of Gdm.Greeter */
+class Greeter {
+    /* Methods of Gdm-1.0.Gdm.Greeter */
     call_begin_auto_login(arg_username: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_begin_auto_login_finish(res: Gio.AsyncResult): boolean
     call_begin_auto_login_sync(arg_username: string, cancellable?: Gio.Cancellable | null): boolean
@@ -80,7 +82,7 @@ export class Greeter {
     emit_selected_user_changed(arg_username: string): void
     emit_session_opened(arg_service_name: string): void
     emit_timed_login_requested(arg_username: string, arg_delay: number): void
-    /* Virtual methods of Gdm.Greeter */
+    /* Virtual methods of Gdm-1.0.Gdm.Greeter */
     vfunc_default_language_name_changed(arg_language_name: string): void
     vfunc_default_session_name_changed(arg_session_name: string): void
     vfunc_handle_begin_auto_login(invocation: Gio.DBusMethodInvocation, arg_username: string): boolean
@@ -92,7 +94,7 @@ export class Greeter {
     vfunc_selected_user_changed(arg_username: string): void
     vfunc_session_opened(arg_service_name: string): void
     vfunc_timed_login_requested(arg_username: string, arg_delay: number): void
-    /* Signals of Gdm.Greeter */
+    /* Signals of Gdm-1.0.Gdm.Greeter */
     connect(sigName: "default-language-name-changed", callback: (($obj: Greeter, object: string) => void)): number
     connect_after(sigName: "default-language-name-changed", callback: (($obj: Greeter, object: string) => void)): number
     emit(sigName: "default-language-name-changed", object: string): void
@@ -131,10 +133,10 @@ export class Greeter {
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
 }
-export class Manager {
-    /* Properties of Gdm.Manager */
+class Manager {
+    /* Properties of Gdm-1.0.Gdm.Manager */
     version: string
-    /* Methods of Gdm.Manager */
+    /* Methods of Gdm-1.0.Gdm.Manager */
     call_open_reauthentication_channel(arg_username: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_open_reauthentication_channel_finish(out_address: string, res: Gio.AsyncResult): boolean
     call_open_reauthentication_channel_sync(arg_username: string, out_address: string, cancellable?: Gio.Cancellable | null): boolean
@@ -154,13 +156,13 @@ export class Manager {
     dup_version(): string
     get_version(): string
     set_version(value: string): void
-    /* Virtual methods of Gdm.Manager */
+    /* Virtual methods of Gdm-1.0.Gdm.Manager */
     vfunc_get_version(): string
     vfunc_handle_open_reauthentication_channel(invocation: Gio.DBusMethodInvocation, arg_username: string): boolean
     vfunc_handle_open_session(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_register_display(invocation: Gio.DBusMethodInvocation, arg_details: GLib.Variant): boolean
     vfunc_handle_register_session(invocation: Gio.DBusMethodInvocation, arg_details: GLib.Variant): boolean
-    /* Signals of Gdm.Manager */
+    /* Signals of Gdm-1.0.Gdm.Manager */
     connect(sigName: "handle-open-reauthentication-channel", callback: (($obj: Manager, object: Gio.DBusMethodInvocation, p0: string) => boolean)): number
     connect_after(sigName: "handle-open-reauthentication-channel", callback: (($obj: Manager, object: Gio.DBusMethodInvocation, p0: string) => boolean)): number
     emit(sigName: "handle-open-reauthentication-channel", object: Gio.DBusMethodInvocation, p0: string): void
@@ -178,15 +180,15 @@ export class Manager {
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
 }
-export class RemoteGreeter {
-    /* Methods of Gdm.RemoteGreeter */
+class RemoteGreeter {
+    /* Methods of Gdm-1.0.Gdm.RemoteGreeter */
     call_disconnect(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_disconnect_finish(res: Gio.AsyncResult): boolean
     call_disconnect_sync(cancellable?: Gio.Cancellable | null): boolean
     complete_disconnect(invocation: Gio.DBusMethodInvocation): void
-    /* Virtual methods of Gdm.RemoteGreeter */
+    /* Virtual methods of Gdm-1.0.Gdm.RemoteGreeter */
     vfunc_handle_disconnect(invocation: Gio.DBusMethodInvocation): boolean
-    /* Signals of Gdm.RemoteGreeter */
+    /* Signals of Gdm-1.0.Gdm.RemoteGreeter */
     connect(sigName: "handle-disconnect", callback: (($obj: RemoteGreeter, object: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "handle-disconnect", callback: (($obj: RemoteGreeter, object: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "handle-disconnect", object: Gio.DBusMethodInvocation): void
@@ -195,8 +197,8 @@ export class RemoteGreeter {
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
 }
-export class UserVerifier {
-    /* Methods of Gdm.UserVerifier */
+class UserVerifier {
+    /* Methods of Gdm-1.0.Gdm.UserVerifier */
     call_answer_query(arg_service_name: string, arg_answer: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_answer_query_finish(res: Gio.AsyncResult): boolean
     call_answer_query_sync(arg_service_name: string, arg_answer: string, cancellable?: Gio.Cancellable | null): boolean
@@ -228,7 +230,7 @@ export class UserVerifier {
     emit_service_unavailable(arg_service_name: string, arg_message: string): void
     emit_verification_complete(arg_service_name: string): void
     emit_verification_failed(arg_service_name: string): void
-    /* Virtual methods of Gdm.UserVerifier */
+    /* Virtual methods of Gdm-1.0.Gdm.UserVerifier */
     vfunc_conversation_started(arg_service_name: string): void
     vfunc_conversation_stopped(arg_service_name: string): void
     vfunc_handle_answer_query(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_answer: string): boolean
@@ -245,7 +247,7 @@ export class UserVerifier {
     vfunc_service_unavailable(arg_service_name: string, arg_message: string): void
     vfunc_verification_complete(arg_service_name: string): void
     vfunc_verification_failed(arg_service_name: string): void
-    /* Signals of Gdm.UserVerifier */
+    /* Signals of Gdm-1.0.Gdm.UserVerifier */
     connect(sigName: "conversation-started", callback: (($obj: UserVerifier, object: string) => void)): number
     connect_after(sigName: "conversation-started", callback: (($obj: UserVerifier, object: string) => void)): number
     emit(sigName: "conversation-started", object: string): void
@@ -299,17 +301,17 @@ export class UserVerifier {
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
 }
-export class UserVerifierChoiceList {
-    /* Methods of Gdm.UserVerifierChoiceList */
+class UserVerifierChoiceList {
+    /* Methods of Gdm-1.0.Gdm.UserVerifierChoiceList */
     call_select_choice(arg_service_name: string, arg_choice: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_select_choice_finish(res: Gio.AsyncResult): boolean
     call_select_choice_sync(arg_service_name: string, arg_choice: string, cancellable?: Gio.Cancellable | null): boolean
     complete_select_choice(invocation: Gio.DBusMethodInvocation): void
     emit_choice_query(arg_service_name: string, arg_prompt_message: string, arg_list: GLib.Variant): void
-    /* Virtual methods of Gdm.UserVerifierChoiceList */
+    /* Virtual methods of Gdm-1.0.Gdm.UserVerifierChoiceList */
     vfunc_choice_query(arg_service_name: string, arg_prompt_message: string, arg_list: GLib.Variant): void
     vfunc_handle_select_choice(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_choice: string): boolean
-    /* Signals of Gdm.UserVerifierChoiceList */
+    /* Signals of Gdm-1.0.Gdm.UserVerifierChoiceList */
     connect(sigName: "choice-query", callback: (($obj: UserVerifierChoiceList, object: string, p0: string, p1: GLib.Variant) => void)): number
     connect_after(sigName: "choice-query", callback: (($obj: UserVerifierChoiceList, object: string, p0: string, p1: GLib.Variant) => void)): number
     emit(sigName: "choice-query", object: string, p0: string, p1: GLib.Variant): void
@@ -321,8 +323,8 @@ export class UserVerifierChoiceList {
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
 }
-export class WorkerManager {
-    /* Methods of Gdm.WorkerManager */
+class WorkerManager {
+    /* Methods of Gdm-1.0.Gdm.WorkerManager */
     call_choice_list_query(arg_service_name: string, arg_prompt_message: string, arg_query: GLib.Variant, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_choice_list_query_finish(out_answer: string, res: Gio.AsyncResult): boolean
     call_choice_list_query_sync(arg_service_name: string, arg_prompt_message: string, arg_query: GLib.Variant, out_answer: string, cancellable?: Gio.Cancellable | null): boolean
@@ -347,14 +349,14 @@ export class WorkerManager {
     complete_info_query(invocation: Gio.DBusMethodInvocation, answer: string): void
     complete_problem(invocation: Gio.DBusMethodInvocation): void
     complete_secret_info_query(invocation: Gio.DBusMethodInvocation, answer: string): void
-    /* Virtual methods of Gdm.WorkerManager */
+    /* Virtual methods of Gdm-1.0.Gdm.WorkerManager */
     vfunc_handle_choice_list_query(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_prompt_message: string, arg_query: GLib.Variant): boolean
     vfunc_handle_hello(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_info(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_info: string): boolean
     vfunc_handle_info_query(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_query: string): boolean
     vfunc_handle_problem(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_problem: string): boolean
     vfunc_handle_secret_info_query(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_query: string): boolean
-    /* Signals of Gdm.WorkerManager */
+    /* Signals of Gdm-1.0.Gdm.WorkerManager */
     connect(sigName: "handle-choice-list-query", callback: (($obj: WorkerManager, object: Gio.DBusMethodInvocation, p0: string, p1: string, p2: GLib.Variant) => boolean)): number
     connect_after(sigName: "handle-choice-list-query", callback: (($obj: WorkerManager, object: Gio.DBusMethodInvocation, p0: string, p1: string, p2: GLib.Variant) => boolean)): number
     emit(sigName: "handle-choice-list-query", object: Gio.DBusMethodInvocation, p0: string, p1: string, p2: GLib.Variant): void
@@ -380,14 +382,14 @@ export class WorkerManager {
 }
 export interface ChooserProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
-export class ChooserProxy {
-    /* Properties of Gio.DBusProxy */
+class ChooserProxy {
+    /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.DBusProxy */
+    /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
     call_sync(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null): GLib.Variant
@@ -401,21 +403,21 @@ export class ChooserProxy {
     get_flags(): Gio.DBusProxyFlags
     get_interface_info(): Gio.DBusInterfaceInfo | null
     get_interface_name(): string
-    get_name(): string
+    get_name(): string | null
     get_name_owner(): string | null
     get_object_path(): string
     set_cached_property(property_name: string, value?: GLib.Variant | null): void
     set_default_timeout(timeout_msec: number): void
     set_interface_info(info?: Gio.DBusInterfaceInfo | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -423,13 +425,13 @@ export class ChooserProxy {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gdm.Chooser */
+    watch_closure(closure: Function): void
+    /* Methods of Gdm-1.0.Gdm.Chooser */
     call_disconnect(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_disconnect_finish(res: Gio.AsyncResult): boolean
     call_disconnect_sync(cancellable?: Gio.Cancellable | null): boolean
@@ -438,48 +440,48 @@ export class ChooserProxy {
     call_select_hostname_sync(arg_hostname: string, cancellable?: Gio.Cancellable | null): boolean
     complete_disconnect(invocation: Gio.DBusMethodInvocation): void
     complete_select_hostname(invocation: Gio.DBusMethodInvocation): void
-    /* Methods of Gio.AsyncInitable */
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     get_info(): Gio.DBusInterfaceInfo
     set_object(object?: Gio.DBusObject | null): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gdm.ChooserProxy */
+    /* Virtual methods of Gdm-1.0.Gdm.ChooserProxy */
     vfunc_handle_disconnect(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_select_hostname(invocation: Gio.DBusMethodInvocation, arg_hostname: string): boolean
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.DBusProxy */
+    /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusProxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusProxy */
     connect(sigName: "g-properties-changed", callback: (($obj: ChooserProxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     connect_after(sigName: "g-properties-changed", callback: (($obj: ChooserProxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     emit(sigName: "g-properties-changed", changed_properties: GLib.Variant, invalidated_properties: string[]): void
     connect(sigName: "g-signal", callback: (($obj: ChooserProxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     connect_after(sigName: "g-signal", callback: (($obj: ChooserProxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     emit(sigName: "g-signal", sender_name: string | null, signal_name: string, parameters: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ChooserProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ChooserProxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gdm.Chooser */
+    /* Signals of Gdm-1.0.Gdm.Chooser */
     connect(sigName: "handle-disconnect", callback: (($obj: ChooserProxy, object: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "handle-disconnect", callback: (($obj: ChooserProxy, object: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "handle-disconnect", object: Gio.DBusMethodInvocation): void
@@ -510,33 +512,33 @@ export class ChooserProxy {
 }
 export interface ChooserSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
-export class ChooserSkeleton {
-    /* Properties of Gio.DBusInterfaceSkeleton */
+class ChooserSkeleton {
+    /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.DBusInterfaceSkeleton */
+    /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
-    get_connection(): Gio.DBusConnection
+    get_connection(): Gio.DBusConnection | null
     get_connections(): Gio.DBusConnection[]
     get_flags(): Gio.DBusInterfaceSkeletonFlags
     get_info(): Gio.DBusInterfaceInfo
-    get_object_path(): string
+    get_object_path(): string | null
     get_properties(): GLib.Variant
     has_connection(connection: Gio.DBusConnection): boolean
     set_flags(flags: Gio.DBusInterfaceSkeletonFlags): void
     unexport(): void
     unexport_from_connection(connection: Gio.DBusConnection): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -544,13 +546,13 @@ export class ChooserSkeleton {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gdm.Chooser */
+    watch_closure(closure: Function): void
+    /* Methods of Gdm-1.0.Gdm.Chooser */
     call_disconnect(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_disconnect_finish(res: Gio.AsyncResult): boolean
     call_disconnect_sync(cancellable?: Gio.Cancellable | null): boolean
@@ -559,37 +561,37 @@ export class ChooserSkeleton {
     call_select_hostname_sync(arg_hostname: string, cancellable?: Gio.Cancellable | null): boolean
     complete_disconnect(invocation: Gio.DBusMethodInvocation): void
     complete_select_hostname(invocation: Gio.DBusMethodInvocation): void
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     set_object(object?: Gio.DBusObject | null): void
-    /* Virtual methods of Gdm.ChooserSkeleton */
+    /* Virtual methods of Gdm-1.0.Gdm.ChooserSkeleton */
     vfunc_handle_disconnect(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_select_hostname(invocation: Gio.DBusMethodInvocation, arg_hostname: string): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
-    /* Virtual methods of Gio.DBusInterfaceSkeleton */
+    /* Virtual methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     vfunc_flush(): void
     vfunc_g_authorize_method(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_get_properties(): GLib.Variant
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusInterfaceSkeleton */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusInterfaceSkeleton */
     connect(sigName: "g-authorize-method", callback: (($obj: ChooserSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "g-authorize-method", callback: (($obj: ChooserSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "g-authorize-method", invocation: Gio.DBusMethodInvocation): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ChooserSkeleton, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ChooserSkeleton, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gdm.Chooser */
+    /* Signals of Gdm-1.0.Gdm.Chooser */
     connect(sigName: "handle-disconnect", callback: (($obj: ChooserSkeleton, object: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "handle-disconnect", callback: (($obj: ChooserSkeleton, object: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "handle-disconnect", object: Gio.DBusMethodInvocation): void
@@ -612,10 +614,10 @@ export class ChooserSkeleton {
 }
 export interface Client_ConstructProps extends GObject.Object_ConstructProps {
 }
-export class Client {
-    /* Fields of GObject.Object */
+class Client {
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gdm.Client */
+    /* Methods of Gdm-1.0.Gdm.Client */
     get_chooser(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_chooser_finish(result: Gio.AsyncResult): Chooser
     get_chooser_sync(cancellable?: Gio.Cancellable | null): Chooser
@@ -633,15 +635,15 @@ export class Client {
     open_reauthentication_channel_finish(result: Gio.AsyncResult): UserVerifier
     open_reauthentication_channel_sync(username: string, cancellable?: Gio.Cancellable | null): UserVerifier
     set_enabled_extensions(extensions: string[]): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -649,21 +651,21 @@ export class Client {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Virtual methods of GObject.Object */
+    watch_closure(closure: Function): void
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of GObject.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Client, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -681,14 +683,14 @@ export class Client {
 }
 export interface GreeterProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
-export class GreeterProxy {
-    /* Properties of Gio.DBusProxy */
+class GreeterProxy {
+    /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.DBusProxy */
+    /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
     call_sync(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null): GLib.Variant
@@ -702,21 +704,21 @@ export class GreeterProxy {
     get_flags(): Gio.DBusProxyFlags
     get_interface_info(): Gio.DBusInterfaceInfo | null
     get_interface_name(): string
-    get_name(): string
+    get_name(): string | null
     get_name_owner(): string | null
     get_object_path(): string
     set_cached_property(property_name: string, value?: GLib.Variant | null): void
     set_default_timeout(timeout_msec: number): void
     set_interface_info(info?: Gio.DBusInterfaceInfo | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -724,13 +726,13 @@ export class GreeterProxy {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gdm.Greeter */
+    watch_closure(closure: Function): void
+    /* Methods of Gdm-1.0.Gdm.Greeter */
     call_begin_auto_login(arg_username: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_begin_auto_login_finish(res: Gio.AsyncResult): boolean
     call_begin_auto_login_sync(arg_username: string, cancellable?: Gio.Cancellable | null): boolean
@@ -757,17 +759,17 @@ export class GreeterProxy {
     emit_selected_user_changed(arg_username: string): void
     emit_session_opened(arg_service_name: string): void
     emit_timed_login_requested(arg_username: string, arg_delay: number): void
-    /* Methods of Gio.AsyncInitable */
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     get_info(): Gio.DBusInterfaceInfo
     set_object(object?: Gio.DBusObject | null): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gdm.GreeterProxy */
+    /* Virtual methods of Gdm-1.0.Gdm.GreeterProxy */
     vfunc_default_language_name_changed(arg_language_name: string): void
     vfunc_default_session_name_changed(arg_session_name: string): void
     vfunc_handle_begin_auto_login(invocation: Gio.DBusMethodInvocation, arg_username: string): boolean
@@ -781,33 +783,33 @@ export class GreeterProxy {
     vfunc_timed_login_requested(arg_username: string, arg_delay: number): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.DBusProxy */
+    /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusProxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusProxy */
     connect(sigName: "g-properties-changed", callback: (($obj: GreeterProxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     connect_after(sigName: "g-properties-changed", callback: (($obj: GreeterProxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     emit(sigName: "g-properties-changed", changed_properties: GLib.Variant, invalidated_properties: string[]): void
     connect(sigName: "g-signal", callback: (($obj: GreeterProxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     connect_after(sigName: "g-signal", callback: (($obj: GreeterProxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     emit(sigName: "g-signal", sender_name: string | null, signal_name: string, parameters: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GreeterProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GreeterProxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gdm.Greeter */
+    /* Signals of Gdm-1.0.Gdm.Greeter */
     connect(sigName: "default-language-name-changed", callback: (($obj: GreeterProxy, object: string) => void)): number
     connect_after(sigName: "default-language-name-changed", callback: (($obj: GreeterProxy, object: string) => void)): number
     emit(sigName: "default-language-name-changed", object: string): void
@@ -865,33 +867,33 @@ export class GreeterProxy {
 }
 export interface GreeterSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
-export class GreeterSkeleton {
-    /* Properties of Gio.DBusInterfaceSkeleton */
+class GreeterSkeleton {
+    /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.DBusInterfaceSkeleton */
+    /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
-    get_connection(): Gio.DBusConnection
+    get_connection(): Gio.DBusConnection | null
     get_connections(): Gio.DBusConnection[]
     get_flags(): Gio.DBusInterfaceSkeletonFlags
     get_info(): Gio.DBusInterfaceInfo
-    get_object_path(): string
+    get_object_path(): string | null
     get_properties(): GLib.Variant
     has_connection(connection: Gio.DBusConnection): boolean
     set_flags(flags: Gio.DBusInterfaceSkeletonFlags): void
     unexport(): void
     unexport_from_connection(connection: Gio.DBusConnection): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -899,13 +901,13 @@ export class GreeterSkeleton {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gdm.Greeter */
+    watch_closure(closure: Function): void
+    /* Methods of Gdm-1.0.Gdm.Greeter */
     call_begin_auto_login(arg_username: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_begin_auto_login_finish(res: Gio.AsyncResult): boolean
     call_begin_auto_login_sync(arg_username: string, cancellable?: Gio.Cancellable | null): boolean
@@ -932,10 +934,10 @@ export class GreeterSkeleton {
     emit_selected_user_changed(arg_username: string): void
     emit_session_opened(arg_service_name: string): void
     emit_timed_login_requested(arg_username: string, arg_delay: number): void
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     set_object(object?: Gio.DBusObject | null): void
-    /* Virtual methods of Gdm.GreeterSkeleton */
+    /* Virtual methods of Gdm-1.0.Gdm.GreeterSkeleton */
     vfunc_default_language_name_changed(arg_language_name: string): void
     vfunc_default_session_name_changed(arg_session_name: string): void
     vfunc_handle_begin_auto_login(invocation: Gio.DBusMethodInvocation, arg_username: string): boolean
@@ -947,31 +949,31 @@ export class GreeterSkeleton {
     vfunc_selected_user_changed(arg_username: string): void
     vfunc_session_opened(arg_service_name: string): void
     vfunc_timed_login_requested(arg_username: string, arg_delay: number): void
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
-    /* Virtual methods of Gio.DBusInterfaceSkeleton */
+    /* Virtual methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     vfunc_flush(): void
     vfunc_g_authorize_method(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_get_properties(): GLib.Variant
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusInterfaceSkeleton */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusInterfaceSkeleton */
     connect(sigName: "g-authorize-method", callback: (($obj: GreeterSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "g-authorize-method", callback: (($obj: GreeterSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "g-authorize-method", invocation: Gio.DBusMethodInvocation): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: GreeterSkeleton, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GreeterSkeleton, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gdm.Greeter */
+    /* Signals of Gdm-1.0.Gdm.Greeter */
     connect(sigName: "default-language-name-changed", callback: (($obj: GreeterSkeleton, object: string) => void)): number
     connect_after(sigName: "default-language-name-changed", callback: (($obj: GreeterSkeleton, object: string) => void)): number
     emit(sigName: "default-language-name-changed", object: string): void
@@ -1022,16 +1024,16 @@ export class GreeterSkeleton {
 export interface ManagerProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
     version?: string
 }
-export class ManagerProxy {
-    /* Properties of Gio.DBusProxy */
+class ManagerProxy {
+    /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Properties of Gdm.Manager */
+    /* Properties of Gdm-1.0.Gdm.Manager */
     version: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.DBusProxy */
+    /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
     call_sync(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null): GLib.Variant
@@ -1045,21 +1047,21 @@ export class ManagerProxy {
     get_flags(): Gio.DBusProxyFlags
     get_interface_info(): Gio.DBusInterfaceInfo | null
     get_interface_name(): string
-    get_name(): string
+    get_name(): string | null
     get_name_owner(): string | null
     get_object_path(): string
     set_cached_property(property_name: string, value?: GLib.Variant | null): void
     set_default_timeout(timeout_msec: number): void
     set_interface_info(info?: Gio.DBusInterfaceInfo | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1067,13 +1069,13 @@ export class ManagerProxy {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gdm.Manager */
+    watch_closure(closure: Function): void
+    /* Methods of Gdm-1.0.Gdm.Manager */
     call_open_reauthentication_channel(arg_username: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_open_reauthentication_channel_finish(out_address: string, res: Gio.AsyncResult): boolean
     call_open_reauthentication_channel_sync(arg_username: string, out_address: string, cancellable?: Gio.Cancellable | null): boolean
@@ -1093,17 +1095,17 @@ export class ManagerProxy {
     dup_version(): string
     get_version(): string
     set_version(value: string): void
-    /* Methods of Gio.AsyncInitable */
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     get_info(): Gio.DBusInterfaceInfo
     set_object(object?: Gio.DBusObject | null): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gdm.ManagerProxy */
+    /* Virtual methods of Gdm-1.0.Gdm.ManagerProxy */
     vfunc_get_version(): string
     vfunc_handle_open_reauthentication_channel(invocation: Gio.DBusMethodInvocation, arg_username: string): boolean
     vfunc_handle_open_session(invocation: Gio.DBusMethodInvocation): boolean
@@ -1111,33 +1113,33 @@ export class ManagerProxy {
     vfunc_handle_register_session(invocation: Gio.DBusMethodInvocation, arg_details: GLib.Variant): boolean
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.DBusProxy */
+    /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusProxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusProxy */
     connect(sigName: "g-properties-changed", callback: (($obj: ManagerProxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     connect_after(sigName: "g-properties-changed", callback: (($obj: ManagerProxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     emit(sigName: "g-properties-changed", changed_properties: GLib.Variant, invalidated_properties: string[]): void
     connect(sigName: "g-signal", callback: (($obj: ManagerProxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     connect_after(sigName: "g-signal", callback: (($obj: ManagerProxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     emit(sigName: "g-signal", sender_name: string | null, signal_name: string, parameters: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ManagerProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ManagerProxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gdm.Manager */
+    /* Signals of Gdm-1.0.Gdm.Manager */
     connect(sigName: "handle-open-reauthentication-channel", callback: (($obj: ManagerProxy, object: Gio.DBusMethodInvocation, p0: string) => boolean)): number
     connect_after(sigName: "handle-open-reauthentication-channel", callback: (($obj: ManagerProxy, object: Gio.DBusMethodInvocation, p0: string) => boolean)): number
     emit(sigName: "handle-open-reauthentication-channel", object: Gio.DBusMethodInvocation, p0: string): void
@@ -1177,35 +1179,35 @@ export class ManagerProxy {
 export interface ManagerSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
     version?: string
 }
-export class ManagerSkeleton {
-    /* Properties of Gio.DBusInterfaceSkeleton */
+class ManagerSkeleton {
+    /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
-    /* Properties of Gdm.Manager */
+    /* Properties of Gdm-1.0.Gdm.Manager */
     version: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.DBusInterfaceSkeleton */
+    /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
-    get_connection(): Gio.DBusConnection
+    get_connection(): Gio.DBusConnection | null
     get_connections(): Gio.DBusConnection[]
     get_flags(): Gio.DBusInterfaceSkeletonFlags
     get_info(): Gio.DBusInterfaceInfo
-    get_object_path(): string
+    get_object_path(): string | null
     get_properties(): GLib.Variant
     has_connection(connection: Gio.DBusConnection): boolean
     set_flags(flags: Gio.DBusInterfaceSkeletonFlags): void
     unexport(): void
     unexport_from_connection(connection: Gio.DBusConnection): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1213,13 +1215,13 @@ export class ManagerSkeleton {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gdm.Manager */
+    watch_closure(closure: Function): void
+    /* Methods of Gdm-1.0.Gdm.Manager */
     call_open_reauthentication_channel(arg_username: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_open_reauthentication_channel_finish(out_address: string, res: Gio.AsyncResult): boolean
     call_open_reauthentication_channel_sync(arg_username: string, out_address: string, cancellable?: Gio.Cancellable | null): boolean
@@ -1239,40 +1241,40 @@ export class ManagerSkeleton {
     dup_version(): string
     get_version(): string
     set_version(value: string): void
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     set_object(object?: Gio.DBusObject | null): void
-    /* Virtual methods of Gdm.ManagerSkeleton */
+    /* Virtual methods of Gdm-1.0.Gdm.ManagerSkeleton */
     vfunc_get_version(): string
     vfunc_handle_open_reauthentication_channel(invocation: Gio.DBusMethodInvocation, arg_username: string): boolean
     vfunc_handle_open_session(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_register_display(invocation: Gio.DBusMethodInvocation, arg_details: GLib.Variant): boolean
     vfunc_handle_register_session(invocation: Gio.DBusMethodInvocation, arg_details: GLib.Variant): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
-    /* Virtual methods of Gio.DBusInterfaceSkeleton */
+    /* Virtual methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     vfunc_flush(): void
     vfunc_g_authorize_method(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_get_properties(): GLib.Variant
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusInterfaceSkeleton */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusInterfaceSkeleton */
     connect(sigName: "g-authorize-method", callback: (($obj: ManagerSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "g-authorize-method", callback: (($obj: ManagerSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "g-authorize-method", invocation: Gio.DBusMethodInvocation): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: ManagerSkeleton, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ManagerSkeleton, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gdm.Manager */
+    /* Signals of Gdm-1.0.Gdm.Manager */
     connect(sigName: "handle-open-reauthentication-channel", callback: (($obj: ManagerSkeleton, object: Gio.DBusMethodInvocation, p0: string) => boolean)): number
     connect_after(sigName: "handle-open-reauthentication-channel", callback: (($obj: ManagerSkeleton, object: Gio.DBusMethodInvocation, p0: string) => boolean)): number
     emit(sigName: "handle-open-reauthentication-channel", object: Gio.DBusMethodInvocation, p0: string): void
@@ -1303,14 +1305,14 @@ export class ManagerSkeleton {
 }
 export interface RemoteGreeterProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
-export class RemoteGreeterProxy {
-    /* Properties of Gio.DBusProxy */
+class RemoteGreeterProxy {
+    /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.DBusProxy */
+    /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
     call_sync(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null): GLib.Variant
@@ -1324,21 +1326,21 @@ export class RemoteGreeterProxy {
     get_flags(): Gio.DBusProxyFlags
     get_interface_info(): Gio.DBusInterfaceInfo | null
     get_interface_name(): string
-    get_name(): string
+    get_name(): string | null
     get_name_owner(): string | null
     get_object_path(): string
     set_cached_property(property_name: string, value?: GLib.Variant | null): void
     set_default_timeout(timeout_msec: number): void
     set_interface_info(info?: Gio.DBusInterfaceInfo | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1346,58 +1348,58 @@ export class RemoteGreeterProxy {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gdm.RemoteGreeter */
+    watch_closure(closure: Function): void
+    /* Methods of Gdm-1.0.Gdm.RemoteGreeter */
     call_disconnect(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_disconnect_finish(res: Gio.AsyncResult): boolean
     call_disconnect_sync(cancellable?: Gio.Cancellable | null): boolean
     complete_disconnect(invocation: Gio.DBusMethodInvocation): void
-    /* Methods of Gio.AsyncInitable */
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     get_info(): Gio.DBusInterfaceInfo
     set_object(object?: Gio.DBusObject | null): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gdm.RemoteGreeterProxy */
+    /* Virtual methods of Gdm-1.0.Gdm.RemoteGreeterProxy */
     vfunc_handle_disconnect(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.DBusProxy */
+    /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusProxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusProxy */
     connect(sigName: "g-properties-changed", callback: (($obj: RemoteGreeterProxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     connect_after(sigName: "g-properties-changed", callback: (($obj: RemoteGreeterProxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     emit(sigName: "g-properties-changed", changed_properties: GLib.Variant, invalidated_properties: string[]): void
     connect(sigName: "g-signal", callback: (($obj: RemoteGreeterProxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     connect_after(sigName: "g-signal", callback: (($obj: RemoteGreeterProxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     emit(sigName: "g-signal", sender_name: string | null, signal_name: string, parameters: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RemoteGreeterProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RemoteGreeterProxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gdm.RemoteGreeter */
+    /* Signals of Gdm-1.0.Gdm.RemoteGreeter */
     connect(sigName: "handle-disconnect", callback: (($obj: RemoteGreeterProxy, object: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "handle-disconnect", callback: (($obj: RemoteGreeterProxy, object: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "handle-disconnect", object: Gio.DBusMethodInvocation): void
@@ -1425,33 +1427,33 @@ export class RemoteGreeterProxy {
 }
 export interface RemoteGreeterSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
-export class RemoteGreeterSkeleton {
-    /* Properties of Gio.DBusInterfaceSkeleton */
+class RemoteGreeterSkeleton {
+    /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.DBusInterfaceSkeleton */
+    /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
-    get_connection(): Gio.DBusConnection
+    get_connection(): Gio.DBusConnection | null
     get_connections(): Gio.DBusConnection[]
     get_flags(): Gio.DBusInterfaceSkeletonFlags
     get_info(): Gio.DBusInterfaceInfo
-    get_object_path(): string
+    get_object_path(): string | null
     get_properties(): GLib.Variant
     has_connection(connection: Gio.DBusConnection): boolean
     set_flags(flags: Gio.DBusInterfaceSkeletonFlags): void
     unexport(): void
     unexport_from_connection(connection: Gio.DBusConnection): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1459,47 +1461,47 @@ export class RemoteGreeterSkeleton {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gdm.RemoteGreeter */
+    watch_closure(closure: Function): void
+    /* Methods of Gdm-1.0.Gdm.RemoteGreeter */
     call_disconnect(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_disconnect_finish(res: Gio.AsyncResult): boolean
     call_disconnect_sync(cancellable?: Gio.Cancellable | null): boolean
     complete_disconnect(invocation: Gio.DBusMethodInvocation): void
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     set_object(object?: Gio.DBusObject | null): void
-    /* Virtual methods of Gdm.RemoteGreeterSkeleton */
+    /* Virtual methods of Gdm-1.0.Gdm.RemoteGreeterSkeleton */
     vfunc_handle_disconnect(invocation: Gio.DBusMethodInvocation): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
-    /* Virtual methods of Gio.DBusInterfaceSkeleton */
+    /* Virtual methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     vfunc_flush(): void
     vfunc_g_authorize_method(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_get_properties(): GLib.Variant
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusInterfaceSkeleton */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusInterfaceSkeleton */
     connect(sigName: "g-authorize-method", callback: (($obj: RemoteGreeterSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "g-authorize-method", callback: (($obj: RemoteGreeterSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "g-authorize-method", invocation: Gio.DBusMethodInvocation): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: RemoteGreeterSkeleton, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RemoteGreeterSkeleton, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gdm.RemoteGreeter */
+    /* Signals of Gdm-1.0.Gdm.RemoteGreeter */
     connect(sigName: "handle-disconnect", callback: (($obj: RemoteGreeterSkeleton, object: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "handle-disconnect", callback: (($obj: RemoteGreeterSkeleton, object: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "handle-disconnect", object: Gio.DBusMethodInvocation): void
@@ -1519,14 +1521,14 @@ export class RemoteGreeterSkeleton {
 }
 export interface UserVerifierChoiceListProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
-export class UserVerifierChoiceListProxy {
-    /* Properties of Gio.DBusProxy */
+class UserVerifierChoiceListProxy {
+    /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.DBusProxy */
+    /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
     call_sync(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null): GLib.Variant
@@ -1540,21 +1542,21 @@ export class UserVerifierChoiceListProxy {
     get_flags(): Gio.DBusProxyFlags
     get_interface_info(): Gio.DBusInterfaceInfo | null
     get_interface_name(): string
-    get_name(): string
+    get_name(): string | null
     get_name_owner(): string | null
     get_object_path(): string
     set_cached_property(property_name: string, value?: GLib.Variant | null): void
     set_default_timeout(timeout_msec: number): void
     set_interface_info(info?: Gio.DBusInterfaceInfo | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1562,60 +1564,60 @@ export class UserVerifierChoiceListProxy {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gdm.UserVerifierChoiceList */
+    watch_closure(closure: Function): void
+    /* Methods of Gdm-1.0.Gdm.UserVerifierChoiceList */
     call_select_choice(arg_service_name: string, arg_choice: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_select_choice_finish(res: Gio.AsyncResult): boolean
     call_select_choice_sync(arg_service_name: string, arg_choice: string, cancellable?: Gio.Cancellable | null): boolean
     complete_select_choice(invocation: Gio.DBusMethodInvocation): void
     emit_choice_query(arg_service_name: string, arg_prompt_message: string, arg_list: GLib.Variant): void
-    /* Methods of Gio.AsyncInitable */
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     get_info(): Gio.DBusInterfaceInfo
     set_object(object?: Gio.DBusObject | null): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gdm.UserVerifierChoiceListProxy */
+    /* Virtual methods of Gdm-1.0.Gdm.UserVerifierChoiceListProxy */
     vfunc_choice_query(arg_service_name: string, arg_prompt_message: string, arg_list: GLib.Variant): void
     vfunc_handle_select_choice(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_choice: string): boolean
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.DBusProxy */
+    /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusProxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusProxy */
     connect(sigName: "g-properties-changed", callback: (($obj: UserVerifierChoiceListProxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     connect_after(sigName: "g-properties-changed", callback: (($obj: UserVerifierChoiceListProxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     emit(sigName: "g-properties-changed", changed_properties: GLib.Variant, invalidated_properties: string[]): void
     connect(sigName: "g-signal", callback: (($obj: UserVerifierChoiceListProxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     connect_after(sigName: "g-signal", callback: (($obj: UserVerifierChoiceListProxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     emit(sigName: "g-signal", sender_name: string | null, signal_name: string, parameters: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UserVerifierChoiceListProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UserVerifierChoiceListProxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gdm.UserVerifierChoiceList */
+    /* Signals of Gdm-1.0.Gdm.UserVerifierChoiceList */
     connect(sigName: "choice-query", callback: (($obj: UserVerifierChoiceListProxy, object: string, p0: string, p1: GLib.Variant) => void)): number
     connect_after(sigName: "choice-query", callback: (($obj: UserVerifierChoiceListProxy, object: string, p0: string, p1: GLib.Variant) => void)): number
     emit(sigName: "choice-query", object: string, p0: string, p1: GLib.Variant): void
@@ -1646,33 +1648,33 @@ export class UserVerifierChoiceListProxy {
 }
 export interface UserVerifierChoiceListSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
-export class UserVerifierChoiceListSkeleton {
-    /* Properties of Gio.DBusInterfaceSkeleton */
+class UserVerifierChoiceListSkeleton {
+    /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.DBusInterfaceSkeleton */
+    /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
-    get_connection(): Gio.DBusConnection
+    get_connection(): Gio.DBusConnection | null
     get_connections(): Gio.DBusConnection[]
     get_flags(): Gio.DBusInterfaceSkeletonFlags
     get_info(): Gio.DBusInterfaceInfo
-    get_object_path(): string
+    get_object_path(): string | null
     get_properties(): GLib.Variant
     has_connection(connection: Gio.DBusConnection): boolean
     set_flags(flags: Gio.DBusInterfaceSkeletonFlags): void
     unexport(): void
     unexport_from_connection(connection: Gio.DBusConnection): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1680,49 +1682,49 @@ export class UserVerifierChoiceListSkeleton {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gdm.UserVerifierChoiceList */
+    watch_closure(closure: Function): void
+    /* Methods of Gdm-1.0.Gdm.UserVerifierChoiceList */
     call_select_choice(arg_service_name: string, arg_choice: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_select_choice_finish(res: Gio.AsyncResult): boolean
     call_select_choice_sync(arg_service_name: string, arg_choice: string, cancellable?: Gio.Cancellable | null): boolean
     complete_select_choice(invocation: Gio.DBusMethodInvocation): void
     emit_choice_query(arg_service_name: string, arg_prompt_message: string, arg_list: GLib.Variant): void
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     set_object(object?: Gio.DBusObject | null): void
-    /* Virtual methods of Gdm.UserVerifierChoiceListSkeleton */
+    /* Virtual methods of Gdm-1.0.Gdm.UserVerifierChoiceListSkeleton */
     vfunc_choice_query(arg_service_name: string, arg_prompt_message: string, arg_list: GLib.Variant): void
     vfunc_handle_select_choice(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_choice: string): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
-    /* Virtual methods of Gio.DBusInterfaceSkeleton */
+    /* Virtual methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     vfunc_flush(): void
     vfunc_g_authorize_method(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_get_properties(): GLib.Variant
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusInterfaceSkeleton */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusInterfaceSkeleton */
     connect(sigName: "g-authorize-method", callback: (($obj: UserVerifierChoiceListSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "g-authorize-method", callback: (($obj: UserVerifierChoiceListSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "g-authorize-method", invocation: Gio.DBusMethodInvocation): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UserVerifierChoiceListSkeleton, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UserVerifierChoiceListSkeleton, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gdm.UserVerifierChoiceList */
+    /* Signals of Gdm-1.0.Gdm.UserVerifierChoiceList */
     connect(sigName: "choice-query", callback: (($obj: UserVerifierChoiceListSkeleton, object: string, p0: string, p1: GLib.Variant) => void)): number
     connect_after(sigName: "choice-query", callback: (($obj: UserVerifierChoiceListSkeleton, object: string, p0: string, p1: GLib.Variant) => void)): number
     emit(sigName: "choice-query", object: string, p0: string, p1: GLib.Variant): void
@@ -1745,14 +1747,14 @@ export class UserVerifierChoiceListSkeleton {
 }
 export interface UserVerifierProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
-export class UserVerifierProxy {
-    /* Properties of Gio.DBusProxy */
+class UserVerifierProxy {
+    /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.DBusProxy */
+    /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
     call_sync(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null): GLib.Variant
@@ -1766,21 +1768,21 @@ export class UserVerifierProxy {
     get_flags(): Gio.DBusProxyFlags
     get_interface_info(): Gio.DBusInterfaceInfo | null
     get_interface_name(): string
-    get_name(): string
+    get_name(): string | null
     get_name_owner(): string | null
     get_object_path(): string
     set_cached_property(property_name: string, value?: GLib.Variant | null): void
     set_default_timeout(timeout_msec: number): void
     set_interface_info(info?: Gio.DBusInterfaceInfo | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1788,13 +1790,13 @@ export class UserVerifierProxy {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gdm.UserVerifier */
+    watch_closure(closure: Function): void
+    /* Methods of Gdm-1.0.Gdm.UserVerifier */
     call_answer_query(arg_service_name: string, arg_answer: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_answer_query_finish(res: Gio.AsyncResult): boolean
     call_answer_query_sync(arg_service_name: string, arg_answer: string, cancellable?: Gio.Cancellable | null): boolean
@@ -1826,17 +1828,17 @@ export class UserVerifierProxy {
     emit_service_unavailable(arg_service_name: string, arg_message: string): void
     emit_verification_complete(arg_service_name: string): void
     emit_verification_failed(arg_service_name: string): void
-    /* Methods of Gio.AsyncInitable */
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     get_info(): Gio.DBusInterfaceInfo
     set_object(object?: Gio.DBusObject | null): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gdm.UserVerifierProxy */
+    /* Virtual methods of Gdm-1.0.Gdm.UserVerifierProxy */
     vfunc_conversation_started(arg_service_name: string): void
     vfunc_conversation_stopped(arg_service_name: string): void
     vfunc_handle_answer_query(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_answer: string): boolean
@@ -1855,33 +1857,33 @@ export class UserVerifierProxy {
     vfunc_verification_failed(arg_service_name: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.DBusProxy */
+    /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusProxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusProxy */
     connect(sigName: "g-properties-changed", callback: (($obj: UserVerifierProxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     connect_after(sigName: "g-properties-changed", callback: (($obj: UserVerifierProxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     emit(sigName: "g-properties-changed", changed_properties: GLib.Variant, invalidated_properties: string[]): void
     connect(sigName: "g-signal", callback: (($obj: UserVerifierProxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     connect_after(sigName: "g-signal", callback: (($obj: UserVerifierProxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     emit(sigName: "g-signal", sender_name: string | null, signal_name: string, parameters: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UserVerifierProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UserVerifierProxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gdm.UserVerifier */
+    /* Signals of Gdm-1.0.Gdm.UserVerifier */
     connect(sigName: "conversation-started", callback: (($obj: UserVerifierProxy, object: string) => void)): number
     connect_after(sigName: "conversation-started", callback: (($obj: UserVerifierProxy, object: string) => void)): number
     emit(sigName: "conversation-started", object: string): void
@@ -1954,33 +1956,33 @@ export class UserVerifierProxy {
 }
 export interface UserVerifierSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
-export class UserVerifierSkeleton {
-    /* Properties of Gio.DBusInterfaceSkeleton */
+class UserVerifierSkeleton {
+    /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.DBusInterfaceSkeleton */
+    /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
-    get_connection(): Gio.DBusConnection
+    get_connection(): Gio.DBusConnection | null
     get_connections(): Gio.DBusConnection[]
     get_flags(): Gio.DBusInterfaceSkeletonFlags
     get_info(): Gio.DBusInterfaceInfo
-    get_object_path(): string
+    get_object_path(): string | null
     get_properties(): GLib.Variant
     has_connection(connection: Gio.DBusConnection): boolean
     set_flags(flags: Gio.DBusInterfaceSkeletonFlags): void
     unexport(): void
     unexport_from_connection(connection: Gio.DBusConnection): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -1988,13 +1990,13 @@ export class UserVerifierSkeleton {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gdm.UserVerifier */
+    watch_closure(closure: Function): void
+    /* Methods of Gdm-1.0.Gdm.UserVerifier */
     call_answer_query(arg_service_name: string, arg_answer: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_answer_query_finish(res: Gio.AsyncResult): boolean
     call_answer_query_sync(arg_service_name: string, arg_answer: string, cancellable?: Gio.Cancellable | null): boolean
@@ -2026,10 +2028,10 @@ export class UserVerifierSkeleton {
     emit_service_unavailable(arg_service_name: string, arg_message: string): void
     emit_verification_complete(arg_service_name: string): void
     emit_verification_failed(arg_service_name: string): void
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     set_object(object?: Gio.DBusObject | null): void
-    /* Virtual methods of Gdm.UserVerifierSkeleton */
+    /* Virtual methods of Gdm-1.0.Gdm.UserVerifierSkeleton */
     vfunc_conversation_started(arg_service_name: string): void
     vfunc_conversation_stopped(arg_service_name: string): void
     vfunc_handle_answer_query(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_answer: string): boolean
@@ -2046,31 +2048,31 @@ export class UserVerifierSkeleton {
     vfunc_service_unavailable(arg_service_name: string, arg_message: string): void
     vfunc_verification_complete(arg_service_name: string): void
     vfunc_verification_failed(arg_service_name: string): void
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
-    /* Virtual methods of Gio.DBusInterfaceSkeleton */
+    /* Virtual methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     vfunc_flush(): void
     vfunc_g_authorize_method(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_get_properties(): GLib.Variant
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusInterfaceSkeleton */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusInterfaceSkeleton */
     connect(sigName: "g-authorize-method", callback: (($obj: UserVerifierSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "g-authorize-method", callback: (($obj: UserVerifierSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "g-authorize-method", invocation: Gio.DBusMethodInvocation): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: UserVerifierSkeleton, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: UserVerifierSkeleton, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gdm.UserVerifier */
+    /* Signals of Gdm-1.0.Gdm.UserVerifier */
     connect(sigName: "conversation-started", callback: (($obj: UserVerifierSkeleton, object: string) => void)): number
     connect_after(sigName: "conversation-started", callback: (($obj: UserVerifierSkeleton, object: string) => void)): number
     emit(sigName: "conversation-started", object: string): void
@@ -2135,14 +2137,14 @@ export class UserVerifierSkeleton {
 }
 export interface WorkerManagerProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
-export class WorkerManagerProxy {
-    /* Properties of Gio.DBusProxy */
+class WorkerManagerProxy {
+    /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.DBusProxy */
+    /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
     call_sync(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null): GLib.Variant
@@ -2156,21 +2158,21 @@ export class WorkerManagerProxy {
     get_flags(): Gio.DBusProxyFlags
     get_interface_info(): Gio.DBusInterfaceInfo | null
     get_interface_name(): string
-    get_name(): string
+    get_name(): string | null
     get_name_owner(): string | null
     get_object_path(): string
     set_cached_property(property_name: string, value?: GLib.Variant | null): void
     set_default_timeout(timeout_msec: number): void
     set_interface_info(info?: Gio.DBusInterfaceInfo | null): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2178,13 +2180,13 @@ export class WorkerManagerProxy {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gdm.WorkerManager */
+    watch_closure(closure: Function): void
+    /* Methods of Gdm-1.0.Gdm.WorkerManager */
     call_choice_list_query(arg_service_name: string, arg_prompt_message: string, arg_query: GLib.Variant, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_choice_list_query_finish(out_answer: string, res: Gio.AsyncResult): boolean
     call_choice_list_query_sync(arg_service_name: string, arg_prompt_message: string, arg_query: GLib.Variant, out_answer: string, cancellable?: Gio.Cancellable | null): boolean
@@ -2209,17 +2211,17 @@ export class WorkerManagerProxy {
     complete_info_query(invocation: Gio.DBusMethodInvocation, answer: string): void
     complete_problem(invocation: Gio.DBusMethodInvocation): void
     complete_secret_info_query(invocation: Gio.DBusMethodInvocation, answer: string): void
-    /* Methods of Gio.AsyncInitable */
+    /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
     new_finish(res: Gio.AsyncResult): GObject.Object
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     get_info(): Gio.DBusInterfaceInfo
     set_object(object?: Gio.DBusObject | null): void
-    /* Methods of Gio.Initable */
+    /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gdm.WorkerManagerProxy */
+    /* Virtual methods of Gdm-1.0.Gdm.WorkerManagerProxy */
     vfunc_handle_choice_list_query(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_prompt_message: string, arg_query: GLib.Variant): boolean
     vfunc_handle_hello(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_info(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_info: string): boolean
@@ -2228,33 +2230,33 @@ export class WorkerManagerProxy {
     vfunc_handle_secret_info_query(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_query: string): boolean
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(res: Gio.AsyncResult): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
-    /* Virtual methods of Gio.DBusProxy */
+    /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusProxy */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusProxy */
     connect(sigName: "g-properties-changed", callback: (($obj: WorkerManagerProxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     connect_after(sigName: "g-properties-changed", callback: (($obj: WorkerManagerProxy, changed_properties: GLib.Variant, invalidated_properties: string[]) => void)): number
     emit(sigName: "g-properties-changed", changed_properties: GLib.Variant, invalidated_properties: string[]): void
     connect(sigName: "g-signal", callback: (($obj: WorkerManagerProxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     connect_after(sigName: "g-signal", callback: (($obj: WorkerManagerProxy, sender_name: string | null, signal_name: string, parameters: GLib.Variant) => void)): number
     emit(sigName: "g-signal", sender_name: string | null, signal_name: string, parameters: GLib.Variant): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WorkerManagerProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WorkerManagerProxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gdm.WorkerManager */
+    /* Signals of Gdm-1.0.Gdm.WorkerManager */
     connect(sigName: "handle-choice-list-query", callback: (($obj: WorkerManagerProxy, object: Gio.DBusMethodInvocation, p0: string, p1: string, p2: GLib.Variant) => boolean)): number
     connect_after(sigName: "handle-choice-list-query", callback: (($obj: WorkerManagerProxy, object: Gio.DBusMethodInvocation, p0: string, p1: string, p2: GLib.Variant) => boolean)): number
     emit(sigName: "handle-choice-list-query", object: Gio.DBusMethodInvocation, p0: string, p1: string, p2: GLib.Variant): void
@@ -2297,33 +2299,33 @@ export class WorkerManagerProxy {
 }
 export interface WorkerManagerSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
-export class WorkerManagerSkeleton {
-    /* Properties of Gio.DBusInterfaceSkeleton */
+class WorkerManagerSkeleton {
+    /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Gio.DBusInterfaceSkeleton */
+    /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
-    get_connection(): Gio.DBusConnection
+    get_connection(): Gio.DBusConnection | null
     get_connections(): Gio.DBusConnection[]
     get_flags(): Gio.DBusInterfaceSkeletonFlags
     get_info(): Gio.DBusInterfaceInfo
-    get_object_path(): string
+    get_object_path(): string | null
     get_properties(): GLib.Variant
     has_connection(connection: Gio.DBusConnection): boolean
     set_flags(flags: Gio.DBusInterfaceSkeletonFlags): void
     unexport(): void
     unexport_from_connection(connection: Gio.DBusConnection): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -2331,13 +2333,13 @@ export class WorkerManagerSkeleton {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gdm.WorkerManager */
+    watch_closure(closure: Function): void
+    /* Methods of Gdm-1.0.Gdm.WorkerManager */
     call_choice_list_query(arg_service_name: string, arg_prompt_message: string, arg_query: GLib.Variant, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_choice_list_query_finish(out_answer: string, res: Gio.AsyncResult): boolean
     call_choice_list_query_sync(arg_service_name: string, arg_prompt_message: string, arg_query: GLib.Variant, out_answer: string, cancellable?: Gio.Cancellable | null): boolean
@@ -2362,41 +2364,41 @@ export class WorkerManagerSkeleton {
     complete_info_query(invocation: Gio.DBusMethodInvocation, answer: string): void
     complete_problem(invocation: Gio.DBusMethodInvocation): void
     complete_secret_info_query(invocation: Gio.DBusMethodInvocation, answer: string): void
-    /* Methods of Gio.DBusInterface */
-    get_object(): Gio.DBusObject
+    /* Methods of Gio-2.0.Gio.DBusInterface */
+    get_object(): Gio.DBusObject | null
     set_object(object?: Gio.DBusObject | null): void
-    /* Virtual methods of Gdm.WorkerManagerSkeleton */
+    /* Virtual methods of Gdm-1.0.Gdm.WorkerManagerSkeleton */
     vfunc_handle_choice_list_query(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_prompt_message: string, arg_query: GLib.Variant): boolean
     vfunc_handle_hello(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_info(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_info: string): boolean
     vfunc_handle_info_query(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_query: string): boolean
     vfunc_handle_problem(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_problem: string): boolean
     vfunc_handle_secret_info_query(invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_query: string): boolean
-    vfunc_dup_object(): Gio.DBusObject
+    vfunc_dup_object(): Gio.DBusObject | null
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_set_object(object?: Gio.DBusObject | null): void
-    /* Virtual methods of Gio.DBusInterfaceSkeleton */
+    /* Virtual methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     vfunc_flush(): void
     vfunc_g_authorize_method(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_get_info(): Gio.DBusInterfaceInfo
     vfunc_get_properties(): GLib.Variant
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Gio.DBusInterfaceSkeleton */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DBusInterfaceSkeleton */
     connect(sigName: "g-authorize-method", callback: (($obj: WorkerManagerSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "g-authorize-method", callback: (($obj: WorkerManagerSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "g-authorize-method", invocation: Gio.DBusMethodInvocation): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: WorkerManagerSkeleton, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: WorkerManagerSkeleton, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gdm.WorkerManager */
+    /* Signals of Gdm-1.0.Gdm.WorkerManager */
     connect(sigName: "handle-choice-list-query", callback: (($obj: WorkerManagerSkeleton, object: Gio.DBusMethodInvocation, p0: string, p1: string, p2: GLib.Variant) => boolean)): number
     connect_after(sigName: "handle-choice-list-query", callback: (($obj: WorkerManagerSkeleton, object: Gio.DBusMethodInvocation, p0: string, p1: string, p2: GLib.Variant) => boolean)): number
     emit(sigName: "handle-choice-list-query", object: Gio.DBusMethodInvocation, p0: string, p1: string, p2: GLib.Variant): void
@@ -2429,36 +2431,36 @@ export class WorkerManagerSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export abstract class ChooserIface {
-    /* Fields of Gdm.ChooserIface */
+abstract class ChooserIface {
+    /* Fields of Gdm-1.0.Gdm.ChooserIface */
     parent_iface: GObject.TypeInterface
     handle_disconnect: (object: Chooser, invocation: Gio.DBusMethodInvocation) => boolean
     handle_select_hostname: (object: Chooser, invocation: Gio.DBusMethodInvocation, arg_hostname: string) => boolean
     static name: string
 }
-export abstract class ChooserProxyClass {
-    /* Fields of Gdm.ChooserProxyClass */
+abstract class ChooserProxyClass {
+    /* Fields of Gdm-1.0.Gdm.ChooserProxyClass */
     parent_class: Gio.DBusProxyClass
     static name: string
 }
-export class ChooserProxyPrivate {
+class ChooserProxyPrivate {
     static name: string
 }
-export abstract class ChooserSkeletonClass {
-    /* Fields of Gdm.ChooserSkeletonClass */
+abstract class ChooserSkeletonClass {
+    /* Fields of Gdm-1.0.Gdm.ChooserSkeletonClass */
     parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
-export class ChooserSkeletonPrivate {
+class ChooserSkeletonPrivate {
     static name: string
 }
-export abstract class ClientClass {
-    /* Fields of Gdm.ClientClass */
+abstract class ClientClass {
+    /* Fields of Gdm-1.0.Gdm.ClientClass */
     parent_class: GObject.ObjectClass
     static name: string
 }
-export abstract class GreeterIface {
-    /* Fields of Gdm.GreeterIface */
+abstract class GreeterIface {
+    /* Fields of Gdm-1.0.Gdm.GreeterIface */
     parent_iface: GObject.TypeInterface
     handle_begin_auto_login: (object: Greeter, invocation: Gio.DBusMethodInvocation, arg_username: string) => boolean
     handle_get_timed_login_details: (object: Greeter, invocation: Gio.DBusMethodInvocation) => boolean
@@ -2473,24 +2475,24 @@ export abstract class GreeterIface {
     timed_login_requested: (object: Greeter, arg_username: string, arg_delay: number) => void
     static name: string
 }
-export abstract class GreeterProxyClass {
-    /* Fields of Gdm.GreeterProxyClass */
+abstract class GreeterProxyClass {
+    /* Fields of Gdm-1.0.Gdm.GreeterProxyClass */
     parent_class: Gio.DBusProxyClass
     static name: string
 }
-export class GreeterProxyPrivate {
+class GreeterProxyPrivate {
     static name: string
 }
-export abstract class GreeterSkeletonClass {
-    /* Fields of Gdm.GreeterSkeletonClass */
+abstract class GreeterSkeletonClass {
+    /* Fields of Gdm-1.0.Gdm.GreeterSkeletonClass */
     parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
-export class GreeterSkeletonPrivate {
+class GreeterSkeletonPrivate {
     static name: string
 }
-export abstract class ManagerIface {
-    /* Fields of Gdm.ManagerIface */
+abstract class ManagerIface {
+    /* Fields of Gdm-1.0.Gdm.ManagerIface */
     parent_iface: GObject.TypeInterface
     handle_open_reauthentication_channel: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_username: string) => boolean
     handle_open_session: (object: Manager, invocation: Gio.DBusMethodInvocation) => boolean
@@ -2499,69 +2501,69 @@ export abstract class ManagerIface {
     get_version: (object: Manager) => string
     static name: string
 }
-export abstract class ManagerProxyClass {
-    /* Fields of Gdm.ManagerProxyClass */
+abstract class ManagerProxyClass {
+    /* Fields of Gdm-1.0.Gdm.ManagerProxyClass */
     parent_class: Gio.DBusProxyClass
     static name: string
 }
-export class ManagerProxyPrivate {
+class ManagerProxyPrivate {
     static name: string
 }
-export abstract class ManagerSkeletonClass {
-    /* Fields of Gdm.ManagerSkeletonClass */
+abstract class ManagerSkeletonClass {
+    /* Fields of Gdm-1.0.Gdm.ManagerSkeletonClass */
     parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
-export class ManagerSkeletonPrivate {
+class ManagerSkeletonPrivate {
     static name: string
 }
-export abstract class RemoteGreeterIface {
-    /* Fields of Gdm.RemoteGreeterIface */
+abstract class RemoteGreeterIface {
+    /* Fields of Gdm-1.0.Gdm.RemoteGreeterIface */
     parent_iface: GObject.TypeInterface
     handle_disconnect: (object: RemoteGreeter, invocation: Gio.DBusMethodInvocation) => boolean
     static name: string
 }
-export abstract class RemoteGreeterProxyClass {
-    /* Fields of Gdm.RemoteGreeterProxyClass */
+abstract class RemoteGreeterProxyClass {
+    /* Fields of Gdm-1.0.Gdm.RemoteGreeterProxyClass */
     parent_class: Gio.DBusProxyClass
     static name: string
 }
-export class RemoteGreeterProxyPrivate {
+class RemoteGreeterProxyPrivate {
     static name: string
 }
-export abstract class RemoteGreeterSkeletonClass {
-    /* Fields of Gdm.RemoteGreeterSkeletonClass */
+abstract class RemoteGreeterSkeletonClass {
+    /* Fields of Gdm-1.0.Gdm.RemoteGreeterSkeletonClass */
     parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
-export class RemoteGreeterSkeletonPrivate {
+class RemoteGreeterSkeletonPrivate {
     static name: string
 }
-export abstract class UserVerifierChoiceListIface {
-    /* Fields of Gdm.UserVerifierChoiceListIface */
+abstract class UserVerifierChoiceListIface {
+    /* Fields of Gdm-1.0.Gdm.UserVerifierChoiceListIface */
     parent_iface: GObject.TypeInterface
     handle_select_choice: (object: UserVerifierChoiceList, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_choice: string) => boolean
     choice_query: (object: UserVerifierChoiceList, arg_service_name: string, arg_prompt_message: string, arg_list: GLib.Variant) => void
     static name: string
 }
-export abstract class UserVerifierChoiceListProxyClass {
-    /* Fields of Gdm.UserVerifierChoiceListProxyClass */
+abstract class UserVerifierChoiceListProxyClass {
+    /* Fields of Gdm-1.0.Gdm.UserVerifierChoiceListProxyClass */
     parent_class: Gio.DBusProxyClass
     static name: string
 }
-export class UserVerifierChoiceListProxyPrivate {
+class UserVerifierChoiceListProxyPrivate {
     static name: string
 }
-export abstract class UserVerifierChoiceListSkeletonClass {
-    /* Fields of Gdm.UserVerifierChoiceListSkeletonClass */
+abstract class UserVerifierChoiceListSkeletonClass {
+    /* Fields of Gdm-1.0.Gdm.UserVerifierChoiceListSkeletonClass */
     parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
-export class UserVerifierChoiceListSkeletonPrivate {
+class UserVerifierChoiceListSkeletonPrivate {
     static name: string
 }
-export abstract class UserVerifierIface {
-    /* Fields of Gdm.UserVerifierIface */
+abstract class UserVerifierIface {
+    /* Fields of Gdm-1.0.Gdm.UserVerifierIface */
     parent_iface: GObject.TypeInterface
     handle_answer_query: (object: UserVerifier, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_answer: string) => boolean
     handle_begin_verification: (object: UserVerifier, invocation: Gio.DBusMethodInvocation, arg_service_name: string) => boolean
@@ -2581,24 +2583,24 @@ export abstract class UserVerifierIface {
     verification_failed: (object: UserVerifier, arg_service_name: string) => void
     static name: string
 }
-export abstract class UserVerifierProxyClass {
-    /* Fields of Gdm.UserVerifierProxyClass */
+abstract class UserVerifierProxyClass {
+    /* Fields of Gdm-1.0.Gdm.UserVerifierProxyClass */
     parent_class: Gio.DBusProxyClass
     static name: string
 }
-export class UserVerifierProxyPrivate {
+class UserVerifierProxyPrivate {
     static name: string
 }
-export abstract class UserVerifierSkeletonClass {
-    /* Fields of Gdm.UserVerifierSkeletonClass */
+abstract class UserVerifierSkeletonClass {
+    /* Fields of Gdm-1.0.Gdm.UserVerifierSkeletonClass */
     parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
-export class UserVerifierSkeletonPrivate {
+class UserVerifierSkeletonPrivate {
     static name: string
 }
-export abstract class WorkerManagerIface {
-    /* Fields of Gdm.WorkerManagerIface */
+abstract class WorkerManagerIface {
+    /* Fields of Gdm-1.0.Gdm.WorkerManagerIface */
     parent_iface: GObject.TypeInterface
     handle_choice_list_query: (object: WorkerManager, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_prompt_message: string, arg_query: GLib.Variant) => boolean
     handle_hello: (object: WorkerManager, invocation: Gio.DBusMethodInvocation) => boolean
@@ -2608,19 +2610,21 @@ export abstract class WorkerManagerIface {
     handle_secret_info_query: (object: WorkerManager, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_query: string) => boolean
     static name: string
 }
-export abstract class WorkerManagerProxyClass {
-    /* Fields of Gdm.WorkerManagerProxyClass */
+abstract class WorkerManagerProxyClass {
+    /* Fields of Gdm-1.0.Gdm.WorkerManagerProxyClass */
     parent_class: Gio.DBusProxyClass
     static name: string
 }
-export class WorkerManagerProxyPrivate {
+class WorkerManagerProxyPrivate {
     static name: string
 }
-export abstract class WorkerManagerSkeletonClass {
-    /* Fields of Gdm.WorkerManagerSkeletonClass */
+abstract class WorkerManagerSkeletonClass {
+    /* Fields of Gdm-1.0.Gdm.WorkerManagerSkeletonClass */
     parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
-export class WorkerManagerSkeletonPrivate {
+class WorkerManagerSkeletonPrivate {
     static name: string
 }
+}
+export default Gdm;

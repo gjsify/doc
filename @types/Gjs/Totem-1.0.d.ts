@@ -3,21 +3,23 @@
  */
 
 import type * as Gjs from './Gjs';
-import type * as TotemPlParser from './TotemPlParser-1.0';
-import type * as Gio from './Gio-2.0';
-import type * as GObject from './GObject-2.0';
-import type * as GLib from './GLib-2.0';
-import type * as Gtk from './Gtk-3.0';
-import type * as xlib from './xlib-2.0';
-import type * as Gdk from './Gdk-3.0';
-import type * as cairo from './cairo-1.0';
-import type * as Pango from './Pango-1.0';
-import type * as HarfBuzz from './HarfBuzz-0.0';
-import type * as GdkPixbuf from './GdkPixbuf-2.0';
-import type * as GModule from './GModule-2.0';
-import type * as Atk from './Atk-1.0';
+import type TotemPlParser from './TotemPlParser-1.0';
+import type Gio from './Gio-2.0';
+import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Gtk from './Gtk-3.0';
+import type xlib from './xlib-2.0';
+import type Gdk from './Gdk-3.0';
+import type cairo from './cairo-1.0';
+import type Pango from './Pango-1.0';
+import type HarfBuzz from './HarfBuzz-0.0';
+import type GdkPixbuf from './GdkPixbuf-2.0';
+import type GModule from './GModule-2.0';
+import type Atk from './Atk-1.0';
 
-export enum RemoteCommand {
+export namespace Totem {
+
+enum RemoteCommand {
     UNKNOWN,
     PLAY,
     PAUSE,
@@ -47,27 +49,27 @@ export enum RemoteCommand {
     MUTE,
     TOGGLE_ASPECT_RATIO,
 }
-export enum RemoteSetting {
+enum RemoteSetting {
     REPEAT,
 }
 export const GSETTINGS_SCHEMA: string
-export function get_plugin_paths(): string[]
-export function interface_create_header_button(header: Gtk.Widget, button: Gtk.Widget, icon_name: string, pack_type: Gtk.PackType): Gtk.Widget
-export function interface_error(title: string, reason: string, parent: Gtk.Window): void
-export function interface_error_blocking(title: string, reason: string, parent: Gtk.Window): void
-export function interface_error_with_link(title: string, reason: string, uri: string, label: string, parent: Gtk.Window): void
-export function interface_get_full_path(name: string): string
-export function interface_load(name: string, fatal: boolean, parent?: Gtk.Window | null, user_data?: object | null): Gtk.Builder
-export function interface_load_pixbuf(name: string): GdkPixbuf.Pixbuf
-export function interface_load_with_full_path(filename: string, fatal: boolean, parent?: Gtk.Window | null, user_data?: object | null): Gtk.Builder
-export function plugin_find_file(plugin_name: string, file: string): string
-export function plugin_load_interface(plugin_name: string, name: string, fatal: boolean, parent?: Gtk.Window | null, user_data?: object | null): Gtk.Builder
-export function remote_command_quark(): GLib.Quark
-export function remote_setting_quark(): GLib.Quark
+function get_plugin_paths(): string[]
+function interface_create_header_button(header: Gtk.Widget, button: Gtk.Widget, icon_name: string, pack_type: Gtk.PackType): Gtk.Widget
+function interface_error(title: string, reason: string, parent: Gtk.Window): void
+function interface_error_blocking(title: string, reason: string, parent: Gtk.Window): void
+function interface_error_with_link(title: string, reason: string, uri: string, label: string, parent: Gtk.Window): void
+function interface_get_full_path(name: string): string
+function interface_load(name: string, fatal: boolean, parent?: Gtk.Window | null, user_data?: object | null): Gtk.Builder
+function interface_load_pixbuf(name: string): GdkPixbuf.Pixbuf
+function interface_load_with_full_path(filename: string, fatal: boolean, parent?: Gtk.Window | null, user_data?: object | null): Gtk.Builder
+function plugin_find_file(plugin_name: string, file: string): string
+function plugin_load_interface(plugin_name: string, name: string, fatal: boolean, parent?: Gtk.Window | null, user_data?: object | null): Gtk.Builder
+function remote_command_quark(): GLib.Quark
+function remote_setting_quark(): GLib.Quark
 export interface Object_ConstructProps extends Gtk.Application_ConstructProps {
 }
-export class Object {
-    /* Properties of Totem.Object */
+class Object {
+    /* Properties of Totem-1.0.Totem.Object */
     readonly current_content_type: string
     readonly current_display_name: string
     readonly current_mrl: string
@@ -77,13 +79,13 @@ export class Object {
     readonly playing: boolean
     readonly seekable: boolean
     readonly stream_length: number
-    /* Properties of Gtk.Application */
+    /* Properties of Gtk-3.0.Gtk.Application */
     readonly active_window: Gtk.Window
     app_menu: Gio.MenuModel
     menubar: Gio.MenuModel
     register_session: boolean
     readonly screensaver_active: boolean
-    /* Properties of Gio.Application */
+    /* Properties of Gio-2.0.Gio.Application */
     action_group: Gio.ActionGroup
     application_id: string
     flags: Gio.ApplicationFlags
@@ -92,11 +94,11 @@ export class Object {
     readonly is_registered: boolean
     readonly is_remote: boolean
     resource_base_path: string
-    /* Fields of Gtk.Application */
+    /* Fields of Gtk-3.0.Gtk.Application */
     parent: Gio.Application
-    /* Fields of GObject.Object */
+    /* Fields of GObject-2.0.GObject.Object */
     g_type_instance: GObject.TypeInstance
-    /* Methods of Totem.Object */
+    /* Methods of Totem-1.0.Totem.Object */
     add_to_playlist(uri: string, display_name: string, play: boolean): void
     add_to_view(file: Gio.File, title: string): void
     can_seek_next(): boolean
@@ -135,7 +137,7 @@ export class Object {
     set_volume(volume: number): void
     show_error(title: string, reason: string): void
     stop(): void
-    /* Methods of Gtk.Application */
+    /* Methods of Gtk-3.0.Gtk.Application */
     add_accelerator(accelerator: string, action_name: string, parameter?: GLib.Variant | null): void
     add_window(window: Gtk.Window): void
     get_accels_for_action(detailed_action_name: string): string[]
@@ -156,15 +158,15 @@ export class Object {
     set_app_menu(app_menu?: Gio.MenuModel | null): void
     set_menubar(menubar?: Gio.MenuModel | null): void
     uninhibit(cookie: number): void
-    /* Methods of Gio.Application */
+    /* Methods of Gio-2.0.Gio.Application */
     activate(): void
     add_main_option(long_name: string, short_name: number, flags: GLib.OptionFlags, arg: GLib.OptionArg, description: string, arg_description?: string | null): void
     add_main_option_entries(entries: GLib.OptionEntry[]): void
     add_option_group(group: GLib.OptionGroup): void
     bind_busy_property(object: GObject.Object, property: string): void
-    get_application_id(): string
-    get_dbus_connection(): Gio.DBusConnection
-    get_dbus_object_path(): string
+    get_application_id(): string | null
+    get_dbus_connection(): Gio.DBusConnection | null
+    get_dbus_object_path(): string | null
     get_flags(): Gio.ApplicationFlags
     get_inactivity_timeout(): number
     get_is_busy(): boolean
@@ -191,15 +193,15 @@ export class Object {
     unbind_busy_property(object: GObject.Object, property: string): void
     unmark_busy(): void
     withdraw_notification(id: string): void
-    /* Methods of GObject.Object */
+    /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
-    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: GObject.Closure, transform_from: GObject.Closure): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
     force_floating(): void
     freeze_notify(): void
     get_data(key: string): object | null
-    get_property(property_name: string, value: GObject.Value): void
+    get_property(property_name: string, value: any): void
     get_qdata(quark: GLib.Quark): object | null
-    getv(names: string[], values: GObject.Value[]): void
+    getv(names: string[], values: any[]): void
     is_floating(): boolean
     notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
@@ -207,13 +209,13 @@ export class Object {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
-    set_property(property_name: string, value: GObject.Value): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     unref(): void
-    watch_closure(closure: GObject.Closure): void
-    /* Methods of Gio.ActionGroup */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.ActionGroup */
     action_added(action_name: string): void
     action_enabled_changed(action_name: string, enabled: boolean): void
     action_removed(action_name: string): void
@@ -228,19 +230,19 @@ export class Object {
     has_action(action_name: string): boolean
     list_actions(): string[]
     query_action(action_name: string): [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
-    /* Methods of Gio.ActionMap */
+    /* Methods of Gio-2.0.Gio.ActionMap */
     add_action(action: Gio.Action): void
     add_action_entries(entries: Gio.ActionEntry[], user_data?: object | null): void
-    lookup_action(action_name: string): Gio.Action
+    lookup_action(action_name: string): Gio.Action | null
     remove_action(action_name: string): void
-    /* Virtual methods of Totem.Object */
+    /* Virtual methods of Totem-1.0.Totem.Object */
     vfunc_file_closed(): void
     vfunc_file_has_played(mrl: string): void
     vfunc_file_opened(mrl: string): void
     vfunc_get_text_subtitle(mrl: string): string
     vfunc_get_user_agent(mrl: string): string
     vfunc_metadata_updated(artist: string, title: string, album: string, track_num: number): void
-    /* Virtual methods of Gtk.Application */
+    /* Virtual methods of Gtk-3.0.Gtk.Application */
     vfunc_window_added(window: Gtk.Window): void
     vfunc_window_removed(window: Gtk.Window): void
     vfunc_action_added(action_name: string): void
@@ -258,9 +260,9 @@ export class Object {
     vfunc_list_actions(): string[]
     vfunc_query_action(action_name: string): [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
     vfunc_add_action(action: Gio.Action): void
-    vfunc_lookup_action(action_name: string): Gio.Action
+    vfunc_lookup_action(action_name: string): Gio.Action | null
     vfunc_remove_action(action_name: string): void
-    /* Virtual methods of Gio.Application */
+    /* Virtual methods of Gio-2.0.Gio.Application */
     vfunc_activate(): void
     vfunc_add_platform_data(builder: GLib.VariantBuilder): void
     vfunc_after_emit(platform_data: GLib.Variant): void
@@ -276,15 +278,15 @@ export class Object {
     vfunc_run_mainloop(): void
     vfunc_shutdown(): void
     vfunc_startup(): void
-    /* Virtual methods of GObject.Object */
+    /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
     vfunc_dispose(): void
     vfunc_finalize(): void
-    vfunc_get_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_notify(pspec: GObject.ParamSpec): void
-    vfunc_set_property(property_id: number, value: GObject.Value, pspec: GObject.ParamSpec): void
-    /* Signals of Totem.Object */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Totem-1.0.Totem.Object */
     connect(sigName: "file-closed", callback: (($obj: Object) => void)): number
     connect_after(sigName: "file-closed", callback: (($obj: Object) => void)): number
     emit(sigName: "file-closed"): void
@@ -303,7 +305,7 @@ export class Object {
     connect(sigName: "metadata-updated", callback: (($obj: Object, artist: string, title: string, album: string, track_number: number) => void)): number
     connect_after(sigName: "metadata-updated", callback: (($obj: Object, artist: string, title: string, album: string, track_number: number) => void)): number
     emit(sigName: "metadata-updated", artist: string, title: string, album: string, track_number: number): void
-    /* Signals of Gtk.Application */
+    /* Signals of Gtk-3.0.Gtk.Application */
     connect(sigName: "query-end", callback: (($obj: Object) => void)): number
     connect_after(sigName: "query-end", callback: (($obj: Object) => void)): number
     emit(sigName: "query-end"): void
@@ -313,7 +315,7 @@ export class Object {
     connect(sigName: "window-removed", callback: (($obj: Object, window: Gtk.Window) => void)): number
     connect_after(sigName: "window-removed", callback: (($obj: Object, window: Gtk.Window) => void)): number
     emit(sigName: "window-removed", window: Gtk.Window): void
-    /* Signals of Gio.Application */
+    /* Signals of Gio-2.0.Gio.Application */
     connect(sigName: "activate", callback: (($obj: Object) => void)): number
     connect_after(sigName: "activate", callback: (($obj: Object) => void)): number
     emit(sigName: "activate"): void
@@ -335,11 +337,11 @@ export class Object {
     connect(sigName: "startup", callback: (($obj: Object) => void)): number
     connect_after(sigName: "startup", callback: (($obj: Object) => void)): number
     emit(sigName: "startup"): void
-    /* Signals of GObject.Object */
+    /* Signals of GObject-2.0.GObject.Object */
     connect(sigName: "notify", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Object, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gio.ActionGroup */
+    /* Signals of Gio-2.0.Gio.ActionGroup */
     connect(sigName: "action-added", callback: (($obj: Object, action_name: string) => void)): number
     connect_after(sigName: "action-added", callback: (($obj: Object, action_name: string) => void)): number
     emit(sigName: "action-added", action_name: string): void
@@ -408,8 +410,8 @@ export class Object {
     static get_supported_uri_schemes(): string[]
     static $gtype: GObject.Type
 }
-export abstract class ObjectClass {
-    /* Fields of Totem.ObjectClass */
+abstract class ObjectClass {
+    /* Fields of Totem-1.0.Totem.ObjectClass */
     parent_class: Gtk.ApplicationClass
     file_opened: (totem: Object, mrl: string) => void
     file_closed: (totem: Object) => void
@@ -419,3 +421,5 @@ export abstract class ObjectClass {
     get_text_subtitle: (totem: Object, mrl: string) => string
     static name: string
 }
+}
+export default Totem;
